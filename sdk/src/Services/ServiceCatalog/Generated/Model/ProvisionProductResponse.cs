@@ -37,9 +37,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordDetail. 
         /// <para>
-        /// The detailed result of the <a>ProvisionProduct</a> request, containing the inputs
-        /// made to that request, the current state of the request, a pointer to the ProvisionedProduct
-        /// object of the request, and a list of any errors that the request encountered. 
+        /// Information about the result of <a>ProvisionProduct</a>.
         /// </para>
         /// </summary>
         public RecordDetail RecordDetail

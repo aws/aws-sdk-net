@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewDetail. 
         /// <para>
-        /// The resulting detailed product view information.
+        /// Information about the product view.
         /// </para>
         /// </summary>
         public ProductViewDetail ProductViewDetail
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactDetail. 
         /// <para>
-        /// The resulting detailed provisioning artifact information.
+        /// Information about the provisioning artifact.
         /// </para>
         /// </summary>
         public ProvisioningArtifactDetail ProvisioningArtifactDetail
@@ -75,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags successfully associated with the new product.
+        /// Information about the tags associated with the product.
         /// </para>
         /// </summary>
         public List<Tag> Tags

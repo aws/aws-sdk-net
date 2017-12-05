@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Detailed resource information.
+    /// Information about a resource.
     /// </summary>
     public partial class ResourceDetail
     {
@@ -41,7 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// ARN of the resource.
+        /// The ARN of the resource.
         /// </para>
         /// </summary>
         public string ARN
@@ -59,7 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// Creation time of the resource.
+        /// The creation time of the resource.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -77,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the resource.
+        /// The description of the resource.
         /// </para>
         /// </summary>
         public string Description
@@ -95,7 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Identifier of the resource.
+        /// The identifier of the resource.
         /// </para>
         /// </summary>
         public string Id
@@ -113,7 +113,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the resource.
+        /// The name of the resource.
         /// </para>
         /// </summary>
         public string Name

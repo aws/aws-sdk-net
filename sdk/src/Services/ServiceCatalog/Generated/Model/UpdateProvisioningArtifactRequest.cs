@@ -29,12 +29,18 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProvisioningArtifact operation.
-    /// Updates an existing provisioning artifact's information. This operation does not work
-    /// on a provisioning artifact associated with a product that has been shared with you.
+    /// Updates the specified provisioning artifact (also known as a version) for the specified
+    /// product.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot update a provisioning artifact for a product that was shared with you.
+    /// </para>
     /// </summary>
     public partial class UpdateProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private bool? _active;
         private string _description;
         private string _name;
         private string _productId;
@@ -72,9 +78,27 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Indicates whether the product version is active.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated text description of the provisioning artifact.
+        /// The updated description of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Description
@@ -128,8 +152,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact for the update request. This is sometimes
-        /// referred to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

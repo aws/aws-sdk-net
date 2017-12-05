@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The ListTagOptions filters.
+    /// Filters to use when listing TagOptions.
     /// </summary>
     public partial class ListTagOptionsFilters
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// The ListTagOptionsFilters active state.
+        /// The active state.
         /// </para>
         /// </summary>
         public bool Active
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The ListTagOptionsFilters key.
+        /// The TagOption key.
         /// </para>
         /// </summary>
         public string Key
@@ -75,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The ListTagOptionsFilters value.
+        /// The TagOption value.
         /// </para>
         /// </summary>
         public string Value

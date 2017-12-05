@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The access level to limit results.
+    /// The access level to use to filter results.
     /// </summary>
     public partial class AccessLevelFilter
     {
@@ -38,20 +38,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Specifies the access level.
+        /// The access level.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>Account</code> allows results at the account level. 
+        ///  <code>Account</code> - Filter results based on the account.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>Role</code> allows results based on the federated role of the specified user.
+        ///  <code>Role</code> - Filter results based on the federated role of the specified user.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>User</code> allows results limited to the specified user. 
+        ///  <code>User</code> - Filter results based on the specified user.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AccessLevelFilterKey Key
         {
@@ -68,8 +69,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Specifies the user to which the access level applies. A value of <code>Self</code>
-        /// is currently supported.
+        /// The user to which the access level applies. The only supported value is <code>Self</code>.
         /// </para>
         /// </summary>
         public string Value

@@ -29,9 +29,9 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLaunchPaths operation.
-    /// Returns a paginated list of all paths to a specified product. A path is how the user
-    /// has access to a specified product, and is necessary when provisioning a product. A
-    /// path also determines the constraints put on the product.
+    /// Lists the paths to the specified product. A path is how the user has access to a specified
+    /// product, and is necessary when provisioning a product. A path also determines the
+    /// constraints put on the product.
     /// </summary>
     public partial class ListLaunchPathsRequest : AmazonServiceCatalogRequest
     {
@@ -74,9 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of items to return in the results. If more results exist than fit
-        /// in the specified <code>PageSize</code>, the value of <code>NextPageToken</code> in
-        /// the response is non-null.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int PageSize
@@ -94,8 +92,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken
@@ -113,8 +111,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-        /// information.
+        /// The product identifier.
         /// </para>
         /// </summary>
         public string ProductId

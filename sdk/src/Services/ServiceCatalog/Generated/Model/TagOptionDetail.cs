@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The TagOption details.
+    /// Information about a TagOption.
     /// </summary>
     public partial class TagOptionDetail
     {
@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// The TagOptionDetail active state.
+        /// The TagOption active state.
         /// </para>
         /// </summary>
         public bool Active
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The TagOptionDetail identifier.
+        /// The TagOption identifier.
         /// </para>
         /// </summary>
         public string Id
@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The TagOptionDetail key.
+        /// The TagOption key.
         /// </para>
         /// </summary>
         public string Key
@@ -94,7 +94,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The TagOptionDetail value.
+        /// The TagOption value.
         /// </para>
         /// </summary>
         public string Value

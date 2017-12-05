@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Summary information about a path for a user to have access to a specified product.
+    /// Summary information about a product path for a user.
     /// </summary>
     public partial class LaunchPathSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConstraintSummaries. 
         /// <para>
-        /// List of constraints on the portfolio-product relationship.
+        /// The constraints on the portfolio-product relationship.
         /// </para>
         /// </summary>
         public List<ConstraintSummary> ConstraintSummaries
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the product path.
+        /// The identifier of the product path.
         /// </para>
         /// </summary>
         public string Id
@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Corresponds to the name of the portfolio to which the user was assigned.
+        /// The name of the portfolio to which the user was assigned.
         /// </para>
         /// </summary>
         public string Name
@@ -94,7 +94,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags used by this launch path.
+        /// The tags associated with this product path.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -29,8 +29,12 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePortfolio operation.
-    /// Updates the specified portfolio's details. This operation does not work with a product
-    /// that has been shared with you.
+    /// Updates the specified portfolio.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot update a product that was shared with you.
+    /// </para>
     /// </summary>
     public partial class UpdatePortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -76,7 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AddTags. 
         /// <para>
-        /// Tags to add to the existing list of tags associated with the portfolio.
+        /// The tags to add.
         /// </para>
         /// </summary>
         public List<Tag> AddTags
@@ -94,7 +98,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated text description of the portfolio.
+        /// The updated description of the portfolio.
         /// </para>
         /// </summary>
         public string Description
@@ -130,7 +134,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the portfolio for the update request.
+        /// The portfolio identifier.
         /// </para>
         /// </summary>
         public string Id
@@ -166,7 +170,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RemoveTags. 
         /// <para>
-        /// Tags to remove from the existing list of tags associated with the portfolio.
+        /// The tags to remove.
         /// </para>
         /// </summary>
         public List<string> RemoveTags

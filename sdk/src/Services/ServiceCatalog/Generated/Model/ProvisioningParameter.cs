@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The parameter key-value pairs used to provision a product.
+    /// Information about a parameter used to provision a product.
     /// </summary>
     public partial class ProvisioningParameter
     {
@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+        /// The parameter key.
         /// </para>
         /// </summary>
         public string Key
@@ -56,8 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to use for provisioning. Any constraints on this value can be found in <code>ProvisioningArtifactParameter</code>
-        /// for <code>Key</code>.
+        /// The parameter value.
         /// </para>
         /// </summary>
         public string Value

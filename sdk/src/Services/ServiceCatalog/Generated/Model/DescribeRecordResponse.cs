@@ -39,8 +39,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The page token to use to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordDetail. 
         /// <para>
-        /// Detailed record information for the specified product. 
+        /// Information about the product.
         /// </para>
         /// </summary>
         public RecordDetail RecordDetail
@@ -76,9 +76,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordOutputs. 
         /// <para>
-        /// A list of outputs for the specified Product object created as the result of a request.
-        /// For example, a CloudFormation-backed product that creates an S3 bucket would have
-        /// an output for the S3 bucket URL.
+        /// Information about the product created as the result of a request. For example, the
+        /// output for a CloudFormation-backed product that creates an S3 bucket would include
+        /// the S3 bucket URL.
         /// </para>
         /// </summary>
         public List<RecordOutput> RecordOutputs

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The TagOption summary key-value pair.
+    /// Summary information about a TagOption.
     /// </summary>
     public partial class TagOptionSummary
     {
@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The TagOptionSummary key.
+        /// The TagOption key.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The TagOptionSummary value.
+        /// The TagOption value.
         /// </para>
         /// </summary>
         public List<string> Values

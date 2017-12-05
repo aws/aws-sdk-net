@@ -70,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the constraint to delete.
+        /// The identifier of the constraint.
         /// </para>
         /// </summary>
         public string Id

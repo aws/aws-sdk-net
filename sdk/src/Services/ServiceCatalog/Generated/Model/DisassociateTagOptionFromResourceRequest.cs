@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateTagOptionFromResource operation.
-    /// Disassociates a TagOption from a resource.
+    /// Disassociates the specified TagOption from the specified resource.
     /// </summary>
     public partial class DisassociateTagOptionFromResourceRequest : AmazonServiceCatalogRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Identifier of the resource from which to disassociate the TagOption.
+        /// The resource identifier.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TagOptionId. 
         /// <para>
-        /// Identifier of the TagOption to disassociate from the resource.
+        /// The TagOption identifier.
         /// </para>
         /// </summary>
         public string TagOptionId

@@ -38,8 +38,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResourceDetails. 
         /// <para>
-        /// The resulting detailed resource information.
+        /// Information about the resources.
         /// </para>
         /// </summary>
         public List<ResourceDetail> ResourceDetails

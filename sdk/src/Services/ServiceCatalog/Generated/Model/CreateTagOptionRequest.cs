@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTagOption operation.
-    /// Create a new TagOption.
+    /// Creates a TagOption.
     /// </summary>
     public partial class CreateTagOptionRequest : AmazonServiceCatalogRequest
     {

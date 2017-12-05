@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewSummary. 
         /// <para>
-        /// The summary metadata about the specified product.
+        /// Summary information about the product.
         /// </para>
         /// </summary>
         public ProductViewSummary ProductViewSummary
@@ -56,8 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifacts. 
         /// <para>
-        /// A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-        /// represent the ways in which the specified product can be provisioned.
+        /// Information about the provisioning artifacts for the product.
         /// </para>
         /// </summary>
         public List<ProvisioningArtifact> ProvisioningArtifacts

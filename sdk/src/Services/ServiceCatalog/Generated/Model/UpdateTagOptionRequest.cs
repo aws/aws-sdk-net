@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTagOption operation.
-    /// Updates an existing TagOption.
+    /// Updates the specified TagOption.
     /// </summary>
     public partial class UpdateTagOptionRequest : AmazonServiceCatalogRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the constraint to update.
+        /// The TagOption identifier.
         /// </para>
         /// </summary>
         public string Id

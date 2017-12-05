@@ -38,8 +38,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The page token to use to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordDetails. 
         /// <para>
-        /// A list of record detail objects, listed in reverse chronological order.
+        /// The records, in reverse chronological order.
         /// </para>
         /// </summary>
         public List<RecordDetail> RecordDetails

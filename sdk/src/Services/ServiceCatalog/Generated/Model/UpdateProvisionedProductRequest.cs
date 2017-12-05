@@ -29,15 +29,17 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProvisionedProduct operation.
-    /// Requests updates to the configuration of an existing ProvisionedProduct object. If
-    /// there are tags associated with the object, they cannot be updated or added with this
-    /// operation. Depending on the specific updates requested, this operation may update
-    /// with no interruption, with some interruption, or replace the ProvisionedProduct object
-    /// entirely. 
+    /// Requests updates to the configuration of the specified provisioned product.
     /// 
     ///  
     /// <para>
-    /// You can check the status of this request using the <a>DescribeRecord</a> operation.
+    /// If there are tags associated with the object, they cannot be updated or added. Depending
+    /// on the specific updates requested, this operation can update with no interruption,
+    /// with some interruption, or replace the provisioned product entirely.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can check the status of this request using <a>DescribeRecord</a>.
     /// </para>
     /// </summary>
     public partial class UpdateProvisionedProductRequest : AmazonServiceCatalogRequest
@@ -85,9 +87,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PathId. 
         /// <para>
-        /// The identifier of the path to use in the updated ProvisionedProduct object. This value
-        /// is optional if the product has a default path, and is required if there is more than
-        /// one path for the specified product.
+        /// The new path identifier. This value is optional if the product has a default path,
+        /// and required if the product has more than one path.
         /// </para>
         /// </summary>
         public string PathId
@@ -105,7 +106,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object.
+        /// The identifier of the provisioned product.
         /// </para>
         /// </summary>
         public string ProductId
@@ -123,8 +124,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code>
-        /// or <code>ProvisionedProductId</code>, but not both.
+        /// The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+        /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductId
@@ -142,8 +143,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code>
-        /// or <code>ProvisionedProductId</code>, but not both.
+        /// The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+        /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductName
@@ -161,8 +162,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product. This is sometimes referred
-        /// to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -180,8 +180,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningParameters. 
         /// <para>
-        /// A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct
-        /// object.
+        /// The new parameters.
         /// </para>
         /// </summary>
         public List<UpdateProvisioningParameter> ProvisioningParameters
@@ -199,7 +198,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UpdateToken. 
         /// <para>
-        /// The idempotency token that uniquely identifies the provisioning update request.
+        /// The idempotency token that uniquely identifies the provisioning update rquest.
         /// </para>
         /// </summary>
         public string UpdateToken

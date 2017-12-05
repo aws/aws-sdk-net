@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProvisionedProduct operation.
-    /// Retrieve detailed information about the provisioned product.
+    /// Gets information about the specified provisioned product.
     /// </summary>
     public partial class DescribeProvisionedProductRequest : AmazonServiceCatalogRequest
     {

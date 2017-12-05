@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConstraintDetail. 
         /// <para>
-        /// Detailed constraint information.
+        /// Information about the constraint.
         /// </para>
         /// </summary>
         public ConstraintDetail ConstraintDetail
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConstraintParameters. 
         /// <para>
-        /// The current parameters associated with the specified constraint.
+        /// The constraint parameters.
         /// </para>
         /// </summary>
         public string ConstraintParameters

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Detailed product view information.
+    /// Information about a product view.
     /// </summary>
     public partial class ProductViewDetail
     {
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductARN. 
         /// <para>
-        /// The ARN associated with the product.
+        /// The ARN of the product.
         /// </para>
         /// </summary>
         public string ProductARN
@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewSummary. 
         /// <para>
-        /// The summary metadata about the specified product view.
+        /// Summary information about the product view.
         /// </para>
         /// </summary>
         public ProductViewSummary ProductViewSummary
@@ -94,20 +94,22 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the product.
+        /// The status of the product.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - Product is available for use.
+        ///  <code>AVAILABLE</code> - The product is ready for use.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Creation of product started, not ready for use.
+        ///  <code>CREATING</code> - Product creation has started; the product is not ready for
+        /// use.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Action on product failed.
+        ///  <code>FAILED</code> - An action failed.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Status Status
         {

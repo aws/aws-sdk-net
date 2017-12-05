@@ -39,8 +39,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The page token to use to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewAggregations. 
         /// <para>
-        /// A list of the product view aggregation value objects.
+        /// The product view aggregations.
         /// </para>
         /// </summary>
         public Dictionary<string, List<ProductViewAggregationValue>> ProductViewAggregations
@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewSummaries. 
         /// <para>
-        /// A list of the product view summary objects.
+        /// Information about the product views.
         /// </para>
         /// </summary>
         public List<ProductViewSummary> ProductViewSummaries

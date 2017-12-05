@@ -29,8 +29,12 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProvisioningArtifact operation.
-    /// Create a new provisioning artifact for the specified product. This operation does
-    /// not work with a product that has been shared with you.
+    /// Creates a provisioning artifact (also known as a version) for the specified product.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot create a provisioning artifact for a product that was shared with you.
+    /// </para>
     /// </summary>
     public partial class CreateProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
@@ -73,8 +77,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -92,7 +96,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters to use when creating the new provisioning artifact.
+        /// The configuration for the provisioning artifact.
         /// </para>
         /// </summary>
         public ProvisioningArtifactProperties Parameters

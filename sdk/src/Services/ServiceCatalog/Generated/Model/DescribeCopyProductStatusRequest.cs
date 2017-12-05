@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCopyProductStatus operation.
-    /// Describes the status of the specified copy product operation.
+    /// Gets the status of the specified copy product operation.
     /// </summary>
     public partial class DescribeCopyProductStatusRequest : AmazonServiceCatalogRequest
     {
@@ -70,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CopyProductToken. 
         /// <para>
-        /// The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+        /// The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
         /// </para>
         /// </summary>
         public string CopyProductToken

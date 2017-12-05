@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property LaunchPathSummaries. 
         /// <para>
-        /// List of launch path information summaries for the specified <code>PageToken</code>.
+        /// Information about the launch path.
         /// </para>
         /// </summary>
         public List<LaunchPathSummary> LaunchPathSummaries
@@ -56,8 +56,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The page token to use to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
         public string NextPageToken

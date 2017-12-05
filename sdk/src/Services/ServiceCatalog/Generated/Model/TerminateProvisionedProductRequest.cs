@@ -29,18 +29,15 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateProvisionedProduct operation.
-    /// Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code>
-    /// associated with the object, they are terminated when the ProvisionedProduct object
-    /// is terminated. 
+    /// Terminates the specified provisioned product.
     /// 
     ///  
     /// <para>
-    /// This operation does not delete any records associated with the ProvisionedProduct
-    /// object.
+    /// This operation does not delete any records associated with the provisioned product.
     /// </para>
     ///  
     /// <para>
-    /// You can check the status of this request using the <a>DescribeRecord</a> operation.
+    /// You can check the status of this request using <a>DescribeRecord</a>.
     /// </para>
     /// </summary>
     public partial class TerminateProvisionedProductRequest : AmazonServiceCatalogRequest
@@ -85,8 +82,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IgnoreErrors. 
         /// <para>
-        /// If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct
-        /// object even if it cannot delete the underlying resources.
+        /// If set to true, AWS Service Catalog stops managing the specified provisioned product
+        /// even if it cannot delete the underlying resources.
         /// </para>
         /// </summary>
         public bool IgnoreErrors
@@ -104,8 +101,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-        /// or <code>ProvisionedProductId</code>, but not both.
+        /// The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+        /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductId
@@ -123,8 +120,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-        /// or <code>ProvisionedProductId</code>, but not both.
+        /// The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+        /// and <code>ProvisionedProductId</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductName
@@ -143,9 +140,8 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property TerminateToken. 
         /// <para>
         /// An idempotency token that uniquely identifies the termination request. This token
-        /// is only valid during the termination process. After the ProvisionedProduct object
-        /// is terminated, further requests to terminate the same ProvisionedProduct object always
-        /// return <b>ResourceNotFound</b> regardless of the value of <code>TerminateToken</code>.
+        /// is only valid during the termination process. After the provisioned product is terminated,
+        /// subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.
         /// </para>
         /// </summary>
         public string TerminateToken

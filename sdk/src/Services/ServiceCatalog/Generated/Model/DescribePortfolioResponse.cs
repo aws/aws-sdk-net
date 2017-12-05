@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PortfolioDetail. 
         /// <para>
-        /// Detailed portfolio information.
+        /// Information about the portfolio.
         /// </para>
         /// </summary>
         public PortfolioDetail PortfolioDetail
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TagOptions. 
         /// <para>
-        /// TagOptions associated with the portfolio.
+        /// Information about the TagOptions associated with the portfolio.
         /// </para>
         /// </summary>
         public List<TagOptionDetail> TagOptions
@@ -75,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with the portfolio.
+        /// Information about the tags associated with the portfolio.
         /// </para>
         /// </summary>
         public List<Tag> Tags

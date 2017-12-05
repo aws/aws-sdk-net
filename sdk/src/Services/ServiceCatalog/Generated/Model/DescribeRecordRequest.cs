@@ -29,9 +29,13 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRecord operation.
-    /// Retrieves a paginated list of the full details of a specific request. Use this operation
-    /// after calling a request operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>,
-    /// or <a>UpdateProvisionedProduct</a>).
+    /// Gets information about the specified request operation.
+    /// 
+    ///  
+    /// <para>
+    /// Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
+    /// <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). 
+    /// </para>
     /// </summary>
     public partial class DescribeRecordRequest : AmazonServiceCatalogRequest
     {
@@ -74,9 +78,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The record identifier of the ProvisionedProduct object for which to retrieve output
-        /// information. This is the <code>RecordDetail.RecordId</code> obtained from the request
-        /// operation's response.
+        /// The record identifier of the provisioned product. This identifier is returned by the
+        /// request operation.
         /// </para>
         /// </summary>
         public string Id
@@ -94,9 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of items to return in the results. If more results exist than fit
-        /// in the specified <code>PageSize</code>, the value of <code>NextPageToken</code> in
-        /// the response is non-null.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int PageSize
@@ -114,8 +115,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken

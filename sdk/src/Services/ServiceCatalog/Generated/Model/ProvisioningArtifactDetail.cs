@@ -28,15 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Detailed provisioning artifact information.
+    /// Information about a provisioning artifact (also known as a version) for a product.
     /// </summary>
     public partial class ProvisioningArtifactDetail
     {
+        private bool? _active;
         private DateTime? _createdTime;
         private string _description;
         private string _id;
         private string _name;
         private ProvisioningArtifactType _type;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// Indicates whether the product version is active.
+        /// </para>
+        /// </summary>
+        public bool Active
+        {
+            get { return this._active.GetValueOrDefault(); }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -59,7 +78,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the provisioning artifact.
+        /// The description of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Description
@@ -77,8 +96,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the provisioning artifact. This is sometimes referred to as the
-        /// product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Id
@@ -96,7 +114,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name assigned to the provisioning artifact.
+        /// The name of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Name
@@ -114,17 +132,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the provisioning artifact. The following provisioning artifact types are
-        /// used by AWS Marketplace products:
+        /// The type of provisioning artifact.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - AMI products.
+        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+        ///  <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProvisioningArtifactType Type
         {

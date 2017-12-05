@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// A parameter used to successfully provision the product. This value includes a list
-    /// of allowable values and additional metadata.
+    /// Information about a parameter used to provision a product.
     /// </summary>
     public partial class ProvisioningArtifactParameter
     {
@@ -43,7 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The default value for this parameter.
+        /// The default value.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -61,7 +60,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the parameter.
+        /// The description of the parameter.
         /// </para>
         /// </summary>
         public string Description
@@ -98,7 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ParameterConstraints. 
         /// <para>
-        /// The list of constraints that the administrator has put on the parameter.
+        /// Constraints that the administrator has put on a parameter.
         /// </para>
         /// </summary>
         public ParameterConstraints ParameterConstraints
@@ -116,7 +115,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ParameterKey. 
         /// <para>
-        /// The parameter key. 
+        /// The parameter key.
         /// </para>
         /// </summary>
         public string ParameterKey

@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductViewDetail. 
         /// <para>
-        /// The resulting detailed product view information.
+        /// Information about the product view.
         /// </para>
         /// </summary>
         public ProductViewDetail ProductViewDetail
@@ -56,7 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with the product.
+        /// Information about the tags associated with the product.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// An administrator-specified constraint to apply when provisioning a product.
+    /// Summary information about a constraint.
     /// </summary>
     public partial class ConstraintSummary
     {
@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the constraint.
+        /// The description of the constraint.
         /// </para>
         /// </summary>
         public string Description
@@ -56,8 +56,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the constraint. 
+        /// The type of constraint.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LAUNCH</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOTIFICATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TEMPLATE</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

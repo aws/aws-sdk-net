@@ -29,9 +29,13 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePortfolio operation.
-    /// Deletes the specified portfolio. This operation does not work with a portfolio that
-    /// has been shared with you or if it has products, users, constraints, or shared accounts
-    /// associated with it.
+    /// Deletes the specified portfolio.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot delete a portfolio if it was shared with you or if it has associated products,
+    /// users, constraints, or shared accounts.
+    /// </para>
     /// </summary>
     public partial class DeletePortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -72,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the portfolio for the delete request.
+        /// The portfolio identifier.
         /// </para>
         /// </summary>
         public string Id

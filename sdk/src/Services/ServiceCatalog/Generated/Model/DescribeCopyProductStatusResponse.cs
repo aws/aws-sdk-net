@@ -75,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TargetProductId. 
         /// <para>
-        /// The ID of the copied product.
+        /// The identifier of the copied product.
         /// </para>
         /// </summary>
         public string TargetProductId

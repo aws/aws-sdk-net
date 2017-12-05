@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateTagOptionWithResource operation.
-    /// Associate a TagOption identifier with a resource identifier.
+    /// Associate the specified TagOption with the specified portfolio or product.
     /// </summary>
     public partial class AssociateTagOptionWithResourceRequest : AmazonServiceCatalogRequest
     {

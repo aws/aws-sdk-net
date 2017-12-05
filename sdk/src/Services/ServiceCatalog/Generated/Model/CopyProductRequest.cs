@@ -33,8 +33,8 @@ namespace Amazon.ServiceCatalog.Model
     /// 
     ///  
     /// <para>
-    /// You can copy the product to the same account or another account. You can copy the
-    /// product to the same region or another region.
+    /// You can copy a product to the same account or another account. You can copy a product
+    /// to the same region or another region.
     /// </para>
     ///  
     /// <para>
@@ -105,9 +105,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        ///  A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
-        /// 
+        ///  A unique identifier that you provide to ensure idempotency. If multiple requests
+        /// differ only by the idempotency token, the same response is returned for each repeated
+        /// request. 
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -143,8 +143,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SourceProvisioningArtifactIdentifiers. 
         /// <para>
-        /// The IDs of the product versions to copy. By default, all provisioning artifacts are
-        /// copied.
+        /// The identifiers of the provisioning artifacts (also known as versions) of the product
+        /// to copy. By default, all provisioning artifacts are copied.
         /// </para>
         /// </summary>
         public List<Dictionary<string, string>> SourceProvisioningArtifactIdentifiers
@@ -162,7 +162,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TargetProductId. 
         /// <para>
-        /// The ID of the target product. By default, a new product is created.
+        /// The identifier of the target product. By default, a new product is created.
         /// </para>
         /// </summary>
         public string TargetProductId

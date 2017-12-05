@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// Additional information about the provisioning artifact update request.
+        /// The URL of the CloudFormation template in Amazon S3.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Info
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactDetail. 
         /// <para>
-        /// The resulting detailed provisioning artifact information.
+        /// Information about the provisioning artifact.
         /// </para>
         /// </summary>
         public ProvisioningArtifactDetail ProvisioningArtifactDetail

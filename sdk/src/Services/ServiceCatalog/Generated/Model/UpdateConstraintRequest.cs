@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConstraint operation.
-    /// Updates an existing constraint.
+    /// Updates the specified constraint.
     /// </summary>
     public partial class UpdateConstraintRequest : AmazonServiceCatalogRequest
     {
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated text description of the constraint.
+        /// The updated description of the constraint.
         /// </para>
         /// </summary>
         public string Description
@@ -89,7 +89,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the constraint to update.
+        /// The identifier of the constraint.
         /// </para>
         /// </summary>
         public string Id

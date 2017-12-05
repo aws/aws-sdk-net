@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConstraint operation.
-    /// Retrieves detailed information for a specified constraint.
+    /// Gets information about the specified constraint.
     /// </summary>
     public partial class DescribeConstraintRequest : AmazonServiceCatalogRequest
     {

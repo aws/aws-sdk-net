@@ -73,6 +73,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
+                if(publicRequest.IsSetActive())
+                {
+                    context.Writer.WritePropertyName("Active");
+                    context.Writer.Write(publicRequest.Active);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

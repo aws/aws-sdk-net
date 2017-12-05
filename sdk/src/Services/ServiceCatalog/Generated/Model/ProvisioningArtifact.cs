@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Contains information indicating the ways in which a product can be provisioned.
+    /// Information about a provisioning artifact. A provisioning artifact is also known as
+    /// a product version.
     /// </summary>
     public partial class ProvisioningArtifact
     {
@@ -58,7 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the artifact.
+        /// The description of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Description
@@ -76,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the artifact. This is sometimes referred to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Id
@@ -94,7 +95,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the artifact.
+        /// The name of the provisioning artifact.
         /// </para>
         /// </summary>
         public string Name

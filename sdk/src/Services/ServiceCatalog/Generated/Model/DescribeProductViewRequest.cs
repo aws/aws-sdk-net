@@ -29,13 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProductView operation.
-    /// Retrieves information about a specified product.
-    /// 
-    ///  
-    /// <para>
-    /// This operation is functionally identical to <a>DescribeProduct</a> except that it
-    /// takes as input <code>ProductViewId</code> instead of <code>ProductId</code>.
-    /// </para>
+    /// Gets information about the specified product.
     /// </summary>
     public partial class DescribeProductViewRequest : AmazonServiceCatalogRequest
     {
@@ -76,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The <code>ProductViewId</code> of the product to describe.
+        /// The product view identifier.
         /// </para>
         /// </summary>
         public string Id

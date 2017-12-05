@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptPortfolioShare operation.
-    /// Accepts an offer to share a portfolio.
+    /// Accepts an offer to share the specified portfolio.
     /// </summary>
     public partial class AcceptPortfolioShareRequest : AmazonServiceCatalogRequest
     {

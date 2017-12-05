@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Provisioning artifact properties. For example request JSON, see <a>CreateProvisioningArtifact</a>.
+    /// Information about a provisioning artifact (also known as a version) for a product.
     /// </summary>
     public partial class ProvisioningArtifactProperties
     {
@@ -40,7 +40,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the provisioning artifact properties.
+        /// The description of the provisioning artifact, including how it differs from the previous
+        /// provisioning artifact.
         /// </para>
         /// </summary>
         public string Description
@@ -58,9 +59,13 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// Additional information about the provisioning artifact properties. When using this
-        /// element in a request, you must specify <code>LoadTemplateFromURL</code>. For more
-        /// information, see <a>CreateProvisioningArtifact</a>.
+        /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format
+        /// as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+        /// 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Info
@@ -78,7 +83,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name assigned to the provisioning artifact properties.
+        /// The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
         /// </para>
         /// </summary>
         public string Name
@@ -96,17 +101,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the provisioning artifact properties. The following provisioning artifact
-        /// property types are used by AWS Marketplace products:
+        /// The type of provisioning artifact.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - AMI products.
+        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+        ///  <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProvisioningArtifactType Type
         {

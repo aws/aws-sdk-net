@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Detailed information about a ProvisionedProduct object.
+    /// Information about a provisioned product.
     /// </summary>
     public partial class ProvisionedProductDetail
     {
@@ -45,7 +45,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN associated with the ProvisionedProduct object.
+        /// The ARN of the provisioned product.
         /// </para>
         /// </summary>
         public string Arn
@@ -81,7 +81,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object.
+        /// The identifier of the provisioned product.
         /// </para>
         /// </summary>
         public string Id
@@ -99,8 +99,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -118,7 +118,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property LastRecordId. 
         /// <para>
-        /// The record identifier of the last request performed on this ProvisionedProduct object.
+        /// The record identifier of the last request performed on this provisioned product.
         /// </para>
         /// </summary>
         public string LastRecordId
@@ -136,7 +136,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user-friendly name of the ProvisionedProduct object.
+        /// The user-friendly name of the provisioned product.
         /// </para>
         /// </summary>
         public string Name
@@ -154,31 +154,32 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the ProvisionedProduct.
+        /// The current status of the provisioned product.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent
-        /// action request succeeded and completed.
+        /// operation succeeded and completed.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not
-        /// have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.
+        ///  <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have
+        /// valid results. Wait for an <code>AVAILABLE</code> status before performing operations.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has
         /// completed the requested operation but is not exactly what was requested. For example,
         /// a request to update to a new version failed and the stack rolled back to the current
-        /// version. 
+        /// version.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR</code> - Something unexpected happened such that the provisioned product
-        /// exists but the stack is not running. For example, CloudFormation received an invalid
-        /// parameter value and could not launch the stack.
+        ///  <code>ERROR</code> - An unexpected error occurred, the provisioned product exists
+        /// but the stack is not running. For example, CloudFormation received a parameter value
+        /// that was not valid and could not launch the stack.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProvisionedProductStatus Status
         {
@@ -195,7 +196,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The current status message of the ProvisionedProduct.
+        /// The current status message of the provisioned product.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -213,7 +214,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the ProvisionedProduct object.
+        /// The type of provisioned product. The supported value is <code>CFN_STACK</code>.
         /// </para>
         /// </summary>
         public string Type

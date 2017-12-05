@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Key-value pairs to associate with this provisioning. These tags are entirely discretionary
-    /// and are propagated to the resources created in the provisioning.
+    /// Information about a tag. A tag is a key-value pair. Tags are entirely discretionary
+    /// and are propagated to the resources created when provisioning a product.
     /// </summary>
     public partial class Tag
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+        /// The tag key.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The desired value for this key.
+        /// The value for this key.
         /// </para>
         /// </summary>
         public string Value

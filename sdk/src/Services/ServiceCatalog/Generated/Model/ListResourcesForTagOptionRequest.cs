@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourcesForTagOption operation.
-    /// Lists resources associated with a TagOption.
+    /// Lists the resources associated with the specified TagOption.
     /// </summary>
     public partial class ListResourcesForTagOptionRequest : AmazonServiceCatalogRequest
     {
@@ -41,9 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of items to return in the results. If more results exist than fit
-        /// in the specified <code>PageSize</code>, the value of <code>NextPageToken</code> in
-        /// the response is non-null.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int PageSize
@@ -61,8 +59,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken
@@ -80,8 +78,17 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Resource type.
+        /// The resource type.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Portfolio</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Product</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceType
         {
@@ -98,7 +105,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TagOptionId. 
         /// <para>
-        /// Identifier of the TagOption.
+        /// The TagOption identifier.
         /// </para>
         /// </summary>
         public string TagOptionId

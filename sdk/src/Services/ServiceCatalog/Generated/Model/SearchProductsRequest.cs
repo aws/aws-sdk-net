@@ -29,13 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchProducts operation.
-    /// Returns a paginated list all of the <code>Products</code> objects to which the caller
-    /// has access. 
-    /// 
-    ///  
-    /// <para>
-    /// The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.
-    /// </para>
+    /// Gets information about the products to which the caller has access.
     /// </summary>
     public partial class SearchProductsRequest : AmazonServiceCatalogRequest
     {
@@ -80,8 +74,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The list of filters with which to limit search results. If no search filters are specified,
-        /// the output is all the products to which the calling user has access. 
+        /// The search filters. If no search filters are specified, the output includes all products
+        /// to which the caller has access.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Filters
@@ -99,9 +93,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of items to return in the results. If more results exist than fit
-        /// in the specified <code>PageSize</code>, the value of <code>NextPageToken</code> in
-        /// the response is non-null.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int PageSize
@@ -119,8 +111,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken
@@ -138,7 +130,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The sort field specifier. If no value is specified, results are not sorted.
+        /// The sort field. If no value is specified, the results are not sorted.
         /// </para>
         /// </summary>
         public ProductViewSortBy SortBy
@@ -156,7 +148,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order specifier. If no value is specified, results are not sorted.
+        /// The sort order. If no value is specified, the results are not sorted.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePortfolio operation.
-    /// Creates a new portfolio.
+    /// Creates a portfolio.
     /// </summary>
     public partial class CreatePortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -74,7 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the portfolio.
+        /// The description of the portfolio.
         /// </para>
         /// </summary>
         public string Description
@@ -110,8 +110,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -147,7 +147,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the new portfolio.
+        /// The tags to associate with the portfolio.
         /// </para>
         /// </summary>
         public List<Tag> Tags

@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePortfolioShare operation.
-    /// Creates a new portfolio share.
+    /// Shares the specified portfolio with the specified account.
     /// </summary>
     public partial class CreatePortfolioShareRequest : AmazonServiceCatalogRequest
     {
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID with which to share the portfolio.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         public string AccountId

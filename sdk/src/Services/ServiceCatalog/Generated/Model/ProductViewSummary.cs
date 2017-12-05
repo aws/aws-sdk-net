@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The summary metadata about the specified product.
+    /// Summary information about a product view.
     /// </summary>
     public partial class ProductViewSummary
     {
@@ -66,10 +66,10 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property HasDefaultPath. 
         /// <para>
-        /// A value of <code>false</code> indicates that the product does not have a default path,
-        /// while a value of <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a>
-        /// to disambiguate between paths. If true, <a>ListLaunchPaths</a> is not required, and
-        /// the output of the <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+        /// Indicates whether the product has a default path. If the product does not have a default
+        /// path, call <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a>
+        /// is not required, and the output of <a>ProductViewSummary</a> can be used directly
+        /// with <a>DescribeProvisioningParameters</a>.
         /// </para>
         /// </summary>
         public bool HasDefaultPath

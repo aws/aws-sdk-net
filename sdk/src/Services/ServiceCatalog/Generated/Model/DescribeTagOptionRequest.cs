@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTagOption operation.
-    /// Describes a TagOption.
+    /// Gets information about the specified TagOption.
     /// </summary>
     public partial class DescribeTagOptionRequest : AmazonServiceCatalogRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the TagOption.
+        /// The TagOption identifier.
         /// </para>
         /// </summary>
         public string Id

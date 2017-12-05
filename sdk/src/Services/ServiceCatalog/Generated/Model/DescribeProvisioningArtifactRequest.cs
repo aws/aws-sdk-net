@@ -29,7 +29,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProvisioningArtifact operation.
-    /// Retrieves detailed information about the specified provisioning artifact.
+    /// Gets information about the specified provisioning artifact (also known as a version)
+    /// for the specified product.
     /// </summary>
     public partial class DescribeProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
@@ -90,8 +91,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact. This is sometimes referred to as the
-        /// product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -109,7 +109,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Verbose. 
         /// <para>
-        /// Enable a verbose level of details for the provisioning artifact.
+        /// Indicates whether a verbose level of detail is enabled.
         /// </para>
         /// </summary>
         public bool Verbose

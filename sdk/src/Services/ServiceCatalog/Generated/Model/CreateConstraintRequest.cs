@@ -29,8 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConstraint operation.
-    /// Creates a new constraint. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
-    /// Constraints</a>.
+    /// Creates a constraint.
     /// </summary>
     public partial class CreateConstraintRequest : AmazonServiceCatalogRequest
     {
@@ -76,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the constraint.
+        /// The description of the constraint.
         /// </para>
         /// </summary>
         public string Description
@@ -94,8 +93,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -113,22 +112,31 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The constraint parameters. Expected values vary depending on which <b>Type</b> is
-        /// specified. For more information, see the Examples section.
+        /// The constraint parameters, in JSON format. The syntax depends on the constraint type
+        /// as follows:
+        /// </para>
+        ///  <dl> <dt>LAUNCH</dt> <dd> 
+        /// <para>
+        /// Specify the <code>RoleArn</code> property as follows:
         /// </para>
         ///  
         /// <para>
-        /// For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. 
+        /// \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+        /// </para>
+        ///  </dd> <dt>NOTIFICATION</dt> <dd> 
+        /// <para>
+        /// Specify the <code>NotificationArns</code> property as follows:
         /// </para>
         ///  
         /// <para>
-        /// For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is
-        /// required.
+        /// \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
         /// </para>
-        ///  
+        ///  </dd> <dt>TEMPLATE</dt> <dd> 
         /// <para>
-        /// For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+        /// Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
+        /// Constraint Rules</a>.
         /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public string Parameters
         {
@@ -181,9 +189,21 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
-        /// <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. 
+        /// The type of constraint.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LAUNCH</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOTIFICATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TEMPLATE</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

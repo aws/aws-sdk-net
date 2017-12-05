@@ -37,8 +37,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CopyProductToken. 
         /// <para>
-        /// A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress
-        /// of the operation.
+        /// The token to use to track the progress of the operation.
         /// </para>
         /// </summary>
         public string CopyProductToken

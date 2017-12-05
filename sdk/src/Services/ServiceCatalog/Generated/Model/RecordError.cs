@@ -56,7 +56,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the error.
+        /// The description of the error.
         /// </para>
         /// </summary>
         public string Description

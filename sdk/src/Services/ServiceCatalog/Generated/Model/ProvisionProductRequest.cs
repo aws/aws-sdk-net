@@ -29,20 +29,19 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ProvisionProduct operation.
-    /// Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is
-    /// a resourced instance for a product. For example, provisioning a CloudFormation-template-backed
-    /// product results in launching a CloudFormation stack and all the underlying resources
-    /// that come with it. 
+    /// Provisions the specified product.
     /// 
     ///  
     /// <para>
-    /// You can check the status of this request using the <a>DescribeRecord</a> operation.
-    /// The error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>"
-    /// indicates that your request contains a tag which has a tag key but no corresponding
-    /// tag value (value is empty or null). Your call may have included values returned from
-    /// a <code>DescribeProvisioningParameters</code> call that resulted in a TagOption key
-    /// with an empty list. This happens when TagOption keys are in conflict. For more information,
-    /// see <a>DescribeProvisioningParameters</a>.
+    /// A provisioned product is a resourced instance of a product. For example, provisioning
+    /// a product based on a CloudFormation template launches a CloudFormation stack and its
+    /// underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the request contains a tag key with an empty list of values, there is a tag conflict
+    /// for that key. Do not include conflicted keys as tags, or this will cause the error
+    /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
     /// </para>
     /// </summary>
     public partial class ProvisionProductRequest : AmazonServiceCatalogRequest
@@ -109,9 +108,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PathId. 
         /// <para>
-        /// The identifier of the path for this product's provisioning. This value is optional
-        /// if the product has a default path, and is required if there is more than one path
-        /// for the specified product.
+        /// The path identifier of the product. This value is optional if the product has a default
+        /// path, and required if the product has more than one path. To list the paths for a
+        /// product, use <a>ListLaunchPaths</a>.
         /// </para>
         /// </summary>
         public string PathId
@@ -147,8 +146,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// A user-friendly name to identify the ProvisionedProduct object. This value must be
-        /// unique for the AWS account and cannot be updated after the product is provisioned.
+        /// A user-friendly name for the provisioned product. This value must be unique for the
+        /// AWS account and cannot be updated after the product is provisioned.
         /// </para>
         /// </summary>
         public string ProvisionedProductName
@@ -166,8 +165,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product. This is sometimes referred
-        /// to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -203,7 +201,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionToken. 
         /// <para>
-        /// An idempotency token that uniquely identifies the provisioning request. 
+        /// An idempotency token that uniquely identifies the provisioning request.
         /// </para>
         /// </summary>
         public string ProvisionToken
@@ -221,7 +219,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to use as provisioning options.
+        /// The tags to use as provisioning options.
         /// </para>
         /// </summary>
         public List<Tag> Tags

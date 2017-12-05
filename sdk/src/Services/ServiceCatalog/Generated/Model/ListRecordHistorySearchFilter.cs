@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The search filter to limit results when listing request history records.
+    /// The search filter to use when listing history records.
     /// </summary>
     public partial class ListRecordHistorySearchFilter
     {
@@ -40,6 +40,16 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The filter key.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>product</code> - Filter results based on the specified product identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>provisionedproduct</code> - Filter results based on the provisioned product
+        /// identifier.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Key
         {
@@ -56,7 +66,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The filter value for <code>Key</code>.
+        /// The filter value.
         /// </para>
         /// </summary>
         public string Value

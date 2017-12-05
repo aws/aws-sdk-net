@@ -37,7 +37,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TagOptionDetail. 
         /// <para>
-        /// The resulting detailed TagOption information.
+        /// Information about the TagOption.
         /// </para>
         /// </summary>
         public TagOptionDetail TagOptionDetail

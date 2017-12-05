@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Detailed portfolio information.
+    /// Information about a portfolio.
     /// </summary>
     public partial class PortfolioDetail
     {
@@ -78,7 +78,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the portfolio.
+        /// The description of the portfolio.
         /// </para>
         /// </summary>
         public string Description
@@ -114,7 +114,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the portfolio.
+        /// The portfolio identifier.
         /// </para>
         /// </summary>
         public string Id

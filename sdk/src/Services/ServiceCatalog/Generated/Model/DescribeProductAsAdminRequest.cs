@@ -29,7 +29,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProductAsAdmin operation.
-    /// Retrieves information about a specified product, run with administrator access.
+    /// Gets information about the specified product. This operation is run with administrator
+    /// access.
     /// </summary>
     public partial class DescribeProductAsAdminRequest : AmazonServiceCatalogRequest
     {
@@ -70,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the product for which to retrieve information.
+        /// The product identifier.
         /// </para>
         /// </summary>
         public string Id

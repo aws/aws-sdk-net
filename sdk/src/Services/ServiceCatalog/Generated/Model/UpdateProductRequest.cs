@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProduct operation.
-    /// Updates an existing product.
+    /// Updates the specified product.
     /// </summary>
     public partial class UpdateProductRequest : AmazonServiceCatalogRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AddTags. 
         /// <para>
-        /// Tags to add to the existing list of tags associated with the product.
+        /// The tags to add to the product.
         /// </para>
         /// </summary>
         public List<Tag> AddTags
@@ -97,7 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated text description of the product.
+        /// The updated description of the product.
         /// </para>
         /// </summary>
         public string Description
@@ -133,7 +133,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the product for the update request.
+        /// The product identifier.
         /// </para>
         /// </summary>
         public string Id
@@ -187,7 +187,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RemoveTags. 
         /// <para>
-        /// Tags to remove from the existing list of tags associated with the product.
+        /// The tags to remove from the product.
         /// </para>
         /// </summary>
         public List<string> RemoveTags

@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPortfolioAccess operation.
-    /// Lists the account IDs that have been authorized sharing of the specified portfolio.
+    /// Lists the account IDs that have access to the specified portfolio.
     /// </summary>
     public partial class ListPortfolioAccessRequest : AmazonServiceCatalogRequest
     {

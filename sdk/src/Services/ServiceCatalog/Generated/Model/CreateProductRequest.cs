@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProduct operation.
-    /// Creates a new product.
+    /// Creates a product.
     /// </summary>
     public partial class CreateProductRequest : AmazonServiceCatalogRequest
     {
@@ -80,7 +80,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The text description of the product.
+        /// The description of the product.
         /// </para>
         /// </summary>
         public string Description
@@ -116,8 +116,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// A token to disambiguate duplicate requests. You can use the same input in multiple
-        /// requests, provided that you also specify a different idempotency token for each request.
+        /// A unique identifier that you provide to ensure idempotency. If multiple requests differ
+        /// only by the idempotency token, the same response is returned for each repeated request.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -171,7 +171,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductType. 
         /// <para>
-        /// The type of the product to create.
+        /// The type of product.
         /// </para>
         /// </summary>
         public ProductType ProductType
@@ -189,7 +189,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactParameters. 
         /// <para>
-        /// Parameters for the provisioning artifact.
+        /// The configuration of the provisioning artifact.
         /// </para>
         /// </summary>
         public ProvisioningArtifactProperties ProvisioningArtifactParameters
@@ -207,7 +207,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SupportDescription. 
         /// <para>
-        /// Support information about the product.
+        /// The support information about the product.
         /// </para>
         /// </summary>
         public string SupportDescription
@@ -225,7 +225,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SupportEmail. 
         /// <para>
-        /// Contact email for product support.
+        /// The contact email for product support.
         /// </para>
         /// </summary>
         public string SupportEmail
@@ -243,7 +243,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SupportUrl. 
         /// <para>
-        /// Contact URL for product support.
+        /// The contact URL for product support.
         /// </para>
         /// </summary>
         public string SupportUrl
@@ -261,7 +261,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the new product.
+        /// The tags to associate with the product.
         /// </para>
         /// </summary>
         public List<Tag> Tags

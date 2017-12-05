@@ -38,8 +38,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The page token to use to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.
+        /// The page token to use to retrieve the next set of results. If there are no additional
+        /// results, this value is null.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -57,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactDetails. 
         /// <para>
-        /// List of detailed provisioning artifact information objects.
+        /// Information about the provisioning artifacts.
         /// </para>
         /// </summary>
         public List<ProvisioningArtifactDetail> ProvisioningArtifactDetails

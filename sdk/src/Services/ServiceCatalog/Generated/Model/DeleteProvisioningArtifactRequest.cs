@@ -29,10 +29,15 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProvisioningArtifact operation.
-    /// Deletes the specified provisioning artifact. This operation does not work on a provisioning
-    /// artifact associated with a product that has been shared with you, or on the last provisioning
-    /// artifact associated with a product (a product must have at least one provisioning
-    /// artifact).
+    /// Deletes the specified provisioning artifact (also known as a version) for the specified
+    /// product.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot delete a provisioning artifact associated with a product that was shared
+    /// with you. You cannot delete the last provisioning artifact for a product, because
+    /// a product must have at least one provisioning artifact.
+    /// </para>
     /// </summary>
     public partial class DeleteProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
@@ -92,8 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact for the delete request. This is sometimes
-        /// referred to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId

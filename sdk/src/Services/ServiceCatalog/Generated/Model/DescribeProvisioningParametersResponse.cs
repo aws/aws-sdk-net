@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConstraintSummaries. 
         /// <para>
-        /// The list of constraint summaries that apply to provisioning this product.
+        /// Information about the constraints used to provision the product.
         /// </para>
         /// </summary>
         public List<ConstraintSummary> ConstraintSummaries
@@ -58,8 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactParameters. 
         /// <para>
-        /// The list of parameters used to successfully provision the product. Each parameter
-        /// includes a list of allowable values and additional metadata about each parameter.
+        /// Information about the parameters used to provision the product.
         /// </para>
         /// </summary>
         public List<ProvisioningArtifactParameter> ProvisioningArtifactParameters
@@ -77,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property TagOptions. 
         /// <para>
-        /// List of TagOptions associated with the provisioned provisioning parameters.
+        /// Information about the TagOptions associated with the resource.
         /// </para>
         /// </summary>
         public List<TagOptionSummary> TagOptions

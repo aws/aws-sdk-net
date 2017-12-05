@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePortfolioShare operation.
-    /// Deletes the specified portfolio share.
+    /// Stops sharing the specified portfolio with the specified account.
     /// </summary>
     public partial class DeletePortfolioShareRequest : AmazonServiceCatalogRequest
     {
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID associated with the share to delete.
+        /// The AWS account ID.
         /// </para>
         /// </summary>
         public string AccountId

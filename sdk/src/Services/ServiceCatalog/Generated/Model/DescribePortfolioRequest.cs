@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePortfolio operation.
-    /// Retrieves detailed information and any tags associated with the specified portfolio.
+    /// Gets information about the specified portfolio.
     /// </summary>
     public partial class DescribePortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -70,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the portfolio for which to retrieve information.
+        /// The portfolio identifier.
         /// </para>
         /// </summary>
         public string Id

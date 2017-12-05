@@ -29,8 +29,12 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProduct operation.
-    /// Deletes the specified product. This operation does not work with a product that has
-    /// been shared with you or is associated with a portfolio.
+    /// Deletes the specified product.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot delete a product if it was shared with you or is associated with a portfolio.
+    /// </para>
     /// </summary>
     public partial class DeleteProductRequest : AmazonServiceCatalogRequest
     {
@@ -71,7 +75,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the product for the delete request.
+        /// The product identifier.
         /// </para>
         /// </summary>
         public string Id

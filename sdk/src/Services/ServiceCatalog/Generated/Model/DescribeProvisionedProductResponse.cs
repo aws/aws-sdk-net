@@ -37,7 +37,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductDetail. 
         /// <para>
-        /// Detailed provisioned product information.
+        /// Information about the provisioned product.
         /// </para>
         /// </summary>
         public ProvisionedProductDetail ProvisionedProductDetail

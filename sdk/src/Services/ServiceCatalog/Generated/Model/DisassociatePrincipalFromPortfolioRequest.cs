@@ -89,7 +89,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN representing the principal (IAM user, role, or group).
+        /// The ARN of the principal (IAM user, role, or group).
         /// </para>
         /// </summary>
         public string PrincipalARN

@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagOptions operation.
-    /// Lists detailed TagOptions information.
+    /// Lists the specified TagOptions or all TagOptions.
     /// </summary>
     public partial class ListTagOptionsRequest : AmazonServiceCatalogRequest
     {
@@ -40,8 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The list of filters with which to limit search results. If no search filters are specified,
-        /// the output is all TagOptions. 
+        /// The search filters. If no search filters are specified, the output includes all TagOptions.
         /// </para>
         /// </summary>
         public ListTagOptionsFilters Filters
@@ -59,9 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of items to return in the results. If more results exist than fit
-        /// in the specified <code>PageSize</code>, the value of <code>NextPageToken</code> in
-        /// the response is non-null.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
         public int PageSize
@@ -79,8 +76,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieved. If null, this retrieves the first page
-        /// of size <code>PageSize</code>.
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
         /// </para>
         /// </summary>
         public string PageToken

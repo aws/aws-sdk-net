@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The parameter key-value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code>
-    /// is set to true, <code>Value</code> is ignored and the value for <code>Key</code> is
-    /// kept as previously set (current value).
+    /// The parameter key-value pair used to update a provisioned product.
     /// </summary>
     public partial class UpdateProvisioningParameter
     {
@@ -41,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+        /// The parameter key.
         /// </para>
         /// </summary>
         public string Key
@@ -59,7 +57,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UsePreviousValue. 
         /// <para>
-        /// If true, uses the currently set value for <code>Key</code>, ignoring <code>UpdateProvisioningParameter.Value</code>.
+        /// If set to true, <code>Value</code> is ignored and the previous parameter value is
+        /// kept.
         /// </para>
         /// </summary>
         public bool UsePreviousValue
@@ -77,8 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to use for updating the product provisioning. Any constraints on this value
-        /// can be found in the <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+        /// The parameter value.
         /// </para>
         /// </summary>
         public string Value

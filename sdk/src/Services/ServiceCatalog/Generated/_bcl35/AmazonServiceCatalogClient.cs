@@ -35,32 +35,12 @@ namespace Amazon.ServiceCatalog
     ///
     /// AWS Service Catalog 
     /// <para>
-    ///  <b>Overview</b> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations
-    /// to create and manage catalogs of IT services that are approved for use on AWS. This
-    /// documentation provides reference material for the AWS Service Catalog end user API.
-    /// To get the most out of this documentation, be familiar with the terminology discussed
-    /// in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
+    ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
+    /// organizations to create and manage catalogs of IT services that are approved for use
+    /// on AWS. To get the most out of this documentation, you should be familiar with the
+    /// terminology discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
     /// Service Catalog Concepts</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <i>Additional Resources</i> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">AWS
-    /// Service Catalog Administrator Guide</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html">AWS
-    /// Service Catalog User Guide</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
     {
@@ -253,17 +233,17 @@ namespace Amazon.ServiceCatalog
         #region  AcceptPortfolioShare
 
         /// <summary>
-        /// Accepts an offer to share a portfolio.
+        /// Accepts an offer to share the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptPortfolioShare service method.</param>
         /// 
         /// <returns>The response from the AcceptPortfolioShare service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -322,11 +302,11 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the AssociatePrincipalWithPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -379,17 +359,17 @@ namespace Amazon.ServiceCatalog
         #region  AssociateProductWithPortfolio
 
         /// <summary>
-        /// Associates a product with a portfolio.
+        /// Associates the specified product with the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateProductWithPortfolio service method.</param>
         /// 
         /// <returns>The response from the AssociateProductWithPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -442,7 +422,7 @@ namespace Amazon.ServiceCatalog
         #region  AssociateTagOptionWithResource
 
         /// <summary>
-        /// Associate a TagOption identifier with a resource identifier.
+        /// Associate the specified TagOption with the specified portfolio or product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTagOptionWithResource service method.</param>
         /// 
@@ -451,16 +431,15 @@ namespace Amazon.ServiceCatalog
         /// The specified resource is a duplicate.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
-        /// An attempt was made to modify a resource that is in an invalid state. Inspect the
-        /// resource you are using for this operation to ensure that all resource states are valid
-        /// before retrying the operation.
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -522,8 +501,8 @@ namespace Amazon.ServiceCatalog
         /// 
         ///  
         /// <para>
-        /// You can copy the product to the same account or another account. You can copy the
-        /// product to the same region or another region.
+        /// You can copy a product to the same account or another account. You can copy a product
+        /// to the same region or another region.
         /// </para>
         ///  
         /// <para>
@@ -535,7 +514,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the CopyProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -588,8 +567,7 @@ namespace Amazon.ServiceCatalog
         #region  CreateConstraint
 
         /// <summary>
-        /// Creates a new constraint. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using
-        /// Constraints</a>.
+        /// Creates a constraint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConstraint service method.</param>
         /// 
@@ -598,11 +576,11 @@ namespace Amazon.ServiceCatalog
         /// The specified resource is a duplicate.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -655,17 +633,17 @@ namespace Amazon.ServiceCatalog
         #region  CreatePortfolio
 
         /// <summary>
-        /// Creates a new portfolio.
+        /// Creates a portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolio service method.</param>
         /// 
         /// <returns>The response from the CreatePortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
@@ -720,17 +698,17 @@ namespace Amazon.ServiceCatalog
         #region  CreatePortfolioShare
 
         /// <summary>
-        /// Creates a new portfolio share.
+        /// Shares the specified portfolio with the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
         /// <returns>The response from the CreatePortfolioShare service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -783,17 +761,17 @@ namespace Amazon.ServiceCatalog
         #region  CreateProduct
 
         /// <summary>
-        /// Creates a new product.
+        /// Creates a product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProduct service method.</param>
         /// 
         /// <returns>The response from the CreateProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
@@ -848,18 +826,22 @@ namespace Amazon.ServiceCatalog
         #region  CreateProvisioningArtifact
 
         /// <summary>
-        /// Create a new provisioning artifact for the specified product. This operation does
-        /// not work with a product that has been shared with you.
+        /// Creates a provisioning artifact (also known as a version) for the specified product.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot create a provisioning artifact for a product that was shared with you.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
         /// <returns>The response from the CreateProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -912,7 +894,7 @@ namespace Amazon.ServiceCatalog
         #region  CreateTagOption
 
         /// <summary>
-        /// Create a new TagOption.
+        /// Creates a TagOption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTagOption service method.</param>
         /// 
@@ -921,8 +903,8 @@ namespace Amazon.ServiceCatalog
         /// The specified resource is a duplicate.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
@@ -983,7 +965,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the DeleteConstraint service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1036,19 +1018,23 @@ namespace Amazon.ServiceCatalog
         #region  DeletePortfolio
 
         /// <summary>
-        /// Deletes the specified portfolio. This operation does not work with a portfolio that
-        /// has been shared with you or if it has products, users, constraints, or shared accounts
-        /// associated with it.
+        /// Deletes the specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a portfolio if it was shared with you or if it has associated products,
+        /// users, constraints, or shared accounts.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePortfolio service method.</param>
         /// 
         /// <returns>The response from the DeletePortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// The operation was requested against a resource that is currently in use. Free the
-        /// resource from use and retry the operation.
+        /// A resource that is currently in use. Ensure the resource is not in use and retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1106,7 +1092,7 @@ namespace Amazon.ServiceCatalog
         #region  DeletePortfolioShare
 
         /// <summary>
-        /// Deletes the specified portfolio share.
+        /// Stops sharing the specified portfolio with the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePortfolioShare service method.</param>
         /// 
@@ -1162,18 +1148,22 @@ namespace Amazon.ServiceCatalog
         #region  DeleteProduct
 
         /// <summary>
-        /// Deletes the specified product. This operation does not work with a product that has
-        /// been shared with you or is associated with a portfolio.
+        /// Deletes the specified product.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a product if it was shared with you or is associated with a portfolio.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProduct service method.</param>
         /// 
         /// <returns>The response from the DeleteProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// The operation was requested against a resource that is currently in use. Free the
-        /// resource from use and retry the operation.
+        /// A resource that is currently in use. Ensure the resource is not in use and retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1231,20 +1221,25 @@ namespace Amazon.ServiceCatalog
         #region  DeleteProvisioningArtifact
 
         /// <summary>
-        /// Deletes the specified provisioning artifact. This operation does not work on a provisioning
-        /// artifact associated with a product that has been shared with you, or on the last provisioning
-        /// artifact associated with a product (a product must have at least one provisioning
-        /// artifact).
+        /// Deletes the specified provisioning artifact (also known as a version) for the specified
+        /// product.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a provisioning artifact associated with a product that was shared
+        /// with you. You cannot delete the last provisioning artifact for a product, because
+        /// a product must have at least one provisioning artifact.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProvisioningArtifact service method.</param>
         /// 
         /// <returns>The response from the DeleteProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// The operation was requested against a resource that is currently in use. Free the
-        /// resource from use and retry the operation.
+        /// A resource that is currently in use. Ensure the resource is not in use and retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1297,7 +1292,7 @@ namespace Amazon.ServiceCatalog
         #region  DescribeConstraint
 
         /// <summary>
-        /// Retrieves detailed information for a specified constraint.
+        /// Gets information about the specified constraint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConstraint service method.</param>
         /// 
@@ -1353,7 +1348,7 @@ namespace Amazon.ServiceCatalog
         #region  DescribeCopyProductStatus
 
         /// <summary>
-        /// Describes the status of the specified copy product operation.
+        /// Gets the status of the specified copy product operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCopyProductStatus service method.</param>
         /// 
@@ -1409,7 +1404,7 @@ namespace Amazon.ServiceCatalog
         #region  DescribePortfolio
 
         /// <summary>
-        /// Retrieves detailed information and any tags associated with the specified portfolio.
+        /// Gets information about the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePortfolio service method.</param>
         /// 
@@ -1465,19 +1460,13 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProduct
 
         /// <summary>
-        /// Retrieves information about a specified product.
-        /// 
-        ///  
-        /// <para>
-        /// This operation is functionally identical to <a>DescribeProductView</a> except that
-        /// it takes as input <code>ProductId</code> instead of <code>ProductViewId</code>.
-        /// </para>
+        /// Gets information about the specified product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProduct service method.</param>
         /// 
         /// <returns>The response from the DescribeProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1530,7 +1519,8 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProductAsAdmin
 
         /// <summary>
-        /// Retrieves information about a specified product, run with administrator access.
+        /// Gets information about the specified product. This operation is run with administrator
+        /// access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProductAsAdmin service method.</param>
         /// 
@@ -1586,19 +1576,13 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProductView
 
         /// <summary>
-        /// Retrieves information about a specified product.
-        /// 
-        ///  
-        /// <para>
-        /// This operation is functionally identical to <a>DescribeProduct</a> except that it
-        /// takes as input <code>ProductViewId</code> instead of <code>ProductId</code>.
-        /// </para>
+        /// Gets information about the specified product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProductView service method.</param>
         /// 
         /// <returns>The response from the DescribeProductView service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1651,7 +1635,7 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProvisionedProduct
 
         /// <summary>
-        /// Retrieve detailed information about the provisioned product.
+        /// Gets information about the specified provisioned product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProduct service method.</param>
         /// 
@@ -1707,7 +1691,8 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProvisioningArtifact
 
         /// <summary>
-        /// Retrieves detailed information about the specified provisioning artifact.
+        /// Gets information about the specified provisioning artifact (also known as a version)
+        /// for the specified product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningArtifact service method.</param>
         /// 
@@ -1763,28 +1748,24 @@ namespace Amazon.ServiceCatalog
         #region  DescribeProvisioningParameters
 
         /// <summary>
-        /// Provides information about parameters required to provision a specified product in
-        /// a specified manner. Use this operation to obtain the list of <code>ProvisioningArtifactParameters</code>
-        /// parameters available to call the <a>ProvisionProduct</a> operation for the specified
-        /// product.
+        /// Gets information about the configuration required to provision the specified product
+        /// using the specified provisioning artifact.
         /// 
         ///  
         /// <para>
         /// If the output contains a TagOption key with an empty list of values, there is a TagOption
         /// conflict for that key. The end user cannot take action to fix the conflict, and launch
-        /// is not blocked. In subsequent calls to the <code>ProvisionProduct</code> operation,
-        /// do not include conflicted TagOption keys as tags. Calls to <code>ProvisionProduct</code>
-        /// with empty TagOption values cause the error "Parameter validation failed: Missing
-        /// required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to <code>ProvisionProduct</code>
-        /// with conflicted TagOption keys automatically tag the provisioned product with the
-        /// conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+        /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
+        /// TagOption keys as tags, or this will cause the error "Parameter validation failed:
+        /// Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
+        /// product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeProvisioningParameters service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1837,9 +1818,13 @@ namespace Amazon.ServiceCatalog
         #region  DescribeRecord
 
         /// <summary>
-        /// Retrieves a paginated list of the full details of a specific request. Use this operation
-        /// after calling a request operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>,
-        /// or <a>UpdateProvisionedProduct</a>).
+        /// Gets information about the specified request operation.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
+        /// <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRecord service method.</param>
         /// 
@@ -1895,7 +1880,7 @@ namespace Amazon.ServiceCatalog
         #region  DescribeTagOption
 
         /// <summary>
-        /// Describes a TagOption.
+        /// Gets information about the specified TagOption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTagOption service method.</param>
         /// 
@@ -1962,7 +1947,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the DisassociatePrincipalFromPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2021,11 +2006,11 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the DisassociateProductFromPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// The operation was requested against a resource that is currently in use. Free the
-        /// resource from use and retry the operation.
+        /// A resource that is currently in use. Ensure the resource is not in use and retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2078,7 +2063,7 @@ namespace Amazon.ServiceCatalog
         #region  DisassociateTagOptionFromResource
 
         /// <summary>
-        /// Disassociates a TagOption from a resource.
+        /// Disassociates the specified TagOption from the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTagOptionFromResource service method.</param>
         /// 
@@ -2139,13 +2124,13 @@ namespace Amazon.ServiceCatalog
         #region  ListAcceptedPortfolioShares
 
         /// <summary>
-        /// Lists details of all portfolios for which sharing was accepted by this account.
+        /// Lists all portfolios for which sharing was accepted by this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAcceptedPortfolioShares service method.</param>
         /// 
         /// <returns>The response from the ListAcceptedPortfolioShares service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public virtual ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request)
@@ -2195,13 +2180,13 @@ namespace Amazon.ServiceCatalog
         #region  ListConstraintsForPortfolio
 
         /// <summary>
-        /// Retrieves detailed constraint information for the specified portfolio and product.
+        /// Lists the constraints for the specified portfolio and product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConstraintsForPortfolio service method.</param>
         /// 
         /// <returns>The response from the ListConstraintsForPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2254,15 +2239,15 @@ namespace Amazon.ServiceCatalog
         #region  ListLaunchPaths
 
         /// <summary>
-        /// Returns a paginated list of all paths to a specified product. A path is how the user
-        /// has access to a specified product, and is necessary when provisioning a product. A
-        /// path also determines the constraints put on the product.
+        /// Lists the paths to the specified product. A path is how the user has access to a specified
+        /// product, and is necessary when provisioning a product. A path also determines the
+        /// constraints put on the product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLaunchPaths service method.</param>
         /// 
         /// <returns>The response from the ListLaunchPaths service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2315,7 +2300,7 @@ namespace Amazon.ServiceCatalog
         #region  ListPortfolioAccess
 
         /// <summary>
-        /// Lists the account IDs that have been authorized sharing of the specified portfolio.
+        /// Lists the account IDs that have access to the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPortfolioAccess service method.</param>
         /// 
@@ -2377,7 +2362,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the ListPortfolios service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolios">REST API Reference for ListPortfolios Operation</seealso>
         public virtual ListPortfoliosResponse ListPortfolios(ListPortfoliosRequest request)
@@ -2433,7 +2418,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the ListPortfoliosForProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2492,7 +2477,7 @@ namespace Amazon.ServiceCatalog
         /// 
         /// <returns>The response from the ListPrincipalsForPortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2545,13 +2530,13 @@ namespace Amazon.ServiceCatalog
         #region  ListProvisioningArtifacts
 
         /// <summary>
-        /// Lists all provisioning artifacts associated with the specified product.
+        /// Lists all provisioning artifacts (also known as versions) for the specified product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisioningArtifacts service method.</param>
         /// 
         /// <returns>The response from the ListProvisioningArtifacts service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2604,14 +2589,13 @@ namespace Amazon.ServiceCatalog
         #region  ListRecordHistory
 
         /// <summary>
-        /// Returns a paginated list of all performed requests, in the form of RecordDetails objects
-        /// that are filtered as specified.
+        /// Lists the specified requests or all performed requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecordHistory service method.</param>
         /// 
         /// <returns>The response from the ListRecordHistory service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistory">REST API Reference for ListRecordHistory Operation</seealso>
         public virtual ListRecordHistoryResponse ListRecordHistory(ListRecordHistoryRequest request)
@@ -2661,13 +2645,13 @@ namespace Amazon.ServiceCatalog
         #region  ListResourcesForTagOption
 
         /// <summary>
-        /// Lists resources associated with a TagOption.
+        /// Lists the resources associated with the specified TagOption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourcesForTagOption service method.</param>
         /// 
         /// <returns>The response from the ListResourcesForTagOption service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2725,13 +2709,13 @@ namespace Amazon.ServiceCatalog
         #region  ListTagOptions
 
         /// <summary>
-        /// Lists detailed TagOptions information.
+        /// Lists the specified TagOptions or all TagOptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagOptions service method.</param>
         /// 
         /// <returns>The response from the ListTagOptions service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
@@ -2786,20 +2770,19 @@ namespace Amazon.ServiceCatalog
         #region  ProvisionProduct
 
         /// <summary>
-        /// Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is
-        /// a resourced instance for a product. For example, provisioning a CloudFormation-template-backed
-        /// product results in launching a CloudFormation stack and all the underlying resources
-        /// that come with it. 
+        /// Provisions the specified product.
         /// 
         ///  
         /// <para>
-        /// You can check the status of this request using the <a>DescribeRecord</a> operation.
-        /// The error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>"
-        /// indicates that your request contains a tag which has a tag key but no corresponding
-        /// tag value (value is empty or null). Your call may have included values returned from
-        /// a <code>DescribeProvisioningParameters</code> call that resulted in a TagOption key
-        /// with an empty list. This happens when TagOption keys are in conflict. For more information,
-        /// see <a>DescribeProvisioningParameters</a>.
+        /// A provisioned product is a resourced instance of a product. For example, provisioning
+        /// a product based on a CloudFormation template launches a CloudFormation stack and its
+        /// underlying resources. You can check the status of this request using <a>DescribeRecord</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the request contains a tag key with an empty list of values, there is a tag conflict
+        /// for that key. Do not include conflicted keys as tags, or this will cause the error
+        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
@@ -2809,7 +2792,7 @@ namespace Amazon.ServiceCatalog
         /// The specified resource is a duplicate.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2862,7 +2845,7 @@ namespace Amazon.ServiceCatalog
         #region  RejectPortfolioShare
 
         /// <summary>
-        /// Rejects an offer to share a portfolio.
+        /// Rejects an offer to share the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectPortfolioShare service method.</param>
         /// 
@@ -2918,14 +2901,13 @@ namespace Amazon.ServiceCatalog
         #region  ScanProvisionedProducts
 
         /// <summary>
-        /// Returns a paginated list of all the ProvisionedProduct objects that are currently
-        /// available (not terminated).
+        /// Lists the provisioned products that are available (not terminated).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanProvisionedProducts service method.</param>
         /// 
         /// <returns>The response from the ScanProvisionedProducts service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ScanProvisionedProducts">REST API Reference for ScanProvisionedProducts Operation</seealso>
         public virtual ScanProvisionedProductsResponse ScanProvisionedProducts(ScanProvisionedProductsRequest request)
@@ -2975,19 +2957,13 @@ namespace Amazon.ServiceCatalog
         #region  SearchProducts
 
         /// <summary>
-        /// Returns a paginated list all of the <code>Products</code> objects to which the caller
-        /// has access. 
-        /// 
-        ///  
-        /// <para>
-        /// The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.
-        /// </para>
+        /// Gets information about the products to which the caller has access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProducts service method.</param>
         /// 
         /// <returns>The response from the SearchProducts service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProducts">REST API Reference for SearchProducts Operation</seealso>
         public virtual SearchProductsResponse SearchProducts(SearchProductsRequest request)
@@ -3037,15 +3013,13 @@ namespace Amazon.ServiceCatalog
         #region  SearchProductsAsAdmin
 
         /// <summary>
-        /// Retrieves summary and status information about all products created within the caller's
-        /// account. If a portfolio ID is provided, this operation retrieves information for only
-        /// those products that are associated with the specified portfolio.
+        /// Gets information about the products for the specified portfolio or all products.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProductsAsAdmin service method.</param>
         /// 
         /// <returns>The response from the SearchProductsAsAdmin service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3098,18 +3072,15 @@ namespace Amazon.ServiceCatalog
         #region  TerminateProvisionedProduct
 
         /// <summary>
-        /// Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code>
-        /// associated with the object, they are terminated when the ProvisionedProduct object
-        /// is terminated. 
+        /// Terminates the specified provisioned product.
         /// 
         ///  
         /// <para>
-        /// This operation does not delete any records associated with the ProvisionedProduct
-        /// object.
+        /// This operation does not delete any records associated with the provisioned product.
         /// </para>
         ///  
         /// <para>
-        /// You can check the status of this request using the <a>DescribeRecord</a> operation.
+        /// You can check the status of this request using <a>DescribeRecord</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateProvisionedProduct service method.</param>
@@ -3166,13 +3137,13 @@ namespace Amazon.ServiceCatalog
         #region  UpdateConstraint
 
         /// <summary>
-        /// Updates an existing constraint.
+        /// Updates the specified constraint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConstraint service method.</param>
         /// 
         /// <returns>The response from the UpdateConstraint service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3225,18 +3196,22 @@ namespace Amazon.ServiceCatalog
         #region  UpdatePortfolio
 
         /// <summary>
-        /// Updates the specified portfolio's details. This operation does not work with a product
-        /// that has been shared with you.
+        /// Updates the specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a product that was shared with you.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolio service method.</param>
         /// 
         /// <returns>The response from the UpdatePortfolio service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
-        /// The current limits of the service would have been exceeded by this operation. Reduce
-        /// the resource use or increase the service limits and retry the operation.
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3294,13 +3269,13 @@ namespace Amazon.ServiceCatalog
         #region  UpdateProduct
 
         /// <summary>
-        /// Updates an existing product.
+        /// Updates the specified product.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProduct service method.</param>
         /// 
         /// <returns>The response from the UpdateProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3358,22 +3333,24 @@ namespace Amazon.ServiceCatalog
         #region  UpdateProvisionedProduct
 
         /// <summary>
-        /// Requests updates to the configuration of an existing ProvisionedProduct object. If
-        /// there are tags associated with the object, they cannot be updated or added with this
-        /// operation. Depending on the specific updates requested, this operation may update
-        /// with no interruption, with some interruption, or replace the ProvisionedProduct object
-        /// entirely. 
+        /// Requests updates to the configuration of the specified provisioned product.
         /// 
         ///  
         /// <para>
-        /// You can check the status of this request using the <a>DescribeRecord</a> operation.
+        /// If there are tags associated with the object, they cannot be updated or added. Depending
+        /// on the specific updates requested, this operation can update with no interruption,
+        /// with some interruption, or replace the provisioned product entirely.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can check the status of this request using <a>DescribeRecord</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisionedProduct service method.</param>
         /// 
         /// <returns>The response from the UpdateProvisionedProduct service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3426,14 +3403,19 @@ namespace Amazon.ServiceCatalog
         #region  UpdateProvisioningArtifact
 
         /// <summary>
-        /// Updates an existing provisioning artifact's information. This operation does not work
-        /// on a provisioning artifact associated with a product that has been shared with you.
+        /// Updates the specified provisioning artifact (also known as a version) for the specified
+        /// product.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a provisioning artifact for a product that was shared with you.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProvisioningArtifact service method.</param>
         /// 
         /// <returns>The response from the UpdateProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3486,7 +3468,7 @@ namespace Amazon.ServiceCatalog
         #region  UpdateTagOption
 
         /// <summary>
-        /// Updates an existing TagOption.
+        /// Updates the specified TagOption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTagOption service method.</param>
         /// 
@@ -3495,7 +3477,7 @@ namespace Amazon.ServiceCatalog
         /// The specified resource is a duplicate.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
-        /// One or more parameters provided to the operation are invalid.
+        /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.

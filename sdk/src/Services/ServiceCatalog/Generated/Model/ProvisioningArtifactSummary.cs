@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Stores summary information about a provisioning artifact.
+    /// Summary information about a provisioning artifact (also known as a version) for a
+    /// product.
     /// </summary>
     public partial class ProvisioningArtifactSummary
     {
@@ -113,8 +114,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactMetadata. 
         /// <para>
-        /// The provisioning artifact metadata. This data is used with products created by AWS
-        /// Marketplace.
+        /// The metadata for the provisioning artifact. This is used with AWS Marketplace products.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ProvisioningArtifactMetadata

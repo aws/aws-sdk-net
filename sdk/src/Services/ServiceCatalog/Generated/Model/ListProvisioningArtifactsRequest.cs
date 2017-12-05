@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProvisioningArtifacts operation.
-    /// Lists all provisioning artifacts associated with the specified product.
+    /// Lists all provisioning artifacts (also known as versions) for the specified product.
     /// </summary>
     public partial class ListProvisioningArtifactsRequest : AmazonServiceCatalogRequest
     {

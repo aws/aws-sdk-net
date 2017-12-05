@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The full details of a specific ProvisionedProduct object.
+    /// Information about a request operation.
     /// </summary>
     public partial class RecordDetail
     {
@@ -67,7 +67,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PathId. 
         /// <para>
-        /// The identifier of the path for this product's provisioning.
+        /// The path identifier.
         /// </para>
         /// </summary>
         public string PathId
@@ -103,7 +103,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object.
+        /// The identifier of the provisioned product.
         /// </para>
         /// </summary>
         public string ProvisionedProductId
@@ -121,7 +121,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The user-friendly name of the ProvisionedProduct object.
+        /// The user-friendly name of the provisioned product.
         /// </para>
         /// </summary>
         public string ProvisionedProductName
@@ -139,7 +139,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductType. 
         /// <para>
-        /// The type of the ProvisionedProduct object.
+        /// The type of provisioned product. The supported value is <code>CFN_STACK</code>.
         /// </para>
         /// </summary>
         public string ProvisionedProductType
@@ -157,8 +157,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The provisioning artifact identifier for this product. This is sometimes referred
-        /// to as the product version.
+        /// The identifier of the provisioning artifact.
         /// </para>
         /// </summary>
         public string ProvisioningArtifactId
@@ -176,7 +175,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordErrors. 
         /// <para>
-        /// A list of errors that occurred while processing the request.
+        /// The errors that occurred while processing the request.
         /// </para>
         /// </summary>
         public List<RecordError> RecordErrors
@@ -194,7 +193,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordId. 
         /// <para>
-        /// The identifier of the ProvisionedProduct object record.
+        /// The identifier of the record.
         /// </para>
         /// </summary>
         public string RecordId
@@ -212,7 +211,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordTags. 
         /// <para>
-        /// List of tags associated with this record.
+        /// The tags associated with this record.
         /// </para>
         /// </summary>
         public List<RecordTag> RecordTags
@@ -232,6 +231,19 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// The record type for this record.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISION_PRODUCT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE_PROVISIONED_PRODUCT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERMINATE_PROVISIONED_PRODUCT</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string RecordType
         {
@@ -248,30 +260,31 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the ProvisionedProduct object.
+        /// The status of the provisioned product.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - Request created but the operation has not yet started.
+        ///  <code>CREATED</code> - The request was created but the operation has not started.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The requested operation is in-progress.
+        ///  <code>IN_PROGRESS</code> - The requested operation is in progress.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
         /// requested operation failed and some remediation is occurring. For example, a rollback.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <code>SUCCEEDED</code> - The requested operation has successfully completed.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The requested operation has completed but has failed. Investigate
+        ///  <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate
         /// using the error messages returned.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RecordStatus Status
         {
@@ -288,7 +301,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UpdatedTime. 
         /// <para>
-        /// The time when the record for the ProvisionedProduct object was last updated.
+        /// The time when the record was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedTime

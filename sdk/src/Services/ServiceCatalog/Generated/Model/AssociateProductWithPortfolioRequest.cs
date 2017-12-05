@@ -29,7 +29,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateProductWithPortfolio operation.
-    /// Associates a product with a portfolio.
+    /// Associates the specified product with the specified portfolio.
     /// </summary>
     public partial class AssociateProductWithPortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -108,7 +108,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SourcePortfolioId. 
         /// <para>
-        /// The identifier of the source portfolio to use with this association.
+        /// The identifier of the source portfolio.
         /// </para>
         /// </summary>
         public string SourcePortfolioId
