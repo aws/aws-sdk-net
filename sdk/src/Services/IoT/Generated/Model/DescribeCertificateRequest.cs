@@ -29,8 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
-    /// Gets information about the specified certificate. You may specify the certificate
-    /// using either its ID or PEM.
+    /// Gets information about the specified certificate.
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonIoTRequest
     {

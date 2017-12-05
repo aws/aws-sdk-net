@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private string _awsIotSqlVersion;
         private DateTime? _createdAt;
         private string _description;
+        private Action _errorAction;
         private bool? _ruleDisabled;
         private string _ruleName;
         private string _sql;
@@ -110,6 +111,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorAction. 
+        /// <para>
+        /// The action to perform when an error occurs.
+        /// </para>
+        /// </summary>
+        public Action ErrorAction
+        {
+            get { return this._errorAction; }
+            set { this._errorAction = value; }
+        }
+
+        // Check to see if ErrorAction property is set
+        internal bool IsSetErrorAction()
+        {
+            return this._errorAction != null;
         }
 
         /// <summary>

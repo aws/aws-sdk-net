@@ -3640,8 +3640,7 @@ namespace Amazon.IoT
         #region  DescribeCertificate
 
         /// <summary>
-        /// Gets information about the specified certificate. You may specify the certificate
-        /// using either its ID or PEM.
+        /// Gets information about the specified certificate.
         /// </summary>
         /// <param name="certificateId">The ID of the certificate.</param>
         /// 
@@ -3674,8 +3673,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about the specified certificate. You may specify the certificate
-        /// using either its ID or PEM.
+        /// Gets information about the specified certificate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 

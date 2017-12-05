@@ -73,6 +73,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Description);
             }
 
+            if(requestObject.IsSetErrorAction())
+            {
+                context.Writer.WritePropertyName("errorAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ErrorAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRuleDisabled())
             {
                 context.Writer.WritePropertyName("ruleDisabled");
