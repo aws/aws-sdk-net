@@ -731,12 +731,11 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.
-        /// 
-        ///  
-        /// <para>
-        /// This location is used to store user log files.
-        /// </para>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+        /// does not create a new bucket.
         /// </summary>
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
@@ -757,12 +756,11 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.
-        /// 
-        ///  
-        /// <para>
-        /// This location is used to store user log files.
-        /// </para>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+        /// does not create a new bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
         /// 
@@ -787,12 +785,11 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.
-        /// 
-        ///  
-        /// <para>
-        /// This location is used to store user log files.
-        /// </para>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+        /// does not create a new bucket.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1921,7 +1918,9 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+        /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// For details about environment tagging, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
+        /// Resources in Your Elastic Beanstalk Environment</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -2509,6 +2508,28 @@ namespace Amazon.ElasticBeanstalk
         ///  
         /// <para>
         /// Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+        /// For details about environment tagging, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
+        /// Resources in Your Elastic Beanstalk Environment</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a custom IAM user policy to control permission to this operation, specify
+        /// one of the following two virtual actions (or both) instead of the API operation name:
+        /// </para>
+        ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+        /// tags to add in the <code>TagsToAdd</code> parameter.
+        /// </para>
+        ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
+        /// <para>
+        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+        /// tag keys to remove in the <code>TagsToRemove</code> parameter.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// For details about creating a custom user policy, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating
+        /// a Custom User Policy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTagsForResource service method.</param>

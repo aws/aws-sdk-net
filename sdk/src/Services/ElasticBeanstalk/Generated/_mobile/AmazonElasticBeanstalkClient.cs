@@ -557,12 +557,11 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account.
-        /// 
-        ///  
-        /// <para>
-        /// This location is used to store user log files.
-        /// </para>
+        /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
+        /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+        /// this API the first time you create an environment in a region. If the storage location
+        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+        /// does not create a new bucket.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

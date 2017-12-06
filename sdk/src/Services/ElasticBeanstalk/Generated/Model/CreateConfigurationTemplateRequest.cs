@@ -157,7 +157,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of the custome platform.
+        /// The ARN of the custom platform.
         /// </para>
         /// </summary>
         public string PlatformArn

@@ -163,10 +163,18 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Process. 
         /// <para>
-        /// Preprocesses and validates the environment manifest and configuration files in the
+        /// Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration
+        /// files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the
         /// source bundle. Validating configuration files can identify issues prior to deploying
         /// the application version to an environment.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Process</code> option validates Elastic Beanstalk configuration files. It
+        /// doesn't validate your application's configuration files, like proxy server or Docker
+        /// configuration.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Process
         {
