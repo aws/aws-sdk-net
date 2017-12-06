@@ -73,6 +73,26 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryForWebExceptionStatusTimeout()
+        {
+            Tester.Reset();
+            Tester.Action = (int callCount) =>
+            {
+                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.Timeout));
+            };
+
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext();
+                RuntimePipeline.InvokeSync(request);
+            },
+            typeof(AmazonServiceException));
+            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
+        }
+
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void RetryForHttpStatus500()
