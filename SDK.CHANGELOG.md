@@ -1,3 +1,11 @@
+### 3.3.203.0 (2017-12-05 22:48 UTC)
+* IoT (3.3.7.0)
+	* Add error action API for RulesEngine. 
+* ServiceCatalog (3.3.6.0)
+	* ServiceCatalog has two distinct personas for its use, an "admin" persona (who creates sets of products with different versions and prescribes who has access to them) and an "end-user" persona (who can launch cloud resources based on the configuration data their admins have given them access to).  This API update will allow admin users to deactivate/activate product versions, end-user will only be able to access and launch active product versions. 
+* ServiceDiscovery (3.3.0.0)
+	* Amazon Route 53 Auto Naming lets you configure public or private namespaces that your microservice applications run in. When instances of the service become available, you can call the Auto Naming API to register the instance, and Amazon Route 53 automatically creates up to five DNS records and an optional health check. Clients that submit DNS queries for the service receive an answer that contains up to eight healthy records.
+
 ### 3.3.202.0 (2017-12-04 20:28 UTC)
 * Budgets (3.3.5.0)
 	* Add additional costTypes to support finer control for different charges included in a cost budget.

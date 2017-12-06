@@ -133,6 +133,7 @@
       <Directory>$(ProjectDir)/src/Services/serverlessapplicationrepository/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/servicediscovery/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/shield/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net35/</Directory>
@@ -262,6 +263,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerlessApplicationRepository.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServiceDiscovery.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Shield.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
