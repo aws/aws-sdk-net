@@ -28,37 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// A facet.
+    /// Container for the parameters to the GetAppliedSchemaVersion operation.
+    /// Returns current applied schema version ARN, including the minor version in use.
     /// </summary>
-    public partial class SchemaFacet
+    public partial class GetAppliedSchemaVersionRequest : AmazonCloudDirectoryRequest
     {
-        private string _facetName;
         private string _schemaArn;
-
-        /// <summary>
-        /// Gets and sets the property FacetName. 
-        /// <para>
-        /// The name of the facet.
-        /// </para>
-        /// </summary>
-        public string FacetName
-        {
-            get { return this._facetName; }
-            set { this._facetName = value; }
-        }
-
-        // Check to see if FacetName property is set
-        internal bool IsSetFacetName()
-        {
-            return this._facetName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// The ARN of the schema that contains the facet with no minor component. See <a>arns</a>
-        /// and <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
-        /// Schema Upgrade</a> for a description of when to provide minor versions.
+        /// The ARN of the applied schema.
         /// </para>
         /// </summary>
         public string SchemaArn

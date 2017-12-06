@@ -1039,6 +1039,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetAppliedSchemaVersion
+
+        internal virtual GetAppliedSchemaVersionResponse GetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request)
+        {
+            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppliedSchemaVersionRequest,GetAppliedSchemaVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppliedSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppliedSchemaVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
+        public virtual Task<GetAppliedSchemaVersionResponse> GetAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppliedSchemaVersionRequest,GetAppliedSchemaVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDirectory
 
         internal virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
@@ -2122,6 +2154,70 @@ namespace Amazon.CloudDirectory
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpgradeAppliedSchema
+
+        internal virtual UpgradeAppliedSchemaResponse UpgradeAppliedSchema(UpgradeAppliedSchemaRequest request)
+        {
+            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeAppliedSchemaRequest,UpgradeAppliedSchemaResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeAppliedSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAppliedSchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
+        public virtual Task<UpgradeAppliedSchemaResponse> UpgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpgradeAppliedSchemaRequest,UpgradeAppliedSchemaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpgradePublishedSchema
+
+        internal virtual UpgradePublishedSchemaResponse UpgradePublishedSchema(UpgradePublishedSchemaRequest request)
+        {
+            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradePublishedSchemaRequest,UpgradePublishedSchemaResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradePublishedSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradePublishedSchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
+        public virtual Task<UpgradePublishedSchemaResponse> UpgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpgradePublishedSchemaRequest,UpgradePublishedSchemaResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

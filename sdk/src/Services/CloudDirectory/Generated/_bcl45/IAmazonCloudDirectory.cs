@@ -114,8 +114,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Copies the input published schema into the <a>Directory</a> with the same name and
-        /// version as that of the published schema .
+        /// Copies the input published schema, at the specified version, into the <a>Directory</a>
+        /// with the same name and version as that of the published schema.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySchema service method.</param>
         /// 
@@ -533,7 +533,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Performs all the write operations in a batch. Either all the operations succeed or
-        /// none. Batch writes supports only object-related operations.
+        /// none.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchWrite service method.</param>
         /// 
@@ -1718,6 +1718,63 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetAppliedSchemaVersion
+
+
+        /// <summary>
+        /// Returns current applied schema version ARN, including the minor version in use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAppliedSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetAppliedSchemaVersion service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
+        GetAppliedSchemaVersionResponse GetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppliedSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppliedSchemaVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
+        Task<GetAppliedSchemaVersionResponse> GetAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDirectory
 
 
@@ -2024,7 +2081,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists schemas applied to a directory.
+        /// Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided,
+        /// lists the minor version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppliedSchemaArns service method.</param>
         /// 
@@ -2084,7 +2142,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists indices attached to an object.
+        /// Lists indices attached to the specified object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedIndices service method.</param>
         /// 
@@ -2454,7 +2512,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists objects attached to the specified index.
+        /// Lists objects and indexed values attached to the index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndex service method.</param>
         /// 
@@ -3003,7 +3061,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Retrieves each published schema Amazon Resource Name (ARN).
+        /// Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided,
+        /// lists the minor version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// 
@@ -3325,9 +3384,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Publishes a development schema with a version. If description and attributes are specified,
-        /// <code>PublishSchema</code> overrides the development schema description and attributes.
-        /// If not, the development schema description and attributes are used.
+        /// Publishes a development schema with a major version and a recommended minor version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishSchema service method.</param>
         /// 
@@ -3902,6 +3959,140 @@ namespace Amazon.CloudDirectory
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpgradeAppliedSchema
+
+
+        /// <summary>
+        /// Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with
+        /// schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version
+        /// upgrades are instantaneously available for readers on all objects in the directory.
+        /// Note: This is a synchronous API call and upgrades only one schema on a given directory
+        /// per call. To upgrade multiple directories from one schema, you would need to call
+        /// this API on each directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAppliedSchema service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeAppliedSchema service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.IncompatibleSchemaException">
+        /// Indicates a failure occurred while performing a check for backward compatibility between
+        /// the specified schema and the schema that is currently applied to the directory.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
+        /// Indicates that an attempt to attach an object with the same link name or to apply
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
+        UpgradeAppliedSchemaResponse UpgradeAppliedSchema(UpgradeAppliedSchemaRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeAppliedSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeAppliedSchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
+        Task<UpgradeAppliedSchemaResponse> UpgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpgradePublishedSchema
+
+
+        /// <summary>
+        /// Upgrades a published schema under a new minor version revision using the current contents
+        /// of <code>DevelopmentSchemaArn</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradePublishedSchema service method.</param>
+        /// 
+        /// <returns>The response from the UpgradePublishedSchema service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.IncompatibleSchemaException">
+        /// Indicates a failure occurred while performing a check for backward compatibility between
+        /// the specified schema and the schema that is currently applied to the directory.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
+        /// Indicates that an attempt to attach an object with the same link name or to apply
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
+        UpgradePublishedSchemaResponse UpgradePublishedSchema(UpgradePublishedSchemaRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradePublishedSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradePublishedSchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
+        Task<UpgradePublishedSchemaResponse> UpgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

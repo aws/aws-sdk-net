@@ -29,13 +29,12 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishSchema operation.
-    /// Publishes a development schema with a version. If description and attributes are specified,
-    /// <code>PublishSchema</code> overrides the development schema description and attributes.
-    /// If not, the development schema description and attributes are used.
+    /// Publishes a development schema with a major version and a recommended minor version.
     /// </summary>
     public partial class PublishSchemaRequest : AmazonCloudDirectoryRequest
     {
         private string _developmentSchemaArn;
+        private string _minorVersion;
         private string _name;
         private string _version;
 
@@ -56,6 +55,25 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetDevelopmentSchemaArn()
         {
             return this._developmentSchemaArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinorVersion. 
+        /// <para>
+        /// The minor version under which the schema will be published. This parameter is recommended.
+        /// Schemas have both a major and minor version associated with them.
+        /// </para>
+        /// </summary>
+        public string MinorVersion
+        {
+            get { return this._minorVersion; }
+            set { this._minorVersion = value; }
+        }
+
+        // Check to see if MinorVersion property is set
+        internal bool IsSetMinorVersion()
+        {
+            return this._minorVersion != null;
         }
 
         /// <summary>
@@ -80,7 +98,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version under which the schema will be published.
+        /// The major version under which the schema will be published. Schemas have both a major
+        /// and minor version associated with them.
         /// </para>
         /// </summary>
         public string Version

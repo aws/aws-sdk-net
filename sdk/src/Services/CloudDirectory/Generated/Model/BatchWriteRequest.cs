@@ -30,7 +30,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the BatchWrite operation.
     /// Performs all the write operations in a batch. Either all the operations succeed or
-    /// none. Batch writes supports only object-related operations.
+    /// none.
     /// </summary>
     public partial class BatchWriteRequest : AmazonCloudDirectoryRequest
     {

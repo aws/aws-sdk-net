@@ -29,13 +29,15 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppliedSchemaArns operation.
-    /// Lists schemas applied to a directory.
+    /// Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided,
+    /// lists the minor version.
     /// </summary>
     public partial class ListAppliedSchemaArnsRequest : AmazonCloudDirectoryRequest
     {
         private string _directoryArn;
         private int? _maxResults;
         private string _nextToken;
+        private string _schemaArn;
 
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
@@ -89,6 +91,25 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaArn. 
+        /// <para>
+        /// The response for <code>ListAppliedSchemaArns</code> when this parameter is used will
+        /// list all minor version ARNs for a major version.
+        /// </para>
+        /// </summary>
+        public string SchemaArn
+        {
+            get { return this._schemaArn; }
+            set { this._schemaArn = value; }
+        }
+
+        // Check to see if SchemaArn property is set
+        internal bool IsSetSchemaArn()
+        {
+            return this._schemaArn != null;
         }
 
     }

@@ -96,7 +96,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// Identifiers for the facet that you are adding to the object.
+        /// Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a>
+        /// for details.
         /// </para>
         /// </summary>
         public SchemaFacet SchemaFacet

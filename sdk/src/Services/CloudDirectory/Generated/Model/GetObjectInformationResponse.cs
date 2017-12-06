@@ -56,7 +56,9 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacets. 
         /// <para>
-        /// The facets attached to the specified object.
+        /// The facets attached to the specified object. Although the response does not include
+        /// minor version information, the most recently applied minor version of each Facet is
+        /// in effect. See <a>GetAppliedSchemaVersion</a> for details.
         /// </para>
         /// </summary>
         public List<SchemaFacet> SchemaFacets

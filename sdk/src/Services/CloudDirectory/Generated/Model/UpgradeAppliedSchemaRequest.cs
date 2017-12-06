@@ -28,20 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the ApplySchema operation.
-    /// Copies the input published schema, at the specified version, into the <a>Directory</a>
-    /// with the same name and version as that of the published schema.
+    /// Container for the parameters to the UpgradeAppliedSchema operation.
+    /// Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with
+    /// schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version
+    /// upgrades are instantaneously available for readers on all objects in the directory.
+    /// Note: This is a synchronous API call and upgrades only one schema on a given directory
+    /// per call. To upgrade multiple directories from one schema, you would need to call
+    /// this API on each directory.
     /// </summary>
-    public partial class ApplySchemaRequest : AmazonCloudDirectoryRequest
+    public partial class UpgradeAppliedSchemaRequest : AmazonCloudDirectoryRequest
     {
         private string _directoryArn;
+        private bool? _dryRun;
         private string _publishedSchemaArn;
 
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which
-        /// the schema is copied. For more information, see <a>arns</a>.
+        /// The ARN for the directory to which the upgraded schema will be applied.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -57,10 +61,29 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Used for testing whether the major version schemas are backward compatible or not.
+        /// If schema compatibility fails, an exception would be thrown else the call would succeed
+        /// but no changes will be saved. This parameter is optional.
+        /// </para>
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PublishedSchemaArn. 
         /// <para>
-        /// Published schema Amazon Resource Name (ARN) that needs to be copied. For more information,
-        /// see <a>arns</a>.
+        /// The revision of the published schema to upgrade the directory to.
         /// </para>
         /// </summary>
         public string PublishedSchemaArn

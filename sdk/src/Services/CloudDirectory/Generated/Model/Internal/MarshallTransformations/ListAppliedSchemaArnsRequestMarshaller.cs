@@ -83,6 +83,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSchemaArn())
+                {
+                    context.Writer.WritePropertyName("SchemaArn");
+                    context.Writer.Write(publicRequest.SchemaArn);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

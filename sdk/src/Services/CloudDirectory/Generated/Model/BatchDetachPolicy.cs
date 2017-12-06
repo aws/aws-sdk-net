@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Detaches the specified policy from the specified directory inside a <a>BatchRead</a>
-    /// operation. For more information, see <a>DetachPolicy</a> and <a>BatchReadRequest$Operations</a>.
+    /// Detaches the specified policy from the specified directory inside a <a>BatchWrite</a>
+    /// operation. For more information, see <a>DetachPolicy</a> and <a>BatchWriteRequest$Operations</a>.
     /// </summary>
     public partial class BatchDetachPolicy
     {

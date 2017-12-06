@@ -76,7 +76,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// The facet to remove.
+        /// The facet to remove. See <a>SchemaFacet</a> for details.
         /// </para>
         /// </summary>
         public SchemaFacet SchemaFacet

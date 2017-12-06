@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PublishSchema Request Marshaller
+    /// UpgradePublishedSchema Request Marshaller
     /// </summary>       
-    public class PublishSchemaRequestMarshaller : IMarshaller<IRequest, PublishSchemaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpgradePublishedSchemaRequestMarshaller : IMarshaller<IRequest, UpgradePublishedSchemaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PublishSchemaRequest)input);
+            return this.Marshall((UpgradePublishedSchemaRequest)input);
         }
 
         /// <summary>
@@ -52,35 +52,41 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PublishSchemaRequest publicRequest)
+        public IRequest Marshall(UpgradePublishedSchemaRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudDirectory");
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/amazonclouddirectory/2017-01-11/schema/publish";
+            string uriResourcePath = "/amazonclouddirectory/2017-01-11/schema/upgradepublished";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDevelopmentSchemaArn())
+                {
+                    context.Writer.WritePropertyName("DevelopmentSchemaArn");
+                    context.Writer.Write(publicRequest.DevelopmentSchemaArn);
+                }
+
+                if(publicRequest.IsSetDryRun())
+                {
+                    context.Writer.WritePropertyName("DryRun");
+                    context.Writer.Write(publicRequest.DryRun);
+                }
+
                 if(publicRequest.IsSetMinorVersion())
                 {
                     context.Writer.WritePropertyName("MinorVersion");
                     context.Writer.Write(publicRequest.MinorVersion);
                 }
 
-                if(publicRequest.IsSetName())
+                if(publicRequest.IsSetPublishedSchemaArn())
                 {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetVersion())
-                {
-                    context.Writer.WritePropertyName("Version");
-                    context.Writer.Write(publicRequest.Version);
+                    context.Writer.WritePropertyName("PublishedSchemaArn");
+                    context.Writer.Write(publicRequest.PublishedSchemaArn);
                 }
 
         
@@ -89,9 +95,6 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-        
-            if(publicRequest.IsSetDevelopmentSchemaArn())
-                request.Headers["x-amz-data-partition"] = publicRequest.DevelopmentSchemaArn;
 
             return request;
         }

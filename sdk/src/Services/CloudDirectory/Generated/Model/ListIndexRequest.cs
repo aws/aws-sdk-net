@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIndex operation.
-    /// Lists objects attached to the specified index.
+    /// Lists objects and indexed values attached to the index.
     /// </summary>
     public partial class ListIndexRequest : AmazonCloudDirectoryRequest
     {
@@ -97,7 +97,9 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to retrieve from the index.
+        /// The maximum number of objects in a single page to retrieve from the index during a
+        /// request. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS
+        /// Directory Service Limits</a>.
         /// </para>
         /// </summary>
         public int MaxResults

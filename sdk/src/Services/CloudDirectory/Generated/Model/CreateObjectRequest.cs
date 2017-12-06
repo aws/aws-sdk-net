@@ -119,8 +119,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacets. 
         /// <para>
-        /// A list of schema facets to be associated with the object that contains <code>SchemaArn</code>
-        /// and facet name. For more information, see <a>arns</a>.
+        /// A list of schema facets to be associated with the object. Do not provide minor version
+        /// components. See <a>SchemaFacet</a> for details.
         /// </para>
         /// </summary>
         public List<SchemaFacet> SchemaFacets

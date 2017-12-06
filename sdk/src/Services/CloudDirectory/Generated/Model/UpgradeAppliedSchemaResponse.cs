@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// A facet.
+    /// This is the response object from the UpgradeAppliedSchema operation.
     /// </summary>
-    public partial class SchemaFacet
+    public partial class UpgradeAppliedSchemaResponse : AmazonWebServiceResponse
     {
-        private string _facetName;
-        private string _schemaArn;
+        private string _directoryArn;
+        private string _upgradedSchemaArn;
 
         /// <summary>
-        /// Gets and sets the property FacetName. 
+        /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// The name of the facet.
+        /// The ARN of the directory that is returned as part of the response.
         /// </para>
         /// </summary>
-        public string FacetName
+        public string DirectoryArn
         {
-            get { return this._facetName; }
-            set { this._facetName = value; }
+            get { return this._directoryArn; }
+            set { this._directoryArn = value; }
         }
 
-        // Check to see if FacetName property is set
-        internal bool IsSetFacetName()
+        // Check to see if DirectoryArn property is set
+        internal bool IsSetDirectoryArn()
         {
-            return this._facetName != null;
+            return this._directoryArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaArn. 
+        /// Gets and sets the property UpgradedSchemaArn. 
         /// <para>
-        /// The ARN of the schema that contains the facet with no minor component. See <a>arns</a>
-        /// and <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
-        /// Schema Upgrade</a> for a description of when to provide minor versions.
+        /// The ARN of the upgraded schema that is returned as part of the response.
         /// </para>
         /// </summary>
-        public string SchemaArn
+        public string UpgradedSchemaArn
         {
-            get { return this._schemaArn; }
-            set { this._schemaArn = value; }
+            get { return this._upgradedSchemaArn; }
+            set { this._upgradedSchemaArn = value; }
         }
 
-        // Check to see if SchemaArn property is set
-        internal bool IsSetSchemaArn()
+        // Check to see if UpgradedSchemaArn property is set
+        internal bool IsSetUpgradedSchemaArn()
         {
-            return this._schemaArn != null;
+            return this._upgradedSchemaArn != null;
         }
 
     }

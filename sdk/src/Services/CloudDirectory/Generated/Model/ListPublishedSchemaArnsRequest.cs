@@ -29,12 +29,14 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPublishedSchemaArns operation.
-    /// Retrieves each published schema Amazon Resource Name (ARN).
+    /// Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided,
+    /// lists the minor version.
     /// </summary>
     public partial class ListPublishedSchemaArnsRequest : AmazonCloudDirectoryRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _schemaArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -70,6 +72,25 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaArn. 
+        /// <para>
+        /// The response for <code>ListPublishedSchemaArns</code> when this parameter is used
+        /// will list all minor version ARNs for a major version.
+        /// </para>
+        /// </summary>
+        public string SchemaArn
+        {
+            get { return this._schemaArn; }
+            set { this._schemaArn = value; }
+        }
+
+        // Check to see if SchemaArn property is set
+        internal bool IsSetSchemaArn()
+        {
+            return this._schemaArn != null;
         }
 
     }

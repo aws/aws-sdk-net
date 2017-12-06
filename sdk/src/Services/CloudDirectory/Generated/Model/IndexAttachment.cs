@@ -56,7 +56,10 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifier. 
         /// <para>
-        /// The <code>ObjectIdentifier</code> of the object attached to the index.
+        /// In response to <a>ListIndex</a>, the <code>ObjectIdentifier</code> of the object attached
+        /// to the index. In response to <a>ListAttachedIndices</a>, the <code>ObjectIdentifier</code>
+        /// of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code>
+        /// of the object on the opposite side of the attachment specified in the query.
         /// </para>
         /// </summary>
         public string ObjectIdentifier

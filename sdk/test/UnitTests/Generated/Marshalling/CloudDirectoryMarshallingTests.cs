@@ -829,6 +829,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void GetAppliedSchemaVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetAppliedSchemaVersion");
+
+            var request = InstantiateClassGenerator.Execute<GetAppliedSchemaVersionRequest>();
+            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetAppliedSchemaVersion", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetAppliedSchemaVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void GetDirectoryMarshallTest()
         {
             var operation = service_model.FindOperation("GetDirectory");
@@ -1909,6 +1941,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateTypedLinkFacetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void UpgradeAppliedSchemaMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpgradeAppliedSchema");
+
+            var request = InstantiateClassGenerator.Execute<UpgradeAppliedSchemaRequest>();
+            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpgradeAppliedSchema", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpgradeAppliedSchemaResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
+        public void UpgradePublishedSchemaMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpgradePublishedSchema");
+
+            var request = InstantiateClassGenerator.Execute<UpgradePublishedSchemaRequest>();
+            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpgradePublishedSchema", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpgradePublishedSchemaResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

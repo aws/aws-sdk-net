@@ -165,6 +165,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.PublishSchemaRequest.MinorVersion</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.PublishSchemaRequest.Name</property>
     <min>1</min>
     <max>32</max>
@@ -190,6 +196,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.UpdateTypedLinkFacetRequest.Name</property>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.UpgradePublishedSchemaRequest.MinorVersion</property>
+    <min>1</min>
+    <max>10</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
