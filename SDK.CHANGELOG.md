@@ -1,3 +1,9 @@
+### 3.3.204.0 (2017-12-06 21:05 UTC)
+* CloudDirectory (3.3.6.0)
+	* Amazon Cloud Directory makes it easier for you to apply schema changes across your directories with in-place schema upgrades. Your directories now remain available while backward-compatible schema changes are being applied, such as the addition of new fields. You also can view the history of your schema changes in Cloud Directory by using both major and minor version identifiers, which can help you track and audit schema versions across directories.
+* ElasticBeanstalk (3.3.6.3)
+	* Documentation updates for AWS Elastic Beanstalk.
+
 ### 3.3.203.0 (2017-12-05 22:48 UTC)
 * IoT (3.3.7.0)
 	* Add error action API for RulesEngine. 
