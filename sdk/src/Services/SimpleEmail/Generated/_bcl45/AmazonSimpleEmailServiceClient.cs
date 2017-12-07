@@ -511,6 +511,71 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Creates a new custom verification email template.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomVerificationEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomVerificationEmailTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailInvalidContentException">
+        /// Indicates that custom verification email template provided content is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailTemplateAlreadyExistsException">
+        /// Indicates that a custom verification email template with the name you specified already
+        /// exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.FromEmailAddressNotVerifiedException">
+        /// Indicates that the sender address specified for a custom verification email is not
+        /// verified, and is therefore not eligible to send the custom verification email.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual CreateCustomVerificationEmailTemplateResponse CreateCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request)
+        {
+            var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomVerificationEmailTemplateRequest,CreateCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomVerificationEmailTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<CreateCustomVerificationEmailTemplateResponse> CreateCustomVerificationEmailTemplateAsync(CreateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomVerificationEmailTemplateRequest,CreateCustomVerificationEmailTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReceiptFilter
 
 
@@ -922,6 +987,55 @@ namespace Amazon.SimpleEmail
             var unmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConfigurationSetTrackingOptionsRequest,DeleteConfigurationSetTrackingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Deletes an existing custom verification email template. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVerificationEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomVerificationEmailTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
+        public virtual DeleteCustomVerificationEmailTemplateResponse DeleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request)
+        {
+            var marshaller = new DeleteCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomVerificationEmailTemplateRequest,DeleteCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVerificationEmailTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<DeleteCustomVerificationEmailTemplateResponse> DeleteCustomVerificationEmailTemplateAsync(DeleteCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomVerificationEmailTemplateRequest,DeleteCustomVerificationEmailTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1521,6 +1635,59 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Returns the custom email verification template for the template name you specify.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomVerificationEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetCustomVerificationEmailTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailTemplateDoesNotExistException">
+        /// Indicates that a custom verification email template with the name you specified does
+        /// not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
+        public virtual GetCustomVerificationEmailTemplateResponse GetCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request)
+        {
+            var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomVerificationEmailTemplateRequest,GetCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomVerificationEmailTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<GetCustomVerificationEmailTemplateResponse> GetCustomVerificationEmailTemplateAsync(GetCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomVerificationEmailTemplateRequest,GetCustomVerificationEmailTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIdentityDkimAttributes
 
 
@@ -2072,6 +2239,55 @@ namespace Amazon.SimpleEmail
             var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCustomVerificationEmailTemplates
+
+
+        /// <summary>
+        /// Lists the existing custom verification email templates for your account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomVerificationEmailTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomVerificationEmailTemplates service method, as returned by SimpleEmailService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
+        public virtual ListCustomVerificationEmailTemplatesResponse ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request)
+        {
+            var marshaller = new ListCustomVerificationEmailTemplatesRequestMarshaller();
+            var unmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomVerificationEmailTemplatesRequest,ListCustomVerificationEmailTemplatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomVerificationEmailTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomVerificationEmailTemplates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
+        public virtual Task<ListCustomVerificationEmailTemplatesResponse> ListCustomVerificationEmailTemplatesAsync(ListCustomVerificationEmailTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListCustomVerificationEmailTemplatesRequestMarshaller();
+            var unmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomVerificationEmailTemplatesRequest,ListCustomVerificationEmailTemplatesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2716,6 +2932,71 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendBulkTemplatedEmailRequest,SendBulkTemplatedEmailResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendCustomVerificationEmail
+
+
+        /// <summary>
+        /// Sends a custom verification email to a specified recipient. Verification emails sent
+        /// using this operation are counted against your 24-hour sending quota and per-second
+        /// sending rate.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCustomVerificationEmail service method.</param>
+        /// 
+        /// <returns>The response from the SendCustomVerificationEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailTemplateDoesNotExistException">
+        /// Indicates that a custom verification email template with the name you specified does
+        /// not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.FromEmailAddressNotVerifiedException">
+        /// Indicates that the sender address specified for a custom verification email is not
+        /// verified, and is therefore not eligible to send the custom verification email.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.MessageRejectedException">
+        /// Indicates that the action failed, and the message could not be sent. Check the error
+        /// stack for more information about what caused the error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.ProductionAccessNotGrantedException">
+        /// Indicates that the account has not been granted production access.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
+        public virtual SendCustomVerificationEmailResponse SendCustomVerificationEmail(SendCustomVerificationEmailRequest request)
+        {
+            var marshaller = new SendCustomVerificationEmailRequestMarshaller();
+            var unmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
+
+            return Invoke<SendCustomVerificationEmailRequest,SendCustomVerificationEmailResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendCustomVerificationEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendCustomVerificationEmail operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
+        public virtual Task<SendCustomVerificationEmailResponse> SendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SendCustomVerificationEmailRequestMarshaller();
+            var unmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendCustomVerificationEmailRequest,SendCustomVerificationEmailResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3850,6 +4131,66 @@ namespace Amazon.SimpleEmail
             var unmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationSetTrackingOptionsRequest,UpdateConfigurationSetTrackingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Updates an existing custom verification email template.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomVerificationEmailTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomVerificationEmailTemplate service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailInvalidContentException">
+        /// Indicates that custom verification email template provided content is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.CustomVerificationEmailTemplateDoesNotExistException">
+        /// Indicates that a custom verification email template with the name you specified does
+        /// not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.FromEmailAddressNotVerifiedException">
+        /// Indicates that the sender address specified for a custom verification email is not
+        /// verified, and is therefore not eligible to send the custom verification email.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual UpdateCustomVerificationEmailTemplateResponse UpdateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request)
+        {
+            var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomVerificationEmailTemplateRequest,UpdateCustomVerificationEmailTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomVerificationEmailTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
+        public virtual Task<UpdateCustomVerificationEmailTemplateResponse> UpdateCustomVerificationEmailTemplateAsync(UpdateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateCustomVerificationEmailTemplateRequestMarshaller();
+            var unmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomVerificationEmailTemplateRequest,UpdateCustomVerificationEmailTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

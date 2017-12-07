@@ -115,6 +115,23 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomVerificationEmailTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
+        void CreateCustomVerificationEmailTemplateAsync(CreateCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<CreateCustomVerificationEmailTemplateRequest, CreateCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  CreateReceiptFilter
 
 
@@ -230,6 +247,23 @@ namespace Amazon.SimpleEmail
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">REST API Reference for DeleteConfigurationSetTrackingOptions Operation</seealso>
         void DeleteConfigurationSetTrackingOptionsAsync(DeleteConfigurationSetTrackingOptionsRequest request, AmazonServiceCallback<DeleteConfigurationSetTrackingOptionsRequest, DeleteConfigurationSetTrackingOptionsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeleteCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomVerificationEmailTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
+        void DeleteCustomVerificationEmailTemplateAsync(DeleteCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<DeleteCustomVerificationEmailTemplateRequest, DeleteCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -438,6 +472,23 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  GetCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomVerificationEmailTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
+        void GetCustomVerificationEmailTemplateAsync(GetCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<GetCustomVerificationEmailTemplateRequest, GetCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetIdentityDkimAttributes
 
 
@@ -587,6 +638,23 @@ namespace Amazon.SimpleEmail
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         void ListConfigurationSetsAsync(ListConfigurationSetsRequest request, AmazonServiceCallback<ListConfigurationSetsRequest, ListConfigurationSetsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListCustomVerificationEmailTemplates
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomVerificationEmailTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomVerificationEmailTemplates operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
+        void ListCustomVerificationEmailTemplatesAsync(ListCustomVerificationEmailTemplatesRequest request, AmazonServiceCallback<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -757,6 +825,23 @@ namespace Amazon.SimpleEmail
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
         void SendBulkTemplatedEmailAsync(SendBulkTemplatedEmailRequest request, AmazonServiceCallback<SendBulkTemplatedEmailRequest, SendBulkTemplatedEmailResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  SendCustomVerificationEmail
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendCustomVerificationEmail operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendCustomVerificationEmail operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
+        void SendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request, AmazonServiceCallback<SendCustomVerificationEmailRequest, SendCustomVerificationEmailResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1029,6 +1114,23 @@ namespace Amazon.SimpleEmail
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">REST API Reference for UpdateConfigurationSetTrackingOptions Operation</seealso>
         void UpdateConfigurationSetTrackingOptionsAsync(UpdateConfigurationSetTrackingOptionsRequest request, AmazonServiceCallback<UpdateConfigurationSetTrackingOptionsRequest, UpdateConfigurationSetTrackingOptionsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateCustomVerificationEmailTemplate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomVerificationEmailTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomVerificationEmailTemplate operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
+        void UpdateCustomVerificationEmailTemplateAsync(UpdateCustomVerificationEmailTemplateRequest request, AmazonServiceCallback<UpdateCustomVerificationEmailTemplateRequest, UpdateCustomVerificationEmailTemplateResponse> callback, AsyncOptions options = null);
 
 
         #endregion

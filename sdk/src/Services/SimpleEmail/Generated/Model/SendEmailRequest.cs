@@ -95,7 +95,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates SendEmailRequest with the parameterized properties
         /// </summary>
-        /// <param name="source">The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>. If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.  In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. </param>
+        /// <param name="source">The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>. If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>. <note> Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>. </note></param>
         /// <param name="destination">The destination for this email, composed of To:, CC:, and BCC: fields.</param>
         /// <param name="message">The message to be sent.</param>
         public SendEmailRequest(string source, Destination destination, Message message)
@@ -248,14 +248,19 @@ namespace Amazon.SimpleEmail.Model
         /// parameter. For more information about sending authorization, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        ///  In all cases, the email address must be 7-bit ASCII. If the text must contain any
-        /// other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of
-        /// a literal string. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
-        /// For more information, see <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
-        /// 
+        /// Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>.
+        /// For this reason, the <i>local part</i> of a source email address (the part of the
+        /// email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit
+        /// ASCII characters</a>. If the <i>domain part</i> of an address (the part after the
+        /// @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described
+        /// in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name
+        /// (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters
+        /// must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC
+        /// 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
         /// </para>
+        ///  </note>
         /// </summary>
         public string Source
         {

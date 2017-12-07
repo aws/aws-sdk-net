@@ -6,6 +6,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmail.Model.ListCustomVerificationEmailTemplatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmail.Model.PutIdentityPolicyRequest.Policy</property>
     <min>1</min>
   </property-value-rule>
