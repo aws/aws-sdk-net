@@ -119,6 +119,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ElasticsearchVersion);
                 }
 
+                if(publicRequest.IsSetEncryptionAtRestOptions())
+                {
+                    context.Writer.WritePropertyName("EncryptionAtRestOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogPublishingOptions())
                 {
                     context.Writer.WritePropertyName("LogPublishingOptions");

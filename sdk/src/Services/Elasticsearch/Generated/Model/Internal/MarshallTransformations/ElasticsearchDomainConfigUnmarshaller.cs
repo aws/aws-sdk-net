@@ -94,6 +94,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
+                {
+                    var unmarshaller = EncryptionAtRestOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogPublishingOptions", targetDepth))
                 {
                     var unmarshaller = LogPublishingOptionsStatusUnmarshaller.Instance;

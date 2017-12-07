@@ -37,6 +37,7 @@ namespace Amazon.Elasticsearch.Model
         private EBSOptionsStatus _ebsOptions;
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
         private ElasticsearchVersionStatus _elasticsearchVersion;
+        private EncryptionAtRestOptionsStatus _encryptionAtRestOptions;
         private LogPublishingOptionsStatus _logPublishingOptions;
         private SnapshotOptionsStatus _snapshotOptions;
         private VPCDerivedInfoStatus _vpcOptions;
@@ -130,6 +131,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchVersion()
         {
             return this._elasticsearchVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAtRestOptions. 
+        /// <para>
+        /// Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public EncryptionAtRestOptionsStatus EncryptionAtRestOptions
+        {
+            get { return this._encryptionAtRestOptions; }
+            set { this._encryptionAtRestOptions = value; }
+        }
+
+        // Check to see if EncryptionAtRestOptions property is set
+        internal bool IsSetEncryptionAtRestOptions()
+        {
+            return this._encryptionAtRestOptions != null;
         }
 
         /// <summary>

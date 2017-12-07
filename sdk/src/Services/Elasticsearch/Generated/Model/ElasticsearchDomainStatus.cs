@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
         private string _elasticsearchVersion;
+        private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
         private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
@@ -233,6 +234,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchVersion()
         {
             return this._elasticsearchVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAtRestOptions. 
+        /// <para>
+        ///  Specifies the status of the <code>EncryptionAtRestOptions</code>.
+        /// </para>
+        /// </summary>
+        public EncryptionAtRestOptions EncryptionAtRestOptions
+        {
+            get { return this._encryptionAtRestOptions; }
+            set { this._encryptionAtRestOptions = value; }
+        }
+
+        // Check to see if EncryptionAtRestOptions property is set
+        internal bool IsSetEncryptionAtRestOptions()
+        {
+            return this._encryptionAtRestOptions != null;
         }
 
         /// <summary>
