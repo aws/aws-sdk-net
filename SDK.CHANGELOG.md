@@ -1,3 +1,11 @@
+### 3.3.205.0 (2017-12-07 17:40 UTC)
+* Elasticsearch (3.3.4.0)
+	* Added support for encryption of data at rest on Amazon Elasticsearch Service using AWS KMS
+* SimpleEmail (3.3.6.0)
+	* Customers can customize the emails that Amazon SES sends when verifying new identities. This feature is helpful for developers whose applications send email through Amazon SES on behalf of their customers.
+* Core 3.3.21.0
+	* Add WebExceptionStatus.Timeout to the default retry list.
+
 ### 3.3.204.0 (2017-12-06 21:05 UTC)
 * CloudDirectory (3.3.6.0)
 	* Amazon Cloud Directory makes it easier for you to apply schema changes across your directories with in-place schema upgrades. Your directories now remain available while backward-compatible schema changes are being applied, such as the addition of new fields. You also can view the history of your schema changes in Cloud Directory by using both major and minor version identifiers, which can help you track and audit schema versions across directories.
