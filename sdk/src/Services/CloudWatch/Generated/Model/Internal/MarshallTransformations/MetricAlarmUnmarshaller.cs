@@ -97,6 +97,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DatapointsToAlarm", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DatapointsToAlarm = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = DimensionUnmarshaller.Instance;

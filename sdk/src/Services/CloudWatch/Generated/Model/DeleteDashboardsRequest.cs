@@ -39,7 +39,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property DashboardNames. 
         /// <para>
-        /// The dashboards to be deleted.
+        /// The dashboards to be deleted. This parameter is required.
         /// </para>
         /// </summary>
         public List<string> DashboardNames

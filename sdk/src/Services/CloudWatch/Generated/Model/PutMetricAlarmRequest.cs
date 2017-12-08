@@ -99,6 +99,7 @@ namespace Amazon.CloudWatch.Model
         private string _alarmDescription;
         private string _alarmName;
         private ComparisonOperator _comparisonOperator;
+        private int? _datapointsToAlarm;
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
@@ -140,13 +141,16 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate
-        /// | arn:aws:automate:<i>region</i>:ec2:recover
+        /// | arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// | arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+        /// autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for use with IAM roles): arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+        /// Valid Values (for use with IAM roles): arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
         /// </para>
         /// </summary>
         public List<string> AlarmActions
@@ -214,6 +218,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetComparisonOperator()
         {
             return this._comparisonOperator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatapointsToAlarm. 
+        /// <para>
+        /// The number of datapoints that must be breaching to trigger the alarm.
+        /// </para>
+        /// </summary>
+        public int DatapointsToAlarm
+        {
+            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            set { this._datapointsToAlarm = value; }
+        }
+
+        // Check to see if DatapointsToAlarm property is set
+        internal bool IsSetDatapointsToAlarm()
+        {
+            return this._datapointsToAlarm.HasValue; 
         }
 
         /// <summary>
@@ -285,7 +307,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ExtendedStatistic. 
         /// <para>
         /// The percentile statistic for the metric associated with the alarm. Specify a value
-        /// between p0.0 and p100.
+        /// between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must specify
+        /// either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
         /// </para>
         /// </summary>
         public string ExtendedStatistic
@@ -309,13 +332,16 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate
-        /// | arn:aws:automate:<i>region</i>:ec2:recover
+        /// | arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// | arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+        /// autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for use with IAM roles): arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+        /// Valid Values (for use with IAM roles): arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
         /// </para>
         /// </summary>
         public List<string> InsufficientDataActions
@@ -375,13 +401,16 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate
-        /// | arn:aws:automate:<i>region</i>:ec2:recover
+        /// | arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// | arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+        /// autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for use with IAM roles): arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
-        /// | arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+        /// Valid Values (for use with IAM roles): arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+        /// | arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
         /// </para>
         /// </summary>
         public List<string> OKActions
@@ -436,7 +465,9 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Statistic. 
         /// <para>
         /// The statistic for the metric associated with the alarm, other than percentile. For
-        /// percentile statistics, use <code>ExtendedStatistic</code>.
+        /// percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>,
+        /// you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+        /// but not both.
         /// </para>
         /// </summary>
         public Statistic Statistic

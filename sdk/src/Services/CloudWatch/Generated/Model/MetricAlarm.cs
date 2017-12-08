@@ -39,6 +39,7 @@ namespace Amazon.CloudWatch.Model
         private string _alarmDescription;
         private string _alarmName;
         private ComparisonOperator _comparisonOperator;
+        private int? _datapointsToAlarm;
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
@@ -183,6 +184,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetComparisonOperator()
         {
             return this._comparisonOperator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatapointsToAlarm. 
+        /// <para>
+        /// The number of datapoints that must be breaching to trigger the alarm.
+        /// </para>
+        /// </summary>
+        public int DatapointsToAlarm
+        {
+            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            set { this._datapointsToAlarm = value; }
+        }
+
+        // Check to see if DatapointsToAlarm property is set
+        internal bool IsSetDatapointsToAlarm()
+        {
+            return this._datapointsToAlarm.HasValue; 
         }
 
         /// <summary>

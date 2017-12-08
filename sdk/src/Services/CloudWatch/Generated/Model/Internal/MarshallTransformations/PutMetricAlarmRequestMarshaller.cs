@@ -83,6 +83,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ComparisonOperator", StringUtils.FromString(publicRequest.ComparisonOperator));
                 }
+                if(publicRequest.IsSetDatapointsToAlarm())
+                {
+                    request.Parameters.Add("DatapointsToAlarm", StringUtils.FromInt(publicRequest.DatapointsToAlarm));
+                }
                 if(publicRequest.IsSetDimensions())
                 {
                     int publicRequestlistValueIndex = 1;

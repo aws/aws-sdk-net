@@ -121,6 +121,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.DatapointsToAlarm</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluateLowSampleCountPercentile</property>
     <min>1</min>
     <max>255</max>
@@ -249,6 +253,10 @@
     <property>Amazon.CloudWatch.Model.MetricAlarm.AlarmName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricAlarm.DatapointsToAlarm</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluateLowSampleCountPercentile</property>
