@@ -274,4 +274,7 @@
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.XRay.CodeAnalysis" Path="|AWSSDK.XRay.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.XRay.CodeAnalysis" Path="|AWSSDK.XRay.CodeAnalysis|"/>
   </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[14.0,]" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
 </PackageManifest>
