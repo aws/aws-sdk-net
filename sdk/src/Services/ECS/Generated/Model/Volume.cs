@@ -45,7 +45,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+        /// Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
+        /// Windows containers cannot mount directories on a different drive, and mount point
+        /// cannot be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code>
+        /// and <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
         /// </para>
         /// </summary>
         public HostVolumeProperties Host

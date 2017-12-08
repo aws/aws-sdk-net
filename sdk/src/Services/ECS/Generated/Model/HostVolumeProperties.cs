@@ -47,7 +47,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+        /// If you are using the Fargate launch type, the <code>sourcePath</code> parameter is
+        /// not supported.
         /// </para>
         /// </summary>
         public string SourcePath

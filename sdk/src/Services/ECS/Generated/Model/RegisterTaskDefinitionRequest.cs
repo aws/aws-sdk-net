@@ -251,6 +251,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
+        /// Docker for Windows uses different network modes than Docker for Linux. When you register
+        /// a task definition with Windows containers, you must not specify a network mode.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
         /// settings</a> in the <i>Docker run reference</i>.
         /// </para>

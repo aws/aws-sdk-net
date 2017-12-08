@@ -86,21 +86,17 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of <code>cpu</code> units reserved for the container. If your containers
-        /// will be part of a task using the Fargate launch type, this field is optional and the
-        /// only requirement is that the total amount of CPU reserved for all containers within
-        /// a task be lower than the task <code>cpu</code> value.
-        /// </para>
-        ///  
-        /// <para>
-        /// For containers that will be part of a task using the EC2 launch type, a container
-        /// instance has 1,024 <code>cpu</code> units for every CPU core. This parameter specifies
-        /// the minimum amount of CPU to reserve for a container, and containers share unallocated
-        /// CPU units with other containers on the instance with the same ratio as their allocated
-        /// amount. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// The number of <code>cpu</code> units reserved for the container. This parameter maps
+        /// to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is optional for tasks using the Fargate launch type, and the only requirement
+        /// is that the total amount of CPU reserved for all containers within a task be lower
+        /// than the task-level <code>cpu</code> value.
         /// </para>
         ///  <note> 
         /// <para>
@@ -121,11 +117,24 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker daemon on the container instance uses the CPU value to calculate the relative
-        /// CPU share ratios for running containers. For more information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
+        /// Linux containers share unallocated CPU units with other containers on the container
+        /// instance with the same ratio as their allocated amount. For example, if you run a
+        /// single-container task on a single-core instance type with 512 CPU units specified
+        /// for that container, and that is the only task running on the container instance, that
+        /// container could use the full 1,024 CPU unit share at any given time. However, if you
+        /// launched another copy of the same task on that container instance, each task would
+        /// be guaranteed a minimum of 512 CPU units when needed, and each container could float
+        /// to higher CPU usage if the other container was not using it, but if both tasks were
+        /// 100% active all of the time, they would be limited to 512 CPU units.
+        /// </para>
+        ///  
+        /// <para>
+        /// On Linux container instances, the Docker daemon on the container instance uses the
+        /// CPU value to calculate the relative CPU share ratios for running containers. For more
+        /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
         /// share constraint</a> in the Docker documentation. The minimum valid CPU share value
-        /// that the Linux kernel allows is 2; however, the CPU parameter is not required, and
-        /// you can use CPU values below 2 in your container definitions. For CPU values below
+        /// that the Linux kernel will allow is 2; however, the CPU parameter is not required,
+        /// and you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
         ///  <ul> <li> 
@@ -139,7 +148,12 @@ namespace Amazon.ECS.Model
         ///  <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
         /// of 1 are passed to Docker as 2.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// On Windows container instances, the CPU limit is enforced as an absolute limit, or
+        /// a quota. Windows containers only have access to the specified amount of CPU that is
+        /// described in the task definition.
+        /// </para>
         /// </summary>
         public int Cpu
         {
@@ -161,6 +175,11 @@ namespace Amazon.ECS.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool DisableNetworking
         {
@@ -183,6 +202,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--dns-search</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> DnsSearchDomains
         {
@@ -205,6 +229,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--dns</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> DnsServers
         {
@@ -265,6 +294,10 @@ namespace Amazon.ECS.Model
         /// options. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is not supported for Windows containers.
         /// </para>
         ///  </note>
         /// </summary>
@@ -377,6 +410,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<HostEntry> ExtraHosts
         {
@@ -466,18 +504,21 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Links. 
         /// <para>
         /// The <code>link</code> parameter allows containers to communicate with each other without
-        /// the need for port mappings, using the <code>name</code> parameter and optionally,
-        /// an <code>alias</code> for the link. This construct is analogous to <code>name:alias</code>
-        /// in Docker links. This field is not valid for containers in tasks using the Fargate
-        /// launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-        /// are allowed for each <code>name</code> and <code>alias</code>. For more information
-        /// on linking Docker containers, see <a href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
+        /// the need for port mappings. Only supported if the network mode of a task definition
+        /// is set to <code>bridge</code>. The <code>name:internalName</code> construct is analogous
+        /// to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed. For more information about linking
+        /// Docker containers, go to <a href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>.
         /// This parameter maps to <code>Links</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>.
+        /// Remote API</a> and the <code>--link</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+        /// <code>docker run</code> </a>.
         /// </para>
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Containers that are collocated on a single container instance may be able to communicate
         /// with each other without requiring links or host port mappings. Network isolation is
@@ -501,8 +542,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LinuxParameters. 
         /// <para>
         /// Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
-        /// This field is not valid for containers in tasks using the Fargate launch type.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers or tasks using the Fargate
+        /// launch type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LinuxParameters LinuxParameters
         {
@@ -669,14 +715,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
-        /// </para>
-        ///  
-        /// <para>
         /// This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
+        /// Windows containers cannot mount directories on a different drive, and mount point
+        /// cannot be across drives.
         /// </para>
         /// </summary>
         public List<MountPoint> MountPoints
@@ -724,9 +772,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using containers in a task with the Fargate, exposed ports should be specified
-        /// using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
-        /// must be the same value as the <code>containerPort</code>.
+        /// For task definitions that use the <code>awsvpc</code> network mode, you should only
+        /// specify the <code>containerPort</code>. The <code>hostPort</code> can be left blank
+        /// or it must be the same value as the <code>containerPort</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Port mappings on Windows use the <code>NetNAT</code> gateway address rather than <code>localhost</code>.
+        /// There is no loopback for port mappings on Windows, so you cannot access a container's
+        /// mapped port from the host itself. 
         /// </para>
         ///  
         /// <para>
@@ -769,6 +823,12 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers or tasks using the Fargate
+        /// launch type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Privileged
         {
@@ -790,6 +850,11 @@ namespace Amazon.ECS.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool ReadonlyRootFilesystem
         {
@@ -816,6 +881,11 @@ namespace Amazon.ECS.Model
         /// container instance and run the following command: <code>sudo docker version | grep
         /// "Server API version"</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Ulimit> Ulimits
         {
@@ -838,6 +908,11 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string User
         {
