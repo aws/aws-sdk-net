@@ -100,6 +100,10 @@ namespace AWSSDK.UnitTests
                     originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
                     Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, testAWSProfileValue);
                 }
+
+                // reset before use to ensure the new credentialProfileChains are used.
+                FallbackCredentialsFactory.Reset();
+                FallbackRegionFactory.Reset();
             }
 
             public void Dispose()
