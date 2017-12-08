@@ -57,8 +57,18 @@ namespace TestWrapper
         }
         private static string GetTestArg(string testName)
         {
-            return string.Format("FullyQualifiedName={0}", QuoteArg(testName));
+            if (testName.Contains("."))
+            {
+                // assume a "." means it's a fully qualified name
+                return string.Format("FullyQualifiedName={0}", QuoteArg(testName));
+            }
+            else
+            {
+                // assume no "." means it's a test method name
+                return string.Format("Name={0}", QuoteArg(testName));
+            }
         }
+
         private static string GetCategoryArg(string categoryName)
         {
             return string.Format("Category={0}", categoryName);
