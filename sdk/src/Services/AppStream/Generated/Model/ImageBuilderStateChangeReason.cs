@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// 
+    /// Describes the reason why the last image builder state change occurred.
     /// </summary>
     public partial class ImageBuilderStateChangeReason
     {
@@ -36,7 +36,10 @@ namespace Amazon.AppStream.Model
         private string _message;
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The state change reason code.
+        /// </para>
         /// </summary>
         public ImageBuilderStateChangeReasonCode Code
         {
@@ -51,7 +54,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The state change reason message.
+        /// </para>
         /// </summary>
         public string Message
         {

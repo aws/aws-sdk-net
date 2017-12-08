@@ -29,14 +29,17 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the StopImageBuilder operation.
-    /// 
+    /// Stops the specified image builder.
     /// </summary>
     public partial class StopImageBuilderRequest : AmazonAppStreamRequest
     {
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {

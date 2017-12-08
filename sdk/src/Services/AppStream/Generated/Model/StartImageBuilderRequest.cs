@@ -29,14 +29,37 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImageBuilder operation.
-    /// 
+    /// Starts the specified image builder.
     /// </summary>
     public partial class StartImageBuilderRequest : AmazonAppStreamRequest
     {
+        private string _appstreamAgentVersion;
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property AppstreamAgentVersion. 
+        /// <para>
+        /// The version of the AppStream 2.0 agent to use for this image builder. To use the latest
+        /// version of the AppStream 2.0 agent, specify [LATEST].
+        /// </para>
+        /// </summary>
+        public string AppstreamAgentVersion
+        {
+            get { return this._appstreamAgentVersion; }
+            set { this._appstreamAgentVersion = value; }
+        }
+
+        // Check to see if AppstreamAgentVersion property is set
+        internal bool IsSetAppstreamAgentVersion()
+        {
+            return this._appstreamAgentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {

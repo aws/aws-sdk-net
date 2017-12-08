@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes the reason why the last state change occurred.
+    /// Describes the reason why the last image state change occurred.
     /// </summary>
     public partial class ImageStateChangeReason
     {

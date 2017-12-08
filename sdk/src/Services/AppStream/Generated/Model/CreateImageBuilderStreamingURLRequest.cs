@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImageBuilderStreamingURL operation.
-    /// 
+    /// Creates a URL to start an image builder streaming session.
     /// </summary>
     public partial class CreateImageBuilderStreamingURLRequest : AmazonAppStreamRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.AppStream.Model
         private long? _validity;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -52,7 +55,11 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Validity.
+        /// Gets and sets the property Validity. 
+        /// <para>
+        /// The time that the streaming URL will be valid, in seconds. Specify a value between
+        /// 1 and 604800 seconds. The default is 3600 seconds.
+        /// </para>
         /// </summary>
         public long Validity
         {

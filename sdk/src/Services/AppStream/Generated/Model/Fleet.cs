@@ -106,7 +106,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users.
+        /// The description for display.
         /// </para>
         /// </summary>
         public string Description
@@ -144,7 +144,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The fleet name displayed to end users.
+        /// The fleet name for display.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -162,7 +162,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DomainJoinInfo. 
         /// <para>
-        /// The information needed for streaming instances to join a domain.
+        /// The information needed to join a Microsoft Active Directory domain.
         /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
@@ -214,7 +214,22 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FleetType.
+        /// Gets and sets the property FleetType. 
+        /// <para>
+        /// The fleet type.
+        /// </para>
+        ///  <dl> <dt>ALWAYS_ON</dt> <dd> 
+        /// <para>
+        /// Provides users with instant-on access to their apps. You are charged for all running
+        /// instances in your fleet, even if no users are streaming apps.
+        /// </para>
+        ///  </dd> <dt>ON_DEMAND</dt> <dd> 
+        /// <para>
+        /// Provide users with access to applications after they connect, which takes one to two
+        /// minutes. You are charged for instance streaming when users are connected and a small
+        /// hourly fee for instances that are not streaming apps.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public FleetType FleetType
         {
@@ -231,7 +246,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The image used by the fleet.
+        /// The name of the image used to create the fleet.
         /// </para>
         /// </summary>
         public string ImageName

@@ -67,6 +67,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppstreamAgentVersion())
+                {
+                    context.Writer.WritePropertyName("AppstreamAgentVersion");
+                    context.Writer.Write(publicRequest.AppstreamAgentVersion);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

@@ -29,14 +29,17 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteImageBuilder operation.
-    /// 
+    /// Deletes the specified image builder and releases the capacity.
     /// </summary>
     public partial class DeleteImageBuilderRequest : AmazonAppStreamRequest
     {
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {

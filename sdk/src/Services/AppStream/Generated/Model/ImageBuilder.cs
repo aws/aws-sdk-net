@@ -28,10 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// 
+    /// Describes a streaming instance used for editing an image. New images are created from
+    /// a snapshot through an image builder.
     /// </summary>
     public partial class ImageBuilder
     {
+        private string _appstreamAgentVersion;
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
@@ -48,7 +50,29 @@ namespace Amazon.AppStream.Model
         private VpcConfig _vpcConfig;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property AppstreamAgentVersion. 
+        /// <para>
+        /// The version of the AppStream 2.0 agent that is currently being used by this image
+        /// builder.
+        /// </para>
+        /// </summary>
+        public string AppstreamAgentVersion
+        {
+            get { return this._appstreamAgentVersion; }
+            set { this._appstreamAgentVersion = value; }
+        }
+
+        // Check to see if AppstreamAgentVersion property is set
+        internal bool IsSetAppstreamAgentVersion()
+        {
+            return this._appstreamAgentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN for the image builder.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -63,7 +87,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTime.
+        /// Gets and sets the property CreatedTime. 
+        /// <para>
+        /// The time stamp when the image builder was created.
+        /// </para>
         /// </summary>
         public DateTime CreatedTime
         {
@@ -78,7 +105,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description for display.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -93,7 +123,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The image builder name for display.
+        /// </para>
         /// </summary>
         public string DisplayName
         {
@@ -108,7 +141,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainJoinInfo.
+        /// Gets and sets the property DomainJoinInfo. 
+        /// <para>
+        /// The information needed to join a Microsoft Active Directory domain.
+        /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
         {
@@ -123,7 +159,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableDefaultInternetAccess.
+        /// Gets and sets the property EnableDefaultInternetAccess. 
+        /// <para>
+        /// Enables or disables default internet access for the image builder.
+        /// </para>
         /// </summary>
         public bool EnableDefaultInternetAccess
         {
@@ -138,7 +177,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageArn.
+        /// Gets and sets the property ImageArn. 
+        /// <para>
+        /// The ARN of the image from which this builder was created.
+        /// </para>
         /// </summary>
         public string ImageArn
         {
@@ -153,7 +195,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageBuilderErrors.
+        /// Gets and sets the property ImageBuilderErrors. 
+        /// <para>
+        /// The image builder errors.
+        /// </para>
         /// </summary>
         public List<ResourceError> ImageBuilderErrors
         {
@@ -168,7 +213,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type for the image builder.
+        /// </para>
         /// </summary>
         public string InstanceType
         {
@@ -183,7 +231,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -198,7 +249,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The operating system platform of the image builder.
+        /// </para>
         /// </summary>
         public PlatformType Platform
         {
@@ -213,7 +267,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the image builder.
+        /// </para>
         /// </summary>
         public ImageBuilderState State
         {
@@ -228,7 +285,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateChangeReason.
+        /// Gets and sets the property StateChangeReason. 
+        /// <para>
+        /// The reason why the last state change occurred.
+        /// </para>
         /// </summary>
         public ImageBuilderStateChangeReason StateChangeReason
         {
@@ -243,7 +303,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig.
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC configuration of the image builder.
+        /// </para>
         /// </summary>
         public VpcConfig VpcConfig
         {

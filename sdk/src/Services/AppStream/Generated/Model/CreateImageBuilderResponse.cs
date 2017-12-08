@@ -35,7 +35,10 @@ namespace Amazon.AppStream.Model
         private ImageBuilder _imageBuilder;
 
         /// <summary>
-        /// Gets and sets the property ImageBuilder.
+        /// Gets and sets the property ImageBuilder. 
+        /// <para>
+        /// Information about the image builder.
+        /// </para>
         /// </summary>
         public ImageBuilder ImageBuilder
         {

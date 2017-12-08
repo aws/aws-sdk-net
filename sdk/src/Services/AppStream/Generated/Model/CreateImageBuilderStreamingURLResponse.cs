@@ -36,7 +36,10 @@ namespace Amazon.AppStream.Model
         private string _streamingURL;
 
         /// <summary>
-        /// Gets and sets the property Expires.
+        /// Gets and sets the property Expires. 
+        /// <para>
+        /// The elapsed time, in seconds after the Unix epoch, when this URL expires.
+        /// </para>
         /// </summary>
         public DateTime Expires
         {
@@ -51,7 +54,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingURL.
+        /// Gets and sets the property StreamingURL. 
+        /// <para>
+        /// The URL to start the AppStream 2.0 streaming session.
+        /// </para>
         /// </summary>
         public string StreamingURL
         {

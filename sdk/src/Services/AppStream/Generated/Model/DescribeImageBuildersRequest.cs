@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImageBuilders operation.
-    /// 
+    /// Describes the specified image builders or all image builders in the account.
     /// </summary>
     public partial class DescribeImageBuildersRequest : AmazonAppStreamRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.AppStream.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum size of each page of results.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -53,7 +56,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Names.
+        /// Gets and sets the property Names. 
+        /// <para>
+        /// The names of the image builders to describe.
+        /// </para>
         /// </summary>
         public List<string> Names
         {
@@ -68,7 +74,11 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

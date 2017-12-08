@@ -424,6 +424,10 @@ namespace Amazon.AppStream
         /// Constant STOPPING for ImageBuilderState
         /// </summary>
         public static readonly ImageBuilderState STOPPING = new ImageBuilderState("STOPPING");
+        /// <summary>
+        /// Constant UPDATING_AGENT for ImageBuilderState
+        /// </summary>
+        public static readonly ImageBuilderState UPDATING_AGENT = new ImageBuilderState("UPDATING_AGENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -60,7 +60,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users.
+        /// The description for display.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +78,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The stack name displayed to end users.
+        /// The stack name for display.
         /// </para>
         /// </summary>
         public string DisplayName

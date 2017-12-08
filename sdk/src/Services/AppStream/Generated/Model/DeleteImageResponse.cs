@@ -35,7 +35,10 @@ namespace Amazon.AppStream.Model
         private Image _image;
 
         /// <summary>
-        /// Gets and sets the property Image.
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// Information about the image.
+        /// </para>
         /// </summary>
         public Image Image
         {

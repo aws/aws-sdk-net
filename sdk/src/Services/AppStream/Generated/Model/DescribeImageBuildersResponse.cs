@@ -36,7 +36,10 @@ namespace Amazon.AppStream.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ImageBuilders.
+        /// Gets and sets the property ImageBuilders. 
+        /// <para>
+        /// Information about the image builders.
+        /// </para>
         /// </summary>
         public List<ImageBuilder> ImageBuilders
         {
@@ -51,7 +54,11 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         public string NextToken
         {

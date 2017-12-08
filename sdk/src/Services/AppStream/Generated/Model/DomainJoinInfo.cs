@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Contains the information needed for streaming instances to join a domain.
+    /// Contains the information needed to join a Microsoft Active Directory domain.
     /// </summary>
     public partial class DomainJoinInfo
     {

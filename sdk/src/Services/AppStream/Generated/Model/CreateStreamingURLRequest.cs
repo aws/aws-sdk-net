@@ -30,11 +30,6 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the CreateStreamingURL operation.
     /// Creates a URL to start a streaming session for the specified user.
-    /// 
-    ///  
-    /// <para>
-    /// By default, the URL is valid only for one minute from the time that it is generated.
-    /// </para>
     /// </summary>
     public partial class CreateStreamingURLRequest : AmazonAppStreamRequest
     {
@@ -48,7 +43,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The ID of the application that must be launched after the session starts.
+        /// The name of the application to launch after the session starts. This is the name that
+        /// you specified as <b>Name</b> in the Image Assistant.
         /// </para>
         /// </summary>
         public string ApplicationId
@@ -84,7 +80,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SessionContext. 
         /// <para>
-        /// The session context of the streaming URL.
+        /// The session context. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session
+        /// Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
         /// </para>
         /// </summary>
         public string SessionContext
@@ -139,7 +136,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property Validity. 
         /// <para>
         /// The time that the streaming URL will be valid, in seconds. Specify a value between
-        /// 1 and 604800 seconds.
+        /// 1 and 604800 seconds. The default is 60 seconds.
         /// </para>
         /// </summary>
         public long Validity

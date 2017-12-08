@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// 
+    /// Describes a resource error.
     /// </summary>
     public partial class ResourceError
     {
@@ -37,7 +37,10 @@ namespace Amazon.AppStream.Model
         private DateTime? _errorTimestamp;
 
         /// <summary>
-        /// Gets and sets the property ErrorCode.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code.
+        /// </para>
         /// </summary>
         public FleetErrorCode ErrorCode
         {
@@ -52,7 +55,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// The error message.
+        /// </para>
         /// </summary>
         public string ErrorMessage
         {
@@ -67,7 +73,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorTimestamp.
+        /// Gets and sets the property ErrorTimestamp. 
+        /// <para>
+        /// The time the error occurred.
+        /// </para>
         /// </summary>
         public DateTime ErrorTimestamp
         {

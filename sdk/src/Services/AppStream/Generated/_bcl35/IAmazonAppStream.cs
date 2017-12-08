@@ -208,7 +208,13 @@ namespace Amazon.AppStream
 
 
         /// <summary>
+        /// Creates an image builder.
         /// 
+        ///  
+        /// <para>
+        /// The initial state of the builder is <code>PENDING</code>. When it is ready, the state
+        /// is <code>RUNNING</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder service method.</param>
         /// 
@@ -272,7 +278,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Creates a URL to start an image builder streaming session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilderStreamingURL service method.</param>
         /// 
@@ -377,11 +383,6 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Creates a URL to start a streaming session for the specified user.
-        /// 
-        ///  
-        /// <para>
-        /// By default, the URL is valid only for one minute from the time that it is generated.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingURL service method.</param>
         /// 
@@ -528,7 +529,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Deletes the specified image. You cannot delete an image that is currently in use.
+        /// After you delete an image, you cannot provision new capacity using the image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImage service method.</param>
         /// 
@@ -580,7 +582,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Deletes the specified image builder and releases the capacity.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImageBuilder service method.</param>
         /// 
@@ -765,7 +767,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Describes the specified image builders or all image builders in the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageBuilders service method.</param>
         /// 
@@ -1160,13 +1162,16 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Starts the specified image builder.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImageBuilder service method.</param>
         /// 
         /// <returns>The response from the StartImageBuilder service method, as returned by AppStream.</returns>
         /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
         /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.IncompatibleImageException">
+        /// The image does not support storage connectors.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
@@ -1255,7 +1260,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// 
+        /// Stops the specified image builder.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopImageBuilder service method.</param>
         /// 

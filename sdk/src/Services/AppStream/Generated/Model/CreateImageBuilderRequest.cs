@@ -29,10 +29,17 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImageBuilder operation.
+    /// Creates an image builder.
     /// 
+    ///  
+    /// <para>
+    /// The initial state of the builder is <code>PENDING</code>. When it is ready, the state
+    /// is <code>RUNNING</code>.
+    /// </para>
     /// </summary>
     public partial class CreateImageBuilderRequest : AmazonAppStreamRequest
     {
+        private string _appstreamAgentVersion;
         private string _description;
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
@@ -43,7 +50,29 @@ namespace Amazon.AppStream.Model
         private VpcConfig _vpcConfig;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property AppstreamAgentVersion. 
+        /// <para>
+        /// The version of the AppStream 2.0 agent to use for this image builder. To use the latest
+        /// version of the AppStream 2.0 agent, specify [LATEST].
+        /// </para>
+        /// </summary>
+        public string AppstreamAgentVersion
+        {
+            get { return this._appstreamAgentVersion; }
+            set { this._appstreamAgentVersion = value; }
+        }
+
+        // Check to see if AppstreamAgentVersion property is set
+        internal bool IsSetAppstreamAgentVersion()
+        {
+            return this._appstreamAgentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description for display.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -58,7 +87,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The image builder name for display.
+        /// </para>
         /// </summary>
         public string DisplayName
         {
@@ -73,7 +105,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainJoinInfo.
+        /// Gets and sets the property DomainJoinInfo. 
+        /// <para>
+        /// The information needed to join a Microsoft Active Directory domain.
+        /// </para>
         /// </summary>
         public DomainJoinInfo DomainJoinInfo
         {
@@ -88,7 +123,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableDefaultInternetAccess.
+        /// Gets and sets the property EnableDefaultInternetAccess. 
+        /// <para>
+        /// Enables or disables default internet access for the image builder.
+        /// </para>
         /// </summary>
         public bool EnableDefaultInternetAccess
         {
@@ -103,7 +141,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageName.
+        /// Gets and sets the property ImageName. 
+        /// <para>
+        /// The name of the image used to create the builder.
+        /// </para>
         /// </summary>
         public string ImageName
         {
@@ -118,7 +159,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type to use when launching the image builder.
+        /// </para>
         /// </summary>
         public string InstanceType
         {
@@ -133,7 +177,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A unique name for the image builder.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -148,7 +195,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig.
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC configuration for the image builder. You can specify only one subnet.
+        /// </para>
         /// </summary>
         public VpcConfig VpcConfig
         {

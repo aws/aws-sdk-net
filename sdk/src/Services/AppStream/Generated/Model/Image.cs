@@ -33,6 +33,7 @@ namespace Amazon.AppStream.Model
     public partial class Image
     {
         private List<Application> _applications = new List<Application>();
+        private string _appstreamAgentVersion;
         private string _arn;
         private string _baseImageArn;
         private DateTime? _createdTime;
@@ -62,6 +63,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetApplications()
         {
             return this._applications != null && this._applications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppstreamAgentVersion. 
+        /// <para>
+        /// The version of the AppStream 2.0 agent to use for instances that are launched from
+        /// this image.
+        /// </para>
+        /// </summary>
+        public string AppstreamAgentVersion
+        {
+            get { return this._appstreamAgentVersion; }
+            set { this._appstreamAgentVersion = value; }
+        }
+
+        // Check to see if AppstreamAgentVersion property is set
+        internal bool IsSetAppstreamAgentVersion()
+        {
+            return this._appstreamAgentVersion != null;
         }
 
         /// <summary>
@@ -121,7 +141,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users.
+        /// The description for display.
         /// </para>
         /// </summary>
         public string Description
@@ -139,7 +159,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The image name displayed to end users.
+        /// The image name for display.
         /// </para>
         /// </summary>
         public string DisplayName
