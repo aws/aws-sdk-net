@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.205.0",
+    "ProductVersion" : "3.3.206.0",
     "CoreVersion"    : "3.3.21.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -77,7 +77,7 @@
             "InPreview"               : false
         },
         "CloudWatch"        : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.9.1",
+            "Version" : "3.3.9.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.6.3",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
