@@ -37,6 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
         private DeviceConfigurationType _deviceConfiguration;
+        private string _domain;
         private EmailConfigurationType _emailConfiguration;
         private string _emailConfigurationFailure;
         private string _emailVerificationMessage;
@@ -147,6 +148,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDeviceConfiguration()
         {
             return this._deviceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain. 
+        /// <para>
+        /// Holds the domain prefix if the user pool has a domain associated with it.
+        /// </para>
+        /// </summary>
+        public string Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
         /// <summary>

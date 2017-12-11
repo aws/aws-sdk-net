@@ -80,7 +80,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreferredMfaSetting.
+        /// Gets and sets the property PreferredMfaSetting. 
+        /// <para>
+        /// The user's preferred MFA setting.
+        /// </para>
         /// </summary>
         public string PreferredMfaSetting
         {
@@ -149,7 +152,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserMFASettingList.
+        /// Gets and sets the property UserMFASettingList. 
+        /// <para>
+        /// The list of the user's MFA settings.
+        /// </para>
         /// </summary>
         public List<string> UserMFASettingList
         {
