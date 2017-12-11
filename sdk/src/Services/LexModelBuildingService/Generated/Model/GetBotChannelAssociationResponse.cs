@@ -37,7 +37,9 @@ namespace Amazon.LexModelBuildingService.Model
         private string _botName;
         private DateTime? _createdDate;
         private string _description;
+        private string _failureReason;
         private string _name;
+        private ChannelStatus _status;
         private ChannelType _type;
 
         /// <summary>
@@ -133,6 +135,25 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that
+        /// it failed to create the association.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the association between the bot and the channel.
@@ -148,6 +169,38 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the bot channel. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATED</code> - The channel has been created and is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code> - Channel creation is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - There was an error creating the channel. For information about
+        /// the reason for the failure, see the <code>failureReason</code> field.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ChannelStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

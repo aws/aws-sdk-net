@@ -35,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <para>
     /// Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code>
     /// field in the bot is set to <code>true</code>. Utterances are stored for 15 days for
-    /// use with the <a>GetUtterancesView</a> operation, and then stored indefinately for
+    /// use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for
     /// use in improving the ability of your bot to respond to user input.
     /// </para>
     ///  

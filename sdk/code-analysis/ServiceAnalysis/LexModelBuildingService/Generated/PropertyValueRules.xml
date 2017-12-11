@@ -4,7 +4,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateBotVersionRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateBotVersionResponse.Description</property>
@@ -20,7 +20,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateBotVersionResponse.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateBotVersionResponse.Version</property>
@@ -32,7 +32,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateIntentVersionRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateIntentVersionResponse.Description</property>
@@ -43,7 +43,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateIntentVersionResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateIntentVersionResponse.Version</property>
@@ -55,7 +55,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateSlotTypeVersionRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateSlotTypeVersionResponse.Description</property>
@@ -66,7 +66,7 @@
     <property>Amazon.LexModelBuildingService.Model.CreateSlotTypeVersionResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.CreateSlotTypeVersionResponse.Version</property>
@@ -78,43 +78,43 @@
     <property>Amazon.LexModelBuildingService.Model.DeleteBotRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotAliasRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotAliasRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotChannelAssociationRequest.BotAlias</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotChannelAssociationRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotChannelAssociationRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotVersionRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteBotVersionRequest.Version</property>
@@ -126,13 +126,13 @@
     <property>Amazon.LexModelBuildingService.Model.DeleteIntentRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteIntentVersionRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteIntentVersionRequest.Version</property>
@@ -144,13 +144,13 @@
     <property>Amazon.LexModelBuildingService.Model.DeleteSlotTypeRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteSlotTypeVersionRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteSlotTypeVersionRequest.Version</property>
@@ -162,7 +162,7 @@
     <property>Amazon.LexModelBuildingService.Model.DeleteUtterancesRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.DeleteUtterancesRequest.UserId</property>
@@ -173,7 +173,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotResponse.Description</property>
@@ -189,7 +189,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotResponse.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotResponse.Version</property>
@@ -201,19 +201,19 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasResponse.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasResponse.BotVersion</property>
@@ -230,13 +230,13 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasesRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasesRequest.MaxResults</property>
@@ -247,37 +247,37 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotAliasesRequest.NameContains</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationRequest.BotAlias</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationResponse.BotAlias</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationResponse.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationResponse.Description</property>
@@ -288,19 +288,19 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationsRequest.BotAlias</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^(-|^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*))$</pattern>
+    <pattern>^(-|^([A-Za-z]_?)+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationsRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationsRequest.MaxResults</property>
@@ -311,7 +311,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotChannelAssociationsRequest.NameContains</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotsRequest.MaxResults</property>
@@ -322,7 +322,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotsRequest.NameContains</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBotVersionsRequest.MaxResults</property>
@@ -333,7 +333,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetBotVersionsRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetBuiltinIntentsRequest.MaxResults</property>
@@ -373,7 +373,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetIntentRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetIntentRequest.Version</property>
@@ -390,7 +390,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetIntentResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetIntentResponse.Version</property>
@@ -407,7 +407,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetIntentsRequest.NameContains</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetIntentVersionsRequest.MaxResults</property>
@@ -418,13 +418,13 @@
     <property>Amazon.LexModelBuildingService.Model.GetIntentVersionsRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeRequest.Version</property>
@@ -441,7 +441,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeResponse.Version</property>
@@ -458,7 +458,7 @@
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypesRequest.NameContains</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeVersionsRequest.MaxResults</property>
@@ -469,19 +469,19 @@
     <property>Amazon.LexModelBuildingService.Model.GetSlotTypeVersionsRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetUtterancesViewRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.GetUtterancesViewResponse.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotRequest.Description</property>
@@ -497,7 +497,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutBotRequest.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotResponse.Description</property>
@@ -513,7 +513,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutBotResponse.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotResponse.Version</property>
@@ -525,7 +525,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasRequest.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasRequest.BotVersion</property>
@@ -542,13 +542,13 @@
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasResponse.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasResponse.BotVersion</property>
@@ -565,7 +565,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutBotAliasResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutIntentRequest.Description</property>
@@ -576,7 +576,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutIntentRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutIntentResponse.Description</property>
@@ -587,7 +587,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutIntentResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutIntentResponse.Version</property>
@@ -604,7 +604,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutSlotTypeRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutSlotTypeResponse.Description</property>
@@ -615,7 +615,7 @@
     <property>Amazon.LexModelBuildingService.Model.PutSlotTypeResponse.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.PutSlotTypeResponse.Version</property>
@@ -627,7 +627,7 @@
     <property>Amazon.LexModelBuildingService.Model.BotAliasMetadata.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotAliasMetadata.BotVersion</property>
@@ -644,19 +644,19 @@
     <property>Amazon.LexModelBuildingService.Model.BotAliasMetadata.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotChannelAssociation.BotAlias</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotChannelAssociation.BotName</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotChannelAssociation.Description</property>
@@ -667,7 +667,7 @@
     <property>Amazon.LexModelBuildingService.Model.BotChannelAssociation.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotMetadata.Description</property>
@@ -678,7 +678,7 @@
     <property>Amazon.LexModelBuildingService.Model.BotMetadata.Name</property>
     <min>2</min>
     <max>50</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.BotMetadata.Version</property>
@@ -706,7 +706,7 @@
     <property>Amazon.LexModelBuildingService.Model.Intent.IntentName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.Intent.IntentVersion</property>
@@ -723,7 +723,7 @@
     <property>Amazon.LexModelBuildingService.Model.IntentMetadata.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.IntentMetadata.Version</property>
@@ -767,7 +767,7 @@
     <property>Amazon.LexModelBuildingService.Model.Slot.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+(((_|.)[a-zA-Z]+)*|([a-zA-Z]+(_|.))*|(_|.))</pattern>
+    <pattern>^([A-Za-z](-|_|.)?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.Slot.Priority</property>
@@ -783,7 +783,7 @@
     <property>Amazon.LexModelBuildingService.Model.Slot.SlotType</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^([a-zA-Z]|AMAZON.)+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^((AMAZON\.)_?|[A-Za-z]_?)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.Slot.SlotTypeVersion</property>
@@ -800,7 +800,7 @@
     <property>Amazon.LexModelBuildingService.Model.SlotTypeMetadata.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[a-zA-Z]+((_[a-zA-Z]+)*|([a-zA-Z]+_)*|_)</pattern>
+    <pattern>^([A-Za-z]_?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelBuildingService.Model.SlotTypeMetadata.Version</property>

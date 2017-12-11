@@ -86,9 +86,11 @@ namespace Amazon.LexModelBuildingService.Model
     ///  </li> </ul> 
     /// <para>
     /// If you specify an existing intent name to update the intent, Amazon Lex replaces the
-    /// values in the <code>$LATEST</code> version of the slot type with the values in the
-    /// request. Amazon Lex removes fields that you don't provide in the request. If you don't
-    /// specify the required fields, Amazon Lex throws an exception.
+    /// values in the <code>$LATEST</code> version of the intent with the values in the request.
+    /// Amazon Lex removes fields that you don't provide in the request. If you don't specify
+    /// the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code>
+    /// version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code>
+    /// version of the intent is set to <code>NOT_BUILT</code>.
     /// </para>
     ///  
     /// <para>

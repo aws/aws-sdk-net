@@ -835,7 +835,7 @@ namespace Amazon.LexModelBuildingService
         /// <para>
         /// Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code>
         /// field in the bot is set to <code>true</code>. Utterances are stored for 15 days for
-        /// use with the <a>GetUtterancesView</a> operation, and then stored indefinately for
+        /// use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for
         /// use in improving the ability of your bot to respond to user input.
         /// </para>
         ///  
@@ -1958,9 +1958,11 @@ namespace Amazon.LexModelBuildingService
         ///  </li> </ul> 
         /// <para>
         /// If you specify an existing intent name to update the intent, Amazon Lex replaces the
-        /// values in the <code>$LATEST</code> version of the slot type with the values in the
-        /// request. Amazon Lex removes fields that you don't provide in the request. If you don't
-        /// specify the required fields, Amazon Lex throws an exception.
+        /// values in the <code>$LATEST</code> version of the intent with the values in the request.
+        /// Amazon Lex removes fields that you don't provide in the request. If you don't specify
+        /// the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code>
+        /// version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code>
+        /// version of the intent is set to <code>NOT_BUILT</code>.
         /// </para>
         ///  
         /// <para>
@@ -2026,7 +2028,9 @@ namespace Amazon.LexModelBuildingService
         /// If you specify the name of an existing slot type, the fields in the request replace
         /// the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex
         /// removes the fields that you don't provide in the request. If you don't specify required
-        /// fields, Amazon Lex throws an exception.
+        /// fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
+        /// of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains
+        /// the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.
         /// </para>
         ///  
         /// <para>
