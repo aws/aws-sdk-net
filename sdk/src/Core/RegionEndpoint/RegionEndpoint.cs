@@ -116,6 +116,11 @@ namespace Amazon
         public static readonly RegionEndpoint CNNorth1 = NewEndpoint("cn-north-1", "China (Beijing)");
 
         /// <summary>
+        /// The China (Ningxia) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint CNNorthWest1 = NewEndpoint("cn-northwest-1", "China (Ningxia)");
+
+        /// <summary>
         /// The Canada (Central) endpoint.
         /// </summary>
         public static readonly RegionEndpoint CACentral1 = NewEndpoint("ca-central-1", "Canada (Central)");
