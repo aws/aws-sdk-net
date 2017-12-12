@@ -327,6 +327,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS WAF (Web Application Firewall) Regional protects web applications from attack via ALB load balancer and provides API to associate it with a WAF WebACL.
 * [AWSSDK.WorkDocs](https://www.nuget.org/packages/AWSSDK.WorkDocs/)
 	* Amazon WorkDocs is a fully managed, secure enterprise storage and sharing service with strong administrative controls and feedback capabilities that improve user productivity.
+* [AWSSDK.WorkMail](https://www.nuget.org/packages/AWSSDK.WorkMail/)
+	* Today, Amazon WorkMail released an administrative SDK and enabled AWS CloudTrail integration. With the administrative SDK, you can natively integrate WorkMail with your existing services. The SDK enables programmatic user, resource, and group management through API calls. This means your existing IT tools and workflows can now automate WorkMail management, and third party applications can streamline WorkMail migrations and account actions.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
 * [AWSSDK.XRay](https://www.nuget.org/packages/AWSSDK.XRay/)

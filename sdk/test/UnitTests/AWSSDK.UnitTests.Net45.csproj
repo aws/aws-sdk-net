@@ -153,6 +153,7 @@
     <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\WAFRegional\AWSSDK.WAFRegional.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\WorkDocs\AWSSDK.WorkDocs.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\WorkMail\AWSSDK.WorkMail.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\XRay\AWSSDK.XRay.Net45.csproj"/>
   </ItemGroup>
