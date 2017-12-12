@@ -1,3 +1,13 @@
+### 3.3.207.0 (2017-12-11 22:23 UTC)
+* CognitoIdentityProvider (3.3.8.0)
+	* Exposing the hosted UI domain name for a user pool that has a domain configured.
+* LexModelBuildingService (3.3.4.0)
+	* The GetBotChannelAssociation API now returns the status and failure reason, if any, for a bot channel.
+* S3 (3.3.16.0)
+	* New region cn-northwest-1 support.
+* Core 3.3.21.1
+	* New region cn-northwest-1
+
 ### 3.3.206.0 (2017-12-08 22:48 UTC)
 * AppStream (3.3.7.0)
 	* This API update is to support the feature that allows customers to automatically consume the latest Amazon AppStream 2.0 agent as and when published by AWS.
