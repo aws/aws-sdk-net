@@ -58,7 +58,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        /// The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+        ///  The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform

@@ -86,19 +86,19 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment</b>: The process, and the components involved in the process, of updating
+    ///  <b>Deployment</b>: The process and the components used in the process of updating
     /// a Lambda function or of installing content on one or more instances. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file
+    ///  <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file
     /// that specifies the Lambda function to update and one or more functions to validate
     /// deployment lifecycle events. For an EC2/On-premises deployment, this is an archive
     /// file containing source content—source code, web pages, executable files, and deployment
-    /// scripts—along with an application specification file (AppSpec file). Revisions are
-    /// stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely
-    /// identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
-    /// a revision is uniquely identified by its commit ID.
+    /// scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub
+    /// repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object
+    /// key and its ETag, version, or both. For GitHub, a revision is uniquely identified
+    /// by its commit ID.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -975,7 +975,7 @@ namespace Amazon.CodeDeploy
         /// The minimum healthy instance value was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTrafficRoutingConfigurationException">
-        /// The configuration that specifies how traffic routes during a deployment is invalid.
+        /// The configuration that specifies how traffic is routed during a deployment is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public virtual CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request)
@@ -2253,14 +2253,14 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLifecycleEventHookExecutionIdException">
         /// A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec
-        /// file to ensure the lifecycle events and <code>hooks</code> functions are valide.
+        /// file to ensure the lifecycle events and <code>hooks</code> functions are valid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLifecycleEventHookExecutionStatusException">
         /// The result of a Lambda validation function that verifies a lifecycle event is invalid.
         /// It should return <code>Succeeded</code> or <code>Failed</code>.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.LifecycleEventAlreadyCompletedException">
-        /// An attempt to return the status of a lifecycle event that already completed occurred.
+        /// An attempt to return the status of an already completed lifecycle event occurred.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.UnsupportedActionForDeploymentTypeException">
         /// A call was submitted that is not supported for the specified deployment type.

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The configuration specifying how traffic is shifted from one version of a Lambda function
-    /// to another version during an AWS Lambda deployment.
+    /// The configuration that specifies how traffic is shifted from one version of a Lambda
+    /// function to another version during an AWS Lambda deployment.
     /// </summary>
     public partial class TrafficRoutingConfig
     {
@@ -80,8 +80,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code>
-        /// or <code>TimeBasedLinear</code>).
+        /// The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>)
+        /// used by a deployment configuration .
         /// </para>
         /// </summary>
         public TrafficRoutingType Type

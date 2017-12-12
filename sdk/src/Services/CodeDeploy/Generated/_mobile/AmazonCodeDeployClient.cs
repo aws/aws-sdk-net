@@ -86,19 +86,19 @@ namespace Amazon.CodeDeploy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Deployment</b>: The process, and the components involved in the process, of updating
+    ///  <b>Deployment</b>: The process and the components used in the process of updating
     /// a Lambda function or of installing content on one or more instances. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file
+    ///  <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file
     /// that specifies the Lambda function to update and one or more functions to validate
     /// deployment lifecycle events. For an EC2/On-premises deployment, this is an archive
     /// file containing source content—source code, web pages, executable files, and deployment
-    /// scripts—along with an application specification file (AppSpec file). Revisions are
-    /// stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely
-    /// identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
-    /// a revision is uniquely identified by its commit ID.
+    /// scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub
+    /// repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object
+    /// key and its ETag, version, or both. For GitHub, a revision is uniquely identified
+    /// by its commit ID.
     /// </para>
     ///  </li> </ul> 
     /// <para>
