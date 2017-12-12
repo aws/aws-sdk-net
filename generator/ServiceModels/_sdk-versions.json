@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.207.0",
+    "ProductVersion" : "3.3.208.0",
     "CoreVersion"    : "3.3.21.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.8.0",
+            "Version" : "3.3.8.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -1029,6 +1029,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
+            },
+            "InPreview"               : false
+        },
+        "WorkMail"                        : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.21.1"
             },
             "InPreview"               : false
         }

@@ -1,3 +1,9 @@
+### 3.3.208.0 (2017-12-12 20:10 UTC)
+* CodeDeploy (3.3.8.1)
+	* Documentation updates for CodeDeploy.
+* WorkMail (3.3.0.0)
+	* Today, Amazon WorkMail released an administrative SDK and enabled AWS CloudTrail integration. With the administrative SDK, you can natively integrate WorkMail with your existing services. The SDK enables programmatic user, resource, and group management through API calls. This means your existing IT tools and workflows can now automate WorkMail management, and third party applications can streamline WorkMail migrations and account actions. 
+
 ### 3.3.207.0 (2017-12-11 22:23 UTC)
 * CognitoIdentityProvider (3.3.8.0)
 	* Exposing the hosted UI domain name for a user pool that has a domain configured.
