@@ -70,6 +70,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiKeyRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("authorizationScopes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AuthorizationScopes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authorizationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

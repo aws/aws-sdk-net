@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     public partial class PutMethodRequest : AmazonAPIGatewayRequest
     {
         private bool? _apiKeyRequired;
+        private List<string> _authorizationScopes = new List<string>();
         private string _authorizationType;
         private string _authorizerId;
         private string _httpMethod;
@@ -60,6 +61,29 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetApiKeyRequired()
         {
             return this._apiKeyRequired.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationScopes. 
+        /// <para>
+        /// A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code>
+        /// authorizer to authorize the method invocation by matching them against the scopes
+        /// parsed from the access token in the incoming request. The method invocation is authorized
+        /// if any method scopes matches a claimed scope in the access token. Otherwise, the invocation
+        /// is not authorized. When the method scope is configured, the client must provide an
+        /// access token instead of an identity token for authorizatinon purposes.
+        /// </para>
+        /// </summary>
+        public List<string> AuthorizationScopes
+        {
+            get { return this._authorizationScopes; }
+            set { this._authorizationScopes = value; }
+        }
+
+        // Check to see if AuthorizationScopes property is set
+        internal bool IsSetAuthorizationScopes()
+        {
+            return this._authorizationScopes != null && this._authorizationScopes.Count > 0; 
         }
 
         /// <summary>

@@ -80,6 +80,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApiKeyRequired);
                 }
 
+                if(publicRequest.IsSetAuthorizationScopes())
+                {
+                    context.Writer.WritePropertyName("authorizationScopes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAuthorizationScopesListValue in publicRequest.AuthorizationScopes)
+                    {
+                            context.Writer.Write(publicRequestAuthorizationScopesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAuthorizationType())
                 {
                     context.Writer.WritePropertyName("authorizationType");
