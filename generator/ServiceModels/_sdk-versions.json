@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.208.0",
-    "CoreVersion"    : "3.3.21.1",
+    "ProductVersion" : "3.3.209.0",
+    "CoreVersion"    : "3.3.21.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.6.0",
+            "Version" : "3.3.6.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.14.0",
+            "Version" : "3.3.15.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"

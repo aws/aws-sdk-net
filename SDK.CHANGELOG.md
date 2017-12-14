@@ -1,3 +1,11 @@
+### 3.3.209.0 (2017-12-14 22:13 UTC)
+* APIGateway (3.3.15.0)
+	* Adds support for Cognito Authorizer scopes at the API method level.
+* SimpleEmail (3.3.6.1)
+	* Added information about the maximum number of transactions per second for the SendCustomVerificationEmail operation.
+* Core 3.3.21.2
+	* Updated endpoints.json to include cn-northwest-1
+
 ### 3.3.208.0 (2017-12-12 20:10 UTC)
 * CodeDeploy (3.3.8.1)
 	* Documentation updates for CodeDeploy.
