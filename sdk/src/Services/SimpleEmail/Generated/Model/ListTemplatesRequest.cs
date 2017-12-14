@@ -64,7 +64,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use for pagination.
+        /// A token returned from a previous call to <code>ListTemplates</code> to indicate the
+        /// position in the list of email templates.
         /// </para>
         /// </summary>
         public string NextToken

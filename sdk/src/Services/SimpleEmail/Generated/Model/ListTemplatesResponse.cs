@@ -38,7 +38,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use for pagination.
+        /// A token indicating that there are additional email templates available to be listed.
+        /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the
+        /// next 50 email templates.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +58,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property TemplatesMetadata. 
         /// <para>
-        /// An array the contains the name of creation time stamp for each template in your Amazon
+        /// An array the contains the name and creation time stamp for each template in your Amazon
         /// SES account.
         /// </para>
         /// </summary>

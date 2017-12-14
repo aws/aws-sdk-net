@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Information about an email template.
+    /// Contains information about an email template.
     /// </summary>
     public partial class TemplateMetadata
     {
