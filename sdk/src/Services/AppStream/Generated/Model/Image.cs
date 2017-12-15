@@ -69,7 +69,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
         /// The version of the AppStream 2.0 agent to use for instances that are launched from
-        /// this image.
+        /// this image. 
         /// </para>
         /// </summary>
         public string AppstreamAgentVersion
