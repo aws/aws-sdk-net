@@ -1,3 +1,11 @@
+### 3.3.210.0 (2017-12-15 20:51 UTC)
+* AppStream (3.3.8.0)
+	* This API update is to enable customers to add tags to their Amazon AppStream 2.0 resources
+* Core 3.3.21.3
+	* expand the region support of Inspector to FRA (eu-central-1)
+
+
+
 ### 3.3.209.0 (2017-12-14 22:13 UTC)
 * APIGateway (3.3.15.0)
 	* Adds support for Cognito Authorizer scopes at the API method level.
