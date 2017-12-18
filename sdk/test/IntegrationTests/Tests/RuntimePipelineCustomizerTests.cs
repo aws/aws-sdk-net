@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             public string UniqueName { get { return "Integ Tests"; } }
 
-            public void Customize(RuntimePipeline pipeline)
+            public void Customize(Type type, RuntimePipeline pipeline)
             {
                 pipeline.AddHandler(new SpecialPipelineHandler());
             }
