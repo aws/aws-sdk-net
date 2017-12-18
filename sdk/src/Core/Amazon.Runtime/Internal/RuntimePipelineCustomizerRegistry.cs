@@ -99,7 +99,8 @@ namespace Amazon.Runtime.Internal
         /// Applies all of the registered customizers on the runtime pipeline
         /// </summary>
         /// <param name="pipeline">The service clients runtime pipeline.</param>
-        internal void ApplyCustomizations(RuntimePipeline pipeline)
+        /// <param name="type">Type object for the service client being created</param>
+        internal void ApplyCustomizations(Type type, RuntimePipeline pipeline)
         {
             _rwlock.EnterReadLock();
             try
@@ -107,7 +108,7 @@ namespace Amazon.Runtime.Internal
                 foreach (var customizer in _customizers)
                 {
                     _logger.InfoFormat("Applying runtime pipeline customization {0}", customizer.UniqueName);
-                    customizer.Customize(pipeline);
+                    customizer.Customize(type, pipeline);
                 }
             }
             finally
@@ -154,6 +155,7 @@ namespace Amazon.Runtime.Internal
         /// Called on service clients as they are being constructed to customize their runtime pipeline.
         /// </summary>
         /// <param name="pipeline"></param>
-        void Customize(RuntimePipeline pipeline);
+        /// <param name="type">Type object for the service client being created</param>
+        void Customize(Type type, RuntimePipeline pipeline);
     }
 }
