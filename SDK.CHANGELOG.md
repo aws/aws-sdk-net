@@ -1,3 +1,11 @@
+### 3.3.210.1 (2017-12-19 05:59 UTC)
+* CloudWatch (3.3.5.1)
+	* Documentation updates for monitoring
+* S3 (3.3.16.1)
+	* New region launch eu-west-3
+* Core 3.3.21.4
+	* New region launch eu-west-3 and pipeline customization change.
+
 ### 3.3.210.0 (2017-12-15 20:51 UTC)
 * AppStream (3.3.8.0)
 	* This API update is to enable customers to add tags to their Amazon AppStream 2.0 resources
