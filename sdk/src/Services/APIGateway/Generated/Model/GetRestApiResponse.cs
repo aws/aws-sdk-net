@@ -35,14 +35,37 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetRestApiResponse : AmazonWebServiceResponse
     {
+        private ApiKeySourceType _apiKeySource;
         private List<string> _binaryMediaTypes = new List<string>();
         private DateTime? _createdDate;
         private string _description;
         private EndpointConfiguration _endpointConfiguration;
         private string _id;
+        private int? _minimumCompressionSize;
         private string _name;
         private string _version;
         private List<string> _warnings = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ApiKeySource. 
+        /// <para>
+        /// The source of the API key for metring requests according to a usage plan. Valid values
+        /// are <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code>
+        /// header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the
+        /// <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul> 
+        /// </para>
+        /// </summary>
+        public ApiKeySourceType ApiKeySource
+        {
+            get { return this._apiKeySource; }
+            set { this._apiKeySource = value; }
+        }
+
+        // Check to see if ApiKeySource property is set
+        internal bool IsSetApiKeySource()
+        {
+            return this._apiKeySource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BinaryMediaTypes. 
@@ -134,6 +157,27 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumCompressionSize. 
+        /// <para>
+        /// A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes,
+        /// inclusive) or disable (null) compression on an API. When compression is enabled, compression
+        /// or decompression are not applied on the payload if the payload size is smaller than
+        /// this value. Setting it to zero allows compression for any payload size.
+        /// </para>
+        /// </summary>
+        public int MinimumCompressionSize
+        {
+            get { return this._minimumCompressionSize.GetValueOrDefault(); }
+            set { this._minimumCompressionSize = value; }
+        }
+
+        // Check to see if MinimumCompressionSize property is set
+        internal bool IsSetMinimumCompressionSize()
+        {
+            return this._minimumCompressionSize.HasValue; 
         }
 
         /// <summary>

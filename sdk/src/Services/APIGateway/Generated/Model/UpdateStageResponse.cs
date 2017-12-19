@@ -49,6 +49,7 @@ namespace Amazon.APIGateway.Model
         private DateTime? _lastUpdatedDate;
         private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
         private string _stageName;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
@@ -287,6 +288,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageName()
         {
             return this._stageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of Tags associated with a given resource.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

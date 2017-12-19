@@ -65,6 +65,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApiKeySource())
+                {
+                    context.Writer.WritePropertyName("apiKeySource");
+                    context.Writer.Write(publicRequest.ApiKeySource);
+                }
+
                 if(publicRequest.IsSetBinaryMediaTypes())
                 {
                     context.Writer.WritePropertyName("binaryMediaTypes");
@@ -97,6 +103,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.EndpointConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMinimumCompressionSize())
+                {
+                    context.Writer.WritePropertyName("minimumCompressionSize");
+                    context.Writer.Write(publicRequest.MinimumCompressionSize);
                 }
 
                 if(publicRequest.IsSetName())
