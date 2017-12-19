@@ -233,6 +233,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion EuWest2 = new CloudWatchRegion("eu-west-2");
         /// <summary>
+        /// Constant EuWest3 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuWest3 = new CloudWatchRegion("eu-west-3");
+        /// <summary>
         /// Constant SaEast1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion SaEast1 = new CloudWatchRegion("sa-east-1");
@@ -737,6 +741,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion CnNorth1 = new ResourceRecordSetRegion("cn-north-1");
         /// <summary>
+        /// Constant CnNorthwest1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion CnNorthwest1 = new ResourceRecordSetRegion("cn-northwest-1");
+        /// <summary>
         /// Constant EuCentral1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuCentral1 = new ResourceRecordSetRegion("eu-central-1");
@@ -748,6 +756,10 @@ namespace Amazon.Route53
         /// Constant EuWest2 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuWest2 = new ResourceRecordSetRegion("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuWest3 = new ResourceRecordSetRegion("eu-west-3");
         /// <summary>
         /// Constant SaEast1 for ResourceRecordSetRegion
         /// </summary>
@@ -1098,6 +1110,10 @@ namespace Amazon.Route53
         /// Constant EuWest2 for VPCRegion
         /// </summary>
         public static readonly VPCRegion EuWest2 = new VPCRegion("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuWest3 = new VPCRegion("eu-west-3");
         /// <summary>
         /// Constant SaEast1 for VPCRegion
         /// </summary>

@@ -42,6 +42,13 @@ namespace Amazon.Route53.Model
         /// the health check, <code>CreateHealthCheck</code> returned the ID in the response,
         /// in the <code>HealthCheckId</code> element.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to get the last failure reason for a calculated health check, you must
+        /// use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code>
+        /// for a calculated health check.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string HealthCheckId
         {

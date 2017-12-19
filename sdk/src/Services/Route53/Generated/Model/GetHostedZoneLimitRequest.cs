@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can
+        ///  <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can
         /// associate with the specified private hosted zone.
         /// </para>
         ///  </li> </ul>
