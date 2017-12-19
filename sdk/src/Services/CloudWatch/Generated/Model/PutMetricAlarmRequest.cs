@@ -49,6 +49,10 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
     /// all alarms on EC2 instance status metrics
     /// </para>
