@@ -29,7 +29,7 @@ namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeObject operation.
-    /// Gets the header for an object at the specified path.
+    /// Gets the headers for an object at the specified path.
     /// </summary>
     public partial class DescribeObjectRequest : AmazonMediaStoreDataRequest
     {

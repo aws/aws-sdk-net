@@ -132,7 +132,7 @@ namespace Amazon.MediaStoreData
         #region  DescribeObject
 
         /// <summary>
-        /// Gets the header for an object at the specified path.
+        /// Gets the headers for an object at the specified path.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeObject service method.</param>
         /// 

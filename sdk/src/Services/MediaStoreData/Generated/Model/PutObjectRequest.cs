@@ -43,19 +43,7 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The path to the file outside of the container. The file name can include or omit an
-        /// extension. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example 1: If the file is stored on a remote server that has been mounted to the workstation
-        /// on which the REST API command is being run, the path could be the absolute path <code>
-        /// \mount\assets\mlaw.avi</code> or the relative path <code>..\..\mount\assets\movies\premium\mlaw.avi</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example 2: If the file is stored on a remote server that is not mounted, the path
-        /// could be <code>https:\\192.0.2.15\movies\premium\mlaw.avi</code>.
+        /// The bytes to be stored. 
         /// </para>
         /// </summary>
         public Stream Body
