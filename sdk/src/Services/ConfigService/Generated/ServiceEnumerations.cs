@@ -603,6 +603,14 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSCloudFormationStack = new ResourceType("AWS::CloudFormation::Stack");
         /// <summary>
+        /// Constant AWSCloudFrontDistribution for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudFrontDistribution = new ResourceType("AWS::CloudFront::Distribution");
+        /// <summary>
+        /// Constant AWSCloudFrontStreamingDistribution for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudFrontStreamingDistribution = new ResourceType("AWS::CloudFront::StreamingDistribution");
+        /// <summary>
         /// Constant AWSCloudTrailTrail for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudTrailTrail = new ResourceType("AWS::CloudTrail::Trail");
@@ -746,6 +754,30 @@ namespace Amazon.ConfigService
         /// Constant AWSSSMManagedInstanceInventory for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSSMManagedInstanceInventory = new ResourceType("AWS::SSM::ManagedInstanceInventory");
+        /// <summary>
+        /// Constant AWSWAFRateBasedRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRateBasedRule = new ResourceType("AWS::WAF::RateBasedRule");
+        /// <summary>
+        /// Constant AWSWAFRegionalRateBasedRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRegionalRateBasedRule = new ResourceType("AWS::WAFRegional::RateBasedRule");
+        /// <summary>
+        /// Constant AWSWAFRegionalRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRegionalRule = new ResourceType("AWS::WAFRegional::Rule");
+        /// <summary>
+        /// Constant AWSWAFRegionalWebACL for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRegionalWebACL = new ResourceType("AWS::WAFRegional::WebACL");
+        /// <summary>
+        /// Constant AWSWAFRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRule = new ResourceType("AWS::WAF::Rule");
+        /// <summary>
+        /// Constant AWSWAFWebACL for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFWebACL = new ResourceType("AWS::WAF::WebACL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
