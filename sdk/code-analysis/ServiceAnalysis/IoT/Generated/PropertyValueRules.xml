@@ -162,6 +162,28 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateOTAUpdateRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateOTAUpdateRequest.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateOTAUpdateRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateOTAUpdateResponse.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreatePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -208,6 +230,38 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamRequest.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamResponse.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateStreamResponse.StreamVersion</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateThingRequest.ThingName</property>
@@ -288,6 +342,12 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteOTAUpdateRequest.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeletePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -308,6 +368,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteStreamRequest.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DeleteThingRequest.ThingName</property>
@@ -397,6 +463,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeStreamRequest.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeThingRequest.ThingName</property>
@@ -525,6 +597,12 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.GetJobDocumentResponse.Document</property>
     <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.GetOTAUpdateRequest.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.GetPolicyRequest.PolicyName</property>
@@ -690,6 +768,11 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListOTAUpdatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListOutgoingCertificatesRequest.Marker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
@@ -770,6 +853,11 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListRoleAliasesResponse.NextMarker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListStreamsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListTargetsForPolicyRequest.Marker</property>
@@ -1109,6 +1197,38 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamRequest.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamResponse.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamResponse.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateStreamResponse.StreamVersion</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateThingRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -1276,6 +1396,23 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.OTAUpdateInfo.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OTAUpdateInfo.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OTAUpdateSummary.OtaUpdateId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.OutgoingCertificate.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -1335,6 +1472,14 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.S3Location.Bucket</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.S3Location.Key</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.SalesforceAction.Token</property>
     <min>40</min>
   </property-value-rule>
@@ -1342,6 +1487,59 @@
     <property>Amazon.IoT.Model.SalesforceAction.Url</property>
     <max>2000</max>
     <pattern>https://ingestion-[a-zA-Z0-9]{1,12}\.[a-zA-Z0-9]+\.((sfdc-matrix\.net)|(sfdcnow\.com))/streams/\w{1,20}/\w{1,20}/event</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.Stream.FileId</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.Stream.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamFile.FileId</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamInfo.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamInfo.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamInfo.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamInfo.StreamVersion</property>
+    <min>0</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamSummary.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamSummary.StreamId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.StreamSummary.StreamVersion</property>
+    <min>0</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingAttribute.ThingName</property>

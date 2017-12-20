@@ -1901,6 +1901,66 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateOTAUpdate
+
+
+        /// <summary>
+        /// Creates an AWS IoT OTAUpdate on a target group of things or groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the CreateOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        public virtual CreateOTAUpdateResponse CreateOTAUpdate(CreateOTAUpdateRequest request)
+        {
+            var marshaller = new CreateOTAUpdateRequestMarshaller();
+            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        public virtual Task<CreateOTAUpdateResponse> CreateOTAUpdateAsync(CreateOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateOTAUpdateRequestMarshaller();
+            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePolicy
 
 
@@ -2403,6 +2463,72 @@ namespace Amazon.IoT
             var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStream
+
+
+        /// <summary>
+        /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
+        /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
+        /// like S3. You can have one or more files associated with a stream. The total size of
+        /// a file associated with the stream cannot exceed more than 2 MB. The stream will be
+        /// created with version 0. If a stream is created with the same streamID as a stream
+        /// that existed and was deleted within last 90 days, we will resurrect that old stream
+        /// by incrementing the version by 1.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
+        /// 
+        /// <returns>The response from the CreateStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
+        {
+            var marshaller = new CreateStreamRequestMarshaller();
+            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateStreamRequestMarshaller();
+            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStreamRequest,CreateStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2919,6 +3045,63 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteOTAUpdate
+
+
+        /// <summary>
+        /// Delete an OTA update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        public virtual DeleteOTAUpdateResponse DeleteOTAUpdate(DeleteOTAUpdateRequest request)
+        {
+            var marshaller = new DeleteOTAUpdateRequestMarshaller();
+            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        public virtual Task<DeleteOTAUpdateResponse> DeleteOTAUpdateAsync(DeleteOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteOTAUpdateRequestMarshaller();
+            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePolicy
 
 
@@ -3359,6 +3542,66 @@ namespace Amazon.IoT
             var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStream
+
+
+        /// <summary>
+        /// Deletes a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        public virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
+        {
+            var marshaller = new DeleteStreamRequestMarshaller();
+            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteStreamRequestMarshaller();
+            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4490,6 +4733,63 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeStream
+
+
+        /// <summary>
+        /// Gets information about a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        public virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
+        {
+            var marshaller = new DescribeStreamRequestMarshaller();
+            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStreamRequestMarshaller();
+            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeThing
 
 
@@ -5424,6 +5724,63 @@ namespace Amazon.IoT
             var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoggingOptionsRequest,GetLoggingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOTAUpdate
+
+
+        /// <summary>
+        /// Gets an OTA update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the GetOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        public virtual GetOTAUpdateResponse GetOTAUpdate(GetOTAUpdateRequest request)
+        {
+            var marshaller = new GetOTAUpdateRequestMarshaller();
+            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        public virtual Task<GetOTAUpdateResponse> GetOTAUpdateAsync(GetOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetOTAUpdateRequestMarshaller();
+            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6464,6 +6821,60 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOTAUpdates
+
+
+        /// <summary>
+        /// Lists OTA updates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListOTAUpdates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        public virtual ListOTAUpdatesResponse ListOTAUpdates(ListOTAUpdatesRequest request)
+        {
+            var marshaller = new ListOTAUpdatesRequestMarshaller();
+            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOTAUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        public virtual Task<ListOTAUpdatesResponse> ListOTAUpdatesAsync(ListOTAUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOTAUpdatesRequestMarshaller();
+            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOutgoingCertificates
 
 
@@ -7147,6 +7558,60 @@ namespace Amazon.IoT
             var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStreams
+
+
+        /// <summary>
+        /// Lists all of the streams in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
+        {
+            var marshaller = new ListStreamsRequestMarshaller();
+            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListStreamsRequestMarshaller();
+            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStreamsRequest,ListStreamsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -9670,6 +10135,63 @@ namespace Amazon.IoT
             var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStream
+
+
+        /// <summary>
+        /// Updates an existing stream. The stream version will be incremented by one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStream service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        public virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
+        {
+            var marshaller = new UpdateStreamRequestMarshaller();
+            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        public virtual Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateStreamRequestMarshaller();
+            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

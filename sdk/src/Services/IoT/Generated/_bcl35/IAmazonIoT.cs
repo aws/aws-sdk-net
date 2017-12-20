@@ -1264,6 +1264,67 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateOTAUpdate
+
+
+        /// <summary>
+        /// Creates an AWS IoT OTAUpdate on a target group of things or groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the CreateOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        CreateOTAUpdateResponse CreateOTAUpdate(CreateOTAUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOTAUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        IAsyncResult BeginCreateOTAUpdate(CreateOTAUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOTAUpdate.</param>
+        /// 
+        /// <returns>Returns a  CreateOTAUpdateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        CreateOTAUpdateResponse EndCreateOTAUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreatePolicy
 
 
@@ -1591,6 +1652,73 @@ namespace Amazon.IoT
         /// <returns>Returns a  CreateRoleAliasResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">REST API Reference for CreateRoleAlias Operation</seealso>
         CreateRoleAliasResponse EndCreateRoleAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateStream
+
+
+        /// <summary>
+        /// Creates a stream for delivering one or more large files in chunks over MQTT. A stream
+        /// transports data bytes in chunks or blocks packaged as MQTT messages from a source
+        /// like S3. You can have one or more files associated with a stream. The total size of
+        /// a file associated with the stream cannot exceed more than 2 MB. The stream will be
+        /// created with version 0. If a stream is created with the same streamID as a stream
+        /// that existed and was deleted within last 90 days, we will resurrect that old stream
+        /// by incrementing the version by 1.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
+        /// 
+        /// <returns>The response from the CreateStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        CreateStreamResponse CreateStream(CreateStreamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        IAsyncResult BeginCreateStream(CreateStreamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStream.</param>
+        /// 
+        /// <returns>Returns a  CreateStreamResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        CreateStreamResponse EndCreateStream(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2056,6 +2184,64 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteOTAUpdate
+
+
+        /// <summary>
+        /// Delete an OTA update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        DeleteOTAUpdateResponse DeleteOTAUpdate(DeleteOTAUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOTAUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        IAsyncResult BeginDeleteOTAUpdate(DeleteOTAUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOTAUpdate.</param>
+        /// 
+        /// <returns>Returns a  DeleteOTAUpdateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        DeleteOTAUpdateResponse EndDeleteOTAUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeletePolicy
 
 
@@ -2390,6 +2576,67 @@ namespace Amazon.IoT
         /// <returns>Returns a  DeleteRoleAliasResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteRoleAlias">REST API Reference for DeleteRoleAlias Operation</seealso>
         DeleteRoleAliasResponse EndDeleteRoleAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteStream
+
+
+        /// <summary>
+        /// Deletes a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
+        /// You can't delete the resource because it is attached to one or more resources.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        DeleteStreamResponse DeleteStream(DeleteStreamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        IAsyncResult BeginDeleteStream(DeleteStreamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStream.</param>
+        /// 
+        /// <returns>Returns a  DeleteStreamResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        DeleteStreamResponse EndDeleteStream(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3378,6 +3625,64 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeStream
+
+
+        /// <summary>
+        /// Gets information about a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        DescribeStreamResponse DescribeStream(DescribeStreamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStream operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        IAsyncResult BeginDescribeStream(DescribeStreamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStream.</param>
+        /// 
+        /// <returns>Returns a  DescribeStreamResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        DescribeStreamResponse EndDescribeStream(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeThing
 
 
@@ -4190,6 +4495,64 @@ namespace Amazon.IoT
         /// <returns>Returns a  GetLoggingOptionsResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         GetLoggingOptionsResponse EndGetLoggingOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOTAUpdate
+
+
+        /// <summary>
+        /// Gets an OTA update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate service method.</param>
+        /// 
+        /// <returns>The response from the GetOTAUpdate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        GetOTAUpdateResponse GetOTAUpdate(GetOTAUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOTAUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        IAsyncResult BeginGetOTAUpdate(GetOTAUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOTAUpdate.</param>
+        /// 
+        /// <returns>Returns a  GetOTAUpdateResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        GetOTAUpdateResponse EndGetOTAUpdate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5076,6 +5439,61 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOTAUpdates
+
+
+        /// <summary>
+        /// Lists OTA updates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListOTAUpdates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        ListOTAUpdatesResponse ListOTAUpdates(ListOTAUpdatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOTAUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOTAUpdates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        IAsyncResult BeginListOTAUpdates(ListOTAUpdatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOTAUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOTAUpdates.</param>
+        /// 
+        /// <returns>Returns a  ListOTAUpdatesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        ListOTAUpdatesResponse EndListOTAUpdates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListOutgoingCertificates
 
 
@@ -5600,6 +6018,61 @@ namespace Amazon.IoT
         /// <returns>Returns a  ListRoleAliasesResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRoleAliases">REST API Reference for ListRoleAliases Operation</seealso>
         ListRoleAliasesResponse EndListRoleAliases(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStreams
+
+
+        /// <summary>
+        /// Lists all of the streams in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        ListStreamsResponse ListStreams(ListStreamsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreams.</param>
+        /// 
+        /// <returns>Returns a  ListStreamsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        ListStreamsResponse EndListStreams(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7809,6 +8282,64 @@ namespace Amazon.IoT
         /// <returns>Returns a  UpdateRoleAliasResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">REST API Reference for UpdateRoleAlias Operation</seealso>
         UpdateRoleAliasResponse EndUpdateRoleAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateStream
+
+
+        /// <summary>
+        /// Updates an existing stream. The stream version will be incremented by one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStream service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStream service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        UpdateStreamResponse UpdateStream(UpdateStreamRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStream operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        IAsyncResult BeginUpdateStream(UpdateStreamRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStream.</param>
+        /// 
+        /// <returns>Returns a  UpdateStreamResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        UpdateStreamResponse EndUpdateStream(IAsyncResult asyncResult);
 
         #endregion
         

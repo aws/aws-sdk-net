@@ -1078,6 +1078,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateOTAUpdate
+
+        internal virtual CreateOTAUpdateResponse CreateOTAUpdate(CreateOTAUpdateRequest request)
+        {
+            var marshaller = new CreateOTAUpdateRequestMarshaller();
+            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate">REST API Reference for CreateOTAUpdate Operation</seealso>
+        public virtual Task<CreateOTAUpdateResponse> CreateOTAUpdateAsync(CreateOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateOTAUpdateRequestMarshaller();
+            var unmarshaller = CreateOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOTAUpdateRequest,CreateOTAUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePolicy
 
         internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
@@ -1327,6 +1359,38 @@ namespace Amazon.IoT
             var unmarshaller = CreateRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoleAliasRequest,CreateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateStream
+
+        internal virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
+        {
+            var marshaller = new CreateStreamRequestMarshaller();
+            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateStreamRequestMarshaller();
+            var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStreamRequest,CreateStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1606,6 +1670,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteOTAUpdate
+
+        internal virtual DeleteOTAUpdateResponse DeleteOTAUpdate(DeleteOTAUpdateRequest request)
+        {
+            var marshaller = new DeleteOTAUpdateRequestMarshaller();
+            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
+        public virtual Task<DeleteOTAUpdateResponse> DeleteOTAUpdateAsync(DeleteOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteOTAUpdateRequestMarshaller();
+            var unmarshaller = DeleteOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOTAUpdateRequest,DeleteOTAUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePolicy
 
         internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
@@ -1828,6 +1924,38 @@ namespace Amazon.IoT
             var unmarshaller = DeleteRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRoleAliasRequest,DeleteRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteStream
+
+        internal virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
+        {
+            var marshaller = new DeleteStreamRequestMarshaller();
+            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteStreamRequestMarshaller();
+            var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2479,6 +2607,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeStream
+
+        internal virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
+        {
+            var marshaller = new DescribeStreamRequestMarshaller();
+            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
+        public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStreamRequestMarshaller();
+            var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeThing
 
         internal virtual DescribeThingResponse DescribeThing(DescribeThingRequest request)
@@ -3010,6 +3170,38 @@ namespace Amazon.IoT
             var unmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoggingOptionsRequest,GetLoggingOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetOTAUpdate
+
+        internal virtual GetOTAUpdateResponse GetOTAUpdate(GetOTAUpdateRequest request)
+        {
+            var marshaller = new GetOTAUpdateRequestMarshaller();
+            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOTAUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOTAUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetOTAUpdate">REST API Reference for GetOTAUpdate Operation</seealso>
+        public virtual Task<GetOTAUpdateResponse> GetOTAUpdateAsync(GetOTAUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetOTAUpdateRequestMarshaller();
+            var unmarshaller = GetOTAUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOTAUpdateRequest,GetOTAUpdateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3605,6 +3797,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOTAUpdates
+
+        internal virtual ListOTAUpdatesResponse ListOTAUpdates(ListOTAUpdatesRequest request)
+        {
+            var marshaller = new ListOTAUpdatesRequestMarshaller();
+            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOTAUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOTAUpdates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOTAUpdates">REST API Reference for ListOTAUpdates Operation</seealso>
+        public virtual Task<ListOTAUpdatesResponse> ListOTAUpdatesAsync(ListOTAUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListOTAUpdatesRequestMarshaller();
+            var unmarshaller = ListOTAUpdatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOTAUpdatesRequest,ListOTAUpdatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOutgoingCertificates
 
         internal virtual ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
@@ -3975,6 +4199,38 @@ namespace Amazon.IoT
             var unmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRoleAliasesRequest,ListRoleAliasesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStreams
+
+        internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
+        {
+            var marshaller = new ListStreamsRequestMarshaller();
+            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListStreamsRequestMarshaller();
+            var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStreamsRequest,ListStreamsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5367,6 +5623,38 @@ namespace Amazon.IoT
             var unmarshaller = UpdateRoleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRoleAliasRequest,UpdateRoleAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateStream
+
+        internal virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
+        {
+            var marshaller = new UpdateStreamRequestMarshaller();
+            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
+        public virtual Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateStreamRequestMarshaller();
+            var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

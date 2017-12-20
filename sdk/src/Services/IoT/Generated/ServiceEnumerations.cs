@@ -891,6 +891,64 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type OTAUpdateStatus.
+    /// </summary>
+    public class OTAUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_COMPLETE for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus CREATE_COMPLETE = new OTAUpdateStatus("CREATE_COMPLETE");
+        /// <summary>
+        /// Constant CREATE_FAILED for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus CREATE_FAILED = new OTAUpdateStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus CREATE_IN_PROGRESS = new OTAUpdateStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_PENDING for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus CREATE_PENDING = new OTAUpdateStatus("CREATE_PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OTAUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OTAUpdateStatus FindValue(string value)
+        {
+            return FindValue<OTAUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OTAUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportType.
     /// </summary>
     public class ReportType : ConstantClass
