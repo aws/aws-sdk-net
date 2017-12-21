@@ -1,3 +1,13 @@
+### 3.3.212.0 (2017-12-20 22:31 UTC)
+* ConfigService (3.3.12.0)
+	* Update ResourceType enum with values for WAF, WAFRegional, and CloudFront resources
+* IoT (3.3.8.0)
+	* This release adds support for code signed Over-the-air update functionality for Amazon FreeRTOS. Users can now create and schedule Over-the-air updates to their Amazon FreeRTOS devices using these new APIs. 
+* Core 3.3.21.5
+	* Launch AWS CodeStar in the Asia Pacific (Tokyo) and Canada (Central) regions. 
+
+
+
 ### 3.3.211.0 (2017-12-19 22:04 UTC)
 * APIGateway (3.3.16.0)
 	* API Gateway now adds support for calling API with compressed payloads using one of the supported content codings, tagging an API stage for cost allocation, and returning API keys from a custom authorizer for use with a usage plan.
