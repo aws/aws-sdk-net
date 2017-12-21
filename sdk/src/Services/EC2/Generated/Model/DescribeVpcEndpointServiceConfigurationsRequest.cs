@@ -45,17 +45,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>service-name</code> - The ARN of the service.
+        ///  <code>service-name</code> - The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-service-id</code> - The ID of the service.
+        ///  <code>service-id</code> - The ID of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code>
-        /// | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
-        /// 
+        ///  <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
+        /// | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>). 
         /// </para>
         ///  </li> </ul>
         /// </summary>

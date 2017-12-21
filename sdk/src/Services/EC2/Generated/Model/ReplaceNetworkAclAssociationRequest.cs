@@ -33,6 +33,11 @@ namespace Amazon.EC2.Model
     /// a subnet, it's automatically associated with the default network ACL. For more information
     /// about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
     /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// This is an idempotent operation.
+    /// </para>
     /// </summary>
     public partial class ReplaceNetworkAclAssociationRequest : AmazonEC2Request
     {

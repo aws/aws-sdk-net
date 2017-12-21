@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The ID of the prefix.
+    /// [EC2-VPC only] The ID of the prefix.
     /// </summary>
     public partial class PrefixListId
     {

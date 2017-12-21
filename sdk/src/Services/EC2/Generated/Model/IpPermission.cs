@@ -129,8 +129,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListIds. 
         /// <para>
-        /// (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
-        /// <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service.
+        /// (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a>
+        /// and <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service.
         /// In an <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you
         /// want to access through a VPC endpoint from instances associated with the security
         /// group.
