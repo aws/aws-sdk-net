@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalytics.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>NOW</code> - Start reading just after the most recent record in the stream,
-        /// start at the request timestamp that the customer issued.
+        /// start at the request time stamp that the customer issued.
         /// </para>
         ///  </li> <li> 
         /// <para>

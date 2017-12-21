@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputDescription Object
+    /// Response Unmarshaller for LambdaOutputDescription Object
     /// </summary>  
-    public class OutputDescriptionUnmarshaller : IUnmarshaller<OutputDescription, XmlUnmarshallerContext>, IUnmarshaller<OutputDescription, JsonUnmarshallerContext>
+    public class LambdaOutputDescriptionUnmarshaller : IUnmarshaller<LambdaOutputDescription, XmlUnmarshallerContext>, IUnmarshaller<LambdaOutputDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputDescription IUnmarshaller<OutputDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaOutputDescription IUnmarshaller<LambdaOutputDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputDescription Unmarshall(JsonUnmarshallerContext context)
+        public LambdaOutputDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputDescription unmarshalledObject = new OutputDescription();
+            LambdaOutputDescription unmarshalledObject = new LambdaOutputDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DestinationSchema", targetDepth))
-                {
-                    var unmarshaller = DestinationSchemaUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSchema = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KinesisFirehoseOutputDescription", targetDepth))
-                {
-                    var unmarshaller = KinesisFirehoseOutputDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.KinesisFirehoseOutputDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KinesisStreamsOutputDescription", targetDepth))
-                {
-                    var unmarshaller = KinesisStreamsOutputDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.KinesisStreamsOutputDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LambdaOutputDescription", targetDepth))
-                {
-                    var unmarshaller = LambdaOutputDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.LambdaOutputDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ResourceARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OutputId", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputDescriptionUnmarshaller _instance = new OutputDescriptionUnmarshaller();        
+        private static LambdaOutputDescriptionUnmarshaller _instance = new LambdaOutputDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputDescriptionUnmarshaller Instance
+        public static LambdaOutputDescriptionUnmarshaller Instance
         {
             get
             {

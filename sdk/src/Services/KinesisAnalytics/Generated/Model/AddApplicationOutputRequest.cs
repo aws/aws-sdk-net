@@ -34,10 +34,11 @@ namespace Amazon.KinesisAnalytics.Model
     ///  
     /// <para>
     /// If you want Amazon Kinesis Analytics to deliver data from an in-application stream
-    /// within your application to an external destination (such as an Amazon Kinesis stream
-    /// or a Firehose delivery stream), you add the relevant configuration to your application
-    /// using this operation. You can configure one or more outputs for your application.
-    /// Each output configuration maps an in-application stream and an external destination.
+    /// within your application to an external destination (such as an Amazon Kinesis stream,
+    /// an Amazon Kinesis Firehose delivery stream, or an Amazon Lambda function), you add
+    /// the relevant configuration to your application using this operation. You can configure
+    /// one or more outputs for your application. Each output configuration maps an in-application
+    /// stream and an external destination.
     /// </para>
     ///  
     /// <para>
@@ -90,8 +91,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// Version of the application to which you want add the output configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the current application version.
+        /// Version of the application to which you want to add the output configuration. You
+        /// can use the <a>DescribeApplication</a> operation to get the current application version.
         /// If the version specified is not the current version, the <code>ConcurrentModificationException</code>
         /// is returned. 
         /// </para>
@@ -113,8 +114,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// An array of objects, each describing one output configuration. In the output configuration,
         /// you specify the name of an in-application stream, a destination (that is, an Amazon
-        /// Kinesis stream or an Amazon Kinesis Firehose delivery stream), and record the formation
-        /// to use when writing to the destination.
+        /// Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon Lambda function),
+        /// and record the formation to use when writing to the destination.
         /// </para>
         /// </summary>
         public Output Output

@@ -40,7 +40,11 @@ namespace Amazon.KinesisAnalytics.Model
         private string _tableName;
 
         /// <summary>
-        /// Gets and sets the property ReferenceSchema.
+        /// Gets and sets the property ReferenceSchema. 
+        /// <para>
+        /// Describes the format of the data in the streaming source, and how each data element
+        /// maps to corresponding columns created in the in-application stream.
+        /// </para>
         /// </summary>
         public SourceSchema ReferenceSchema
         {
@@ -55,7 +59,14 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3ReferenceDataSource.
+        /// Gets and sets the property S3ReferenceDataSource. 
+        /// <para>
+        /// Identifies the S3 bucket and object that contains the reference data. Also identifies
+        /// the IAM role Amazon Kinesis Analytics can assume to read this object on your behalf.
+        /// An Amazon Kinesis Analytics application loads reference data only once. If the data
+        /// changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
+        /// into your application. 
+        /// </para>
         /// </summary>
         public S3ReferenceDataSource S3ReferenceDataSource
         {

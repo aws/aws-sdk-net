@@ -30,9 +30,9 @@ namespace Amazon.KinesisAnalytics.Model
     /// <summary>
     /// Container for the parameters to the DiscoverInputSchema operation.
     /// Infers a schema by evaluating sample records on the specified streaming source (Amazon
-    /// Kinesis stream or Amazon Kinesis Firehose delivery stream). In the response, the operation
-    /// returns the inferred schema and also the sample records that the operation used to
-    /// infer the schema.
+    /// Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3 object. In the response,
+    /// the operation returns the inferred schema and also the sample records that the operation
+    /// used to infer the schema.
     /// 
     ///  
     /// <para>
@@ -132,7 +132,10 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Configuration.
+        /// Gets and sets the property S3Configuration. 
+        /// <para>
+        /// Specify this parameter to discover a schema from data in an S3 object.
+        /// </para>
         /// </summary>
         public S3Configuration S3Configuration
         {

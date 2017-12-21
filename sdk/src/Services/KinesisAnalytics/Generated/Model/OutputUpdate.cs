@@ -35,11 +35,17 @@ namespace Amazon.KinesisAnalytics.Model
         private DestinationSchema _destinationSchemaUpdate;
         private KinesisFirehoseOutputUpdate _kinesisFirehoseOutputUpdate;
         private KinesisStreamsOutputUpdate _kinesisStreamsOutputUpdate;
+        private LambdaOutputUpdate _lambdaOutputUpdate;
         private string _nameUpdate;
         private string _outputId;
 
         /// <summary>
-        /// Gets and sets the property DestinationSchemaUpdate.
+        /// Gets and sets the property DestinationSchemaUpdate. 
+        /// <para>
+        /// Describes the data format when records are written to the destination. For more information,
+        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+        /// Application Output</a>.
+        /// </para>
         /// </summary>
         public DestinationSchema DestinationSchemaUpdate
         {
@@ -56,7 +62,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property KinesisFirehoseOutputUpdate. 
         /// <para>
-        /// Describes a Amazon Kinesis Firehose delivery stream as the destination for the output.
+        /// Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.
         /// </para>
         /// </summary>
         public KinesisFirehoseOutputUpdate KinesisFirehoseOutputUpdate
@@ -87,6 +93,24 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetKinesisStreamsOutputUpdate()
         {
             return this._kinesisStreamsOutputUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaOutputUpdate. 
+        /// <para>
+        /// Describes an AWS Lambda function as the destination for the output.
+        /// </para>
+        /// </summary>
+        public LambdaOutputUpdate LambdaOutputUpdate
+        {
+            get { return this._lambdaOutputUpdate; }
+            set { this._lambdaOutputUpdate = value; }
+        }
+
+        // Check to see if LambdaOutputUpdate property is set
+        internal bool IsSetLambdaOutputUpdate()
+        {
+            return this._lambdaOutputUpdate != null;
         }
 
         /// <summary>

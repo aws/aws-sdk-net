@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// When updating application input configuration, provides information about an Amazon
-    /// Kinesis Firehose delivery stream as the streaming source.
+    /// When updating an output configuration using the <a>UpdateApplication</a> operation,
+    /// provides information about an AWS Lambda function configured as the destination.
     /// </summary>
-    public partial class KinesisFirehoseInputUpdate
+    public partial class LambdaOutputUpdate
     {
         private string _resourceARNUpdate;
         private string _roleARNUpdate;
@@ -39,8 +39,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARNUpdate. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to
-        /// read.
+        /// Amazon Resource Name (ARN) of the destination Lambda function.
         /// </para>
         /// </summary>
         public string ResourceARNUpdate
@@ -58,8 +57,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleARNUpdate. 
         /// <para>
-        /// ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream
-        /// on your behalf. You need to grant necessary permissions to this role.
+        /// ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination
+        /// function on your behalf. You need to grant the necessary permissions to this role.
+        /// 
         /// </para>
         /// </summary>
         public string RoleARNUpdate

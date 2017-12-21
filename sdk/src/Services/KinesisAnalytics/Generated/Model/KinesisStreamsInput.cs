@@ -29,8 +29,8 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's
-    /// ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream
-    /// on your behalf.
+    /// Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics
+    /// to access the stream on your behalf.
     /// </summary>
     public partial class KinesisStreamsInput
     {

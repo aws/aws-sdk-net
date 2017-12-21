@@ -29,7 +29,7 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Provides a description of a processor that is used to preprocess the records in the
-    /// stream prior to being processed by your application code. Currently, the only input
+    /// stream before being processed by your application code. Currently, the only input
     /// processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS
     /// Lambda</a>.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property InputLambdaProcessor. 
         /// <para>
         /// The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream
-        /// prior to being processed by your application code.
+        /// before being processed by your application code.
         /// </para>
         /// </summary>
         public InputLambdaProcessor InputLambdaProcessor

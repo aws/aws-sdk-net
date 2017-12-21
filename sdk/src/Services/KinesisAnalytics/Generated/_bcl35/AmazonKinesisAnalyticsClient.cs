@@ -458,10 +458,11 @@ namespace Amazon.KinesisAnalytics
         ///  
         /// <para>
         /// If you want Amazon Kinesis Analytics to deliver data from an in-application stream
-        /// within your application to an external destination (such as an Amazon Kinesis stream
-        /// or a Firehose delivery stream), you add the relevant configuration to your application
-        /// using this operation. You can configure one or more outputs for your application.
-        /// Each output configuration maps an in-application stream and an external destination.
+        /// within your application to an external destination (such as an Amazon Kinesis stream,
+        /// an Amazon Kinesis Firehose delivery stream, or an Amazon Lambda function), you add
+        /// the relevant configuration to your application using this operation. You can configure
+        /// one or more outputs for your application. Each output configuration maps an in-application
+        /// stream and an external destination.
         /// </para>
         ///  
         /// <para>
@@ -640,8 +641,8 @@ namespace Amazon.KinesisAnalytics
         /// <summary>
         /// Creates an Amazon Kinesis Analytics application. You can configure each application
         /// with one streaming source as input, application code to process the input, and up
-        /// to five streaming destinations where you want Amazon Kinesis Analytics to write the
-        /// output data from your application. For an overview, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
+        /// to three destinations where you want Amazon Kinesis Analytics to write the output
+        /// data from your application. For an overview, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How
         /// it Works</a>. 
         /// 
         ///  
@@ -660,7 +661,7 @@ namespace Amazon.KinesisAnalytics
         ///  
         /// <para>
         /// In the output configuration, you can configure the application to write data from
-        /// in-application streams created in your applications to up to five streaming destinations.
+        /// in-application streams created in your applications to up to three destinations.
         /// </para>
         ///  
         /// <para>
@@ -1165,9 +1166,9 @@ namespace Amazon.KinesisAnalytics
 
         /// <summary>
         /// Infers a schema by evaluating sample records on the specified streaming source (Amazon
-        /// Kinesis stream or Amazon Kinesis Firehose delivery stream). In the response, the operation
-        /// returns the inferred schema and also the sample records that the operation used to
-        /// infer the schema.
+        /// Kinesis stream or Amazon Kinesis Firehose delivery stream) or S3 object. In the response,
+        /// the operation returns the inferred schema and also the sample records that the operation
+        /// used to infer the schema.
         /// 
         ///  
         /// <para>

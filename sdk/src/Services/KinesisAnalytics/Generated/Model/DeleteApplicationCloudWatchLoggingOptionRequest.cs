@@ -61,8 +61,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property CloudWatchLoggingOptionId. 
         /// <para>
         /// The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete.
-        /// You can use the <a>DescribeApplication</a> operation to get the <code>CloudWatchLoggingOptionId</code>.
-        /// 
+        /// You can get the <code>CloudWatchLoggingOptionId</code> by using the <a>DescribeApplication</a>
+        /// operation. 
         /// </para>
         /// </summary>
         public string CloudWatchLoggingOptionId

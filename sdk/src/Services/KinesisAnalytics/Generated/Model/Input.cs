@@ -49,7 +49,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// Data from your source will be routed to these in-application input streams.
+        /// Data from your source is routed to these in-application input streams.
         /// </para>
         ///  
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputProcessingConfiguration. 
         /// <para>
-        /// The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms
+        /// The <a>InputProcessingConfiguration</a> for the input. An input processor transforms
         /// records as they are received from the stream, before the application's SQL code executes.
         /// Currently, the only input processing configuration available is <a>InputLambdaProcessor</a>.
         /// </para>
@@ -116,8 +116,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property KinesisFirehoseInput. 
         /// <para>
         /// If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies
-        /// the Firehose delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics
-        /// to access the stream on your behalf.
+        /// the delivery stream's ARN and an IAM role that enables Amazon Kinesis Analytics to
+        /// access the stream on your behalf.
         /// </para>
         ///  
         /// <para>
@@ -165,10 +165,10 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property NamePrefix. 
         /// <para>
-        /// Name prefix to use when creating in-application stream. Suppose you specify a prefix
-        /// "MyInApplicationStream". Amazon Kinesis Analytics will then create one or more (as
-        /// per the <code>InputParallelism</code> count you specified) in-application streams
-        /// with names "MyInApplicationStream_001", "MyInApplicationStream_002" and so on. 
+        /// Name prefix to use when creating an in-application stream. Suppose that you specify
+        /// a prefix "MyInApplicationStream." Amazon Kinesis Analytics then creates one or more
+        /// (as per the <code>InputParallelism</code> count you specified) in-application streams
+        /// with names "MyInApplicationStream_001," "MyInApplicationStream_002," and so on. 
         /// </para>
         /// </summary>
         public string NamePrefix

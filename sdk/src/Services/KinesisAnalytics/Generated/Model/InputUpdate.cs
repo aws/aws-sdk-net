@@ -119,7 +119,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property KinesisFirehoseInputUpdate. 
         /// <para>
         /// If an Amazon Kinesis Firehose delivery stream is the streaming source to be updated,
-        /// provides an updated stream Amazon Resource Name (ARN) and IAM role ARN.
+        /// provides an updated stream ARN and IAM role ARN.
         /// </para>
         /// </summary>
         public KinesisFirehoseInputUpdate KinesisFirehoseInputUpdate
@@ -137,8 +137,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamsInputUpdate. 
         /// <para>
-        /// If a Amazon Kinesis stream is the streaming source to be updated, provides an updated
-        /// stream ARN and IAM role ARN.
+        /// If an Amazon Kinesis stream is the streaming source to be updated, provides an updated
+        /// stream Amazon Resource Name (ARN) and IAM role ARN.
         /// </para>
         /// </summary>
         public KinesisStreamsInputUpdate KinesisStreamsInputUpdate

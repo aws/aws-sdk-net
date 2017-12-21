@@ -78,6 +78,17 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLambdaOutputUpdate())
+            {
+                context.Writer.WritePropertyName("LambdaOutputUpdate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaOutputUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaOutputUpdate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNameUpdate())
             {
                 context.Writer.WritePropertyName("NameUpdate");

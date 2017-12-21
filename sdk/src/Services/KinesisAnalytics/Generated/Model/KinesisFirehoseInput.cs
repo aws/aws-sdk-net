@@ -29,8 +29,8 @@ namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
     /// Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You
-    /// provide the Firehose delivery stream's Amazon Resource Name (ARN) and an IAM role
-    /// ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
+    /// provide the delivery stream's Amazon Resource Name (ARN) and an IAM role ARN that
+    /// enables Amazon Kinesis Analytics to access the stream on your behalf.
     /// </summary>
     public partial class KinesisFirehoseInput
     {
@@ -40,7 +40,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// ARN of the input Firehose delivery stream.
+        /// ARN of the input delivery stream.
         /// </para>
         /// </summary>
         public string ResourceARN

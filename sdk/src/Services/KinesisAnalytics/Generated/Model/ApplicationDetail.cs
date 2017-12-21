@@ -179,7 +179,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property CreateTimestamp. 
         /// <para>
-        /// Timestamp when the application version was created.
+        /// Time stamp when the application version was created.
         /// </para>
         /// </summary>
         public DateTime CreateTimestamp
@@ -216,7 +216,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTimestamp. 
         /// <para>
-        /// Timestamp when the application was last updated.
+        /// Time stamp when the application was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdateTimestamp

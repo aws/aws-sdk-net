@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// An object that contains the Amazon Resource Name (ARN) of the <a href="https://aws.amazon.com/documentation/lambda/">AWS
-    /// Lambda</a> function that is used to preprocess records in the stream, and the ARN
-    /// of the IAM role that is used to access the AWS Lambda function.
+    /// When configuring application output, identifies an AWS Lambda function as the destination.
+    /// You provide the function Amazon Resource Name (ARN) and also an IAM role ARN that
+    /// Amazon Kinesis Analytics can use to write to the function on your behalf.
     /// </summary>
-    public partial class InputLambdaProcessor
+    public partial class LambdaOutput
     {
         private string _resourceARN;
         private string _roleARN;
@@ -40,8 +40,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
-        /// function that operates on records in the stream.
+        /// Amazon Resource Name (ARN) of the destination Lambda function to write to.
         /// </para>
         /// </summary>
         public string ResourceARN
@@ -59,7 +58,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the IAM role that is used to access the AWS Lambda function.
+        /// ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination
+        /// function on your behalf. You need to grant the necessary permissions to this role.
+        /// 
         /// </para>
         /// </summary>
         public string RoleARN

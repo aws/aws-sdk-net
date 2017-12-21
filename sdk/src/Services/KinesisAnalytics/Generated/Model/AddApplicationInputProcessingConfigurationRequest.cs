@@ -83,8 +83,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property InputId. 
         /// <para>
-        /// The ID of the input configuration to which to add the input configuration. You can
-        /// get a list of the input IDs for an application using the <a>DescribeApplication</a>
+        /// The ID of the input configuration to add the input processing configuration to. You
+        /// can get a list of the input IDs for an application using the <a>DescribeApplication</a>
         /// operation.
         /// </para>
         /// </summary>

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// 
+    /// Provides a description of an Amazon S3 data source, including the Amazon Resource
+    /// Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket,
+    /// and the name of the S3 object that contains the data.
     /// </summary>
     public partial class S3Configuration
     {
@@ -37,7 +39,10 @@ namespace Amazon.KinesisAnalytics.Model
         private string _roleARN;
 
         /// <summary>
-        /// Gets and sets the property BucketARN.
+        /// Gets and sets the property BucketARN. 
+        /// <para>
+        /// ARN of the S3 bucket that contains the data.
+        /// </para>
         /// </summary>
         public string BucketARN
         {
@@ -52,7 +57,10 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileKey.
+        /// Gets and sets the property FileKey. 
+        /// <para>
+        /// The name of the object that contains the data.
+        /// </para>
         /// </summary>
         public string FileKey
         {
@@ -67,7 +75,10 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN.
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// IAM ARN of the role used to access the data.
+        /// </para>
         /// </summary>
         public string RoleARN
         {

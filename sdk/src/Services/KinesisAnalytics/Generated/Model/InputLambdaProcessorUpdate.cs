@@ -39,8 +39,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ResourceARNUpdate. 
         /// <para>
-        /// The ARN of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>
-        /// function that is used to preprocess the records in the stream.
+        /// The Amazon Resource Name (ARN) of the new <a href="https://aws.amazon.com/documentation/lambda/">AWS
+        /// Lambda</a> function that is used to preprocess the records in the stream.
         /// </para>
         /// </summary>
         public string ResourceARNUpdate
@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleARNUpdate. 
         /// <para>
-        /// The ARN of the new IAM role used to access the AWS Lambda function.
+        /// The ARN of the new IAM role that is used to access the AWS Lambda function.
         /// </para>
         /// </summary>
         public string RoleARNUpdate

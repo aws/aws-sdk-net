@@ -61,7 +61,11 @@ namespace Amazon.KinesisAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReferenceSchemaUpdate.
+        /// Gets and sets the property ReferenceSchemaUpdate. 
+        /// <para>
+        /// Describes the format of the data in the streaming source, and how each data element
+        /// maps to corresponding columns created in the in-application stream. 
+        /// </para>
         /// </summary>
         public SourceSchema ReferenceSchemaUpdate
         {

@@ -37,6 +37,7 @@ namespace Amazon.KinesisAnalytics.Model
         private DestinationSchema _destinationSchema;
         private KinesisFirehoseOutputDescription _kinesisFirehoseOutputDescription;
         private KinesisStreamsOutputDescription _kinesisStreamsOutputDescription;
+        private LambdaOutputDescription _lambdaOutputDescription;
         private string _name;
         private string _outputId;
 
@@ -93,6 +94,24 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetKinesisStreamsOutputDescription()
         {
             return this._kinesisStreamsOutputDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaOutputDescription. 
+        /// <para>
+        /// Describes the AWS Lambda function configured as the destination where output is written.
+        /// </para>
+        /// </summary>
+        public LambdaOutputDescription LambdaOutputDescription
+        {
+            get { return this._lambdaOutputDescription; }
+            set { this._lambdaOutputDescription = value; }
+        }
+
+        // Check to see if LambdaOutputDescription property is set
+        internal bool IsSetLambdaOutputDescription()
+        {
+            return this._lambdaOutputDescription != null;
         }
 
         /// <summary>

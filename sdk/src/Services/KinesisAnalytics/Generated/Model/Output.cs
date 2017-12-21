@@ -45,10 +45,16 @@ namespace Amazon.KinesisAnalytics.Model
         private DestinationSchema _destinationSchema;
         private KinesisFirehoseOutput _kinesisFirehoseOutput;
         private KinesisStreamsOutput _kinesisStreamsOutput;
+        private LambdaOutput _lambdaOutput;
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property DestinationSchema.
+        /// Gets and sets the property DestinationSchema. 
+        /// <para>
+        /// Describes the data format when records are written to the destination. For more information,
+        /// see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+        /// Application Output</a>.
+        /// </para>
         /// </summary>
         public DestinationSchema DestinationSchema
         {
@@ -96,6 +102,24 @@ namespace Amazon.KinesisAnalytics.Model
         internal bool IsSetKinesisStreamsOutput()
         {
             return this._kinesisStreamsOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaOutput. 
+        /// <para>
+        /// Identifies an AWS Lambda function as the destination.
+        /// </para>
+        /// </summary>
+        public LambdaOutput LambdaOutput
+        {
+            get { return this._lambdaOutput; }
+            set { this._lambdaOutput = value; }
+        }
+
+        // Check to see if LambdaOutput property is set
+        internal bool IsSetLambdaOutput()
+        {
+            return this._lambdaOutput != null;
         }
 
         /// <summary>

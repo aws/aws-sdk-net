@@ -37,7 +37,12 @@ namespace Amazon.KinesisAnalytics.Model
         private RecordFormatType _recordFormatType;
 
         /// <summary>
-        /// Gets and sets the property MappingParameters.
+        /// Gets and sets the property MappingParameters. 
+        /// <para>
+        /// When configuring application input at the time of creating or updating an application,
+        /// provides additional mapping information specific to the record format (such as JSON,
+        /// CSV, or record fields delimited by some delimiter) on the streaming source.
+        /// </para>
         /// </summary>
         public MappingParameters MappingParameters
         {
