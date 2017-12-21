@@ -34,6 +34,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _description;
         private string _name;
+        private List<string> _versions = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -69,6 +70,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Versions. 
+        /// <para>
+        /// A list of environment image versions.
+        /// </para>
+        /// </summary>
+        public List<string> Versions
+        {
+            get { return this._versions; }
+            set { this._versions = value; }
+        }
+
+        // Check to see if Versions property is set
+        internal bool IsSetVersions()
+        {
+            return this._versions != null && this._versions.Count > 0; 
         }
 
     }
