@@ -260,7 +260,32 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.AgentPreview.AgentVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.AgentPreview.AutoScalingGroup</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.AgentPreview.Hostname</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.AgentPreview.Ipv4Address</property>
+    <min>7</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.AgentPreview.KernelVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.AgentPreview.OperatingSystem</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

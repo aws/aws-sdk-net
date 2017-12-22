@@ -29,8 +29,8 @@ namespace Amazon.Inspector.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCrossAccountAccessRole operation.
-    /// Registers the IAM role that Amazon Inspector uses to list your EC2 instances at the
-    /// start of the assessment run or when you call the <a>PreviewAgents</a> action.
+    /// Registers the IAM role that grants Amazon Inspector access to AWS Services needed
+    /// to perform security assessments.
     /// </summary>
     public partial class RegisterCrossAccountAccessRoleRequest : AmazonInspectorRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during
-        /// the assessment run or when you call the <a>PreviewAgents</a> action. 
+        /// The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed
+        /// to perform security assessments. 
         /// </para>
         /// </summary>
         public string RoleArn

@@ -112,6 +112,10 @@ namespace Amazon.Inspector
         /// Constant UNHEALTHY for AgentHealth
         /// </summary>
         public static readonly AgentHealth UNHEALTHY = new AgentHealth("UNHEALTHY");
+        /// <summary>
+        /// Constant UNKNOWN for AgentHealth
+        /// </summary>
+        public static readonly AgentHealth UNKNOWN = new AgentHealth("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

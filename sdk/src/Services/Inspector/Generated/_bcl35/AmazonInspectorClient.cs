@@ -300,9 +300,11 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Creates a new assessment target using the ARN of the resource group that is generated
-        /// by <a>CreateResourceGroup</a>. You can create up to 50 assessment targets per AWS
-        /// account. You can run up to 500 concurrent agents per AWS account. For more information,
-        /// see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+        /// by <a>CreateResourceGroup</a>. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+        /// role</a> isn’t already registered, also creates and registers a service-linked role
+        /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+        /// You can create up to 50 assessment targets per AWS account. You can run up to 500
+        /// concurrent agents per AWS account. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
         /// Amazon Inspector Assessment Targets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTarget service method.</param>
@@ -375,7 +377,9 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Creates an assessment template for the assessment target that is specified by the
-        /// ARN of the assessment target.
+        /// ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+        /// role</a> isn’t already registered, also creates and registers a service-linked role
+        /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTemplate service method.</param>
         /// 
@@ -1896,8 +1900,8 @@ namespace Amazon.Inspector
         #region  RegisterCrossAccountAccessRole
 
         /// <summary>
-        /// Registers the IAM role that Amazon Inspector uses to list your EC2 instances at the
-        /// start of the assessment run or when you call the <a>PreviewAgents</a> action.
+        /// Registers the IAM role that grants Amazon Inspector access to AWS Services needed
+        /// to perform security assessments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCrossAccountAccessRole service method.</param>
         /// 

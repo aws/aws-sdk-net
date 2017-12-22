@@ -32,8 +32,32 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class AgentPreview
     {
+        private AgentHealth _agentHealth;
         private string _agentId;
+        private string _agentVersion;
         private string _autoScalingGroup;
+        private string _hostname;
+        private string _ipv4Address;
+        private string _kernelVersion;
+        private string _operatingSystem;
+
+        /// <summary>
+        /// Gets and sets the property AgentHealth. 
+        /// <para>
+        /// The health status of the Amazon Inspector Agent.
+        /// </para>
+        /// </summary>
+        public AgentHealth AgentHealth
+        {
+            get { return this._agentHealth; }
+            set { this._agentHealth = value; }
+        }
+
+        // Check to see if AgentHealth property is set
+        internal bool IsSetAgentHealth()
+        {
+            return this._agentHealth != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -54,6 +78,24 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version of the Amazon Inspector Agent.
+        /// </para>
+        /// </summary>
+        public string AgentVersion
+        {
+            get { return this._agentVersion; }
+            set { this._agentVersion = value; }
+        }
+
+        // Check to see if AgentVersion property is set
+        internal bool IsSetAgentVersion()
+        {
+            return this._agentVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AutoScalingGroup. 
         /// <para>
         /// The Auto Scaling group for the EC2 instance where the agent is installed.
@@ -69,6 +111,80 @@ namespace Amazon.Inspector.Model
         internal bool IsSetAutoScalingGroup()
         {
             return this._autoScalingGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hostname. 
+        /// <para>
+        /// The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.
+        /// </para>
+        /// </summary>
+        public string Hostname
+        {
+            get { return this._hostname; }
+            set { this._hostname = value; }
+        }
+
+        // Check to see if Hostname property is set
+        internal bool IsSetHostname()
+        {
+            return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Address. 
+        /// <para>
+        /// The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.
+        /// </para>
+        /// </summary>
+        public string Ipv4Address
+        {
+            get { return this._ipv4Address; }
+            set { this._ipv4Address = value; }
+        }
+
+        // Check to see if Ipv4Address property is set
+        internal bool IsSetIpv4Address()
+        {
+            return this._ipv4Address != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KernelVersion. 
+        /// <para>
+        /// The kernel version of the operating system running on the EC2 instance on which the
+        /// Amazon Inspector Agent is installed.
+        /// </para>
+        /// </summary>
+        public string KernelVersion
+        {
+            get { return this._kernelVersion; }
+            set { this._kernelVersion = value; }
+        }
+
+        // Check to see if KernelVersion property is set
+        internal bool IsSetKernelVersion()
+        {
+            return this._kernelVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// The operating system running on the EC2 instance on which the Amazon Inspector Agent
+        /// is installed.
+        /// </para>
+        /// </summary>
+        public string OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
     }

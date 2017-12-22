@@ -64,16 +64,52 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("agentHealth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentHealth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("autoScalingGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("hostname", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ipv4Address", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipv4Address = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kernelVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KernelVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("operatingSystem", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
