@@ -1,3 +1,13 @@
+### 3.3.214.0 (2017-12-22 20:52 UTC)
+* EC2 (3.3.42.0)
+	* This release fixes an issue with tags not showing in DescribeAddresses responses.
+* ECS (3.3.10.0)
+	* Amazon ECS users can now set a health check initialization wait period of their ECS services, the services that are associated with an Elastic Load Balancer (ELB) will wait for a period of time before the ELB become healthy. You can now configure this in Create and Update Service.
+* Inspector (3.3.3.0)
+	* PreviewAgents API now returns additional fields within the AgentPreview data type. The API now shows the agent health and availability status for all instances included in the assessment target. This allows users to check the health status of Inspector Agents before running an assessment. In addition, it shows the instance ID, hostname, and IP address of the targeted instances.
+* SageMaker (3.3.1.0)
+	* SageMaker Models no longer support SupplementalContainers.  API's that have been affected are CreateModel and DescribeModel.
+
 ### 3.3.213.0 (2017-12-21 23:04 UTC)
 * CodeBuild (3.3.7.0)
 	* Adding support allowing AWS CodeBuild customers to select specific curated image versions.

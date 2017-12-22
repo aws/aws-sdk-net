@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.213.0",
+    "ProductVersion" : "3.3.214.0",
     "CoreVersion"    : "3.3.21.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.41.0",
+            "Version" : "3.3.42.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.9.2",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -457,7 +457,7 @@
             "InPreview"               : false
         },
         "Inspector"                       : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
