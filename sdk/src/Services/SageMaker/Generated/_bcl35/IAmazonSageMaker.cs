@@ -250,9 +250,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateModel</code> request, you must define at least one container with
-        /// the <code>PrimaryContainer</code> parameter. You can optionally specify additional
-        /// containers with the <code>SupplementalContainers</code> parameter. 
+        /// In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
+        /// parameter. 
         /// </para>
         ///  
         /// <para>
@@ -1219,8 +1218,7 @@ namespace Amazon.SageMaker
         /// Launches an ML compute instance with the latest version of the libraries and attaches
         /// your ML storage volume. After configuring the notebook instance, Amazon SageMaker
         /// sets the notebook instance status to <code>InService</code>. A notebook instance's
-        /// status must be <code>InService</code> (is this same as "Running" in the console?)
-        /// before you can connect to your Jupyter notebook.
+        /// status must be <code>InService</code> before you can connect to your Jupyter notebook.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartNotebookInstance service method.</param>
         /// 

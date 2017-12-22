@@ -47,9 +47,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// In the <code>CreateModel</code> request, you must define at least one container with
-    /// the <code>PrimaryContainer</code> parameter. You can optionally specify additional
-    /// containers with the <code>SupplementalContainers</code> parameter. 
+    /// In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
+    /// parameter. 
     /// </para>
     ///  
     /// <para>
@@ -65,7 +64,6 @@ namespace Amazon.SageMaker.Model
         private string _executionRoleArn;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
-        private List<ContainerDefinition> _supplementalContainers = new List<ContainerDefinition>();
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -125,24 +123,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPrimaryContainer()
         {
             return this._primaryContainer != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SupplementalContainers. 
-        /// <para>
-        /// The additional optional containers to deploy.
-        /// </para>
-        /// </summary>
-        public List<ContainerDefinition> SupplementalContainers
-        {
-            get { return this._supplementalContainers; }
-            set { this._supplementalContainers = value; }
-        }
-
-        // Check to see if SupplementalContainers property is set
-        internal bool IsSetSupplementalContainers()
-        {
-            return this._supplementalContainers != null && this._supplementalContainers.Count > 0; 
         }
 
         /// <summary>

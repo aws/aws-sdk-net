@@ -37,7 +37,6 @@ namespace Amazon.SageMaker.Model
         private string _modelArn;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
-        private List<ContainerDefinition> _supplementalContainers = new List<ContainerDefinition>();
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -128,25 +127,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPrimaryContainer()
         {
             return this._primaryContainer != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SupplementalContainers. 
-        /// <para>
-        /// The description of additional optional containers that you defined when creating the
-        /// model.
-        /// </para>
-        /// </summary>
-        public List<ContainerDefinition> SupplementalContainers
-        {
-            get { return this._supplementalContainers; }
-            set { this._supplementalContainers = value; }
-        }
-
-        // Check to see if SupplementalContainers property is set
-        internal bool IsSetSupplementalContainers()
-        {
-            return this._supplementalContainers != null && this._supplementalContainers.Count > 0; 
         }
 
     }

@@ -81,12 +81,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.PrimaryContainer = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SupplementalContainers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
-                    response.SupplementalContainers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
 
             return response;

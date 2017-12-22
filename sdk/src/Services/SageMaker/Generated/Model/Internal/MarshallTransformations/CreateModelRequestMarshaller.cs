@@ -90,22 +90,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSupplementalContainers())
-                {
-                    context.Writer.WritePropertyName("SupplementalContainers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupplementalContainersListValue in publicRequest.SupplementalContainers)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ContainerDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSupplementalContainersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
