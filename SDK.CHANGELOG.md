@@ -1,3 +1,11 @@
+### 3.3.213.0 (2017-12-21 23:04 UTC)
+* CodeBuild (3.3.7.0)
+	* Adding support allowing AWS CodeBuild customers to select specific curated image versions.
+* EC2 (3.3.41.0)
+	* Elastic IP tagging enables you to add key and value metadata to your Elastic IPs so that you can search, filter, and organize them according to your organization's needs.
+* KinesisAnalytics (3.3.4.0)
+	* Kinesis Analytics now supports AWS Lambda functions as output.
+
 ### 3.3.212.0 (2017-12-20 22:31 UTC)
 * ConfigService (3.3.12.0)
 	* Update ResourceType enum with values for WAF, WAFRegional, and CloudFront resources
