@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RunningFargateTasksCount
+        /// runningFargateTasksCount
         /// </para>
         ///  </li> <li> 
         /// <para>

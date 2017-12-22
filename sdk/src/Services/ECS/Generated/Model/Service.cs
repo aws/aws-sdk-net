@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
+        private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private NetworkConfiguration _networkConfiguration;
@@ -161,6 +162,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetEvents()
         {
             return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckGracePeriodSeconds. 
+        /// <para>
+        /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
+        /// Elastic Load Balancing target health checks after a task has first started.
+        /// </para>
+        /// </summary>
+        public int HealthCheckGracePeriodSeconds
+        {
+            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            set { this._healthCheckGracePeriodSeconds = value; }
+        }
+
+        // Check to see if HealthCheckGracePeriodSeconds property is set
+        internal bool IsSetHealthCheckGracePeriodSeconds()
+        {
+            return this._healthCheckGracePeriodSeconds.HasValue; 
         }
 
         /// <summary>

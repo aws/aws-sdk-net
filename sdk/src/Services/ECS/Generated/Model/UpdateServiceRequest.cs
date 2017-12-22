@@ -131,6 +131,7 @@ namespace Amazon.ECS.Model
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private bool? _forceNewDeployment;
+        private int? _healthCheckGracePeriodSeconds;
         private NetworkConfiguration _networkConfiguration;
         private string _platformVersion;
         private string _service;
@@ -208,6 +209,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetForceNewDeployment()
         {
             return this._forceNewDeployment.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckGracePeriodSeconds. 
+        /// <para>
+        /// The period of time, in seconds, that the Amazon ECS service scheduler should ignore
+        /// unhealthy Elastic Load Balancing target health checks after a task has first started.
+        /// This is only valid if your service is configured to use a load balancer. If your service's
+        /// tasks take a while to start and respond to ELB health checks, you can specify a health
+        /// check grace period of up to 1,800 seconds during which the ECS service scheduler will
+        /// ignore ELB health check status. This grace period can prevent the ECS service scheduler
+        /// from marking tasks as unhealthy and stopping them before they have time to come up.
+        /// </para>
+        /// </summary>
+        public int HealthCheckGracePeriodSeconds
+        {
+            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            set { this._healthCheckGracePeriodSeconds = value; }
+        }
+
+        // Check to see if HealthCheckGracePeriodSeconds property is set
+        internal bool IsSetHealthCheckGracePeriodSeconds()
+        {
+            return this._healthCheckGracePeriodSeconds.HasValue; 
         }
 
         /// <summary>

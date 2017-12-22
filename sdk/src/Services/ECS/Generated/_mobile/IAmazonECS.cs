@@ -37,7 +37,7 @@ namespace Amazon.ECS
     /// by Amazon ECS by launching your services or tasks using the Fargate launch type. For
     /// more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud
     /// (Amazon EC2) instances that you manage by using the EC2 launch type. For more information
-    /// about launch types, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidelaunch_types.html">Amazon
+    /// about launch types, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
     /// ECS Launch Types</a>.
     /// 
     ///  

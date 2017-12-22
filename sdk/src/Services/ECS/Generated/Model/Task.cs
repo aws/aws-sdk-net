@@ -178,7 +178,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+        /// 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -332,7 +332,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+        /// 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
         /// </para>
         ///  </li> <li> 
         /// <para>

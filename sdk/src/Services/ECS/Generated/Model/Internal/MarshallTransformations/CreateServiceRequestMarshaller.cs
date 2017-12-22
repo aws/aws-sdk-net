@@ -96,6 +96,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DesiredCount);
                 }
 
+                if(publicRequest.IsSetHealthCheckGracePeriodSeconds())
+                {
+                    context.Writer.WritePropertyName("healthCheckGracePeriodSeconds");
+                    context.Writer.Write(publicRequest.HealthCheckGracePeriodSeconds);
+                }
+
                 if(publicRequest.IsSetLaunchType())
                 {
                     context.Writer.WritePropertyName("launchType");

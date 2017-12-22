@@ -100,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Events = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("healthCheckGracePeriodSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheckGracePeriodSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -91,13 +91,22 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of <code>cpu</code> units used by the task. If using the EC2 launch type,
-        /// this field is optional and any value can be used. If you are using the Fargate launch
-        /// type, this field is required and you must use one of the following values, which determines
-        /// your range of valid values for the <code>memory</code> parameter:
+        /// this field is optional and any value can be used.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Task-level CPU and memory parameters are ignored for Windows containers. We recommend
+        /// specifying container-level resources for Windows containers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of valid values for the <code>memory</code>
+        /// parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+        /// 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -176,13 +185,22 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Memory. 
         /// <para>
         /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this
-        /// field is optional and any value can be used. If you are using the Fargate launch type,
-        /// this field is required and you must use one of the following values, which determines
-        /// your range of valid values for the <code>cpu</code> parameter:
+        /// field is optional and any value can be used.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Task-level CPU and memory parameters are ignored for Windows containers. We recommend
+        /// specifying container-level resources for Windows containers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of valid values for the <code>cpu</code>
+        /// parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+        /// 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
         /// </para>
         ///  </li> <li> 
         /// <para>

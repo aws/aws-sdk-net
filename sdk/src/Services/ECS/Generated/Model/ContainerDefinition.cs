@@ -695,6 +695,11 @@ namespace Amazon.ECS.Model
         /// on the container instance, but also allow the container to consume more memory resources
         /// when needed.
         /// </para>
+        ///  
+        /// <para>
+        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should
+        /// not specify fewer than 4 MiB of memory for your containers. 
+        /// </para>
         /// </summary>
         public int MemoryReservation
         {
