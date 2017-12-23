@@ -938,6 +938,44 @@ namespace Amazon.S3
             return FindValue(value);
         }
 
+        /// <summary>
+        /// Compares if the ConstantClass instances are equals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(ConstantClass obj)
+        {
+            if(obj == null)
+            {
+                return false;
+            }
+
+            return this.Equals(obj.Value);
+        }
+
+        /// <summary>
+        /// Compares if the ConstantClass instances are equals. This is ovewritten to handle the 
+        /// discrepancy with S3 events coming from Lambda that don't have the prefix "s3:".
+        /// </summary>
+        /// <param name="objString"></param>
+        /// <returns></returns>
+        protected override bool Equals(string objString)
+        {
+            if (objString == null)
+            {
+                return false;
+            }
+
+            var thisValue = this.Value;
+            if (!thisValue.StartsWith("s3:"))
+                thisValue = "s3:" + thisValue;
+
+            if (!objString.StartsWith("s3:"))
+                objString = "s3:" + objString;
+
+
+            return StringComparer.OrdinalIgnoreCase.Equals(thisValue, objString);
+        }
     }
 
     /// <summary>

@@ -59,5 +59,21 @@ namespace AWSSDK.UnitTests
 
             Assert.IsTrue(nonPublicTypes.Count == 0, "Non-public types are: " + string.Join(", ", nonPublicTypes));
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void HandleS3EventTypeLambdaDiscrepancy()
+        {
+            Assert.IsTrue("s3:ObjectCreated:Put" == EventType.ObjectCreatedPut);
+            Assert.IsTrue("ObjectCreated:Put" == EventType.ObjectCreatedPut);
+            Assert.IsTrue("ObjectCreated:Get" != EventType.ObjectCreatedPut);
+
+            Assert.IsTrue(new EventType("s3:ObjectCreated:Put") == EventType.ObjectCreatedPut);
+            Assert.IsTrue(new EventType("ObjectCreated:Put") == EventType.ObjectCreatedPut);
+            Assert.IsTrue(new EventType("s3:ObjectCreated:Get") != EventType.ObjectCreatedPut);
+
+            // Sanity test to make sure we haven't messed up the == operator
+            Assert.IsTrue(EventType.ObjectCreatedPut == EventType.ObjectCreatedPut);
+        }
     }
 }

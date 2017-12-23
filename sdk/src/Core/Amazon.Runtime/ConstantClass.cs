@@ -165,14 +165,14 @@ namespace Amazon.Runtime
             var objString = obj as string;
             if (objString != null)
             {
-                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, objString);
+                return Equals(objString);
             }
 
             // obj is of an incompatible type, return false.
             return false;
         }
 
-        public bool Equals(ConstantClass obj)
+        public virtual bool Equals(ConstantClass obj)
         {
             if ((object)obj == null)
             {
@@ -180,6 +180,11 @@ namespace Amazon.Runtime
                 return false;
             }
             return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
+        }
+
+        protected virtual bool Equals(string objString)
+        {
+            return StringComparer.OrdinalIgnoreCase.Equals(this.Value, objString);
         }
 
         public static bool operator ==(ConstantClass a, ConstantClass b)
