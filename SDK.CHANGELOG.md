@@ -3,7 +3,7 @@
 	* Updated to use new Core, version 3.3.21.6
 	* Handle S3 EventType ConstantClass discrepancy between the S3 service sending strings with the s3: prefix and lambda not sending the prefix.
 * Core 3.3.21.6
-	* All service assemblies to override how ConstantClass childs are compared
+	* Allow service assemblies to override how ConstantClass childs are compared
 
 ### 3.3.214.0 (2017-12-22 20:52 UTC)
 * EC2 (3.3.42.0)
