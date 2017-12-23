@@ -182,9 +182,9 @@ namespace Amazon.Runtime
             return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
         }
 
-        protected virtual bool Equals(string objString)
+        protected virtual bool Equals(string value)
         {
-            return StringComparer.OrdinalIgnoreCase.Equals(this.Value, objString);
+            return StringComparer.OrdinalIgnoreCase.Equals(this.Value, value);
         }
 
         public static bool operator ==(ConstantClass a, ConstantClass b)
