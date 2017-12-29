@@ -1,3 +1,7 @@
+### 3.3.215.0 (2017-12-29 17:27 UTC)
+* WorkSpaces (3.3.1.0)
+	* Modify WorkSpaces have been updated with flexible storage and switching of hardware bundles feature. The following configurations have been added to ModifyWorkSpacesProperties: storage and compute. This update provides the capability to configure the storage of a WorkSpace. It also adds the capability of switching hardware bundle of a WorkSpace by specifying an eligible compute (Value, Standard, Performance, Power).
+
 ### 3.3.214.1 (2017-12-23 05:31 UTC)
 * S3 (3.3.16.2)
 	* Updated to use new Core, version 3.3.21.6

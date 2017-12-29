@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.214.1",
+    "ProductVersion" : "3.3.215.0",
     "CoreVersion"    : "3.3.21.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.0.24",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
