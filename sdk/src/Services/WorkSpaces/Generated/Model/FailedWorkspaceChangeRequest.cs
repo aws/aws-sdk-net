@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>),
+    /// Information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>),
     /// rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started
     /// (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
     /// </summary>

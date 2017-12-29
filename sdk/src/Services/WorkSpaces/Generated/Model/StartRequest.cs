@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the start request.
+    /// Information used to start a WorkSpace.
     /// </summary>
     public partial class StartRequest
     {

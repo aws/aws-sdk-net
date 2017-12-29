@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspacesConnectionStatus operation.
-    /// Describes the connection status of a specified WorkSpace.
+    /// Describes the connection status of the specified WorkSpaces.
     /// </summary>
     public partial class DescribeWorkspacesConnectionStatusRequest : AmazonWorkSpacesRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token of the request.
+        /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceIds. 
         /// <para>
-        /// An array of strings that contain the identifiers of the WorkSpaces.
+        /// The identifiers of the WorkSpaces.
         /// </para>
         /// </summary>
         public List<string> WorkspaceIds

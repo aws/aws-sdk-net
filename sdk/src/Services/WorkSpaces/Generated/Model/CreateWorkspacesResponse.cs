@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the result of the <a>CreateWorkspaces</a> operation.
+    /// This is the response object from the CreateWorkspaces operation.
     /// </summary>
     public partial class CreateWorkspacesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property FailedRequests. 
         /// <para>
-        /// An array of structures that represent the WorkSpaces that could not be created.
+        /// Information about the WorkSpaces that could not be created.
         /// </para>
         /// </summary>
         public List<FailedCreateWorkspaceRequest> FailedRequests
@@ -56,13 +56,13 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PendingRequests. 
         /// <para>
-        /// An array of structures that represent the WorkSpaces that were created.
+        /// Information about the WorkSpaces that were created.
         /// </para>
         ///  
         /// <para>
-        /// Because this operation is asynchronous, the identifier in <code>WorkspaceId</code>
-        /// is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with
-        /// this identifier, no information will be returned.
+        /// Because this operation is asynchronous, the identifier returned is not immediately
+        /// available for use with other operations. For example, if you call <a>DescribeWorkspaces</a>
+        /// before the WorkSpace is created, the information returned can be incomplete.
         /// </para>
         /// </summary>
         public List<Workspace> PendingRequests

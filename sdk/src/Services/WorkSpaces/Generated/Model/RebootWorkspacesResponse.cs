@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results of the <a>RebootWorkspaces</a> operation.
+    /// This is the response object from the RebootWorkspaces operation.
     /// </summary>
     public partial class RebootWorkspacesResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property FailedRequests. 
         /// <para>
-        /// An array of structures representing any WorkSpaces that could not be rebooted.
+        /// Information about the WorkSpaces that could not be rebooted.
         /// </para>
         /// </summary>
         public List<FailedWorkspaceChangeRequest> FailedRequests

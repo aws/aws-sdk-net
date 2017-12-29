@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about a WorkSpace.
+    /// Information about a WorkSpace.
     /// </summary>
     public partial class Workspace
     {
@@ -38,6 +38,7 @@ namespace Amazon.WorkSpaces.Model
         private string _errorCode;
         private string _errorMessage;
         private string _ipAddress;
+        private List<ModificationState> _modificationStates = new List<ModificationState>();
         private bool? _rootVolumeEncryptionEnabled;
         private WorkspaceState _state;
         private string _subnetId;
@@ -50,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The identifier of the bundle that the WorkSpace was created from.
+        /// The identifier of the bundle used to create the WorkSpace.
         /// </para>
         /// </summary>
         public string BundleId
@@ -68,7 +69,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ComputerName. 
         /// <para>
-        /// The name of the WorkSpace as seen by the operating system.
+        /// The name of the WorkSpace, as seen by the operating system.
         /// </para>
         /// </summary>
         public string ComputerName
@@ -86,7 +87,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the AWS Directory Service directory that the WorkSpace belongs to.
+        /// The identifier of the AWS Directory Service directory for the WorkSpace.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -104,7 +105,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// If the WorkSpace could not be created, this contains the error code.
+        /// If the WorkSpace could not be created, contains the error code.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -122,8 +123,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// If the WorkSpace could not be created, this contains a textual error message that
-        /// describes the failure.
+        /// If the WorkSpace could not be created, contains a textual error message that describes
+        /// the failure.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -157,9 +158,27 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModificationStates. 
+        /// <para>
+        /// The modification states of the WorkSpace.
+        /// </para>
+        /// </summary>
+        public List<ModificationState> ModificationStates
+        {
+            get { return this._modificationStates; }
+            set { this._modificationStates = value; }
+        }
+
+        // Check to see if ModificationStates property is set
+        internal bool IsSetModificationStates()
+        {
+            return this._modificationStates != null && this._modificationStates.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RootVolumeEncryptionEnabled. 
         /// <para>
-        /// Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+        /// Indicates whether the data stored on the root volume is encrypted.
         /// </para>
         /// </summary>
         public bool RootVolumeEncryptionEnabled
@@ -195,7 +214,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The identifier of the subnet that the WorkSpace is in.
+        /// The identifier of the subnet for the WorkSpace.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -213,7 +232,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user that the WorkSpace is assigned to.
+        /// The user for the WorkSpace.
         /// </para>
         /// </summary>
         public string UserName
@@ -231,7 +250,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserVolumeEncryptionEnabled. 
         /// <para>
-        /// Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+        /// Indicates whether the data stored on the user volume is encrypted.
         /// </para>
         /// </summary>
         public bool UserVolumeEncryptionEnabled
@@ -283,7 +302,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceProperties.
+        /// Gets and sets the property WorkspaceProperties. 
+        /// <para>
+        /// The properties of the WorkSpace.
+        /// </para>
         /// </summary>
         public WorkspaceProperties WorkspaceProperties
         {

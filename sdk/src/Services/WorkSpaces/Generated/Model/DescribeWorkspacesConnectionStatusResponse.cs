@@ -38,7 +38,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token of the result.
+        /// The token to use to retrieve the next set of results, or null if there are no more
+        /// results available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspacesConnectionStatus. 
         /// <para>
-        /// The connection status of the WorkSpace.
+        /// Information about the connection status of the WorkSpace.
         /// </para>
         /// </summary>
         public List<WorkspaceConnectionStatus> WorkspacesConnectionStatus

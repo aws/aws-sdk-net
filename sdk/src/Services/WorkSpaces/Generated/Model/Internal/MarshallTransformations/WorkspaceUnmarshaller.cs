@@ -100,6 +100,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModificationStates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ModificationState, ModificationStateUnmarshaller>(ModificationStateUnmarshaller.Instance);
+                    unmarshalledObject.ModificationStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RootVolumeEncryptionEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

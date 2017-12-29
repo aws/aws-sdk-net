@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// The result of the <a>DescribeTags</a> operation.
+    /// This is the response object from the DescribeTags operation.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// The list of tags.
+        /// The tags.
         /// </para>
         /// </summary>
         public List<Tag> TagList

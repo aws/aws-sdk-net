@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains default WorkSpace creation information.
+    /// Information about defaults used to create a WorkSpace.
     /// </summary>
     public partial class DefaultWorkspaceCreationProperties
     {
@@ -41,8 +41,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property CustomSecurityGroupId. 
         /// <para>
-        /// The identifier of any custom security groups that are applied to the WorkSpaces when
-        /// they are created.
+        /// The identifier of any security groups to apply to WorkSpaces when they are created.
         /// </para>
         /// </summary>
         public string CustomSecurityGroupId
@@ -60,8 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DefaultOu. 
         /// <para>
-        /// The organizational unit (OU) in the directory that the WorkSpace machine accounts
-        /// are placed in.
+        /// The organizational unit (OU) in the directory for the WorkSpace machine accounts.
         /// </para>
         /// </summary>
         public string DefaultOu
@@ -79,7 +77,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property EnableInternetAccess. 
         /// <para>
-        /// A public IP address will be attached to all WorkSpaces that are created or rebuilt.
+        /// The public IP address to attach to all WorkSpaces that are created or rebuilt.
         /// </para>
         /// </summary>
         public bool EnableInternetAccess
@@ -97,7 +95,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property EnableWorkDocs. 
         /// <para>
-        /// Specifies if the directory is enabled for Amazon WorkDocs.
+        /// Indicates whether the directory is enabled for Amazon WorkDocs.
         /// </para>
         /// </summary>
         public bool EnableWorkDocs
@@ -115,7 +113,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserEnabledAsLocalAdministrator. 
         /// <para>
-        /// The WorkSpace user is an administrator on the WorkSpace.
+        /// Indicates whether the WorkSpace user is an administrator on the WorkSpace.
         /// </para>
         /// </summary>
         public bool UserEnabledAsLocalAdministrator

@@ -29,19 +29,12 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaces operation.
-    /// Obtains information about the specified WorkSpaces.
+    /// Describes the specified WorkSpaces.
     /// 
     ///  
     /// <para>
-    /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
-    /// or <code>WorkspaceIds</code>, can be specified at a time.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation supports pagination with the use of the <code>NextToken</code> request
-    /// and response parameters. If more results are available, the <code>NextToken</code>
-    /// response member contains a token that you pass in the next call to this operation
-    /// to retrieve the next set of items.
+    /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
+    /// only one filter at a time.
     /// </para>
     /// </summary>
     public partial class DescribeWorkspacesRequest : AmazonWorkSpacesRequest
@@ -56,9 +49,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that are created
-        /// from this bundle will be retrieved. This parameter cannot be combined with any other
-        /// filter parameter.
+        /// The ID of the bundle. All WorkSpaces that are created from this bundle are retrieved.
+        /// This parameter cannot be combined with any other filter.
         /// </para>
         /// </summary>
         public string BundleId
@@ -76,9 +68,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Specifies the directory identifier to which to limit the WorkSpaces. Optionally, you
-        /// can specify a specific directory user with the <code>UserName</code> parameter. This
-        /// parameter cannot be combined with any other filter parameter.
+        /// The ID of the directory. In addition, you can optionally specify a specific directory
+        /// user (see <code>UserName</code>). This parameter cannot be combined with any other
+        /// filter.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -114,8 +106,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value from a previous call to this operation. Pass null
-        /// if this is the first call.
+        /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -133,8 +124,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Used with the <code>DirectoryId</code> parameter to specify the directory user for
-        /// whom to obtain the WorkSpace.
+        /// The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.
         /// </para>
         /// </summary>
         public string UserName
@@ -152,8 +142,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceIds. 
         /// <para>
-        /// An array of strings that contain the identifiers of the WorkSpaces for which to retrieve
-        /// information. This parameter cannot be combined with any other filter parameter.
+        /// The IDs of the WorkSpaces. This parameter cannot be combined with any other filter.
         /// </para>
         ///  
         /// <para>

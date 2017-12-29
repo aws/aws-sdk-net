@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about the user storage for a WorkSpace bundle.
+    /// Information about the user storage for a WorkSpace bundle.
     /// </summary>
     public partial class UserStorage
     {
@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The amount of user storage for the bundle.
+        /// The size of the user storage.
         /// </para>
         /// </summary>
         public string Capacity

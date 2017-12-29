@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results of the <a>DescribeWorkspaceBundles</a> operation.
+    /// This is the response object from the DescribeWorkspaceBundles operation.
     /// </summary>
     public partial class DescribeWorkspaceBundlesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Bundles. 
         /// <para>
-        /// An array of structures that contain information about the bundles.
+        /// Information about the bundles.
         /// </para>
         /// </summary>
         public List<WorkspaceBundle> Bundles
@@ -56,9 +56,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to this operation to retrieve the next set of items.
-        /// This token is valid for one day and must be used within that time frame.
+        /// The token to use to retrieve the next set of results, or null if there are no more
+        /// results available. This token is valid for one day and must be used within that time
+        /// frame.
         /// </para>
         /// </summary>
         public string NextToken

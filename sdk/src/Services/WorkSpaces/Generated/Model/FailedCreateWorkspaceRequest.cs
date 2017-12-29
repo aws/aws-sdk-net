@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about a WorkSpace that could not be created.
+    /// Information about a WorkSpace that could not be created.
     /// </summary>
     public partial class FailedCreateWorkspaceRequest
     {
@@ -75,8 +75,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceRequest. 
         /// <para>
-        /// A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information
-        /// about the WorkSpace that could not be created.
+        /// Information about the WorkSpace.
         /// </para>
         /// </summary>
         public WorkspaceRequest WorkspaceRequest

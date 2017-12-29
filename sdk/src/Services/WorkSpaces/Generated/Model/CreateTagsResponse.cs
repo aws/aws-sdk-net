@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// The result of the <a>CreateTags</a> operation.
+    /// This is the response object from the CreateTags operation.
     /// </summary>
     public partial class CreateTagsResponse : AmazonWebServiceResponse
     {

@@ -28,19 +28,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the properties of a WorkSpace.
+    /// Information about a WorkSpace.
     /// </summary>
     public partial class WorkspaceProperties
     {
+        private Compute _computeTypeName;
+        private int? _rootVolumeSizeGib;
         private RunningMode _runningMode;
         private int? _runningModeAutoStopTimeoutInMinutes;
+        private int? _userVolumeSizeGib;
+
+        /// <summary>
+        /// Gets and sets the property ComputeTypeName. 
+        /// <para>
+        /// The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+        /// WorkSpaces Bundles</a>.
+        /// </para>
+        /// </summary>
+        public Compute ComputeTypeName
+        {
+            get { return this._computeTypeName; }
+            set { this._computeTypeName = value; }
+        }
+
+        // Check to see if ComputeTypeName property is set
+        internal bool IsSetComputeTypeName()
+        {
+            return this._computeTypeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootVolumeSizeGib. 
+        /// <para>
+        /// The size of the root volume.
+        /// </para>
+        /// </summary>
+        public int RootVolumeSizeGib
+        {
+            get { return this._rootVolumeSizeGib.GetValueOrDefault(); }
+            set { this._rootVolumeSizeGib = value; }
+        }
+
+        // Check to see if RootVolumeSizeGib property is set
+        internal bool IsSetRootVolumeSizeGib()
+        {
+            return this._rootVolumeSizeGib.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RunningMode. 
         /// <para>
-        /// The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop
-        /// WorkSpaces are billed by the hour and stopped when no longer being used in order to
-        /// save on costs.
+        /// The running mode. For more information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+        /// the WorkSpace Running Mode</a>.
         /// </para>
         /// </summary>
         public RunningMode RunningMode
@@ -72,6 +111,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRunningModeAutoStopTimeoutInMinutes()
         {
             return this._runningModeAutoStopTimeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserVolumeSizeGib. 
+        /// <para>
+        /// The size of the user storage.
+        /// </para>
+        /// </summary>
+        public int UserVolumeSizeGib
+        {
+            get { return this._userVolumeSizeGib.GetValueOrDefault(); }
+            set { this._userVolumeSizeGib = value; }
+        }
+
+        // Check to see if UserVolumeSizeGib property is set
+        internal bool IsSetUserVolumeSizeGib()
+        {
+            return this._userVolumeSizeGib.HasValue; 
         }
 
     }

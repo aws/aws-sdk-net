@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains the results for the <a>DescribeWorkspaces</a> operation.
+    /// This is the response object from the DescribeWorkspaces operation.
     /// </summary>
     public partial class DescribeWorkspacesResponse : AmazonWebServiceResponse
     {
@@ -38,9 +38,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to this operation to retrieve the next set of items.
-        /// This token is valid for one day and must be used within that time frame.
+        /// The token to use to retrieve the next set of results, or null if there are no more
+        /// results available. This token is valid for one day and must be used within that time
+        /// frame.
         /// </para>
         /// </summary>
         public string NextToken
@@ -58,12 +58,12 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Workspaces. 
         /// <para>
-        /// An array of structures that contain the information about the WorkSpaces.
+        /// Information about the WorkSpaces.
         /// </para>
         ///  
         /// <para>
-        /// Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information
-        /// may be incomplete for a newly-created WorkSpace.
+        /// Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned
+        /// information could be incomplete.
         /// </para>
         /// </summary>
         public List<Workspace> Workspaces

@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a tag.
+    /// Information about a WorkSpace modification.
     /// </summary>
-    public partial class Tag
+    public partial class ModificationState
     {
-        private string _key;
-        private string _value;
+        private ModificationResourceEnum _resource;
+        private ModificationStateEnum _state;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Resource. 
         /// <para>
-        /// The key of the tag.
+        /// The resource.
         /// </para>
         /// </summary>
-        public string Key
+        public ModificationResourceEnum Resource
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._resource; }
+            set { this._resource = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
         {
-            return this._key != null;
+            return this._resource != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. 
+        /// Gets and sets the property State. 
         /// <para>
-        /// The value of the tag.
+        /// The modification state.
         /// </para>
         /// </summary>
-        public string Value
+        public ModificationStateEnum State
         {
-            get { return this._value; }
-            set { this._value = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._value != null;
+            return this._state != null;
         }
 
     }

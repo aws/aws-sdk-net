@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a tag.
+    /// Information about the root volume for a WorkSpace bundle.
     /// </summary>
-    public partial class Tag
+    public partial class RootStorage
     {
-        private string _key;
-        private string _value;
+        private string _capacity;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Capacity. 
         /// <para>
-        /// The key of the tag.
+        /// The size of the root volume.
         /// </para>
         /// </summary>
-        public string Key
+        public string Capacity
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._capacity; }
+            set { this._capacity = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Capacity property is set
+        internal bool IsSetCapacity()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The value of the tag.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._capacity != null;
         }
 
     }

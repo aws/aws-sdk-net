@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Creates tags for a WorkSpace.
+    /// Creates tags for the specified WorkSpace.
     /// </summary>
     public partial class CreateTagsRequest : AmazonWorkSpacesRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID of the request.
+        /// The ID of the resource.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the request.
+        /// The tags. Each resource can have a maximum of 50 tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags

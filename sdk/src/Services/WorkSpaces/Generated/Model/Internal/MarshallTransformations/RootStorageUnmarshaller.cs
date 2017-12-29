@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkspaceProperties Object
+    /// Response Unmarshaller for RootStorage Object
     /// </summary>  
-    public class WorkspacePropertiesUnmarshaller : IUnmarshaller<WorkspaceProperties, XmlUnmarshallerContext>, IUnmarshaller<WorkspaceProperties, JsonUnmarshallerContext>
+    public class RootStorageUnmarshaller : IUnmarshaller<RootStorage, XmlUnmarshallerContext>, IUnmarshaller<RootStorage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkspaceProperties IUnmarshaller<WorkspaceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RootStorage IUnmarshaller<RootStorage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WorkspaceProperties Unmarshall(JsonUnmarshallerContext context)
+        public RootStorage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkspaceProperties unmarshalledObject = new WorkspaceProperties();
+            RootStorage unmarshalledObject = new RootStorage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComputeTypeName", targetDepth))
+                if (context.TestExpression("Capacity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputeTypeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RootVolumeSizeGib", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RootVolumeSizeGib = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RunningMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunningMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RunningModeAutoStopTimeoutInMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserVolumeSizeGib", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UserVolumeSizeGib = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkspacePropertiesUnmarshaller _instance = new WorkspacePropertiesUnmarshaller();        
+        private static RootStorageUnmarshaller _instance = new RootStorageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkspacePropertiesUnmarshaller Instance
+        public static RootStorageUnmarshaller Instance
         {
             get
             {

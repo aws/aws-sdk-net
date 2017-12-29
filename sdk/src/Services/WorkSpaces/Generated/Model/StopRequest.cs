@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the stop request.
+    /// Information used to stop a WorkSpace.
     /// </summary>
     public partial class StopRequest
     {

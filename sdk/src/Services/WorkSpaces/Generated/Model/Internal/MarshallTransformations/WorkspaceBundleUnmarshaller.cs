@@ -94,6 +94,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RootStorage", targetDepth))
+                {
+                    var unmarshaller = RootStorageUnmarshaller.Instance;
+                    unmarshalledObject.RootStorage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserStorage", targetDepth))
                 {
                     var unmarshaller = UserStorageUnmarshaller.Instance;

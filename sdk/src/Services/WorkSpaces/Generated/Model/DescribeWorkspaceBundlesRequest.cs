@@ -29,20 +29,11 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaceBundles operation.
-    /// Obtains information about the WorkSpace bundles that are available to your account
-    /// in the specified region.
+    /// Describes the available WorkSpace bundles.
     /// 
     ///  
     /// <para>
-    /// You can filter the results with either the <code>BundleIds</code> parameter, or the
-    /// <code>Owner</code> parameter, but not both.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation supports pagination with the use of the <code>NextToken</code> request
-    /// and response parameters. If more results are available, the <code>NextToken</code>
-    /// response member contains a token that you pass in the next call to this operation
-    /// to retrieve the next set of items.
+    /// You can filter the results using either bundle ID or owner, but not both.
     /// </para>
     /// </summary>
     public partial class DescribeWorkspaceBundlesRequest : AmazonWorkSpacesRequest
@@ -54,8 +45,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleIds. 
         /// <para>
-        /// An array of strings that contains the identifiers of the bundles to retrieve. This
-        /// parameter cannot be combined with any other filter parameter.
+        /// The IDs of the bundles. This parameter cannot be combined with any other filter.
         /// </para>
         /// </summary>
         public List<string> BundleIds
@@ -73,8 +63,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value from a previous call to this operation. Pass null
-        /// if this is the first call.
+        /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -92,22 +81,13 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the bundles to retrieve. This parameter cannot be combined with any other
-        /// filter parameter.
+        /// The owner of the bundles. This parameter cannot be combined with any other filter.
         /// </para>
         ///  
         /// <para>
-        /// This contains one of the following values:
+        /// Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe
+        /// the bundles that belong to your account.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// null- Retrieves the bundles that belong to the account making the call.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string Owner
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// The result of the <a>DeleteTags</a> operation.
+    /// This is the response object from the DeleteTags operation.
     /// </summary>
     public partial class DeleteTagsResponse : AmazonWebServiceResponse
     {

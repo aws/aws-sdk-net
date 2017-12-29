@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about a WorkSpace bundle.
+    /// Information about a WorkSpace bundle.
     /// </summary>
     public partial class WorkspaceBundle
     {
@@ -37,6 +37,7 @@ namespace Amazon.WorkSpaces.Model
         private string _description;
         private string _name;
         private string _owner;
+        private RootStorage _rootStorage;
         private UserStorage _userStorage;
 
         /// <summary>
@@ -60,7 +61,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ComputeType. 
         /// <para>
-        /// A <a>ComputeType</a> object that specifies the compute type for the bundle.
+        /// The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+        /// WorkSpaces Bundles</a>.
         /// </para>
         /// </summary>
         public ComputeType ComputeType
@@ -78,7 +80,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The bundle description.
+        /// A description.
         /// </para>
         /// </summary>
         public string Description
@@ -114,7 +116,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code>
+        /// The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code>
         /// if the bundle is provided by AWS.
         /// </para>
         /// </summary>
@@ -131,10 +133,27 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootStorage. 
+        /// <para>
+        /// The size of the root volume.
+        /// </para>
+        /// </summary>
+        public RootStorage RootStorage
+        {
+            get { return this._rootStorage; }
+            set { this._rootStorage = value; }
+        }
+
+        // Check to see if RootStorage property is set
+        internal bool IsSetRootStorage()
+        {
+            return this._rootStorage != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserStorage. 
         /// <para>
-        /// A <a>UserStorage</a> object that specifies the amount of user storage that the bundle
-        /// contains.
+        /// The size of the user storage.
         /// </para>
         /// </summary>
         public UserStorage UserStorage

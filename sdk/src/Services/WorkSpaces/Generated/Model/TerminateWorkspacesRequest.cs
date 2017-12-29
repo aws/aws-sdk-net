@@ -34,19 +34,18 @@ namespace Amazon.WorkSpaces.Model
     ///  
     /// <para>
     /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-    /// is not maintained and will be destroyed. If you need to archive any user data, contact
-    /// Amazon Web Services before terminating the WorkSpace.
+    /// is destroyed. If you need to archive any user data, contact Amazon Web Services before
+    /// terminating the WorkSpace.
     /// </para>
     ///  
     /// <para>
     /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// This operation is asynchronous and returns before the WorkSpaces have been completely
     /// terminated.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class TerminateWorkspacesRequest : AmazonWorkSpacesRequest
     {
@@ -55,7 +54,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property TerminateWorkspaceRequests. 
         /// <para>
-        /// An array of structures that specify the WorkSpaces to terminate.
+        /// The WorkSpaces to terminate.
         /// </para>
         /// </summary>
         public List<TerminateRequest> TerminateWorkspaceRequests

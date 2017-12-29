@@ -33,14 +33,13 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-    /// <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+    /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>,
+    /// or <code>INOPERABLE</code>.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// This operation is asynchronous and returns before the WorkSpaces have rebooted.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class RebootWorkspacesRequest : AmazonWorkSpacesRequest
     {
@@ -49,7 +48,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RebootWorkspaceRequests. 
         /// <para>
-        /// An array of structures that specify the WorkSpaces to reboot.
+        /// The WorkSpaces to reboot.
         /// </para>
         /// </summary>
         public List<RebootRequest> RebootWorkspaceRequests

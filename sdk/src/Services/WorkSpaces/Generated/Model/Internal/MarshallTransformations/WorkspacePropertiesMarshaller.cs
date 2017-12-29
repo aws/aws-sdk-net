@@ -45,6 +45,18 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkspaceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetComputeTypeName())
+            {
+                context.Writer.WritePropertyName("ComputeTypeName");
+                context.Writer.Write(requestObject.ComputeTypeName);
+            }
+
+            if(requestObject.IsSetRootVolumeSizeGib())
+            {
+                context.Writer.WritePropertyName("RootVolumeSizeGib");
+                context.Writer.Write(requestObject.RootVolumeSizeGib);
+            }
+
             if(requestObject.IsSetRunningMode())
             {
                 context.Writer.WritePropertyName("RunningMode");
@@ -55,6 +67,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RunningModeAutoStopTimeoutInMinutes");
                 context.Writer.Write(requestObject.RunningModeAutoStopTimeoutInMinutes);
+            }
+
+            if(requestObject.IsSetUserVolumeSizeGib())
+            {
+                context.Writer.WritePropertyName("UserVolumeSizeGib");
+                context.Writer.Write(requestObject.UserVolumeSizeGib);
             }
 
         }

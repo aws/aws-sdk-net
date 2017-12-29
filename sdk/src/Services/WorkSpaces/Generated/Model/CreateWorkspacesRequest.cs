@@ -31,11 +31,10 @@ namespace Amazon.WorkSpaces.Model
     /// Container for the parameters to the CreateWorkspaces operation.
     /// Creates one or more WorkSpaces.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// This operation is asynchronous and returns before the WorkSpaces are created.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateWorkspacesRequest : AmazonWorkSpacesRequest
     {
@@ -44,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Workspaces. 
         /// <para>
-        /// An array of structures that specify the WorkSpaces to create.
+        /// Information about the WorkSpaces to create.
         /// </para>
         /// </summary>
         public List<WorkspaceRequest> Workspaces

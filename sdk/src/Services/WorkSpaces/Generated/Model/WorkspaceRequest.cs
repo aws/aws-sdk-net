@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about a WorkSpace creation request.
+    /// Information used to create a WorkSpace.
     /// </summary>
     public partial class WorkspaceRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-        /// operation to obtain a list of the bundles that are available.
+        /// The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a>
+        /// to list the available bundles.
         /// </para>
         /// </summary>
         public string BundleId
@@ -63,9 +63,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the AWS Directory Service directory to create the WorkSpace in.
-        /// You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
-        /// the directories that are available.
+        /// The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+        /// <a>DescribeWorkspaceDirectories</a> to list the available directories.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -83,7 +82,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RootVolumeEncryptionEnabled. 
         /// <para>
-        /// Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+        /// Indicates whether the data stored on the root volume is encrypted.
         /// </para>
         /// </summary>
         public bool RootVolumeEncryptionEnabled
@@ -101,7 +100,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the WorkSpace request.
+        /// The tags for the WorkSpace.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -119,8 +118,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The username that the WorkSpace is assigned to. This username must exist in the AWS
-        /// Directory Service directory specified by the <code>DirectoryId</code> member.
+        /// The username of the user for the WorkSpace. This username must exist in the AWS Directory
+        /// Service directory for the WorkSpace.
         /// </para>
         /// </summary>
         public string UserName
@@ -138,7 +137,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserVolumeEncryptionEnabled. 
         /// <para>
-        /// Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+        /// Indicates whether the data stored on the user volume is encrypted.
         /// </para>
         /// </summary>
         public bool UserVolumeEncryptionEnabled
@@ -172,7 +171,10 @@ namespace Amazon.WorkSpaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WorkspaceProperties.
+        /// Gets and sets the property WorkspaceProperties. 
+        /// <para>
+        /// The WorkSpace properties.
+        /// </para>
         /// </summary>
         public WorkspaceProperties WorkspaceProperties
         {

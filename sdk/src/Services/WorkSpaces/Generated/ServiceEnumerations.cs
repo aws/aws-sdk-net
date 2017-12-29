@@ -31,9 +31,17 @@ namespace Amazon.WorkSpaces
     {
 
         /// <summary>
+        /// Constant GRAPHICS for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS = new Compute("GRAPHICS");
+        /// <summary>
         /// Constant PERFORMANCE for Compute
         /// </summary>
         public static readonly Compute PERFORMANCE = new Compute("PERFORMANCE");
+        /// <summary>
+        /// Constant POWER for Compute
+        /// </summary>
+        public static readonly Compute POWER = new Compute("POWER");
         /// <summary>
         /// Constant STANDARD for Compute
         /// </summary>
@@ -126,6 +134,110 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModificationResourceEnum.
+    /// </summary>
+    public class ModificationResourceEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPUTE_TYPE for ModificationResourceEnum
+        /// </summary>
+        public static readonly ModificationResourceEnum COMPUTE_TYPE = new ModificationResourceEnum("COMPUTE_TYPE");
+        /// <summary>
+        /// Constant ROOT_VOLUME for ModificationResourceEnum
+        /// </summary>
+        public static readonly ModificationResourceEnum ROOT_VOLUME = new ModificationResourceEnum("ROOT_VOLUME");
+        /// <summary>
+        /// Constant USER_VOLUME for ModificationResourceEnum
+        /// </summary>
+        public static readonly ModificationResourceEnum USER_VOLUME = new ModificationResourceEnum("USER_VOLUME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModificationResourceEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModificationResourceEnum FindValue(string value)
+        {
+            return FindValue<ModificationResourceEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModificationResourceEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModificationStateEnum.
+    /// </summary>
+    public class ModificationStateEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ModificationStateEnum
+        /// </summary>
+        public static readonly ModificationStateEnum UPDATE_IN_PROGRESS = new ModificationStateEnum("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_INITIATED for ModificationStateEnum
+        /// </summary>
+        public static readonly ModificationStateEnum UPDATE_INITIATED = new ModificationStateEnum("UPDATE_INITIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModificationStateEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModificationStateEnum FindValue(string value)
+        {
+            return FindValue<ModificationStateEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModificationStateEnum(string value)
         {
             return FindValue(value);
         }
@@ -356,6 +468,10 @@ namespace Amazon.WorkSpaces
         /// Constant UNHEALTHY for WorkspaceState
         /// </summary>
         public static readonly WorkspaceState UNHEALTHY = new WorkspaceState("UNHEALTHY");
+        /// <summary>
+        /// Constant UPDATING for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState UPDATING = new WorkspaceState("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

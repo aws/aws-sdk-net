@@ -139,7 +139,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DnsIpAddresses. 
         /// <para>
-        /// An array of strings that contains the IP addresses of the DNS servers for the directory.
+        /// The IP addresses of the DNS servers for the directory.
         /// </para>
         /// </summary>
         public List<string> DnsIpAddresses
@@ -213,7 +213,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// An array of strings that contains the identifiers of the subnets used with the directory.
+        /// The identifiers of the subnets used with the directory.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -231,8 +231,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceCreationProperties. 
         /// <para>
-        /// A structure that specifies the default creation properties for all WorkSpaces in the
-        /// directory.
+        /// The default creation properties for all WorkSpaces in the directory.
         /// </para>
         /// </summary>
         public DefaultWorkspaceCreationProperties WorkspaceCreationProperties

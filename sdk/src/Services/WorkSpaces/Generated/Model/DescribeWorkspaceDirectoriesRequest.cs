@@ -29,16 +29,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspaceDirectories operation.
-    /// Retrieves information about the AWS Directory Service directories in the region that
-    /// are registered with Amazon WorkSpaces and are available to your account.
-    /// 
-    ///  
-    /// <para>
-    /// This operation supports pagination with the use of the <code>NextToken</code> request
-    /// and response parameters. If more results are available, the <code>NextToken</code>
-    /// response member contains a token that you pass in the next call to this operation
-    /// to retrieve the next set of items.
-    /// </para>
+    /// Describes the available AWS Directory Service directories that are registered with
+    /// Amazon WorkSpaces.
     /// </summary>
     public partial class DescribeWorkspaceDirectoriesRequest : AmazonWorkSpacesRequest
     {
@@ -48,8 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryIds. 
         /// <para>
-        /// An array of strings that contains the directory identifiers to retrieve information
-        /// for. If this member is null, all directories are retrieved.
+        /// The identifiers of the directories. If the value is null, all directories are retrieved.
         /// </para>
         /// </summary>
         public List<string> DirectoryIds
@@ -67,8 +58,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value from a previous call to this operation. Pass null
-        /// if this is the first call.
+        /// The token for the next set of results. (You received this token from a previous call.)
         /// </para>
         /// </summary>
         public string NextToken

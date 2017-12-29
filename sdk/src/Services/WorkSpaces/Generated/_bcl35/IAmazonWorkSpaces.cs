@@ -31,7 +31,8 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This reference provides detailed information about the Amazon WorkSpaces operations.
+    /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
+    /// desktops for your users.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
@@ -42,7 +43,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Creates tags for a WorkSpace.
+        /// Creates tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
@@ -93,11 +94,10 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Creates one or more WorkSpaces.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// 
@@ -143,7 +143,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Deletes tags from a WorkSpace.
+        /// Deletes the specified tags from a WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -189,7 +189,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes tags for a WorkSpace.
+        /// Describes the tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -232,20 +232,11 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the WorkSpace bundles that are available to your account
-        /// in the specified region.
+        /// Describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
-        /// You can filter the results with either the <code>BundleIds</code> parameter, or the
-        /// <code>Owner</code> parameter, but not both.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using either bundle ID or owner, but not both.
         /// </para>
         /// </summary>
         /// 
@@ -257,20 +248,11 @@ namespace Amazon.WorkSpaces
         DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles();
 
         /// <summary>
-        /// Obtains information about the WorkSpace bundles that are available to your account
-        /// in the specified region.
+        /// Describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
-        /// You can filter the results with either the <code>BundleIds</code> parameter, or the
-        /// <code>Owner</code> parameter, but not both.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using either bundle ID or owner, but not both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceBundles service method.</param>
@@ -314,16 +296,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves information about the AWS Directory Service directories in the region that
-        /// are registered with Amazon WorkSpaces and are available to your account.
-        /// 
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
-        /// </para>
+        /// Describes the available AWS Directory Service directories that are registered with
+        /// Amazon WorkSpaces.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeWorkspaceDirectories service method, as returned by WorkSpaces.</returns>
@@ -334,16 +308,8 @@ namespace Amazon.WorkSpaces
         DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories();
 
         /// <summary>
-        /// Retrieves information about the AWS Directory Service directories in the region that
-        /// are registered with Amazon WorkSpaces and are available to your account.
-        /// 
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
-        /// </para>
+        /// Describes the available AWS Directory Service directories that are registered with
+        /// Amazon WorkSpaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceDirectories service method.</param>
         /// 
@@ -386,19 +352,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces.
+        /// Describes the specified WorkSpaces.
         /// 
         ///  
         /// <para>
-        /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
-        /// or <code>WorkspaceIds</code>, can be specified at a time.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
+        /// only one filter at a time.
         /// </para>
         /// </summary>
         /// 
@@ -413,19 +372,12 @@ namespace Amazon.WorkSpaces
         DescribeWorkspacesResponse DescribeWorkspaces();
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces.
+        /// Describes the specified WorkSpaces.
         /// 
         ///  
         /// <para>
-        /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
-        /// or <code>WorkspaceIds</code>, can be specified at a time.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
+        /// only one filter at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaces service method.</param>
@@ -472,7 +424,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the connection status of a specified WorkSpace.
+        /// Describes the connection status of the specified WorkSpaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus service method.</param>
         /// 
@@ -515,7 +467,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the WorkSpace properties, including the running mode and AutoStop time.
+        /// Modifies the specified WorkSpace properties.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -582,14 +534,13 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-        /// <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>,
+        /// or <code>INOPERABLE</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have rebooted.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootWorkspaces service method.</param>
         /// 
@@ -633,33 +584,19 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
+        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Rebuilding a WorkSpace is a potentially destructive action that can result in the
-        /// loss of data. Rebuilding a WorkSpace causes the following to occur:
+        /// loss of data. For more information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+        /// a WorkSpace</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The system is restored to the image of the bundle that the WorkSpace is created from.
-        /// Any applications that have been installed, or system settings that have been made
-        /// since the WorkSpace was created will be lost.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The data drive (D drive) is re-created from the last automatic snapshot taken of the
-        /// data drive. The current contents of the data drive are overwritten. Automatic snapshots
-        /// of the data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-        /// old.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>
-        /// or <code>ERROR</code>.
-        /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
         /// rebuilt.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebuildWorkspaces service method.</param>
         /// 
@@ -699,8 +636,13 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
-        /// and a state of STOPPED.
+        /// Starts the specified WorkSpaces.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code>
+        /// and a state of <code>STOPPED</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
         /// 
@@ -740,8 +682,14 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
-        /// and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+        /// Stops the specified WorkSpaces.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code>
+        /// and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>,
+        /// or <code>ERROR</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
         /// 
@@ -786,19 +734,18 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is not maintained and will be destroyed. If you need to archive any user data, contact
-        /// Amazon Web Services before terminating the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact Amazon Web Services before
+        /// terminating the WorkSpace.
         /// </para>
         ///  
         /// <para>
         /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
         /// terminated.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
         /// 

@@ -40,8 +40,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ConnectionState. 
         /// <para>
-        /// The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped
-        /// state.
+        /// The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
+        /// is stopped.
         /// </para>
         /// </summary>
         public ConnectionState ConnectionState

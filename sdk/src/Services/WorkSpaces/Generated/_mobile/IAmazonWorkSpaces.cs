@@ -33,7 +33,8 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This reference provides detailed information about the Amazon WorkSpaces operations.
+    /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
+    /// desktops for your users.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
@@ -111,20 +112,11 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the WorkSpace bundles that are available to your account
-        /// in the specified region.
+        /// Describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
-        /// You can filter the results with either the <code>BundleIds</code> parameter, or the
-        /// <code>Owner</code> parameter, but not both.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using either bundle ID or owner, but not both.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -156,16 +148,8 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Retrieves information about the AWS Directory Service directories in the region that
-        /// are registered with Amazon WorkSpaces and are available to your account.
-        /// 
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
-        /// </para>
+        /// Describes the available AWS Directory Service directories that are registered with
+        /// Amazon WorkSpaces.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -196,19 +180,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces.
+        /// Describes the specified WorkSpaces.
         /// 
         ///  
         /// <para>
-        /// Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>,
-        /// or <code>WorkspaceIds</code>, can be specified at a time.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>NextToken</code>
-        /// response member contains a token that you pass in the next call to this operation
-        /// to retrieve the next set of items.
+        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
+        /// only one filter at a time.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

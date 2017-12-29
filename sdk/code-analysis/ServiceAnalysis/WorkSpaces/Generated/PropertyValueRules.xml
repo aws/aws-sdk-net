@@ -99,6 +99,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RootStorage.Capacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.StartRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>

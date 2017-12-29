@@ -29,8 +29,14 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StopWorkspaces operation.
-    /// Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
-    /// and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+    /// Stops the specified WorkSpaces.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code>
+    /// and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>,
+    /// or <code>ERROR</code>.
+    /// </para>
     /// </summary>
     public partial class StopWorkspacesRequest : AmazonWorkSpacesRequest
     {
@@ -39,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property StopWorkspaceRequests. 
         /// <para>
-        /// The requests.
+        /// The WorkSpaces to stop.
         /// </para>
         /// </summary>
         public List<StopRequest> StopWorkspaceRequests
