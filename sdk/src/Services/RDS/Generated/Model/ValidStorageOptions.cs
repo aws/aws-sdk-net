@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IopsToStorageRatio. 
         /// <para>
-        /// The valid range of Provisioned IOPS to gigabytes of storage multiplier. For example,
+        /// The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example,
         /// 3-10, which means that provisioned IOPS can be between 3 and 10 times storage. 
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageSize. 
         /// <para>
-        /// The valid range of storage in gigabytes. For example, 100 to 6144. 
+        /// The valid range of storage in gibibytes. For example, 100 to 16384. 
         /// </para>
         /// </summary>
         public List<Range> StorageSize

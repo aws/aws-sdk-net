@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size specified in gigabytes.
+        /// Specifies the allocated storage size specified in gibibytes.
         /// </para>
         /// </summary>
         public int AllocatedStorage

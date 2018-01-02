@@ -462,7 +462,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
+        ///  Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set
+        /// to aurora-postgresql. 
         /// </para>
         /// </summary>
         public int Port

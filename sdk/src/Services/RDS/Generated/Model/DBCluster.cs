@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
-        /// the allocated storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code>
+        /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
         /// always returns 1, because Aurora DB cluster storage size is not fixed, but instead
         /// automatically adjusts as needed.
         /// </para>
