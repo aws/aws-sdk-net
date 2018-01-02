@@ -1,3 +1,7 @@
+### 3.3.215.1 (2018-01-02 21:36 UTC)
+* RDS (3.3.18.1)
+	* Documentation updates for rds
+
 ### 3.3.215.0 (2017-12-29 17:27 UTC)
 * WorkSpaces (3.3.1.0)
 	* Modify WorkSpaces have been updated with flexible storage and switching of hardware bundles feature. The following configurations have been added to ModifyWorkSpacesProperties: storage and compute. This update provides the capability to configure the storage of a WorkSpace. It also adds the capability of switching hardware bundle of a WorkSpace by specifying an eligible compute (Value, Standard, Performance, Power).
