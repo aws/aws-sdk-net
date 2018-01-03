@@ -24,11 +24,18 @@ namespace SDKDocGenerator
             {"SimpleSystemsManagement", "SSM"},
         };
 
-        private static Dictionary<string, string> fixedupNameDictionary = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-        private static string Fixup(string name)
+        // Where possible we use a fully namespaced name as key to avoid confusing same-named
+        // shapes from different services that may or may not differ in casing only, eg
+        // HttpHeader in CognitoIdentityProvider vs HTTPHeader in WAF/WAFRegional. We also use
+        // case sensitive comparison in the unlikely event a service introduces shapes with
+        // the same name differing only in case.
+        private static readonly Dictionary<string, string> FixedupNameDictionary = new Dictionary<string, string>(StringComparer.Ordinal);
+
+        private static string Fixup(string name, TypeWrapper type = null)
         {
-            string fixedUpName;
-            if (fixedupNameDictionary.TryGetValue(name, out fixedUpName))
+            var lookupKey = type == null ? name : string.Concat(type.Namespace, ".", name);
+
+            if (FixedupNameDictionary.TryGetValue(lookupKey, out var fixedUpName))
             {
                 return fixedUpName;
             }
@@ -55,7 +62,7 @@ namespace SDKDocGenerator
                 throw new ApplicationException(string.Format("Filename: {0} is too long", fixedUpName));
             }
 
-            fixedupNameDictionary[name] = fixedUpName;
+            FixedupNameDictionary[lookupKey] = fixedUpName;
             return fixedUpName;
         }
 
@@ -66,7 +73,7 @@ namespace SDKDocGenerator
             {
                 if (sb.Length > 0)
                     sb.Append("_");
-                sb.AppendFormat("{0}", Fixup(parameter.ParameterType.GetDisplayName(false)));
+                sb.AppendFormat("{0}", Fixup(parameter.ParameterType.GetDisplayName(false), parameter.ParameterType));
             }
 
             return sb.ToString();
@@ -74,32 +81,32 @@ namespace SDKDocGenerator
 
         public static string GenerateFilename(TypeWrapper type)
         {
-            return Fixup(string.Format("T_{0}", type.Name)) + ".html";
+            return Fixup(string.Format("T_{0}", type.Name), type) + ".html";
         }
 
         public static string GenerateFilename(PropertyInfoWrapper info)
         {
-            return Fixup(string.Format("P_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("P_{0}_{1}", info.DeclaringType.Name, info.Name), info.DeclaringType) + ".html";
         }
 
         public static string GenerateFilename(MethodInfoWrapper info)
         {
-            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
+            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters())), info.DeclaringType) + ".html";
         }
 
         public static string GenerateFilename(ConstructorInfoWrapper info)
         {
-            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters()))) + ".html";
+            return Fixup(string.Format("M_{0}_{1}_{2}", info.DeclaringType.Name, info.Name, GenerateParametersTail(info.GetParameters())), info.DeclaringType) + ".html";
         }
 
         public static string GenerateFilename(FieldInfoWrapper info)
         {
-            return Fixup(string.Format("F_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("F_{0}_{1}", info.DeclaringType.Name, info.Name), info.DeclaringType) + ".html";
         }
 
         public static string GenerateFilename(EventInfoWrapper info)
         {
-            return Fixup(string.Format("E_{0}_{1}", info.DeclaringType.Name, info.Name)) + ".html";
+            return Fixup(string.Format("E_{0}_{1}", info.DeclaringType.Name, info.Name), info.DeclaringType) + ".html";
         }
 
         public static string GenerateNamespaceFilename(string namespaceName)
