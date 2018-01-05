@@ -49,7 +49,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property AddressId. 
         /// <para>
-        /// The ID for the address that you want the cluster shipped to.&gt;
+        /// The ID for the address that you want the cluster shipped to.
         /// </para>
         /// </summary>
         public string AddressId

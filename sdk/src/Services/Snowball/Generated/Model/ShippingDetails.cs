@@ -41,7 +41,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property InboundShipment. 
         /// <para>
         /// The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being
-        /// delivered to the address that you specified for a particular job.
+        /// returned to AWS for a particular job.
         /// </para>
         /// </summary>
         public Shipment InboundShipment
@@ -60,7 +60,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property OutboundShipment. 
         /// <para>
         /// The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being
-        /// returned to AWS for a particular job.
+        /// delivered to the address that you specified for a particular job.
         /// </para>
         /// </summary>
         public Shipment OutboundShipment
