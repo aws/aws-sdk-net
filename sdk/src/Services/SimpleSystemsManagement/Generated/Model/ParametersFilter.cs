@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// One or more filters. Use a filter to return a more specific list of results.
+    /// This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.
     /// </summary>
     public partial class ParametersFilter
     {

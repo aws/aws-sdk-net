@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    /// Each resource can have a maximum of 10 tags. 
+    /// Each resource can have a maximum of 50 tags. 
     /// </para>
     ///  
     /// <para>

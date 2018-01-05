@@ -31,6 +31,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the UpdatePatchBaseline operation.
     /// Modifies an existing patch baseline. Fields not specified in the request are left
     /// unchanged.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For information about valid key and value pairs in <code>PatchFilters</code> for each
+    /// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdatePatchBaselineRequest : AmazonSimpleSystemsManagementRequest
     {
