@@ -34,8 +34,8 @@ namespace SDKDocGenerator
         private static string Fixup(string name, TypeWrapper type = null)
         {
             var lookupKey = type == null ? name : string.Concat(type.Namespace, ".", name);
-
-            if (FixedupNameDictionary.TryGetValue(lookupKey, out var fixedUpName))
+            string fixedUpName;
+            if (FixedupNameDictionary.TryGetValue(lookupKey, out fixedUpName))
             {
                 return fixedUpName;
             }
