@@ -34,9 +34,11 @@ namespace Amazon.Inspector.Model
     public partial class AssessmentTemplate
     {
         private string _arn;
+        private int? _assessmentRunCount;
         private string _assessmentTargetArn;
         private DateTime? _createdAt;
         private int? _durationInSeconds;
+        private string _lastAssessmentRunArn;
         private string _name;
         private List<string> _rulesPackageArns = new List<string>();
         private List<Attribute> _userAttributesForFindings = new List<Attribute>();
@@ -57,6 +59,25 @@ namespace Amazon.Inspector.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssessmentRunCount. 
+        /// <para>
+        /// The number of existing assessment runs associated with this assessment template. This
+        /// value can be zero or a positive integer.
+        /// </para>
+        /// </summary>
+        public int AssessmentRunCount
+        {
+            get { return this._assessmentRunCount.GetValueOrDefault(); }
+            set { this._assessmentRunCount = value; }
+        }
+
+        // Check to see if AssessmentRunCount property is set
+        internal bool IsSetAssessmentRunCount()
+        {
+            return this._assessmentRunCount.HasValue; 
         }
 
         /// <summary>
@@ -112,6 +133,26 @@ namespace Amazon.Inspector.Model
         internal bool IsSetDurationInSeconds()
         {
             return this._durationInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastAssessmentRunArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the most recent assessment run associated with this
+        /// assessment template. This value exists only when the value of assessmentRunCount is
+        /// greater than zero.
+        /// </para>
+        /// </summary>
+        public string LastAssessmentRunArn
+        {
+            get { return this._lastAssessmentRunArn; }
+            set { this._lastAssessmentRunArn = value; }
+        }
+
+        // Check to see if LastAssessmentRunArn property is set
+        internal bool IsSetLastAssessmentRunArn()
+        {
+            return this._lastAssessmentRunArn != null;
         }
 
         /// <summary>

@@ -390,6 +390,11 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.AssessmentTemplate.LastAssessmentRunArn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.AssessmentTemplate.Name</property>
     <min>1</min>
     <max>140</max>
