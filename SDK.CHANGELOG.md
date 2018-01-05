@@ -1,3 +1,11 @@
+### 3.3.216.0 (2018-01-05 21:41 UTC)
+* Inspector (3.3.4.0)
+	* Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
+* SimpleSystemsManagement (3.3.15.1)
+	* Documentation updates for ssm
+* Snowball (3.3.2.10)
+	* Documentation updates for snowball
+
 ### 3.3.215.1 (2018-01-02 21:36 UTC)
 * RDS (3.3.18.1)
 	* Documentation updates for rds

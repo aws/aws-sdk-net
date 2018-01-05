@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.215.1",
+    "ProductVersion" : "3.3.216.0",
     "CoreVersion"    : "3.3.21.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.15.0",
+            "Version" : "3.3.15.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -457,7 +457,7 @@
             "InPreview"               : false
         },
         "Inspector"                       : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -585,7 +585,7 @@
             "InPreview"               : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.2.9",
+            "Version" : "3.3.2.10",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
