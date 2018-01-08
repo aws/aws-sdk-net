@@ -95,8 +95,8 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Your AWS account must be granted access to Application Discovery Service, a process
     /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, sign up for AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
-    /// We send you information about how to get started.
+    /// request access, <a href="http://aws.amazon.com/application-discovery/how-to-start/">
+    /// sign up for AWS Application Discovery Service</a>.
     /// </para>
     ///  
     /// <para>

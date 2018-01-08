@@ -33,7 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// 
     ///  
     /// <para>
-    ///  If you specify <code>agentId</code> in a filter, the task exports up to 72 hours
+    ///  If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours
     /// of detailed data collected by the identified Application Discovery Agent, including
     /// network, process, and performance details. A time range for exported agent data may
     /// be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed
@@ -41,7 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </para>
     ///  
     /// <para>
-    ///  If you do not include an <code>agentId</code> filter, summary data is exported that
+    ///  If you do not include an <code>agentIds</code> filter, summary data is exported that
     /// includes both AWS Agentless Discovery Connector data and summary data from AWS Discovery
     /// Agents. Export of summary data is limited to two exports per day. 
     /// </para>
@@ -76,7 +76,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportDataFormat. 
         /// <para>
-        /// The file format for the returned export data. Default value is <code>CSV</code>.
+        /// The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b>
+        /// <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> 
         /// </para>
         /// </summary>
         public List<string> ExportDataFormat
