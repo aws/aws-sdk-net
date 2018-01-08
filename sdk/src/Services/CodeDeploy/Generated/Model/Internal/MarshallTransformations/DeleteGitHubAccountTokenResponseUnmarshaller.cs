@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RemoveTagsFromOnPremisesInstances operation
+    /// Response Unmarshaller for DeleteGitHubAccountToken operation
     /// </summary>  
-    public class RemoveTagsFromOnPremisesInstancesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteGitHubAccountTokenResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RemoveTagsFromOnPremisesInstancesResponse response = new RemoveTagsFromOnPremisesInstancesResponse();
+            DeleteGitHubAccountTokenResponse response = new DeleteGitHubAccountTokenResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("tokenName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TokenName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,40 +72,32 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceLimitExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("GitHubAccountTokenDoesNotExistException"))
             {
-                return new InstanceLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new GitHubAccountTokenDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNameRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("GitHubAccountTokenNameRequiredException"))
             {
-                return new InstanceNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new GitHubAccountTokenNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InstanceNotRegisteredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGitHubAccountTokenNameException"))
             {
-                return new InstanceNotRegisteredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidGitHubAccountTokenNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInstanceNameException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
             {
-                return new InvalidInstanceNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new OperationNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceValidationException"))
             {
-                return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TagLimitExceededException"))
-            {
-                return new TagLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TagRequiredException"))
-            {
-                return new TagRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RemoveTagsFromOnPremisesInstancesResponseUnmarshaller _instance = new RemoveTagsFromOnPremisesInstancesResponseUnmarshaller();        
+        private static DeleteGitHubAccountTokenResponseUnmarshaller _instance = new DeleteGitHubAccountTokenResponseUnmarshaller();        
 
-        internal static RemoveTagsFromOnPremisesInstancesResponseUnmarshaller GetInstance()
+        internal static DeleteGitHubAccountTokenResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +105,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RemoveTagsFromOnPremisesInstancesResponseUnmarshaller Instance
+        public static DeleteGitHubAccountTokenResponseUnmarshaller Instance
         {
             get
             {

@@ -804,6 +804,38 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  DeleteGitHubAccountToken
+
+        internal virtual DeleteGitHubAccountTokenResponse DeleteGitHubAccountToken(DeleteGitHubAccountTokenRequest request)
+        {
+            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGitHubAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGitHubAccountToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">REST API Reference for DeleteGitHubAccountToken Operation</seealso>
+        public virtual Task<DeleteGitHubAccountTokenResponse> DeleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterOnPremisesInstance
 
         internal virtual DeregisterOnPremisesInstanceResponse DeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request)

@@ -337,6 +337,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceNotRegisteredException">
         /// The specified on-premises instance is not registered.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
+        /// The specified on-premises instance name was specified in an invalid format.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
         /// </exception>
@@ -1313,6 +1316,60 @@ namespace Amazon.CodeDeploy
             var unmarshaller = DeleteDeploymentGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDeploymentGroupRequest,DeleteDeploymentGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGitHubAccountToken
+
+
+        /// <summary>
+        /// Deletes a GitHub account connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGitHubAccountToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGitHubAccountToken service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.GitHubAccountTokenDoesNotExistException">
+        /// No GitHub account connection exists with the named specified in the call.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.GitHubAccountTokenNameRequiredException">
+        /// The call is missing a required GitHub account connection name.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidGitHubAccountTokenNameException">
+        /// The format of the specified GitHub account connection name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.OperationNotSupportedException">
+        /// The API used does not support the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ResourceValidationException">
+        /// The specified resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">REST API Reference for DeleteGitHubAccountToken Operation</seealso>
+        public virtual DeleteGitHubAccountTokenResponse DeleteGitHubAccountToken(DeleteGitHubAccountTokenRequest request)
+        {
+            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGitHubAccountToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGitHubAccountToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">REST API Reference for DeleteGitHubAccountToken Operation</seealso>
+        public virtual Task<DeleteGitHubAccountTokenResponse> DeleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2448,6 +2505,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceNotRegisteredException">
         /// The specified on-premises instance is not registered.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
+        /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
