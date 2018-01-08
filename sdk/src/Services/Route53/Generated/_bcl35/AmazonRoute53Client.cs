@@ -1519,6 +1519,17 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyTrafficPolicyVersionsForCurrentPolicyException">
+        /// This traffic policy version can't be created because you've reached the limit of 1000
+        /// on the number of versions that you can create for the current traffic policy.
+        /// 
+        ///  
+        /// <para>
+        /// To create more traffic policy versions, you can use <a>GetTrafficPolicy</a> to get
+        /// the traffic policy document for a specified traffic policy version, and then use <a>CreateTrafficPolicy</a>
+        /// to create a new traffic policy using the traffic policy document.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         public virtual CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
         {

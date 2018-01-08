@@ -106,6 +106,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 return new NoSuchTrafficPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTrafficPolicyVersionsForCurrentPolicy"))
+            {
+                return new TooManyTrafficPolicyVersionsForCurrentPolicyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
