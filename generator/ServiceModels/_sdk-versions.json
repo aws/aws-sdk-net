@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.218.0",
+    "ProductVersion" : "3.3.218.1",
     "CoreVersion"    : "3.3.21.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -249,7 +249,7 @@
             "InPreview"               : false
         },
         "KeyManagementService" : {
-            "Version" : "3.3.4.1",
+            "Version" : "3.3.4.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
