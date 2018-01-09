@@ -37,7 +37,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// A policy document in JSON format.
+        /// A key policy document in JSON format.
         /// </para>
         /// </summary>
         public string Policy

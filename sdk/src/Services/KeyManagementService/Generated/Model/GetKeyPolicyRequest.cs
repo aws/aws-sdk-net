@@ -79,8 +79,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Specifies the name of the policy. The only valid name is <code>default</code>. To
-        /// get the names of key policies, use <a>ListKeyPolicies</a>.
+        /// Specifies the name of the key policy. The only valid name is <code>default</code>.
+        /// To get the names of key policies, use <a>ListKeyPolicies</a>.
         /// </para>
         /// </summary>
         public string PolicyName

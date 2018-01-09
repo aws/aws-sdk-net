@@ -58,7 +58,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyNames. 
         /// <para>
-        /// A list of policy names. Currently, there is only one policy and it is named "Default".
+        /// A list of key policy names. Currently, there is only one key policy per CMK and it
+        /// is always named <code>default</code>.
         /// </para>
         /// </summary>
         public List<string> PolicyNames
