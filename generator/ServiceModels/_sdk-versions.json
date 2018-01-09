@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.216.0",
+    "ProductVersion" : "3.3.217.0",
     "CoreVersion"    : "3.3.21.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -93,7 +93,7 @@
             "InPreview"               : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -297,7 +297,7 @@
             "InPreview"               : false
         },
         "Route53"              : {
-            "Version" : "3.3.12.0",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -545,7 +545,7 @@
             "InPreview"               : false
         },
         "ApplicationDiscoveryService"     : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.3.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
