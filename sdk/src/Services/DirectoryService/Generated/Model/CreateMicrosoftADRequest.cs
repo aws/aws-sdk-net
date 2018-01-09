@@ -42,6 +42,7 @@ namespace Amazon.DirectoryService.Model
     public partial class CreateMicrosoftADRequest : AmazonDirectoryServiceRequest
     {
         private string _description;
+        private DirectoryEdition _edition;
         private string _name;
         private string _password;
         private string _shortName;
@@ -64,6 +65,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Edition. 
+        /// <para>
+        /// AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise
+        /// is the default.
+        /// </para>
+        /// </summary>
+        public DirectoryEdition Edition
+        {
+            get { return this._edition; }
+            set { this._edition = value; }
+        }
+
+        // Check to see if Edition property is set
+        internal bool IsSetEdition()
+        {
+            return this._edition != null;
         }
 
         /// <summary>

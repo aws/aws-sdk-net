@@ -39,6 +39,7 @@ namespace Amazon.DirectoryService.Model
         private int? _desiredNumberOfDomainControllers;
         private string _directoryId;
         private List<string> _dnsIpAddrs = new List<string>();
+        private DirectoryEdition _edition;
         private DateTime? _launchTime;
         private string _name;
         private RadiusSettings _radiusSettings;
@@ -185,6 +186,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDnsIpAddrs()
         {
             return this._dnsIpAddrs != null && this._dnsIpAddrs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Edition. 
+        /// <para>
+        /// The edition associated with this directory.
+        /// </para>
+        /// </summary>
+        public DirectoryEdition Edition
+        {
+            get { return this._edition; }
+            set { this._edition = value; }
+        }
+
+        // Check to see if Edition property is set
+        internal bool IsSetEdition()
+        {
+            return this._edition != null;
         }
 
         /// <summary>

@@ -106,6 +106,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Edition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Edition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LaunchTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

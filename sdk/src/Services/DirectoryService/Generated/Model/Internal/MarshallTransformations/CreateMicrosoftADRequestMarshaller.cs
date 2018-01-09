@@ -73,6 +73,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEdition())
+                {
+                    context.Writer.WritePropertyName("Edition");
+                    context.Writer.Write(publicRequest.Edition);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
