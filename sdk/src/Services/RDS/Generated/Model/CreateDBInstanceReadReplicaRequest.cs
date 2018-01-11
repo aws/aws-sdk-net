@@ -31,28 +31,25 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
     /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
     /// You can create a Read Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+    /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
     /// 
-    /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
     /// action to create a DB instance for an Aurora DB cluster. 
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
-    /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
-    /// All other DB instance attributes (including DB security groups and DB parameter groups)
-    /// are inherited from the source DB instance, except as specified below. 
+    /// All Read Replica DB instances are created with backups disabled. All other DB instance
+    /// attributes (including DB security groups and DB parameter groups) are inherited from
+    /// the source DB instance, except as specified below. 
     /// </para>
     ///  <important> 
     /// <para>
-    /// The source DB instance must have backup retention enabled. 
+    /// Your source DB instance must have backup retention enabled. 
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-    /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDBInstanceReadReplicaRequest : AmazonRDSRequest
     {
@@ -68,6 +65,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
+        private bool? _multiAZ;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
         private int? _port;
@@ -429,6 +427,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMonitoringRoleArn()
         {
             return this._monitoringRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// Specifies whether the read replica is in a Multi-AZ deployment. 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

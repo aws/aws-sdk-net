@@ -1281,28 +1281,25 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
         /// You can create a Read Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
         /// 
-        /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
         /// action to create a DB instance for an Aurora DB cluster. 
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
-        /// All other DB instance attributes (including DB security groups and DB parameter groups)
-        /// are inherited from the source DB instance, except as specified below. 
+        /// All Read Replica DB instances are created with backups disabled. All other DB instance
+        /// attributes (including DB security groups and DB parameter groups) are inherited from
+        /// the source DB instance, except as specified below. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// The source DB instance must have backup retention enabled. 
+        /// Your source DB instance must have backup retention enabled. 
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
-        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
@@ -6104,7 +6101,13 @@ namespace Amazon.RDS
         /// <summary>
         /// Starts a DB instance that was stopped using the AWS console, the stop-db-instance
         /// AWS CLI command, or the StopDBInstance action. For more information, see Stopping
-        /// and Starting a DB instance in the AWS RDS user guide.
+        /// and Starting a DB instance in the AWS RDS user guide. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBInstance service method.</param>
         /// 
@@ -6189,7 +6192,13 @@ namespace Amazon.RDS
         /// metadata, including its endpoint, DB parameter group, and option group membership.
         /// Amazon RDS also retains the transaction logs so you can do a point-in-time restore
         /// if necessary. For more information, see Stopping and Starting a DB instance in the
-        /// AWS RDS user guide.
+        /// AWS RDS user guide. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDBInstance service method.</param>
         /// 

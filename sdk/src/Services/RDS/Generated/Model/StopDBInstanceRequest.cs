@@ -33,7 +33,13 @@ namespace Amazon.RDS.Model
     /// metadata, including its endpoint, DB parameter group, and option group membership.
     /// Amazon RDS also retains the transaction logs so you can do a point-in-time restore
     /// if necessary. For more information, see Stopping and Starting a DB instance in the
-    /// AWS RDS user guide.
+    /// AWS RDS user guide. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class StopDBInstanceRequest : AmazonRDSRequest
     {
