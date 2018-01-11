@@ -6598,17 +6598,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
-        /// A hierarchy can have a maximum of five levels. For example:
-        /// 
-        ///  
-        /// <para>
-        /// /Finance/Prod/IAD/OS/WinServ2016/license15
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a>. 
-        /// </para>
+        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+        /// with Systems Manager Parameters</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
         /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
