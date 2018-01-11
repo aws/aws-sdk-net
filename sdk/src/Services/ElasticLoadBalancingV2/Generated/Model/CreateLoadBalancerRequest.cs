@@ -45,15 +45,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </para>
     ///  
     /// <para>
-    /// For limit information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+    /// You can create up to 20 load balancers per region per account. You can request an
+    /// increase for the number of load balancers for your account. For more information,
+    /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
     /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
     /// and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
     /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation is idempotent, which means that it completes at most one time. If you
-    /// attempt to create multiple load balancers with the same settings, each call succeeds.
     /// </para>
     ///  
     /// <para>
@@ -177,13 +174,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// [Application Load Balancers] You must specify subnets from at least two Availability
-        /// Zones. You cannot specify Elastic IP addresses for your subnets.
+        /// [Network Load Balancers] You can specify one Elastic IP address per subnet.
         /// </para>
         ///  
         /// <para>
-        /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
-        /// You can specify one Elastic IP address per subnet.
+        /// [Application Load Balancers] You cannot specify Elastic IP addresses for your subnets.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings
@@ -208,10 +203,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [Application Load Balancers] You must specify subnets from at least two Availability
         /// Zones.
-        /// </para>
-        ///  
-        /// <para>
-        /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
         /// </para>
         /// </summary>
         public List<string> Subnets

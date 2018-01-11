@@ -70,7 +70,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify Elastic IP addresses for your subnets.
+        /// The load balancer is allocated one static IP address per subnet. You cannot specify
+        /// your own Elastic IP addresses.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings

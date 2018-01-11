@@ -86,14 +86,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// targets-per-application-load-balancer
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// targets-per-availability-zone-per-network-load-balancer
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// targets-per-network-load-balancer
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Name
