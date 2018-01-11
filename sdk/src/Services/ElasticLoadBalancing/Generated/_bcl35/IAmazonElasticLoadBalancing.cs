@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancing
     ///
     /// Elastic Load Balancing 
     /// <para>
-    /// A load balancer distributes incoming traffic across your EC2 instances. This enables
+    /// A load balancer can distribute incoming traffic across your EC2 instances. This enables
     /// you to increase the availability of your application. The load balancer also monitors
     /// the health of its registered instances and ensures that it routes traffic only to
     /// healthy instances. You configure your load balancer to accept incoming traffic by
@@ -41,20 +41,15 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     ///  
     /// <para>
-    /// Elastic Load Balancing supports two types of load balancers: Classic Load Balancers
-    /// and Application Load Balancers (new). A Classic Load Balancer makes routing and load
-    /// balancing decisions either at the transport layer (TCP/SSL) or the application layer
-    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer
-    /// makes routing and load balancing decisions at the application layer (HTTP/HTTPS),
-    /// supports path-based routing, and can route requests to one or more ports on each EC2
-    /// instance or container instance in your virtual private cloud (VPC). For more information,
-    /// see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic
+    /// Elastic Load Balancing supports three types of load balancers: Application Load Balancers,
+    /// Network Load Balancers, and Classic Load Balancers. You can select a load balancer
+    /// based on your application needs. For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
     /// Load Balancing User Guide</a>.
     /// </para>
     ///  
     /// <para>
     /// This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The
-    /// 2015-12-01 API supports Application Load Balancers.
+    /// 2015-12-01 API supports Application Load Balancers and Network Load Balancers.
     /// </para>
     ///  
     /// <para>
@@ -500,6 +495,9 @@ namespace Amazon.ElasticLoadBalancing
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSubnetException">
         /// The specified VPC has no associated Internet gateway.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancing.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
         /// One or more of the specified subnets do not exist.
