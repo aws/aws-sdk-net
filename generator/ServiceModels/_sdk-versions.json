@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.218.1",
+    "ProductVersion" : "3.3.219.0",
     "CoreVersion"    : "3.3.21.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -183,7 +183,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancing" : {
-            "Version" : "3.3.1.6",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.18.1",
+            "Version" : "3.3.19.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.15.1",
+            "Version" : "3.3.15.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.7.2",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
