@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of this job command.
+        /// The name of the job command: this must be <code>glueetl</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ScriptLocation. 
         /// <para>
-        /// Specifies the location of a script that executes a job.
+        /// Specifies the S3 path to a script that executes a job (required).
         /// </para>
         /// </summary>
         public string ScriptLocation

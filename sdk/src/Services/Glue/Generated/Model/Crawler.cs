@@ -82,6 +82,11 @@ namespace Amazon.Glue.Model
         /// rather than detect this information separately for each partition. Use the following
         /// JSON string to specify that behavior:
         /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior":
+        /// "InheritFromTable" } } }'</code> 
+        /// </para>
         /// </summary>
         public string Configuration
         {

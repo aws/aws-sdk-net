@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchStopJobRun operation.
-    /// Stops a batch of job runs for a given job.
+    /// Stops one or more job runs for a specified Job.
     /// </summary>
     public partial class BatchStopJobRunRequest : AmazonGlueRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job whose job runs are to be stopped.
+        /// The name of the Job in question.
         /// </para>
         /// </summary>
         public string JobName
@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunIds. 
         /// <para>
-        /// A list of job run Ids of the given job to be stopped.
+        /// A list of the JobRunIds that should be stopped for that Job.
         /// </para>
         /// </summary>
         public List<string> JobRunIds

@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The trigger ID.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string Id
@@ -116,7 +116,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Predicate. 
         /// <para>
-        /// The predicate of this trigger.
+        /// The predicate of this trigger, which defines when it will fire.
         /// </para>
         /// </summary>
         public Predicate Predicate

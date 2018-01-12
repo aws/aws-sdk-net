@@ -29,12 +29,13 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScript operation.
-    /// Transforms a directed acyclic graph (DAG) into a Python script.
+    /// Transforms a directed acyclic graph (DAG) into code.
     /// </summary>
     public partial class CreateScriptRequest : AmazonGlueRequest
     {
         private List<CodeGenEdge> _dagEdges = new List<CodeGenEdge>();
         private List<CodeGenNode> _dagNodes = new List<CodeGenNode>();
+        private Language _language;
 
         /// <summary>
         /// Gets and sets the property DagEdges. 
@@ -70,6 +71,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDagNodes()
         {
             return this._dagNodes != null && this._dagNodes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The programming language of the resulting code from the DAG.
+        /// </para>
+        /// </summary>
+        public Language Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
         }
 
     }

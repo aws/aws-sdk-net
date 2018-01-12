@@ -335,6 +335,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type Language.
+    /// </summary>
+    public class Language : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PYTHON for Language
+        /// </summary>
+        public static readonly Language PYTHON = new Language("PYTHON");
+        /// <summary>
+        /// Constant SCALA for Language
+        /// </summary>
+        public static readonly Language SCALA = new Language("SCALA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Language(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Language FindValue(string value)
+        {
+            return FindValue<Language>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Language(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LastCrawlStatus.
     /// </summary>
     public class LastCrawlStatus : ConstantClass
@@ -398,6 +448,10 @@ namespace Amazon.Glue
         /// Constant AND for Logical
         /// </summary>
         public static readonly Logical AND = new Logical("AND");
+        /// <summary>
+        /// Constant ANY for Logical
+        /// </summary>
+        public static readonly Logical ANY = new Logical("ANY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

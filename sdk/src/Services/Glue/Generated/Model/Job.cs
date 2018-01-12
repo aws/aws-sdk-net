@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a job in the Data Catalog.
+    /// Specifies a job.
     /// </summary>
     public partial class Job
     {
@@ -48,7 +48,10 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
-        /// The number of capacity units allocated to this job.
+        /// The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2
+        /// to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing
+        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
+        /// see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
         /// </para>
         /// </summary>
         public int AllocatedCapacity
@@ -120,7 +123,24 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DefaultArguments. 
         /// <para>
-        /// The default parameters for this job.
+        /// The default arguments for this job, specified as name-value pairs.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify arguments here that your own job-execution script consumes, as well
+        /// as arguments that AWS Glue itself consumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to specify and consume your own Job arguments, see the <a
+        /// href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+        /// AWS Glue APIs in Python</a> topic in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the key-value pairs that AWS Glue consumes to set up your job,
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DefaultArguments
@@ -247,7 +267,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The role associated with this job.
+        /// The name of the IAM role associated with this job.
         /// </para>
         /// </summary>
         public string Role

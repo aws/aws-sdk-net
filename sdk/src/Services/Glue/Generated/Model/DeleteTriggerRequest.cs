@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTrigger operation.
-    /// Deletes a specified trigger.
+    /// Deletes a specified trigger. If the trigger is not found, no exception is thrown.
     /// </summary>
     public partial class DeleteTriggerRequest : AmazonGlueRequest
     {

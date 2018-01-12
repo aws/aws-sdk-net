@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PredecessorsIncluded. 
         /// <para>
-        /// A list of the predecessor runs to return as well.
+        /// True if a list of predecessor runs should be returned.
         /// </para>
         /// </summary>
         public bool PredecessorsIncluded

@@ -41,7 +41,11 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
-        /// The infrastructure capacity to allocate to this job.
+        /// The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From
+        /// 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of
+        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+        /// pricing page</a>.
         /// </para>
         /// </summary>
         public int AllocatedCapacity
@@ -59,7 +63,25 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// Specific arguments for this job run.
+        /// The job arguments specifically for this run. They override the equivalent default
+        /// arguments set for the job itself.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify arguments here that your own job-execution script consumes, as well
+        /// as arguments that AWS Glue itself consumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how to specify and consume your own Job arguments, see the <a
+        /// href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+        /// AWS Glue APIs in Python</a> topic in the developer guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the key-value pairs that AWS Glue consumes to set up your job,
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Arguments
@@ -95,7 +117,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunId. 
         /// <para>
-        /// The ID of the job run to start.
+        /// The ID of a previous JobRun to retry.
         /// </para>
         /// </summary>
         public string JobRunId

@@ -29,14 +29,33 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPlan operation.
-    /// Gets a Python script to perform a specified mapping.
+    /// Gets code to perform a specified mapping.
     /// </summary>
     public partial class GetPlanRequest : AmazonGlueRequest
     {
+        private Language _language;
         private Location _location;
         private List<MappingEntry> _mapping = new List<MappingEntry>();
         private List<CatalogEntry> _sinks = new List<CatalogEntry>();
         private CatalogEntry _source;
+
+        /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The programming language of the code to perform the mapping.
+        /// </para>
+        /// </summary>
+        public Language Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 

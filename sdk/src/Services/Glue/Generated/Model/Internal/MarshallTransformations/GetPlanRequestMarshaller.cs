@@ -67,6 +67,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLanguage())
+                {
+                    context.Writer.WritePropertyName("Language");
+                    context.Writer.Write(publicRequest.Language);
+                }
+
                 if(publicRequest.IsSetLocation())
                 {
                     context.Writer.WritePropertyName("Location");

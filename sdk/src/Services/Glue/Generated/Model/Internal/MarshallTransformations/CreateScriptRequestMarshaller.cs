@@ -99,6 +99,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLanguage())
+                {
+                    context.Writer.WritePropertyName("Language");
+                    context.Writer.Write(publicRequest.Language);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

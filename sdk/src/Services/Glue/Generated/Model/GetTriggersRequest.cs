@@ -40,7 +40,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DependentJobName. 
         /// <para>
-        /// The name of the job for which to retrieve triggers.
+        /// The name of the job for which to retrieve triggers. The trigger that can start this
+        /// job will be returned, and if there is no such trigger, all triggers will be returned.
         /// </para>
         /// </summary>
         public string DependentJobName

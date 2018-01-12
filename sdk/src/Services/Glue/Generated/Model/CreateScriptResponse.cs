@@ -33,6 +33,7 @@ namespace Amazon.Glue.Model
     public partial class CreateScriptResponse : AmazonWebServiceResponse
     {
         private string _pythonScript;
+        private string _scalaCode;
 
         /// <summary>
         /// Gets and sets the property PythonScript. 
@@ -50,6 +51,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetPythonScript()
         {
             return this._pythonScript != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalaCode. 
+        /// <para>
+        /// The Scala code generated from the DAG.
+        /// </para>
+        /// </summary>
+        public string ScalaCode
+        {
+            get { return this._scalaCode; }
+            set { this._scalaCode = value; }
+        }
+
+        // Check to see if ScalaCode property is set
+        internal bool IsSetScalaCode()
+        {
+            return this._scalaCode != null;
         }
 
     }

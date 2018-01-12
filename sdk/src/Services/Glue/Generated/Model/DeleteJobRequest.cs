@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteJob operation.
-    /// Deletes a specified job.
+    /// Deletes a specified job. If the job is not found, no exception is thrown.
     /// </summary>
     public partial class DeleteJobRequest : AmazonGlueRequest
     {

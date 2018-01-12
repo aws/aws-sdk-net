@@ -29,7 +29,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTrigger operation.
-    /// Starts an existing trigger.
+    /// Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+    /// Jobs</a> for information about how different types of trigger are started.
     /// </summary>
     public partial class StartTriggerRequest : AmazonGlueRequest
     {

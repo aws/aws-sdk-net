@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name assigned to the new trigger.
+        /// The name of the trigger.
         /// </para>
         /// </summary>
         public string Name

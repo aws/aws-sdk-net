@@ -76,8 +76,10 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RowTag. 
         /// <para>
         /// The XML tag designating the element that contains each record in an XML document being
-        /// parsed. Note that this cannot be an empty element. It must contain child elements
-        /// representing fields in the record.
+        /// parsed. Note that this cannot identify a self-closing element (closed by <code>/&gt;</code>).
+        /// An empty row element that contains only attributes can be parsed as long as it ends
+        /// with a closing tag (for example, <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code>
+        /// is okay, but <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
         /// </para>
         /// </summary>
         public string RowTag

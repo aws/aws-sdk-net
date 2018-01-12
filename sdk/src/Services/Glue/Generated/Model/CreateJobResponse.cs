@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique name of the new job that has been created.
+        /// The unique name that was provided.
         /// </para>
         /// </summary>
         public string Name

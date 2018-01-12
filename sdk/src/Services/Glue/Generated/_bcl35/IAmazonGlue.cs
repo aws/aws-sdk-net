@@ -302,7 +302,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops a batch of job runs for a given job.
+        /// Stops one or more job runs for a specified Job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun service method.</param>
         /// 
@@ -631,6 +631,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
         /// The same unique identifier was associated with two different records.
         /// </exception>
@@ -739,7 +742,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Transforms a directed acyclic graph (DAG) into a Python script.
+        /// Transforms a directed acyclic graph (DAG) into code.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScript service method.</param>
         /// 
@@ -853,6 +856,12 @@ namespace Amazon.Glue
         /// <returns>The response from the CreateTrigger service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.IdempotentParameterMismatchException">
+        /// The same unique identifier was associated with two different records.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1204,7 +1213,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Deletes a specified job.
+        /// Deletes a specified job. If the job is not found, no exception is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// 
@@ -1357,11 +1366,14 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Deletes a specified trigger.
+        /// Deletes a specified trigger. If the trigger is not found, no exception is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger service method.</param>
         /// 
         /// <returns>The response from the DeleteTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2435,7 +2447,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Gets a Python script to perform a specified mapping.
+        /// Gets code to perform a specified mapping.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlan service method.</param>
         /// 
@@ -3110,7 +3122,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts an existing trigger.
+        /// Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+        /// Jobs</a> for information about how different types of trigger are started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTrigger service method.</param>
         /// 
@@ -3278,6 +3291,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the StopTrigger service method.</param>
         /// 
         /// <returns>The response from the StopTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -3649,6 +3665,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -3808,6 +3827,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
         /// 
         /// <returns>The response from the UpdateTrigger service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>

@@ -57,6 +57,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.PythonScript = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScalaCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ScalaCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
