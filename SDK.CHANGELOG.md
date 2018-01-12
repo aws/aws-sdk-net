@@ -1,3 +1,7 @@
+### 3.3.220.0 (2018-01-12 21:20 UTC)
+* Glue (3.3.3.0)
+	* Support is added to generate ETL scripts in Scala which can now be run by  AWS Glue ETL jobs. In addition, the trigger API now supports firing when any conditions are met (in addition to all conditions). Also, jobs can be triggered based on a "failed" or "stopped" job run (in addition to a "succeeded" job run). 
+
 ### 3.3.219.0 (2018-01-11 20:40 UTC)
 * ElasticLoadBalancing (3.3.2.0)
 	* Added OperationNotPermittedException to indicate that you cannot create a classic load balancer while deleting the Elastic Load Balancing service-linked role.
