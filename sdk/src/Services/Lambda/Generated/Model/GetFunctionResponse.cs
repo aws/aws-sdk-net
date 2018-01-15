@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Concurrency. 
         /// <para>
-        /// The concurrent execution limit set for this function.
+        /// The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
         /// </para>
         /// </summary>
         public Concurrency Concurrency

@@ -47,6 +47,16 @@ namespace Amazon.Lambda.Model
     /// <para>
     /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>TooManyRequestsException</code> noted below will return the following: <code>ConcurrentInvocationLimitExceeded</code>
+    /// will be returned if you have no functions with reserved concurrency and have exceeded
+    /// your account concurrent limit or if a function without reserved concurrency exceeds
+    /// the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
+    /// will be returned when a function with reserved concurrency exceeds its configured
+    /// concurrency limit. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class InvokeRequest : AmazonLambdaRequest
     {

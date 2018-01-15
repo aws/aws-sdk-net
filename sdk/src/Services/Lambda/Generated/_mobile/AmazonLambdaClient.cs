@@ -487,14 +487,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
-        /// is returned if you have no functions with reserved-concurrency and have exceeded your
-        /// account concurrent limit or if a function without reserved concurrency exceeds the
-        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
-        /// is returned when a function with reserved concurrency exceeds its configured concurrent
-        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
-        /// exceeded and you have not reserved concurrency on any function. For more information,
-        /// see <a>concurrent-executions</a>
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -703,14 +696,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
-        /// is returned if you have no functions with reserved-concurrency and have exceeded your
-        /// account concurrent limit or if a function without reserved concurrency exceeds the
-        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
-        /// is returned when a function with reserved concurrency exceeds its configured concurrent
-        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
-        /// exceeded and you have not reserved concurrency on any function. For more information,
-        /// see <a>concurrent-executions</a>
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -791,14 +777,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
-        /// is returned if you have no functions with reserved-concurrency and have exceeded your
-        /// account concurrent limit or if a function without reserved concurrency exceeds the
-        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
-        /// is returned when a function with reserved concurrency exceeds its configured concurrent
-        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
-        /// exceeded and you have not reserved concurrency on any function. For more information,
-        /// see <a>concurrent-executions</a>
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1034,14 +1013,7 @@ namespace Amazon.Lambda
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
-        /// You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code>
-        /// is returned if you have no functions with reserved-concurrency and have exceeded your
-        /// account concurrent limit or if a function without reserved concurrency exceeds the
-        /// account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>
-        /// is returned when a function with reserved concurrency exceeds its configured concurrent
-        /// limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
-        /// exceeded and you have not reserved concurrency on any function. For more information,
-        /// see <a>concurrent-executions</a>
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))

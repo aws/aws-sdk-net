@@ -239,6 +239,14 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Dotnetcore10 = new Runtime("dotnetcore1.0");
         /// <summary>
+        /// Constant Dotnetcore20 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnetcore20 = new Runtime("dotnetcore2.0");
+        /// <summary>
+        /// Constant Go1X for Runtime
+        /// </summary>
+        public static readonly Runtime Go1X = new Runtime("go1.x");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");

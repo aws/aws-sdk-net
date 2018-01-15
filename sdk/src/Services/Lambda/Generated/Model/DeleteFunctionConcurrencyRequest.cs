@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFunctionConcurrency operation.
-    /// Removes concurrent execution limits from this function.
+    /// Removes concurrent execution limits from this function. For more information, see
+    /// <a>concurrent-executions</a>.
     /// </summary>
     public partial class DeleteFunctionConcurrencyRequest : AmazonLambdaRequest
     {
@@ -38,7 +39,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function you are removing concurrent execution limits from.
+        /// The name of the function you are removing concurrent execution limits from. For more
+        /// information, see <a>concurrent-executions</a>.
         /// </para>
         /// </summary>
         public string FunctionName

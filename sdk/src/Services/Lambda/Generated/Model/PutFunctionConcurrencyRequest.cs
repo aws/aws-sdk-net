@@ -33,7 +33,8 @@ namespace Amazon.Lambda.Model
     /// is a subset of your account's total concurrent execution limit per region. Note that
     /// Lambda automatically reserves a buffer of 100 concurrent executions for functions
     /// without any reserved concurrency limit. This means if your account limit is 1000,
-    /// you have a total of 900 available to allocate to individual functions.
+    /// you have a total of 900 available to allocate to individual functions. For more information,
+    /// see <a>concurrent-executions</a>.
     /// </summary>
     public partial class PutFunctionConcurrencyRequest : AmazonLambdaRequest
     {
@@ -43,7 +44,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function you are setting concurrent execution limits on.
+        /// The name of the function you are setting concurrent execution limits on. For more
+        /// information, see <a>concurrent-executions</a>.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -61,7 +63,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ReservedConcurrentExecutions. 
         /// <para>
-        /// The concurrent execution limit reserved for this function.
+        /// The concurrent execution limit reserved for this function. For more information, see
+        /// <a>concurrent-executions</a>.
         /// </para>
         /// </summary>
         public int ReservedConcurrentExecutions

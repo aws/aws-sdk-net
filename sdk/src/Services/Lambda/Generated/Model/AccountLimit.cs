@@ -121,7 +121,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property UnreservedConcurrentExecutions. 
         /// <para>
         /// The number of concurrent executions available to functions that do not have concurrency
-        /// limits set.
+        /// limits set. For more information, see <a>concurrent-executions</a>.
         /// </para>
         /// </summary>
         public int UnreservedConcurrentExecutions
