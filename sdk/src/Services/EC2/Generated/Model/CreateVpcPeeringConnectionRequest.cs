@@ -34,7 +34,13 @@ namespace Amazon.EC2.Model
     /// another AWS account and can be in a different region to the requester VPC. The requester
     /// VPC and accepter VPC cannot have overlapping CIDR blocks.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Limitations and rules apply to a VPC peering connection. For more information, see
+    /// the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+    /// section in the <i>VPC Peering Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The owner of the accepter VPC must accept the peering request to activate the peering
     /// connection. The VPC peering connection request expires after 7 days, after which it

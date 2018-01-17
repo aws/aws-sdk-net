@@ -34,8 +34,8 @@ namespace Amazon.EC2
     /// Amazon Elastic Compute Cloud 
     /// <para>
     /// Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in
-    /// the Amazon Web Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest
-    /// in hardware up front, so you can develop and deploy applications faster.
+    /// the AWS Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front,
+    /// so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
     public partial interface IAmazonEC2 : IAmazonService, IDisposable

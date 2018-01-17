@@ -181,7 +181,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
-        /// request.
+        /// request, or get the name from the service provider.
         /// </para>
         /// </summary>
         public string ServiceName

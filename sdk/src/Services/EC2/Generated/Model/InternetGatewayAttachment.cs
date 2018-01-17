@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the attachment.
+        /// The current state of the attachment. For an Internet gateway, the state is <code>available</code>
+        /// when attached to a VPC; otherwise, this value is not returned.
         /// </para>
         /// </summary>
         public AttachmentStatus State
