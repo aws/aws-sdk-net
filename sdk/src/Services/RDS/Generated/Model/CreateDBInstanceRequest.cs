@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private string _engine;
@@ -749,6 +750,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of log types that need to be enabled for exporting to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>

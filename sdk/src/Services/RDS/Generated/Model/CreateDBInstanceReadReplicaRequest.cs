@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private int? _iops;
@@ -262,6 +263,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the new DB instance is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
@@ -434,6 +453,18 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies whether the read replica is in a Multi-AZ deployment. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of
+        /// your replica in another Availability Zone for failover support for the replica. Creating
+        /// your Read Replica as a Multi-AZ DB instance is independent of whether the source database
+        /// is a Multi-AZ DB instance. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool MultiAZ
         {

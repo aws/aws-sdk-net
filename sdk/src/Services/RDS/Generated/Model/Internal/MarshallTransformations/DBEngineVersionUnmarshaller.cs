@@ -90,6 +90,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExportableLogTypes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ExportableLogTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
                     {
                         var unmarshaller = CharacterSetUnmarshaller.Instance;
@@ -102,6 +109,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         var unmarshaller = TimezoneUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedTimezones.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsLogExportsToCloudwatchLogs", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsLogExportsToCloudwatchLogs = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))

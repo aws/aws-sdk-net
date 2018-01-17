@@ -38,8 +38,10 @@ namespace Amazon.RDS.Model
         private CharacterSet _defaultCharacterSet;
         private string _engine;
         private string _engineVersion;
+        private List<string> _exportableLogTypes = new List<string>();
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private bool? _supportsLogExportsToCloudwatchLogs;
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
         /// <summary>
@@ -157,6 +159,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExportableLogTypes. 
+        /// <para>
+        /// The types of logs that the database engine has available for export to CloudWatch
+        /// Logs.
+        /// </para>
+        /// </summary>
+        public List<string> ExportableLogTypes
+        {
+            get { return this._exportableLogTypes; }
+            set { this._exportableLogTypes = value; }
+        }
+
+        // Check to see if ExportableLogTypes property is set
+        internal bool IsSetExportableLogTypes()
+        {
+            return this._exportableLogTypes != null && this._exportableLogTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
         ///  A list of the character sets supported by this engine for the <code>CharacterSetName</code>
@@ -192,6 +213,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedTimezones()
         {
             return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsLogExportsToCloudwatchLogs. 
+        /// <para>
+        /// A value that indicates whether the engine version supports exporting the log types
+        /// specified by ExportableLogTypes to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public bool SupportsLogExportsToCloudwatchLogs
+        {
+            get { return this._supportsLogExportsToCloudwatchLogs.GetValueOrDefault(); }
+            set { this._supportsLogExportsToCloudwatchLogs = value; }
+        }
+
+        // Check to see if SupportsLogExportsToCloudwatchLogs property is set
+        internal bool IsSetSupportsLogExportsToCloudwatchLogs()
+        {
+            return this._supportsLogExportsToCloudwatchLogs.HasValue; 
         }
 
         /// <summary>

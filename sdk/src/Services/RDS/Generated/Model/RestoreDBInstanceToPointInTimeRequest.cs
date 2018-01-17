@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private int? _iops;
@@ -78,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates RestoreDBInstanceToPointInTimeRequest with the parameterized properties
         /// </summary>
-        /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
+        /// <param name="sourceDBInstanceIdentifier">The identifier of the source DB instance from which to restore. Constraints: <ul> <li> Must match the identifier of an existing DB instance. </li> </ul></param>
         /// <param name="targetDBInstanceIdentifier">The name of the new DB instance to be created. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Cannot end with a hyphen or contain two consecutive hyphens </li> </ul></param>
         public RestoreDBInstanceToPointInTimeRequest(string sourceDBInstanceIdentifier, string targetDBInstanceIdentifier)
         {
@@ -265,6 +266,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the restored DB instance is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>
@@ -610,7 +629,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing DBInstance.
+        /// Must match the identifier of an existing DB instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

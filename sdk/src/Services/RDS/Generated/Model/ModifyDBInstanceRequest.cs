@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private bool? _autoMinorVersionUpgrade;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -275,6 +276,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudwatchLogsExportConfiguration. 
+        /// <para>
+        /// The configuration setting for the log types to be enabled for export to CloudWatch
+        /// Logs for a specific DB instance or DB cluster.
+        /// </para>
+        /// </summary>
+        public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
+        {
+            get { return this._cloudwatchLogsExportConfiguration; }
+            set { this._cloudwatchLogsExportConfiguration = value; }
+        }
+
+        // Check to see if CloudwatchLogsExportConfiguration property is set
+        internal bool IsSetCloudwatchLogsExportConfiguration()
+        {
+            return this._cloudwatchLogsExportConfiguration != null;
         }
 
         /// <summary>

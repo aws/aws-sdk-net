@@ -120,6 +120,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PendingCloudwatchLogsExports", targetDepth))
+                    {
+                        var unmarshaller = PendingCloudwatchLogsExportsUnmarshaller.Instance;
+                        unmarshalledObject.PendingCloudwatchLogsExports = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

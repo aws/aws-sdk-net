@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
         private DBSubnetGroup _dbSubnetGroup;
         private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
+        private List<string> _enabledCloudwatchLogsExports = new List<string>();
         private Endpoint _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -464,6 +465,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainMemberships()
         {
             return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledCloudwatchLogsExports. 
+        /// <para>
+        /// A list of log types that this DB instance is configured to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledCloudwatchLogsExports
+        {
+            get { return this._enabledCloudwatchLogsExports; }
+            set { this._enabledCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnabledCloudwatchLogsExports property is set
+        internal bool IsSetEnabledCloudwatchLogsExports()
+        {
+            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>

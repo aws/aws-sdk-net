@@ -82,6 +82,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CACertificateIdentifier", StringUtils.FromString(publicRequest.CACertificateIdentifier));
                 }
+                if(publicRequest.IsSetCloudwatchLogsExportConfiguration())
+                {
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetDisableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetEnableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
                     request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));

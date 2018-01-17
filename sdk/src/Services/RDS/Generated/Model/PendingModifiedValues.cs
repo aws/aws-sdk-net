@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUserPassword;
         private bool? _multiAZ;
+        private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
         private int? _port;
         private string _storageType;
 
@@ -257,6 +258,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingCloudwatchLogsExports.
+        /// </summary>
+        public PendingCloudwatchLogsExports PendingCloudwatchLogsExports
+        {
+            get { return this._pendingCloudwatchLogsExports; }
+            set { this._pendingCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if PendingCloudwatchLogsExports property is set
+        internal bool IsSetPendingCloudwatchLogsExports()
+        {
+            return this._pendingCloudwatchLogsExports != null;
         }
 
         /// <summary>

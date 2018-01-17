@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
+        private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private int? _iops;
@@ -342,6 +343,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCloudwatchLogsExports. 
+        /// <para>
+        /// The list of logs that the restored DB instance is to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnableCloudwatchLogsExports
+        {
+            get { return this._enableCloudwatchLogsExports; }
+            set { this._enableCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnableCloudwatchLogsExports property is set
+        internal bool IsSetEnableCloudwatchLogsExports()
+        {
+            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>
