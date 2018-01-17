@@ -91,6 +91,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This release adds support for Amazon Athena. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
+* [AWSSDK.AutoScalingPlans](https://www.nuget.org/packages/AWSSDK.AutoScalingPlans/)
+	* AWS Auto Scaling enables you to quickly discover all of the scalable resources underlying your application and set up application scaling in minutes using built-in scaling recommendations.
 * [AWSSDK.AWSHealth](https://www.nuget.org/packages/AWSSDK.AWSHealth/)
 	* The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts.
 * [AWSSDK.AWSMarketplaceCommerceAnalytics](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceCommerceAnalytics/)

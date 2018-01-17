@@ -31,6 +31,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Athena.CodeAnalysis" Path="|AWSSDK.Athena.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScalingPlans.CodeAnalysis" Path="|AWSSDK.AutoScalingPlans.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AutoScalingPlans.CodeAnalysis" Path="|AWSSDK.AutoScalingPlans.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AWSHealth.CodeAnalysis" Path="|AWSSDK.AWSHealth.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AWSHealth.CodeAnalysis" Path="|AWSSDK.AWSHealth.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis" Path="|AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis|"/>

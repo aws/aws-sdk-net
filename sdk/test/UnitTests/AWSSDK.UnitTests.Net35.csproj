@@ -37,6 +37,7 @@
     <ProjectReference Include="..\..\src\Services\AppSync\AWSSDK.AppSync.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Athena\AWSSDK.Athena.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\AutoScalingPlans\AWSSDK.AutoScalingPlans.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSHealth\AWSSDK.AWSHealth.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceMetering\AWSSDK.AWSMarketplaceMetering.Net35.csproj"/>
