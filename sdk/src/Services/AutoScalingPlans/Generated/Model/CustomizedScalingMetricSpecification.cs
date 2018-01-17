@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a customized metric for a target tracking policy.
     /// </summary>
     public partial class CustomizedScalingMetricSpecification
     {
@@ -39,7 +39,10 @@ namespace Amazon.AutoScalingPlans.Model
         private string _unit;
 
         /// <summary>
-        /// Gets and sets the property Dimensions.
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        /// The dimensions of the metric.
+        /// </para>
         /// </summary>
         public List<MetricDimension> Dimensions
         {
@@ -54,7 +57,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the metric.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -69,7 +75,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace of the metric.
+        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -84,7 +93,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statistic.
+        /// Gets and sets the property Statistic. 
+        /// <para>
+        /// The statistic of the metric.
+        /// </para>
         /// </summary>
         public MetricStatistic Statistic
         {
@@ -99,7 +111,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Unit.
+        /// Gets and sets the property Unit. 
+        /// <para>
+        /// The unit of the metric.
+        /// </para>
         /// </summary>
         public string Unit
         {

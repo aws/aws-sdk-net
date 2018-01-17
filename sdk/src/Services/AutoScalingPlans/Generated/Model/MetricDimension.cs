@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a dimension for a customized metric.
     /// </summary>
     public partial class MetricDimension
     {
@@ -36,7 +36,10 @@ namespace Amazon.AutoScalingPlans.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the dimension.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -51,7 +54,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the dimension.
+        /// </para>
         /// </summary>
         public string Value
         {

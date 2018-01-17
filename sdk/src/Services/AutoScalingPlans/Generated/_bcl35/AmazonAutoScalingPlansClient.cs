@@ -33,7 +33,17 @@ namespace Amazon.AutoScalingPlans
     /// <summary>
     /// Implementation for accessing AutoScalingPlans
     ///
+    /// Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application
+    /// and configure dynamic scaling for your scalable resources.
     /// 
+    ///  
+    /// <para>
+    /// To get started, create a scaling plan with a set of instructions used to configure
+    /// dynamic scaling for the scalable resources in your application. AWS Auto Scaling creates
+    /// target tracking scaling policies for the scalable resources in your scaling plan.
+    /// Target tracking scaling policies adjust the capacity of your scalable resource as
+    /// required to maintain resource utilization at the target value that you specified.
+    /// </para>
     /// </summary>
     public partial class AmazonAutoScalingPlansClient : AmazonServiceClient, IAmazonAutoScalingPlans
     {
@@ -226,22 +236,31 @@ namespace Amazon.AutoScalingPlans
         #region  CreateScalingPlan
 
         /// <summary>
+        /// Creates a scaling plan.
         /// 
+        ///  
+        /// <para>
+        /// A scaling plan contains a set of instructions used to configure dynamic scaling for
+        /// the scalable resources in your application. AWS Auto Scaling creates target tracking
+        /// scaling policies based on the scaling instructions in your scaling plan.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScalingPlan service method.</param>
         /// 
         /// <returns>The response from the CreateScalingPlan service method, as returned by AutoScalingPlans.</returns>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ConcurrentUpdateException">
-        /// 
+        /// Concurrent updates caused an exception, for example, if you request an update to a
+        /// scaling plan that already has a pending update.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
-        /// 
+        /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.LimitExceededException">
-        /// 
+        /// Your account exceeded a limit. This exception is thrown when a per-account resource
+        /// limit is exceeded.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
-        /// 
+        /// An exception was thrown for a validation issue. Review the parameters provided.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan">REST API Reference for CreateScalingPlan Operation</seealso>
         public virtual CreateScalingPlanResponse CreateScalingPlan(CreateScalingPlanRequest request)
@@ -291,22 +310,23 @@ namespace Amazon.AutoScalingPlans
         #region  DeleteScalingPlan
 
         /// <summary>
-        /// 
+        /// Deletes the specified scaling plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPlan service method.</param>
         /// 
         /// <returns>The response from the DeleteScalingPlan service method, as returned by AutoScalingPlans.</returns>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ConcurrentUpdateException">
-        /// 
+        /// Concurrent updates caused an exception, for example, if you request an update to a
+        /// scaling plan that already has a pending update.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
-        /// 
+        /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ObjectNotFoundException">
-        /// 
+        /// The specified object could not be found.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
-        /// 
+        /// An exception was thrown for a validation issue. Review the parameters provided.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DeleteScalingPlan">REST API Reference for DeleteScalingPlan Operation</seealso>
         public virtual DeleteScalingPlanResponse DeleteScalingPlan(DeleteScalingPlanRequest request)
@@ -356,22 +376,23 @@ namespace Amazon.AutoScalingPlans
         #region  DescribeScalingPlanResources
 
         /// <summary>
-        /// 
+        /// Describes the scalable resources in the specified scaling plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPlanResources service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingPlanResources service method, as returned by AutoScalingPlans.</returns>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ConcurrentUpdateException">
-        /// 
+        /// Concurrent updates caused an exception, for example, if you request an update to a
+        /// scaling plan that already has a pending update.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
-        /// 
+        /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InvalidNextTokenException">
-        /// 
+        /// The token provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
-        /// 
+        /// An exception was thrown for a validation issue. Review the parameters provided.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlanResources">REST API Reference for DescribeScalingPlanResources Operation</seealso>
         public virtual DescribeScalingPlanResourcesResponse DescribeScalingPlanResources(DescribeScalingPlanResourcesRequest request)
@@ -421,22 +442,23 @@ namespace Amazon.AutoScalingPlans
         #region  DescribeScalingPlans
 
         /// <summary>
-        /// 
+        /// Describes the specified scaling plans or all of your scaling plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPlans service method.</param>
         /// 
         /// <returns>The response from the DescribeScalingPlans service method, as returned by AutoScalingPlans.</returns>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ConcurrentUpdateException">
-        /// 
+        /// Concurrent updates caused an exception, for example, if you request an update to a
+        /// scaling plan that already has a pending update.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
-        /// 
+        /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.InvalidNextTokenException">
-        /// 
+        /// The token provided is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
-        /// 
+        /// An exception was thrown for a validation issue. Review the parameters provided.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">REST API Reference for DescribeScalingPlans Operation</seealso>
         public virtual DescribeScalingPlansResponse DescribeScalingPlans(DescribeScalingPlansRequest request)

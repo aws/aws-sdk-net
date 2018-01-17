@@ -29,7 +29,14 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScalingPlan operation.
+    /// Creates a scaling plan.
     /// 
+    ///  
+    /// <para>
+    /// A scaling plan contains a set of instructions used to configure dynamic scaling for
+    /// the scalable resources in your application. AWS Auto Scaling creates target tracking
+    /// scaling policies based on the scaling instructions in your scaling plan.
+    /// </para>
     /// </summary>
     public partial class CreateScalingPlanRequest : AmazonAutoScalingPlansRequest
     {
@@ -38,7 +45,10 @@ namespace Amazon.AutoScalingPlans.Model
         private string _scalingPlanName;
 
         /// <summary>
-        /// Gets and sets the property ApplicationSource.
+        /// Gets and sets the property ApplicationSource. 
+        /// <para>
+        /// The source for the application.
+        /// </para>
         /// </summary>
         public ApplicationSource ApplicationSource
         {
@@ -53,7 +63,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingInstructions.
+        /// Gets and sets the property ScalingInstructions. 
+        /// <para>
+        /// The scaling instructions.
+        /// </para>
         /// </summary>
         public List<ScalingInstruction> ScalingInstructions
         {
@@ -68,7 +81,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanName.
+        /// Gets and sets the property ScalingPlanName. 
+        /// <para>
+        /// The name of the scaling plan.
+        /// </para>
         /// </summary>
         public string ScalingPlanName
         {

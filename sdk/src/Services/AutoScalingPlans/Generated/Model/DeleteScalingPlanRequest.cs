@@ -29,7 +29,7 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScalingPlan operation.
-    /// 
+    /// Deletes the specified scaling plan.
     /// </summary>
     public partial class DeleteScalingPlanRequest : AmazonAutoScalingPlansRequest
     {
@@ -37,7 +37,10 @@ namespace Amazon.AutoScalingPlans.Model
         private long? _scalingPlanVersion;
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanName.
+        /// Gets and sets the property ScalingPlanName. 
+        /// <para>
+        /// The name of the scaling plan.
+        /// </para>
         /// </summary>
         public string ScalingPlanName
         {
@@ -52,7 +55,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion.
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version of the scaling plan.
+        /// </para>
         /// </summary>
         public long ScalingPlanVersion
         {

@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents an application source.
     /// </summary>
     public partial class ApplicationSource
     {
         private string _cloudFormationStackARN;
 
         /// <summary>
-        /// Gets and sets the property CloudFormationStackARN.
+        /// Gets and sets the property CloudFormationStackARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a CloudFormation stack.
+        /// </para>
         /// </summary>
         public string CloudFormationStackARN
         {

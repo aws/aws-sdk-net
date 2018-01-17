@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a target tracking scaling policy.
     /// </summary>
     public partial class TargetTrackingConfiguration
     {
@@ -41,7 +41,10 @@ namespace Amazon.AutoScalingPlans.Model
         private double? _targetValue;
 
         /// <summary>
-        /// Gets and sets the property CustomizedScalingMetricSpecification.
+        /// Gets and sets the property CustomizedScalingMetricSpecification. 
+        /// <para>
+        /// A customized metric.
+        /// </para>
         /// </summary>
         public CustomizedScalingMetricSpecification CustomizedScalingMetricSpecification
         {
@@ -56,7 +59,14 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisableScaleIn.
+        /// Gets and sets the property DisableScaleIn. 
+        /// <para>
+        /// Indicates whether scale in by the target tracking policy is disabled. If the value
+        /// is <code>true</code>, scale in is disabled and the target tracking policy won't remove
+        /// capacity from the scalable resource. Otherwise, scale in is enabled and the target
+        /// tracking policy can remove capacity from the scalable resource. The default value
+        /// is <code>false</code>.
+        /// </para>
         /// </summary>
         public bool DisableScaleIn
         {
@@ -71,7 +81,12 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EstimatedInstanceWarmup.
+        /// Gets and sets the property EstimatedInstanceWarmup. 
+        /// <para>
+        /// The estimated time, in seconds, until a newly launched instance can contribute to
+        /// the CloudWatch metrics. This value is used only if the resource is an Auto Scaling
+        /// group.
+        /// </para>
         /// </summary>
         public int EstimatedInstanceWarmup
         {
@@ -86,7 +101,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PredefinedScalingMetricSpecification.
+        /// Gets and sets the property PredefinedScalingMetricSpecification. 
+        /// <para>
+        /// A predefined metric.
+        /// </para>
         /// </summary>
         public PredefinedScalingMetricSpecification PredefinedScalingMetricSpecification
         {
@@ -101,7 +119,19 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScaleInCooldown.
+        /// Gets and sets the property ScaleInCooldown. 
+        /// <para>
+        /// The amount of time, in seconds, after a scale in activity completes before another
+        /// scale in activity can start. This value is not used if the scalable resource is an
+        /// Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// The cooldown period is used to block subsequent scale in requests until it has expired.
+        /// The intention is to scale in conservatively to protect your application's availability.
+        /// However, if another alarm triggers a scale out policy during the cooldown period after
+        /// a scale-in, AWS Auto Scaling scales out your scalable target immediately.
+        /// </para>
         /// </summary>
         public int ScaleInCooldown
         {
@@ -116,7 +146,19 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScaleOutCooldown.
+        /// Gets and sets the property ScaleOutCooldown. 
+        /// <para>
+        /// The amount of time, in seconds, after a scale out activity completes before another
+        /// scale out activity can start. This value is not used if the scalable resource is an
+        /// Auto Scaling group.
+        /// </para>
+        ///  
+        /// <para>
+        /// While the cooldown period is in effect, the capacity that has been added by the previous
+        /// scale out event that initiated the cooldown is calculated as part of the desired capacity
+        /// for the next scale out. The intention is to continuously (but not excessively) scale
+        /// out.
+        /// </para>
         /// </summary>
         public int ScaleOutCooldown
         {
@@ -131,7 +173,11 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetValue.
+        /// Gets and sets the property TargetValue. 
+        /// <para>
+        /// The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base
+        /// 10) or 2e-360 to 2e360 (Base 2).
+        /// </para>
         /// </summary>
         public double TargetValue
         {

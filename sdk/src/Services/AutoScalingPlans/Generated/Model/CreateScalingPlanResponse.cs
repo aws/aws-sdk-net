@@ -35,7 +35,10 @@ namespace Amazon.AutoScalingPlans.Model
         private long? _scalingPlanVersion;
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion.
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version of the scaling plan. This value is always 1.
+        /// </para>
         /// </summary>
         public long ScalingPlanVersion
         {

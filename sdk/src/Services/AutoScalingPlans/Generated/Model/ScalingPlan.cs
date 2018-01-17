@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a scaling plan.
     /// </summary>
     public partial class ScalingPlan
     {
@@ -41,7 +41,10 @@ namespace Amazon.AutoScalingPlans.Model
         private string _statusMessage;
 
         /// <summary>
-        /// Gets and sets the property ApplicationSource.
+        /// Gets and sets the property ApplicationSource. 
+        /// <para>
+        /// The application source.
+        /// </para>
         /// </summary>
         public ApplicationSource ApplicationSource
         {
@@ -56,7 +59,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The Unix timestamp when the scaling plan was created.
+        /// </para>
         /// </summary>
         public DateTime CreationTime
         {
@@ -71,7 +77,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingInstructions.
+        /// Gets and sets the property ScalingInstructions. 
+        /// <para>
+        /// The scaling instructions.
+        /// </para>
         /// </summary>
         public List<ScalingInstruction> ScalingInstructions
         {
@@ -86,7 +95,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanName.
+        /// Gets and sets the property ScalingPlanName. 
+        /// <para>
+        /// The name of the scaling plan.
+        /// </para>
         /// </summary>
         public string ScalingPlanName
         {
@@ -101,7 +113,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion.
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version of the scaling plan.
+        /// </para>
         /// </summary>
         public long ScalingPlanVersion
         {
@@ -116,7 +131,36 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusCode.
+        /// Gets and sets the property StatusCode. 
+        /// <para>
+        /// The status of the scaling plan.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Active</code> - The scaling plan is active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration
+        /// for one or more resources could not be applied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationInProgress</code> - The scaling plan is being created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreationFailed</code> - The scaling plan could not be created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DeletionInProgress</code> - The scaling plan is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DeletionFailed</code> - The scaling plan could not be deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalingPlanStatusCode StatusCode
         {
@@ -131,7 +175,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// A simple message about the current status of the scaling plan.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {

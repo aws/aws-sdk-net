@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Specifies the scaling configuration for a scalable resource.
     /// </summary>
     public partial class ScalingInstruction
     {
@@ -40,7 +40,10 @@ namespace Amazon.AutoScalingPlans.Model
         private List<TargetTrackingConfiguration> _targetTrackingConfigurations = new List<TargetTrackingConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property MaxCapacity.
+        /// Gets and sets the property MaxCapacity. 
+        /// <para>
+        /// The maximum value to scale to in response to a scale out event.
+        /// </para>
         /// </summary>
         public int MaxCapacity
         {
@@ -55,7 +58,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinCapacity.
+        /// Gets and sets the property MinCapacity. 
+        /// <para>
+        /// The minimum value to scale to in response to a scale in event.
+        /// </para>
         /// </summary>
         public int MinCapacity
         {
@@ -70,7 +76,41 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The ID of the resource. This string consists of the resource type and unique identifier.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique
+        /// identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
+        /// is the resource ID. Example: <code>table/my-table</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DynamoDB global secondary index - The resource type is <code>index</code> and the
+        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
+        /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -85,7 +125,50 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalableDimension.
+        /// Gets and sets the property ScalableDimension. 
+        /// <para>
+        /// The scalable dimension associated with the resource.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity
+        /// of an Auto Scaling group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for
+        /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
+        /// a DynamoDB global secondary index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
+        /// DB cluster. Available for Aurora MySQL-compatible edition.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -100,7 +183,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceNamespace.
+        /// Gets and sets the property ServiceNamespace. 
+        /// <para>
+        /// The namespace of the AWS service.
+        /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace
         {
@@ -115,7 +201,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetTrackingConfigurations.
+        /// Gets and sets the property TargetTrackingConfigurations. 
+        /// <para>
+        /// The target tracking scaling policies (up to 10).
+        /// </para>
         /// </summary>
         public List<TargetTrackingConfiguration> TargetTrackingConfigurations
         {

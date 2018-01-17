@@ -36,7 +36,11 @@ namespace Amazon.AutoScalingPlans.Model
         private List<ScalingPlanResource> _scalingPlanResources = new List<ScalingPlanResource>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token required to get the next set of results. This value is <code>null</code>
+        /// if there are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +55,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanResources.
+        /// Gets and sets the property ScalingPlanResources. 
+        /// <para>
+        /// Information about the scalable resources.
+        /// </para>
         /// </summary>
         public List<ScalingPlanResource> ScalingPlanResources
         {

@@ -29,7 +29,7 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingPlans operation.
-    /// 
+    /// Describes the specified scaling plans or all of your scaling plans.
     /// </summary>
     public partial class DescribeScalingPlansRequest : AmazonAutoScalingPlansRequest
     {
@@ -40,7 +40,11 @@ namespace Amazon.AutoScalingPlans.Model
         private long? _scalingPlanVersion;
 
         /// <summary>
-        /// Gets and sets the property ApplicationSources.
+        /// Gets and sets the property ApplicationSources. 
+        /// <para>
+        /// The sources for the applications (up to 10). If you specify scaling plan names, you
+        /// cannot specify application sources.
+        /// </para>
         /// </summary>
         public List<ApplicationSource> ApplicationSources
         {
@@ -55,7 +59,11 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of scalable resources to return. This value can be between 1 and
+        /// 50. The default value is 50.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -70,7 +78,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -85,7 +96,11 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanNames.
+        /// Gets and sets the property ScalingPlanNames. 
+        /// <para>
+        /// The names of the scaling plans (up to 10). If you specify application sources, you
+        /// cannot specify scaling plan names.
+        /// </para>
         /// </summary>
         public List<string> ScalingPlanNames
         {
@@ -100,7 +115,11 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion.
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version of the scaling plan. If you specify a scaling plan version, you must also
+        /// specify a scaling plan name.
+        /// </para>
         /// </summary>
         public long ScalingPlanVersion
         {

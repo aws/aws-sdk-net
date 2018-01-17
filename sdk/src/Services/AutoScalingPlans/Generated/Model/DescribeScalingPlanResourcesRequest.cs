@@ -29,7 +29,7 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingPlanResources operation.
-    /// 
+    /// Describes the scalable resources in the specified scaling plan.
     /// </summary>
     public partial class DescribeScalingPlanResourcesRequest : AmazonAutoScalingPlansRequest
     {
@@ -39,7 +39,11 @@ namespace Amazon.AutoScalingPlans.Model
         private long? _scalingPlanVersion;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of scalable resources to return. This value can be between 1 and
+        /// 50. The default value is 50.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -54,7 +58,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -69,7 +76,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanName.
+        /// Gets and sets the property ScalingPlanName. 
+        /// <para>
+        /// The name of the scaling plan.
+        /// </para>
         /// </summary>
         public string ScalingPlanName
         {
@@ -84,7 +94,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion.
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version of the scaling plan.
+        /// </para>
         /// </summary>
         public long ScalingPlanVersion
         {

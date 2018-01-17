@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a scaling policy.
     /// </summary>
     public partial class ScalingPolicy
     {
@@ -37,7 +37,10 @@ namespace Amazon.AutoScalingPlans.Model
         private TargetTrackingConfiguration _targetTrackingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property PolicyName.
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// The name of the scaling policy.
+        /// </para>
         /// </summary>
         public string PolicyName
         {
@@ -52,7 +55,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyType.
+        /// Gets and sets the property PolicyType. 
+        /// <para>
+        /// The type of scaling policy.
+        /// </para>
         /// </summary>
         public PolicyType PolicyType
         {
@@ -67,7 +73,10 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetTrackingConfiguration.
+        /// Gets and sets the property TargetTrackingConfiguration. 
+        /// <para>
+        /// The target tracking scaling policy.
+        /// </para>
         /// </summary>
         public TargetTrackingConfiguration TargetTrackingConfiguration
         {

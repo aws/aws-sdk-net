@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// 
+    /// Represents a predefined metric for a target tracking policy.
     /// </summary>
     public partial class PredefinedScalingMetricSpecification
     {
@@ -36,7 +36,11 @@ namespace Amazon.AutoScalingPlans.Model
         private string _resourceLabel;
 
         /// <summary>
-        /// Gets and sets the property PredefinedScalingMetricType.
+        /// Gets and sets the property PredefinedScalingMetricType. 
+        /// <para>
+        /// The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only
+        /// to Auto Scaling groups, Sport Fleet requests, and ECS services.
+        /// </para>
         /// </summary>
         public ScalingMetricType PredefinedScalingMetricType
         {
@@ -51,7 +55,28 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceLabel.
+        /// Gets and sets the property ResourceLabel. 
+        /// <para>
+        /// Identifies the resource associated with the metric type. You can't specify a resource
+        /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
+        /// a target group attached to the Auto Scaling group, Spot Fleet request, or ECS service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+        /// where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the
+        /// load balancer ARN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion
+        /// of the target group ARN.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceLabel
         {
