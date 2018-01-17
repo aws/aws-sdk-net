@@ -1,3 +1,9 @@
+### 3.3.222.1 (2018-01-17 19:52 UTC)
+* AutoScalingPlans (3.3.0.1)
+	* Documentation updates for autoscaling-plans
+* EC2 (3.3.42.1)
+	* Documentation updates for EC2
+
 ### 3.3.222.0 (2018-01-17 00:00 UTC)
 * ApplicationAutoScaling (3.3.8.0)
 	* Application Auto Scaling is adding support for Target Tracking Scaling for ECS services.
