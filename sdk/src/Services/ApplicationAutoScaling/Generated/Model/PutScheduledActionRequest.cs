@@ -35,8 +35,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
     /// dimension. A scheduled action applies to the scalable target identified by those three
-    /// attributes. You cannot create a scheduled action without first registering a scalable
-    /// target using <a>RegisterScalableTarget</a>.
+    /// attributes. You cannot create a scheduled action until you register the scalable target
+    /// using <a>RegisterScalableTarget</a>.
     /// </para>
     ///  
     /// <para>
@@ -137,8 +137,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension. This string consists of the service namespace, resource type,
-        /// and scaling property.
+        /// The scalable dimension. This parameter is required if you are creating a scheduled
+        /// action. This string consists of the service namespace, resource type, and scaling
+        /// property.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -39,7 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property PredefinedMetricType. 
         /// <para>
         /// The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only
-        /// to Spot fleet requests.
+        /// to Spot fleet requests and ECS services.
         /// </para>
         /// </summary>
         public MetricType PredefinedMetricType
@@ -59,7 +59,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Identifies the resource associated with the metric type. You can't specify a resource
         /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
-        /// a target group attached to the Spot fleet request.
+        /// a target group attached to the Spot fleet request or ECS service.
         /// </para>
         ///  
         /// <para>

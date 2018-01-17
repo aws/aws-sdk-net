@@ -35,8 +35,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// <para>
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
     /// dimension. A scaling policy applies to the scalable target identified by those three
-    /// attributes. You cannot create a scaling policy without first registering a scalable
-    /// target using <a>RegisterScalableTarget</a>.
+    /// attributes. You cannot create a scaling policy until you register the scalable target
+    /// using <a>RegisterScalableTarget</a>.
     /// </para>
     ///  
     /// <para>
@@ -80,13 +80,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. If you are creating a new policy, this parameter is required. If
-        /// you are updating a policy, this parameter is not required.
+        /// The policy type. This parameter is required if you are creating a policy.
         /// </para>
         ///  
         /// <para>
-        /// For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other
-        /// service, only <code>StepScaling</code> is supported.
+        /// For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS,
+        /// Spot Fleet, and Amazon RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code>
+        /// are supported. For any other service, only <code>StepScaling</code> is supported.
         /// </para>
         /// </summary>
         public PolicyType PolicyType
@@ -268,8 +268,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if you are creating a new policy and the policy type is
-        /// <code>TargetTrackingScaling</code>.
+        /// This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>.
         /// </para>
         /// </summary>
         public TargetTrackingScalingPolicyConfiguration TargetTrackingScalingPolicyConfiguration

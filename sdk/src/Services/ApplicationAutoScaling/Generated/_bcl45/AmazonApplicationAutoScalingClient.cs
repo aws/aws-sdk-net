@@ -50,6 +50,10 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Schedule one-time or recurring scaling actions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// View the history of your scaling events
     /// </para>
     ///  </li> </ul> 
@@ -59,7 +63,7 @@ namespace Amazon.ApplicationAutoScaling
     ///  <ul> <li> 
     /// <para>
     /// Amazon ECS services. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
-    /// Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Auto Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -87,7 +91,7 @@ namespace Amazon.ApplicationAutoScaling
     ///  </li> <li> 
     /// <para>
     /// Amazon Aurora Replicas. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using
-    /// Application Auto Scaling with an Amazon Aurora DB Cluster</a>.
+    /// Amazon Aurora Auto Scaling with Aurora Replicas</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -309,12 +313,11 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
-        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
-        /// API operation, which depends on the existence of a scalable target, this exception
-        /// is thrown if the scalable target with the specified service namespace, resource ID,
-        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
-        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// cannot be found.
+        /// The specified object could not be found. For any operation that depends on the existence
+        /// of a scalable target, this exception is thrown if the scalable target with the specified
+        /// service namespace, resource ID, and scalable dimension does not exist. For any operation
+        /// that deletes or deregisters a resource, this exception is thrown if the resource cannot
+        /// be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -367,12 +370,11 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
-        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
-        /// API operation, which depends on the existence of a scalable target, this exception
-        /// is thrown if the scalable target with the specified service namespace, resource ID,
-        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
-        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// cannot be found.
+        /// The specified object could not be found. For any operation that depends on the existence
+        /// of a scalable target, this exception is thrown if the scalable target with the specified
+        /// service namespace, resource ID, and scalable dimension does not exist. For any operation
+        /// that deletes or deregisters a resource, this exception is thrown if the resource cannot
+        /// be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -435,12 +437,11 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
-        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
-        /// API operation, which depends on the existence of a scalable target, this exception
-        /// is thrown if the scalable target with the specified service namespace, resource ID,
-        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
-        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// cannot be found.
+        /// The specified object could not be found. For any operation that depends on the existence
+        /// of a scalable target, this exception is thrown if the scalable target with the specified
+        /// service namespace, resource ID, and scalable dimension does not exist. For any operation
+        /// that deletes or deregisters a resource, this exception is thrown if the resource cannot
+        /// be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -480,7 +481,7 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information about the scalable targets in the specified namespace.
+        /// Gets information about the scalable targets in the specified namespace.
         /// 
         ///  
         /// <para>
@@ -635,7 +636,7 @@ namespace Amazon.ApplicationAutoScaling
         /// Auto Scaling is unable to retrieve the alarms associated with a scaling policy due
         /// to a client error, for example, if the role ARN specified for a scalable target does
         /// not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
-        /// API operation on behalf of your account.
+        /// on your behalf.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
         /// The service encountered an internal error.
@@ -751,8 +752,8 @@ namespace Amazon.ApplicationAutoScaling
         /// <para>
         /// Each scalable target is identified by a service namespace, resource ID, and scalable
         /// dimension. A scaling policy applies to the scalable target identified by those three
-        /// attributes. You cannot create a scaling policy without first registering a scalable
-        /// target using <a>RegisterScalableTarget</a>.
+        /// attributes. You cannot create a scaling policy until you register the scalable target
+        /// using <a>RegisterScalableTarget</a>.
         /// </para>
         ///  
         /// <para>
@@ -777,23 +778,21 @@ namespace Amazon.ApplicationAutoScaling
         /// Auto Scaling is unable to retrieve the alarms associated with a scaling policy due
         /// to a client error, for example, if the role ARN specified for a scalable target does
         /// not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
-        /// API operation on behalf of your account.
+        /// on your behalf.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.InternalServiceException">
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
         /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
-        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
-        /// API operation, which depends on the existence of a scalable target, this exception
-        /// is thrown if the scalable target with the specified service namespace, resource ID,
-        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
-        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// cannot be found.
+        /// The specified object could not be found. For any operation that depends on the existence
+        /// of a scalable target, this exception is thrown if the scalable target with the specified
+        /// service namespace, resource ID, and scalable dimension does not exist. For any operation
+        /// that deletes or deregisters a resource, this exception is thrown if the resource cannot
+        /// be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -839,8 +838,8 @@ namespace Amazon.ApplicationAutoScaling
         /// <para>
         /// Each scalable target is identified by a service namespace, resource ID, and scalable
         /// dimension. A scheduled action applies to the scalable target identified by those three
-        /// attributes. You cannot create a scheduled action without first registering a scalable
-        /// target using <a>RegisterScalableTarget</a>.
+        /// attributes. You cannot create a scheduled action until you register the scalable target
+        /// using <a>RegisterScalableTarget</a>.
         /// </para>
         ///  
         /// <para>
@@ -865,17 +864,15 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
         /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
-        /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
-        /// API operation, which depends on the existence of a scalable target, this exception
-        /// is thrown if the scalable target with the specified service namespace, resource ID,
-        /// and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code>
-        /// API operation, this exception is thrown if the resource that is to be deleted or deregistered
-        /// cannot be found.
+        /// The specified object could not be found. For any operation that depends on the existence
+        /// of a scalable target, this exception is thrown if the scalable target with the specified
+        /// service namespace, resource ID, and scalable dimension does not exist. For any operation
+        /// that deletes or deregisters a resource, this exception is thrown if the resource cannot
+        /// be found.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for
@@ -917,15 +914,15 @@ namespace Amazon.ApplicationAutoScaling
         /// <summary>
         /// Registers or updates a scalable target. A scalable target is a resource that Application
         /// Auto Scaling can scale out or scale in. After you have registered a scalable target,
-        /// you can use this operation to update the minimum and maximum values for your scalable
+        /// you can use this operation to update the minimum and maximum values for its scalable
         /// dimension.
         /// 
         ///  
         /// <para>
         /// After you register a scalable target, you can create and apply scaling policies using
         /// <a>PutScalingPolicy</a>. You can view the scaling policies for a service namespace
-        /// using <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
-        /// you can deregister it using <a>DeregisterScalableTarget</a>.
+        /// using <a>DescribeScalableTargets</a>. If you no longer need a scalable target, you
+        /// can deregister it using <a>DeregisterScalableTarget</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterScalableTarget service method.</param>
@@ -939,8 +936,7 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
         /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">

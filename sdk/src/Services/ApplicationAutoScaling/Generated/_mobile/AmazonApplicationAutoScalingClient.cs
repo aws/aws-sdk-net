@@ -50,6 +50,10 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Schedule one-time or recurring scaling actions
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// View the history of your scaling events
     /// </para>
     ///  </li> </ul> 
@@ -59,7 +63,7 @@ namespace Amazon.ApplicationAutoScaling
     ///  <ul> <li> 
     /// <para>
     /// Amazon ECS services. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
-    /// Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// Auto Scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -87,7 +91,7 @@ namespace Amazon.ApplicationAutoScaling
     ///  </li> <li> 
     /// <para>
     /// Amazon Aurora Replicas. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using
-    /// Application Auto Scaling with an Amazon Aurora DB Cluster</a>.
+    /// Amazon Aurora Auto Scaling with Aurora Replicas</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>

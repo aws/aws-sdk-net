@@ -225,6 +225,14 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType EC2SpotFleetRequestAverageNetworkOut = new MetricType("EC2SpotFleetRequestAverageNetworkOut");
         /// <summary>
+        /// Constant ECSServiceAverageCPUUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ECSServiceAverageCPUUtilization = new MetricType("ECSServiceAverageCPUUtilization");
+        /// <summary>
+        /// Constant ECSServiceAverageMemoryUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
+        /// <summary>
         /// Constant RDSReaderAverageCPUUtilization for MetricType
         /// </summary>
         public static readonly MetricType RDSReaderAverageCPUUtilization = new MetricType("RDSReaderAverageCPUUtilization");

@@ -54,8 +54,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of scalable target results. This value can be between 1 and 50.
-        /// The default value is 50.
+        /// The maximum number of scalable targets. This value can be between 1 and 50. The default
+        /// value is 50.
         /// </para>
         ///  
         /// <para>

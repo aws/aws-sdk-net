@@ -57,7 +57,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableTargets. 
         /// <para>
-        /// The list of scalable targets that matches the request parameters.
+        /// The scalable targets that match the request parameters.
         /// </para>
         /// </summary>
         public List<ScalableTarget> ScalableTargets
