@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.221.0",
-    "CoreVersion"    : "3.3.21.6",
+    "ProductVersion" : "3.3.222.0",
+    "CoreVersion"    : "3.3.21.7",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.19.0",
+            "Version" : "3.3.20.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.7.0",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -1037,6 +1037,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.1"
+            },
+            "InPreview"               : false
+        },
+        "AutoScalingPlans"                : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.21.7"
             },
             "InPreview"               : false
         }

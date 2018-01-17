@@ -30,6 +30,7 @@
       <Directory>$(ProjectDir)/src/Services/appsync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/athena/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/autoscalingplans/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awshealth/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacemetering/bin/Release/net45/</Directory>
@@ -161,6 +162,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AppSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Athena.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScalingPlans.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSHealth.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceMetering.dll" Analyze="True" AnalyzeAllChildren="True" />

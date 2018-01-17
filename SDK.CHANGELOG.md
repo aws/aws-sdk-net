@@ -1,3 +1,15 @@
+### 3.3.222.0 (2018-01-17 00:00 UTC)
+* ApplicationAutoScaling (3.3.8.0)
+	* Application Auto Scaling is adding support for Target Tracking Scaling for ECS services.
+* AutoScalingPlans (3.3.0.0)
+	* AWS Auto Scaling enables you to quickly discover all of the scalable resources underlying your application and set up application scaling in minutes using built-in scaling recommendations.
+* RDS (3.3.20.0)
+	* With this release you can now integrate RDS DB instances with CloudWatch Logs. We have added parameters to the operations for creating and modifying DB instances (for example CreateDBInstance) to allow you to take advantage of this capability through the CLI and API. Once you enable this feature, a stream of log events will publish to CloudWatch Logs for each log type you enable.
+* Core 3.3.21.7
+	* Amazon Workspaces is now available in sa-east-1
+
+
+
 ### 3.3.221.0 (2018-01-15 23:31 UTC)
 * Lambda (3.3.11.0)
 	* Support for creating Lambda Functions using 'dotnetcore2.0' and 'go1.x'. 
