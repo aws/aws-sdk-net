@@ -1588,11 +1588,11 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Updates variant weight, capacity, or both of one or more variants associated with
-        /// an endpoint. This operation updates weight, capacity, or both for the previously provisioned
-        /// endpoint. When it receives the request, Amazon SageMaker sets the endpoint status
-        /// to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>.
-        /// To check the status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// Updates variant weight of one or more variants associated with an existing endpoint,
+        /// or capacity of one variant associated with an existing endpoint. When it receives
+        /// the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
+        /// updating the endpoint, it sets the status to <code>InService</code>. To check the
+        /// status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>

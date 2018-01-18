@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateEndpointConfigRequest : AmazonSageMakerRequest
     {
         private string _endpointConfigName;
+        private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
 
@@ -79,6 +80,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker
+        /// uses to encrypt data on the storage volume attached to the ML compute instance that
+        /// hosts the endpoint.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

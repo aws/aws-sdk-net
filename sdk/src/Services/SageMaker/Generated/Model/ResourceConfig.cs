@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _instanceCount;
         private TrainingInstanceType _instanceType;
+        private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
 
         /// <summary>
@@ -72,6 +73,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeKmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that run the training job.
+        /// </para>
+        /// </summary>
+        public string VolumeKmsKeyId
+        {
+            get { return this._volumeKmsKeyId; }
+            set { this._volumeKmsKeyId = value; }
+        }
+
+        // Check to see if VolumeKmsKeyId property is set
+        internal bool IsSetVolumeKmsKeyId()
+        {
+            return this._volumeKmsKeyId != null;
         }
 
         /// <summary>

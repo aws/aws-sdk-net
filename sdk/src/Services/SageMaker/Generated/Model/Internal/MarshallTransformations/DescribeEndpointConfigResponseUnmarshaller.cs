@@ -69,6 +69,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.EndpointConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductionVariants", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ProductionVariant, ProductionVariantUnmarshaller>(ProductionVariantUnmarshaller.Instance);

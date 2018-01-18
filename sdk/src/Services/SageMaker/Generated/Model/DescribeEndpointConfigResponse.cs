@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _endpointConfigArn;
         private string _endpointConfigName;
+        private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
 
         /// <summary>
@@ -89,6 +90,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage
+        /// volume attached to the instance.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
