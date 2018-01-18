@@ -1,3 +1,7 @@
+### 3.3.223.0 (2018-01-18 01:05 UTC)
+* SageMaker (3.3.2.0)
+	* CreateTrainingJob and CreateEndpointConfig now supports KMS Key for volume encryption. 
+
 ### 3.3.222.1 (2018-01-17 19:52 UTC)
 * AutoScalingPlans (3.3.0.1)
 	* Documentation updates for autoscaling-plans
