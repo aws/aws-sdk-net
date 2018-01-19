@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.223.0",
-    "CoreVersion"    : "3.3.21.7",
+    "ProductVersion" : "3.3.224.0",
+    "CoreVersion"    : "3.3.21.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -1045,6 +1045,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.7"
+            },
+            "InPreview"               : false
+        },
+        "TranscribeService"               : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.21.8"
             },
             "InPreview"               : false
         }

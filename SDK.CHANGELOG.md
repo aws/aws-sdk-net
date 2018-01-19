@@ -1,3 +1,11 @@
+### 3.3.224.0 (2018-01-19 20:44 UTC)
+* Glue (3.3.4.0)
+	* New AWS Glue DataCatalog APIs to manage table versions and a new feature to skip archiving of the old table version when updating table.
+* TranscribeService (3.3.0.0)
+	* Amazon Transcribe Public Preview Release
+* Core 3.3.21.8
+	* Fix issue signing request with x-amzn-trace-id
+
 ### 3.3.223.0 (2018-01-18 01:05 UTC)
 * SageMaker (3.3.2.0)
 	* CreateTrainingJob and CreateEndpointConfig now supports KMS Key for volume encryption. 
