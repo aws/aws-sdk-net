@@ -548,6 +548,10 @@
       <Project>{ECF2D7A1-D543-4290-B0CE-1EAF4E5E64A7}</Project>
       <Name>AWSSDK.StorageGateway.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
+      <Project>{7027246A-5E80-43D3-82D0-AA13B5519D45}</Project>
+      <Name>AWSSDK.TranscribeService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Translate/AWSSDK.Translate.CodeAnalysis.csproj">
       <Project>{6FF17F31-ED67-4AFF-830D-EC37A05E0BD4}</Project>
       <Name>AWSSDK.Translate.CodeAnalysis</Name>
