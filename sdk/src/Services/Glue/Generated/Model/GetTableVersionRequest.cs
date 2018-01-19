@@ -28,16 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTables operation.
-    /// Retrieves the definitions of some or all of the tables in a given <code>Database</code>.
+    /// Container for the parameters to the GetTableVersion operation.
+    /// Retrieves a specified version of a table.
     /// </summary>
-    public partial class GetTablesRequest : AmazonGlueRequest
+    public partial class GetTableVersionRequest : AmazonGlueRequest
     {
         private string _catalogId;
         private string _databaseName;
-        private string _expression;
-        private int? _maxResults;
-        private string _nextToken;
+        private string _tableName;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -61,8 +60,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The database in the catalog whose tables to list. For Hive compatibility, this name
-        /// is entirely lowercase.
+        /// The database in the catalog in which the table resides. For Hive compatibility, this
+        /// name is entirely lowercase.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -78,58 +77,39 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Expression. 
+        /// Gets and sets the property TableName. 
         /// <para>
-        /// A regular expression pattern. If present, only those tables whose names match the
-        /// pattern are returned.
+        /// The name of the table. For Hive compatibility, this name is entirely lowercase.
         /// </para>
         /// </summary>
-        public string Expression
+        public string TableName
         {
-            get { return this._expression; }
-            set { this._expression = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
-        // Check to see if Expression property is set
-        internal bool IsSetExpression()
+        // Check to see if TableName property is set
+        internal bool IsSetTableName()
         {
-            return this._expression != null;
+            return this._tableName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property VersionId. 
         /// <para>
-        /// The maximum number of tables to return in a single response.
+        /// The ID value of the table version to be retrieved.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public string VersionId
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._versionId; }
+            set { this._versionId = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
         {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// A continuation token, included if this is a continuation call.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
+            return this._versionId != null;
         }
 
     }

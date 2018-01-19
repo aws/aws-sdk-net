@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateTable Request Marshaller
+    /// BatchDeleteTableVersion Request Marshaller
     /// </summary>       
-    public class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchDeleteTableVersionRequestMarshaller : IMarshaller<IRequest, BatchDeleteTableVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateTableRequest)input);
+            return this.Marshall((BatchDeleteTableVersionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateTableRequest publicRequest)
+        public IRequest Marshall(BatchDeleteTableVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.UpdateTable";
+            string target = "AWSGlue.BatchDeleteTableVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -79,21 +79,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
-                if(publicRequest.IsSetSkipArchive())
+                if(publicRequest.IsSetTableName())
                 {
-                    context.Writer.WritePropertyName("SkipArchive");
-                    context.Writer.Write(publicRequest.SkipArchive);
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
                 }
 
-                if(publicRequest.IsSetTableInput())
+                if(publicRequest.IsSetVersionIds())
                 {
-                    context.Writer.WritePropertyName("TableInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TableInput, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("VersionIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVersionIdsListValue in publicRequest.VersionIds)
+                    {
+                            context.Writer.Write(publicRequestVersionIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

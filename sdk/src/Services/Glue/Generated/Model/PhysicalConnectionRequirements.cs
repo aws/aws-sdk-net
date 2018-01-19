@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The connection's availability zone.
+        /// The connection's availability zone. This field is deprecated and has no effect.
         /// </para>
         /// </summary>
         public string AvailabilityZone

@@ -46,6 +46,21 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.BatchDeleteTableVersionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchDeleteTableVersionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.BatchDeleteTableVersionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.BatchGetPartitionRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -230,6 +245,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteTableRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableVersionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableVersionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableVersionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteTableVersionRequest.VersionId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -437,6 +472,26 @@
     <property>Amazon.Glue.Model.GetTablesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableVersionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableVersionRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableVersionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetTableVersionRequest.VersionId</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTableVersionsRequest.CatalogId</property>
@@ -1057,11 +1112,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Table.ViewExpandedText</property>
-    <max>2048</max>
+    <max>409600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Table.ViewOriginalText</property>
-    <max>2048</max>
+    <max>409600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableError.TableName</property>
@@ -1093,14 +1148,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableInput.ViewExpandedText</property>
-    <max>2048</max>
+    <max>409600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableInput.ViewOriginalText</property>
-    <max>2048</max>
+    <max>409600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.TableVersion.VersionId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.TableVersionError.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.TableVersionError.VersionId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

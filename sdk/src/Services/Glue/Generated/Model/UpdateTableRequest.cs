@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private bool? _skipArchive;
         private TableInput _tableInput;
 
         /// <summary>
@@ -59,7 +60,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the catalog database in which the table resides.
+        /// The name of the catalog database in which the table resides. For Hive compatibility,
+        /// this name is entirely lowercase.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -72,6 +74,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipArchive. 
+        /// <para>
+        /// By default, <code>UpdateTable</code> always creates an archived version of the table
+        /// before updating it. If <code>skipArchive</code> is set to true, however, <code>UpdateTable</code>
+        /// does not create the archived version.
+        /// </para>
+        /// </summary>
+        public bool SkipArchive
+        {
+            get { return this._skipArchive.GetValueOrDefault(); }
+            set { this._skipArchive = value; }
+        }
+
+        // Check to see if SkipArchive property is set
+        internal bool IsSetSkipArchive()
+        {
+            return this._skipArchive.HasValue; 
         }
 
         /// <summary>

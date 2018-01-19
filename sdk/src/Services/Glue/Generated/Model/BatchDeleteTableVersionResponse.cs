@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An error record for table operations.
+    /// This is the response object from the BatchDeleteTableVersion operation.
     /// </summary>
-    public partial class TableError
+    public partial class BatchDeleteTableVersionResponse : AmazonWebServiceResponse
     {
-        private ErrorDetail _errorDetail;
-        private string _tableName;
+        private List<TableVersionError> _errors = new List<TableVersionError>();
 
         /// <summary>
-        /// Gets and sets the property ErrorDetail. 
+        /// Gets and sets the property Errors. 
         /// <para>
-        /// Detail about the error.
+        /// A list of errors encountered while trying to delete the specified table versions.
         /// </para>
         /// </summary>
-        public ErrorDetail ErrorDetail
+        public List<TableVersionError> Errors
         {
-            get { return this._errorDetail; }
-            set { this._errorDetail = value; }
+            get { return this._errors; }
+            set { this._errors = value; }
         }
 
-        // Check to see if ErrorDetail property is set
-        internal bool IsSetErrorDetail()
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
         {
-            return this._errorDetail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TableName. 
-        /// <para>
-        /// Name of the table. For Hive compatibility, this must be entirely lowercase.
-        /// </para>
-        /// </summary>
-        public string TableName
-        {
-            get { return this._tableName; }
-            set { this._tableName = value; }
-        }
-
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
-        {
-            return this._tableName != null;
+            return this._errors != null && this._errors.Count > 0; 
         }
 
     }

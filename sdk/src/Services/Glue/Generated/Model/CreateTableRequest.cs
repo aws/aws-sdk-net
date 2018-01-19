@@ -59,7 +59,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The catalog database in which to create the new table.
+        /// The catalog database in which to create the new table. For Hive compatibility, this
+        /// name is entirely lowercase.
         /// </para>
         /// </summary>
         public string DatabaseName

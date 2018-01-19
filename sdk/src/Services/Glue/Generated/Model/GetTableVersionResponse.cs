@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// An error record for table operations.
+    /// This is the response object from the GetTableVersion operation.
     /// </summary>
-    public partial class TableError
+    public partial class GetTableVersionResponse : AmazonWebServiceResponse
     {
-        private ErrorDetail _errorDetail;
-        private string _tableName;
+        private TableVersion _tableVersion;
 
         /// <summary>
-        /// Gets and sets the property ErrorDetail. 
+        /// Gets and sets the property TableVersion. 
         /// <para>
-        /// Detail about the error.
+        /// The requested table version.
         /// </para>
         /// </summary>
-        public ErrorDetail ErrorDetail
+        public TableVersion TableVersion
         {
-            get { return this._errorDetail; }
-            set { this._errorDetail = value; }
+            get { return this._tableVersion; }
+            set { this._tableVersion = value; }
         }
 
-        // Check to see if ErrorDetail property is set
-        internal bool IsSetErrorDetail()
+        // Check to see if TableVersion property is set
+        internal bool IsSetTableVersion()
         {
-            return this._errorDetail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TableName. 
-        /// <para>
-        /// Name of the table. For Hive compatibility, this must be entirely lowercase.
-        /// </para>
-        /// </summary>
-        public string TableName
-        {
-            get { return this._tableName; }
-            set { this._tableName = value; }
-        }
-
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
-        {
-            return this._tableName != null;
+            return this._tableVersion != null;
         }
 
     }

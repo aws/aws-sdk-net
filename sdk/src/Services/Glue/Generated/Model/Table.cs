@@ -88,7 +88,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// Name of the metadata database where the table metadata resides.
+        /// Name of the metadata database where the table metadata resides. For Hive compatibility,
+        /// this must be all lowercase.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -161,7 +162,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the table.
+        /// Name of the table. For Hive compatibility, this must be entirely lowercase.
         /// </para>
         /// </summary>
         public string Name

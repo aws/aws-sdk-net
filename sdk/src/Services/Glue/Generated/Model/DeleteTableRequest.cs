@@ -59,7 +59,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name of the catalog database in which the table resides.
+        /// The name of the catalog database in which the table resides. For Hive compatibility,
+        /// this name is entirely lowercase.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -77,7 +78,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the table to be deleted.
+        /// The name of the table to be deleted. For Hive compatibility, this name is entirely
+        /// lowercase.
         /// </para>
         /// </summary>
         public string Name

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateConnection operation
+    /// Response Unmarshaller for DeleteTableVersion operation
     /// </summary>  
-    public class CreateConnectionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteTableVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateConnectionResponse response = new CreateConnectionResponse();
+            DeleteTableVersionResponse response = new DeleteTableVersionResponse();
 
 
             return response;
@@ -61,9 +61,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFoundException"))
             {
-                return new AlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new EntityNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
+            {
+                return new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
             {
@@ -73,16 +77,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 return new OperationTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNumberLimitExceededException"))
-            {
-                return new ResourceNumberLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonGlueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateConnectionResponseUnmarshaller _instance = new CreateConnectionResponseUnmarshaller();        
+        private static DeleteTableVersionResponseUnmarshaller _instance = new DeleteTableVersionResponseUnmarshaller();        
 
-        internal static CreateConnectionResponseUnmarshaller GetInstance()
+        internal static DeleteTableVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +90,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConnectionResponseUnmarshaller Instance
+        public static DeleteTableVersionResponseUnmarshaller Instance
         {
             get
             {

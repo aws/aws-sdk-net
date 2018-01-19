@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The structure used to create or updata a database.
+    /// The structure used to create or update a database.
     /// </summary>
     public partial class DatabaseInput
     {
@@ -76,7 +76,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the database.
+        /// Name of the database. For Hive compatibility, this is folded to lowercase when it
+        /// is stored.
         /// </para>
         /// </summary>
         public string Name

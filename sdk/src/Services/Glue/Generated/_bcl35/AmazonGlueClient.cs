@@ -486,6 +486,71 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchDeleteTableVersion
+
+        /// <summary>
+        /// Deletes a specified batch of versions of a table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableVersion service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
+        public virtual BatchDeleteTableVersionResponse BatchDeleteTableVersion(BatchDeleteTableVersionRequest request)
+        {
+            var marshaller = new BatchDeleteTableVersionRequestMarshaller();
+            var unmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteTableVersionRequest,BatchDeleteTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableVersion operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteTableVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteTableVersion(BatchDeleteTableVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new BatchDeleteTableVersionRequestMarshaller();
+            var unmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchDeleteTableVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteTableVersion.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteTableVersionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
+        public virtual BatchDeleteTableVersionResponse EndBatchDeleteTableVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteTableVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetPartition
 
         /// <summary>
@@ -692,6 +757,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
@@ -1325,6 +1393,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
         public virtual CreateUserDefinedFunctionResponse CreateUserDefinedFunction(CreateUserDefinedFunctionRequest request)
         {
@@ -1871,6 +1942,71 @@ namespace Amazon.Glue
         public virtual DeleteTableResponse EndDeleteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTableVersion
+
+        /// <summary>
+        /// Deletes a specified version of a table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
+        public virtual DeleteTableVersionResponse DeleteTableVersion(DeleteTableVersionRequest request)
+        {
+            var marshaller = new DeleteTableVersionRequestMarshaller();
+            var unmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTableVersionRequest,DeleteTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableVersion operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTableVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTableVersion(DeleteTableVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteTableVersionRequestMarshaller();
+            var unmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTableVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTableVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteTableVersionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
+        public virtual DeleteTableVersionResponse EndDeleteTableVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTableVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -3434,6 +3570,71 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetTableVersion
+
+        /// <summary>
+        /// Retrieves a specified version of a table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetTableVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
+        public virtual GetTableVersionResponse GetTableVersion(GetTableVersionRequest request)
+        {
+            var marshaller = new GetTableVersionRequestMarshaller();
+            var unmarshaller = GetTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableVersionRequest,GetTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableVersion operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTableVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetTableVersion(GetTableVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetTableVersionRequestMarshaller();
+            var unmarshaller = GetTableVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTableVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTableVersion.</param>
+        /// 
+        /// <returns>Returns a  GetTableVersionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
+        public virtual GetTableVersionResponse EndGetTableVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTableVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTableVersions
 
         /// <summary>
@@ -4909,6 +5110,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)

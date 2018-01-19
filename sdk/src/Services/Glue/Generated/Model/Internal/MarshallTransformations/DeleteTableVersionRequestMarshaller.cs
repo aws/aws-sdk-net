@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateTable Request Marshaller
+    /// DeleteTableVersion Request Marshaller
     /// </summary>       
-    public class UpdateTableRequestMarshaller : IMarshaller<IRequest, UpdateTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteTableVersionRequestMarshaller : IMarshaller<IRequest, DeleteTableVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateTableRequest)input);
+            return this.Marshall((DeleteTableVersionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateTableRequest publicRequest)
+        public IRequest Marshall(DeleteTableVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.UpdateTable";
+            string target = "AWSGlue.DeleteTableVersion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -79,21 +79,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
-                if(publicRequest.IsSetSkipArchive())
+                if(publicRequest.IsSetTableName())
                 {
-                    context.Writer.WritePropertyName("SkipArchive");
-                    context.Writer.Write(publicRequest.SkipArchive);
+                    context.Writer.WritePropertyName("TableName");
+                    context.Writer.Write(publicRequest.TableName);
                 }
 
-                if(publicRequest.IsSetTableInput())
+                if(publicRequest.IsSetVersionId())
                 {
-                    context.Writer.WritePropertyName("TableInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TableInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TableInput, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("VersionId");
+                    context.Writer.Write(publicRequest.VersionId);
                 }
 
         

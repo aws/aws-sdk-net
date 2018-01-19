@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Database to delete.
+        /// The name of the Database to delete. For Hive compatibility, this must be all lowercase.
         /// </para>
         /// </summary>
         public string Name

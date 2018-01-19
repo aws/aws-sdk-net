@@ -96,7 +96,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the database.
+        /// Name of the database. For Hive compatibility, this is folded to lowercase when it
+        /// is stored.
         /// </para>
         /// </summary>
         public string Name

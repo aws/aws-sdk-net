@@ -78,7 +78,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the metadata database to update in the catalog.
+        /// The name of the database to update in the catalog. For Hive compatibility, this is
+        /// folded to lowercase.
         /// </para>
         /// </summary>
         public string Name

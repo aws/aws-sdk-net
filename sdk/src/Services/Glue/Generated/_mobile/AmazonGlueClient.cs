@@ -361,6 +361,38 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchDeleteTableVersion
+
+        internal virtual BatchDeleteTableVersionResponse BatchDeleteTableVersion(BatchDeleteTableVersionRequest request)
+        {
+            var marshaller = new BatchDeleteTableVersionRequestMarshaller();
+            var unmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteTableVersionRequest,BatchDeleteTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
+        public virtual Task<BatchDeleteTableVersionResponse> BatchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchDeleteTableVersionRequestMarshaller();
+            var unmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteTableVersionRequest,BatchDeleteTableVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetPartition
 
         internal virtual BatchGetPartitionResponse BatchGetPartition(BatchGetPartitionRequest request)
@@ -1028,6 +1060,38 @@ namespace Amazon.Glue
             var unmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTableRequest,DeleteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTableVersion
+
+        internal virtual DeleteTableVersionResponse DeleteTableVersion(DeleteTableVersionRequest request)
+        {
+            var marshaller = new DeleteTableVersionRequestMarshaller();
+            var unmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTableVersionRequest,DeleteTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTableVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
+        public virtual Task<DeleteTableVersionResponse> DeleteTableVersionAsync(DeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTableVersionRequestMarshaller();
+            var unmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTableVersionRequest,DeleteTableVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1828,6 +1892,38 @@ namespace Amazon.Glue
             var unmarshaller = GetTablesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTablesRequest,GetTablesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTableVersion
+
+        internal virtual GetTableVersionResponse GetTableVersion(GetTableVersionRequest request)
+        {
+            var marshaller = new GetTableVersionRequestMarshaller();
+            var unmarshaller = GetTableVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableVersionRequest,GetTableVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTableVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTableVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
+        public virtual Task<GetTableVersionResponse> GetTableVersionAsync(GetTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetTableVersionRequestMarshaller();
+            var unmarshaller = GetTableVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTableVersionRequest,GetTableVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
