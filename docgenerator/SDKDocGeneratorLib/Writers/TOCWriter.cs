@@ -10,83 +10,24 @@ namespace SDKDocGenerator.Writers
 {
     public class TOCWriter : BaseTemplateWriter
     {
-        private readonly IList<GenerationManifest> _manifests;
         private readonly Dictionary<string, string> _namespaceTocs = new Dictionary<string, string>(); 
-        private readonly Dictionary<string, AssemblyWrapper> _generatedNamespaces = new Dictionary<string, AssemblyWrapper>();
 
-        private const string tocFilesFolderName = "_tocfiles";
-        
-        private const string tocIdFieldName = "id";
-        private const string tocHrefFieldName = "href";
-        private const string tocNodesFieldName = "nodes";
+        private const string TocFilesFolderName = "_tocfiles";
+        private const string TocFilenameSuffix = ".toc.json";
 
-        public TOCWriter(GeneratorOptions options, IList<GenerationManifest> manifests)
+        private const string TocIdFieldName = "id";
+        private const string TocHrefFieldName = "href";
+        private const string TocNodesFieldName = "nodes";
+
+        public TOCWriter(GeneratorOptions options)
             : base(options)
         {
-            _manifests = manifests;
-        }
-
-        protected override string GetTemplateName()
-        {
-            return "TOC.html";
-        }
-
-        protected override string ReplaceTokens(string templateBody)
-        {
-            // collate the set of namespaces fom the manifests we've been
-            // given
-            foreach (var m in _manifests)
-            {
-                var namespaces = m.AssemblyWrapper.GetNamespaces();
-                foreach (var n in namespaces)
-                {
-                    if (!_generatedNamespaces.ContainsKey(n))
-                        _generatedNamespaces.Add(n, m.AssemblyWrapper);
-                }
-            }
-
-            LoadExistingNamespaceTocs();
-            UpdateNamespaceTocs();
-            PersistNamespaceTocs();
-
-            var tocContent = TransformNamespaceTocsToHtml();
-
-            var finalBody = templateBody.Replace("{TOC}", tocContent);
-            return finalBody;
         }
 
         /// <summary>
-        /// Scans the ./items/_tocfiles folder in the output content and loads all existing
-        /// toc files (*.toc.json) into the _namespaceTocs collection, indexed
-        /// by namespace (the first part of the filename).
-        /// </summary>
-        void LoadExistingNamespaceTocs()
-        {
-            const string extensionPattern = ".toc.json";
-
-            var filePath = Path.Combine(Options.ComputedContentFolder, tocFilesFolderName);
-            if (!Directory.Exists(filePath))
-                return;
-
-            var tocs = Directory.GetFiles(filePath, "*" + extensionPattern);
-            foreach (var t in tocs)
-            {
-                // we expect the major portion of the filename to be the namespace
-                // we'll be keying off
-                var filename = Path.GetFileName(t);
-                var ns = filename.Substring(0, filename.Length - extensionPattern.Length);
-                using (var reader = File.OpenText(t))
-                {
-                    var tocContent = reader.ReadToEnd();
-                    _namespaceTocs.Add(ns, tocContent);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Constructs the per-root-namespace json files for the services that were generated.
-        /// These will be added to the _namespaceTocs collection, either extending it or
-        /// overwriting an existing entry if we're updating a service.
+        /// Creates or updates a per-namespace json file during generation of docs for types in that
+        /// namespace. These will be added to the _namespaceTocs collection to be collated into
+        /// one single master toc at the end of processing of all namespaces.
         /// </summary>
         /// <example>
         /// An partial and annotated example of what one data file looks like for the 
@@ -110,28 +51,60 @@ namespace SDKDocGenerator.Writers
         ///     }
         /// }
         /// </example>
-        void UpdateNamespaceTocs()
+        public void BuildNamespaceToc(string nameSpace, AssemblyWrapper sdkAssemblyWrapper)
         {
-            foreach (var ns in _generatedNamespaces.Keys)
-            {
-                var sb = new StringBuilder();
-                var jsonWriter = new JsonWriter(sb);
+            var sb = new StringBuilder();
+            var jsonWriter = new JsonWriter(sb);
 
-                jsonWriter.WriteObjectStart();
-                WriteNamespaceToc(jsonWriter, ns);
-                jsonWriter.WriteObjectEnd();
+            jsonWriter.WriteObjectStart();
+            WriteNamespaceToc(jsonWriter, nameSpace, sdkAssemblyWrapper);
+            jsonWriter.WriteObjectEnd();
 
-                var nsTocContents = sb.ToString();
-                if (_namespaceTocs.ContainsKey(ns))
-                    _namespaceTocs[ns] = nsTocContents;
-                else
-                    _namespaceTocs.Add(ns, nsTocContents);
-            }
+            var nsTocContents = sb.ToString();
+            if (_namespaceTocs.ContainsKey(nameSpace))
+                _namespaceTocs[nameSpace] = nsTocContents;
+            else
+                _namespaceTocs.Add(nameSpace, nsTocContents);
+
+            PersistNamespaceToc(nameSpace);
         }
 
-        void WriteNamespaceToc(JsonWriter writer, string ns)
+        protected override string GetTemplateName()
         {
-            var assemblyWrapper = _generatedNamespaces[ns];
+            return "TOC.html";
+        }
+
+        protected override string ReplaceTokens(string templateBody)
+        {
+            var tocContent = TransformNamespaceTocsToHtml();
+
+            var finalBody = templateBody.Replace("{TOC}", tocContent);
+            return finalBody;
+        }
+
+        /// <summary>
+        /// Loads the toc snippet file for the specified namespace, adding it to the managed
+        /// collection for later collation into the overall toc file.
+        /// </summary>
+        //void LoadNamespaceToc(string nameSpace)
+        //{
+        //    var filePath = Path.Combine(Options.ComputedContentFolder, tocFilesFolderName);
+        //    if (!Directory.Exists(filePath))
+        //        return;
+
+        //    var tocFile = Path.Combine(filePath, nameSpace + extensionPattern);
+        //    if (File.Exists(tocFile))
+        //    {
+        //        using (var reader = File.OpenText(tocFile))
+        //        {
+        //            var tocContent = reader.ReadToEnd();
+        //            _namespaceTocs.Add(nameSpace, tocContent);
+        //        }
+        //    }
+        //}
+
+        void WriteNamespaceToc(JsonWriter writer, string ns, AssemblyWrapper sdkAssemblyWrapper)
+        {
             var tocId = ns.Replace(".", "_");
 
             var nsFilePath = Path.Combine("./" + Options.ContentSubFolderName,
@@ -141,16 +114,16 @@ namespace SDKDocGenerator.Writers
             writer.WritePropertyName(ns);
             writer.WriteObjectStart();
 
-            writer.WritePropertyName("id");
+            writer.WritePropertyName(TocIdFieldName);
             writer.Write(tocId);
 
-            writer.WritePropertyName("href");
+            writer.WritePropertyName(TocHrefFieldName);
             writer.Write(nsFilePath);
 
-            writer.WritePropertyName("nodes");
+            writer.WritePropertyName(TocNodesFieldName);
             writer.WriteObjectStart();
 
-            foreach (var type in assemblyWrapper.GetTypesForNamespace(ns).OrderBy(x => x.Name))
+            foreach (var type in sdkAssemblyWrapper.GetTypesForNamespace(ns).OrderBy(x => x.Name))
             {
                 var filePath = Path.Combine("./" + Options.ContentSubFolderName,
                                             GenerationManifest.OutputSubFolderFromNamespace(type.Namespace),
@@ -158,10 +131,10 @@ namespace SDKDocGenerator.Writers
 
                 writer.WritePropertyName(type.GetDisplayName(false));
                 writer.WriteObjectStart();
-                writer.WritePropertyName("id");
+                writer.WritePropertyName(TocIdFieldName);
                 writer.Write(type.GetDisplayName(true).Replace(".", "_"));
 
-                writer.WritePropertyName("href");
+                writer.WritePropertyName(TocHrefFieldName);
                 writer.Write(filePath);
                 writer.WriteObjectEnd();
             }
@@ -172,23 +145,19 @@ namespace SDKDocGenerator.Writers
         }
 
         /// <summary>
-        /// Writes each namespace toc, in json format, to files inside the ./items
-        /// folder of the output so they are available for the next run.
+        /// Persists a toc snippet file, in json format, from the managed collection.
         /// </summary>
-        void PersistNamespaceTocs()
+        void PersistNamespaceToc(string nameSpace)
         {
-            var tocFilesSubfolder = Path.Combine(Options.ComputedContentFolder, tocFilesFolderName);
+            var tocFilesSubfolder = Path.Combine(Options.ComputedContentFolder, TocFilesFolderName);
             if (!Directory.Exists(tocFilesSubfolder))
                 Directory.CreateDirectory(tocFilesSubfolder);
 
-            foreach (var ns in _namespaceTocs.Keys)
+            var filePath = Path.Combine(tocFilesSubfolder, nameSpace + TocFilenameSuffix);
+            using (var writer = File.CreateText(filePath))
             {
-                var filePath = Path.Combine(tocFilesSubfolder, ns + ".toc.json");
-                using (var writer = File.CreateText(filePath))
-                {
-                    writer.Write(_namespaceTocs[ns]);                    
-                }
-            }            
+                writer.Write(_namespaceTocs[nameSpace]);                    
+            }
         }
 
         /// <summary>
@@ -200,7 +169,7 @@ namespace SDKDocGenerator.Writers
         {
             var writer = new StringWriter();
             writer.Write("<ul class=\"awstoc\">");
-            foreach (var ns in _generatedNamespaces.Keys.OrderBy(x => x))
+            foreach (var ns in _namespaceTocs.Keys.OrderBy(x => x))
             {
                 var nsJson = JsonMapper.ToObject(new JsonReader(_namespaceTocs[ns]));
 

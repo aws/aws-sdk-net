@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Management.Instrumentation;
 using System.Text;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.Xml.XPath;
-using System.Xml.Linq;
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Lifetime;
 
 namespace SDKDocGenerator
 {
@@ -21,7 +15,7 @@ namespace SDKDocGenerator
             get;
         }
 
-        public AbstractWrapper(string docId)
+        protected AbstractWrapper(string docId)
         {
             DocId = docId;
         }
@@ -34,15 +28,15 @@ namespace SDKDocGenerator
 
     public abstract class AbstractTypeProvider : AbstractWrapper
     {
-        public AbstractTypeProvider(string docId)
+        protected AbstractTypeProvider(string docId)
             : base(docId)
         {
         }
 
-        virtual public TypeWrapper GetType(string name) { return null; }
-        virtual public IEnumerable<TypeWrapper> GetTypes() { return null; }
-        virtual public IEnumerable<string> GetNamespaces() { return null; }
-        virtual public IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName) { return null; }
+        public virtual TypeWrapper GetType(string name) { return null; }
+        public virtual IEnumerable<TypeWrapper> GetTypes() { return null; }
+        public virtual IEnumerable<string> GetNamespaces() { return null; }
+        public virtual IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName) { return null; }
     }
 
     public class AssemblyWrapper : AbstractTypeProvider
@@ -51,7 +45,7 @@ namespace SDKDocGenerator
         IList<TypeWrapper> _allTypes;
         IDictionary<string, TypeWrapper> _typesByFullName;
         IDictionary<string, IList<TypeWrapper>> _typesByNamespace;
-        AbstractTypeProvider _secondaryTypeProvider;
+        AbstractTypeProvider _deferredTypesProvider;
 
         public AssemblyWrapper(string docId)
             : base(docId)
@@ -116,9 +110,10 @@ namespace SDKDocGenerator
             get { return this._assembly.GetName().Version.ToString(); }
         }
 
-        public void SetSecondaryTypeProvider(AbstractTypeProvider typeProvider)
+        public AbstractTypeProvider DeferredTypesProvider
         {
-            _secondaryTypeProvider = typeProvider;
+            get { return _deferredTypesProvider; }
+            set { _deferredTypesProvider = value; }
         }
 
         public override TypeWrapper GetType(string name)
@@ -126,9 +121,9 @@ namespace SDKDocGenerator
             TypeWrapper wrapper;
             if (!this._typesByFullName.TryGetValue(name, out wrapper))
             {
-                if (_secondaryTypeProvider != null)
+                if (_deferredTypesProvider != null)
                 {
-                    return _secondaryTypeProvider.GetType(name);
+                    return _deferredTypesProvider.GetType(name);
                 }
                 return null;
             }
@@ -140,9 +135,9 @@ namespace SDKDocGenerator
         {
             var types = new HashSet<TypeWrapper>(this._allTypes);
             
-            if (_secondaryTypeProvider != null)
+            if (_deferredTypesProvider != null)
             {
-                types.UnionWith(_secondaryTypeProvider.GetTypes());
+                types.UnionWith(_deferredTypesProvider.GetTypes());
             }
             return types;
         }
@@ -151,9 +146,9 @@ namespace SDKDocGenerator
         {
              var namespaces = new HashSet<string>(this._typesByNamespace.Keys);
             
-            if (_secondaryTypeProvider != null)
+            if (_deferredTypesProvider != null)
             {
-                namespaces.UnionWith(_secondaryTypeProvider.GetNamespaces());
+                namespaces.UnionWith(_deferredTypesProvider.GetNamespaces());
             }
 
             return namespaces;
@@ -168,9 +163,9 @@ namespace SDKDocGenerator
                 typeSet.UnionWith(namespaceTypes);
             }
 
-            if(_secondaryTypeProvider != null)
+            if(_deferredTypesProvider != null)
             {
-                typeSet.UnionWith(_secondaryTypeProvider.GetTypesForNamespace(namespaceName));
+                typeSet.UnionWith(_deferredTypesProvider.GetTypesForNamespace(namespaceName));
             }
 
             return typeSet;
@@ -182,52 +177,73 @@ namespace SDKDocGenerator
         }
     }
 
-    public class PartialTypeProvider : AbstractTypeProvider
+    public class DeferredTypesProvider : AbstractTypeProvider
     {
-        private IDictionary<string, TypeWrapper> typeDictionary = new Dictionary<string, TypeWrapper>();
-        private IDictionary<string, IList<TypeWrapper>> namespaceToTypes = new Dictionary<string, IList<TypeWrapper>>();
+        private readonly IDictionary<string, TypeWrapper> _typeDictionary = new Dictionary<string, TypeWrapper>();
+        private readonly IDictionary<string, IList<TypeWrapper>> _namespaceToTypeNames = new Dictionary<string, IList<TypeWrapper>>();
 
-        public PartialTypeProvider(string docId)
+        // Types implemented in service assemblies (such as AmazonS3Config) that exist in the namespaces below are output when we 
+        // process the awssdk.core manifest (which is done last), so they appear under the Amazon tree root in the docs. We 
+        // therefore collate these types and the parent assembly as we run, and will process them once we start to 
+        // process core.
+        public readonly HashSet<string> Namespaces = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "Amazon",
+            "Amazon.Util",
+            "Amazon.Runtime",
+            "Amazon.Runtime.SharedInterfaces"
+        };
+
+        public DeferredTypesProvider(string docId)
             : base(docId)
         {
         }
 
-        public void ProcessTypes(IEnumerable<TypeWrapper> types)
+        /// <summary>
+        /// Registers a collection of types implemented in a service assembly to be processed
+        /// when the doc set for awssdk.core.dll is generated.
+        /// </summary>
+        /// <param name="types"></param>
+        public void AddTypes(IEnumerable<TypeWrapper> types)
         {
-            foreach(var type in types)
+            foreach (var type in types)
             {
                 IList<TypeWrapper> list;
-                if (namespaceToTypes.TryGetValue(type.Namespace, out list))
+                if (_namespaceToTypeNames.TryGetValue(type.Namespace, out list))
                 {
                     list.Add(type);
                 }
                 else
                 {
-                    namespaceToTypes.Add(type.Namespace, new List<TypeWrapper> { type });
+                    _namespaceToTypeNames.Add(type.Namespace, new List<TypeWrapper> { type });
                 }
-                typeDictionary.Add(type.FullName, type);
+
+                _typeDictionary.Add(type.FullName, type);
             }
         }
 
         public override TypeWrapper GetType(string fullName) 
         {
-            TypeWrapper type = null;
-            typeDictionary.TryGetValue(fullName, out type);
+            TypeWrapper type;
+            _typeDictionary.TryGetValue(fullName, out type);
             return type;
         }
+
         public override IEnumerable<TypeWrapper> GetTypes()
         {
-            return typeDictionary.Values;
+            return _typeDictionary.Values;
         }
+
         public override IEnumerable<string> GetNamespaces() 
         {
-            return namespaceToTypes.Keys;
+            return _namespaceToTypeNames.Keys;
         }
+
         public override IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName)
         {
             IList<TypeWrapper> types;
 
-            if (namespaceToTypes.TryGetValue(namespaceName, out types))
+            if (_namespaceToTypeNames.TryGetValue(namespaceName, out types))
             {
                 return types;
             }
@@ -282,7 +298,7 @@ namespace SDKDocGenerator
 
                 if (name != null && this._type.IsNested)
                 {
-                    name = string.Format("{0}.{1}", this._type.DeclaringType.Name, this._type.Name);
+                    name = $"{this._type.DeclaringType.Name}.{this._type.Name}";
                 }
                 return name; 
             }
@@ -293,18 +309,24 @@ namespace SDKDocGenerator
             get { return this._type.Namespace; }
         }
 
+        private string _fullName;
         public string FullName
         {
             get {
-                string fullName = this._type.FullName;
-
-                // _type can be of generic type T in which case FullName is null
-                if (fullName != null && this._type.IsNested)
+                if (string.IsNullOrEmpty(_fullName))
                 {
-                    fullName = fullName.Replace("+", ".");
+                    // _type can be of generic type T in which case FullName is null
+                    if (this._type.FullName != null && this._type.IsNested)
+                    {
+                        _fullName = new StringBuilder(this._type.FullName).Replace("+", ".").ToString();
+                    }
+                    else
+                    {
+                        _fullName = this._type.FullName;
+                    }
                 }
 
-                return fullName;
+                return _fullName;
             }
         }
 
@@ -360,7 +382,7 @@ namespace SDKDocGenerator
                     }
                 }
 
-                name = string.Format("{0}&lt;{1}&gt;", baseName, pars);
+                name = $"{baseName}&lt;{pars}&gt;";
             }
             else
             {
@@ -373,7 +395,7 @@ namespace SDKDocGenerator
             }
 
             if (name == null)
-                throw new ApplicationException(string.Format("Failed to resolve display for type {0}", this._type));
+                throw new ApplicationException($"Failed to resolve display for type {this._type}");
 
             return name;
         }
@@ -501,7 +523,6 @@ namespace SDKDocGenerator
         public string CreateReferenceHtml(bool fullTypeName)
         {
             string html;
-            var fullName = this.FullName;
             var nameOrFullName = fullTypeName ? (this.FullName ?? this.Name) : this.Name;
 
             if (this.IsGenericParameter)
@@ -519,21 +540,18 @@ namespace SDKDocGenerator
                     string url;
                     if (this.IsAmazonNamespace)
                     {
-                        url = string.Format("../{0}/{1}",
-                                GenerationManifest.OutputSubFolderFromNamespace(this.Namespace),
-                                FilenameGenerator.GenerateFilename(this));
+                        url = $"../{GenerationManifest.OutputSubFolderFromNamespace(this.Namespace)}/{FilenameGenerator.GenerateFilename(this)}";
                     }
                     else if (this.IsSystemNamespace)
                     {
                         writer.Write(" target=_new");
 
                         var fixedMsdnName = this.Name.Replace('`', '-');
-                        url = string.Format("https://docs.microsoft.com/en-us/dotnet/api/{0}.{1}", this.Namespace, fixedMsdnName);
+                        url = $"https://docs.microsoft.com/en-us/dotnet/api/{this.Namespace}.{fixedMsdnName}";
                     }
                     else
                     {
-                        throw new ApplicationException(string.Format(
-                            "Type {0} is not a System or Amazon type, no idea how to handle its help URL", this.FullName));
+                        throw new ApplicationException($"Type {this.FullName} is not a System or Amazon type, no idea how to handle its help URL");
                     }
 
                     writer.Write(" href=\"{0}\"", url);
@@ -561,16 +579,14 @@ namespace SDKDocGenerator
             {
                 var elementType = this.GetElementType();
                 var elementTypeHtml = elementType.CreateReferenceHtml(fullTypeName);
-                html = string.Format("{0}[]", elementTypeHtml);
+                html = $"{elementTypeHtml}[]";
             }
             else
             {
                 string url, label, target;
                 if (this.IsAmazonNamespace)
                 {
-                    url = string.Format("../{0}/{1}",
-                            GenerationManifest.OutputSubFolderFromNamespace(this.Namespace),
-                            FilenameGenerator.GenerateFilename(this));
+                    url = $"../{GenerationManifest.OutputSubFolderFromNamespace(this.Namespace)}/{FilenameGenerator.GenerateFilename(this)}";
                     label = nameOrFullName;
                     target = string.Empty;
                 }
@@ -582,11 +598,10 @@ namespace SDKDocGenerator
                 }
                 else
                 {
-                    throw new ApplicationException(string.Format(
-                        "Type {0} is not a System or Amazon type, no idea how to handle its help URL", this.FullName));
+                    throw new ApplicationException($"Type {this.FullName} is not a System or Amazon type, no idea how to handle its help URL");
                 }
 
-                html = string.Format("<a{0} href=\"{1}\">{2}</a>", target, url, label);
+                html = $"<a{target} href=\"{url}\">{label}</a>";
             }
 
             return html;
@@ -622,9 +637,7 @@ namespace SDKDocGenerator
                 // FullName in this case includes the assembly info, reconstruct
                 // using the namespace + name
                 var apos = this.Name.LastIndexOf('`');
-                return string.Format("{0}.{1}", 
-                                     this.Namespace, 
-                                     apos != -1 ? this.Name.Substring(0, apos) : this.Name);
+                return $"{this.Namespace}.{(apos != -1 ? this.Name.Substring(0, apos) : this.Name)}";
             }
         }
 
@@ -754,7 +767,7 @@ namespace SDKDocGenerator
 
         public override string ToString()
         {
-            return string.Format("{0}.{1}", this._info.DeclaringType.FullName, this._info.Name);
+            return $"{this._info.DeclaringType.FullName}.{this._info.Name}";
         }
     }
 
@@ -792,13 +805,7 @@ namespace SDKDocGenerator
         TypeWrapper _fieldType;
         public TypeWrapper FieldType
         {
-            get
-            {
-                if (this._fieldType == null)
-                    this._fieldType = new TypeWrapper(this._info.FieldType, DocId);
-
-                return this._fieldType;
-            }
+            get { return this._fieldType ?? (this._fieldType = new TypeWrapper(this._info.FieldType, DocId)); }
         }
     }
 
@@ -1018,7 +1025,7 @@ namespace SDKDocGenerator
 
         public override string ToString()
         {
-            return string.Format("Parameter {0}", this._info.Name);
+            return $"Parameter {this._info.Name}";
         }
     }
 

@@ -156,7 +156,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             var docs = NDocUtilities.FindDocumentation(info);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", this.Artifacts.AssemblyWrapper, this._version);
+            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", this.Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
 
             writer.WriteLine(html);
             writer.WriteLine("</td>");
@@ -207,7 +207,7 @@ namespace SDKDocGenerator.Writers
             }
             else {
                 var docs = NDocUtilities.FindDocumentation(propertyInfo);
-                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
             writer.WriteLine(html);
@@ -265,7 +265,7 @@ namespace SDKDocGenerator.Writers
             }
             else {
                 var docs = NDocUtilities.FindDocumentation(info);
-                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
             writer.WriteLine(html);
             writer.WriteLine("</td>");
@@ -313,7 +313,7 @@ namespace SDKDocGenerator.Writers
             }
             else {
                 var docs = NDocUtilities.FindDocumentation(info);
-                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
             writer.WriteLine(html);
@@ -363,7 +363,7 @@ namespace SDKDocGenerator.Writers
             }
             else {
                 var docs = NDocUtilities.FindDocumentation(info);
-                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+                html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
             writer.WriteLine(html);
@@ -401,7 +401,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             var docs = NDocUtilities.FindFieldDocumentation(this._versionType, enumName);
-            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+            var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
 
             writer.WriteLine(html);
             writer.WriteLine("</td>");

@@ -7,11 +7,8 @@
     <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css" />
     <meta name="description" content="AWSConfigs.GenerateConfigTemplate Method">
     <title>Migration Guide from V2 to V3 | AWS SDK for Unity V3</title>
-    <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page=Amazon/TAWSConfigs.html&tocid=Amazon_AWSConfigs" />
-    <!-- BEGIN-URCHIN-TRACKER -->
-    <script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"> <!-- Empty tag --> </script>
-    <!-- END-URCHIN-TRACKER -->
     <script src="https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js"></script>
+    <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page=Amazon/TAWSConfigs.html&tocid=Amazon_AWSConfigs" />
 </head>
 <body>
 
@@ -20,84 +17,88 @@
     Version 3 of the AWS SDK for Unity is nearly completely compatible with version 2. To include the new version in your unity project, remove the contents of your <code>Assets/AWSSDK</code> folder, then replace them by importing the SDK version 3 <code>.unitypackage</code> files for the services you use. Then make the following changes if the apply to your project.
     </p>
 
-    <table border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <th valign="top"> <strong>Change</strong> </th>
-                <th valign="top"> <strong>Description</strong> </th>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> are renamed.
-                </td>
-                <td valign="top">
-                    <p>Use <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> instead, respectively.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <code>Amazon.CognitoSync.SyncManger.Dataset.Synchronize</code> is renamed.
-                </td>
-                <td valign="top">
-                    <p>Use <code>Amazon.CognitoSync.SyncManger.Dataset.SynchronizeAsync</code> instead.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                     <code>Amazon.CognitoSync.SyncManger.Dataset.GetAll</code> is removed.
-                </td>
-                <td valign="top">         
-                    <p>Use <code>Amazon.CognitoSync.Dataset.ActiveRecords</code> instead.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <code>Amazon.MobileAnalytics.MobileAnalyticsManager.GetOrCreateInstance</code> has parameters <code>appID</code>, <code>credentials</code>, and <code>regionEndpoint</code> reordered. The deprecated overload has been removed.
-                </td>
-                <td valign="top">
-                    <p>Reorder the arguments to match the appropriate method signature. If you were using the deprecated overload, you must now provide the <code>regionEndpoint</code> parameter.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    The AWS SDK Unity packages no longer ship with the <i>awsconfig.xml</i> file, previously located in <i>Assets/AWSSDK/src/Core/Resources/</i>.
-                </td>
-                <td valign="top">
-                    <p>Copy your <i>awsconfig.xml</i> from version 2 or create a new one, and place it in any folder named <i>Resources</i> within your <i>Assets</i> folder.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <code>Amazon.UnityInitializer</code> can now be attached to game objects in code.
-                </td>
-                <td valign="top">
-                    <p>It is recommended that you use <code>UnityInitializer.AttachToGameObject(this.gameObject)</code> from the <code>Start</code> or <code>Awake</code> methods of your game component, and remove the AWSPrefab from your scene altogether.</p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    Methods <code>QueryAsync&lt;T&gt;</code>, <code>FromQueryAsync&lt;T&gt;</code>, <code>ScanAsync&lt;T&gt;</code>, and <code>FromScanAsync&lt;T&gt;</code> in <code>Amazon.DynamoDBv2.DataModel.DynamoDBContext</code> now have overloads with parameters <code>AmazonDynamoDBCallback&lt;AsyncSearch&lt;T&gt;&gt;</code> and <code>AsyncOptions</code>.
-                </td>
-                <td valign="top">
-                    <p>Use these versions of the the method instead of the counterparts that directly return an <code>AsyncSearch&lt;T&gt;</code> value.</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <th valign="top"> <strong>Change</strong> </th>
+        <th valign="top"> <strong>Description</strong> </th>
+    </tr>
+    <tr>
+        <td valign="top">
+            <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEvent</code> are renamed.
+        </td>
+        <td valign="top">
+            <p>Use <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> and <code>Amazon.CognitoSync.SyncManger.SyncSuccessEventArgs</code> instead, respectively.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <code>Amazon.CognitoSync.SyncManger.Dataset.Synchronize</code> is renamed.
+        </td>
+        <td valign="top">
+            <p>Use <code>Amazon.CognitoSync.SyncManger.Dataset.SynchronizeAsync</code> instead.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <code>Amazon.CognitoSync.SyncManger.Dataset.GetAll</code> is removed.
+        </td>
+        <td valign="top">         
+            <p>Use <code>Amazon.CognitoSync.Dataset.ActiveRecords</code> instead.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <code>Amazon.MobileAnalytics.MobileAnalyticsManager.GetOrCreateInstance</code> has parameters <code>appID</code>, <code>credentials</code>, and <code>regionEndpoint</code> reordered. The deprecated overload has been removed.
+        </td>
+        <td valign="top">
+            <p>Reorder the arguments to match the appropriate method signature. If you were using the deprecated overload, you must now provide the <code>regionEndpoint</code> parameter.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            The AWS SDK Unity packages no longer ship with the <i>awsconfig.xml</i> file, previously located in <i>Assets/AWSSDK/src/Core/Resources/</i>.
+        </td>
+        <td valign="top">
+            <p>Copy your <i>awsconfig.xml</i> from version 2 or create a new one, and place it in any folder named <i>Resources</i> within your <i>Assets</i> folder.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <code>Amazon.UnityInitializer</code> can now be attached to game objects in code.
+        </td>
+        <td valign="top">
+            <p>It is recommended that you use <code>UnityInitializer.AttachToGameObject(this.gameObject)</code> from the <code>Start</code> or <code>Awake</code> methods of your game component, and remove the AWSPrefab from your scene altogether.</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            Methods <code>QueryAsync&lt;T&gt;</code>, <code>FromQueryAsync&lt;T&gt;</code>, <code>ScanAsync&lt;T&gt;</code>, and <code>FromScanAsync&lt;T&gt;</code> in <code>Amazon.DynamoDBv2.DataModel.DynamoDBContext</code> now have overloads with parameters <code>AmazonDynamoDBCallback&lt;AsyncSearch&lt;T&gt;&gt;</code> and <code>AsyncOptions</code>.
+        </td>
+        <td valign="top">
+            <p>Use these versions of the the method instead of the counterparts that directly return an <code>AsyncSearch&lt;T&gt;</code> value.</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-    <!-- SiteCatalyst code version: H.25.1. Copyright 1996-2012 Adobe, Inc. All Rights Reserved -->
-    <script>
+<!-- BEGIN-URCHIN-TRACKER -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- END-URCHIN-TRACKER -->
+<!-- SiteCatalyst code version: H.25.1. Copyright 1996-2012 Adobe, Inc. All Rights Reserved -->
+<script>
+    <!--
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code = s.t(); if (s_code) document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript">
 <!--
-/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
-var s_code=s.t();if(s_code)document.write(s_code)//--></script>
-    <script language="JavaScript" type="text/javascript">
-<!--
-if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+    if (navigator.appVersion.indexOf('MSIE') >= 0) document.write(unescape('%3C') + '\!-' + '-')
 //--></script>
-    <noscript>
-        <img src="//amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazonalldev2/1/H.25.1--NS/0" height="1" width="1" border="0" alt="" />
-    </noscript>
-    <!--/DO NOT REMOVE/-->
-    <!-- End SiteCatalyst code version: H.25.1. -->
+<noscript>
+    <img src="//amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazonalldev2/1/H.25.1--NS/0" height="1" width="1" border="0" alt="" />
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.1. -->
+
 </body>
 </html>

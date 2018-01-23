@@ -51,32 +51,37 @@ namespace SDKDocGenerator
                                   bool useAppDomain)
         {
             AssemblyPath = Path.GetFullPath(assemblyPath);
-            var assemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
-            ServiceName = assemblyName.StartsWith(AWSAssemblyNamePrefix + ".", StringComparison.OrdinalIgnoreCase)
-                ? assemblyName.Substring(AWSAssemblyNamePrefix.Length + 1)
-                : assemblyName;            
-            Options = options;
-            AssemblyWrapper = CreateAssemblyWrapper(AssemblyPath, useAppDomain);
-            OutputFolder = Path.GetFullPath(outputFolderRoot);
+            AssemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
 
-            foreach(var platform in allPlatforms)
-            {
-                NDocUtilities.LoadDocumentation(assemblyName, ServiceName, platform, options);
-            }
+            ServiceName = AssemblyName.StartsWith(AWSAssemblyNamePrefix + ".", StringComparison.OrdinalIgnoreCase)
+                ? AssemblyName.Substring(AWSAssemblyNamePrefix.Length + 1)
+                : AssemblyName;            
+
+            Options = options;
+            OutputFolder = Path.GetFullPath(outputFolderRoot);
+            AllPlatforms = allPlatforms;
+            UseAppDomain = useAppDomain;
 
             if (Options.Verbose)
             {
                 Trace.WriteLine("\tConstructed GenerationManifest:");
-                Trace.WriteLine(String.Format("\t...AssemblyPath: {0}", AssemblyPath));
-                Trace.WriteLine(String.Format("\t...ServiceName: {0}", ServiceName));
-                Trace.WriteLine(String.Format("\t...OutputFolder: {0}", OutputFolder));
+                Trace.WriteLine($"\t...AssemblyPath: {AssemblyPath}");
+                Trace.WriteLine($"\t...ServiceName: {ServiceName}");
+                Trace.WriteLine($"\t...OutputFolder: {OutputFolder}");
             }
         }
 
         /// <summary>
         /// The path and filename to the assembly represented by this set of artifacts
         /// </summary>
-        public string AssemblyPath { get; private set; }
+        public string AssemblyPath { get; }
+
+        /// <summary>
+        /// The basename of the sdk assembly we're generating docs for, less extension.
+        /// </summary>
+        public string AssemblyName { get; }
+
+        public IEnumerable<string> AllPlatforms { get; }
 
         /// <summary>
         /// The root output folder; the artifacts will be placed under
@@ -84,17 +89,18 @@ namespace SDKDocGenerator
         /// part). So Amazon.DynamoDBv2.* types get emitted to 'dynamodbv2'
         /// underneath this root.
         /// </summary>
-        public string OutputFolder { get; private set; }
+        public string OutputFolder { get; }
 
         /// <summary>
         /// The generation options specified by the user
         /// </summary>
-        public GeneratorOptions Options { get; private set; }
+        public GeneratorOptions Options { get; }
 
         /// <summary>
-        /// Wrapper around the assembly we're generating docs for.
+        /// If true, sdk assemblies are loaded into a separate app domain prior to doc
+        /// generation.
         /// </summary>
-        public AssemblyWrapper AssemblyWrapper { get; private set; }
+        public bool UseAppDomain { get; }
 
         /// <summary>
         /// Returns the discovered NDoc table for a given platform, if it existed. If platform
@@ -116,7 +122,35 @@ namespace SDKDocGenerator
         /// The logical name of the service. This is assumed to exist
         /// in the assembly name after 'awssdk.' and before the extension.
         /// </summary>
-        public string ServiceName { get; private set; }
+        public string ServiceName { get; }
+
+        private ManifestAssemblyWrapper _manifestAssemblyWrapper;
+        /// <summary>
+        /// Contains the wrapped sdk assembly and the app domain we loaded it
+        /// into, if so configured. Dispose of this when processing of the
+        /// assembly is complete if the assembly contained no types that need
+        /// deferred processing alongside the core sdk assembly.
+        /// </summary>
+        public ManifestAssemblyWrapper ManifestAssemblyContext
+        {
+            get
+            {
+                if (_manifestAssemblyWrapper == null)
+                {
+                    _manifestAssemblyWrapper = new ManifestAssemblyWrapper(ServiceName, Options.Platform, AssemblyPath, UseAppDomain);
+                }
+
+                return _manifestAssemblyWrapper;
+            }
+            private set
+            {
+                if (value == null)
+                {
+                    _manifestAssemblyWrapper?.Dispose();
+                }
+                _manifestAssemblyWrapper = value;
+            }
+        }
 
         /// <summary>
         /// Returns the subfolder name that should be used for Amazon artifacts
@@ -158,54 +192,71 @@ namespace SDKDocGenerator
         /// <summary>
         /// Generates the documentation for the artifacts represented by this
         /// manifest, starting at the namespace(s) in the assembly and working
-        /// down through the type hierarchy.
+        /// down through the type hierarchy. Types that exist in the deferable
+        /// namespaces will be processed later in generation, when the awssdk.core
+        /// assembly is processed.
         /// </summary>
-        public void Generate(IEnumerable<string> ignoreNamespaces)
+        /// <param name="deferrableTypes">
+        /// Collection for types in service assemblies that we want to defer processing
+        /// on until we process awssdk.core.
+        /// </param>
+        /// <param name="tocWriter">
+        /// Toc generation handler to which each processed namespace is registered
+        /// </param>
+        public void Generate(DeferredTypesProvider deferrableTypes, TOCWriter tocWriter)
         {
-            Trace.WriteLine(String.Format("\tgenerating from {0}/{1}", Options.Platform, Path.GetFileName(AssemblyPath)));
+            Trace.WriteLine($"\tgenerating from {Options.Platform}/{Path.GetFileName(AssemblyPath)}");
 
-            var namespaceNames = AssemblyWrapper.GetNamespaces();
+            // load the assembly and ndoc dataset for the service we're about to generate; assuming
+            // they contain no deferrable types we'll release them when done
+            var discardAssemblyOnExit = true;
+
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
+
+            var namespaceNames = ManifestAssemblyContext.SdkAssembly.GetNamespaces();
 
             var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
             var processed = 0;
 
             foreach (var namespaceName in namespaceNames)
             {
-                if (ignoreNamespaces != null && ignoreNamespaces.Contains(namespaceName))
-                    continue;
+                // when processing awssdk.core, we don't get handed a collection to hold
+                // deferrable types
+                if (deferrableTypes != null)
+                {
+                    if (deferrableTypes.Namespaces.Contains(namespaceName))
+                    {
+                        var types = ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName);
+                        if (types.Any())
+                        {
+                            Trace.WriteLine($"\t\tdeferring processing of types in namespace {namespaceName} for {Path.GetFileName(AssemblyPath)}");
+                            deferrableTypes.AddTypes(types);
+                            discardAssemblyOnExit = false;
+                        }
+
+                        continue;
+                    }
+                }
 
                 WriteNamespace(frameworkVersion, namespaceName);
-                Trace.WriteLine(String.Format("\t\t{0} processed ({1} of {2})", namespaceName, ++processed, namespaceNames.Count()));
-            }
-        }
+                tocWriter.BuildNamespaceToc(namespaceName, ManifestAssemblyContext.SdkAssembly);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="filePath"></param>
-        /// <param name="useAppDomain"></param>
-        /// <returns></returns>
-        private AssemblyWrapper CreateAssemblyWrapper(string filePath, bool useAppDomain)
-        {
-            var docId = NDocUtilities.GenerateDocId(ServiceName, Options.Platform);
-            if (useAppDomain)
-            {
-                var domain = AppDomain.CreateDomain(filePath);
-                var inst = domain.CreateInstance(   this.GetType().Assembly.FullName,
-                                                    typeof(AssemblyWrapper).FullName, 
-                                                    true,
-                                                    BindingFlags.CreateInstance | BindingFlags.Public | BindingFlags.Instance,
-                                                    null,
-                                                    new object[] {docId}, null, null);
-                var wrapper = (AssemblyWrapper)inst.Unwrap();
-                wrapper.LoadAssembly(filePath);
-                return wrapper;
+                Trace.WriteLine($"\t\t{namespaceName} processed ({++processed} of {namespaceNames.Count()})");
             }
-            else
+
+            if (discardAssemblyOnExit)
             {
-                var wrapper = new AssemblyWrapper(docId);
-                wrapper.LoadAssembly(filePath);
-                return wrapper;
+                // release artifact roots for future GC collections to operate on
+                foreach (var platform in AllPlatforms)
+                {
+                    NDocUtilities.UnloadDocumentation(ServiceName, platform);
+                }
+
+                ManifestAssemblyContext.Dispose();
+                ManifestAssemblyContext = null;
             }
         }
 
@@ -214,7 +265,7 @@ namespace SDKDocGenerator
             var writer = new NamespaceWriter(this, version, namespaceName);
             writer.Write();
 
-            foreach (var type in AssemblyWrapper.GetTypesForNamespace(namespaceName))
+            foreach (var type in ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName))
             {
                 WriteType(version, type);
             }
@@ -250,6 +301,63 @@ namespace SDKDocGenerator
                     itemWriter.Write();
                 }
             }
+        }
+
+        public class ManifestAssemblyWrapper : IDisposable
+        {
+            public AssemblyWrapper SdkAssembly { get; private set; }
+            public AppDomain Domain { get; private set; }
+
+            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath, bool useNewAppDomain)
+            {
+                var docId = NDocUtilities.GenerateDocId(serviceName, platform);
+                if (useNewAppDomain)
+                {
+                    Domain = AppDomain.CreateDomain(assemblyPath);
+                    var inst = Domain.CreateInstance(this.GetType().Assembly.FullName,
+                                                     typeof(AssemblyWrapper).FullName,
+                                                     true,
+                                                     BindingFlags.CreateInstance | BindingFlags.Public | BindingFlags.Instance,
+                                                     null,
+                                                     new object[] { docId }, null, null);
+                    SdkAssembly = (AssemblyWrapper)inst.Unwrap();
+                    SdkAssembly.LoadAssembly(assemblyPath);
+                }
+                else
+                {
+                    SdkAssembly = new AssemblyWrapper(docId);
+                    SdkAssembly.LoadAssembly(assemblyPath);
+                }
+            }
+
+            #region IDisposable Support
+            private bool _disposedValue; // To detect redundant calls
+
+            protected virtual void Dispose(bool disposing)
+            {
+                if (!_disposedValue)
+                {
+                    if (disposing)
+                    {
+                        // unlink roots, then drop the domain if we used one
+                        SdkAssembly = null;
+                        if (Domain != null)
+                        {
+                            AppDomain.Unload(Domain);
+                            Domain = null;
+                        }
+                    }
+
+                    _disposedValue = true;
+                }
+            }
+
+            public void Dispose()
+            {
+                // we have no finalizer and/or unmanaged resources, so no need to use GC.SuppressFinalize()
+                Dispose(true);
+            }
+            #endregion
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SDKDocGenerator.Writers
             : base(artifacts, version)
         {
             this._namespaceName = namespaceName;
-            this._assemblyWrapper = artifacts.AssemblyWrapper;
+            this._assemblyWrapper = artifacts.ManifestAssemblyContext.SdkAssembly;
         }
 
         protected override string GenerateFilename()
@@ -131,7 +131,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<td>");
 
                     var docs = NDocUtilities.FindDocumentation(NDocUtilities.GetDocumentationInstance(info.DocId), info);
-                    var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
+                    var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
 
                     writer.WriteLine(html);
                 writer.WriteLine("</td>");

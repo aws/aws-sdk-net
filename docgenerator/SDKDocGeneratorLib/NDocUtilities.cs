@@ -54,14 +54,19 @@ namespace SDKDocGenerator
 
         public static void LoadDocumentation(string assemblyName, string serviceName, string platform, GeneratorOptions options)
         {
-            string docId = null;
             var ndocFilename = assemblyName + ".xml";
             var platformSpecificNdocFile = Path.Combine(options.SDKAssembliesRoot, platform, ndocFilename);
             if (File.Exists(platformSpecificNdocFile))
             {
-                docId = GenerateDocId(serviceName, platform);
+                var docId = GenerateDocId(serviceName, platform);
                 _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
             }
+        }
+
+        public static void UnloadDocumentation(string serviceName, string platform)
+        {
+            var docId = GenerateDocId(serviceName, platform);
+            _ndocCache.Remove(docId);
         }
 
         public static IDictionary<string, XElement> GetDocumentationInstance(string serviceName, string platform)
@@ -768,11 +773,11 @@ namespace SDKDocGenerator
         private static string LeftJustifyCodeBlocks(string codeBlock)
         {
             // Switch tabs to 4 spaces
-            codeBlock = codeBlock.Replace("\t", new string(' ', 4));
+            var block = new StringBuilder(codeBlock).Replace("\t", new string(' ', 4)).ToString();
 
             // Find the nearest indent location
             var nearestIndent = int.MaxValue;
-            using (var reader = new StringReader(codeBlock))
+            using (var reader = new StringReader(block))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
@@ -785,7 +790,7 @@ namespace SDKDocGenerator
 
             // Substring all lines with content to the indent location;
             var reformattedBuilder = new StringBuilder();
-            using (var reader = new StringReader(codeBlock))
+            using (var reader = new StringReader(block))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)

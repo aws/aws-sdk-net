@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
 
@@ -32,6 +30,11 @@ namespace SDKDocGenerator
             }
         }
 
+        /// <summary>
+        /// Manages the individual namespace tocs and consolidates them all into
+        /// a single tree on the conclusion of processing.
+        /// </summary>
+        public TOCWriter TOCWriter { get; private set; }
 
         /// <summary>
         /// Runs the doc generator to produce or update a consistent documentation
@@ -83,19 +86,11 @@ namespace SDKDocGenerator
             // use the sdk root and primary platform to determine the set of
             // service manifests to process
             var manifests = ConstructGenerationManifests();
+            TOCWriter = new TOCWriter(options);
 
-            // We want to aggregate all types(such as AmazonS3Config) under Amazon namespace before generating docs for Core.
-            // Currently, the doc generator will stomp over files with conflicting namespaces across dll.  If we encounter manifest
-            // for Core, stash all its types and process it last.
-            List<string> namespacesToIgnore = 
-                new List<string> {
-                    "Amazon",
-                    "Amazon.Util",
-                    "Amazon.Runtime",
-                    "Amazon.Runtime.SharedInterfaces"
-                };
             GenerationManifest coreManifest = null;
-            PartialTypeProvider additionalTypeProvider = new PartialTypeProvider(null);
+            DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
+
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
@@ -104,19 +99,16 @@ namespace SDKDocGenerator
                     continue;
                 }
 
-                m.Generate(namespacesToIgnore);
-
-                foreach(var namespaceName in namespacesToIgnore)
-                {
-                    additionalTypeProvider.ProcessTypes(m.AssemblyWrapper.GetTypesForNamespace(namespaceName));
-                }
+                m.Generate(deferredTypes, TOCWriter);
             }
-            coreManifest.AssemblyWrapper.SetSecondaryTypeProvider(additionalTypeProvider);
-            coreManifest.Generate(null);
 
-            // finish up by outputting/updating the TOC and emitting the static doc framework content if requested
-            // we try and generate the toc based on the .Net 4.5 platform by preference, falling back as necessary
-            GenerateTableOfContents(manifests);
+            // now all service assemblies are processed, handle core plus any types in those assemblies that 
+            // we elected to defer until we processed core.
+            coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
+            coreManifest.Generate(null, TOCWriter);
+
+            Info("Generating table of contents entries...");
+            TOCWriter.Write();
 
             CopyVersionInfoManifest();
 
@@ -169,14 +161,6 @@ namespace SDKDocGenerator
             Info("");
         }
 
-        private void GenerateTableOfContents(IList<GenerationManifest> manifests)
-        {
-            Info("Generating table of contents entries...");
-
-            var tocWriter = new TOCWriter(Options, manifests);
-            tocWriter.Write();
-        }
-
         /// <summary>
         /// Copies the json file containing the version information for each SDK assembly
         /// (by service) into the output docs folder.
@@ -192,7 +176,7 @@ namespace SDKDocGenerator
             }
             else
             {
-                throw new Exception(string.Format("Failed to find version file at {0}.", Options.SDKVersionFilePath));
+                throw new Exception($"Failed to find version file at {Options.SDKVersionFilePath}.");
             }
         }
 
@@ -232,7 +216,7 @@ namespace SDKDocGenerator
 
             foreach (var service in Options.Services)
             {
-                var namePattern = string.Format("{0}.{1}.dll", GenerationManifest.AWSAssemblyNamePrefix, service);
+                var namePattern = $"{GenerationManifest.AWSAssemblyNamePrefix}.{service}.dll";
                 var assemblies = Directory.GetFiles(assemblySourcePath, namePattern);
                 foreach (var a in assemblies)
                 {
@@ -254,7 +238,7 @@ namespace SDKDocGenerator
 
         private void Info(string format, params object[] args)
         {
-            Trace.WriteLine(String.Format(format, args));
+            Trace.WriteLine(string.Format(format, args));
             Trace.Flush();
         }
 
@@ -273,7 +257,7 @@ namespace SDKDocGenerator
 
     public class ConditionalConsoleTraceListener : TraceListener
     {
-        private bool _verboseOption = false;
+        private readonly bool _verboseOption;
 
         public ConditionalConsoleTraceListener(bool verbose)
         {
@@ -294,7 +278,7 @@ namespace SDKDocGenerator
         {
             if (_verboseOption)
             {
-                Console.WriteLine(String.Format("[{0}]: {1}", category, message));
+                Console.WriteLine($"[{category}]: {message}");
             }
         }
     }

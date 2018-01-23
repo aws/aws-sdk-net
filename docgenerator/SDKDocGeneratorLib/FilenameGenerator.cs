@@ -40,28 +40,32 @@ namespace SDKDocGenerator
                 return fixedUpName;
             }
 
-            fixedUpName = name.Replace('.', '_');
+            var sb = new StringBuilder(name);
+
             // don't use encoded <> in filename, as browsers re-encode it in links to %3C
             // and the link fails
-            fixedUpName = fixedUpName.Replace("&lt;", "!").Replace("&gt;", "!");
-            fixedUpName = fixedUpName.Replace("Amazon", "");
-            fixedUpName = fixedUpName.Replace("_Model_", "");
-            fixedUpName = fixedUpName.Replace("_Begin", "");
-            fixedUpName = fixedUpName.Replace("_End", "");
-            fixedUpName = fixedUpName.Replace("Client_", "");
-            fixedUpName = fixedUpName.Replace("+", "");
-            fixedUpName = fixedUpName.Replace("_", "");
+            sb.Replace('.', '_')
+                .Replace("&lt;", "!")
+                .Replace("&gt;", "!")
+                .Replace("Amazon", "")
+                .Replace("_Model_", "")
+                .Replace("_Begin", "")
+                .Replace("_End", "")
+                .Replace("Client_", "")
+                .Replace("+", "")
+                .Replace("_", "");
 
             foreach (var k in ServiceNamespaceContractions.Keys)
             {
-                fixedUpName = fixedUpName.Replace(k, ServiceNamespaceContractions[k]);
+                sb.Replace(k, ServiceNamespaceContractions[k]);
             }
 
-            if (fixedUpName.Length > MAX_FILE_SIZE)
+            if (sb.Length > MAX_FILE_SIZE)
             {
-                throw new ApplicationException(string.Format("Filename: {0} is too long", fixedUpName));
+                throw new ApplicationException(string.Format("Filename: {0} is too long", sb));
             }
 
+            fixedUpName = sb.ToString();
             FixedupNameDictionary[lookupKey] = fixedUpName;
             return fixedUpName;
         }

@@ -56,6 +56,17 @@ namespace SDKDocGenerator.Writers
         public GenerationManifest Artifacts { get; private set; }
         public AbstractTypeProvider TypeProvider { get; private set; }
 
+        public static string SiteCatalystSnippet { get; private set; }
+
+        static BaseWriter()
+        {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SDKDocGenerator.Templates.SiteCatalyst.snippet"))
+            using (var reader = new StreamReader(stream))
+            {
+                SiteCatalystSnippet = reader.ReadToEnd();
+            }
+        }
+
         protected BaseWriter(GenerationManifest artifacts, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             Artifacts = artifacts;
@@ -64,7 +75,7 @@ namespace SDKDocGenerator.Writers
         }
 
         protected BaseWriter(GenerationManifest artifacts, FrameworkVersion version)
-            : this(artifacts, artifacts.AssemblyWrapper, version)
+            : this(artifacts, artifacts.ManifestAssemblyContext.SdkAssembly, version)
         {
         }
 
@@ -130,6 +141,7 @@ namespace SDKDocGenerator.Writers
                 // the page title for now
                 writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
                 writer.WriteLine("<title>{0} | AWS SDK for .NET V3</title>", GetTitle());
+                writer.WriteLine("<script src=\"https://a0.awsstatic.com/s_code/js/1.0/awshome_s_code.js\"></script>");
                 writer.WriteLine("<link rel=\"canonical\" href=\"http://docs.aws.amazon.com/sdkfornet/v3/apidocs/index.html?page={0}&tocid={1}\"/>",
                                 FilenameGenerator.Escape(this.GenerateFilename()),
                                 FilenameGenerator.Escape(this.GetTOCID()));
@@ -158,8 +170,8 @@ namespace SDKDocGenerator.Writers
 
                 // normalize all line endings so any docs committed into Git present a consistent
                 // set of line terminators for core.autocrlf to work with
-                var content = writer.ToString();
-                content = content.Replace("\r\n", "\n").Replace("\n", "\r\n");
+                var content = new StringBuilder(writer.ToString());
+                content.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
                 using (var fileWriter = new StreamWriter(filename))
                 {
@@ -316,12 +328,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);
             writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushXml.js\"></script>", RootRelativePath);
 
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SDKDocGenerator.Templates.SiteCatalyst.snippet"))
-            using (var reader = new StreamReader(stream))
-            {
-                var script = reader.ReadToEnd();
-                writer.WriteLine(script);
-            }
+            writer.WriteLine(SiteCatalystSnippet);
 
             writer.WriteLine("<script type=\"text/javascript\">SyntaxHighlighter.all()</script>");
         }

@@ -57,7 +57,7 @@
 		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -o $(DocOutputRoot) -sf $(DocSamplesFolder)" />
 		
     </Target>
-	
+
 	<Target Name="setup-production-doc-build" Condition="'$(DocBuildReleaseBuild)'=='True'">
 		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-syncmanager" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
 		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="get-reference-sdk" Properties="TargetRepository=$(MSBuildProjectDirectory)\.."/>
