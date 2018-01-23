@@ -70,6 +70,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeCredit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IncludeDiscount", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeDiscount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeOtherSubscription", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeUpfront = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseAmortized", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseAmortized = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseBlended", targetDepth))

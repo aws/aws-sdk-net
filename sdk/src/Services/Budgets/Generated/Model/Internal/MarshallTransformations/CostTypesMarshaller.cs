@@ -51,6 +51,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IncludeCredit);
             }
 
+            if(requestObject.IsSetIncludeDiscount())
+            {
+                context.Writer.WritePropertyName("IncludeDiscount");
+                context.Writer.Write(requestObject.IncludeDiscount);
+            }
+
             if(requestObject.IsSetIncludeOtherSubscription())
             {
                 context.Writer.WritePropertyName("IncludeOtherSubscription");
@@ -91,6 +97,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("IncludeUpfront");
                 context.Writer.Write(requestObject.IncludeUpfront);
+            }
+
+            if(requestObject.IsSetUseAmortized())
+            {
+                context.Writer.WritePropertyName("UseAmortized");
+                context.Writer.Write(requestObject.UseAmortized);
             }
 
             if(requestObject.IsSetUseBlended())

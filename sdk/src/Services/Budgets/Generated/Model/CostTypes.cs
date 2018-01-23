@@ -33,6 +33,7 @@ namespace Amazon.Budgets.Model
     public partial class CostTypes
     {
         private bool? _includeCredit;
+        private bool? _includeDiscount;
         private bool? _includeOtherSubscription;
         private bool? _includeRecurring;
         private bool? _includeRefund;
@@ -40,6 +41,7 @@ namespace Amazon.Budgets.Model
         private bool? _includeSupport;
         private bool? _includeTax;
         private bool? _includeUpfront;
+        private bool? _useAmortized;
         private bool? _useBlended;
 
         /// <summary>
@@ -56,6 +58,22 @@ namespace Amazon.Budgets.Model
         internal bool IsSetIncludeCredit()
         {
             return this._includeCredit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDiscount. A boolean value whether to include discounts
+        /// in the cost budget.
+        /// </summary>
+        public bool IncludeDiscount
+        {
+            get { return this._includeDiscount.GetValueOrDefault(); }
+            set { this._includeDiscount = value; }
+        }
+
+        // Check to see if IncludeDiscount property is set
+        internal bool IsSetIncludeDiscount()
+        {
+            return this._includeDiscount.HasValue; 
         }
 
         /// <summary>
@@ -168,6 +186,22 @@ namespace Amazon.Budgets.Model
         internal bool IsSetIncludeUpfront()
         {
             return this._includeUpfront.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAmortized. A boolean value whether to include amortized
+        /// costs in the cost budget.
+        /// </summary>
+        public bool UseAmortized
+        {
+            get { return this._useAmortized.GetValueOrDefault(); }
+            set { this._useAmortized = value; }
+        }
+
+        // Check to see if UseAmortized property is set
+        internal bool IsSetUseAmortized()
+        {
+            return this._useAmortized.HasValue; 
         }
 
         /// <summary>
