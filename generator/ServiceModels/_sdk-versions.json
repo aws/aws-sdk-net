@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.224.0",
+    "ProductVersion" : "3.3.225.0",
     "CoreVersion"    : "3.3.21.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -593,7 +593,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.3.5.0",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"

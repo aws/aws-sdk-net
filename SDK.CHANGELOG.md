@@ -1,3 +1,7 @@
+### 3.3.225.0 (2018-01-23 02:32 UTC)
+* Budgets (3.3.6.0)
+	* Add additional costTypes: IncludeDiscount, UseAmortized,  to support finer control for different charges included in a cost budget.
+
 ### 3.3.224.0 (2018-01-19 20:44 UTC)
 * Glue (3.3.4.0)
 	* New AWS Glue DataCatalog APIs to manage table versions and a new feature to skip archiving of the old table version when updating table.
