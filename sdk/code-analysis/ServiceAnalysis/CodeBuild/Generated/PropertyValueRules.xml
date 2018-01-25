@@ -53,6 +53,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildRequest.GitCloneDepthOverride</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.ProjectName</property>
     <min>1</min>
   </property-value-rule>
@@ -148,6 +152,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ProjectSource.GitCloneDepth</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Tag.Key</property>
     <min>1</min>
     <max>127</max>
@@ -161,6 +169,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.VpcConfig.VpcId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Webhook.PayloadUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Webhook.Secret</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

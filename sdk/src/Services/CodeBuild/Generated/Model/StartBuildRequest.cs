@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectArtifacts _artifactsOverride;
         private string _buildspecOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
+        private int? _gitCloneDepthOverride;
         private string _projectName;
         private string _sourceVersion;
         private int? _timeoutInMinutesOverride;
@@ -95,6 +96,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetEnvironmentVariablesOverride()
         {
             return this._environmentVariablesOverride != null && this._environmentVariablesOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitCloneDepthOverride. 
+        /// <para>
+        /// The user-defined depth of history, with a minimum value of 0, that overrides, for
+        /// this build only, any previous depth of history defined in the build project.
+        /// </para>
+        /// </summary>
+        public int GitCloneDepthOverride
+        {
+            get { return this._gitCloneDepthOverride.GetValueOrDefault(); }
+            set { this._gitCloneDepthOverride = value; }
+        }
+
+        // Check to see if GitCloneDepthOverride property is set
+        internal bool IsSetGitCloneDepthOverride()
+        {
+            return this._gitCloneDepthOverride.HasValue; 
         }
 
         /// <summary>

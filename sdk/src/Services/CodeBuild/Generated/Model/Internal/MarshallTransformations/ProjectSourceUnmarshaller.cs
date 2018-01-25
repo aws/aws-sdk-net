@@ -76,6 +76,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Buildspec = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gitCloneDepth", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GitCloneDepth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("insecureSsl", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InsecureSsl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

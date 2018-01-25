@@ -45,6 +45,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectEnvironment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCertificate())
+            {
+                context.Writer.WritePropertyName("certificate");
+                context.Writer.Write(requestObject.Certificate);
+            }
+
             if(requestObject.IsSetComputeType())
             {
                 context.Writer.WritePropertyName("computeType");

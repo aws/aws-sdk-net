@@ -100,6 +100,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGitCloneDepthOverride())
+                {
+                    context.Writer.WritePropertyName("gitCloneDepthOverride");
+                    context.Writer.Write(publicRequest.GitCloneDepthOverride);
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");

@@ -765,6 +765,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly SourceType GITHUB = new SourceType("GITHUB");
         /// <summary>
+        /// Constant GITHUB_ENTERPRISE for SourceType
+        /// </summary>
+        public static readonly SourceType GITHUB_ENTERPRISE = new SourceType("GITHUB_ENTERPRISE");
+        /// <summary>
         /// Constant S3 for SourceType
         /// </summary>
         public static readonly SourceType S3 = new SourceType("S3");

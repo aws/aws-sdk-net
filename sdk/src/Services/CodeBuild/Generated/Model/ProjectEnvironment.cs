@@ -32,11 +32,30 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ProjectEnvironment
     {
+        private string _certificate;
         private ComputeType _computeType;
         private List<EnvironmentVariable> _environmentVariables = new List<EnvironmentVariable>();
         private string _image;
         private bool? _privilegedMode;
         private EnvironmentType _type;
+
+        /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// The certificate to use with this build project.
+        /// </para>
+        /// </summary>
+        public string Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
+        }
+
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this._certificate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComputeType. 

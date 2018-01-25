@@ -62,6 +62,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Buildspec);
             }
 
+            if(requestObject.IsSetGitCloneDepth())
+            {
+                context.Writer.WritePropertyName("gitCloneDepth");
+                context.Writer.Write(requestObject.GitCloneDepth);
+            }
+
+            if(requestObject.IsSetInsecureSsl())
+            {
+                context.Writer.WritePropertyName("insecureSsl");
+                context.Writer.Write(requestObject.InsecureSsl);
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

@@ -34,6 +34,8 @@ namespace Amazon.CodeBuild.Model
     {
         private SourceAuth _auth;
         private string _buildspec;
+        private int? _gitCloneDepth;
+        private bool? _insecureSsl;
         private string _location;
         private SourceType _type;
 
@@ -83,6 +85,42 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetBuildspec()
         {
             return this._buildspec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitCloneDepth. 
+        /// <para>
+        /// Information about the git clone depth for the build project.
+        /// </para>
+        /// </summary>
+        public int GitCloneDepth
+        {
+            get { return this._gitCloneDepth.GetValueOrDefault(); }
+            set { this._gitCloneDepth = value; }
+        }
+
+        // Check to see if GitCloneDepth property is set
+        internal bool IsSetGitCloneDepth()
+        {
+            return this._gitCloneDepth.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsecureSsl. 
+        /// <para>
+        /// Enable this flag to ignore SSL warnings while connecting to the project source code.
+        /// </para>
+        /// </summary>
+        public bool InsecureSsl
+        {
+            get { return this._insecureSsl.GetValueOrDefault(); }
+            set { this._insecureSsl = value; }
+        }
+
+        // Check to see if InsecureSsl property is set
+        internal bool IsSetInsecureSsl()
+        {
+            return this._insecureSsl.HasValue; 
         }
 
         /// <summary>

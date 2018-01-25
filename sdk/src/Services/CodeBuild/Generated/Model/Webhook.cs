@@ -33,7 +33,46 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class Webhook
     {
+        private string _payloadUrl;
+        private string _secret;
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property PayloadUrl. 
+        /// <para>
+        /// This is the server endpoint that will receive the webhook payload.
+        /// </para>
+        /// </summary>
+        public string PayloadUrl
+        {
+            get { return this._payloadUrl; }
+            set { this._payloadUrl = value; }
+        }
+
+        // Check to see if PayloadUrl property is set
+        internal bool IsSetPayloadUrl()
+        {
+            return this._payloadUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Secret. 
+        /// <para>
+        /// Use this secret while creating a webhook in GitHub for Enterprise. The secret allows
+        /// webhook requests sent by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+        /// </para>
+        /// </summary>
+        public string Secret
+        {
+            get { return this._secret; }
+            set { this._secret = value; }
+        }
+
+        // Check to see if Secret property is set
+        internal bool IsSetSecret()
+        {
+            return this._secret != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Url. 
