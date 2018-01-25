@@ -87,6 +87,11 @@ namespace Amazon.Runtime
         /// <param name="role">Role to use</param>
         public InstanceProfileAWSCredentials(string role)
         {
+            if (role == null)
+                throw new ArgumentNullException(nameof(role));
+            else if (IsNullOrWhiteSpace(role))
+                throw new ArgumentException("The argument '" + nameof(role) + "' must contain a valid role name.");
+
             Role = role;
             this.PreemptExpiryTime = _preemptExpiryTime;
         }
@@ -210,6 +215,22 @@ namespace Amazon.Runtime
             throw new InvalidOperationException("No roles found");
         }
 
+        /// <summary>
+        /// Return true if string is null or whitespace, false otherwise.
+        /// We can't use String.IsNullOrWhitespace because it doesn't exist
+        /// in all frameworks we support.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        private static bool IsNullOrWhiteSpace(string s)
+        {
+            if (s == null)
+                return true;
+            else if (s.Trim().Length == 0)
+                return true;
+            else
+                return false;
+        }
         #endregion
     }
 }
