@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for AccessKeyDetails Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class AccessKeyDetailsUnmarshaller : IUnmarshaller<AccessKeyDetails, XmlUnmarshallerContext>, IUnmarshaller<AccessKeyDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccessKeyDetails IUnmarshaller<AccessKeyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public AccessKeyDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            AccessKeyDetails unmarshalledObject = new AccessKeyDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
-                {
-                    var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceDetails", targetDepth))
-                {
-                    var unmarshaller = InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("accessKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("principalId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static AccessKeyDetailsUnmarshaller _instance = new AccessKeyDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static AccessKeyDetailsUnmarshaller Instance
         {
             get
             {

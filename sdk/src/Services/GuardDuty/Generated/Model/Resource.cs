@@ -33,8 +33,24 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Resource
     {
+        private AccessKeyDetails _accessKeyDetails;
         private InstanceDetails _instanceDetails;
         private string _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property AccessKeyDetails.
+        /// </summary>
+        public AccessKeyDetails AccessKeyDetails
+        {
+            get { return this._accessKeyDetails; }
+            set { this._accessKeyDetails = value; }
+        }
+
+        // Check to see if AccessKeyDetails property is set
+        internal bool IsSetAccessKeyDetails()
+        {
+            return this._accessKeyDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceDetails.
