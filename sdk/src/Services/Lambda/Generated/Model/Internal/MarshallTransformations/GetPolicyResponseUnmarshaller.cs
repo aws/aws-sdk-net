@@ -57,6 +57,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RevisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -89,6 +89,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Principal);
                 }
 
+                if(publicRequest.IsSetRevisionId())
+                {
+                    context.Writer.WritePropertyName("RevisionId");
+                    context.Writer.Write(publicRequest.RevisionId);
+                }
+
                 if(publicRequest.IsSetSourceAccount())
                 {
                     context.Writer.WritePropertyName("SourceAccount");

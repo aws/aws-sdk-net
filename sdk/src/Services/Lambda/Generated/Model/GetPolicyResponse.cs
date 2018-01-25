@@ -33,6 +33,7 @@ namespace Amazon.Lambda.Model
     public partial class GetPolicyResponse : AmazonWebServiceResponse
     {
         private string _policy;
+        private string _revisionId;
 
         /// <summary>
         /// Gets and sets the property Policy. 
@@ -51,6 +52,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Represents the latest updated revision of the function or alias.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
     }

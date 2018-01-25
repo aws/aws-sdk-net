@@ -270,6 +270,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
         /// Lambda function access policy is limited to 20 KB.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
         /// </exception>
@@ -2189,6 +2194,11 @@ namespace Amazon.Lambda
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -2348,6 +2358,11 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -2562,6 +2577,11 @@ namespace Amazon.Lambda
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -2741,6 +2761,11 @@ namespace Amazon.Lambda
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
         /// in the request does not exist.
@@ -2824,6 +2849,11 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.

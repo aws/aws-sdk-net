@@ -123,6 +123,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.MemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RevisionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RevisionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

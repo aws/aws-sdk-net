@@ -36,6 +36,7 @@ namespace Amazon.Lambda.Model
         private string _description;
         private string _functionVersion;
         private string _name;
+        private string _revisionId;
         private AliasRoutingConfiguration _routingConfig;
 
         /// <summary>
@@ -110,6 +111,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Represents the latest updated revision of the function or alias.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
         /// <summary>

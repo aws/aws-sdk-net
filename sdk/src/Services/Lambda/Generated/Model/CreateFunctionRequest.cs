@@ -275,7 +275,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Node v0.10.42 is currently marked as deprecated. You must migrate existing functions
         /// to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10)
-        /// as soon as possible. Failure to do so will result in an invalid parmaeter error being
+        /// as soon as possible. Failure to do so will result in an invalid parameter error being
         /// returned. Note that you will have to follow this procedure for each region that contains
         /// functions written in the Node v0.10.42 runtime.
         /// </para>

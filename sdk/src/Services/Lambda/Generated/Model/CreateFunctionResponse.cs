@@ -44,6 +44,7 @@ namespace Amazon.Lambda.Model
         private string _lastModified;
         private string _masterArn;
         private int? _memorySize;
+        private string _revisionId;
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
@@ -272,6 +273,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// Represents the latest updated revision of the function or alias.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
         /// <summary>

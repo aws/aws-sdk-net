@@ -67,6 +67,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));
+            
+            if (publicRequest.IsSetRevisionId())
+                request.Parameters.Add("RevisionId", StringUtils.FromString(publicRequest.RevisionId));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
