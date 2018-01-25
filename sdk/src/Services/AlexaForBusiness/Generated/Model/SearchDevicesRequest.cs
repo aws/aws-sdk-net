@@ -42,7 +42,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filters to use to list a specified set of devices. Supported filter keys are DeviceName,
-        /// DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+        /// DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and
+        /// UnassociatedOnly.
         /// </para>
         /// </summary>
         public List<Filter> Filters

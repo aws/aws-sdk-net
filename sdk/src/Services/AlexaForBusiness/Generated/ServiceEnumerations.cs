@@ -79,6 +79,56 @@ namespace Amazon.AlexaForBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceStatusDetailCode.
+    /// </summary>
+    public class DeviceStatusDetailCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEVICE_SOFTWARE_UPDATE_NEEDED for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode DEVICE_SOFTWARE_UPDATE_NEEDED = new DeviceStatusDetailCode("DEVICE_SOFTWARE_UPDATE_NEEDED");
+        /// <summary>
+        /// Constant DEVICE_WAS_OFFLINE for DeviceStatusDetailCode
+        /// </summary>
+        public static readonly DeviceStatusDetailCode DEVICE_WAS_OFFLINE = new DeviceStatusDetailCode("DEVICE_WAS_OFFLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceStatusDetailCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceStatusDetailCode FindValue(string value)
+        {
+            return FindValue<DeviceStatusDetailCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceStatusDetailCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DistanceUnit.
     /// </summary>
     public class DistanceUnit : ConstantClass

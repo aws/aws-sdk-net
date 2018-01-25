@@ -88,6 +88,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeviceStatusInfo", targetDepth))
+                {
+                    var unmarshaller = DeviceStatusInfoUnmarshaller.Instance;
+                    unmarshalledObject.DeviceStatusInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

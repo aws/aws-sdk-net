@@ -36,6 +36,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _deviceName;
         private string _deviceSerialNumber;
         private DeviceStatus _deviceStatus;
+        private DeviceStatusInfo _deviceStatusInfo;
         private string _deviceType;
         private string _macAddress;
         private string _roomArn;
@@ -112,6 +113,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetDeviceStatus()
         {
             return this._deviceStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceStatusInfo. 
+        /// <para>
+        /// Detailed information about a device's status.
+        /// </para>
+        /// </summary>
+        public DeviceStatusInfo DeviceStatusInfo
+        {
+            get { return this._deviceStatusInfo; }
+            set { this._deviceStatusInfo = value; }
+        }
+
+        // Check to see if DeviceStatusInfo property is set
+        internal bool IsSetDeviceStatusInfo()
+        {
+            return this._deviceStatusInfo != null;
         }
 
         /// <summary>
