@@ -739,6 +739,60 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type InteractionMode.
+    /// </summary>
+    public class InteractionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERACTIVE for InteractionMode
+        /// </summary>
+        public static readonly InteractionMode INTERACTIVE = new InteractionMode("INTERACTIVE");
+        /// <summary>
+        /// Constant NO_VIDEO for InteractionMode
+        /// </summary>
+        public static readonly InteractionMode NO_VIDEO = new InteractionMode("NO_VIDEO");
+        /// <summary>
+        /// Constant VIDEO_ONLY for InteractionMode
+        /// </summary>
+        public static readonly InteractionMode VIDEO_ONLY = new InteractionMode("VIDEO_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InteractionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InteractionMode FindValue(string value)
+        {
+            return FindValue<InteractionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InteractionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkProfileType.
     /// </summary>
     public class NetworkProfileType : ConstantClass
@@ -1157,6 +1211,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType INSTRUMENTATION = new TestType("INSTRUMENTATION");
         /// <summary>
+        /// Constant REMOTE_ACCESS_RECORD for TestType
+        /// </summary>
+        public static readonly TestType REMOTE_ACCESS_RECORD = new TestType("REMOTE_ACCESS_RECORD");
+        /// <summary>
+        /// Constant REMOTE_ACCESS_REPLAY for TestType
+        /// </summary>
+        public static readonly TestType REMOTE_ACCESS_REPLAY = new TestType("REMOTE_ACCESS_REPLAY");
+        /// <summary>
         /// Constant UIAUTOMATION for TestType
         /// </summary>
         public static readonly TestType UIAUTOMATION = new TestType("UIAUTOMATION");
@@ -1164,6 +1226,10 @@ namespace Amazon.DeviceFarm
         /// Constant UIAUTOMATOR for TestType
         /// </summary>
         public static readonly TestType UIAUTOMATOR = new TestType("UIAUTOMATOR");
+        /// <summary>
+        /// Constant WEB_PERFORMANCE_PROFILE for TestType
+        /// </summary>
+        public static readonly TestType WEB_PERFORMANCE_PROFILE = new TestType("WEB_PERFORMANCE_PROFILE");
         /// <summary>
         /// Constant XCTEST for TestType
         /// </summary>

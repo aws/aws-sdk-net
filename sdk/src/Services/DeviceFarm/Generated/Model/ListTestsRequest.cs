@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTests operation.
-    /// Gets information about tests.
+    /// Gets information about tests in a given test suite.
     /// </summary>
     public partial class ListTestsRequest : AmazonDeviceFarmRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The tests' ARNs.
+        /// The test suite's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string Arn

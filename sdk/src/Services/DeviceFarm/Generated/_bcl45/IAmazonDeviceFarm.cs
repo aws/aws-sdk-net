@@ -1606,7 +1606,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about jobs.
+        /// Gets information about jobs for a given test run.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
@@ -1977,7 +1977,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about suites.
+        /// Gets information about test suites for a given job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSuites service method.</param>
         /// 
@@ -2016,7 +2016,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about tests.
+        /// Gets information about tests in a given test suite.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTests service method.</param>
         /// 

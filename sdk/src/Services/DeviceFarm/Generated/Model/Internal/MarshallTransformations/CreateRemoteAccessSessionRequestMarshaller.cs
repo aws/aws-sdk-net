@@ -90,6 +90,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceArn);
                 }
 
+                if(publicRequest.IsSetInteractionMode())
+                {
+                    context.Writer.WritePropertyName("interactionMode");
+                    context.Writer.Write(publicRequest.InteractionMode);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -106,6 +112,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("remoteDebugEnabled");
                     context.Writer.Write(publicRequest.RemoteDebugEnabled);
+                }
+
+                if(publicRequest.IsSetRemoteRecordAppArn())
+                {
+                    context.Writer.WritePropertyName("remoteRecordAppArn");
+                    context.Writer.Write(publicRequest.RemoteRecordAppArn);
+                }
+
+                if(publicRequest.IsSetRemoteRecordEnabled())
+                {
+                    context.Writer.WritePropertyName("remoteRecordEnabled");
+                    context.Writer.Write(publicRequest.RemoteRecordEnabled);
                 }
 
                 if(publicRequest.IsSetSshPublicKey())

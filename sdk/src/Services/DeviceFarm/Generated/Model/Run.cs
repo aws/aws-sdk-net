@@ -33,6 +33,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class Run
     {
+        private string _appUpload;
         private string _arn;
         private BillingMethod _billingMethod;
         private int? _completedJobs;
@@ -40,18 +41,44 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _created;
         private CustomerArtifactPaths _customerArtifactPaths;
         private DeviceMinutes _deviceMinutes;
+        private string _devicePoolArn;
+        private int? _eventCount;
+        private int? _jobTimeoutMinutes;
+        private string _locale;
+        private Location _location;
         private string _message;
         private string _name;
         private NetworkProfile _networkProfile;
         private string _parsingResultUrl;
         private DevicePlatform _platform;
+        private Radios _radios;
         private ExecutionResult _result;
         private ExecutionResultCode _resultCode;
+        private int? _seed;
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
         private int? _totalJobs;
         private TestType _type;
+        private string _webUrl;
+
+        /// <summary>
+        /// Gets and sets the property AppUpload. 
+        /// <para>
+        /// An app to upload or that has been uploaded.
+        /// </para>
+        /// </summary>
+        public string AppUpload
+        {
+            get { return this._appUpload; }
+            set { this._appUpload = value; }
+        }
+
+        // Check to see if AppUpload property is set
+        internal bool IsSetAppUpload()
+        {
+            return this._appUpload != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -181,6 +208,97 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DevicePoolArn. 
+        /// <para>
+        /// The ARN of the device pool for the run.
+        /// </para>
+        /// </summary>
+        public string DevicePoolArn
+        {
+            get { return this._devicePoolArn; }
+            set { this._devicePoolArn = value; }
+        }
+
+        // Check to see if DevicePoolArn property is set
+        internal bool IsSetDevicePoolArn()
+        {
+            return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventCount. 
+        /// <para>
+        /// For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz
+        /// test should perform.
+        /// </para>
+        /// </summary>
+        public int EventCount
+        {
+            get { return this._eventCount.GetValueOrDefault(); }
+            set { this._eventCount = value; }
+        }
+
+        // Check to see if EventCount property is set
+        internal bool IsSetEventCount()
+        {
+            return this._eventCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTimeoutMinutes. 
+        /// <para>
+        /// The number of minutes the job will execute before it times out.
+        /// </para>
+        /// </summary>
+        public int JobTimeoutMinutes
+        {
+            get { return this._jobTimeoutMinutes.GetValueOrDefault(); }
+            set { this._jobTimeoutMinutes = value; }
+        }
+
+        // Check to see if JobTimeoutMinutes property is set
+        internal bool IsSetJobTimeoutMinutes()
+        {
+            return this._jobTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// Information about the locale that is used for the run.
+        /// </para>
+        /// </summary>
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Information about the location that is used for the run.
+        /// </para>
+        /// </summary>
+        public Location Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
         /// A message about the run's result.
@@ -286,6 +404,24 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Radios. 
+        /// <para>
+        /// Information about the radio states for the run.
+        /// </para>
+        /// </summary>
+        public Radios Radios
+        {
+            get { return this._radios; }
+            set { this._radios = value; }
+        }
+
+        // Check to see if Radios property is set
+        internal bool IsSetRadios()
+        {
+            return this._radios != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
         /// The run's result.
@@ -354,6 +490,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetResultCode()
         {
             return this._resultCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Seed. 
+        /// <para>
+        /// For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the
+        /// same seed value between tests ensures identical event sequences.
+        /// </para>
+        /// </summary>
+        public int Seed
+        {
+            get { return this._seed.GetValueOrDefault(); }
+            set { this._seed = value; }
+        }
+
+        // Check to see if Seed property is set
+        internal bool IsSetSeed()
+        {
+            return this._seed.HasValue; 
         }
 
         /// <summary>
@@ -547,6 +702,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebUrl. 
+        /// <para>
+        /// A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download
+        /// the symbol file for the run.
+        /// </para>
+        /// </summary>
+        public string WebUrl
+        {
+            get { return this._webUrl; }
+            set { this._webUrl = value; }
+        }
+
+        // Check to see if WebUrl property is set
+        internal bool IsSetWebUrl()
+        {
+            return this._webUrl != null;
         }
 
     }

@@ -49,8 +49,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project that you wish to update network profile
-        /// settings.
+        /// The Amazon Resource Name (ARN) of the project for which you want to update network
+        /// profile settings.
         /// </para>
         /// </summary>
         public string Arn

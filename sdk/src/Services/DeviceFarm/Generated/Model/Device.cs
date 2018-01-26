@@ -43,6 +43,7 @@ namespace Amazon.DeviceFarm.Model
         private string _manufacturer;
         private long? _memory;
         private string _model;
+        private string _modelId;
         private string _name;
         private string _os;
         private DevicePlatform _platform;
@@ -261,6 +262,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetModel()
         {
             return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelId. 
+        /// <para>
+        /// The device's model ID.
+        /// </para>
+        /// </summary>
+        public string ModelId
+        {
+            get { return this._modelId; }
+            set { this._modelId = value; }
+        }
+
+        // Check to see if ModelId property is set
+        internal bool IsSetModelId()
+        {
+            return this._modelId != null;
         }
 
         /// <summary>

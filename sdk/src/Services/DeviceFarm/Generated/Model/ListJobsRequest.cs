@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Gets information about jobs.
+    /// Gets information about jobs for a given test run.
     /// </summary>
     public partial class ListJobsRequest : AmazonDeviceFarmRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The jobs' ARNs.
+        /// The run's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         public string Arn

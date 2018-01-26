@@ -64,6 +64,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appUpload", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AppUpload = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,36 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("devicePoolArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DevicePoolArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.EventCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobTimeoutMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.JobTimeoutMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("locale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = LocationUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -136,6 +172,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("radios", targetDepth))
+                {
+                    var unmarshaller = RadiosUnmarshaller.Instance;
+                    unmarshalledObject.Radios = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("result", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -146,6 +188,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResultCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("seed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Seed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("started", targetDepth))
@@ -176,6 +224,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("webUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
