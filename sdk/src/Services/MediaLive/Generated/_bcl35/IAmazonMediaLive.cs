@@ -367,6 +367,9 @@ namespace Amazon.MediaLive
         /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
         /// Placeholder documentation for InternalServerErrorException
         /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
         /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
         /// Placeholder documentation for TooManyRequestsException
         /// </exception>

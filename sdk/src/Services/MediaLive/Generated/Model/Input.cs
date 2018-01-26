@@ -43,7 +43,7 @@ namespace Amazon.MediaLive.Model
         private InputType _type;
 
         /// <summary>
-        /// Gets and sets the property Arn. Unique ARN of input (generated, immutable)
+        /// Gets and sets the property Arn. The Unique ARN of the input (generated, immutable).
         /// </summary>
         public string Arn
         {
@@ -58,8 +58,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttachedChannels. List of channel IDs that that input is
-        /// attached to (currently an input can only be attached to one channel)
+        /// Gets and sets the property AttachedChannels. A list of channel IDs that that input
+        /// is attached to (currently an input can only be attached to one channel).
         /// </summary>
         public List<string> AttachedChannels
         {
@@ -74,7 +74,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Destinations. List of destinations of input (PULL-type)
+        /// Gets and sets the property Destinations. A list of the destinations of the input (PUSH-type).
         /// </summary>
         public List<InputDestination> Destinations
         {
@@ -89,7 +89,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. generated ID of input (unique for user account, immutable)
+        /// Gets and sets the property Id. The generated ID of the input (unique for user account,
+        /// immutable).
         /// </summary>
         public string Id
         {
@@ -104,7 +105,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. user-assigned name (mutable)
+        /// Gets and sets the property Name. The user-assigned name (This is a mutable value).
         /// </summary>
         public string Name
         {
@@ -119,7 +120,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. List of IDs for all the security groups
+        /// Gets and sets the property SecurityGroups. A list of IDs for all the security groups
         /// attached to the input.
         /// </summary>
         public List<string> SecurityGroups
@@ -135,7 +136,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. List of sources of input (PULL-type)
+        /// Gets and sets the property Sources. A list of the sources of the input (PULL-type).
         /// </summary>
         public List<InputSource> Sources
         {

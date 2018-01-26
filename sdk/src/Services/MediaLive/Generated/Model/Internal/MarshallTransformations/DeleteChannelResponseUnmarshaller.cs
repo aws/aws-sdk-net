@@ -87,6 +87,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.InputAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputSpecification", targetDepth))
+                {
+                    var unmarshaller = InputSpecificationUnmarshaller.Instance;
+                    response.InputSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -5225,6 +5225,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type InputCodec.
+    /// </summary>
+    public class InputCodec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVC for InputCodec
+        /// </summary>
+        public static readonly InputCodec AVC = new InputCodec("AVC");
+        /// <summary>
+        /// Constant HEVC for InputCodec
+        /// </summary>
+        public static readonly InputCodec HEVC = new InputCodec("HEVC");
+        /// <summary>
+        /// Constant MPEG2 for InputCodec
+        /// </summary>
+        public static readonly InputCodec MPEG2 = new InputCodec("MPEG2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputCodec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputCodec FindValue(string value)
+        {
+            return FindValue<InputCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputDeblockFilter.
     /// </summary>
     public class InputDeblockFilter : ConstantClass
@@ -5576,6 +5630,114 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InputLossImageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputMaximumBitrate.
+    /// </summary>
+    public class InputMaximumBitrate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_10_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_10_MBPS = new InputMaximumBitrate("MAX_10_MBPS");
+        /// <summary>
+        /// Constant MAX_20_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_20_MBPS = new InputMaximumBitrate("MAX_20_MBPS");
+        /// <summary>
+        /// Constant MAX_50_MBPS for InputMaximumBitrate
+        /// </summary>
+        public static readonly InputMaximumBitrate MAX_50_MBPS = new InputMaximumBitrate("MAX_50_MBPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputMaximumBitrate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputMaximumBitrate FindValue(string value)
+        {
+            return FindValue<InputMaximumBitrate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputMaximumBitrate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputResolution.
+    /// </summary>
+    public class InputResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HD for InputResolution
+        /// </summary>
+        public static readonly InputResolution HD = new InputResolution("HD");
+        /// <summary>
+        /// Constant SD for InputResolution
+        /// </summary>
+        public static readonly InputResolution SD = new InputResolution("SD");
+        /// <summary>
+        /// Constant UHD for InputResolution
+        /// </summary>
+        public static readonly InputResolution UHD = new InputResolution("UHD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputResolution FindValue(string value)
+        {
+            return FindValue<InputResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputResolution(string value)
         {
             return FindValue(value);
         }

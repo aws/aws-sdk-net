@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for a PUSH type input
+    /// The settings for a PUSH type input.
     /// </summary>
     public partial class InputDestination
     {
@@ -37,8 +37,8 @@ namespace Amazon.MediaLive.Model
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Ip. system-generated static IP address of endpoint.Remains
-        /// fixed for the lifetime of the input
+        /// Gets and sets the property Ip. The system-generated static IP address of endpoint.It
+        /// remains fixed for the lifetime of the input.
         /// </summary>
         public string Ip
         {
@@ -53,7 +53,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port. port for input
+        /// Gets and sets the property Port. The port number for the input.
         /// </summary>
         public string Port
         {

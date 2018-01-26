@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Endpoint settings for a PUSH type input
+    /// Endpoint settings for a PUSH type input.
     /// </summary>
     public partial class InputDestinationRequest
     {

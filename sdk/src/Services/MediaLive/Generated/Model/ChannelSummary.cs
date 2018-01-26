@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private List<ChannelEgressEndpoint> _egressEndpoints = new List<ChannelEgressEndpoint>();
         private string _id;
         private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
+        private InputSpecification _inputSpecification;
         private string _name;
         private int? _pipelinesRunningCount;
         private string _roleArn;
@@ -118,6 +119,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputAttachments()
         {
             return this._inputAttachments != null && this._inputAttachments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputSpecification.
+        /// </summary>
+        public InputSpecification InputSpecification
+        {
+            get { return this._inputSpecification; }
+            set { this._inputSpecification = value; }
+        }
+
+        // Check to see if InputSpecification property is set
+        internal bool IsSetInputSpecification()
+        {
+            return this._inputSpecification != null;
         }
 
         /// <summary>

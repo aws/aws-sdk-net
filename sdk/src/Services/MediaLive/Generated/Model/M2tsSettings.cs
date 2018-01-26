@@ -420,9 +420,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EcmPid. Packet Identifier (PID) for ECM in the transport
-        /// stream. Only enabled when Simulcrypt is enabled. Can be entered as a decimal or hexadecimal
-        /// value.  Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
+        /// Gets and sets the property EcmPid. This field is unused and deprecated.
         /// </summary>
         public string EcmPid
         {

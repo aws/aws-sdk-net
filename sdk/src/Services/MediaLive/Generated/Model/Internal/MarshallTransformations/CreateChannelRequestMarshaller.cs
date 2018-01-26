@@ -108,6 +108,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInputSpecification())
+                {
+                    context.Writer.WritePropertyName("inputSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

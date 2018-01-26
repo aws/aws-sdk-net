@@ -41,9 +41,7 @@ namespace Amazon.MediaLive.Model
         private InputType _type;
 
         /// <summary>
-        /// Gets and sets the property Destinations. settings required for PUSH-type inputs; one
-        /// per redundancy group.Only one of sources and destinations can be specified.Note: there
-        /// are currently no settings required for PUSH-type inputs
+        /// Gets and sets the property Destinations. Destination settings for PUSH type inputs.
         /// </summary>
         public List<InputDestinationRequest> Destinations
         {
@@ -90,7 +88,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property RequestId. Unique identifier of the request to ensure the
-        /// request is handledexactly once in case of retries
+        /// request is handledexactly once in case of retries.
         /// </summary>
         public string RequestId
         {
@@ -105,8 +103,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sources. settings required for PULL-type inputs; one per
-        /// redundancy groupOnly one of sources and destinations can be specified
+        /// Gets and sets the property Sources. The source URLs for a PULL-type input. Every PULL
+        /// type input needsexactly two source URLs for redundancy.Only specify sources for PULL
+        /// type Inputs. Leave Destinations empty.
         /// </summary>
         public List<InputSourceRequest> Sources
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for a PULL type input
+    /// The settings for a PULL type input.
     /// </summary>
     public partial class InputSource
     {
@@ -37,8 +37,8 @@ namespace Amazon.MediaLive.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property PasswordParam. key used to extract the password from EC2
-        /// Parameter store
+        /// Gets and sets the property PasswordParam. The key used to extract the password from
+        /// EC2 Parameter store.
         /// </summary>
         public string PasswordParam
         {
@@ -69,7 +69,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. username for input source
+        /// Gets and sets the property Username. The username for the input source.
         /// </summary>
         public string Username
         {

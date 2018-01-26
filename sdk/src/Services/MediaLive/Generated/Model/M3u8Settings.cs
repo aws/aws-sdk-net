@@ -82,10 +82,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EcmPid. ThePlatform-protected transport streams using 'microsoft'
-        /// as Target Client include an ECM stream. This ECM stream contains the size, IV, and
-        /// PTS of every sample in the transport stream.  This stream PID is specified here. This
-        /// PID has no effect on non ThePlatform-protected streams.
+        /// Gets and sets the property EcmPid. This parameter is unused and deprecated.
         /// </summary>
         public string EcmPid
         {
