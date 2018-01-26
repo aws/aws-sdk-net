@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.225.0",
-    "CoreVersion"    : "3.3.21.8",
+    "ProductVersion" : "3.3.226.0",
+    "CoreVersion"    : "3.3.21.9",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.11.0",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.7.0",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -913,7 +913,7 @@
             "InPreview"               : false
         },
         "GuardDuty"                       : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
