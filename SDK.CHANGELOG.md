@@ -1,3 +1,11 @@
+### 3.3.227.0 (2018-01-26 22:17 UTC)
+* DeviceFarm (3.3.4.0)
+	* Add InteractionMode in CreateRemoteAccessSession for DirectDeviceAccess feature.
+* MediaLive (3.3.1.0)
+	* Add InputSpecification to CreateChannel (specification of input attributes is used for channel sizing and affects pricing);  add NotFoundException to DeleteInputSecurityGroups.
+* MTurk (3.3.1.4)
+	* Documentation updates for mturk-requester
+
 ### 3.3.226.0 (2018-01-25 22:41 UTC)
 * AlexaForBusiness (3.3.1.0)
 	* Supports new field for DeviceStatusInfo which provides details about the DeviceStatus following a DeviceSync operation.
