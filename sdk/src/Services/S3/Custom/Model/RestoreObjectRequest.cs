@@ -220,7 +220,6 @@ namespace Amazon.S3.Model
                 {
                     xmlWriter.WriteStartElement("GlacierJobParameters");
                     {
-                        xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days));
                         xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(Tier));
                     }
                     xmlWriter.WriteEndElement();
