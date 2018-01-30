@@ -216,7 +216,7 @@ namespace Amazon.S3.Model
                 if (IsSetRetrievalTier())
                     xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(RetrievalTier));
 
-                if (IsSetDays() || IsSetTier())
+                if (IsSetTier())
                 {
                     xmlWriter.WriteStartElement("GlacierJobParameters");
                     {
@@ -225,6 +225,8 @@ namespace Amazon.S3.Model
                     xmlWriter.WriteEndElement();
                 }
 
+                if (IsSetDays())
+                    xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days));
                 if (IsSetType())
                     xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(RestoreRequestType.Value));
                 if (IsSetDescription())
