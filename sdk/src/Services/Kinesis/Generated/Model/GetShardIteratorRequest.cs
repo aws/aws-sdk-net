@@ -67,7 +67,7 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
     /// For more information about throughput limits, see <a>GetRecords</a>, and <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
-    /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>GetShardIterator</a> has a limit of 5 transactions per second per account per
+    ///  <a>GetShardIterator</a> has a limit of five transactions per second per account per
     /// open shard.
     /// </para>
     /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ShardId. 
         /// <para>
-        /// The shard ID of the Kinesis Streams shard to get the iterator for.
+        /// The shard ID of the Kinesis Data Streams shard to get the iterator for.
         /// </para>
         /// </summary>
         public string ShardId
@@ -177,7 +177,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the Amazon Kinesis stream.
+        /// The name of the Amazon Kinesis data stream.
         /// </para>
         /// </summary>
         public string StreamName

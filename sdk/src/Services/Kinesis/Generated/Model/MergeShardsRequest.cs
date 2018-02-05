@@ -29,14 +29,14 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the MergeShards operation.
-    /// Merges two adjacent shards in a Kinesis stream and combines them into a single shard
-    /// to reduce the stream's capacity to ingest and transport data. Two shards are considered
-    /// adjacent if the union of the hash key ranges for the two shards form a contiguous
-    /// set with no gaps. For example, if you have two shards, one with a hash key range of
-    /// 276...381 and the other with a hash key range of 382...454, then you could merge these
-    /// two shards into a single shard that would have a hash key range of 276...454. After
-    /// the merge, the single child shard receives data for all hash key values covered by
-    /// the two parent shards.
+    /// Merges two adjacent shards in a Kinesis data stream and combines them into a single
+    /// shard to reduce the stream's capacity to ingest and transport data. Two shards are
+    /// considered adjacent if the union of the hash key ranges for the two shards form a
+    /// contiguous set with no gaps. For example, if you have two shards, one with a hash
+    /// key range of 276...381 and the other with a hash key range of 382...454, then you
+    /// could merge these two shards into a single shard that would have a hash key range
+    /// of 276...454. After the merge, the single child shard receives data for all hash key
+    /// values covered by the two parent shards.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model
     /// of a stream because of excess capacity that is not being used. You must specify the
     /// shard to be merged and the adjacent shard for a stream. For more information about
     /// merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
-    /// Two Shards</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -62,9 +62,9 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     ///  <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
-    /// request, Amazon Kinesis immediately returns a response and sets the <code>StreamStatus</code>
-    /// to <code>UPDATING</code>. After the operation is completed, Amazon Kinesis sets the
-    /// <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
+    /// request, Amazon Kinesis Data Streams immediately returns a response and sets the <code>StreamStatus</code>
+    /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
+    /// the <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
     /// to work while the stream is in the <code>UPDATING</code> state. 
     /// </para>
     ///  
@@ -75,12 +75,12 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
-    /// <code>MergeShards</code> or <a>SplitShard</a>, you will receive a <code>LimitExceededException</code>.
+    /// <code>MergeShards</code>, or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
     /// 
     /// </para>
     ///  
     /// <para>
-    ///  <code>MergeShards</code> has a limit of 5 transactions per second per account.
+    ///  <code>MergeShards</code> has a limit of five transactions per second per account.
     /// </para>
     /// </summary>
     public partial class MergeShardsRequest : AmazonKinesisRequest

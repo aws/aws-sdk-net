@@ -28,9 +28,9 @@ namespace Amazon.Kinesis
     /// <summary>
     /// Interface for accessing Kinesis
     ///
-    /// Amazon Kinesis Streams Service API Reference 
+    /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>
-    /// Amazon Kinesis Streams is a managed service that scales elastically for real time
+    /// Amazon Kinesis Data Streams is a managed service that scales elastically for real-time
     /// processing of streaming big data.
     /// </para>
     /// </summary>
@@ -76,9 +76,9 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Decreases the Kinesis stream's retention period, which is the length of time data
-        /// records are accessible after they are added to the stream. The minimum value of a
-        /// stream's retention period is 24 hours.
+        /// Decreases the Kinesis data stream's retention period, which is the length of time
+        /// data records are accessible after they are added to the stream. The minimum value
+        /// of a stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -99,6 +99,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
@@ -264,7 +268,7 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Increases the Amazon Kinesis stream's retention period, which is the length of time
+        /// Increases the Kinesis data stream's retention period, which is the length of time
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 168 hours (7 days).
         /// 
@@ -291,6 +295,10 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// must be in the <code>ACTIVE</code> state.
@@ -311,6 +319,23 @@ namespace Amazon.Kinesis
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         void IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, AmazonServiceCallback<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListShards
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListShards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListShards operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">REST API Reference for ListShards Operation</seealso>
+        void ListShardsAsync(ListShardsRequest request, AmazonServiceCallback<ListShardsRequest, ListShardsResponse> callback, AsyncOptions options = null);
 
 
         #endregion

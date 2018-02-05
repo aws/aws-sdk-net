@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecord operation.
-    /// Writes a single data record into an Amazon Kinesis stream. Call <code>PutRecord</code>
+    /// Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code>
     /// to send data into the stream for real-time ingestion and subsequent processing, one
     /// record at a time. Each shard can support writes up to 1,000 records per second, up
     /// to a maximum data write total of 1 MB per second.
@@ -46,10 +46,10 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The partition key is used by Kinesis Streams to distribute data across shards. Kinesis
-    /// Streams segregates the data records that belong to a stream into multiple shards,
-    /// using the partition key associated with each data record to determine the shard to
-    /// which a given data record belongs.
+    /// The partition key is used by Kinesis Data Streams to distribute data across shards.
+    /// Kinesis Data Streams segregates the data records that belong to a stream into multiple
+    /// shards, using the partition key associated with each data record to determine the
+    /// shard to which a given data record belongs.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.Kinesis.Model
     /// shards. You can override hashing the partition key to determine the shard by explicitly
     /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
     /// information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
-    /// Data to a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.Kinesis.Model
     /// across all shards within a stream. To guarantee strictly increasing ordering, write
     /// serially to a shard and use the <code>SequenceNumberForOrdering</code> parameter.
     /// For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
-    /// Data to a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -139,11 +139,11 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// Determines which shard in the stream the data record is assigned to. Partition keys
         /// are Unicode strings with a maximum length limit of 256 characters for each key. Amazon
-        /// Kinesis uses the partition key as input to a hash function that maps the partition
-        /// key and associated data to a specific shard. Specifically, an MD5 hash function is
-        /// used to map partition keys to 128-bit integer values and to map associated data records
-        /// to shards. As a result of this hashing mechanism, all data records with the same partition
-        /// key map to the same shard within the stream.
+        /// Kinesis Data Streams uses the partition key as input to a hash function that maps
+        /// the partition key and associated data to a specific shard. Specifically, an MD5 hash
+        /// function is used to map partition keys to 128-bit integer values and to map associated
+        /// data records to shards. As a result of this hashing mechanism, all data records with
+        /// the same partition key map to the same shard within the stream.
         /// </para>
         /// </summary>
         public string PartitionKey

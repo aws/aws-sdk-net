@@ -79,8 +79,8 @@ namespace Amazon.Kinesis.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-        /// the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis
-        /// Streams Developer Guide</i>.
+        /// the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon
+        /// Kinesis Data Streams Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> ShardLevelMetrics

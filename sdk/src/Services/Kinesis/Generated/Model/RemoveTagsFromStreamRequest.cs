@@ -29,12 +29,16 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromStream operation.
-    /// Removes tags from the specified Kinesis stream. Removed tags are deleted and cannot
-    /// be recovered after this operation successfully completes.
+    /// Removes tags from the specified Kinesis data stream. Removed tags are deleted and
+    /// cannot be recovered after this operation successfully completes.
     /// 
     ///  
     /// <para>
     /// If you specify a tag that does not exist, it is ignored.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <a>RemoveTagsFromStream</a> has a limit of five transactions per second per account.
     /// </para>
     /// </summary>
     public partial class RemoveTagsFromStreamRequest : AmazonKinesisRequest

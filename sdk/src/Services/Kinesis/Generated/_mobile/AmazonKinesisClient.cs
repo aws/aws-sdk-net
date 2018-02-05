@@ -36,9 +36,9 @@ namespace Amazon.Kinesis
     /// <summary>
     /// Implementation for accessing Kinesis
     ///
-    /// Amazon Kinesis Streams Service API Reference 
+    /// Amazon Kinesis Data Streams Service API Reference 
     /// <para>
-    /// Amazon Kinesis Streams is a managed service that scales elastically for real time
+    /// Amazon Kinesis Data Streams is a managed service that scales elastically for real-time
     /// processing of streaming big data.
     /// </para>
     /// </summary>
@@ -310,9 +310,9 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Decreases the Kinesis stream's retention period, which is the length of time data
-        /// records are accessible after they are added to the stream. The minimum value of a
-        /// stream's retention period is 24 hours.
+        /// Decreases the Kinesis data stream's retention period, which is the length of time
+        /// data records are accessible after they are added to the stream. The minimum value
+        /// of a stream's retention period is 24 hours.
         /// 
         ///  
         /// <para>
@@ -331,6 +331,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
@@ -638,7 +642,7 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Increases the Amazon Kinesis stream's retention period, which is the length of time
+        /// Increases the Kinesis data stream's retention period, which is the length of time
         /// data records are accessible after they are added to the stream. The maximum value
         /// of a stream's retention period is 168 hours (7 days).
         /// 
@@ -662,6 +666,10 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
@@ -701,6 +709,38 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListShards
+
+        internal virtual ListShardsResponse ListShards(ListShardsRequest request)
+        {
+            var marshaller = new ListShardsRequestMarshaller();
+            var unmarshaller = ListShardsResponseUnmarshaller.Instance;
+
+            return Invoke<ListShardsRequest,ListShardsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListShards operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListShards operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">REST API Reference for ListShards Operation</seealso>
+        public virtual Task<ListShardsResponse> ListShardsAsync(ListShardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListShardsRequestMarshaller();
+            var unmarshaller = ListShardsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListShardsRequest,ListShardsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStreams
 
         internal virtual ListStreamsResponse ListStreams()
@@ -717,13 +757,13 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Lists your Kinesis streams.
+        /// Lists your Kinesis data streams.
         /// 
         ///  
         /// <para>
         /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
         /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Streams
+        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
         /// uses the default limit, which is currently 10.
         /// </para>
         ///  
@@ -738,7 +778,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        ///  <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        ///  <a>ListStreams</a> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

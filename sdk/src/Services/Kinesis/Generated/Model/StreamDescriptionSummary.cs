@@ -90,10 +90,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The GUID for the customer-managed KMS key to use for encryption. This value can be
-        /// a globally unique identifier, a fully specified ARN to either an alias or a key, or
-        /// an alias name prefixed by "alias/".You can also use a master key owned by Kinesis
-        /// Streams by specifying the alias <code>aws/kinesis</code>.
+        /// The GUID for the customer-managed AWS KMS key to use for encryption. This value can
+        /// be a globally unique identifier, a fully specified ARN to either an alias or a key,
+        /// or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis
+        /// Data Streams by specifying the alias <code>aws/kinesis</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Master key owned by Kinesis: <code>alias/aws/kinesis</code> 
+        /// Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -230,13 +230,13 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The stream is being created. Kinesis Streams immediately
+        ///  <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately
         /// returns and sets <code>StreamStatus</code> to <code>CREATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>DELETING</code> - The stream is being deleted. The specified stream is in the
-        /// <code>DELETING</code> state until Kinesis Streams completes the deletion.
+        /// <code>DELETING</code> state until Kinesis Data Streams completes the deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,19 +29,19 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStream operation.
-    /// Deletes a Kinesis stream and all its shards and data. You must shut down any applications
-    /// that are operating on the stream before you delete the stream. If an application attempts
-    /// to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
+    /// Deletes a Kinesis data stream and all its shards and data. You must shut down any
+    /// applications that are operating on the stream before you delete the stream. If an
+    /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
     /// 
     ///  
     /// <para>
     /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
     /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
-    /// Streams completes the deletion.
+    /// Data Streams completes the deletion.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Note:</b> Kinesis Streams might continue to accept data read and write operations,
+    ///  <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations,
     /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
     /// the <code>DELETING</code> state until the stream deletion is complete.
     /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>DeleteStream</a> has a limit of 5 transactions per second per account.
+    ///  <a>DeleteStream</a> has a limit of five transactions per second per account.
     /// </para>
     /// </summary>
     public partial class DeleteStreamRequest : AmazonKinesisRequest

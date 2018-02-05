@@ -37,7 +37,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation has a limit of 1 transaction per second per account.
+    /// This operation has a limit of one transaction per second per account.
     /// </para>
     /// </summary>
     public partial class DescribeLimitsRequest : AmazonKinesisRequest

@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecords operation.
-    /// Writes multiple data records into a Kinesis stream in a single call (also referred
+    /// Writes multiple data records into a Kinesis data stream in a single call (also referred
     /// to as a <code>PutRecords</code> request). Use this operation to send data into the
     /// stream for data ingestion and processing. 
     /// 
@@ -54,12 +54,13 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// The partition key is used by Kinesis Streams as input to a hash function that maps
-    /// the partition key and associated data to a specific shard. An MD5 hash function is
-    /// used to map partition keys to 128-bit integer values and to map associated data records
-    /// to shards. As a result of this hashing mechanism, all data records with the same partition
-    /// key map to the same shard within the stream. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
-    /// Data to a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// The partition key is used by Kinesis Data Streams as input to a hash function that
+    /// maps the partition key and associated data to a specific shard. An MD5 hash function
+    /// is used to map partition keys to 128-bit integer values and to map associated data
+    /// records to shards. As a result of this hashing mechanism, all data records with the
+    /// same partition key map to the same shard within the stream. For more information,
+    /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+    /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +68,8 @@ namespace Amazon.Kinesis.Model
     /// which overrides the partition key to shard mapping. This parameter allows a data producer
     /// to determine explicitly the shard where the record is stored. For more information,
     /// see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
-    /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -80,7 +82,7 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// The response <code>Records</code> array includes both successfully and unsuccessfully
-    /// processed records. Amazon Kinesis attempts to process all records in each <code>PutRecords</code>
+    /// processed records. Kinesis Data Streams attempts to process all records in each <code>PutRecords</code>
     /// request. A single record failure does not stop the processing of subsequent records.
     /// </para>
     ///  
@@ -98,7 +100,8 @@ namespace Amazon.Kinesis.Model
     /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
     /// exception including the account ID, stream name, and shard ID of the record that was
     /// throttled. For more information about partially successful responses, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
-    /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>

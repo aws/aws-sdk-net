@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the SplitShard operation.
-    /// Splits a shard into two new shards in the Kinesis stream, to increase the stream's
+    /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
     /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
     /// is a need to increase the overall capacity of a stream because of an expected increase
     /// in the volume of data records being ingested. 
@@ -39,7 +39,7 @@ namespace Amazon.Kinesis.Model
     /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
     /// maximum utilization; for example, the producers sending data into the specific shard
     /// are suddenly sending more than previously anticipated. You can also call <code>SplitShard</code>
-    /// to increase stream capacity, so that more Kinesis Streams applications can simultaneously
+    /// to increase stream capacity, so that more Kinesis Data Streams applications can simultaneously
     /// read data from the stream for real-time processing. 
     /// </para>
     ///  
@@ -48,7 +48,7 @@ namespace Amazon.Kinesis.Model
     /// in the shard where the shard gets split in two. In many cases, the new hash key might
     /// be the average of the beginning and ending hash key, but it can be any hash key value
     /// in the range being mapped into the shard. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
-    /// a Shard</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -59,10 +59,10 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     ///  <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
-    /// request, Kinesis Streams immediately returns a response and sets the stream status
-    /// to <code>UPDATING</code>. After the operation is completed, Kinesis Streams sets the
-    /// stream status to <code>ACTIVE</code>. Read and write operations continue to work while
-    /// the stream is in the <code>UPDATING</code> state. 
+    /// request, Kinesis Data Streams immediately returns a response and sets the stream status
+    /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
+    /// the stream status to <code>ACTIVE</code>. Read and write operations continue to work
+    /// while the stream is in the <code>UPDATING</code> state. 
     /// </para>
     ///  
     /// <para>
@@ -81,8 +81,8 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
-    /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. To increase this
-    /// limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase
+    /// this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  
@@ -93,7 +93,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>SplitShard</code> has a limit of 5 transactions per second per account.
+    ///  <code>SplitShard</code> has a limit of five transactions per second per account.
     /// </para>
     /// </summary>
     public partial class SplitShardRequest : AmazonKinesisRequest

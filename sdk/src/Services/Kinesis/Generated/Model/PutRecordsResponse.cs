@@ -49,7 +49,7 @@ namespace Amazon.Kinesis.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>KMS</code>: Use server-side encryption on the records using a customer-managed
-        /// KMS key.
+        /// AWS KMS key.
         /// </para>
         ///  </li> </ul>
         /// </summary>

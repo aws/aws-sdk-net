@@ -29,31 +29,31 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStream operation.
-    /// Creates a Kinesis stream. A stream captures and transports data records that are continuously
-    /// emitted from different data sources or <i>producers</i>. Scale-out within a stream
-    /// is explicitly supported by means of shards, which are uniquely identified groups of
-    /// data records in a stream.
+    /// Creates a Kinesis data stream. A stream captures and transports data records that
+    /// are continuously emitted from different data sources or <i>producers</i>. Scale-out
+    /// within a stream is explicitly supported by means of shards, which are uniquely identified
+    /// groups of data records in a stream.
     /// 
     ///  
     /// <para>
     /// You specify and control the number of shards that a stream is composed of. Each shard
-    /// can support reads up to 5 transactions per second, up to a maximum data read total
+    /// can support reads up to five transactions per second, up to a maximum data read total
     /// of 2 MB per second. Each shard can support writes up to 1,000 records per second,
-    /// up to a maximum data write total of 1 MB per second. I the amount of data input increases
+    /// up to a maximum data write total of 1 MB per second. If the amount of data input increases
     /// or decreases, you can add or remove shards.
     /// </para>
     ///  
     /// <para>
     /// The stream name identifies the stream. The name is scoped to the AWS account used
-    /// by the application. It is also scoped by region. That is, two streams in two different
+    /// by the application. It is also scoped by AWS Region. That is, two streams in two different
     /// accounts can have the same name, and two streams in the same account, but in two different
-    /// regions, can have the same name.
+    /// Regions, can have the same name.
     /// </para>
     ///  
     /// <para>
     ///  <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code>
-    /// request, Kinesis Streams immediately returns and sets the stream status to <code>CREATING</code>.
-    /// After the stream is created, Kinesis Streams sets the stream status to <code>ACTIVE</code>.
+    /// request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>.
+    /// After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>.
     /// You should perform read and write operations only on an <code>ACTIVE</code> stream.
     /// 
     /// </para>
@@ -72,9 +72,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
-    /// Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>. To increase this
-    /// limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+    /// To increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  
@@ -84,7 +84,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a>CreateStream</a> has a limit of 5 transactions per second per account.
+    ///  <a>CreateStream</a> has a limit of five transactions per second per account.
     /// </para>
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
@@ -119,9 +119,9 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// A name to identify the stream. The stream name is scoped to the AWS account used by
-        /// the application that creates the stream. It is also scoped by region. That is, two
-        /// streams in two different AWS accounts can have the same name. Two streams in the same
-        /// AWS account but in two different regions can also have the same name.
+        /// the application that creates the stream. It is also scoped by AWS Region. That is,
+        /// two streams in two different AWS accounts can have the same name. Two streams in the
+        /// same AWS account but in two different Regions can also have the same name.
         /// </para>
         /// </summary>
         public string StreamName

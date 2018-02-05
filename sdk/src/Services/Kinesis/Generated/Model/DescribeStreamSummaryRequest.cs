@@ -29,8 +29,8 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStreamSummary operation.
-    /// Provides a summarized description of the specified Kinesis stream without the shard
-    /// list.
+    /// Provides a summarized description of the specified Kinesis data stream without the
+    /// shard list.
     /// 
     ///  
     /// <para>

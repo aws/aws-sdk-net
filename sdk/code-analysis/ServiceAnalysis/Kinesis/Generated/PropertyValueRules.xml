@@ -20,7 +20,7 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.RetentionPeriodHours</property>
     <min>1</min>
-    <max>100000</max>
+    <max>168</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamName</property>
@@ -134,13 +134,40 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.RetentionPeriodHours</property>
     <min>1</min>
-    <max>100000</max>
+    <max>168</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.StreamName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsRequest.ExclusiveStartShardId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsRequest.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsRequest.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.ListShardsResponse.NextToken</property>
+    <min>1</min>
+    <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.ListStreamsRequest.ExclusiveStartStreamName</property>
@@ -383,7 +410,7 @@
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescription.RetentionPeriodHours</property>
     <min>1</min>
-    <max>100000</max>
+    <max>168</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescription.StreamName</property>

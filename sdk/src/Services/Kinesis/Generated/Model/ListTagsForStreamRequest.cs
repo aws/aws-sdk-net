@@ -29,7 +29,8 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForStream operation.
-    /// Lists the tags for the specified Kinesis stream.
+    /// Lists the tags for the specified Kinesis data stream. This operation has a limit of
+    /// five transactions per second per account.
     /// </summary>
     public partial class ListTagsForStreamRequest : AmazonKinesisRequest
     {

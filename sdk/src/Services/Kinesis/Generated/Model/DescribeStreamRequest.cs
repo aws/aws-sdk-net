@@ -29,7 +29,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStream operation.
-    /// Describes the specified Kinesis stream.
+    /// Describes the specified Kinesis data stream.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model
     /// <para>
     /// You can limit the number of shards returned by each call. For more information, see
     /// <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
-    /// Shards from a Stream</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+    /// Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
