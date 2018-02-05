@@ -38,7 +38,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property EnvironmentIds. 
         /// <para>
-        /// The IDs of invidividual environments to get information about.
+        /// The IDs of individual environments to get information about.
         /// </para>
         /// </summary>
         public List<string> EnvironmentIds

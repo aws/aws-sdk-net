@@ -136,12 +136,12 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon
-        /// EC2) instance.
+        ///  <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects
+        /// to the environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ssh</code>: An environment hosted on your own server.
+        ///  <code>ssh</code>: Your own server connects to the environment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -38,15 +38,8 @@ namespace Amazon.Cloud9
     /// </para>
     ///  
     /// <para>
-    /// In the background, these tools are available through development environments running
-    /// on Amazon Elastic Compute Cloud (Amazon EC2) instances (known as <i>Amazon EC2 environments</i>),
-    /// your own servers (known as <i>SSH environments</i>), or a combination. This enables
-    /// you to create and switch between multiple environments, with each environment set
-    /// up for a specific development project.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about AWS Cloud9, see the <i>AWS Cloud9 User Guide</i>.
+    /// For more information about AWS Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS
+    /// Cloud9 User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +48,7 @@ namespace Amazon.Cloud9
     ///  <ul> <li> 
     /// <para>
     ///  <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment,
-    /// launches an Amazon EC2 instance, and then hosts the environment on the instance.
+    /// launches an Amazon EC2 instance, and then connects from the instance to the environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -63,8 +56,8 @@ namespace Amazon.Cloud9
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteEnvironment</code>: Deletes an environment. If the environment is hosted
-    /// on an Amazon EC2 instance, also terminates the instance.
+    ///  <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2 instance
+    /// is connected to the environment, also terminates the instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -107,7 +100,7 @@ namespace Amazon.Cloud9
 
         /// <summary>
         /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-        /// Cloud (Amazon EC2) instance, and then hosts the environment on the instance.
+        /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentEC2 service method.</param>
         /// 
@@ -203,8 +196,8 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an AWS Cloud9 development environment. If the environment is hosted on an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.
+        /// Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected
+        /// to the environment, also terminates the instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// 

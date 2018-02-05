@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.CreateEnvironmentEC2(Amazon.Cloud9.Model.CreateEnvironmentEC2Request)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.CreateEnvironmentEC2(Amazon.Cloud9.Model.CreateEnvironmentEC2Request)" />
+            <member name="T:Amazon.Cloud9.Model.CreateEnvironmentEC2Request" />
+            <member name="T:Amazon.Cloud9.Model.CreateEnvironmentEC2Response" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateEnvironmentEC2"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="createenvironmentec2-1516821730547" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.CreateEnvironmentMembership(Amazon.Cloud9.Model.CreateEnvironmentMembershipRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.CreateEnvironmentMembership(Amazon.Cloud9.Model.CreateEnvironmentMembershipRequest)" />
+            <member name="T:Amazon.Cloud9.Model.CreateEnvironmentMembershipRequest" />
+            <member name="T:Amazon.Cloud9.Model.CreateEnvironmentMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateEnvironmentMembership"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="createenvironmentmembership-1516822583452" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DeleteEnvironment(Amazon.Cloud9.Model.DeleteEnvironmentRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DeleteEnvironment(Amazon.Cloud9.Model.DeleteEnvironmentRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DeleteEnvironmentRequest" />
+            <member name="T:Amazon.Cloud9.Model.DeleteEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteEnvironment"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="deleteenvironment-1516822903149" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DeleteEnvironmentMembership(Amazon.Cloud9.Model.DeleteEnvironmentMembershipRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DeleteEnvironmentMembership(Amazon.Cloud9.Model.DeleteEnvironmentMembershipRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DeleteEnvironmentMembershipRequest" />
+            <member name="T:Amazon.Cloud9.Model.DeleteEnvironmentMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteEnvironmentMembership"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="deleteenvironmentmembership-1516822975655" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about all of the environment members for the specified AWS Cloud9 development environment.
+                </para>
+                <code
+                    title="DescribeEnvironmentMemberships1"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="describeenvironmentmemberships1-1516823070453" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about the owner of the specified AWS Cloud9 development environment.
+                </para>
+                <code
+                    title="DescribeEnvironmentMemberships2"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="describeenvironmentmemberships2-1516823191355" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DescribeEnvironmentMemberships(Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsRequest" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentMembershipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets AWS Cloud9 development environment membership information for the specified user.
+                </para>
+                <code
+                    title="DescribeEnvironmentMemberships3"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="describeenvironmentmemberships3-1516823268793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DescribeEnvironments(Amazon.Cloud9.Model.DescribeEnvironmentsRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DescribeEnvironments(Amazon.Cloud9.Model.DescribeEnvironmentsRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentsRequest" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DescribeEnvironments"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="describeenvironments-1516823568291" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.DescribeEnvironmentStatus(Amazon.Cloud9.Model.DescribeEnvironmentStatusRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.DescribeEnvironmentStatus(Amazon.Cloud9.Model.DescribeEnvironmentStatusRequest)" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentStatusRequest" />
+            <member name="T:Amazon.Cloud9.Model.DescribeEnvironmentStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DescribeEnvironmentStatus"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="describeenvironmentstatus-1516823462133" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.ListEnvironments(Amazon.Cloud9.Model.ListEnvironmentsRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.ListEnvironments(Amazon.Cloud9.Model.ListEnvironmentsRequest)" />
+            <member name="T:Amazon.Cloud9.Model.ListEnvironmentsRequest" />
+            <member name="T:Amazon.Cloud9.Model.ListEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListEnvironments"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="listenvironments-1516823687205" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.UpdateEnvironment(Amazon.Cloud9.Model.UpdateEnvironmentRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.UpdateEnvironment(Amazon.Cloud9.Model.UpdateEnvironmentRequest)" />
+            <member name="T:Amazon.Cloud9.Model.UpdateEnvironmentRequest" />
+            <member name="T:Amazon.Cloud9.Model.UpdateEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateEnvironment"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="updateenvironment-1516823781910" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Cloud9.IAmazonCloud9.UpdateEnvironmentMembership(Amazon.Cloud9.Model.UpdateEnvironmentMembershipRequest)" />
+            <member name="M:Amazon.Cloud9.AmazonCloud9Client.UpdateEnvironmentMembership(Amazon.Cloud9.Model.UpdateEnvironmentMembershipRequest)" />
+            <member name="T:Amazon.Cloud9.Model.UpdateEnvironmentMembershipRequest" />
+            <member name="T:Amazon.Cloud9.Model.UpdateEnvironmentMembershipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateEnvironmentMembership"
+                    source=".\AWSSDKDocSamples\Cloud9\Cloud9.GeneratedSamples.cs"
+                    region="updateenvironmentmembership-1516823876645" />
+            </example>
+        </value>
+    </doc>
+</docs>

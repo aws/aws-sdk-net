@@ -30,7 +30,7 @@ namespace Amazon.Cloud9.Model
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentEC2 operation.
     /// Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute
-    /// Cloud (Amazon EC2) instance, and then hosts the environment on the instance.
+    /// Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
     /// </summary>
     public partial class CreateEnvironmentEC2Request : AmazonCloud9Request
     {
@@ -106,7 +106,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The type of instance to host the environment on (for example, <code>t2.micro</code>).
+        /// The type of instance to connect to the environment (for example, <code>t2.micro</code>).
         /// </para>
         /// </summary>
         public string InstanceType

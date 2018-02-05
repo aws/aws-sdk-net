@@ -29,8 +29,8 @@ namespace Amazon.Cloud9.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironment operation.
-    /// Deletes an AWS Cloud9 development environment. If the environment is hosted on an
-    /// Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.
+    /// Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected
+    /// to the environment, also terminates the instance.
     /// </summary>
     public partial class DeleteEnvironmentRequest : AmazonCloud9Request
     {

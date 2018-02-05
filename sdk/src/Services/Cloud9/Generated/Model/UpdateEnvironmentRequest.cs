@@ -76,7 +76,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Any replacement name for the environment.
+        /// A replacement name for the environment.
         /// </para>
         /// </summary>
         public string Name
