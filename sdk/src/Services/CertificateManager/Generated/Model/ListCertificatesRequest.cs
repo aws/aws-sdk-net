@@ -61,22 +61,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// Filter the certificate list by one or more of the following values. For more information,
-        /// see the <a>Filters</a> structure.
+        /// Filter the certificate list. For more information, see the <a>Filters</a> structure.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// extendedKeyUsage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// keyUsage
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// keyTypes
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Filters Includes
         {

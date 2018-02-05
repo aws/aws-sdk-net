@@ -88,7 +88,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
-        /// The domain name that you want ACM to use to send you emails so taht your can validate
+        /// The domain name that you want ACM to use to send you emails so that you can validate
         /// domain ownership.
         /// </para>
         /// </summary>
