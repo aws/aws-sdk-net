@@ -1,3 +1,18 @@
+### 3.3.228.0 (2018-02-05 21:19 UTC)
+* CertificateManager (3.3.3.1)
+	* Documentation updates for acm
+* Cloud9 (3.3.0.1)
+	* API usage examples for AWS Cloud9.
+* Kinesis (3.3.5.0)
+	* Using ListShards a Kinesis Data Streams customer or client can get information about shards in a data stream (including meta-data for each shard) without obtaining data stream level information.
+* OpsWorks (3.3.3.0)
+	* AWS OpsWorks Stacks supports EBS encryption and HDD volume types. Also, a new DescribeOperatingSystems API is available, which lists all operating systems supported by OpsWorks Stacks.
+* S3 (3.3.17.0)
+	* Fix incorrect marshaller for S3 RestoreObject request.
+* Core 3.3.21.10
+	* Validate the role paramater when creating InstanceProfileAWSCredentials.
+
+
 ### 3.3.227.0 (2018-01-26 22:17 UTC)
 * DeviceFarm (3.3.4.0)
 	* Add InteractionMode in CreateRemoteAccessSession for DirectDeviceAccess feature.

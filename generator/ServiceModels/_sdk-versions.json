@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.227.0",
-    "CoreVersion"    : "3.3.21.9",
+    "ProductVersion" : "3.3.228.0",
+    "CoreVersion"    : "3.3.21.10",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -233,7 +233,7 @@
             "InPreview"               : false
         },
         "Kinesis"              : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -273,7 +273,7 @@
             "InPreview"               : false
         },
         "OpsWorks"             : {
-            "Version" : "3.3.2.6",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.16.2",
+            "Version" : "3.3.17.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.6"
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.3.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -1017,7 +1017,7 @@
             "InPreview"               : false
         },
         "Cloud9"                          : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
