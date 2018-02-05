@@ -32,12 +32,33 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class VolumeConfiguration
     {
+        private bool? _encrypted;
         private int? _iops;
         private string _mountPoint;
         private int? _numberOfDisks;
         private int? _raidLevel;
         private int? _size;
         private string _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a>.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Iops. 
@@ -132,7 +153,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type:
+        /// The volume type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+        /// Amazon EBS Volume Types</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -145,6 +167,14 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>gp2</code> - General Purpose (SSD)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>st1</code> - Throughput Optimized hard disk drive (HDD)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sc1</code> - Cold HDD
         /// </para>
         ///  </li> </ul>
         /// </summary>

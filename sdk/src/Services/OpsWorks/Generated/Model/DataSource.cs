@@ -76,7 +76,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
-        /// or <code>RdsDbInstance</code>.
+        /// <code>RdsDbInstance</code>, or <code>None</code>.
         /// </para>
         /// </summary>
         public string Type

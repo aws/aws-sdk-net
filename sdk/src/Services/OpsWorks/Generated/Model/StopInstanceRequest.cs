@@ -44,7 +44,23 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class StopInstanceRequest : AmazonOpsWorksRequest
     {
+        private bool? _force;
         private string _instanceId;
+
+        /// <summary>
+        /// Gets and sets the property Force.
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 

@@ -52,8 +52,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The app ID. If you include this parameter, <code>DescribeDeployments</code> returns
-        /// a description of the commands associated with the specified app.
+        /// The app ID. If you include this parameter, the command returns a description of the
+        /// commands associated with the specified app.
         /// </para>
         /// </summary>
         public string AppId
@@ -71,7 +71,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DeploymentIds. 
         /// <para>
-        /// An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
+        /// An array of deployment IDs to be described. If you include this parameter, the command
         /// returns a description of the specified deployments. Otherwise, it returns a description
         /// of every deployment.
         /// </para>
@@ -91,8 +91,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns
-        /// a description of the commands associated with the specified stack.
+        /// The stack ID. If you include this parameter, the command returns a description of
+        /// the commands associated with the specified stack.
         /// </para>
         /// </summary>
         public string StackId

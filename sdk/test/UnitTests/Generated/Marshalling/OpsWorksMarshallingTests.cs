@@ -786,6 +786,32 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("OpsWorks")]
+        public void DescribeOperatingSystemsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeOperatingSystemsRequest>();
+            var marshaller = new DescribeOperatingSystemsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeOperatingSystems").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeOperatingSystemsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeOperatingSystemsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("OpsWorks")]
         public void DescribePermissionsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribePermissionsRequest>();

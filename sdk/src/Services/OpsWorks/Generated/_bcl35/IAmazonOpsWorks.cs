@@ -114,11 +114,19 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// opsworks.eu-west-1.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// opsworks.eu-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.eu-west-3.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -2021,6 +2029,46 @@ namespace Amazon.OpsWorks
         /// <returns>Returns a  DescribeMyUserProfileResult from OpsWorks.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         DescribeMyUserProfileResponse EndDescribeMyUserProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeOperatingSystems
+
+
+        /// <summary>
+        /// Describes the operating systems that are supported by AWS OpsWorks Stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOperatingSystems service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOperatingSystems service method, as returned by OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
+        DescribeOperatingSystemsResponse DescribeOperatingSystems(DescribeOperatingSystemsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOperatingSystems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOperatingSystems operation on AmazonOpsWorksClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOperatingSystems
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
+        IAsyncResult BeginDescribeOperatingSystems(DescribeOperatingSystemsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOperatingSystems operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOperatingSystems.</param>
+        /// 
+        /// <returns>Returns a  DescribeOperatingSystemsResult from OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
+        DescribeOperatingSystemsResponse EndDescribeOperatingSystems(IAsyncResult asyncResult);
 
         #endregion
         

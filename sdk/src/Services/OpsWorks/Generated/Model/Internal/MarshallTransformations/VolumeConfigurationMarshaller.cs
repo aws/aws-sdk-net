@@ -45,6 +45,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VolumeConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncrypted())
+            {
+                context.Writer.WritePropertyName("Encrypted");
+                context.Writer.Write(requestObject.Encrypted);
+            }
+
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");

@@ -148,6 +148,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StopFailed", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.StopFailed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Stopped", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StopInstance Request Marshaller
+    /// DescribeOperatingSystems Request Marshaller
     /// </summary>       
-    public class StopInstanceRequestMarshaller : IMarshaller<IRequest, StopInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeOperatingSystemsRequestMarshaller : IMarshaller<IRequest, DescribeOperatingSystemsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StopInstanceRequest)input);
+            return this.Marshall((DescribeOperatingSystemsRequest)input);
         }
 
         /// <summary>
@@ -52,39 +52,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StopInstanceRequest publicRequest)
+        public IRequest Marshall(DescribeOperatingSystemsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpsWorks");
-            string target = "OpsWorks_20130218.StopInstance";
+            string target = "OpsWorks_20130218.DescribeOperatingSystems";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetForce())
-                {
-                    context.Writer.WritePropertyName("Force");
-                    context.Writer.Write(publicRequest.Force);
-                }
-
-                if(publicRequest.IsSetInstanceId())
-                {
-                    context.Writer.WritePropertyName("InstanceId");
-                    context.Writer.Write(publicRequest.InstanceId);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;
         }

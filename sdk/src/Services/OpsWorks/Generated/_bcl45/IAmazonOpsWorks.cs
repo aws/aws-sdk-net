@@ -116,11 +116,19 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// opsworks.eu-west-1.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// opsworks.eu-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.eu-west-3.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1659,6 +1667,33 @@ namespace Amazon.OpsWorks
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeOperatingSystems
+
+
+        /// <summary>
+        /// Describes the operating systems that are supported by AWS OpsWorks Stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOperatingSystems service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOperatingSystems service method, as returned by OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
+        DescribeOperatingSystemsResponse DescribeOperatingSystems(DescribeOperatingSystemsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOperatingSystems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOperatingSystems operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
+        Task<DescribeOperatingSystemsResponse> DescribeOperatingSystemsAsync(DescribeOperatingSystemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

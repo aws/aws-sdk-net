@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VolumeConfiguration Object
+    /// Response Unmarshaller for OperatingSystem Object
     /// </summary>  
-    public class VolumeConfigurationUnmarshaller : IUnmarshaller<VolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VolumeConfiguration, JsonUnmarshallerContext>
+    public class OperatingSystemUnmarshaller : IUnmarshaller<OperatingSystem, XmlUnmarshallerContext>, IUnmarshaller<OperatingSystem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        VolumeConfiguration IUnmarshaller<VolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OperatingSystem IUnmarshaller<OperatingSystem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,57 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public VolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OperatingSystem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            VolumeConfiguration unmarshalledObject = new VolumeConfiguration();
+            OperatingSystem unmarshalledObject = new OperatingSystem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Encrypted", targetDepth))
+                if (context.TestExpression("ConfigurationManagers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OperatingSystemConfigurationManager, OperatingSystemConfigurationManagerUnmarshaller>(OperatingSystemConfigurationManagerUnmarshaller.Instance);
+                    unmarshalledObject.ConfigurationManagers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportedName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReportedName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReportedVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReportedVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Supported", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Supported = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Iops", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MountPoint", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MountPoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NumberOfDisks", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDisks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RaidLevel", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.RaidLevel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Size", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeConfigurationUnmarshaller _instance = new VolumeConfigurationUnmarshaller();        
+        private static OperatingSystemUnmarshaller _instance = new OperatingSystemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeConfigurationUnmarshaller Instance
+        public static OperatingSystemUnmarshaller Instance
         {
             get
             {

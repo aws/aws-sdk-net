@@ -35,6 +35,7 @@ namespace Amazon.OpsWorks.Model
         private string _availabilityZone;
         private string _device;
         private string _ec2VolumeId;
+        private bool? _encrypted;
         private string _instanceId;
         private int? _iops;
         private string _mountPoint;
@@ -99,6 +100,21 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetEc2VolumeId()
         {
             return this._ec2VolumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted.
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
         }
 
         /// <summary>

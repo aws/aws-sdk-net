@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         private int? _setupFailed;
         private int? _shuttingDown;
         private int? _startFailed;
+        private int? _stopFailed;
         private int? _stopped;
         private int? _stopping;
         private int? _terminated;
@@ -302,6 +303,21 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetStartFailed()
         {
             return this._startFailed.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopFailed.
+        /// </summary>
+        public int StopFailed
+        {
+            get { return this._stopFailed.GetValueOrDefault(); }
+            set { this._stopFailed = value; }
+        }
+
+        // Check to see if StopFailed property is set
+        internal bool IsSetStopFailed()
+        {
+            return this._stopFailed.HasValue; 
         }
 
         /// <summary>
