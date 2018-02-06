@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PatchRule Marshaller
+    /// PatchSource Marshaller
     /// </summary>       
-    public class PatchRuleMarshaller : IRequestMarshaller<PatchRule, JsonMarshallerContext> 
+    public class PatchSourceMarshaller : IRequestMarshaller<PatchSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,29 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PatchRule requestObject, JsonMarshallerContext context)
+        public void Marshall(PatchSource requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetApproveAfterDays())
+            if(requestObject.IsSetConfiguration())
             {
-                context.Writer.WritePropertyName("ApproveAfterDays");
-                context.Writer.Write(requestObject.ApproveAfterDays);
+                context.Writer.WritePropertyName("Configuration");
+                context.Writer.Write(requestObject.Configuration);
             }
 
-            if(requestObject.IsSetComplianceLevel())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("ComplianceLevel");
-                context.Writer.Write(requestObject.ComplianceLevel);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetEnableNonSecurity())
+            if(requestObject.IsSetProducts())
             {
-                context.Writer.WritePropertyName("EnableNonSecurity");
-                context.Writer.Write(requestObject.EnableNonSecurity);
-            }
-
-            if(requestObject.IsSetPatchFilterGroup())
-            {
-                context.Writer.WritePropertyName("PatchFilterGroup");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PatchFilterGroupMarshaller.Instance;
-                marshaller.Marshall(requestObject.PatchFilterGroup, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Products");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectProductsListValue in requestObject.Products)
+                {
+                        context.Writer.Write(requestObjectProductsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -79,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static PatchRuleMarshaller Instance = new PatchRuleMarshaller();
+        public readonly static PatchSourceMarshaller Instance = new PatchSourceMarshaller();
 
     }
 }

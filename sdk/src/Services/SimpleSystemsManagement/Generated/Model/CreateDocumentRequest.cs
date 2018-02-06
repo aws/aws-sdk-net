@@ -53,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the Systems Manager document.</param>
+        /// <param name="name">A name for the Systems Manager document. <important> Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="content">A valid JSON or YAML string.</param>
         public CreateDocumentRequest(string name, string content)
         {
@@ -122,6 +122,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A name for the Systems Manager document.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not use the following to begin the names of documents you create. They are reserved
+        /// by AWS for use as document prefixes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aws</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>amazon</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>amzn</code> 
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         public string Name
         {

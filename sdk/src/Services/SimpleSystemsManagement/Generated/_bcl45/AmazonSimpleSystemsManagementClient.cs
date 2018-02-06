@@ -1063,7 +1063,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         /// </summary>
         /// <param name="content">A valid JSON or YAML string.</param>
-        /// <param name="name">A name for the Systems Manager document.</param>
+        /// <param name="name">A name for the Systems Manager document. <important> Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
@@ -1144,7 +1144,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         /// </summary>
         /// <param name="content">A valid JSON or YAML string.</param>
-        /// <param name="name">A name for the Systems Manager document.</param>
+        /// <param name="name">A name for the Systems Manager document. <important> Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

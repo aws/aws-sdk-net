@@ -95,6 +95,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApprovedPatchesComplianceLevel);
                 }
 
+                if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
+                {
+                    context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
+                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity);
+                }
+
                 if(publicRequest.IsSetBaselineId())
                 {
                     context.Writer.WritePropertyName("BaselineId");
@@ -131,6 +137,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     foreach(var publicRequestRejectedPatchesListValue in publicRequest.RejectedPatches)
                     {
                             context.Writer.Write(publicRequestRejectedPatchesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetReplace())
+                {
+                    context.Writer.WritePropertyName("Replace");
+                    context.Writer.Write(publicRequest.Replace);
+                }
+
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("Sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PatchSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }

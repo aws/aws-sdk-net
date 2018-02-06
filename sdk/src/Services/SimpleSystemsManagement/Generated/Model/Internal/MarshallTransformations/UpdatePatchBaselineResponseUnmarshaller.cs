@@ -69,6 +69,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.ApprovedPatchesComplianceLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ApprovedPatchesEnableNonSecurity", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ApprovedPatchesEnableNonSecurity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RejectedPatches = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PatchSource, PatchSourceUnmarshaller>(PatchSourceUnmarshaller.Instance);
+                    response.Sources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

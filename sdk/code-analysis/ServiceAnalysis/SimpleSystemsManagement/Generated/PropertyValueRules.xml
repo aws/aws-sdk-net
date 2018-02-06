@@ -2516,6 +2516,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchSource.Configuration</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchSource.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,50}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceComplianceSummaryItem.ComplianceType</property>
     <min>1</min>
     <max>100</max>

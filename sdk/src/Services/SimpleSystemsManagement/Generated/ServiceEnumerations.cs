@@ -1865,6 +1865,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem REDHAT_ENTERPRISE_LINUX = new OperatingSystem("REDHAT_ENTERPRISE_LINUX");
         /// <summary>
+        /// Constant SUSE for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem SUSE = new OperatingSystem("SUSE");
+        /// <summary>
         /// Constant UBUNTU for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem UBUNTU = new OperatingSystem("UBUNTU");

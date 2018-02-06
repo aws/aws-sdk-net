@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private PatchRuleGroup _approvalRules;
         private List<string> _approvedPatches = new List<string>();
         private PatchComplianceLevel _approvedPatchesComplianceLevel;
+        private bool? _approvedPatchesEnableNonSecurity;
         private string _baselineId;
         private DateTime? _createdDate;
         private string _description;
@@ -44,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private OperatingSystem _operatingSystem;
         private List<string> _patchGroups = new List<string>();
         private List<string> _rejectedPatches = new List<string>();
+        private List<PatchSource> _sources = new List<PatchSource>();
 
         /// <summary>
         /// Gets and sets the property ApprovalRules. 
@@ -98,6 +100,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApprovedPatchesComplianceLevel()
         {
             return this._approvedPatchesComplianceLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApprovedPatchesEnableNonSecurity. 
+        /// <para>
+        /// Indicates whether the list of approved patches includes non-security updates that
+        /// should be applied to the instances. The default value is 'false'. Applies to Linux
+        /// instances only.
+        /// </para>
+        /// </summary>
+        public bool ApprovedPatchesEnableNonSecurity
+        {
+            get { return this._approvedPatchesEnableNonSecurity.GetValueOrDefault(); }
+            set { this._approvedPatchesEnableNonSecurity = value; }
+        }
+
+        // Check to see if ApprovedPatchesEnableNonSecurity property is set
+        internal bool IsSetApprovedPatchesEnableNonSecurity()
+        {
+            return this._approvedPatchesEnableNonSecurity.HasValue; 
         }
 
         /// <summary>
@@ -260,6 +282,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRejectedPatches()
         {
             return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// Information about the patches to use to update the instances, including target operating
+        /// systems and source repositories. Applies to Linux instances only.
+        /// </para>
+        /// </summary>
+        public List<PatchSource> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

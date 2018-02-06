@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PatchRule Object
+    /// Response Unmarshaller for PatchSource Object
     /// </summary>  
-    public class PatchRuleUnmarshaller : IUnmarshaller<PatchRule, XmlUnmarshallerContext>, IUnmarshaller<PatchRule, JsonUnmarshallerContext>
+    public class PatchSourceUnmarshaller : IUnmarshaller<PatchSource, XmlUnmarshallerContext>, IUnmarshaller<PatchSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PatchRule IUnmarshaller<PatchRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PatchSource IUnmarshaller<PatchSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,33 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PatchRule Unmarshall(JsonUnmarshallerContext context)
+        public PatchSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PatchRule unmarshalledObject = new PatchRule();
+            PatchSource unmarshalledObject = new PatchSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApproveAfterDays", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ApproveAfterDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ComplianceLevel", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EnableNonSecurity", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableNonSecurity = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PatchFilterGroup", targetDepth))
+                if (context.TestExpression("Products", targetDepth))
                 {
-                    var unmarshaller = PatchFilterGroupUnmarshaller.Instance;
-                    unmarshalledObject.PatchFilterGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Products = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +88,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static PatchRuleUnmarshaller _instance = new PatchRuleUnmarshaller();        
+        private static PatchSourceUnmarshaller _instance = new PatchSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PatchRuleUnmarshaller Instance
+        public static PatchSourceUnmarshaller Instance
         {
             get
             {

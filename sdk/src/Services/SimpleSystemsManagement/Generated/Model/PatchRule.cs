@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private int? _approveAfterDays;
         private PatchComplianceLevel _complianceLevel;
+        private bool? _enableNonSecurity;
         private PatchFilterGroup _patchFilterGroup;
 
         /// <summary>
@@ -73,6 +74,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetComplianceLevel()
         {
             return this._complianceLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNonSecurity. 
+        /// <para>
+        /// For instances identified by the approval rule filters, enables a patch baseline to
+        /// apply non-security updates available in the specified repository. The default value
+        /// is 'false'. Applies to Linux instances only.
+        /// </para>
+        /// </summary>
+        public bool EnableNonSecurity
+        {
+            get { return this._enableNonSecurity.GetValueOrDefault(); }
+            set { this._enableNonSecurity = value; }
+        }
+
+        // Check to see if EnableNonSecurity property is set
+        internal bool IsSetEnableNonSecurity()
+        {
+            return this._enableNonSecurity.HasValue; 
         }
 
         /// <summary>

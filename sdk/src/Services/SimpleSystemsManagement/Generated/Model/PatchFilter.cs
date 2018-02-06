@@ -472,6 +472,120 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <code>Low</code> 
     /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>SUSE Linux Enterprise Server (SUSE) Operating Systems</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The supported keys for SUSE operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>,
+    /// and <code>SEVERITY</code>. See the following lists for valid values for each of these
+    /// keys.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported key:</i> <code>PRODUCT</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Suse12.0</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.3</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.4</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.5</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.6</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.7</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.8</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Suse12.9</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Security</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Recommended</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Optional</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Feature</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Document</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Yast</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>SEVERITY</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Critical</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Important</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Moderate</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Low</code> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class PatchFilter
