@@ -29,12 +29,14 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClassifier operation.
-    /// Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code>
-    /// or an <code>XMLClassifier</code>.
+    /// Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>,
+    /// an <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on
+    /// which field of the request is present.
     /// </summary>
     public partial class CreateClassifierRequest : AmazonGlueRequest
     {
         private CreateGrokClassifierRequest _grokClassifier;
+        private CreateJsonClassifierRequest _jsonClassifier;
         private CreateXMLClassifierRequest _xmlClassifier;
 
         /// <summary>
@@ -53,6 +55,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JsonClassifier. 
+        /// <para>
+        /// A <code>JsonClassifier</code> object specifying the classifier to create.
+        /// </para>
+        /// </summary>
+        public CreateJsonClassifierRequest JsonClassifier
+        {
+            get { return this._jsonClassifier; }
+            set { this._jsonClassifier = value; }
+        }
+
+        // Check to see if JsonClassifier property is set
+        internal bool IsSetJsonClassifier()
+        {
+            return this._jsonClassifier != null;
         }
 
         /// <summary>

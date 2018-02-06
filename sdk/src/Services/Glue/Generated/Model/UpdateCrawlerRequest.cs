@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Example:  <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior":
+        /// Example: <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior":
         /// "InheritFromTable" } } }'</code> 
         /// </para>
         /// </summary>

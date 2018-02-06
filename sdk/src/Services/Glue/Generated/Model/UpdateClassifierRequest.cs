@@ -29,11 +29,13 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateClassifier operation.
-    /// Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
+    /// Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>,
+    /// or <code>JsonClassifier</code>, depending on which field is present).
     /// </summary>
     public partial class UpdateClassifierRequest : AmazonGlueRequest
     {
         private UpdateGrokClassifierRequest _grokClassifier;
+        private UpdateJsonClassifierRequest _jsonClassifier;
         private UpdateXMLClassifierRequest _xmlClassifier;
 
         /// <summary>
@@ -52,6 +54,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JsonClassifier. 
+        /// <para>
+        /// A <code>JsonClassifier</code> object with updated fields.
+        /// </para>
+        /// </summary>
+        public UpdateJsonClassifierRequest JsonClassifier
+        {
+            get { return this._jsonClassifier; }
+            set { this._jsonClassifier = value; }
+        }
+
+        // Check to see if JsonClassifier property is set
+        internal bool IsSetJsonClassifier()
+        {
+            return this._jsonClassifier != null;
         }
 
         /// <summary>

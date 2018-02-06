@@ -36,13 +36,14 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// A classifier can be either a <code>grok</code> classifier or an XML classifier, specified
-    /// in one or the other field of the <code>Classifier</code> object.
+    /// A classifier can be a <code>grok</code> classifier, an XML classifier, or a JSON classifier,
+    /// asspecified in one of the fields in the <code>Classifier</code> object.
     /// </para>
     /// </summary>
     public partial class Classifier
     {
         private GrokClassifier _grokClassifier;
+        private JsonClassifier _jsonClassifier;
         private XMLClassifier _xmlClassifier;
 
         /// <summary>
@@ -61,6 +62,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetGrokClassifier()
         {
             return this._grokClassifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JsonClassifier. 
+        /// <para>
+        /// A <code>JsonClassifier</code> object.
+        /// </para>
+        /// </summary>
+        public JsonClassifier JsonClassifier
+        {
+            get { return this._jsonClassifier; }
+            set { this._jsonClassifier = value; }
+        }
+
+        // Check to see if JsonClassifier property is set
+        internal bool IsSetJsonClassifier()
+        {
+            return this._jsonClassifier != null;
         }
 
         /// <summary>
