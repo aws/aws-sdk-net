@@ -823,6 +823,82 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CreateProvisionedProductPlan
+
+        /// <summary>
+        /// Creates a plan. A plan includes the list of resources that will be created (when provisioning
+        /// a new product) or modified (when updating a provisioned product) when the plan is
+        /// executed.
+        /// 
+        ///  
+        /// <para>
+        /// You can create one plan per provisioned product. To create a plan for an existing
+        /// provisioned product, it's status must be AVAILBLE or TAINTED.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
+        /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual CreateProvisionedProductPlanResponse CreateProvisionedProductPlan(CreateProvisionedProductPlanRequest request)
+        {
+            var marshaller = new CreateProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = CreateProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProvisionedProductPlanRequest,CreateProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginCreateProvisionedProductPlan(CreateProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = CreateProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        public virtual CreateProvisionedProductPlanResponse EndCreateProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateProvisioningArtifact
 
         /// <summary>
@@ -1033,8 +1109,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1162,8 +1238,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1218,6 +1294,65 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DeleteProvisionedProductPlan
+
+        /// <summary>
+        /// Deletes the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual DeleteProvisionedProductPlanResponse DeleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest request)
+        {
+            var marshaller = new DeleteProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = DeleteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProvisionedProductPlanRequest,DeleteProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = DeleteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        public virtual DeleteProvisionedProductPlanResponse EndDeleteProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteProvisioningArtifact
 
         /// <summary>
@@ -1238,8 +1373,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1688,6 +1823,65 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeProvisionedProductPlan
+
+        /// <summary>
+        /// Gets information about the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual DescribeProvisionedProductPlanResponse DescribeProvisionedProductPlan(DescribeProvisionedProductPlanRequest request)
+        {
+            var marshaller = new DescribeProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = DescribeProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProvisionedProductPlanRequest,DescribeProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProvisionedProductPlan(DescribeProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = DescribeProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  DescribeProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        public virtual DescribeProvisionedProductPlanResponse EndDescribeProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeProvisioningArtifact
 
         /// <summary>
@@ -1756,9 +1950,9 @@ namespace Amazon.ServiceCatalog
         /// If the output contains a TagOption key with an empty list of values, there is a TagOption
         /// conflict for that key. The end user cannot take action to fix the conflict, and launch
         /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
-        /// TagOption keys as tags, or this will cause the error "Parameter validation failed:
-        /// Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
-        /// product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
+        /// TagOption keys as tags, or this causes the error "Parameter validation failed: Missing
+        /// required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with
+        /// the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
@@ -2009,8 +2203,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2117,6 +2311,69 @@ namespace Amazon.ServiceCatalog
         public virtual DisassociateTagOptionFromResourceResponse EndDisassociateTagOptionFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateTagOptionFromResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExecuteProvisionedProductPlan
+
+        /// <summary>
+        /// Provisions or modifies a product based on the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual ExecuteProvisionedProductPlanResponse ExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request)
+        {
+            var marshaller = new ExecuteProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteProvisionedProductPlanRequest,ExecuteProvisionedProductPlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteProvisionedProductPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual IAsyncResult BeginExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ExecuteProvisionedProductPlanRequestMarshaller();
+            var unmarshaller = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExecuteProvisionedProductPlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteProvisionedProductPlan.</param>
+        /// 
+        /// <returns>Returns a  ExecuteProvisionedProductPlanResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        public virtual ExecuteProvisionedProductPlanResponse EndExecuteProvisionedProductPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteProvisionedProductPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -2527,6 +2784,66 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListProvisionedProductPlans
+
+        /// <summary>
+        /// Lists the plans for the specified provisioned product or all plans the user has access
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisionedProductPlans service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual ListProvisionedProductPlansResponse ListProvisionedProductPlans(ListProvisionedProductPlansRequest request)
+        {
+            var marshaller = new ListProvisionedProductPlansRequestMarshaller();
+            var unmarshaller = ListProvisionedProductPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisionedProductPlansRequest,ListProvisionedProductPlansResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedProductPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisionedProductPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual IAsyncResult BeginListProvisionedProductPlans(ListProvisionedProductPlansRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListProvisionedProductPlansRequestMarshaller();
+            var unmarshaller = ListProvisionedProductPlansResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListProvisionedProductPlansRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProvisionedProductPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisionedProductPlans.</param>
+        /// 
+        /// <returns>Returns a  ListProvisionedProductPlansResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        public virtual ListProvisionedProductPlansResponse EndListProvisionedProductPlans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProvisionedProductPlansResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProvisioningArtifacts
 
         /// <summary>
@@ -2781,8 +3098,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// If the request contains a tag key with an empty list of values, there is a tag conflict
-        /// for that key. Do not include conflicted keys as tags, or this will cause the error
-        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
+        /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
@@ -2902,6 +3219,11 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists the provisioned products that are available (not terminated).
+        /// 
+        ///  
+        /// <para>
+        /// To use additional filtering, see <a>SearchProvisionedProducts</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanProvisionedProducts service method.</param>
         /// 
@@ -3065,6 +3387,62 @@ namespace Amazon.ServiceCatalog
         public virtual SearchProductsAsAdminResponse EndSearchProductsAsAdmin(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchProductsAsAdminResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchProvisionedProducts
+
+        /// <summary>
+        /// Gets information about the provisioned products that meet the specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts service method.</param>
+        /// 
+        /// <returns>The response from the SearchProvisionedProducts service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual SearchProvisionedProductsResponse SearchProvisionedProducts(SearchProvisionedProductsRequest request)
+        {
+            var marshaller = new SearchProvisionedProductsRequestMarshaller();
+            var unmarshaller = SearchProvisionedProductsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchProvisionedProductsRequest,SearchProvisionedProductsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchProvisionedProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchProvisionedProducts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual IAsyncResult BeginSearchProvisionedProducts(SearchProvisionedProductsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SearchProvisionedProductsRequestMarshaller();
+            var unmarshaller = SearchProvisionedProductsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchProvisionedProductsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchProvisionedProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchProvisionedProducts.</param>
+        /// 
+        /// <returns>Returns a  SearchProvisionedProductsResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        public virtual SearchProvisionedProductsResponse EndSearchProvisionedProducts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchProvisionedProductsResponse>(asyncResult);
         }
 
         #endregion

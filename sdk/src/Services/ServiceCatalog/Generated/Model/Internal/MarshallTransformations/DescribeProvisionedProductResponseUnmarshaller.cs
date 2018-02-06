@@ -51,6 +51,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CloudWatchDashboards", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CloudWatchDashboard, CloudWatchDashboardUnmarshaller>(CloudWatchDashboardUnmarshaller.Instance);
+                    response.CloudWatchDashboards = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProvisionedProductDetail", targetDepth))
                 {
                     var unmarshaller = ProvisionedProductDetailUnmarshaller.Instance;

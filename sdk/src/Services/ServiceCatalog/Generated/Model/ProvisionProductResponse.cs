@@ -37,7 +37,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordDetail. 
         /// <para>
-        /// Information about the result of <a>ProvisionProduct</a>.
+        /// Information about the result of provisioning the product.
         /// </para>
         /// </summary>
         public RecordDetail RecordDetail

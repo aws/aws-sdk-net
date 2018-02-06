@@ -198,7 +198,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UpdateToken. 
         /// <para>
-        /// The idempotency token that uniquely identifies the provisioning update rquest.
+        /// The idempotency token that uniquely identifies the provisioning update request.
         /// </para>
         /// </summary>
         public string UpdateToken

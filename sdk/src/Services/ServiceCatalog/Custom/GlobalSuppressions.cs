@@ -21,4 +21,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.ServiceCatalog.Model.SearchProductsResponse.#ProductViewAggregations")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.ServiceCatalog.Model.SearchProductsAsAdminRequest.#Filters")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.ServiceCatalog.Model.CopyProductRequest.#SourceProvisioningArtifactIdentifiers")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member",  Target = "Amazon.ServiceCatalog.Model.SearchProvisionedProductsRequest.#Filters")]
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.ServiceCatalog.Model.Principal")]

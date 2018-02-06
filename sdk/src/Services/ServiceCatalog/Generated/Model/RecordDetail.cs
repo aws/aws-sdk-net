@@ -49,7 +49,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The UTC timestamp of the creation time.
+        /// The UTC time stamp of the creation time.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -175,7 +175,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordErrors. 
         /// <para>
-        /// The errors that occurred while processing the request.
+        /// The errors that occurred.
         /// </para>
         /// </summary>
         public List<RecordError> RecordErrors
@@ -211,7 +211,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordTags. 
         /// <para>
-        /// The tags associated with this record.
+        /// One or more tags.
         /// </para>
         /// </summary>
         public List<RecordTag> RecordTags
@@ -229,7 +229,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RecordType. 
         /// <para>
-        /// The record type for this record.
+        /// The record type.
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -40,8 +40,8 @@ namespace Amazon.ServiceCatalog.Model
     ///  
     /// <para>
     /// If the request contains a tag key with an empty list of values, there is a tag conflict
-    /// for that key. Do not include conflicted keys as tags, or this will cause the error
-    /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+    /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
+    /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
     /// </para>
     /// </summary>
     public partial class ProvisionProductRequest : AmazonServiceCatalogRequest
@@ -219,7 +219,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to use as provisioning options.
+        /// One or more tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags

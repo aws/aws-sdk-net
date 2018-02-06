@@ -403,6 +403,56 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CreateProvisionedProductPlan
+
+
+        /// <summary>
+        /// Creates a plan. A plan includes the list of resources that will be created (when provisioning
+        /// a new product) or modified (when updating a provisioned product) when the plan is
+        /// executed.
+        /// 
+        ///  
+        /// <para>
+        /// You can create one plan per provisioned product. To create a plan for an existing
+        /// provisioned product, it's status must be AVAILBLE or TAINTED.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.
+        /// To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        CreateProvisionedProductPlanResponse CreateProvisionedProductPlan(CreateProvisionedProductPlanRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProvisionedProductPlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan">REST API Reference for CreateProvisionedProductPlan Operation</seealso>
+        Task<CreateProvisionedProductPlanResponse> CreateProvisionedProductPlanAsync(CreateProvisionedProductPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateProvisioningArtifact
 
 
@@ -536,8 +586,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -613,8 +663,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -642,6 +692,39 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DeleteProvisionedProductPlan
+
+
+        /// <summary>
+        /// Deletes the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        DeleteProvisionedProductPlanResponse DeleteProvisionedProductPlan(DeleteProvisionedProductPlanRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProvisionedProductPlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan">REST API Reference for DeleteProvisionedProductPlan Operation</seealso>
+        Task<DeleteProvisionedProductPlanResponse> DeleteProvisionedProductPlanAsync(DeleteProvisionedProductPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteProvisioningArtifact
 
 
@@ -663,8 +746,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -904,6 +987,39 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeProvisionedProductPlan
+
+
+        /// <summary>
+        /// Gets information about the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        DescribeProvisionedProductPlanResponse DescribeProvisionedProductPlan(DescribeProvisionedProductPlanRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedProductPlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan">REST API Reference for DescribeProvisionedProductPlan Operation</seealso>
+        Task<DescribeProvisionedProductPlanResponse> DescribeProvisionedProductPlanAsync(DescribeProvisionedProductPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeProvisioningArtifact
 
 
@@ -947,9 +1063,9 @@ namespace Amazon.ServiceCatalog
         /// If the output contains a TagOption key with an empty list of values, there is a TagOption
         /// conflict for that key. The end user cannot take action to fix the conflict, and launch
         /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
-        /// TagOption keys as tags, or this will cause the error "Parameter validation failed:
-        /// Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
-        /// product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
+        /// TagOption keys as tags, or this causes the error "Parameter validation failed: Missing
+        /// required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with
+        /// the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
@@ -1096,8 +1212,8 @@ namespace Amazon.ServiceCatalog
         /// One or more parameters provided to the operation are not valid.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
-        /// A resource that is currently in use. Ensure the resource is not in use and retry the
-        /// operation.
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1152,6 +1268,43 @@ namespace Amazon.ServiceCatalog
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
         Task<DisassociateTagOptionFromResourceResponse> DisassociateTagOptionFromResourceAsync(DisassociateTagOptionFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExecuteProvisionedProductPlan
+
+
+        /// <summary>
+        /// Provisions or modifies a product based on the resource changes for the specified plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteProvisionedProductPlan service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        ExecuteProvisionedProductPlanResponse ExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteProvisionedProductPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductPlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">REST API Reference for ExecuteProvisionedProductPlan Operation</seealso>
+        Task<ExecuteProvisionedProductPlanResponse> ExecuteProvisionedProductPlanAsync(ExecuteProvisionedProductPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1379,6 +1532,40 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListProvisionedProductPlans
+
+
+        /// <summary>
+        /// Lists the plans for the specified provisioned product or all plans the user has access
+        /// to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisionedProductPlans service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        ListProvisionedProductPlansResponse ListProvisionedProductPlans(ListProvisionedProductPlansRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedProductPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans">REST API Reference for ListProvisionedProductPlans Operation</seealso>
+        Task<ListProvisionedProductPlansResponse> ListProvisionedProductPlansAsync(ListProvisionedProductPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListProvisioningArtifacts
 
 
@@ -1530,8 +1717,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// If the request contains a tag key with an empty list of values, there is a tag conflict
-        /// for that key. Do not include conflicted keys as tags, or this will cause the error
-        /// "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
+        /// for that key. Do not include conflicted keys as tags, or this causes the error "Parameter
+        /// validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProvisionProduct service method.</param>
@@ -1599,6 +1786,11 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists the provisioned products that are available (not terminated).
+        /// 
+        ///  
+        /// <para>
+        /// To use additional filtering, see <a>SearchProvisionedProducts</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScanProvisionedProducts service method.</param>
         /// 
@@ -1684,6 +1876,36 @@ namespace Amazon.ServiceCatalog
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProductsAsAdmin">REST API Reference for SearchProductsAsAdmin Operation</seealso>
         Task<SearchProductsAsAdminResponse> SearchProductsAsAdminAsync(SearchProductsAsAdminRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchProvisionedProducts
+
+
+        /// <summary>
+        /// Gets information about the provisioned products that meet the specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts service method.</param>
+        /// 
+        /// <returns>The response from the SearchProvisionedProducts service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        SearchProvisionedProductsResponse SearchProvisionedProducts(SearchProvisionedProductsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchProvisionedProducts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts">REST API Reference for SearchProvisionedProducts Operation</seealso>
+        Task<SearchProvisionedProductsResponse> SearchProvisionedProductsAsync(SearchProvisionedProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

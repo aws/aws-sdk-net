@@ -42,7 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The UTC timestamp of the creation time.
+        /// The UTC time stamp of the creation time.
         /// </para>
         /// </summary>
         public DateTime CreatedTime

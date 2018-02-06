@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// A tag associated with the record, stored as a key-value pair.
+    /// Information about a tag, which is a key-value pair.
     /// </summary>
     public partial class RecordTag
     {

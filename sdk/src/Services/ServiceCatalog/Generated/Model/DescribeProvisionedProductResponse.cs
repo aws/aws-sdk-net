@@ -32,7 +32,26 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProvisionedProductResponse : AmazonWebServiceResponse
     {
+        private List<CloudWatchDashboard> _cloudWatchDashboards = new List<CloudWatchDashboard>();
         private ProvisionedProductDetail _provisionedProductDetail;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchDashboards. 
+        /// <para>
+        /// Any CloudWatch dashboards that were created when provisioning the product.
+        /// </para>
+        /// </summary>
+        public List<CloudWatchDashboard> CloudWatchDashboards
+        {
+            get { return this._cloudWatchDashboards; }
+            set { this._cloudWatchDashboards = value; }
+        }
+
+        // Check to see if CloudWatchDashboards property is set
+        internal bool IsSetCloudWatchDashboards()
+        {
+            return this._cloudWatchDashboards != null && this._cloudWatchDashboards.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ProvisionedProductDetail. 

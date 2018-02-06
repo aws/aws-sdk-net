@@ -30,6 +30,11 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ScanProvisionedProducts operation.
     /// Lists the provisioned products that are available (not terminated).
+    /// 
+    ///  
+    /// <para>
+    /// To use additional filtering, see <a>SearchProvisionedProducts</a>.
+    /// </para>
     /// </summary>
     public partial class ScanProvisionedProductsRequest : AmazonServiceCatalogRequest
     {

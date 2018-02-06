@@ -261,7 +261,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to associate with the product.
+        /// One or more tags.
         /// </para>
         /// </summary>
         public List<Tag> Tags
