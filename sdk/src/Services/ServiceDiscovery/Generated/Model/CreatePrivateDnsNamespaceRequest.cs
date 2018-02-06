@@ -45,8 +45,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-        /// helps to determine if a specific client owns the namespace.
+        /// A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+        /// requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+        /// can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
         public string CreatorRequestId

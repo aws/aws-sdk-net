@@ -41,8 +41,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you
-        /// create it.
+        /// The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create
+        /// it.
         /// </para>
         /// </summary>
         public string Arn
@@ -78,7 +78,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that Amazon Route 53 assigned to the service when you created it.
+        /// The ID that Route 53 assigned to the service when you created it.
         /// </para>
         /// </summary>
         public string Id

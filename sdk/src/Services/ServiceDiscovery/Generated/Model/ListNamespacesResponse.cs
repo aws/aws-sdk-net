@@ -57,11 +57,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> namespaces match the specified criteria, you
-        /// can submit another <code>ListNamespaces</code> request to get the next group of results.
-        /// Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.
+        /// If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code>
+        /// request to get the next group of results. Specify the value of <code>NextToken</code>
+        /// from the previous response in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route 53 gets <code>MaxResults</code> namespaces and then filters them based on the
+        /// specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
+        /// namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code>
+        /// namespaces do contain namespaces that match the criteria.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

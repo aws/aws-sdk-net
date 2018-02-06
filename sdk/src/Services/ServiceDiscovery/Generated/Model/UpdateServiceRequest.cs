@@ -29,16 +29,31 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// Updates the TTL setting for a specified service. You must specify all the resource
-    /// record set templates (and, optionally, a health check template) that you want to appear
-    /// in the updated service. Any current resource record set templates (or health check
-    /// template) that don't appear in an <code>UpdateService</code> request are deleted.
+    /// Submits a request to perform the following operations:
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Add or delete <code>DnsRecords</code> configurations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Update the TTL setting for existing <code>DnsRecords</code> configurations
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
+    /// </para>
+    ///  </li> <li>  </li> </ul> 
+    /// <para>
+    /// You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)
+    /// that you want to appear in the updated service. Any current configurations that don't
+    /// appear in an <code>UpdateService</code> request are deleted.
+    /// </para>
     ///  
     /// <para>
     /// When you update the TTL setting for a service, Amazon Route 53 also updates the corresponding
-    /// settings in all the resource record sets and health checks that were created by using
-    /// the specified service.
+    /// settings in all the records and health checks that were created by using the specified
+    /// service.
     /// </para>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonServiceDiscoveryRequest

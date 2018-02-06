@@ -29,8 +29,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServices operation.
-    /// Gets settings for all the services that are associated with one or more specified
-    /// namespaces.
+    /// Lists summary information for all the services that are associated with one or more
+    /// specified namespaces.
     /// </summary>
     public partial class ListServicesRequest : AmazonServiceDiscoveryRequest
     {
@@ -67,7 +67,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The maximum number of services that you want Amazon Route 53 to return in the response
         /// to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// Amazon Route 53 returns up to 100 services.
+        /// Route 53 returns up to 100 services.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -89,11 +89,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If more than <code>MaxResults</code> services match the specified criteria, you can
-        /// submit another <code>ListServices</code> request to get the next group of results.
-        /// Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.
+        /// If the response contains <code>NextToken</code>, submit another <code>ListServices</code>
+        /// request to get the next group of results. Specify the value of <code>NextToken</code>
+        /// from the previous response in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route 53 gets <code>MaxResults</code> services and then filters them based on the
+        /// specified criteria. It's possible that no services in the first <code>MaxResults</code>
+        /// services matched the specified criteria but that subsequent groups of <code>MaxResults</code>
+        /// services do contain services that match the criteria.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

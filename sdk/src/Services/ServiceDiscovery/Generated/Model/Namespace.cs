@@ -45,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace when
-        /// you create it.
+        /// The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create
+        /// it.
         /// </para>
         /// </summary>
         public string Arn
@@ -65,7 +65,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date that the namespace was created, in Unix date/time format and Coordinated
-        /// Universal Time (UTC).
+        /// Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds.
+        /// For example, the value <code>1516925490.087</code> represents Friday, January 26,
+        /// 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -83,8 +85,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-        /// helps to determine if a specific client owns the namespace.
+        /// A unique string that identifies the request and that allows failed requests to be
+        /// retried without the risk of executing an operation twice. 
         /// </para>
         /// </summary>
         public string CreatorRequestId

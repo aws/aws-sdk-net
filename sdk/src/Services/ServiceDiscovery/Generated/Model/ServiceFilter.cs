@@ -54,6 +54,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// the namespaces that you want <code>ListServices</code> to return a list of services
         /// for.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BETWEEN</code>: Not applicable.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public FilterCondition Condition

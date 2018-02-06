@@ -29,7 +29,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
-    /// Gets information about the namespaces that were created by the current AWS account.
+    /// Lists summary information about the namespaces that were created by the current AWS
+    /// account.
     /// </summary>
     public partial class ListNamespacesRequest : AmazonServiceDiscoveryRequest
     {
@@ -44,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify more than one filter, an operation must match all filters to be returned
-        /// by ListNamespaces.
+        /// If you specify more than one filter, a namespace must match all filters to be returned
+        /// by <code>ListNamespaces</code>.
         /// </para>
         /// </summary>
         public List<NamespaceFilter> Filters
@@ -65,7 +66,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The maximum number of namespaces that you want Amazon Route 53 to return in the response
         /// to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// Amazon Route 53 returns up to 100 namespaces.
+        /// Route 53 returns up to 100 namespaces.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -87,11 +88,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If more than <code>MaxResults</code> namespaces match the specified criteria, you
-        /// can submit another <code>ListNamespaces</code> request to get the next group of results.
-        /// Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.
+        /// If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code>
+        /// request to get the next group of results. Specify the value of <code>NextToken</code>
+        /// from the previous response in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route 53 gets <code>MaxResults</code> namespaces and then filters them based on the
+        /// specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
+        /// namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code>
+        /// namespaces do contain namespaces that match the criteria.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

@@ -29,7 +29,7 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstances operation.
-    /// Gets summary information about the instances that you created by using a specified
+    /// Lists summary information about the instances that you registered by using a specified
     /// service.
     /// </summary>
     public partial class ListInstancesRequest : AmazonServiceDiscoveryRequest
@@ -43,7 +43,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The maximum number of instances that you want Amazon Route 53 to return in the response
         /// to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>,
-        /// Amazon Route 53 returns up to 100 instances.
+        /// Route 53 returns up to 100 instances.
         /// </para>
         /// </summary>
         public int MaxResults

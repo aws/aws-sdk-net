@@ -67,6 +67,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NamespaceId);
             }
 
+            if(requestObject.IsSetRoutingPolicy())
+            {
+                context.Writer.WritePropertyName("RoutingPolicy");
+                context.Writer.Write(requestObject.RoutingPolicy);
+            }
+
         }
 
         /// <summary>

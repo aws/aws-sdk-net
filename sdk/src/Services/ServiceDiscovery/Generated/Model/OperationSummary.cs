@@ -65,7 +65,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PENDING</b>: Amazon Route 53 is performing the operation.
+        ///  <b>PENDING</b>: Route 53 is performing the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>

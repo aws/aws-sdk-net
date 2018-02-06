@@ -40,8 +40,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the namespace when
-        /// you create it.
+        /// The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create
+        /// it.
         /// </para>
         /// </summary>
         public string Arn
@@ -77,8 +77,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the namespace. When you create a namespace, Amazon Route 53 automatically
-        /// creates a hosted zone that has the same name as the namespace.
+        /// The name of the namespace. When you create a namespace, Route 53 automatically creates
+        /// a hosted zone that has the same name as the namespace.
         /// </para>
         /// </summary>
         public string Name

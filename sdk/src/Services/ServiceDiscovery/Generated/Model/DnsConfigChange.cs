@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about changes to the resource record sets
-    /// that Amazon Route 53 creates when you register an instance.
+    /// A complex type that contains information about changes to the records that Route 53
+    /// creates when you register an instance.
     /// </summary>
     public partial class DnsConfigChange
     {
@@ -38,8 +38,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsRecords. 
         /// <para>
-        /// An array that contains one <code>DnsRecord</code> object for each resource record
-        /// set that you want Amazon Route 53 to create when you register an instance.
+        /// An array that contains one <code>DnsRecord</code> object for each record that you
+        /// want Route 53 to create when you register an instance.
         /// </para>
         /// </summary>
         public List<DnsRecord> DnsRecords

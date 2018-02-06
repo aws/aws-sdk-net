@@ -54,6 +54,10 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose
         /// to list public namespaces, private namespaces, or both. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BETWEEN</code>: Not applicable
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public FilterCondition Condition

@@ -29,8 +29,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstance operation.
-    /// Deletes the resource record sets and the health check, if any, that Amazon Route 53
-    /// created for the specified instance.
+    /// Deletes the records and the health check, if any, that Amazon Route 53 created for
+    /// the specified instance.
     /// </summary>
     public partial class DeregisterInstanceRequest : AmazonServiceDiscoveryRequest
     {

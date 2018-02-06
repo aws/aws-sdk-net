@@ -31,6 +31,13 @@ namespace Amazon.ServiceDiscovery.Model
     /// Container for the parameters to the GetInstancesHealthStatus operation.
     /// Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>)
     /// of one or more instances that are associated with a specified service.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// There is a brief delay between when you register an instance and when the health status
+    /// for the instance is available. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetInstancesHealthStatusRequest : AmazonServiceDiscoveryRequest
     {
@@ -43,14 +50,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Instances. 
         /// <para>
         /// An array that contains the IDs of all the instances that you want to get the health
-        /// status for. To get the IDs for the instances that you've created by using a specified
-        /// service, submit a <a>ListInstances</a> request.
+        /// status for.
         /// </para>
         ///  
         /// <para>
         /// If you omit <code>Instances</code>, Amazon Route 53 returns the health status for
         /// all the instances that are associated with the specified service.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To get the IDs for the instances that you've registered by using a specified service,
+        /// submit a <a>ListInstances</a> request.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Instances
         {
@@ -67,9 +79,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of instances that you want Amazon Route 53 to return in the response
-        /// to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for
-        /// <code>MaxResults</code>, Amazon Route 53 returns up to 100 instances.
+        /// The maximum number of instances that you want Route 53 to return in the response to
+        /// a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for
+        /// <code>MaxResults</code>, Route 53 returns up to 100 instances.
         /// </para>
         /// </summary>
         public int MaxResults

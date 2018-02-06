@@ -29,11 +29,11 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateService operation.
-    /// Creates a service, which defines a template for the following entities:
+    /// Creates a service, which defines the configuration for the following entities:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// One to five resource record sets
+    /// Up to three records (A, AAAA, and SRV) or one CNAME record
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> </ul> 
     /// <para>
     /// After you create the service, you can submit a <a>RegisterInstance</a> request, and
-    /// Amazon Route 53 uses the values in the template to create the specified entities.
+    /// Amazon Route 53 uses the values in the configuration to create the specified entities.
     /// 
     /// </para>
     /// </summary>
@@ -57,8 +57,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-        /// helps to determine if a specific client owns the namespace.
+        /// A unique string that identifies the request and that allows failed <code>CreateService</code>
+        /// requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+        /// can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
         public string CreatorRequestId
@@ -94,8 +95,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the resource record sets that you want
-        /// Amazon Route 53 to create when you register an instance. 
+        /// A complex type that contains information about the records that you want Route 53
+        /// to create when you register an instance. 
         /// </para>
         /// </summary>
         public DnsConfig DnsConfig
@@ -114,24 +115,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-        /// health check. If you specify settings for a health check, Amazon Route 53 associates
-        /// the health check with all the resource record sets that you specify in <code>DnsConfig</code>.
+        /// health check. If you specify settings for a health check, Route 53 associates the
+        /// health check with all the records that you specify in <code>DnsConfig</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// The health check uses 30 seconds as the request interval. This is the number of seconds
-        /// between the time that each Amazon Route 53 health checker gets a response from your
-        /// endpoint and the time that it sends the next health check request. A health checker
-        /// in each data center around the world sends your endpoint a health check request every
-        /// 30 seconds. On average, your endpoint receives a health check request about every
-        /// two seconds. Health checkers in different data centers don't coordinate with one another,
-        /// so you'll sometimes see several requests per second followed by a few seconds with
-        /// no health checks at all.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Amazon
-        /// Route 53 Pricing</a>.
+        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route
+        /// 53 Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig

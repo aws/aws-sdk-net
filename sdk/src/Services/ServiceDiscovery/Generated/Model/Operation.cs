@@ -45,7 +45,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date and time that the request was submitted, in Unix date/time format and Coordinated
-        /// Universal Time (UTC).
+        /// Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds.
+        /// For example, the value <code>1516925490.087</code> represents Friday, January 26,
+        /// 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -63,8 +65,38 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code associated with <code>ErrorMessage</code>.
+        /// The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code>
+        /// include the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACCESS_DENIED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CANNOT_CREATE_HOSTED_ZONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EXPIRED_TOKEN</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HOSTED_ZONE_NOT_FOUND</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INTERNAL_FAILURE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INVALID_CHANGE_BATCH</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>THROTTLED_REQUEST</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ErrorCode
         {
@@ -126,7 +158,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PENDING</b>: Amazon Route 53 is performing the operation.
+        ///  <b>PENDING</b>: Route 53 is performing the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -203,7 +235,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property UpdateDate. 
         /// <para>
         /// The date and time that the value of <code>Status</code> changed to the current value,
-        /// in Unix date/time format and Coordinated Universal Time (UTC).
+        /// in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code>
+        /// is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents
+        /// Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime UpdateDate

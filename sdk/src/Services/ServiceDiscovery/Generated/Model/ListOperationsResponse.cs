@@ -38,11 +38,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> operations match the specified criteria, you
-        /// can submit another <code>ListOperations</code> request to get the next group of results.
-        /// Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.
+        /// If the response contains <code>NextToken</code>, submit another <code>ListOperations</code>
+        /// request to get the next group of results. Specify the value of <code>NextToken</code>
+        /// from the previous response in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route 53 gets <code>MaxResults</code> operations and then filters them based on the
+        /// specified criteria. It's possible that no operations in the first <code>MaxResults</code>
+        /// operations matched the specified criteria but that subsequent groups of <code>MaxResults</code>
+        /// operations do contain operations that match the criteria.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

@@ -30,8 +30,13 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the GetOperation operation.
     /// Gets information about any operation that returns an operation ID in the response,
-    /// such as a <code>CreateService</code> request. To get a list of operations that match
-    /// specified criteria, see <a>ListOperations</a>.
+    /// such as a <code>CreateService</code> request.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To get a list of operations that match specified criteria, see <a>ListOperations</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetOperationRequest : AmazonServiceDiscoveryRequest
     {
