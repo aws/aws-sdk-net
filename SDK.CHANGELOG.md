@@ -1,3 +1,13 @@
+### 3.3.229.0 (2018-02-06 22:00 UTC)
+* Glue (3.3.5.0)
+	* This new feature will now allow customers to add a customized json classifier. They can specify a json path to indicate the object, array or field of the json documents they'd like crawlers to inspect when they crawl json files. 
+* ServiceCatalog (3.3.7.0)
+	* This release of Service Catalog adds SearchProvisionedProducts API and ProvisionedProductPlan APIs.
+* ServiceDiscovery (3.3.1.0)
+	* This release adds support for registering CNAME record types and creating Route 53 alias records that route traffic to Amazon Elastic Load Balancers using Amazon Route 53 Auto Naming APIs.
+* SimpleSystemsManagement (3.3.16.0)
+	* This Patch Manager release supports configuring Linux repos as part of patch baselines, controlling updates of non-OS security packages and also creating patch baselines for SUSE12
+
 ### 3.3.228.0 (2018-02-05 21:19 UTC)
 * CertificateManager (3.3.3.1)
 	* Documentation updates for acm
