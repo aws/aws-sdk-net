@@ -152,11 +152,61 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  DeleteCorsPolicy
+
+
+        /// <summary>
+        /// Deletes the cross-origin resource sharing (CORS) configuration information that is
+        /// set for the container.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code>
+        /// action. The container owner has this permission by default and can grant this permission
+        /// to others.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// Resource already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// Could not perform an operation on a container that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
+        /// Could not perform an operation on a policy that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
+        DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
+        Task<DeleteCorsPolicyResponse> DeleteCorsPolicyAsync(DeleteCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeContainer
 
 
         /// <summary>
-        /// Retrieves the properties of the requested container. This returns a single <code>Container</code>
+        /// Retrieves the properties of the requested container. This request is commonly used
+        /// to retrieve the endpoint of a container. An endpoint is a value assigned by the service
+        /// when a new container is created. A container's endpoint does not change after it has
+        /// been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code>
         /// object based on <code>ContainerName</code>. To return all <code>Container</code> objects
         /// that are associated with a specified AWS account, use <a>ListContainers</a>.
         /// </summary>
@@ -225,6 +275,52 @@ namespace Amazon.MediaStore
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         Task<GetContainerPolicyResponse> GetContainerPolicyAsync(GetContainerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCorsPolicy
+
+
+        /// <summary>
+        /// Returns the cross-origin resource sharing (CORS) configuration information that is
+        /// set for the container.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code>
+        /// action. By default, the container owner has this permission and can grant it to others.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCorsPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// Resource already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// Could not perform an operation on a container that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
+        /// Could not perform an operation on a policy that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
+        GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
+        Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -315,6 +411,54 @@ namespace Amazon.MediaStore
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         Task<PutContainerPolicyResponse> PutContainerPolicyAsync(PutContainerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutCorsPolicy
+
+
+        /// <summary>
+        /// Sets the cross-origin resource sharing (CORS) configuration on a container so that
+        /// the container can service cross-origin requests. For example, you might want to enable
+        /// a request whose origin is http://www.example.com to access your AWS Elemental MediaStore
+        /// container at my.example.container.com by using the browser's XMLHttpRequest capability.
+        /// 
+        ///  
+        /// <para>
+        /// To enable CORS on a container, you attach a CORS policy to the container. In the CORS
+        /// policy, you configure rules that identify origins and the HTTP methods that can be
+        /// executed on your container. The policy can contain up to 398,000 characters. You can
+        /// add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
+        /// the first applicable rule listed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutCorsPolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// Resource already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// Could not perform an operation on a container that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
+        PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
+        Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

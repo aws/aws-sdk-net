@@ -19,6 +19,12 @@
     <pattern>\w+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaStore.Model.DeleteCorsPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>\w+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaStore.Model.DescribeContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
@@ -35,6 +41,12 @@
     <min>1</min>
     <max>8192</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.GetCorsPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>\w+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersRequest.MaxResults</property>
@@ -64,6 +76,12 @@
     <min>1</min>
     <max>8192</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.PutCorsPolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>\w+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.ARN</property>
@@ -98,6 +116,17 @@
     <min>1</min>
     <max>255</max>
     <pattern>[ \w:\.\?-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.CorsPolicyNotFoundException.Message</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[ \w:\.\?-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.CorsRule.MaxAgeSeconds</property>
+    <min>0</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.InternalServerError.Message</property>

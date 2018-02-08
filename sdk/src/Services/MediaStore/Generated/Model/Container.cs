@@ -87,8 +87,9 @@ namespace Amazon.MediaStore.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The DNS endpoint of the container. Use from 1 to 255 characters. Use this endpoint
-        /// to identify this container when sending requests to the data plane. 
+        /// The DNS endpoint of the container. Use the endpoint to identify the specific container
+        /// when sending requests to the data plane. The service assigns this value when the container
+        /// is created. Once the value has been assigned, it does not change.
         /// </para>
         /// </summary>
         public string Endpoint

@@ -28,22 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeContainer operation.
-    /// Retrieves the properties of the requested container. This request is commonly used
-    /// to retrieve the endpoint of a container. An endpoint is a value assigned by the service
-    /// when a new container is created. A container's endpoint does not change after it has
-    /// been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code>
-    /// object based on <code>ContainerName</code>. To return all <code>Container</code> objects
-    /// that are associated with a specified AWS account, use <a>ListContainers</a>.
+    /// Container for the parameters to the DeleteCorsPolicy operation.
+    /// Deletes the cross-origin resource sharing (CORS) configuration information that is
+    /// set for the container.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code>
+    /// action. The container owner has this permission by default and can grant this permission
+    /// to others.
+    /// </para>
     /// </summary>
-    public partial class DescribeContainerRequest : AmazonMediaStoreRequest
+    public partial class DeleteCorsPolicyRequest : AmazonMediaStoreRequest
     {
         private string _containerName;
 
         /// <summary>
         /// Gets and sets the property ContainerName. 
         /// <para>
-        /// The name of the container to query.
+        /// The name of the container to remove the policy from.
         /// </para>
         /// </summary>
         public string ContainerName

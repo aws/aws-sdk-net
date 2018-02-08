@@ -327,6 +327,38 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  DeleteCorsPolicy
+
+        internal virtual DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request)
+        {
+            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCorsPolicyRequest,DeleteCorsPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
+        public virtual Task<DeleteCorsPolicyResponse> DeleteCorsPolicyAsync(DeleteCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCorsPolicyRequest,DeleteCorsPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeContainer
 
         internal virtual DescribeContainerResponse DescribeContainer(DescribeContainerRequest request)
@@ -391,6 +423,38 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  GetCorsPolicy
+
+        internal virtual GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request)
+        {
+            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetCorsPolicyRequest,GetCorsPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
+        public virtual Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCorsPolicyRequest,GetCorsPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListContainers
 
         internal virtual ListContainersResponse ListContainers(ListContainersRequest request)
@@ -450,6 +514,38 @@ namespace Amazon.MediaStore
             var unmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutContainerPolicyRequest,PutContainerPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutCorsPolicy
+
+        internal virtual PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request)
+        {
+            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutCorsPolicyRequest,PutCorsPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutCorsPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutCorsPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
+        public virtual Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutCorsPolicyRequest,PutCorsPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

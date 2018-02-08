@@ -48,7 +48,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  
         /// <para>
-        /// CreationTime: Unix timestamp.
+        /// CreationTime: Unix time stamp.
         /// </para>
         ///  
         /// <para>
