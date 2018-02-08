@@ -1190,6 +1190,52 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeReplicationInstanceTaskLogs
+
+
+        /// <summary>
+        /// Returns information about the task logs for the specified task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationInstanceTaskLogs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationInstanceTaskLogs service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
+        DescribeReplicationInstanceTaskLogsResponse DescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationInstanceTaskLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationInstanceTaskLogs operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationInstanceTaskLogs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
+        IAsyncResult BeginDescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplicationInstanceTaskLogs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationInstanceTaskLogs.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplicationInstanceTaskLogsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
+        DescribeReplicationInstanceTaskLogsResponse EndDescribeReplicationInstanceTaskLogs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeReplicationSubnetGroups
 
 
@@ -1434,6 +1480,9 @@ namespace Amazon.DatabaseMigrationService
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
@@ -1799,6 +1848,53 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  ModifyReplicationTaskResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
         ModifyReplicationTaskResponse EndModifyReplicationTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RebootReplicationInstance
+
+
+        /// <summary>
+        /// Reboots a replication instance. Rebooting results in a momentary outage, until the
+        /// replication instance becomes available again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootReplicationInstance service method.</param>
+        /// 
+        /// <returns>The response from the RebootReplicationInstance service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
+        RebootReplicationInstanceResponse RebootReplicationInstance(RebootReplicationInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootReplicationInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootReplicationInstance operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootReplicationInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
+        IAsyncResult BeginRebootReplicationInstance(RebootReplicationInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootReplicationInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootReplicationInstance.</param>
+        /// 
+        /// <returns>Returns a  RebootReplicationInstanceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
+        RebootReplicationInstanceResponse EndRebootReplicationInstance(IAsyncResult asyncResult);
 
         #endregion
         

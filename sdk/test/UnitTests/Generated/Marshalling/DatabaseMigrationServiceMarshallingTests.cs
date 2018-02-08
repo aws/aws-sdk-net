@@ -710,6 +710,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DatabaseMigrationService")]
+        public void DescribeReplicationInstanceTaskLogsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeReplicationInstanceTaskLogsRequest>();
+            var marshaller = new DescribeReplicationInstanceTaskLogsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeReplicationInstanceTaskLogsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeReplicationInstanceTaskLogs").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeReplicationInstanceTaskLogsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
         public void DescribeReplicationSubnetGroupsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeReplicationSubnetGroupsRequest>();
@@ -1050,6 +1079,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ModifyReplicationTaskResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyReplicationTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void RebootReplicationInstanceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RebootReplicationInstanceRequest>();
+            var marshaller = new RebootReplicationInstanceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RebootReplicationInstanceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("RebootReplicationInstance").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = RebootReplicationInstanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as RebootReplicationInstanceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -164,8 +164,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndPointType, include MYSQL,
-        /// ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+        /// The database engine name. Valid values, depending on the EndPointType, include mysql,
+        /// oracle, postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName

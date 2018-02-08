@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportCertificate operation
+    /// Response Unmarshaller for RebootReplicationInstance operation
     /// </summary>  
-    public class ImportCertificateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RebootReplicationInstanceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportCertificateResponse response = new ImportCertificateResponse();
+            RebootReplicationInstanceResponse response = new RebootReplicationInstanceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Certificate", targetDepth))
+                if (context.TestExpression("ReplicationInstance", targetDepth))
                 {
-                    var unmarshaller = CertificateUnmarshaller.Instance;
-                    response.Certificate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ReplicationInstanceUnmarshaller.Instance;
+                    response.ReplicationInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,24 +72,20 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCertificateFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateFault"))
             {
-                return new InvalidCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidResourceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
             {
-                return new ResourceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceQuotaExceededFault"))
-            {
-                return new ResourceQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonDatabaseMigrationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ImportCertificateResponseUnmarshaller _instance = new ImportCertificateResponseUnmarshaller();        
+        private static RebootReplicationInstanceResponseUnmarshaller _instance = new RebootReplicationInstanceResponseUnmarshaller();        
 
-        internal static ImportCertificateResponseUnmarshaller GetInstance()
+        internal static RebootReplicationInstanceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +93,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportCertificateResponseUnmarshaller Instance
+        public static RebootReplicationInstanceResponseUnmarshaller Instance
         {
             get
             {
