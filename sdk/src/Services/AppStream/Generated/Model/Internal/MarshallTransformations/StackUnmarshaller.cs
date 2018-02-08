@@ -94,6 +94,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RedirectURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RedirectURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StackErrors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<StackError, StackErrorUnmarshaller>(StackErrorUnmarshaller.Instance);

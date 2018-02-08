@@ -38,7 +38,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryConfigs. 
         /// <para>
-        /// Information about the directory configurations.
+        /// Information about the directory configurations. Note that although the response syntax
+        /// in this topic includes the account password, this password is not returned in the
+        /// actual response. 
         /// </para>
         /// </summary>
         public List<DirectoryConfig> DirectoryConfigs

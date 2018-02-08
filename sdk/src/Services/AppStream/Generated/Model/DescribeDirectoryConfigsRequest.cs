@@ -29,7 +29,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDirectoryConfigs operation.
-    /// Describes the specified directory configurations.
+    /// Describes the specified directory configurations. Note that although the response
+    /// syntax in this topic includes the account password, this password is not returned
+    /// in the actual response.
     /// </summary>
     public partial class DescribeDirectoryConfigsRequest : AmazonAppStreamRequest
     {

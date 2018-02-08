@@ -33,11 +33,31 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class UpdateStackRequest : AmazonAppStreamRequest
     {
+        private List<string> _attributesToDelete = new List<string>();
         private bool? _deleteStorageConnectors;
         private string _description;
         private string _displayName;
         private string _name;
+        private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+
+        /// <summary>
+        /// Gets and sets the property AttributesToDelete. 
+        /// <para>
+        /// The stack attributes to delete.
+        /// </para>
+        /// </summary>
+        public List<string> AttributesToDelete
+        {
+            get { return this._attributesToDelete; }
+            set { this._attributesToDelete = value; }
+        }
+
+        // Check to see if AttributesToDelete property is set
+        internal bool IsSetAttributesToDelete()
+        {
+            return this._attributesToDelete != null && this._attributesToDelete.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeleteStorageConnectors. 
@@ -109,6 +129,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedirectURL. 
+        /// <para>
+        /// The URL the user is redirected to after the streaming session ends.
+        /// </para>
+        /// </summary>
+        public string RedirectURL
+        {
+            get { return this._redirectURL; }
+            set { this._redirectURL = value; }
+        }
+
+        // Check to see if RedirectURL property is set
+        internal bool IsSetRedirectURL()
+        {
+            return this._redirectURL != null;
         }
 
         /// <summary>

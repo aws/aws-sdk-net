@@ -34,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging
+    /// For more information about tags, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
     /// Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
     /// </para>
     /// </summary>

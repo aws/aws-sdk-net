@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private string _name;
+        private string _redirectURL;
         private List<StackError> _stackErrors = new List<StackError>();
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
 
@@ -128,6 +129,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedirectURL. 
+        /// <para>
+        /// The URL the user is redirected to after the streaming session ends.
+        /// </para>
+        /// </summary>
+        public string RedirectURL
+        {
+            get { return this._redirectURL; }
+            set { this._redirectURL = value; }
+        }
+
+        // Check to see if RedirectURL property is set
+        internal bool IsSetRedirectURL()
+        {
+            return this._redirectURL != null;
         }
 
         /// <summary>

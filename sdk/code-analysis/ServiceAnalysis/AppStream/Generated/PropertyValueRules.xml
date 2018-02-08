@@ -74,6 +74,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateStackRequest.RedirectURL</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStreamingURLRequest.ApplicationId</property>
     <min>1</min>
   </property-value-rule>
@@ -270,6 +274,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateStackRequest.RedirectURL</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.Application.DisplayName</property>
     <min>1</min>
   </property-value-rule>
@@ -428,6 +436,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Stack.RedirectURL</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.StackError.ErrorMessage</property>
