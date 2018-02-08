@@ -678,5 +678,37 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  UpdateChannel
+
+        internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
+        {
+            var marshaller = new UpdateChannelRequestMarshaller();
+            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateChannelRequestMarshaller();
+            var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

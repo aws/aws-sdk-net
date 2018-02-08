@@ -38,8 +38,9 @@ namespace Amazon.MediaLive.Model
         private string _languageDescription;
 
         /// <summary>
-        /// Gets and sets the property CaptionChannel. Channel to insert closed captions.  Each
-        /// channel mapping must have a unique channel number (maximum of 4)
+        /// Gets and sets the property CaptionChannel. The closed caption channel being described
+        /// by this CaptionLanguageMapping.  Each channel mapping must have a unique channel number
+        /// (maximum of 4)
         /// </summary>
         public int CaptionChannel
         {

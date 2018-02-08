@@ -28,22 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateChannel operation.
-    /// Creates a new channel
+    /// Container for the parameters to the UpdateChannel operation.
+    /// Updates a channel.
     /// </summary>
-    public partial class CreateChannelRequest : AmazonMediaLiveRequest
+    public partial class UpdateChannelRequest : AmazonMediaLiveRequest
     {
+        private string _channelId;
         private List<OutputDestination> _destinations = new List<OutputDestination>();
         private EncoderSettings _encoderSettings;
-        private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
         private InputSpecification _inputSpecification;
         private string _name;
-        private string _requestId;
-        private string _reserved;
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property Destinations.
+        /// Gets and sets the property ChannelId. channel ID
+        /// </summary>
+        public string ChannelId
+        {
+            get { return this._channelId; }
+            set { this._channelId = value; }
+        }
+
+        // Check to see if ChannelId property is set
+        internal bool IsSetChannelId()
+        {
+            return this._channelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destinations. A list of output destinations for this channel.
         /// </summary>
         public List<OutputDestination> Destinations
         {
@@ -58,7 +71,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncoderSettings.
+        /// Gets and sets the property EncoderSettings. The encoder settings for this channel.
         /// </summary>
         public EncoderSettings EncoderSettings
         {
@@ -70,21 +83,6 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEncoderSettings()
         {
             return this._encoderSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InputAttachments. List of input attachments for channel.
-        /// </summary>
-        public List<InputAttachment> InputAttachments
-        {
-            get { return this._inputAttachments; }
-            set { this._inputAttachments = value; }
-        }
-
-        // Check to see if InputAttachments property is set
-        internal bool IsSetInputAttachments()
-        {
-            return this._inputAttachments != null && this._inputAttachments.Count > 0; 
         }
 
         /// <summary>
@@ -104,7 +102,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Name of channel.
+        /// Gets and sets the property Name. The name of the channel.
         /// </summary>
         public string Name
         {
@@ -119,40 +117,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId. Unique request ID to be specified. This is needed
-        /// to prevent retries fromcreating multiple resources.
-        /// </summary>
-        public string RequestId
-        {
-            get { return this._requestId; }
-            set { this._requestId = value; }
-        }
-
-        // Check to see if RequestId property is set
-        internal bool IsSetRequestId()
-        {
-            return this._requestId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Reserved. Deprecated field that's only usable by whitelisted
-        /// customers.
-        /// </summary>
-        public string Reserved
-        {
-            get { return this._reserved; }
-            set { this._reserved = value; }
-        }
-
-        // Check to see if Reserved property is set
-        internal bool IsSetReserved()
-        {
-            return this._reserved != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property RoleArn. An optional Amazon Resource Name (ARN) of the
-        /// role to assume when running the Channel.
+        /// role to assume when running the Channel. If you do not specify this on an update call
+        /// but the role was previously set that role will be removed.
         /// </summary>
         public string RoleArn
         {
