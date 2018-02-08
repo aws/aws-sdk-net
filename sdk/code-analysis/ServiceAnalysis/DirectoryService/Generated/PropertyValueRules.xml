@@ -407,7 +407,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettings.VpcId</property>
-    <pattern>^(vpc-[0-9a-f]{8})$</pattern>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettingsDescription.CustomerUserName</property>
@@ -416,11 +416,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettingsDescription.SecurityGroupId</property>
-    <pattern>^(sg-[0-9a-f]{8})$</pattern>
+    <pattern>^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettingsDescription.VpcId</property>
-    <pattern>^(vpc-[0-9a-f]{8})$</pattern>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDescription.AccessUrl</property>
@@ -489,15 +489,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryVpcSettings.VpcId</property>
-    <pattern>^(vpc-[0-9a-f]{8})$</pattern>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryVpcSettingsDescription.SecurityGroupId</property>
-    <pattern>^(sg-[0-9a-f]{8})$</pattern>
+    <pattern>^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryVpcSettingsDescription.VpcId</property>
-    <pattern>^(vpc-[0-9a-f]{8})$</pattern>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DomainController.DirectoryId</property>
@@ -513,11 +513,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DomainController.SubnetId</property>
-    <pattern>^(subnet-[0-9a-f]{8})$</pattern>
+    <pattern>^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DomainController.VpcId</property>
-    <pattern>^(vpc-[0-9a-f]{8})$</pattern>
+    <pattern>^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DomainControllerLimitExceededException.RequestId</property>
