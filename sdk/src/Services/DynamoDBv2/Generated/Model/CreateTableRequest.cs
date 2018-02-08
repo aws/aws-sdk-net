@@ -60,6 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private List<LocalSecondaryIndex> _localSecondaryIndexes = new List<LocalSecondaryIndex>();
         private ProvisionedThroughput _provisionedThroughput;
+        private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private string _tableName;
 
@@ -336,6 +337,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSESpecification. 
+        /// <para>
+        /// Represents the settings used to enable server-side encryption.
+        /// </para>
+        /// </summary>
+        public SSESpecification SSESpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SSESpecification property is set
+        internal bool IsSetSSESpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

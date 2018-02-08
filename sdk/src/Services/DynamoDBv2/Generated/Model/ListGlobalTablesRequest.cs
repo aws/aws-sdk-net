@@ -29,8 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGlobalTables operation.
-    /// Lists all the global tables. Only those global tables that have replicas in the region
-    /// specified as input are returned.
+    /// Lists all global tables that have a replica in the specified region.
     /// </summary>
     public partial class ListGlobalTablesRequest : AmazonDynamoDBRequest
     {

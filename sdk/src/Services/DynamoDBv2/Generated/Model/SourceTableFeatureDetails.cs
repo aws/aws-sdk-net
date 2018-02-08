@@ -35,6 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private List<GlobalSecondaryIndexInfo> _globalSecondaryIndexes = new List<GlobalSecondaryIndexInfo>();
         private List<LocalSecondaryIndexInfo> _localSecondaryIndexes = new List<LocalSecondaryIndexInfo>();
+        private SSEDescription _sseDescription;
         private StreamSpecification _streamDescription;
         private TimeToLiveDescription _timeToLiveDescription;
 
@@ -76,6 +77,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetLocalSecondaryIndexes()
         {
             return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSEDescription. 
+        /// <para>
+        /// The description of the server-side encryption status on the table when the backup
+        /// was created.
+        /// </para>
+        /// </summary>
+        public SSEDescription SSEDescription
+        {
+            get { return this._sseDescription; }
+            set { this._sseDescription = value; }
+        }
+
+        // Check to see if SSEDescription property is set
+        internal bool IsSetSSEDescription()
+        {
+            return this._sseDescription != null;
         }
 
         /// <summary>

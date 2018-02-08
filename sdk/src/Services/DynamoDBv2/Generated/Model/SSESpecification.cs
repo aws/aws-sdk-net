@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeGlobalTable operation.
-    /// Returns information about the specified global table.
+    /// Represents the settings used to enable server-side encryption.
     /// </summary>
-    public partial class DescribeGlobalTableRequest : AmazonDynamoDBRequest
+    public partial class SSESpecification
     {
-        private string _globalTableName;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property GlobalTableName. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The name of the global table.
+        /// Indicates whether server-side encryption is enabled (true) or disabled (false) on
+        /// the table.
         /// </para>
         /// </summary>
-        public string GlobalTableName
+        public bool Enabled
         {
-            get { return this._globalTableName; }
-            set { this._globalTableName = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if GlobalTableName property is set
-        internal bool IsSetGlobalTableName()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._globalTableName != null;
+            return this._enabled.HasValue; 
         }
 
     }

@@ -59,6 +59,10 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Stream settings
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Time to Live (TTL) settings
     /// </para>
     ///  </li> </ul>

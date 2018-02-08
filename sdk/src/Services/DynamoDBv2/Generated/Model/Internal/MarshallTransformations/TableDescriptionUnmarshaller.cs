@@ -124,6 +124,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RestoreSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SSEDescription", targetDepth))
+                {
+                    var unmarshaller = SSEDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamSpecification", targetDepth))
                 {
                     var unmarshaller = StreamSpecificationUnmarshaller.Instance;

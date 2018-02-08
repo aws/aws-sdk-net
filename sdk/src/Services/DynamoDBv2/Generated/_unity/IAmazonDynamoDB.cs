@@ -493,13 +493,27 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// and <code>RestoreTableFromBackup</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -719,13 +733,27 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// and <code>RestoreTableFromBackup</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  
@@ -1846,13 +1874,27 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
-        /// of 10.
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
         /// <para>
-        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// and <code>RestoreTableFromBackup</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
         /// state at any point in time. Do not attempt to create more than one such table simultaneously.
         /// </para>
         ///  

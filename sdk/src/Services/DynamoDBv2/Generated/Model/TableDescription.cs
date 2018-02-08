@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
         private ProvisionedThroughputDescription _provisionedThroughput;
         private RestoreSummary _restoreSummary;
+        private SSEDescription _sseDescription;
         private StreamSpecification _streamSpecification;
         private string _tableArn;
         private string _tableId;
@@ -459,6 +460,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRestoreSummary()
         {
             return this._restoreSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSEDescription. 
+        /// <para>
+        /// The description of the server-side encryption status on the specified table.
+        /// </para>
+        /// </summary>
+        public SSEDescription SSEDescription
+        {
+            get { return this._sseDescription; }
+            set { this._sseDescription = value; }
+        }
+
+        // Check to see if SSEDescription property is set
+        internal bool IsSetSSEDescription()
+        {
+            return this._sseDescription != null;
         }
 
         /// <summary>

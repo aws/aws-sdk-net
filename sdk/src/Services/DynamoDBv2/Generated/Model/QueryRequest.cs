@@ -402,9 +402,12 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// The condition must perform an equality test on a single partition key value. The condition
-        /// can also perform one of several comparison tests on a single sort key value. <code>Query</code>
-        /// can use <code>KeyConditionExpression</code> to retrieve one item with a given partition
+        /// The condition must perform an equality test on a single partition key value.
+        /// </para>
+        ///  
+        /// <para>
+        /// The condition can optionally perform one of several comparison tests on a single sort
+        /// key value. This allows <code>Query</code> to retrieve one item with a given partition
         /// key value and sort key value, or several items that have the same partition key value
         /// but different sort key values.
         /// </para>
