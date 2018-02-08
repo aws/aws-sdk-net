@@ -36,7 +36,10 @@ namespace Amazon.Budgets.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Budgets.
+        /// Gets and sets the property Budgets. 
+        /// <para>
+        /// A list of budgets.
+        /// </para>
         /// </summary>
         public List<Budget> Budgets
         {
@@ -51,7 +54,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token that indicates the next set of results that you can retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {

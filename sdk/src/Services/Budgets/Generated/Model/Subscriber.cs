@@ -28,8 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// Subscriber model. Each notification may contain multiple subscribers with different
-    /// addresses.
+    /// The subscriber to a budget notification. The subscriber consists of a subscription
+    /// type and either an Amazon Simple Notification Service topic or an email address.
+    /// 
+    ///  
+    /// <para>
+    /// For example, an email subscriber would have the following parameters:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A <code>subscriptionType</code> of <code>EMAIL</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An <code>address</code> of <code>example@example.com</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Subscriber
     {
@@ -37,7 +51,10 @@ namespace Amazon.Budgets.Model
         private SubscriptionType _subscriptionType;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// The address that AWS sends budget notifications to, either an SNS topic or an email.
+        /// </para>
         /// </summary>
         public string Address
         {
@@ -52,7 +69,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionType.
+        /// Gets and sets the property SubscriptionType. 
+        /// <para>
+        /// The type of notification that AWS sends to a subscriber.
+        /// </para>
         /// </summary>
         public SubscriptionType SubscriptionType
         {

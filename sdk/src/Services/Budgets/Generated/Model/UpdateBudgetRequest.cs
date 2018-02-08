@@ -29,7 +29,9 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBudget operation.
-    /// Update the information of a budget already created
+    /// Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
+    /// and the <code>calculatedSpend</code>. When a budget is modified, the <code>calculatedSpend</code>
+    /// drops to zero until AWS has new usage data to use for forecasting.
     /// </summary>
     public partial class UpdateBudgetRequest : AmazonBudgetsRequest
     {
@@ -37,7 +39,10 @@ namespace Amazon.Budgets.Model
         private Budget _newBudget;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget that you want to update.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -52,7 +57,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewBudget.
+        /// Gets and sets the property NewBudget. 
+        /// <para>
+        /// The budget that you want to update your budget to.
+        /// </para>
         /// </summary>
         public Budget NewBudget
         {

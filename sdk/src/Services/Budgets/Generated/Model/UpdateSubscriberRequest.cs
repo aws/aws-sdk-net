@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSubscriber operation.
-    /// Update a subscriber
+    /// Updates a subscriber.
     /// </summary>
     public partial class UpdateSubscriberRequest : AmazonBudgetsRequest
     {
@@ -40,7 +40,11 @@ namespace Amazon.Budgets.Model
         private Subscriber _oldSubscriber;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget whose subscriber you
+        /// want to update.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -55,7 +59,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget whose subscriber you want to update.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -70,7 +77,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewSubscriber.
+        /// Gets and sets the property NewSubscriber. 
+        /// <para>
+        /// The updated subscriber associated with a budget notification.
+        /// </para>
         /// </summary>
         public Subscriber NewSubscriber
         {
@@ -85,7 +95,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification whose subscriber you want to update.
+        /// </para>
         /// </summary>
         public Notification Notification
         {
@@ -100,7 +113,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OldSubscriber.
+        /// Gets and sets the property OldSubscriber. 
+        /// <para>
+        /// The previous subscriber associated with a budget notification.
+        /// </para>
         /// </summary>
         public Subscriber OldSubscriber
         {

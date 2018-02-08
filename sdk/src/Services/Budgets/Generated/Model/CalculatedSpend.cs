@@ -28,7 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A structure that holds the actual and forecasted spend for a budget.
+    /// The spend objects associated with this budget. The <code>actualSpend</code> tracks
+    /// how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code>
+    /// tracks how much you are predicted to spend if your current usage remains steady.
+    /// 
+    ///  
+    /// <para>
+    /// For example, if it is the 20th of the month and you have spent <code>50</code> dollars
+    /// on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code>
+    /// is <code>75 USD</code>.
+    /// </para>
     /// </summary>
     public partial class CalculatedSpend
     {
@@ -36,7 +45,10 @@ namespace Amazon.Budgets.Model
         private Spend _forecastedSpend;
 
         /// <summary>
-        /// Gets and sets the property ActualSpend.
+        /// Gets and sets the property ActualSpend. 
+        /// <para>
+        /// The amount of cost, usage, or RI units that you have used.
+        /// </para>
         /// </summary>
         public Spend ActualSpend
         {
@@ -51,7 +63,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ForecastedSpend.
+        /// Gets and sets the property ForecastedSpend. 
+        /// <para>
+        /// The amount of cost, usage, or RI units that you are forecasted to use.
+        /// </para>
         /// </summary>
         public Spend ForecastedSpend
         {

@@ -36,7 +36,10 @@ namespace Amazon.Budgets.Model
         private List<Notification> _notifications = new List<Notification>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token that indicates the next set of results that you can retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +54,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notifications.
+        /// Gets and sets the property Notifications. 
+        /// <para>
+        /// A list of notifications associated with a budget.
+        /// </para>
         /// </summary>
         public List<Notification> Notifications
         {

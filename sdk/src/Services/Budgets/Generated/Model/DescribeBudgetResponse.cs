@@ -35,7 +35,10 @@ namespace Amazon.Budgets.Model
         private Budget _budget;
 
         /// <summary>
-        /// Gets and sets the property Budget.
+        /// Gets and sets the property Budget. 
+        /// <para>
+        /// The description of the budget.
+        /// </para>
         /// </summary>
         public Budget Budget
         {

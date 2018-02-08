@@ -29,7 +29,13 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBudget operation.
-    /// Delete a budget and related notifications
+    /// Deletes a budget. You can delete your budget at any time.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Deleting a budget also deletes the notifications and subscribers associated with
+    /// that budget.</b> 
+    /// </para>
     /// </summary>
     public partial class DeleteBudgetRequest : AmazonBudgetsRequest
     {
@@ -37,7 +43,10 @@ namespace Amazon.Budgets.Model
         private string _budgetName;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget that you want to delete.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -52,7 +61,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget that you want to delete.
+        /// </para>
         /// </summary>
         public string BudgetName
         {

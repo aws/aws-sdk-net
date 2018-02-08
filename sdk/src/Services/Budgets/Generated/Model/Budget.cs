@@ -28,7 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// AWS Budget model
+    /// Represents the output of the <code>CreateBudget</code> operation. The content consists
+    /// of the detailed metadata and data file information, and the current status of the
+    /// <code>budget</code>.
+    /// 
+    ///  
+    /// <para>
+    /// The ARN pattern for a budget is: <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
+    /// 
+    /// </para>
     /// </summary>
     public partial class Budget
     {
@@ -42,7 +50,17 @@ namespace Amazon.Budgets.Model
         private TimeUnit _timeUnit;
 
         /// <summary>
-        /// Gets and sets the property BudgetLimit.
+        /// Gets and sets the property BudgetLimit. 
+        /// <para>
+        /// The total amount of cost, usage, or RI utilization that you want to track with your
+        /// budget.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>BudgetLimit</code> is required for cost or usage budgets, but optional for
+        /// RI utilization budgets. RI utilization budgets default to the only valid value for
+        /// RI utilization budgets, which is <code>100</code>.
+        /// </para>
         /// </summary>
         public Spend BudgetLimit
         {
@@ -57,7 +75,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of a budget. Unique within accounts. <code>:</code> and <code>\</code> characters
+        /// are not allowed in the <code>BudgetName</code>.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -72,7 +94,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetType.
+        /// Gets and sets the property BudgetType. 
+        /// <para>
+        /// Whether this budget tracks monetary costs, usage, or RI utilization.
+        /// </para>
         /// </summary>
         public BudgetType BudgetType
         {
@@ -87,7 +112,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CalculatedSpend.
+        /// Gets and sets the property CalculatedSpend. 
+        /// <para>
+        /// The actual and forecasted cost or usage being tracked by a budget.
+        /// </para>
         /// </summary>
         public CalculatedSpend CalculatedSpend
         {
@@ -102,7 +130,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CostFilters.
+        /// Gets and sets the property CostFilters. 
+        /// <para>
+        /// The cost filters applied to a budget, such as service or region.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> CostFilters
         {
@@ -117,7 +148,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CostTypes.
+        /// Gets and sets the property CostTypes. 
+        /// <para>
+        /// The types of costs included in this budget.
+        /// </para>
         /// </summary>
         public CostTypes CostTypes
         {
@@ -132,7 +166,30 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimePeriod.
+        /// Gets and sets the property TimePeriod. 
+        /// <para>
+        /// The period of time covered by a budget. Has a start date and an end date. The start
+        /// date must come before the end date. There are no restrictions on the end date. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created your budget and didn't specify a start date, AWS defaults to the start
+        /// of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example,
+        /// if you created your budget on January 24th 2018, chose <code>DAILY</code>, and didn't
+        /// set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
+        /// chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>.
+        /// If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>.
+        /// The defaults are the same for the AWS Billing and Cost Management console and the
+        /// API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can change either date with the <code>UpdateBudget</code> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
+        /// </para>
         /// </summary>
         public TimePeriod TimePeriod
         {
@@ -147,7 +204,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeUnit.
+        /// Gets and sets the property TimeUnit. 
+        /// <para>
+        /// The length of time until a budget resets the actual and forecasted spend.
+        /// </para>
         /// </summary>
         public TimeUnit TimeUnit
         {

@@ -29,7 +29,13 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNotification operation.
-    /// Delete a notification and related subscribers
+    /// Deletes a notification.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Deleting a notification also deletes the subscribers associated with the notification.</b>
+    /// 
+    /// </para>
     /// </summary>
     public partial class DeleteNotificationRequest : AmazonBudgetsRequest
     {
@@ -38,7 +44,11 @@ namespace Amazon.Budgets.Model
         private Notification _notification;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget whose notification you
+        /// want to delete.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -53,7 +63,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget whose notification you want to delete.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -68,7 +81,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification that you want to delete.
+        /// </para>
         /// </summary>
         public Notification Notification
         {

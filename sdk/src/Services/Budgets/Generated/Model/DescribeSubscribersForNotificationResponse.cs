@@ -36,7 +36,10 @@ namespace Amazon.Budgets.Model
         private List<Subscriber> _subscribers = new List<Subscriber>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token that indicates the next set of results that you can retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +54,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscribers.
+        /// Gets and sets the property Subscribers. 
+        /// <para>
+        /// A list of subscribers associated with a notification.
+        /// </para>
         /// </summary>
         public List<Subscriber> Subscribers
         {

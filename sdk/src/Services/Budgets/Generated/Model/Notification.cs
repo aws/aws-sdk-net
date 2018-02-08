@@ -28,8 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// Notification model. Each budget may contain multiple notifications with different
-    /// settings.
+    /// A notification associated with a budget. A budget can have up to five notifications.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Each notification must have at least one subscriber. A notification can have one SNS
+    /// subscriber and up to ten email subscribers, for a total of 11 subscribers.
+    /// </para>
+    ///  
+    /// <para>
+    /// For example, if you have a budget for 200 dollars and you want to be notified when
+    /// you go over 160 dollars, create a notification with the following parameters:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A notificationType of <code>ACTUAL</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A comparisonOperator of <code>GREATER_THAN</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A notification threshold of <code>80</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Notification
     {
@@ -39,7 +63,10 @@ namespace Amazon.Budgets.Model
         private ThresholdType _thresholdType;
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator.
+        /// Gets and sets the property ComparisonOperator. 
+        /// <para>
+        /// The comparison used for this notification.
+        /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
         {
@@ -54,7 +81,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationType.
+        /// Gets and sets the property NotificationType. 
+        /// <para>
+        /// Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for
+        /// how much you are forecasted to spend (<code>FORECASTED</code>).
+        /// </para>
         /// </summary>
         public NotificationType NotificationType
         {
@@ -69,7 +100,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Threshold.
+        /// Gets and sets the property Threshold. 
+        /// <para>
+        /// The threshold associated with a notification. Thresholds are always a percentage.
+        /// </para>
         /// </summary>
         public double Threshold
         {
@@ -84,7 +118,12 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThresholdType.
+        /// Gets and sets the property ThresholdType. 
+        /// <para>
+        /// The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS
+        /// notifies you when you go over the threshold, and for <code>FORECASTED</code> thresholds
+        /// AWS notifies you when you are forecasted to go over the threshold.
+        /// </para>
         /// </summary>
         public ThresholdType ThresholdType
         {

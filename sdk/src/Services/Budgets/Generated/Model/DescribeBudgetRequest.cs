@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBudget operation.
-    /// Get a single budget
+    /// Describes a budget.
     /// </summary>
     public partial class DescribeBudgetRequest : AmazonBudgetsRequest
     {
@@ -37,7 +37,11 @@ namespace Amazon.Budgets.Model
         private string _budgetName;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget that you want a description
+        /// of.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -52,7 +56,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget that you want a description of.
+        /// </para>
         /// </summary>
         public string BudgetName
         {

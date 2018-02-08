@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSubscribersForNotification operation.
-    /// Get subscribers of a notification
+    /// Lists the subscribers associated with a notification.
     /// </summary>
     public partial class DescribeSubscribersForNotificationRequest : AmazonBudgetsRequest
     {
@@ -40,7 +40,11 @@ namespace Amazon.Budgets.Model
         private Notification _notification;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget whose subscribers you
+        /// want descriptions of.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -55,7 +59,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget whose subscribers you want descriptions of.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -70,7 +77,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Optional integer. Specifies the maximum number of results to return in response.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -85,7 +95,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token that indicates the next set of results to retrieve.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -100,7 +113,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification whose subscribers you want to list.
+        /// </para>
         /// </summary>
         public Notification Notification
         {

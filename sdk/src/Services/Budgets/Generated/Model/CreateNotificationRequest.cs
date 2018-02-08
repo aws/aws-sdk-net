@@ -29,7 +29,8 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNotification operation.
-    /// Create a new Notification with subscribers for a budget
+    /// Creates a notification. You must create the budget before you create the associated
+    /// notification.
     /// </summary>
     public partial class CreateNotificationRequest : AmazonBudgetsRequest
     {
@@ -39,7 +40,11 @@ namespace Amazon.Budgets.Model
         private List<Subscriber> _subscribers = new List<Subscriber>();
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget that you want to create
+        /// a notification for.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -54,7 +59,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget that you want AWS to notified you about. Budget names must
+        /// be unique within an account.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -69,7 +78,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification that you want to create.
+        /// </para>
         /// </summary>
         public Notification Notification
         {
@@ -84,7 +96,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscribers.
+        /// Gets and sets the property Subscribers. 
+        /// <para>
+        /// A list of subscribers that you want to associate with the notification. Each notification
+        /// can have one SNS subscriber and up to ten email subscribers.
+        /// </para>
         /// </summary>
         public List<Subscriber> Subscribers
         {

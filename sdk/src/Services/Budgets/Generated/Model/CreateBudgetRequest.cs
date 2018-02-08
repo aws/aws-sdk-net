@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBudget operation.
-    /// Create a new budget
+    /// Creates a budget and, if included, notifications and subscribers.
     /// </summary>
     public partial class CreateBudgetRequest : AmazonBudgetsRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.Budgets.Model
         private List<NotificationWithSubscribers> _notificationsWithSubscribers = new List<NotificationWithSubscribers>();
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -53,7 +56,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Budget.
+        /// Gets and sets the property Budget. 
+        /// <para>
+        /// The budget object that you want to create.
+        /// </para>
         /// </summary>
         public Budget Budget
         {
@@ -68,7 +74,13 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationsWithSubscribers.
+        /// Gets and sets the property NotificationsWithSubscribers. 
+        /// <para>
+        /// A notification that you want to associate with a budget. A budget can have up to five
+        /// notifications, and each notification can have one SNS subscriber and up to ten email
+        /// subscribers. If you include notifications and subscribers in your <code>CreateBudget</code>
+        /// call, AWS creates the notifications and subscribers for you.
+        /// </para>
         /// </summary>
         public List<NotificationWithSubscribers> NotificationsWithSubscribers
         {

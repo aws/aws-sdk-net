@@ -28,8 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A structure that represents either a cost spend or usage spend. Contains an amount
-    /// and a unit.
+    /// The amount of cost or usage being measured for a budget.
+    /// 
+    ///  
+    /// <para>
+    /// For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the
+    /// following parameters:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// An <code>Amount</code> of <code>3</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <code>unit</code> of <code>GB</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Spend
     {
@@ -37,7 +51,11 @@ namespace Amazon.Budgets.Model
         private string _unit;
 
         /// <summary>
-        /// Gets and sets the property Amount.
+        /// Gets and sets the property Amount. 
+        /// <para>
+        /// The cost or usage amount associated with a budget forecast, actual spend, or budget
+        /// threshold.
+        /// </para>
         /// </summary>
         public decimal Amount
         {
@@ -52,7 +70,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Unit.
+        /// Gets and sets the property Unit. 
+        /// <para>
+        /// The unit of measurement used for the budget forecast, actual spend, or budget threshold,
+        /// such as dollars or GB.
+        /// </para>
         /// </summary>
         public string Unit
         {

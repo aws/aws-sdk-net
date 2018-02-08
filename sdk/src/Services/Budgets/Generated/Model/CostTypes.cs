@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// This includes the options for getting the cost of a budget.
+    /// The types of cost included in a budget, such as tax and subscriptions.
     /// </summary>
     public partial class CostTypes
     {
@@ -45,8 +45,14 @@ namespace Amazon.Budgets.Model
         private bool? _useBlended;
 
         /// <summary>
-        /// Gets and sets the property IncludeCredit. A boolean value whether to include credits
-        /// in the cost budget.
+        /// Gets and sets the property IncludeCredit. 
+        /// <para>
+        /// Specifies whether a budget includes credits.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeCredit
         {
@@ -61,8 +67,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeDiscount. A boolean value whether to include discounts
-        /// in the cost budget.
+        /// Gets and sets the property IncludeDiscount. 
+        /// <para>
+        /// Specifies whether a budget includes discounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeDiscount
         {
@@ -77,8 +89,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeOtherSubscription. A boolean value whether to include
-        /// other subscription costs in the cost budget.
+        /// Gets and sets the property IncludeOtherSubscription. 
+        /// <para>
+        /// Specifies whether a budget includes non-RI subscription costs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeOtherSubscription
         {
@@ -93,8 +111,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeRecurring. A boolean value whether to include recurring
-        /// costs in the cost budget.
+        /// Gets and sets the property IncludeRecurring. 
+        /// <para>
+        /// Specifies whether a budget includes recurring fees such as monthly RI fees.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeRecurring
         {
@@ -109,8 +133,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeRefund. A boolean value whether to include refunds
-        /// in the cost budget.
+        /// Gets and sets the property IncludeRefund. 
+        /// <para>
+        /// Specifies whether a budget includes refunds.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeRefund
         {
@@ -125,8 +155,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeSubscription. A boolean value whether to include
-        /// subscriptions in the cost budget.
+        /// Gets and sets the property IncludeSubscription. 
+        /// <para>
+        /// Specifies whether a budget includes subscriptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeSubscription
         {
@@ -141,8 +177,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeSupport. A boolean value whether to include support
-        /// costs in the cost budget.
+        /// Gets and sets the property IncludeSupport. 
+        /// <para>
+        /// Specifies whether a budget includes support subscription fees.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeSupport
         {
@@ -157,8 +199,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeTax. A boolean value whether to include tax in the
-        /// cost budget.
+        /// Gets and sets the property IncludeTax. 
+        /// <para>
+        /// Specifies whether a budget includes taxes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeTax
         {
@@ -173,8 +221,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeUpfront. A boolean value whether to include upfront
-        /// costs in the cost budget.
+        /// Gets and sets the property IncludeUpfront. 
+        /// <para>
+        /// Specifies whether a budget includes upfront RI costs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>true</code>.
+        /// </para>
         /// </summary>
         public bool IncludeUpfront
         {
@@ -189,8 +243,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UseAmortized. A boolean value whether to include amortized
-        /// costs in the cost budget.
+        /// Gets and sets the property UseAmortized. 
+        /// <para>
+        /// Specifies whether a budget uses the amortized rate.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>false</code>.
+        /// </para>
         /// </summary>
         public bool UseAmortized
         {
@@ -205,8 +265,14 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UseBlended. A boolean value whether to use blended costs
-        /// in the cost budget.
+        /// Gets and sets the property UseBlended. 
+        /// <para>
+        /// Specifies whether a budget uses blended rate.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>false</code>.
+        /// </para>
         /// </summary>
         public bool UseBlended
         {

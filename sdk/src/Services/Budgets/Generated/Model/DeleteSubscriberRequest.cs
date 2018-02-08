@@ -29,7 +29,13 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriber operation.
-    /// Delete a Subscriber for a notification
+    /// Deletes a subscriber.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Deleting the last subscriber to a notification also deletes the notification.</b>
+    /// 
+    /// </para>
     /// </summary>
     public partial class DeleteSubscriberRequest : AmazonBudgetsRequest
     {
@@ -39,7 +45,11 @@ namespace Amazon.Budgets.Model
         private Subscriber _subscriber;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget whose subscriber you
+        /// want to delete.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -54,7 +64,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget whose subscriber you want to delete.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -69,7 +82,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification whose subscriber you want to delete.
+        /// </para>
         /// </summary>
         public Notification Notification
         {
@@ -84,7 +100,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscriber.
+        /// Gets and sets the property Subscriber. 
+        /// <para>
+        /// The subscriber that you want to delete.
+        /// </para>
         /// </summary>
         public Subscriber Subscriber
         {

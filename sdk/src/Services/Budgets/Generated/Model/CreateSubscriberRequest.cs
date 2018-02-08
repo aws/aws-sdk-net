@@ -29,7 +29,8 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubscriber operation.
-    /// Create a new Subscriber for a notification
+    /// Creates a subscriber. You must create the associated budget and notification before
+    /// you create the subscriber.
     /// </summary>
     public partial class CreateSubscriberRequest : AmazonBudgetsRequest
     {
@@ -39,7 +40,11 @@ namespace Amazon.Budgets.Model
         private Subscriber _subscriber;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> associated with the budget that you want to create a subscriber
+        /// for.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -54,7 +59,11 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget that you want to subscribe to. Budget names must be unique
+        /// within an account.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -69,7 +78,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification that you want to create a subscriber for.
+        /// </para>
         /// </summary>
         public Notification Notification
         {
@@ -84,7 +96,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscriber.
+        /// Gets and sets the property Subscriber. 
+        /// <para>
+        /// The subscriber that you want to associate with a budget notification.
+        /// </para>
         /// </summary>
         public Subscriber Subscriber
         {

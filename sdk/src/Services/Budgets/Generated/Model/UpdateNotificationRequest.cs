@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNotification operation.
-    /// Update the information about a notification already created
+    /// Updates a notification.
     /// </summary>
     public partial class UpdateNotificationRequest : AmazonBudgetsRequest
     {
@@ -39,7 +39,11 @@ namespace Amazon.Budgets.Model
         private Notification _oldNotification;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The <code>accountId</code> that is associated with the budget whose notification you
+        /// want to update.
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -54,7 +58,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName.
+        /// Gets and sets the property BudgetName. 
+        /// <para>
+        /// The name of the budget whose notification you want to update.
+        /// </para>
         /// </summary>
         public string BudgetName
         {
@@ -69,7 +76,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewNotification.
+        /// Gets and sets the property NewNotification. 
+        /// <para>
+        /// The updated notification to be associated with a budget.
+        /// </para>
         /// </summary>
         public Notification NewNotification
         {
@@ -84,7 +94,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OldNotification.
+        /// Gets and sets the property OldNotification. 
+        /// <para>
+        /// The previous notification associated with a budget.
+        /// </para>
         /// </summary>
         public Notification OldNotification
         {

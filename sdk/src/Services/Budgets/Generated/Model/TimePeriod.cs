@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A time period indicating the start date and end date of a budget.
+    /// The period of time covered by a budget. Has a start date and an end date. The start
+    /// date must come before the end date. There are no restrictions on the end date.
     /// </summary>
     public partial class TimePeriod
     {
@@ -36,7 +37,17 @@ namespace Amazon.Budgets.Model
         private DateTime? _start;
 
         /// <summary>
-        /// Gets and sets the property End.
+        /// Gets and sets the property End. 
+        /// <para>
+        /// The end date for a budget. If you didn't specify an end date, AWS set your end date
+        /// to <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
+        /// and Cost Management console and the API.
+        /// </para>
+        ///  
+        /// <para>
+        /// After the end date, AWS deletes the budget and all associated notifications and subscribers.
+        /// You can change your end date with the <code>UpdateBudget</code> operation.
+        /// </para>
         /// </summary>
         public DateTime End
         {
@@ -51,7 +62,20 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start.
+        /// Gets and sets the property Start. 
+        /// <para>
+        /// The start date for a budget. If you created your budget and didn't specify a start
+        /// date, AWS defaults to the start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY,
+        /// ANNUALLY). For example, if you created your budget on January 24th 2018, chose <code>DAILY</code>,
+        /// and didn't set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>.
+        /// If you chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
+        /// UTC</code>. The defaults are the same for the AWS Billing and Cost Management console
+        /// and the API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can change your start date with the <code>UpdateBudget</code> operation.
+        /// </para>
         /// </summary>
         public DateTime Start
         {

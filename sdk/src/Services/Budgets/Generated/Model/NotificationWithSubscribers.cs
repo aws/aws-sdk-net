@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A structure to relate notification and a list of subscribers who belong to the notification.
+    /// A notification with subscribers. A notification can have one SNS subscriber and up
+    /// to ten email subscribers, for a total of 11 subscribers.
     /// </summary>
     public partial class NotificationWithSubscribers
     {
@@ -36,7 +37,10 @@ namespace Amazon.Budgets.Model
         private List<Subscriber> _subscribers = new List<Subscriber>();
 
         /// <summary>
-        /// Gets and sets the property Notification.
+        /// Gets and sets the property Notification. 
+        /// <para>
+        /// The notification associated with a budget.
+        /// </para>
         /// </summary>
         public Notification Notification
         {
@@ -51,7 +55,10 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscribers.
+        /// Gets and sets the property Subscribers. 
+        /// <para>
+        /// A list of subscribers who are subscribed to this notification.
+        /// </para>
         /// </summary>
         public List<Subscriber> Subscribers
         {
