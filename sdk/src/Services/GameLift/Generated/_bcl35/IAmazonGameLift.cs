@@ -32,10 +32,11 @@ namespace Amazon.GameLift
     /// Amazon GameLift Service 
     /// <para>
     ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
-    /// server solution for their multiplayer games. Amazon GameLift provides tools for the
-    /// following tasks: (1) acquire computing resources and deploy game servers, (2) scale
-    /// game server capacity to meet player demand, (3) host game sessions and manage player
-    /// access, and (4) track in-depth metrics on player usage and server performance.
+    /// server solution for their multiplayer games. Use Amazon GameLift for these tasks:
+    /// (1) set up computing resources and deploy your game servers, (2) run game sessions
+    /// and get players into games, (3) automatically scale your resources to meet player
+    /// demand and manage costs, and (4) track in-depth metrics on game server performance
+    /// and player usage.
     /// </para>
     ///  
     /// <para>
@@ -87,18 +88,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>MORE RESOURCES</b> 
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a> -- Learn more about Amazon GameLift features and how to use them.
-    /// 
+    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a>
+    /// -- Read about Amazon GameLift features and how to use them. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
-    /// Tutorials</a> -- Get started fast with walkthroughs and sample projects.
+    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> -- Get started
+    /// fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -112,9 +112,10 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-    /// GameLift Document History</a> -- See changes to the Amazon GameLift service, SDKs,
-    /// and documentation, as well as links to release notes. 
+    ///  <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and
+    /// <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
+    /// history</a> -- Stay current with updates to the Amazon GameLift service, SDKs, and
+    /// documentation. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -191,6 +192,11 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
+    /// in an existing game session. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>StopMatchmaking</a> -- Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -254,8 +260,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
-    /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
-    /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
+    /// To create a build and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -720,28 +725,52 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates a new Amazon GameLift build from a set of game server binary files stored
-        /// in an Amazon Simple Storage Service (Amazon S3) location. To use this API call, create
-        /// a <code>.zip</code> file containing all of the files for the build and store it in
-        /// an Amazon S3 bucket under your AWS account. For help on packaging your build files
-        /// and creating a build, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-        /// Your Game to Amazon GameLift</a>.
+        /// Creates a new Amazon GameLift build record for your game server binary files and points
+        /// to the location of your game server build files in an Amazon Simple Storage Service
+        /// (Amazon S3) location. 
         /// 
+        ///  
+        /// <para>
+        /// Game server binaries must be combined into a <code>.zip</code> file for use with Amazon
+        /// GameLift. See <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game</a> for more information. 
+        /// </para>
         ///  <important> 
         /// <para>
-        /// Use this API action ONLY if you are storing your game build files in an Amazon S3
-        /// bucket. To create a build using files stored locally, use the CLI command <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
-        /// <code>upload-build</code> </a>, which uploads the build files from a file location
-        /// you specify.
+        /// To create new builds quickly and easily, use the AWS CLI command <b> <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+        /// </b>. This helper command uploads your build and creates a new build record in one
+        /// step, and automatically handles the necessary permissions. See <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+        /// Upload Build Files to Amazon GameLift</a> for more help.
         /// </para>
         ///  </important> 
         /// <para>
-        /// To create a new build using <code>CreateBuild</code>, identify the storage location
-        /// and operating system of your game build. You also have the option of specifying a
-        /// build name and version. If successful, this action creates a new build record with
-        /// an unique build ID and in <code>INITIALIZED</code> status. Use the API call <a>DescribeBuild</a>
-        /// to check the status of your build. A build must be in <code>READY</code> status before
-        /// it can be used to create fleets to host your game.
+        /// The <code>CreateBuild</code> operation should be used only when you need to manually
+        /// upload your build files, as in the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Store a build file in an Amazon S3 bucket under your own AWS account. To use this
+        /// option, you must first give Amazon GameLift access to that Amazon S3 bucket. See <a
+        /// href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+        /// Create a Build with Files in Amazon S3</a> for detailed help. To create a new build
+        /// record using files in your Amazon S3 bucket, call <code>CreateBuild</code> and specify
+        /// a build name, operating system, and the storage location of your game build.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Upload a build file directly to Amazon GameLift's Amazon S3 account. To use this option,
+        /// you first call <code>CreateBuild</code> with a build name and operating system. This
+        /// action creates a new build record and returns an Amazon S3 storage location (bucket
+        /// and key only) and temporary access credentials. Use the credentials to manually upload
+        /// your build file to the storage location (see the Amazon S3 topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+        /// Objects</a>). You can upload files to a location only once. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If successful, this operation creates a new build record with a unique build ID and
+        /// places it in <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to
+        /// check the status of your build. A build must be in <code>READY</code> status before
+        /// it can be used to create fleets.
         /// </para>
         ///  
         /// <para>
@@ -3417,8 +3446,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-        /// an object containing the build properties is returned.
+        /// Retrieves properties for a build. To request a build record, specify a build ID. If
+        /// successful, an object containing the build properties is returned.
         /// 
         ///  
         /// <para>
@@ -3468,8 +3497,8 @@ namespace Amazon.GameLift
         DescribeBuildResponse DescribeBuild(string buildId);
 
         /// <summary>
-        /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-        /// an object containing the build properties is returned.
+        /// Retrieves properties for a build. To request a build record, specify a build ID. If
+        /// successful, an object containing the build properties is returned.
         /// 
         ///  
         /// <para>
@@ -5200,9 +5229,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a set of one or more matchmaking tickets. Use this operation to retrieve
-        /// ticket information, including status and--once a successful match is made--acquire
-        /// connection information for the resulting new game session. 
+        /// Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information,
+        /// including status and--once a successful match is made--acquire connection information
+        /// for the resulting new game session. 
         /// 
         ///  
         /// <para>
@@ -5213,9 +5242,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// You can request data for a one or a list of ticket IDs. If the request is successful,
-        /// a ticket object is returned for each requested ID. When specifying a list of ticket
-        /// IDs, objects are returned only for tickets that currently exist. 
+        /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
+        /// is successful, a ticket object is returned for each requested ID that currently exists.
         /// </para>
         ///  
         /// <para>
@@ -6811,9 +6839,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
-        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
-        /// are required to upload your game build files to Amazon S3.
+        /// Retrieves a fresh set of credentials for use when uploading a new set of game build
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// request. If successful, a new set of credentials are returned, along with the S3 storage
+        /// location associated with the build ID.
+        /// </para>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// 
@@ -6837,9 +6872,16 @@ namespace Amazon.GameLift
         RequestUploadCredentialsResponse RequestUploadCredentials(string buildId);
 
         /// <summary>
-        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
-        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
-        /// are required to upload your game build files to Amazon S3.
+        /// Retrieves a fresh set of credentials for use when uploading a new set of game build
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// request. If successful, a new set of credentials are returned, along with the S3 storage
+        /// location associated with the build ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestUploadCredentials service method.</param>
         /// 
@@ -7045,16 +7087,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a set of game sessions that match a set of search criteria and sorts them
-        /// in a specified order. A game session search is limited to a single fleet. Search results
-        /// include only game sessions that are in <code>ACTIVE</code> status. If you need to
-        /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
-        /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
+        /// Retrieves all active game sessions that match a set of search criteria and sorts them
+        /// in a specified order. You can search or sort by the following game session attributes:
         /// 
-        ///  
-        /// <para>
-        /// You can search or sort by the following game session attributes:
-        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
@@ -7068,6 +7103,21 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>gameSessionProperties</b> -- Custom data defined in a game session's <code>GameProperty</code>
+        /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
+        /// expression must indicate the key and a string to search the data values for. For example,
+        /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
+        /// specify the following: gameSessionProperties.gameMode = "brawl". All custom data values
+        /// are searched as strings.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
+        /// This value is set when requesting a new game session with <a>CreateGameSession</a>
+        /// or updating with <a>UpdateGameSession</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>creationTimeMillis</b> -- Value indicating when a game session was created. It
         /// is expressed in Unix time as milliseconds.
         /// </para>
@@ -7078,26 +7128,12 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
-        /// This value is set when requesting a new game session with <a>CreateGameSession</a>
-        /// or updating with <a>UpdateGameSession</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session
-        /// has reached its maximum number of players. When searching with this attribute, the
-        /// search value must be <code>true</code> or <code>false</code>. It is highly recommended
-        /// that all search requests include this filter attribute to optimize search performance
-        /// and return only sessions that players can join. 
+        /// has reached its maximum number of players. It is highly recommended that all search
+        /// requests include this filter attribute to optimize search performance and return only
+        /// sessions that players can join. 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
-        /// filter expression, a sort expression, or both. Use the pagination parameters to retrieve
-        /// results as a set of sequential pages. If successful, a collection of <a>GameSession</a>
-        /// objects matching the request is returned.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
         /// change quickly as players join sessions and others drop out. Results should be considered
@@ -7105,6 +7141,20 @@ namespace Amazon.GameLift
         /// fill up before a player can join. 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
+        /// filter expression, a sort expression, or both. If successful, a collection of <a>GameSession</a>
+        /// objects matching the request is returned. Use the pagination parameters to retrieve
+        /// results as a set of sequential pages. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can search for game sessions one fleet at a time only. To find game sessions across
+        /// multiple fleets, you must search each fleet separately and combine the results. This
+        /// search feature finds only game sessions that are in <code>ACTIVE</code> status. To
+        /// locate games in statuses other than active, use <a>DescribeGameSessionDetails</a>.
+        /// </para>
+        ///  
         /// <para>
         /// Game-session-related operations include:
         /// </para>
@@ -7362,6 +7412,109 @@ namespace Amazon.GameLift
         /// <returns>Returns a  StartGameSessionPlacementResult from GameLift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         StartGameSessionPlacementResponse EndStartGameSessionPlacement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMatchBackfill
+
+
+        /// <summary>
+        /// Finds new players to fill open slots in an existing game session. This operation can
+        /// be used to add players to matched games that start with fewer than the maximum number
+        /// of players or to replace players when they drop out. By backfilling with the same
+        /// matchmaker used to create the original match, you ensure that new players meet the
+        /// match criteria and maintain a consistent experience throughout the game session. You
+        /// can backfill a match anytime after a game session has been created. 
+        /// 
+        ///  
+        /// <para>
+        /// To request a match backfill, specify a unique ticket ID, the existing game session's
+        /// ARN, a matchmaking configuration, and a set of data that describes all current players
+        /// in the game session. If successful, a match backfill ticket is created and returned
+        /// with status set to QUEUED. The ticket is placed in the matchmaker's ticket pool and
+        /// processed. Track the status of the ticket to respond as needed. For more detail how
+        /// to set up backfilling, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+        /// Set up Match Backfilling</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The process of finding backfill matches is essentially identical to the initial matchmaking
+        /// process. The matchmaker searches the pool and groups tickets together to form potential
+        /// matches, allowing only one backfill ticket per potential match. Once the a match is
+        /// formed, the matchmaker creates player sessions for the new players. All tickets in
+        /// the match are updated with the game session's connection information, and the <a>GameSession</a>
+        /// object is updated to include matchmaker data on the new players. For more detail on
+        /// how match backfill requests are processed, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+        /// How Amazon GameLift FlexMatch Works</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Matchmaking-related operations include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopMatchmaking</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>AcceptMatch</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill service method.</param>
+        /// 
+        /// <returns>The response from the StartMatchBackfill service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        StartMatchBackfillResponse StartMatchBackfill(StartMatchBackfillRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMatchBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMatchBackfill
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        IAsyncResult BeginStartMatchBackfill(StartMatchBackfillRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMatchBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMatchBackfill.</param>
+        /// 
+        /// <returns>Returns a  StartMatchBackfillResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        StartMatchBackfillResponse EndStartMatchBackfill(IAsyncResult asyncResult);
 
         #endregion
         

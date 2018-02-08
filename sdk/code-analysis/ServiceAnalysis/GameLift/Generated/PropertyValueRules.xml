@@ -695,6 +695,24 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.StartMatchBackfillRequest.ConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.StartMatchBackfillRequest.GameSessionArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.StartMatchBackfillRequest.TicketId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.StartMatchmakingRequest.ConfigurationName</property>
     <min>1</min>
     <max>128</max>
@@ -1078,6 +1096,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.MatchmakerData</property>
+    <min>1</min>
+    <max>390000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.MaximumPlayerSessionCount</property>
     <min>0</min>
   </property-value-rule>
@@ -1135,6 +1158,11 @@
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionRegion</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionPlacement.MatchmakerData</property>
+    <min>1</min>
+    <max>390000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.MaximumPlayerSessionCount</property>
@@ -1334,8 +1362,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Player.PlayerId</property>
     <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9-\.]+</pattern>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Player.Team</property>

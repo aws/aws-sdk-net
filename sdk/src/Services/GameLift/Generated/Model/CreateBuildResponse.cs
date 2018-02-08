@@ -57,7 +57,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StorageLocation. 
         /// <para>
-        /// Amazon S3 location specified in the request.
+        /// Amazon S3 location for your game build file, including bucket name and key.
         /// </para>
         /// </summary>
         public S3Location StorageLocation
@@ -75,7 +75,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UploadCredentials. 
         /// <para>
-        /// This element is not currently in use.
+        /// This element is returned only when the operation is called without a storage location.
+        /// It contains credentials to use when you are uploading a build file to an Amazon S3
+        /// bucket that is owned by Amazon GameLift. Credentials have a limited life span. To
+        /// refresh these credentials, call <a>RequestUploadCredentials</a>. 
         /// </para>
         /// </summary>
         public Credentials UploadCredentials

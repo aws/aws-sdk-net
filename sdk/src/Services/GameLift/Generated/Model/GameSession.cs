@@ -97,6 +97,7 @@ namespace Amazon.GameLift.Model
         private string _gameSessionData;
         private string _gameSessionId;
         private string _ipAddress;
+        private string _matchmakerData;
         private int? _maximumPlayerSessionCount;
         private string _name;
         private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
@@ -181,10 +182,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameProperties. 
         /// <para>
-        /// Set of developer-defined properties for a game session, formatted as a set of type:value
-        /// pairs. These properties are included in the <a>GameSession</a> object, which is passed
-        /// to the game server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>).
+        /// Set of custom properties for a game session, formatted as key:value pairs. These properties
+        /// are passed to a game server process in the <a>GameSession</a> object with a request
+        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a Game Session</a>). You can search for active game sessions based on this custom
+        /// data with <a>SearchGameSessions</a>.
         /// </para>
         /// </summary>
         public List<GameProperty> GameProperties
@@ -202,9 +204,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionData. 
         /// <para>
-        /// Set of developer-defined game session properties, formatted as a single string value.
-        /// This data is included in the <a>GameSession</a> object, which is passed to the game
-        /// server with a request to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// Set of custom game session properties, formatted as a single string value. This data
+        /// is passed to a game server process in the <a>GameSession</a> object with a request
+        /// to start a new game session (see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>
@@ -257,6 +259,30 @@ namespace Amazon.GameLift.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchmakerData. 
+        /// <para>
+        /// Information about the matchmaking process that was used to create the game session.
+        /// It is in JSON syntax, formated as a string. In addition the matchmaking configuration
+        /// used, it contains data on all players assigned to the match, including player attributes
+        /// and team assignments. For more details on matchmaker data, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+        /// Data</a>. Matchmaker data is useful when requesting match backfills, and is updated
+        /// whenever new players are added during a successful backfill (see <a>StartMatchBackfill</a>).
+        /// 
+        /// </para>
+        /// </summary>
+        public string MatchmakerData
+        {
+            get { return this._matchmakerData; }
+            set { this._matchmakerData = value; }
+        }
+
+        // Check to see if MatchmakerData property is set
+        internal bool IsSetMatchmakerData()
+        {
+            return this._matchmakerData != null;
         }
 
         /// <summary>

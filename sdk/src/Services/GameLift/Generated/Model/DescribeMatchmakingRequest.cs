@@ -29,9 +29,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMatchmaking operation.
-    /// Retrieves a set of one or more matchmaking tickets. Use this operation to retrieve
-    /// ticket information, including status and--once a successful match is made--acquire
-    /// connection information for the resulting new game session. 
+    /// Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information,
+    /// including status and--once a successful match is made--acquire connection information
+    /// for the resulting new game session. 
     /// 
     ///  
     /// <para>
@@ -42,9 +42,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// You can request data for a one or a list of ticket IDs. If the request is successful,
-    /// a ticket object is returned for each requested ID. When specifying a list of ticket
-    /// IDs, objects are returned only for tickets that currently exist. 
+    /// To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request
+    /// is successful, a ticket object is returned for each requested ID that currently exists.
     /// </para>
     ///  
     /// <para>
@@ -75,8 +74,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TicketIds. 
         /// <para>
-        /// Unique identifier for a matchmaking ticket. To request all existing tickets, leave
-        /// this parameter empty.
+        /// Unique identifier for a matchmaking ticket. You can include up to 10 ID values. 
         /// </para>
         /// </summary>
         public List<string> TicketIds

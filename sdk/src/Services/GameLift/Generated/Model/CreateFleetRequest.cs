@@ -320,9 +320,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricGroups. 
         /// <para>
-        /// Names of metric groups to add this fleet to. Use an existing metric group name to
-        /// add this fleet to the group. Or use a new name to create a new metric group. A fleet
-        /// can only be included in one metric group at a time.
+        /// Name of a metric group to add this fleet to. A metric group tracks metrics across
+        /// all fleets in the group. Use an existing metric group name to add this fleet to the
+        /// group, or use a new name to create a new metric group. A fleet can only be included
+        /// in one metric group at a time.
         /// </para>
         /// </summary>
         public List<string> MetricGroups

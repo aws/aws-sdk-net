@@ -29,8 +29,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBuild operation.
-    /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-    /// an object containing the build properties is returned.
+    /// Retrieves properties for a build. To request a build record, specify a build ID. If
+    /// successful, an object containing the build properties is returned.
     /// 
     ///  
     /// <para>

@@ -29,16 +29,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchGameSessions operation.
-    /// Retrieves a set of game sessions that match a set of search criteria and sorts them
-    /// in a specified order. A game session search is limited to a single fleet. Search results
-    /// include only game sessions that are in <code>ACTIVE</code> status. If you need to
-    /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
-    /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
+    /// Retrieves all active game sessions that match a set of search criteria and sorts them
+    /// in a specified order. You can search or sort by the following game session attributes:
     /// 
-    ///  
-    /// <para>
-    /// You can search or sort by the following game session attributes:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
@@ -52,6 +45,21 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <b>gameSessionProperties</b> -- Custom data defined in a game session's <code>GameProperty</code>
+    /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
+    /// expression must indicate the key and a string to search the data values for. For example,
+    /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
+    /// specify the following: gameSessionProperties.gameMode = "brawl". All custom data values
+    /// are searched as strings.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
+    /// This value is set when requesting a new game session with <a>CreateGameSession</a>
+    /// or updating with <a>UpdateGameSession</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <b>creationTimeMillis</b> -- Value indicating when a game session was created. It
     /// is expressed in Unix time as milliseconds.
     /// </para>
@@ -62,26 +70,12 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
-    /// This value is set when requesting a new game session with <a>CreateGameSession</a>
-    /// or updating with <a>UpdateGameSession</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game session
-    /// has reached its maximum number of players. When searching with this attribute, the
-    /// search value must be <code>true</code> or <code>false</code>. It is highly recommended
-    /// that all search requests include this filter attribute to optimize search performance
-    /// and return only sessions that players can join. 
+    /// has reached its maximum number of players. It is highly recommended that all search
+    /// requests include this filter attribute to optimize search performance and return only
+    /// sessions that players can join. 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
-    /// filter expression, a sort expression, or both. Use the pagination parameters to retrieve
-    /// results as a set of sequential pages. If successful, a collection of <a>GameSession</a>
-    /// objects matching the request is returned.
-    /// </para>
-    ///  <note> 
+    ///  </li> </ul> <note> 
     /// <para>
     /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
     /// change quickly as players join sessions and others drop out. Results should be considered
@@ -89,6 +83,20 @@ namespace Amazon.GameLift.Model
     /// fill up before a player can join. 
     /// </para>
     ///  </note> 
+    /// <para>
+    /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
+    /// filter expression, a sort expression, or both. If successful, a collection of <a>GameSession</a>
+    /// objects matching the request is returned. Use the pagination parameters to retrieve
+    /// results as a set of sequential pages. 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can search for game sessions one fleet at a time only. To find game sessions across
+    /// multiple fleets, you must search each fleet separately and combine the results. This
+    /// search feature finds only game sessions that are in <code>ACTIVE</code> status. To
+    /// locate games in statuses other than active, use <a>DescribeGameSessionDetails</a>.
+    /// </para>
+    ///  
     /// <para>
     /// Game-session-related operations include:
     /// </para>
@@ -177,8 +185,8 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -187,12 +195,12 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Value</b> -- Value to be searched for. Values can be numbers, boolean values (true/false)
-        /// or strings. String values are case sensitive, enclosed in single quotes. Special characters
-        /// must be escaped. Boolean and string values can only be used with the comparators <code>=</code>
-        /// and <code>&lt;&gt;</code>. For example, the following filter expression searches on
-        /// <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s
-        /// Awesome Game 1'"</code>. 
+        ///  <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false)
+        /// or strings depending on the operand. String values are case sensitive and must be
+        /// enclosed in single quotes. Special characters must be escaped. Boolean and string
+        /// values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>.
+        /// For example, the following filter expression searches on <code>gameSessionName</code>:
+        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -314,8 +322,8 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>,
-        /// <code>maximumSessions</code>, <code>hasAvailablePlayerSessions</code>.
+        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
+        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

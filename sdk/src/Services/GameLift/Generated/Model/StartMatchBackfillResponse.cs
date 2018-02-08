@@ -28,38 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the RequestUploadCredentials operation.
-    /// Retrieves a fresh set of credentials for use when uploading a new set of game build
-    /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
-    /// see <a>CreateBuild</a>.
-    /// 
-    ///  
-    /// <para>
-    /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
-    /// request. If successful, a new set of credentials are returned, along with the S3 storage
-    /// location associated with the build ID.
-    /// </para>
+    /// Represents the returned data in response to a request action.
     /// </summary>
-    public partial class RequestUploadCredentialsRequest : AmazonGameLiftRequest
+    public partial class StartMatchBackfillResponse : AmazonWebServiceResponse
     {
-        private string _buildId;
+        private MatchmakingTicket _matchmakingTicket;
 
         /// <summary>
-        /// Gets and sets the property BuildId. 
+        /// Gets and sets the property MatchmakingTicket. 
         /// <para>
-        /// Unique identifier for a build to get credentials for.
+        /// Ticket representing the backfill matchmaking request. This object includes the information
+        /// in the request, ticket status, and match results as generated during the matchmaking
+        /// process.
         /// </para>
         /// </summary>
-        public string BuildId
+        public MatchmakingTicket MatchmakingTicket
         {
-            get { return this._buildId; }
-            set { this._buildId = value; }
+            get { return this._matchmakingTicket; }
+            set { this._matchmakingTicket = value; }
         }
 
-        // Check to see if BuildId property is set
-        internal bool IsSetBuildId()
+        // Check to see if MatchmakingTicket property is set
+        internal bool IsSetMatchmakingTicket()
         {
-            return this._buildId != null;
+            return this._matchmakingTicket != null;
         }
 
     }

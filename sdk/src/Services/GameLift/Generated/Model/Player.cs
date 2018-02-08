@@ -68,10 +68,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerAttributes. 
         /// <para>
-        /// Collection of name:value pairs containing player information for use in matchmaking.
-        /// Player attribute names need to match <i>playerAttributes</i> names in the rule set
-        /// being used. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode":
-        /// {"S": "deathmatch"}}</code>.
+        /// Collection of key:value pairs containing player information for use in matchmaking.
+        /// Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking
+        /// rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S":
+        /// "deathmatch"}}</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> PlayerAttributes

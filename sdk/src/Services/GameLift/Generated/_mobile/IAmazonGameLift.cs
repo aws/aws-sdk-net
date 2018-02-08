@@ -34,10 +34,11 @@ namespace Amazon.GameLift
     /// Amazon GameLift Service 
     /// <para>
     ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
-    /// server solution for their multiplayer games. Amazon GameLift provides tools for the
-    /// following tasks: (1) acquire computing resources and deploy game servers, (2) scale
-    /// game server capacity to meet player demand, (3) host game sessions and manage player
-    /// access, and (4) track in-depth metrics on player usage and server performance.
+    /// server solution for their multiplayer games. Use Amazon GameLift for these tasks:
+    /// (1) set up computing resources and deploy your game servers, (2) run game sessions
+    /// and get players into games, (3) automatically scale your resources to meet player
+    /// demand and manage costs, and (4) track in-depth metrics on game server performance
+    /// and player usage.
     /// </para>
     ///  
     /// <para>
@@ -89,18 +90,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>MORE RESOURCES</b> 
+    ///  <b>Learn more</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a> -- Learn more about Amazon GameLift features and how to use them.
-    /// 
+    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a>
+    /// -- Read about Amazon GameLift features and how to use them. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
-    /// Tutorials</a> -- Get started fast with walkthroughs and sample projects.
+    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> -- Get started
+    /// fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -114,9 +114,10 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
-    /// GameLift Document History</a> -- See changes to the Amazon GameLift service, SDKs,
-    /// and documentation, as well as links to release notes. 
+    ///  <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and
+    /// <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
+    /// history</a> -- Stay current with updates to the Amazon GameLift service, SDKs, and
+    /// documentation. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -193,6 +194,11 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
+    /// in an existing game session. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>StopMatchmaking</a> -- Cancel a matchmaking request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -256,8 +262,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket.
-    /// (Update uploading permissions with <a>RequestUploadCredentials</a>.) To create a build
-    /// and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
+    /// To create a build and upload files from a local path, use the AWS CLI command <code>upload-build</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1357,8 +1362,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
-        /// an object containing the build properties is returned.
+        /// Retrieves properties for a build. To request a build record, specify a build ID. If
+        /// successful, an object containing the build properties is returned.
         /// 
         ///  
         /// <para>
@@ -2183,9 +2188,16 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
-        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
-        /// are required to upload your game build files to Amazon S3.
+        /// Retrieves a fresh set of credentials for use when uploading a new set of game build
+        /// files to Amazon GameLift's Amazon S3. This is done as part of the build creation process;
+        /// see <a>CreateBuild</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// request. If successful, a new set of credentials are returned, along with the S3 storage
+        /// location associated with the build ID.
+        /// </para>
         /// </summary>
         /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// <param name="cancellationToken">
@@ -2336,6 +2348,23 @@ namespace Amazon.GameLift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         Task<StartGameSessionPlacementResponse> StartGameSessionPlacementAsync(StartGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartMatchBackfill
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMatchBackfill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMatchBackfill operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
+        Task<StartMatchBackfillResponse> StartMatchBackfillAsync(StartMatchBackfillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

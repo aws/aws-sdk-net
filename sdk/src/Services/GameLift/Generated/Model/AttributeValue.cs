@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Values for use in <a>Player</a> attribute type:value pairs. This object lets you specify
+    /// Values for use in <a>Player</a> attribute key:value pairs. This object lets you specify
     /// an attribute value using any of the valid data types: string, number, string array
     /// or data map. Each <code>AttributeValue</code> object can use only one of the available
     /// properties.
@@ -79,8 +79,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property SDM. 
         /// <para>
-        /// For a map of up to 10 type:value pairs. Maximum length for each string value is 100
-        /// characters. 
+        /// For a map of up to 10 data type:value pairs. Maximum length for each string value
+        /// is 100 characters. 
         /// </para>
         /// </summary>
         public Dictionary<string, double> SDM
