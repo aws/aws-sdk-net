@@ -57,6 +57,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContentType);
             }
 
+            if(requestObject.IsSetGroupNumber())
+            {
+                context.Writer.WritePropertyName("groupNumber");
+                context.Writer.Write(requestObject.GroupNumber);
+            }
+
         }
 
         /// <summary>

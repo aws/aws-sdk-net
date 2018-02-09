@@ -76,6 +76,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("groupNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.GroupNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

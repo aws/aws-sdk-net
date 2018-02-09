@@ -34,6 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     {
         private string _content;
         private ContentType _contentType;
+        private int? _groupNumber;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -69,6 +70,25 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupNumber. 
+        /// <para>
+        /// Identifies the message group that the message belongs to. When a group is assigned
+        /// to a message, Amazon Lex returns one message from each group in the response.
+        /// </para>
+        /// </summary>
+        public int GroupNumber
+        {
+            get { return this._groupNumber.GetValueOrDefault(); }
+            set { this._groupNumber = value; }
+        }
+
+        // Check to see if GroupNumber property is set
+        internal bool IsSetGroupNumber()
+        {
+            return this._groupNumber.HasValue; 
         }
 
     }

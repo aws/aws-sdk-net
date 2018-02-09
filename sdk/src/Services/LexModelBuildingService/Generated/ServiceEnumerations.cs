@@ -89,6 +89,10 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         public static readonly ChannelType Facebook = new ChannelType("Facebook");
         /// <summary>
+        /// Constant Kik for ChannelType
+        /// </summary>
+        public static readonly ChannelType Kik = new ChannelType("Kik");
+        /// <summary>
         /// Constant Slack for ChannelType
         /// </summary>
         public static readonly ChannelType Slack = new ChannelType("Slack");
@@ -138,6 +142,10 @@ namespace Amazon.LexModelBuildingService
     public class ContentType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CustomPayload for ContentType
+        /// </summary>
+        public static readonly ContentType CustomPayload = new ContentType("CustomPayload");
         /// <summary>
         /// Constant PlainText for ContentType
         /// </summary>
