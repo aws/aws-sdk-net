@@ -444,11 +444,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data to make available to the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+        /// The Base64-encoded user data to make available to the instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
         /// Commands on Your Linux Instance at Launch</a> (Linux) and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
-        /// User Data</a> (Windows). If you are using a command line tool, base64-encoding is
-        /// performed for you and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text.
+        /// User Data</a> (Windows).
         /// </para>
         /// </summary>
         public string UserData

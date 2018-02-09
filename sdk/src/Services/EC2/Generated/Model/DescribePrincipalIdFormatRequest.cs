@@ -28,12 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeIdFormat operation.
-    /// Describes the ID format settings for your resources on a per-region basis, for example,
-    /// to view which resource types are enabled for longer IDs. This request only returns
-    /// information about resource types whose ID formats can be modified; it does not return
-    /// information about other resource types.
+    /// Container for the parameters to the DescribePrincipalIdFormat operation.
+    /// Describes the ID format settings for the root user and all IAM roles and IAM users
+    /// that have explicitly specified a longer ID (17-character ID) preference. 
     /// 
+    ///  
+    /// <para>
+    /// By default, all IAM roles and IAM users default to the same ID settings as the root
+    /// user, unless they explicitly override the settings. This request is useful for identifying
+    /// those IAM users and IAM roles that have overridden the default ID settings.
+    /// </para>
     ///  
     /// <para>
     /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
@@ -47,22 +51,52 @@ namespace Amazon.EC2.Model
     /// | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
     /// 
     /// </para>
-    ///  
-    /// <para>
-    /// These settings apply to the IAM user who makes the request; they do not apply to the
-    /// entire AWS account. By default, an IAM user defaults to the same settings as the root
-    /// user, unless they explicitly override the settings by running the <a>ModifyIdFormat</a>
-    /// command. Resources created with longer IDs are visible to all IAM users, regardless
-    /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
-    /// command for the resource type.
-    /// </para>
     /// </summary>
-    public partial class DescribeIdFormatRequest : AmazonEC2Request
+    public partial class DescribePrincipalIdFormatRequest : AmazonEC2Request
     {
-        private string _resource;
+        private int? _maxResults;
+        private string _nextToken;
+        private List<string> _resources = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another call with the returned NextToken value. 
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resources. 
         /// <para>
         /// The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code>
         /// | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code>
@@ -75,16 +109,16 @@ namespace Amazon.EC2.Model
         /// | <code>vpc-peering-connection</code> 
         /// </para>
         /// </summary>
-        public string Resource
+        public List<string> Resources
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._resources; }
+            set { this._resources = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
         {
-            return this._resource != null;
+            return this._resources != null && this._resources.Count > 0; 
         }
 
     }

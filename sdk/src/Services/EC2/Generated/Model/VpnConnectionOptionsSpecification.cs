@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicate whether the VPN connection uses static routes only. If you are creating a
         /// VPN connection for a device that does not support BGP, you must specify <code>true</code>.
+        /// Use <a>CreateVpnConnectionRoute</a> to create a static route.
         /// </para>
         ///  
         /// <para>

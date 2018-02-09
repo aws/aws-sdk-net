@@ -230,9 +230,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The user data to make available to the instance. If you are using an AWS SDK or command
-        /// line tool, Base64-encoding is performed for you, and you can load the text from a
-        /// file. Otherwise, you must provide Base64-encoded text.
+        /// The Base64-encoded user data to make available to the instance.
         /// </para>
         /// </summary>
         public UserData UserData

@@ -28,18 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeSpotPriceHistory.
+    /// This is the response object from the DescribePrincipalIdFormat operation.
     /// </summary>
-    public partial class DescribeSpotPriceHistoryResponse : AmazonWebServiceResponse
+    public partial class DescribePrincipalIdFormatResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpotPrice> _spotPriceHistory = new List<SpotPrice>();
+        private List<PrincipalIdFormat> _principals = new List<PrincipalIdFormat>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token required to retrieve the next set of results. This value is an empty string
-        /// when there are no more results to return.
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -55,21 +55,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpotPriceHistory. 
+        /// Gets and sets the property Principals. 
         /// <para>
-        /// The historical Spot prices.
+        /// Information about the ID format settings for the ARN.
         /// </para>
         /// </summary>
-        public List<SpotPrice> SpotPriceHistory
+        public List<PrincipalIdFormat> Principals
         {
-            get { return this._spotPriceHistory; }
-            set { this._spotPriceHistory = value; }
+            get { return this._principals; }
+            set { this._principals = value; }
         }
 
-        // Check to see if SpotPriceHistory property is set
-        internal bool IsSetSpotPriceHistory()
+        // Check to see if Principals property is set
+        internal bool IsSetPrincipals()
         {
-            return this._spotPriceHistory != null && this._spotPriceHistory.Count > 0; 
+            return this._principals != null && this._principals.Count > 0; 
         }
 
     }

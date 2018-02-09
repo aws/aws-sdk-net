@@ -2333,6 +2333,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeAggregateIdFormatMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAggregateIdFormat");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAggregateIdFormatRequest>();
+            var marshaller = new DescribeAggregateIdFormatRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeAggregateIdFormatResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAggregateIdFormatResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeAvailabilityZonesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAvailabilityZones");
@@ -3236,6 +3260,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribePrefixListsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribePrefixListsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribePrincipalIdFormatMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePrincipalIdFormat");
+
+            var request = InstantiateClassGenerator.Execute<DescribePrincipalIdFormatRequest>();
+            var marshaller = new DescribePrincipalIdFormatRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribePrincipalIdFormatResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribePrincipalIdFormatResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

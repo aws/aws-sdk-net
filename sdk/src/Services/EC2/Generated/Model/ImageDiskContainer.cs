@@ -82,8 +82,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
-        /// 
+        /// Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> 
         /// </para>
         /// </summary>
         public string Format

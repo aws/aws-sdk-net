@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeSpotPriceHistory.
+    /// PrincipalIdFormat description
     /// </summary>
-    public partial class DescribeSpotPriceHistoryResponse : AmazonWebServiceResponse
+    public partial class PrincipalIdFormat
     {
-        private string _nextToken;
-        private List<SpotPrice> _spotPriceHistory = new List<SpotPrice>();
+        private string _arn;
+        private List<IdFormat> _statuses = new List<IdFormat>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The token required to retrieve the next set of results. This value is an empty string
-        /// when there are no more results to return.
+        /// PrincipalIdFormatARN description
         /// </para>
         /// </summary>
-        public string NextToken
+        public string Arn
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._nextToken != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SpotPriceHistory. 
+        /// Gets and sets the property Statuses. 
         /// <para>
-        /// The historical Spot prices.
+        /// PrincipalIdFormatStatuses description
         /// </para>
         /// </summary>
-        public List<SpotPrice> SpotPriceHistory
+        public List<IdFormat> Statuses
         {
-            get { return this._spotPriceHistory; }
-            set { this._spotPriceHistory = value; }
+            get { return this._statuses; }
+            set { this._statuses = value; }
         }
 
-        // Check to see if SpotPriceHistory property is set
-        internal bool IsSetSpotPriceHistory()
+        // Check to see if Statuses property is set
+        internal bool IsSetStatuses()
         {
-            return this._spotPriceHistory != null && this._spotPriceHistory.Count > 0; 
+            return this._statuses != null && this._statuses.Count > 0; 
         }
 
     }

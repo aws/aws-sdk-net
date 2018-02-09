@@ -4093,6 +4093,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAggregateIdFormat
+
+
+        /// <summary>
+        /// Describes the longer ID format settings for all resource types in a specific region.
+        /// This request is useful for performing a quick audit to determine whether a specific
+        /// region is fully opted in for longer IDs (17-character IDs).
+        /// 
+        ///  
+        /// <para>
+        /// This request only returns information about resource types that support longer IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
+        /// | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+        /// | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+        /// <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code>
+        /// | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAggregateIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        DescribeAggregateIdFormatResponse DescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAggregateIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
+        Task<DescribeAggregateIdFormatResponse> DescribeAggregateIdFormatAsync(DescribeAggregateIdFormatRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAvailabilityZones
 
 
@@ -4801,8 +4847,16 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. 
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
+        /// | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+        /// | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+        /// <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code>
+        /// | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -4842,8 +4896,16 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. 
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
+        /// | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+        /// | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+        /// <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code>
+        /// | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -5833,6 +5895,54 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         Task<DescribePrefixListsResponse> DescribePrefixListsAsync(DescribePrefixListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribePrincipalIdFormat
+
+
+        /// <summary>
+        /// Describes the ID format settings for the root user and all IAM roles and IAM users
+        /// that have explicitly specified a longer ID (17-character ID) preference. 
+        /// 
+        ///  
+        /// <para>
+        /// By default, all IAM roles and IAM users default to the same ID settings as the root
+        /// user, unless they explicitly override the settings. This request is useful for identifying
+        /// those IAM users and IAM roles that have overridden the default ID settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
+        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
+        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
+        /// | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code>
+        /// | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+        /// | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+        /// <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code>
+        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code>
+        /// | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrincipalIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        DescribePrincipalIdFormatResponse DescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrincipalIdFormat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
+        Task<DescribePrincipalIdFormatResponse> DescribePrincipalIdFormatAsync(DescribePrincipalIdFormatRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9118,8 +9228,20 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// This request can only be used to modify longer ID settings for resource types that
+        /// are within the opt-in period. Resources currently in their opt-in period include:
+        /// <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>internet-gateway</code> |
+        /// <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>route-table</code>
+        /// | <code>route-table-association</code> | <code>security-group</code> | <code>subnet</code>
+        /// | <code>subnet-cidr-block-association</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-peering-connection</code>.. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
         /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         ///  
@@ -9161,9 +9283,20 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the ID format for the specified resource on a per-region basis. You can specify
         /// that resources should receive longer IDs (17-character IDs) when they are created.
-        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
-        /// | <code>snapshot</code> | <code>volume</code>.
         /// 
+        ///  
+        /// <para>
+        /// This request can only be used to modify longer ID settings for resource types that
+        /// are within the opt-in period. Resources currently in their opt-in period include:
+        /// <code>bundle</code> | <code>conversion-task</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
+        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
+        /// | <code>image</code> | <code>import-task</code> | <code>internet-gateway</code> |
+        /// <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
+        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>route-table</code>
+        /// | <code>route-table-association</code> | <code>security-group</code> | <code>subnet</code>
+        /// | <code>subnet-cidr-block-association</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
+        /// | <code>vpc-peering-connection</code>.
+        /// </para>
         ///  
         /// <para>
         /// This setting applies to the IAM user who makes the request; it does not apply to the
