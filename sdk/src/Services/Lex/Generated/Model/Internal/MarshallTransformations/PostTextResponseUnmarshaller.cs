@@ -69,6 +69,12 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                     response.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("messageFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MessageFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("responseCard", targetDepth))
                 {
                     var unmarshaller = ResponseCardUnmarshaller.Instance;

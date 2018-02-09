@@ -58,6 +58,8 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 response.IntentName = context.ResponseData.GetHeaderValue("x-amz-lex-intent-name");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-message"))
                 response.Message = context.ResponseData.GetHeaderValue("x-amz-lex-message");
+            if (context.ResponseData.IsHeaderPresent("x-amz-lex-message-format"))
+                response.MessageFormat = context.ResponseData.GetHeaderValue("x-amz-lex-message-format");
             if (context.ResponseData.IsHeaderPresent("x-amz-lex-session-attributes"))
             {
                 var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-amz-lex-session-attributes"));

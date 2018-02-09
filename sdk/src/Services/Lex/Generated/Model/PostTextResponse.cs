@@ -35,6 +35,7 @@ namespace Amazon.Lex.Model
         private DialogState _dialogState;
         private string _intentName;
         private string _message;
+        private MessageFormatType _messageFormat;
         private ResponseCard _responseCard;
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
@@ -139,17 +140,29 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  A message to convey to the user. It can come from the bot's configuration or a code
-        /// hook (Lambda function). If the current intent is not configured with a code hook or
-        /// the code hook returned <code>Delegate</code> as the <code>dialogAction.type</code>
-        /// in its response, then Amazon Lex decides the next course of action and selects an
-        /// appropriate message from the bot configuration based on the current user interaction
-        /// context. For example, if Amazon Lex is not able to understand the user input, it uses
-        /// a clarification prompt message (for more information, see the Error Handling section
-        /// in the Amazon Lex console). Another example: if the intent requires confirmation before
-        /// fulfillment, then Amazon Lex uses the confirmation prompt message in the intent configuration.
-        /// If the code hook returns a message, Amazon Lex passes it as-is in its response to
-        /// the client. 
+        /// The message to convey to the user. The message can come from the bot's configuration
+        /// or from a Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the intent is not configured with a Lambda function, or if the Lambda function
+        /// returned <code>Delegate</code> as the <code>dialogAction.type</code> its response,
+        /// Amazon Lex decides on the next course of action and selects an appropriate message
+        /// from the bot's configuration based on the current interaction context. For example,
+        /// if Amazon Lex isn't able to understand user input, it uses a clarification prompt
+        /// message.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an intent you can assign messages to groups. When messages are assigned
+        /// to groups Amazon Lex returns one message from each group in the response. The message
+        /// field is an escaped JSON string containing the messages. For more information about
+        /// the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the Lambda function returns a message, Amazon Lex passes it to the client in its
+        /// response.
         /// </para>
         /// </summary>
         public string Message
@@ -162,6 +175,44 @@ namespace Amazon.Lex.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageFormat. 
+        /// <para>
+        /// The format of the response message. One of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PlainText</code> - The message contains plain UTF-8 text.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CustomPayload</code> - The message is a custom format defined by the Lambda
+        /// function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SSML</code> - The message contains text formatted for voice output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Composite</code> - The message contains an escaped JSON object containing one
+        /// or more messages from the groups that messages were assigned to when the intent was
+        /// created.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MessageFormatType MessageFormat
+        {
+            get { return this._messageFormat; }
+            set { this._messageFormat = value; }
+        }
+
+        // Check to see if MessageFormat property is set
+        internal bool IsSetMessageFormat()
+        {
+            return this._messageFormat != null;
         }
 
         /// <summary>
