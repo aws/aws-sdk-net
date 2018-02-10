@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.230.0",
+    "ProductVersion" : "3.3.231.0",
     "CoreVersion"    : "3.3.21.11",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.42.1",
+            "Version" : "3.3.43.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -729,7 +729,7 @@
             "InPreview"               : false
         },
         "Lex"                             : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -777,7 +777,7 @@
             "InPreview"               : false
         },
         "LexModelBuildingService"         : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"

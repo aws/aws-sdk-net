@@ -1,3 +1,11 @@
+### 3.3.231.0 (2018-02-09 22:53 UTC)
+* EC2 (3.3.43.0)
+	* Users can now better understand the longer ID opt-in status of their account using the two new APIs DescribeAggregateIdFormat and DescribePrincipalIdFormat
+* Lex (3.3.3.0)
+	* You can now define a response for your Amazon Lex chatbot directly from the AWS console. A response consists of messages dynamically selected from a group of pre-defined messages, populated by the developer.
+* LexModelBuildingService (3.3.5.0)
+	* You can now define a response for your Amazon Lex chatbot directly from the AWS console. A response consists of messages dynamically selected from a group of pre-defined messages, populated by the developer.
+
 ### 3.3.230.0 (2018-02-08 23:07 UTC)
 * AppStream (3.3.9.0)
 	* Adds support for allowing customers to provide a redirect URL for a stack. Users will be redirected to the link provided by the admin at the end of their streaming session. 
