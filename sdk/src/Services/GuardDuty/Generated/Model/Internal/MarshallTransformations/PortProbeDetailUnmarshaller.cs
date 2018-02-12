@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Action Object
+    /// Response Unmarshaller for PortProbeDetail Object
     /// </summary>  
-    public class ActionUnmarshaller : IUnmarshaller<Action, XmlUnmarshallerContext>, IUnmarshaller<Action, JsonUnmarshallerContext>
+    public class PortProbeDetailUnmarshaller : IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>, IUnmarshaller<PortProbeDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Action IUnmarshaller<Action, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PortProbeDetail IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Action Unmarshall(JsonUnmarshallerContext context)
+        public PortProbeDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Action unmarshalledObject = new Action();
+            PortProbeDetail unmarshalledObject = new PortProbeDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("actionType", targetDepth))
+                if (context.TestExpression("localPortDetails", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LocalPortDetailsUnmarshaller.Instance;
+                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("awsApiCallAction", targetDepth))
+                if (context.TestExpression("remoteIpDetails", targetDepth))
                 {
-                    var unmarshaller = AwsApiCallActionUnmarshaller.Instance;
-                    unmarshalledObject.AwsApiCallAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dnsRequestAction", targetDepth))
-                {
-                    var unmarshaller = DnsRequestActionUnmarshaller.Instance;
-                    unmarshalledObject.DnsRequestAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("networkConnectionAction", targetDepth))
-                {
-                    var unmarshaller = NetworkConnectionActionUnmarshaller.Instance;
-                    unmarshalledObject.NetworkConnectionAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("portProbeAction", targetDepth))
-                {
-                    var unmarshaller = PortProbeActionUnmarshaller.Instance;
-                    unmarshalledObject.PortProbeAction = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActionUnmarshaller _instance = new ActionUnmarshaller();        
+        private static PortProbeDetailUnmarshaller _instance = new PortProbeDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionUnmarshaller Instance
+        public static PortProbeDetailUnmarshaller Instance
         {
             get
             {

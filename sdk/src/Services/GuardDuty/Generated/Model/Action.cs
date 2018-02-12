@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
         private AwsApiCallAction _awsApiCallAction;
         private DnsRequestAction _dnsRequestAction;
         private NetworkConnectionAction _networkConnectionAction;
+        private PortProbeAction _portProbeAction;
 
         /// <summary>
         /// Gets and sets the property ActionType. GuardDuty Finding activity type.
@@ -98,6 +99,22 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetNetworkConnectionAction()
         {
             return this._networkConnectionAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortProbeAction. Information about the PORT_PROBE action
+        /// described in this finding.
+        /// </summary>
+        public PortProbeAction PortProbeAction
+        {
+            get { return this._portProbeAction; }
+            set { this._portProbeAction = value; }
+        }
+
+        // Check to see if PortProbeAction property is set
+        internal bool IsSetPortProbeAction()
+        {
+            return this._portProbeAction != null;
         }
 
     }
