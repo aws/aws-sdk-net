@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// If your intent is to replace your original DB instance with the new, restored DB instance,
     /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
-    /// action. RDS does not allow two DB instances with the same name. Once you have renamed
+    /// action. RDS doesn't allow two DB instances with the same name. Once you have renamed
     /// your original DB instance with a different identifier, then you can pass the original
     /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
     /// action. The result is that you will replace the original DB instance with the DB instance
@@ -51,6 +51,12 @@ namespace Amazon.RDS.Model
     /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
     /// must be the ARN of the shared DB snapshot.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+    /// <a>RestoreDBClusterFromSnapshot</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
@@ -381,10 +387,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default: <code>false</code> 
@@ -421,14 +423,6 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>aurora</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-postgresql</code> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

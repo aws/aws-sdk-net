@@ -111,6 +111,22 @@ namespace Amazon.RDS.Model
         /// a DB cluster running a database engine and engine version compatible with that DB
         /// cluster parameter group family.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>aurora-postgresql9.6</code> 
+        /// </para>
         /// </summary>
         public string DBParameterGroupFamily
         {

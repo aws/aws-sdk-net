@@ -281,7 +281,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> 
+        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
+        /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -303,11 +304,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Aurora</b> 
+        ///  <b>Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.10a</code> 
+        /// Example: <code>5.6.10a</code>, <code>5.7.12</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.6.3</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

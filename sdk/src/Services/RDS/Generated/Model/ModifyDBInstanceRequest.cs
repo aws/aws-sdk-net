@@ -120,7 +120,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowMajorVersionUpgrade. 
         /// <para>
-        /// Indicates that major version upgrades are allowed. Changing this parameter does not
+        /// Indicates that major version upgrades are allowed. Changing this parameter doesn't
         /// result in an outage and the change is asynchronously applied as soon as possible.
         /// </para>
         ///  
@@ -179,7 +179,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
         ///  Indicates that minor version upgrades are applied automatically to the DB instance
-        /// during the maintenance window. Changing this parameter does not result in an outage
+        /// during the maintenance window. Changing this parameter doesn't result in an outage
         /// except in the following case and the change is asynchronously applied as soon as possible.
         /// An outage will result if this parameter is set to <code>true</code> during the maintenance
         /// window, and a newer minor version is available, and RDS has enabled auto patching
@@ -379,7 +379,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBParameterGroupName. 
         /// <para>
         /// The name of the DB parameter group to apply to the DB instance. Changing this setting
-        /// does not result in an outage. The parameter group name itself is changed immediately,
+        /// doesn't result in an outage. The parameter group name itself is changed immediately,
         /// but the actual parameter changes are not applied until you reboot the instance without
         /// failover. The db instance will NOT be rebooted automatically and the parameter changes
         /// will NOT be applied during the next maintenance window.
@@ -516,7 +516,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
         /// A list of DB security groups to authorize on this DB instance. Changing this setting
-        /// does not result in an outage and the change is asynchronously applied as soon as possible.
+        /// doesn't result in an outage and the change is asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
@@ -720,7 +720,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Changing this setting does not result in an outage and the change is applied during
+        /// Changing this setting doesn't result in an outage and the change is applied during
         /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
         /// set to <code>true</code> for this request. If you are migrating from Provisioned IOPS
         /// to standard storage, set this value to 0. The DB instance will require a reboot for
@@ -795,7 +795,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  Changing this parameter does not result in an outage and the change is asynchronously
+        ///  Changing this parameter doesn't result in an outage and the change is asynchronously
         /// applied as soon as possible. Between the time of the request and the completion of
         /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
         /// element of the operation response. 
@@ -931,10 +931,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter does
-        /// not result in an outage and the change is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for
-        /// this request. 
+        /// Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't
+        /// result in an outage and the change is applied during the next maintenance window unless
+        /// the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
+        /// 
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -995,8 +995,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         ///  Indicates that the DB instance should be associated with the specified option group.
-        /// Changing this parameter does not result in an outage except in the following case
-        /// and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// Changing this parameter doesn't result in an outage except in the following case and
+        /// the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
         /// parameter is set to <code>true</code> for this request. If the parameter change results
         /// in an option group that enables OEM, this change can cause a brief (sub-second) period
         /// during which new connections are rejected but existing connections are not interrupted.
@@ -1046,7 +1046,7 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The daily time range during which automated backups are created if automated backups
         /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
-        /// this parameter does not result in an outage and the change is asynchronously applied
+        /// this parameter doesn't result in an outage and the change is asynchronously applied
         /// as soon as possible. 
         /// </para>
         ///  
@@ -1096,8 +1096,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// The weekly time range (in UTC) during which system maintenance can occur, which might
-        /// result in an outage. Changing this parameter does not result in an outage, except
-        /// in the following situation, and the change is asynchronously applied as soon as possible.
+        /// result in an outage. Changing this parameter doesn't result in an outage, except in
+        /// the following situation, and the change is asynchronously applied as soon as possible.
         /// If there are pending actions that cause a reboot, and the maintenance window is changed
         /// to include the current time, then changing this parameter will cause a reboot of the
         /// DB instance. If moving this window to the current time, there must be at least 30

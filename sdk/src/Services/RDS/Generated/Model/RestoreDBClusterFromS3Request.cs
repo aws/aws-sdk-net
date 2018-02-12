@@ -295,11 +295,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Aurora</b> 
+        ///  <b>Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
         /// Example: <code>5.6.10a</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.6.3</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

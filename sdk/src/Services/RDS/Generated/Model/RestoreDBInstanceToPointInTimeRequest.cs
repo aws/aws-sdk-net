@@ -42,6 +42,12 @@ namespace Amazon.RDS.Model
     /// that is associated with mirroring; in this case, the instance becomes a mirrored deployment
     /// and not a single-AZ deployment.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+    /// <a>RestoreDBClusterToPointInTime</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
     {
@@ -304,10 +310,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// For MySQL 5.7, minor version 5.7.16 or higher
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default: <code>false</code> 
@@ -343,14 +345,6 @@ namespace Amazon.RDS.Model
         /// Valid Values:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>aurora</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-postgresql</code> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>mariadb</code> 
         /// </para>

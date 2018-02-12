@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This command does not take any parameters.
+    /// This command doesn't take any parameters.
     /// </para>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonRDSRequest
