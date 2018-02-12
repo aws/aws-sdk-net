@@ -131,7 +131,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+        /// The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
         /// username, not an alias (such as email address or phone number), even if you specified
         /// an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code>
         /// API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be

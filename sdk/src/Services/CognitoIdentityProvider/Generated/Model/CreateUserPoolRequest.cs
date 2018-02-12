@@ -185,6 +185,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Lambda trigger configuration information for the new user pool.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In a push model, event sources (such as Amazon S3 and custom applications) need permission
+        /// to invoke a function. So you will need to make an extra call to add permission for
+        /// these event sources to invoke your Lambda function.
+        /// </para>
+        ///   
+        /// <para>
+        /// For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+        /// AddPermission </a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For adding permission using the AWS CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+        /// add-permission </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LambdaConfigType LambdaConfig
         {

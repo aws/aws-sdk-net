@@ -93,6 +93,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PreTokenGeneration);
             }
 
+            if(requestObject.IsSetUserMigration())
+            {
+                context.Writer.WritePropertyName("UserMigration");
+                context.Writer.Write(requestObject.UserMigration);
+            }
+
             if(requestObject.IsSetVerifyAuthChallengeResponse())
             {
                 context.Writer.WritePropertyName("VerifyAuthChallengeResponse");

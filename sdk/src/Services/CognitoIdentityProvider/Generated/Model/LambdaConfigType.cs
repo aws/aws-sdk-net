@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _preAuthentication;
         private string _preSignUp;
         private string _preTokenGeneration;
+        private string _userMigration;
         private string _verifyAuthChallengeResponse;
 
         /// <summary>
@@ -184,6 +185,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPreTokenGeneration()
         {
             return this._preTokenGeneration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserMigration. 
+        /// <para>
+        /// The user migration Lambda config type.
+        /// </para>
+        /// </summary>
+        public string UserMigration
+        {
+            get { return this._userMigration; }
+            set { this._userMigration = value; }
+        }
+
+        // Check to see if UserMigration property is set
+        internal bool IsSetUserMigration()
+        {
+            return this._userMigration != null;
         }
 
         /// <summary>

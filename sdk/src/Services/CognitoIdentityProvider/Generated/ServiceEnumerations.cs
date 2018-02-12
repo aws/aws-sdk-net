@@ -271,6 +271,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly AuthFlowType REFRESH_TOKEN_AUTH = new AuthFlowType("REFRESH_TOKEN_AUTH");
         /// <summary>
+        /// Constant USER_PASSWORD_AUTH for AuthFlowType
+        /// </summary>
+        public static readonly AuthFlowType USER_PASSWORD_AUTH = new AuthFlowType("USER_PASSWORD_AUTH");
+        /// <summary>
         /// Constant USER_SRP_AUTH for AuthFlowType
         /// </summary>
         public static readonly AuthFlowType USER_SRP_AUTH = new AuthFlowType("USER_SRP_AUTH");
@@ -926,6 +930,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant CUSTOM_AUTH_FLOW_ONLY for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType CUSTOM_AUTH_FLOW_ONLY = new ExplicitAuthFlowsType("CUSTOM_AUTH_FLOW_ONLY");
+        /// <summary>
+        /// Constant USER_PASSWORD_AUTH for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType USER_PASSWORD_AUTH = new ExplicitAuthFlowsType("USER_PASSWORD_AUTH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

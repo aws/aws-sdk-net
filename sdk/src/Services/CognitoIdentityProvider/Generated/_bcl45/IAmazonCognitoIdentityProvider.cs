@@ -3352,6 +3352,40 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetSigningCertificate
+
+
+        /// <summary>
+        /// This method takes a user pool ID, and returns the signing certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningCertificate service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        GetSigningCertificateResponse GetSigningCertificate(GetSigningCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSigningCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        Task<GetSigningCertificateResponse> GetSigningCertificateAsync(GetSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetUICustomization
 
 

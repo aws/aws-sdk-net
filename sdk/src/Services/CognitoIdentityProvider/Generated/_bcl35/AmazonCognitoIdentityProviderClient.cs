@@ -5072,6 +5072,66 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetSigningCertificate
+
+        /// <summary>
+        /// This method takes a user pool ID, and returns the signing certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningCertificate service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual GetSigningCertificateResponse GetSigningCertificate(GetSigningCertificateRequest request)
+        {
+            var marshaller = new GetSigningCertificateRequestMarshaller();
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSigningCertificateRequest,GetSigningCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSigningCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSigningCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual IAsyncResult BeginGetSigningCertificate(GetSigningCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetSigningCertificateRequestMarshaller();
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSigningCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSigningCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSigningCertificate.</param>
+        /// 
+        /// <returns>Returns a  GetSigningCertificateResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual GetSigningCertificateResponse EndGetSigningCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSigningCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUICustomization
 
         /// <summary>

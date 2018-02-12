@@ -4248,6 +4248,52 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GetSigningCertificate
+
+
+        /// <summary>
+        /// This method takes a user pool ID, and returns the signing certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningCertificate service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual GetSigningCertificateResponse GetSigningCertificate(GetSigningCertificateRequest request)
+        {
+            var marshaller = new GetSigningCertificateRequestMarshaller();
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<GetSigningCertificateRequest,GetSigningCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSigningCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">REST API Reference for GetSigningCertificate Operation</seealso>
+        public virtual Task<GetSigningCertificateResponse> GetSigningCertificateAsync(GetSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSigningCertificateRequestMarshaller();
+            var unmarshaller = GetSigningCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSigningCertificateRequest,GetSigningCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetUICustomization
 
 

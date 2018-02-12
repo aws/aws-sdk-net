@@ -75,6 +75,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code>
         /// and return the SRP variables to be used for next challenge execution.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code>
+        /// and return the next challenge or tokens.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Valid values include:
@@ -92,6 +97,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>CUSTOM_AUTH</code>: Custom authentication flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD
+        /// are passed directly. If a user migration Lambda trigger is set, this flow will invoke
+        /// the user migration Lambda if the USERNAME is not found in the user pool. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -124,9 +135,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+        /// For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
         /// <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-        /// <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> 
+        /// <code>DEVICE_KEY</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -78,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user pool username.
+        /// The user pool username or an alias.
         /// </para>
         /// </summary>
         public string Username
