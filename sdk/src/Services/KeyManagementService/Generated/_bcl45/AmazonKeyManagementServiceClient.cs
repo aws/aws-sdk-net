@@ -3976,6 +3976,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
@@ -4040,6 +4043,9 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
@@ -4109,6 +4115,9 @@ namespace Amazon.KeyManagementService
         /// <returns>The response from the RetireGrant service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
