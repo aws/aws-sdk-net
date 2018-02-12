@@ -32,7 +32,7 @@ namespace Amazon.EC2
     /// Amazon Elastic Compute Cloud 
     /// <para>
     /// Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in
-    /// the AWS Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front,
+    /// the AWS Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front,
     /// so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
@@ -5131,7 +5131,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 
@@ -5171,7 +5171,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+        ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
         /// run.
         /// </para>
         ///  </li> <li> 

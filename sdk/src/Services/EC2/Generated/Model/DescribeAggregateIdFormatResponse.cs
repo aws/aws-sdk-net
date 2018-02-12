@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UseLongIdsAggregated. 
         /// <para>
-        /// Indicates whether all resrouces types in the region are configured to use longer IDs.
-        /// This value will only be <code>true</code> if all users are configured to use longer
-        /// IDs for all resources types in the region.
+        /// Indicates whether all resource types in the region are configured to use longer IDs.
+        /// This value is only <code>true</code> if all users are configured to use longer IDs
+        /// for all resources types in the region.
         /// </para>
         /// </summary>
         public bool UseLongIdsAggregated

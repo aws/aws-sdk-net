@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>max-instances</code>: The maximum number of On-Demand instances that you can
+    ///  <code>max-instances</code>: The maximum number of On-Demand Instances that you can
     /// run.
     /// </para>
     ///  </li> <li> 

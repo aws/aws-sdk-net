@@ -3563,6 +3563,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Associated for NetworkInterfaceStatus
+        /// </summary>
+        public static readonly NetworkInterfaceStatus Associated = new NetworkInterfaceStatus("associated");
+        /// <summary>
         /// Constant Attaching for NetworkInterfaceStatus
         /// </summary>
         public static readonly NetworkInterfaceStatus Attaching = new NetworkInterfaceStatus("attaching");
