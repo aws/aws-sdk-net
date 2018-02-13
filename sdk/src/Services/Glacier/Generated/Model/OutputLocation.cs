@@ -37,7 +37,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// Describes an S3 location that will receive the results of the restore request.
+        /// Describes an S3 location that will receive the results of the job request.
         /// </para>
         /// </summary>
         public S3Location S3

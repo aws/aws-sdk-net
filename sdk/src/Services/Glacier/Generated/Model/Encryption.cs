@@ -60,7 +60,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property KMSContext. 
         /// <para>
         /// Optional. If the encryption type is <code>aws:kms</code>, you can use this value to
-        /// specify the encryption context for the restore results.
+        /// specify the encryption context for the job results.
         /// </para>
         /// </summary>
         public string KMSContext

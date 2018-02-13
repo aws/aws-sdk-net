@@ -229,9 +229,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The retrieval option to use for a select or archive retrieval job. Valid values are
-        /// <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code>
-        /// is the default.
+        /// The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
+        /// <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
         /// </para>
         /// </summary>
         public string Tier

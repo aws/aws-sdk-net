@@ -63,7 +63,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the bucket where the restore results are stored.
+        /// The name of the Amazon S3 bucket where the job results are stored.
         /// </para>
         /// </summary>
         public string BucketName
@@ -81,7 +81,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property CannedACL. 
         /// <para>
-        /// The canned ACL to apply to the restore results.
+        /// The canned access control list (ACL) to apply to the job results.
         /// </para>
         /// </summary>
         public CannedACL CannedACL
@@ -118,7 +118,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix that is prepended to the restore results for this request.
+        /// The prefix that is prepended to the results for this request.
         /// </para>
         /// </summary>
         public string Prefix
@@ -136,7 +136,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// The storage class used to store the restore results.
+        /// The storage class used to store the job results.
         /// </para>
         /// </summary>
         public StorageClass StorageClass
@@ -154,7 +154,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Tagging. 
         /// <para>
-        /// The tag-set that is applied to the restore results.
+        /// The tag-set that is applied to the job results.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tagging
@@ -172,7 +172,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property UserMetadata. 
         /// <para>
-        /// A map of metadata to store with the restore results in Amazon S3.
+        /// A map of metadata to store with the job results in Amazon S3.
         /// </para>
         /// </summary>
         public Dictionary<string, string> UserMetadata
