@@ -1,3 +1,9 @@
+### 3.3.233.0 (2018-02-13 22:15 UTC)
+* Glacier (3.3.2.1)
+	* Documentation updates for glacier
+* Route53 (3.3.14.0)
+	* Added support for creating Private Hosted Zones and metric-based healthchecks in the ap-northeast-3 region for whitelisted customers.
+
 ### 3.3.232.0 (2018-02-12 23:33 UTC)
 * CognitoIdentityProvider (3.3.9.0)
 	* Support for user migration using AWS Lambda trigger. Support to obtain signing certificate for user pools.

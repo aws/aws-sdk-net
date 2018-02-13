@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.232.0",
+    "ProductVersion" : "3.3.233.0",
     "CoreVersion"    : "3.3.21.11",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -207,7 +207,7 @@
             "InPreview"               : false
         },
         "Glacier"              : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.2.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0",
@@ -297,7 +297,7 @@
             "InPreview"               : false
         },
         "Route53"              : {
-            "Version" : "3.3.13.0",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
