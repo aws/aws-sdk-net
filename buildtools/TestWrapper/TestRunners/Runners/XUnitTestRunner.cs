@@ -11,7 +11,7 @@ namespace TestWrapper
 {
     public class XUnitTestRunner : TestRunner
     {
-        public XUnitTestRunner(FileInfo testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
+        public XUnitTestRunner(string testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
             : base(testSuiteExecutable, testContainer, workingDirectory: null)
         {
         }

@@ -20,7 +20,7 @@ namespace TestWrapper
         public ITaskItem Configuration { get; set; }
 
         protected FileInfo TestContainerFileInfo { get { return new FileInfo(TestContainer.ItemSpec); } }
-        protected FileInfo TestSuiteRunnerFileInfo { get { return new FileInfo(TestSuiteRunner.ItemSpec); } }
+        protected string TestSuiteRunnerFileInfo { get { return TestSuiteRunner.ItemSpec; } }
         protected string[] CategoriesArray
         {
             get

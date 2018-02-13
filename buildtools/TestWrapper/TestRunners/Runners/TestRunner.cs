@@ -26,9 +26,8 @@ namespace TestWrapper.TestRunners
             '\t',
         };
 
-        protected TestRunner(FileInfo testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
+        protected TestRunner(string testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
         {
-            ValidateFileInfo(testSuiteExecutable, nameof(testSuiteExecutable));
             ValidateFileInfo(testContainer, nameof(testContainer));
             if (workingDirectory != null && !workingDirectory.Exists)
             {
@@ -46,7 +45,7 @@ namespace TestWrapper.TestRunners
         public string RunnerName { get; set; }
         public int MaxTestRuns { get; set; }
         public int MaxConsecutiveFailures { get; set; }
-        public FileInfo TestSuiteExecutable { get; private set; }
+        public string TestSuiteExecutable { get; private set; }
         public FileInfo TestContainer { get; private set; }
         public DirectoryInfo WorkingDirectory { get; private set; }
         public string[] Categories { get; set; }
@@ -206,12 +205,11 @@ namespace TestWrapper.TestRunners
         protected int InvokeTestSuite(string args, out string log)
         {
             var workingDir = WorkingDirectory.FullName;
-            var file = TestSuiteExecutable.FullName;
+            var file = TestSuiteExecutable;
             var si = new ProcessStartInfo
             {
                 FileName = file,
                 Arguments = args,
-                WorkingDirectory = workingDir,
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true
