@@ -96,6 +96,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCreateVersion())
+                {
+                    context.Writer.WritePropertyName("createVersion");
+                    context.Writer.Write(publicRequest.CreateVersion);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

@@ -971,6 +971,38 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  GetImport
+
+        internal virtual GetImportResponse GetImport(GetImportRequest request)
+        {
+            var marshaller = new GetImportRequestMarshaller();
+            var unmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportRequest,GetImportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual Task<GetImportResponse> GetImportAsync(GetImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetImportRequestMarshaller();
+            var unmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetImportRequest,GetImportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIntent
 
         internal virtual GetIntentResponse GetIntent(GetIntentRequest request)
@@ -1318,6 +1350,38 @@ namespace Amazon.LexModelBuildingService
             var unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutSlotTypeRequest,PutSlotTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+        internal virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var marshaller = new StartImportRequestMarshaller();
+            var unmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportRequest,StartImportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartImportRequestMarshaller();
+            var unmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartImportRequest,StartImportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -106,6 +106,7 @@ namespace Amazon.LexModelBuildingService.Model
         private string _checksum;
         private Statement _conclusionStatement;
         private Prompt _confirmationPrompt;
+        private bool? _createVersion;
         private string _description;
         private CodeHook _dialogCodeHook;
         private FollowUpPrompt _followUpPrompt;
@@ -206,6 +207,21 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetConfirmationPrompt()
         {
             return this._confirmationPrompt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateVersion.
+        /// </summary>
+        public bool CreateVersion
+        {
+            get { return this._createVersion.GetValueOrDefault(); }
+            set { this._createVersion = value; }
+        }
+
+        // Check to see if CreateVersion property is set
+        internal bool IsSetCreateVersion()
+        {
+            return this._createVersion.HasValue; 
         }
 
         /// <summary>

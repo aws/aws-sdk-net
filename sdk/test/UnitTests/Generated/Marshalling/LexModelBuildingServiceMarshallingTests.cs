@@ -645,6 +645,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("LexModelBuildingService")]
+        public void GetImportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetImport");
+
+            var request = InstantiateClassGenerator.Execute<GetImportRequest>();
+            var marshaller = new GetImportRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetImport", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetImportResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetImportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LexModelBuildingService")]
         public void GetIntentMarshallTest()
         {
             var operation = service_model.FindOperation("GetIntent");
@@ -989,6 +1021,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutSlotTypeResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutSlotTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LexModelBuildingService")]
+        public void StartImportMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartImport");
+
+            var request = InstantiateClassGenerator.Execute<StartImportRequest>();
+            var marshaller = new StartImportRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartImport", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartImportResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartImportResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

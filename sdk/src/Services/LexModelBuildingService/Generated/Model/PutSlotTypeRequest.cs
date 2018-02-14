@@ -54,6 +54,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class PutSlotTypeRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _checksum;
+        private bool? _createVersion;
         private string _description;
         private List<EnumerationValue> _enumerationValues = new List<EnumerationValue>();
         private string _name;
@@ -87,6 +88,21 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetChecksum()
         {
             return this._checksum != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateVersion.
+        /// </summary>
+        public bool CreateVersion
+        {
+            get { return this._createVersion.GetValueOrDefault(); }
+            set { this._createVersion = value; }
+        }
+
+        // Check to see if CreateVersion property is set
+        internal bool IsSetCreateVersion()
+        {
+            return this._createVersion.HasValue; 
         }
 
         /// <summary>

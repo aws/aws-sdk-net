@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutSlotType operation
+    /// Response Unmarshaller for GetImport operation
     /// </summary>  
-    public class PutSlotTypeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetImportResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,40 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutSlotTypeResponse response = new PutSlotTypeResponse();
+            GetImportResponse response = new GetImportResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("checksum", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Checksum = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createVersion", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CreateVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("importId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.ImportId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("enumerationValues", targetDepth))
+                if (context.TestExpression("importStatus", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EnumerationValue, EnumerationValueUnmarshaller>(EnumerationValueUnmarshaller.Instance);
-                    response.EnumerationValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ImportStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
+                if (context.TestExpression("mergeStrategy", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MergeStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -93,16 +87,10 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("valueSelectionStrategy", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ValueSelectionStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Version = unmarshaller.Unmarshall(context);
+                    response.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,10 +112,6 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-            {
-                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
             {
                 return new InternalFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -136,16 +120,16 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionFailedException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
-                return new PreconditionFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonLexModelBuildingServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PutSlotTypeResponseUnmarshaller _instance = new PutSlotTypeResponseUnmarshaller();        
+        private static GetImportResponseUnmarshaller _instance = new GetImportResponseUnmarshaller();        
 
-        internal static PutSlotTypeResponseUnmarshaller GetInstance()
+        internal static GetImportResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +137,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutSlotTypeResponseUnmarshaller Instance
+        public static GetImportResponseUnmarshaller Instance
         {
             get
             {

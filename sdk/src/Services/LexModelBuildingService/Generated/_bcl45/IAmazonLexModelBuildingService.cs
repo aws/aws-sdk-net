@@ -1393,6 +1393,46 @@ namespace Amazon.LexModelBuildingService
 
         #endregion
         
+        #region  GetImport
+
+
+        /// <summary>
+        /// Gets information about an import job started with the <code>StartImport</code> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
+        /// 
+        /// <returns>The response from the GetImport service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        GetImportResponse GetImport(GetImportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        Task<GetImportResponse> GetImportAsync(GetImportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetIntent
 
 
@@ -2066,6 +2106,43 @@ namespace Amazon.LexModelBuildingService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
         Task<PutSlotTypeResponse> PutSlotTypeAsync(PutSlotTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartImport
+
+
+        /// <summary>
+        /// Starts a job to import a resource to Amazon Lex.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by LexModelBuildingService.</returns>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.InternalFailureException">
+        /// An internal Amazon Lex error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelBuildingService.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        StartImportResponse StartImport(StartImportRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        Task<StartImportResponse> StartImportAsync(StartImportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

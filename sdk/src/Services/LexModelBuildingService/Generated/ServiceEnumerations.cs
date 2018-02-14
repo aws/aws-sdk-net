@@ -254,6 +254,10 @@ namespace Amazon.LexModelBuildingService
         /// Constant ALEXA_SKILLS_KIT for ExportType
         /// </summary>
         public static readonly ExportType ALEXA_SKILLS_KIT = new ExportType("ALEXA_SKILLS_KIT");
+        /// <summary>
+        /// Constant LEX for ExportType
+        /// </summary>
+        public static readonly ExportType LEX = new ExportType("LEX");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -341,11 +345,73 @@ namespace Amazon.LexModelBuildingService
 
 
     /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETE = new ImportStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Locale.
     /// </summary>
     public class Locale : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DeDE for Locale
+        /// </summary>
+        public static readonly Locale DeDE = new Locale("de-DE");
+        /// <summary>
+        /// Constant EnGB for Locale
+        /// </summary>
+        public static readonly Locale EnGB = new Locale("en-GB");
         /// <summary>
         /// Constant EnUS for Locale
         /// </summary>
@@ -380,6 +446,56 @@ namespace Amazon.LexModelBuildingService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Locale(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MergeStrategy.
+    /// </summary>
+    public class MergeStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL_ON_CONFLICT for MergeStrategy
+        /// </summary>
+        public static readonly MergeStrategy FAIL_ON_CONFLICT = new MergeStrategy("FAIL_ON_CONFLICT");
+        /// <summary>
+        /// Constant OVERWRITE_LATEST for MergeStrategy
+        /// </summary>
+        public static readonly MergeStrategy OVERWRITE_LATEST = new MergeStrategy("OVERWRITE_LATEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MergeStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MergeStrategy FindValue(string value)
+        {
+            return FindValue<MergeStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MergeStrategy(string value)
         {
             return FindValue(value);
         }
@@ -504,6 +620,14 @@ namespace Amazon.LexModelBuildingService
         /// Constant BOT for ResourceType
         /// </summary>
         public static readonly ResourceType BOT = new ResourceType("BOT");
+        /// <summary>
+        /// Constant INTENT for ResourceType
+        /// </summary>
+        public static readonly ResourceType INTENT = new ResourceType("INTENT");
+        /// <summary>
+        /// Constant SLOT_TYPE for ResourceType
+        /// </summary>
+        public static readonly ResourceType SLOT_TYPE = new ResourceType("SLOT_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

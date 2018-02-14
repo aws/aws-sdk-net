@@ -81,6 +81,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createVersion", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.CreateVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

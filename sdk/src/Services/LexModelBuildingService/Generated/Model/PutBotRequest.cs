@@ -57,6 +57,7 @@ namespace Amazon.LexModelBuildingService.Model
         private string _checksum;
         private bool? _childDirected;
         private Prompt _clarificationPrompt;
+        private bool? _createVersion;
         private string _description;
         private int? _idleSessionTTLInSeconds;
         private List<Intent> _intents = new List<Intent>();
@@ -200,6 +201,21 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateVersion.
+        /// </summary>
+        public bool CreateVersion
+        {
+            get { return this._createVersion.GetValueOrDefault(); }
+            set { this._createVersion = value; }
+        }
+
+        // Check to see if CreateVersion property is set
+        internal bool IsSetCreateVersion()
+        {
+            return this._createVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the bot.
@@ -322,13 +338,13 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ProcessBehavior. 
         /// <para>
-        /// If you set the <code>processBehavior</code> element to <code>Build</code>, Amazon
-        /// Lex builds the bot so that it can be run. If you set the element to <code>Save</code>Amazon
-        /// Lex saves the bot, but doesn't build it. 
+        /// If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon
+        /// Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code>
+        /// Amazon Lex saves the bot, but doesn't build it. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this value, the default value is <code>Save</code>.
+        /// If you don't specify this value, the default value is <code>BUILD</code>.
         /// </para>
         /// </summary>
         public ProcessBehavior ProcessBehavior

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutSlotType Request Marshaller
+    /// StartImport Request Marshaller
     /// </summary>       
-    public class PutSlotTypeRequestMarshaller : IMarshaller<IRequest, PutSlotTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartImportRequestMarshaller : IMarshaller<IRequest, StartImportRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutSlotTypeRequest)input);
+            return this.Marshall((StartImportRequest)input);
         }
 
         /// <summary>
@@ -52,60 +52,35 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutSlotTypeRequest publicRequest)
+        public IRequest Marshall(StartImportRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelBuildingService");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/slottypes/{name}/versions/$LATEST";
-            if (!publicRequest.IsSetName())
-                throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
+            string uriResourcePath = "/imports/";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChecksum())
+                if(publicRequest.IsSetMergeStrategy())
                 {
-                    context.Writer.WritePropertyName("checksum");
-                    context.Writer.Write(publicRequest.Checksum);
+                    context.Writer.WritePropertyName("mergeStrategy");
+                    context.Writer.Write(publicRequest.MergeStrategy);
                 }
 
-                if(publicRequest.IsSetCreateVersion())
+                if(publicRequest.IsSetPayload())
                 {
-                    context.Writer.WritePropertyName("createVersion");
-                    context.Writer.Write(publicRequest.CreateVersion);
+                    context.Writer.WritePropertyName("payload");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.Payload));
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetResourceType())
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnumerationValues())
-                {
-                    context.Writer.WritePropertyName("enumerationValues");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEnumerationValuesListValue in publicRequest.EnumerationValues)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnumerationValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEnumerationValuesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetValueSelectionStrategy())
-                {
-                    context.Writer.WritePropertyName("valueSelectionStrategy");
-                    context.Writer.Write(publicRequest.ValueSelectionStrategy);
+                    context.Writer.WritePropertyName("resourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
                 }
 
         
