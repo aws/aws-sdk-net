@@ -5,10 +5,6 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppSync.Model.CreateGraphqlApiRequest.Name</property>
-    <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.DataSourceName</property>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
@@ -129,10 +125,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateDataSourceRequest.Name</property>
-    <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppSync.Model.UpdateGraphqlApiRequest.Name</property>
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -173,6 +173,24 @@ namespace Amazon.AppSync.Model
         /// <para>
         /// The type of the data source.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>NONE</b>: There is no data source. This type is used when the required information
+        /// can be computed on the fly without connecting to a back-end data source.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DataSourceType Type
         {

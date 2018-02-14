@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateGraphqlApi operation.
+    /// This is the response object from the UpdateApiKey operation.
     /// </summary>
-    public partial class UpdateGraphqlApiResponse : AmazonWebServiceResponse
+    public partial class UpdateApiKeyResponse : AmazonWebServiceResponse
     {
-        private GraphqlApi _graphqlApi;
+        private ApiKey _apiKey;
 
         /// <summary>
-        /// Gets and sets the property GraphqlApi. 
+        /// Gets and sets the property ApiKey. 
         /// <para>
-        /// The updated <code>GraphqlApi</code> object.
+        /// The API key.
         /// </para>
         /// </summary>
-        public GraphqlApi GraphqlApi
+        public ApiKey ApiKey
         {
-            get { return this._graphqlApi; }
-            set { this._graphqlApi = value; }
+            get { return this._apiKey; }
+            set { this._apiKey = value; }
         }
 
-        // Check to see if GraphqlApi property is set
-        internal bool IsSetGraphqlApi()
+        // Check to see if ApiKey property is set
+        internal bool IsSetApiKey()
         {
-            return this._graphqlApi != null;
+            return this._apiKey != null;
         }
 
     }

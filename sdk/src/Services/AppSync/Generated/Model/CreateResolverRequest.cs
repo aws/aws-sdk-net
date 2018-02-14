@@ -107,9 +107,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// A resolver use a request mapping template to convert a GraphQL expression into a format
-        /// that a data source can understand. Mapping templates are written in Apache Velocity
-        /// Template Language (VTL).
+        /// A resolver uses a request mapping template to convert a GraphQL expression into a
+        /// format that a data source can understand. Mapping templates are written in Apache
+        /// Velocity Template Language (VTL).
         /// </para>
         /// </summary>
         public string RequestMappingTemplate

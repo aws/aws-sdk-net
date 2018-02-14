@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApiKey Request Marshaller
+    /// UpdateApiKey Request Marshaller
     /// </summary>       
-    public class CreateApiKeyRequestMarshaller : IMarshaller<IRequest, CreateApiKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateApiKeyRequestMarshaller : IMarshaller<IRequest, UpdateApiKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApiKeyRequest)input);
+            return this.Marshall((UpdateApiKeyRequest)input);
         }
 
         /// <summary>
@@ -52,16 +52,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApiKeyRequest publicRequest)
+        public IRequest Marshall(UpdateApiKeyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/apis/{apiId}/apikeys";
+            string uriResourcePath = "/v1/apis/{apiId}/apikeys/{id}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromString(publicRequest.ApiId));
+            if (!publicRequest.IsSetId())
+                throw new AmazonAppSyncException("Request object does not have required field Id set");
+            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateApiKey operation
+    /// Response Unmarshaller for UpdateApiKey operation
     /// </summary>  
-    public class CreateApiKeyResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateApiKeyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateApiKeyResponse response = new CreateApiKeyResponse();
+            UpdateApiKeyResponse response = new UpdateApiKeyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -72,10 +72,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ApiKeyLimitExceededException"))
-            {
-                return new ApiKeyLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ApiKeyValidityOutOfBoundsException"))
             {
                 return new ApiKeyValidityOutOfBoundsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -92,10 +88,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
                 return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -107,9 +99,9 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             return new AmazonAppSyncException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateApiKeyResponseUnmarshaller _instance = new CreateApiKeyResponseUnmarshaller();        
+        private static UpdateApiKeyResponseUnmarshaller _instance = new UpdateApiKeyResponseUnmarshaller();        
 
-        internal static CreateApiKeyResponseUnmarshaller GetInstance()
+        internal static UpdateApiKeyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +109,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApiKeyResponseUnmarshaller Instance
+        public static UpdateApiKeyResponseUnmarshaller Instance
         {
             get
             {

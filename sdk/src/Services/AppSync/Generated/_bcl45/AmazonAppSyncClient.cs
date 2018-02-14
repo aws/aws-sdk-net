@@ -238,6 +238,9 @@ namespace Amazon.AppSync
         /// <exception cref="Amazon.AppSync.Model.ApiKeyLimitExceededException">
         /// The API key exceeded a limit. Try your request again.
         /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
+        /// The API key expiration must be set to a value between 1 and 365 days.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
         /// is missing. Check the field values, and try again.
@@ -1424,6 +1427,64 @@ namespace Amazon.AppSync
             var unmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartSchemaCreationRequest,StartSchemaCreationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApiKey
+
+
+        /// <summary>
+        /// Updates an API key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApiKey service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
+        /// The API key expiration must be set to a value between 1 and 365 days.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
+        public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
+        {
+            var marshaller = new UpdateApiKeyRequestMarshaller();
+            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApiKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
+        public virtual Task<UpdateApiKeyResponse> UpdateApiKeyAsync(UpdateApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateApiKeyRequestMarshaller();
+            var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

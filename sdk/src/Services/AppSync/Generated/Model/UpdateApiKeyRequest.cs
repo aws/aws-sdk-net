@@ -28,19 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateApiKey operation.
-    /// Creates a unique key that you can distribute to clients who are executing your API.
+    /// Container for the parameters to the UpdateApiKey operation.
+    /// Updates an API key.
     /// </summary>
-    public partial class CreateApiKeyRequest : AmazonAppSyncRequest
+    public partial class UpdateApiKeyRequest : AmazonAppSyncRequest
     {
         private string _apiId;
         private string _description;
         private long? _expires;
+        private string _id;
 
         /// <summary>
         /// Gets and sets the property ApiId. 
         /// <para>
-        /// The ID for your GraphQL API.
+        /// The ID for the GraphQL API
         /// </para>
         /// </summary>
         public string ApiId
@@ -77,8 +78,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property Expires. 
         /// <para>
         /// The time after which the API key expires. The date is represented as seconds since
-        /// the epoch, rounded down to the nearest hour. The default value for this parameter
-        /// is 7 days from creation time.
+        /// the epoch.
         /// </para>
         /// </summary>
         public long Expires
@@ -91,6 +91,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetExpires()
         {
             return this._expires.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The API key ID.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
     }

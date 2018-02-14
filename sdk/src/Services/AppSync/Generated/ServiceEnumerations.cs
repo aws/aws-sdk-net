@@ -96,6 +96,10 @@ namespace Amazon.AppSync
         /// Constant AWS_LAMBDA for DataSourceType
         /// </summary>
         public static readonly DataSourceType AWS_LAMBDA = new DataSourceType("AWS_LAMBDA");
+        /// <summary>
+        /// Constant NONE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType NONE = new DataSourceType("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
