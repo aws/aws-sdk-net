@@ -1,3 +1,9 @@
+### 3.3.234.0 (2018-02-14 23:24 UTC)
+* AppSync (3.3.1.0)
+	* AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+* LexModelBuildingService (3.3.6.0)
+	* Amazon Lex now provides the ability to export and import your Amazon Lex chatbot definition as a JSON file.
+
 ### 3.3.233.0 (2018-02-13 22:15 UTC)
 * Glacier (3.3.2.1)
 	* Documentation updates for glacier
