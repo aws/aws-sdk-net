@@ -48,14 +48,6 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>General events:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  GENERIC_EVENT -- An unspecified event has occurred.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         ///  <b>Fleet creation events:</b> 
         /// </para>
         ///  <ul> <li> 
@@ -160,6 +152,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        ///  <b>Spot instance events:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute
+        /// notification.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         ///  <b>Other fleet events:</b> 
         /// </para>
         ///  <ul> <li> 
@@ -177,6 +178,10 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         /// FLEET_DELETED -- A request to delete a fleet was initiated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  GENERIC_EVENT -- An unspecified event has occurred.
         /// </para>
         ///  </li> </ul>
         /// </summary>

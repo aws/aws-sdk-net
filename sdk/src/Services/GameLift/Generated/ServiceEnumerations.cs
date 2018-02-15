@@ -471,6 +471,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode GENERIC_EVENT = new EventCode("GENERIC_EVENT");
         /// <summary>
+        /// Constant INSTANCE_INTERRUPTED for EventCode
+        /// </summary>
+        public static readonly EventCode INSTANCE_INTERRUPTED = new EventCode("INSTANCE_INTERRUPTED");
+        /// <summary>
         /// Constant SERVER_PROCESS_CRASHED for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_CRASHED = new EventCode("SERVER_PROCESS_CRASHED");
@@ -613,6 +617,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type FleetType.
+    /// </summary>
+    public class FleetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for FleetType
+        /// </summary>
+        public static readonly FleetType ON_DEMAND = new FleetType("ON_DEMAND");
+        /// <summary>
+        /// Constant SPOT for FleetType
+        /// </summary>
+        public static readonly FleetType SPOT = new FleetType("SPOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetType FindValue(string value)
+        {
+            return FindValue<FleetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GameSessionPlacementState.
     /// </summary>
     public class GameSessionPlacementState : ConstantClass
@@ -726,6 +780,52 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GameSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameSessionStatusReason.
+    /// </summary>
+    public class GameSessionStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERRUPTED for GameSessionStatusReason
+        /// </summary>
+        public static readonly GameSessionStatusReason INTERRUPTED = new GameSessionStatusReason("INTERRUPTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameSessionStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameSessionStatusReason FindValue(string value)
+        {
+            return FindValue<GameSessionStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameSessionStatusReason(string value)
         {
             return FindValue(value);
         }

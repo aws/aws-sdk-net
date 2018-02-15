@@ -128,6 +128,10 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  <a>AcceptMatch</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartMatchBackfill</a> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class StartMatchmakingRequest : AmazonGameLiftRequest

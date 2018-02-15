@@ -103,6 +103,7 @@ namespace Amazon.GameLift.Model
         private PlayerSessionCreationPolicy _playerSessionCreationPolicy;
         private int? _port;
         private GameSessionStatus _status;
+        private GameSessionStatusReason _statusReason;
         private DateTime? _terminationTime;
 
         /// <summary>
@@ -376,6 +377,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Provides additional information about game session status. <code>INTERRUPTED</code>
+        /// indicates that the game session was hosted on a spot instance that was reclaimed,
+        /// causing the active game session to be terminated.
+        /// </para>
+        /// </summary>
+        public GameSessionStatusReason StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

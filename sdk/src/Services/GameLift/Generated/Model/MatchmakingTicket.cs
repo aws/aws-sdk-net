@@ -69,9 +69,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Time stamp indicating when the matchmaking request stopped being processed due to
-        /// successful completion, timeout, or cancellation. Format is a number expressed in Unix
-        /// time as milliseconds (for example "1469498468.057").
+        /// Time stamp indicating when this matchmaking request stopped being processed due to
+        /// success, failure, or cancellation. Format is a number expressed in Unix time as milliseconds
+        /// (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime EndTime

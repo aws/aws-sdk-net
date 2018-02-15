@@ -127,6 +127,8 @@ namespace Amazon.GameLift.Model
         private string _description;
         private string _fleetArn;
         private string _fleetId;
+        private FleetType _fleetType;
+        private EC2InstanceType _instanceType;
         private List<string> _logPaths = new List<string>();
         private List<string> _metricGroups = new List<string>();
         private string _name;
@@ -227,6 +229,45 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetType. 
+        /// <para>
+        /// Indicates whether the fleet uses on-demand or spot instances. A spot instance in use
+        /// may be interrupted with a two-minute notification.
+        /// </para>
+        /// </summary>
+        public FleetType FleetType
+        {
+            get { return this._fleetType; }
+            set { this._fleetType = value; }
+        }
+
+        // Check to see if FleetType property is set
+        internal bool IsSetFleetType()
+        {
+            return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// EC2 instance type indicating the computing resources of each instance in the fleet,
+        /// including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// EC2 Instance Types</a> for detailed descriptions.
+        /// </para>
+        /// </summary>
+        public EC2InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

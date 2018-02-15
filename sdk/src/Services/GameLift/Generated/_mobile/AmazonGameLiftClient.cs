@@ -181,12 +181,17 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Start new game sessions with FlexMatch matchmaking</b> 
+    ///  <b>Match players to game sessions with FlexMatch matchmaking</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want
     /// to play together. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
+    /// in an existing game session. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -196,11 +201,6 @@ namespace Amazon.GameLift
     /// <para>
     ///  <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches
     /// that require player acceptance. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots
-    /// in an existing game session. 
     /// </para>
     ///  </li> <li> 
     /// <para>

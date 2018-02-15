@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
     /// with status set to QUEUED. The ticket is placed in the matchmaker's ticket pool and
     /// processed. Track the status of the ticket to respond as needed. For more detail how
     /// to set up backfilling, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
-    /// Set up Match Backfilling</a>. 
+    /// Backfill Existing Games with FlexMatch</a>. 
     /// </para>
     ///  
     /// <para>
@@ -76,6 +76,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>AcceptMatch</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartMatchBackfill</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -136,7 +140,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a>
+        /// PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a>
         /// object, <code>MatchmakerData</code> property, for all players who are currently assigned
         /// to the game session. The matchmaker data is in JSON syntax, formatted as a string.
         /// For more details, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
@@ -144,7 +148,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LatencyInMs -- If the matchmaker uses player latency, include a latency value, in
+        /// LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in
         /// milliseconds, for the region that the game session is currently in. Do not include
         /// latency values for any other region.
         /// </para>

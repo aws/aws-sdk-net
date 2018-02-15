@@ -101,6 +101,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EC2InstanceType);
                 }
 
+                if(publicRequest.IsSetFleetType())
+                {
+                    context.Writer.WritePropertyName("FleetType");
+                    context.Writer.Write(publicRequest.FleetType);
+                }
+
                 if(publicRequest.IsSetLogPaths())
                 {
                     context.Writer.WritePropertyName("LogPaths");
