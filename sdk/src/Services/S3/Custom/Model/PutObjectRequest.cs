@@ -48,6 +48,7 @@ namespace Amazon.S3.Model
         private string contentBody;
         private bool autoCloseStream = true;
         private bool autoResetStreamPosition = true;
+        private bool useChunkEncoding = true;
         private RequestPayer requestPayer;
 
         private string md5Digest;
@@ -129,6 +130,16 @@ namespace Amazon.S3.Model
         {
             get { return this.autoResetStreamPosition; }
             set { this.autoResetStreamPosition = value; }
+        }
+
+        /// <summary>
+        /// If this value is set to true then the request payload will be transfered in multiple chunks (AWS Signature Version 4).
+        /// Default: true.
+        /// </summary>
+        public bool UseChunkEncoding
+        {
+            get { return this.useChunkEncoding; }
+            set { this.useChunkEncoding = value; }
         }
 
         /// <summary>
