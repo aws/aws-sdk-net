@@ -133,7 +133,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// If this value is set to true then the request payload will be transfered in multiple chunks (AWS Signature Version 4).
+        /// If this value is set to true then a chunked encoding upload will be used for the request.
         /// Default: true.
         /// </summary>
         public bool UseChunkEncoding
