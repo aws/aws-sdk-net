@@ -1,3 +1,13 @@
+### 3.3.235.0 (2018-02-15 22:56 UTC)
+* GameLift (3.3.11.0)
+	* Updates to allow Fleets to run on On-Demand or Spot instances.
+* MediaConvert (3.3.1.0)
+	* Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
+* Core 3.3.21.12
+	* Launch AWS CodeStar in the Asia Pacific Northeast 2 (ICN) region.
+
+
+
 ### 3.3.234.0 (2018-02-14 23:24 UTC)
 * AppSync (3.3.1.0)
 	* AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 

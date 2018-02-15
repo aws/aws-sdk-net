@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.234.0",
-    "CoreVersion"    : "3.3.21.11",
+    "ProductVersion" : "3.3.235.0",
+    "CoreVersion"    : "3.3.21.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.10.0",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.20.0"
