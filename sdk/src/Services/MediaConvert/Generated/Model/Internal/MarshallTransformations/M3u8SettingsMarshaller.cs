@@ -62,6 +62,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetNielsenId3())
+            {
+                context.Writer.WritePropertyName("nielsenId3");
+                context.Writer.Write(requestObject.NielsenId3);
+            }
+
             if(requestObject.IsSetPatInterval())
             {
                 context.Writer.WritePropertyName("patInterval");

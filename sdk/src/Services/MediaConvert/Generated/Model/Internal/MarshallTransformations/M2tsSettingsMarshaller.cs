@@ -166,6 +166,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinEbpInterval);
             }
 
+            if(requestObject.IsSetNielsenId3())
+            {
+                context.Writer.WritePropertyName("nielsenId3");
+                context.Writer.Write(requestObject.NielsenId3);
+            }
+
             if(requestObject.IsSetNullPacketBitrate())
             {
                 context.Writer.WritePropertyName("nullPacketBitrate");
@@ -248,6 +254,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("segmentationTime");
                 context.Writer.Write(requestObject.SegmentationTime);
+            }
+
+            if(requestObject.IsSetTimedMetadataPid())
+            {
+                context.Writer.WritePropertyName("timedMetadataPid");
+                context.Writer.Write(requestObject.TimedMetadataPid);
             }
 
             if(requestObject.IsSetTransportStreamId())

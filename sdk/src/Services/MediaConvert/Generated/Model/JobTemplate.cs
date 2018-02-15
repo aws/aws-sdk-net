@@ -172,7 +172,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Type. A job template can be of two types: system or custom.
-        /// System or built-in job templates can’t be modified or deleted by the user.
+        /// System or built-in job templates can't be modified or deleted by the user.
         /// </summary>
         public Type Type
         {

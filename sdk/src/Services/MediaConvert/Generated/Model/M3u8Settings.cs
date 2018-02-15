@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _audioFramesPerPes;
         private List<int> _audioPids = new List<int>();
+        private M3u8NielsenId3 _nielsenId3;
         private int? _patInterval;
         private M3u8PcrControl _pcrControl;
         private int? _pcrPid;
@@ -67,7 +68,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioPids. Packet Identifier (PID) of the elementary audio
         /// stream(s) in the transport stream. Multiple values are accepted, and can be entered
-        /// in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
+        /// in ranges and/or by comma separation.
         /// </summary>
         public List<int> AudioPids
         {
@@ -79,6 +80,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioPids()
         {
             return this._audioPids != null && this._audioPids.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenId3.
+        /// </summary>
+        public M3u8NielsenId3 NielsenId3
+        {
+            get { return this._nielsenId3; }
+            set { this._nielsenId3 = value; }
+        }
+
+        // Check to see if NielsenId3 property is set
+        internal bool IsSetNielsenId3()
+        {
+            return this._nielsenId3 != null;
         }
 
         /// <summary>
@@ -115,7 +131,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property PcrPid. Packet Identifier (PID) of the Program Clock Reference
         /// (PCR) in the transport stream. When no value is given, the encoder will assign the
-        /// same value as the Video PID. Can be entered as a decimal or hexadecimal value.
+        /// same value as the Video PID.
         /// </summary>
         public int PcrPid
         {
@@ -147,7 +163,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PmtPid. Packet Identifier (PID) for the Program Map Table
-        /// (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// (PMT) in the transport stream.
         /// </summary>
         public int PmtPid
         {
@@ -163,8 +179,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PrivateMetadataPid. Packet Identifier (PID) of the private
-        /// metadata stream in the transport stream. Can be entered as a decimal or hexadecimal
-        /// value.
+        /// metadata stream in the transport stream.
         /// </summary>
         public int PrivateMetadataPid
         {
@@ -196,7 +211,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Scte35Pid. Packet Identifier (PID) of the SCTE-35 stream
-        /// in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// in the transport stream.
         /// </summary>
         public int Scte35Pid
         {
@@ -242,8 +257,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
-        /// metadata stream in the transport stream. Can be entered as a decimal or hexadecimal
-        /// value.
+        /// metadata stream in the transport stream.
         /// </summary>
         public int TimedMetadataPid
         {
@@ -275,7 +289,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property VideoPid. Packet Identifier (PID) of the elementary video
-        /// stream in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// stream in the transport stream.
         /// </summary>
         public int VideoPid
         {

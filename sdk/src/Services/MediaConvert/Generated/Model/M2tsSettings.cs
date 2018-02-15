@@ -48,6 +48,7 @@ namespace Amazon.MediaConvert.Model
         private double? _fragmentTime;
         private int? _maxPcrInterval;
         private int? _minEbpInterval;
+        private M2tsNielsenId3 _nielsenId3;
         private double? _nullPacketBitrate;
         private int? _patInterval;
         private M2tsPcrControl _pcrControl;
@@ -62,6 +63,7 @@ namespace Amazon.MediaConvert.Model
         private M2tsSegmentationMarkers _segmentationMarkers;
         private M2tsSegmentationStyle _segmentationStyle;
         private double? _segmentationTime;
+        private int? _timedMetadataPid;
         private int? _transportStreamId;
         private int? _videoPid;
 
@@ -99,7 +101,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property AudioPids. Packet Identifier (PID) of the elementary audio
         /// stream(s) in the transport stream. Multiple values are accepted, and can be entered
-        /// in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
+        /// in ranges and/or by comma separation.
         /// </summary>
         public List<int> AudioPids
         {
@@ -178,7 +180,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property DvbSubPids. Packet Identifier (PID) for input source DVB
         /// Subtitle data to this output. Multiple values are accepted, and can be entered in
-        /// ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
+        /// ranges and/or by comma separation.
         /// </summary>
         public List<int> DvbSubPids
         {
@@ -209,7 +211,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DvbTeletextPid. Packet Identifier (PID) for input source
-        /// DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value.
+        /// DVB Teletext data to this output.
         /// </summary>
         public int DvbTeletextPid
         {
@@ -321,6 +323,21 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NielsenId3.
+        /// </summary>
+        public M2tsNielsenId3 NielsenId3
+        {
+            get { return this._nielsenId3; }
+            set { this._nielsenId3 = value; }
+        }
+
+        // Check to see if NielsenId3 property is set
+        internal bool IsSetNielsenId3()
+        {
+            return this._nielsenId3 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NullPacketBitrate. Value in bits per second of extra null
         /// packets to insert into the transport stream. This can be used if a downstream encryption
         /// system requires periodic null packets.
@@ -371,7 +388,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property PcrPid. Packet Identifier (PID) of the Program Clock Reference
         /// (PCR) in the transport stream. When no value is given, the encoder will assign the
-        /// same value as the Video PID. Can be entered as a decimal or hexadecimal value.
+        /// same value as the Video PID.
         /// </summary>
         public int PcrPid
         {
@@ -403,7 +420,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PmtPid. Packet Identifier (PID) for the Program Map Table
-        /// (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// (PMT) in the transport stream.
         /// </summary>
         public int PmtPid
         {
@@ -419,8 +436,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PrivateMetadataPid. Packet Identifier (PID) of the private
-        /// metadata stream in the transport stream. Can be entered as a decimal or hexadecimal
-        /// value.
+        /// metadata stream in the transport stream.
         /// </summary>
         public int PrivateMetadataPid
         {
@@ -467,7 +483,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Scte35Pid. Packet Identifier (PID) of the SCTE-35 stream
-        /// in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// in the transport stream.
         /// </summary>
         public int Scte35Pid
         {
@@ -543,6 +559,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TimedMetadataPid. Packet Identifier (PID) of the timed
+        /// metadata stream in the transport stream.
+        /// </summary>
+        public int TimedMetadataPid
+        {
+            get { return this._timedMetadataPid.GetValueOrDefault(); }
+            set { this._timedMetadataPid = value; }
+        }
+
+        // Check to see if TimedMetadataPid property is set
+        internal bool IsSetTimedMetadataPid()
+        {
+            return this._timedMetadataPid.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TransportStreamId. The value of the transport stream ID
         /// field in the Program Map Table.
         /// </summary>
@@ -560,7 +592,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property VideoPid. Packet Identifier (PID) of the elementary video
-        /// stream in the transport stream. Can be entered as a decimal or hexadecimal value.
+        /// stream in the transport stream.
         /// </summary>
         public int VideoPid
         {

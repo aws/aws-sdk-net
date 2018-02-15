@@ -56,8 +56,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationType. Type of Caption output, including Burn-In,
-        /// Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
+        /// Gets and sets the property DestinationType.
         /// </summary>
         public CaptionDestinationType DestinationType
         {
@@ -117,8 +116,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TtmlDestinationSettings. Settings specific to TTML caption
-        /// outputs, including Pass style information (TtmlStylePassthrough).
+        /// Gets and sets the property TtmlDestinationSettings.
         /// </summary>
         public TtmlDestinationSettings TtmlDestinationSettings
         {

@@ -43,7 +43,7 @@ namespace Amazon.MediaConvert.Model
         private string _streamName;
 
         /// <summary>
-        /// Gets and sets the property AudioNormalizationSettings. Settings for Audio Normalization
+        /// Gets and sets the property AudioNormalizationSettings.
         /// </summary>
         public AudioNormalizationSettings AudioNormalizationSettings
         {

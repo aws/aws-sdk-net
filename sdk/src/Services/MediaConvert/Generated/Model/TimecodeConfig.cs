@@ -96,7 +96,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimestampOffset. Only applies to outputs that support program-date-time
-        /// stamp. Use Time  stamp offset (TimestampOffset) to overwrite the timecode date without
+        /// stamp. Use Time stamp offset (TimestampOffset) to overwrite the timecode date without
         /// affecting the time and frame number. Provide the new date as a string in the format
         /// "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time
         /// (InsertProgramDateTime) in the output settings.

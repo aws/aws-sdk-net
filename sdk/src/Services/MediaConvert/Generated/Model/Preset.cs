@@ -154,7 +154,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Type. A preset can be of two types: system or custom. System
-        /// or built-in preset can’t be modified or deleted by the user.
+        /// or built-in preset can't be modified or deleted by the user.
         /// </summary>
         public Type Type
         {

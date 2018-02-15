@@ -59,7 +59,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property ExternalAudioFileInput. Specifies audio data from an external
-        /// file source. Auto populated when Infer External Filename is checked
+        /// file source.
         /// </summary>
         public string ExternalAudioFileInput
         {

@@ -8339,6 +8339,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsNielsenId3.
+    /// </summary>
+    public class M2tsNielsenId3 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSERT for M2tsNielsenId3
+        /// </summary>
+        public static readonly M2tsNielsenId3 INSERT = new M2tsNielsenId3("INSERT");
+        /// <summary>
+        /// Constant NONE for M2tsNielsenId3
+        /// </summary>
+        public static readonly M2tsNielsenId3 NONE = new M2tsNielsenId3("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsNielsenId3(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsNielsenId3 FindValue(string value)
+        {
+            return FindValue<M2tsNielsenId3>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsNielsenId3(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsPcrControl.
     /// </summary>
     public class M2tsPcrControl : ConstantClass
@@ -8598,6 +8648,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M2tsSegmentationStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type M3u8NielsenId3.
+    /// </summary>
+    public class M3u8NielsenId3 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSERT for M3u8NielsenId3
+        /// </summary>
+        public static readonly M3u8NielsenId3 INSERT = new M3u8NielsenId3("INSERT");
+        /// <summary>
+        /// Constant NONE for M3u8NielsenId3
+        /// </summary>
+        public static readonly M3u8NielsenId3 NONE = new M3u8NielsenId3("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M3u8NielsenId3(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M3u8NielsenId3 FindValue(string value)
+        {
+            return FindValue<M3u8NielsenId3>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M3u8NielsenId3(string value)
         {
             return FindValue(value);
         }

@@ -114,9 +114,10 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property NameModifier. Use Name modifier (NameModifier) to have
         /// the service add a string to the end of each output filename. You specify the base
         /// filename as part of your destination URI. When you create multiple outputs in the
-        /// same output group, Name modifier is required. Name modifier also accepts format identifiers.
-        /// For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-        /// output, you must use them in the same way in all outputs of the output group.
+        /// same output group, Name modifier (NameModifier) is required. Name modifier also accepts
+        /// format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$
+        /// or $Time$ in one output, you must use them in the same way in all outputs of the output
+        /// group.
         /// </summary>
         public string NameModifier
         {

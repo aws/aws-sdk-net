@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioPids = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nielsenId3", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NielsenId3 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("patInterval", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

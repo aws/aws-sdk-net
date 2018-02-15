@@ -36,7 +36,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PageNumber. Set pageNumber to the Teletext page number
-        /// for the destination captions for this output.  This value must be a three-digit hexadecimal
+        /// for the destination captions for this output. This value must be a three-digit hexadecimal
         /// string; strings ending in -FF are invalid. If you are passing through the entire set
         /// of Teletext data, do not use this field.
         /// </summary>

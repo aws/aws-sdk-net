@@ -99,8 +99,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. Type of output group (File group, Apple HLS, DASH
-        /// ISO, Microsoft Smooth Streaming)
+        /// Gets and sets the property Type.
         /// </summary>
         public OutputGroupType Type
         {

@@ -160,6 +160,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinEbpInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nielsenId3", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NielsenId3 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nullPacketBitrate", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
@@ -242,6 +248,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.SegmentationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timedMetadataPid", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("transportStreamId", targetDepth))

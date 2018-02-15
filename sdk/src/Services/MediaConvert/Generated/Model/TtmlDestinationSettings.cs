@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for TTML caption output
+    /// Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
     /// </summary>
     public partial class TtmlDestinationSettings
     {

@@ -138,7 +138,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Type. A queue can be of two types: system or custom. System
-        /// or built-in queues can’t be modified or deleted by the user.
+        /// or built-in queues can't be modified or deleted by the user.
         /// </summary>
         public Type Type
         {
