@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
         private bool? _supportsLogExportsToCloudwatchLogs;
+        private bool? _supportsReadReplica;
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
         /// <summary>
@@ -232,6 +233,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsLogExportsToCloudwatchLogs()
         {
             return this._supportsLogExportsToCloudwatchLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsReadReplica. 
+        /// <para>
+        /// Indicates whether the database engine version supports read replicas.
+        /// </para>
+        /// </summary>
+        public bool SupportsReadReplica
+        {
+            get { return this._supportsReadReplica.GetValueOrDefault(); }
+            set { this._supportsReadReplica = value; }
+        }
+
+        // Check to see if SupportsReadReplica property is set
+        internal bool IsSetSupportsReadReplica()
+        {
+            return this._supportsReadReplica.HasValue; 
         }
 
         /// <summary>

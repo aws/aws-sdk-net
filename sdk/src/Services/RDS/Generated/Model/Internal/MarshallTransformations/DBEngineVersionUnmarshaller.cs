@@ -117,6 +117,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportsLogExportsToCloudwatchLogs = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportsReadReplica", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsReadReplica = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))
                     {
                         var unmarshaller = UpgradeTargetUnmarshaller.Instance;

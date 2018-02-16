@@ -460,11 +460,6 @@ namespace Amazon.RDS.Model
         /// your Read Replica as a Multi-AZ DB instance is independent of whether the source database
         /// is a Multi-AZ DB instance. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool MultiAZ
         {
