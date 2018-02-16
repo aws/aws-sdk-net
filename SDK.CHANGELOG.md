@@ -1,3 +1,7 @@
+### 3.3.236.0 (2018-02-16 20:53 UTC)
+* RDS (3.3.21.0)
+	* Updates RDS API to indicate whether a DBEngine supports read replicas.
+
 ### 3.3.235.0 (2018-02-15 22:56 UTC)
 * GameLift (3.3.11.0)
 	* Updates to allow Fleets to run on On-Demand or Spot instances.
