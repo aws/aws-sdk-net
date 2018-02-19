@@ -197,21 +197,25 @@ namespace Amazon.ConfigService
     {
 
         /// <summary>
-        /// Constant Deleted for ConfigurationItemStatus
+        /// Constant OK for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Deleted = new ConfigurationItemStatus("Deleted");
+        public static readonly ConfigurationItemStatus OK = new ConfigurationItemStatus("OK");
         /// <summary>
-        /// Constant Discovered for ConfigurationItemStatus
+        /// Constant ResourceDeleted for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Discovered = new ConfigurationItemStatus("Discovered");
+        public static readonly ConfigurationItemStatus ResourceDeleted = new ConfigurationItemStatus("ResourceDeleted");
         /// <summary>
-        /// Constant Failed for ConfigurationItemStatus
+        /// Constant ResourceDeletedNotRecorded for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Failed = new ConfigurationItemStatus("Failed");
+        public static readonly ConfigurationItemStatus ResourceDeletedNotRecorded = new ConfigurationItemStatus("ResourceDeletedNotRecorded");
         /// <summary>
-        /// Constant Ok for ConfigurationItemStatus
+        /// Constant ResourceDiscovered for ConfigurationItemStatus
         /// </summary>
-        public static readonly ConfigurationItemStatus Ok = new ConfigurationItemStatus("Ok");
+        public static readonly ConfigurationItemStatus ResourceDiscovered = new ConfigurationItemStatus("ResourceDiscovered");
+        /// <summary>
+        /// Constant ResourceNotRecorded for ConfigurationItemStatus
+        /// </summary>
+        public static readonly ConfigurationItemStatus ResourceNotRecorded = new ConfigurationItemStatus("ResourceNotRecorded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
