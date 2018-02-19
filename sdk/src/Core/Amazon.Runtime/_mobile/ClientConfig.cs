@@ -27,7 +27,7 @@ namespace Amazon.Runtime
     /// </summary>    
     public abstract partial class ClientConfig
     {
-        private HttpClientHandler _httpClientHandler = null;
+        private Func<HttpClientHandler> _httpClientHandler = null;
         private IWebProxy proxy = null;
         private string proxyHost;
         private int proxyPort = -1;
@@ -48,10 +48,10 @@ namespace Amazon.Runtime
         /// <summary>
         /// Update the Http Client handler to use
         /// </summary>
-        /// <param name="httpClientHandler">The http client handler to use</param>
-        public void SetHttpMessageHandler(HttpClientHandler httpClientHandler)
+        /// <param name="httpClientHandler">A function that returns a new instance of the http client handler to use</param>
+        public void SetHttpMessageHandler(Func<HttpClientHandler> httpClientHandler)
         {
-            this._httpClientHandler = httpClientHandler;
+            this._httpClientHandler = httpClientHandler?.Invoke();
         }
         
         /// <summary>
