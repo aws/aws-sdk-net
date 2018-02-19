@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -40,6 +41,11 @@ namespace Amazon.Runtime
         /// in the client configuration.
         /// </summary>
         IWebProxy GetWebProxy();
-
+        
+        /// <summary>
+        /// Return a custom http message handle to use with HttpClient. (example: NativeMessageHandler from ModernHttpClient)
+        /// Default Http Message Handler used if null value returned
+        /// </summary>
+        HttpClientHandler GetHttpMessageHandler();
     }
 }
