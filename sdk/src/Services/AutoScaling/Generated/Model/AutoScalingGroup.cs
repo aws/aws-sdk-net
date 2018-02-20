@@ -49,6 +49,7 @@ namespace Amazon.AutoScaling.Model
         private int? _minSize;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
+        private string _serviceLinkedRoleARN;
         private string _status;
         private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
         private List<TagDescription> _tags = new List<TagDescription>();
@@ -366,6 +367,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkedRoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
+        /// uses to call other AWS services on your behalf.
+        /// </para>
+        /// </summary>
+        public string ServiceLinkedRoleARN
+        {
+            get { return this._serviceLinkedRoleARN; }
+            set { this._serviceLinkedRoleARN = value; }
+        }
+
+        // Check to see if ServiceLinkedRoleARN property is set
+        internal bool IsSetServiceLinkedRoleARN()
+        {
+            return this._serviceLinkedRoleARN != null;
         }
 
         /// <summary>

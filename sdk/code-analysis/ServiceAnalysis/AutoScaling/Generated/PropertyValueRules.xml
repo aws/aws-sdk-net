@@ -62,6 +62,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.ServiceLinkedRoleARN</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
     <max>2047</max>
@@ -474,6 +479,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.ServiceLinkedRoleARN</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.VPCZoneIdentifier</property>
     <min>1</min>
     <max>2047</max>
@@ -546,6 +556,11 @@
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.PlacementGroup</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.AutoScalingGroup.ServiceLinkedRoleARN</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AutoScalingGroup.Status</property>
@@ -899,6 +914,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ScheduledUpdateGroupAction.ScheduledActionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.ServiceLinkedRoleFailure.Message</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

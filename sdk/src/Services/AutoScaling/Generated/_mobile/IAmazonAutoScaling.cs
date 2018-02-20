@@ -31,11 +31,12 @@ namespace Amazon.AutoScaling
     /// <summary>
     /// Interface for accessing AutoScaling
     ///
-    /// Auto Scaling 
+    /// Amazon EC2 Auto Scaling 
     /// <para>
-    /// Auto Scaling is designed to automatically launch or terminate EC2 instances based
-    /// on user-defined policies, schedules, and health checks. Use this service in conjunction
-    /// with the Amazon CloudWatch and Elastic Load Balancing services.
+    /// Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
+    /// based on user-defined policies, schedules, and health checks. Use this service in
+    /// conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing
+    /// services.
     /// </para>
     /// </summary>
     public partial interface IAmazonAutoScaling : IAmazonService, IDisposable
@@ -287,8 +288,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -652,6 +653,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         Task<DescribePoliciesResponse> DescribePoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));

@@ -122,6 +122,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));
                 }
+                if(publicRequest.IsSetServiceLinkedRoleARN())
+                {
+                    request.Parameters.Add("ServiceLinkedRoleARN", StringUtils.FromString(publicRequest.ServiceLinkedRoleARN));
+                }
                 if(publicRequest.IsSetTerminationPolicies())
                 {
                     int publicRequestlistValueIndex = 1;

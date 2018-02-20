@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more load balancer names.
+        /// The names of the load balancers. You can specify up to 10 load balancers.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames

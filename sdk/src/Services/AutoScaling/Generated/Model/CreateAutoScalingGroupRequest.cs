@@ -33,9 +33,10 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per
-    /// region, the call fails. For information about viewing and updating this limit, see
-    /// <a>DescribeAccountLimits</a>.
+    /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
+    /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
+    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+    /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -60,6 +61,7 @@ namespace Amazon.AutoScaling.Model
         private int? _minSize;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
+        private string _serviceLinkedRoleARN;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
@@ -386,6 +388,26 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkedRoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
+        /// uses to call other AWS services on your behalf. By default, Auto Scaling uses a service-linked
+        /// role named AWSServiceRoleForAutoScaling, which it creates if it does not exist.
+        /// </para>
+        /// </summary>
+        public string ServiceLinkedRoleARN
+        {
+            get { return this._serviceLinkedRoleARN; }
+            set { this._serviceLinkedRoleARN = value; }
+        }
+
+        // Check to see if ServiceLinkedRoleARN property is set
+        internal bool IsSetServiceLinkedRoleARN()
+        {
+            return this._serviceLinkedRoleARN != null;
         }
 
         /// <summary>

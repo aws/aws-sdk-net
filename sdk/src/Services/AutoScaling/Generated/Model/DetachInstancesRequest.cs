@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// The IDs of the instances. You can specify up to 20 instances.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -98,8 +98,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        /// If <code>True</code>, the Auto Scaling group decrements the desired capacity value
-        /// by the number of instances detached.
+        /// Indicates whether the Auto Scaling group decrements the desired capacity value by
+        /// the number of instances detached.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

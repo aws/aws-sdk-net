@@ -29,11 +29,12 @@ namespace Amazon.AutoScaling
     /// <summary>
     /// Interface for accessing AutoScaling
     ///
-    /// Auto Scaling 
+    /// Amazon EC2 Auto Scaling 
     /// <para>
-    /// Auto Scaling is designed to automatically launch or terminate EC2 instances based
-    /// on user-defined policies, schedules, and health checks. Use this service in conjunction
-    /// with the Amazon CloudWatch and Elastic Load Balancing services.
+    /// Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
+    /// based on user-defined policies, schedules, and health checks. Use this service in
+    /// conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing
+    /// services.
     /// </para>
     /// </summary>
     public partial interface IAmazonAutoScaling : IAmazonService, IDisposable
@@ -71,6 +72,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         AttachInstancesResponse AttachInstances(AttachInstancesRequest request);
@@ -131,6 +135,9 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request);
 
@@ -185,6 +192,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request);
@@ -307,9 +317,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per
-        /// region, the call fails. For information about viewing and updating this limit, see
-        /// <a>DescribeAccountLimits</a>.
+        /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
+        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
+        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -330,6 +341,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request);
@@ -370,9 +384,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you exceed your maximum limit of launch configurations, which by default is 100
-        /// per region, the call fails. For information about viewing and updating this limit,
-        /// see <a>DescribeAccountLimits</a>.
+        /// If you exceed your maximum limit of launch configurations, the call fails. For information
+        /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
+        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -728,6 +743,9 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
 
@@ -858,8 +876,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -876,8 +894,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-        /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -1543,6 +1561,9 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         DescribePoliciesResponse DescribePolicies();
 
@@ -1558,6 +1579,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request);
@@ -2446,6 +2470,9 @@ namespace Amazon.AutoScaling
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
         /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request);
 
@@ -2503,6 +2530,9 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Auto Scaling resource (for example, a group,
         /// instance, or load balancer).
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request);
@@ -3052,6 +3082,9 @@ namespace Amazon.AutoScaling
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ScalingActivityInProgressException">
         /// The operation can't be performed because there are scaling activities in progress.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ServiceLinkedRoleFailureException">
+        /// The service-linked role is not yet ready for use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request);

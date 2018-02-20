@@ -107,6 +107,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 return new ScalingActivityInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceLinkedRoleFailure"))
+            {
+                return new ServiceLinkedRoleFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonAutoScalingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static UpdateAutoScalingGroupResponseUnmarshaller _instance = new UpdateAutoScalingGroupResponseUnmarshaller();        

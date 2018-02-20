@@ -62,8 +62,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        /// If <code>true</code>, terminating the instance also decrements the size of the Auto
-        /// Scaling group.
+        /// Indicates whether terminating the instance also decrements the size of the Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

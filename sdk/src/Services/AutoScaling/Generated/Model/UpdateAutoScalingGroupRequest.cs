@@ -81,6 +81,7 @@ namespace Amazon.AutoScaling.Model
         private int? _minSize;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
+        private string _serviceLinkedRoleARN;
         private List<string> _terminationPolicies = new List<string>();
         private string _vpcZoneIdentifier;
 
@@ -210,8 +211,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. You must specify either a launch configuration
-        /// or a launch template.
+        /// The name of the launch configuration. If you specify a launch configuration, you can't
+        /// specify a launch template.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -229,8 +230,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template to use to specify the updates. You must specify a launch configuration
-        /// or a launch template.
+        /// The launch template to use to specify the updates. If you specify a launch template,
+        /// you can't specify a launch configuration.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -318,6 +319,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkedRoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group
+        /// uses to call other AWS services on your behalf.
+        /// </para>
+        /// </summary>
+        public string ServiceLinkedRoleARN
+        {
+            get { return this._serviceLinkedRoleARN; }
+            set { this._serviceLinkedRoleARN = value; }
+        }
+
+        // Check to see if ServiceLinkedRoleARN property is set
+        internal bool IsSetServiceLinkedRoleARN()
+        {
+            return this._serviceLinkedRoleARN != null;
         }
 
         /// <summary>

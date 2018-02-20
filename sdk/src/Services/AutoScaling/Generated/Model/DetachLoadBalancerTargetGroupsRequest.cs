@@ -57,7 +57,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the target groups.
+        /// The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// groups.
         /// </para>
         /// </summary>
         public List<string> TargetGroupARNs

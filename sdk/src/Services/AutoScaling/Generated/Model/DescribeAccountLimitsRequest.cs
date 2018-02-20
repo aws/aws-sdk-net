@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
-    /// Service Limits</a> in the <i>Amazon Web Services General Reference</i>.
+    /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+    /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonAutoScalingRequest

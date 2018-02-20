@@ -160,6 +160,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.PlacementGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServiceLinkedRoleARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceLinkedRoleARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

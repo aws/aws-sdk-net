@@ -33,9 +33,10 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// If you exceed your maximum limit of launch configurations, which by default is 100
-    /// per region, the call fails. For information about viewing and updating this limit,
-    /// see <a>DescribeAccountLimits</a>.
+    /// If you exceed your maximum limit of launch configurations, the call fails. For information
+    /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
+    /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
+    /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -79,10 +80,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: If the instance is launched into a default subnet, the default is <code>true</code>.
-        /// If the instance is launched into a nondefault subnet, the default is <code>false</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Default: If the instance is launched into a default subnet, the default is to assign
+        /// a public IP address. If the instance is launched into a nondefault subnet, the default
+        /// is not to assign a public IP address.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress

@@ -64,8 +64,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instances to move into <code>Standby</code> mode. You must specify at
-        /// least one instance ID.
+        /// The IDs of the instances. You can specify up to 20 instances.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -83,10 +82,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
-        /// Specifies whether the instances moved to <code>Standby</code> mode count as part of
-        /// the Auto Scaling group's desired capacity. If set, the desired capacity for the Auto
-        /// Scaling group decrements by the number of instances moved to <code>Standby</code>
-        /// mode.
+        /// Indicates whether to decrement the desired capacity of the Auto Scaling group by the
+        /// number of instances moved to <code>Standby</code> mode.
         /// </para>
         /// </summary>
         public bool ShouldDecrementDesiredCapacity

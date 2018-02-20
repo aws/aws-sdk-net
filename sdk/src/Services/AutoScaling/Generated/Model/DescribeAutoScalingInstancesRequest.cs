@@ -61,7 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of items to return with this call. The default value is 50 and
-        /// the maximum value is 100.
+        /// the maximum value is 50.
         /// </para>
         /// </summary>
         public int MaxRecords

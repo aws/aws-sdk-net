@@ -42,11 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Indicates whether the volume is deleted on instance termination.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code> 
+        /// Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
