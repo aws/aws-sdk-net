@@ -1465,6 +1465,38 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  DeletePermissionPolicy
+
+        internal virtual DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request)
+        {
+            var marshaller = new DeletePermissionPolicyRequestMarshaller();
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionPolicyRequest,DeletePermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual Task<DeletePermissionPolicyResponse> DeletePermissionPolicyAsync(DeletePermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePermissionPolicyRequestMarshaller();
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePermissionPolicyRequest,DeletePermissionPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRateBasedRule
 
         internal virtual DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
@@ -2374,6 +2406,38 @@ namespace Amazon.WAFRegional
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIPSetRequest,GetIPSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPermissionPolicy
+
+        internal virtual GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request)
+        {
+            var marshaller = new GetPermissionPolicyRequestMarshaller();
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionPolicyRequest,GetPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual Task<GetPermissionPolicyResponse> GetPermissionPolicyAsync(GetPermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPermissionPolicyRequestMarshaller();
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPermissionPolicyRequest,GetPermissionPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3326,6 +3390,38 @@ namespace Amazon.WAFRegional
             var unmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListXssMatchSetsRequest,ListXssMatchSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutPermissionPolicy
+
+        internal virtual PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request)
+        {
+            var marshaller = new PutPermissionPolicyRequestMarshaller();
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPermissionPolicyRequest,PutPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual Task<PutPermissionPolicyResponse> PutPermissionPolicyAsync(PutPermissionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutPermissionPolicyRequestMarshaller();
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutPermissionPolicyRequest,PutPermissionPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

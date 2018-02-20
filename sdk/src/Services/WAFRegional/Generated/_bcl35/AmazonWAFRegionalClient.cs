@@ -3252,6 +3252,75 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  DeletePermissionPolicy
+
+        /// <summary>
+        /// Permanently deletes an IAM policy from the specified RuleGroup.
+        /// 
+        ///  
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request)
+        {
+            var marshaller = new DeletePermissionPolicyRequestMarshaller();
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionPolicyRequest,DeletePermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeletePermissionPolicy(DeletePermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeletePermissionPolicyRequestMarshaller();
+            var unmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        public virtual DeletePermissionPolicyResponse EndDeletePermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePermissionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRateBasedRule
 
         /// <summary>
@@ -5280,6 +5349,66 @@ namespace Amazon.WAFRegional
 
         #endregion
         
+        #region  GetPermissionPolicy
+
+        /// <summary>
+        /// Returns the IAM policy attached to the RuleGroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request)
+        {
+            var marshaller = new GetPermissionPolicyRequestMarshaller();
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionPolicyRequest,GetPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetPermissionPolicy(GetPermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPermissionPolicyRequestMarshaller();
+            var unmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        public virtual GetPermissionPolicyResponse EndGetPermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPermissionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRateBasedRule
 
         /// <summary>
@@ -7201,6 +7330,164 @@ namespace Amazon.WAFRegional
         public virtual ListXssMatchSetsResponse EndListXssMatchSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListXssMatchSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutPermissionPolicy
+
+        /// <summary>
+        /// Attaches a IAM policy to the specified resource. The only supported use for this action
+        /// is to share a RuleGroup across accounts.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+        /// Policies</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An example of a valid policy parameter is shown in the Examples section below.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionPolicy service method, as returned by WAFRegional.</returns>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidPermissionPolicyException">
+        /// The operation failed because the specified policy is not in the proper format. 
+        /// 
+        ///  
+        /// <para>
+        /// The policy is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request)
+        {
+            var marshaller = new PutPermissionPolicyRequestMarshaller();
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPermissionPolicyRequest,PutPermissionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy operation on AmazonWAFRegionalClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPermissionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutPermissionPolicy(PutPermissionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutPermissionPolicyRequestMarshaller();
+            var unmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutPermissionPolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPermissionPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutPermissionPolicyResult from WAFRegional.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        public virtual PutPermissionPolicyResponse EndPutPermissionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutPermissionPolicyResponse>(asyncResult);
         }
 
         #endregion
