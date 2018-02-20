@@ -1,3 +1,11 @@
+### 3.3.238.0 (2018-02-20 22:50 UTC)
+* AutoScaling (3.3.4.0)
+	* Amazon EC2 Auto Scaling support for service-linked roles
+* WAF (3.3.5.0)
+	* The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+* WAFRegional (3.3.4.0)
+	* The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
 ### 3.3.237.0 (2018-02-19 20:50 UTC)
 * ConfigService (3.3.13.0)
 	* With this release, AWS Config updated the ConfigurationItemStatus enum values. The values prior to this update did not represent appropriate values returned by GetResourceConfigHistory. You must update your code to enumerate the new enum values so this is a breaking change.  To map old properties to new properties, use the following descriptions: New discovered resource - Old property: Discovered, New property: ResourceDiscovered. Updated resource - Old property: Ok, New property: OK. Deleted resource - Old property: Deleted, New property: ResourceDeleted or ResourceDeletedNotRecorded. Not-recorded resource - Old property: N/A, New property: ResourceNotRecorded or ResourceDeletedNotRecorded.

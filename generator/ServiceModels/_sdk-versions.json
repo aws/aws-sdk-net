@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.237.0",
+    "ProductVersion" : "3.3.238.0",
     "CoreVersion"    : "3.3.21.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -13,7 +13,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -433,7 +433,7 @@
             "InPreview"               : false
         },
         "WAF"                       : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
@@ -697,7 +697,7 @@
             "InPreview"               : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
