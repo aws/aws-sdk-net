@@ -3188,6 +3188,49 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeletePermissionPolicy
+
+
+        /// <summary>
+        /// Permanently deletes an IAM policy from the specified RuleGroup.
+        /// 
+        ///  
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionPolicy service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
+        Task<DeletePermissionPolicyResponse> DeletePermissionPolicyAsync(DeletePermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteRateBasedRule
 
 
@@ -5086,6 +5129,40 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetPermissionPolicy
+
+
+        /// <summary>
+        /// Returns the IAM policy attached to the RuleGroup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionPolicy service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
+        Task<GetPermissionPolicyResponse> GetPermissionPolicyAsync(GetPermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRateBasedRule
 
 
@@ -6229,6 +6306,138 @@ namespace Amazon.WAF
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         Task<ListXssMatchSetsResponse> ListXssMatchSetsAsync(ListXssMatchSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPermissionPolicy
+
+
+        /// <summary>
+        /// Attaches a IAM policy to the specified resource. The only supported use for this action
+        /// is to share a RuleGroup across accounts.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+        /// Policies</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An example of a valid policy parameter is shown in the Examples section below.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionPolicy service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidPermissionPolicyException">
+        /// The operation failed because the specified policy is not in the proper format. 
+        /// 
+        ///  
+        /// <para>
+        /// The policy is subject to the following restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Effect</code> must specify <code>Allow</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or <code>waf-regional:UpdateWebACL</code>.
+        /// Any extra or wildcard actions in the policy will be rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The policy cannot include a <code>Resource</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist
+        /// in the same region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user making the request must be the owner of the RuleGroup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your policy must be composed using IAM Policy version 2012-10-17.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
+        Task<PutPermissionPolicyResponse> PutPermissionPolicyAsync(PutPermissionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

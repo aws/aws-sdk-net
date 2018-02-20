@@ -200,6 +200,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeletePermissionPolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteRateBasedRuleRequest.ChangeToken</property>
     <min>1</min>
   </property-value-rule>
@@ -338,6 +343,15 @@
     <property>Amazon.WAF.Model.GetIPSetRequest.IPSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetPermissionPolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetPermissionPolicyResponse.Policy</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.GetRateBasedRuleRequest.RuleId</property>
@@ -598,6 +612,15 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.ListXssMatchSetsResponse.NextMarker</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.PutPermissionPolicyRequest.Policy</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.PutPermissionPolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateByteMatchSetRequest.ByteMatchSetId</property>
