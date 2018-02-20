@@ -26,8 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net45.csproj" />
-    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +76,7 @@
     <ProjectReference Include="..\..\src\Services\Lambda\AWSSDK.Lambda.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj" />

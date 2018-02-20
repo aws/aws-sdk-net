@@ -102,7 +102,7 @@ namespace ServiceClientGenerator
             //
             // CommonTest project reference
             //
-            string commonTestProjectName = string.Format("AWSSDK.CommonTest.{0}", projectType);
+            string commonTestProjectName = "AWSSDK.CommonTest";
             string commonTestIncludePath = Path.Combine("..", "Common", commonTestProjectName + ".csproj");
             string commonTestPath = Path.Combine(unitTestRoot, commonTestIncludePath);
 

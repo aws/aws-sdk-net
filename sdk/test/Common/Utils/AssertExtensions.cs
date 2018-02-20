@@ -17,10 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.IO;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             Action<string> validateMessage = expectedMessage == null ? (Action<string>)null :
                 (message) =>
                 {
-                    Assert.AreEqual(expectedMessage, message);
+                    Assert.Equal(expectedMessage, message);
                 };
             return ExpectException(action, exceptionType, validateMessage);
         }
@@ -57,7 +57,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             Action<string> validateMessage = messageRegex == null ? (Action<string>)null :
                 (message) =>
                 {
-                    Assert.IsTrue(messageRegex.IsMatch(message),
+                    Assert.True(messageRegex.IsMatch(message),
                         string.Format("Expected exception message <{0}> to match regular expression <{1}>", message, messageRegex));
                 };
             return ExpectException(action, exceptionType, validateMessage);
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
                 if (exceptionType != null)
                 {
-                    Assert.AreEqual(exceptionType, e.GetType(), e.ToString());
+                    Assert.True(exceptionType == e.GetType(), e.ToString());
                 }
 
                 if (validateMessage != null)
@@ -87,11 +87,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 gotException = true;
             }
 
-            string message = (exceptionType == null) ? 
+            string message = (exceptionType == null) ?
                 "Failed to get an exception." :
                 String.Format("Failed to get expected exception: {0}", exceptionType.FullName);
 
-            Assert.IsTrue(gotException, message);
+            Assert.True(gotException, message);
 
             return exception;
         }
@@ -103,13 +103,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         /// <param name="actual"></param>
         public static void AssertDateTimesAreEqualToTheSecond(DateTime expected, DateTime actual)
         {
-            Assert.AreEqual(expected.Kind, actual.Kind);
-            Assert.AreEqual(expected.Year, actual.Year);
-            Assert.AreEqual(expected.Month, actual.Month);
-            Assert.AreEqual(expected.Day, actual.Day);
-            Assert.AreEqual(expected.Hour, actual.Hour);
-            Assert.AreEqual(expected.Minute, actual.Minute);
-            Assert.AreEqual(expected.Second, actual.Second);
+            Assert.Equal(expected.Kind, actual.Kind);
+            Assert.Equal(expected.Year, actual.Year);
+            Assert.Equal(expected.Month, actual.Month);
+            Assert.Equal(expected.Day, actual.Day);
+            Assert.Equal(expected.Hour, actual.Hour);
+            Assert.Equal(expected.Minute, actual.Minute);
+            Assert.Equal(expected.Second, actual.Second);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             var stringToHash = string.Join("::", list.ToArray());
             var actualHash = BitConverter.ToString(provider.ComputeHash(Encoding.Default.GetBytes(stringToHash))).Replace("-", "");
 
-            Assert.AreEqual(expectedHash, actualHash, whatChanged + "  Please read the following notes and " +
+            Assert.True(expectedHash == actualHash, whatChanged + "  Please read the following notes and " +
                 "make any necessary changes.  Once the changes have been made use the value " + actualHash + " as the new expectedHash.\n" +
                 "NOTES:\n" + notes);
         }
@@ -159,7 +159,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             {
                 sourceRoot = Path.GetDirectoryName(sourceRoot);
             }
-            Assert.IsNotNull(sourceRoot, "Unable to find the src directory to check for source file changes.");
+            Assert.True(sourceRoot!=null, "Unable to find the src directory to check for source file changes.");
             sourceRoot = Path.Combine(sourceRoot, "src");
 
             // calculate the hash of the files' contents
@@ -181,7 +181,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             messageBuilder.AppendLine("This requires manual testing.  Once the testing is complete use " + actualHash + " as expectedHash.");
             messageBuilder.AppendLine("Manual testing required:");
             messageBuilder.AppendLine(message);
-            Assert.AreEqual(expectedHash, actualHash, messageBuilder.ToString());
+            Assert.True(expectedHash == actualHash, messageBuilder.ToString());
         }
     }
 }

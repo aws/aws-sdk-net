@@ -15,6 +15,9 @@ namespace ServiceClientGenerator
         public GeneratorOptions Options { get; set; }
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; set; }
 
+        /// Regex check to identify framework of a project.
+        private static readonly Regex FrameworkRegex = new Regex(@"<TargetFramework[^>]*>(.*?)<\/TargetFramework>");
+
         /// <summary>
         /// The set of project 'types' (or platforms) that we generate the SDK against.
         /// These type names form part of the project filename.
@@ -58,10 +61,20 @@ namespace ServiceClientGenerator
         private const string GeneratorLibProjectGuid = "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}";
         private const string GeneratorLibProjectName = "ServiceClientGeneratorLib";
 
+        private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
+        private const string CommonTestProjectName = "AWSSDK.CommonTest";
+
         private static readonly ProjectFileCreator.ProjectConfigurationData GeneratorLibProjectConfig
             = new ProjectFileCreator.ProjectConfigurationData
             {
                 ProjectGuid = GeneratorLibProjectGuid,
+                ConfigurationPlatforms = StandardPlatformConfigurations
+            };
+
+        private static readonly ProjectFileCreator.ProjectConfigurationData CommonTestProjectConfig
+            = new ProjectFileCreator.ProjectConfigurationData
+            {
+                ProjectGuid = CommonTestProjectGuid,
                 ConfigurationPlatforms = StandardPlatformConfigurations
             };
 
@@ -72,7 +85,14 @@ namespace ServiceClientGenerator
             ProjectPath = string.Format(@"..\generator\{0}\{0}.csproj", GeneratorLibProjectName)
         };
 
-        private readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> _allProjects 
+        private static readonly Project CommonTestProject = new Project
+        {
+            Name = CommonTestProjectName,
+            ProjectGuid = CommonTestProjectGuid,
+            ProjectPath = string.Format(@"..\sdk\test\Common\{0}.csproj", CommonTestProjectName)
+        };
+
+        private readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> _allProjects
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
         public void Execute(IDictionary<string, ProjectFileCreator.ProjectConfigurationData> newProjects)
@@ -83,7 +103,7 @@ namespace ServiceClientGenerator
             // collection with existing projects.
             foreach (var projectKey in newProjects.Keys)
             {
-                _allProjects.Add(projectKey, newProjects[projectKey]);    
+                _allProjects.Add(projectKey, newProjects[projectKey]);
             }
 
             AddSupportProjects();
@@ -169,7 +189,7 @@ namespace ServiceClientGenerator
                     var projectConfig = new ProjectFileCreator.ProjectConfigurationData
                     {
                         ProjectGuid = Utils.GetProjectGuid(projectFile),
-                        ConfigurationPlatforms = GetProjectPlatforms(projectName)
+                        ConfigurationPlatforms = GetProjectPlatforms(projectName, projectFile)
                     };
 
                     _allProjects.Add(projectName, projectConfig);
@@ -184,7 +204,7 @@ namespace ServiceClientGenerator
             return config;
         }
 
-        static IEnumerable<string> GetProjectPlatformsFromFile(string projectFile)
+        private static IEnumerable<string> GetProjectPlatformsFromFile(string projectFile)
         {
             var platforms = new List<string>();
 
@@ -194,7 +214,7 @@ namespace ServiceClientGenerator
 
             var searchPhrase = "$(Configuration)|$(Platform)";
             var propertyGroups = doc.GetElementsByTagName("PropertyGroup");
-            foreach(XmlNode pg in propertyGroups)
+            foreach (XmlNode pg in propertyGroups)
             {
                 var conditionAttrbiute = pg.Attributes["Condition"];
                 if (conditionAttrbiute != null)
@@ -214,11 +234,19 @@ namespace ServiceClientGenerator
 
             return platforms;
         }
-        static IEnumerable<string> GetProjectPlatforms(string projectName)
+        private static IEnumerable<string> GetProjectPlatforms(string projectName, string projectFile)
         {
+
             var projectTypeStart = projectName.LastIndexOf('.');
             var projectType = projectName.Substring(projectTypeStart + 1);
 
+            var platformConfigurations = GetPlatformConfigurations(projectType);
+            // Identify the framework of the project file if not already identified.
+            return IdentifyProjectConfigurations(projectFile, platformConfigurations, projectType);
+        }
+
+        private static IEnumerable<string> GetPlatformConfigurations(string projectType)
+        {
             switch (projectType)
             {
                 case ProjectTypes.Win8:
@@ -235,19 +263,39 @@ namespace ServiceClientGenerator
                 case ProjectTypes.Unity:
                 case ProjectTypes.Partial:
                     return StandardPlatformConfigurations;
+                default:
+                    return null;
+            }
+        }
+        /// <summary>
+        /// Method that opens the project file and does a Regex match for <TargetFramework></TargetFramework>
+        /// to identify the framework of the csproj.
+        /// </summary>
+        /// <param name="projectFile"></param>
+        /// <returns></returns>
+        private static IEnumerable<string> IdentifyProjectConfigurations(string projectFile, IEnumerable<string> configurations, string projectType)
+        {
+            if (!string.IsNullOrEmpty(projectFile) && (configurations == null))
+            {
+                var fileContent = File.ReadAllText(projectFile);
+                var match = FrameworkRegex.Match(fileContent);
+                configurations = GetPlatformConfigurations(match.Groups[1].ToString());
             }
 
-            throw new Exception(string.Format("Unrecognized platform type in project name - '{0}'", projectType));
+            if (configurations != null)
+                return configurations;
+            else
+                throw new Exception(string.Format("Unrecognized platform type in project name - '{0}'", projectType));
         }
 
         private void GenerateCombinedSolution(string solutionFileName, bool includeTests, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
-        {            
+        {
             Console.WriteLine("Generating solution file {0}", solutionFileName);
 
             var session = new Dictionary<string, object>();
 
             var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();            
+            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
             var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
 
@@ -302,7 +350,7 @@ namespace ServiceClientGenerator
                     var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
                     string[] testFolderNames = (serviceProjectsForPartialBuild == null)
                         ? new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName }
-                        : new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername};
+                        : new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername };
 
                     foreach (var testFoldername in testFolderNames)
                     {
@@ -339,7 +387,7 @@ namespace ServiceClientGenerator
             session["Configurations"] = configurationsList;
 
             var generator = new SolutionFileGenerator { Session = session };
-            var content = generator.TransformText();            
+            var content = generator.TransformText();
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
@@ -433,7 +481,7 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                if(folder.Projects.Count > 0)
+                if (folder.Projects.Count > 0)
                     serviceSolutionFolders.Add(folder);
             }
 
@@ -442,7 +490,7 @@ namespace ServiceClientGenerator
             foreach (var configuration in projectFileConfigurations)
             {
                 string projectFilePattern = string.Format("*.{0}.csproj", configuration.Name);
-                foreach(var projectFile in Directory.GetFiles(coreProjectsRoot, projectFilePattern, SearchOption.TopDirectoryOnly))
+                foreach (var projectFile in Directory.GetFiles(coreProjectsRoot, projectFilePattern, SearchOption.TopDirectoryOnly))
                 {
                     string projectName = Path.GetFileNameWithoutExtension(projectFile);
                     coreProjects.Add(new Project
@@ -477,6 +525,10 @@ namespace ServiceClientGenerator
                         solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
                         testProjects.Add(GeneratorLibProject);
                         SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+
+                        solutionProjects.Add(CommonTestProjectName, CommonTestProjectConfig);
+                        testProjects.Add(CommonTestProject);
+                        SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
                     }
                 }
             }
@@ -611,7 +663,7 @@ namespace ServiceClientGenerator
                 foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
                 {
                     testProjects.Add(TestProjectFromFile(GeneratorDriver.UnitTestsSubFoldername, projectFile));
-                                                
+
                     var projectKey = Path.GetFileNameWithoutExtension(projectFile);
                     solutionProjects.Add(projectKey, _allProjects[projectKey]);
                     SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
@@ -674,8 +726,8 @@ namespace ServiceClientGenerator
             }
         }
 
-        void SelectProjectAndConfigurationsForSolution(string projectFile, 
-                                                       IDictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects, 
+        void SelectProjectAndConfigurationsForSolution(string projectFile,
+                                                       IDictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects,
                                                        ISet<string> buildConfigurations)
         {
             var projectKey = Path.GetFileNameWithoutExtension(projectFile);
@@ -714,7 +766,7 @@ namespace ServiceClientGenerator
                 ProjectPath = string.Format(@"test\{0}\{1}", folderName, fi.Name)
             };
         }
-        
+
         Project ServiceProjectFromFile(string folderName, string projectFile)
         {
             var fi = new FileInfo(projectFile);
