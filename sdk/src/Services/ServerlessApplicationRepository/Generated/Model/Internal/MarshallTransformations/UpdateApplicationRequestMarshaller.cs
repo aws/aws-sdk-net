@@ -80,6 +80,12 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetHomePageUrl())
+                {
+                    context.Writer.WritePropertyName("homePageUrl");
+                    context.Writer.Write(publicRequest.HomePageUrl);
+                }
+
                 if(publicRequest.IsSetLabels())
                 {
                     context.Writer.WritePropertyName("labels");

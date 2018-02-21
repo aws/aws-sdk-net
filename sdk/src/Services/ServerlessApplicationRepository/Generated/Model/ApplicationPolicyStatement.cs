@@ -37,9 +37,30 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _statementId;
 
         /// <summary>
-        /// Gets and sets the property Actions. A list of supported actions:\n\n GetApplication
-        /// \n \n\n CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n SearchApplications
-        /// \n \n\n Deploy (Note: This action enables all other actions above.)
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// A list of supported actions:
+        /// </para>
+        /// 
+        /// <para>
+        ///  GetApplication 
+        /// </para>
+        /// 
+        /// <para>
+        ///  CreateCloudFormationChangeSet 
+        /// </para>
+        /// 
+        /// <para>
+        ///  ListApplicationVersions 
+        /// </para>
+        /// 
+        /// <para>
+        ///  SearchApplications 
+        /// </para>
+        /// 
+        /// <para>
+        ///  Deploy (Note: This action enables all other actions above.)
+        /// </para>
         /// </summary>
         public List<string> Actions
         {
@@ -54,8 +75,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Principals. An AWS account ID, or * to make the application
-        /// public.
+        /// Gets and sets the property Principals. 
+        /// <para>
+        /// An AWS account ID, or * to make the application public.
+        /// </para>
         /// </summary>
         public List<string> Principals
         {
@@ -70,7 +93,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatementId. A unique ID for the statement.
+        /// Gets and sets the property StatementId. 
+        /// <para>
+        /// A unique ID for the statement.
+        /// </para>
         /// </summary>
         public string StatementId
         {

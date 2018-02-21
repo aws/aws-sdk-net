@@ -37,8 +37,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private List<ApplicationPolicyStatement> _statements = new List<ApplicationPolicyStatement>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to put policy
-        /// for
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -53,7 +55,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statements. Array of policy statements applied to the application.
+        /// Gets and sets the property Statements. 
+        /// <para>
+        /// Array of policy statements applied to the application.
+        /// </para>
         /// </summary>
         public List<ApplicationPolicyStatement> Statements
         {

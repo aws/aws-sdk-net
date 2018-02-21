@@ -36,6 +36,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     {
         private string _author;
         private string _description;
+        private string _homePageUrl;
         private List<string> _labels = new List<string>();
         private string _licenseBody;
         private string _licenseUrl;
@@ -49,8 +50,18 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _templateUrl;
 
         /// <summary>
-        /// Gets and sets the property Author. The name of the author publishing the app.\nMin
-        /// Length=1. Max Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+        /// Gets and sets the property Author. 
+        /// <para>
+        /// The name of the author publishing the app.
+        /// </para>
+        /// 
+        /// <para>
+        /// Min Length=1. Max Length=127.
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+        /// </para>
         /// </summary>
         public string Author
         {
@@ -65,8 +76,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. The description of the application.\nMin Length=1.
-        /// Max Length=256
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the application.
+        /// </para>
+        /// 
+        /// <para>
+        /// Min Length=1. Max Length=256
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -81,8 +98,37 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Labels. Labels to improve discovery of apps in search results.\nMin
-        /// Length=1. Max Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+        /// Gets and sets the property HomePageUrl. 
+        /// <para>
+        /// A URL with more information about the application, for example the location of your
+        /// GitHub repository for the application.
+        /// </para>
+        /// </summary>
+        public string HomePageUrl
+        {
+            get { return this._homePageUrl; }
+            set { this._homePageUrl = value; }
+        }
+
+        // Check to see if HomePageUrl property is set
+        internal bool IsSetHomePageUrl()
+        {
+            return this._homePageUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// Labels to improve discovery of apps in search results.
+        /// </para>
+        /// 
+        /// <para>
+        /// Min Length=1. Max Length=127. Maximum number of labels: 10
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+        /// </para>
         /// </summary>
         public List<string> Labels
         {
@@ -97,8 +143,15 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LicenseBody. A raw text file that contains the license
-        /// of the app that matches the spdxLicenseID of your application.\nMax size 5 MB
+        /// Gets and sets the property LicenseBody. 
+        /// <para>
+        /// A raw text file that contains the license of the app that matches the spdxLicenseID
+        /// of your application.
+        /// </para>
+        /// 
+        /// <para>
+        /// Max size 5 MB
+        /// </para>
         /// </summary>
         public string LicenseBody
         {
@@ -113,8 +166,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LicenseUrl. A link to a license file of the app that matches
-        /// the spdxLicenseID of your application.\nMax size 5 MB
+        /// Gets and sets the property LicenseUrl. 
+        /// <para>
+        /// A link to a license file of the app that matches the spdxLicenseID of your application.
+        /// </para>
+        /// 
+        /// <para>
+        /// Max size 5 MB
+        /// </para>
         /// </summary>
         public string LicenseUrl
         {
@@ -129,8 +188,18 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the application you want to publish.\nMin
-        /// Length=1. Max Length=140\nPattern: "[a-zA-Z0-9\\-]+";
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the application you want to publish.
+        /// </para>
+        /// 
+        /// <para>
+        /// Min Length=1. Max Length=140
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: "[a-zA-Z0-9\\-]+";
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -145,9 +214,15 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadmeBody. A raw text Readme file that contains a more
-        /// detailed description of the application and how it works in markdown language.\nMax
-        /// size 5 MB
+        /// Gets and sets the property ReadmeBody. 
+        /// <para>
+        /// A raw text Readme file that contains a more detailed description of the application
+        /// and how it works in markdown language.
+        /// </para>
+        /// 
+        /// <para>
+        /// Max size 5 MB
+        /// </para>
         /// </summary>
         public string ReadmeBody
         {
@@ -162,9 +237,15 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadmeUrl. A link to the Readme file that contains a more
-        /// detailed description of the application and how it works in markdown language.\nMax
-        /// size 5 MB
+        /// Gets and sets the property ReadmeUrl. 
+        /// <para>
+        /// A link to the Readme file that contains a more detailed description of the application
+        /// and how it works in markdown language.
+        /// </para>
+        /// 
+        /// <para>
+        /// Max size 5 MB
+        /// </para>
         /// </summary>
         public string ReadmeUrl
         {
@@ -179,8 +260,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the application:\n\n
-        /// https://semver.org/
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the application:
+        /// </para>
+        /// 
+        /// <para>
+        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {
@@ -195,8 +282,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCodeUrl. A link to a public repository for the source
-        /// code of your application.
+        /// Gets and sets the property SourceCodeUrl. 
+        /// <para>
+        /// A link to a public repository for the source code of your application.
+        /// </para>
         /// </summary>
         public string SourceCodeUrl
         {
@@ -211,8 +300,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SpdxLicenseId. A valid identifier from https://spdx.org/licenses/
-        /// .
+        /// Gets and sets the property SpdxLicenseId. 
+        /// <para>
+        /// A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+        /// </para>
         /// </summary>
         public string SpdxLicenseId
         {
@@ -227,7 +318,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateBody. The raw packaged SAM template of your application.
+        /// Gets and sets the property TemplateBody. 
+        /// <para>
+        /// The raw packaged AWS SAM template of your application.
+        /// </para>
         /// </summary>
         public string TemplateBody
         {
@@ -242,8 +336,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateUrl. A link to the packaged SAM template of your
-        /// application.
+        /// Gets and sets the property TemplateUrl. 
+        /// <para>
+        /// A link to the packaged AWS SAM template of your application.
+        /// </para>
         /// </summary>
         public string TemplateUrl
         {

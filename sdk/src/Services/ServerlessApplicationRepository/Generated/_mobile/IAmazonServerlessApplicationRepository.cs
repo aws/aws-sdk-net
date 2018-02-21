@@ -31,7 +31,48 @@ namespace Amazon.ServerlessApplicationRepository
     /// <summary>
     /// Interface for accessing ServerlessApplicationRepository
     ///
-    /// AWS Serverless Repository
+    /// The AWS Serverless Application Repository makes it easy for developers and enterprises
+    /// to quickly find and deploy serverless applications in the AWS Cloud. For more information
+    /// about serverless applications, see Serverless Computing and Applications on the AWS
+    /// website.
+    /// 
+    /// 
+    /// <para>
+    /// The AWS Serverless Application Repository is deeply integrated with the AWS Lambda
+    /// console, so that developers of  all levels can get started with serverless computing
+    /// without needing to learn anything new. You can use category  keywords to browse for
+    /// applications such as web and mobile backends, data processing applications, or chatbots.
+    ///  You can also search for applications by name, publisher, or event source. To use
+    /// an application, you simply choose it,  configure any required fields, and deploy it
+    /// with a few clicks. 
+    /// </para>
+    /// 
+    /// <para>
+    /// You can also easily publish applications, sharing them publicly with the community
+    /// at large, or privately within your team or across your organization. To publish a
+    /// serverless application (or app), you can use the AWS Management Console, AWS Command
+    /// Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the code, you
+    /// upload a simple manifest file, also known as the AWS Serverless Application Model
+    /// (AWS SAM) template. For more information about AWS SAM, see AWS Serverless Application
+    /// Model (AWS SAM) on the AWS Labs GitHub repository.
+    /// </para>
+    /// 
+    /// <para>
+    /// The AWS Serverless Application Repository Developer Guide contains more information
+    /// about the two developer experiences available:
+    /// </para>
+    /// <ul> <li> 
+    /// <para>
+    /// Consuming Applications – Browse for applications and view information about them,
+    /// including source code and readme files. Also install, configure, and deploy applications
+    /// of your choosing. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Publishing Applications – Configure and upload applications to make them available
+    /// to other developers, and publish new versions of applications. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonServerlessApplicationRepository : IAmazonService, IDisposable
     {
@@ -84,6 +125,23 @@ namespace Amazon.ServerlessApplicationRepository
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">REST API Reference for CreateCloudFormationChangeSet Operation</seealso>
         Task<CreateCloudFormationChangeSetResponse> CreateCloudFormationChangeSetAsync(CreateCloudFormationChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteApplication
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

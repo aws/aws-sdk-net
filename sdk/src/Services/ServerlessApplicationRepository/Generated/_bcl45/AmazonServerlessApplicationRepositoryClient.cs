@@ -36,7 +36,48 @@ namespace Amazon.ServerlessApplicationRepository
     /// <summary>
     /// Implementation for accessing ServerlessApplicationRepository
     ///
-    /// AWS Serverless Repository
+    /// The AWS Serverless Application Repository makes it easy for developers and enterprises
+    /// to quickly find and deploy serverless applications in the AWS Cloud. For more information
+    /// about serverless applications, see Serverless Computing and Applications on the AWS
+    /// website.
+    /// 
+    /// 
+    /// <para>
+    /// The AWS Serverless Application Repository is deeply integrated with the AWS Lambda
+    /// console, so that developers of  all levels can get started with serverless computing
+    /// without needing to learn anything new. You can use category  keywords to browse for
+    /// applications such as web and mobile backends, data processing applications, or chatbots.
+    ///  You can also search for applications by name, publisher, or event source. To use
+    /// an application, you simply choose it,  configure any required fields, and deploy it
+    /// with a few clicks. 
+    /// </para>
+    /// 
+    /// <para>
+    /// You can also easily publish applications, sharing them publicly with the community
+    /// at large, or privately within your team or across your organization. To publish a
+    /// serverless application (or app), you can use the AWS Management Console, AWS Command
+    /// Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the code, you
+    /// upload a simple manifest file, also known as the AWS Serverless Application Model
+    /// (AWS SAM) template. For more information about AWS SAM, see AWS Serverless Application
+    /// Model (AWS SAM) on the AWS Labs GitHub repository.
+    /// </para>
+    /// 
+    /// <para>
+    /// The AWS Serverless Application Repository Developer Guide contains more information
+    /// about the two developer experiences available:
+    /// </para>
+    /// <ul> <li> 
+    /// <para>
+    /// Consuming Applications – Browse for applications and view information about them,
+    /// including source code and readme files. Also install, configure, and deploy applications
+    /// of your choosing. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Publishing Applications – Configure and upload applications to make them available
+    /// to other developers, and publish new versions of applications. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonServerlessApplicationRepositoryClient : AmazonServiceClient, IAmazonServerlessApplicationRepository
     {
@@ -380,6 +421,64 @@ namespace Amazon.ServerlessApplicationRepository
             var unmarshaller = CreateCloudFormationChangeSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCloudFormationChangeSetRequest,CreateCloudFormationChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteApplication
+
+
+        /// <summary>
+        /// Deletes the specified application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplication service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request does
+        /// not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        {
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
+        public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteApplicationRequestMarshaller();
+            var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

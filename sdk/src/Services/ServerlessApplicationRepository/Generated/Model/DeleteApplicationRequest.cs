@@ -28,49 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
-    /// Parameter value of the application.
+    /// Container for the parameters to the DeleteApplication operation.
+    /// Deletes the specified application.
     /// </summary>
-    public partial class ParameterValue
+    public partial class DeleteApplicationRequest : AmazonServerlessApplicationRepositoryRequest
     {
-        private string _name;
-        private string _value;
+        private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The key associated with the parameter. If you don't specify a key and value for a
-        /// particular parameter, AWS CloudFormation uses the default value that is specified
-        /// in your template.
+        /// The ID of the application to get.
         /// </para>
         /// </summary>
-        public string Name
+        public string ApplicationId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The input value associated with the parameter.
-        /// </para>
-        /// </summary>
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._applicationId != null;
         }
 
     }

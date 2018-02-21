@@ -38,7 +38,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to list
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -53,7 +56,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The total number of items to return
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The total number of items to return.
+        /// </para>
         /// </summary>
         public int MaxItems
         {
@@ -68,7 +74,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A token to specify where to start paginating
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token to specify where to start paginating.
+        /// </para>
         /// </summary>
         public string NextToken
         {

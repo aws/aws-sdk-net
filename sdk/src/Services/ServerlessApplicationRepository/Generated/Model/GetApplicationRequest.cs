@@ -37,7 +37,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _semanticVersion;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to get
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -52,8 +55,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the application
-        /// to get
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the application to get.
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {

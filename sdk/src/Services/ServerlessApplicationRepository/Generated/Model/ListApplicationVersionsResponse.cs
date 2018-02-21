@@ -36,7 +36,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private List<VersionSummary> _versions = new List<VersionSummary>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token to request the next page of results.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +54,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Versions. Array of version summaries for the application.
+        /// Gets and sets the property Versions. 
+        /// <para>
+        /// Array of version summaries for the application.
+        /// </para>
         /// </summary>
         public List<VersionSummary> Versions
         {

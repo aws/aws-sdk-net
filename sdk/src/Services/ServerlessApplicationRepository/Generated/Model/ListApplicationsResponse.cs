@@ -36,7 +36,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Applications. Array of application summaries.
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// Array of application summaries.
+        /// </para>
         /// </summary>
         public List<ApplicationSummary> Applications
         {
@@ -51,7 +54,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. The token to request the next page of results.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

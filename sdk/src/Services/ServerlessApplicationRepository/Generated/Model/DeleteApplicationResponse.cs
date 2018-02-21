@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
-    /// This is the response object from the PutApplicationPolicy operation.
+    /// This is the response object from the DeleteApplication operation.
     /// </summary>
-    public partial class PutApplicationPolicyResponse : AmazonWebServiceResponse
+    public partial class DeleteApplicationResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationPolicyStatement> _statements = new List<ApplicationPolicyStatement>();
-
-        /// <summary>
-        /// Gets and sets the property Statements. 
-        /// <para>
-        /// Array of policy statements applied to the application.
-        /// </para>
-        /// </summary>
-        public List<ApplicationPolicyStatement> Statements
-        {
-            get { return this._statements; }
-            set { this._statements = value; }
-        }
-
-        // Check to see if Statements property is set
-        internal bool IsSetStatements()
-        {
-            return this._statements != null && this._statements.Count > 0; 
-        }
 
     }
 }

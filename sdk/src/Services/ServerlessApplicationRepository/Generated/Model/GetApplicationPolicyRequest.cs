@@ -36,8 +36,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to get policy
-        /// for
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {

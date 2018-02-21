@@ -38,7 +38,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _stackId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The application Amazon Resource Name (ARN).
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The application Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -53,8 +56,18 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChangeSetId. The ARN of the change set.\nLength Constraints:
-        /// Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]*
+        /// Gets and sets the property ChangeSetId. 
+        /// <para>
+        /// The ARN of the change set.
+        /// </para>
+        /// 
+        /// <para>
+        /// Length Constraints: Minimum length of 1.
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+        /// </para>
         /// </summary>
         public string ChangeSetId
         {
@@ -69,8 +82,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the application:\n\n
-        /// https://semver.org/
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the application:
+        /// </para>
+        /// 
+        /// <para>
+        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {
@@ -85,7 +104,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackId. The unique ID of the stack.
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The unique ID of the stack.
+        /// </para>
         /// </summary>
         public string StackId
         {

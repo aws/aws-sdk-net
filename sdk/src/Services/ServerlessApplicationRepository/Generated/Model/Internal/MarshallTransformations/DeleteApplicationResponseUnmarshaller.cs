@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateApplication operation
+    /// Response Unmarshaller for DeleteApplication operation
     /// </summary>  
-    public class UpdateApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteApplicationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,79 +45,8 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateApplicationResponse response = new UpdateApplicationResponse();
+            DeleteApplicationResponse response = new DeleteApplicationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("applicationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ApplicationId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("author", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Author = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("homePageUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HomePageUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("labels", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Labels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licenseUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LicenseUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("readmeUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReadmeUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("spdxLicenseId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SpdxLicenseId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth))
-                {
-                    var unmarshaller = VersionUnmarshaller.Instance;
-                    response.Version = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -159,9 +88,9 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             return new AmazonServerlessApplicationRepositoryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateApplicationResponseUnmarshaller _instance = new UpdateApplicationResponseUnmarshaller();        
+        private static DeleteApplicationResponseUnmarshaller _instance = new DeleteApplicationResponseUnmarshaller();        
 
-        internal static UpdateApplicationResponseUnmarshaller GetInstance()
+        internal static DeleteApplicationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +98,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateApplicationResponseUnmarshaller Instance
+        public static DeleteApplicationResponseUnmarshaller Instance
         {
             get
             {

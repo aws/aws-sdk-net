@@ -40,8 +40,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _templateUrl;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to create a new
-        /// version for
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -56,7 +58,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the new version
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the new version.
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {
@@ -71,8 +76,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCodeUrl. A link to a public repository for the source
-        /// code of your application.
+        /// Gets and sets the property SourceCodeUrl. 
+        /// <para>
+        /// A link to a public repository for the source code of your application.
+        /// </para>
         /// </summary>
         public string SourceCodeUrl
         {
@@ -87,7 +94,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateBody. The raw packaged SAM template of your application.
+        /// Gets and sets the property TemplateBody. 
+        /// <para>
+        /// The raw packaged AWS SAM template of your application.
+        /// </para>
         /// </summary>
         public string TemplateBody
         {
@@ -102,8 +112,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateUrl. A link to the packaged SAM template of your
-        /// application.
+        /// Gets and sets the property TemplateUrl. 
+        /// <para>
+        /// A link to the packaged AWS SAM template of your application.
+        /// </para>
         /// </summary>
         public string TemplateUrl
         {

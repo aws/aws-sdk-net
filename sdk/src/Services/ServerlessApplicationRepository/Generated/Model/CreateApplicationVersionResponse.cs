@@ -40,7 +40,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _templateUrl;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The application Amazon Resource Name (ARN).
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The application Amazon Resource Name (ARN).
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -55,7 +58,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. The date/time this resource was created.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The date/time this resource was created.
+        /// </para>
         /// </summary>
         public string CreationTime
         {
@@ -70,8 +76,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParameterDefinitions. Array of parameter types supported
-        /// by the application.
+        /// Gets and sets the property ParameterDefinitions. 
+        /// <para>
+        /// Array of parameter types supported by the application.
+        /// </para>
         /// </summary>
         public List<ParameterDefinition> ParameterDefinitions
         {
@@ -86,8 +94,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the application:\n\n
-        /// https://semver.org/
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the application:
+        /// </para>
+        /// 
+        /// <para>
+        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {
@@ -102,8 +116,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCodeUrl. A link to a public repository for the source
-        /// code of your application.
+        /// Gets and sets the property SourceCodeUrl. 
+        /// <para>
+        /// A link to a public repository for the source code of your application.
+        /// </para>
         /// </summary>
         public string SourceCodeUrl
         {
@@ -118,8 +134,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateUrl. A link to the packaged SAM template of your
-        /// application.
+        /// Gets and sets the property TemplateUrl. 
+        /// <para>
+        /// A link to the packaged AWS SAM template of your application.
+        /// </para>
         /// </summary>
         public string TemplateUrl
         {

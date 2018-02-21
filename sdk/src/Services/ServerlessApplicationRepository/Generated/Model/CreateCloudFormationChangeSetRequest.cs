@@ -39,8 +39,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private string _stackName;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The id of the application to create the
-        /// ChangeSet for
+        /// Gets and sets the property ApplicationId. 
+        /// <para>
+        /// The ID of the application to get.
+        /// </para>
         /// </summary>
         public string ApplicationId
         {
@@ -55,8 +57,10 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParameterOverrides. A list of parameter values for the
-        /// parameters of the application.
+        /// Gets and sets the property ParameterOverrides. 
+        /// <para>
+        /// A list of parameter values for the parameters of the application.
+        /// </para>
         /// </summary>
         public List<ParameterValue> ParameterOverrides
         {
@@ -71,8 +75,14 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SemanticVersion. The semantic version of the application:\n\n
-        /// https://semver.org/
+        /// Gets and sets the property SemanticVersion. 
+        /// <para>
+        /// The semantic version of the application:
+        /// </para>
+        /// 
+        /// <para>
+        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        /// </para>
         /// </summary>
         public string SemanticVersion
         {
@@ -87,11 +97,21 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackName. The name or the unique ID of the stack for which
-        /// you are creating a change set. AWS CloudFormation generates\n the change set by comparing
-        /// this stack's information with the information that you submit, such as a modified\n
-        /// template or different parameter input values. \nConstraints: Minimum length of 1.\nPattern:
-        /// ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name or the unique ID of the stack for which you are creating a change set. AWS
+        /// CloudFormation generates the change set by comparing this stack's information with
+        /// the information that you submit, such as a modified template or different parameter
+        /// input values. 
+        /// </para>
+        /// 
+        /// <para>
+        /// Constraints: Minimum length of 1.
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+        /// </para>
         /// </summary>
         public string StackName
         {
