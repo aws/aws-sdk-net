@@ -1,3 +1,15 @@
+### 3.3.239.0 (2018-02-21 20:41 UTC)
+* CodeCommit (3.3.4.0)
+	* This release adds an API for adding a file directly to an AWS CodeCommit repository without requiring a Git client.
+* EC2 (3.3.45.0)
+	* Adds support for tagging an EBS snapshot as part of the API call that creates the EBS snapshot
+* ServerlessApplicationRepository (3.3.1.0)
+	* Added support for delete-application API and the ability for developers to set a homepage for their application. The homepage is a URL with more information about the application, for example the location of your GitHub repository for the application. 
+* Core 3.3.21.13
+	* Mediapackage expands their service to FRA and CDG regions.
+
+
+
 ### 3.3.238.0 (2018-02-20 22:50 UTC)
 * AutoScaling (3.3.4.0)
 	* Amazon EC2 Auto Scaling support for service-linked roles
