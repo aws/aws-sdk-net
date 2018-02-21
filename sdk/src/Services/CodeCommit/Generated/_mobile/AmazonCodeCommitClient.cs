@@ -109,6 +109,14 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Files, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Information about committed code in a repository, by calling the following:
     /// </para>
     ///  <ul> <li> 
@@ -1256,6 +1264,38 @@ namespace Amazon.CodeCommit
             var unmarshaller = PostCommentReplyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostCommentReplyRequest,PostCommentReplyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutFile
+
+        internal virtual PutFileResponse PutFile(PutFileRequest request)
+        {
+            var marshaller = new PutFileRequestMarshaller();
+            var unmarshaller = PutFileResponseUnmarshaller.Instance;
+
+            return Invoke<PutFileRequest,PutFileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        public virtual Task<PutFileResponse> PutFileAsync(PutFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutFileRequestMarshaller();
+            var unmarshaller = PutFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutFileRequest,PutFileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

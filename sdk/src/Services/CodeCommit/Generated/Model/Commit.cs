@@ -143,7 +143,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Parents. 
         /// <para>
-        /// The parent list for the specified commit.
+        /// A list of parent commits for the specified commit. Each parent commit ID is the full
+        /// commit ID.
         /// </para>
         /// </summary>
         public List<string> Parents

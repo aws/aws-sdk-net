@@ -28,66 +28,66 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about the user who made a specified commit.
+    /// This is the response object from the PutFile operation.
     /// </summary>
-    public partial class UserInfo
+    public partial class PutFileResponse : AmazonWebServiceResponse
     {
-        private string _date;
-        private string _email;
-        private string _name;
+        private string _blobId;
+        private string _commitId;
+        private string _treeId;
 
         /// <summary>
-        /// Gets and sets the property Date. 
+        /// Gets and sets the property BlobId. 
         /// <para>
-        /// The date when the specified commit was commited, in timestamp format with GMT offset.
+        /// The ID of the blob, which is its SHA-1 pointer.
         /// </para>
         /// </summary>
-        public string Date
+        public string BlobId
         {
-            get { return this._date; }
-            set { this._date = value; }
+            get { return this._blobId; }
+            set { this._blobId = value; }
         }
 
-        // Check to see if Date property is set
-        internal bool IsSetDate()
+        // Check to see if BlobId property is set
+        internal bool IsSetBlobId()
         {
-            return this._date != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Email. 
-        /// <para>
-        /// The email address associated with the user who made the commit, if any.
-        /// </para>
-        /// </summary>
-        public string Email
-        {
-            get { return this._email; }
-            set { this._email = value; }
-        }
-
-        // Check to see if Email property is set
-        internal bool IsSetEmail()
-        {
-            return this._email != null;
+            return this._blobId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property CommitId. 
         /// <para>
-        /// The name of the user who made the specified commit.
+        /// The full SHA of the commit that contains this file change.
         /// </para>
         /// </summary>
-        public string Name
+        public string CommitId
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._commitId; }
+            set { this._commitId = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if CommitId property is set
+        internal bool IsSetCommitId()
         {
-            return this._name != null;
+            return this._commitId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TreeId. 
+        /// <para>
+        /// Tree information for the commit that contains this file change.
+        /// </para>
+        /// </summary>
+        public string TreeId
+        {
+            get { return this._treeId; }
+            set { this._treeId = value; }
+        }
+
+        // Check to see if TreeId property is set
+        internal bool IsSetTreeId()
+        {
+            return this._treeId != null;
         }
 
     }

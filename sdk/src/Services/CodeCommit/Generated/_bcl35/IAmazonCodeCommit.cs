@@ -102,6 +102,14 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Files, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// Information about committed code in a repository, by calling the following:
     /// </para>
     ///  <ul> <li> 
@@ -2508,6 +2516,153 @@ namespace Amazon.CodeCommit
         /// <returns>Returns a  PostCommentReplyResult from CodeCommit.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         PostCommentReplyResponse EndPostCommentReply(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutFile
+
+
+        /// <summary>
+        /// Adds or updates a file in an AWS CodeCommit repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFile service method.</param>
+        /// 
+        /// <returns>The response from the PutFile service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.DirectoryNameConflictsWithFileNameException">
+        /// A file cannot be added to the repository because the specified path name has the same
+        /// name as a file that already exists in this repository. Either provide a different
+        /// name for the file, or specify a different path for the file.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentRequiredException">
+        /// The file cannot be added because it is empty. Empty files cannot be added to the repository
+        /// with this API.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileContentSizeLimitExceededException">
+        /// The file cannot be added because it is too large. The maximum file size that can be
+        /// added using PutFile is 6 MB. For files larger than 6 MB but smaller than 2 GB, add
+        /// them using a Git client.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileNameConflictsWithDirectoryNameException">
+        /// A file cannot be added to the repository because the specified file name has the same
+        /// name as a directory in this repository. Either provide another name for the file,
+        /// or add the file in a directory that does not match the file name.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidFileModeException">
+        /// The specified file mode permission is not valid. For a list of valid file mode permissions,
+        /// see <a>PutFile</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidParentCommitIdException">
+        /// The parent commit ID is not valid. The commit ID cannot be empty, and must match the
+        /// head commit ID for the branch of the repository where you want to add or update a
+        /// file.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The file name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
+        /// The parent commit ID is not valid. The specified parent commit ID does not exist in
+        /// the specified branch of the repository.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdOutdatedException">
+        /// The file could not be added because the provided parent commit ID is not the current
+        /// tip of the specified branch. To view the full commit ID of the current head of the
+        /// branch, use <a>GetBranch</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdRequiredException">
+        /// A parent commit ID is required. To view the full commit ID of a branch in a repository,
+        /// use <a>GetBranch</a> or a Git command (for example, git pull or git log).
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The filePath for a location cannot be empty or null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.SameFileContentException">
+        /// The file was not added or updated because the content of the file is exactly the same
+        /// as the content of that file in the repository and branch that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        PutFileResponse PutFile(PutFileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutFile operation on AmazonCodeCommitClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        IAsyncResult BeginPutFile(PutFileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutFile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFile.</param>
+        /// 
+        /// <returns>Returns a  PutFileResult from CodeCommit.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
+        PutFileResponse EndPutFile(IAsyncResult asyncResult);
 
         #endregion
         
