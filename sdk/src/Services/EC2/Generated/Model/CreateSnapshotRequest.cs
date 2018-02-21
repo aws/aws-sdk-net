@@ -62,6 +62,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// You can tag your snapshots during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// Your Amazon EC2 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
     /// Elastic Block Store</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
     /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -70,6 +75,7 @@ namespace Amazon.EC2.Model
     public partial class CreateSnapshotRequest : AmazonEC2Request
     {
         private string _description;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _volumeId;
 
         /// <summary>
@@ -104,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the snapshot during creation.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>
