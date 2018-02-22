@@ -71,6 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         /// </summary>
         [TestMethod]
         [TestCategory("EC2")]
+        [Ignore("Disabled until it can be fixed.")]
         public void IpRangeRoundTripTest()
         {
             var describeSecurityGroupsResponse  = DescribeSecurityGroups();
