@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetDimensionValues operation
+    /// Response Unmarshaller for GetReservationCoverage operation
     /// </summary>  
-    public class GetDimensionValuesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetReservationCoverageResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetDimensionValuesResponse response = new GetDimensionValuesResponse();
+            GetReservationCoverageResponse response = new GetReservationCoverageResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DimensionValues", targetDepth))
+                if (context.TestExpression("CoveragesByTime", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionValuesWithAttributes, DimensionValuesWithAttributesUnmarshaller>(DimensionValuesWithAttributesUnmarshaller.Instance);
-                    response.DimensionValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CoverageByTime, CoverageByTimeUnmarshaller>(CoverageByTimeUnmarshaller.Instance);
+                    response.CoveragesByTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextPageToken", targetDepth))
@@ -63,16 +63,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     response.NextPageToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ReturnSize", targetDepth))
+                if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.ReturnSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TotalSize", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.TotalSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CoverageUnmarshaller.Instance;
+                    response.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,9 +84,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("BillExpirationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DataUnavailableException"))
             {
-                return new BillExpirationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DataUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
@@ -105,9 +99,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             return new AmazonCostExplorerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetDimensionValuesResponseUnmarshaller _instance = new GetDimensionValuesResponseUnmarshaller();        
+        private static GetReservationCoverageResponseUnmarshaller _instance = new GetReservationCoverageResponseUnmarshaller();        
 
-        internal static GetDimensionValuesResponseUnmarshaller GetInstance()
+        internal static GetReservationCoverageResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +109,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDimensionValuesResponseUnmarshaller Instance
+        public static GetReservationCoverageResponseUnmarshaller Instance
         {
             get
             {

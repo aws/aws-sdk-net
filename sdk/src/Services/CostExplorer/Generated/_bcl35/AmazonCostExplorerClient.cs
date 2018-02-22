@@ -246,13 +246,22 @@ namespace Amazon.CostExplorer
         /// Retrieve cost and usage metrics for your account. You can specify which cost and usage-related
         /// metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you
         /// want the request to return. You can also filter and group your data by various dimensions,
-        /// such as <code>AWS Service</code> or <code>AvailabilityZone</code>, in a specific time
-        /// range. See the <code>GetDimensionValues</code> action for a complete list of the valid
-        /// dimensions. Master accounts in an organization have access to all member accounts.
+        /// such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. See the
+        /// <code>GetDimensionValues</code> action for a complete list of the valid dimensions.
+        /// Master accounts in an organization have access to all member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// 
         /// <returns>The response from the GetCostAndUsage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
@@ -311,6 +320,12 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetDimensionValues service method.</param>
         /// 
         /// <returns>The response from the GetDimensionValues service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
@@ -359,6 +374,100 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetReservationCoverage
+
+        /// <summary>
+        /// Retrieve the reservation coverage for your account. An organization's master account
+        /// has access to the associated member accounts. For any time period, you can filter
+        /// data about reservation usage by the following dimensions. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// AZ
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// LINKED_ACCOUNT
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PLATFORM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TENANCY
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+        /// operation. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage service method.</param>
+        /// 
+        /// <returns>The response from the GetReservationCoverage service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
+        public virtual GetReservationCoverageResponse GetReservationCoverage(GetReservationCoverageRequest request)
+        {
+            var marshaller = new GetReservationCoverageRequestMarshaller();
+            var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationCoverageRequest,GetReservationCoverageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservationCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReservationCoverage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
+        public virtual IAsyncResult BeginGetReservationCoverage(GetReservationCoverageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetReservationCoverageRequestMarshaller();
+            var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetReservationCoverageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReservationCoverage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReservationCoverage.</param>
+        /// 
+        /// <returns>Returns a  GetReservationCoverageResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
+        public virtual GetReservationCoverageResponse EndGetReservationCoverage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetReservationCoverageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetReservationUtilization
 
         /// <summary>
@@ -370,6 +479,12 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetReservationUtilization service method.</param>
         /// 
         /// <returns>The response from the GetReservationUtilization service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
@@ -427,6 +542,12 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// 
         /// <returns>The response from the GetTags service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>

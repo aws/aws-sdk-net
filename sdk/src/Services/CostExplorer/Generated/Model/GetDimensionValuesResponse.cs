@@ -54,46 +54,46 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// InstanceType - The type of EC2 instance. An example is m4.xlarge.
+        /// INSTANCE_TYPE - The type of EC2 instance. An example is m4.xlarge.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LinkedAccount - The description in the attribute map that includes the full name of
-        /// the member account. The value field contains the AWS ID of the member account
+        /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
+        /// of the member account. The value field contains the AWS ID of the member account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Operation - The action performed. Examples include RunInstance and CreateBucket.
+        /// OPERATION - The action performed. Examples include RunInstance and CreateBucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PurchaseType - The reservation type of the purchase to which this usage is related.
+        /// PURCHASE_TYPE - The reservation type of the purchase to which this usage is related.
         /// Examples include: On Demand Instances and Standard Reserved Instances
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Service - The AWS service such as DynamoDB.
+        /// SERVICE - The AWS service such as DynamoDB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UsageType -The type of usage. An example is DataTransfer-In-Bytes. The response for
-        /// the GetDimensionValues action includes a unit attribute, examples of which include
+        /// USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response
+        /// for the GetDimensionValues action includes a unit attribute, examples of which include
         /// GB and Hrs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UsageTypeGroup - The grouping of common usage types. An example is EC2: CloudWatch
+        /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch
         /// – Alarms. The response for this action includes a unit attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RecordType - The different types of charges such as RI fees, usage costs, tax refunds,
-        /// and credits
+        /// RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds,
+        /// and credits.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set the context to <code>ReservedInstance</code>, you can use the following
-        /// dimensions for searching:
+        /// If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions
+        /// for searching:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -101,29 +101,29 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// InstanceType - The type of EC2 instance. An example is m4.xlarge.
+        /// INSTANCE_TYPE - The type of EC2 instance. An example is m4.xlarge.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// LinkedAccount - The description in the attribute map that includes the full name of
-        /// the member account. The value field contains the AWS ID of the member account
+        /// LINKED_ACCOUNT - The description in the attribute map that includes the full name
+        /// of the member account. The value field contains the AWS ID of the member account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Platform - The operating system. Examples are Windows or Linux.
+        /// PLATFORM - The operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Region - The AWS region.
+        /// REGION - The AWS region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Scope - The scope of a reserved instance (RI). Values are regional or a single availability
+        /// SCOPE - The scope of a reserved instance (RI). Values are regional or a single availability
         /// zone.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tenancy - The tenancy of a resource. Examples are shared or dedicated.
+        /// TENANCY - The tenancy of a resource. Examples are shared or dedicated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

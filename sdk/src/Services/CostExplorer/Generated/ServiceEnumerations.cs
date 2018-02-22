@@ -85,9 +85,29 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension AZ = new Dimension("AZ");
         /// <summary>
+        /// Constant CACHE_ENGINE for Dimension
+        /// </summary>
+        public static readonly Dimension CACHE_ENGINE = new Dimension("CACHE_ENGINE");
+        /// <summary>
+        /// Constant DATABASE_ENGINE for Dimension
+        /// </summary>
+        public static readonly Dimension DATABASE_ENGINE = new Dimension("DATABASE_ENGINE");
+        /// <summary>
+        /// Constant DEPLOYMENT_OPTION for Dimension
+        /// </summary>
+        public static readonly Dimension DEPLOYMENT_OPTION = new Dimension("DEPLOYMENT_OPTION");
+        /// <summary>
         /// Constant INSTANCE_TYPE for Dimension
         /// </summary>
         public static readonly Dimension INSTANCE_TYPE = new Dimension("INSTANCE_TYPE");
+        /// <summary>
+        /// Constant INSTANCE_TYPE_FAMILY for Dimension
+        /// </summary>
+        public static readonly Dimension INSTANCE_TYPE_FAMILY = new Dimension("INSTANCE_TYPE_FAMILY");
+        /// <summary>
+        /// Constant LEGAL_ENTITY_NAME for Dimension
+        /// </summary>
+        public static readonly Dimension LEGAL_ENTITY_NAME = new Dimension("LEGAL_ENTITY_NAME");
         /// <summary>
         /// Constant LINKED_ACCOUNT for Dimension
         /// </summary>

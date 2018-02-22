@@ -32,9 +32,9 @@ namespace Amazon.CostExplorer.Model
     /// Retrieve cost and usage metrics for your account. You can specify which cost and usage-related
     /// metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you
     /// want the request to return. You can also filter and group your data by various dimensions,
-    /// such as <code>AWS Service</code> or <code>AvailabilityZone</code>, in a specific time
-    /// range. See the <code>GetDimensionValues</code> action for a complete list of the valid
-    /// dimensions. Master accounts in an organization have access to all member accounts.
+    /// such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. See the
+    /// <code>GetDimensionValues</code> action for a complete list of the valid dimensions.
+    /// Master accounts in an organization have access to all member accounts.
     /// </summary>
     public partial class GetCostAndUsageRequest : AmazonCostExplorerRequest
     {
@@ -48,11 +48,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filters AWS costs by different dimensions. For example, you can specify <code>Service</code>
-        /// and <code>Linked Account</code> and get the costs associated with that account's usage
+        /// Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code>
+        /// and <code>LINKED_ACCOUNT</code> and get the costs associated with that account's usage
         /// of that service. You can nest <code>Expression</code> objects to define any combination
-        /// of dimension filters. For more information, see the <code>Expression</code> object
-        /// or <code>More Examples</code>. 
+        /// of dimension filters. For more information, see <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        /// 
         /// </para>
         /// </summary>
         public Expression Filter
@@ -70,7 +70,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>.
+        /// Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code>
+        /// isn't set, the response object doesn't include the <code>Granularity</code>, either
+        /// <code>MONTHLY</code> or <code>DAILY</code>. 
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -97,9 +99,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCCOUNT</code>,
-        /// <code>OPERATION</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>USAGE_TYPE</code>,
-        /// <code>TAGS</code>, and <code>PLATFORM</code>.
+        /// Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>,
+        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+        /// <code>TAGS</code>, <code>TENANCY</code>, and <code>USAGE_TYPE</code>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
@@ -118,8 +120,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// Which metrics are returned in the query. For more information about blended and unblended
-        /// rates, see https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/.
-        /// 
+        /// rates, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+        /// does the "blended" annotation appear on some line items in my bill?</a>. 
         /// </para>
         ///  
         /// <para>
