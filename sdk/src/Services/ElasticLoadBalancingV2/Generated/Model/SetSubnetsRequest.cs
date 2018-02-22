@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the SetSubnets operation.
-    /// Enables the Availability Zone for the specified subnets for the specified Application
+    /// Enables the Availability Zone for the specified public subnets for the specified Application
     /// Load Balancer. The specified subnets replace the previously enabled subnets.
     /// 
     ///  
@@ -64,14 +64,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SubnetMappings. 
         /// <para>
-        /// The IDs of the subnets. You must specify subnets from at least two Availability Zones.
-        /// You can specify only one subnet per Availability Zone. You must specify either subnets
-        /// or subnet mappings.
+        /// The IDs of the public subnets. You must specify subnets from at least two Availability
+        /// Zones. You can specify only one subnet per Availability Zone. You must specify either
+        /// subnets or subnet mappings.
         /// </para>
         ///  
         /// <para>
-        /// The load balancer is allocated one static IP address per subnet. You cannot specify
-        /// your own Elastic IP addresses.
+        /// You cannot specify Elastic IP addresses for your subnets.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings
@@ -89,9 +88,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of the subnets. You must specify subnets from at least two Availability Zones.
-        /// You can specify only one subnet per Availability Zone. You must specify either subnets
-        /// or subnet mappings.
+        /// The IDs of the public subnets. You must specify subnets from at least two Availability
+        /// Zones. You can specify only one subnet per Availability Zone. You must specify either
+        /// subnets or subnet mappings.
         /// </para>
         /// </summary>
         public List<string> Subnets

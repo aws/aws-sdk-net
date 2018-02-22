@@ -215,13 +215,14 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// You can create up to 10 listeners per load balancer.
-        /// </para>
-        ///  
-        /// <para>
         /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
         /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
         /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple listeners with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -300,9 +301,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify security groups, subnets, IP address
-        /// type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
-        /// <a>SetIpAddressType</a>, and <a>AddTags</a>.
+        /// When you create a load balancer, you can specify security groups, public subnets,
+        /// IP address type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
+        /// <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.
         /// </para>
         ///  
         /// <para>
@@ -312,12 +313,15 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// You can create up to 20 load balancers per region per account. You can request an
-        /// increase for the number of load balancers for your account. For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+        /// For limit information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
         /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>
         /// and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
         /// for Your Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple load balancers with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -479,6 +483,11 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// To delete a target group, use <a>DeleteTargetGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent, which means that it completes at most one time. If you
+        /// attempt to create multiple target groups with the same settings, each call succeeds.
         /// </para>
         ///  
         /// <para>
@@ -683,7 +692,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the DeregisterTargets service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -1068,7 +1078,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// The health of the specified targets could not be retrieved due to an internal error.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -1369,7 +1380,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the RegisterTargets service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidTargetException">
-        /// The specified target does not exist or is not in the same VPC as the target group.
+        /// The specified target does not exist, is not in the same VPC as the target group, or
+        /// has an unsupported instance type.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
@@ -1619,7 +1631,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Enables the Availability Zone for the specified subnets for the specified Application
+        /// Enables the Availability Zone for the specified public subnets for the specified Application
         /// Load Balancer. The specified subnets replace the previously enabled subnets.
         /// 
         ///  

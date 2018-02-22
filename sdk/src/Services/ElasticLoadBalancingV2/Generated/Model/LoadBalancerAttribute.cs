@@ -69,6 +69,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle
         /// timeout value, in seconds. The valid range is 1-4000. The default is 60 seconds.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates
+        /// whether cross-zone load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+        /// The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether
+        /// HTTP/2 is enabled. The value is <code>true</code> or <code>false</code>. The default
+        /// is <code>true</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Key
