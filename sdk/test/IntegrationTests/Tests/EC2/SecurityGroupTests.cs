@@ -19,39 +19,79 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         private static readonly string SECURITY_GROUP_NAME = "test-sg";
         private static string SECURITY_GROUP_ID;
         private static string VPC_ID;
+
+        private static readonly Tag DotNetTag = new Tag("purpose", ".NET SDK integ test");
+
         public SecurityGroupTests()
         {
-            var createVpcResponse =  Client.CreateVpc(new  CreateVpcRequest
+            var createVpcResponse = Client.CreateVpc(new CreateVpcRequest
             {
                 CidrBlock = "10.0.0.0/16"
             });
+            // tag so we can identify later
+            Client.CreateTags(new CreateTagsRequest
+            {
+                Resources = { createVpcResponse.Vpc.VpcId },
+                Tags = { DotNetTag }
+            });
+
             var createSecurityGroup = Client.CreateSecurityGroup(new CreateSecurityGroupRequest
             {
                 GroupName = SECURITY_GROUP_NAME,
                 Description = "Test security Group",
                 VpcId = createVpcResponse.Vpc.VpcId
             });
+            // tag so we can identify later
+            Client.CreateTags(new CreateTagsRequest
+            {
+                Resources = { createSecurityGroup.GroupId },
+                Tags = { DotNetTag }
+            });
 
-            SetGroupId(createSecurityGroup.GroupId,createVpcResponse.Vpc.VpcId);
+            SetGroupId(createSecurityGroup.GroupId, createVpcResponse.Vpc.VpcId);
         }
 
-        private static void SetGroupId(string groupId,string vpcId)
+        private static void SetGroupId(string groupId, string vpcId)
         {
             SECURITY_GROUP_ID = groupId;
             VPC_ID = vpcId;
         }
+
         [ClassCleanup]
         public static void Cleanup()
         {
-            Client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
+            // clean up all .net tagged security groups
+            var describeSecurityGroupsResponse = Client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest
             {
-                GroupId = SECURITY_GROUP_ID
+                Filters = new List<Filter>
+                {
+                    new Filter("tag-value", new List<string> { DotNetTag.Value }),
+                }
+            });
+            foreach (var group in describeSecurityGroupsResponse.SecurityGroups)
+            {
+                Client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
+                {
+                    GroupId = group.GroupId
+                });
+            }
+
+            // clean up all .net tagged vpcs
+            var describVpcsResponse = Client.DescribeVpcs(new DescribeVpcsRequest
+            {
+                Filters = new List<Filter>
+                {
+                    new Filter("tag:" +  DotNetTag.Key, new List<string> {  DotNetTag.Value })
+                }
             });
 
-            Client.DeleteVpc(new DeleteVpcRequest
+            foreach (var vpc in describVpcsResponse.Vpcs)
             {
-                VpcId = VPC_ID
-            });
+                Client.DeleteVpc(new DeleteVpcRequest
+                {
+                    VpcId = vpc.VpcId
+                });
+            }
             BaseClean();
         }
 
@@ -71,10 +111,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         /// </summary>
         [TestMethod]
         [TestCategory("EC2")]
-        [Ignore("Disabled until it can be fixed.")]
         public void IpRangeRoundTripTest()
         {
-            var describeSecurityGroupsResponse  = DescribeSecurityGroups();
+            var describeSecurityGroupsResponse = DescribeSecurityGroups();
 
             var testCollection = new List<string>();
             var authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
@@ -90,9 +129,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.IsNotNull(authorizeSecurityGroupEgressResponse);
             Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p=>p.CidrIp).ToList(), testCollection);
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList(), testCollection);
+            });
 
             authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
             authorizeSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
@@ -101,10 +143,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             authorizeSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] };
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            var validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            var validationResult = new List<string>();
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            });
 
             authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
             authorizeSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
@@ -115,8 +161,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.AreEqual(authorizeSecurityGroupEgressException.Message, "Cannot set values for both Ipv4Ranges and IpRanges properties on the IpPermission type which is part of the request. Consider using only Ipv4Ranges as IpRanges has been marked obsolete.");
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-
             authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest();
             authorizeSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
             describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges = new List<IpRange> { new IpRange { CidrIp = "0.0.0.0/9", Description = "TestDescription" } };
@@ -125,58 +169,97 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             authorizeSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] };
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            });
 
             authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges = new List<IpRange> { new IpRange { CidrIp = "0.0.0.0/10", Description = "TestDescription" }, new IpRange { CidrIp = "0.0.0.0/11", Description = "TestDescription" } };
-            authorizeSecurityGroupEgressRequest.IpPermissions[0].IpRanges = new List<string> { "0.0.0.0/10","0.0.0.0/11" };
+            authorizeSecurityGroupEgressRequest.IpPermissions[0].IpRanges = new List<string> { "0.0.0.0/10", "0.0.0.0/11" };
             testCollection.Add("0.0.0.0/10");
             testCollection.Add("0.0.0.0/11");
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            });
 
             var updateSecurityGroupEgressRequest = new UpdateSecurityGroupRuleDescriptionsEgressRequest();
             updateSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
-            describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges = new List<string> {"0.0.0.0/8"};
+            describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges = new List<string> { "0.0.0.0/8" };
             updateSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] };
             var updateSecurityGroupEgressResponse = Client.UpdateSecurityGroupRuleDescriptionsEgress(updateSecurityGroupEgressRequest);
 
             Assert.IsNotNull(updateSecurityGroupEgressResponse);
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
-            CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
+                CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, validationResult);
 
-            var descriptionTest = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Where(p => p.CidrIp == "0.0.0.0/8").Select(p => p.Description).Single().ToString();
-            Assert.AreEqual(descriptionTest, "TestDescription");
+                var descriptionTest = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Where(p => p.CidrIp == "0.0.0.0/8").Select(p => p.Description).Single().ToString();
+                Assert.AreEqual(descriptionTest, "TestDescription");
+            });
 
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
             var revokeSecurityGroupEgressRequest = new RevokeSecurityGroupEgressRequest();
             revokeSecurityGroupEgressRequest.GroupId = SECURITY_GROUP_ID;
             revokeSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] };
             var revokeSecurityGroupIngressResponse = Client.RevokeSecurityGroupEgress(revokeSecurityGroupEgressRequest);
 
-            
             Assert.IsNotNull(revokeSecurityGroupIngressResponse);
-            describeSecurityGroupsResponse = DescribeSecurityGroups();
-            Assert.IsFalse(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress
-                .Where(p=>p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" })|| p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7"})||p.IpRanges.Contains("0.0.0.0/7")||p.IpRanges.Contains("0.0.0.0/8")).ToList().Any());
+
+            RunWithRetries(() =>
+            {
+                describeSecurityGroupsResponse = DescribeSecurityGroups();
+                Assert.IsFalse(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress
+                    .Where(p => p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" }) || p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7" }) || p.IpRanges.Contains("0.0.0.0/7") || p.IpRanges.Contains("0.0.0.0/8")).ToList().Any());
+            });
+
+        }
+
+        private void RunWithRetries(Action action)
+        {
+            var waitTimes = new int[] { 1000, 5000 };
+            var exceptions = new List<Exception>();
+            var attempt = 0;
+
+            while (true)
+            {
+                try
+                {
+                    action();
+                    break;
+                }
+                catch (Exception e)
+                {
+                    exceptions.Add(e);
+                    if (attempt < waitTimes.Length)
+                    {
+                        Thread.Sleep(waitTimes[attempt]);
+                        attempt++;
+                    }
+                    else
+                        throw new AggregateException("RunWithRetries failed.", exceptions);
+                }
+            }
         }
 
         private static DescribeSecurityGroupsResponse DescribeSecurityGroups()
         {
             var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest();
             describeSecurityGroupRequest.GroupIds = new List<string> { SECURITY_GROUP_ID };
-            var describeSecurityGroupsResponse =  Client.DescribeSecurityGroups(describeSecurityGroupRequest);
+            var describeSecurityGroupsResponse = Client.DescribeSecurityGroups(describeSecurityGroupRequest);
             return describeSecurityGroupsResponse;
         }
 
-        
+
     }
 }
