@@ -11,7 +11,7 @@ namespace TestWrapper
 {
     public class MSTestRunner : TestRunner
     {
-        public MSTestRunner(FileInfo testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
+        public MSTestRunner(string testSuiteExecutable, FileInfo testContainer, DirectoryInfo workingDirectory)
             : base(testSuiteExecutable, testContainer, workingDirectory: null)
         {
         }
