@@ -525,6 +525,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageState AVAILABLE = new ImageState("AVAILABLE");
         /// <summary>
+        /// Constant COPYING for ImageState
+        /// </summary>
+        public static readonly ImageState COPYING = new ImageState("COPYING");
+        /// <summary>
         /// Constant DELETING for ImageState
         /// </summary>
         public static readonly ImageState DELETING = new ImageState("DELETING");
@@ -582,6 +586,10 @@ namespace Amazon.AppStream
         /// Constant IMAGE_BUILDER_NOT_AVAILABLE for ImageStateChangeReasonCode
         /// </summary>
         public static readonly ImageStateChangeReasonCode IMAGE_BUILDER_NOT_AVAILABLE = new ImageStateChangeReasonCode("IMAGE_BUILDER_NOT_AVAILABLE");
+        /// <summary>
+        /// Constant IMAGE_COPY_FAILURE for ImageStateChangeReasonCode
+        /// </summary>
+        public static readonly ImageStateChangeReasonCode IMAGE_COPY_FAILURE = new ImageStateChangeReasonCode("IMAGE_COPY_FAILURE");
         /// <summary>
         /// Constant INTERNAL_ERROR for ImageStateChangeReasonCode
         /// </summary>

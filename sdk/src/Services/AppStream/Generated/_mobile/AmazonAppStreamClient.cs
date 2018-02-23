@@ -266,6 +266,38 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CopyImage
+
+        internal virtual CopyImageResponse CopyImage(CopyImageRequest request)
+        {
+            var marshaller = new CopyImageRequestMarshaller();
+            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+
+            return Invoke<CopyImageRequest,CopyImageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage">REST API Reference for CopyImage Operation</seealso>
+        public virtual Task<CopyImageResponse> CopyImageAsync(CopyImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyImageRequestMarshaller();
+            var unmarshaller = CopyImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyImageRequest,CopyImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDirectoryConfig
 
         internal virtual CreateDirectoryConfigResponse CreateDirectoryConfig(CreateDirectoryConfigRequest request)

@@ -65,7 +65,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet.
+        /// The name of the fleet. This value is case-sensitive.
         /// </para>
         /// </summary>
         public string FleetName
@@ -121,7 +121,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack.
+        /// The name of the stack. This value is case-sensitive.
         /// </para>
         /// </summary>
         public string StackName
