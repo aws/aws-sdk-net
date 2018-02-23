@@ -58,7 +58,8 @@ namespace Amazon.Util
             LATEST = "/latest",
             EC2_METADATA_ROOT = EC2_METADATA_SVC + LATEST + "/meta-data",
             EC2_USERDATA_ROOT = EC2_METADATA_SVC + LATEST + "/user-data",
-            EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic";
+            EC2_DYNAMICDATA_ROOT = EC2_METADATA_SVC + LATEST + "/dynamic",
+            AWS_EC2_METADATA_DISABLED = "AWS_EC2_METADATA_DISABLED";
 
         private static int
             DEFAULT_RETRIES = 3,
@@ -66,6 +67,22 @@ namespace Amazon.Util
             MAX_RETRIES = 3;
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
+
+        /// <summary>
+        /// </summary>
+        public static bool IsIMDSEnabled
+        {
+            get
+            {
+                const string True = "true";
+                string value = string.Empty;
+                try
+                {
+                    value = System.Environment.GetEnvironmentVariable(AWS_EC2_METADATA_DISABLED);
+                } catch { };
+                return !True.Equals(value, StringComparison.OrdinalIgnoreCase);
+            }
+        }
 
         /// <summary>
         /// The AMI ID used to launch the instance.
@@ -476,9 +493,13 @@ namespace Amazon.Util
         private static List<string> GetItems(string relativeOrAbsolutePath, int tries, bool slurp)
         {
             var items = new List<string>();
-
             try
             {
+                if (!IsIMDSEnabled)
+                {
+                    throw new IMDSDisabledException();
+                }
+
                 // if we are given a relative path, we assume the data we need exists under the
                 // main metadata root
                 var uri = relativeOrAbsolutePath.StartsWith(EC2_METADATA_SVC, StringComparison.Ordinal)
@@ -518,6 +539,11 @@ namespace Amazon.Util
                 PauseExponentially(tries);
                 return GetItems(relativeOrAbsolutePath, tries - 1, slurp);
             }
+            catch (IMDSDisabledException)
+            {
+                // Keep this behavior identical to when HttpStatusCode.NotFound is returned.
+                return null;
+            }
 
             return items;
         }
@@ -528,6 +554,10 @@ namespace Amazon.Util
             var pause = (int)(Math.Pow(2, DEFAULT_RETRIES - tries) * MIN_PAUSE_MS);
             Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
         }
+#if !PCL && !CORECLR
+        [Serializable]
+#endif
+        private class IMDSDisabledException : InvalidOperationException { };
     }
 
     /// <summary>

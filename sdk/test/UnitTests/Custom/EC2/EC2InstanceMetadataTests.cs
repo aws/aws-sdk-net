@@ -36,7 +36,9 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
                         var pi = member as PropertyInfo;
 
                         object value;
-                        if (pi != null)
+
+                        // make and exception for IsIMDSEnabled property
+                        if (pi != null && !pi.Name.Equals("IsIMDSEnabled"))
                         {
                             value = pi.GetValue(null);
                             // all properties should return null on non-EC2 instances

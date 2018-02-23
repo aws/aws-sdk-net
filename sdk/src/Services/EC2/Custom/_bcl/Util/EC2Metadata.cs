@@ -396,6 +396,11 @@ namespace Amazon.EC2.Util
 
             try
             {
+                if (!Amazon.Util.EC2InstanceMetadata.IsIMDSEnabled)
+                {
+                    throw new IMDSDisabledException();
+                }
+
                 HttpWebRequest request;
                 if (path.StartsWith("http", StringComparison.Ordinal))
                     request = WebRequest.Create(path) as HttpWebRequest;
@@ -439,6 +444,11 @@ namespace Amazon.EC2.Util
                 PauseExponentially(tries);
                 return GetItems(path, tries - 1, slurp);
             }
+            catch (IMDSDisabledException)
+            {
+                // Keep this behavior identical to when HttpStatusCode.NotFound is returned.
+                return null;
+            }
 
             return items;
         }
@@ -449,6 +459,11 @@ namespace Amazon.EC2.Util
             var pause = (int)(Math.Pow(2, DEFAULT_RETRIES - tries) * MIN_PAUSE_MS);
             Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
         }
+
+#if !PCL && !CORECLR
+        [Serializable]
+#endif
+        private class IMDSDisabledException : InvalidOperationException { };
     }
 
     /// <summary>

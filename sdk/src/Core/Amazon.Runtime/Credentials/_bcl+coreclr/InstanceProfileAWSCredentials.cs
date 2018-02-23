@@ -195,12 +195,20 @@ namespace Amazon.Runtime
 
         private static SecurityInfo GetServiceInfo()
         {
+            CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityInfo>(InfoUri);
         }
 
         private SecurityCredentials GetRoleCredentials()
         {
+            CheckIsIMDSEnabled();
             return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri);
+        }
+
+        private static void CheckIsIMDSEnabled()
+        {
+            // keep this behavior consistent with GetObjectFromResponse case.
+            if (!EC2InstanceMetadata.IsIMDSEnabled) throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, "Unable to retrieve credentials."));
         }
 
         private static string GetFirstRole()

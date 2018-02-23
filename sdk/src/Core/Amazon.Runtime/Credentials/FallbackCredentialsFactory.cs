@@ -53,8 +53,8 @@ namespace Amazon.Runtime
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                 () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
-#endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
+#endif
             };
         }
 
@@ -71,13 +71,11 @@ namespace Amazon.Runtime
             else
                 throw new AmazonClientException("Unable to find the '" + profileName + "' profile in CredentialProfileStoreChain.");
         }
-#endif
 
         /// If AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is set, we want to attempt to retrieve credentials
         /// using ECS endpoint instead of referring to instance profile credentials.
         private static AWSCredentials ECSEC2CredentialsWrapper()
         {
-#if !PCL
             try
             {
                 string uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
@@ -90,10 +88,9 @@ namespace Amazon.Runtime
             {
                 Logger.GetLogger(typeof(ECSTaskCredentials)).Error(e, "Failed to access environment variable {0}", ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
             }
-#endif
             return new InstanceProfileAWSCredentials();
         }
-
+#endif
 
         private static AWSCredentials cachedCredentials;
         public static AWSCredentials GetCredentials()
