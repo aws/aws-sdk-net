@@ -127,7 +127,7 @@ namespace SDKDocGenerator.Writers
                 string platforms = string.Empty;
                 if (this._referAsyncAlternativeUnity && this._referAsyncAlternativePCL)
                 {
-                    platforms = "PCL and Unity";
+                    platforms = ".NET Core, PCL and Unity";
                 }
                 else if (this._referAsyncAlternativeUnity)
                 {
@@ -135,7 +135,7 @@ namespace SDKDocGenerator.Writers
                 }
                 else
                 {
-                    platforms = "PCL";
+                    platforms = ".NET Core and PCL";
                 }
                 const string syncPatternNote =
                     "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>"
