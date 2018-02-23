@@ -1,3 +1,7 @@
+### 3.3.241.0 (2018-02-23 19:52 UTC)
+* AppStream (3.3.10.0)
+	* This API update is to enable customers to copy their Amazon AppStream 2.0 images within and between AWS Regions
+
 ### 3.3.240.0 (2018-02-22 19:30 UTC)
 * CostExplorer (3.3.1.0)
 	* Added GetReservationCoverage API for retrieving reservation coverage information.

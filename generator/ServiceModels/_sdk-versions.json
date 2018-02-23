@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.240.0",
+    "ProductVersion" : "3.3.241.0",
     "CoreVersion"    : "3.3.21.13",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.9.0",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.19.0"
