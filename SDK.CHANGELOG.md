@@ -1,3 +1,10 @@
+### 3.3.242.0 (2018-02-24 01:00 UTC)
+* EC2 (3.3.46.0)
+	* Updated to use new Core, version 3.3.21.14
+	* You can now use AWS_EC2_METADATA_DISABLED environment variable to control SDK access to EC2 IMDS service.
+* Core 3.3.21.14
+	* You can now use  AWS_EC2_METADATA_DISABLED environment variable to control SDK access to EC2 IMDS service.  This release also removes InstanceProfileAWSCredentials from PCL.
+
 ### 3.3.241.0 (2018-02-23 19:52 UTC)
 * AppStream (3.3.10.0)
 	* This API update is to enable customers to copy their Amazon AppStream 2.0 images within and between AWS Regions
