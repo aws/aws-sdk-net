@@ -11,12 +11,15 @@ using System.IO;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.IoT.Model;
 using Amazon.IoT;
+using System.Net;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
     public class IotData
     {
+        private const string TopicThatRequiresUrlEncoding = "X$aws/,topic";
+
         private static string THING_NAME = null;
         private static string CREATED_THING_NAME = null;
 
@@ -62,6 +65,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Client.Dispose();
             }
+        }
+
+        [TestMethod]
+        [TestCategory("IoTData")]
+        public void PublishTopicWithUrlEncodedCharacters()
+        {
+            var response = Client.Publish(new PublishRequest
+            {
+                Topic = TopicThatRequiresUrlEncoding
+            });
+            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
         }
 
         [TestMethod]

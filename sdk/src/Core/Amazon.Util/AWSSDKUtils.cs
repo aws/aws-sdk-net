@@ -258,7 +258,7 @@ namespace Amazon.Util
         }
 
         /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
+        /// Returns the canonicalized resource path for the service endpoint with single URL encoded path segments.
         /// </summary>
         /// <param name="endpoint">Endpoint URL for the request</param>
         /// <param name="resourcePath">Resource path for the request</param>
@@ -268,6 +268,24 @@ namespace Amazon.Util
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
+        {
+            // This overload is kept for backward compatibility in existing code bases.
+            return CanonicalizeResourcePath(endpoint, resourcePath, false);
+        }
+
+        /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint
+        /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request</param>
+        /// <param name="resourcePath">Resource path for the request</param>
+        /// <param name="detectPreEncode">If true pre URL encode path segments if necessary.
+        /// S3 is currently the only service that does not expect pre URL encoded segments.</param>
+        /// <remarks>
+        /// If resourcePath begins or ends with slash, the resulting canonicalized
+        /// path will follow suit.
+        /// </remarks>
+        /// <returns>Canonicalized resource path for the endpoint</returns>
+        public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
         {
             if (endpoint != null)
             {
@@ -290,13 +308,34 @@ namespace Amazon.Util
             // split path at / into segments
             var pathSegments = resourcePath.Split(new char[] { SlashChar }, StringSplitOptions.None);
 
-            // url encode the segments
-            var encodedSegments = pathSegments
-                .Select(segment => AWSSDKUtils.UrlEncode(segment, false))
-                .ToArray();
+            IEnumerable<string> encodedSegments = pathSegments;
+            var pathWasPreEncoded = false;
+            if (detectPreEncode)
+            {
+                if (endpoint == null)
+                    throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
+
+                // S3 is a special case.  For S3 skip the pre encode.
+                // For everything else URL pre encode the resource path segments.
+                if (!S3Uri.IsS3Uri(endpoint))
+                {
+                    encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true));
+                    pathWasPreEncoded = true;
+                }
+            }
+
+            // Encode for canonicalization
+            encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
 
             // join the encoded segments with /
-            var canonicalizedResourcePath = string.Join(Slash, encodedSegments);
+            var canonicalizedResourcePath = string.Join(Slash, encodedSegments.ToArray());
+
+            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
+            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
+                pathWasPreEncoded ? "Double" : "Single",
+                resourcePath,
+                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
+                canonicalizedResourcePath);
 
             return canonicalizedResourcePath;
         }

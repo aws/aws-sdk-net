@@ -32,7 +32,13 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class S3Uri
     {
-        private const string EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
+        private const string S3EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
+
+#if BCL
+        private static readonly Regex S3EndpointRegex = new Regex(S3EndpointPattern, RegexOptions.Compiled);
+#else
+        private static readonly Regex S3EndpointRegex = new Regex(S3EndpointPattern);
+#endif
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
@@ -75,7 +81,7 @@ namespace Amazon.Runtime.Internal.Util
             if (string.IsNullOrEmpty(uri.Host))
                 throw new ArgumentException("Invalid URI - no hostname present");
 
-            var match = new Regex(EndpointPattern).Match(uri.Host);
+            var match = S3EndpointRegex.Match(uri.Host);
             if (!match.Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
 
@@ -143,6 +149,12 @@ namespace Amazon.Runtime.Internal.Util
                 else
                     this.Region = RegionEndpoint.GetBySystemName(regionGroupValue);
             }
+        }
+
+
+        public static bool IsS3Uri(Uri uri)
+        {
+            return S3EndpointRegex.Match(uri.Host).Success;
         }
 
         /// <summary>

@@ -15,6 +15,7 @@ using System.Net;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK.UnitTests
 {
@@ -113,6 +114,33 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(
                 "/custompath/vx_folder/1.0%5Cdatafiles%5Cfile.json",
                 AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json"));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestCanonicalizeResourcePathDoubleEncoded()
+        {
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), null, true));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty, true));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), null, true));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), string.Empty, true));
+
+            // exception because the URI is necessary to decide whether or not to pre URL encode
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSSDKUtils.CanonicalizeResourcePath(null, "doesn't matter", true);
+            }, typeof(ArgumentNullException), "A non-null endpoint is necessary to decide whether or not to pre URL encode.\r\nParameter name: endpoint");
+
+            // should be single URL encoded because it's S3
+            Assert.AreEqual(
+                "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", true));
+
+            // should be double URL encoded because it's not S3
+            Assert.AreEqual(
+                "/custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", true));
         }
 
 #if BCL45

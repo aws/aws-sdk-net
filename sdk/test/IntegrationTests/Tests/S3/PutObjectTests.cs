@@ -384,6 +384,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void PutObjectKeyWithUrlEncodedCharacters()
+        {
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "X$abc,xyz",
+                ContentBody = testContent,
+                CannedACL = S3CannedACL.AuthenticatedRead
+            };
+            request.Metadata.Add("Subject", "Content-As-Object");
+            PutObjectResponse response = Client.PutObject(request);
+
+            Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+            Assert.IsTrue(response.ETag.Length > 0);
+
+            VerifyPut(testContent, request);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void PutObject()
         {
             PutObjectRequest request = new PutObjectRequest()
