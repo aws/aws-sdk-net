@@ -1,3 +1,9 @@
+### 3.3.243.0 (2018-02-27 16:47 UTC)
+* Route53 (3.3.15.0)
+	* Added support for creating LBR rules using ap-northeast-3 region.
+* SecurityToken (3.3.3.4)
+	* Increased SAMLAssertion parameter size from 50000 to 100000 for AWS Security Token Service AssumeRoleWithSAML API to allow customers to pass bigger SAML assertions
+
 ### 3.3.242.0 (2018-02-24 01:00 UTC)
 * EC2 (3.3.46.0)
 	* Updated to use new Core, version 3.3.21.14
