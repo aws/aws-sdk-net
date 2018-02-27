@@ -1,15 +1,10 @@
-﻿using System;
+﻿using Amazon.EC2;
+using Amazon.EC2.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using Amazon.IdentityManagement.Model;
-using Amazon.Runtime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.EC2;
-using Amazon.EC2.Model;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 {
@@ -129,7 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.IsNotNull(authorizeSecurityGroupEgressResponse);
             Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 CollectionAssert.AreEqual(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].IpRanges, testCollection);
@@ -144,7 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
             var validationResult = new List<string>();
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
@@ -169,7 +164,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             authorizeSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] };
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
@@ -183,7 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             testCollection.Add("0.0.0.0/11");
             authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
@@ -199,7 +194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.IsNotNull(updateSecurityGroupEgressResponse);
 
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 validationResult = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1].Ipv4Ranges.Select(p => p.CidrIp).ToList();
@@ -216,40 +211,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             Assert.IsNotNull(revokeSecurityGroupIngressResponse);
 
-            RunWithRetries(() =>
+            UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroups();
                 Assert.IsFalse(describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress
                     .Where(p => p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/8", Description = "TestDescription" }) || p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7" }) || p.IpRanges.Contains("0.0.0.0/7") || p.IpRanges.Contains("0.0.0.0/8")).ToList().Any());
             });
 
-        }
-
-        private void RunWithRetries(Action action)
-        {
-            var waitTimes = new int[] { 1000, 5000 };
-            var exceptions = new List<Exception>();
-            var attempt = 0;
-
-            while (true)
-            {
-                try
-                {
-                    action();
-                    break;
-                }
-                catch (Exception e)
-                {
-                    exceptions.Add(e);
-                    if (attempt < waitTimes.Length)
-                    {
-                        Thread.Sleep(waitTimes[attempt]);
-                        attempt++;
-                    }
-                    else
-                        throw new AggregateException("RunWithRetries failed.", exceptions);
-                }
-            }
         }
 
         private static DescribeSecurityGroupsResponse DescribeSecurityGroups()
