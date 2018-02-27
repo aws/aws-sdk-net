@@ -98,7 +98,7 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// To assume a role, your AWS account must be trusted by the role. The trust relationship
     /// is defined in the role's trust policy when the role is created. That trust policy
-    /// states which accounts are allowed to delegate access to this account's role.
+    /// states which accounts are allowed to delegate access to this account's role. 
     /// </para>
     ///  
     /// <para>
@@ -108,7 +108,11 @@ namespace Amazon.SecurityToken.Model
     /// on the ARN of the role in the other account. If the user is in the same account as
     /// the role, then you can either attach a policy to the user (identical to the previous
     /// different account user), or you can add the user as a principal directly in the role's
-    /// trust policy
+    /// trust policy. In this case, the trust policy acts as the only resource-based policy
+    /// in IAM, and users in the same account as the role do not need explicit permission
+    /// to assume the role. For more information about trust policies and resource-based policies,
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+    /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>

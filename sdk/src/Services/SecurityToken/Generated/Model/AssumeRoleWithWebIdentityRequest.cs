@@ -139,10 +139,10 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity Federation
-    /// with Mobile Applications</a>. This article discusses web identity federation and shows
-    /// an example of how to use web identity federation to get access to content in Amazon
-    /// S3. 
+    ///  <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
+    /// Identity Federation with Mobile Applications</a>. This article discusses web identity
+    /// federation and shows an example of how to use web identity federation to get access
+    /// to content in Amazon S3. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
