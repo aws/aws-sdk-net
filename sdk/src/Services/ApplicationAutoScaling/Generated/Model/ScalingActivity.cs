@@ -175,6 +175,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
         /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and
+        /// the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -238,6 +243,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
         /// DB cluster. Available for Aurora MySQL-compatible edition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
+        /// for an Amazon SageMaker model endpoint variant.
         /// </para>
         ///  </li> </ul>
         /// </summary>

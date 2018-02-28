@@ -240,6 +240,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant RDSReaderAverageDatabaseConnections for MetricType
         /// </summary>
         public static readonly MetricType RDSReaderAverageDatabaseConnections = new MetricType("RDSReaderAverageDatabaseConnections");
+        /// <summary>
+        /// Constant SageMakerVariantInvocationsPerInstance for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerVariantInvocationsPerInstance = new MetricType("SageMakerVariantInvocationsPerInstance");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -368,6 +372,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant RdsClusterReadReplicaCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension RdsClusterReadReplicaCount = new ScalableDimension("rds:cluster:ReadReplicaCount");
+        /// <summary>
+        /// Constant SagemakerVariantDesiredInstanceCount for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension SagemakerVariantDesiredInstanceCount = new ScalableDimension("sagemaker:variant:DesiredInstanceCount");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -500,6 +508,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Rds for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Rds = new ServiceNamespace("rds");
+        /// <summary>
+        /// Constant Sagemaker for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Sagemaker = new ServiceNamespace("sagemaker");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

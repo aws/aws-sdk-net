@@ -42,7 +42,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property CustomizedMetricSpecification. 
         /// <para>
-        /// Reserved for future use.
+        /// A customized metric.
         /// </para>
         /// </summary>
         public CustomizedMetricSpecification CustomizedMetricSpecification
