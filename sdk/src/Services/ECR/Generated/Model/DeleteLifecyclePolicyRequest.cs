@@ -58,8 +58,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository that is associated with the repository policy to&#8232;
-        /// delete.
+        /// The name of the repository.
         /// </para>
         /// </summary>
         public string RepositoryName

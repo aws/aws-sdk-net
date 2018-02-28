@@ -58,7 +58,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property LifecyclePolicyText. 
         /// <para>
-        /// The JSON repository policy text.
+        /// The JSON lifecycle policy text.
         /// </para>
         /// </summary>
         public string LifecyclePolicyText

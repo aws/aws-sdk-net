@@ -81,13 +81,14 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code>
-        /// in&#8232; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
-        /// only returns&#8232; <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code>&#8232; response element. The remaining results of the initial
-        /// request can be seen by sending&#8232; another <code>GetLifecyclePolicyPreviewRequest</code>
-        /// request with the returned <code>nextToken</code>&#8232; value. This value can be between
-        /// 1 and 100. If this&#8232; parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code>
-        /// returns up to&#8232; 100 results and a <code>nextToken</code> value, if&#8232; applicable.
+        /// in&#x2028; paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code>
+        /// only returns&#x2028; <code>maxResults</code> results in a single page along with a
+        /// <code>nextToken</code>&#x2028; response element. The remaining results of the initial
+        /// request can be seen by sending&#x2028; another <code>GetLifecyclePolicyPreviewRequest</code>
+        /// request with the returned <code>nextToken</code>&#x2028; value. This value can be
+        /// between 1 and 100. If this&#x2028; parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code>
+        /// returns up to&#x2028; 100 results and a <code>nextToken</code> value, if&#x2028; applicable.
+        /// This option cannot be used when you specify images with <code>imageIds</code>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -105,11 +106,12 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated&#8232; <code>GetLifecyclePolicyPreviewRequest</code>
-        /// request where <code>maxResults</code> was used and the&#8232; results exceeded the
-        /// value of that parameter. Pagination continues from the end of the&#8232; previous
-        /// results that returned the <code>nextToken</code> value. This value is&#8232; <code>null</code>
-        /// when there are no more results to return.
+        /// The <code>nextToken</code> value returned from a previous paginated&#x2028; <code>GetLifecyclePolicyPreviewRequest</code>
+        /// request where <code>maxResults</code> was used and the&#x2028; results exceeded the
+        /// value of that parameter. Pagination continues from the end of the&#x2028; previous
+        /// results that returned the <code>nextToken</code> value. This value is&#x2028; <code>null</code>
+        /// when there are no more results to return. This option cannot be used when you specify
+        /// images with <code>imageIds</code>.
         /// </para>
         /// </summary>
         public string NextToken
@@ -146,7 +148,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository with the policy to retrieve.
+        /// The name of the repository.
         /// </para>
         /// </summary>
         public string RepositoryName

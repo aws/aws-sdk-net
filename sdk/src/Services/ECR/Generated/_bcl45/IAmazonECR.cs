@@ -31,12 +31,12 @@ namespace Amazon.ECR
     /// <summary>
     /// Interface for accessing ECR
     ///
-    /// Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers
-    /// can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides
-    /// a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories
-    /// with resource-based permissions using IAM so that specific users or Amazon EC2 instances
-    /// can access repositories and images. Developers can use the Docker CLI to author and
-    /// manage images.
+    /// Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service.
+    /// Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon
+    /// ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private
+    /// Docker repositories with resource-based permissions using IAM so that specific users
+    /// or Amazon EC2 instances can access repositories and images. Developers can use the
+    /// Docker CLI to author and manage images.
     /// </summary>
     public partial interface IAmazonECR : IAmazonService, IDisposable
     {
@@ -252,7 +252,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryAlreadyExistsException">
         /// The specified repository already exists in the specified registry.
@@ -828,7 +828,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -859,7 +859,9 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates or updates a lifecycle policy.
+        /// Creates or updates a lifecycle policy. For information about lifecycle policy syntax,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+        /// Policy Template</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
         /// 
@@ -1001,7 +1003,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.LimitExceededException">
         /// The operation did not succeed because it would have exceeded a service limit for your
         /// account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon
-        /// ECR Default Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+        /// ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository

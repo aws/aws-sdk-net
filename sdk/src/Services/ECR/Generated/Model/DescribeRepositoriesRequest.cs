@@ -47,7 +47,8 @@ namespace Amazon.ECR.Model
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
         /// value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if applicable.
+        /// returns up to 100 results and a <code>nextToken</code> value, if applicable. This
+        /// option cannot be used when you specify repositories with <code>repositoryNames</code>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -69,7 +70,8 @@ namespace Amazon.ECR.Model
         /// request where <code>maxResults</code> was used and the results exceeded the value
         /// of that parameter. Pagination continues from the end of the previous results that
         /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// are no more results to return. This option cannot be used when you specify repositories
+        /// with <code>repositoryNames</code>.
         /// </para>
         ///  <note> 
         /// <para>

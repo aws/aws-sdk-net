@@ -29,7 +29,9 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecyclePolicy operation.
-    /// Creates or updates a lifecycle policy.
+    /// Creates or updates a lifecycle policy. For information about lifecycle policy syntax,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+    /// Policy Template</a>.
     /// </summary>
     public partial class PutLifecyclePolicyRequest : AmazonECRRequest
     {
@@ -59,7 +61,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RegistryId. 
         /// <para>
         /// The AWS account ID associated with the registry that contains the repository. If you
-        /// do&#8232; not specify a registry, the default registry is assumed.
+        /// do&#x2028; not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId
