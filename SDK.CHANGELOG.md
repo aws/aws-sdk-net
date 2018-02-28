@@ -1,3 +1,7 @@
+### 3.3.244.0 (2018-02-28 22:16 UTC)
+* ApplicationAutoScaling (3.3.9.0)
+	* Application Auto Scaling now supports automatic scaling of SageMaker Production Variants on an Endpoint.
+
 ### 3.3.243.1 (2018-02-28 02:38 UTC)
 * ECR (3.3.3.3)
 	* Documentation updates for Amazon ECR.
