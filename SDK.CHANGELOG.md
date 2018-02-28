@@ -1,3 +1,7 @@
+### 3.3.243.1 (2018-02-28 02:38 UTC)
+* ECR (3.3.3.3)
+	* Documentation updates for Amazon ECR.
+
 ### 3.3.243.0 (2018-02-27 16:47 UTC)
 * Route53 (3.3.15.0)
 	* Added support for creating LBR rules using ap-northeast-3 region.
