@@ -211,7 +211,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
-        /// or errors, such as 10%. The default value is 50. For more information about how to
+        /// or errors, such as 10%. The default value is 0. For more information about how to
         /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
         /// a Command Using Systems Manager Run Command</a>.
         /// </para>

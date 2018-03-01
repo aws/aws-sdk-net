@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private LastResourceDataSyncStatus _lastStatus;
         private DateTime? _lastSuccessfulSyncTime;
+        private string _lastSyncStatusMessage;
         private DateTime? _lastSyncTime;
         private ResourceDataSyncS3Destination _s3Destination;
         private DateTime? _syncCreatedTime;
@@ -74,6 +75,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetLastSuccessfulSyncTime()
         {
             return this._lastSuccessfulSyncTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSyncStatusMessage. 
+        /// <para>
+        /// The status message details reported by the last sync.
+        /// </para>
+        /// </summary>
+        public string LastSyncStatusMessage
+        {
+            get { return this._lastSyncStatusMessage; }
+            set { this._lastSyncStatusMessage = value; }
+        }
+
+        // Check to see if LastSyncStatusMessage property is set
+        internal bool IsSetLastSyncStatusMessage()
+        {
+            return this._lastSyncStatusMessage != null;
         }
 
         /// <summary>

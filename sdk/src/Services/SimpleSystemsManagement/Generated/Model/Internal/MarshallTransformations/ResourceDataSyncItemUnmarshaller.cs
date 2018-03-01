@@ -76,6 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastSuccessfulSyncTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastSyncStatusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastSyncStatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastSyncTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
