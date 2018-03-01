@@ -366,19 +366,19 @@
 
         <Target Name="test-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
             <XUnitWrapperTask
-            TestSuiteRunner="$(SDKToolingExe)"
+            TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.CoreCLR.csproj"
             Configuration="$(Configuration)"/> 
          <XUnitWrapperTask
-            TestSuiteRunner="$(SDKToolingExe)"
+            TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.CoreCLR.csproj"
             Configuration="$(Configuration)"/> 
         <!--<XUnitWrapperTask
-            TestSuiteRunner="$(SDKToolingExe)"
+            TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.NET45.csproj"
             Configuration="$(Configuration)"/> 
          <XUnitWrapperTask
-            TestSuiteRunner="$(SDKToolingExe)"
+            TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.NET45.csproj"
             Configuration="$(Configuration)"/>
         -->
