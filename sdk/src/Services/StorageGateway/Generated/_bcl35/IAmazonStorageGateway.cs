@@ -118,13 +118,11 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Activates the gateway you previously deployed on your host. For more information,
-        /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-        /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
-        /// such as the region you want to use for storing snapshots or tapes, the time zone for
-        /// scheduled snapshots the gateway snapshot schedule window, an activation key, and a
-        /// name for your gateway. The activation process also associates your gateway with your
-        /// account; for more information, see <a>UpdateGatewayInformation</a>.
+        /// Activates the gateway you previously deployed on your host. In the activation process,
+        /// you specify information such as the region you want to use for storing snapshots or
+        /// tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
+        /// an activation key, and a name for your gateway. The activation process also associates
+        /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -2802,8 +2800,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sends you notification when all file data written to the NFS file share has been uploaded
-        /// to Amazon S3.
+        /// Sends you notification through CloudWatch Events when all files written to your NFS
+        /// file share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
@@ -2811,10 +2809,15 @@ namespace Amazon.StorageGateway
         /// all files written to your file share up to that point in time have been uploaded to
         /// Amazon S3. These files include files written to the NFS file share up to the time
         /// that you make a request for notification. When the upload is done, Storage Gateway
-        /// sends you notification through an Amazon CloudWatch event. You can configure CloudWatch
-        /// Events to sent the notification through event targets such as email, SNS or a Lambda
-        /// function. text or Lambda functions. This operation is only supported in the file gateway
-        /// type.
+        /// sends you notification through an Amazon CloudWatch Event. You can configure CloudWatch
+        /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
+        /// function. This operation is only supported in the file gateway type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Getting File Upload Notification in the Storage Gateway
+        /// User Guide (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyWhenUploaded service method.</param>
@@ -2968,8 +2971,8 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. This operation is only supported in the cached volume, tape
-        /// and file gateway types.
+        /// disks as cache disks. This operation is only supported in the cached volume and tape
+        /// types.
         /// 
         ///  <important> 
         /// <para>
@@ -3000,8 +3003,8 @@ namespace Amazon.StorageGateway
         /// prevents read and write operations on virtual tapes in the gateway. For example, an
         /// error can occur when a disk is corrupted or removed from the gateway. When a cache
         /// is reset, the gateway loses its cache storage. At this point you can reconfigure the
-        /// disks as cache disks. This operation is only supported in the cached volume, tape
-        /// and file gateway types.
+        /// disks as cache disks. This operation is only supported in the cached volume and tape
+        /// types.
         /// 
         ///  <important> 
         /// <para>

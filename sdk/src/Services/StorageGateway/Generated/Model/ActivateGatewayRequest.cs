@@ -29,13 +29,11 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
-    /// Activates the gateway you previously deployed on your host. For more information,
-    /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-    /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
-    /// such as the region you want to use for storing snapshots or tapes, the time zone for
-    /// scheduled snapshots the gateway snapshot schedule window, an activation key, and a
-    /// name for your gateway. The activation process also associates your gateway with your
-    /// account; for more information, see <a>UpdateGatewayInformation</a>.
+    /// Activates the gateway you previously deployed on your host. In the activation process,
+    /// you specify information such as the region you want to use for storing snapshots or
+    /// tapes, the time zone for scheduled snapshots the gateway snapshot schedule window,
+    /// an activation key, and a name for your gateway. The activation process also associates
+    /// your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -61,7 +59,12 @@ namespace Amazon.StorageGateway.Model
         /// URL returned in the response provides you the activation key for your gateway in the
         /// query string parameter <code>activationKey</code>. It may also include other activation-related
         /// parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code>
-        /// API call determine the actual configuration of your gateway.
+        /// API call determine the actual configuration of your gateway. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html
+        /// in the Storage Gateway User Guide.
         /// </para>
         /// </summary>
         public string ActivationKey
@@ -106,8 +109,8 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         ///  Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-        /// "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
-        /// "ap-southeast-2", "ap-south-1", "sa-east-1"
+        /// "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2",
+        /// "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
         /// </para>
         /// </summary>
         public string GatewayRegion

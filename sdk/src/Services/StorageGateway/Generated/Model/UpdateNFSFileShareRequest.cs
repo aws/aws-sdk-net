@@ -75,7 +75,9 @@ namespace Amazon.StorageGateway.Model
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private ObjectACL _objectACL;
         private bool? _readOnly;
+        private bool? _requesterPays;
         private string _squash;
 
         /// <summary>
@@ -138,8 +140,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
-        /// Enables guessing of the MIME type for uploaded objects based on file extensions: "true"
-        /// to enable MIME type guessing, and otherwise "false".
+        /// Enables guessing of the MIME type for uploaded objects based on file extensions. Set
+        /// this value to true to enable MIME type guessing, and otherwise to false. The default
+        /// value is true.
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -211,10 +214,29 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ObjectACL. 
+        /// <para>
+        /// Sets the access control list permission for objects in the S3 bucket that a file gateway
+        /// puts objects into. The default value is "private".
+        /// </para>
+        /// </summary>
+        public ObjectACL ObjectACL
+        {
+            get { return this._objectACL; }
+            set { this._objectACL = value; }
+        }
+
+        // Check to see if ObjectACL property is set
+        internal bool IsSetObjectACL()
+        {
+            return this._objectACL != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share: "true" if the write status is read-only, otherwise
-        /// "false".
+        /// Sets the write status of a file share. This value is true if the write status is read-only,
+        /// and otherwise false.
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -227,6 +249,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetReadOnly()
         {
             return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequesterPays. 
+        /// <para>
+        /// Sets who pays the cost of the request and the data download from the Amazon S3 bucket.
+        /// Set this value to true if you want the requester to pay instead of the bucket owner,
+        /// and otherwise to false.
+        /// </para>
+        /// </summary>
+        public bool RequesterPays
+        {
+            get { return this._requesterPays.GetValueOrDefault(); }
+            set { this._requesterPays = value; }
+        }
+
+        // Check to see if RequesterPays property is set
+        internal bool IsSetRequesterPays()
+        {
+            return this._requesterPays.HasValue; 
         }
 
         /// <summary>

@@ -130,6 +130,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.NFSFileShareDefaults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ObjectACL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ObjectACL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequesterPays", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RequesterPays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Role", targetDepth))

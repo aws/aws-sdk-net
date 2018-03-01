@@ -309,4 +309,74 @@ namespace Amazon.StorageGateway
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ObjectACL.
+    /// </summary>
+    public class ObjectACL : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AuthenticatedRead for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL AuthenticatedRead = new ObjectACL("authenticated-read");
+        /// <summary>
+        /// Constant AwsExecRead for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL AwsExecRead = new ObjectACL("aws-exec-read");
+        /// <summary>
+        /// Constant BucketOwnerFullControl for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL BucketOwnerFullControl = new ObjectACL("bucket-owner-full-control");
+        /// <summary>
+        /// Constant BucketOwnerRead for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL BucketOwnerRead = new ObjectACL("bucket-owner-read");
+        /// <summary>
+        /// Constant Private for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL Private = new ObjectACL("private");
+        /// <summary>
+        /// Constant PublicRead for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL PublicRead = new ObjectACL("public-read");
+        /// <summary>
+        /// Constant PublicReadWrite for ObjectACL
+        /// </summary>
+        public static readonly ObjectACL PublicReadWrite = new ObjectACL("public-read-write");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectACL(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectACL FindValue(string value)
+        {
+            return FindValue<ObjectACL>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectACL(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
