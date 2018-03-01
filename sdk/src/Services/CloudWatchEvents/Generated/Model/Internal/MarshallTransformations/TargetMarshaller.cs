@@ -51,6 +51,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Arn);
             }
 
+            if(requestObject.IsSetBatchParameters())
+            {
+                context.Writer.WritePropertyName("BatchParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.BatchParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEcsParameters())
             {
                 context.Writer.WritePropertyName("EcsParameters");

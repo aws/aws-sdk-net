@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchEvents.Model
     public partial class Target
     {
         private string _arn;
+        private BatchParameters _batchParameters;
         private EcsParameters _ecsParameters;
         private string _id;
         private string _input;
@@ -60,6 +61,26 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchParameters. 
+        /// <para>
+        /// Contains the job definition, job name, and other parameters if the event target is
+        /// an AWS Batch job. For more information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+        /// in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BatchParameters BatchParameters
+        {
+            get { return this._batchParameters; }
+            set { this._batchParameters = value; }
+        }
+
+        // Check to see if BatchParameters property is set
+        internal bool IsSetBatchParameters()
+        {
+            return this._batchParameters != null;
         }
 
         /// <summary>
@@ -104,9 +125,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property Input. 
         /// <para>
         /// Valid JSON text passed to the target. In this case, nothing from the event itself
-        /// is passed to the target. You must use JSON dot notation, not bracket notation. For
-        /// more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
-        /// Object Notation (JSON) Data Interchange Format</a>.
+        /// is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The
+        /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
         /// </summary>
         public string Input

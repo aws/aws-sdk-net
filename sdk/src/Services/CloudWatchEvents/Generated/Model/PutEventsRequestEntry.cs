@@ -41,8 +41,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// In the JSON sense, an object containing fields, which may also contain nested subobjects.
-        /// No constraints are imposed on its contents.
+        /// A valid JSON string. There is no other schema imposed. The JSON string may contain
+        /// fields and nested subobjects.
         /// </para>
         /// </summary>
         public string Detail

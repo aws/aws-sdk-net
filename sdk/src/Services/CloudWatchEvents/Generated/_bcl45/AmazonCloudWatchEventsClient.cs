@@ -790,6 +790,13 @@ namespace Amazon.CloudWatchEvents
         /// 
         ///  
         /// <para>
+        /// If you are updating an existing rule, the rule is completely replaced with what you
+        /// specify in this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>,
+        /// the old values for those arguments are not kept. Instead, they are replaced with null
+        /// values.
+        /// </para>
+        ///  
+        /// <para>
         /// When you create or update a rule, incoming events might not immediately start matching
         /// to new or updated rules. Please allow a short period of time for changes to take effect.
         /// </para>
@@ -894,6 +901,10 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// AWS Batch jobs
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Pipelines in Amazon Code Pipeline
         /// </para>
         ///  </li> <li> 
@@ -981,8 +992,8 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>,
-        /// you must use JSON dot notation, not bracket notation.
+        /// When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
+        /// use JSON dot notation, not bracket notation.
         /// </para>
         ///  
         /// <para>

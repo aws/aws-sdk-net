@@ -66,6 +66,10 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// AWS Batch jobs
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Pipelines in Amazon Code Pipeline
     /// </para>
     ///  </li> <li> 
@@ -153,8 +157,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>,
-    /// you must use JSON dot notation, not bracket notation.
+    /// When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
+    /// use JSON dot notation, not bracket notation.
     /// </para>
     ///  
     /// <para>

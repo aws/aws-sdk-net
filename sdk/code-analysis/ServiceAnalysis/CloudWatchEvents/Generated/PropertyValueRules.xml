@@ -22,10 +22,6 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatchEvents.Model.DescribeRuleResponse.EventPattern</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.DescribeRuleResponse.Name</property>
     <min>1</min>
     <max>64</max>
@@ -137,10 +133,6 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatchEvents.Model.PutRuleRequest.EventPattern</property>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutRuleRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -177,10 +169,6 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\.\-_A-Za-z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatchEvents.Model.TestEventPatternRequest.EventPattern</property>
-    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.EcsParameters.TaskCount</property>
@@ -220,10 +208,6 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.Rule.Description</property>
     <max>512</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CloudWatchEvents.Model.Rule.EventPattern</property>
-    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.Rule.Name</property>
