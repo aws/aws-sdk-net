@@ -813,6 +813,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DeleteTagOption
+
+        internal virtual DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request)
+        {
+            var marshaller = new DeleteTagOptionRequestMarshaller();
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagOptionRequest,DeleteTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual Task<DeleteTagOptionResponse> DeleteTagOptionAsync(DeleteTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTagOptionRequestMarshaller();
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagOptionRequest,DeleteTagOptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeConstraint
 
         internal virtual DescribeConstraintResponse DescribeConstraint(DescribeConstraintRequest request)

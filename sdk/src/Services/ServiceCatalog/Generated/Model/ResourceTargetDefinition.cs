@@ -39,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The attribute that will change.
+        /// The attribute to be changed.
         /// </para>
         /// </summary>
         public ResourceAttribute Attribute
@@ -77,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property RequiresRecreation. 
         /// <para>
         /// If the attribute is <code>Properties</code>, indicates whether a change to this property
-        /// causes the resource to be recreated.
+        /// causes the resource to be re-created.
         /// </para>
         /// </summary>
         public RequiresRecreation RequiresRecreation

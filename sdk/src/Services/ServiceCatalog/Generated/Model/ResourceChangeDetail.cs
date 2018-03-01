@@ -57,9 +57,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Evaluation. 
         /// <para>
-        /// For static evaluations, the value the resource attribute will change and the new value
-        /// is known. For dynamic evaluations, the value might change, and any new value will
-        /// be determined when the plan is updated.
+        /// For static evaluations, the value of the resource attribute will change and the new
+        /// value is known. For dynamic evaluations, the value might change, and any new value
+        /// will be determined when the plan is updated.
         /// </para>
         /// </summary>
         public EvaluationType Evaluation
@@ -77,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// Information about the resource attribute that will be modified.
+        /// Information about the resource attribute to be modified.
         /// </para>
         /// </summary>
         public ResourceTargetDefinition Target

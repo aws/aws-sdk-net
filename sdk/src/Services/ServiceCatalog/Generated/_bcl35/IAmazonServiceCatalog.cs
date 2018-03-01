@@ -522,14 +522,14 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Creates a plan. A plan includes the list of resources that will be created (when provisioning
+        /// Creates a plan. A plan includes the list of resources to be created (when provisioning
         /// a new product) or modified (when updating a provisioned product) when the plan is
         /// executed.
         /// 
         ///  
         /// <para>
         /// You can create one plan per provisioned product. To create a plan for an existing
-        /// provisioned product, it's status must be AVAILBLE or TAINTED.
+        /// provisioned product, the product status must be AVAILBLE or TAINTED.
         /// </para>
         ///  
         /// <para>
@@ -999,6 +999,63 @@ namespace Amazon.ServiceCatalog
         /// <returns>Returns a  DeleteProvisioningArtifactResult from ServiceCatalog.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisioningArtifact">REST API Reference for DeleteProvisioningArtifact Operation</seealso>
         DeleteProvisioningArtifactResponse EndDeleteProvisioningArtifact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTagOption
+
+
+        /// <summary>
+        /// Deletes the specified TagOption.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a TagOption if it is associated with a product or portfolio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTagOption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        IAsyncResult BeginDeleteTagOption(DeleteTagOptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTagOption.</param>
+        /// 
+        /// <returns>Returns a  DeleteTagOptionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        DeleteTagOptionResponse EndDeleteTagOption(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2067,8 +2124,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists the plans for the specified provisioned product or all plans the user has access
-        /// to.
+        /// Lists the plans for the specified provisioned product or all plans to which the user
+        /// has access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans service method.</param>
         /// 

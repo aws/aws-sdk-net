@@ -703,14 +703,14 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Creates a plan. A plan includes the list of resources that will be created (when provisioning
+        /// Creates a plan. A plan includes the list of resources to be created (when provisioning
         /// a new product) or modified (when updating a provisioned product) when the plan is
         /// executed.
         /// 
         ///  
         /// <para>
         /// You can create one plan per provisioned product. To create a plan for an existing
-        /// provisioned product, it's status must be AVAILBLE or TAINTED.
+        /// provisioned product, the product status must be AVAILBLE or TAINTED.
         /// </para>
         ///  
         /// <para>
@@ -1169,6 +1169,62 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = DeleteProvisioningArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProvisioningArtifactRequest,DeleteProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTagOption
+
+
+        /// <summary>
+        /// Deletes the specified TagOption.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a TagOption if it is associated with a product or portfolio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTagOption service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
+        /// An operation requiring TagOptions failed because the TagOptions migration process
+        /// has not been performed for this account. Please use the AWS console to perform the
+        /// migration process before retrying the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request)
+        {
+            var marshaller = new DeleteTagOptionRequestMarshaller();
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagOptionRequest,DeleteTagOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTagOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTagOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
+        public virtual Task<DeleteTagOptionResponse> DeleteTagOptionAsync(DeleteTagOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteTagOptionRequestMarshaller();
+            var unmarshaller = DeleteTagOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagOptionRequest,DeleteTagOptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2216,8 +2272,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists the plans for the specified provisioned product or all plans the user has access
-        /// to.
+        /// Lists the plans for the specified provisioned product or all plans to which the user
+        /// has access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProvisionedProductPlans service method.</param>
         /// 

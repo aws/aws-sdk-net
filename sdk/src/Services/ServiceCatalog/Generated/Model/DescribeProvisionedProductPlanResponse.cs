@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResourceChanges. 
         /// <para>
-        /// Information about the resources changes that will occur when the plan is executed.
+        /// Information about the resource changes that will occur when the plan is executed.
         /// </para>
         /// </summary>
         public List<ResourceChange> ResourceChanges

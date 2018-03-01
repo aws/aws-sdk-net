@@ -29,8 +29,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProvisionedProductPlans operation.
-    /// Lists the plans for the specified provisioned product or all plans the user has access
-    /// to.
+    /// Lists the plans for the specified provisioned product or all plans to which the user
+    /// has access.
     /// </summary>
     public partial class ListProvisionedProductPlansRequest : AmazonServiceCatalogRequest
     {
