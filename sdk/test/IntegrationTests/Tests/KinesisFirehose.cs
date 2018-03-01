@@ -138,24 +138,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCleanup]
         public void TestCleanup()
         {
-            // Delete Delivery Stream
-            Client.DeleteDeliveryStream(DeliveryStreamName);
-
-            // Delete Role Policy
-            iamClient.DeleteRolePolicy(new DeleteRolePolicyRequest()
+            try
             {
-                RoleName = RoleName,
-                PolicyName = PolicyName
-            });
+                // Check if stream status qualifies it to be deleted.
+                var streamStatus = Client.DescribeDeliveryStream(new DescribeDeliveryStreamRequest()
+                {
+                    DeliveryStreamName = DeliveryStreamName
+                }).DeliveryStreamDescription.DeliveryStreamStatus;
 
-            // Delete Role
-            iamClient.DeleteRole(new DeleteRoleRequest()
+                if (streamStatus == DeliveryStreamStatus.ACTIVE || streamStatus == DeliveryStreamStatus.DELETING)
+                    Client.DeleteDeliveryStream(DeliveryStreamName);
+            }
+
+            catch (Exception e)
+            {}
+
+            try
             {
-                RoleName = RoleName
-            });
+                // Delete Role Policy
+                iamClient.DeleteRolePolicy(new DeleteRolePolicyRequest()
+                {
+                    RoleName = RoleName,
+                    PolicyName = PolicyName
+                });
 
-            // Delete Bucket
-            AmazonS3Util.DeleteS3BucketWithObjects(s3Client, BucketName);
+                // Delete Role
+                iamClient.DeleteRole(new DeleteRoleRequest()
+                {
+                    RoleName = RoleName
+                });
+            }
+
+            catch (Exception e)
+            {}
+
+            try
+            {
+                // Delete Bucket
+                AmazonS3Util.DeleteS3BucketWithObjects(s3Client, BucketName);
+            }
+
+            catch(Exception e)
+            {}
         }
 
         [TestMethod]
