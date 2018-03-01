@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key alias
+        /// Key alias, in the form <code>alias/<i>ExampleAlias</i> </code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

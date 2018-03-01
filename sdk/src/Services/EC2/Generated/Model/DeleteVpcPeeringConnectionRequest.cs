@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
     /// Deletes a VPC peering connection. Either the owner of the requester VPC or the owner
     /// of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code>
     /// state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code>
+    /// state. You cannot delete a VPC peering connection that's in the <code>failed</code>
     /// state.
     /// </summary>
     public partial class DeleteVpcPeeringConnectionRequest : AmazonEC2Request

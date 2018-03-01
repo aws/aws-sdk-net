@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllowDnsResolutionFromRemoteVpc. 
         /// <para>
-        /// If true, enables a local VPC to resolve public DNS hostnames to private IP addresses
-        /// when queried from instances in the peer VPC.
+        /// If true, the public DNS hostnames of instances in the specified VPC resolve to private
+        /// IP addresses when queried from instances in the peer VPC.
         /// </para>
         /// </summary>
         public bool AllowDnsResolutionFromRemoteVpc

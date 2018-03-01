@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses
+    /// Enable/disable the ability to resolve public DNS hostnames to private IP addresses
     /// when queried from instances in the peer VPC.
     /// </para>
     ///  </li> </ul> 

@@ -132,7 +132,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeId.
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume.
+        /// </para>
         /// </summary>
         public string VolumeId
         {

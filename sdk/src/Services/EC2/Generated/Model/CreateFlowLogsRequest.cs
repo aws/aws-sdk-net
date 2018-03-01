@@ -41,6 +41,11 @@ namespace Amazon.EC2.Model
     /// In your request, you must also specify an IAM role that has permission to publish
     /// logs to CloudWatch Logs.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+    /// Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateFlowLogsRequest : AmazonEC2Request
     {

@@ -29,36 +29,45 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyInstancePlacement operation.
-    /// Set the instance affinity value for a specific stopped instance and modify the instance
-    /// tenancy setting.
+    /// Modifies the placement attributes for a specified instance. You can do the following:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// Instance affinity is disabled by default. When instance affinity is <code>host</code>
-    /// and it is not associated with a specific Dedicated Host, the next time it is launched
-    /// it will automatically be associated with the host it lands on. This relationship will
-    /// persist if the instance is stopped/started, or rebooted.
+    /// Modify the affinity between an instance and a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+    /// Host</a>. When affinity is set to <code>host</code> and the instance is not associated
+    /// with a specific Dedicated Host, the next time the instance is launched, it is automatically
+    /// associated with the host on which it lands. If the instance is restarted or rebooted,
+    /// this relationship persists.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Change the Dedicated Host with which an instance is associated.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>,
+    /// or from <code>dedicated</code> to <code>host</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Move an instance to or from a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
+    /// group</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// At least one attribute for affinity, host ID, tenancy, or placement group name must
+    /// be specified in the request. Affinity and tenancy can be modified in the same request.
     /// </para>
     ///  
     /// <para>
-    /// You can modify the host ID associated with a stopped instance. If a stopped instance
-    /// has a new host ID association, the instance will target that host when restarted.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can modify the tenancy of a stopped instance with a tenancy of <code>host</code>
-    /// or <code>dedicated</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Affinity, hostID, and tenancy are not required parameters, but at least one of them
-    /// must be specified in the request. Affinity and tenancy can be modified in the same
-    /// request, but tenancy can only be modified on instances that are stopped.
+    /// To modify the host ID, tenancy, or placement group for an instance, the instance must
+    /// be in the <code>stopped</code> state.
     /// </para>
     /// </summary>
     public partial class ModifyInstancePlacementRequest : AmazonEC2Request
     {
         private Affinity _affinity;
+        private string _groupName;
         private string _hostId;
         private string _instanceId;
         private HostTenancy _tenancy;
@@ -66,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Affinity. 
         /// <para>
-        /// The new affinity setting for the instance.
+        /// The affinity setting for the instance.
         /// </para>
         /// </summary>
         public Affinity Affinity
@@ -82,9 +91,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of the placement group in which to place the instance. For spread placement
+        /// groups, the instance must have a tenancy of <code>default</code>. For cluster placement
+        /// groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove an instance from a placement group, specify an empty string ("").
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HostId. 
         /// <para>
-        /// The ID of the Dedicated Host that the instance will have affinity with.
+        /// The ID of the Dedicated Host with which to associate the instance.
         /// </para>
         /// </summary>
         public string HostId
@@ -120,7 +153,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
-        /// The tenancy of the instance that you are modifying.
+        /// The tenancy for the instance.
         /// </para>
         /// </summary>
         public HostTenancy Tenancy
