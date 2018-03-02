@@ -50,14 +50,12 @@ namespace Amazon.Extensions.CognitoAuthentication.UnitTests
             // Compute v = g^x
             BigInteger v = g.ModPow(x, N);
 
-            Random random = new Random();
-
             // Generate random a, b, A
             BigInteger a, b, A;
             do
             {
-                a = new BigInteger(16, random);
-                b = new BigInteger(16, random);
+                a = AuthenticationHelper.CreateEphemeralRandom();
+                b = AuthenticationHelper.CreateEphemeralRandom();
                 A = g.ModPow(a, N);
             } while (A.Mod(N).Equals(BigInteger.Zero));
 
