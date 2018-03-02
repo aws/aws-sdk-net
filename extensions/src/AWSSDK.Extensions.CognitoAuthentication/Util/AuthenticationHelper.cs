@@ -54,7 +54,7 @@ namespace Amazon.Extensions.CognitoAuthentication
             BigInteger a, A;
             do
             {
-                a = new BigInteger(16, new Random());
+                a = new BigInteger(EphemeralKeyLength, new Random());
                 A = g.ModPow(a, N);
             } while (A.Mod(N).Equals(BigInteger.Zero));
 
