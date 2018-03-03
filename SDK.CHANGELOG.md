@@ -1,3 +1,8 @@
+### 3.3.245.1 (2018-03-03 00:50 UTC)
+* Core 3.3.21.15
+	* URL encode resource path segments before canonicalization for all services except S3.
+	* All services packages updated to require new Core
+
 ### 3.3.245.0 (2018-03-01 23:43 UTC)
 * CloudWatchEvents (3.3.4.0)
 	* Added BatchParameters to the PutTargets API
