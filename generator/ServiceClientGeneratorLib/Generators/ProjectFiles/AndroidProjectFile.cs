@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+    #line 1 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class AndroidProjectFile : AndroidProjectFileBase
     {
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>");
             
-            #line 14 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 14 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ProjectGuid"]));
             
             #line default
@@ -56,7 +56,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
 	<BaseIntermediateOutputPath>obj\");
             
-            #line 25 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 25 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -71,14 +71,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\");
             
-            #line 33 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 33 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE;");
             
-            #line 34 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 34 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -86,7 +86,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</W" +
                     "arningLevel>\r\n");
             
-            #line 37 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 37 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -96,14 +96,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 41 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 41 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 42 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 42 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -113,14 +113,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
                     "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Debug\\");
             
-            #line 46 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 46 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 46 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 46 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -129,7 +129,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "figuration)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <DebugType>pdbonly</DebugTy" +
                     "pe>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\");
             
-            #line 51 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 51 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
@@ -138,7 +138,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "nstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLev" +
                     "el>\r\n");
             
-            #line 55 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 55 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("SupressWarnings"))
     {
@@ -148,14 +148,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t<NoWarn>");
             
-            #line 59 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 59 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["SupressWarnings"]));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 60 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 60 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -165,14 +165,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModule" +
                     "SuppressionsFile>\r\n\t<DocumentationFile>bin\\Release\\");
             
-            #line 64 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 64 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BinSubfolder"]));
             
             #line default
             #line hidden
             this.Write("\\");
             
-            #line 64 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 64 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
@@ -188,7 +188,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <PropertyGroup>
 ");
             
-            #line 73 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 73 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("KeyFilePath"))
     {
@@ -198,14 +198,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("\t\t<AssemblyOriginatorKeyFile>");
             
-            #line 77 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 77 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["KeyFilePath"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyOriginatorKeyFile>\r\n");
             
-            #line 78 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 78 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 	else
@@ -217,7 +217,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("        <AssemblyOriginatorKeyFile>..\\..\\..\\awssdk.dll.snk</AssemblyOriginatorKey" +
                     "File>\r\n");
             
-            #line 84 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 84 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -228,7 +228,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "    <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>\r\n      " +
                     "</PropertyGroup>\r\n    </Otherwise>\r\n  </Choose>\r\n  <ItemGroup>\r\n");
             
-            #line 96 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 96 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     foreach(string subDirectory in ((IList<string>)this.Session["SourceDirectories"]))
     {
@@ -238,14 +238,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 100 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 100 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subDirectory));
             
             #line default
             #line hidden
             this.Write("\\*.cs\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 103 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 103 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     }
 
@@ -254,7 +254,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n");
             
-            #line 108 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 108 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("IndividualFileIncludes"))
     {
@@ -268,14 +268,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Include=\"");
             
-            #line 116 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 116 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Code</SubType>\r\n    </Compile>\r\n");
             
-            #line 119 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 119 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
             }
             else
@@ -286,14 +286,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 124 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 124 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(file));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <SubType>Designer</SubType>\r\n    </EmbeddedResource>\r\n");
             
-            #line 127 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 127 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
             }
         }
@@ -304,7 +304,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 133 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 133 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferences"))
     {
@@ -316,28 +316,28 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <ProjectReference Include=\"");
             
-            #line 140 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 140 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.IncludePath));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <Project>");
             
-            #line 141 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 141 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.ProjectGuid));
             
             #line default
             #line hidden
             this.Write("</Project>\r\n        <Name>");
             
-            #line 142 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 142 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReferences.Name));
             
             #line default
             #line hidden
             this.Write("</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n");
             
-            #line 145 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 145 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
 
         }
     }
@@ -359,7 +359,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     <Reference Include=""PCLCrypto"">
       <HintPath>");
             
-            #line 161 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 161 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -368,7 +368,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "nios10+MonoTouch10\\PCLCrypto.dll</HintPath>\r\n    </Reference>\r\n    <Reference In" +
                     "clude=\"PCLStorage\">\r\n      <HintPath>");
             
-            #line 164 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 164 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -377,16 +377,16 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "iOS+Xamarin.Mac\\PCLStorage.dll</HintPath>\r\n    </Reference>\r\n    <Reference Incl" +
                     "ude=\"PCLStorage.Abstractions\">\r\n      <HintPath>");
             
-            #line 167 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 167 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
             #line hidden
             this.Write("PCLStorage.1.0.2\\lib\\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin." +
-                    "iOS+Xamarin.Mac\\PCLStorage.Abstractions.dll</HintPath>\r\n    </Reference>\r\n    <R" +
-                    "eference Include=\"System.Net.Http\">\r\n      <HintPath>");
+                    "iOS+Xamarin.Mac\\PCLStorage.Abstractions.dll</HintPath>\r\n    </Reference>\r\n\t<Refe" +
+                    "rence Include=\"System.Net.Http\">\r\n      <HintPath>");
             
-            #line 170 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 170 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -395,7 +395,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Extens" +
                     "ions\">\r\n      <HintPath>");
             
-            #line 173 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 173 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default
@@ -404,7 +404,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
                     "h>\r\n    </Reference>\r\n    <Reference Include=\"System.Net.Http.Primitives\">\r\n    " +
                     "  <HintPath>");
             
-            #line 176 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
+            #line 176 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\AndroidProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NugetPackagesLocation"]));
             
             #line default

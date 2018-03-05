@@ -940,7 +940,7 @@ namespace Amazon.Util
 
         public static string DownloadStringContent(Uri uri, TimeSpan timeout)
         {
-#if PCL || CORECLR
+#if PCL || CORECLR 
             using (var client = new System.Net.Http.HttpClient())
             {
                 if (timeout > TimeSpan.Zero)

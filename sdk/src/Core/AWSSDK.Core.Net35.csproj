@@ -36,19 +36,20 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_android/**"/>
-    <Compile Remove="**/_async/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_coreclr/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_mobile/**"/>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_unity/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
+    <Compile Remove="**/_android/**" />
+    <Compile Remove="**/_async/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/_coreclr/**" />
+    <Compile Remove="**/_ios/**" />
+    <Compile Remove="**/_mobile/**" />
+    <Compile Remove="**/_pcl/**" />
+    <Compile Remove="**/_pcl-sl/**" />
+    <Compile Remove="**/_pclReference/**" />
+    <Compile Remove="**/_unity/**" />
+    <Compile Remove="**/_win8/**" />
+    <Compile Remove="**/_winPhone81/**" />
+    <Compile Remove="**/_winPhoneSilverlight8/**" />
+    <Compile Remove="**/_bcl45+coreclr+pcl/**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +59,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
 </Project>

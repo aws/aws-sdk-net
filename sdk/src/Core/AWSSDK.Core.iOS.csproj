@@ -180,6 +180,9 @@
     <Compile Include="Amazon.Util\Internal\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\_bcl45+coreclr+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>

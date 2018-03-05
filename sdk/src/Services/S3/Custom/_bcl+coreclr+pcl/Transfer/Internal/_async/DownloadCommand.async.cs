@@ -15,12 +15,12 @@
 
 using Amazon.Runtime;
 using Amazon.S3.Model;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading;
@@ -143,16 +143,16 @@ namespace Amazon.S3.Transfer.Internal
 
         private static bool HandleExceptionForHttpClient(Exception exception, int retries, int maxRetries)
         {
-            var httpException = exception as HttpRequestException;
-            if (httpException != null)
+            if (AWSHttpClient.IsHttpInnerException(exception))
             {
-                if (httpException.InnerException is IOException
+                var innerHttpException = exception.InnerException;
+                if (innerHttpException is IOException
 #if !CORECLR
-                    || httpException.InnerException is WebException
+                    || innerHttpException is WebException
 #endif
                     )
                 {
-                    return HandleException(httpException.InnerException, retries, maxRetries);
+                    return HandleException(innerHttpException, retries, maxRetries);
                 }
                 else
                     return false;
