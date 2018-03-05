@@ -148,13 +148,18 @@
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
 
+    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true'" DependsOnTargets="build-tools">  
+      <ValidateRepoTask
+      RepoPath = "$(MSBuildProjectDirectory)\.."/>  
+   </Target>  
+
     <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;restore-nuget">
+    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;ValidateRepo;restore-nuget">
         <Message Text="Restore and compile .Net35 SDK"/>
         <Exec Command="dotnet restore -f  $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet clean -c $(Configuration) $(Net35SolutionsFile)" WorkingDirectory="..\sdk"/>
