@@ -41,7 +41,8 @@ namespace Amazon.Extensions.CognitoAuthentication
         internal static BigInteger N = new BigInteger(HexN, 16);
         internal static BigInteger g = BigInteger.ValueOf(2);
 
-        private const int EphemeralKeyLength = 1024;
+        // 1024 bits
+        private const int EphemeralKeyByteLength = 128;
         private const int DerivedKeySize = 16;
         private const string DerivedKeyInfo = "Caldera Derived Key";
 
@@ -168,7 +169,7 @@ namespace Amazon.Extensions.CognitoAuthentication
 
         public static BigInteger CreateEphemeralRandom()
         {
-            var bytes = new byte[EphemeralKeyLength];
+            var bytes = new byte[EphemeralKeyByteLength];
             using(var randomNumberGenerator = RandomNumberGenerator.Create())
             {
                 randomNumberGenerator.GetBytes(bytes);
