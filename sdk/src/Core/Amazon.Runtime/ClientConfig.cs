@@ -104,8 +104,8 @@ namespace Amazon.Runtime
         /// Gets and sets the RegionEndpoint property.  The region constant that 
         /// determines the endpoint to use.
         /// 
-        /// Setting this property to null will force the SDK to recaculate the
-        /// RegionEndpoint value based on App/WebConfig, environment ariables,
+        /// Setting this property to null will force the SDK to recalculate the
+        /// RegionEndpoint value based on App/WebConfig, environment variables,
         /// profile, etc.
         /// </summary>
         public RegionEndpoint RegionEndpoint
