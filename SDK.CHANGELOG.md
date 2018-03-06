@@ -1,3 +1,7 @@
+### 3.3.245.2 (2018-03-06 21:07 UTC)
+* ECS (3.3.10.2)
+	* Documentation updates for Amazon ECS
+
 ### 3.3.245.1 (2018-03-03 00:50 UTC)
 * Core 3.3.21.15
 	* URL encode resource path segments before canonicalization for all services except S3.

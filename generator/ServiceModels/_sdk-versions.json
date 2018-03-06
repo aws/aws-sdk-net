@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.245.1",
+    "ProductVersion" : "3.3.245.2",
     "CoreVersion"    : "3.3.21.15",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.10.1",
+            "Version" : "3.3.10.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"
