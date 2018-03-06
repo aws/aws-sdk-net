@@ -196,7 +196,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ForceNewDeployment. 
         /// <para>
-        /// Whether or not to force a new deployment of the service.
+        /// Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code>
+        /// is assumed unless specified otherwise.
         /// </para>
         /// </summary>
         public bool ForceNewDeployment

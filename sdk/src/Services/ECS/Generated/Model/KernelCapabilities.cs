@@ -49,7 +49,12 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you are using tasks that use the Fargate launch type, the <code>add</code> parameter
+        /// is not supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN"
         /// | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER"

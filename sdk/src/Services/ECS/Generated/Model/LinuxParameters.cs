@@ -42,6 +42,12 @@ namespace Amazon.ECS.Model
         /// The Linux capabilities for the container that are added to or dropped from the default
         /// configuration provided by Docker.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using tasks that use the Fargate launch type, <code>capabilities</code>
+        /// is supported but the <code>add</code> parameter is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public KernelCapabilities Capabilities
         {
@@ -64,6 +70,12 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using tasks that use the Fargate launch type, the <code>devices</code>
+        /// parameter is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Device> Devices
         {

@@ -466,6 +466,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// When a new task starts, the Amazon ECS container agent pulls the latest version of
+        /// the specified image and tag for the container to use. However, subsequent updates
+        /// to a repository image are not propagated to already running tasks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
         /// or <code>registry/repository@digest</code>. For example, <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code>
         /// or <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>.
@@ -545,8 +551,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers or tasks using the Fargate
-        /// launch type.
+        /// This parameter is not supported for Windows containers.
         /// </para>
         ///  </note>
         /// </summary>
