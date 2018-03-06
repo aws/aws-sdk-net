@@ -53,6 +53,7 @@
     <Compile Include="MD5User.cs" />
     <Compile Include="PreventHashAlgorithmCreateRule.cs" />
     <Compile Include="PreventDateTimeNowUse.cs" />
+    <Compile Include="PreventRegionEndpointUseRule.cs" />
     <Compile Include="PreventMD5Use.cs" />
     <Compile Include="PreventStaticLoggers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

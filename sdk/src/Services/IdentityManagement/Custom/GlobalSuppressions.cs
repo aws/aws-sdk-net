@@ -14,7 +14,8 @@
  */
 
 using System.Diagnostics.CodeAnalysis;
-
+// Don't reference RegionEndpoints in the SDK unless absolutely necessary.
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.IdentityManagement.AmazonIdentityManagementServiceConfig.#.ctor()")]
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.IdentityManagement.Model.Policy")]
 // Uri properties should not be strings

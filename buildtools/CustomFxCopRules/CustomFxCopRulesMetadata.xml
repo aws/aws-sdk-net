@@ -40,4 +40,14 @@
     <Owner />
     <Email />
   </Rule>
+  <Rule TypeName="PreventRegionEndpointUseRule" Category="AwsSdkRules" CheckId="CR1004">
+    <Name>Do not use static readonly RegionEndpoint members from within the SDK.</Name>
+    <Description>Makes sure none of the static readonly RegionEndpoint members are used directly within the SDK itself.</Description>
+    <Resolution>Target {0} uses {1}. This member {2} be used within the SDK.{3}</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
 </Rules>

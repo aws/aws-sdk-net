@@ -15,6 +15,16 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+// Don't reference RegionEndpoints in the SDK unless absolutely necessary.
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Internal.AmazonS3KmsHandler.#EvaluateIfSigV4Required(Amazon.Runtime.Internal.IRequest)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Internal.AmazonS3RetryPolicy.#RetryForExceptionSync(Amazon.Runtime.IExecutionContext,System.Exception)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Util.AmazonS3Uri.#.ctor(System.Uri)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Util.AmazonS3Util.#PostUpload(Amazon.S3.Util.S3PostUploadRequest)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Util.BucketRegionDetector.#GetUsEast1ClientFromCredentials(Amazon.Runtime.ImmutableCredentials)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Util.BucketRegionDetector.#GetUsEast1ClientFromCredentials(Amazon.Runtime.ImmutableCredentials)")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.Util.S3PostUploadRequest.#.ctor()")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#GetPreSignedURLInternal(Amazon.S3.Model.GetPreSignedUrlRequest,System.Boolean)")]
+
 // Suppressions for empty response types
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.PutBucketResponseUnmarshaller.#UnmarshallResult(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,Amazon.S3.Model.PutBucketResponse)", MessageId = "context")]
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.PutBucketResponseUnmarshaller.#UnmarshallResult(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,Amazon.S3.Model.PutBucketResponse)", MessageId = "response")]

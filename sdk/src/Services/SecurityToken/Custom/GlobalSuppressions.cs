@@ -15,6 +15,10 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+// Don't reference RegionEndpoints in the SDK unless absolutely necessary.
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceConfig.#.ctor()")]
+[module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.SecurityToken.SAML.StoredProfileSAMLCredentials.#.ctor(System.String,System.String)")]
+
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromSAMLAuthentication(System.String,System.String,System.String,System.TimeSpan,System.Net.ICredentials)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication(System.String,System.String,Amazon.Runtime.AssumeRoleAWSCredentialsOptions)")]
 
