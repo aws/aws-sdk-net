@@ -1,3 +1,7 @@
+### 3.3.246.0 (2018-03-08 00:42 UTC)
+* MediaLive (3.3.3.0)
+	* Updates API to model required traits and minimum/maximum constraints.
+
 ### 3.3.245.2 (2018-03-06 21:07 UTC)
 * ECS (3.3.10.2)
 	* Documentation updates for Amazon ECS
