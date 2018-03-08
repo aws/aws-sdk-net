@@ -161,8 +161,10 @@ namespace Amazon.Runtime
         private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
         {
             // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
+#pragma warning disable CS0612 // Type or member is obsolete
             var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + _refreshAttemptPeriod + PreemptExpiryTime;
-            // Use this only if the time is earlier than the default expiration time
+#pragma warning restore CS0612 // Type or member is obsolete
+                              // Use this only if the time is earlier than the default expiration time
             if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
                 newExpiryTime = state.Expiration;
 

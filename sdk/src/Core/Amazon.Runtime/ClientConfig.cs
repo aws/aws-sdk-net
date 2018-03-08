@@ -167,6 +167,9 @@ namespace Amazon.Runtime
             set { this.useHttp = value; }
         }
 
+        /// <summary>
+        /// Given this client configuration, return a string form ofthe service endpoint url.
+        /// </summary>
         public string DetermineServiceURL()
         {
             string url;
@@ -452,6 +455,46 @@ namespace Amazon.Runtime
                 throw new AmazonClientException("No RegionEndpoint or ServiceURL configured");
         }
 
+        /// <summary>
+        /// Returns the current UTC now after clock correction for this endpoint.
+        /// </summary>
+        public DateTime CorrectedUtcNow
+        {
+            get
+            {
+                return CorrectClockSkew.GetCorrectedUtcNowForEndpoint(DetermineServiceURL());
+            }
+        }
+
+        /// <summary>
+        /// The calculated clock skew correction for a specific endpoint, if there is one.
+        /// This field will be set if a service call resulted in an exception
+        /// and the SDK has determined that there is a difference between local
+        /// and server times.
+        /// 
+        /// If <seealso cref="CorrectForClockSkew"/> is set to true, this
+        /// value will still be set to the correction, but it will not be used by the
+        /// SDK and clock skew errors will not be retried.
+        /// </summary>
+        public TimeSpan ClockOffset
+        {
+            get
+            {
+                if (AWSConfigs.ManualClockCorrection.HasValue)
+                {
+                    return AWSConfigs.ManualClockCorrection.Value;
+                }
+                else
+                {
+                    string endpoint = DetermineServiceURL();
+                    return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Throw an exception if the boxed TimeSpan parameter doesn't have a value or is out of range.
+        /// </summary>
         public static void ValidateTimeout(TimeSpan? timeout)
         {
             if (!timeout.HasValue)

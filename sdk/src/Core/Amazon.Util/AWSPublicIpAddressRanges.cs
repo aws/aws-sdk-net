@@ -145,7 +145,9 @@ namespace Amazon.Util
                 catch (FormatException) { }
                 catch (ArgumentNullException) { }
 
+#pragma warning disable CS0612 // Type or member is obsolete
                 instance.CreateDate = creationDateTime.GetValueOrDefault(AWSSDKUtils.CorrectedUtcNow);
+#pragma warning restore CS0612 // Type or member is obsolete
 
                 // ipv4 and v6 addresses occupy different keys in the data file and can't easily be merged
                 // so process each subset separately

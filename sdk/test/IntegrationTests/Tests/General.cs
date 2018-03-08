@@ -700,7 +700,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             TestClients(TestServiceCallForClockSkew);
         }
 
-        private void TestClients(Action<Action> serviceCall)
+        private void TestClients(Action<ClockSkewTestContext> serviceCall)
         {
             bool allPassed = true;
             foreach (var clientTest in clientTests)
@@ -735,11 +735,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(clockSkewSetting, configClockSkewSetting);
         }
 
-        private static void TestServiceCallForManualClockCorrection(Action action)
+        private class ClockSkewTestContext
+        {
+            public IClientConfig Config;
+            public Action TestAction;
+        }
+
+        private static void TestServiceCallForManualClockCorrection(ClockSkewTestContext context)
         {
             var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = AWSConfigs.ClockOffset;
+            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
@@ -748,85 +754,95 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
                 AWSConfigs.ManualClockCorrection = null;
-                AssertExtensions.ExpectException(action);
+                AssertExtensions.ExpectException(context.TestAction);
 
                 AWSConfigs.ManualClockCorrection = IncorrectPositiveClockSkewOffset.Negate();
-                action();
+                context.TestAction();
 
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.ManualClockCorrection = IncorrectNegativeClockSkewOffset.Negate();
-                action();
+                context.TestAction();
 
                 AWSConfigs.ManualClockCorrection = TimeSpan.FromTicks(IncorrectNegativeClockSkewOffset.Negate().Ticks * 2);
-                AssertExtensions.ExpectException(action);
+                AssertExtensions.ExpectException(context.TestAction);
 
                 AWSConfigs.ManualClockCorrection = TimeSpan.Zero;
-                AssertExtensions.ExpectException(action);
+                AssertExtensions.ExpectException(context.TestAction);
             }
             finally
             {
                 AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(oldClockSkewCorrection);
+                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
 
-        private static void TestServiceCallForClockSkew(Action action)
+        private static void TestServiceCallForClockSkew(ClockSkewTestContext context)
         {
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldClockSkewCorrection = AWSConfigs.ClockOffset;
+            var oldClockSkewCorrection = context.Config.ClockOffset;
             var oldUtcNowSource = GetUtcNowSource();
 
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                action();
+                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                context.TestAction();
+
+#pragma warning disable CS0618 // Type or member is obsolete
                 Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
+#pragma warning restore CS0618 // Type or member is obsolete
+                Assert.IsTrue(context.Config.ClockOffset == TimeSpan.Zero);                
 
-                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
-                action();
+                SetClockSkewCorrection(context.Config, IncorrectPositiveClockSkewOffset);
+                context.TestAction();
+#pragma warning disable CS0618 // Type or member is obsolete
                 Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+#pragma warning restore CS0618 // Type or member is obsolete
+                Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, context.Config.ClockOffset);
 
-                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
-                action();
-                Assert.AreNotEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
+                SetClockSkewCorrection(context.Config, IncorrectNegativeClockSkewOffset);
+                context.TestAction();
+#pragma warning disable CS0618 // Type or member is obsolete
+                Assert.AreNotEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+#pragma warning restore CS0618 // Type or member is obsolete
+                Assert.AreNotEqual(IncorrectNegativeClockSkewOffset, context.Config.ClockOffset);
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(action);
+                AssertExtensions.ExpectException(context.TestAction);
                     
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                action();
+                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                action();
+                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(action);
+                AssertExtensions.ExpectException(context.TestAction);
             }
             finally
             {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(oldClockSkewCorrection);
+                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
 
         // ClientTest helpers
-        private void TestClient(Type clientType, string methodName, object request, Action<Action> serviceCall)
+        private void TestClient(Type clientType, string methodName, object request, Action<ClockSkewTestContext> serviceCall)
         {
             Console.WriteLine("Testing client: " + clientType.FullName);
             var client = Activator.CreateInstance(clientType, null) as IDisposable;
 
             // Optionally modify client config
-            //var config = GetConfig(client);
+            var config = GetConfig(client);
             //config.UseHttp = true;
 
             using (client)
@@ -837,7 +853,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 //var signer = GetSigner(client);
                 //Console.WriteLine("Signer: " + signer.GetType().FullName);
 
-                serviceCall(action);
+                serviceCall(
+                    new ClockSkewTestContext {
+                        TestAction = action,
+                        Config = config
+                });
             }
         }
         private class ClientTest
@@ -855,7 +875,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBuckets" },
             new ClientTest { Client = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
-            new ClientTest { Client = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
+            // ImportExport returns a 500.  Investigating...
+            //new ClientTest { Client = typeof(Amazon.ImportExport.AmazonImportExportClient), Method = "ListJobs" },
         };
 
         // Reflection helpers
@@ -871,10 +892,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
-        public static void SetClockSkewCorrection(TimeSpan value)
+        public static void SetClockSkewCorrection(IClientConfig config, TimeSpan value)
         {
-            var property = typeof(AWSConfigs).GetProperty("ClockOffset");
-            property.SetValue(null, value, null);
+            var method = typeof(CorrectClockSkew).GetMethod("SetClockCorrectionForEndpoint", BindingFlags.Static | BindingFlags.NonPublic);
+            method.Invoke(null, new object[] {config.DetermineServiceURL(), value});
         }
         private AbstractAWSSigner GetSigner(object client)
         {
@@ -884,7 +905,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
         private ClientConfig GetConfig(object client)
         {
-            var configProperty = typeof(AmazonServiceClient).GetProperty("Config", BindingFlags.Instance | BindingFlags.NonPublic);
+            var configProperty = typeof(AmazonServiceClient).GetProperty("Config", BindingFlags.Instance | BindingFlags.Public);
             var config = configProperty.GetValue(client, null) as ClientConfig;
             return config;
 

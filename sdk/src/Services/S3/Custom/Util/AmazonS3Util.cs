@@ -567,7 +567,7 @@ namespace Amazon.S3.Util
             var request = new GetPreSignedUrlRequest
             {
                 BucketName = bucketName,
-                Expires = AWSSDKUtils.CorrectedUtcNow.ToLocalTime().AddDays(1),
+                Expires = s3Client.Config.CorrectedUtcNow.ToLocalTime().AddDays(1),
                 Verb = HttpVerb.HEAD,
                 Protocol = Protocol.HTTP
             };

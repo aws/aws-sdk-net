@@ -72,8 +72,6 @@ namespace Amazon
         #region Private static members
 
         private static char[] validSeparators = new char[] { ' ', ',' };
-        private static TimeSpan? manualClockCorrection;
-        private static object manualClockCorrectionLock = new object();
 
         // Tests can override this DateTime source.
         internal static Func<DateTime> utcNowSource = GetUtcNow;
@@ -98,28 +96,23 @@ namespace Amazon
 
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
-
-        
-
         #endregion
 
         #region Clock Skew
 
         /// <summary>
-        /// Manual offset to apply to client clock.
+        /// Manual offset to apply to client clock.  This is a global setting that overrides 
+        /// ClockOffset value calculated for all service endpoints.
         /// </summary>
         public static TimeSpan? ManualClockCorrection
         {
             get
             {
-                lock (manualClockCorrectionLock)
-                    return manualClockCorrection;
+                return Runtime.CorrectClockSkew.GlobalClockCorrection;
             }
-
             set
             {
-                lock (manualClockCorrectionLock)
-                    manualClockCorrection = value;
+                Runtime.CorrectClockSkew.GlobalClockCorrection = value;
             }
         }
 
@@ -149,12 +142,12 @@ namespace Amazon
         /// value will be set to the correction, but it will not be used by the
         /// SDK and clock skew errors will not be retried.
         /// </summary>
+        [Obsolete("This value is deprecated in favor of IClientConfig.ClockOffset")]
         public static TimeSpan ClockOffset
         {
             get;
             internal set;
         }
-
         #endregion
 
         #region Region

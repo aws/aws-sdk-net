@@ -129,7 +129,9 @@ namespace Amazon.Runtime
                 else
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
+#pragma warning disable CS0612 // Type or member is obsolete
                         AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
+#pragma warning restore CS0612 // Type or member is obsolete
                 throw new AmazonClientException(errorMessage);
             }
 
@@ -143,7 +145,9 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
+#pragma warning disable CS0612 // Type or member is obsolete
                     AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
+#pragma warning restore CS0612 // Type or member is obsolete
                     currentState.Expiration,
                     PreemptExpiryTime);
             }
@@ -161,7 +165,9 @@ namespace Amazon.Runtime
                     return true;
 
                 //  it's past the expiration time
+#pragma warning disable CS0612 // Type or member is obsolete
                 var now = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0612 // Type or member is obsolete
                 var exp = currentState.Expiration.ToUniversalTime();
                 return (now > exp);
             }

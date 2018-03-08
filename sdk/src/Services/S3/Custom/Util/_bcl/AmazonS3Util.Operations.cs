@@ -63,18 +63,18 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
             }
 
+            var config = s3Client.Config;
             var request = new GetPreSignedUrlRequest
             {
                 BucketName = bucketName, 
-                Expires = AWSSDKUtils.CorrectedUtcNow.ToLocalTime().AddDays(1), 
+                Expires = config.CorrectedUtcNow.ToLocalTime().AddDays(1), 
                 Verb = HttpVerb.HEAD, 
                 Protocol = Protocol.HTTP
             };
 
             var url = s3Client.GetPreSignedURL(request);
             var uri = new Uri(url);
-
-            var config = s3Client.Config;
+            
             var response = AmazonS3HttpUtil.GetHead(s3Client, config, url, HeaderKeys.XAmzBucketRegion);
             if (response.StatusCode == null)
             {

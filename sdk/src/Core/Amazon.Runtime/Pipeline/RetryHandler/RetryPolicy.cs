@@ -75,8 +75,8 @@ namespace Amazon.Runtime
             "RequestInTheFuture",
         };
         
-        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}.";
-        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}.";
+        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}, service endpoint = {4}.";
+        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}, service endpoint = {1}.";
         private const string clockSkewMessageParen = "(";
         private const string clockSkewMessagePlusSeparator = " + ";
         private const string clockSkewMessageMinusSeparator = " - ";
@@ -162,6 +162,7 @@ namespace Amazon.Runtime
 
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
         {
+            var clientConfig = executionContext.RequestContext.ClientConfig;
             var ase = exception as AmazonServiceException;
 
             var isHead =
@@ -174,7 +175,7 @@ namespace Amazon.Runtime
             if (isHead || isClockskewErrorCode)
             {
                 var realNow = AWSConfigs.utcNowSource();
-                var correctedNow = AWSSDKUtils.CorrectedUtcNow;
+                var correctedNow = clientConfig.CorrectedUtcNow;
 
                 DateTime serverTime;
 
@@ -193,19 +194,21 @@ namespace Amazon.Runtime
                     var absDiff = diff.Ticks < 0 ? -diff : diff;
                     if (absDiff > clockSkewMaxThreshold)
                     {
+                        string endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
                         var newCorrection = serverTime - realNow;
                         Logger.InfoFormat(clockSkewMessageFormat,
-                            realNow, correctedNow, AWSConfigs.ClockOffset, serverTime);
+                            realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);
 
                         // Always set the correction, for informational purposes
-                        AWSConfigs.ClockOffset = newCorrection;
+                        CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
+
                         var shouldRetry = AWSConfigs.CorrectForClockSkew && !AWSConfigs.ManualClockCorrection.HasValue;
 
                         // Only retry if clock skew correction is not disabled
                         if (shouldRetry)
                         {
                             // Set clock skew correction
-                            Logger.InfoFormat(clockSkewUpdatedFormat, newCorrection);
+                            Logger.InfoFormat(clockSkewUpdatedFormat, newCorrection, endpoint);
                             executionContext.RequestContext.IsSigned = false;
                             return true;
                         }

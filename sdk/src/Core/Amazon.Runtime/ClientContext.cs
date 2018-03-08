@@ -64,7 +64,9 @@ namespace Amazon.Runtime.Internal
         
         private IDictionary _clientContext;
         private static object _lock = new object();
+#if PCL || UNITY || BCL
         private static string _clientID = null;
+#endif
         private const string APP_ID_KEY = "APP_ID_KEY";
         private const string CLIENT_ID_CACHE_FILENAME = "client-ID-cache";
 

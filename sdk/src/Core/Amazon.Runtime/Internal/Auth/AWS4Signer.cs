@@ -188,7 +188,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>Date and time used for x-amz-date, in UTC</returns>
         public static DateTime InitializeHeaders(IDictionary<string, string> headers, Uri requestEndpoint)
         {
-            return InitializeHeaders(headers, requestEndpoint, AWSSDKUtils.CorrectedUtcNow);
+            return InitializeHeaders(headers, requestEndpoint, CorrectClockSkew.GetCorrectedUtcNowForEndpoint(requestEndpoint.ToString()));
         }
 
         /// <summary>
@@ -1026,7 +1026,7 @@ namespace Amazon.Runtime.Internal.Auth
                 request.Headers.Add(HeaderKeys.HostHeader, hostHeader);
             }
 
-            var signedAt = AWSSDKUtils.CorrectedUtcNow;
+            var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
             var region = overrideSigningRegion ?? DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
 
             // AWS4 presigned urls got S3 are expected to contain a 'UNSIGNED-PAYLOAD' magic string

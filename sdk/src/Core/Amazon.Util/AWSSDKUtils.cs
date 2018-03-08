@@ -27,6 +27,7 @@ using System.Text;
 using System.Linq;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 namespace Amazon.Util
 {
@@ -676,7 +677,9 @@ namespace Amazon.Util
         {
             get
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 DateTime dateTime = AWSSDKUtils.CorrectedUtcNow;
+#pragma warning restore CS0618 // Type or member is obsolete
                 DateTime formatted = new DateTime(
                     dateTime.Year,
                     dateTime.Month,
@@ -693,6 +696,8 @@ namespace Amazon.Util
                     );
             }
         }
+
+
 
         /// <summary>
         /// Formats the current date as ISO 8601 timestamp
@@ -717,7 +722,18 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampISO8601(int minutesFromNow)
         {
-            DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
+#pragma warning disable CS0618 // Type or member is obsolete
+            return GetFormattedTimestampISO8601(AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow));
+#pragma warning restore CS0618 // Type or member is obsolete
+        }
+
+        internal static string GetFormattedTimestampISO8601(IClientConfig config)
+        {
+            return GetFormattedTimestampISO8601(config.CorrectedUtcNow);
+        }
+
+        private static string GetFormattedTimestampISO8601(DateTime dateTime)
+        {
             DateTime formatted = new DateTime(
                 dateTime.Year,
                 dateTime.Month,
@@ -757,7 +773,9 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampRFC822(int minutesFromNow)
         {
+#pragma warning disable CS0612 // Type or member is obsolete
             DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
+#pragma warning restore CS0612 // Type or member is obsolete
             DateTime formatted = new DateTime(
                 dateTime.Year,
                 dateTime.Month,
@@ -866,11 +884,9 @@ namespace Amazon.Util
         /// <summary>
         /// Returns DateTime.UtcNow + ManualClockCorrection when
         /// <seealso cref="AWSConfigs.ManualClockCorrection"/> is set.
-        /// Otherwise returns DateTime.UtcNow + ClockOffset when
-        /// <seealso cref="AWSConfigs.CorrectForClockSkew"/> is true.
-        /// This value should be used when constructing requests, as it
-        /// will represent accurate time w.r.t. AWS servers.
+        /// This value should be used instead of DateTime.UtcNow to factor in manual clock correction
         /// </summary>
+        [Obsolete("This property does not account for endpoint specific clock skew.  Use CorrectClockSkew.GetCorrectedUtcNowForEndpoint() instead.")]
         public static DateTime CorrectedUtcNow
         {
             get
@@ -878,8 +894,6 @@ namespace Amazon.Util
                 var now = AWSConfigs.utcNowSource();
                 if (AWSConfigs.ManualClockCorrection.HasValue)
                     now += AWSConfigs.ManualClockCorrection.Value;
-                else if (AWSConfigs.CorrectForClockSkew)
-                    now += AWSConfigs.ClockOffset;
                 return now;
             }
         }

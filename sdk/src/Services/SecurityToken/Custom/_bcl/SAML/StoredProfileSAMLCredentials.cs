@@ -248,7 +248,7 @@ namespace Amazon.SecurityToken.SAML
                 using (var stsClient = new AmazonSecurityTokenServiceClient(new AnonymousAWSCredentials(), region))
                 {
                     var credentials = assertion.GetRoleCredentials(stsClient, ProfileData.RoleArn, credentialDuration);
-                    state = new CredentialsRefreshState(credentials, AWSSDKUtils.CorrectedUtcNow + credentialDuration);
+                    state = new CredentialsRefreshState(credentials, stsClient.Config.CorrectedUtcNow + credentialDuration);
                 }
             }
             catch (Exception e)

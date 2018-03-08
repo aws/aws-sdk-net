@@ -201,7 +201,9 @@ namespace Amazon.Runtime.CredentialManagement
 
                         }
 
+#pragma warning disable CS0612 // Type or member is obsolete
                         var roleSessionName = RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
+#pragma warning restore CS0612 // Type or member is obsolete
                         var assumeRoleOptions = new AssumeRoleAWSCredentialsOptions()
                         {
                             ExternalId = options.ExternalID,

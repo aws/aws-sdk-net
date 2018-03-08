@@ -86,7 +86,7 @@ namespace Amazon.S3
             // But only if the region we're signing for allows SigV2.
             if (aws4Signing)
             {
-                var secondsUntilExpiration = GetSecondsUntilExpiration(request, aws4Signing);
+                var secondsUntilExpiration = GetSecondsUntilExpiration(this.Config, request, aws4Signing);
 
                 if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
                     endpoint.GetEndpointForService("s3").SignatureVersionOverride == "2")
@@ -96,7 +96,7 @@ namespace Amazon.S3
             }
 
             var immutableCredentials = Credentials.GetCredentials();
-            var irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);
+            var irequest = Marshall(this.Config, request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);
 
             irequest.Endpoint = EndpointResolver.DetermineEndpoint(this.Config, irequest);
 
@@ -154,7 +154,8 @@ namespace Amazon.S3
         /// maximum allowed for AWS4 (one week), an ArgumentException is thrown.
         /// </param>
         /// <returns></returns>
-        private static IRequest Marshall(GetPreSignedUrlRequest getPreSignedUrlRequest,
+        private static IRequest Marshall(IClientConfig config, 
+                                         GetPreSignedUrlRequest getPreSignedUrlRequest,
                                          string accessKey,
                                          string token,
                                          bool aws4Signing)
@@ -193,7 +194,7 @@ namespace Amazon.S3
                 uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
-            var expires = GetSecondsUntilExpiration(getPreSignedUrlRequest, aws4Signing);
+            var expires = GetSecondsUntilExpiration(config, getPreSignedUrlRequest, aws4Signing);
 
             if (aws4Signing && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
@@ -235,9 +236,9 @@ namespace Amazon.S3
             return request;
         }
 
-        private static long GetSecondsUntilExpiration(GetPreSignedUrlRequest request, bool aws4Signing)
+        private static long GetSecondsUntilExpiration(IClientConfig config, GetPreSignedUrlRequest request, bool aws4Signing)
         {
-            var baselineTime = aws4Signing ? AWSSDKUtils.CorrectedUtcNow : new DateTime(1970, 1, 1);
+            var baselineTime = aws4Signing ? config.CorrectedUtcNow : new DateTime(1970, 1, 1);
             return Convert.ToInt64((request.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
         }
 

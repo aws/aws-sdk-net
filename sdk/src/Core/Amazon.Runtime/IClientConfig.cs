@@ -213,6 +213,17 @@ namespace Amazon.Runtime
         /// <exception cref="Amazon.Runtime.AmazonClientException">The timeout specified is null.</exception>
         void Validate();
 
+        /// <summary>
+        /// Returns the clock skew adjusted utc now.  This value is affected by AWSConfigs.ManualClockCorrection
+        /// </summary>
+        DateTime CorrectedUtcNow { get; }
+
+        /// <summary>
+        /// Returns the calculated clock skew value for this config's service endpoint. If AWSConfigs.CorrectForClockSkew is false,
+        /// this value won't be used to construct service requests.
+        /// </summary>
+        TimeSpan ClockOffset { get; }
+
 #if CORECLR
         /// <summary>
         /// Get the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.

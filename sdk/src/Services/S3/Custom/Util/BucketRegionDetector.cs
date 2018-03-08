@@ -111,23 +111,24 @@ namespace Amazon.S3.Util
 
         private static string GetHeadBucketPreSignedUrl(string bucketName, ImmutableCredentials credentials)
         {
-            // IMPORTANT:
-            // This method is called as part of the request pipeline.
-            // If the pipeline were to be invoked here it would cause
-            // unwanted recursion.
-            // As such, the only reason it's OK to use an S3Client here
-            // is because this code is using a method that doesn't go
-            // through the request pipeline: GetPreSignedURLInternal
-            var request = new GetPreSignedUrlRequest
-            {
-                BucketName = bucketName,
-                Expires = AWSSDKUtils.CorrectedUtcNow.ToLocalTime().AddDays(1),
-                Verb = HttpVerb.HEAD,
-                Protocol = Protocol.HTTP
-            };
             // all buckets accessible via USEast1
             using (var s3Client = GetUsEast1ClientFromCredentials(credentials))
             {
+                // IMPORTANT:
+                // This method is called as part of the request pipeline.
+                // If the pipeline were to be invoked here it would cause
+                // unwanted recursion.
+                // As such, the only reason it's OK to use an S3Client here
+                // is because this code is using a method that doesn't go
+                // through the request pipeline: GetPreSignedURLInternal
+                var request = new GetPreSignedUrlRequest
+                {
+                    BucketName = bucketName,
+                    Expires = s3Client.Config.CorrectedUtcNow.ToLocalTime().AddDays(1),
+                    Verb = HttpVerb.HEAD,
+                    Protocol = Protocol.HTTP
+                };
+
                 return s3Client.GetPreSignedURLInternal(request, false);
             }
         }

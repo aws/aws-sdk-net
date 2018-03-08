@@ -59,7 +59,9 @@ namespace Amazon.Runtime
             WebServiceRequestEventArgs args = new WebServiceRequestEventArgs
             {
                 Headers = request.Headers,
+#pragma warning disable CS0618 // Type or member is obsolete
                 Parameters = request.Parameters,
+#pragma warning restore CS0618 // Type or member is obsolete
                 ParameterCollection = request.ParameterCollection,
                 ServiceName = request.ServiceName,
                 Request = request.OriginalRequest,
