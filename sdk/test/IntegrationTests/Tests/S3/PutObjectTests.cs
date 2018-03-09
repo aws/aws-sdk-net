@@ -334,7 +334,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ServiceURL = "https://s3-external-1.amazonaws.com",
                 SignatureVersion = "4"
             });
-            var testBucketName = "testBucket" + random.Next();
+            var testBucketName = "aws-net-sdk-external" + random.Next();
             var key = "testKey";
             try
             {
