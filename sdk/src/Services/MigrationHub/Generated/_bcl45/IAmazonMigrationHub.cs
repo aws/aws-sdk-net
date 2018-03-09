@@ -31,7 +31,9 @@ namespace Amazon.MigrationHub
     /// <summary>
     /// Interface for accessing MigrationHub
     ///
-    /// 
+    /// The AWS Migration Hub API methods help to obtain server and application migration
+    /// status and integrate your resource-specific migration tool by providing a programmatic
+    /// interface to Migration Hub.
     /// </summary>
     public partial interface IAmazonMigrationHub : IAmazonService, IDisposable
     {
@@ -66,8 +68,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the AssociateCreatedArtifact service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -86,8 +87,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -122,8 +122,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the AssociateDiscoveredResource service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -138,8 +137,8 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
         /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>ADSCaller</code> role is missing
-        /// or not configured correctly.
+        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
         /// Exception raised when the request references a resource (ADS configuration, update
@@ -147,8 +146,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -186,8 +184,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the CreateProgressUpdateStream service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -201,8 +198,7 @@ namespace Amazon.MigrationHub
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -240,9 +236,9 @@ namespace Amazon.MigrationHub
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The call will return, and a background process will asynchronously be doing the actual
-        /// delete of the stream and all of its resources (tasks, associated resources, resource
-        /// attributes, created artifacts).
+        /// The call will return, and a background process will asynchronously delete the stream
+        /// and all of its resources (tasks, associated resources, resource attributes, created
+        /// artifacts).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -268,8 +264,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the DeleteProgressUpdateStream service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -288,8 +283,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -323,8 +317,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the DescribeApplicationState service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -335,8 +328,8 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
         /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>ADSCaller</code> role is missing
-        /// or not configured correctly.
+        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
         /// Exception raised when the request references a resource (ADS configuration, update
@@ -344,8 +337,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
         DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request);
@@ -375,8 +367,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the DescribeMigrationTask service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -391,8 +382,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
         DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request);
@@ -440,8 +430,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the DisassociateCreatedArtifact service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -460,8 +449,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -496,8 +484,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the DisassociateDiscoveredResource service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -516,8 +503,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -558,8 +544,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the ImportMigrationTask service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -578,8 +563,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -629,8 +613,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the ListCreatedArtifacts service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -645,8 +628,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
         ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request);
@@ -676,8 +658,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the ListDiscoveredResources service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -692,8 +673,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request);
@@ -738,8 +718,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the ListMigrationTasks service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -750,8 +729,8 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
         /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>ADSCaller</code> role is missing
-        /// or not configured correctly.
+        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
         /// Exception raised when the request references a resource (ADS configuration, update
@@ -759,8 +738,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
         ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request);
@@ -790,8 +768,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the ListProgressUpdateStreams service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.InternalServerErrorException">
         /// Exception raised when there is an internal, configuration, or dependency error encountered.
@@ -801,8 +778,7 @@ namespace Amazon.MigrationHub
         /// in the wrong format or data type.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request);
@@ -834,8 +810,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the NotifyApplicationState service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -850,8 +825,8 @@ namespace Amazon.MigrationHub
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.PolicyErrorException">
         /// Exception raised when there are problems accessing ADS (Application Discovery Service);
-        /// most likely due to a misconfigured policy or the <code>ADSCaller</code> role is missing
-        /// or not configured correctly.
+        /// most likely due to a misconfigured policy or the <code>migrationhub-discovery</code>
+        /// role is missing or not configured correctly.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ResourceNotFoundException">
         /// Exception raised when the request references a resource (ADS configuration, update
@@ -859,8 +834,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -911,8 +885,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the NotifyMigrationTaskState service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -931,8 +904,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
@@ -964,18 +936,23 @@ namespace Amazon.MigrationHub
         /// in the Application Discovery Service (ADS)'s repository. This association occurs asynchronously
         /// after <code>PutResourceAttributes</code> returns.
         /// 
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
         /// Keep in mind that subsequent calls to PutResourceAttributes will override previously
         /// stored attributes. For example, if it is first called with a MAC address, but later,
         /// it is desired to <i>add</i> an IP address, it will then be required to call it with
         /// <i>both</i> the IP and MAC addresses to prevent overiding the MAC address.
         /// </para>
-        ///  </important> <note> 
+        ///  </li> <li> 
+        /// <para>
+        /// Note the instructions regarding the special use case of the <code>ResourceAttributeList</code>
+        /// parameter when specifying any "VM" related value.
+        /// </para>
+        ///  </li> </ul> </important> <note> 
         /// <para>
         /// Because this is an asynchronous call, it will always return 200, whether an association
         /// occurs or not. To confirm if an association was found based on the provided details,
-        /// call <code>ListAssociatedResource</code>.
+        /// call <code>ListDiscoveredResources</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -983,8 +960,7 @@ namespace Amazon.MigrationHub
         /// 
         /// <returns>The response from the PutResourceAttributes service method, as returned by MigrationHub.</returns>
         /// <exception cref="Amazon.MigrationHub.Model.AccessDeniedException">
-        /// Exception raised when the account making the call is not whitelisted or there are
-        /// other authentication errors.
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.DryRunOperationException">
         /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
@@ -1003,8 +979,7 @@ namespace Amazon.MigrationHub
         /// or in Migration Hub's repository.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.ServiceUnavailableException">
-        /// Exception raised when the service encounters throttled communication with upstream
-        /// dependencies or is overloaded with requests.
+        /// Exception raised when there is an internal, configuration, or dependency error encountered.
         /// </exception>
         /// <exception cref="Amazon.MigrationHub.Model.UnauthorizedOperationException">
         /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>

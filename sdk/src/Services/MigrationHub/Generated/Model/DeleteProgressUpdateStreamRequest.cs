@@ -39,9 +39,9 @@ namespace Amazon.MigrationHub.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The call will return, and a background process will asynchronously be doing the actual
-    /// delete of the stream and all of its resources (tasks, associated resources, resource
-    /// attributes, created artifacts).
+    /// The call will return, and a background process will asynchronously delete the stream
+    /// and all of its resources (tasks, associated resources, resource attributes, created
+    /// artifacts).
     /// </para>
     ///  </li> <li> 
     /// <para>

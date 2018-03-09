@@ -101,10 +101,6 @@ namespace Amazon.MigrationHub
         /// </summary>
         public static readonly ResourceAttributeType IPV6_ADDRESS = new ResourceAttributeType("IPV6_ADDRESS");
         /// <summary>
-        /// Constant LABEL for ResourceAttributeType
-        /// </summary>
-        public static readonly ResourceAttributeType LABEL = new ResourceAttributeType("LABEL");
-        /// <summary>
         /// Constant MAC_ADDRESS for ResourceAttributeType
         /// </summary>
         public static readonly ResourceAttributeType MAC_ADDRESS = new ResourceAttributeType("MAC_ADDRESS");

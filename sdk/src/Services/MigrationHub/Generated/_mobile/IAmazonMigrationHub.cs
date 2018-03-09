@@ -31,7 +31,9 @@ namespace Amazon.MigrationHub
     /// <summary>
     /// Interface for accessing MigrationHub
     ///
-    /// 
+    /// The AWS Migration Hub API methods help to obtain server and application migration
+    /// status and integrate your resource-specific migration tool by providing a programmatic
+    /// interface to Migration Hub.
     /// </summary>
     public partial interface IAmazonMigrationHub : IAmazonService, IDisposable
     {

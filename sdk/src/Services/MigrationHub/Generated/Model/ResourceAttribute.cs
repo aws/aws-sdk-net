@@ -29,6 +29,36 @@ namespace Amazon.MigrationHub.Model
 {
     /// <summary>
     /// Attribute associated with a resource.
+    /// 
+    ///  
+    /// <para>
+    /// Note the corresponding format required per type listed below:
+    /// </para>
+    ///  <dl> <dt>IPV4</dt> <dd> 
+    /// <para>
+    ///  <code>x.x.x.x</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>where x is an integer in the range [0,255]</i> 
+    /// </para>
+    ///  </dd> <dt>IPV6</dt> <dd> 
+    /// <para>
+    ///  <code>y : y : y : y : y : y : y : y</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>where y is a hexadecimal between 0 and FFFF. [0, FFFF]</i> 
+    /// </para>
+    ///  </dd> <dt>MAC_ADDRESS</dt> <dd> 
+    /// <para>
+    ///  <code>^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$</code> 
+    /// </para>
+    ///  </dd> <dt>FQDN</dt> <dd> 
+    /// <para>
+    ///  <code>^[^&lt;&gt;{}\\\\/?,=\\p{Cntrl}]{1,256}$</code> 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class ResourceAttribute
     {
