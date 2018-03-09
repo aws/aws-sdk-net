@@ -106,7 +106,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         .Count(b =>
                             string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
 
-                    var fakeBucketName = "really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime();
+                    var fakeBucketName = ("really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime()).ToLower();
                     var as3e = await AssertExtensions.ExpectExceptionAsync<AmazonS3Exception>(client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = fakeBucketName

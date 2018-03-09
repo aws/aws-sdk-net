@@ -57,7 +57,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName)
         {
-            string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks);
+            string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks).ToLower().Replace('_','-');
             await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName }).ConfigureAwait(false);
             return bucketName;
         }
@@ -69,7 +69,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         public static string GenerateName(string name)
         {
-            return SDK_TEST_PREFIX + "-" + name + "-" + new Random().Next();
+            return (SDK_TEST_PREFIX + "-" + name + "-" + new Random().Next()).ToLower().Replace('_', '-');
         }
 
         public static void WriteFile(string path, string contents)
