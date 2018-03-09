@@ -1,3 +1,13 @@
+### 3.3.247.0 (2018-03-09 00:26 UTC)
+* ECS (3.3.11.0)
+	* Amazon Elastic Container Service (ECS) now supports container health checks. Customers can now specify a docker container health check command and parameters in their task definition. ECS will monitor, report and take scheduling action based on the health status.
+* MigrationHub (3.3.1.0)
+	* Unused key LABEL removed from ResourceAttrbute
+* Pinpoint (3.3.6.0)
+	* With this release, you can export endpoints from your Amazon Pinpoint projects. You can export a) all of the endpoints assigned to a project or b) the subset of endpoints assigned to a segment.
+* RDS (3.3.21.2)
+	* Documentation updates for RDS
+
 ### 3.3.246.0 (2018-03-08 00:42 UTC)
 * MediaLive (3.3.3.0)
 	* Updates API to model required traits and minimum/maximum constraints.
