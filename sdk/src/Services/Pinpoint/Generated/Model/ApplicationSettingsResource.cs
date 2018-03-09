@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class ApplicationSettingsResource
     {
         private string _applicationId;
+        private CampaignHook _campaignHook;
         private string _lastModifiedDate;
         private CampaignLimits _limits;
         private QuietTime _quietTime;
@@ -50,6 +51,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CampaignHook. Default campaign hook.
+        /// </summary>
+        public CampaignHook CampaignHook
+        {
+            get { return this._campaignHook; }
+            set { this._campaignHook = value; }
+        }
+
+        // Check to see if CampaignHook property is set
+        internal bool IsSetCampaignHook()
+        {
+            return this._campaignHook != null;
         }
 
         /// <summary>

@@ -122,9 +122,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CollapseId. Multiple notifications with the same collapse
-        /// identifier are displayed to the user as a single notification. The value of this key
-        /// must not exceed 64 bytes.
+        /// Gets and sets the property CollapseId. An ID that, if assigned to multiple messages,
+        /// causes APNs to coalesce the messages into a single push notification instead of delivering
+        /// each message individually. The value must not exceed 64 bytes. Amazon Pinpoint uses
+        /// this value to set the apns-collapse-id request header when it sends the message to
+        /// APNs.
         /// </summary>
         public string CollapseId
         {
@@ -187,8 +189,15 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Priority. Is this a transaction priority message or lower
-        /// priority.
+        /// Gets and sets the property Priority. The message priority. Amazon Pinpoint uses this
+        /// value to set the apns-priority request header when it sends the message to APNs. Accepts
+        /// the following values:"5" - Low priority. Messages might be delayed, delivered in groups,
+        /// and throttled."10" - High priority. Messages are sent immediately. High priority messages
+        /// must cause an alert, sound, or badge on the receiving device.The default value is
+        /// "10".The equivalent values for FCM or GCM messages are "normal" and "high". Amazon
+        /// Pinpoint accepts these values for APNs messages and converts them.For more information
+        /// about the apns-priority parameter, see Communicating with APNs in the APNs Local and
+        /// Remote Notification Programming Guide.
         /// </summary>
         public string Priority
         {
@@ -288,11 +297,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
-        /// the message should be kept if APNS is unable to deliver the notification the first
-        /// time. If the value is 0, APNS treats the notification as if it expires immediately
-        /// and does not store the notification or attempt to redeliver it. This value is converted
-        /// to the expiration field when sent to APNS
+        /// Gets and sets the property TimeToLive. The length of time (in seconds) that APNs stores
+        /// and attempts to deliver the message. If the value is 0, APNs does not store the message
+        /// or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
+        /// apns-expiration request header when it sends the message to APNs.
         /// </summary>
         public int TimeToLive
         {

@@ -123,6 +123,49 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateExportJob
+
+
+        /// <summary>
+        /// Creates an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        CreateExportJobResponse CreateExportJob(CreateExportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateImportJob
 
 
@@ -944,7 +987,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Get an APNS VoipSandbox channel
+        /// Get an APNS VoIPSandbox channel
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipSandboxChannel service method.</param>
         /// 
@@ -1499,6 +1542,92 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetExportJob
+
+
+        /// <summary>
+        /// Returns information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetExportJobResponse GetExportJob(GetExportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetExportJobs
+
+
+        /// <summary>
+        /// Returns information about your export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetExportJobsResponse GetExportJobs(GetExportJobsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetGcmChannel
 
 
@@ -1668,6 +1797,49 @@ namespace Amazon.Pinpoint
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSegmentExportJobs
+
+
+        /// <summary>
+        /// Returns a list of export jobs for a specific segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

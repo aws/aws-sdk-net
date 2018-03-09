@@ -28,12 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetApnsVoipSandboxChannel operation.
-    /// Get an APNS VoIPSandbox channel
+    /// Container for the parameters to the GetExportJobs operation.
+    /// Returns information about your export jobs.
     /// </summary>
-    public partial class GetApnsVoipSandboxChannelRequest : AmazonPinpointRequest
+    public partial class GetExportJobsRequest : AmazonPinpointRequest
     {
         private string _applicationId;
+        private string _pageSize;
+        private string _token;
 
         /// <summary>
         /// Gets and sets the property ApplicationId.
@@ -48,6 +50,38 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageSize. The number of entries you want on each page in
+        /// the response.
+        /// </summary>
+        public string PageSize
+        {
+            get { return this._pageSize; }
+            set { this._pageSize = value; }
+        }
+
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
+        {
+            return this._pageSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Token. The NextToken string returned on a previous page
+        /// that you use to get the next page of results in a paginated response.
+        /// </summary>
+        public string Token
+        {
+            get { return this._token; }
+            set { this._token = value; }
+        }
+
+        // Check to see if Token property is set
+        internal bool IsSetToken()
+        {
+            return this._token != null;
         }
 
     }

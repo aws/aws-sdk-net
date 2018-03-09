@@ -74,8 +74,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalId. The external ID assigned the IAM role that
-        /// authorizes Amazon Pinpoint to publish to the stream.
+        /// Gets and sets the property ExternalId. DEPRECATED. Your AWS account ID, which you
+        /// assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to
+        /// assume an IAM role. This requirement is removed, and external IDs are not recommended
+        /// for IAM roles assumed by Amazon Pinpoint.
         /// </summary>
         public string ExternalId
         {

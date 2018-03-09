@@ -145,6 +145,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateExportJob
+
+
+        /// <summary>
+        /// Creates an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        CreateExportJobResponse CreateExportJob(CreateExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportJob
+        ///         operation.</returns>
+        IAsyncResult BeginCreateExportJob(CreateExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExportJob.</param>
+        /// 
+        /// <returns>Returns a  CreateExportJobResult from Pinpoint.</returns>
+        CreateExportJobResponse EndCreateExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateImportJob
 
 
@@ -1194,7 +1249,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Get an APNS VoipSandbox channel
+        /// Get an APNS VoIPSandbox channel
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipSandboxChannel service method.</param>
         /// 
@@ -1905,6 +1960,116 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetExportJob
+
+
+        /// <summary>
+        /// Returns information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetExportJobResponse GetExportJob(GetExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportJob
+        ///         operation.</returns>
+        IAsyncResult BeginGetExportJob(GetExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportJob.</param>
+        /// 
+        /// <returns>Returns a  GetExportJobResult from Pinpoint.</returns>
+        GetExportJobResponse EndGetExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetExportJobs
+
+
+        /// <summary>
+        /// Returns information about your export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetExportJobsResponse GetExportJobs(GetExportJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExportJobs
+        ///         operation.</returns>
+        IAsyncResult BeginGetExportJobs(GetExportJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExportJobs.</param>
+        /// 
+        /// <returns>Returns a  GetExportJobsResult from Pinpoint.</returns>
+        GetExportJobsResponse EndGetExportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetGcmChannel
 
 
@@ -2122,6 +2287,61 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>Returns a  GetSegmentResult from Pinpoint.</returns>
         GetSegmentResponse EndGetSegment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSegmentExportJobs
+
+
+        /// <summary>
+        /// Returns a list of export jobs for a specific segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegmentExportJobs
+        ///         operation.</returns>
+        IAsyncResult BeginGetSegmentExportJobs(GetSegmentExportJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegmentExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegmentExportJobs.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentExportJobsResult from Pinpoint.</returns>
+        GetSegmentExportJobsResponse EndGetSegmentExportJobs(IAsyncResult asyncResult);
 
         #endregion
         

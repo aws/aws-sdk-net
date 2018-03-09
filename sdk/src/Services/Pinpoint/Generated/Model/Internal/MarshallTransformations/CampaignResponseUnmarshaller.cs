@@ -100,6 +100,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.HoldoutPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Hook", targetDepth))
+                {
+                    var unmarshaller = CampaignHookUnmarshaller.Instance;
+                    unmarshalledObject.Hook = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

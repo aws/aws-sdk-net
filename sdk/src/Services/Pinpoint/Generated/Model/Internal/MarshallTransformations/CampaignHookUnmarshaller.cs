@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationSettingsResource Object
+    /// Response Unmarshaller for CampaignHook Object
     /// </summary>  
-    public class ApplicationSettingsResourceUnmarshaller : IUnmarshaller<ApplicationSettingsResource, XmlUnmarshallerContext>, IUnmarshaller<ApplicationSettingsResource, JsonUnmarshallerContext>
+    public class CampaignHookUnmarshaller : IUnmarshaller<CampaignHook, XmlUnmarshallerContext>, IUnmarshaller<CampaignHook, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApplicationSettingsResource IUnmarshaller<ApplicationSettingsResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CampaignHook IUnmarshaller<CampaignHook, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationSettingsResource Unmarshall(JsonUnmarshallerContext context)
+        public CampaignHook Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationSettingsResource unmarshalledObject = new ApplicationSettingsResource();
+            CampaignHook unmarshalledObject = new CampaignHook();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApplicationId", targetDepth))
+                if (context.TestExpression("LambdaFunctionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LambdaFunctionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CampaignHook", targetDepth))
-                {
-                    var unmarshaller = CampaignHookUnmarshaller.Instance;
-                    unmarshalledObject.CampaignHook = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
+                if (context.TestExpression("Mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Limits", targetDepth))
+                if (context.TestExpression("WebUrl", targetDepth))
                 {
-                    var unmarshaller = CampaignLimitsUnmarshaller.Instance;
-                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("QuietTime", targetDepth))
-                {
-                    var unmarshaller = QuietTimeUnmarshaller.Instance;
-                    unmarshalledObject.QuietTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationSettingsResourceUnmarshaller _instance = new ApplicationSettingsResourceUnmarshaller();        
+        private static CampaignHookUnmarshaller _instance = new CampaignHookUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationSettingsResourceUnmarshaller Instance
+        public static CampaignHookUnmarshaller Instance
         {
             get
             {

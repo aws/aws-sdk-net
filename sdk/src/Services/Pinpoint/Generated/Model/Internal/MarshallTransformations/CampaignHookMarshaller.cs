@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WriteApplicationSettingsRequest Marshaller
+    /// CampaignHook Marshaller
     /// </summary>       
-    public class WriteApplicationSettingsRequestMarshaller : IRequestMarshaller<WriteApplicationSettingsRequest, JsonMarshallerContext> 
+    public class CampaignHookMarshaller : IRequestMarshaller<CampaignHook, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WriteApplicationSettingsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(CampaignHook requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCampaignHook())
+            if(requestObject.IsSetLambdaFunctionName())
             {
-                context.Writer.WritePropertyName("CampaignHook");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CampaignHookMarshaller.Instance;
-                marshaller.Marshall(requestObject.CampaignHook, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("LambdaFunctionName");
+                context.Writer.Write(requestObject.LambdaFunctionName);
             }
 
-            if(requestObject.IsSetLimits())
+            if(requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("Limits");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CampaignLimitsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Limits, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
-            if(requestObject.IsSetQuietTime())
+            if(requestObject.IsSetWebUrl())
             {
-                context.Writer.WritePropertyName("QuietTime");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = QuietTimeMarshaller.Instance;
-                marshaller.Marshall(requestObject.QuietTime, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("WebUrl");
+                context.Writer.Write(requestObject.WebUrl);
             }
 
         }
@@ -83,7 +68,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static WriteApplicationSettingsRequestMarshaller Instance = new WriteApplicationSettingsRequestMarshaller();
+        public readonly static CampaignHookMarshaller Instance = new CampaignHookMarshaller();
 
     }
 }

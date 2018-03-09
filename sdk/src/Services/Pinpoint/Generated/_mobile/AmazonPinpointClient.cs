@@ -292,6 +292,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateExportJob
+
+        internal virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
+        {
+            var marshaller = new CreateExportJobRequestMarshaller();
+            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateExportJobRequestMarshaller();
+            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateImportJob
 
         internal virtual CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
@@ -1284,6 +1315,68 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetExportJob
+
+        internal virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
+        {
+            var marshaller = new GetExportJobRequestMarshaller();
+            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobRequest,GetExportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetExportJobRequestMarshaller();
+            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportJobRequest,GetExportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExportJobs
+
+        internal virtual GetExportJobsResponse GetExportJobs(GetExportJobsRequest request)
+        {
+            var marshaller = new GetExportJobsRequestMarshaller();
+            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetExportJobsRequestMarshaller();
+            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGcmChannel
 
         internal virtual GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
@@ -1403,6 +1496,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSegmentRequest,GetSegmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSegmentExportJobs
+
+        internal virtual GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request)
+        {
+            var marshaller = new GetSegmentExportJobsRequestMarshaller();
+            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSegmentExportJobsRequestMarshaller();
+            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -38,6 +38,7 @@ namespace Amazon.Pinpoint.Model
         private CampaignState _defaultState;
         private string _description;
         private int? _holdoutPercent;
+        private CampaignHook _hook;
         private string _id;
         private bool? _isPaused;
         private string _lastModifiedDate;
@@ -145,6 +146,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetHoldoutPercent()
         {
             return this._holdoutPercent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hook. Campaign hook information.
+        /// </summary>
+        public CampaignHook Hook
+        {
+            get { return this._hook; }
+            set { this._hook = value; }
+        }
+
+        // Check to see if Hook property is set
+        internal bool IsSetHook()
+        {
+            return this._hook != null;
         }
 
         /// <summary>

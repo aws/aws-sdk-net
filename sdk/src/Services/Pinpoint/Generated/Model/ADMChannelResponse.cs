@@ -44,7 +44,8 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. Application id
+        /// Gets and sets the property ApplicationId. The ID of the application to which the channel
+        /// applies.
         /// </summary>
         public string ApplicationId
         {
@@ -89,8 +90,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. If the channel is registered with a credential
-        /// for authentication.
+        /// Gets and sets the property HasCredential. Indicates whether the channel is configured
+        /// with ADM credentials. Amazon Pinpoint uses your credentials to authenticate push notifications
+        /// with ADM. Provide your credentials by setting the ClientId and ClientSecret attributes.
         /// </summary>
         public bool HasCredential
         {

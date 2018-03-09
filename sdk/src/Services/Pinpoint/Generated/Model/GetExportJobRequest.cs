@@ -28,12 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetApnsVoipSandboxChannel operation.
-    /// Get an APNS VoIPSandbox channel
+    /// Container for the parameters to the GetExportJob operation.
+    /// Returns information about an export job.
     /// </summary>
-    public partial class GetApnsVoipSandboxChannelRequest : AmazonPinpointRequest
+    public partial class GetExportJobRequest : AmazonPinpointRequest
     {
         private string _applicationId;
+        private string _jobId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId.
@@ -48,6 +49,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobId.
+        /// </summary>
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
         }
 
     }

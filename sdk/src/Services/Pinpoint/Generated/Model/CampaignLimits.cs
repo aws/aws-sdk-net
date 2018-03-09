@@ -54,8 +54,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaximumDuration. The maximum duration of a campaign from
-        /// the scheduled start. Must be a minimum of 60 seconds.
+        /// Gets and sets the property MaximumDuration. The length of time (in seconds) that the
+        /// campaign can run before it ends and message deliveries stop. This duration begins
+        /// at the scheduled start time for the campaign. The minimum value is 60.
         /// </summary>
         public int MaximumDuration
         {
@@ -70,9 +71,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessagesPerSecond. The maximum number of messages per second
-        /// that the campaign will send. This is a best effort maximum cap and can go as high
-        /// as 20000 and as low as 50
+        /// Gets and sets the property MessagesPerSecond. The number of messages that the campaign
+        /// can send per second. The minimum value is 50, and the maximum is 20000.
         /// </summary>
         public int MessagesPerSecond
         {

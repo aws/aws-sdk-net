@@ -171,8 +171,14 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Priority. Is this a transaction priority message or lower
-        /// priority.
+        /// Gets and sets the property Priority. The message priority. Amazon Pinpoint uses this
+        /// value to set the FCM or GCM priority parameter when it sends the message. Accepts
+        /// the following values:"Normal" - Messages might be delayed. Delivery is optimized for
+        /// battery usage on the receiving device. Use normal priority unless immediate delivery
+        /// is required."High" - Messages are sent immediately and might wake a sleeping device.The
+        /// equivalent values for APNs messages are "5" and "10". Amazon Pinpoint accepts these
+        /// values here and converts them.For more information, see About FCM Messages in the
+        /// Firebase documentation.
         /// </summary>
         public string Priority
         {
@@ -287,9 +293,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
-        /// the message should be kept in GCM storage if the device is offline. The maximum time
-        /// to live supported is 4 weeks, and the default value is 4 weeks.
+        /// Gets and sets the property TimeToLive. The length of time (in seconds) that FCM or
+        /// GCM stores and attempts to deliver the message. If unspecified, the value defaults
+        /// to the maximum, which is 2,419,200 seconds (28 days). Amazon Pinpoint uses this value
+        /// to set the FCM or GCM time_to_live parameter.
         /// </summary>
         public int TimeToLive
         {

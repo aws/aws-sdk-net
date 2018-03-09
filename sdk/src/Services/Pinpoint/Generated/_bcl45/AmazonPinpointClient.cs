@@ -335,6 +335,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  CreateExportJob
+
+
+        /// <summary>
+        /// Creates an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual CreateExportJobResponse CreateExportJob(CreateExportJobRequest request)
+        {
+            var marshaller = new CreateExportJobRequestMarshaller();
+            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateExportJobResponse> CreateExportJobAsync(CreateExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateExportJobRequestMarshaller();
+            var unmarshaller = CreateExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExportJobRequest,CreateExportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateImportJob
 
 
@@ -1384,7 +1439,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Get an APNS VoipSandbox channel
+        /// Get an APNS VoIPSandbox channel
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApnsVoipSandboxChannel service method.</param>
         /// 
@@ -2095,6 +2150,116 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetExportJob
+
+
+        /// <summary>
+        /// Returns information about an export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJob service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetExportJobResponse GetExportJob(GetExportJobRequest request)
+        {
+            var marshaller = new GetExportJobRequestMarshaller();
+            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobRequest,GetExportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetExportJobResponse> GetExportJobAsync(GetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetExportJobRequestMarshaller();
+            var unmarshaller = GetExportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportJobRequest,GetExportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExportJobs
+
+
+        /// <summary>
+        /// Returns information about your export jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetExportJobsResponse GetExportJobs(GetExportJobsRequest request)
+        {
+            var marshaller = new GetExportJobsRequestMarshaller();
+            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetExportJobsResponse> GetExportJobsAsync(GetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetExportJobsRequestMarshaller();
+            var unmarshaller = GetExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportJobsRequest,GetExportJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGcmChannel
 
 
@@ -2310,6 +2475,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSegmentRequest,GetSegmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSegmentExportJobs
+
+
+        /// <summary>
+        /// Returns a list of export jobs for a specific segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentExportJobs service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetSegmentExportJobsResponse GetSegmentExportJobs(GetSegmentExportJobsRequest request)
+        {
+            var marshaller = new GetSegmentExportJobsRequestMarshaller();
+            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegmentExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentExportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(GetSegmentExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSegmentExportJobsRequestMarshaller();
+            var unmarshaller = GetSegmentExportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSegmentExportJobsRequest,GetSegmentExportJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

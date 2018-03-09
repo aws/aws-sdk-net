@@ -32,8 +32,24 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class WriteApplicationSettingsRequest
     {
+        private CampaignHook _campaignHook;
         private CampaignLimits _limits;
         private QuietTime _quietTime;
+
+        /// <summary>
+        /// Gets and sets the property CampaignHook. Default campaign hook information.
+        /// </summary>
+        public CampaignHook CampaignHook
+        {
+            get { return this._campaignHook; }
+            set { this._campaignHook = value; }
+        }
+
+        // Check to see if CampaignHook property is set
+        internal bool IsSetCampaignHook()
+        {
+            return this._campaignHook != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Limits. The default campaign limits for the app. These

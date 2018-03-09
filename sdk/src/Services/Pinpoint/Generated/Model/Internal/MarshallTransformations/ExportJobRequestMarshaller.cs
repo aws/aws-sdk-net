@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WriteApplicationSettingsRequest Marshaller
+    /// ExportJobRequest Marshaller
     /// </summary>       
-    public class WriteApplicationSettingsRequestMarshaller : IRequestMarshaller<WriteApplicationSettingsRequest, JsonMarshallerContext> 
+    public class ExportJobRequestMarshaller : IRequestMarshaller<ExportJobRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,24 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WriteApplicationSettingsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ExportJobRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCampaignHook())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("CampaignHook");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CampaignHookMarshaller.Instance;
-                marshaller.Marshall(requestObject.CampaignHook, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.Write(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetLimits())
+            if(requestObject.IsSetS3UrlPrefix())
             {
-                context.Writer.WritePropertyName("Limits");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CampaignLimitsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Limits, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("S3UrlPrefix");
+                context.Writer.Write(requestObject.S3UrlPrefix);
             }
 
-            if(requestObject.IsSetQuietTime())
+            if(requestObject.IsSetSegmentId())
             {
-                context.Writer.WritePropertyName("QuietTime");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = QuietTimeMarshaller.Instance;
-                marshaller.Marshall(requestObject.QuietTime, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("SegmentId");
+                context.Writer.Write(requestObject.SegmentId);
             }
 
         }
@@ -83,7 +68,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static WriteApplicationSettingsRequestMarshaller Instance = new WriteApplicationSettingsRequestMarshaller();
+        public readonly static ExportJobRequestMarshaller Instance = new ExportJobRequestMarshaller();
 
     }
 }

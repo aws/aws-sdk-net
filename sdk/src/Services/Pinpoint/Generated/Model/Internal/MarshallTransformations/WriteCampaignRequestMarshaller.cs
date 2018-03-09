@@ -73,6 +73,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HoldoutPercent);
             }
 
+            if(requestObject.IsSetHook())
+            {
+                context.Writer.WritePropertyName("Hook");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CampaignHookMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hook, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIsPaused())
             {
                 context.Writer.WritePropertyName("IsPaused");

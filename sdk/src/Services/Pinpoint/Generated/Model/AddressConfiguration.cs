@@ -57,7 +57,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property ChannelType. The channel type.Valid values: GCM | APNS
-        /// | SMS | EMAIL
+        /// | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
         /// </summary>
         public ChannelType ChannelType
         {
