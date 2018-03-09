@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     {
         private string _containerArn;
         private int? _exitCode;
+        private HealthStatus _healthStatus;
         private string _lastStatus;
         private string _name;
         private List<NetworkBinding> _networkBindings = new List<NetworkBinding>();
@@ -75,6 +76,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        /// The health status of the container. If health checks are not configured for this container
+        /// in its task definition, then it reports health status as <code>UNKNOWN</code>.
+        /// </para>
+        /// </summary>
+        public HealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
         }
 
         /// <summary>

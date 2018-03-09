@@ -44,6 +44,7 @@ namespace Amazon.ECS.Model
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private bool? _essential;
         private List<HostEntry> _extraHosts = new List<HostEntry>();
+        private HealthCheck _healthCheck;
         private string _hostname;
         private string _image;
         private List<string> _links = new List<string>();
@@ -133,8 +134,8 @@ namespace Amazon.ECS.Model
         /// CPU value to calculate the relative CPU share ratios for running containers. For more
         /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
         /// share constraint</a> in the Docker documentation. The minimum valid CPU share value
-        /// that the Linux kernel will allow is 2; however, the CPU parameter is not required,
-        /// and you can use CPU values below 2 in your container definitions. For CPU values below
+        /// that the Linux kernel allows is 2; however, the CPU parameter is not required, and
+        /// you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
         ///  <ul> <li> 
@@ -429,6 +430,28 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        /// The health check command and associated configuration parameters for the container.
+        /// This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+        /// Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
+        /// </para>
+        /// </summary>
+        public HealthCheck HealthCheck
+        {
+            get { return this._healthCheck; }
+            set { this._healthCheck = value; }
+        }
+
+        // Check to see if HealthCheck property is set
+        internal bool IsSetHealthCheck()
+        {
+            return this._healthCheck != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
         /// The hostname to use for your container. This parameter maps to <code>Hostname</code>
@@ -637,13 +660,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If your containers will be part of a task using the Fargate launch type, this field
-        /// is optional and the only requirement is that the total amount of memory reserved for
+        /// If your containers are part of a task using the Fargate launch type, this field is
+        /// optional and the only requirement is that the total amount of memory reserved for
         /// all containers within a task be lower than the task <code>memory</code> value.
         /// </para>
         ///  
         /// <para>
-        /// For containers that will be part of a task using the EC2 launch type, you must specify
+        /// For containers that are part of a task using the EC2 launch type, you must specify
         /// a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code>
         /// in container definitions. If you specify both, <code>memory</code> must be greater
         /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,

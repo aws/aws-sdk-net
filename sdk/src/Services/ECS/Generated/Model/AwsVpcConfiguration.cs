@@ -39,8 +39,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
-        /// Specifies whether or not the task's elastic network interface receives a public IP
-        /// address.
+        /// Whether the task's elastic network interface receives a public IP address.
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp

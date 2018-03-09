@@ -130,6 +130,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtraHosts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("healthCheck", targetDepth))
+                {
+                    var unmarshaller = HealthCheckUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

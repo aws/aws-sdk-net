@@ -164,6 +164,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetHealthCheck())
+            {
+                context.Writer.WritePropertyName("healthCheck");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HealthCheckMarshaller.Instance;
+                marshaller.Marshall(requestObject.HealthCheck, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("hostname");

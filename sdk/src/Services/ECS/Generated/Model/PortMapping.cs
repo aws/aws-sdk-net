@@ -90,7 +90,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If using containers in a task with the <code>awsvpc</code> or <code>host</code> network
-        /// mode, the <code>hostPort</code> can either be left blank or needs to be the same value
+        /// mode, the <code>hostPort</code> can either be left blank or set to the same value
         /// as the <code>containerPort</code>.
         /// </para>
         ///  

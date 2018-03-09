@@ -1473,7 +1473,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your AWS account has been blocked. <a href="http://aws.amazon.com/contact-us/">Contact
-        /// AWS Customer Support</a> for more information.
+        /// AWS Support</a> for more information.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource

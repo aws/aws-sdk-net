@@ -97,7 +97,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+        /// The type of the attachment, such as <code>ElasticNetworkInterface</code>.
         /// </para>
         /// </summary>
         public string Type

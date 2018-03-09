@@ -130,6 +130,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Group = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("healthStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
