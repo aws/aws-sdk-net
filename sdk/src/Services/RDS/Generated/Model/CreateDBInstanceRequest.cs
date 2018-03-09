@@ -1225,7 +1225,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> 
+        ///  <b>Version 10.1</b> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

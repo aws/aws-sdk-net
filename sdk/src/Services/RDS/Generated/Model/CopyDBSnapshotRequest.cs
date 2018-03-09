@@ -40,10 +40,6 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't copy an encrypted, shared DB snapshot from one AWS Region to another.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information about copying snapshots, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
     /// a DB Snapshot</a> in the Amazon RDS User Guide. 
     /// </para>
