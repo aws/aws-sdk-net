@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -77,8 +78,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Executes a server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected virtual void ExecuteHelper(bool isAsync)
+        protected virtual void ExecuteHelper()
         {
+        }
+
+        /// <summary>
+        /// Executes a server call to batch-get the items requested.
+        /// Populates Results with the retrieved items.
+        /// </summary>
+        protected virtual Task ExecuteHelperAsync()
+        {
+            return Task.FromResult<object>(null);
         }
 
         #endregion
@@ -174,11 +184,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes the batch get
         /// </summary>
-        /// <param name="isAsync"></param>
-        protected override void ExecuteHelper(bool isAsync)
+        protected override void ExecuteHelper()
         {
             CreateDocumentBatch();
-            DocumentBatch.ExecuteHelper(isAsync);
+            DocumentBatch.ExecuteHelper();
+            PopulateResults(DocumentBatch.Results);
+        }
+
+        /// <summary>
+        /// Executes the batch get asynchronously
+        /// </summary>
+        protected override async Task ExecuteHelperAsync()
+        {
+            CreateDocumentBatch();
+            await DocumentBatch.ExecuteHelperAsync().ConfigureAwait(false);
             PopulateResults(DocumentBatch.Results);
         }
 
@@ -283,7 +302,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches.Add(batch);
         }
 
-        internal void ExecuteHelper(bool isAsync)
+        internal void ExecuteHelper()
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
             foreach (var batch in allBatches)
@@ -291,7 +310,25 @@ namespace Amazon.DynamoDBv2.DataModel
                 batch.CreateDocumentBatch();
                 superBatch.AddBatch(batch.DocumentBatch);
             }
-            superBatch.ExecuteHelper(isAsync);
+
+            superBatch.ExecuteHelper();
+
+            foreach (var batch in allBatches)
+            {
+                batch.PopulateResults(batch.DocumentBatch.Results);
+            }
+        }
+
+        internal async Task ExecuteHelperAsync()
+        {
+            MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
+            foreach (var batch in allBatches)
+            {
+                batch.CreateDocumentBatch();
+                superBatch.AddBatch(batch.DocumentBatch);
+            }
+
+            await superBatch.ExecuteHelperAsync().ConfigureAwait(false);
 
             foreach (var batch in allBatches)
             {

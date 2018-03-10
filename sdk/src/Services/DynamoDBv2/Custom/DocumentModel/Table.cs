@@ -26,6 +26,7 @@ using System.Globalization;
 using System.Text;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -556,7 +557,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region PutItem
 
-        internal Document PutItemHelper(Document doc, PutItemOperationConfig config, bool isAsync)
+        internal Document PutItemHelper(Document doc, PutItemOperationConfig config)
         {
             var currentConfig = config ?? new PutItemOperationConfig();
 
@@ -565,7 +566,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Item = this.ToAttributeMap(doc)
             };
-            this.AddRequestHandler(req, isAsync);
+            this.AddRequestHandler(req, isAsync: false);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -601,12 +602,57 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+        internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config)
+        {
+            var currentConfig = config ?? new PutItemOperationConfig();
+
+            PutItemRequest req = new PutItemRequest
+            {
+                TableName = TableName,
+                Item = this.ToAttributeMap(doc)
+            };
+            this.AddRequestHandler(req, isAsync: true);
+
+            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+                req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
+
+            ValidateConditional(currentConfig);
+
+
+            if (currentConfig.Expected != null)
+            {
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
+            }
+            else if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
+            {
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
+            }
+            else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
+            {
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+            }
+
+            var resp = await DDBClient.PutItemAsync(req).ConfigureAwait(false);
+            doc.CommitChanges();
+
+            Document ret = null;
+            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+            {
+                ret = this.FromAttributeMap(resp.Attributes);
+            }
+            return ret;
+        }
+
         #endregion
 
 
         #region GetItem
 
-        internal Document GetItemHelper(Key key, GetItemOperationConfig config, bool isAsync)
+        internal Document GetItemHelper(Key key, GetItemOperationConfig config)
         {
             var currentConfig = config ?? new GetItemOperationConfig();
             var request = new GetItemRequest
@@ -616,7 +662,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConsistentRead = currentConfig.ConsistentRead
             };
 
-            this.AddRequestHandler(request, isAsync);
+            this.AddRequestHandler(request, isAsync: false);
 
             if (currentConfig.AttributesToGet != null)
                 request.AttributesToGet = currentConfig.AttributesToGet;
@@ -628,17 +674,46 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
+        internal async Task<Document> GetItemHelperAsync(Key key, GetItemOperationConfig config)
+        {
+            var currentConfig = config ?? new GetItemOperationConfig();
+            var request = new GetItemRequest
+            {
+                TableName = TableName,
+                Key = key,
+                ConsistentRead = currentConfig.ConsistentRead
+            };
+
+            this.AddRequestHandler(request, isAsync: true);
+
+            if (currentConfig.AttributesToGet != null)
+                request.AttributesToGet = currentConfig.AttributesToGet;
+
+            var result = await DDBClient.GetItemAsync(request).ConfigureAwait(false);
+            var attributeMap = result.Item;
+            if (attributeMap == null || attributeMap.Count == 0)
+                return null;
+            return this.FromAttributeMap(attributeMap);
+        }
+
         #endregion
 
 
         #region UpdateItem
 
-        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, bool isAsync)
+        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config, isAsync);
+            return UpdateHelper(doc, key, config);
         }
-        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, bool isAsync)
+
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
+        {
+            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
+            return UpdateHelperAsync(doc, key, config);
+        }
+
+        internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -660,7 +735,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
             };
 
-            this.AddRequestHandler(req, isAsync);
+            this.AddRequestHandler(req, isAsync: false);
 
             ValidateConditional(currentConfig);
 
@@ -717,6 +792,85 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config)
+        {
+            var currentConfig = config ?? new UpdateItemOperationConfig();
+
+            // If the keys have been changed, treat entire document as having changed
+            bool haveKeysChanged = HaveKeysChanged(doc);
+            bool updateChangedAttributesOnly = !haveKeysChanged;
+
+            var attributeUpdates = this.ToAttributeUpdateMap(doc, updateChangedAttributesOnly);
+            foreach (var keyName in this.KeyNames)
+            {
+                attributeUpdates.Remove(keyName);
+            }
+
+            UpdateItemRequest req = new UpdateItemRequest
+            {
+                TableName = TableName,
+                Key = key,
+                AttributeUpdates = attributeUpdates.Count == 0 ? null : attributeUpdates, // pass null if keys-only update
+                ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
+            };
+
+            this.AddRequestHandler(req, isAsync: true);
+
+            ValidateConditional(currentConfig);
+
+            if (currentConfig.Expected != null)
+            {
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
+            }
+            else if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
+            {
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
+            }
+            else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
+            {
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+
+                string statement;
+                Dictionary<string, AttributeValue> expressionAttributeValues;
+                Dictionary<string, string> expressionAttributeNames;
+                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, out statement, out expressionAttributeValues, out expressionAttributeNames);
+
+                req.AttributeUpdates = null;
+                req.UpdateExpression = statement;
+
+                if (req.ExpressionAttributeValues == null)
+                    req.ExpressionAttributeValues = expressionAttributeValues;
+                else
+                {
+                    foreach (var kvp in expressionAttributeValues)
+                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                }
+
+                if (req.ExpressionAttributeNames == null)
+                    req.ExpressionAttributeNames = expressionAttributeNames;
+                else
+                {
+                    foreach (var kvp in expressionAttributeNames)
+                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            var resp = await DDBClient.UpdateItemAsync(req).ConfigureAwait(false);
+            var returnedAttributes = resp.Attributes;
+            doc.CommitChanges();
+
+            Document ret = null;
+            if (currentConfig.ReturnValues != ReturnValues.None)
+            {
+                ret = this.FromAttributeMap(returnedAttributes);
+            }
+            return ret;
+        }
+
         // Checks if key attributes have been updated
         private bool HaveKeysChanged(Document doc)
         {
@@ -733,7 +887,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region DeleteItem
 
-        internal Document DeleteHelper(Key key, DeleteItemOperationConfig config, bool isAsync)
+        internal Document DeleteHelper(Key key, DeleteItemOperationConfig config)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
 
@@ -742,7 +896,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Key = key
             };
-            this.AddRequestHandler(req, isAsync);
+            this.AddRequestHandler(req, isAsync: false);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -767,6 +921,49 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             var attributes = DDBClient.DeleteItem(req).Attributes;
+
+            Document ret = null;
+            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+            {
+                ret = this.FromAttributeMap(attributes);
+            }
+            return ret;
+        }
+
+        internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config)
+        {
+            var currentConfig = config ?? new DeleteItemOperationConfig();
+
+            var req = new DeleteItemRequest
+            {
+                TableName = TableName,
+                Key = key
+            };
+            this.AddRequestHandler(req, isAsync: true);
+
+            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+                req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
+
+            ValidateConditional(currentConfig);
+
+            if (currentConfig.Expected != null)
+            {
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
+            }
+            else if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
+            {
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
+            }
+            else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
+            {
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
+            }
+
+            var attributes = (await DDBClient.DeleteItemAsync(req).ConfigureAwait(false)).Attributes;
 
             Document ret = null;
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)

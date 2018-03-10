@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => ExecuteHelper(true), cancellationToken);
+            return ExecuteHelperAsync();
         }
 
         #endregion
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => ExecuteHelper(true), cancellationToken);
+            return ExecuteHelperAsync();
         }
 
         #endregion

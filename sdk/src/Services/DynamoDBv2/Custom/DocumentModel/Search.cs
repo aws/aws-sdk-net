@@ -20,6 +20,7 @@ using System.Linq;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -201,7 +202,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private/internal members
 
-        internal List<Document> GetNextSetHelper(bool isAsync)
+        internal List<Document> GetNextSetHelper()
         {
             List<Document> ret = new List<Document>();
 
@@ -234,7 +235,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
-                        SourceTable.AddRequestHandler(scanReq, isAsync);
+                        SourceTable.AddRequestHandler(scanReq, isAsync: false);
 
                         var scanResult = SourceTable.DDBClient.Scan(scanReq);
                         foreach (var item in scanResult.Items)
@@ -276,7 +277,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                        SourceTable.AddRequestHandler(queryReq, isAsync);
+                        SourceTable.AddRequestHandler(queryReq, isAsync: false);
 
                         var queryResult = SourceTable.DDBClient.Query(queryReq);
                         foreach (var item in queryResult.Items)
@@ -302,13 +303,129 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal List<Document> GetRemainingHelper(bool isAsync)
+        internal async Task<List<Document>> GetNextSetHelperAsync()
+        {
+            List<Document> ret = new List<Document>();
+
+            if (!IsDone)
+            {
+                switch (SearchMethod)
+                {
+                    case SearchType.Scan:
+                        ScanRequest scanReq = new ScanRequest
+                        {
+                            ExclusiveStartKey = NextKey,
+                            Limit = Limit,
+                            TableName = TableName,
+                            AttributesToGet = AttributesToGet,
+                            ScanFilter = Filter.ToConditions(SourceTable),
+                            Select = EnumMapper.Convert(Select),
+                            ConsistentRead = IsConsistentRead
+                        };
+                        if (!string.IsNullOrEmpty(this.IndexName))
+                            scanReq.IndexName = this.IndexName;
+                        if (this.FilterExpression != null && this.FilterExpression.IsSet)
+                            this.FilterExpression.ApplyExpression(scanReq, SourceTable);
+                        if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
+                            scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+                        Common.ConvertAttributesToGetToProjectionExpression(scanReq);
+
+                        if (this.TotalSegments != 0)
+                        {
+                            scanReq.TotalSegments = this.TotalSegments;
+                            scanReq.Segment = this.Segment;
+                        }
+
+                        SourceTable.AddRequestHandler(scanReq, isAsync: true);
+
+                        var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq).ConfigureAwait(false);
+                        foreach (var item in scanResult.Items)
+                        {
+                            Document doc = SourceTable.FromAttributeMap(item);
+                            ret.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
+                        }
+                        NextKey = scanResult.LastEvaluatedKey;
+                        if (NextKey == null || NextKey.Count == 0)
+                        {
+                            IsDone = true;
+                        }
+                        return ret;
+                    case SearchType.Query:
+                        QueryRequest queryReq = new QueryRequest
+                        {
+                            TableName = TableName,
+                            ConsistentRead = IsConsistentRead,
+                            Select = EnumMapper.Convert(Select),
+                            ExclusiveStartKey = NextKey,
+                            Limit = Limit,
+                            ScanIndexForward = !IsBackwardSearch,
+                            AttributesToGet = AttributesToGet,
+                            IndexName = IndexName,
+                        };
+
+                        Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
+
+                        Dictionary<string, Condition> keyConditions, filterConditions;
+                        SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
+                        queryReq.KeyConditions = keyConditions;
+                        queryReq.QueryFilter = filterConditions;
+                        Common.ConvertAttributesToGetToProjectionExpression(queryReq);
+
+                        if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
+                            queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+
+                        SourceTable.AddRequestHandler(queryReq, isAsync: true);
+
+                        var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq).ConfigureAwait(false);
+                        foreach (var item in queryResult.Items)
+                        {
+                            Document doc = SourceTable.FromAttributeMap(item);
+                            ret.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
+                        }
+                        NextKey = queryResult.LastEvaluatedKey;
+                        if (NextKey == null || NextKey.Count == 0)
+                        {
+                            IsDone = true;
+                        }
+                        return ret;
+                    default:
+                        throw new InvalidOperationException("Unknown Search Method");
+                }
+            }
+
+            return ret;
+        }
+
+        internal List<Document> GetRemainingHelper()
         {
             List<Document> ret = new List<Document>();
 
             while (!IsDone)
             {
-                foreach (Document doc in GetNextSetHelper(isAsync))
+                foreach (Document doc in GetNextSetHelper())
+                {
+                    ret.Add(doc);
+                }
+            }
+
+            return ret;
+        }
+
+        internal async Task<List<Document>> GetRemainingHelperAsync()
+        {
+            List<Document> ret = new List<Document>();
+
+            while (!IsDone)
+            {
+                foreach (Document doc in await GetNextSetHelperAsync().ConfigureAwait(false))
                 {
                     ret.Add(doc);
                 }

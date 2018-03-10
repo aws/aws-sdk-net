@@ -20,6 +20,7 @@ using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -54,8 +55,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         /// </summary>
-        protected virtual void ExecuteHelper(bool isAsync)
+        protected virtual void ExecuteHelper()
         {
+        }
+
+        /// <summary>
+        /// Executes an asynchronous server call to batch-write/delete the items requested.
+        /// </summary>
+        protected virtual Task ExecuteHelperAsync()
+        {
+            return Task.FromResult<object>(null);
         }
 
         #endregion
@@ -198,18 +207,25 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal ItemStorageConfig StorageConfig { get; set; }
 
-        internal void ExecuteInternal(bool isAsync)
+        internal void ExecuteInternal()
         {
-            ExecuteHelper(isAsync);
+            ExecuteHelper();
         }
 
         /// <summary>
         /// Execute the batch write.
         /// </summary>
-        /// <param name="isAsync"></param>
-        protected override void ExecuteHelper(bool isAsync)
+        protected override void ExecuteHelper()
         {
-            DocumentBatch.ExecuteHelper(isAsync);
+            DocumentBatch.ExecuteHelper();
+        }
+
+        /// <summary>
+        /// Execute the batch write asynchronously.
+        /// </summary>
+        protected override Task ExecuteHelperAsync()
+        {
+            return DocumentBatch.ExecuteHelperAsync();
         }
 
         #endregion
@@ -261,14 +277,24 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches.Add(batch);
         }
 
-        internal void ExecuteHelper(bool isAsync)
+        internal void ExecuteHelper()
         {
             MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
             foreach (var batch in allBatches)
             {
                 superBatch.AddBatch(batch.DocumentBatch);
             }
-            superBatch.ExecuteHelper(isAsync);
+            superBatch.ExecuteHelper();
+        }
+
+        internal Task ExecuteHelperAsync()
+        {
+            MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
+            foreach (var batch in allBatches)
+            {
+                superBatch.AddBatch(batch.DocumentBatch);
+            }
+            return superBatch.ExecuteHelperAsync();
         }
 
         #endregion

@@ -45,14 +45,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the next set of result items from DynamoDB.
         /// </returns>
-        public Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() =>
-            {
-                var documents = DocumentSearch.GetNextSetHelper(true);
-                List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
-                return items;
-            }, cancellationToken);
+            var documents = await DocumentSearch.GetNextSetHelperAsync().ConfigureAwait(false);
+            List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
+            return items;   
         }
 
         /// <summary>
@@ -63,14 +60,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A Task that can be used to poll or wait for results, or both.
         /// Results will include the remaining result items from DynamoDB.
         /// </returns>
-        public Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() =>
-            {
-                var documents = DocumentSearch.GetRemainingHelper(true);
-                List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
-                return items;
-            }, cancellationToken);
+            var documents = await DocumentSearch.GetRemainingHelperAsync().ConfigureAwait(false);
+            List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
+            return items;
         }
 
         #endregion

@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => SaveHelper<T>(value, null, true), cancellationToken);
+            return SaveHelperAsync(value, null);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => SaveHelper<T>(value, operationConfig, true), cancellationToken);
+            return SaveHelperAsync(value, operationConfig);
         }
 
         #endregion
@@ -74,7 +74,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(hashKey, null, null, true), cancellationToken);
+            return LoadHelperAsync<T>(hashKey, null, null);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(hashKey, null, operationConfig, true), cancellationToken);
+            return LoadHelperAsync<T>(hashKey, null, operationConfig);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(hashKey, rangeKey, null, true), cancellationToken);
+            return LoadHelperAsync<T>(hashKey, rangeKey, null);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(hashKey, rangeKey, operationConfig, true), cancellationToken);
+            return LoadHelperAsync<T>(hashKey, rangeKey, operationConfig);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(keyObject, null, true), cancellationToken);
+            return LoadHelperAsync(keyObject, null);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => LoadHelper<T>(keyObject, operationConfig, true), cancellationToken);
+            return LoadHelperAsync(keyObject, operationConfig);
         }
 
         #endregion
@@ -161,7 +161,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(value, null, true), cancellationToken);
+            return DeleteHelperAsync(value, null);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(value, operationConfig, true), cancellationToken);
+            return DeleteHelperAsync(value, operationConfig);
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(hashKey, null, null, true), cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, null, null);
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(hashKey, null, operationConfig, true), cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, null, operationConfig);
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(hashKey, rangeKey, null, true), cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, rangeKey, null);
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AsyncRunner.Run(() => DeleteHelper<T>(hashKey, rangeKey, operationConfig, true), cancellationToken);
+            return DeleteHelperAsync<T>(hashKey, rangeKey, operationConfig);
         }
 
         #endregion
