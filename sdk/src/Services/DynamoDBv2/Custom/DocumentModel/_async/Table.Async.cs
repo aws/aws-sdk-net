@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> PutItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return PutItemHelperAsync(doc, null);
+            return PutItemHelperAsync(doc, null, cancellationToken);
         }
 
 
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> PutItemAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return PutItemHelperAsync(doc, config);
+            return PutItemHelperAsync(doc, config, cancellationToken);
         }
 
         #endregion
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(hashKey, null), null);
+            return GetItemHelperAsync(MakeKey(hashKey, null), null, cancellationToken);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(Primitive hashKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(hashKey, null), config);
+            return GetItemHelperAsync(MakeKey(hashKey, null), config, cancellationToken);
         }
 
 
@@ -98,7 +98,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), null);
+            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), null, cancellationToken);
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), config);
+            return GetItemHelperAsync(MakeKey(hashKey, rangeKey), config, cancellationToken);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(key), null);
+            return GetItemHelperAsync(MakeKey(key), null, cancellationToken);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetItemHelperAsync(MakeKey(key), config);
+            return GetItemHelperAsync(MakeKey(key), config, cancellationToken);
         }
 
         #endregion
@@ -153,7 +153,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, null, null, null);
+            return UpdateHelperAsync(doc, null, null, null, cancellationToken);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, null, null, config);
+            return UpdateHelperAsync(doc, null, null, config, cancellationToken);
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, MakeKey(key), null);
+            return UpdateHelperAsync(doc, MakeKey(key), null, cancellationToken);
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, MakeKey(key), config);
+            return UpdateHelperAsync(doc, MakeKey(key), config, cancellationToken);
         }
 
         /// <summary>
@@ -206,7 +206,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, hashKey, null, null);
+            return UpdateHelperAsync(doc, hashKey, null, null, cancellationToken);
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, hashKey, null, config);
+            return UpdateHelperAsync(doc, hashKey, null, config, cancellationToken);
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, hashKey, rangeKey, null);
+            return UpdateHelperAsync(doc, hashKey, rangeKey, null, cancellationToken);
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> UpdateItemAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return UpdateHelperAsync(doc, hashKey, rangeKey, config);
+            return UpdateHelperAsync(doc, hashKey, rangeKey, config, cancellationToken);
         }
 
 
@@ -266,7 +266,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Document document, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(document), null);
+            return DeleteHelperAsync(MakeKey(document), null, cancellationToken);
         }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Document document, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(document), config);
+            return DeleteHelperAsync(MakeKey(document), config, cancellationToken);
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Primitive hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(hashKey, null), null);
+            return DeleteHelperAsync(MakeKey(hashKey, null), null, cancellationToken);
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Primitive hashKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(hashKey, null), config);
+            return DeleteHelperAsync(MakeKey(hashKey, null), config, cancellationToken);
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(hashKey, rangeKey), null);
+            return DeleteHelperAsync(MakeKey(hashKey, rangeKey), null, cancellationToken);
         }
 
         /// <summary>
@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(hashKey, rangeKey), config);
+            return DeleteHelperAsync(MakeKey(hashKey, rangeKey), config, cancellationToken);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(key), null);
+            return DeleteHelperAsync(MakeKey(key), null, cancellationToken);
         }
 
         /// <summary>
@@ -356,7 +356,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<Document> DeleteItemAsync(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(MakeKey(key), config);
+            return DeleteHelperAsync(MakeKey(key), config, cancellationToken);
         }
         
         #endregion

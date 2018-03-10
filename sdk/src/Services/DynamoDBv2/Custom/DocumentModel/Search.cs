@@ -21,6 +21,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -303,7 +304,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<List<Document>> GetNextSetHelperAsync()
+        internal async Task<List<Document>> GetNextSetHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
 
@@ -338,7 +339,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         SourceTable.AddRequestHandler(scanReq, isAsync: true);
 
-                        var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq).ConfigureAwait(false);
+                        var scanResult = await SourceTable.DDBClient.ScanAsync(scanReq, cancellationToken).ConfigureAwait(false);
                         foreach (var item in scanResult.Items)
                         {
                             Document doc = SourceTable.FromAttributeMap(item);
@@ -380,7 +381,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         SourceTable.AddRequestHandler(queryReq, isAsync: true);
 
-                        var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq).ConfigureAwait(false);
+                        var queryResult = await SourceTable.DDBClient.QueryAsync(queryReq, cancellationToken).ConfigureAwait(false);
                         foreach (var item in queryResult.Items)
                         {
                             Document doc = SourceTable.FromAttributeMap(item);
@@ -419,13 +420,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<List<Document>> GetRemainingHelperAsync()
+        internal async Task<List<Document>> GetRemainingHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
 
             while (!IsDone)
             {
-                foreach (Document doc in await GetNextSetHelperAsync().ConfigureAwait(false))
+                foreach (Document doc in await GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false))
                 {
                     ret.Add(doc);
                 }

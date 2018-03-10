@@ -20,6 +20,7 @@ using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -86,7 +87,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Executes a server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected virtual Task ExecuteHelperAsync()
+        protected virtual Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             return Task.FromResult<object>(null);
         }
@@ -194,10 +195,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes the batch get asynchronously
         /// </summary>
-        protected override async Task ExecuteHelperAsync()
+        protected override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             CreateDocumentBatch();
-            await DocumentBatch.ExecuteHelperAsync().ConfigureAwait(false);
+            await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults(DocumentBatch.Results);
         }
 
@@ -319,7 +320,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        internal async Task ExecuteHelperAsync()
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
             foreach (var batch in allBatches)
@@ -328,7 +329,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 superBatch.AddBatch(batch.DocumentBatch);
             }
 
-            await superBatch.ExecuteHelperAsync().ConfigureAwait(false);
+            await superBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
 
             foreach (var batch in allBatches)
             {

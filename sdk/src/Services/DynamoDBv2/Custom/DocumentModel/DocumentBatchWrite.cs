@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
@@ -139,13 +140,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             multiBatchWrite.WriteItems();
         }
 
-        internal Task ExecuteHelperAsync()
+        internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchWrite multiBatchWrite = new MultiBatchWrite
             {
                 Batches = new List<DocumentBatchWrite> { this }
             };
-            return multiBatchWrite.WriteItemsAsync();
+            return multiBatchWrite.WriteItemsAsync(cancellationToken);
         }
 
         internal void AddKeyToDelete(Key key)
@@ -215,13 +216,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             multiBatchWrite.WriteItems();
         }
 
-        internal Task ExecuteHelperAsync()
+        internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchWrite multiBatchWrite = new MultiBatchWrite
             {
                 Batches = Batches
             };
-            return multiBatchWrite.WriteItemsAsync();
+            return multiBatchWrite.WriteItemsAsync(cancellationToken);
         }
 
         #endregion
@@ -261,9 +262,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Pushes items configured in Batches to the server asynchronously
         /// </summary>
-        public Task WriteItemsAsync()
+        public Task WriteItemsAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return WriteItemsHelperAsync(Batches);
+            return WriteItemsHelperAsync(Batches, cancellationToken);
         }
 
         #region Private helper methods
@@ -285,7 +286,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        private async Task WriteItemsHelperAsync(List<DocumentBatchWrite> batches)
+        private async Task WriteItemsHelperAsync(List<DocumentBatchWrite> batches, CancellationToken cancellationToken)
         {
             if (Batches == null || Batches.Count == 0)
                 return;
@@ -298,7 +299,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (nextSet.Count == 0)
                     break;
 
-                await SendSetAsync(nextSet, targetTable).ConfigureAwait(false);
+                await SendSetAsync(nextSet, targetTable, cancellationToken).ConfigureAwait(false);
             }
         }
 
@@ -340,7 +341,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        private async Task SendSetAsync(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable)
+        private async Task SendSetAsync(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable, CancellationToken cancellationToken)
         {
             Dictionary<string, Dictionary<Key, Document>> documentMap = null;
             BatchWriteItemRequest request = ConstructRequest(set, targetTable, out documentMap, true);
@@ -350,7 +351,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             bool shouldTrySmallerRequest = false;
             try
             {
-                await CallUntilCompletionAsync(request, documentMap, targetTable.DDBClient).ConfigureAwait(false);
+                await CallUntilCompletionAsync(request, documentMap, targetTable.DDBClient, cancellationToken).ConfigureAwait(false);
             }
             catch (AmazonDynamoDBException addbex)
             {
@@ -367,13 +368,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     // 2 or more items in request, retry with the request split up
                     var partialSet = GetNextWriteItems(ref set, totalWrites / 2);
-                    await SendSetAsync(partialSet, targetTable).ConfigureAwait(false);
-                    await SendSetAsync(set, targetTable).ConfigureAwait(false);
+                    await SendSetAsync(partialSet, targetTable, cancellationToken).ConfigureAwait(false);
+                    await SendSetAsync(set, targetTable, cancellationToken).ConfigureAwait(false);
                 }
                 else
                 {
                     // only 1 item in request, retry as-is
-                    await SendSetAsync(set, targetTable).ConfigureAwait(false);
+                    await SendSetAsync(set, targetTable, cancellationToken).ConfigureAwait(false);
                 }
             }
         }
@@ -511,14 +512,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if (PCL|| UNITY || CORECLR)
-        private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client)
+        private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client, CancellationToken cancellationToken)
 #else
-        private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
+        private async Task CallUntilCompletionAsync(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client, CancellationToken cancellationToken)
 #endif
         {
             do
             {
-                var result = await client.BatchWriteItemAsync(request).ConfigureAwait(false);
+                var result = await client.BatchWriteItemAsync(request, cancellationToken).ConfigureAwait(false);
                 request.RequestItems = result.UnprocessedItems;
 
                 Dictionary<Key, Document> unprocessedDocuments = new Dictionary<Key, Document>(keyComparer);

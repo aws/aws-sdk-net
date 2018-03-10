@@ -602,7 +602,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config)
+        internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new PutItemOperationConfig();
 
@@ -636,7 +636,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-            var resp = await DDBClient.PutItemAsync(req).ConfigureAwait(false);
+            var resp = await DDBClient.PutItemAsync(req, cancellationToken).ConfigureAwait(false);
             doc.CommitChanges();
 
             Document ret = null;
@@ -674,7 +674,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
-        internal async Task<Document> GetItemHelperAsync(Key key, GetItemOperationConfig config)
+        internal async Task<Document> GetItemHelperAsync(Key key, GetItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new GetItemOperationConfig();
             var request = new GetItemRequest
@@ -689,7 +689,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (currentConfig.AttributesToGet != null)
                 request.AttributesToGet = currentConfig.AttributesToGet;
 
-            var result = await DDBClient.GetItemAsync(request).ConfigureAwait(false);
+            var result = await DDBClient.GetItemAsync(request, cancellationToken).ConfigureAwait(false);
             var attributeMap = result.Item;
             if (attributeMap == null || attributeMap.Count == 0)
                 return null;
@@ -707,10 +707,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, key, config);
         }
 
-        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
+        internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelperAsync(doc, key, config);
+            return UpdateHelperAsync(doc, key, config, cancellationToken);
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config)
@@ -792,7 +792,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config)
+        internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
 
@@ -930,7 +930,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config)
+        internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
 
@@ -963,7 +963,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
-            var attributes = (await DDBClient.DeleteItemAsync(req).ConfigureAwait(false)).Attributes;
+            var attributes = (await DDBClient.DeleteItemAsync(req, cancellationToken).ConfigureAwait(false)).Attributes;
 
             Document ret = null;
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)

@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<List<Document>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetNextSetHelperAsync();
+            return GetNextSetHelperAsync(cancellationToken);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public Task<List<Document>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetRemainingHelperAsync();
+            return GetRemainingHelperAsync(cancellationToken);
         }
 
         #endregion

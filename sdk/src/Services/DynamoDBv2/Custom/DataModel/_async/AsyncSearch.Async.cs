@@ -47,9 +47,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await DocumentSearch.GetNextSetHelperAsync().ConfigureAwait(false);
+            var documents = await DocumentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
             List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
-            return items;   
+            return items;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await DocumentSearch.GetRemainingHelperAsync().ConfigureAwait(false);
+            var documents = await DocumentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
             List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
             return items;
         }

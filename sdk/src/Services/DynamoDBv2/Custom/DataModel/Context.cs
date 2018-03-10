@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -265,7 +266,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig)
+        private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) return;
 
@@ -278,7 +279,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 (flatConfig.SkipVersionCheck.HasValue && flatConfig.SkipVersionCheck.Value)
                 || !storage.Config.HasVersion)
             {
-                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null).ConfigureAwait(false);
+                await table.UpdateHelperAsync(storage.Document, table.MakeKey(storage.Document), null, cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -287,7 +288,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 await table.UpdateHelperAsync(
                     storage.Document,
                     table.MakeKey(storage.Document),
-                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None }).ConfigureAwait(false);
+                    new UpdateItemOperationConfig { Expected = expectedDocument, ReturnValues = ReturnValues.None },
+                    cancellationToken).ConfigureAwait(false);
                 PopulateInstance(storage, value, flatConfig);
             }
         }
@@ -333,12 +335,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
+        private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
-            return LoadHelperAsync<T>(key, flatConfig, storageConfig);
+            return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
 
         private T LoadHelper<T>(T keyObject, DynamoDBOperationConfig operationConfig)
@@ -349,12 +351,12 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
-        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig)
+        private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
-            return LoadHelperAsync<T>(key, flatConfig, storageConfig);
+            return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
 
         private T LoadHelper<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
@@ -373,7 +375,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return instance;
         }
 
-        private async Task<T> LoadHelperAsync<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
+        private async Task<T> LoadHelperAsync<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
             GetItemOperationConfig getConfig = new GetItemOperationConfig
             {
@@ -383,7 +385,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = await table.GetItemHelperAsync(key, getConfig).ConfigureAwait(false);
+            storage.Document = await table.GetItemHelperAsync(key, getConfig, cancellationToken).ConfigureAwait(false);
 
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
@@ -480,14 +482,14 @@ namespace Amazon.DynamoDBv2.DataModel
             table.DeleteHelper(key, null);
         }
 
-        private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
+        private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(config);
             Key key = MakeKey(hashKey, rangeKey, storageConfig, config);
 
             Table table = GetTargetTable(storageConfig, config);
-            return table.DeleteHelperAsync(key, null);
+            return table.DeleteHelperAsync(key, null, cancellationToken);
         }
 
         private void DeleteHelper<T>(T value, DynamoDBOperationConfig operationConfig)
@@ -513,7 +515,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private async Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig)
+        private async Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
 
@@ -525,14 +527,15 @@ namespace Amazon.DynamoDBv2.DataModel
             Table table = GetTargetTable(storage.Config, flatConfig);
             if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
             {
-                await table.DeleteHelperAsync(table.MakeKey(storage.Document), null).ConfigureAwait(false);
+                await table.DeleteHelperAsync(table.MakeKey(storage.Document), null, cancellationToken).ConfigureAwait(false);
             }
             else
             {
                 Document expectedDocument = CreateExpectedDocumentForVersion(storage);
                 await table.DeleteHelperAsync(
                     table.MakeKey(storage.Document),
-                    new DeleteItemOperationConfig { Expected = expectedDocument }).ConfigureAwait(false);
+                    new DeleteItemOperationConfig { Expected = expectedDocument },
+                    cancellationToken).ConfigureAwait(false);
             }
         }
 

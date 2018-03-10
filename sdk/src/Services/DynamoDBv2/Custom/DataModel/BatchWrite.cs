@@ -21,6 +21,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -62,7 +63,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes an asynchronous server call to batch-write/delete the items requested.
         /// </summary>
-        protected virtual Task ExecuteHelperAsync()
+        protected virtual Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             return Task.FromResult<object>(null);
         }
@@ -223,9 +224,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Execute the batch write asynchronously.
         /// </summary>
-        protected override Task ExecuteHelperAsync()
+        protected override Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            return DocumentBatch.ExecuteHelperAsync();
+            return DocumentBatch.ExecuteHelperAsync(cancellationToken);
         }
 
         #endregion
@@ -287,14 +288,14 @@ namespace Amazon.DynamoDBv2.DataModel
             superBatch.ExecuteHelper();
         }
 
-        internal Task ExecuteHelperAsync()
+        internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
             foreach (var batch in allBatches)
             {
                 superBatch.AddBatch(batch.DocumentBatch);
             }
-            return superBatch.ExecuteHelperAsync();
+            return superBatch.ExecuteHelperAsync(cancellationToken);
         }
 
         #endregion
