@@ -79,18 +79,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Executes a server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected virtual void ExecuteHelper()
-        {
-        }
+        protected abstract void ExecuteHelper();
 
         /// <summary>
-        /// Executes a server call to batch-get the items requested.
+        /// Executes an asynchronous server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected virtual Task ExecuteHelperAsync(CancellationToken cancellationToken)
-        {
-            return Task.FromResult<object>(null);
-        }
+        protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
 
         #endregion
 
