@@ -208,11 +208,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal ItemStorageConfig StorageConfig { get; set; }
 
-        internal void ExecuteInternal()
-        {
-            ExecuteHelper();
-        }
-
         /// <summary>
         /// Execute the batch write.
         /// </summary>
