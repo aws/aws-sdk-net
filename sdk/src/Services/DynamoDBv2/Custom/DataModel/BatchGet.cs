@@ -79,13 +79,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Executes a server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected abstract void ExecuteHelper();
+        internal protected abstract void ExecuteHelper();
 
         /// <summary>
         /// Executes an asynchronous server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
+        internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
 
         #endregion
 
@@ -180,7 +180,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes the batch get
         /// </summary>
-        protected override void ExecuteHelper()
+        internal protected override void ExecuteHelper()
         {
             CreateDocumentBatch();
             DocumentBatch.ExecuteHelper();
@@ -190,7 +190,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes the batch get asynchronously
         /// </summary>
-        protected override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        internal protected override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             CreateDocumentBatch();
             await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);

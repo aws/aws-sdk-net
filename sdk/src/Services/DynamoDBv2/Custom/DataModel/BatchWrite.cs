@@ -56,12 +56,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         /// </summary>
-        protected abstract void ExecuteHelper();
+        internal protected abstract void ExecuteHelper();
         
         /// <summary>
         /// Executes an asynchronous server call to batch-write/delete the items requested.
         /// </summary>
-        protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
+        internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
 
         #endregion
     }
@@ -206,7 +206,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Execute the batch write.
         /// </summary>
-        protected override void ExecuteHelper()
+        internal protected override void ExecuteHelper()
         {
             DocumentBatch.ExecuteHelper();
         }
@@ -214,7 +214,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Execute the batch write asynchronously.
         /// </summary>
-        protected override Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        internal protected override Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             return DocumentBatch.ExecuteHelperAsync(cancellationToken);
         }
