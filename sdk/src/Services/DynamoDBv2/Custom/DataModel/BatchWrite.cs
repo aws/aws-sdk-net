@@ -56,17 +56,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         /// </summary>
-        protected virtual void ExecuteHelper()
-        {
-        }
-
+        protected abstract void ExecuteHelper();
+        
         /// <summary>
         /// Executes an asynchronous server call to batch-write/delete the items requested.
         /// </summary>
-        protected virtual Task ExecuteHelperAsync(CancellationToken cancellationToken)
-        {
-            return Task.FromResult<object>(null);
-        }
+        protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
 
         #endregion
     }
