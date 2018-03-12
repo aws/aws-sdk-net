@@ -30,7 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DeleteHsmRequest.EniId</property>
-    <pattern>eni-[0-9a-fA-F]{8}</pattern>
+    <pattern>eni-[0-9a-fA-F]{8,17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.DeleteHsmRequest.EniIp</property>
@@ -193,7 +193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.EniId</property>
-    <pattern>eni-[0-9a-fA-F]{8}</pattern>
+    <pattern>eni-[0-9a-fA-F]{8,17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.EniIp</property>
@@ -205,7 +205,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.SubnetId</property>
-    <pattern>subnet-[0-9a-fA-F]{8}</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Tag.Key</property>
@@ -217,5 +217,6 @@
     <property>Amazon.CloudHSMV2.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>
