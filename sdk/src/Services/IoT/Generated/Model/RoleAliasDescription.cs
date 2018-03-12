@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private DateTime? _lastModifiedDate;
         private string _owner;
         private string _roleAlias;
+        private string _roleAliasArn;
         private string _roleArn;
 
         /// <summary>
@@ -127,6 +128,21 @@ namespace Amazon.IoT.Model
         internal bool IsSetRoleAlias()
         {
             return this._roleAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleAliasArn.
+        /// </summary>
+        public string RoleAliasArn
+        {
+            get { return this._roleAliasArn; }
+            set { this._roleAliasArn = value; }
+        }
+
+        // Check to see if RoleAliasArn property is set
+        internal bool IsSetRoleAliasArn()
+        {
+            return this._roleAliasArn != null;
         }
 
         /// <summary>

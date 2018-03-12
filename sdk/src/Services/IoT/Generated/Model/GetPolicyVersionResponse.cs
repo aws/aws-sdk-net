@@ -32,11 +32,44 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetPolicyVersionResponse : AmazonWebServiceResponse
     {
+        private DateTime? _creationDate;
+        private string _generationId;
         private bool? _isDefaultVersion;
+        private DateTime? _lastModifiedDate;
         private string _policyArn;
         private string _policyDocument;
         private string _policyName;
         private string _policyVersionId;
+
+        /// <summary>
+        /// Gets and sets the property CreationDate.
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerationId.
+        /// </summary>
+        public string GenerationId
+        {
+            get { return this._generationId; }
+            set { this._generationId = value; }
+        }
+
+        // Check to see if GenerationId property is set
+        internal bool IsSetGenerationId()
+        {
+            return this._generationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IsDefaultVersion. 
@@ -54,6 +87,21 @@ namespace Amazon.IoT.Model
         internal bool IsSetIsDefaultVersion()
         {
             return this._isDefaultVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate.
+        /// </summary>
+        public DateTime LastModifiedDate
+        {
+            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            set { this._lastModifiedDate = value; }
+        }
+
+        // Check to see if LastModifiedDate property is set
+        internal bool IsSetLastModifiedDate()
+        {
+            return this._lastModifiedDate.HasValue; 
         }
 
         /// <summary>

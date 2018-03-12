@@ -37,6 +37,9 @@ namespace Amazon.IoT.Model
         private string _certificateId;
         private string _certificatePem;
         private DateTime? _creationDate;
+        private int? _customerVersion;
+        private string _generationId;
+        private DateTime? _lastModifiedDate;
         private string _ownedBy;
         private CACertificateStatus _status;
 
@@ -129,6 +132,51 @@ namespace Amazon.IoT.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerVersion.
+        /// </summary>
+        public int CustomerVersion
+        {
+            get { return this._customerVersion.GetValueOrDefault(); }
+            set { this._customerVersion = value; }
+        }
+
+        // Check to see if CustomerVersion property is set
+        internal bool IsSetCustomerVersion()
+        {
+            return this._customerVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerationId.
+        /// </summary>
+        public string GenerationId
+        {
+            get { return this._generationId; }
+            set { this._generationId = value; }
+        }
+
+        // Check to see if GenerationId property is set
+        internal bool IsSetGenerationId()
+        {
+            return this._generationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate.
+        /// </summary>
+        public DateTime LastModifiedDate
+        {
+            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            set { this._lastModifiedDate = value; }
+        }
+
+        // Check to see if LastModifiedDate property is set
+        internal bool IsSetLastModifiedDate()
+        {
+            return this._lastModifiedDate.HasValue; 
         }
 
         /// <summary>

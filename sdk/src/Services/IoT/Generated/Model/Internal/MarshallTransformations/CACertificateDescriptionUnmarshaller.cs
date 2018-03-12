@@ -94,6 +94,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customerVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CustomerVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("generationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenerationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ownedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

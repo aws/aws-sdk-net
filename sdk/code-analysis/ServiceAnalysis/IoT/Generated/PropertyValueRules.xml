@@ -1288,6 +1288,10 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CACertificateDescription.CustomerVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CACertificateDescription.OwnedBy</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -1313,6 +1317,10 @@
     <property>Amazon.IoT.Model.CertificateDescription.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CertificateDescription.CustomerVersion</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.OwnedBy</property>

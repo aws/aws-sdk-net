@@ -32,10 +32,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetPolicyResponse : AmazonWebServiceResponse
     {
+        private DateTime? _creationDate;
         private string _defaultVersionId;
+        private string _generationId;
+        private DateTime? _lastModifiedDate;
         private string _policyArn;
         private string _policyDocument;
         private string _policyName;
+
+        /// <summary>
+        /// Gets and sets the property CreationDate.
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultVersionId. 
@@ -53,6 +71,36 @@ namespace Amazon.IoT.Model
         internal bool IsSetDefaultVersionId()
         {
             return this._defaultVersionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerationId.
+        /// </summary>
+        public string GenerationId
+        {
+            get { return this._generationId; }
+            set { this._generationId = value; }
+        }
+
+        // Check to see if GenerationId property is set
+        internal bool IsSetGenerationId()
+        {
+            return this._generationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate.
+        /// </summary>
+        public DateTime LastModifiedDate
+        {
+            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            set { this._lastModifiedDate = value; }
+        }
+
+        // Check to see if LastModifiedDate property is set
+        internal bool IsSetLastModifiedDate()
+        {
+            return this._lastModifiedDate.HasValue; 
         }
 
         /// <summary>

@@ -51,10 +51,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("creationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("generationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GenerationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isDefaultVersion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.IsDefaultVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("policyArn", targetDepth))
