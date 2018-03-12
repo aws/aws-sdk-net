@@ -409,7 +409,7 @@
         <Message Text="Collating service models for downstream tooling" />
 		
 		<ItemGroup>
-			<ServiceModels Include="..\generator\ServiceModels\**\*" />
+			<ServiceModels Include="..\generator\ServiceModels\*" />
 		</ItemGroup>
 		
 		<Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)\models\%(RecursiveDir)" />
