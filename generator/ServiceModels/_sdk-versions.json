@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.247.0",
+    "ProductVersion" : "3.3.248.0",
     "CoreVersion"    : "3.3.21.15",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -289,7 +289,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.3.3.4",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"
@@ -545,7 +545,7 @@
             "InPreview"               : false
         },
         "ApplicationDiscoveryService"     : {
-            "Version" : "3.3.3.5",
+            "Version" : "3.3.3.6",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"
@@ -833,7 +833,7 @@
             "InPreview"               : false
         },
         "CloudHSMV2"                      : {
-            "Version" : "3.3.0.5",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"

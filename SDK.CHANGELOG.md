@@ -1,3 +1,13 @@
+### 3.3.248.0 (2018-03-12 22:42 UTC)
+* ApplicationDiscoveryService (3.3.3.6)
+	* Documentation updates for discovery
+* CloudHSMV2 (3.3.1.0)
+	* CreateCluster can now take both 8 and 17 character Subnet IDs. DeleteHsm can now take both 8 and 17 character ENI IDs.
+* IoT (3.3.9.0)
+	* We added new fields to the response of the following APIs. (1) describe-certificate: added new generationId, customerVersion fields (2) describe-ca-certificate: added new generationId, customerVersion and lastModifiedDate fields (3) get-policy: added generationId, creationDate and lastModifiedDate fields
+* Redshift (3.3.4.0)
+	* DescribeClusterSnapshotsMessage with ClusterExists flag returns snapshots of existing clusters. Else both existing and deleted cluster snapshots are returned
+
 ### 3.3.247.0 (2018-03-09 00:26 UTC)
 * ECS (3.3.11.0)
 	* Amazon Elastic Container Service (ECS) now supports container health checks. Customers can now specify a docker container health check command and parameters in their task definition. ECS will monitor, report and take scheduling action based on the health status.
