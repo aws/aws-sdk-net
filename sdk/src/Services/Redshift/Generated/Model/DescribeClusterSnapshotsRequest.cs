@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClusterSnapshotsRequest : AmazonRedshiftRequest
     {
+        private bool? _clusterExists;
         private string _clusterIdentifier;
         private DateTime? _endTime;
         private string _marker;
@@ -61,6 +62,27 @@ namespace Amazon.Redshift.Model
         private DateTime? _startTime;
         private List<string> _tagKeys = new List<string>();
         private List<string> _tagValues = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ClusterExists. 
+        /// <para>
+        /// A value that indicates whether to return snapshots only for an existing cluster. Table-level
+        /// restore can be performed only using a snapshot of an existing cluster, that is, a
+        /// cluster that has not been deleted. If <code>ClusterExists</code> is set to <code>true</code>,
+        /// <code>ClusterIdentifier</code> is required.
+        /// </para>
+        /// </summary>
+        public bool ClusterExists
+        {
+            get { return this._clusterExists.GetValueOrDefault(); }
+            set { this._clusterExists = value; }
+        }
+
+        // Check to see if ClusterExists property is set
+        internal bool IsSetClusterExists()
+        {
+            return this._clusterExists.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 

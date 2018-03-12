@@ -97,6 +97,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReservedNodeOfferingId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReservedNodeOfferingType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedNodeOfferingType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("UsagePrice", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;

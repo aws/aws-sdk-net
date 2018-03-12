@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
         private string _reservedNodeId;
         private string _reservedNodeOfferingId;
+        private ReservedNodeOfferingType _reservedNodeOfferingType;
         private DateTime? _startTime;
         private string _state;
         private double? _usagePrice;
@@ -207,6 +208,21 @@ namespace Amazon.Redshift.Model
         internal bool IsSetReservedNodeOfferingId()
         {
             return this._reservedNodeOfferingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedNodeOfferingType.
+        /// </summary>
+        public ReservedNodeOfferingType ReservedNodeOfferingType
+        {
+            get { return this._reservedNodeOfferingType; }
+            set { this._reservedNodeOfferingType = value; }
+        }
+
+        // Check to see if ReservedNodeOfferingType property is set
+        internal bool IsSetReservedNodeOfferingType()
+        {
+            return this._reservedNodeOfferingType != null;
         }
 
         /// <summary>

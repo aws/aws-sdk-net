@@ -58,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetClusterExists())
+                {
+                    request.Parameters.Add("ClusterExists", StringUtils.FromBool(publicRequest.ClusterExists));
+                }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));

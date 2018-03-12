@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AvailabilityZone Object
+    /// Response Unmarshaller for SupportedPlatform Object
     /// </summary>  
-    public class AvailabilityZoneUnmarshaller : IUnmarshaller<AvailabilityZone, XmlUnmarshallerContext>, IUnmarshaller<AvailabilityZone, JsonUnmarshallerContext>
+    public class SupportedPlatformUnmarshaller : IUnmarshaller<SupportedPlatform, XmlUnmarshallerContext>, IUnmarshaller<SupportedPlatform, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailabilityZone Unmarshall(XmlUnmarshallerContext context)
+        public SupportedPlatform Unmarshall(XmlUnmarshallerContext context)
         {
-            AvailabilityZone unmarshalledObject = new AvailabilityZone();
+            SupportedPlatform unmarshalledObject = new SupportedPlatform();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -58,13 +58,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SupportedPlatforms/SupportedPlatform", targetDepth))
-                    {
-                        var unmarshaller = SupportedPlatformUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedPlatforms.Add(item);
                         continue;
                     }
                 }
@@ -82,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailabilityZone Unmarshall(JsonUnmarshallerContext context)
+        public SupportedPlatform Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static AvailabilityZoneUnmarshaller _instance = new AvailabilityZoneUnmarshaller();        
+        private static SupportedPlatformUnmarshaller _instance = new SupportedPlatformUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AvailabilityZoneUnmarshaller Instance
+        public static SupportedPlatformUnmarshaller Instance
         {
             get
             {
