@@ -666,6 +666,18 @@ namespace Amazon.CognitoIdentity
         /// <returns></returns>
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
+#if UNITY
+            if (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer)
+                throw new PlatformNotSupportedException("Unity WebGL is not supported. Please use GenerateNewCredentialsWebGL instead.");
+            else
+                return GenerateNewCredentialsInternal();
+#else
+            return GenerateNewCredentialsInternal();
+#endif
+        }
+
+        private CredentialsRefreshState GenerateNewCredentialsInternal()
+        {
             CredentialsRefreshState credentialsState;
 
             // Pick role to use, depending on Logins

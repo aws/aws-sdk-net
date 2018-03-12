@@ -277,7 +277,11 @@ namespace Amazon.Runtime.Internal
 
         private void GetRequestStreamCallback(IAsyncResult result)
         {
+#if UNITY
+            if (result.CompletedSynchronously && UnityEngine.Application.platform != UnityEngine.RuntimePlatform.WebGLPlayer)
+#else
             if (result.CompletedSynchronously)
+#endif
             {
                 System.Threading.ThreadPool.QueueUserWorkItem(GetRequestStreamCallbackHelper, result);
             }
@@ -316,7 +320,11 @@ namespace Amazon.Runtime.Internal
 
         private void GetResponseCallback(IAsyncResult result)
         {
+#if UNITY
+            if (result.CompletedSynchronously && UnityEngine.Application.platform != UnityEngine.RuntimePlatform.WebGLPlayer)
+#else
             if (result.CompletedSynchronously)
+#endif
             {
                 System.Threading.ThreadPool.QueueUserWorkItem(GetResponseCallbackHelper, result);
             }

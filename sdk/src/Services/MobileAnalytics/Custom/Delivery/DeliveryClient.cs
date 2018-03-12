@@ -184,16 +184,19 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             {
                 _logger.Error(e, "An AmazonMobileAnalyticsException occurred while sending Amazon Mobile Analytics request: error code is {0} ; error type is {1} ; request id is {2} ; status code is {3} ; error message is {4}", e.ErrorCode, e.ErrorType, e.RequestId, e.StatusCode, e.Message);
                 // Delete events in any of the three error codes.
-                if (e.StatusCode == HttpStatusCode.BadRequest &&
-                     (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
-                      e.ErrorCode.Equals("SerializationException", StringComparison.CurrentCultureIgnoreCase) ||
-                      e.ErrorCode.Equals("BadRequestException", StringComparison.CurrentCultureIgnoreCase)))
+                if (e.ErrorCode.Equals("ValidationException", StringComparison.CurrentCultureIgnoreCase) ||
+                    e.ErrorCode.Equals("SerializationException", StringComparison.CurrentCultureIgnoreCase) ||
+                    e.ErrorCode.Equals("BadRequestException", StringComparison.CurrentCultureIgnoreCase))
                 {
                     MobileAnalyticsErrorEventArgs eventArgs = new MobileAnalyticsErrorEventArgs(this.GetType().Name, "Amazon Mobile Analytics Service returned an error.", e, eventList);
                     _maManager.OnRaiseErrorEvent(eventArgs);
 
                     _logger.InfoFormat("The error code is not retriable. Delete {0} events from local storage.", rowIds.Count);
                     _eventStore.DeleteEvent(rowIds);
+#if UNITY
+                    if (_eventStore is FileEventStore _fileEventStore)
+                        _fileEventStore.SaveDatabase();
+#endif
                 }
                 else
                 {
@@ -219,6 +222,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 {
                     _logger.InfoFormat("Mobile Analytics client successfully delivered {0} events to service. Delete those events from local storage.", rowIds.Count);
                     _eventStore.DeleteEvent(rowIds);
+#if UNITY
+                    if (_eventStore is FileEventStore _fileEventStore)
+                        _fileEventStore.SaveDatabase();
+#endif
                 }
                 lock (_deliveryLock)
                 {
