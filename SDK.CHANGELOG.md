@@ -1,3 +1,7 @@
+### 3.3.249.0 (2018-03-13 19:15 UTC)
+* ServiceDiscovery (3.3.2.0)
+	* This release adds support for custom health checks, which let you check the health of resources that aren't accessible over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC.
+
 ### 3.3.248.0 (2018-03-12 22:42 UTC)
 * ApplicationDiscoveryService (3.3.3.6)
 	* Documentation updates for discovery
