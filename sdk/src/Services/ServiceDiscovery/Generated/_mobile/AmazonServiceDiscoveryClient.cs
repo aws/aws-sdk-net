@@ -746,6 +746,38 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
         
+        #region  UpdateInstanceCustomHealthStatus
+
+        internal virtual UpdateInstanceCustomHealthStatusResponse UpdateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request)
+        {
+            var marshaller = new UpdateInstanceCustomHealthStatusRequestMarshaller();
+            var unmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceCustomHealthStatusRequest,UpdateInstanceCustomHealthStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceCustomHealthStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceCustomHealthStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus">REST API Reference for UpdateInstanceCustomHealthStatus Operation</seealso>
+        public virtual Task<UpdateInstanceCustomHealthStatusResponse> UpdateInstanceCustomHealthStatusAsync(UpdateInstanceCustomHealthStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateInstanceCustomHealthStatusRequestMarshaller();
+            var unmarshaller = UpdateInstanceCustomHealthStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInstanceCustomHealthStatusRequest,UpdateInstanceCustomHealthStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateService
 
         internal virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)

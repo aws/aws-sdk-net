@@ -32,8 +32,10 @@ namespace Amazon.ServiceDiscovery.Model
     /// Creates a private namespace based on DNS, which will be visible only inside a specified
     /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
     /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-    /// the resulting DNS name for the service will be <code>backend.example.com</code>. You
-    /// can associate more than one service with the same namespace.
+    /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
+    /// the current limit on the number of namespaces that you can create using the same AWS
+    /// account, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+    /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
     /// </summary>
     public partial class CreatePrivateDnsNamespaceRequest : AmazonServiceDiscoveryRequest
     {

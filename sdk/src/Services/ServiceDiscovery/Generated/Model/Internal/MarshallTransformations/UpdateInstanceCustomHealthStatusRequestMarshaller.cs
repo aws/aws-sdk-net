@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateService Request Marshaller
+    /// UpdateInstanceCustomHealthStatus Request Marshaller
     /// </summary>       
-    public class CreateServiceRequestMarshaller : IMarshaller<IRequest, CreateServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateInstanceCustomHealthStatusRequestMarshaller : IMarshaller<IRequest, UpdateInstanceCustomHealthStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateServiceRequest)input);
+            return this.Marshall((UpdateInstanceCustomHealthStatusRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateServiceRequest publicRequest)
+        public IRequest Marshall(UpdateInstanceCustomHealthStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceDiscovery");
-            string target = "Route53AutoNaming_v20170314.CreateService";
+            string target = "Route53AutoNaming_v20170314.UpdateInstanceCustomHealthStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,60 +67,22 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatorRequestId())
+                if(publicRequest.IsSetInstanceId())
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
-                else if(!(publicRequest.IsSetCreatorRequestId()))
+                if(publicRequest.IsSetServiceId())
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("ServiceId");
+                    context.Writer.Write(publicRequest.ServiceId);
                 }
 
-                if(publicRequest.IsSetDnsConfig())
+                if(publicRequest.IsSetStatus())
                 {
-                    context.Writer.WritePropertyName("DnsConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DnsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DnsConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckConfig())
-                {
-                    context.Writer.WritePropertyName("HealthCheckConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckCustomConfig())
-                {
-                    context.Writer.WritePropertyName("HealthCheckCustomConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckCustomConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("Status");
+                    context.Writer.Write(publicRequest.Status);
                 }
 
         

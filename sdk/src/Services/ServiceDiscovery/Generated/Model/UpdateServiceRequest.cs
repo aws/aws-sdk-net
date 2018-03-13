@@ -43,7 +43,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <para>
     /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
     /// </para>
-    ///  </li> <li>  </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
     /// You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)
     /// that you want to appear in the updated service. Any current configurations that don't

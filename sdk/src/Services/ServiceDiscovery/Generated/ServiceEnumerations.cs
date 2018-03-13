@@ -25,6 +25,56 @@ namespace Amazon.ServiceDiscovery
 {
 
     /// <summary>
+    /// Constants used for properties of type CustomHealthStatus.
+    /// </summary>
+    public class CustomHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for CustomHealthStatus
+        /// </summary>
+        public static readonly CustomHealthStatus HEALTHY = new CustomHealthStatus("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for CustomHealthStatus
+        /// </summary>
+        public static readonly CustomHealthStatus UNHEALTHY = new CustomHealthStatus("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomHealthStatus FindValue(string value)
+        {
+            return FindValue<CustomHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomHealthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterCondition.
     /// </summary>
     public class FilterCondition : ConstantClass

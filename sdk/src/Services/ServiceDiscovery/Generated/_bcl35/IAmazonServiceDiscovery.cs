@@ -46,8 +46,10 @@ namespace Amazon.ServiceDiscovery
         /// Creates a private namespace based on DNS, which will be visible only inside a specified
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
         /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-        /// the resulting DNS name for the service will be <code>backend.example.com</code>. You
-        /// can associate more than one service with the same namespace.
+        /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
+        /// the current limit on the number of namespaces that you can create using the same AWS
+        /// account, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+        /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
         /// 
@@ -103,8 +105,10 @@ namespace Amazon.ServiceDiscovery
         /// Creates a public namespace based on DNS, which will be visible on the internet. The
         /// namespace defines your service naming scheme. For example, if you name your namespace
         /// <code>example.com</code> and name your service <code>backend</code>, the resulting
-        /// DNS name for the service will be <code>backend.example.com</code>. You can associate
-        /// more than one service with the same namespace.
+        /// DNS name for the service will be <code>backend.example.com</code>. For the current
+        /// limit on the number of namespaces that you can create using the same AWS account,
+        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+        /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicDnsNamespace service method.</param>
         /// 
@@ -171,7 +175,12 @@ namespace Amazon.ServiceDiscovery
         /// <para>
         /// After you create the service, you can submit a <a>RegisterInstance</a> request, and
         /// Amazon Route 53 uses the values in the configuration to create the specified entities.
-        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the current limit on the number of instances that you can register using the same
+        /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+        /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -839,8 +848,8 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Creates or updates a health check based on the settings in the health check configuration,
-        /// if any, for the service
+        /// If the service includes <code>HealthCheckConfig</code>, creates or updates a health
+        /// check based on the settings in the health check configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -866,14 +875,19 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>If the health check is unhealthy</b>: returns the IP address of the last healthy
-        /// instance
+        ///  <b>If the health check is unhealthy</b>: returns the applicable value for the last
+        /// healthy instance
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>If you didn't specify a health check configuration</b>: returns all the records
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the current limit on the number of instances that you can register using the same
+        /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+        /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstance service method.</param>
         /// 
@@ -926,6 +940,60 @@ namespace Amazon.ServiceDiscovery
 
         #endregion
         
+        #region  UpdateInstanceCustomHealthStatus
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceCustomHealthStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceCustomHealthStatus service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.CustomHealthNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InstanceNotFoundException">
+        /// No instance exists with the specified ID, or the instance was recently registered,
+        /// and information about the instance hasn't propagated yet.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, when you're creating a namespace,
+        /// the value of <code>Name</code> might not be a valid DNS name.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus">REST API Reference for UpdateInstanceCustomHealthStatus Operation</seealso>
+        UpdateInstanceCustomHealthStatusResponse UpdateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceCustomHealthStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceCustomHealthStatus operation on AmazonServiceDiscoveryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstanceCustomHealthStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus">REST API Reference for UpdateInstanceCustomHealthStatus Operation</seealso>
+        IAsyncResult BeginUpdateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstanceCustomHealthStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstanceCustomHealthStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceCustomHealthStatusResult from ServiceDiscovery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus">REST API Reference for UpdateInstanceCustomHealthStatus Operation</seealso>
+        UpdateInstanceCustomHealthStatusResponse EndUpdateInstanceCustomHealthStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateService
 
 
@@ -944,7 +1012,7 @@ namespace Amazon.ServiceDiscovery
         /// <para>
         /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
         /// </para>
-        ///  </li> <li>  </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)
         /// that you want to appear in the updated service. Any current configurations that don't

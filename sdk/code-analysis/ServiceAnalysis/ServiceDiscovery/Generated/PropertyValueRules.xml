@@ -46,7 +46,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.CreateServiceRequest.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z])(\.([a-z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z]))*$)|(^\.$)</pattern>
+    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.DeleteNamespaceRequest.Id</property>
@@ -182,6 +182,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.InstanceId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest.ServiceId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.UpdateServiceRequest.Id</property>
     <max>64</max>
   </property-value-rule>
@@ -210,6 +218,11 @@
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.HealthCheckConfig.ResourcePath</property>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceDiscovery.Model.HealthCheckCustomConfig.FailureThreshold</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Instance.CreatorRequestId</property>
@@ -289,7 +302,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.Service.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z])(\.([a-z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z]))*$)|(^\.$)</pattern>
+    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ServiceAlreadyExists.CreatorRequestId</property>
@@ -317,6 +330,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceDiscovery.Model.ServiceSummary.Name</property>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z])(\.([a-z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]|[a-zA-Z]))*$)|(^\.$)</pattern>
+    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)</pattern>
   </property-value-rule>
 </property-value-rules>

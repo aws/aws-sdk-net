@@ -507,6 +507,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ServiceDiscovery")]
+        public void UpdateInstanceCustomHealthStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateInstanceCustomHealthStatusRequest>();
+            var marshaller = new UpdateInstanceCustomHealthStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateInstanceCustomHealthStatusRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceDiscovery")]
         public void UpdateServiceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateServiceRequest>();

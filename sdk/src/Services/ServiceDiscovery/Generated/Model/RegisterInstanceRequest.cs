@@ -41,8 +41,8 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Creates or updates a health check based on the settings in the health check configuration,
-    /// if any, for the service
+    /// If the service includes <code>HealthCheckConfig</code>, creates or updates a health
+    /// check based on the settings in the health check configuration
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,14 +68,19 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>If the health check is unhealthy</b>: returns the IP address of the last healthy
-    /// instance
+    ///  <b>If the health check is unhealthy</b>: returns the applicable value for the last
+    /// healthy instance
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>If you didn't specify a health check configuration</b>: returns all the records
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For the current limit on the number of instances that you can register using the same
+    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+    /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class RegisterInstanceRequest : AmazonServiceDiscoveryRequest
     {
@@ -172,8 +177,9 @@ namespace Amazon.ServiceDiscovery.Model
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an A record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code>
-        /// is required if the service includes settings for an SRV record.
+        /// settings for an A record. If the service includes settings for an SRV record, you
+        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
+        /// or both.
         /// </para>
         ///  
         /// <para>
@@ -187,8 +193,9 @@ namespace Amazon.ServiceDiscovery.Model
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code>
-        /// is required if the service includes settings for an SRV record.
+        /// settings for an AAAA record. If the service includes settings for an SRV record, you
+        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
+        /// or both.
         /// </para>
         ///  
         /// <para>

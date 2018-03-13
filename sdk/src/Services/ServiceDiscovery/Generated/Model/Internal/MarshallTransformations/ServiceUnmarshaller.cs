@@ -100,6 +100,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.HealthCheckConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HealthCheckCustomConfig", targetDepth))
+                {
+                    var unmarshaller = HealthCheckCustomConfigUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheckCustomConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -43,7 +43,12 @@ namespace Amazon.ServiceDiscovery.Model
     /// <para>
     /// After you create the service, you can submit a <a>RegisterInstance</a> request, and
     /// Amazon Route 53 uses the values in the configuration to create the specified entities.
-    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// For the current limit on the number of instances that you can register using the same
+    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
+    /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonServiceDiscoveryRequest
@@ -52,6 +57,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _description;
         private DnsConfig _dnsConfig;
         private HealthCheckConfig _healthCheckConfig;
+        private HealthCheckCustomConfig _healthCheckCustomConfig;
         private string _name;
 
         /// <summary>
@@ -134,6 +140,21 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetHealthCheckConfig()
         {
             return this._healthCheckConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckCustomConfig.
+        /// </summary>
+        public HealthCheckCustomConfig HealthCheckCustomConfig
+        {
+            get { return this._healthCheckCustomConfig; }
+            set { this._healthCheckCustomConfig = value; }
+        }
+
+        // Check to see if HealthCheckCustomConfig property is set
+        internal bool IsSetHealthCheckCustomConfig()
+        {
+            return this._healthCheckCustomConfig != null;
         }
 
         /// <summary>

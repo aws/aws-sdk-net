@@ -55,12 +55,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// Supported attribute keys include the following:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>AWS_ALIAS_DNS_NAME</code>: If you want Route 53 to create an alias record that
-        /// routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that
-        /// is associated with the load balancer. For information about how to get the DNS name,
-        /// see "DNSName" in the topic <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+        ///  <b>AWS_ALIAS_DNS_NAME</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b/> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want Route 53 to create an alias record that routes traffic to an Elastic Load
+        /// Balancing load balancer, specify the DNS name that is associated with the load balancer.
+        /// For information about how to get the DNS name, see "DNSName" in the topic <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
         /// </para>
         ///  
         /// <para>
@@ -92,54 +99,71 @@ namespace Amazon.ServiceDiscovery.Model
         /// If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for
         /// any of the <code>AWS_INSTANCE</code> attributes.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <code>AWS_INSTANCE_CNAME</code>: If the service configuration includes a CNAME record,
-        /// the domain name that you want Route 53 to return in response to DNS queries, for example,
-        /// <code>example.com</code>.
+        ///  <b>AWS_INSTANCE_CNAME</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service configuration includes a CNAME record, the domain name that you want
+        /// Route 53 to return in response to DNS queries, for example, <code>example.com</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
         /// settings for an CNAME record.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>AWS_INSTANCE_IPV4</code>: If the service configuration includes an A record,
-        /// the IPv4 address that you want Route 53 to return in response to DNS queries, for
-        /// example, <code>192.0.2.44</code>.
+        ///  <b>AWS_INSTANCE_IPV4</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service configuration includes an A record, the IPv4 address that you want
+        /// Route 53 to return in response to DNS queries, for example, <code>192.0.2.44</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an A record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code>
-        /// is required if the service includes settings for an SRV record.
+        /// settings for an A record. If the service includes settings for an SRV record, you
+        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
+        /// or both.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>AWS_INSTANCE_IPV6</code>: If the service configuration includes an AAAA record,
-        /// the IPv6 address that you want Route 53 to return in response to DNS queries, for
-        /// example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+        ///  <b>AWS_INSTANCE_IPV6</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service configuration includes an AAAA record, the IPv6 address that you want
+        /// Route 53 to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
         /// </para>
         ///  
         /// <para>
         /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an AAAA record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code>
-        /// is required if the service includes settings for an SRV record.
+        /// settings for an AAAA record. If the service includes settings for an SRV record, you
+        /// must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
+        /// or both.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>AWS_INSTANCE_PORT</code>: If the service includes an SRV record, the value
-        /// that you want Route 53 to return for the port. In addition, if the service includes
-        /// <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to
-        /// send requests to. For more information, see <a>CreateService</a>.
+        ///  <b>AWS_INSTANCE_PORT</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service includes an SRV record, the value that you want Route 53 to return
+        /// for the port.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
+        /// you want Route 53 to send requests to. 
         /// </para>
         ///  
         /// <para>
         /// This value is required if you specified settings for an SRV record when you created
         /// the service.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

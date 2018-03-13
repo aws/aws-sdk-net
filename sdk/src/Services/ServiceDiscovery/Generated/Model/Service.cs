@@ -38,6 +38,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _description;
         private DnsConfig _dnsConfig;
         private HealthCheckConfig _healthCheckConfig;
+        private HealthCheckCustomConfig _healthCheckCustomConfig;
         private string _id;
         private int? _instanceCount;
         private string _name;
@@ -162,6 +163,21 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetHealthCheckConfig()
         {
             return this._healthCheckConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckCustomConfig.
+        /// </summary>
+        public HealthCheckCustomConfig HealthCheckCustomConfig
+        {
+            get { return this._healthCheckCustomConfig; }
+            set { this._healthCheckCustomConfig = value; }
+        }
+
+        // Check to see if HealthCheckCustomConfig property is set
+        internal bool IsSetHealthCheckCustomConfig()
+        {
+            return this._healthCheckCustomConfig != null;
         }
 
         /// <summary>
