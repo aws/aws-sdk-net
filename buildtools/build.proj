@@ -148,7 +148,7 @@
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
 
-    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true'" DependsOnTargets="build-tools">  
+    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(PartialBuildList)'==''" DependsOnTargets="build-tools">  
       <ValidateRepoTask
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  
