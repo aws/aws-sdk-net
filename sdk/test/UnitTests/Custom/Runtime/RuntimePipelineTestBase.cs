@@ -68,7 +68,9 @@ namespace AWSSDK.UnitTests
                 OriginalRequest = putObjectRequest,
                 Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
                 Unmarshaller = PutObjectResponseUnmarshaller.Instance,
-                ClientConfig = new AmazonS3Config()
+                ClientConfig = new AmazonS3Config{
+                    RegionEndpoint = RegionEndpoint.USEast1
+                }
             };
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 

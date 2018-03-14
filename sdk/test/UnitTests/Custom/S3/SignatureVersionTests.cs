@@ -30,7 +30,9 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void TestS3SignerSignatureVersion()
         {
-            var defaultClientConfigSignatureVersion = new AmazonS3Config().SignatureVersion;
+            var defaultClientConfigSignatureVersion = (new AmazonS3Config{
+                                                            RegionEndpoint = RegionEndpoint.USEast1
+                                                        }).SignatureVersion;
             var defaultAWSConfigsS3UseSignatureVersion4 = AWSConfigsS3.UseSignatureVersion4;
             
             // customers don't control IRequest.UseSigV4 because it's in the Internal namespace

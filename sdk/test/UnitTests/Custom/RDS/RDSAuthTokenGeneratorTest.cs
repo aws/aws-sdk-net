@@ -117,7 +117,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AssertExtensions.ExpectException(() =>
             {
-                RDSAuthTokenGenerator.GenerateAuthToken(" ", DBPort, DBUser);
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, " ", DBPort, DBUser);
             }, typeof(ArgumentException));
         }
 
@@ -126,7 +126,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AssertExtensions.ExpectException(() =>
             {
-                RDSAuthTokenGenerator.GenerateAuthToken(DBHost, DBPort, " ");
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, DBHost, DBPort, " ");
             }, typeof(ArgumentException));
         }
 
@@ -135,7 +135,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AssertExtensions.ExpectException(() =>
             {
-                RDSAuthTokenGenerator.GenerateAuthToken(DBHost, -1, DBUser);
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, DBHost, -1, DBUser);
             }, typeof(ArgumentException));
         }
 
@@ -144,7 +144,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AssertExtensions.ExpectException(() =>
             {
-                RDSAuthTokenGenerator.GenerateAuthToken(DBHost, 100000, DBUser);
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, DBHost, 100000, DBUser);
             }, typeof(ArgumentException));
         }
 
