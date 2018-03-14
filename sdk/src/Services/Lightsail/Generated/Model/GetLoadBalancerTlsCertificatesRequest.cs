@@ -36,6 +36,11 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
     /// </para>
+    ///  
+    /// <para>
+    /// You can have a maximum of 2 certificates associated with a Lightsail load balancer.
+    /// One is active and the other is inactive.
+    /// </para>
     /// </summary>
     public partial class GetLoadBalancerTlsCertificatesRequest : AmazonLightsailRequest
     {
@@ -44,7 +49,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer where you stored your TLS/SSL certificate.
+        /// The name of the load balancer you associated with your SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string LoadBalancerName

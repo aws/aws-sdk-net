@@ -30,6 +30,12 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the DetachInstancesFromLoadBalancer operation.
     /// Detaches the specified instances from a Lightsail load balancer.
+    /// 
+    ///  
+    /// <para>
+    /// This operation waits until the instances are no longer needed before they are detached
+    /// from the load balancer.
+    /// </para>
     /// </summary>
     public partial class DetachInstancesFromLoadBalancerRequest : AmazonLightsailRequest
     {

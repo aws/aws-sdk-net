@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes a load balancer TLS/SSL certificate.
+    /// Describes a load balancer SSL/TLS certificate.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+        /// The Amazon Resource Name (ARN) of the SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string Arn
@@ -83,7 +83,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when you created your TLS/SSL certificate.
+        /// The time when you created your SSL/TLS certificate.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -101,7 +101,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name for your TLS/SSL certificate.
+        /// The domain name for your SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string DomainName
@@ -138,7 +138,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for the TLS/SSL certificate validation failure.
+        /// The reason for the SSL/TLS certificate validation failure.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateFailureReason FailureReason
@@ -156,7 +156,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsAttached. 
         /// <para>
-        /// When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load
+        /// When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
         /// balancer.
         /// </para>
         /// </summary>
@@ -175,7 +175,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IssuedAt. 
         /// <para>
-        /// The time when the TLS/SSL certificate was issued.
+        /// The time when the SSL/TLS certificate was issued.
         /// </para>
         /// </summary>
         public DateTime IssuedAt
@@ -229,7 +229,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The load balancer name where your TLS/SSL certificate is attached.
+        /// The load balancer name where your SSL/TLS certificate is attached.
         /// </para>
         /// </summary>
         public string LoadBalancerName
@@ -265,7 +265,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+        /// The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
         /// </para>
         /// </summary>
         public string Name
@@ -283,7 +283,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NotAfter. 
         /// <para>
-        /// The timestamp when the TLS/SSL certificate expires.
+        /// The timestamp when the SSL/TLS certificate expires.
         /// </para>
         /// </summary>
         public DateTime NotAfter
@@ -301,7 +301,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NotBefore. 
         /// <para>
-        /// The timestamp when the TLS/SSL certificate is first valid.
+        /// The timestamp when the SSL/TLS certificate is first valid.
         /// </para>
         /// </summary>
         public DateTime NotBefore
@@ -338,8 +338,50 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+        /// The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>StaticIp</code> </b> - A static IP address
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>Domain</code> </b> - A DNS zone
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>PeeredVpc</code> </b> - A peered VPC
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated
+        /// with a Lightsail load balancer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>Disk</code> </b> - A Lightsail block storage disk
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceType ResourceType
         {
@@ -374,7 +416,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RevokedAt. 
         /// <para>
-        /// The timestamp when the TLS/SSL certificate was revoked.
+        /// The timestamp when the SSL/TLS certificate was revoked.
         /// </para>
         /// </summary>
         public DateTime RevokedAt
@@ -428,7 +470,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the TLS/SSL certificate. Valid values are below.
+        /// The status of the SSL/TLS certificate. Valid values are below.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateStatus Status
@@ -464,11 +506,11 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// One or more domain names (subject alternative names) included in the certificate.
-        /// This list contains the domain names that are bound to the public key that is contained
-        /// in the certificate. The subject alternative names include the canonical domain name
-        /// (CN) of the certificate and additional domain names that can be used to connect to
-        /// the website.
+        /// One or more domains or subdomains included in the certificate. This list contains
+        /// the domain names that are bound to the public key that is contained in the certificate.
+        /// The subject alternative names include the canonical domain name (CNAME) of the certificate
+        /// and additional domain names that can be used to connect to the website, such as <code>example.com</code>,
+        /// <code>www.example.com</code>, or <code>m.example.com</code>.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames
@@ -487,7 +529,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property SupportCode. 
         /// <para>
         /// The support code. Include this code in your email to support when you have questions
-        /// about your Lightsail load balancer or TLS/SSL certificate. This code enables our support
+        /// about your Lightsail load balancer or SSL/TLS certificate. This code enables our support
         /// team to look up your Lightsail information more easily.
         /// </para>
         /// </summary>

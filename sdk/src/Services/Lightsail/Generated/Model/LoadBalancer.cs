@@ -161,7 +161,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstancePort. 
         /// <para>
-        /// The instance port where the load balancer is listening.
+        /// The port where the load balancer will direct traffic to your Lightsail instances.
+        /// For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.
         /// </para>
         /// </summary>
         public int InstancePort
@@ -179,7 +180,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The AWS Region and Availability Zone where your load balancer was created (e.g., <code>us-east-2a</code>).
+        /// The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>).
+        /// Lightsail automatically creates your load balancer across Availability Zones.
         /// </para>
         /// </summary>
         public ResourceLocation Location
@@ -217,6 +219,10 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// The protocol you have enabled for your load balancer. Valid values are below.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't just have <code>HTTP_HTTPS</code>, but you can have just <code>HTTP</code>.
+        /// </para>
         /// </summary>
         public LoadBalancerProtocol Protocol
         {
@@ -233,7 +239,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PublicPorts. 
         /// <para>
-        /// An array of public port settings for your load balancer.
+        /// An array of public port settings for your load balancer. For HTTP, use port 80. For
+        /// HTTPS, use port 443.
         /// </para>
         /// </summary>
         public List<int> PublicPorts
@@ -308,7 +315,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property TlsCertificateSummaries. 
         /// <para>
         /// An array of LoadBalancerTlsCertificateSummary objects that provide additional information
-        /// about the TLS/SSL certificates.
+        /// about the SSL/TLS certificates. For example, if <code>true</code>, the certificate
+        /// is attached to the load balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancerTlsCertificateSummary> TlsCertificateSummaries

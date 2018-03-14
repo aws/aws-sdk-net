@@ -1490,6 +1490,10 @@ namespace Amazon.Lightsail
         /// Constant Started for OperationStatus
         /// </summary>
         public static readonly OperationStatus Started = new OperationStatus("Started");
+        /// <summary>
+        /// Constant Succeeded for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus Succeeded = new OperationStatus("Succeeded");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1838,6 +1842,10 @@ namespace Amazon.Lightsail
         /// Constant EuWest1 for RegionName
         /// </summary>
         public static readonly RegionName EuWest1 = new RegionName("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for RegionName
+        /// </summary>
+        public static readonly RegionName EuWest2 = new RegionName("eu-west-2");
         /// <summary>
         /// Constant UsEast1 for RegionName
         /// </summary>

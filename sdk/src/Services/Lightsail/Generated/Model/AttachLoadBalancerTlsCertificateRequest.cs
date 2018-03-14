@@ -29,11 +29,15 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerTlsCertificate operation.
-    /// Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+    /// Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is
+    /// just an updated, more secure version of Secure Socket Layer (SSL).
     /// 
     ///  
     /// <para>
-    /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+    /// Once you create and validate your certificate, you can attach it to your load balancer.
+    /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
+    /// operation with the non-attached certificate, and it will replace the existing one
+    /// and become the attached certificate.
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerTlsCertificateRequest : AmazonLightsailRequest
@@ -44,7 +48,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateName. 
         /// <para>
-        /// The name of your TLS/SSL certificate.
+        /// The name of your SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -62,7 +66,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer to which you want to associate the TLS/SSL certificate.
+        /// The name of the load balancer to which you want to associate the SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string LoadBalancerName

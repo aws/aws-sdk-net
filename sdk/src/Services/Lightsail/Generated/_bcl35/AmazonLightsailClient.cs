@@ -263,7 +263,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -348,7 +348,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -413,6 +413,12 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Attaches one or more Lightsail instances to a load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// After some time, the instances are attached to the load balancer and the health check
+        /// status is available.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInstancesToLoadBalancer service method.</param>
         /// 
@@ -432,7 +438,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -496,11 +502,15 @@ namespace Amazon.Lightsail
         #region  AttachLoadBalancerTlsCertificate
 
         /// <summary>
-        /// Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+        /// Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is
+        /// just an updated, more secure version of Secure Socket Layer (SSL).
         /// 
         ///  
         /// <para>
-        /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+        /// Once you create and validate your certificate, you can attach it to your load balancer.
+        /// You can also use this API to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code>
+        /// operation with the non-attached certificate, and it will replace the existing one
+        /// and become the attached certificate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTlsCertificate service method.</param>
@@ -521,7 +531,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -605,7 +615,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -689,7 +699,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -776,7 +786,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -864,7 +874,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -962,7 +972,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1046,7 +1056,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1131,7 +1141,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1215,7 +1225,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1300,7 +1310,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1385,7 +1395,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1469,7 +1479,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1533,12 +1543,16 @@ namespace Amazon.Lightsail
         #region  CreateLoadBalancer
 
         /// <summary>
-        /// Creates a Lightsail load balancer.
+        /// Creates a Lightsail load balancer. To learn more about deciding whether to load balance
+        /// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure
+        /// your Lightsail instances for load balancing</a>. You can create up to 5 load balancers
+        /// per AWS Region in your account.
         /// 
         ///  
         /// <para>
-        /// When you create a load balancer, you can specify certificates and port settings. You
-        /// can create up to 5 load balancers per AWS Region in your account.
+        /// When you create a load balancer, you can specify a unique name and port settings.
+        /// To change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -1559,7 +1573,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1648,7 +1662,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1739,7 +1753,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1832,7 +1846,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -1916,7 +1930,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2000,7 +2014,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2084,7 +2098,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2168,7 +2182,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2252,7 +2266,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2316,7 +2330,9 @@ namespace Amazon.Lightsail
         #region  DeleteLoadBalancer
 
         /// <summary>
-        /// Deletes a Lightsail load balancer.
+        /// Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once
+        /// the load balancer is deleted, you will need to create a new load balancer, create
+        /// a new certificate, and verify domain ownership again.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
@@ -2336,7 +2352,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2400,7 +2416,7 @@ namespace Amazon.Lightsail
         #region  DeleteLoadBalancerTlsCertificate
 
         /// <summary>
-        /// Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+        /// Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancerTlsCertificate service method.</param>
         /// 
@@ -2420,7 +2436,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2506,7 +2522,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2571,6 +2587,12 @@ namespace Amazon.Lightsail
 
         /// <summary>
         /// Detaches the specified instances from a Lightsail load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// This operation waits until the instances are no longer needed before they are detached
+        /// from the load balancer.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachInstancesFromLoadBalancer service method.</param>
         /// 
@@ -2590,7 +2612,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2674,7 +2696,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2758,7 +2780,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2842,7 +2864,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -2929,7 +2951,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3014,7 +3036,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3098,7 +3120,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3189,7 +3211,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3273,7 +3295,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3365,7 +3387,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3449,7 +3471,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3533,7 +3555,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3618,7 +3640,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3703,7 +3725,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3788,7 +3810,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3872,7 +3894,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -3956,7 +3978,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4040,7 +4062,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4124,7 +4146,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4208,7 +4230,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4292,7 +4314,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4376,7 +4398,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4460,7 +4482,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4544,7 +4566,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4635,7 +4657,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4706,6 +4728,11 @@ namespace Amazon.Lightsail
         /// <para>
         /// TLS is just an updated, more secure version of Secure Socket Layer (SSL).
         /// </para>
+        ///  
+        /// <para>
+        /// You can have a maximum of 2 certificates associated with a Lightsail load balancer.
+        /// One is active and the other is inactive.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoadBalancerTlsCertificates service method.</param>
         /// 
@@ -4725,7 +4752,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4810,7 +4837,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4901,7 +4928,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -4985,7 +5012,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5070,7 +5097,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5154,7 +5181,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5238,7 +5265,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5322,7 +5349,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5406,7 +5433,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5490,7 +5517,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5574,7 +5601,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5659,7 +5686,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5745,7 +5772,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5829,7 +5856,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5914,7 +5941,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -5998,7 +6025,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -6082,7 +6109,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -6166,7 +6193,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>
@@ -6230,7 +6257,8 @@ namespace Amazon.Lightsail
         #region  UpdateLoadBalancerAttribute
 
         /// <summary>
-        /// Updates the specified attribute for a load balancer.
+        /// Updates the specified attribute for a load balancer. You can only update one attribute
+        /// at a time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoadBalancerAttribute service method.</param>
         /// 
@@ -6250,7 +6278,7 @@ namespace Amazon.Lightsail
         ///  <note> 
         /// <para>
         /// Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please
-        /// set your Region configuration to us-east-1 to create, view, or edit these resources.
+        /// set your AWS Region configuration to us-east-1 to create, view, or edit these resources.
         /// </para>
         ///  </note>
         /// </exception>

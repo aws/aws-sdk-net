@@ -29,7 +29,9 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// Deletes a Lightsail load balancer.
+    /// Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once
+    /// the load balancer is deleted, you will need to create a new load balancer, create
+    /// a new certificate, and verify domain ownership again.
     /// </summary>
     public partial class DeleteLoadBalancerRequest : AmazonLightsailRequest
     {

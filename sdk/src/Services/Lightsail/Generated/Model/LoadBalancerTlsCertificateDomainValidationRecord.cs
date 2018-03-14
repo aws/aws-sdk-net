@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the validation record of each domain name in the TLS/SSL certificate.
+    /// Describes the validation record of each domain name in the SSL/TLS certificate.
     /// </summary>
     public partial class LoadBalancerTlsCertificateDomainValidationRecord
     {
@@ -41,7 +41,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name against which your TLS/SSL certificate was validated.
+        /// The domain name against which your SSL/TLS certificate was validated.
         /// </para>
         /// </summary>
         public string DomainName

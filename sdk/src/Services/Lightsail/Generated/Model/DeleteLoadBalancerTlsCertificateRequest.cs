@@ -29,7 +29,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerTlsCertificate operation.
-    /// Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+    /// Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
     /// </summary>
     public partial class DeleteLoadBalancerTlsCertificateRequest : AmazonLightsailRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateName. 
         /// <para>
-        /// The TLS/SSL certificate name.
+        /// The SSL/TLS certificate name.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -58,7 +58,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+        /// When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// There can be two certificates associated with a Lightsail load balancer: the primary
+        /// and the backup. The force parameter is required when the primary SSL/TLS certificate
+        /// is in use by an instance attached to the load balancer.
         /// </para>
         /// </summary>
         public bool Force

@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property TlsCertificates. 
         /// <para>
-        /// An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+        /// An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
         /// </para>
         /// </summary>
         public List<LoadBalancerTlsCertificate> TlsCertificates

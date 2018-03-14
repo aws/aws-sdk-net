@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Provides a summary of TLS/SSL certificate metadata.
+    /// Provides a summary of SSL/TLS certificate metadata.
     /// </summary>
     public partial class LoadBalancerTlsCertificateSummary
     {
@@ -38,7 +38,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsAttached. 
         /// <para>
-        /// When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load
+        /// When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
         /// balancer.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the TLS/SSL certificate.
+        /// The name of the SSL/TLS certificate.
         /// </para>
         /// </summary>
         public string Name

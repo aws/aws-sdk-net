@@ -61,7 +61,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IsAlias. 
         /// <para>
         /// When <code>true</code>, specifies whether the domain entry is an alias used by the
-        /// Lightsail load balancer.
+        /// Lightsail load balancer. You can include an alias (A type) record in your request,
+        /// which points to a load balancer DNS name and routes traffic to your load balancer
         /// </para>
         /// </summary>
         public bool IsAlias
@@ -122,6 +123,12 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
+        /// Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A
+        /// record for a load balancer.
         /// </para>
         /// </summary>
         public string Target

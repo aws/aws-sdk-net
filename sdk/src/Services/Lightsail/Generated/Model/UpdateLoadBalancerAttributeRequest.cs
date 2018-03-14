@@ -29,7 +29,8 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoadBalancerAttribute operation.
-    /// Updates the specified attribute for a load balancer.
+    /// Updates the specified attribute for a load balancer. You can only update one attribute
+    /// at a time.
     /// </summary>
     public partial class UpdateLoadBalancerAttributeRequest : AmazonLightsailRequest
     {
@@ -76,7 +77,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer that you want to modify.
+        /// The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.
         /// </para>
         /// </summary>
         public string LoadBalancerName

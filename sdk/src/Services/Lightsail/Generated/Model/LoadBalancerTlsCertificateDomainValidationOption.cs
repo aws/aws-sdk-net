@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Contains information about the domain names on a TLS/SSL certificate that you will
+    /// Contains information about the domain names on an SSL/TLS certificate that you will
     /// use to validate domain ownership.
     /// </summary>
     public partial class LoadBalancerTlsCertificateDomainValidationOption
@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// A fully qualified domain name in the certificate request.
+        /// The fully qualified domain name in the certificate request.
         /// </para>
         /// </summary>
         public string DomainName

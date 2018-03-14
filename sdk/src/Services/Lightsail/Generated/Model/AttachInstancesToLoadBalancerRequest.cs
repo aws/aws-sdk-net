@@ -30,6 +30,12 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the AttachInstancesToLoadBalancer operation.
     /// Attaches one or more Lightsail instances to a load balancer.
+    /// 
+    ///  
+    /// <para>
+    /// After some time, the instances are attached to the load balancer and the health check
+    /// status is available.
+    /// </para>
     /// </summary>
     public partial class AttachInstancesToLoadBalancerRequest : AmazonLightsailRequest
     {
@@ -41,6 +47,16 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An array of strings representing the instance name(s) you want to attach to your load
         /// balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// An instance must be <code>running</code> before you can attach it to your load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// There are no additional limits on the number of instances you can attach to your load
+        /// balancer, aside from the limit of Lightsail instances you can create in your account
+        /// (20).
         /// </para>
         /// </summary>
         public List<string> InstanceNames

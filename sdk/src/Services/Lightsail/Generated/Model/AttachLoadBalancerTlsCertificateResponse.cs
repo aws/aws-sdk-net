@@ -39,6 +39,11 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An object representing the API operations.
         /// </para>
+        ///  
+        /// <para>
+        /// These SSL/TLS certificates are only usable by Lightsail load balancers. You can't
+        /// get the certificate and use it for another purpose.
+        /// </para>
         /// </summary>
         public List<Operation> Operations
         {
