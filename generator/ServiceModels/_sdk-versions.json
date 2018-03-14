@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.249.0",
+    "ProductVersion" : "3.3.249.1",
     "CoreVersion"    : "3.3.21.15",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.5.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.15"
