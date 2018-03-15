@@ -97,7 +97,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.DisableAWSServiceAccessRequest.ServicePrincipal</property>
     <min>1</min>
-    <max>1000</max>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.DisablePolicyTypeRequest.RootId</property>
@@ -106,7 +107,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnableAWSServiceAccessRequest.ServicePrincipal</property>
     <min>1</min>
-    <max>1000</max>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnablePolicyTypeRequest.RootId</property>
@@ -287,7 +289,8 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.EnabledServicePrincipal.ServicePrincipal</property>
     <min>1</min>
-    <max>1000</max>
+    <max>128</max>
+    <pattern>[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Handshake.Arn</property>

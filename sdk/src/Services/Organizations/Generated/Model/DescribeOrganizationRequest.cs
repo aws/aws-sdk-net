@@ -35,6 +35,13 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// This operation can be called from any account in the organization.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Even if a policy type is shown as available in the organization, it can be disabled
+    /// separately at the root level with <a>DisablePolicyType</a>. Use <a>ListRoots</a> to
+    /// see the status of policy types for a specified root.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeOrganizationRequest : AmazonOrganizationsRequest
     {

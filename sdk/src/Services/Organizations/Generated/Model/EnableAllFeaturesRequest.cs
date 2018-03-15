@@ -47,6 +47,12 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </important> 
     /// <para>
+    /// After you enable all features, you can separately enable or disable individual policy
+    /// types in a root using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see
+    /// the status of policy types in a root, use <a>ListRoots</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// After all invited member accounts accept the handshake, you finalize the feature set
     /// change by accepting the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>.
     /// This completes the change.

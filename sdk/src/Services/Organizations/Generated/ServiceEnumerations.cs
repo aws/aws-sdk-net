@@ -865,6 +865,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_PATTERN_TARGET_ID = new InvalidInputExceptionReason("INVALID_PATTERN_TARGET_ID");
         /// <summary>
+        /// Constant INVALID_ROLE_NAME for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_ROLE_NAME = new InvalidInputExceptionReason("INVALID_ROLE_NAME");
+        /// <summary>
         /// Constant INVALID_SYNTAX_ORGANIZATION_ARN for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_SYNTAX_ORGANIZATION_ARN = new InvalidInputExceptionReason("INVALID_SYNTAX_ORGANIZATION_ARN");

@@ -37,6 +37,16 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
+    ///  
+    /// <para>
+    /// You can enable a policy type in a root only if that policy type is available in the
+    /// organization. Use <a>DescribeOrganization</a> to view the status of available policy
+    /// types in the organization.
+    /// </para>
+    ///  
+    /// <para>
+    /// To view the status of policy type in a root, use <a>ListRoots</a>.
+    /// </para>
     /// </summary>
     public partial class EnablePolicyTypeRequest : AmazonOrganizationsRequest
     {

@@ -39,6 +39,14 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you disable a policy type for a root, it still shows as enabled for the organization
+    /// if all features are enabled in that organization. Use <a>ListRoots</a> to see the
+    /// status of policy types for a specified root. Use <a>DescribeOrganization</a> to see
+    /// the status of policy types in the organization.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DisablePolicyTypeRequest : AmazonOrganizationsRequest
     {

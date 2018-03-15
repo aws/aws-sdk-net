@@ -35,7 +35,15 @@ namespace Amazon.Organizations.Model
     /// only that OU, and not in any child OUs. To get a list of all accounts in the organization,
     /// use the <a>ListAccounts</a> operation.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
+    /// value when calling a <code>List*</code> operation. These operations can occasionally
+    /// return an empty set of results even when there are more results available. The <code>NextToken</code>
+    /// response parameter value is <code>null</code> <i>only</i> when there are no more results
+    /// to display.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>

@@ -116,6 +116,14 @@ namespace Amazon.Organizations.Model
         /// The types of policies that are currently enabled for the root and therefore can be
         /// attached to the root or to its OUs or accounts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Even if a policy type is shown as available in the organization, you can separately
+        /// enable and disable them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>.
+        /// Use <a>DescribeOrganization</a> to see the availability of the policy types in that
+        /// organization.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<PolicyTypeSummary> PolicyTypes
         {

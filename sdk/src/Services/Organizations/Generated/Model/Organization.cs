@@ -72,6 +72,13 @@ namespace Amazon.Organizations.Model
         /// organization has all features enabled, then service control policies (SCPs) are included
         /// in the list.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Even if a policy type is shown as available in the organization, you can separately
+        /// enable and disable them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>.
+        /// Use <a>ListRoots</a> to see the status of a policy type in that root.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<PolicyTypeSummary> AvailablePolicyTypes
         {

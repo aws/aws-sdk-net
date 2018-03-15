@@ -33,7 +33,15 @@ namespace Amazon.Organizations.Model
     /// the specified child OU or account. This operation, along with <a>ListChildren</a>
     /// enables you to traverse the tree structure that makes up this root.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
+    /// value when calling a <code>List*</code> operation. These operations can occasionally
+    /// return an empty set of results even when there are more results available. The <code>NextToken</code>
+    /// response parameter value is <code>null</code> <i>only</i> when there are no more results
+    /// to display.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
