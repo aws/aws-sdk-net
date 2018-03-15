@@ -57,6 +57,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MessageType);
             }
 
+            if(requestObject.IsSetOriginationNumber())
+            {
+                context.Writer.WritePropertyName("OriginationNumber");
+                context.Writer.Write(requestObject.OriginationNumber);
+            }
+
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("SenderId");

@@ -1175,6 +1175,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteEndpoint
+
+        /// <summary>
+        /// Deletes an endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEndpoint service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var marshaller = new DeleteEndpointRequestMarshaller();
+            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEndpointRequest,DeleteEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteEndpointRequestMarshaller();
+            var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteEndpointRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteEndpointResult from Pinpoint.</returns>
+        public virtual DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEventStream
 
         /// <summary>

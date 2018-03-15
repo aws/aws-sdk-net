@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _body;
         private MessageType _messageType;
+        private string _originationNumber;
         private string _senderId;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
 
@@ -70,7 +71,26 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SenderId. Sender ID of sent message.
+        /// Gets and sets the property OriginationNumber. The phone number that the SMS message
+        /// originates from. Specify one of the dedicated long codes or short codes that you requested
+        /// from AWS Support and that is assigned to your account. If this attribute is not specified,
+        /// Amazon Pinpoint randomly assigns a long code.
+        /// </summary>
+        public string OriginationNumber
+        {
+            get { return this._originationNumber; }
+            set { this._originationNumber = value; }
+        }
+
+        // Check to see if OriginationNumber property is set
+        internal bool IsSetOriginationNumber()
+        {
+            return this._originationNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderId. The sender ID that is shown as the message sender
+        /// on the recipient's device. Support for sender IDs varies by country or region.
         /// </summary>
         public string SenderId
         {
