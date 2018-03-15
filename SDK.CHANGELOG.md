@@ -1,3 +1,8 @@
+### 3.3.249.2 (2018-03-14 22:38 UTC)
+* Core 3.3.21.16
+	* This change allows endpoint specific clock skew adjustment.
+	* All services packages updated to require new Core
+
 ### 3.3.249.1 (2018-03-14 20:20 UTC)
 * Lightsail (3.3.5.2)
 	* Updates to existing Lightsail documentation
