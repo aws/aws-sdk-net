@@ -1,3 +1,11 @@
+### 3.3.250.0 (2018-03-15 19:47 UTC)
+* Organizations (3.3.8.0)
+	* This release adds additional reason codes to improve clarity to exceptions that can occur.
+* Pinpoint (3.3.7.0)
+	* With this release, you can delete endpoints from your Amazon Pinpoint projects. Customers can now specify one of their leased dedicated long or short codes to send text messages.
+* SageMaker (3.3.3.0)
+	* This release provides support for ml.p3.xlarge instance types for notebook instances.  Lifecycle configuration is now available to customize your notebook instances on start; the configuration can be reused between multiple notebooks.  If a notebook instance is attached to a VPC you can now opt out of internet access that by default is provided by SageMaker.
+
 ### 3.3.249.2 (2018-03-14 22:38 UTC)
 * Core 3.3.21.16
 	* This change allows endpoint specific clock skew adjustment.
