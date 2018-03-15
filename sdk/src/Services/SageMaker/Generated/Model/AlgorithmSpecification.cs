@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         ///  In File mode, make sure you provision ML storage volume with sufficient capacity
-        /// to accomodate the data download from S3. In addition to the training data, the ML
+        /// to accommodate the data download from S3. In addition to the training data, the ML
         /// storage volume also stores the output model. The algorithm container use ML storage
         /// volume to also store intermediate information, if any. 
         /// </para>

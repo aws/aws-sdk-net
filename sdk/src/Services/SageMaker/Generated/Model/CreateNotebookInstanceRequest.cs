@@ -29,21 +29,21 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNotebookInstance operation.
-    /// Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute
-    /// instance running on a Jupyter notebook. 
+    /// Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning
+    /// (ML) compute instance running on a Jupyter notebook. 
     /// 
     ///  
     /// <para>
-    /// In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute
-    /// instance that you want to run. Amazon SageMaker launches the instance, installs common
-    /// libraries that you can use to explore datasets for model training, and attaches an
-    /// ML storage volume to the notebook instance. 
+    /// In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance
+    /// that you want to run. Amazon SageMaker launches the instance, installs common libraries
+    /// that you can use to explore datasets for model training, and attaches an ML storage
+    /// volume to the notebook instance. 
     /// </para>
     ///  
     /// <para>
     /// Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates
-    /// how to use Amazon SageMaker with a specific an algorithm or with a machine learning
-    /// framework. 
+    /// how to use Amazon SageMaker with a specific algorithm or with a machine learning framework.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -55,10 +55,11 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Option) If you specified <code>SubnetId</code>, creates a network interface in your
-    /// own VPC, which is inferred from the subnet ID that you provide in the input. When
-    /// creating this network interface, Amazon SageMaker attaches the security group that
-    /// you specified in the request to the network interface that it creates in your VPC.
+    /// (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network
+    /// interface in your own VPC, which is inferred from the subnet ID that you provide in
+    /// the input. When creating this network interface, Amazon SageMaker attaches the security
+    /// group that you specified in the request to the network interface that it creates in
+    /// your VPC.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,13 +89,42 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateNotebookInstanceRequest : AmazonSageMakerRequest
     {
+        private DirectInternetAccess _directInternetAccess;
         private InstanceType _instanceType;
         private string _kmsKeyId;
+        private string _lifecycleConfigName;
         private string _notebookInstanceName;
         private string _roleArn;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property DirectInternetAccess. 
+        /// <para>
+        /// Sets whether Amazon SageMaker provides internet access to the notebook instance. If
+        /// you set this to <code>Disabled</code> this notebook instance will be able to access
+        /// resources only in your VPC, and will not be able to connect to Amazon SageMaker training
+        /// and endpoint services unless your configure a NAT Gateway in your VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>appendix-notebook-and-internet-access</a>. You can set
+        /// the value of this parameter to <code>Disabled</code> only if you set a value for the
+        /// <code>SubnetId</code> parameter.
+        /// </para>
+        /// </summary>
+        public DirectInternetAccess DirectInternetAccess
+        {
+            get { return this._directInternetAccess; }
+            set { this._directInternetAccess = value; }
+        }
+
+        // Check to see if DirectInternetAccess property is set
+        internal bool IsSetDirectInternetAccess()
+        {
+            return this._directInternetAccess != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -131,6 +161,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleConfigName. 
+        /// <para>
+        /// The name of a lifecycle configuration to associate with the notebook instance. For
+        /// information about lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        public string LifecycleConfigName
+        {
+            get { return this._lifecycleConfigName; }
+            set { this._lifecycleConfigName = value; }
+        }
+
+        // Check to see if LifecycleConfigName property is set
+        internal bool IsSetLifecycleConfigName()
+        {
+            return this._lifecycleConfigName != null;
         }
 
         /// <summary>

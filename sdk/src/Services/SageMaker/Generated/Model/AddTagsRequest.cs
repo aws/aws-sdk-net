@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource that you want to tag. 
+        /// The Amazon Resource Name (ARN) of the resource that you want to tag.
         /// </para>
         /// </summary>
         public string ResourceArn

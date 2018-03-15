@@ -33,12 +33,14 @@ namespace Amazon.SageMaker.Model
     public partial class DescribeNotebookInstanceResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private DirectInternetAccess _directInternetAccess;
         private string _failureReason;
         private InstanceType _instanceType;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private string _networkInterfaceId;
         private string _notebookInstanceArn;
+        private string _notebookInstanceLifecycleConfigName;
         private string _notebookInstanceName;
         private NotebookInstanceStatus _notebookInstanceStatus;
         private string _roleArn;
@@ -66,9 +68,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DirectInternetAccess. 
+        /// <para>
+        /// Describes whether the notebook instance has internet access.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>appendix-notebook-and-internet-access</a>.
+        /// </para>
+        /// </summary>
+        public DirectInternetAccess DirectInternetAccess
+        {
+            get { return this._directInternetAccess; }
+            set { this._directInternetAccess = value; }
+        }
+
+        // Check to see if DirectInternetAccess property is set
+        internal bool IsSetDirectInternetAccess()
+        {
+            return this._directInternetAccess != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If staus is failed, the reason it failed.
+        /// If status is failed, the reason it failed.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -174,6 +198,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNotebookInstanceArn()
         {
             return this._notebookInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotebookInstanceLifecycleConfigName. 
+        /// <para>
+        /// Returns the name of a notebook instance lifecycle configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        public string NotebookInstanceLifecycleConfigName
+        {
+            get { return this._notebookInstanceLifecycleConfigName; }
+            set { this._notebookInstanceLifecycleConfigName = value; }
+        }
+
+        // Check to see if NotebookInstanceLifecycleConfigName property is set
+        internal bool IsSetNotebookInstanceLifecycleConfigName()
+        {
+            return this._notebookInstanceLifecycleConfigName != null;
         }
 
         /// <summary>

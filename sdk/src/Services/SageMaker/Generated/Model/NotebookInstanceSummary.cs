@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private InstanceType _instanceType;
         private DateTime? _lastModifiedTime;
         private string _notebookInstanceArn;
+        private string _notebookInstanceLifecycleConfigName;
         private string _notebookInstanceName;
         private NotebookInstanceStatus _notebookInstanceStatus;
         private string _url;
@@ -110,6 +111,29 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNotebookInstanceArn()
         {
             return this._notebookInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotebookInstanceLifecycleConfigName. 
+        /// <para>
+        /// The name of a notebook instance lifecycle configuration associated with this notebook
+        /// instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        public string NotebookInstanceLifecycleConfigName
+        {
+            get { return this._notebookInstanceLifecycleConfigName; }
+            set { this._notebookInstanceLifecycleConfigName = value; }
+        }
+
+        // Check to see if NotebookInstanceLifecycleConfigName property is set
+        internal bool IsSetNotebookInstanceLifecycleConfigName()
+        {
+            return this._notebookInstanceLifecycleConfigName != null;
         }
 
         /// <summary>

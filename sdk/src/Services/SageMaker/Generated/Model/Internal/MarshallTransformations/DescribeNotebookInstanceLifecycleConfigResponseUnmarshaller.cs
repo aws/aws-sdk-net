@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeNotebookInstance operation
+    /// Response Unmarshaller for DescribeNotebookInstanceLifecycleConfig operation
     /// </summary>  
-    public class DescribeNotebookInstanceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeNotebookInstanceResponse response = new DescribeNotebookInstanceResponse();
+            DescribeNotebookInstanceLifecycleConfigResponse response = new DescribeNotebookInstanceLifecycleConfigResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,46 +57,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DirectInternetAccess", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DirectInternetAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KmsKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.KmsKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkInterfaceId", targetDepth))
+                if (context.TestExpression("NotebookInstanceLifecycleConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NetworkInterfaceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotebookInstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NotebookInstanceArn = unmarshaller.Unmarshall(context);
+                    response.NotebookInstanceLifecycleConfigArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotebookInstanceLifecycleConfigName", targetDepth))
@@ -105,40 +75,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.NotebookInstanceLifecycleConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceName", targetDepth))
+                if (context.TestExpression("OnCreate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NotebookInstanceName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<NotebookInstanceLifecycleHook, NotebookInstanceLifecycleHookUnmarshaller>(NotebookInstanceLifecycleHookUnmarshaller.Instance);
+                    response.OnCreate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceStatus", targetDepth))
+                if (context.TestExpression("OnStart", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NotebookInstanceStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SecurityGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubnetId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SubnetId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Url = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<NotebookInstanceLifecycleHook, NotebookInstanceLifecycleHookUnmarshaller>(NotebookInstanceLifecycleHookUnmarshaller.Instance);
+                    response.OnStart = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -159,9 +105,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeNotebookInstanceResponseUnmarshaller _instance = new DescribeNotebookInstanceResponseUnmarshaller();        
+        private static DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller _instance = new DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller();        
 
-        internal static DescribeNotebookInstanceResponseUnmarshaller GetInstance()
+        internal static DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +115,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeNotebookInstanceResponseUnmarshaller Instance
+        public static DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller Instance
         {
             get
             {

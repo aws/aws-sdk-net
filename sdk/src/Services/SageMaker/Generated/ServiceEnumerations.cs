@@ -75,6 +75,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type DirectInternetAccess.
+    /// </summary>
+    public class DirectInternetAccess : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for DirectInternetAccess
+        /// </summary>
+        public static readonly DirectInternetAccess Disabled = new DirectInternetAccess("Disabled");
+        /// <summary>
+        /// Constant Enabled for DirectInternetAccess
+        /// </summary>
+        public static readonly DirectInternetAccess Enabled = new DirectInternetAccess("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectInternetAccess(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectInternetAccess FindValue(string value)
+        {
+            return FindValue<DirectInternetAccess>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectInternetAccess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointConfigSortKey.
     /// </summary>
     public class EndpointConfigSortKey : ConstantClass
@@ -263,6 +313,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlP2Xlarge = new InstanceType("ml.p2.xlarge");
         /// <summary>
+        /// Constant MlP32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP32xlarge = new InstanceType("ml.p3.2xlarge");
+        /// <summary>
         /// Constant MlT2Medium for InstanceType
         /// </summary>
         public static readonly InstanceType MlT2Medium = new InstanceType("ml.t2.medium");
@@ -346,6 +400,110 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookInstanceLifecycleConfigSortKey.
+    /// </summary>
+    public class NotebookInstanceLifecycleConfigSortKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for NotebookInstanceLifecycleConfigSortKey
+        /// </summary>
+        public static readonly NotebookInstanceLifecycleConfigSortKey CreationTime = new NotebookInstanceLifecycleConfigSortKey("CreationTime");
+        /// <summary>
+        /// Constant LastModifiedTime for NotebookInstanceLifecycleConfigSortKey
+        /// </summary>
+        public static readonly NotebookInstanceLifecycleConfigSortKey LastModifiedTime = new NotebookInstanceLifecycleConfigSortKey("LastModifiedTime");
+        /// <summary>
+        /// Constant Name for NotebookInstanceLifecycleConfigSortKey
+        /// </summary>
+        public static readonly NotebookInstanceLifecycleConfigSortKey Name = new NotebookInstanceLifecycleConfigSortKey("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookInstanceLifecycleConfigSortKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookInstanceLifecycleConfigSortKey FindValue(string value)
+        {
+            return FindValue<NotebookInstanceLifecycleConfigSortKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookInstanceLifecycleConfigSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookInstanceLifecycleConfigSortOrder.
+    /// </summary>
+    public class NotebookInstanceLifecycleConfigSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ascending for NotebookInstanceLifecycleConfigSortOrder
+        /// </summary>
+        public static readonly NotebookInstanceLifecycleConfigSortOrder Ascending = new NotebookInstanceLifecycleConfigSortOrder("Ascending");
+        /// <summary>
+        /// Constant Descending for NotebookInstanceLifecycleConfigSortOrder
+        /// </summary>
+        public static readonly NotebookInstanceLifecycleConfigSortOrder Descending = new NotebookInstanceLifecycleConfigSortOrder("Descending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookInstanceLifecycleConfigSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookInstanceLifecycleConfigSortOrder FindValue(string value)
+        {
+            return FindValue<NotebookInstanceLifecycleConfigSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookInstanceLifecycleConfigSortOrder(string value)
         {
             return FindValue(value);
         }

@@ -29,8 +29,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Describes weight and capacities for a production variant associated with an endpoint.
-    /// If you sent a request to the <code>UpdateWeightAndCapacities</code> API and the endpoint
-    /// status is <code>Updating</code>, you get different desired and current values.
+    /// If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and
+    /// the endpoint status is <code>Updating</code>, you get different desired and current
+    /// values.
     /// </summary>
     public partial class ProductionVariantSummary
     {
@@ -79,8 +80,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredInstanceCount. 
         /// <para>
-        /// The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
-        /// 
+        /// The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code>
+        /// request. 
         /// </para>
         /// </summary>
         public int DesiredInstanceCount
@@ -98,8 +99,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredWeight. 
         /// <para>
-        /// The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
-        /// 
+        /// The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code>
+        /// request. 
         /// </para>
         /// </summary>
         public float DesiredWeight

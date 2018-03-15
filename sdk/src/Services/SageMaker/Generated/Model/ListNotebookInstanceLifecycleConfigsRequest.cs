@@ -28,11 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListNotebookInstances operation.
-    /// Returns a list of the Amazon SageMaker notebook instances in the requester's account
-    /// in an AWS Region.
+    /// Container for the parameters to the ListNotebookInstanceLifecycleConfigs operation.
+    /// Lists notebook instance lifestyle configurations created with the API.
     /// </summary>
-    public partial class ListNotebookInstancesRequest : AmazonSageMakerRequest
+    public partial class ListNotebookInstanceLifecycleConfigsRequest : AmazonSageMakerRequest
     {
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
@@ -41,15 +40,13 @@ namespace Amazon.SageMaker.Model
         private int? _maxResults;
         private string _nameContains;
         private string _nextToken;
-        private string _notebookInstanceLifecycleConfigNameContains;
-        private NotebookInstanceSortKey _sortBy;
-        private NotebookInstanceSortOrder _sortOrder;
-        private NotebookInstanceStatus _statusEquals;
+        private NotebookInstanceLifecycleConfigSortKey _sortBy;
+        private NotebookInstanceLifecycleConfigSortOrder _sortOrder;
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// A filter that returns only notebook instances that were created after the specified
+        /// A filter that returns only lifecycle configurations that were created after the specified
         /// time (timestamp).
         /// </para>
         /// </summary>
@@ -68,8 +65,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// A filter that returns only notebook instances that were created before the specified
-        /// time (timestamp). 
+        /// A filter that returns only lifecycle configurations that were created before the specified
+        /// time (timestamp).
         /// </para>
         /// </summary>
         public DateTime CreationTimeBefore
@@ -87,7 +84,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeAfter. 
         /// <para>
-        /// A filter that returns only notebook instances that were modified after the specified
+        /// A filter that returns only lifecycle configurations that were modified after the specified
         /// time (timestamp).
         /// </para>
         /// </summary>
@@ -106,8 +103,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeBefore. 
         /// <para>
-        /// A filter that returns only notebook instances that were modified before the specified
-        /// time (timestamp).
+        /// A filter that returns only lifecycle configurations that were modified before the
+        /// specified time (timestamp).
         /// </para>
         /// </summary>
         public DateTime LastModifiedTimeBefore
@@ -125,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of notebook instances to return.
+        /// The maximum number of lifecycle configurations to return in the response.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -143,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string in the notebook instances' name. This filter returns only notebook instances
+        /// A string in the lifecycle configuration name. This filter returns only lifecycle configurations
         /// whose name contains the specified string.
         /// </para>
         /// </summary>
@@ -162,17 +159,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If the previous call to the <code>ListNotebookInstances</code> is truncated, the
-        /// response includes a <code>NextToken</code>. You can use this token in your subsequent
-        /// <code>ListNotebookInstances</code> request to fetch the next set of notebook instances.
-        /// 
+        /// If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated,
+        /// the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations,
+        /// use the token in the next request.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  You might specify a filter or a sort order in your request. When response is truncated,
-        /// you must use the same values for the filer and sort order in the next request. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public string NextToken
         {
@@ -187,32 +177,12 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotebookInstanceLifecycleConfigNameContains. 
-        /// <para>
-        /// A string in the name of a notebook instances lifecycle configuration associated with
-        /// this notebook instance. This filter returns only notebook instances associated with
-        /// a lifecycle configuration with a name that contains the specified string.
-        /// </para>
-        /// </summary>
-        public string NotebookInstanceLifecycleConfigNameContains
-        {
-            get { return this._notebookInstanceLifecycleConfigNameContains; }
-            set { this._notebookInstanceLifecycleConfigNameContains = value; }
-        }
-
-        // Check to see if NotebookInstanceLifecycleConfigNameContains property is set
-        internal bool IsSetNotebookInstanceLifecycleConfigNameContains()
-        {
-            return this._notebookInstanceLifecycleConfigNameContains != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. The default is <code>Name</code>.
+        /// Sorts the list of results. The default is <code>CreationTime</code>.
         /// </para>
         /// </summary>
-        public NotebookInstanceSortKey SortBy
+        public NotebookInstanceLifecycleConfigSortKey SortBy
         {
             get { return this._sortBy; }
             set { this._sortBy = value; }
@@ -227,10 +197,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. 
+        /// The sort order for results.
         /// </para>
         /// </summary>
-        public NotebookInstanceSortOrder SortOrder
+        public NotebookInstanceLifecycleConfigSortOrder SortOrder
         {
             get { return this._sortOrder; }
             set { this._sortOrder = value; }
@@ -240,24 +210,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSortOrder()
         {
             return this._sortOrder != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatusEquals. 
-        /// <para>
-        /// A filter that returns only notebook instances with the specified status.
-        /// </para>
-        /// </summary>
-        public NotebookInstanceStatus StatusEquals
-        {
-            get { return this._statusEquals; }
-            set { this._statusEquals = value; }
-        }
-
-        // Check to see if StatusEquals property is set
-        internal bool IsSetStatusEquals()
-        {
-            return this._statusEquals != null;
         }
 
     }

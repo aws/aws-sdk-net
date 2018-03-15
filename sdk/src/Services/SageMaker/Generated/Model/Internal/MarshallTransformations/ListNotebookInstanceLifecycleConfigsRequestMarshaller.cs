@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListNotebookInstances Request Marshaller
+    /// ListNotebookInstanceLifecycleConfigs Request Marshaller
     /// </summary>       
-    public class ListNotebookInstancesRequestMarshaller : IMarshaller<IRequest, ListNotebookInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListNotebookInstanceLifecycleConfigsRequestMarshaller : IMarshaller<IRequest, ListNotebookInstanceLifecycleConfigsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListNotebookInstancesRequest)input);
+            return this.Marshall((ListNotebookInstanceLifecycleConfigsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListNotebookInstancesRequest publicRequest)
+        public IRequest Marshall(ListNotebookInstanceLifecycleConfigsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.ListNotebookInstances";
+            string target = "SageMaker.ListNotebookInstanceLifecycleConfigs";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -109,12 +109,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetNotebookInstanceLifecycleConfigNameContains())
-                {
-                    context.Writer.WritePropertyName("NotebookInstanceLifecycleConfigNameContains");
-                    context.Writer.Write(publicRequest.NotebookInstanceLifecycleConfigNameContains);
-                }
-
                 if(publicRequest.IsSetSortBy())
                 {
                     context.Writer.WritePropertyName("SortBy");
@@ -125,12 +119,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SortOrder");
                     context.Writer.Write(publicRequest.SortOrder);
-                }
-
-                if(publicRequest.IsSetStatusEquals())
-                {
-                    context.Writer.WritePropertyName("StatusEquals");
-                    context.Writer.Write(publicRequest.StatusEquals);
                 }
 
         

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NotebookInstanceSummary Object
+    /// Response Unmarshaller for NotebookInstanceLifecycleConfigSummary Object
     /// </summary>  
-    public class NotebookInstanceSummaryUnmarshaller : IUnmarshaller<NotebookInstanceSummary, XmlUnmarshallerContext>, IUnmarshaller<NotebookInstanceSummary, JsonUnmarshallerContext>
+    public class NotebookInstanceLifecycleConfigSummaryUnmarshaller : IUnmarshaller<NotebookInstanceLifecycleConfigSummary, XmlUnmarshallerContext>, IUnmarshaller<NotebookInstanceLifecycleConfigSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NotebookInstanceSummary IUnmarshaller<NotebookInstanceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NotebookInstanceLifecycleConfigSummary IUnmarshaller<NotebookInstanceLifecycleConfigSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NotebookInstanceSummary Unmarshall(JsonUnmarshallerContext context)
+        public NotebookInstanceLifecycleConfigSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NotebookInstanceSummary unmarshalledObject = new NotebookInstanceSummary();
+            NotebookInstanceLifecycleConfigSummary unmarshalledObject = new NotebookInstanceLifecycleConfigSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,22 +70,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceArn", targetDepth))
+                if (context.TestExpression("NotebookInstanceLifecycleConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotebookInstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotebookInstanceLifecycleConfigArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotebookInstanceLifecycleConfigName", targetDepth))
@@ -94,36 +88,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotebookInstanceLifecycleConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotebookInstanceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotebookInstanceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotebookInstanceStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotebookInstanceStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static NotebookInstanceSummaryUnmarshaller _instance = new NotebookInstanceSummaryUnmarshaller();        
+        private static NotebookInstanceLifecycleConfigSummaryUnmarshaller _instance = new NotebookInstanceLifecycleConfigSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NotebookInstanceSummaryUnmarshaller Instance
+        public static NotebookInstanceLifecycleConfigSummaryUnmarshaller Instance
         {
             get
             {

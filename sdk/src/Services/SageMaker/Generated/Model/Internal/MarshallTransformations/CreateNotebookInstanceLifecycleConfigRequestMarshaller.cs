@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateNotebookInstance Request Marshaller
+    /// CreateNotebookInstanceLifecycleConfig Request Marshaller
     /// </summary>       
-    public class CreateNotebookInstanceRequestMarshaller : IMarshaller<IRequest, CreateNotebookInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateNotebookInstanceLifecycleConfigRequestMarshaller : IMarshaller<IRequest, CreateNotebookInstanceLifecycleConfigRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateNotebookInstanceRequest)input);
+            return this.Marshall((CreateNotebookInstanceLifecycleConfigRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateNotebookInstanceRequest publicRequest)
+        public IRequest Marshall(CreateNotebookInstanceLifecycleConfigRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.CreateNotebookInstance";
+            string target = "SageMaker.CreateNotebookInstanceLifecycleConfig";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,69 +67,38 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDirectInternetAccess())
+                if(publicRequest.IsSetNotebookInstanceLifecycleConfigName())
                 {
-                    context.Writer.WritePropertyName("DirectInternetAccess");
-                    context.Writer.Write(publicRequest.DirectInternetAccess);
+                    context.Writer.WritePropertyName("NotebookInstanceLifecycleConfigName");
+                    context.Writer.Write(publicRequest.NotebookInstanceLifecycleConfigName);
                 }
 
-                if(publicRequest.IsSetInstanceType())
+                if(publicRequest.IsSetOnCreate())
                 {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetLifecycleConfigName())
-                {
-                    context.Writer.WritePropertyName("LifecycleConfigName");
-                    context.Writer.Write(publicRequest.LifecycleConfigName);
-                }
-
-                if(publicRequest.IsSetNotebookInstanceName())
-                {
-                    context.Writer.WritePropertyName("NotebookInstanceName");
-                    context.Writer.Write(publicRequest.NotebookInstanceName);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSecurityGroupIds())
-                {
-                    context.Writer.WritePropertyName("SecurityGroupIds");
+                    context.Writer.WritePropertyName("OnCreate");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                    foreach(var publicRequestOnCreateListValue in publicRequest.OnCreate)
                     {
-                            context.Writer.Write(publicRequestSecurityGroupIdsListValue);
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOnCreateListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetSubnetId())
+                if(publicRequest.IsSetOnStart())
                 {
-                    context.Writer.WritePropertyName("SubnetId");
-                    context.Writer.Write(publicRequest.SubnetId);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WritePropertyName("OnStart");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    foreach(var publicRequestOnStartListValue in publicRequest.OnStart)
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = NotebookInstanceLifecycleHookMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOnStartListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }

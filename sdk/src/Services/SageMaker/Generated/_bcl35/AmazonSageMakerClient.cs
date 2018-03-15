@@ -543,21 +543,21 @@ namespace Amazon.SageMaker
         #region  CreateNotebookInstance
 
         /// <summary>
-        /// Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute
-        /// instance running on a Jupyter notebook. 
+        /// Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning
+        /// (ML) compute instance running on a Jupyter notebook. 
         /// 
         ///  
         /// <para>
-        /// In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute
-        /// instance that you want to run. Amazon SageMaker launches the instance, installs common
-        /// libraries that you can use to explore datasets for model training, and attaches an
-        /// ML storage volume to the notebook instance. 
+        /// In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance
+        /// that you want to run. Amazon SageMaker launches the instance, installs common libraries
+        /// that you can use to explore datasets for model training, and attaches an ML storage
+        /// volume to the notebook instance. 
         /// </para>
         ///  
         /// <para>
         /// Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates
-        /// how to use Amazon SageMaker with a specific an algorithm or with a machine learning
-        /// framework. 
+        /// how to use Amazon SageMaker with a specific algorithm or with a machine learning framework.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -569,10 +569,11 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Option) If you specified <code>SubnetId</code>, creates a network interface in your
-        /// own VPC, which is inferred from the subnet ID that you provide in the input. When
-        /// creating this network interface, Amazon SageMaker attaches the security group that
-        /// you specified in the request to the network interface that it creates in your VPC.
+        /// (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network
+        /// interface in your own VPC, which is inferred from the subnet ID that you provide in
+        /// the input. When creating this network interface, Amazon SageMaker attaches the security
+        /// group that you specified in the request to the network interface that it creates in
+        /// your VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -648,6 +649,70 @@ namespace Amazon.SageMaker
         public virtual CreateNotebookInstanceResponse EndCreateNotebookInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNotebookInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Creates a lifecycle configuration that you can associate with a notebook instance.
+        /// A <i>lifecycle configuration</i> is a collection of shell scripts that run when you
+        /// create or start a notebook instance.
+        /// 
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual CreateNotebookInstanceLifecycleConfigResponse CreateNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = new CreateNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotebookInstanceLifecycleConfigRequest,CreateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = CreateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig">REST API Reference for CreateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual CreateNotebookInstanceLifecycleConfigResponse EndCreateNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNotebookInstanceLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1051,6 +1116,59 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Deletes a notebook instance lifecycle configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DeleteNotebookInstanceLifecycleConfigResponse DeleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = new DeleteNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotebookInstanceLifecycleConfigRequest,DeleteNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DeleteNotebookInstanceLifecycleConfigResponse EndDeleteNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTags
 
         /// <summary>
@@ -1322,6 +1440,64 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Returns a description of a notebook instance lifecycle configuration.
+        /// 
+        ///  
+        /// <para>
+        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DescribeNotebookInstanceLifecycleConfigResponse DescribeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = new DescribeNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotebookInstanceLifecycleConfigRequest,DescribeNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = DescribeNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig">REST API Reference for DescribeNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual DescribeNotebookInstanceLifecycleConfigResponse EndDescribeNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTrainingJob
 
         /// <summary>
@@ -1534,6 +1710,59 @@ namespace Amazon.SageMaker
         public virtual ListModelsResponse EndListModels(IAsyncResult asyncResult)
         {
             return EndInvoke<ListModelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNotebookInstanceLifecycleConfigs
+
+        /// <summary>
+        /// Lists notebook instance lifestyle configurations created with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookInstanceLifecycleConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual ListNotebookInstanceLifecycleConfigsResponse ListNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request)
+        {
+            var marshaller = new ListNotebookInstanceLifecycleConfigsRequestMarshaller();
+            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebookInstanceLifecycleConfigsRequest,ListNotebookInstanceLifecycleConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotebookInstanceLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotebookInstanceLifecycleConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListNotebookInstanceLifecycleConfigsRequestMarshaller();
+            var unmarshaller = ListNotebookInstanceLifecycleConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListNotebookInstanceLifecycleConfigsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotebookInstanceLifecycleConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotebookInstanceLifecycleConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListNotebookInstanceLifecycleConfigsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">REST API Reference for ListNotebookInstanceLifecycleConfigs Operation</seealso>
+        public virtual ListNotebookInstanceLifecycleConfigsResponse EndListNotebookInstanceLifecycleConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNotebookInstanceLifecycleConfigsResponse>(asyncResult);
         }
 
         #endregion
@@ -2077,6 +2306,63 @@ namespace Amazon.SageMaker
         public virtual UpdateNotebookInstanceResponse EndUpdateNotebookInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotebookInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNotebookInstanceLifecycleConfig
+
+        /// <summary>
+        /// Updates a notebook instance lifecycle configuration created with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual UpdateNotebookInstanceLifecycleConfigResponse UpdateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request)
+        {
+            var marshaller = new UpdateNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotebookInstanceLifecycleConfigRequest,UpdateNotebookInstanceLifecycleConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotebookInstanceLifecycleConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateNotebookInstanceLifecycleConfigRequestMarshaller();
+            var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateNotebookInstanceLifecycleConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotebookInstanceLifecycleConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotebookInstanceLifecycleConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotebookInstanceLifecycleConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
+        public virtual UpdateNotebookInstanceLifecycleConfigResponse EndUpdateNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNotebookInstanceLifecycleConfigResponse>(asyncResult);
         }
 
         #endregion
