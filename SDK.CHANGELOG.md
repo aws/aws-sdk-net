@@ -1,3 +1,7 @@
+### 3.3.251.0 (2018-03-16 20:40 UTC)
+* ElasticBeanstalk (3.3.7.0)
+	* AWS Elastic Beanstalk is launching a new public API named DescribeAccountAttributes which allows customers to access account level attributes. In this release, the API will support quotas for resources such as applications, application versions, and environments.
+
 ### 3.3.250.0 (2018-03-15 19:47 UTC)
 * Organizations (3.3.8.0)
 	* This release adds additional reason codes to improve clarity to exceptions that can occur.
