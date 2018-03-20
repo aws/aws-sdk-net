@@ -36,7 +36,7 @@ namespace Amazon.CostExplorer.Model
     /// Simple dimension values - You can set the dimension name and values for the filters
     /// that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge
     /// OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like
-    /// this.
+    /// this:
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.CostExplorer.Model
     /// more <code>Expression</code> objects. This allows you to filter on more advanced options.
     /// For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE
     /// == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The
-    /// <code>Expression</code> for that looks like this.
+    /// <code>Expression</code> for that looks like this:
     /// </para>
     ///  
     /// <para>
@@ -68,8 +68,8 @@ namespace Amazon.CostExplorer.Model
     ///  <note> 
     /// <para>
     /// Because each <code>Expression</code> can have only one operator, the service returns
-    /// an error if more than one is specified. The following example shows an Expression
-    /// object that will create an error.
+    /// an error if more than one is specified. The following example shows an <code>Expression</code>
+    /// object that creates an error.
     /// </para>
     ///  </note> 
     /// <para>
@@ -125,7 +125,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Not. 
         /// <para>
-        /// Return results that don't match <code>Dimension</code>.
+        /// Return results that don't match a <code>Dimension</code> object.
         /// </para>
         /// </summary>
         public Expression Not
@@ -143,7 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Or. 
         /// <para>
-        /// Return results that match either <code>Dimension</code>.
+        /// Return results that match either <code>Dimension</code> object.
         /// </para>
         /// </summary>
         public List<Expression> Or

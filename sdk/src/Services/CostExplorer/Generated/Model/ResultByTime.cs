@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Estimated. 
         /// <para>
-        /// Whether or not this result is estimated.
+        /// Whether this result is estimated.
         /// </para>
         /// </summary>
         public bool Estimated

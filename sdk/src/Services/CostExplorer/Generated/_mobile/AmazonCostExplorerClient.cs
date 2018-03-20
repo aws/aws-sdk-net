@@ -343,6 +343,38 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetReservationPurchaseRecommendation
+
+        internal virtual GetReservationPurchaseRecommendationResponse GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request)
+        {
+            var marshaller = new GetReservationPurchaseRecommendationRequestMarshaller();
+            var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservationPurchaseRecommendationRequest,GetReservationPurchaseRecommendationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservationPurchaseRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
+        public virtual Task<GetReservationPurchaseRecommendationResponse> GetReservationPurchaseRecommendationAsync(GetReservationPurchaseRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetReservationPurchaseRecommendationRequestMarshaller();
+            var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReservationPurchaseRecommendationRequest,GetReservationPurchaseRecommendationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetReservationUtilization
 
         internal virtual GetReservationUtilizationResponse GetReservationUtilization(GetReservationUtilizationRequest request)

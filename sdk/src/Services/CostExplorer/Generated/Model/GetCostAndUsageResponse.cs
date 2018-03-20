@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupDefinitions. 
         /// <para>
-        /// The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters
+        /// The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters
         /// in the request.
         /// </para>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResultsByTime. 
         /// <para>
-        /// The time period covered by the results in the response.
+        /// The time period that is covered by the results in the response.
         /// </para>
         /// </summary>
         public List<ResultByTime> ResultsByTime

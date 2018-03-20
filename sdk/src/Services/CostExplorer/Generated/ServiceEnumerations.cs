@@ -25,6 +25,52 @@ namespace Amazon.CostExplorer
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountScope.
+    /// </summary>
+    public class AccountScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PAYER for AccountScope
+        /// </summary>
+        public static readonly AccountScope PAYER = new AccountScope("PAYER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountScope FindValue(string value)
+        {
+            return FindValue<AccountScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Context.
     /// </summary>
     public class Context : ConstantClass
@@ -290,6 +336,214 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupDefinitionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LookbackPeriodInDays.
+    /// </summary>
+    public class LookbackPeriodInDays : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEVEN_DAYS for LookbackPeriodInDays
+        /// </summary>
+        public static readonly LookbackPeriodInDays SEVEN_DAYS = new LookbackPeriodInDays("SEVEN_DAYS");
+        /// <summary>
+        /// Constant SIXTY_DAYS for LookbackPeriodInDays
+        /// </summary>
+        public static readonly LookbackPeriodInDays SIXTY_DAYS = new LookbackPeriodInDays("SIXTY_DAYS");
+        /// <summary>
+        /// Constant THIRTY_DAYS for LookbackPeriodInDays
+        /// </summary>
+        public static readonly LookbackPeriodInDays THIRTY_DAYS = new LookbackPeriodInDays("THIRTY_DAYS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LookbackPeriodInDays(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LookbackPeriodInDays FindValue(string value)
+        {
+            return FindValue<LookbackPeriodInDays>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LookbackPeriodInDays(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferingClass.
+    /// </summary>
+    public class OfferingClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONVERTIBLE for OfferingClass
+        /// </summary>
+        public static readonly OfferingClass CONVERTIBLE = new OfferingClass("CONVERTIBLE");
+        /// <summary>
+        /// Constant STANDARD for OfferingClass
+        /// </summary>
+        public static readonly OfferingClass STANDARD = new OfferingClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingClass FindValue(string value)
+        {
+            return FindValue<OfferingClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentOption.
+    /// </summary>
+    public class PaymentOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_UPFRONT for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption ALL_UPFRONT = new PaymentOption("ALL_UPFRONT");
+        /// <summary>
+        /// Constant NO_UPFRONT for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption NO_UPFRONT = new PaymentOption("NO_UPFRONT");
+        /// <summary>
+        /// Constant PARTIAL_UPFRONT for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption PARTIAL_UPFRONT = new PaymentOption("PARTIAL_UPFRONT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentOption FindValue(string value)
+        {
+            return FindValue<PaymentOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TermInYears.
+    /// </summary>
+    public class TermInYears : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONE_YEAR for TermInYears
+        /// </summary>
+        public static readonly TermInYears ONE_YEAR = new TermInYears("ONE_YEAR");
+        /// <summary>
+        /// Constant THREE_YEARS for TermInYears
+        /// </summary>
+        public static readonly TermInYears THREE_YEARS = new TermInYears("THREE_YEARS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TermInYears(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TermInYears FindValue(string value)
+        {
+            return FindValue<TermInYears>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TermInYears(string value)
         {
             return FindValue(value);
         }

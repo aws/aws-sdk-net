@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PurchasedHours. 
         /// <para>
-        /// How many RI hours you purchased.
+        /// How many RI hours that you purchased.
         /// </para>
         /// </summary>
         public string PurchasedHours

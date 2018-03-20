@@ -39,8 +39,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property End. 
         /// <para>
         /// The end of the time period that you want the usage and costs for. The end date is
-        /// exclusive. For example, if the <code>end</code> is <code>2017-05-01</code>, then the
-        /// cost and usage data is retrieved from the start date but not including <code>2017-05-01</code>.
+        /// exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, AWS retrieves
+        /// cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.
         /// </para>
         /// </summary>
         public string End
@@ -60,8 +60,8 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// The beginning of the time period that you want the usage and costs for. The start
         /// date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>,
-        /// then the cost and usage data is retrieved starting at <code>2017-01-01</code> up to
-        /// the end date.
+        /// AWS retrieves cost and usage data starting at <code>2017-01-01</code> up to the end
+        /// date.
         /// </para>
         /// </summary>
         public string Start

@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// One level of grouped data within the results.
+    /// Information about this specific recommendation, such as the time stamp for when AWS
+    /// made a specific recommendation.
     /// </summary>
-    public partial class Group
+    public partial class ReservationPurchaseRecommendationMetadata
     {
-        private List<string> _keys = new List<string>();
-        private Dictionary<string, MetricValue> _metrics = new Dictionary<string, MetricValue>();
+        private string _generationTimestamp;
+        private string _recommendationId;
 
         /// <summary>
-        /// Gets and sets the property Keys. 
+        /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        /// The keys that are included in this group.
+        /// The time stamp for when AWS made this recommendation.
         /// </para>
         /// </summary>
-        public List<string> Keys
+        public string GenerationTimestamp
         {
-            get { return this._keys; }
-            set { this._keys = value; }
+            get { return this._generationTimestamp; }
+            set { this._generationTimestamp = value; }
         }
 
-        // Check to see if Keys property is set
-        internal bool IsSetKeys()
+        // Check to see if GenerationTimestamp property is set
+        internal bool IsSetGenerationTimestamp()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._generationTimestamp != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics. 
+        /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The metrics that are included in this group.
+        /// The ID for this specific recommendation.
         /// </para>
         /// </summary>
-        public Dictionary<string, MetricValue> Metrics
+        public string RecommendationId
         {
-            get { return this._metrics; }
-            set { this._metrics = value; }
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
         }
 
-        // Check to see if Metrics property is set
-        internal bool IsSetMetrics()
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._recommendationId != null;
         }
 
     }

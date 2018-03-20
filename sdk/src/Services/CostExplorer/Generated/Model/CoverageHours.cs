@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CoverageHoursPercentage. 
         /// <para>
-        /// The percentage of instance hours covered by a reservation.
+        /// The percentage of instance hours that are covered by a reservation.
         /// </para>
         /// </summary>
         public string CoverageHoursPercentage
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandHours. 
         /// <para>
-        /// The number of instance running hours covered by On-Demand Instances.
+        /// The number of instance running hours that are covered by On-Demand Instances.
         /// </para>
         /// </summary>
         public string OnDemandHours
@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ReservedHours. 
         /// <para>
-        /// The number of instance running hours covered by reservations.
+        /// The number of instance running hours that are covered by reservations.
         /// </para>
         /// </summary>
         public string ReservedHours

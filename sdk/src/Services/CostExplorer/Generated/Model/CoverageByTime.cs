@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Reservation coverage, in hours.
+    /// Reservation coverage for a specified period, in hours.
     /// </summary>
     public partial class CoverageByTime
     {
@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The group of instances that a reservation covered.
+        /// The groups of instances that are covered by a reservation.
         /// </para>
         /// </summary>
         public List<ReservationCoverageGroup> Groups

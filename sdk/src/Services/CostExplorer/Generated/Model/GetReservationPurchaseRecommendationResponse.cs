@@ -28,37 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// This is the response object from the GetReservationCoverage operation.
+    /// This is the response object from the GetReservationPurchaseRecommendation operation.
     /// </summary>
-    public partial class GetReservationCoverageResponse : AmazonWebServiceResponse
+    public partial class GetReservationPurchaseRecommendationResponse : AmazonWebServiceResponse
     {
-        private List<CoverageByTime> _coveragesByTime = new List<CoverageByTime>();
+        private ReservationPurchaseRecommendationMetadata _metadata;
         private string _nextPageToken;
-        private Coverage _total;
+        private List<ReservationPurchaseRecommendation> _recommendations = new List<ReservationPurchaseRecommendation>();
 
         /// <summary>
-        /// Gets and sets the property CoveragesByTime. 
+        /// Gets and sets the property Metadata. 
         /// <para>
-        /// The amount of time that your reservations covered.
+        /// Information about this specific recommendation call, such as the time stamp for when
+        /// Cost Explorer generated this recommendation.
         /// </para>
         /// </summary>
-        public List<CoverageByTime> CoveragesByTime
+        public ReservationPurchaseRecommendationMetadata Metadata
         {
-            get { return this._coveragesByTime; }
-            set { this._coveragesByTime = value; }
+            get { return this._metadata; }
+            set { this._metadata = value; }
         }
 
-        // Check to see if CoveragesByTime property is set
-        internal bool IsSetCoveragesByTime()
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
         {
-            return this._coveragesByTime != null && this._coveragesByTime.Count > 0; 
+            return this._metadata != null;
         }
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token for the next set of retrievable results. AWS provides the token when the
-        /// response from a previous call has more results than the maximum page size.
+        /// The pagination token for the next set of retrievable results.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -74,21 +74,21 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Total. 
+        /// Gets and sets the property Recommendations. 
         /// <para>
-        /// The total amount of instance usage that is covered by a reservation.
+        /// Recommendations for reservations to purchase.
         /// </para>
         /// </summary>
-        public Coverage Total
+        public List<ReservationPurchaseRecommendation> Recommendations
         {
-            get { return this._total; }
-            set { this._total = value; }
+            get { return this._recommendations; }
+            set { this._recommendations = value; }
         }
 
-        // Check to see if Total property is set
-        internal bool IsSetTotal()
+        // Check to see if Recommendations property is set
+        internal bool IsSetRecommendations()
         {
-            return this._total != null;
+            return this._recommendations != null && this._recommendations.Count > 0; 
         }
 
     }

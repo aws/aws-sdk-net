@@ -29,10 +29,10 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservationUtilization operation.
-    /// You can retrieve the Reservation utilization for your account. Master accounts in
-    /// an organization have access to their associated member accounts. You can filter data
-    /// by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine
-    /// the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+    /// You can retrieve the reservation utilization for your account. Master accounts in
+    /// an organization in AWS Organizations have access to their associated member accounts.
+    /// You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
+    /// to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
     /// </summary>
     public partial class GetReservationUtilizationRequest : AmazonCostExplorerRequest
     {
@@ -46,9 +46,10 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// Filters utilization data by using different dimensions. <code>GetReservationUtilization</code>
-        /// uses the same <code>Expression</code> object as the other operations, but only <code>AND</code>
-        /// is supported among each dimension, and nesting is supported up to only one level deep.
-        /// If there are multiple values for a dimension, they are OR'd together.
+        /// uses the same <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// </code> object as the other operations, but only <code>AND</code> is supported among
+        /// each dimension, and nesting is supported to only one level deep. If there are multiple
+        /// values for a dimension, they are OR'd together.
         /// </para>
         /// </summary>
         public Expression Filter
