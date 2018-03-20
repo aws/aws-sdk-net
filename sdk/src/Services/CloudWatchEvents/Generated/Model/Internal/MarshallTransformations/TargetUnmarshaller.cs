@@ -124,6 +124,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunCommandParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SqsParameters", targetDepth))
+                {
+                    var unmarshaller = SqsParametersUnmarshaller.Instance;
+                    unmarshalledObject.SqsParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

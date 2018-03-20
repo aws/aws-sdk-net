@@ -130,6 +130,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSqsParameters())
+            {
+                context.Writer.WritePropertyName("SqsParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SqsParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.SqsParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

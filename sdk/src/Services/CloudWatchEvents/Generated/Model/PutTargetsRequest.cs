@@ -82,7 +82,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SQS queues
+    /// Amazon SQS queues, including FIFO queues
     /// </para>
     ///  </li> <li> 
     /// <para>

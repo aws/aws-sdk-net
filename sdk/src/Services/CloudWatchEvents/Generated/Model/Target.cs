@@ -44,6 +44,7 @@ namespace Amazon.CloudWatchEvents.Model
         private KinesisParameters _kinesisParameters;
         private string _roleArn;
         private RunCommandParameters _runCommandParameters;
+        private SqsParameters _sqsParameters;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -237,6 +238,24 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetRunCommandParameters()
         {
             return this._runCommandParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqsParameters. 
+        /// <para>
+        /// Contains the message group ID to use when the target is a FIFO queue.
+        /// </para>
+        /// </summary>
+        public SqsParameters SqsParameters
+        {
+            get { return this._sqsParameters; }
+            set { this._sqsParameters = value; }
+        }
+
+        // Check to see if SqsParameters property is set
+        internal bool IsSetSqsParameters()
+        {
+            return this._sqsParameters != null;
         }
 
     }
