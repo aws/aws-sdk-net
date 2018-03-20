@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LinuxParameters Object
+    /// Response Unmarshaller for Tmpfs Object
     /// </summary>  
-    public class LinuxParametersUnmarshaller : IUnmarshaller<LinuxParameters, XmlUnmarshallerContext>, IUnmarshaller<LinuxParameters, JsonUnmarshallerContext>
+    public class TmpfsUnmarshaller : IUnmarshaller<Tmpfs, XmlUnmarshallerContext>, IUnmarshaller<Tmpfs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LinuxParameters IUnmarshaller<LinuxParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Tmpfs IUnmarshaller<Tmpfs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LinuxParameters Unmarshall(JsonUnmarshallerContext context)
+        public Tmpfs Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LinuxParameters unmarshalledObject = new LinuxParameters();
+            Tmpfs unmarshalledObject = new Tmpfs();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("capabilities", targetDepth))
+                if (context.TestExpression("containerPath", targetDepth))
                 {
-                    var unmarshaller = KernelCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("devices", targetDepth))
+                if (context.TestExpression("mountOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Device, DeviceUnmarshaller>(DeviceUnmarshaller.Instance);
-                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MountOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("initProcessEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sharedMemorySize", targetDepth))
+                if (context.TestExpression("size", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tmpfs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tmpfs, TmpfsUnmarshaller>(TmpfsUnmarshaller.Instance);
-                    unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static LinuxParametersUnmarshaller _instance = new LinuxParametersUnmarshaller();        
+        private static TmpfsUnmarshaller _instance = new TmpfsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LinuxParametersUnmarshaller Instance
+        public static TmpfsUnmarshaller Instance
         {
             get
             {

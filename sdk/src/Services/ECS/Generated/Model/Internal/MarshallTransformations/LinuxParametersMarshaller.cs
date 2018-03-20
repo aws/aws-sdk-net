@@ -78,6 +78,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InitProcessEnabled);
             }
 
+            if(requestObject.IsSetSharedMemorySize())
+            {
+                context.Writer.WritePropertyName("sharedMemorySize");
+                context.Writer.Write(requestObject.SharedMemorySize);
+            }
+
+            if(requestObject.IsSetTmpfs())
+            {
+                context.Writer.WritePropertyName("tmpfs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTmpfsListValue in requestObject.Tmpfs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TmpfsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTmpfsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

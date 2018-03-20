@@ -35,6 +35,8 @@ namespace Amazon.ECS.Model
         private KernelCapabilities _capabilities;
         private List<Device> _devices = new List<Device>();
         private bool? _initProcessEnabled;
+        private int? _sharedMemorySize;
+        private List<Tmpfs> _tmpfs = new List<Tmpfs>();
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
@@ -110,6 +112,46 @@ namespace Amazon.ECS.Model
         internal bool IsSetInitProcessEnabled()
         {
             return this._initProcessEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharedMemorySize. 
+        /// <para>
+        /// The value for the size of the <code>/dev/shm</code> volume. This parameter maps to
+        /// the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
+        /// </para>
+        /// </summary>
+        public int SharedMemorySize
+        {
+            get { return this._sharedMemorySize.GetValueOrDefault(); }
+            set { this._sharedMemorySize = value; }
+        }
+
+        // Check to see if SharedMemorySize property is set
+        internal bool IsSetSharedMemorySize()
+        {
+            return this._sharedMemorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tmpfs. 
+        /// <para>
+        /// The container path, mount options, and size of the tmpfs mount. This parameter maps
+        /// to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
+        /// </para>
+        /// </summary>
+        public List<Tmpfs> Tmpfs
+        {
+            get { return this._tmpfs; }
+            set { this._tmpfs = value; }
+        }
+
+        // Check to see if Tmpfs property is set
+        internal bool IsSetTmpfs()
+        {
+            return this._tmpfs != null && this._tmpfs.Count > 0; 
         }
 
     }
