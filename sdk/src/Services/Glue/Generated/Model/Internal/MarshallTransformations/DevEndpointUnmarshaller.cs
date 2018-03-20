@@ -118,6 +118,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PrivateAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrivateAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PublicAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

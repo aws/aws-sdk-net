@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private DateTime? _lastModifiedTimestamp;
         private string _lastUpdateStatus;
         private int? _numberOfNodes;
+        private string _privateAddress;
         private string _publicAddress;
         private string _publicKey;
         private string _roleArn;
@@ -225,9 +226,27 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateAddress. 
+        /// <para>
+        /// The private address used by this DevEndpoint.
+        /// </para>
+        /// </summary>
+        public string PrivateAddress
+        {
+            get { return this._privateAddress; }
+            set { this._privateAddress = value; }
+        }
+
+        // Check to see if PrivateAddress property is set
+        internal bool IsSetPrivateAddress()
+        {
+            return this._privateAddress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublicAddress. 
         /// <para>
-        /// The public address used by this DevEndpoint.
+        /// The public VPC address used by this DevEndpoint.
         /// </para>
         /// </summary>
         public string PublicAddress
