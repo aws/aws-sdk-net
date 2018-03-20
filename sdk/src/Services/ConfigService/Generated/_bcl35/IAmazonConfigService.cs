@@ -67,6 +67,67 @@ namespace Amazon.ConfigService
     {
 
         
+        #region  BatchGetResourceConfig
+
+
+        /// <summary>
+        /// Returns the current configuration for one or more requested resources. The operation
+        /// also returns a list of resources that are not processed in the current request. If
+        /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+        /// list. 
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The API does not return results for deleted resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The API does not return any tags for the requested resources. This information is
+        /// filtered out of the supplementaryConfiguration section of the API response.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources. Create a configuration recorder.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetResourceConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        IAsyncResult BeginBatchGetResourceConfig(BatchGetResourceConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetResourceConfig.</param>
+        /// 
+        /// <returns>Returns a  BatchGetResourceConfigResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        BatchGetResourceConfigResponse EndBatchGetResourceConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteConfigRule
 
 

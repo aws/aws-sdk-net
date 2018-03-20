@@ -262,6 +262,38 @@ namespace Amazon.ConfigService
         #endregion
 
         
+        #region  BatchGetResourceConfig
+
+        internal virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
+        {
+            var marshaller = new BatchGetResourceConfigRequestMarshaller();
+            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        public virtual Task<BatchGetResourceConfigResponse> BatchGetResourceConfigAsync(BatchGetResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchGetResourceConfigRequestMarshaller();
+            var unmarshaller = BatchGetResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetResourceConfigRequest,BatchGetResourceConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfigRule
 
         internal virtual DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)

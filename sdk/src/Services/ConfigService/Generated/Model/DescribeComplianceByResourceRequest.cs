@@ -80,7 +80,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
+        /// The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public List<string> ComplianceTypes

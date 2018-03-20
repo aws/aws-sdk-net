@@ -69,6 +69,54 @@ namespace Amazon.ConfigService
     {
 
         
+        #region  BatchGetResourceConfig
+
+
+        /// <summary>
+        /// Returns the current configuration for one or more requested resources. The operation
+        /// also returns a list of resources that are not processed in the current request. If
+        /// there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys
+        /// list. 
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The API does not return results for deleted resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The API does not return any tags for the requested resources. This information is
+        /// filtered out of the supplementaryConfiguration section of the API response.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources. Create a configuration recorder.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">REST API Reference for BatchGetResourceConfig Operation</seealso>
+        Task<BatchGetResourceConfigResponse> BatchGetResourceConfigAsync(BatchGetResourceConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteConfigRule
 
 
