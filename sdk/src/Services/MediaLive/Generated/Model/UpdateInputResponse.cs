@@ -28,25 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// An IPv4 CIDR to whitelist.
+    /// Placeholder documentation for UpdateInputResponse
     /// </summary>
-    public partial class InputWhitelistRuleCidr
+    public partial class UpdateInputResponse : AmazonWebServiceResponse
     {
-        private string _cidr;
+        private Input _input;
 
         /// <summary>
-        /// Gets and sets the property Cidr. The IPv4 CIDR to whitelist.
+        /// Gets and sets the property Input.
         /// </summary>
-        public string Cidr
+        public Input Input
         {
-            get { return this._cidr; }
-            set { this._cidr = value; }
+            get { return this._input; }
+            set { this._input = value; }
         }
 
-        // Check to see if Cidr property is set
-        internal bool IsSetCidr()
+        // Check to see if Input property is set
+        internal bool IsSetInput()
         {
-            return this._cidr != null;
+            return this._input != null;
         }
 
     }

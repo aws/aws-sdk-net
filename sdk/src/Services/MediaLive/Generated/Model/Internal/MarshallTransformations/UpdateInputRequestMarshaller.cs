@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateChannel Request Marshaller
+    /// UpdateInput Request Marshaller
     /// </summary>       
-    public class UpdateChannelRequestMarshaller : IMarshaller<IRequest, UpdateChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateInputRequestMarshaller : IMarshaller<IRequest, UpdateInputRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateChannelRequest)input);
+            return this.Marshall((UpdateInputRequest)input);
         }
 
         /// <summary>
@@ -52,16 +52,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateChannelRequest publicRequest)
+        public IRequest Marshall(UpdateInputRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaLive");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/prod/channels/{channelId}";
-            if (!publicRequest.IsSetChannelId())
-                throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
-            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
+            string uriResourcePath = "/prod/inputs/{inputId}";
+            if (!publicRequest.IsSetInputId())
+                throw new AmazonMediaLiveException("Request object does not have required field InputId set");
+            uriResourcePath = uriResourcePath.Replace("{inputId}", StringUtils.FromString(publicRequest.InputId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -76,7 +76,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = OutputDestinationMarshaller.Instance;
+                        var marshaller = InputDestinationRequestMarshaller.Instance;
                         marshaller.Marshall(publicRequestDestinationsListValue, context);
 
                         context.Writer.WriteObjectEnd();
@@ -84,42 +84,15 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetEncoderSettings())
+                if(publicRequest.IsSetInputSecurityGroups())
                 {
-                    context.Writer.WritePropertyName("encoderSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncoderSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncoderSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputAttachments())
-                {
-                    context.Writer.WritePropertyName("inputAttachments");
+                    context.Writer.WritePropertyName("inputSecurityGroups");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputAttachmentsListValue in publicRequest.InputAttachments)
+                    foreach(var publicRequestInputSecurityGroupsListValue in publicRequest.InputSecurityGroups)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputAttachmentMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInputAttachmentsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestInputSecurityGroupsListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetInputSpecification())
-                {
-                    context.Writer.WritePropertyName("inputSpecification");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputSpecification, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetName())
@@ -128,10 +101,20 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetRoleArn())
+                if(publicRequest.IsSetSources())
                 {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InputSourceRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

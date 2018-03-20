@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeInputSecurityGroup operation
+    /// Response Unmarshaller for UpdateInput operation
     /// </summary>  
-    public class DescribeInputSecurityGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateInputResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,40 +45,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeInputSecurityGroupResponse response = new DescribeInputSecurityGroupResponse();
+            UpdateInputResponse response = new UpdateInputResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("input", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Inputs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("state", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("whitelistRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InputWhitelistRule, InputWhitelistRuleUnmarshaller>(InputWhitelistRuleUnmarshaller.Instance);
-                    response.WhitelistRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InputUnmarshaller.Instance;
+                    response.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,6 +80,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
             {
                 return new ForbiddenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -120,16 +100,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
-            {
-                return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonMediaLiveException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeInputSecurityGroupResponseUnmarshaller _instance = new DescribeInputSecurityGroupResponseUnmarshaller();        
+        private static UpdateInputResponseUnmarshaller _instance = new UpdateInputResponseUnmarshaller();        
 
-        internal static DescribeInputSecurityGroupResponseUnmarshaller GetInstance()
+        internal static UpdateInputResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +113,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeInputSecurityGroupResponseUnmarshaller Instance
+        public static UpdateInputResponseUnmarshaller Instance
         {
             get
             {

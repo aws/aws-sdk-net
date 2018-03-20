@@ -28,25 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// An IPv4 CIDR to whitelist.
+    /// Placeholder documentation for UpdateInputSecurityGroupResponse
     /// </summary>
-    public partial class InputWhitelistRuleCidr
+    public partial class UpdateInputSecurityGroupResponse : AmazonWebServiceResponse
     {
-        private string _cidr;
+        private InputSecurityGroup _securityGroup;
 
         /// <summary>
-        /// Gets and sets the property Cidr. The IPv4 CIDR to whitelist.
+        /// Gets and sets the property SecurityGroup.
         /// </summary>
-        public string Cidr
+        public InputSecurityGroup SecurityGroup
         {
-            get { return this._cidr; }
-            set { this._cidr = value; }
+            get { return this._securityGroup; }
+            set { this._securityGroup = value; }
         }
 
-        // Check to see if Cidr property is set
-        internal bool IsSetCidr()
+        // Check to see if SecurityGroup property is set
+        internal bool IsSetSecurityGroup()
         {
-            return this._cidr != null;
+            return this._securityGroup != null;
         }
 
     }

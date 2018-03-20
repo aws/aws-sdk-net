@@ -34,6 +34,8 @@ namespace Amazon.MediaLive.Model
     {
         private string _arn;
         private string _id;
+        private List<string> _inputs = new List<string>();
+        private InputSecurityGroupState _state;
         private List<InputWhitelistRule> _whitelistRules = new List<InputWhitelistRule>();
 
         /// <summary>
@@ -64,6 +66,37 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inputs. The list of inputs currently using this Input Security
+        /// Group.
+        /// </summary>
+        public List<string> Inputs
+        {
+            get { return this._inputs; }
+            set { this._inputs = value; }
+        }
+
+        // Check to see if Inputs property is set
+        internal bool IsSetInputs()
+        {
+            return this._inputs != null && this._inputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. The current state of the Input Security Group.
+        /// </summary>
+        public InputSecurityGroupState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>
