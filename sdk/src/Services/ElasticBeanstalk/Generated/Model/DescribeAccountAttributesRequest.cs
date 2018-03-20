@@ -29,7 +29,13 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
+    /// Returns attributes related to AWS Elastic Beanstalk that are associated with the calling
+    /// AWS account.
     /// 
+    ///  
+    /// <para>
+    /// The result currently has one set of attributes—resource quotas.
+    /// </para>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonElasticBeanstalkRequest
     {

@@ -228,7 +228,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// The specified account does not have sufficient privileges for one or more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
         /// The specified account does not have a subscription to Amazon S3.
