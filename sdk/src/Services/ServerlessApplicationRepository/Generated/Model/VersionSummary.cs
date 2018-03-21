@@ -80,7 +80,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        ///  <a href="https://semver.org/">https://semver.org/</a> 
         /// </para>
         /// </summary>
         public string SemanticVersion

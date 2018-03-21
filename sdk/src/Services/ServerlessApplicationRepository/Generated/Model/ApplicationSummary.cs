@@ -199,7 +199,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property SpdxLicenseId. 
         /// <para>
-        /// A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+        /// A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
         /// </para>
         /// </summary>
         public string SpdxLicenseId

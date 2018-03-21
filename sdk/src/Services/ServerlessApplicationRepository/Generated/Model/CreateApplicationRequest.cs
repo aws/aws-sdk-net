@@ -266,7 +266,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        ///  <a href=""https://semver.org/"">https://semver.org/</a> 
+        ///  <a href="https://semver.org/">https://semver.org/</a> 
         /// </para>
         /// </summary>
         public string SemanticVersion
@@ -302,7 +302,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property SpdxLicenseId. 
         /// <para>
-        /// A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+        /// A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
         /// </para>
         /// </summary>
         public string SpdxLicenseId
