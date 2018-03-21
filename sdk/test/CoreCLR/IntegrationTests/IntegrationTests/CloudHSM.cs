@@ -14,7 +14,7 @@ namespace Amazon.DNXCore.IntegrationTests
     
     public class CloudHSM : TestBase<AmazonCloudHSMClient>
     {
-        [Fact]
+        [Fact(Skip="CloudHSM classic is not available to newly created AWS accounts.")]
         public async Task TestSimpleMethods()
         {
             var zones = (await Client.ListAvailableZonesAsync()).AZList;

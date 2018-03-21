@@ -9,6 +9,7 @@ using Amazon.CloudHSM.Model;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
+    [Ignore("CloudHSM classic is not available to newly created AWS accounts.")]
     [TestClass]
     public class CloudHSM : TestBase<AmazonCloudHSMClient>
     {

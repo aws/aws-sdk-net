@@ -46,19 +46,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         [TestCategory("RDS")]
         public void TestDescribeDBEngineVersionsForFamily()
         {
-            var dbParamGroupFamily = Client.DescribeDBParameterGroups().DBParameterGroups[0]; 
-
-            var response = Client.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest
-            {
-                DBParameterGroupFamily = dbParamGroupFamily.DBParameterGroupFamily
-            });
+            var response = Client.DescribeDBParameterGroups();
             Assert.IsNotNull(response);
 
-            if (response.DBEngineVersions.Count > 0)
+            if (response.DBParameterGroups.Count > 0)
             {
-                foreach (var dbev in response.DBEngineVersions)
+                var dbParamGroupFamily = response.DBParameterGroups[0];
+
+                var describeResponse = Client.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest
                 {
-                    Assert.IsTrue(dbev.DBParameterGroupFamily.Equals(dbParamGroupFamily.DBParameterGroupFamily));
+                    DBParameterGroupFamily = dbParamGroupFamily.DBParameterGroupFamily
+                });
+                Assert.IsNotNull(response);
+
+                if (describeResponse.DBEngineVersions.Count > 0)
+                {
+                    foreach (var dbev in describeResponse.DBEngineVersions)
+                    {
+                        Assert.IsTrue(dbev.DBParameterGroupFamily.Equals(dbParamGroupFamily.DBParameterGroupFamily));
+                    }
                 }
             }
         }
