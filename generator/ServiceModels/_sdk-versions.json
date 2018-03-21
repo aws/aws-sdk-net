@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.252.0",
-    "CoreVersion"    : "3.3.21.16",
+    "ProductVersion" : "3.3.252.1",
+    "CoreVersion"    : "3.3.21.17",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -1009,7 +1009,7 @@
             "InPreview"               : false
         },
         "ServerlessApplicationRepository" : {
-            "Version" : "3.3.1.2",
+            "Version" : "3.3.1.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.16"

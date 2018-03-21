@@ -1,3 +1,11 @@
+### 3.3.252.1 (2018-03-21 21:19 UTC)
+* ServerlessApplicationRepository (3.3.1.3)
+	* Documentation updates for Serverless Application Respository
+* Core 3.3.21.17
+	* Elemental MediaPackage is now available in the ICN and GRU regions.
+
+
+
 ### 3.3.252.0 (2018-03-20 21:17 UTC)
 * CloudWatchEvents (3.3.5.0)
 	* Added SQS FIFO queue target support
