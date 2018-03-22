@@ -683,6 +683,10 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant FEEDBACK_URL for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute FEEDBACK_URL = new StackAttribute("FEEDBACK_URL");
+        /// <summary>
         /// Constant REDIRECT_URL for StackAttribute
         /// </summary>
         public static readonly StackAttribute REDIRECT_URL = new StackAttribute("REDIRECT_URL");
@@ -690,6 +694,10 @@ namespace Amazon.AppStream
         /// Constant STORAGE_CONNECTORS for StackAttribute
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTORS = new StackAttribute("STORAGE_CONNECTORS");
+        /// <summary>
+        /// Constant THEME_NAME for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute THEME_NAME = new StackAttribute("THEME_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

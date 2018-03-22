@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
         private bool? _deleteStorageConnectors;
         private string _description;
         private string _displayName;
+        private string _feedbackURL;
         private string _name;
         private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
@@ -114,6 +115,25 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeedbackURL. 
+        /// <para>
+        /// The URL that users are redirected to after they click the Send Feedback link. If no
+        /// URL is specified, no Send Feedback link is displayed.
+        /// </para>
+        /// </summary>
+        public string FeedbackURL
+        {
+            get { return this._feedbackURL; }
+            set { this._feedbackURL = value; }
+        }
+
+        // Check to see if FeedbackURL property is set
+        internal bool IsSetFeedbackURL()
+        {
+            return this._feedbackURL != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the stack.
@@ -134,7 +154,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property RedirectURL. 
         /// <para>
-        /// The URL the user is redirected to after the streaming session ends.
+        /// The URL that users are redirected to after their streaming session ends.
         /// </para>
         /// </summary>
         public string RedirectURL

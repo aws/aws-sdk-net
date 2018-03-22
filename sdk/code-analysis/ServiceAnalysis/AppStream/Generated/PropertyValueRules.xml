@@ -91,6 +91,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateStackRequest.FeedbackURL</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -291,6 +295,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateStackRequest.FeedbackURL</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -453,6 +461,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.DisplayName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Stack.FeedbackURL</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.Name</property>
