@@ -64,6 +64,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("branchFilter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BranchFilter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedSecret", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("payloadUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

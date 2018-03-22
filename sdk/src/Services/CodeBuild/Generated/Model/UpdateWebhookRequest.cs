@@ -28,28 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateWebhook operation.
-    /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-    /// repository, enables AWS CodeBuild to begin automatically rebuilding the source code
-    /// every time a code change is pushed to the repository.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// If you enable webhooks for an AWS CodeBuild project, and the project is used as a
-    /// build step in AWS CodePipeline, then two identical builds will be created for each
-    /// commit. One build is triggered through webhooks, and one through AWS CodePipeline.
-    /// Because billing is on a per-build basis, you will be billed for both builds. Therefore,
-    /// if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild.
-    /// In the AWS CodeBuild console, clear the Webhook box. For more information, see step
-    /// 9 in <a href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
-    /// a Build Project's Settings</a>.
-    /// </para>
-    ///  </important>
+    /// Container for the parameters to the UpdateWebhook operation.
+    /// Updates the webhook associated with an AWS CodeBuild build project.
     /// </summary>
-    public partial class CreateWebhookRequest : AmazonCodeBuildRequest
+    public partial class UpdateWebhookRequest : AmazonCodeBuildRequest
     {
         private string _branchFilter;
         private string _projectName;
+        private bool? _rotateSecret;
 
         /// <summary>
         /// Gets and sets the property BranchFilter. 
@@ -88,6 +74,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RotateSecret. 
+        /// <para>
+        ///  A boolean value that specifies whether the associated repository's secret token should
+        /// be updated. 
+        /// </para>
+        /// </summary>
+        public bool RotateSecret
+        {
+            get { return this._rotateSecret.GetValueOrDefault(); }
+            set { this._rotateSecret = value; }
+        }
+
+        // Check to see if RotateSecret property is set
+        internal bool IsSetRotateSecret()
+        {
+            return this._rotateSecret.HasValue; 
         }
 
     }

@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Container for the parameters to the InvalidateProjectCache operation.
-    /// Resets the cache for a project.
+    /// This is the response object from the UpdateWebhook operation.
     /// </summary>
-    public partial class InvalidateProjectCacheRequest : AmazonCodeBuildRequest
+    public partial class UpdateWebhookResponse : AmazonWebServiceResponse
     {
-        private string _projectName;
+        private Webhook _webhook;
 
         /// <summary>
-        /// Gets and sets the property ProjectName. 
+        /// Gets and sets the property Webhook. 
         /// <para>
-        /// The name of the AWS CodeBuild build project that the cache will be reset for.
+        ///  Information about a repository's webhook that is associated with a project in AWS
+        /// CodeBuild. 
         /// </para>
         /// </summary>
-        public string ProjectName
+        public Webhook Webhook
         {
-            get { return this._projectName; }
-            set { this._projectName = value; }
+            get { return this._webhook; }
+            set { this._webhook = value; }
         }
 
-        // Check to see if ProjectName property is set
-        internal bool IsSetProjectName()
+        // Check to see if Webhook property is set
+        internal bool IsSetWebhook()
         {
-            return this._projectName != null;
+            return this._webhook != null;
         }
 
     }

@@ -120,7 +120,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The name of the build project to start running a build.
+        /// The name of the AWS CodeBuild build project to start running a build.
         /// </para>
         /// </summary>
         public string ProjectName

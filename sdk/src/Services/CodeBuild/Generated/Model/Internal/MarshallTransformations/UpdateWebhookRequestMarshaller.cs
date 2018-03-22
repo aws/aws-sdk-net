@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWebhook Request Marshaller
+    /// UpdateWebhook Request Marshaller
     /// </summary>       
-    public class CreateWebhookRequestMarshaller : IMarshaller<IRequest, CreateWebhookRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateWebhookRequestMarshaller : IMarshaller<IRequest, UpdateWebhookRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWebhookRequest)input);
+            return this.Marshall((UpdateWebhookRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWebhookRequest publicRequest)
+        public IRequest Marshall(UpdateWebhookRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeBuild");
-            string target = "CodeBuild_20161006.CreateWebhook";
+            string target = "CodeBuild_20161006.UpdateWebhook";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -77,6 +77,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("projectName");
                     context.Writer.Write(publicRequest.ProjectName);
+                }
+
+                if(publicRequest.IsSetRotateSecret())
+                {
+                    context.Writer.WritePropertyName("rotateSecret");
+                    context.Writer.Write(publicRequest.RotateSecret);
                 }
 
         

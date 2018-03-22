@@ -77,6 +77,10 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
     /// </para>
     ///  </li> <li> 
@@ -790,6 +794,38 @@ namespace Amazon.CodeBuild
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWebhook
+
+        internal virtual UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request)
+        {
+            var marshaller = new UpdateWebhookRequestMarshaller();
+            var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWebhookRequest,UpdateWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        public virtual Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateWebhookRequestMarshaller();
+            var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWebhookRequest,UpdateWebhookResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -70,6 +70,10 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
     /// </para>
     ///  </li> <li> 
@@ -819,6 +823,55 @@ namespace Amazon.CodeBuild
         /// <returns>Returns a  UpdateProjectResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateWebhook
+
+
+        /// <summary>
+        /// Updates the webhook associated with an AWS CodeBuild build project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWebhook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        IAsyncResult BeginUpdateWebhook(UpdateWebhookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWebhook.</param>
+        /// 
+        /// <returns>Returns a  UpdateWebhookResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        UpdateWebhookResponse EndUpdateWebhook(IAsyncResult asyncResult);
 
         #endregion
         

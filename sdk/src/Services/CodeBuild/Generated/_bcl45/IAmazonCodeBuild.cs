@@ -72,6 +72,10 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeleteProject</code>: Deletes a build project.
     /// </para>
     ///  </li> <li> 
@@ -626,6 +630,42 @@ namespace Amazon.CodeBuild
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateWebhook
+
+
+        /// <summary>
+        /// Updates the webhook associated with an AWS CodeBuild build project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWebhook service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.OAuthProviderException">
+        /// There was a problem with the underlying OAuth provider.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
+        Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
