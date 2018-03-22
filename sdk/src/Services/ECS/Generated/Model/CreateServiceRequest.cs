@@ -122,6 +122,7 @@ namespace Amazon.ECS.Model
         private string _platformVersion;
         private string _role;
         private string _serviceName;
+        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _taskDefinition;
 
         /// <summary>
@@ -418,6 +419,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegistries. 
+        /// <para>
+        /// The details of the service discovery registries you want to assign to this service.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+        /// Discovery</a>.
+        /// </para>
+        /// </summary>
+        public List<ServiceRegistry> ServiceRegistries
+        {
+            get { return this._serviceRegistries; }
+            set { this._serviceRegistries = value; }
+        }
+
+        // Check to see if ServiceRegistries property is set
+        internal bool IsSetServiceRegistries()
+        {
+            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
         }
 
         /// <summary>

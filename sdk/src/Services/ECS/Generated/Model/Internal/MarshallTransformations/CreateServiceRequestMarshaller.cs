@@ -185,6 +185,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceName);
                 }
 
+                if(publicRequest.IsSetServiceRegistries())
+                {
+                    context.Writer.WritePropertyName("serviceRegistries");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestServiceRegistriesListValue in publicRequest.ServiceRegistries)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceRegistryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestServiceRegistriesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskDefinition())
                 {
                     context.Writer.WritePropertyName("taskDefinition");

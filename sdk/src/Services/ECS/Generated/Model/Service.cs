@@ -50,6 +50,7 @@ namespace Amazon.ECS.Model
         private int? _runningCount;
         private string _serviceArn;
         private string _serviceName;
+        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _status;
         private string _taskDefinition;
 
@@ -391,6 +392,21 @@ namespace Amazon.ECS.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegistries.
+        /// </summary>
+        public List<ServiceRegistry> ServiceRegistries
+        {
+            get { return this._serviceRegistries; }
+            set { this._serviceRegistries = value; }
+        }
+
+        // Check to see if ServiceRegistries property is set
+        internal bool IsSetServiceRegistries()
+        {
+            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
         }
 
         /// <summary>

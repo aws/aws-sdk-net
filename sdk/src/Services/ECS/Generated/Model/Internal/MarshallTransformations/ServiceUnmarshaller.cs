@@ -172,6 +172,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceRegistries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceRegistry, ServiceRegistryUnmarshaller>(ServiceRegistryUnmarshaller.Instance);
+                    unmarshalledObject.ServiceRegistries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
