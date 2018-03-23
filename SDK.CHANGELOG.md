@@ -1,3 +1,7 @@
+### 3.3.253.1 (2018-03-23 18:07 UTC)
+* RDS (3.3.21.4)
+	* Documentation updates for RDS
+
 ### 3.3.253.0 (2018-03-22 22:05 UTC)
 * AppStream (3.3.11.0)
 	* Feedback URL allows admins to provide a feedback link or a survey link for collecting user feedback while streaming sessions. When a feedback link is provided, streaming users will see a "Send Feedback" choice in their streaming session toolbar. On selecting this choice, user will be redirected to the link provided in a new browser tab. If a feedback link is not provided, users will not see the "Send Feedback" option. 

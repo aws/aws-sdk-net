@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.253.0",
+    "ProductVersion" : "3.3.253.1",
     "CoreVersion"    : "3.3.21.17",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.21.3",
+            "Version" : "3.3.21.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.16"
