@@ -944,9 +944,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>10.2.12</code> (supported in all AWS Regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>10.2.11</code> (supported in all AWS Regions)
         /// </para>
         ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>10.1.31</code> (supported in all AWS Regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>10.1.26</code> (supported in all AWS Regions)
         /// </para>
@@ -963,6 +971,10 @@ namespace Amazon.RDS.Model
         ///  <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
         /// </para>
         ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>10.0.34</code> (supported in all AWS Regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>10.0.32</code> (supported in all AWS Regions)
         /// </para>
@@ -1071,6 +1083,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>5.7.21</code> (supported in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>5.7.19</code> (supported in all AWS regions)
         /// </para>
         ///  </li> <li> 
@@ -1082,6 +1098,10 @@ namespace Amazon.RDS.Model
         ///  <code>5.7.16</code> (supported in all AWS regions)
         /// </para>
         ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>5.6.39</code> (supported in all AWS Regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>5.6.37</code> (supported in all AWS Regions)
         /// </para>
@@ -1103,6 +1123,10 @@ namespace Amazon.RDS.Model
         /// eu-west-2)
         /// </para>
         ///  </li> </ul>  <ul> <li> 
+        /// <para>
+        ///  <code>5.5.59</code> (supported in all AWS Regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>5.5.57</code> (supported in all AWS Regions)
         /// </para>
