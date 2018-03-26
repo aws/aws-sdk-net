@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the RestoreTableFromBackup operation.
     /// Creates a new table from an existing backup. Any number of users can execute up to
-    /// 10 concurrent restores in a given account. 
+    /// 4 concurrent restores (any type of restore) in a given account. 
     /// 
     ///  
     /// <para>

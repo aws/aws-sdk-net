@@ -116,6 +116,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  Your request contains at least two items with identical hash and range keys (which
+    /// essentially is two put operations). 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// There are more than 25 requests in the batch.
     /// </para>
     ///  </li> <li> 

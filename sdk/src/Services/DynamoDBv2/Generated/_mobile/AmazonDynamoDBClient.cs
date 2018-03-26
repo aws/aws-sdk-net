@@ -597,6 +597,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// There are more than 25 requests in the batch.
         /// </para>
         ///  </li> <li> 
@@ -783,16 +788,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1086,16 +1082,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2084,6 +2071,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableToPointInTime
+
+        internal virtual RestoreTableToPointInTimeResponse RestoreTableToPointInTime(RestoreTableToPointInTimeRequest request)
+        {
+            var marshaller = new RestoreTableToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        public virtual Task<RestoreTableToPointInTimeResponse> RestoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreTableToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  Scan
 
         internal virtual ScanResponse Scan(ScanRequest request)
@@ -2392,6 +2411,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateContinuousBackups
+
+        internal virtual UpdateContinuousBackupsResponse UpdateContinuousBackups(UpdateContinuousBackupsRequest request)
+        {
+            var marshaller = new UpdateContinuousBackupsRequestMarshaller();
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        public virtual Task<UpdateContinuousBackupsResponse> UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateContinuousBackupsRequestMarshaller();
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateGlobalTable
 
         internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
@@ -2627,16 +2678,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>

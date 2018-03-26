@@ -31,8 +31,8 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the UpdateGlobalTable operation.
     /// Adds or removes replicas in the specified global table. The global table must already
     /// exist to be able to use this operation. Any replica to be added must be empty, must
-    /// have the same name as the global table, must have the same key schema, must have DynamoDB
-    /// Streams enabled, and cannot have any local secondary indexes (LSIs).
+    /// have the same name as the global table, must have the same key schema, and must have
+    /// DynamoDB Streams enabled.
     /// 
     ///  <note> 
     /// <para>

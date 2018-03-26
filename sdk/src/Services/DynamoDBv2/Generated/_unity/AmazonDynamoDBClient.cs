@@ -537,6 +537,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// There are more than 25 requests in the batch.
         /// </para>
         ///  </li> <li> 
@@ -736,16 +741,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1054,16 +1050,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2132,6 +2119,41 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  RestoreTableToPointInTime
+        internal virtual RestoreTableToPointInTimeResponse RestoreTableToPointInTime(RestoreTableToPointInTimeRequest request)
+        {
+            var marshaller = new RestoreTableToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        public virtual void RestoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request, AmazonServiceCallback<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new RestoreTableToPointInTimeRequestMarshaller();
+            var unmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse> responseObject 
+                            = new AmazonServiceResult<RestoreTableToPointInTimeRequest,RestoreTableToPointInTimeResponse>((RestoreTableToPointInTimeRequest)req, (RestoreTableToPointInTimeResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RestoreTableToPointInTimeRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  Scan
         internal virtual ScanResponse Scan(ScanRequest request)
         {
@@ -2455,6 +2477,41 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateContinuousBackups
+        internal virtual UpdateContinuousBackupsResponse UpdateContinuousBackups(UpdateContinuousBackupsRequest request)
+        {
+            var marshaller = new UpdateContinuousBackupsRequestMarshaller();
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        public virtual void UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, AmazonServiceCallback<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateContinuousBackupsRequestMarshaller();
+            var unmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse> responseObject 
+                            = new AmazonServiceResult<UpdateContinuousBackupsRequest,UpdateContinuousBackupsResponse>((UpdateContinuousBackupsRequest)req, (UpdateContinuousBackupsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateContinuousBackupsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UpdateGlobalTable
         internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
         {
@@ -2700,16 +2757,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>

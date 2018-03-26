@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContinuousBackupsDescription Object
+    /// Response Unmarshaller for PointInTimeRecoveryDescription Object
     /// </summary>  
-    public class ContinuousBackupsDescriptionUnmarshaller : IUnmarshaller<ContinuousBackupsDescription, XmlUnmarshallerContext>, IUnmarshaller<ContinuousBackupsDescription, JsonUnmarshallerContext>
+    public class PointInTimeRecoveryDescriptionUnmarshaller : IUnmarshaller<PointInTimeRecoveryDescription, XmlUnmarshallerContext>, IUnmarshaller<PointInTimeRecoveryDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContinuousBackupsDescription IUnmarshaller<ContinuousBackupsDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PointInTimeRecoveryDescription IUnmarshaller<PointInTimeRecoveryDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ContinuousBackupsDescription Unmarshall(JsonUnmarshallerContext context)
+        public PointInTimeRecoveryDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ContinuousBackupsDescription unmarshalledObject = new ContinuousBackupsDescription();
+            PointInTimeRecoveryDescription unmarshalledObject = new PointInTimeRecoveryDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ContinuousBackupsStatus", targetDepth))
+                if (context.TestExpression("EarliestRestorableDateTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContinuousBackupsStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EarliestRestorableDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PointInTimeRecoveryDescription", targetDepth))
+                if (context.TestExpression("LatestRestorableDateTime", targetDepth))
                 {
-                    var unmarshaller = PointInTimeRecoveryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.PointInTimeRecoveryDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LatestRestorableDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PointInTimeRecoveryStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PointInTimeRecoveryStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContinuousBackupsDescriptionUnmarshaller _instance = new ContinuousBackupsDescriptionUnmarshaller();        
+        private static PointInTimeRecoveryDescriptionUnmarshaller _instance = new PointInTimeRecoveryDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContinuousBackupsDescriptionUnmarshaller Instance
+        public static PointInTimeRecoveryDescriptionUnmarshaller Instance
         {
             get
             {

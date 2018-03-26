@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeContinuousBackups operation.
-    /// Checks the status of continuous backups and point in time recovery on the specified
-    /// table. Continuous backups are <code>ENABLED</code> on all tables at table creation.
-    /// If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code> will
-    /// be set to ENABLED.
+    /// Container for the parameters to the UpdateContinuousBackups operation.
+    /// <code>UpdateContinuousBackups</code> enables or disables point in time recovery for
+    /// the specified table. A successful <code>UpdateContinuousBackups</code> call returns
+    /// the current <code>ContinuousBackupsDescription</code>. Continuous backups are <code>ENABLED</code>
+    /// on all tables at table creation. If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code>
+    /// will be set to ENABLED.
     /// 
     ///  
     /// <para>
@@ -46,21 +47,34 @@ namespace Amazon.DynamoDBv2.Model
     /// You can restore your table to any point in time during the last 35 days with a 1-minute
     /// granularity. 
     /// </para>
-    ///  
-    /// <para>
-    /// You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
-    /// per second.
-    /// </para>
     /// </summary>
-    public partial class DescribeContinuousBackupsRequest : AmazonDynamoDBRequest
+    public partial class UpdateContinuousBackupsRequest : AmazonDynamoDBRequest
     {
+        private PointInTimeRecoverySpecification _pointInTimeRecoverySpecification;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property PointInTimeRecoverySpecification. 
+        /// <para>
+        /// Represents the settings used to enable point in time recovery.
+        /// </para>
+        /// </summary>
+        public PointInTimeRecoverySpecification PointInTimeRecoverySpecification
+        {
+            get { return this._pointInTimeRecoverySpecification; }
+            set { this._pointInTimeRecoverySpecification = value; }
+        }
+
+        // Check to see if PointInTimeRecoverySpecification property is set
+        internal bool IsSetPointInTimeRecoverySpecification()
+        {
+            return this._pointInTimeRecoverySpecification != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// Name of the table for which the customer wants to check the continuous backups and
-        /// point in time recovery settings.
+        /// The name of the table.
         /// </para>
         /// </summary>
         public string TableName

@@ -459,6 +459,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// There are more than 25 requests in the batch.
         /// </para>
         ///  </li> <li> 
@@ -580,6 +585,11 @@ namespace Amazon.DynamoDBv2
         /// You try to perform multiple operations on the same item in the same <code>BatchWriteItem</code>
         /// request. For example, you cannot put and delete the same item in the same <code>BatchWriteItem</code>
         /// request. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Your request contains at least two items with identical hash and range keys (which
+        /// essentially is two put operations). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -723,16 +733,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -745,11 +746,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
-        /// A table by that name is either being created or deleted.
+        /// A target table with the specified name is either being created or deleted.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
-        /// account.
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         CreateBackupResponse CreateBackup(CreateBackupRequest request);
@@ -830,16 +831,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -852,8 +844,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
-        /// account.
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
         CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request);
@@ -931,16 +923,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -999,16 +982,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1088,16 +1062,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1368,16 +1333,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1445,16 +1401,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1561,9 +1508,23 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Checks the status of the backup restore settings on the specified table. If backups
-        /// are enabled, <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+        /// Checks the status of continuous backups and point in time recovery on the specified
+        /// table. Continuous backups are <code>ENABLED</code> on all tables at table creation.
+        /// If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code> will
+        /// be set to ENABLED.
         /// 
+        ///  
+        /// <para>
+        ///  Once continuous backups and point in time recovery are enabled, you can restore to
+        /// any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
+        /// You can restore your table to any point in time during the last 35 days with a 1-minute
+        /// granularity. 
+        /// </para>
         ///  
         /// <para>
         /// You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
@@ -1577,8 +1538,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
-        /// account.
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
         DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request);
@@ -2808,7 +2769,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Creates a new table from an existing backup. Any number of users can execute up to
-        /// 10 concurrent restores in a given account. 
+        /// 4 concurrent restores (any type of restore) in a given account. 
         /// 
         ///  
         /// <para>
@@ -2866,16 +2827,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -2888,10 +2840,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
-        /// A table with the name already exists.
+        /// A target table with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
-        /// A table by that name is either being created or deleted.
+        /// A target table with the specified name is either being created or deleted.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
         RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request);
@@ -2921,6 +2873,123 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  RestoreTableFromBackupResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
         RestoreTableFromBackupResponse EndRestoreTableFromBackup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreTableToPointInTime
+
+
+        /// <summary>
+        /// Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code>
+        /// and <code>LatestRestorableDateTime</code>. You can restore your table to any point
+        /// in time during the last 35 days with a 1-minute granularity. Any number of users can
+        /// execute up to 4 concurrent restores (any type of restore) in a given account. 
+        /// 
+        ///  
+        /// <para>
+        /// You must manually set up the following on the restored table:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto scaling policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM policies
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cloudwatch metrics and alarms
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stream settings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Time to Live (TTL) settings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Point in time recovery settings
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime service method.</param>
+        /// 
+        /// <returns>The response from the RestoreTableToPointInTime service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidRestoreTimeException">
+        /// An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime
+        /// and LatestRestorableDateTime.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
+        /// Point in time recovery has not yet been enabled for this source table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
+        /// A target table with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
+        /// A target table with the specified name is either being created or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        RestoreTableToPointInTimeResponse RestoreTableToPointInTime(RestoreTableToPointInTimeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreTableToPointInTime operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreTableToPointInTime
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        IAsyncResult BeginRestoreTableToPointInTime(RestoreTableToPointInTimeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreTableToPointInTime.</param>
+        /// 
+        /// <returns>Returns a  RestoreTableToPointInTimeResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
+        RestoreTableToPointInTimeResponse EndRestoreTableToPointInTime(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3224,16 +3293,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -3312,16 +3372,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -3373,14 +3424,81 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateContinuousBackups
+
+
+        /// <summary>
+        /// <code>UpdateContinuousBackups</code> enables or disables point in time recovery for
+        /// the specified table. A successful <code>UpdateContinuousBackups</code> call returns
+        /// the current <code>ContinuousBackupsDescription</code>. Continuous backups are <code>ENABLED</code>
+        /// on all tables at table creation. If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code>
+        /// will be set to ENABLED.
+        /// 
+        ///  
+        /// <para>
+        ///  Once continuous backups and point in time recovery are enabled, you can restore to
+        /// any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
+        /// You can restore your table to any point in time during the last 35 days with a 1-minute
+        /// granularity. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContinuousBackups service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ContinuousBackupsUnavailableException">
+        /// Backups have not yet been enabled for this table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        UpdateContinuousBackupsResponse UpdateContinuousBackups(UpdateContinuousBackupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContinuousBackups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        IAsyncResult BeginUpdateContinuousBackups(UpdateContinuousBackupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContinuousBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContinuousBackups.</param>
+        /// 
+        /// <returns>Returns a  UpdateContinuousBackupsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
+        UpdateContinuousBackupsResponse EndUpdateContinuousBackups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateGlobalTable
 
 
         /// <summary>
         /// Adds or removes replicas in the specified global table. The global table must already
         /// exist to be able to use this operation. Any replica to be added must be empty, must
-        /// have the same name as the global table, must have the same key schema, must have DynamoDB
-        /// Streams enabled, and cannot have any local secondary indexes (LSIs).
+        /// have the same name as the global table, must have the same key schema, and must have
+        /// DynamoDB Streams enabled.
         /// 
         ///  <note> 
         /// <para>
@@ -3406,8 +3524,8 @@ namespace Amazon.DynamoDBv2
         /// The specified replica is no longer part of the global table.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A table with the name <code>TableName</code> does not currently exist within the subscriber's
-        /// account.
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
         UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request);
@@ -3648,16 +3766,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -3729,16 +3838,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
@@ -3848,16 +3948,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Up to 10 simultaneous table operations are allowed per account. These operations include
         /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// and <code>RestoreTableFromBackup</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
-        /// </para>
-        ///  
-        /// <para>
-        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
