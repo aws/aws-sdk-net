@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.254.0",
+    "ProductVersion" : "3.3.255.0",
     "CoreVersion"    : "3.3.21.17",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.16"
