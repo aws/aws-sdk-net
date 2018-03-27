@@ -163,7 +163,7 @@ namespace Amazon.Runtime
 
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
         {
-            var httpMessageHandler = new HttpClientHandler();
+            var httpMessageHandler = clientConfig.GetHttpMessageHandler() ?? new HttpClientHandler();
 #if CORECLR
             if (clientConfig.MaxConnectionsPerServer.HasValue)
                 httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
