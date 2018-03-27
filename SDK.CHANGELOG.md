@@ -1,3 +1,7 @@
+### 3.3.254.0 (2018-03-26 22:30 UTC)
+* DynamoDBv2 (3.3.7.0)
+	* Point-in-time recovery (PITR) provides continuous backups of your DynamoDB table data. With PITR, you do not have to worry about creating, maintaining, or scheduling backups. You enable PITR on your table and your backup is available for restore at any point in time from the moment you enable it, up to a maximum of the 35 preceding days. PITR provides continuous backups until you explicitly disable it. For more information, see the Amazon DynamoDB Developer Guide.
+
 ### 3.3.253.1 (2018-03-23 18:07 UTC)
 * RDS (3.3.21.4)
 	* Documentation updates for RDS
