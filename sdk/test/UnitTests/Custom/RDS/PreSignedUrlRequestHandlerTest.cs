@@ -78,7 +78,9 @@ namespace AWSSDK.UnitTests
             RunPreInvoke(request);
 
             Assert.AreEqual(OriginalOtherValue, request.OtherProperty);
-            Assert.AreEqual(RegionEndpoint.USWest1.SystemName, request.SourceRegion);
+            Assert.IsTrue(request.PreSignedUrl.Contains("Key=Property%20with%20spaces"));
+            Assert.IsTrue(request.PreSignedUrl.Contains("SpecialCharacter=%26%26"));
+            Assert.AreEqual(RegionEndpoint.USWest1.SystemName, request.SourceRegion);            
             Assert.IsNotNull(request.PreSignedUrl);
         }
 
@@ -138,6 +140,8 @@ namespace AWSSDK.UnitTests
                 request.Parameters.Add("Version", "2014-10-31");
                 request.Parameters.Add("PreSignedUrl", publicRequest.PreSignedUrl);
                 request.Parameters.Add("OtherProperty", publicRequest.OtherProperty);
+                request.Parameters.Add("Key", "Property with spaces");
+                request.Parameters.Add("SpecialCharacter", "&&");
 
                 return request;
             }
