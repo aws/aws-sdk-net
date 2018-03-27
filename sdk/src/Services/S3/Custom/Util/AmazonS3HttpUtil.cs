@@ -68,19 +68,17 @@ namespace Amazon.S3
 
         private static HttpClient GetHttpClient(IClientConfig config)
         {
+            var handler = config.GetHttpMessageHandler();
             var proxy = GetProxyIfAvailableAndConfigured(config);
             if (proxy == null)
             {
-                return new HttpClient();
+                return new HttpClient(handler);
             }
             else
             {
-                return new HttpClient(
-                    new HttpClientHandler
-                    {
-                        Proxy = proxy,
-                        UseProxy = true
-                    });
+                handler.Proxy = proxy;
+                handler.UseProxy = true;
+                return new HttpClient(handler);
             }
         }
 #endif
