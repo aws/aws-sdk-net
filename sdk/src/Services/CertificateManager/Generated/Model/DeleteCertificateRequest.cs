@@ -36,7 +36,7 @@ namespace Amazon.CertificateManager.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot delete an ACM Certificate that is being used by another AWS service. To
+    /// You cannot delete an ACM certificate that is being used by another AWS service. To
     /// delete a certificate that is in use, the certificate association must first be removed.
     /// </para>
     ///  </note>
@@ -53,7 +53,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Instantiates DeleteCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateArn">String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         public DeleteCertificateRequest(string certificateArn)
         {
             _certificateArn = certificateArn;
@@ -62,7 +62,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM Certificate to be deleted. This must be of
+        /// String that contains the ARN of the ACM certificate to be deleted. This must be of
         /// the form:
         /// </para>
         ///  

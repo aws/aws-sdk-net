@@ -29,8 +29,8 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForCertificate operation.
-    /// Lists the tags that have been applied to the ACM Certificate. Use the certificate's
-    /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM Certificate,
+    /// Lists the tags that have been applied to the ACM certificate. Use the certificate's
+    /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate,
     /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a>
     /// action.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM Certificate for which you want to list the
+        /// String that contains the ARN of the ACM certificate for which you want to list the
         /// tags. This must have the following form:
         /// </para>
         ///  

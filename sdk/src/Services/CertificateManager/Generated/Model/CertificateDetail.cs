@@ -47,6 +47,7 @@ namespace Amazon.CertificateManager.Model
         private List<KeyUsage> _keyUsages = new List<KeyUsage>();
         private DateTime? _notAfter;
         private DateTime? _notBefore;
+        private CertificateOptions _options;
         private RenewalSummary _renewalSummary;
         private RevocationReason _revocationReason;
         private DateTime? _revokedAt;
@@ -321,6 +322,27 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetNotBefore()
         {
             return this._notBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Value that specifies whether to add the certificate to a transparency log. Certificate
+        /// transparency makes it possible to detect SSL certificates that have been mistakenly
+        /// or maliciously issued. A browser might respond to certificate that has not been logged
+        /// by showing an error message. The logs are cryptographicaly secure. 
+        /// </para>
+        /// </summary>
+        public CertificateOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

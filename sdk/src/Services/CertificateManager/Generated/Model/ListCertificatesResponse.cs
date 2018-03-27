@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateSummaryList. 
         /// <para>
-        /// A list of ACM Certificates.
+        /// A list of ACM certificates.
         /// </para>
         /// </summary>
         public List<CertificateSummary> CertificateSummaryList

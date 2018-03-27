@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RequestCertificate Request Marshaller
+    /// UpdateCertificateOptions Request Marshaller
     /// </summary>       
-    public class RequestCertificateRequestMarshaller : IMarshaller<IRequest, RequestCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateCertificateOptionsRequestMarshaller : IMarshaller<IRequest, UpdateCertificateOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RequestCertificateRequest)input);
+            return this.Marshall((UpdateCertificateOptionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RequestCertificateRequest publicRequest)
+        public IRequest Marshall(UpdateCertificateOptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CertificateManager");
-            string target = "CertificateManager.RequestCertificate";
+            string target = "CertificateManager.UpdateCertificateOptions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,32 +67,10 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainName())
+                if(publicRequest.IsSetCertificateArn())
                 {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetDomainValidationOptions())
-                {
-                    context.Writer.WritePropertyName("DomainValidationOptions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDomainValidationOptionsListValue in publicRequest.DomainValidationOptions)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainValidationOptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDomainValidationOptionsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetIdempotencyToken())
-                {
-                    context.Writer.WritePropertyName("IdempotencyToken");
-                    context.Writer.Write(publicRequest.IdempotencyToken);
+                    context.Writer.WritePropertyName("CertificateArn");
+                    context.Writer.Write(publicRequest.CertificateArn);
                 }
 
                 if(publicRequest.IsSetOptions())
@@ -104,23 +82,6 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Options, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubjectAlternativeNames())
-                {
-                    context.Writer.WritePropertyName("SubjectAlternativeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubjectAlternativeNamesListValue in publicRequest.SubjectAlternativeNames)
-                    {
-                            context.Writer.Write(publicRequestSubjectAlternativeNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetValidationMethod())
-                {
-                    context.Writer.WritePropertyName("ValidationMethod");
-                    context.Writer.Write(publicRequest.ValidationMethod);
                 }
 
         

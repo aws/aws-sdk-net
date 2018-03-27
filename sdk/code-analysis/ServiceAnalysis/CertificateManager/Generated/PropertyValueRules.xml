@@ -129,6 +129,12 @@
     <pattern>^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.UpdateCertificateOptionsRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.CertificateDetail.CertificateArn</property>
     <min>20</min>
     <max>2048</max>

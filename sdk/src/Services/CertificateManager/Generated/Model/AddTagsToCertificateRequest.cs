@@ -29,7 +29,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToCertificate operation.
-    /// Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify
+    /// Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify
     /// and organize your AWS resources. Each tag consists of a <code>key</code> and an optional
     /// <code>value</code>. You specify the certificate on input by its Amazon Resource Name
     /// (ARN). You specify the tag by using a key-value pair. 
@@ -40,10 +40,10 @@ namespace Amazon.CertificateManager.Model
     /// of that certificate, or you can apply the same tag to multiple certificates if you
     /// want to filter for a common relationship among those certificates. Similarly, you
     /// can apply the same tag to multiple resources if you want to specify a relationship
-    /// among those resources. For example, you can add the same tag to an ACM Certificate
+    /// among those resources. For example, you can add the same tag to an ACM certificate
     /// and an Elastic Load Balancing load balancer to indicate that they are both used by
     /// the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
-    /// ACM Certificates</a>. 
+    /// ACM certificates</a>. 
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains the ARN of the ACM Certificate to which the tag is to be applied.
+        /// String that contains the ARN of the ACM certificate to which the tag is to be applied.
         /// This must be of the form:
         /// </para>
         ///  

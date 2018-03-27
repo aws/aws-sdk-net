@@ -276,5 +276,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         }
 
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CertificateManager")]
+        public void UpdateCertificateOptionsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateCertificateOptionsRequest>();
+            var marshaller = new UpdateCertificateOptionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateCertificateOptionsRequest>(request,jsonRequest);
+
+        }
+
             }
 }

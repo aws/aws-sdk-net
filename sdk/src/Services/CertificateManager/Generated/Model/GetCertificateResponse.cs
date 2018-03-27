@@ -38,7 +38,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// String that contains the ACM Certificate represented by the ARN specified at input.
+        /// String that contains the ACM certificate represented by the ARN specified at input.
         /// </para>
         /// </summary>
         public string Certificate

@@ -29,7 +29,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestCertificate operation.
-    /// Requests an ACM Certificate for use with other AWS services. To request an ACM Certificate,
+    /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
     /// you must specify the fully qualified domain name (FQDN) for your site in the <code>DomainName</code>
     /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
     /// parameter if users can reach your site by using other names. 
@@ -45,7 +45,7 @@ namespace Amazon.CertificateManager.Model
     /// </para>
     ///  
     /// <para>
-    /// After receiving approval from the domain owner, the ACM Certificate is issued. For
+    /// After receiving approval from the domain owner, the ACM certificate is issued. For
     /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
     /// Certificate Manager User Guide</a>. 
     /// </para>
@@ -55,6 +55,7 @@ namespace Amazon.CertificateManager.Model
         private string _domainName;
         private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
         private string _idempotencyToken;
+        private CertificateOptions _options;
         private List<string> _subjectAlternativeNames = new List<string>();
         private ValidationMethod _validationMethod;
 
@@ -127,13 +128,36 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Currently, you can use this parameter to specify whether to add the certificate to
+        /// a certificate transparency log. Certificate transparency makes it possible to detect
+        /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates
+        /// that have not been logged typically produce an error message in a browser. For more
+        /// information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+        /// Opting Out of Certificate Transparency Logging</a>. 
+        /// </para>
+        /// </summary>
+        public CertificateOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
         /// Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
-        /// Certificate. For example, add the name www.example.net to a certificate for which
+        /// certificate. For example, add the name www.example.net to a certificate for which
         /// the <code>DomainName</code> field is www.example.com if users can reach your site
         /// by using either name. The maximum number of domain names that you can add to an ACM
-        /// Certificate is 100. However, the initial limit is 10 domain names. If you need more
+        /// certificate is 100. However, the initial limit is 10 domain names. If you need more
         /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
         /// </para>
         ///  
