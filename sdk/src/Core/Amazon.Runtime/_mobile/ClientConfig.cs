@@ -27,6 +27,7 @@ namespace Amazon.Runtime
     /// </summary>    
     public abstract partial class ClientConfig
     {
+        private Func<HttpClientHandler> _httpClientHandler = null;
         private IWebProxy proxy = null;
         private string proxyHost;
         private int proxyPort = -1;
@@ -35,7 +36,24 @@ namespace Amazon.Runtime
         {
             return FallbackRegionFactory.GetRegionEndpoint();
         }
-
+       
+        /// <summary>
+        /// Return a custom http message handle to use with HttpClient. (example: NativeMessageHandler from ModernHttpClient)
+        /// Default Http Message Handler used if null value returned
+        /// </summary>
+        public HttpClientHandler GetHttpMessageHandler()
+        {
+            return _httpClientHandler; // Use the default Http client handler
+        }
+        /// <summary>
+        /// Update the Http Client handler to use
+        /// </summary>
+        /// <param name="httpClientHandler">A function that returns a new instance of the http client handler to use</param>
+        public void SetHttpMessageHandler(Func<HttpClientHandler> httpClientHandler)
+        {
+            this._httpClientHandler = httpClientHandler?.Invoke();
+        }
+        
         /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings
         /// in the client configuration.
