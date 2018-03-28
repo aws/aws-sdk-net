@@ -46,10 +46,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }
             return request;
         }
-    }
 			<#				
 		this.AddRequestSingletonMethod();
 #>
+    }
 }
 
 <#+
