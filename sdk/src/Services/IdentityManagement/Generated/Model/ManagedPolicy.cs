@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>,
-    /// and <a>ListPolicies</a> actions. 
+    /// and <a>ListPolicies</a> operations. 
     /// </para>
     ///  
     /// <para>

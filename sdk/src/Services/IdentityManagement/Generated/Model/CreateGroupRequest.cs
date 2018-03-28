@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates CreateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group to create. Do not include the path in this value. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".</param>
+        /// <param name="groupName">The name of the group to create. Do not include the path in this value. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".</param>
         public CreateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -65,7 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-. The group
+        /// no spaces. You can also include any of the following characters: _+=,.@-. The group
         /// name must be unique within the account. Group names are not distinguished by case.
         /// For example, you cannot create groups named both "ADMINS" and "admins".
         /// </para>
@@ -94,11 +94,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
-        /// that must begin and end with forward slashes, containing any ASCII character from
-        /// the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// that must begin and end with forward slashes. In addition, it can contain any ASCII
+        /// character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+        /// characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string Path

@@ -47,7 +47,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter is a string of 6 digits.
+        /// The format for this parameter is a string of six digits.
         /// </para>
         ///  <important> 
         /// <para>
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter is a string of 6 digits.
+        /// The format for this parameter is a string of six digits.
         /// </para>
         ///  <important> 
         /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

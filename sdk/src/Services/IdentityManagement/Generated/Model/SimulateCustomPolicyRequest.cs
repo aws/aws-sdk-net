@@ -30,13 +30,13 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the SimulateCustomPolicy operation.
     /// Simulate how a set of IAM policies and optionally a resource-based policy works with
-    /// a list of API actions and AWS resources to determine the policies' effective permissions.
+    /// a list of API operations and AWS resources to determine the policies' effective permissions.
     /// The policies are provided as strings.
     /// 
     ///  
     /// <para>
-    /// The simulation does not perform the API actions; it only checks the authorization
-    /// to determine if the simulated policies allow or deny the actions.
+    /// The simulation does not perform the API operations; it only checks the authorization
+    /// to determine if the simulated policies allow or deny the operations.
     /// </para>
     ///  
     /// <para>
@@ -72,8 +72,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ActionNames. 
         /// <para>
-        /// A list of names of API actions to evaluate in the simulation. Each action is evaluated
-        /// against each resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+        /// A list of names of API operations to evaluate in the simulation. Each operation is
+        /// evaluated against each resource. Each operation must include the service identifier,
+        /// such as <code>iam:CreateUser</code>.
         /// </para>
         /// </summary>
         public List<string> ActionNames
@@ -91,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CallerArn. 
         /// <para>
-        /// The ARN of the IAM user that you want to use as the simulated caller of the APIs.
+        /// The ARN of the IAM user that you want to use as the simulated caller of the API operations.
         /// <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so
         /// that the policy's <code>Principal</code> element has a value to use in evaluating
         /// the policy.
@@ -190,17 +191,29 @@ namespace Amazon.IdentityManagement.Model
         /// with the <code>ResourcePolicy</code> parameter. The policies cannot be "scope-down"
         /// policies, such as you could include in a call to <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
         /// or one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-        /// APIs to restrict what a user can do while using the temporary credentials.
+        /// API operations. In other words, do not use policies designed to restrict what a user
+        /// can do while using the temporary credentials.
         /// </para>
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-        /// parameter is a string of characters consisting of any printable ASCII character ranging
-        /// from the space character (\u0020) through end of the ASCII character range as well
-        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
-        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
-        /// (\u000A), and carriage return (\u000D).
+        /// parameter is a string of characters consisting of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any printable ASCII character ranging from the space character (\u0020) through the
+        /// end of the ASCII character range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// \u00FF)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> PolicyInputList
         {
@@ -255,7 +268,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceHandlingOption. 
         /// <para>
-        /// Specifies the type of simulation to run. Different APIs that support resource-based
+        /// Specifies the type of simulation to run. Different API operations that support resource-based
         /// policies require different combinations of resources. By specifying the type of simulation
         /// to run, you enable the policy simulator to enforce the presence of the required resources
         /// to ensure reliable simulation results. If your simulation does not match one of the
@@ -270,7 +283,7 @@ namespace Amazon.IdentityManagement.Model
         /// as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface
         /// resource. If it includes an IP subnet, then you must specify the subnet resource.
         /// For more information on the EC2 scenario options, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a> in the <i>AWS EC2 User Guide</i>.
+        /// Platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -369,12 +382,23 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-        /// parameter is a string of characters consisting of any printable ASCII character ranging
-        /// from the space character (\u0020) through end of the ASCII character range as well
-        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
-        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
-        /// (\u000A), and carriage return (\u000D).
+        /// parameter is a string of characters consisting of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any printable ASCII character ranging from the space character (\u0020) through the
+        /// end of the ASCII character range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// \u00FF)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourcePolicy
         {

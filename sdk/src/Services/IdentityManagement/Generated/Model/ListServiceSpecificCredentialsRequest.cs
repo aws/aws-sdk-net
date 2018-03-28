@@ -30,8 +30,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListServiceSpecificCredentials operation.
     /// Returns information about the service-specific credentials associated with the specified
-    /// IAM user. If there are none, the action returns an empty list. The service-specific
-    /// credentials returned by this action are used only for authenticating the IAM user
+    /// IAM user. If there are none, the operation returns an empty list. The service-specific
+    /// credentials returned by this operation are used only for authenticating the IAM user
     /// to a specific service. For more information about using service-specific credentials
     /// to authenticate to an AWS service, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
     /// Up service-specific credentials</a> in the AWS CodeCommit User Guide.
@@ -64,14 +64,14 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The name of the user whose service-specific credentials you want information about.
-        /// If this value is not specified then the operation assumes the user whose credentials
+        /// If this value is not specified, then the operation assumes the user whose credentials
         /// are used to call the operation.
         /// </para>
         ///  
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

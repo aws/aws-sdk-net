@@ -78,6 +78,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MaxSessionDuration", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxSessionDuration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Path", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

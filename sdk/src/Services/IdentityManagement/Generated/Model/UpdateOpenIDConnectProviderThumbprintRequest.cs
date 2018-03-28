@@ -34,8 +34,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// The list that you pass with this action completely replaces the existing list of thumbprints.
-    /// (The lists are not merged.)
+    /// The list that you pass with this operation completely replaces the existing list of
+    /// thumbprints. (The lists are not merged.)
     /// </para>
     ///  
     /// <para>
@@ -46,9 +46,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Because trust for the OIDC provider is ultimately derived from the provider's certificate
-    /// and is validated by the thumbprint, it is a best practice to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
-    /// action to highly-privileged users.
+    /// Because trust for the OIDC provider is derived from the provider's certificate and
+    /// is validated by the thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
+    /// operation to highly privileged users.
     /// </para>
     ///  </note>
     /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which
         /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using
-        /// the <a>ListOpenIDConnectProviders</a> action.
+        /// the <a>ListOpenIDConnectProviders</a> operation.
         /// </para>
         ///  
         /// <para>

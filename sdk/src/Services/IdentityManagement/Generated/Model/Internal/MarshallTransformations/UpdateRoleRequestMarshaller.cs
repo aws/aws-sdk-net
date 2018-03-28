@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRole Request Marshaller
+    /// UpdateRole Request Marshaller
     /// </summary>       
-    public class CreateRoleRequestMarshaller : IMarshaller<IRequest, CreateRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateRoleRequestMarshaller : IMarshaller<IRequest, UpdateRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRoleRequest)input);
+            return this.Marshall((UpdateRoleRequest)input);
         }
     
         /// <summary>
@@ -50,18 +50,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRoleRequest publicRequest)
+        public IRequest Marshall(UpdateRoleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
-            request.Parameters.Add("Action", "CreateRole");
+            request.Parameters.Add("Action", "UpdateRole");
             request.Parameters.Add("Version", "2010-05-08");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAssumeRolePolicyDocument())
-                {
-                    request.Parameters.Add("AssumeRolePolicyDocument", StringUtils.FromString(publicRequest.AssumeRolePolicyDocument));
-                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
@@ -69,10 +65,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxSessionDuration())
                 {
                     request.Parameters.Add("MaxSessionDuration", StringUtils.FromInt(publicRequest.MaxSessionDuration));
-                }
-                if(publicRequest.IsSetPath())
-                {
-                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
                 }
                 if(publicRequest.IsSetRoleName())
                 {

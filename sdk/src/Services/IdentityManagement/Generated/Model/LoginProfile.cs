@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     ///  This data type is used as a response element in the <a>CreateLoginProfile</a> and
-    /// <a>GetLoginProfile</a> actions. 
+    /// <a>GetLoginProfile</a> operations. 
     /// </para>
     /// </summary>
     public partial class LoginProfile

@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Contains information about an IAM role. This structure is returned as a response element
-    /// in several APIs that interact with roles.
+    /// in several API operations that interact with roles.
     /// </summary>
     public partial class Role
     {
@@ -37,6 +37,7 @@ namespace Amazon.IdentityManagement.Model
         private string _assumeRolePolicyDocument;
         private DateTime? _createDate;
         private string _description;
+        private int? _maxSessionDuration;
         private string _path;
         private string _roleId;
         private string _roleName;
@@ -114,6 +115,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxSessionDuration. 
+        /// <para>
+        /// The maximum session duration (in seconds) for the specified role. Anyone who uses
+        /// the AWS CLI or API to assume the role can specify the duration using the optional
+        /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI parameter.
+        /// </para>
+        /// </summary>
+        public int MaxSessionDuration
+        {
+            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            set { this._maxSessionDuration = value; }
+        }
+
+        // Check to see if MaxSessionDuration property is set
+        internal bool IsSetMaxSessionDuration()
+        {
+            return this._maxSessionDuration.HasValue; 
         }
 
         /// <summary>

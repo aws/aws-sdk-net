@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a>
-    /// action.
+    /// operation.
     /// </para>
     /// </summary>
     public partial class RoleDetail

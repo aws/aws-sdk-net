@@ -30,14 +30,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateSSHPublicKey operation.
     /// Sets the status of an IAM user's SSH public key to active or inactive. SSH public
-    /// keys that are inactive cannot be used for authentication. This action can be used
+    /// keys that are inactive cannot be used for authentication. This operation can be used
     /// to disable a user's SSH public key as part of a key rotation work flow.
     /// 
     ///  
     /// <para>
-    /// The SSH public key affected by this action is used only for authenticating the associated
-    /// IAM user to an AWS CodeCommit repository. For more information about using SSH keys
-    /// to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+    /// The SSH public key affected by this operation is used only for authenticating the
+    /// associated IAM user to an AWS CodeCommit repository. For more information about using
+    /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
     /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
     /// </para>
     /// </summary>
@@ -73,9 +73,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status to assign to the SSH public key. <code>Active</code> means the key can
-        /// be used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
-        /// means the key cannot be used.
+        /// The status to assign to the SSH public key. <code>Active</code> means that the key
+        /// can be used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
+        /// means that the key cannot be used.
         /// </para>
         /// </summary>
         public StatusType Status
@@ -99,7 +99,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

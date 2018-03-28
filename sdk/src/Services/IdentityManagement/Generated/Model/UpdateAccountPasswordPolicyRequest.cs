@@ -31,13 +31,16 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
     /// Updates the password policy settings for the AWS account.
     /// 
-    ///  <note> 
+    ///  <note> <ul> <li> 
     /// <para>
-    /// This action does not support partial updates. No parameters are required, but if you
-    /// do not specify a parameter, that parameter's value reverts to its default value. See
-    /// the <b>Request Parameters</b> section for each parameter's default value.
+    /// This operation does not support partial updates. No parameters are required, but if
+    /// you do not specify a parameter, that parameter's value reverts to its default value.
+    /// See the <b>Request Parameters</b> section for each parameter's default value. Also
+    /// note that some parameters do not allow the default parameter to be explicitly set.
+    /// Instead, to invoke the default value, do not include that parameter when you invoke
+    /// the operation.
     /// </para>
-    ///  </note> 
+    ///  </li> </ul> </note> 
     /// <para>
     ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
     /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
@@ -64,7 +67,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that IAM users in the account do not automatically
+        /// have permissions to change their own password.
         /// </para>
         /// </summary>
         public bool AllowUsersToChangePassword
@@ -82,11 +87,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property HardExpiry. 
         /// <para>
-        /// Prevents IAM users from setting a new password after their password has expired.
+        /// Prevents IAM users from setting a new password after their password has expired. The
+        /// IAM user cannot be accessed until an administrator resets the password.
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that IAM users can change their passwords
+        /// after they expire and continue to sign in as the user.
         /// </para>
         /// </summary>
         public bool HardExpiry
@@ -104,12 +112,12 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxPasswordAge. 
         /// <para>
-        /// The number of days that an IAM user password is valid. The default value of 0 means
-        /// IAM user passwords never expire.
+        /// The number of days that an IAM user password is valid.
         /// </para>
         ///  
         /// <para>
-        /// Default value: 0
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>0</code>. The result is that IAM user passwords never expire.
         /// </para>
         /// </summary>
         public int MaxPasswordAge
@@ -131,7 +139,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: 6
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>6</code>.
         /// </para>
         /// </summary>
         public int MinimumPasswordLength
@@ -150,11 +159,12 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property PasswordReusePrevention. 
         /// <para>
         /// Specifies the number of previous passwords that IAM users are prevented from reusing.
-        /// The default value of 0 means IAM users are not prevented from reusing previous passwords.
         /// </para>
         ///  
         /// <para>
-        /// Default value: 0
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
+        /// previous passwords.
         /// </para>
         /// </summary>
         public int PasswordReusePrevention
@@ -177,7 +187,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that passwords do not require at least
+        /// one lowercase character.
         /// </para>
         /// </summary>
         public bool RequireLowercaseCharacters
@@ -200,7 +212,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that passwords do not require at least
+        /// one numeric character.
         /// </para>
         /// </summary>
         public bool RequireNumbers
@@ -227,7 +241,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that passwords do not require at least
+        /// one symbol character.
         /// </para>
         /// </summary>
         public bool RequireSymbols
@@ -250,7 +266,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: false
+        /// If you do not specify a value for this parameter, then the operation uses the default
+        /// value of <code>false</code>. The result is that passwords do not require at least
+        /// one uppercase character.
         /// </para>
         /// </summary>
         public bool RequireUppercaseCharacters

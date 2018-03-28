@@ -240,9 +240,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this action works for access keys
-        /// under the AWS account, you can use this action to manage root credentials even if
-        /// the AWS account has no associated users.
+        /// the AWS access key ID signing the request. Because this operation works for access
+        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// user credentials. This is true even if the AWS account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -1137,14 +1137,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by testing against
-        /// a value specified in an IAM policy. Use GetContextKeysForCustomPolicy to understand
-        /// what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
-        /// Note that all parameters are shown in unencoded form here for clarity, but must be
+        /// about the context of an API query request. Context keys can be evaluated by testing
+        /// against a value specified in an IAM policy. Use <code>GetContextKeysForCustomPolicy</code>
+        /// to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
+        /// Note that all parameters are shown in unencoded form here for clarity but must be
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF) </li> <li> The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D) </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1175,10 +1175,10 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
-        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
-        /// specify a user, then the request also includes all of the policies attached to groups
-        /// that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all the IAM policies that are
+        /// attached to the specified IAM entity. The entity can be an IAM user, group, or role.
+        /// If you specify a user, then the request also includes all of the policies attached
+        /// to groups that the user is a member of.
         /// 
         ///  
         /// <para>
@@ -1195,12 +1195,12 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by testing against
-        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// about the context of an API query request. Context keys can be evaluated by testing
+        /// against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
         /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1218,10 +1218,10 @@ namespace Amazon.IdentityManagement
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Gets a list of all of the context keys referenced in all of the IAM policies attached
-        /// to the specified IAM entity. The entity can be an IAM user, group, or role. If you
-        /// specify a user, then the request also includes all of the policies attached to groups
-        /// that the user is a member of.
+        /// Gets a list of all of the context keys referenced in all the IAM policies that are
+        /// attached to the specified IAM entity. The entity can be an IAM user, group, or role.
+        /// If you specify a user, then the request also includes all of the policies attached
+        /// to groups that the user is a member of.
         /// 
         ///  
         /// <para>
@@ -1238,13 +1238,13 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by AWS and its services that provide details
-        /// about the context of an API query request, and can be evaluated by testing against
-        /// a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
+        /// about the context of an API query request. Context keys can be evaluated by testing
+        /// against a value in an IAM policy. Use <a>GetContextKeysForPrincipalPolicy</a> to understand
         /// what key names and values you must supply when you call <a>SimulatePrincipalPolicy</a>.
         /// </para>
         /// </summary>
-        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF) </li> <li> The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D) </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1608,7 +1608,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the access key IDs associated with the specified IAM user.
-        /// If there are none, the action returns an empty list.
+        /// If there are none, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -1617,10 +1617,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the UserName is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this action works
-        /// for access keys under the AWS account, you can use this action to manage root credentials
-        /// even if the AWS account has no associated users.
+        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// based on the AWS access key ID used to sign the request. Because this operation works
+        /// for access keys under the AWS account, you can use this operation to manage AWS account
+        /// root user credentials even if the AWS account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1838,8 +1838,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the instance profiles that have the specified path prefix. If there are none,
-        /// the action returns an empty list. For more information about instance profiles, go
-        /// to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+        /// the operation returns an empty list. For more information about instance profiles,
+        /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
         /// Instance Profiles</a>.
         /// 
         ///  
@@ -1896,8 +1896,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the MFA devices for an IAM user. If the request includes a IAM user name, then
-        /// this action lists all the MFA devices associated with the specified user. If you do
-        /// not specify a user name, IAM determines the user name implicitly based on the AWS
+        /// this operation lists all the MFA devices associated with the specified user. If you
+        /// do not specify a user name, IAM determines the user name implicitly based on the AWS
         /// access key ID signing the request for this API.
         /// 
         ///  
@@ -2042,7 +2042,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Lists the IAM roles that have the specified path prefix. If there are none, the action
+        /// Lists the IAM roles that have the specified path prefix. If there are none, the operation
         /// returns an empty list. For more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>.
         /// 
@@ -2122,7 +2122,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the server certificates stored in IAM that have the specified path prefix. If
-        /// none exist, the action returns an empty list.
+        /// none exist, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -2131,9 +2131,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about working with server certificates, including a list of AWS
-        /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-        /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+        /// For more information about working with server certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+        /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+        /// a list of AWS services that can use the server certificates that you manage with IAM.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2184,7 +2184,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the signing certificates associated with the specified IAM
-        /// user. If there are none, the action returns an empty list.
+        /// user. If there are none, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -2195,8 +2195,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
         /// based on the AWS access key ID used to sign the request for this API. Because this
-        /// action works for access keys under the AWS account, you can use this action to manage
-        /// root credentials even if the AWS account has no associated users.
+        /// operation works for access keys under the AWS account, you can use this operation
+        /// to manage AWS account root user credentials even if the AWS account has no associated
+        /// users.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -2268,8 +2269,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-        /// the action returns all users in the AWS account. If there are none, the action returns
-        /// an empty list.
+        /// the operation returns all users in the AWS account. If there are none, the operation
+        /// returns an empty list.
         /// 
         ///  
         /// <para>
@@ -2308,7 +2309,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Lists the virtual MFA devices defined in the AWS account by assignment status. If
-        /// you do not specify an assignment status, the action returns a list of all virtual
+        /// you do not specify an assignment status, the operation returns a list of all virtual
         /// MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
         /// or <code>Any</code>.
         /// 
@@ -2551,13 +2552,16 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Updates the password policy settings for the AWS account.
         /// 
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
-        /// This action does not support partial updates. No parameters are required, but if you
-        /// do not specify a parameter, that parameter's value reverts to its default value. See
-        /// the <b>Request Parameters</b> section for each parameter's default value.
+        /// This operation does not support partial updates. No parameters are required, but if
+        /// you do not specify a parameter, that parameter's value reverts to its default value.
+        /// See the <b>Request Parameters</b> section for each parameter's default value. Also
+        /// note that some parameters do not allow the default parameter to be explicitly set.
+        /// Instead, to invoke the default value, do not include that parameter when you invoke
+        /// the operation.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> </note> 
         /// <para>
         ///  For more information about using a password policy, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing
         /// an IAM Password Policy</a> in the <i>IAM User Guide</i>.
@@ -2666,6 +2670,23 @@ namespace Amazon.IdentityManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRole
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRole">REST API Reference for UpdateRole Operation</seealso>
+        Task<UpdateRoleResponse> UpdateRoleAsync(UpdateRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

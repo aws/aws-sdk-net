@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     ///  This data type is used as a response element in the <a>UploadServerCertificate</a>
-    /// and <a>ListServerCertificates</a> actions. 
+    /// and <a>ListServerCertificates</a> operations. 
     /// </para>
     /// </summary>
     public partial class ServerCertificateMetadata

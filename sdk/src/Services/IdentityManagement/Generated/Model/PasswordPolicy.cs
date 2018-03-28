@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     ///  This data type is used as a response element in the <a>GetAccountPasswordPolicy</a>
-    /// action. 
+    /// operation. 
     /// </para>
     /// </summary>
     public partial class PasswordPolicy
@@ -70,8 +70,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ExpirePasswords. 
         /// <para>
-        /// Indicates whether passwords in the account expire. Returns true if MaxPasswordAge
-        /// is contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.
+        /// Indicates whether passwords in the account expire. Returns true if <code>MaxPasswordAge</code>
+        /// contains a value greater than 0. Returns false if MaxPasswordAge is 0 or not present.
         /// </para>
         /// </summary>
         public bool ExpirePasswords

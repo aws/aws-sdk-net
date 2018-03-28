@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>,
-    /// <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> actions. 
+    /// <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations. 
     /// </para>
     ///  
     /// <para>
@@ -77,6 +77,14 @@ namespace Amazon.IdentityManagement.Model
         /// The policy document is returned in the response to the <a>GetPolicyVersion</a> and
         /// <a>GetAccountAuthorizationDetails</a> operations. It is not returned in the response
         /// to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
         /// </para>
         /// </summary>
         public string Document

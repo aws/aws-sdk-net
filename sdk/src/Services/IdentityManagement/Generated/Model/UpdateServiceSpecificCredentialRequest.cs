@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateServiceSpecificCredential operation.
     /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
     /// Service-specific credentials that are inactive cannot be used for authentication to
-    /// the service. This action can be used to disable a user’s service-specific credential
+    /// the service. This operation can be used to disable a user’s service-specific credential
     /// as part of a credential rotation work flow.
     /// </summary>
     public partial class UpdateServiceSpecificCredentialRequest : AmazonIdentityManagementServiceRequest
@@ -92,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

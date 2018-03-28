@@ -87,8 +87,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ContextKeyValues. 
         /// <para>
         /// The value (or values, if the condition context key supports multiple values) to provide
-        /// to the simulation for use when the key is referenced by a <code>Condition</code> element
-        /// in an input policy.
+        /// to the simulation when the key is referenced by a <code>Condition</code> element in
+        /// an input policy.
         /// </para>
         /// </summary>
         public List<string> ContextKeyValues

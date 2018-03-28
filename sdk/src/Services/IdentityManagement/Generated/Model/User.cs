@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the following actions:
+    /// This data type is used as a response element in the following operations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -146,7 +146,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. 
+        /// This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
+        /// 
         /// </para>
         /// </summary>
         public DateTime PasswordLastUsed

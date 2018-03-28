@@ -2497,6 +2497,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void UpdateRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRole");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoleRequest>();
+            var marshaller = new UpdateRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateRoleResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateRoleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void UpdateRoleDescriptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateRoleDescription");

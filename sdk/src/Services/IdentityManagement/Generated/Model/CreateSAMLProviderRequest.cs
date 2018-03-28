@@ -35,14 +35,15 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// The SAML provider resource that you create with this operation can be used as a principal
-    /// in an IAM role's trust policy to enable federated users who sign-in using the SAML
-    /// IdP to assume the role. You can create an IAM role that supports Web-based single
-    /// sign-on (SSO) to the AWS Management Console or one that supports API access to AWS.
+    /// in an IAM role's trust policy. Such a policy can enable federated users who sign-in
+    /// using the SAML IdP to assume the role. You can create an IAM role that supports Web-based
+    /// single sign-on (SSO) to the AWS Management Console or one that supports API access
+    /// to AWS.
     /// </para>
     ///  
     /// <para>
-    /// When you create the SAML provider resource, you upload an a SAML metadata document
-    /// that you get from your IdP and that includes the issuer's name, expiration information,
+    /// When you create the SAML provider resource, you upload a SAML metadata document that
+    /// you get from your IdP. That document includes the issuer's name, expiration information,
     /// and keys that can be used to validate the SAML authentication response (assertions)
     /// that the IdP sends. You must generate the metadata document using the identity management
     /// software that is used as your organization's IdP.
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string Name

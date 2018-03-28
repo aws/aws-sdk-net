@@ -30,8 +30,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
     /// Lists the IAM users that have the specified path prefix. If no path prefix is specified,
-    /// the action returns all users in the AWS account. If there are none, the action returns
-    /// an empty list.
+    /// the operation returns all users in the AWS account. If there are none, the operation
+    /// returns an empty list.
     /// 
     ///  
     /// <para>
@@ -106,11 +106,11 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all user names. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+        /// all user names. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
         /// pattern</a>) a string of characters consisting of either a forward slash (/) by itself
-        /// or a string that must begin and end with forward slashes, containing any ASCII character
-        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// or a string that must begin and end with forward slashes. In addition, it can contain
+        /// any ASCII character from the ! (\u0021) through the DEL character (\u007F), including
+        /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string PathPrefix

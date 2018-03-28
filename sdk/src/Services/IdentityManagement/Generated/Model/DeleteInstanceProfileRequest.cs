@@ -34,9 +34,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Make sure you do not have any Amazon EC2 instances running with the instance profile
-    /// you are about to delete. Deleting a role or instance profile that is associated with
-    /// a running instance will break any applications running on the instance.
+    /// Make sure that you do not have any Amazon EC2 instances running with the instance
+    /// profile you are about to delete. Deleting a role or instance profile that is associated
+    /// with a running instance will break any applications running on the instance.
     /// </para>
     ///  </important> 
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string InstanceProfileName

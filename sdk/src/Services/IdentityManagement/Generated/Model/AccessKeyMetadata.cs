@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>ListAccessKeys</a> action.
+    /// This data type is used as a response element in the <a>ListAccessKeys</a> operation.
     /// </para>
     /// </summary>
     public partial class AccessKeyMetadata

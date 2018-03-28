@@ -180,6 +180,11 @@
     <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateRoleRequest.MaxSessionDuration</property>
+    <min>3600</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Path</property>
     <min>1</min>
     <max>512</max>
@@ -1520,6 +1525,22 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.Description</property>
+    <max>1000</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.MaxSessionDuration</property>
+    <min>3600</min>
+    <max>43200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleDescriptionRequest.Description</property>
     <max>1000</max>
     <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
@@ -1968,6 +1989,11 @@
     <property>Amazon.IdentityManagement.Model.Role.Description</property>
     <max>1000</max>
     <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.Role.MaxSessionDuration</property>
+    <min>3600</min>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.Path</property>

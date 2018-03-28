@@ -50,7 +50,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EvalActionName. 
         /// <para>
-        /// The name of the API action tested on the indicated resource.
+        /// The name of the API operation tested on the indicated resource.
         /// </para>
         /// </summary>
         public string EvalActionName
@@ -109,7 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EvalResourceName. 
         /// <para>
-        /// The ARN of the resource that the indicated API action was tested on.
+        /// The ARN of the resource that the indicated API operation was tested on.
         /// </para>
         /// </summary>
         public string EvalResourceName
@@ -128,9 +128,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MatchedStatements. 
         /// <para>
         /// A list of the statements in the input policies that determine the result for this
-        /// scenario. Remember that even if multiple statements allow the action on the resource,
-        /// if only one statement denies that action, then the explicit deny overrides any allow,
-        /// and the deny statement is the only entry included in the result.
+        /// scenario. Remember that even if multiple statements allow the operation on the resource,
+        /// if only one statement denies that operation, then the explicit deny overrides any
+        /// allow, and the deny statement is the only entry included in the result.
         /// </para>
         /// </summary>
         public List<Statement> MatchedStatements
@@ -192,7 +192,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceSpecificResults. 
         /// <para>
-        /// The individual results of the simulation of the API action specified in EvalActionName
+        /// The individual results of the simulation of the API operation specified in EvalActionName
         /// on each resource.
         /// </para>
         /// </summary>
