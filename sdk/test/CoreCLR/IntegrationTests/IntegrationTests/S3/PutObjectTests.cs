@@ -97,15 +97,18 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             );
         }
 
-        [Fact]
-        public async Task SimplePutObjectTest()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task SimplePutObjectTest(bool useChunkEncoding)
         {
             PutObjectRequest request = new PutObjectRequest()
             {
                 BucketName = bucketName,
                 Key = "contentBodyPut" + random.Next(),
                 ContentBody = testContent,
-                CannedACL = S3CannedACL.AuthenticatedRead
+                CannedACL = S3CannedACL.AuthenticatedRead,
+                UseChunkEncoding = useChunkEncoding
             };
             PutObjectResponse response = await Client.PutObjectAsync(request);
 
@@ -113,34 +116,43 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.True(response.ETag.Length > 0);
         }
 
-        [Fact]
-        public async Task SimplePathPutObjectTest()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task SimplePathPutObjectTest(bool useChunkEncoding)
         {
             PutObjectRequest request = new PutObjectRequest()
             {
                 BucketName = bucketName,
                 FilePath = filePath,
-                CannedACL = S3CannedACL.AuthenticatedRead
+                CannedACL = S3CannedACL.AuthenticatedRead,
+                UseChunkEncoding = useChunkEncoding
             };
             PutObjectResponse response = await Client.PutObjectAsync(request);
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
             Assert.True(response.ETag.Length > 0);
-        }
-
-        [Fact]
-        public async Task GzipTest()
+        } 
+         
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task GzipTest(bool useChunkEncoding)
         {
             var request = CreatePutObjectRequest();
+            request.UseChunkEncoding = useChunkEncoding;
             request.Headers.ContentEncoding = "gzip";
 
             await TestPutAndGet(request);
         }
 
-        [Fact]
-        public async Task PutObjectWithContentEncoding()
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task PutObjectWithContentEncoding(bool useChunkEncoding)
         {
             var request = CreatePutObjectRequest();
+            request.UseChunkEncoding = useChunkEncoding;
             request.Headers.ContentEncoding = "gzip";
             request.Headers.ContentDisposition = "disposition";
 
@@ -148,10 +160,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.Equal("disposition", headers.ContentDisposition);
             Assert.Equal("gzip", headers.ContentEncoding);
         }
-        [Fact]
-        public async Task PutObjectWithContentEncodingIdentity()
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task PutObjectWithContentEncodingIdentity(bool useChunkEncoding)
         {
             var request = CreatePutObjectRequest();
+            request.UseChunkEncoding = useChunkEncoding;
             request.Headers.ContentEncoding = "identity";
             request.Headers.ContentDisposition = "disposition";
 
@@ -159,10 +175,14 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.Equal("disposition", headers.ContentDisposition);
             Assert.Equal("identity", headers.ContentEncoding);
         }
-        [Fact]
-        public async Task PutObjectWithoutContentEncoding()
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public async Task PutObjectWithoutContentEncoding(bool useChunkEncoding)
         {
             var request = CreatePutObjectRequest();
+            request.UseChunkEncoding = useChunkEncoding;
             request.Headers.ContentDisposition = "disposition";
 
             var headers = await TestPutAndGet(request);
