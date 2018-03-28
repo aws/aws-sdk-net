@@ -55,7 +55,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             _appID = clientContext.AppID;
             _maConfig = maConfig;
             _maManager = maManager;
-            _eventStore = new SQLiteEventStore(maConfig);
+            _eventStore = UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer ? (IEventStore)new FileEventStore(maConfig) : new SQLiteEventStore(maConfig);
             _deliveryPolicies = new List<IDeliveryPolicy>();
             _deliveryPolicies.Add(_policyFactory.NewConnectivityPolicy());
         }

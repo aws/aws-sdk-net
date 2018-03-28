@@ -222,13 +222,13 @@ namespace Amazon.Runtime.Internal
                 // Invoke the callback method for the request on the thread pool
                 // after the web request is executed. This callback triggers the 
                 // post processing of the response from the server.
-                ThreadPool.QueueUserWorkItem((state) =>
+                if(Application.platform == RuntimePlatform.WebGLPlayer) 
                 {
-                    try
+                    try 
                     {
                         request.Callback(request.AsyncResult);
                     }
-                    catch (Exception exception)
+                    catch (Exception exception) 
                     {
                         // The callback method (HttpHandler.GetResponseCallback) and 
                         // subsequent calls to handler callbacks capture any exceptions
@@ -241,7 +241,28 @@ namespace Amazon.Runtime.Internal
                     + "UnityMainThreadDispatcher.InvokeRequest method.");
 
                     }
-                });
+                }
+                else
+                    ThreadPool.QueueUserWorkItem((state) =>
+                    {
+                        try
+                        {
+                            request.Callback(request.AsyncResult);
+                        }
+                        catch (Exception exception)
+                        {
+                            // The callback method (HttpHandler.GetResponseCallback) and 
+                            // subsequent calls to handler callbacks capture any exceptions
+                            // thrown from the runtime pipeline during post processing.
+
+                            // Log the exception, in case we get an unhandled exception 
+                            // from the callback.
+                            _logger.Error(exception,
+                        "An exception was thrown from the callback method executed from"
+                        + "UnityMainThreadDispatcher.InvokeRequest method.");
+
+                        }
+                    });
             }
         }
 

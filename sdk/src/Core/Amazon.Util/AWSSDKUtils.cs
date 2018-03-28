@@ -522,7 +522,14 @@ namespace Amazon.Util
                 var eventHandler = ((EventHandler<T>)call);
                 if (eventHandler != null)
                 {
+#if UNITY
+                    if(UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer)
+                        CoroutineDispatcher.Dispatch(() => eventHandler(sender, args));
+                    else
+                        Dispatcher.Dispatch(() => eventHandler(sender, args));
+#else
                     Dispatcher.Dispatch(() => eventHandler(sender, args));
+#endif
                 }
             }
         }
@@ -541,6 +548,20 @@ namespace Amazon.Util
                 return _dispatcher;
             }
         }
+
+#if UNITY
+        private static CoroutineInvoker _coroutineDispatcher;
+
+        private static CoroutineInvoker CoroutineDispatcher {
+            get {
+                if (_coroutineDispatcher == null) {
+                    _coroutineDispatcher = new CoroutineInvoker();
+                }
+
+                return _coroutineDispatcher;
+            }
+        }
+#endif
 
         /// <summary>
         /// Parses a query string of a URL and returns the parameters as a string-to-string dictionary.

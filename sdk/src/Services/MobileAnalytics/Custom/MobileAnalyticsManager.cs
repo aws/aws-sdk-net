@@ -36,6 +36,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         private static IDictionary<string, MobileAnalyticsManager> _instanceDictionary = new Dictionary<string, MobileAnalyticsManager>();
         private Logger _logger = Logger.GetLogger(typeof(MobileAnalyticsManager));
         private static BackgroundRunner _backgroundRunner = new BackgroundRunner();
+#if UNITY
+        private static CoroutineRunner _coroutineRunner = new CoroutineRunner();
+#endif
 
         #region constructor
 
@@ -135,7 +138,18 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
                 managerInstance.Session.Start();
             }
 
+#if UNITY
+            if(UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer)
+            {
+                _coroutineRunner.StartWork();
+            }
+            else 
+            {
+                _backgroundRunner.StartWork();
+            }
+#else
             _backgroundRunner.StartWork();
+#endif
 
             return managerInstance;
         }

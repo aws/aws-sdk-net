@@ -118,7 +118,12 @@ namespace Amazon.Runtime
 
         #region Private/protected credential update methods
 
-        private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
+#if UNITY
+        protected
+#else
+        private
+#endif
+        void UpdateToGeneratedCredentials(CredentialsRefreshState state)
         {
             // Check if the new credentials are already expired
             if (ShouldUpdate)
@@ -154,7 +159,12 @@ namespace Amazon.Runtime
         }
 
         // Test credentials existence and expiration time
-        private bool ShouldUpdate
+#if UNITY
+        protected
+#else
+        private
+#endif
+        bool ShouldUpdate
         {
             get
             {

@@ -78,7 +78,7 @@ namespace Amazon.Util.Internal
 
         public static void AsyncExecutor(Action action, AsyncOptions options)
         {
-            if (options.ExecuteCallbackOnMainThread)
+            if (options.ExecuteCallbackOnMainThread || Application.platform == RuntimePlatform.WebGLPlayer)
             {
                 if (UnityInitializer.IsMainThread())
                 {

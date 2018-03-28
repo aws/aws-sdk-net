@@ -33,6 +33,14 @@ namespace Amazon.Runtime.Internal.Util
 
         private Queue<ThreadPoolOptions<T>> _queuedRequests = new Queue<ThreadPoolOptions<T>>();
 
+        private bool IsWebGL 
+        {
+            get 
+            {
+                return UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer;
+            }
+        }
+
         /// <summary>
         /// Maximum number of requests to be enqueued to
         /// the threadpool at any given time.
@@ -47,7 +55,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
-                return Thread.VolatileRead(ref _requestCount);
+                return IsWebGL ? _requestCount : Thread.VolatileRead(ref _requestCount);
             }
         }
 
@@ -71,11 +79,14 @@ namespace Amazon.Runtime.Internal.Util
         public void Enqueue(T executionContext, Action<T> callback, Action<Exception, T> errorCallback)
         {
             ThreadPoolOptions<T> options = new ThreadPoolOptions<T> { Callback = callback, ErrorCallback = errorCallback, State = executionContext };
-            var requestNumber = Interlocked.Increment(ref _requestCount);
+            var requestNumber = IsWebGL ? ++_requestCount : Interlocked.Increment(ref _requestCount);
             if (requestNumber <= this.MaxConcurentRequest)
             {
                 // If we haven't hit the limit, enqueue to threadpool.
-                ThreadPool.QueueUserWorkItem(Callback, options);
+                if (IsWebGL)
+                    Callback(options);
+                else
+                    ThreadPool.QueueUserWorkItem(Callback, options);
             }
             else
             {
@@ -129,10 +140,16 @@ namespace Amazon.Runtime.Internal.Util
             }
             if (count > 0)
             {
-                ThreadPool.QueueUserWorkItem(Callback, context);
+                if (IsWebGL)
+                    Callback(context);
+                else
+                    ThreadPool.QueueUserWorkItem(Callback, context);
             }
 
-            Interlocked.Decrement(ref _requestCount);
+            if (IsWebGL)
+                _requestCount--;
+            else
+                Interlocked.Decrement(ref _requestCount);
         }
 
         /// <summary>
