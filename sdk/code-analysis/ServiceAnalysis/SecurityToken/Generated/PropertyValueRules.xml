@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleRequest.ExternalId</property>
@@ -48,7 +48,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithSAMLRequest.Policy</property>
@@ -80,7 +80,7 @@
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.DurationSeconds</property>
     <min>900</min>
-    <max>3600</max>
+    <max>43200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityToken.Model.AssumeRoleWithWebIdentityRequest.Policy</property>

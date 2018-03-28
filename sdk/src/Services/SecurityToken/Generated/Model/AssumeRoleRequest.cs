@@ -68,9 +68,18 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// The temporary security credentials are valid for the duration that you specified when
-    /// calling <code>AssumeRole</code>, which can be from 900 seconds (15 minutes) to a maximum
-    /// of 3600 seconds (1 hour). The default is 1 hour. 
+    /// By default, the temporary security credentials created by <code>AssumeRole</code>
+    /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
+    /// parameter to specify the duration of your session. You can provide a value from 900
+    /// seconds (15 minutes) up to the maximum session duration setting for the role. This
+    /// setting can have a value from 1 hour to 12 hours. To learn how to view the maximum
+    /// value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+    /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+    /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
+    /// API operations or the <code>assume-role*</code> CLI operations but does not apply
+    /// when you use those operations to create a console URL. For more information, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+    /// Roles</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -159,15 +168,24 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// The duration, in seconds, of the role session. The value can range from 900 seconds
-        /// (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
+        /// (15 minutes) up to the maximum session duration setting for the role. This setting
+        /// can have a value from 1 hour to 12 hours. If you specify a value higher than this
+        /// setting, the operation fails. For example, if you specify a session duration of 12
+        /// hours, but your administrator set the maximum session duration to 6 hours, your operation
+        /// fails. To learn how to view the maximum value for your role, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the value is set to 3600 seconds. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is separate from the duration of a console session that you might request using
-        /// the returned credentials. The request to the federation endpoint for a console sign-in
-        /// token takes a <code>SessionDuration</code> parameter that specifies the maximum length
-        /// of the console session, separately from the <code>DurationSeconds</code> parameter
-        /// on this API. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+        /// The <code>DurationSeconds</code> parameter is separate from the duration of a console
+        /// session that you might request using the returned credentials. The request to the
+        /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
+        /// parameter that specifies the maximum length of the console session. For more information,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
         /// a URL that Enables Federated Users to Access the AWS Management Console</a> in the
         /// <i>IAM User Guide</i>.
         /// </para>
