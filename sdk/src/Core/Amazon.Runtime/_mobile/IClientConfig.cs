@@ -20,6 +20,7 @@ using System.Text;
 using Amazon.Util;
 
 using Amazon.Runtime.Internal.Auth;
+using System.Net.Http;
 
 namespace Amazon.Runtime
 {
@@ -41,5 +42,10 @@ namespace Amazon.Runtime
         /// </summary>
         IWebProxy GetWebProxy();
 
+        /// <summary>
+        /// Return a custom http message handle to use with HttpClient. (example: NativeMessageHandler from ModernHttpClient)
+        /// Default Http Message Handler used if null value returned
+        /// </summary>
+        HttpClientHandler GetHttpMessageHandler();
     }
 }
