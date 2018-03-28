@@ -64,6 +64,12 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActionsGuarded", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionsGuarded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Comparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

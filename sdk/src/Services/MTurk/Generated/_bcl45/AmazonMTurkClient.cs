@@ -1591,10 +1591,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListQualificationRequests</code> operation retrieves requests for Qualifications
-        /// of a particular Qualification type. The owner of the Qualification type calls this
-        /// operation to poll for pending requests, and accepts them using the AcceptQualification
-        /// operation.
+        /// The <code>ListQualificationTypes</code> operation returns a list of Qualification
+        /// types, filtered by an optional search term.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQualificationTypes service method.</param>
         /// 

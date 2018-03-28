@@ -45,6 +45,12 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(QualificationRequirement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActionsGuarded())
+            {
+                context.Writer.WritePropertyName("ActionsGuarded");
+                context.Writer.Write(requestObject.ActionsGuarded);
+            }
+
             if(requestObject.IsSetComparator())
             {
                 context.Writer.WritePropertyName("Comparator");

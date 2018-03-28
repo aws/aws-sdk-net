@@ -251,6 +251,60 @@ namespace Amazon.MTurk
 
 
     /// <summary>
+    /// Constants used for properties of type HITAccessActions.
+    /// </summary>
+    public class HITAccessActions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accept for HITAccessActions
+        /// </summary>
+        public static readonly HITAccessActions Accept = new HITAccessActions("Accept");
+        /// <summary>
+        /// Constant DiscoverPreviewAndAccept for HITAccessActions
+        /// </summary>
+        public static readonly HITAccessActions DiscoverPreviewAndAccept = new HITAccessActions("DiscoverPreviewAndAccept");
+        /// <summary>
+        /// Constant PreviewAndAccept for HITAccessActions
+        /// </summary>
+        public static readonly HITAccessActions PreviewAndAccept = new HITAccessActions("PreviewAndAccept");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HITAccessActions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HITAccessActions FindValue(string value)
+        {
+            return FindValue<HITAccessActions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HITAccessActions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HITReviewStatus.
     /// </summary>
     public class HITReviewStatus : ConstantClass

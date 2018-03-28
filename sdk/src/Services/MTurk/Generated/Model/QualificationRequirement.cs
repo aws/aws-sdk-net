@@ -30,15 +30,48 @@ namespace Amazon.MTurk.Model
     /// <summary>
     /// The QualificationRequirement data structure describes a Qualification that a Worker
     /// must have before the Worker is allowed to accept a HIT. A requirement may optionally
-    /// state that a Worker must have the Qualification in order to preview the HIT.
+    /// state that a Worker must have the Qualification in order to preview the HIT, or see
+    /// the HIT in search results.
     /// </summary>
     public partial class QualificationRequirement
     {
+        private HITAccessActions _actionsGuarded;
         private Comparator _comparator;
         private List<int> _integerValues = new List<int>();
         private List<Locale> _localeValues = new List<Locale>();
         private string _qualificationTypeId;
         private bool? _requiredToPreview;
+
+        /// <summary>
+        /// Gets and sets the property ActionsGuarded. 
+        /// <para>
+        ///  Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+        /// from taking the specified action. Valid arguments include "Accept" (Worker cannot
+        /// accept the HIT, but can preview the HIT and see it in their search results), "PreviewAndAccept"
+        /// (Worker cannot accept or preview the HIT, but can see the HIT in their search results),
+        /// and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in their
+        /// search results). It's possible for you to create a HIT with multiple QualificationRequirements
+        /// (which can have different values for the ActionGuarded attribute). In this case, the
+        /// Worker is only permitted to perform an action when they have met all QualificationRequirements
+        /// guarding the action. The actions in the order of least restrictive to most restrictive
+        /// are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements
+        /// that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are
+        /// set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+        /// HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded
+        /// should not be used in combination with the <code>RequiredToPreview</code> field. 
+        /// </para>
+        /// </summary>
+        public HITAccessActions ActionsGuarded
+        {
+            get { return this._actionsGuarded; }
+            set { this._actionsGuarded = value; }
+        }
+
+        // Check to see if ActionsGuarded property is set
+        internal bool IsSetActionsGuarded()
+        {
+            return this._actionsGuarded != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Comparator. 
@@ -132,13 +165,15 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property RequiredToPreview. 
         /// <para>
-        ///  If true, the question data for the HIT will not be shown when a Worker whose Qualifications
+        ///  DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview
+        /// is true, the question data for the HIT will not be shown when a Worker whose Qualifications
         /// do not meet this requirement tries to preview the HIT. That is, a Worker's Qualifications
         /// must meet all of the requirements for which RequiredToPreview is true in order to
         /// preview the HIT. If a Worker meets all of the requirements where RequiredToPreview
         /// is true (or if there are no such requirements), but does not meet all of the requirements
         /// for the HIT, the Worker will be allowed to preview the HIT's question data, but will
-        /// not be allowed to accept and complete the HIT. The default is false. 
+        /// not be allowed to accept and complete the HIT. The default is false. This should not
+        /// be used in combination with the <code>ActionsGuarded</code> field. 
         /// </para>
         /// </summary>
         public bool RequiredToPreview
