@@ -171,6 +171,9 @@
     <Compile Include="Amazon.Util\Internal\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\_bcl45+coreclr+pcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -225,6 +228,7 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+    
     <Reference Include="PCLCrypto">
       <HintPath>..\..\packages\PCLCrypto.1.0.2.15130\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
     </Reference>

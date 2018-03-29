@@ -127,7 +127,7 @@ namespace Amazon.RDS.Internal
 
                 var authorization = "&" + signingResult.ForQueryParameters;
 
-                preSignedUrlRequest.PreSignedUrl = AmazonServiceClient.ComposeUrl(iRequest) + authorization;
+                preSignedUrlRequest.PreSignedUrl = AmazonServiceClient.ComposeUrl(iRequest).AbsoluteUri + authorization;
             }
         }
     }

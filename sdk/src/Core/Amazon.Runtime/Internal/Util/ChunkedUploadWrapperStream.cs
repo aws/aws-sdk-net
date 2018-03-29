@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public class ChunkedUploadWrapperStream : WrapperStream
     {
-        public static readonly int DefaultChunkSize = 128*1024;
+        public static readonly int DefaultChunkSize = 81920;
 
         private const string CLRF = "\r\n";
         private const string CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";

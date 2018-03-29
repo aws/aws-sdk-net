@@ -12,10 +12,10 @@
 
 using System;
 using System.IO;
-using System.Net.Http;
 using System.Threading.Tasks;
-
+using Amazon.Util;
 using Amazon.WorkDocs.Model;
+using System.Collections.Generic;
 
 namespace Amazon.WorkDocs.Utils
 {
@@ -26,7 +26,7 @@ namespace Amazon.WorkDocs.Utils
     {
         private readonly IAmazonWorkDocs client;
         private readonly String authenticationToken;
-        private readonly HttpClient httpClient;
+        private readonly AWSHttpClient httpClient;
         private bool disposed = false;
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Amazon.WorkDocs.Utils
         {
             client = param.WorkDocsClient;
             authenticationToken = param.AuthenticationToken;
-            httpClient = new HttpClient();
+            httpClient = new AWSHttpClient();
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Utils
                 GetDocumentResponse response = await client.GetDocumentAsync(getDocumentRequest).ConfigureAwait(false);
                 versionId = response.Metadata.LatestVersionMetadata.Id;
             }
-            
+
             Stream documentVersionStream = await GetDocumentVersionStreamAsync(getDocumentStreamRequest.DocumentId, versionId).ConfigureAwait(false);
             GetDocumentStreamResponse getDocumentStreamResponse = new GetDocumentStreamResponse(getDocumentStreamRequest)
             {
@@ -111,20 +111,21 @@ namespace Amazon.WorkDocs.Utils
             String versionId = response.Metadata.LatestVersionMetadata.Id;
             String uploadUrl = uploadMetadata.UploadUrl;
 
+            AWSStreamContent content = new AWSStreamContent(uploadDocumentStreamRequest.Stream);
             try
             {
-                httpClient.DefaultRequestHeaders.Add("x-amz-server-side-encryption", "AES256");
+                IDictionary<string, string> requestHeaders = new Dictionary<string, string>();
+                requestHeaders.Add("x-amz-server-side-encryption", "AES256");
 
-                StreamContent content = new StreamContent(uploadDocumentStreamRequest.Stream);
-                content.Headers.Remove("Content-Type");
-                content.Headers.Add("Content-Type", uploadDocumentStreamRequest.ContentType);
+                content.RemoveHttpContentHeader("Content-Type");
+                content.AddHttpContentHeader("Content-Type", uploadDocumentStreamRequest.ContentType);
 
-                Task<HttpResponseMessage> responseTask = httpClient.PutAsync(uploadUrl, content);
-                Task<Task<String>> task = responseTask.ContinueWith(t => CompleteUpload(documentId, versionId));
+                await httpClient.PutRequestUriAsync(uploadUrl, content, requestHeaders);
+                var task = CompleteUpload(documentId, versionId);
 
                 UploadDocumentStreamResponse uploadDocumentStreamResponse = new UploadDocumentStreamResponse(uploadDocumentStreamRequest)
                 {
-                    DocumentId = task.Result.Result,
+                    DocumentId = task.Result,
                     VersionId = versionId
                 };
 
@@ -132,7 +133,7 @@ namespace Amazon.WorkDocs.Utils
             }
             finally
             {
-                httpClient.DefaultRequestHeaders.Remove("x-amz-server-side-encryption");
+                content.Dispose();
             }
         }
 

@@ -505,7 +505,10 @@ namespace Amazon.Runtime
                     "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
             var parameterizedPath = string.Concat(AWSSDKUtils.UrlEncode(resourcePath, true), sb);
-            var uri = new Uri(url.AbsoluteUri + parameterizedPath);
+            var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
+            var uri = hasSlash
+                ? new Uri(url.AbsoluteUri + parameterizedPath)
+                : new Uri(url.AbsoluteUri + "/" + parameterizedPath);
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }

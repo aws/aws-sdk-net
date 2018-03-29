@@ -16,7 +16,7 @@
     <licenseUrl><#=this.Session["licenseUrl"]#></licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3<#=this.Session["ExtraTags"]#></tags>
-    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
 <# 
     if (bool.Parse(this.Session["requireLicenseAcceptance"].ToString()))
 	{#>

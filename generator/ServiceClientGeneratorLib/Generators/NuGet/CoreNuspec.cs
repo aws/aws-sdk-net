@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -31,13 +31,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 12 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -49,7 +49,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
-    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
     <dependencies>
       <group targetFramework=""net35"">
       </group>
@@ -57,7 +57,7 @@ namespace ServiceClientGenerator.Generators.NuGet
       </group>
 ");
             
-            #line 25 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -76,14 +76,14 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("\r\n      <group targetFramework=\"");
             
-            #line 39 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(target));
             
             #line default
             #line hidden
             this.Write("\">\r\n");
             
-            #line 40 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 			if(windowsPCLTargets.Contains(target))
 			{
@@ -93,7 +93,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             #line hidden
             this.Write("        <dependency id=\"Microsoft.Net.Http\" version=\"2.2.29\" />\r\n");
             
-            #line 45 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 			}
 
@@ -103,7 +103,7 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("        <dependency id=\"PCLStorage\" version=\"1.0.2\" />\r\n        <dependency id=\"P" +
                     "CLCrypto\" version=\"1.0.2.15130\" />\r\n      </group>\r\n");
             
-            #line 51 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 		}
 
@@ -117,7 +117,7 @@ namespace ServiceClientGenerator.Generators.NuGet
       </group>
 ");
             
-            #line 59 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 	}
 
@@ -147,7 +147,7 @@ namespace ServiceClientGenerator.Generators.NuGet
 
 ");
             
-            #line 83 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 83 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -182,7 +182,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "t=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp" +
                     "8\" />\r\n\r\n");
             
-            #line 120 "D:\workspace\AWSDotNetPublic_static\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 120 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 
