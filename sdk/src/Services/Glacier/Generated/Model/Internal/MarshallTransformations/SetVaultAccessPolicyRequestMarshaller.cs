@@ -81,7 +81,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetVaultAccessPolicyRequestMarshaller _instance = new SetVaultAccessPolicyRequestMarshaller();        
 
+        internal static SetVaultAccessPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetVaultAccessPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

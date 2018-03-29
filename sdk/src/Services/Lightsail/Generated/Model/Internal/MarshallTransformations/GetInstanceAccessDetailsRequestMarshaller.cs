@@ -88,7 +88,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetInstanceAccessDetailsRequestMarshaller _instance = new GetInstanceAccessDetailsRequestMarshaller();        
 
+        internal static GetInstanceAccessDetailsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetInstanceAccessDetailsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

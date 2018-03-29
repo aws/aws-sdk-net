@@ -126,7 +126,23 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static StartSupportDataExportRequestMarshaller _instance = new StartSupportDataExportRequestMarshaller();        
 
+        internal static StartSupportDataExportRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartSupportDataExportRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

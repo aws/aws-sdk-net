@@ -112,7 +112,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeMetricFiltersRequestMarshaller _instance = new DescribeMetricFiltersRequestMarshaller();        
 
+        internal static DescribeMetricFiltersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeMetricFiltersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

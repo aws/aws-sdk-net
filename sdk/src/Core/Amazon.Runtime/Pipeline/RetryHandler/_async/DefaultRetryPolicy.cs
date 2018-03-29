@@ -30,9 +30,9 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">Request context containing the state of the request.</param>
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <returns>Return true if the request should be retried.</returns>
-        public override async Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
+        public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
-            return await Task.FromResult(RetryForExceptionSync(exception)).ConfigureAwait(false);
+            return Task.FromResult(RetryForExceptionSync(exception));
         }
 
         /// <summary>
@@ -40,10 +40,10 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
-        public override async Task WaitBeforeRetryAsync(IExecutionContext executionContext)
+        public override Task WaitBeforeRetryAsync(IExecutionContext executionContext)
         {
             var delay = CalculateRetryDelay(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
-            await Task.Delay(delay).ConfigureAwait(false);
+            return Task.Delay(delay, executionContext.RequestContext.CancellationToken);
         }
     }
 }

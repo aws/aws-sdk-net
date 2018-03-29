@@ -88,7 +88,23 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ModifyMountTargetSecurityGroupsRequestMarshaller _instance = new ModifyMountTargetSecurityGroupsRequestMarshaller();        
 
+        internal static ModifyMountTargetSecurityGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyMountTargetSecurityGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -110,7 +110,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchCreatePartitionRequestMarshaller _instance = new BatchCreatePartitionRequestMarshaller();        
 
+        internal static BatchCreatePartitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchCreatePartitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

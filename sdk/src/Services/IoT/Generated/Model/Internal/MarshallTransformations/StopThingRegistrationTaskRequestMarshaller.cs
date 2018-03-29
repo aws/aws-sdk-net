@@ -66,7 +66,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopThingRegistrationTaskRequestMarshaller _instance = new StopThingRegistrationTaskRequestMarshaller();        
 
+        internal static StopThingRegistrationTaskRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopThingRegistrationTaskRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

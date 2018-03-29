@@ -166,7 +166,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListClosedWorkflowExecutionsRequestMarshaller _instance = new ListClosedWorkflowExecutionsRequestMarshaller();        
 
+        internal static ListClosedWorkflowExecutionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListClosedWorkflowExecutionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

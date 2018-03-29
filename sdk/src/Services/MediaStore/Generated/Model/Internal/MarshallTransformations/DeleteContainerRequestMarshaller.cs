@@ -82,7 +82,23 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteContainerRequestMarshaller _instance = new DeleteContainerRequestMarshaller();        
 
+        internal static DeleteContainerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteContainerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

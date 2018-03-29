@@ -100,7 +100,23 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateTeamMemberRequestMarshaller _instance = new UpdateTeamMemberRequestMarshaller();        
 
+        internal static UpdateTeamMemberRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateTeamMemberRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

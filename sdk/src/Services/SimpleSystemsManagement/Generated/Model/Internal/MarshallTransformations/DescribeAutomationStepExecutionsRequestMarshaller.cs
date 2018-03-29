@@ -116,7 +116,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeAutomationStepExecutionsRequestMarshaller _instance = new DescribeAutomationStepExecutionsRequestMarshaller();        
 
+        internal static DescribeAutomationStepExecutionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAutomationStepExecutionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

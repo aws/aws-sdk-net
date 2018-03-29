@@ -98,7 +98,23 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutCorsPolicyRequestMarshaller _instance = new PutCorsPolicyRequestMarshaller();        
 
+        internal static PutCorsPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutCorsPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

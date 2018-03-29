@@ -66,7 +66,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static EnableAllFeaturesRequestMarshaller _instance = new EnableAllFeaturesRequestMarshaller();        
 
+        internal static EnableAllFeaturesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableAllFeaturesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

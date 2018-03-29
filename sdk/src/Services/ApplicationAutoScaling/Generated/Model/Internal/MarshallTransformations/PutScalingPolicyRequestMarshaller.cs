@@ -128,7 +128,23 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutScalingPolicyRequestMarshaller _instance = new PutScalingPolicyRequestMarshaller();        
 
+        internal static PutScalingPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutScalingPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -71,7 +71,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AbortDocumentVersionUploadRequestMarshaller _instance = new AbortDocumentVersionUploadRequestMarshaller();        
 
+        internal static AbortDocumentVersionUploadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AbortDocumentVersionUploadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

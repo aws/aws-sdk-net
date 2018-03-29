@@ -104,7 +104,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateDirectoryConfigRequestMarshaller _instance = new CreateDirectoryConfigRequestMarshaller();        
 
+        internal static CreateDirectoryConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDirectoryConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

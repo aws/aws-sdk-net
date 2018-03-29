@@ -87,7 +87,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteNamedQueryRequestMarshaller _instance = new DeleteNamedQueryRequestMarshaller();        
 
+        internal static DeleteNamedQueryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteNamedQueryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

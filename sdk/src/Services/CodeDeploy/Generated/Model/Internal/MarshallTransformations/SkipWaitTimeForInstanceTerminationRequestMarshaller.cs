@@ -82,7 +82,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SkipWaitTimeForInstanceTerminationRequestMarshaller _instance = new SkipWaitTimeForInstanceTerminationRequestMarshaller();        
 
+        internal static SkipWaitTimeForInstanceTerminationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SkipWaitTimeForInstanceTerminationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -97,5 +97,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PutScheduledUpdateGroupActionRequestMarshaller _instance = new PutScheduledUpdateGroupActionRequestMarshaller();        
+
+        internal static PutScheduledUpdateGroupActionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutScheduledUpdateGroupActionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -120,7 +120,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGameSessionQueueRequestMarshaller _instance = new UpdateGameSessionQueueRequestMarshaller();        
 
+        internal static UpdateGameSessionQueueRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGameSessionQueueRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

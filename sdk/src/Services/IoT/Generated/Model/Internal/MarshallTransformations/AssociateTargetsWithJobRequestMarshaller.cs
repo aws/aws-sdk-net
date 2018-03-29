@@ -94,7 +94,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateTargetsWithJobRequestMarshaller _instance = new AssociateTargetsWithJobRequestMarshaller();        
 
+        internal static AssociateTargetsWithJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateTargetsWithJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

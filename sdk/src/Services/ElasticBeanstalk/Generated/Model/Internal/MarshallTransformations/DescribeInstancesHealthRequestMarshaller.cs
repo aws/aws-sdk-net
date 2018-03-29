@@ -82,5 +82,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeInstancesHealthRequestMarshaller _instance = new DescribeInstancesHealthRequestMarshaller();        
+
+        internal static DescribeInstancesHealthRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeInstancesHealthRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

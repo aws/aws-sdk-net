@@ -78,5 +78,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetLoadBalancerPoliciesOfListenerRequestMarshaller _instance = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();        
+
+        internal static SetLoadBalancerPoliciesOfListenerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetLoadBalancerPoliciesOfListenerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

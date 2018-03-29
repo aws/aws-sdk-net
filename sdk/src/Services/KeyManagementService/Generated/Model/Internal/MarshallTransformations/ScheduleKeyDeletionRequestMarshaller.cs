@@ -88,7 +88,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ScheduleKeyDeletionRequestMarshaller _instance = new ScheduleKeyDeletionRequestMarshaller();        
 
+        internal static ScheduleKeyDeletionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ScheduleKeyDeletionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

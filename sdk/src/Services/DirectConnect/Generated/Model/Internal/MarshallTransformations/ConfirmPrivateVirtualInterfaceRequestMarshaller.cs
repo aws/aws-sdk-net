@@ -94,7 +94,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ConfirmPrivateVirtualInterfaceRequestMarshaller _instance = new ConfirmPrivateVirtualInterfaceRequestMarshaller();        
 
+        internal static ConfirmPrivateVirtualInterfaceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ConfirmPrivateVirtualInterfaceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

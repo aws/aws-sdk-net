@@ -93,7 +93,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePrivateVirtualInterfaceRequestMarshaller _instance = new CreatePrivateVirtualInterfaceRequestMarshaller();        
 
+        internal static CreatePrivateVirtualInterfaceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePrivateVirtualInterfaceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

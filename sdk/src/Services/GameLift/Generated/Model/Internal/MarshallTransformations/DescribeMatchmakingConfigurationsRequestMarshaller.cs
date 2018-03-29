@@ -105,7 +105,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeMatchmakingConfigurationsRequestMarshaller _instance = new DescribeMatchmakingConfigurationsRequestMarshaller();        
 
+        internal static DescribeMatchmakingConfigurationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeMatchmakingConfigurationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

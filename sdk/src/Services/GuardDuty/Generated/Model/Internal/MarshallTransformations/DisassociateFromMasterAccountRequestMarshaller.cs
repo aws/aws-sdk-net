@@ -66,7 +66,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateFromMasterAccountRequestMarshaller _instance = new DisassociateFromMasterAccountRequestMarshaller();        
 
+        internal static DisassociateFromMasterAccountRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateFromMasterAccountRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

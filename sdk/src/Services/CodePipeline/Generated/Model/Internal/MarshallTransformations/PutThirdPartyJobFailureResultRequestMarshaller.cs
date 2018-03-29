@@ -99,7 +99,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutThirdPartyJobFailureResultRequestMarshaller _instance = new PutThirdPartyJobFailureResultRequestMarshaller();        
 
+        internal static PutThirdPartyJobFailureResultRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutThirdPartyJobFailureResultRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

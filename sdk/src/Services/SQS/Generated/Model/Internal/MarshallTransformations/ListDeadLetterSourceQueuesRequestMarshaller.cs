@@ -65,5 +65,23 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListDeadLetterSourceQueuesRequestMarshaller _instance = new ListDeadLetterSourceQueuesRequestMarshaller();        
+
+        internal static ListDeadLetterSourceQueuesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDeadLetterSourceQueuesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

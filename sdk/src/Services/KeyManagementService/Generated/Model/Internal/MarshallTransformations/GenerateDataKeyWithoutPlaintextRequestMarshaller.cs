@@ -119,7 +119,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GenerateDataKeyWithoutPlaintextRequestMarshaller _instance = new GenerateDataKeyWithoutPlaintextRequestMarshaller();        
 
+        internal static GenerateDataKeyWithoutPlaintextRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GenerateDataKeyWithoutPlaintextRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

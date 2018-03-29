@@ -91,7 +91,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateTrafficPolicyInstanceRequestMarshaller _instance = new UpdateTrafficPolicyInstanceRequestMarshaller();        
 
-        
+        internal static UpdateTrafficPolicyInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateTrafficPolicyInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

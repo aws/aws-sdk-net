@@ -94,7 +94,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDomainSuggestionsRequestMarshaller _instance = new GetDomainSuggestionsRequestMarshaller();        
 
+        internal static GetDomainSuggestionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDomainSuggestionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

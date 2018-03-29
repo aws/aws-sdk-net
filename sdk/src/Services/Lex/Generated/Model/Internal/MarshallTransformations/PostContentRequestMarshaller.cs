@@ -88,7 +88,23 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PostContentRequestMarshaller _instance = new PostContentRequestMarshaller();        
 
+        internal static PostContentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PostContentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

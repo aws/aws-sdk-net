@@ -82,7 +82,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteDeliveryStreamRequestMarshaller _instance = new DeleteDeliveryStreamRequestMarshaller();        
 
+        internal static DeleteDeliveryStreamRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDeliveryStreamRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

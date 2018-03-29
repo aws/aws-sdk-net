@@ -117,7 +117,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListReviewPolicyResultsForHITRequestMarshaller _instance = new ListReviewPolicyResultsForHITRequestMarshaller();        
 
+        internal static ListReviewPolicyResultsForHITRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListReviewPolicyResultsForHITRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

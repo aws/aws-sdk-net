@@ -69,5 +69,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteEnvironmentConfigurationRequestMarshaller _instance = new DeleteEnvironmentConfigurationRequestMarshaller();        
+
+        internal static DeleteEnvironmentConfigurationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteEnvironmentConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

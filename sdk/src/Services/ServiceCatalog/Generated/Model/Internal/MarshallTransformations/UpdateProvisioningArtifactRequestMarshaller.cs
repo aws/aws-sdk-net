@@ -112,7 +112,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateProvisioningArtifactRequestMarshaller _instance = new UpdateProvisioningArtifactRequestMarshaller();        
 
+        internal static UpdateProvisioningArtifactRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateProvisioningArtifactRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

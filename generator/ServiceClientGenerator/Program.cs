@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ServiceClientGenerator
 {
@@ -37,27 +39,29 @@ namespace ServiceClientGenerator
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
-                    HashSet<string> generatedFiles = new HashSet<string>();
+                    ConcurrentDictionary<string, string> generatedFiles = new ConcurrentDictionary<string, string>();
 					GeneratorDriver.GenerateCoreProjects(generationManifest, options);
-					foreach (var serviceConfig in generationManifest.ServiceConfigurations)
+                    Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = 16 }, (serviceConfig, state) =>
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))
                         {
-                            Console.WriteLine("Skipping model (not in -servicemodels set to process): {0} ({1})", serviceConfig.ModelName, serviceConfig.ModelPath);
-                            continue;
+                            Console.WriteLine("Skipping model (not in -servicemodels set to process): {0} ({1})",
+                                serviceConfig.ModelName, serviceConfig.ModelPath);
+                            return;
                         }
 
-                        Console.WriteLine("Processing model: {0} ({1})", serviceConfig.ModelName, serviceConfig.ModelPath);
+                        Console.WriteLine("Processing model: {0} ({1})", serviceConfig.ModelName,
+                            serviceConfig.ModelPath);
                         var driver = new GeneratorDriver(serviceConfig, generationManifest, options);
                         driver.Execute();
-                        foreach(var file in driver.FilesWrittenToGeneratorFolder)
+                        foreach (var file in driver.FilesWrittenToGeneratorFolder)
                         {
-                            generatedFiles.Add(file);
+                            generatedFiles.TryAdd(file, file);
                         }
-                    }
+                    });
 
-                    GeneratorDriver.RemoveOrphanedShapes(generatedFiles, Path.Combine(options.SdkRootFolder, @"src\Services"));
-
+                    var files = new HashSet<string>(generatedFiles.Values);
+                    GeneratorDriver.RemoveOrphanedShapes(files, Path.Combine(options.SdkRootFolder, @"src\Services"));
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);

@@ -66,7 +66,23 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListLexiconsRequestMarshaller _instance = new ListLexiconsRequestMarshaller();        
 
+        internal static ListLexiconsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListLexiconsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -114,5 +114,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeReservedDBInstancesOfferingsRequestMarshaller _instance = new DescribeReservedDBInstancesOfferingsRequestMarshaller();        
+
+        internal static DescribeReservedDBInstancesOfferingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeReservedDBInstancesOfferingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

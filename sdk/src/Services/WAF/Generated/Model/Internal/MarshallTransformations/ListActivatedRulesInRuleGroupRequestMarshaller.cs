@@ -94,7 +94,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListActivatedRulesInRuleGroupRequestMarshaller _instance = new ListActivatedRulesInRuleGroupRequestMarshaller();        
 
+        internal static ListActivatedRulesInRuleGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListActivatedRulesInRuleGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

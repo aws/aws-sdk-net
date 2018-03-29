@@ -103,7 +103,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListPolicyAttachmentsRequestMarshaller _instance = new ListPolicyAttachmentsRequestMarshaller();        
 
+        internal static ListPolicyAttachmentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPolicyAttachmentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -99,7 +99,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateConditionalForwarderRequestMarshaller _instance = new CreateConditionalForwarderRequestMarshaller();        
 
+        internal static CreateConditionalForwarderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateConditionalForwarderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

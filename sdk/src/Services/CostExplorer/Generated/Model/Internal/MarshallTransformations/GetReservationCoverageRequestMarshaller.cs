@@ -126,7 +126,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetReservationCoverageRequestMarshaller _instance = new GetReservationCoverageRequestMarshaller();        
 
+        internal static GetReservationCoverageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetReservationCoverageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

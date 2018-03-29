@@ -99,7 +99,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTopicsDetectionJobsRequestMarshaller _instance = new ListTopicsDetectionJobsRequestMarshaller();        
 
+        internal static ListTopicsDetectionJobsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTopicsDetectionJobsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

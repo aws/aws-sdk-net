@@ -82,7 +82,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteEvaluationResultsRequestMarshaller _instance = new DeleteEvaluationResultsRequestMarshaller();        
 
+        internal static DeleteEvaluationResultsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteEvaluationResultsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

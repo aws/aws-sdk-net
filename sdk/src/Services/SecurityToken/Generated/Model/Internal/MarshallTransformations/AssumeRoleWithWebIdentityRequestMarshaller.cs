@@ -85,5 +85,23 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AssumeRoleWithWebIdentityRequestMarshaller _instance = new AssumeRoleWithWebIdentityRequestMarshaller();        
+
+        internal static AssumeRoleWithWebIdentityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssumeRoleWithWebIdentityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

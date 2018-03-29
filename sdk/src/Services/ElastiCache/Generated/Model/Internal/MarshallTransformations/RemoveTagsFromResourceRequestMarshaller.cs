@@ -74,5 +74,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RemoveTagsFromResourceRequestMarshaller _instance = new RemoveTagsFromResourceRequestMarshaller();        
+
+        internal static RemoveTagsFromResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveTagsFromResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

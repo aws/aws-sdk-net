@@ -94,7 +94,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateBandwidthRateLimitRequestMarshaller _instance = new UpdateBandwidthRateLimitRequestMarshaller();        
 
+        internal static UpdateBandwidthRateLimitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateBandwidthRateLimitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

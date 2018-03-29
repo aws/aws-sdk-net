@@ -117,7 +117,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateMicrosoftADRequestMarshaller _instance = new CreateMicrosoftADRequestMarshaller();        
 
+        internal static CreateMicrosoftADRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateMicrosoftADRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -66,7 +66,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DownloadDefaultKeyPairRequestMarshaller _instance = new DownloadDefaultKeyPairRequestMarshaller();        
 
+        internal static DownloadDefaultKeyPairRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DownloadDefaultKeyPairRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

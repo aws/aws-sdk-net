@@ -103,7 +103,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddAttributesToFindingsRequestMarshaller _instance = new AddAttributesToFindingsRequestMarshaller();        
 
+        internal static AddAttributesToFindingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddAttributesToFindingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

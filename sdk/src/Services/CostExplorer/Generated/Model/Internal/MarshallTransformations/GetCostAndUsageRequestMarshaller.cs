@@ -137,7 +137,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCostAndUsageRequestMarshaller _instance = new GetCostAndUsageRequestMarshaller();        
 
+        internal static GetCostAndUsageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCostAndUsageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

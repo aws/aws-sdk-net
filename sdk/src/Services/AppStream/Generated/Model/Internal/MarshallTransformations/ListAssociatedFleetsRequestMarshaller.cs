@@ -88,7 +88,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListAssociatedFleetsRequestMarshaller _instance = new ListAssociatedFleetsRequestMarshaller();        
 
+        internal static ListAssociatedFleetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListAssociatedFleetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -83,7 +83,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutFunctionConcurrencyRequestMarshaller _instance = new PutFunctionConcurrencyRequestMarshaller();        
 
+        internal static PutFunctionConcurrencyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutFunctionConcurrencyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

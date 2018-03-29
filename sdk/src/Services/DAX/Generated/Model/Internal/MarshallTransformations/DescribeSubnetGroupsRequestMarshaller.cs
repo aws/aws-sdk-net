@@ -99,7 +99,23 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeSubnetGroupsRequestMarshaller _instance = new DescribeSubnetGroupsRequestMarshaller();        
 
+        internal static DescribeSubnetGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeSubnetGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

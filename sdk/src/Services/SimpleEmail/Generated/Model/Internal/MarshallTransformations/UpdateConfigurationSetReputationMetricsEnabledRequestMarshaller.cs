@@ -69,5 +69,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller _instance = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller();        
+
+        internal static UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -69,5 +69,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RemoveRoleFromDBClusterRequestMarshaller _instance = new RemoveRoleFromDBClusterRequestMarshaller();        
+
+        internal static RemoveRoleFromDBClusterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveRoleFromDBClusterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

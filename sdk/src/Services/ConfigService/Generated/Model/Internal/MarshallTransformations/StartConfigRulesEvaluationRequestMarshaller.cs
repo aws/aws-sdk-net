@@ -87,7 +87,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartConfigRulesEvaluationRequestMarshaller _instance = new StartConfigRulesEvaluationRequestMarshaller();        
 
+        internal static StartConfigRulesEvaluationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartConfigRulesEvaluationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

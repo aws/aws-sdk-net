@@ -98,5 +98,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeOptionGroupOptionsRequestMarshaller _instance = new DescribeOptionGroupOptionsRequestMarshaller();        
+
+        internal static DescribeOptionGroupOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeOptionGroupOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

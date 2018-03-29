@@ -82,7 +82,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteGameSessionQueueRequestMarshaller _instance = new DeleteGameSessionQueueRequestMarshaller();        
 
+        internal static DeleteGameSessionQueueRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteGameSessionQueueRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

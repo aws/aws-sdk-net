@@ -104,7 +104,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetUserMFAPreferenceRequestMarshaller _instance = new SetUserMFAPreferenceRequestMarshaller();        
 
+        internal static SetUserMFAPreferenceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetUserMFAPreferenceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

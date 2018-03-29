@@ -92,7 +92,23 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetServiceGraphRequestMarshaller _instance = new GetServiceGraphRequestMarshaller();        
 
+        internal static GetServiceGraphRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetServiceGraphRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

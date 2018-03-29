@@ -66,7 +66,23 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSnowballUsageRequestMarshaller _instance = new GetSnowballUsageRequestMarshaller();        
 
+        internal static GetSnowballUsageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSnowballUsageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

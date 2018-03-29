@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RemoveClientIDFromOpenIDConnectProviderRequestMarshaller _instance = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();        
+
+        internal static RemoveClientIDFromOpenIDConnectProviderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveClientIDFromOpenIDConnectProviderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

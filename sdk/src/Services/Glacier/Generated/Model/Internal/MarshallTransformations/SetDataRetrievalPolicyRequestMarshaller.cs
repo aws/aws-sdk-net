@@ -86,7 +86,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetDataRetrievalPolicyRequestMarshaller _instance = new SetDataRetrievalPolicyRequestMarshaller();        
 
+        internal static SetDataRetrievalPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetDataRetrievalPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

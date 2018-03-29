@@ -72,7 +72,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListDistributionsByWebACLIdRequestMarshaller _instance = new ListDistributionsByWebACLIdRequestMarshaller();        
 
-        
+        internal static ListDistributionsByWebACLIdRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDistributionsByWebACLIdRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

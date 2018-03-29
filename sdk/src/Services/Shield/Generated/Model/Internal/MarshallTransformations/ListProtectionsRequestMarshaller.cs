@@ -88,7 +88,23 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListProtectionsRequestMarshaller _instance = new ListProtectionsRequestMarshaller();        
 
+        internal static ListProtectionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListProtectionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

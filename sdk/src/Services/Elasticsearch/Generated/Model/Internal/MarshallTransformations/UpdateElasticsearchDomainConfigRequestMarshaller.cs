@@ -160,7 +160,23 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateElasticsearchDomainConfigRequestMarshaller _instance = new UpdateElasticsearchDomainConfigRequestMarshaller();        
 
+        internal static UpdateElasticsearchDomainConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateElasticsearchDomainConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

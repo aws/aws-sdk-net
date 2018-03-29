@@ -118,7 +118,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateSoftwareUpdateJobRequestMarshaller _instance = new CreateSoftwareUpdateJobRequestMarshaller();        
 
+        internal static CreateSoftwareUpdateJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateSoftwareUpdateJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class BaseRequestMarshaller : BaseMarshaller
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 7 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+        #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
 
     // The operation the marshaller will be used on
 	public Operation Operation { get; set; }	
@@ -52,6 +52,83 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this._structure; 
         }
         set { this._structure = value; }
+    }
+
+    protected void AddRequestSingletonMethod()
+    {
+
+        
+        #line default
+        #line hidden
+        
+        #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write("        private static ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write("RequestMarshaller _instance = new ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 31 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write("RequestMarshaller();        \r\n\r\n\t\tinternal static ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write("RequestMarshaller GetInstance()\r\n\t\t{\r\n\t\t\treturn _instance;\r\n\t\t}\r\n\r\n        /// <s" +
+        "ummary>\r\n        /// Gets the singleton.\r\n        /// </summary>  \r\n\t\tpublic sta" +
+        "tic ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+this.Write("RequestMarshaller Instance\r\n\t\t{\r\n\t\t\tget\r\n\t\t\t{\r\n\t\t\t\treturn _instance;\r\n\t\t\t}\r\n\t\t}\r\n" +
+        "\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 49 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseRequestMarshaller.tt"
+
     }
 
         

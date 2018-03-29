@@ -87,7 +87,23 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateAddressRequestMarshaller _instance = new CreateAddressRequestMarshaller();        
 
+        internal static CreateAddressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAddressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -169,5 +169,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AuthorizeSecurityGroupEgressRequestMarshaller _instance = new AuthorizeSecurityGroupEgressRequestMarshaller();        
+
+        internal static AuthorizeSecurityGroupEgressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AuthorizeSecurityGroupEgressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

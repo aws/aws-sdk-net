@@ -65,5 +65,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetServiceLinkedRoleDeletionStatusRequestMarshaller _instance = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();        
+
+        internal static GetServiceLinkedRoleDeletionStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetServiceLinkedRoleDeletionStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

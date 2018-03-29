@@ -72,7 +72,23 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListItemsRequestMarshaller _instance = new ListItemsRequestMarshaller();        
 
+        internal static ListItemsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListItemsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

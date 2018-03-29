@@ -110,7 +110,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeJobFlowsRequestMarshaller _instance = new DescribeJobFlowsRequestMarshaller();        
 
+        internal static DescribeJobFlowsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeJobFlowsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

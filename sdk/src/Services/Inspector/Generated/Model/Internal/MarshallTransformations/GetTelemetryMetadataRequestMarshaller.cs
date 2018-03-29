@@ -82,7 +82,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetTelemetryMetadataRequestMarshaller _instance = new GetTelemetryMetadataRequestMarshaller();        
 
+        internal static GetTelemetryMetadataRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTelemetryMetadataRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -65,7 +65,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteFunctionConcurrencyRequestMarshaller _instance = new DeleteFunctionConcurrencyRequestMarshaller();        
 
+        internal static DeleteFunctionConcurrencyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteFunctionConcurrencyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

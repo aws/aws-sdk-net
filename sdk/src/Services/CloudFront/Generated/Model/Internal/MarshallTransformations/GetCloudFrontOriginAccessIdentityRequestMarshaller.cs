@@ -65,7 +65,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCloudFrontOriginAccessIdentityRequestMarshaller _instance = new GetCloudFrontOriginAccessIdentityRequestMarshaller();        
 
-        
+        internal static GetCloudFrontOriginAccessIdentityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCloudFrontOriginAccessIdentityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

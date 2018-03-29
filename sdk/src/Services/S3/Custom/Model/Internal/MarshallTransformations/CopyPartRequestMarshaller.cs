@@ -115,6 +115,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", firstByte, lastByte);
         }
+
+	    private static CopyPartRequestMarshaller _instance;
+
+	    public static CopyPartRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new CopyPartRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

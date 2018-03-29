@@ -88,7 +88,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CheckDomainTransferabilityRequestMarshaller _instance = new CheckDomainTransferabilityRequestMarshaller();        
 
+        internal static CheckDomainTransferabilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CheckDomainTransferabilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

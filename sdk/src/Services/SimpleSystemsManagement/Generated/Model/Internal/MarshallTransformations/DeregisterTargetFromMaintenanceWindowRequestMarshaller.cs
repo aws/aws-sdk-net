@@ -94,7 +94,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterTargetFromMaintenanceWindowRequestMarshaller _instance = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();        
 
+        internal static DeregisterTargetFromMaintenanceWindowRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterTargetFromMaintenanceWindowRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

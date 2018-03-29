@@ -143,5 +143,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyFpgaImageAttributeRequestMarshaller _instance = new ModifyFpgaImageAttributeRequestMarshaller();        
+
+        internal static ModifyFpgaImageAttributeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyFpgaImageAttributeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

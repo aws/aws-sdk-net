@@ -66,7 +66,23 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteServerCatalogRequestMarshaller _instance = new DeleteServerCatalogRequestMarshaller();        
 
+        internal static DeleteServerCatalogRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteServerCatalogRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

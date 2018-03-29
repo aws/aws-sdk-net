@@ -82,7 +82,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CancelKeyDeletionRequestMarshaller _instance = new CancelKeyDeletionRequestMarshaller();        
 
+        internal static CancelKeyDeletionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelKeyDeletionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

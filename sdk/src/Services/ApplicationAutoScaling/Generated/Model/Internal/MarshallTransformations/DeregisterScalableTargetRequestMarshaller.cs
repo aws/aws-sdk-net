@@ -94,7 +94,23 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterScalableTargetRequestMarshaller _instance = new DeregisterScalableTargetRequestMarshaller();        
 
+        internal static DeregisterScalableTargetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterScalableTargetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

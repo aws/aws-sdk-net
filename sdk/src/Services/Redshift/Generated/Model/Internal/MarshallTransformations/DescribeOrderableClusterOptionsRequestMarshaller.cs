@@ -77,5 +77,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeOrderableClusterOptionsRequestMarshaller _instance = new DescribeOrderableClusterOptionsRequestMarshaller();        
+
+        internal static DescribeOrderableClusterOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeOrderableClusterOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

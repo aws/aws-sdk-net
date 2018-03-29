@@ -78,5 +78,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ComposeEnvironmentsRequestMarshaller _instance = new ComposeEnvironmentsRequestMarshaller();        
+
+        internal static ComposeEnvironmentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ComposeEnvironmentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

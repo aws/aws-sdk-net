@@ -88,7 +88,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteRepositoryPolicyRequestMarshaller _instance = new DeleteRepositoryPolicyRequestMarshaller();        
 
+        internal static DeleteRepositoryPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteRepositoryPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

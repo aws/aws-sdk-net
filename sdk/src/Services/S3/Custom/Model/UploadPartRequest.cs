@@ -52,6 +52,7 @@ namespace Amazon.S3.Model
 
         private string filePath;
         private long? filePosition;
+        private bool useChunkEncoding = true;
 
         private bool lastPart;
         private RequestPayer requestPayer;
@@ -268,6 +269,16 @@ namespace Amazon.S3.Model
         {
             get { return this.filePosition.GetValueOrDefault(); }
             set { this.filePosition = value; }
+        }
+
+        /// <summary>
+        /// If this value is set to true then a chunked encoding upload will be used for the request.
+        /// Default: true.
+        /// </summary>
+        public bool UseChunkEncoding
+        {
+            get { return this.useChunkEncoding; }
+            set { this.useChunkEncoding = value; }
         }
 
         /// <summary>

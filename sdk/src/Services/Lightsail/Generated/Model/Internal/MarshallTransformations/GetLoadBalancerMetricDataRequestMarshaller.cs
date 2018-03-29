@@ -123,7 +123,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetLoadBalancerMetricDataRequestMarshaller _instance = new GetLoadBalancerMetricDataRequestMarshaller();        
 
+        internal static GetLoadBalancerMetricDataRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetLoadBalancerMetricDataRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -244,5 +244,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RestoreDBInstanceFromS3RequestMarshaller _instance = new RestoreDBInstanceFromS3RequestMarshaller();        
+
+        internal static RestoreDBInstanceFromS3RequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreDBInstanceFromS3RequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

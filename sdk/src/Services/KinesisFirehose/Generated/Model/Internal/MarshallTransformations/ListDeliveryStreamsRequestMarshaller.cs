@@ -94,7 +94,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDeliveryStreamsRequestMarshaller _instance = new ListDeliveryStreamsRequestMarshaller();        
 
+        internal static ListDeliveryStreamsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDeliveryStreamsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

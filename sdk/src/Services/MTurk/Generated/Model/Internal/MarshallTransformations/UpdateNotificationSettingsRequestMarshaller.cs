@@ -99,7 +99,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateNotificationSettingsRequestMarshaller _instance = new UpdateNotificationSettingsRequestMarshaller();        
 
+        internal static UpdateNotificationSettingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateNotificationSettingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

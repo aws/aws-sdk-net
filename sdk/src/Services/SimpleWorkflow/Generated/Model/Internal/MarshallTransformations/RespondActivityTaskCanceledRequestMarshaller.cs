@@ -88,7 +88,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RespondActivityTaskCanceledRequestMarshaller _instance = new RespondActivityTaskCanceledRequestMarshaller();        
 
+        internal static RespondActivityTaskCanceledRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RespondActivityTaskCanceledRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

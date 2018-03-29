@@ -113,7 +113,23 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
 
             return request;
         }
+        private static GetEntitlementsRequestMarshaller _instance = new GetEntitlementsRequestMarshaller();        
 
+        internal static GetEntitlementsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetEntitlementsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

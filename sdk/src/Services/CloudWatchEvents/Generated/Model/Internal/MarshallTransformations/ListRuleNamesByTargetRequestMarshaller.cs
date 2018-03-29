@@ -94,7 +94,23 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListRuleNamesByTargetRequestMarshaller _instance = new ListRuleNamesByTargetRequestMarshaller();        
 
+        internal static ListRuleNamesByTargetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListRuleNamesByTargetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

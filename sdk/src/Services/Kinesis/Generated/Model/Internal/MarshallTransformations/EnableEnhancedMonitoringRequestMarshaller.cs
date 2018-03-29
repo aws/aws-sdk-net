@@ -93,7 +93,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static EnableEnhancedMonitoringRequestMarshaller _instance = new EnableEnhancedMonitoringRequestMarshaller();        
 
+        internal static EnableEnhancedMonitoringRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableEnhancedMonitoringRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -126,7 +126,23 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SynthesizeSpeechRequestMarshaller _instance = new SynthesizeSpeechRequestMarshaller();        
 
+        internal static SynthesizeSpeechRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SynthesizeSpeechRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

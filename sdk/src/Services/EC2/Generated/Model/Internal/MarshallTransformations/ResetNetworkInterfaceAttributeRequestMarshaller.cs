@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ResetNetworkInterfaceAttributeRequestMarshaller _instance = new ResetNetworkInterfaceAttributeRequestMarshaller();        
+
+        internal static ResetNetworkInterfaceAttributeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResetNetworkInterfaceAttributeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

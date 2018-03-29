@@ -66,7 +66,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListCuratedEnvironmentImagesRequestMarshaller _instance = new ListCuratedEnvironmentImagesRequestMarshaller();        
 
+        internal static ListCuratedEnvironmentImagesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListCuratedEnvironmentImagesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

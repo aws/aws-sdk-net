@@ -68,7 +68,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DetachThingPrincipalRequestMarshaller _instance = new DetachThingPrincipalRequestMarshaller();        
 
+        internal static DetachThingPrincipalRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetachThingPrincipalRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

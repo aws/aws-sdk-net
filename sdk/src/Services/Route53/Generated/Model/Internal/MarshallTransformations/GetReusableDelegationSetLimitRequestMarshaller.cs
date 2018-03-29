@@ -68,7 +68,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetReusableDelegationSetLimitRequestMarshaller _instance = new GetReusableDelegationSetLimitRequestMarshaller();        
 
-        
+        internal static GetReusableDelegationSetLimitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetReusableDelegationSetLimitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

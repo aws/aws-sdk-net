@@ -94,7 +94,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RegisterOnPremisesInstanceRequestMarshaller _instance = new RegisterOnPremisesInstanceRequestMarshaller();        
 
+        internal static RegisterOnPremisesInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RegisterOnPremisesInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

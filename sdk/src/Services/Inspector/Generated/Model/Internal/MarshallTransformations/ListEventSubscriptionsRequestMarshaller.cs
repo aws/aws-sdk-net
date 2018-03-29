@@ -94,7 +94,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListEventSubscriptionsRequestMarshaller _instance = new ListEventSubscriptionsRequestMarshaller();        
 
+        internal static ListEventSubscriptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListEventSubscriptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

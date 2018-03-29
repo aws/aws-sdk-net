@@ -68,7 +68,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveAllResourcePermissionsRequestMarshaller _instance = new RemoveAllResourcePermissionsRequestMarshaller();        
 
+        internal static RemoveAllResourcePermissionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveAllResourcePermissionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

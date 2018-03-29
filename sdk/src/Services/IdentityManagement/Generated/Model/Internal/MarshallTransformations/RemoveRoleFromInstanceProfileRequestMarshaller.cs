@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RemoveRoleFromInstanceProfileRequestMarshaller _instance = new RemoveRoleFromInstanceProfileRequestMarshaller();        
+
+        internal static RemoveRoleFromInstanceProfileRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveRoleFromInstanceProfileRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

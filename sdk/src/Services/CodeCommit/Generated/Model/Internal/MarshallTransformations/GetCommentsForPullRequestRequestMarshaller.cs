@@ -112,7 +112,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCommentsForPullRequestRequestMarshaller _instance = new GetCommentsForPullRequestRequestMarshaller();        
 
+        internal static GetCommentsForPullRequestRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCommentsForPullRequestRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

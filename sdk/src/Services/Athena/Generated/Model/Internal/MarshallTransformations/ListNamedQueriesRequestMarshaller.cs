@@ -88,7 +88,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListNamedQueriesRequestMarshaller _instance = new ListNamedQueriesRequestMarshaller();        
 
+        internal static ListNamedQueriesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListNamedQueriesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

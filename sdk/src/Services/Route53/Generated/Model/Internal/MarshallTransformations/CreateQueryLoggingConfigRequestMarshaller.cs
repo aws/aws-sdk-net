@@ -85,7 +85,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateQueryLoggingConfigRequestMarshaller _instance = new CreateQueryLoggingConfigRequestMarshaller();        
 
-        
+        internal static CreateQueryLoggingConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateQueryLoggingConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

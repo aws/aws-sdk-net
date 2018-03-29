@@ -82,7 +82,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetRegexPatternSetRequestMarshaller _instance = new GetRegexPatternSetRequestMarshaller();        
 
+        internal static GetRegexPatternSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetRegexPatternSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

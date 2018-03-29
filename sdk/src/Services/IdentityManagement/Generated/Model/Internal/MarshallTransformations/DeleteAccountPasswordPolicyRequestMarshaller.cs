@@ -61,5 +61,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteAccountPasswordPolicyRequestMarshaller _instance = new DeleteAccountPasswordPolicyRequestMarshaller();        
+
+        internal static DeleteAccountPasswordPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteAccountPasswordPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

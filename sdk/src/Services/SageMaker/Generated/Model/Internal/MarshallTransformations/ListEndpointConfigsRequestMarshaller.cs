@@ -118,7 +118,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListEndpointConfigsRequestMarshaller _instance = new ListEndpointConfigsRequestMarshaller();        
 
+        internal static ListEndpointConfigsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListEndpointConfigsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

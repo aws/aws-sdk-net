@@ -73,5 +73,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetInstanceHealthRequestMarshaller _instance = new SetInstanceHealthRequestMarshaller();        
+
+        internal static SetInstanceHealthRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetInstanceHealthRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

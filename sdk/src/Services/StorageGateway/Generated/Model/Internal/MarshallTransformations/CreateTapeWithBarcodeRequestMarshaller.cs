@@ -94,7 +94,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateTapeWithBarcodeRequestMarshaller _instance = new CreateTapeWithBarcodeRequestMarshaller();        
 
+        internal static CreateTapeWithBarcodeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateTapeWithBarcodeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

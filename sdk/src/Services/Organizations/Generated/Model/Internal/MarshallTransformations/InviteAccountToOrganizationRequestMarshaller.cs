@@ -93,7 +93,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InviteAccountToOrganizationRequestMarshaller _instance = new InviteAccountToOrganizationRequestMarshaller();        
 
+        internal static InviteAccountToOrganizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InviteAccountToOrganizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -93,5 +93,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static EstimateTemplateCostRequestMarshaller _instance = new EstimateTemplateCostRequestMarshaller();        
+
+        internal static EstimateTemplateCostRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EstimateTemplateCostRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

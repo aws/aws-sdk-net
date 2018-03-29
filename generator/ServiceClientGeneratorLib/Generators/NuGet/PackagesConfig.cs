@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+    #line 1 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class PackagesConfig : PackagesConfigBase
     {
@@ -32,13 +32,12 @@ namespace ServiceClientGenerator.Generators.NuGet
 <packages>
   <package id=""Microsoft.Bcl"" version=""1.1.10"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""Microsoft.Bcl.Build"" version=""1.0.14"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
-  <package id=""Microsoft.Net.Http"" version=""2.2.29"" targetFramework=""portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""PCLCrypto"" version=""1.0.2.15130"" targetFramework=""portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""PCLStorage"" version=""1.0.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
   <package id=""Validation"" version=""2.0.6.15003"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
 ");
             
-            #line 14 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 13 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
   
     if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase)
         || ((string)this.Session["AssemblyName"]).Equals("AWSSDK.CognitoSync",StringComparison.CurrentCultureIgnoreCase))
@@ -55,7 +54,7 @@ namespace ServiceClientGenerator.Generators.NuGet
   <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net35"" />
 ");
             
-            #line 25 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 24 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
 
     }
 

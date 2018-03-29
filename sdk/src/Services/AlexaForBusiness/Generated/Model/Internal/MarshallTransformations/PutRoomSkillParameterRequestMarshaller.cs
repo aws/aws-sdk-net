@@ -99,7 +99,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutRoomSkillParameterRequestMarshaller _instance = new PutRoomSkillParameterRequestMarshaller();        
 
+        internal static PutRoomSkillParameterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutRoomSkillParameterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

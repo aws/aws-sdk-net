@@ -110,5 +110,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeDBClusterSnapshotsRequestMarshaller _instance = new DescribeDBClusterSnapshotsRequestMarshaller();        
+
+        internal static DescribeDBClusterSnapshotsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDBClusterSnapshotsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -100,7 +100,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateProductWithPortfolioRequestMarshaller _instance = new AssociateProductWithPortfolioRequestMarshaller();        
 
+        internal static AssociateProductWithPortfolioRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateProductWithPortfolioRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

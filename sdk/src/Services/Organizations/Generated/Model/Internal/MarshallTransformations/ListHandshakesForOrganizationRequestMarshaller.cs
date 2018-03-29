@@ -99,7 +99,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListHandshakesForOrganizationRequestMarshaller _instance = new ListHandshakesForOrganizationRequestMarshaller();        
 
+        internal static ListHandshakesForOrganizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListHandshakesForOrganizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

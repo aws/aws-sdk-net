@@ -57,6 +57,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static ListObjectsRequestMarshaller _instance;
+
+	    public static ListObjectsRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new ListObjectsRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

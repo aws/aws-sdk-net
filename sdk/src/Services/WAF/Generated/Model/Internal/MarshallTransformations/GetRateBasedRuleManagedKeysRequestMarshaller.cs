@@ -88,7 +88,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetRateBasedRuleManagedKeysRequestMarshaller _instance = new GetRateBasedRuleManagedKeysRequestMarshaller();        
 
+        internal static GetRateBasedRuleManagedKeysRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetRateBasedRuleManagedKeysRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

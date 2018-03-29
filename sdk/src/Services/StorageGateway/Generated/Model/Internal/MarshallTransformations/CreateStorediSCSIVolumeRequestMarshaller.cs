@@ -112,7 +112,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateStorediSCSIVolumeRequestMarshaller _instance = new CreateStorediSCSIVolumeRequestMarshaller();        
 
+        internal static CreateStorediSCSIVolumeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateStorediSCSIVolumeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

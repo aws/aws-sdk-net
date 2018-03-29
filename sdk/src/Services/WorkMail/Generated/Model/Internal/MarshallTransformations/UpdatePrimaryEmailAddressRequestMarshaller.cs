@@ -94,7 +94,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdatePrimaryEmailAddressRequestMarshaller _instance = new UpdatePrimaryEmailAddressRequestMarshaller();        
 
+        internal static UpdatePrimaryEmailAddressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdatePrimaryEmailAddressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

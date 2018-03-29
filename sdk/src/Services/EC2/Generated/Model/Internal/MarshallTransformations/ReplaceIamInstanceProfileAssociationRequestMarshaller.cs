@@ -76,5 +76,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ReplaceIamInstanceProfileAssociationRequestMarshaller _instance = new ReplaceIamInstanceProfileAssociationRequestMarshaller();        
+
+        internal static ReplaceIamInstanceProfileAssociationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReplaceIamInstanceProfileAssociationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

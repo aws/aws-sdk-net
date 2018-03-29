@@ -88,7 +88,23 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeNodeAssociationStatusRequestMarshaller _instance = new DescribeNodeAssociationStatusRequestMarshaller();        
 
+        internal static DescribeNodeAssociationStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeNodeAssociationStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

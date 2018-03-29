@@ -104,7 +104,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateSqlInjectionMatchSetRequestMarshaller _instance = new UpdateSqlInjectionMatchSetRequestMarshaller();        
 
+        internal static UpdateSqlInjectionMatchSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateSqlInjectionMatchSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

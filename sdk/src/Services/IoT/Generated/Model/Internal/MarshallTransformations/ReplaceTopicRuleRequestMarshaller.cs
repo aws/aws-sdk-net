@@ -80,7 +80,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ReplaceTopicRuleRequestMarshaller _instance = new ReplaceTopicRuleRequestMarshaller();        
 
+        internal static ReplaceTopicRuleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReplaceTopicRuleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

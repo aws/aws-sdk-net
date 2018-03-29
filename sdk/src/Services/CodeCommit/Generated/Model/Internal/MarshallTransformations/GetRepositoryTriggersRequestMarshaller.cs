@@ -82,7 +82,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetRepositoryTriggersRequestMarshaller _instance = new GetRepositoryTriggersRequestMarshaller();        
 
+        internal static GetRepositoryTriggersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetRepositoryTriggersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

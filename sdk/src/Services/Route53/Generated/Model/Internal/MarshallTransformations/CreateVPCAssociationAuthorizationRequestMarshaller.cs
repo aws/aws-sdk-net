@@ -94,7 +94,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateVPCAssociationAuthorizationRequestMarshaller _instance = new CreateVPCAssociationAuthorizationRequestMarshaller();        
 
-        
+        internal static CreateVPCAssociationAuthorizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateVPCAssociationAuthorizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

@@ -94,7 +94,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateAssessmentTargetRequestMarshaller _instance = new UpdateAssessmentTargetRequestMarshaller();        
 
+        internal static UpdateAssessmentTargetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateAssessmentTargetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

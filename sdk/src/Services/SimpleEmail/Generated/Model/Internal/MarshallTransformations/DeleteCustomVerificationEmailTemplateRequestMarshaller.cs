@@ -65,5 +65,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteCustomVerificationEmailTemplateRequestMarshaller _instance = new DeleteCustomVerificationEmailTemplateRequestMarshaller();        
+
+        internal static DeleteCustomVerificationEmailTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCustomVerificationEmailTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

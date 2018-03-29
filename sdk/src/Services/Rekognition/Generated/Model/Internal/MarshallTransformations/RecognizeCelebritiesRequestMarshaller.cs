@@ -87,7 +87,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RecognizeCelebritiesRequestMarshaller _instance = new RecognizeCelebritiesRequestMarshaller();        
 
+        internal static RecognizeCelebritiesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RecognizeCelebritiesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

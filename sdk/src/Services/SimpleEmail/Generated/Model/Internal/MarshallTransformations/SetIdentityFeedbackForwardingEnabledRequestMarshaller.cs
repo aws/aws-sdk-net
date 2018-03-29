@@ -69,5 +69,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetIdentityFeedbackForwardingEnabledRequestMarshaller _instance = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();        
+
+        internal static SetIdentityFeedbackForwardingEnabledRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetIdentityFeedbackForwardingEnabledRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

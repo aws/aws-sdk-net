@@ -83,7 +83,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetTypedLinkFacetInformationRequestMarshaller _instance = new GetTypedLinkFacetInformationRequestMarshaller();        
 
+        internal static GetTypedLinkFacetInformationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTypedLinkFacetInformationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

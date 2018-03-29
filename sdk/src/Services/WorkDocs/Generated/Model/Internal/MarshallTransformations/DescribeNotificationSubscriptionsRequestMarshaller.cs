@@ -72,7 +72,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeNotificationSubscriptionsRequestMarshaller _instance = new DescribeNotificationSubscriptionsRequestMarshaller();        
 
+        internal static DescribeNotificationSubscriptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeNotificationSubscriptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

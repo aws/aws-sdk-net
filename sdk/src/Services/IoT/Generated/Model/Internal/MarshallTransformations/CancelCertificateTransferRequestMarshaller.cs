@@ -66,7 +66,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CancelCertificateTransferRequestMarshaller _instance = new CancelCertificateTransferRequestMarshaller();        
 
+        internal static CancelCertificateTransferRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelCertificateTransferRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

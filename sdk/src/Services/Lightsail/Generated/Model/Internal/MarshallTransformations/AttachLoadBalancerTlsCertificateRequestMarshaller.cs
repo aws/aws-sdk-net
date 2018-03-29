@@ -88,7 +88,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AttachLoadBalancerTlsCertificateRequestMarshaller _instance = new AttachLoadBalancerTlsCertificateRequestMarshaller();        
 
+        internal static AttachLoadBalancerTlsCertificateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachLoadBalancerTlsCertificateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

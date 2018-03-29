@@ -88,7 +88,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterPatchBaselineForPatchGroupRequestMarshaller _instance = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();        
 
+        internal static DeregisterPatchBaselineForPatchGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterPatchBaselineForPatchGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

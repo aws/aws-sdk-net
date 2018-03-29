@@ -118,7 +118,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateCachediSCSIVolumeRequestMarshaller _instance = new CreateCachediSCSIVolumeRequestMarshaller();        
 
+        internal static CreateCachediSCSIVolumeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateCachediSCSIVolumeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

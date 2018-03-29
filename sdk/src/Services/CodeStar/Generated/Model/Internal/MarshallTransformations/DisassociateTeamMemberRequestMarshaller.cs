@@ -88,7 +88,23 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateTeamMemberRequestMarshaller _instance = new DisassociateTeamMemberRequestMarshaller();        
 
+        internal static DisassociateTeamMemberRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateTeamMemberRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

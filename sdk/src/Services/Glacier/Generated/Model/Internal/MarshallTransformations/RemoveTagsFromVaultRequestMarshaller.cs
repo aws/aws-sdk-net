@@ -90,7 +90,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveTagsFromVaultRequestMarshaller _instance = new RemoveTagsFromVaultRequestMarshaller();        
 
+        internal static RemoveTagsFromVaultRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveTagsFromVaultRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

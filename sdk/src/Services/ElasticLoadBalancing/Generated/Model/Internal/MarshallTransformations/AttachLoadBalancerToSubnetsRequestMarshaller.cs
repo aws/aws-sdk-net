@@ -74,5 +74,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AttachLoadBalancerToSubnetsRequestMarshaller _instance = new AttachLoadBalancerToSubnetsRequestMarshaller();        
+
+        internal static AttachLoadBalancerToSubnetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachLoadBalancerToSubnetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

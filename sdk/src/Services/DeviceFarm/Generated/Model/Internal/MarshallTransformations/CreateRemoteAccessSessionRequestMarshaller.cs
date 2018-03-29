@@ -141,7 +141,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRemoteAccessSessionRequestMarshaller _instance = new CreateRemoteAccessSessionRequestMarshaller();        
 
+        internal static CreateRemoteAccessSessionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRemoteAccessSessionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

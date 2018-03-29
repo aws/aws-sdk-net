@@ -110,7 +110,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetUserPoolMfaConfigRequestMarshaller _instance = new SetUserPoolMfaConfigRequestMarshaller();        
 
+        internal static SetUserPoolMfaConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetUserPoolMfaConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -93,7 +93,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateConnectivityInfoRequestMarshaller _instance = new UpdateConnectivityInfoRequestMarshaller();        
 
+        internal static UpdateConnectivityInfoRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateConnectivityInfoRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -99,7 +99,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchCheckLayerAvailabilityRequestMarshaller _instance = new BatchCheckLayerAvailabilityRequestMarshaller();        
 
+        internal static BatchCheckLayerAvailabilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchCheckLayerAvailabilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -74,5 +74,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetContextKeysForPrincipalPolicyRequestMarshaller _instance = new GetContextKeysForPrincipalPolicyRequestMarshaller();        
+
+        internal static GetContextKeysForPrincipalPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetContextKeysForPrincipalPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

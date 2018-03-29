@@ -77,5 +77,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SwapEnvironmentCNAMEsRequestMarshaller _instance = new SwapEnvironmentCNAMEsRequestMarshaller();        
+
+        internal static SwapEnvironmentCNAMEsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SwapEnvironmentCNAMEsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

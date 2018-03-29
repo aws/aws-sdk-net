@@ -94,7 +94,23 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateServerEngineAttributesRequestMarshaller _instance = new UpdateServerEngineAttributesRequestMarshaller();        
 
+        internal static UpdateServerEngineAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateServerEngineAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

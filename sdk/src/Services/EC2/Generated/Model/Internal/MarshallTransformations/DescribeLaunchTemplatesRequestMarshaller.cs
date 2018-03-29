@@ -108,5 +108,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeLaunchTemplatesRequestMarshaller _instance = new DescribeLaunchTemplatesRequestMarshaller();        
+
+        internal static DescribeLaunchTemplatesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeLaunchTemplatesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

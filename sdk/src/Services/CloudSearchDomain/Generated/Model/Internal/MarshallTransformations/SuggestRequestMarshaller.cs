@@ -74,7 +74,23 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SuggestRequestMarshaller _instance = new SuggestRequestMarshaller();        
 
+        internal static SuggestRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SuggestRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

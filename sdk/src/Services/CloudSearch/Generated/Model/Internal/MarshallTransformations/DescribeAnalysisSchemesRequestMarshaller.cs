@@ -78,5 +78,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeAnalysisSchemesRequestMarshaller _instance = new DescribeAnalysisSchemesRequestMarshaller();        
+
+        internal static DescribeAnalysisSchemesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAnalysisSchemesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetUserAttributeVerificationCodeRequestMarshaller _instance = new GetUserAttributeVerificationCodeRequestMarshaller();        
 
+        internal static GetUserAttributeVerificationCodeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetUserAttributeVerificationCodeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

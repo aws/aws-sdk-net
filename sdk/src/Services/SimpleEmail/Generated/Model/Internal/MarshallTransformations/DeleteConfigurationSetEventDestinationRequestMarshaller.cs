@@ -69,5 +69,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteConfigurationSetEventDestinationRequestMarshaller _instance = new DeleteConfigurationSetEventDestinationRequestMarshaller();        
+
+        internal static DeleteConfigurationSetEventDestinationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteConfigurationSetEventDestinationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

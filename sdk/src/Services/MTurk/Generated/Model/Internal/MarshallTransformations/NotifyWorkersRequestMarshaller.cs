@@ -99,7 +99,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static NotifyWorkersRequestMarshaller _instance = new NotifyWorkersRequestMarshaller();        
 
+        internal static NotifyWorkersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static NotifyWorkersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

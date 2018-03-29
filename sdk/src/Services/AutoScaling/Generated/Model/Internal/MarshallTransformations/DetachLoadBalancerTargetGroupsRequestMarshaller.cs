@@ -74,5 +74,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DetachLoadBalancerTargetGroupsRequestMarshaller _instance = new DetachLoadBalancerTargetGroupsRequestMarshaller();        
+
+        internal static DetachLoadBalancerTargetGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetachLoadBalancerTargetGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

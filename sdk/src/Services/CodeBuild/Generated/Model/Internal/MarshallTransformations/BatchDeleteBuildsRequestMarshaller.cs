@@ -87,7 +87,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchDeleteBuildsRequestMarshaller _instance = new BatchDeleteBuildsRequestMarshaller();        
 
+        internal static BatchDeleteBuildsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchDeleteBuildsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

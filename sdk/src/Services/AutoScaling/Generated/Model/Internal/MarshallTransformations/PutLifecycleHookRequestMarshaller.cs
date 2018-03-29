@@ -93,5 +93,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PutLifecycleHookRequestMarshaller _instance = new PutLifecycleHookRequestMarshaller();        
+
+        internal static PutLifecycleHookRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutLifecycleHookRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

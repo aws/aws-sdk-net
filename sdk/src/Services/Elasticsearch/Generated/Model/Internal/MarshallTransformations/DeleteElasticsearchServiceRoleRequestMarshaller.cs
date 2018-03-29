@@ -62,7 +62,23 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteElasticsearchServiceRoleRequestMarshaller _instance = new DeleteElasticsearchServiceRoleRequestMarshaller();        
 
+        internal static DeleteElasticsearchServiceRoleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteElasticsearchServiceRoleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

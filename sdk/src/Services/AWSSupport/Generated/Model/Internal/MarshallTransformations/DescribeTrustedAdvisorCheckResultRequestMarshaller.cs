@@ -88,7 +88,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeTrustedAdvisorCheckResultRequestMarshaller _instance = new DescribeTrustedAdvisorCheckResultRequestMarshaller();        
 
+        internal static DescribeTrustedAdvisorCheckResultRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeTrustedAdvisorCheckResultRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

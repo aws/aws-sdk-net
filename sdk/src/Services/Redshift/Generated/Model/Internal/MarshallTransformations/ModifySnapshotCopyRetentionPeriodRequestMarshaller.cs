@@ -69,5 +69,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifySnapshotCopyRetentionPeriodRequestMarshaller _instance = new ModifySnapshotCopyRetentionPeriodRequestMarshaller();        
+
+        internal static ModifySnapshotCopyRetentionPeriodRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifySnapshotCopyRetentionPeriodRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

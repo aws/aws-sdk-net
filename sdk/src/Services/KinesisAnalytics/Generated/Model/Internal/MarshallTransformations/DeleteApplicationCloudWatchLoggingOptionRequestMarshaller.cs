@@ -94,7 +94,23 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteApplicationCloudWatchLoggingOptionRequestMarshaller _instance = new DeleteApplicationCloudWatchLoggingOptionRequestMarshaller();        
 
+        internal static DeleteApplicationCloudWatchLoggingOptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteApplicationCloudWatchLoggingOptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -293,7 +293,7 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request)
         {
-            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 
             return Invoke<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, unmarshaller);
@@ -333,7 +333,7 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.IsInternal ? "internal" : "public"#> virtual Task<<#=operation.Name#>Response> <#=operation.Name#>Async(<#=operation.Name#>Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new <#=operation.Name#>RequestMarshaller();
+            var marshaller = <#=operation.Name#>RequestMarshaller.Instance;
             var unmarshaller = <#=operation.Name#>ResponseUnmarshaller.Instance;
 
             return InvokeAsync<<#=operation.Name#>Request,<#=operation.Name#>Response>(request, marshaller, 

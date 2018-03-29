@@ -94,7 +94,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateDocumentationPartRequestMarshaller _instance = new CreateDocumentationPartRequestMarshaller();        
 
+        internal static CreateDocumentationPartRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDocumentationPartRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateAdditionalAssignmentsForHITRequestMarshaller _instance = new CreateAdditionalAssignmentsForHITRequestMarshaller();        
 
+        internal static CreateAdditionalAssignmentsForHITRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAdditionalAssignmentsForHITRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

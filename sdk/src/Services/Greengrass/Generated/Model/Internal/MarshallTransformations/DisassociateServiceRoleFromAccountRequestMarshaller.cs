@@ -62,7 +62,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateServiceRoleFromAccountRequestMarshaller _instance = new DisassociateServiceRoleFromAccountRequestMarshaller();        
 
+        internal static DisassociateServiceRoleFromAccountRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateServiceRoleFromAccountRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -100,7 +100,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDirectConnectGatewayAssociationsRequestMarshaller _instance = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();        
 
+        internal static DescribeDirectConnectGatewayAssociationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDirectConnectGatewayAssociationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

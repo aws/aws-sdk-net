@@ -101,5 +101,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeAlarmsForMetricRequestMarshaller _instance = new DescribeAlarmsForMetricRequestMarshaller();        
+
+        internal static DescribeAlarmsForMetricRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAlarmsForMetricRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

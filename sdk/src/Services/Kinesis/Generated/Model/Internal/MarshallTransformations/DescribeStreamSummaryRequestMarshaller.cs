@@ -82,7 +82,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeStreamSummaryRequestMarshaller _instance = new DescribeStreamSummaryRequestMarshaller();        
 
+        internal static DescribeStreamSummaryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeStreamSummaryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

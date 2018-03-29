@@ -5,6 +5,7 @@
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
+        <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <PartialBuildList Condition="'$(PartialBuildList)'==''"></PartialBuildList>
 
 		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
@@ -148,7 +149,7 @@
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
 
-    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(PartialBuildList)'==''" DependsOnTargets="build-tools">  
+    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(PartialBuildList)'=='' And !$(DisableValidateRepo)" DependsOnTargets="build-tools">  
       <ValidateRepoTask
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  

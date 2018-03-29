@@ -99,5 +99,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeIamInstanceProfileAssociationsRequestMarshaller _instance = new DescribeIamInstanceProfileAssociationsRequestMarshaller();        
+
+        internal static DescribeIamInstanceProfileAssociationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeIamInstanceProfileAssociationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

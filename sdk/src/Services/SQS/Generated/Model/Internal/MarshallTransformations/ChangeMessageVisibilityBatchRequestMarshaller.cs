@@ -85,5 +85,23 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ChangeMessageVisibilityBatchRequestMarshaller _instance = new ChangeMessageVisibilityBatchRequestMarshaller();        
+
+        internal static ChangeMessageVisibilityBatchRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ChangeMessageVisibilityBatchRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

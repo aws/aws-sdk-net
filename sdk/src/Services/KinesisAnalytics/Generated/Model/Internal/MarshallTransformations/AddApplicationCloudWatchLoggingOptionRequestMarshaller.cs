@@ -99,7 +99,23 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddApplicationCloudWatchLoggingOptionRequestMarshaller _instance = new AddApplicationCloudWatchLoggingOptionRequestMarshaller();        
 
+        internal static AddApplicationCloudWatchLoggingOptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddApplicationCloudWatchLoggingOptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

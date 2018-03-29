@@ -88,7 +88,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateNumberOfDomainControllersRequestMarshaller _instance = new UpdateNumberOfDomainControllersRequestMarshaller();        
 
+        internal static UpdateNumberOfDomainControllersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateNumberOfDomainControllersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

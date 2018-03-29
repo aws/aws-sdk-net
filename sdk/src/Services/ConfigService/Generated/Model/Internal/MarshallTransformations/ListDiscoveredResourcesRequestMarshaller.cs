@@ -117,7 +117,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDiscoveredResourcesRequestMarshaller _instance = new ListDiscoveredResourcesRequestMarshaller();        
 
+        internal static ListDiscoveredResourcesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDiscoveredResourcesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

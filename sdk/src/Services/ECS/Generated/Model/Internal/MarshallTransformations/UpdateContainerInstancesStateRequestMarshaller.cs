@@ -99,7 +99,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateContainerInstancesStateRequestMarshaller _instance = new UpdateContainerInstancesStateRequestMarshaller();        
 
+        internal static UpdateContainerInstancesStateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateContainerInstancesStateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

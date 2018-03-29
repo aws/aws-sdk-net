@@ -73,7 +73,23 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ExportBundleRequestMarshaller _instance = new ExportBundleRequestMarshaller();        
 
+        internal static ExportBundleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ExportBundleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

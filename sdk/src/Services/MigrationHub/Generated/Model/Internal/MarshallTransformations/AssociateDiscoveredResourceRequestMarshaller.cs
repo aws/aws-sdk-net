@@ -105,7 +105,23 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateDiscoveredResourceRequestMarshaller _instance = new AssociateDiscoveredResourceRequestMarshaller();        
 
+        internal static AssociateDiscoveredResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateDiscoveredResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

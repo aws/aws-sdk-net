@@ -100,7 +100,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AdminUpdateDeviceStatusRequestMarshaller _instance = new AdminUpdateDeviceStatusRequestMarshaller();        
 
+        internal static AdminUpdateDeviceStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AdminUpdateDeviceStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

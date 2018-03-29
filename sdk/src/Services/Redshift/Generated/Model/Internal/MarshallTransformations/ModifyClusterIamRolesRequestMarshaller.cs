@@ -83,5 +83,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyClusterIamRolesRequestMarshaller _instance = new ModifyClusterIamRolesRequestMarshaller();        
+
+        internal static ModifyClusterIamRolesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyClusterIamRolesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

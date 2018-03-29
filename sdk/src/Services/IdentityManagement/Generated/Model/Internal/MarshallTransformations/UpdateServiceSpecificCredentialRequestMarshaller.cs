@@ -73,5 +73,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateServiceSpecificCredentialRequestMarshaller _instance = new UpdateServiceSpecificCredentialRequestMarshaller();        
+
+        internal static UpdateServiceSpecificCredentialRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateServiceSpecificCredentialRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

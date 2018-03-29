@@ -98,7 +98,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveAttributesFromFindingsRequestMarshaller _instance = new RemoveAttributesFromFindingsRequestMarshaller();        
 
+        internal static RemoveAttributesFromFindingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveAttributesFromFindingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

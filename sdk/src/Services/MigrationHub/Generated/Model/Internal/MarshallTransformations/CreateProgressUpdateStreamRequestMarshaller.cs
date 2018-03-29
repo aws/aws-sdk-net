@@ -88,7 +88,23 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateProgressUpdateStreamRequestMarshaller _instance = new CreateProgressUpdateStreamRequestMarshaller();        
 
+        internal static CreateProgressUpdateStreamRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateProgressUpdateStreamRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

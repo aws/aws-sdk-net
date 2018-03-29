@@ -89,5 +89,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PurchaseReservedDBInstancesOfferingRequestMarshaller _instance = new PurchaseReservedDBInstancesOfferingRequestMarshaller();        
+
+        internal static PurchaseReservedDBInstancesOfferingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PurchaseReservedDBInstancesOfferingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

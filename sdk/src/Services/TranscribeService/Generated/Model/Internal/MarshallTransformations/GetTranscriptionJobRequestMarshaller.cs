@@ -82,7 +82,23 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetTranscriptionJobRequestMarshaller _instance = new GetTranscriptionJobRequestMarshaller();        
 
+        internal static GetTranscriptionJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTranscriptionJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteAssessmentTemplateRequestMarshaller _instance = new DeleteAssessmentTemplateRequestMarshaller();        
 
+        internal static DeleteAssessmentTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteAssessmentTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

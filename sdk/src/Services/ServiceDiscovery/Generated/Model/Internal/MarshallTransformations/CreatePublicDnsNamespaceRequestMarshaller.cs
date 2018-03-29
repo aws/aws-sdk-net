@@ -99,7 +99,23 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePublicDnsNamespaceRequestMarshaller _instance = new CreatePublicDnsNamespaceRequestMarshaller();        
 
+        internal static CreatePublicDnsNamespaceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePublicDnsNamespaceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

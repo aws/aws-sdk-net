@@ -82,7 +82,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSnapshotLimitsRequestMarshaller _instance = new GetSnapshotLimitsRequestMarshaller();        
 
+        internal static GetSnapshotLimitsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSnapshotLimitsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

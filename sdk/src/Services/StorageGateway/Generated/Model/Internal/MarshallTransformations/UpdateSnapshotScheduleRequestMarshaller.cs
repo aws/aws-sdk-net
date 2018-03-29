@@ -100,7 +100,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateSnapshotScheduleRequestMarshaller _instance = new UpdateSnapshotScheduleRequestMarshaller();        
 
+        internal static UpdateSnapshotScheduleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateSnapshotScheduleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -95,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
                 if (streamWithLength.Length > 0)
-                    request.UseChunkEncoding = true;
+                    request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
                 var length = streamWithLength.Length - streamWithLength.Position;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));
@@ -138,6 +138,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return result;
         }
+
+	    private static PutObjectRequestMarshaller _instance;
+
+	    public static PutObjectRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutObjectRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

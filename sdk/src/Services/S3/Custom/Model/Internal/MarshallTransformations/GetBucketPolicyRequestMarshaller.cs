@@ -43,6 +43,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetBucketPolicyRequestMarshaller _instance;
+
+	    public static GetBucketPolicyRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetBucketPolicyRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

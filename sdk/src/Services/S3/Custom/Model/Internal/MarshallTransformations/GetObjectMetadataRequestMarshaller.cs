@@ -80,6 +80,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetObjectMetadataRequestMarshaller _instance;
+
+	    public static GetObjectMetadataRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetObjectMetadataRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

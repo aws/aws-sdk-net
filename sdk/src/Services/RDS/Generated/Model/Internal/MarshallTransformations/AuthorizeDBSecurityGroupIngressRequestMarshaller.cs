@@ -81,5 +81,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AuthorizeDBSecurityGroupIngressRequestMarshaller _instance = new AuthorizeDBSecurityGroupIngressRequestMarshaller();        
+
+        internal static AuthorizeDBSecurityGroupIngressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AuthorizeDBSecurityGroupIngressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

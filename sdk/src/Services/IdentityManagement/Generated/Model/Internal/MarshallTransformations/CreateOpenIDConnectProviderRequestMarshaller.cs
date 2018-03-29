@@ -83,5 +83,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateOpenIDConnectProviderRequestMarshaller _instance = new CreateOpenIDConnectProviderRequestMarshaller();        
+
+        internal static CreateOpenIDConnectProviderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateOpenIDConnectProviderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

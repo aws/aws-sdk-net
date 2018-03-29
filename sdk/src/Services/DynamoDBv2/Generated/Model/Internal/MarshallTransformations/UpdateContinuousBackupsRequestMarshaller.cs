@@ -93,7 +93,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateContinuousBackupsRequestMarshaller _instance = new UpdateContinuousBackupsRequestMarshaller();        
 
+        internal static UpdateContinuousBackupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateContinuousBackupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -99,7 +99,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartDeviceSyncRequestMarshaller _instance = new StartDeviceSyncRequestMarshaller();        
 
+        internal static StartDeviceSyncRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartDeviceSyncRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

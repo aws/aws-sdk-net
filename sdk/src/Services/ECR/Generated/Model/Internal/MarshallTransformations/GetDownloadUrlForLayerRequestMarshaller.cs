@@ -94,7 +94,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDownloadUrlForLayerRequestMarshaller _instance = new GetDownloadUrlForLayerRequestMarshaller();        
 
+        internal static GetDownloadUrlForLayerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDownloadUrlForLayerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

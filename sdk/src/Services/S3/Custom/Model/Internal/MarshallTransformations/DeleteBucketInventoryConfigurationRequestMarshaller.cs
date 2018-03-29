@@ -43,5 +43,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+        private static DeleteBucketInventoryConfigurationRequestMarshaller _instance;
+
+        public static DeleteBucketInventoryConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new DeleteBucketInventoryConfigurationRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }

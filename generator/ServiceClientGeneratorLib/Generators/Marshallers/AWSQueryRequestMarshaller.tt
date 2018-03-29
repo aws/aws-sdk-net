@@ -46,6 +46,9 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             }
             return request;
         }
+			<#				
+		this.AddRequestSingletonMethod();
+#>
     }
 }
 
@@ -222,6 +225,4 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         nc += text;
         return nc;
     }
-
-
 #>

@@ -94,7 +94,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteCustomActionTypeRequestMarshaller _instance = new DeleteCustomActionTypeRequestMarshaller();        
 
+        internal static DeleteCustomActionTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCustomActionTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

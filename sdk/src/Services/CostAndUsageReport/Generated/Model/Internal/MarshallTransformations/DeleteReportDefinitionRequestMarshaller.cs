@@ -82,7 +82,23 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteReportDefinitionRequestMarshaller _instance = new DeleteReportDefinitionRequestMarshaller();        
 
+        internal static DeleteReportDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteReportDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

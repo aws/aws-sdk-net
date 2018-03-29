@@ -69,5 +69,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteAutoScalingGroupRequestMarshaller _instance = new DeleteAutoScalingGroupRequestMarshaller();        
+
+        internal static DeleteAutoScalingGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteAutoScalingGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

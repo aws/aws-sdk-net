@@ -78,7 +78,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetBotChannelAssociationsRequestMarshaller _instance = new GetBotChannelAssociationsRequestMarshaller();        
 
+        internal static GetBotChannelAssociationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetBotChannelAssociationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

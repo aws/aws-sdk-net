@@ -88,5 +88,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ConfigureHealthCheckRequestMarshaller _instance = new ConfigureHealthCheckRequestMarshaller();        
+
+        internal static ConfigureHealthCheckRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ConfigureHealthCheckRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

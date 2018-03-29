@@ -94,7 +94,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ReportTaskRunnerHeartbeatRequestMarshaller _instance = new ReportTaskRunnerHeartbeatRequestMarshaller();        
 
+        internal static ReportTaskRunnerHeartbeatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReportTaskRunnerHeartbeatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

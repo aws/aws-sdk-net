@@ -112,7 +112,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutSubscriptionFilterRequestMarshaller _instance = new PutSubscriptionFilterRequestMarshaller();        
 
+        internal static PutSubscriptionFilterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutSubscriptionFilterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

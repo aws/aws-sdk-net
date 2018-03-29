@@ -65,5 +65,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static CheckIfPhoneNumberIsOptedOutRequestMarshaller _instance = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();        
+
+        internal static CheckIfPhoneNumberIsOptedOutRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CheckIfPhoneNumberIsOptedOutRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

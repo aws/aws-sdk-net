@@ -97,7 +97,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateVPCFromHostedZoneRequestMarshaller _instance = new DisassociateVPCFromHostedZoneRequestMarshaller();        
 
-        
+        internal static DisassociateVPCFromHostedZoneRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateVPCFromHostedZoneRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

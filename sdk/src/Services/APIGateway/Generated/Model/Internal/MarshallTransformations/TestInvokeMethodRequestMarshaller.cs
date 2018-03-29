@@ -129,7 +129,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TestInvokeMethodRequestMarshaller _instance = new TestInvokeMethodRequestMarshaller();        
 
+        internal static TestInvokeMethodRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestInvokeMethodRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

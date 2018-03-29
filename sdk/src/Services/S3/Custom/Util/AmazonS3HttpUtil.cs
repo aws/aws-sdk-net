@@ -16,14 +16,12 @@ using System;
 using System.Net;
 using Amazon.Runtime;
 using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
 
-#if PCL
-using System.Net.Http;
-#endif
 
 
 namespace Amazon.S3
@@ -43,20 +41,19 @@ namespace Amazon.S3
             {
                 using (var httpClient = GetHttpClient(config))
                 {
-                    var request = new HttpRequestMessage(HttpMethod.Head, url);
-                    var response = await httpClient.SendAsync(request).ConfigureAwait(false);
-                    foreach (var headerPair in response.Headers)
+                    var response = await httpClient.GetResponseHeadersAsync("Head",url);
+                    foreach (var headerPair in response)
                     {
-                        if (string.Equals(headerPair.Key, HeaderKeys.XAmzBucketRegion, StringComparison.OrdinalIgnoreCase))
+                        if (string.Equals(headerPair.Item1, HeaderKeys.XAmzBucketRegion, StringComparison.OrdinalIgnoreCase))
                         {
-                            foreach (var value in headerPair.Value)
+                            foreach (var value in headerPair.Item2)
                             {
                                 // If there's more than one there's something really wrong.
                                 // So just use the first one anyway.
                                 return new GetHeadResponse
                                 {
                                     HeaderValue = value,
-                                    StatusCode = response.StatusCode
+                                    StatusCode = headerPair.Item3
                                 };
                             }
                         }
@@ -66,22 +63,22 @@ namespace Amazon.S3
             return null;
         }
 
-        private static HttpClient GetHttpClient(IClientConfig config)
+        private static AWSHttpClient GetHttpClient(IClientConfig config)
         {
+#if PCL
+            return new AWSHttpClient();
+#else
             var proxy = GetProxyIfAvailableAndConfigured(config);
+
             if (proxy == null)
             {
-                return new HttpClient();
+                return new AWSHttpClient();
             }
             else
             {
-                return new HttpClient(
-                    new HttpClientHandler
-                    {
-                        Proxy = proxy,
-                        UseProxy = true
-                    });
+                return new AWSHttpClient(proxy, true);
             }
+#endif
         }
 #endif
 
@@ -171,7 +168,7 @@ namespace Amazon.S3
             }
 #endif
         }
-
+#if !PCL
         private static IWebProxy GetProxyIfAvailableAndConfigured(IClientConfig config)
         {
 #if BCL || UNITY || CORECLR
@@ -180,5 +177,6 @@ namespace Amazon.S3
             return null;
 #endif
         }
+#endif
     }
 }

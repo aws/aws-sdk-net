@@ -66,7 +66,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDirectoryLimitsRequestMarshaller _instance = new GetDirectoryLimitsRequestMarshaller();        
 
+        internal static GetDirectoryLimitsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDirectoryLimitsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

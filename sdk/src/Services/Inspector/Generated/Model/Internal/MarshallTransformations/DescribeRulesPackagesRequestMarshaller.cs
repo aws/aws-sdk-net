@@ -93,7 +93,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeRulesPackagesRequestMarshaller _instance = new DescribeRulesPackagesRequestMarshaller();        
 
+        internal static DescribeRulesPackagesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeRulesPackagesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

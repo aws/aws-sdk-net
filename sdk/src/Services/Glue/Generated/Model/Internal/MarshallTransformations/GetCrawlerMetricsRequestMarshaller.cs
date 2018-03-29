@@ -99,7 +99,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCrawlerMetricsRequestMarshaller _instance = new GetCrawlerMetricsRequestMarshaller();        
 
+        internal static GetCrawlerMetricsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCrawlerMetricsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

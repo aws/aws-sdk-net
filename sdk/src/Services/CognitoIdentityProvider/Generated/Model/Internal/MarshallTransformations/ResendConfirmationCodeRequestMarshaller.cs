@@ -116,7 +116,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ResendConfirmationCodeRequestMarshaller _instance = new ResendConfirmationCodeRequestMarshaller();        
 
+        internal static ResendConfirmationCodeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResendConfirmationCodeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -89,5 +89,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeReservedCacheNodesOfferingsRequestMarshaller _instance = new DescribeReservedCacheNodesOfferingsRequestMarshaller();        
+
+        internal static DescribeReservedCacheNodesOfferingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeReservedCacheNodesOfferingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

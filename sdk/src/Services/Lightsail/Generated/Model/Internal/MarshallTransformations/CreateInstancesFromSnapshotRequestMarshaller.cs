@@ -141,7 +141,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateInstancesFromSnapshotRequestMarshaller _instance = new CreateInstancesFromSnapshotRequestMarshaller();        
 
+        internal static CreateInstancesFromSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateInstancesFromSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

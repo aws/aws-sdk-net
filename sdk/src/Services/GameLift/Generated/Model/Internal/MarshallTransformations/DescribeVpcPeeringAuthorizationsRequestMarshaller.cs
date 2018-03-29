@@ -66,7 +66,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeVpcPeeringAuthorizationsRequestMarshaller _instance = new DescribeVpcPeeringAuthorizationsRequestMarshaller();        
 
+        internal static DescribeVpcPeeringAuthorizationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeVpcPeeringAuthorizationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

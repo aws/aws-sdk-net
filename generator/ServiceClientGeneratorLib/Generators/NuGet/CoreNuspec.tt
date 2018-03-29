@@ -16,7 +16,7 @@
     <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
-    <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
     <dependencies>
       <group targetFramework="net35">
       </group>

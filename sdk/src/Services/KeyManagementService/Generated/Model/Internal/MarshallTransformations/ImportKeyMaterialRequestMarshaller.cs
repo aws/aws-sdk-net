@@ -106,7 +106,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ImportKeyMaterialRequestMarshaller _instance = new ImportKeyMaterialRequestMarshaller();        
 
+        internal static ImportKeyMaterialRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ImportKeyMaterialRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -72,7 +72,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
                 var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
                 if (partialStream.Length > 0)
-                    request.UseChunkEncoding = true;
+                    request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
 
@@ -88,6 +88,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static UploadPartRequestMarshaller _instance;
+
+	    public static UploadPartRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new UploadPartRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

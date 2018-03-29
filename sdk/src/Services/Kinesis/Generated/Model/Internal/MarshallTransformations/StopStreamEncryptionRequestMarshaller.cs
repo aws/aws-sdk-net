@@ -94,7 +94,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopStreamEncryptionRequestMarshaller _instance = new StopStreamEncryptionRequestMarshaller();        
 
+        internal static StopStreamEncryptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopStreamEncryptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

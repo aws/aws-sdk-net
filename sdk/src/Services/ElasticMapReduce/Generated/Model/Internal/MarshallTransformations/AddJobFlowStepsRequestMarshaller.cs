@@ -98,7 +98,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddJobFlowStepsRequestMarshaller _instance = new AddJobFlowStepsRequestMarshaller();        
 
+        internal static AddJobFlowStepsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddJobFlowStepsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

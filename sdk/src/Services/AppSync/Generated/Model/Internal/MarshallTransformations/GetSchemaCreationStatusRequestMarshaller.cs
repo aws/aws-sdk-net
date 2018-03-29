@@ -65,7 +65,23 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSchemaCreationStatusRequestMarshaller _instance = new GetSchemaCreationStatusRequestMarshaller();        
 
+        internal static GetSchemaCreationStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSchemaCreationStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

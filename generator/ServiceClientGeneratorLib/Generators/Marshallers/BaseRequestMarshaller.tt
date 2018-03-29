@@ -24,4 +24,28 @@
         }
         set { this._structure = value; }
     }
+
+    protected void AddRequestSingletonMethod()
+    {
+#>
+        private static <#=this.Operation.Name #>RequestMarshaller _instance = new <#=this.Operation.Name #>RequestMarshaller();        
+
+		internal static <#=this.Operation.Name #>RequestMarshaller GetInstance()
+		{
+			return _instance;
+		}
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+		public static <#=this.Operation.Name #>RequestMarshaller Instance
+		{
+			get
+			{
+				return _instance;
+			}
+		}
+
+<#+
+    }
 #>

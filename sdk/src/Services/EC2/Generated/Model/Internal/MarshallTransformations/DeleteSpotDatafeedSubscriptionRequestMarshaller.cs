@@ -61,5 +61,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteSpotDatafeedSubscriptionRequestMarshaller _instance = new DeleteSpotDatafeedSubscriptionRequestMarshaller();        
+
+        internal static DeleteSpotDatafeedSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteSpotDatafeedSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

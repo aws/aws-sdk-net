@@ -93,7 +93,23 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static PutApplicationPolicyRequestMarshaller _instance = new PutApplicationPolicyRequestMarshaller();        
 
+        internal static PutApplicationPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutApplicationPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

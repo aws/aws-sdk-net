@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static EnableVpcClassicLinkDnsSupportRequestMarshaller _instance = new EnableVpcClassicLinkDnsSupportRequestMarshaller();        
+
+        internal static EnableVpcClassicLinkDnsSupportRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableVpcClassicLinkDnsSupportRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

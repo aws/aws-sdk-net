@@ -88,7 +88,23 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteScalingPlanRequestMarshaller _instance = new DeleteScalingPlanRequestMarshaller();        
 
+        internal static DeleteScalingPlanRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteScalingPlanRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

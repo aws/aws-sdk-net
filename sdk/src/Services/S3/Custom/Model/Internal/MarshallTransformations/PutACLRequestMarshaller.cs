@@ -112,6 +112,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static PutACLRequestMarshaller _instance;
+
+	    public static PutACLRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutACLRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

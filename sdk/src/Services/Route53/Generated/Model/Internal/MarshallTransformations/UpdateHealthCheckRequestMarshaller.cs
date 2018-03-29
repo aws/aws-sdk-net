@@ -163,7 +163,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateHealthCheckRequestMarshaller _instance = new UpdateHealthCheckRequestMarshaller();        
 
-        
+        internal static UpdateHealthCheckRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateHealthCheckRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

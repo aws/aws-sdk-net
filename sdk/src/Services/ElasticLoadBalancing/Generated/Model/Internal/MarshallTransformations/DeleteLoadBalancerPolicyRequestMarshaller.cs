@@ -69,5 +69,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteLoadBalancerPolicyRequestMarshaller _instance = new DeleteLoadBalancerPolicyRequestMarshaller();        
+
+        internal static DeleteLoadBalancerPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteLoadBalancerPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -100,7 +100,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTaskDefinitionFamiliesRequestMarshaller _instance = new ListTaskDefinitionFamiliesRequestMarshaller();        
 
+        internal static ListTaskDefinitionFamiliesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTaskDefinitionFamiliesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

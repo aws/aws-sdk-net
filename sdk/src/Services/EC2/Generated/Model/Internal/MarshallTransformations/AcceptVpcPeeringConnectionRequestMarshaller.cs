@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AcceptVpcPeeringConnectionRequestMarshaller _instance = new AcceptVpcPeeringConnectionRequestMarshaller();        
+
+        internal static AcceptVpcPeeringConnectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AcceptVpcPeeringConnectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

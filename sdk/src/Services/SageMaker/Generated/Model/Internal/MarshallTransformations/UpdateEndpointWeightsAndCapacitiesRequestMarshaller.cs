@@ -98,7 +98,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateEndpointWeightsAndCapacitiesRequestMarshaller _instance = new UpdateEndpointWeightsAndCapacitiesRequestMarshaller();        
 
+        internal static UpdateEndpointWeightsAndCapacitiesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateEndpointWeightsAndCapacitiesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -105,7 +105,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddCommunicationToCaseRequestMarshaller _instance = new AddCommunicationToCaseRequestMarshaller();        
 
+        internal static AddCommunicationToCaseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddCommunicationToCaseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

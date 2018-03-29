@@ -106,7 +106,23 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static LookupDeveloperIdentityRequestMarshaller _instance = new LookupDeveloperIdentityRequestMarshaller();        
 
+        internal static LookupDeveloperIdentityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static LookupDeveloperIdentityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }
