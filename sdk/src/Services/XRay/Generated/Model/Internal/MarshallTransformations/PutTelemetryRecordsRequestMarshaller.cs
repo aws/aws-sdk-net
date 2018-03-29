@@ -108,7 +108,23 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutTelemetryRecordsRequestMarshaller _instance = new PutTelemetryRecordsRequestMarshaller();        
 
+        internal static PutTelemetryRecordsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutTelemetryRecordsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

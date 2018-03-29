@@ -88,7 +88,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePresignedNotebookInstanceUrlRequestMarshaller _instance = new CreatePresignedNotebookInstanceUrlRequestMarshaller();        
 
+        internal static CreatePresignedNotebookInstanceUrlRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePresignedNotebookInstanceUrlRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

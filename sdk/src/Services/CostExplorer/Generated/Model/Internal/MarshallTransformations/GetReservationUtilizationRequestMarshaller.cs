@@ -126,7 +126,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetReservationUtilizationRequestMarshaller _instance = new GetReservationUtilizationRequestMarshaller();        
 
+        internal static GetReservationUtilizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetReservationUtilizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

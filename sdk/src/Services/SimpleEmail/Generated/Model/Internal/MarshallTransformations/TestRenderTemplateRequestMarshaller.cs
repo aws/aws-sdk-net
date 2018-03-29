@@ -69,5 +69,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static TestRenderTemplateRequestMarshaller _instance = new TestRenderTemplateRequestMarshaller();        
+
+        internal static TestRenderTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestRenderTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

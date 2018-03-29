@@ -82,7 +82,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteModelRequestMarshaller _instance = new DeleteModelRequestMarshaller();        
 
+        internal static DeleteModelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteModelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

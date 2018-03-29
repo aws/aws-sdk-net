@@ -88,7 +88,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeProductAsAdminRequestMarshaller _instance = new DescribeProductAsAdminRequestMarshaller();        
 
+        internal static DescribeProductAsAdminRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeProductAsAdminRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

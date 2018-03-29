@@ -89,5 +89,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CopyDBParameterGroupRequestMarshaller _instance = new CopyDBParameterGroupRequestMarshaller();        
+
+        internal static CopyDBParameterGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CopyDBParameterGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

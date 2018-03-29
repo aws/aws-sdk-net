@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AddClientIDToOpenIDConnectProviderRequestMarshaller _instance = new AddClientIDToOpenIDConnectProviderRequestMarshaller();        
+
+        internal static AddClientIDToOpenIDConnectProviderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddClientIDToOpenIDConnectProviderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -73,7 +73,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetUtterancesViewRequestMarshaller _instance = new GetUtterancesViewRequestMarshaller();        
 
+        internal static GetUtterancesViewRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetUtterancesViewRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

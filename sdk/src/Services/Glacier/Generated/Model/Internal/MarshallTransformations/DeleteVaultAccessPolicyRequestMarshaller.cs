@@ -66,7 +66,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteVaultAccessPolicyRequestMarshaller _instance = new DeleteVaultAccessPolicyRequestMarshaller();        
 
+        internal static DeleteVaultAccessPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteVaultAccessPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

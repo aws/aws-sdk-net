@@ -88,7 +88,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterFromWorkMailRequestMarshaller _instance = new DeregisterFromWorkMailRequestMarshaller();        
 
+        internal static DeregisterFromWorkMailRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterFromWorkMailRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

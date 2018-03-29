@@ -85,7 +85,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateHostedZoneCommentRequestMarshaller _instance = new UpdateHostedZoneCommentRequestMarshaller();        
 
-        
+        internal static UpdateHostedZoneCommentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateHostedZoneCommentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

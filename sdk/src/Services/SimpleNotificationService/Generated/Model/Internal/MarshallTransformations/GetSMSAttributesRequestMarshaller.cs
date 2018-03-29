@@ -70,5 +70,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static GetSMSAttributesRequestMarshaller _instance = new GetSMSAttributesRequestMarshaller();        
+
+        internal static GetSMSAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSMSAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -80,7 +80,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGcmChannelRequestMarshaller _instance = new UpdateGcmChannelRequestMarshaller();        
 
+        internal static UpdateGcmChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGcmChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

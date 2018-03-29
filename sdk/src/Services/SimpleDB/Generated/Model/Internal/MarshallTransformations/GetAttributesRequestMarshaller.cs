@@ -82,5 +82,23 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetAttributesRequestMarshaller _instance = new GetAttributesRequestMarshaller();        
+
+        internal static GetAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

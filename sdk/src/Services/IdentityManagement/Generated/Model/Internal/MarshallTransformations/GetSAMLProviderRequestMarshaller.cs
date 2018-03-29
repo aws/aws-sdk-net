@@ -65,5 +65,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetSAMLProviderRequestMarshaller _instance = new GetSAMLProviderRequestMarshaller();        
+
+        internal static GetSAMLProviderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSAMLProviderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

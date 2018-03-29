@@ -87,7 +87,23 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
+        private static StopDataCollectionByAgentIdsRequestMarshaller _instance = new StopDataCollectionByAgentIdsRequestMarshaller();        
 
+        internal static StopDataCollectionByAgentIdsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopDataCollectionByAgentIdsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

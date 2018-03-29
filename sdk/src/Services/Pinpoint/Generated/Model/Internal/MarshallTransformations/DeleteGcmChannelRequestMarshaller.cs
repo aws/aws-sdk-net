@@ -65,7 +65,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteGcmChannelRequestMarshaller _instance = new DeleteGcmChannelRequestMarshaller();        
 
+        internal static DeleteGcmChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteGcmChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

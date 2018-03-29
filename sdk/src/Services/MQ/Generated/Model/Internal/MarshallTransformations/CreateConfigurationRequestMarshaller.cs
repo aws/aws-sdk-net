@@ -92,7 +92,23 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateConfigurationRequestMarshaller _instance = new CreateConfigurationRequestMarshaller();        
 
+        internal static CreateConfigurationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -100,7 +100,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutImageRequestMarshaller _instance = new PutImageRequestMarshaller();        
 
+        internal static PutImageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutImageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

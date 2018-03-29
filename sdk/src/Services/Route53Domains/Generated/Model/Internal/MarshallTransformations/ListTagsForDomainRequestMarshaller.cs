@@ -82,7 +82,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTagsForDomainRequestMarshaller _instance = new ListTagsForDomainRequestMarshaller();        
 
+        internal static ListTagsForDomainRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTagsForDomainRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

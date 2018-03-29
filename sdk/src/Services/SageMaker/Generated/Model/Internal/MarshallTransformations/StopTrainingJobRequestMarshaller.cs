@@ -82,7 +82,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopTrainingJobRequestMarshaller _instance = new StopTrainingJobRequestMarshaller();        
 
+        internal static StopTrainingJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopTrainingJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

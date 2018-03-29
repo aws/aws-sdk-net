@@ -82,7 +82,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DetachStaticIpRequestMarshaller _instance = new DetachStaticIpRequestMarshaller();        
 
+        internal static DetachStaticIpRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetachStaticIpRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

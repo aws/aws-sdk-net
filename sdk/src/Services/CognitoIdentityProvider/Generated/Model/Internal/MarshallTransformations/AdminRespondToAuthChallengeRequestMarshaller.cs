@@ -136,7 +136,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AdminRespondToAuthChallengeRequestMarshaller _instance = new AdminRespondToAuthChallengeRequestMarshaller();        
 
+        internal static AdminRespondToAuthChallengeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AdminRespondToAuthChallengeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

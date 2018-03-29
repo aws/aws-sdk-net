@@ -73,5 +73,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetIdentityHeadersInNotificationsEnabledRequestMarshaller _instance = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();        
+
+        internal static SetIdentityHeadersInNotificationsEnabledRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetIdentityHeadersInNotificationsEnabledRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

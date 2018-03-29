@@ -88,7 +88,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteUserRequestMarshaller _instance = new DeleteUserRequestMarshaller();        
 
+        internal static DeleteUserRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteUserRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

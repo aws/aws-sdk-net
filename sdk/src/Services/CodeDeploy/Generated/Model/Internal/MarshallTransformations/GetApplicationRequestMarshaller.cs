@@ -82,7 +82,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetApplicationRequestMarshaller _instance = new GetApplicationRequestMarshaller();        
 
+        internal static GetApplicationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetApplicationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

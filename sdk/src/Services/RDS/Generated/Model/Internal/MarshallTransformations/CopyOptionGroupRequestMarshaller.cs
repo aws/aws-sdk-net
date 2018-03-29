@@ -89,5 +89,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CopyOptionGroupRequestMarshaller _instance = new CopyOptionGroupRequestMarshaller();        
+
+        internal static CopyOptionGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CopyOptionGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

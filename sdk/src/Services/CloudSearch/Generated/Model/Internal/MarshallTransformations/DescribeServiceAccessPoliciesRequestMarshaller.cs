@@ -69,5 +69,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeServiceAccessPoliciesRequestMarshaller _instance = new DescribeServiceAccessPoliciesRequestMarshaller();        
+
+        internal static DescribeServiceAccessPoliciesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeServiceAccessPoliciesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

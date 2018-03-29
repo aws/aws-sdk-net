@@ -82,7 +82,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendInvitationRequestMarshaller _instance = new SendInvitationRequestMarshaller();        
 
+        internal static SendInvitationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendInvitationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

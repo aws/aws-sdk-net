@@ -65,5 +65,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteClusterParameterGroupRequestMarshaller _instance = new DeleteClusterParameterGroupRequestMarshaller();        
+
+        internal static DeleteClusterParameterGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteClusterParameterGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

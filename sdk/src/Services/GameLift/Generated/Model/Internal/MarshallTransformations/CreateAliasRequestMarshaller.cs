@@ -99,7 +99,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateAliasRequestMarshaller _instance = new CreateAliasRequestMarshaller();        
 
+        internal static CreateAliasRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAliasRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

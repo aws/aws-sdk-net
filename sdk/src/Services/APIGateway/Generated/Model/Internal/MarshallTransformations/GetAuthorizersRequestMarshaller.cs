@@ -72,7 +72,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetAuthorizersRequestMarshaller _instance = new GetAuthorizersRequestMarshaller();        
 
+        internal static GetAuthorizersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAuthorizersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

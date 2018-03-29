@@ -99,7 +99,23 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static IncreaseReplicationFactorRequestMarshaller _instance = new IncreaseReplicationFactorRequestMarshaller();        
 
+        internal static IncreaseReplicationFactorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static IncreaseReplicationFactorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

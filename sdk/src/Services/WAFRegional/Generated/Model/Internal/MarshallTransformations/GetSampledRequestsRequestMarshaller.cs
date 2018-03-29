@@ -105,7 +105,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSampledRequestsRequestMarshaller _instance = new GetSampledRequestsRequestMarshaller();        
 
+        internal static GetSampledRequestsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSampledRequestsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

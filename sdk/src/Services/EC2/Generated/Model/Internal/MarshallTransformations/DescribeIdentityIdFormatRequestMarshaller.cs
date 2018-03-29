@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeIdentityIdFormatRequestMarshaller _instance = new DescribeIdentityIdFormatRequestMarshaller();        
+
+        internal static DescribeIdentityIdFormatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeIdentityIdFormatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

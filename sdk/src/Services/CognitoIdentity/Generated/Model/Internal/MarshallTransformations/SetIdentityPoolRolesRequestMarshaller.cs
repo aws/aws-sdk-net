@@ -115,7 +115,23 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetIdentityPoolRolesRequestMarshaller _instance = new SetIdentityPoolRolesRequestMarshaller();        
 
+        internal static SetIdentityPoolRolesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetIdentityPoolRolesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -69,5 +69,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static ListEndpointsByPlatformApplicationRequestMarshaller _instance = new ListEndpointsByPlatformApplicationRequestMarshaller();        
+
+        internal static ListEndpointsByPlatformApplicationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListEndpointsByPlatformApplicationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

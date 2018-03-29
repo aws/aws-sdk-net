@@ -88,7 +88,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateTagOptionRequestMarshaller _instance = new CreateTagOptionRequestMarshaller();        
 
+        internal static CreateTagOptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateTagOptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

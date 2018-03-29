@@ -69,5 +69,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteExpressionRequestMarshaller _instance = new DeleteExpressionRequestMarshaller();        
+
+        internal static DeleteExpressionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteExpressionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

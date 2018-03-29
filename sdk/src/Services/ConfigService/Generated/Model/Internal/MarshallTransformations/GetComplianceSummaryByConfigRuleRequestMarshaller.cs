@@ -66,7 +66,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetComplianceSummaryByConfigRuleRequestMarshaller _instance = new GetComplianceSummaryByConfigRuleRequestMarshaller();        
 
+        internal static GetComplianceSummaryByConfigRuleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetComplianceSummaryByConfigRuleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

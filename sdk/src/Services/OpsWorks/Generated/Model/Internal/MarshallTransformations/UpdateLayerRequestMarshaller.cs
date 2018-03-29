@@ -221,7 +221,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateLayerRequestMarshaller _instance = new UpdateLayerRequestMarshaller();        
 
+        internal static UpdateLayerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateLayerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -96,7 +96,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateStageRequestMarshaller _instance = new UpdateStageRequestMarshaller();        
 
+        internal static UpdateStageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateStageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -68,7 +68,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeletePolicyVersionRequestMarshaller _instance = new DeletePolicyVersionRequestMarshaller();        
 
+        internal static DeletePolicyVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeletePolicyVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListRulesRequestMarshaller _instance = new ListRulesRequestMarshaller();        
 
+        internal static ListRulesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListRulesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

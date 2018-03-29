@@ -98,7 +98,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutRecordBatchRequestMarshaller _instance = new PutRecordBatchRequestMarshaller();        
 
+        internal static PutRecordBatchRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutRecordBatchRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

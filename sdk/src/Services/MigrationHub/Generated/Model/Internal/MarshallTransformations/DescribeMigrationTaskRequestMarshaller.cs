@@ -88,7 +88,23 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeMigrationTaskRequestMarshaller _instance = new DescribeMigrationTaskRequestMarshaller();        
 
+        internal static DescribeMigrationTaskRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeMigrationTaskRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

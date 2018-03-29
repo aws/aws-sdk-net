@@ -118,5 +118,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ImportSnapshotRequestMarshaller _instance = new ImportSnapshotRequestMarshaller();        
+
+        internal static ImportSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ImportSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

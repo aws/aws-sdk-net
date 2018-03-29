@@ -105,7 +105,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchDeleteTableVersionRequestMarshaller _instance = new BatchDeleteTableVersionRequestMarshaller();        
 
+        internal static BatchDeleteTableVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchDeleteTableVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetRuleGroupRequestMarshaller _instance = new GetRuleGroupRequestMarshaller();        
 
+        internal static GetRuleGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetRuleGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

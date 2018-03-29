@@ -142,7 +142,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDataSourcesRequestMarshaller _instance = new DescribeDataSourcesRequestMarshaller();        
 
+        internal static DescribeDataSourcesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDataSourcesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

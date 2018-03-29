@@ -81,7 +81,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static TestDNSAnswerRequestMarshaller _instance = new TestDNSAnswerRequestMarshaller();        
 
-        
+        internal static TestDNSAnswerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestDNSAnswerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

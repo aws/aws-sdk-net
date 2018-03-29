@@ -65,5 +65,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteCacheSubnetGroupRequestMarshaller _instance = new DeleteCacheSubnetGroupRequestMarshaller();        
+
+        internal static DeleteCacheSubnetGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCacheSubnetGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

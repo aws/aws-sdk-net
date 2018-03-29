@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeImageAttributeRequestMarshaller _instance = new DescribeImageAttributeRequestMarshaller();        
+
+        internal static DescribeImageAttributeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeImageAttributeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

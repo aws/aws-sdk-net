@@ -88,7 +88,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RestoreTableFromBackupRequestMarshaller _instance = new RestoreTableFromBackupRequestMarshaller();        
 
+        internal static RestoreTableFromBackupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreTableFromBackupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

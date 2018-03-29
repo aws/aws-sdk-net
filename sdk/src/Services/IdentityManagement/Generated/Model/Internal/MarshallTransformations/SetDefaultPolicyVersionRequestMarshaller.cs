@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetDefaultPolicyVersionRequestMarshaller _instance = new SetDefaultPolicyVersionRequestMarshaller();        
+
+        internal static SetDefaultPolicyVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetDefaultPolicyVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

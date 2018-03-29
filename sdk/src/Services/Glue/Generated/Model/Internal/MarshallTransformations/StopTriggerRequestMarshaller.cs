@@ -82,7 +82,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopTriggerRequestMarshaller _instance = new StopTriggerRequestMarshaller();        
 
+        internal static StopTriggerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopTriggerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

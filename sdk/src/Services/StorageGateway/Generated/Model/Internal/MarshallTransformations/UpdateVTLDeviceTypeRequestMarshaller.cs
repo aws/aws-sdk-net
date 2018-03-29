@@ -88,7 +88,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateVTLDeviceTypeRequestMarshaller _instance = new UpdateVTLDeviceTypeRequestMarshaller();        
 
+        internal static UpdateVTLDeviceTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateVTLDeviceTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

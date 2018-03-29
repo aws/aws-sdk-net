@@ -82,7 +82,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteLayerRequestMarshaller _instance = new DeleteLayerRequestMarshaller();        
 
+        internal static DeleteLayerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteLayerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

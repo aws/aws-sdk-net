@@ -91,5 +91,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeTargetGroupsRequestMarshaller _instance = new DescribeTargetGroupsRequestMarshaller();        
+
+        internal static DescribeTargetGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeTargetGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

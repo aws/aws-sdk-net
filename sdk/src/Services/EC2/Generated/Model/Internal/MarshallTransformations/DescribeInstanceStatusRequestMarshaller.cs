@@ -103,5 +103,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeInstanceStatusRequestMarshaller _instance = new DescribeInstanceStatusRequestMarshaller();        
+
+        internal static DescribeInstanceStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeInstanceStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

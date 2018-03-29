@@ -82,7 +82,23 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateContainerRequestMarshaller _instance = new CreateContainerRequestMarshaller();        
 
+        internal static CreateContainerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateContainerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

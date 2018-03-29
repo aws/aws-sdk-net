@@ -97,7 +97,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateVpcLinkRequestMarshaller _instance = new CreateVpcLinkRequestMarshaller();        
 
+        internal static CreateVpcLinkRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateVpcLinkRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

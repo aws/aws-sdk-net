@@ -88,7 +88,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateEvaluationRequestMarshaller _instance = new UpdateEvaluationRequestMarshaller();        
 
+        internal static UpdateEvaluationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateEvaluationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

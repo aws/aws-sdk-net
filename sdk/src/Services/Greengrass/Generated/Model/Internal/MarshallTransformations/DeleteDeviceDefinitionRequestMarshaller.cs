@@ -65,7 +65,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteDeviceDefinitionRequestMarshaller _instance = new DeleteDeviceDefinitionRequestMarshaller();        
 
+        internal static DeleteDeviceDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDeviceDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

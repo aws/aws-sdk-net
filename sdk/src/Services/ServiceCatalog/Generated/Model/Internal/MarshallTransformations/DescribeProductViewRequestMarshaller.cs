@@ -88,7 +88,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeProductViewRequestMarshaller _instance = new DescribeProductViewRequestMarshaller();        
 
+        internal static DescribeProductViewRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeProductViewRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

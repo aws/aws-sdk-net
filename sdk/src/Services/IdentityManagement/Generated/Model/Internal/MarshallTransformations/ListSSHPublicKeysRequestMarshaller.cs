@@ -73,5 +73,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListSSHPublicKeysRequestMarshaller _instance = new ListSSHPublicKeysRequestMarshaller();        
+
+        internal static ListSSHPublicKeysRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListSSHPublicKeysRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteDiskRequestMarshaller _instance = new DeleteDiskRequestMarshaller();        
 
+        internal static DeleteDiskRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDiskRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

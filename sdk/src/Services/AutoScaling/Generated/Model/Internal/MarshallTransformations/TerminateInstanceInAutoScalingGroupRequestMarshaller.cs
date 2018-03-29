@@ -69,5 +69,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static TerminateInstanceInAutoScalingGroupRequestMarshaller _instance = new TerminateInstanceInAutoScalingGroupRequestMarshaller();        
+
+        internal static TerminateInstanceInAutoScalingGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TerminateInstanceInAutoScalingGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

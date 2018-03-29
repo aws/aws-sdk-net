@@ -110,7 +110,23 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateSubscriberRequestMarshaller _instance = new CreateSubscriberRequestMarshaller();        
 
+        internal static CreateSubscriberRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateSubscriberRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

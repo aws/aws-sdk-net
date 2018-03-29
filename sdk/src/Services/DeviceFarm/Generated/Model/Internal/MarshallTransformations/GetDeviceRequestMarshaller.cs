@@ -82,7 +82,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDeviceRequestMarshaller _instance = new GetDeviceRequestMarshaller();        
 
+        internal static GetDeviceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDeviceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

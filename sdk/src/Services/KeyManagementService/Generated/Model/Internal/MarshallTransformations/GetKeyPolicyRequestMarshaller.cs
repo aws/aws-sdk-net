@@ -88,7 +88,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetKeyPolicyRequestMarshaller _instance = new GetKeyPolicyRequestMarshaller();        
 
+        internal static GetKeyPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetKeyPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -99,7 +99,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateDatabaseRequestMarshaller _instance = new UpdateDatabaseRequestMarshaller();        
 
+        internal static UpdateDatabaseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateDatabaseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

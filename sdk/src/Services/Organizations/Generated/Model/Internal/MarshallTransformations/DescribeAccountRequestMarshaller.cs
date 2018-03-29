@@ -82,7 +82,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeAccountRequestMarshaller _instance = new DescribeAccountRequestMarshaller();        
 
+        internal static DescribeAccountRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAccountRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

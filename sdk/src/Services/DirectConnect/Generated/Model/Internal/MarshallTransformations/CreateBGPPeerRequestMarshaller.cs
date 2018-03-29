@@ -93,7 +93,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateBGPPeerRequestMarshaller _instance = new CreateBGPPeerRequestMarshaller();        
 
+        internal static CreateBGPPeerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateBGPPeerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -61,5 +61,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeSpotDatafeedSubscriptionRequestMarshaller _instance = new DescribeSpotDatafeedSubscriptionRequestMarshaller();        
+
+        internal static DescribeSpotDatafeedSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeSpotDatafeedSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

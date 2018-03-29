@@ -65,5 +65,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteDBSecurityGroupRequestMarshaller _instance = new DeleteDBSecurityGroupRequestMarshaller();        
+
+        internal static DeleteDBSecurityGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDBSecurityGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

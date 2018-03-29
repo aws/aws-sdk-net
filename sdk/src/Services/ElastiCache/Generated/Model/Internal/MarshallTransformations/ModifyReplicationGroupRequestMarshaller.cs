@@ -143,5 +143,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyReplicationGroupRequestMarshaller _instance = new ModifyReplicationGroupRequestMarshaller();        
+
+        internal static ModifyReplicationGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyReplicationGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

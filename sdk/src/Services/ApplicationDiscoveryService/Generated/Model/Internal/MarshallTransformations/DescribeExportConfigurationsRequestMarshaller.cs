@@ -99,7 +99,23 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
+        private static DescribeExportConfigurationsRequestMarshaller _instance = new DescribeExportConfigurationsRequestMarshaller();        
 
+        internal static DescribeExportConfigurationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeExportConfigurationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

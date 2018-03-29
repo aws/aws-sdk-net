@@ -94,7 +94,23 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TranslateTextRequestMarshaller _instance = new TranslateTextRequestMarshaller();        
 
+        internal static TranslateTextRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TranslateTextRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

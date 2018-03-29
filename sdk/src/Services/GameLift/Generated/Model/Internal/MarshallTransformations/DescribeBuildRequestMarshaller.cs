@@ -82,7 +82,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeBuildRequestMarshaller _instance = new DescribeBuildRequestMarshaller();        
 
+        internal static DescribeBuildRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeBuildRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

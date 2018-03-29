@@ -115,7 +115,23 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateNotificationRequestMarshaller _instance = new CreateNotificationRequestMarshaller();        
 
+        internal static CreateNotificationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateNotificationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

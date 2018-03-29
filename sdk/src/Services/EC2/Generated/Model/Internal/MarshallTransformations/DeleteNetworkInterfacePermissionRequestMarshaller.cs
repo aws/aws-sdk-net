@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteNetworkInterfacePermissionRequestMarshaller _instance = new DeleteNetworkInterfacePermissionRequestMarshaller();        
+
+        internal static DeleteNetworkInterfacePermissionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteNetworkInterfacePermissionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

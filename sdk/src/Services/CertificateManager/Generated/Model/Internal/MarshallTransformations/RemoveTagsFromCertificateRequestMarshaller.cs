@@ -98,7 +98,23 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveTagsFromCertificateRequestMarshaller _instance = new RemoveTagsFromCertificateRequestMarshaller();        
 
+        internal static RemoveTagsFromCertificateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveTagsFromCertificateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

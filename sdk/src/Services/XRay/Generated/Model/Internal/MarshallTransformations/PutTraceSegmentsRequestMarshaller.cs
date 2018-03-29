@@ -85,7 +85,23 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutTraceSegmentsRequestMarshaller _instance = new PutTraceSegmentsRequestMarshaller();        
 
+        internal static PutTraceSegmentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutTraceSegmentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -86,5 +86,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PurchaseHostReservationRequestMarshaller _instance = new PurchaseHostReservationRequestMarshaller();        
+
+        internal static PurchaseHostReservationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PurchaseHostReservationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

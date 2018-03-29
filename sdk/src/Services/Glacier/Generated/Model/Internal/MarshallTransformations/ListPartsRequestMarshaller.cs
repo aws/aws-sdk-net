@@ -76,7 +76,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListPartsRequestMarshaller _instance = new ListPartsRequestMarshaller();        
 
+        internal static ListPartsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPartsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

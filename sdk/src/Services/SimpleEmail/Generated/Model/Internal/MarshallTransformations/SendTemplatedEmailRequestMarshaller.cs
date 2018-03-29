@@ -148,5 +148,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SendTemplatedEmailRequestMarshaller _instance = new SendTemplatedEmailRequestMarshaller();        
+
+        internal static SendTemplatedEmailRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendTemplatedEmailRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

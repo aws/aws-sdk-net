@@ -88,7 +88,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribePermissionsRequestMarshaller _instance = new DescribePermissionsRequestMarshaller();        
 
+        internal static DescribePermissionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribePermissionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

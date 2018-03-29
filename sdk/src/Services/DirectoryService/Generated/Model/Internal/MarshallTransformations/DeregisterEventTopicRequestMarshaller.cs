@@ -88,7 +88,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterEventTopicRequestMarshaller _instance = new DeregisterEventTopicRequestMarshaller();        
 
+        internal static DeregisterEventTopicRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterEventTopicRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

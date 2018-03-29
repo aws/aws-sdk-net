@@ -82,7 +82,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeSeverityLevelsRequestMarshaller _instance = new DescribeSeverityLevelsRequestMarshaller();        
 
+        internal static DescribeSeverityLevelsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeSeverityLevelsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

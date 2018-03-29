@@ -88,7 +88,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetRepositoryPolicyRequestMarshaller _instance = new GetRepositoryPolicyRequestMarshaller();        
 
+        internal static GetRepositoryPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetRepositoryPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

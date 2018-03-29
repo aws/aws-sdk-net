@@ -75,7 +75,23 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeMountTargetsRequestMarshaller _instance = new DescribeMountTargetsRequestMarshaller();        
 
+        internal static DescribeMountTargetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeMountTargetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

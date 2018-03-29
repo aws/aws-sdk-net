@@ -178,5 +178,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RestoreDBInstanceToPointInTimeRequestMarshaller _instance = new RestoreDBInstanceToPointInTimeRequestMarshaller();        
+
+        internal static RestoreDBInstanceToPointInTimeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreDBInstanceToPointInTimeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

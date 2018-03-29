@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteAccessKeyRequestMarshaller _instance = new DeleteAccessKeyRequestMarshaller();        
+
+        internal static DeleteAccessKeyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteAccessKeyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

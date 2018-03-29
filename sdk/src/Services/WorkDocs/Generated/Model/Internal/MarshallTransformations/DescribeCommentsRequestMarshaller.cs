@@ -78,7 +78,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeCommentsRequestMarshaller _instance = new DescribeCommentsRequestMarshaller();        
 
+        internal static DescribeCommentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeCommentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

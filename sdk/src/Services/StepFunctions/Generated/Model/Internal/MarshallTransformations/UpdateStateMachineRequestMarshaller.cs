@@ -94,7 +94,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateStateMachineRequestMarshaller _instance = new UpdateStateMachineRequestMarshaller();        
 
+        internal static UpdateStateMachineRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateStateMachineRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

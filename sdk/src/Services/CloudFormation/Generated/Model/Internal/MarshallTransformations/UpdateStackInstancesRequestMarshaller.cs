@@ -143,5 +143,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateStackInstancesRequestMarshaller _instance = new UpdateStackInstancesRequestMarshaller();        
+
+        internal static UpdateStackInstancesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateStackInstancesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

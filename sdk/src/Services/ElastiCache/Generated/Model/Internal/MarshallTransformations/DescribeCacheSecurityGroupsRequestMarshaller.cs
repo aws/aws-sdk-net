@@ -73,5 +73,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeCacheSecurityGroupsRequestMarshaller _instance = new DescribeCacheSecurityGroupsRequestMarshaller();        
+
+        internal static DescribeCacheSecurityGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeCacheSecurityGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

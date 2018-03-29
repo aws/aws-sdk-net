@@ -90,5 +90,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateTagsForResourceRequestMarshaller _instance = new UpdateTagsForResourceRequestMarshaller();        
+
+        internal static UpdateTagsForResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateTagsForResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

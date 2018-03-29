@@ -88,7 +88,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendTaskSuccessRequestMarshaller _instance = new SendTaskSuccessRequestMarshaller();        
 
+        internal static SendTaskSuccessRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendTaskSuccessRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

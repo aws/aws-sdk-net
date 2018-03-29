@@ -778,7 +778,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateDistributionRequestMarshaller _instance = new CreateDistributionRequestMarshaller();        
 
-        
+        internal static CreateDistributionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDistributionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

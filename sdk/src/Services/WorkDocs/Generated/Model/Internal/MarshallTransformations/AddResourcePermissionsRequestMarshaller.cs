@@ -107,7 +107,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddResourcePermissionsRequestMarshaller _instance = new AddResourcePermissionsRequestMarshaller();        
 
+        internal static AddResourcePermissionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddResourcePermissionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

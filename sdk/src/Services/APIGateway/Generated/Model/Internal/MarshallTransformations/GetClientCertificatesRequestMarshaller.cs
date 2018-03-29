@@ -69,7 +69,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetClientCertificatesRequestMarshaller _instance = new GetClientCertificatesRequestMarshaller();        
 
+        internal static GetClientCertificatesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetClientCertificatesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

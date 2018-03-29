@@ -65,7 +65,23 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ReadJobRequestMarshaller _instance = new ReadJobRequestMarshaller();        
 
+        internal static ReadJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReadJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -106,7 +106,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetTaskStatusRequestMarshaller _instance = new SetTaskStatusRequestMarshaller();        
 
+        internal static SetTaskStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetTaskStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

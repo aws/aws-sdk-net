@@ -77,5 +77,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DownloadDBLogFilePortionRequestMarshaller _instance = new DownloadDBLogFilePortionRequestMarshaller();        
+
+        internal static DownloadDBLogFilePortionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DownloadDBLogFilePortionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

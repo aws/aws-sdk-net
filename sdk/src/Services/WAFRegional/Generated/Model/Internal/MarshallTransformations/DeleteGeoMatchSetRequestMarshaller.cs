@@ -88,7 +88,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteGeoMatchSetRequestMarshaller _instance = new DeleteGeoMatchSetRequestMarshaller();        
 
+        internal static DeleteGeoMatchSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteGeoMatchSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetByteMatchSetRequestMarshaller _instance = new GetByteMatchSetRequestMarshaller();        
 
+        internal static GetByteMatchSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetByteMatchSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

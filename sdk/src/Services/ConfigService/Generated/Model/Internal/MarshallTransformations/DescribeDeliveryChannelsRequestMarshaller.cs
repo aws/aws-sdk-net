@@ -87,7 +87,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDeliveryChannelsRequestMarshaller _instance = new DescribeDeliveryChannelsRequestMarshaller();        
 
+        internal static DescribeDeliveryChannelsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDeliveryChannelsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -65,7 +65,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteIntentRequestMarshaller _instance = new DeleteIntentRequestMarshaller();        
 
+        internal static DeleteIntentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteIntentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

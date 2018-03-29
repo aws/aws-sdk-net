@@ -82,7 +82,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeBandwidthRateLimitRequestMarshaller _instance = new DescribeBandwidthRateLimitRequestMarshaller();        
 
+        internal static DescribeBandwidthRateLimitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeBandwidthRateLimitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

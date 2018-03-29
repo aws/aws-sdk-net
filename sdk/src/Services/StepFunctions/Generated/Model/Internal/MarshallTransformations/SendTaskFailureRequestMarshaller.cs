@@ -94,7 +94,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendTaskFailureRequestMarshaller _instance = new SendTaskFailureRequestMarshaller();        
 
+        internal static SendTaskFailureRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendTaskFailureRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -96,7 +96,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchReadRequestMarshaller _instance = new BatchReadRequestMarshaller();        
 
+        internal static BatchReadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchReadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -65,7 +65,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteUsagePlanRequestMarshaller _instance = new DeleteUsagePlanRequestMarshaller();        
 
+        internal static DeleteUsagePlanRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteUsagePlanRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

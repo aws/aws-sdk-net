@@ -68,7 +68,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeactivateUserRequestMarshaller _instance = new DeactivateUserRequestMarshaller();        
 
+        internal static DeactivateUserRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeactivateUserRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

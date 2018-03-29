@@ -65,7 +65,23 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeOriginEndpointRequestMarshaller _instance = new DescribeOriginEndpointRequestMarshaller();        
 
+        internal static DescribeOriginEndpointRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeOriginEndpointRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

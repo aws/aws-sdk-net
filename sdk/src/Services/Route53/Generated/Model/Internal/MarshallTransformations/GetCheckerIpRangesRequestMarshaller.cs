@@ -62,7 +62,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCheckerIpRangesRequestMarshaller _instance = new GetCheckerIpRangesRequestMarshaller();        
 
-        
+        internal static GetCheckerIpRangesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCheckerIpRangesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

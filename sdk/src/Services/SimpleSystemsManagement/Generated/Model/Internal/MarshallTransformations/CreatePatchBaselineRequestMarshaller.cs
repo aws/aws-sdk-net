@@ -177,7 +177,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePatchBaselineRequestMarshaller _instance = new CreatePatchBaselineRequestMarshaller();        
 
+        internal static CreatePatchBaselineRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePatchBaselineRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

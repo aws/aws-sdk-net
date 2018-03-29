@@ -94,7 +94,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateThingGroupRequestMarshaller _instance = new CreateThingGroupRequestMarshaller();        
 
+        internal static CreateThingGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateThingGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

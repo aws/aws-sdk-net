@@ -92,7 +92,23 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTagsForStreamRequestMarshaller _instance = new ListTagsForStreamRequestMarshaller();        
 
+        internal static ListTagsForStreamRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTagsForStreamRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

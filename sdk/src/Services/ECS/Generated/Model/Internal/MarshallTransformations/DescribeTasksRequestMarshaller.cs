@@ -93,7 +93,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeTasksRequestMarshaller _instance = new DescribeTasksRequestMarshaller();        
 
+        internal static DescribeTasksRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeTasksRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

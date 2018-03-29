@@ -115,7 +115,23 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
+        private static DescribeAgentsRequestMarshaller _instance = new DescribeAgentsRequestMarshaller();        
 
+        internal static DescribeAgentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAgentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

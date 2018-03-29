@@ -82,7 +82,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeStackSummaryRequestMarshaller _instance = new DescribeStackSummaryRequestMarshaller();        
 
+        internal static DescribeStackSummaryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeStackSummaryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

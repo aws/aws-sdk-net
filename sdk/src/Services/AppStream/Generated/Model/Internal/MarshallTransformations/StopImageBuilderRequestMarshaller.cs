@@ -82,7 +82,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopImageBuilderRequestMarshaller _instance = new StopImageBuilderRequestMarshaller();        
 
+        internal static StopImageBuilderRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopImageBuilderRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

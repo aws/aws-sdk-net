@@ -91,7 +91,23 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartNextPendingJobExecutionRequestMarshaller _instance = new StartNextPendingJobExecutionRequestMarshaller();        
 
+        internal static StartNextPendingJobExecutionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartNextPendingJobExecutionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

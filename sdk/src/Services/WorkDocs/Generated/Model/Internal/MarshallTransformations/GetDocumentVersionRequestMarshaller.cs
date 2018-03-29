@@ -78,7 +78,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDocumentVersionRequestMarshaller _instance = new GetDocumentVersionRequestMarshaller();        
 
+        internal static GetDocumentVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDocumentVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

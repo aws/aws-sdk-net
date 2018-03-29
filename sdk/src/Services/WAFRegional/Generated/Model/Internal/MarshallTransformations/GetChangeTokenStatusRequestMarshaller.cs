@@ -82,7 +82,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetChangeTokenStatusRequestMarshaller _instance = new GetChangeTokenStatusRequestMarshaller();        
 
+        internal static GetChangeTokenStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetChangeTokenStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

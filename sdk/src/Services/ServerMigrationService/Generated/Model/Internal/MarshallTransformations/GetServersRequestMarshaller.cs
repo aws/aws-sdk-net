@@ -88,7 +88,23 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetServersRequestMarshaller _instance = new GetServersRequestMarshaller();        
 
+        internal static GetServersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetServersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

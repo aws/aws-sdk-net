@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetConsoleScreenshotRequestMarshaller _instance = new GetConsoleScreenshotRequestMarshaller();        
+
+        internal static GetConsoleScreenshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetConsoleScreenshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

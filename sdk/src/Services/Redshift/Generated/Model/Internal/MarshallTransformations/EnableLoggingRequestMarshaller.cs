@@ -73,5 +73,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static EnableLoggingRequestMarshaller _instance = new EnableLoggingRequestMarshaller();        
+
+        internal static EnableLoggingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableLoggingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

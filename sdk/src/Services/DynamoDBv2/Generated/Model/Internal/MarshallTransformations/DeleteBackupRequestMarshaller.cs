@@ -82,7 +82,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteBackupRequestMarshaller _instance = new DeleteBackupRequestMarshaller();        
 
+        internal static DeleteBackupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteBackupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

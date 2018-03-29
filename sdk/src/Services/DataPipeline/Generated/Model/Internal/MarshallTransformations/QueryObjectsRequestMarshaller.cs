@@ -111,7 +111,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static QueryObjectsRequestMarshaller _instance = new QueryObjectsRequestMarshaller();        
 
+        internal static QueryObjectsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static QueryObjectsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

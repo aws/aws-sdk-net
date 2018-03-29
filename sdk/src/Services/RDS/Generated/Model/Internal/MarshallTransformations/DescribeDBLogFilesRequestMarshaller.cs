@@ -106,5 +106,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeDBLogFilesRequestMarshaller _instance = new DescribeDBLogFilesRequestMarshaller();        
+
+        internal static DescribeDBLogFilesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDBLogFilesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

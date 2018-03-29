@@ -77,5 +77,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SignalResourceRequestMarshaller _instance = new SignalResourceRequestMarshaller();        
+
+        internal static SignalResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SignalResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

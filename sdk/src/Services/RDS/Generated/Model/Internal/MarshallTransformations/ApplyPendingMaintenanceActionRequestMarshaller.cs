@@ -73,5 +73,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ApplyPendingMaintenanceActionRequestMarshaller _instance = new ApplyPendingMaintenanceActionRequestMarshaller();        
+
+        internal static ApplyPendingMaintenanceActionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ApplyPendingMaintenanceActionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

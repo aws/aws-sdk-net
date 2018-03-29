@@ -68,7 +68,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteNotificationSubscriptionRequestMarshaller _instance = new DeleteNotificationSubscriptionRequestMarshaller();        
 
+        internal static DeleteNotificationSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteNotificationSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteProfileRequestMarshaller _instance = new DeleteProfileRequestMarshaller();        
 
+        internal static DeleteProfileRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteProfileRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -72,7 +72,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeRootFoldersRequestMarshaller _instance = new DescribeRootFoldersRequestMarshaller();        
 
+        internal static DescribeRootFoldersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeRootFoldersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

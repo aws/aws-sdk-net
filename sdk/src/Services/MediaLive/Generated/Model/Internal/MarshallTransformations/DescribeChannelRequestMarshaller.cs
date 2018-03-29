@@ -65,7 +65,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeChannelRequestMarshaller _instance = new DescribeChannelRequestMarshaller();        
 
+        internal static DescribeChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

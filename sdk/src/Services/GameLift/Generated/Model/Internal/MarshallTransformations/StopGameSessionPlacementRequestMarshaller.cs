@@ -82,7 +82,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopGameSessionPlacementRequestMarshaller _instance = new StopGameSessionPlacementRequestMarshaller();        
 
+        internal static StopGameSessionPlacementRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopGameSessionPlacementRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

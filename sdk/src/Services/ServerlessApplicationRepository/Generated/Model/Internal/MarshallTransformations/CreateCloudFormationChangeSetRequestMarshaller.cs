@@ -105,7 +105,23 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static CreateCloudFormationChangeSetRequestMarshaller _instance = new CreateCloudFormationChangeSetRequestMarshaller();        
 
+        internal static CreateCloudFormationChangeSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateCloudFormationChangeSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

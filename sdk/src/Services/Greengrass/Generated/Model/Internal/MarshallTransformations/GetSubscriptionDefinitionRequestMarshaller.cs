@@ -65,7 +65,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSubscriptionDefinitionRequestMarshaller _instance = new GetSubscriptionDefinitionRequestMarshaller();        
 
+        internal static GetSubscriptionDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSubscriptionDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -73,5 +73,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetDesiredCapacityRequestMarshaller _instance = new SetDesiredCapacityRequestMarshaller();        
+
+        internal static SetDesiredCapacityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetDesiredCapacityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -96,7 +96,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateRequestValidatorRequestMarshaller _instance = new UpdateRequestValidatorRequestMarshaller();        
 
+        internal static UpdateRequestValidatorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateRequestValidatorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

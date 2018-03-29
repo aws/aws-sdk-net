@@ -88,7 +88,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AdminDeleteUserRequestMarshaller _instance = new AdminDeleteUserRequestMarshaller();        
 
+        internal static AdminDeleteUserRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AdminDeleteUserRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

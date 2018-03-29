@@ -63,7 +63,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListProvisionedCapacityRequestMarshaller _instance = new ListProvisionedCapacityRequestMarshaller();        
 
+        internal static ListProvisionedCapacityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListProvisionedCapacityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

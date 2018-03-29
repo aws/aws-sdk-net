@@ -106,7 +106,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateInvalidationRequestMarshaller _instance = new CreateInvalidationRequestMarshaller();        
 
-        
+        internal static CreateInvalidationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateInvalidationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

@@ -93,7 +93,23 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveTargetsRequestMarshaller _instance = new RemoveTargetsRequestMarshaller();        
 
+        internal static RemoveTargetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveTargetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

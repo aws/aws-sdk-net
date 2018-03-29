@@ -94,7 +94,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AcknowledgeThirdPartyJobRequestMarshaller _instance = new AcknowledgeThirdPartyJobRequestMarshaller();        
 
+        internal static AcknowledgeThirdPartyJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AcknowledgeThirdPartyJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -91,5 +91,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeClusterSubnetGroupsRequestMarshaller _instance = new DescribeClusterSubnetGroupsRequestMarshaller();        
+
+        internal static DescribeClusterSubnetGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeClusterSubnetGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

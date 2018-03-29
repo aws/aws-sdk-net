@@ -94,7 +94,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateMemberToGroupRequestMarshaller _instance = new AssociateMemberToGroupRequestMarshaller();        
 
+        internal static AssociateMemberToGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateMemberToGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

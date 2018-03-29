@@ -65,5 +65,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateAccountAliasRequestMarshaller _instance = new CreateAccountAliasRequestMarshaller();        
+
+        internal static CreateAccountAliasRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAccountAliasRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

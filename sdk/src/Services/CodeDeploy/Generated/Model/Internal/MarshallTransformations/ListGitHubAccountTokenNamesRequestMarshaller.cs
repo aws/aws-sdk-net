@@ -82,7 +82,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListGitHubAccountTokenNamesRequestMarshaller _instance = new ListGitHubAccountTokenNamesRequestMarshaller();        
 
+        internal static ListGitHubAccountTokenNamesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListGitHubAccountTokenNamesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

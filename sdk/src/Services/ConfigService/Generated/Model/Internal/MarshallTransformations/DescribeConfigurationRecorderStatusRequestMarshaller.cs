@@ -87,7 +87,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeConfigurationRecorderStatusRequestMarshaller _instance = new DescribeConfigurationRecorderStatusRequestMarshaller();        
 
+        internal static DescribeConfigurationRecorderStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeConfigurationRecorderStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

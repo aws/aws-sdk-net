@@ -94,7 +94,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGatewayInformationRequestMarshaller _instance = new UpdateGatewayInformationRequestMarshaller();        
 
+        internal static UpdateGatewayInformationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGatewayInformationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

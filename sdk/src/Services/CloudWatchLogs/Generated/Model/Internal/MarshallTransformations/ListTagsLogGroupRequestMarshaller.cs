@@ -82,7 +82,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTagsLogGroupRequestMarshaller _instance = new ListTagsLogGroupRequestMarshaller();        
 
+        internal static ListTagsLogGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTagsLogGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

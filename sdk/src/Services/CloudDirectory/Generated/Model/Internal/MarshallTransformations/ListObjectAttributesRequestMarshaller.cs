@@ -114,7 +114,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListObjectAttributesRequestMarshaller _instance = new ListObjectAttributesRequestMarshaller();        
 
+        internal static ListObjectAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListObjectAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

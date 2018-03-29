@@ -110,7 +110,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeInstancePatchesRequestMarshaller _instance = new DescribeInstancePatchesRequestMarshaller();        
 
+        internal static DescribeInstancePatchesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeInstancePatchesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

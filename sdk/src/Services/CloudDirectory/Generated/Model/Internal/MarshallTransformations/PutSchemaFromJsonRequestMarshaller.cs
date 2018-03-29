@@ -83,7 +83,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutSchemaFromJsonRequestMarshaller _instance = new PutSchemaFromJsonRequestMarshaller();        
 
+        internal static PutSchemaFromJsonRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutSchemaFromJsonRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

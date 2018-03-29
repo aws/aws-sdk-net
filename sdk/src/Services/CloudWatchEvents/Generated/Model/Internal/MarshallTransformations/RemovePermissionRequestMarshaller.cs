@@ -82,7 +82,23 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemovePermissionRequestMarshaller _instance = new RemovePermissionRequestMarshaller();        
 
+        internal static RemovePermissionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemovePermissionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

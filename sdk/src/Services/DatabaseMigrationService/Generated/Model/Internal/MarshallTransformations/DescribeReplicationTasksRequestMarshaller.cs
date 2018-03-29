@@ -104,7 +104,23 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeReplicationTasksRequestMarshaller _instance = new DescribeReplicationTasksRequestMarshaller();        
 
+        internal static DescribeReplicationTasksRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeReplicationTasksRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

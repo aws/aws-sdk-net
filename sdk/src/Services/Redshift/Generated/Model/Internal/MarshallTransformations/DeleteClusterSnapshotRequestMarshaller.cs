@@ -69,5 +69,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteClusterSnapshotRequestMarshaller _instance = new DeleteClusterSnapshotRequestMarshaller();        
+
+        internal static DeleteClusterSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteClusterSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

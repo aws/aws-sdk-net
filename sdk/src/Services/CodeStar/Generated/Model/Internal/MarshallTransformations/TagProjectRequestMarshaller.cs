@@ -96,7 +96,23 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TagProjectRequestMarshaller _instance = new TagProjectRequestMarshaller();        
 
+        internal static TagProjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TagProjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

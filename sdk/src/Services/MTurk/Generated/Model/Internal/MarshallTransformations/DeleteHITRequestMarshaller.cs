@@ -82,7 +82,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteHITRequestMarshaller _instance = new DeleteHITRequestMarshaller();        
 
+        internal static DeleteHITRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteHITRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

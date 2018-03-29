@@ -88,7 +88,23 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TestConnectionRequestMarshaller _instance = new TestConnectionRequestMarshaller();        
 
+        internal static TestConnectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestConnectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

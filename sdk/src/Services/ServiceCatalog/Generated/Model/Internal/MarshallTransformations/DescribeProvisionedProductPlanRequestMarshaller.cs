@@ -100,7 +100,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeProvisionedProductPlanRequestMarshaller _instance = new DescribeProvisionedProductPlanRequestMarshaller();        
 
+        internal static DescribeProvisionedProductPlanRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeProvisionedProductPlanRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

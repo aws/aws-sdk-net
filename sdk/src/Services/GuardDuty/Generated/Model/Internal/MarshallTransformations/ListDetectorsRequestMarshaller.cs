@@ -69,7 +69,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDetectorsRequestMarshaller _instance = new ListDetectorsRequestMarshaller();        
 
+        internal static ListDetectorsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDetectorsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

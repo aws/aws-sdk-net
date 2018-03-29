@@ -94,7 +94,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListTagsForResourcesRequestMarshaller _instance = new ListTagsForResourcesRequestMarshaller();        
 
-        
+        internal static ListTagsForResourcesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTagsForResourcesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

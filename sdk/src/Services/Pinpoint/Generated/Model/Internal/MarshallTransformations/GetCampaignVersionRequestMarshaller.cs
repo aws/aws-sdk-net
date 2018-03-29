@@ -71,7 +71,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCampaignVersionRequestMarshaller _instance = new GetCampaignVersionRequestMarshaller();        
 
+        internal static GetCampaignVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCampaignVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

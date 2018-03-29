@@ -263,7 +263,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateUserPoolRequestMarshaller _instance = new CreateUserPoolRequestMarshaller();        
 
+        internal static CreateUserPoolRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateUserPoolRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

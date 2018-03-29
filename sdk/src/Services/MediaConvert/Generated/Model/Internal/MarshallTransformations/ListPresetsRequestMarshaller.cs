@@ -78,7 +78,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListPresetsRequestMarshaller _instance = new ListPresetsRequestMarshaller();        
 
+        internal static ListPresetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPresetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

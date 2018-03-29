@@ -88,7 +88,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteDatabaseRequestMarshaller _instance = new DeleteDatabaseRequestMarshaller();        
 
+        internal static DeleteDatabaseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDatabaseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

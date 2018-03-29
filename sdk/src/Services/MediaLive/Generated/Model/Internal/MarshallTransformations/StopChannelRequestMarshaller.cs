@@ -66,7 +66,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopChannelRequestMarshaller _instance = new StopChannelRequestMarshaller();        
 
+        internal static StopChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CheckDomainAvailabilityRequestMarshaller _instance = new CheckDomainAvailabilityRequestMarshaller();        
 
+        internal static CheckDomainAvailabilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CheckDomainAvailabilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

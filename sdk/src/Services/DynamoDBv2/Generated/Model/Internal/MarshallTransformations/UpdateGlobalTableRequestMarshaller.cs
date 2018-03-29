@@ -98,7 +98,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGlobalTableRequestMarshaller _instance = new UpdateGlobalTableRequestMarshaller();        
 
+        internal static UpdateGlobalTableRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGlobalTableRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

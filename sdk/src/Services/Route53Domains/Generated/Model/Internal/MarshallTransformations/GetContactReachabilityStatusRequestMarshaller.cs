@@ -82,7 +82,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetContactReachabilityStatusRequestMarshaller _instance = new GetContactReachabilityStatusRequestMarshaller();        
 
+        internal static GetContactReachabilityStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetContactReachabilityStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

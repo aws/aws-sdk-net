@@ -94,7 +94,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SplitShardRequestMarshaller _instance = new SplitShardRequestMarshaller();        
 
+        internal static SplitShardRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SplitShardRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

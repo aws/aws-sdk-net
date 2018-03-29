@@ -88,7 +88,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AcceptPortfolioShareRequestMarshaller _instance = new AcceptPortfolioShareRequestMarshaller();        
 
+        internal static AcceptPortfolioShareRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AcceptPortfolioShareRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

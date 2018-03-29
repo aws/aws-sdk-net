@@ -82,7 +82,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateCollectionRequestMarshaller _instance = new CreateCollectionRequestMarshaller();        
 
+        internal static CreateCollectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateCollectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

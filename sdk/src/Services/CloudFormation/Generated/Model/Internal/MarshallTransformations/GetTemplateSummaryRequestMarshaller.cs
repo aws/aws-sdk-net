@@ -77,5 +77,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetTemplateSummaryRequestMarshaller _instance = new GetTemplateSummaryRequestMarshaller();        
+
+        internal static GetTemplateSummaryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTemplateSummaryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

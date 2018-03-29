@@ -93,7 +93,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateDomainEntryRequestMarshaller _instance = new UpdateDomainEntryRequestMarshaller();        
 
+        internal static UpdateDomainEntryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateDomainEntryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

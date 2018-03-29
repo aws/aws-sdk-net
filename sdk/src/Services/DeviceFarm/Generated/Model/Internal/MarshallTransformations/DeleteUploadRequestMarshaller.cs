@@ -82,7 +82,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteUploadRequestMarshaller _instance = new DeleteUploadRequestMarshaller();        
 
+        internal static DeleteUploadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteUploadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -65,7 +65,23 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteFileSystemRequestMarshaller _instance = new DeleteFileSystemRequestMarshaller();        
 
+        internal static DeleteFileSystemRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteFileSystemRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

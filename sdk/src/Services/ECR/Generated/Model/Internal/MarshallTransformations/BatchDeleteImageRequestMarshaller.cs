@@ -104,7 +104,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchDeleteImageRequestMarshaller _instance = new BatchDeleteImageRequestMarshaller();        
 
+        internal static BatchDeleteImageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchDeleteImageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

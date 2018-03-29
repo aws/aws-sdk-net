@@ -65,7 +65,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetQueueRequestMarshaller _instance = new GetQueueRequestMarshaller();        
 
+        internal static GetQueueRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetQueueRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

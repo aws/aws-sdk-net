@@ -88,7 +88,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateConnectionWithLagRequestMarshaller _instance = new AssociateConnectionWithLagRequestMarshaller();        
 
+        internal static AssociateConnectionWithLagRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateConnectionWithLagRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

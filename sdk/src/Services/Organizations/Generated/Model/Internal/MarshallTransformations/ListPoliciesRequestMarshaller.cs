@@ -94,7 +94,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListPoliciesRequestMarshaller _instance = new ListPoliciesRequestMarshaller();        
 
+        internal static ListPoliciesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPoliciesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

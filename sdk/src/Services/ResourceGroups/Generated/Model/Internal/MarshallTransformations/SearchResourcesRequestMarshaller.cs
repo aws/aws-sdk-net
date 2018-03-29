@@ -97,7 +97,23 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SearchResourcesRequestMarshaller _instance = new SearchResourcesRequestMarshaller();        
 
+        internal static SearchResourcesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SearchResourcesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -117,5 +117,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateConfigurationTemplateRequestMarshaller _instance = new UpdateConfigurationTemplateRequestMarshaller();        
+
+        internal static UpdateConfigurationTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateConfigurationTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

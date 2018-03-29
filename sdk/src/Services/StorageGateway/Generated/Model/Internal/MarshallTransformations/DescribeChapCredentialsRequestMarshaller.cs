@@ -82,7 +82,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeChapCredentialsRequestMarshaller _instance = new DescribeChapCredentialsRequestMarshaller();        
 
+        internal static DescribeChapCredentialsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeChapCredentialsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

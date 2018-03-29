@@ -82,7 +82,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRealtimeEndpointRequestMarshaller _instance = new CreateRealtimeEndpointRequestMarshaller();        
 
+        internal static CreateRealtimeEndpointRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRealtimeEndpointRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

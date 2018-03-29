@@ -80,7 +80,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteJobQueueRequestMarshaller _instance = new DeleteJobQueueRequestMarshaller();        
 
+        internal static DeleteJobQueueRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteJobQueueRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

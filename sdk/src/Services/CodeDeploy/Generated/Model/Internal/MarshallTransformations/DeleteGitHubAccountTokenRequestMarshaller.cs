@@ -82,7 +82,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteGitHubAccountTokenRequestMarshaller _instance = new DeleteGitHubAccountTokenRequestMarshaller();        
 
+        internal static DeleteGitHubAccountTokenRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteGitHubAccountTokenRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRegexMatchSetRequestMarshaller _instance = new CreateRegexMatchSetRequestMarshaller();        
 
+        internal static CreateRegexMatchSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRegexMatchSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

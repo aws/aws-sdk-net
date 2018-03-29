@@ -88,7 +88,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdatePullRequestStatusRequestMarshaller _instance = new UpdatePullRequestStatusRequestMarshaller();        
 
+        internal static UpdatePullRequestStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdatePullRequestStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

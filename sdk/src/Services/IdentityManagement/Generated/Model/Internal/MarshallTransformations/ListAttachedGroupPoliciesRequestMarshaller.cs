@@ -77,5 +77,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListAttachedGroupPoliciesRequestMarshaller _instance = new ListAttachedGroupPoliciesRequestMarshaller();        
+
+        internal static ListAttachedGroupPoliciesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListAttachedGroupPoliciesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -98,7 +98,23 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutEventSelectorsRequestMarshaller _instance = new PutEventSelectorsRequestMarshaller();        
 
+        internal static PutEventSelectorsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutEventSelectorsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

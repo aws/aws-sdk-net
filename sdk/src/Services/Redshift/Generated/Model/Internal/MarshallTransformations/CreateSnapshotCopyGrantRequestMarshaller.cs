@@ -85,5 +85,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateSnapshotCopyGrantRequestMarshaller _instance = new CreateSnapshotCopyGrantRequestMarshaller();        
+
+        internal static CreateSnapshotCopyGrantRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateSnapshotCopyGrantRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

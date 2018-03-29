@@ -72,7 +72,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListHostedZonesByNameRequestMarshaller _instance = new ListHostedZonesByNameRequestMarshaller();        
 
-        
+        internal static ListHostedZonesByNameRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListHostedZonesByNameRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

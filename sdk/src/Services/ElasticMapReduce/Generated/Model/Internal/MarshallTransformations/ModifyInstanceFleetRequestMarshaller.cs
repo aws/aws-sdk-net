@@ -93,7 +93,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ModifyInstanceFleetRequestMarshaller _instance = new ModifyInstanceFleetRequestMarshaller();        
 
+        internal static ModifyInstanceFleetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyInstanceFleetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

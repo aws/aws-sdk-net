@@ -94,7 +94,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateSkillGroupRequestMarshaller _instance = new UpdateSkillGroupRequestMarshaller();        
 
+        internal static UpdateSkillGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateSkillGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

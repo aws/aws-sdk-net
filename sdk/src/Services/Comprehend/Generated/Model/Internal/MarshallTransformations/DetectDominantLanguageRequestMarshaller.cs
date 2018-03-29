@@ -82,7 +82,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DetectDominantLanguageRequestMarshaller _instance = new DetectDominantLanguageRequestMarshaller();        
 
+        internal static DetectDominantLanguageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetectDominantLanguageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

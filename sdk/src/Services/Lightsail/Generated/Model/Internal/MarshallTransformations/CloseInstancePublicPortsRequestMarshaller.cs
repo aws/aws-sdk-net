@@ -93,7 +93,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CloseInstancePublicPortsRequestMarshaller _instance = new CloseInstancePublicPortsRequestMarshaller();        
 
+        internal static CloseInstancePublicPortsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CloseInstancePublicPortsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

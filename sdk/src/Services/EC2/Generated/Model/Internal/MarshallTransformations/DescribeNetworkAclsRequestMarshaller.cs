@@ -91,5 +91,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeNetworkAclsRequestMarshaller _instance = new DescribeNetworkAclsRequestMarshaller();        
+
+        internal static DescribeNetworkAclsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeNetworkAclsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

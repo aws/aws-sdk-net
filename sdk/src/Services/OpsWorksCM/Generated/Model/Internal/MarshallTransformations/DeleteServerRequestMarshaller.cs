@@ -82,7 +82,23 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteServerRequestMarshaller _instance = new DeleteServerRequestMarshaller();        
 
+        internal static DeleteServerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteServerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

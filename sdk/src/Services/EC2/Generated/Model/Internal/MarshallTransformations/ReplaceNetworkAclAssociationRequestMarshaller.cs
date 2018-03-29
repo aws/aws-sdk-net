@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ReplaceNetworkAclAssociationRequestMarshaller _instance = new ReplaceNetworkAclAssociationRequestMarshaller();        
+
+        internal static ReplaceNetworkAclAssociationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReplaceNetworkAclAssociationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

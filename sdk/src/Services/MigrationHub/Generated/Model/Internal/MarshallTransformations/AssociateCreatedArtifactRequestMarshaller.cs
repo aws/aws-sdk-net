@@ -105,7 +105,23 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateCreatedArtifactRequestMarshaller _instance = new AssociateCreatedArtifactRequestMarshaller();        
 
+        internal static AssociateCreatedArtifactRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateCreatedArtifactRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

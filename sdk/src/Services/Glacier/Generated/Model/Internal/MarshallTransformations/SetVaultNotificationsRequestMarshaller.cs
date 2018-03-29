@@ -81,7 +81,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetVaultNotificationsRequestMarshaller _instance = new SetVaultNotificationsRequestMarshaller();        
 
+        internal static SetVaultNotificationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetVaultNotificationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateLogStreamRequestMarshaller _instance = new CreateLogStreamRequestMarshaller();        
 
+        internal static CreateLogStreamRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateLogStreamRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

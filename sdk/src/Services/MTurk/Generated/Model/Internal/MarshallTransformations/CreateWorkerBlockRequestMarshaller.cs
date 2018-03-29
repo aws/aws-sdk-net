@@ -88,7 +88,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateWorkerBlockRequestMarshaller _instance = new CreateWorkerBlockRequestMarshaller();        
 
+        internal static CreateWorkerBlockRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateWorkerBlockRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

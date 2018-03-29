@@ -116,7 +116,23 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetProductsRequestMarshaller _instance = new GetProductsRequestMarshaller();        
 
+        internal static GetProductsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetProductsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

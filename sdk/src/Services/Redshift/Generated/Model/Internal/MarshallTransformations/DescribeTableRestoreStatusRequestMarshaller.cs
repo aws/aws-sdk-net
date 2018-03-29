@@ -77,5 +77,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeTableRestoreStatusRequestMarshaller _instance = new DescribeTableRestoreStatusRequestMarshaller();        
+
+        internal static DescribeTableRestoreStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeTableRestoreStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

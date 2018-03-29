@@ -65,7 +65,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetBuiltinIntentRequestMarshaller _instance = new GetBuiltinIntentRequestMarshaller();        
 
+        internal static GetBuiltinIntentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetBuiltinIntentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

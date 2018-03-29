@@ -124,7 +124,23 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateHsmRequestMarshaller _instance = new CreateHsmRequestMarshaller();        
 
+        internal static CreateHsmRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateHsmRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

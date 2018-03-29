@@ -99,7 +99,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDirectoriesRequestMarshaller _instance = new DescribeDirectoriesRequestMarshaller();        
 
+        internal static DescribeDirectoriesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDirectoriesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

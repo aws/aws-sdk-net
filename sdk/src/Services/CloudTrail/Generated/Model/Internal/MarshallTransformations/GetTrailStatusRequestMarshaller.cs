@@ -82,7 +82,23 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetTrailStatusRequestMarshaller _instance = new GetTrailStatusRequestMarshaller();        
 
+        internal static GetTrailStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTrailStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

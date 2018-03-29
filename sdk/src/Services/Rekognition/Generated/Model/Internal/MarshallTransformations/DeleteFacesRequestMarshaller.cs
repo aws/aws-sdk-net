@@ -93,7 +93,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteFacesRequestMarshaller _instance = new DeleteFacesRequestMarshaller();        
 
+        internal static DeleteFacesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteFacesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

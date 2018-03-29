@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateDefaultSubnetRequestMarshaller _instance = new CreateDefaultSubnetRequestMarshaller();        
+
+        internal static CreateDefaultSubnetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDefaultSubnetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -69,5 +69,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteCacheClusterRequestMarshaller _instance = new DeleteCacheClusterRequestMarshaller();        
+
+        internal static DeleteCacheClusterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCacheClusterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

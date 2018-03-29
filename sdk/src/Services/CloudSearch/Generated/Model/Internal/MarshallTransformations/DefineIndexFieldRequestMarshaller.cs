@@ -353,5 +353,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DefineIndexFieldRequestMarshaller _instance = new DefineIndexFieldRequestMarshaller();        
+
+        internal static DefineIndexFieldRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DefineIndexFieldRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

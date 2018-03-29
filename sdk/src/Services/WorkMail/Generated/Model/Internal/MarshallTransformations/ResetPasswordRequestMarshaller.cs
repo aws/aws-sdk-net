@@ -94,7 +94,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ResetPasswordRequestMarshaller _instance = new ResetPasswordRequestMarshaller();        
 
+        internal static ResetPasswordRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResetPasswordRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

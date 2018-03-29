@@ -83,7 +83,23 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGroupRequestMarshaller _instance = new UpdateGroupRequestMarshaller();        
 
+        internal static UpdateGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

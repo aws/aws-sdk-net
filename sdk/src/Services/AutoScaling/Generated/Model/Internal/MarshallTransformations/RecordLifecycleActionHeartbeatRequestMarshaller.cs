@@ -77,5 +77,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RecordLifecycleActionHeartbeatRequestMarshaller _instance = new RecordLifecycleActionHeartbeatRequestMarshaller();        
+
+        internal static RecordLifecycleActionHeartbeatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RecordLifecycleActionHeartbeatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

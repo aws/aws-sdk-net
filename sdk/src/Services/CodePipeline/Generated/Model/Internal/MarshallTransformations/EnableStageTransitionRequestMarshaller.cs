@@ -94,7 +94,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static EnableStageTransitionRequestMarshaller _instance = new EnableStageTransitionRequestMarshaller();        
 
+        internal static EnableStageTransitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableStageTransitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

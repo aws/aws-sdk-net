@@ -137,5 +137,23 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SendMessageBatchRequestMarshaller _instance = new SendMessageBatchRequestMarshaller();        
+
+        internal static SendMessageBatchRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendMessageBatchRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

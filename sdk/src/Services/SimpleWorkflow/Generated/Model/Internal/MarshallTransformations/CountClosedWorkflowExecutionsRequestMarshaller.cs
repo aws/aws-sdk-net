@@ -148,7 +148,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CountClosedWorkflowExecutionsRequestMarshaller _instance = new CountClosedWorkflowExecutionsRequestMarshaller();        
 
+        internal static CountClosedWorkflowExecutionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CountClosedWorkflowExecutionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

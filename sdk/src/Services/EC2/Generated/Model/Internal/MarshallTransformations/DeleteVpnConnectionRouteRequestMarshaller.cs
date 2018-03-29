@@ -69,5 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteVpnConnectionRouteRequestMarshaller _instance = new DeleteVpnConnectionRouteRequestMarshaller();        
+
+        internal static DeleteVpnConnectionRouteRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteVpnConnectionRouteRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

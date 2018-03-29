@@ -105,7 +105,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutActionRevisionRequestMarshaller _instance = new PutActionRevisionRequestMarshaller();        
 
+        internal static PutActionRevisionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutActionRevisionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -74,7 +74,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteMethodResponseRequestMarshaller _instance = new DeleteMethodResponseRequestMarshaller();        
 
+        internal static DeleteMethodResponseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteMethodResponseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

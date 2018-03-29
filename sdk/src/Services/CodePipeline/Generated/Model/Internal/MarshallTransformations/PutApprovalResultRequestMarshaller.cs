@@ -111,7 +111,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutApprovalResultRequestMarshaller _instance = new PutApprovalResultRequestMarshaller();        
 
+        internal static PutApprovalResultRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutApprovalResultRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListUniqueProblemsRequestMarshaller _instance = new ListUniqueProblemsRequestMarshaller();        
 
+        internal static ListUniqueProblemsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListUniqueProblemsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

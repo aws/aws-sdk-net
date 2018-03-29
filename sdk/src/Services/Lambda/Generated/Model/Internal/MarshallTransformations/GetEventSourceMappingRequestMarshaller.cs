@@ -65,7 +65,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetEventSourceMappingRequestMarshaller _instance = new GetEventSourceMappingRequestMarshaller();        
 
+        internal static GetEventSourceMappingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetEventSourceMappingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -70,7 +70,23 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateThingShadowRequestMarshaller _instance = new UpdateThingShadowRequestMarshaller();        
 
+        internal static UpdateThingShadowRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateThingShadowRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

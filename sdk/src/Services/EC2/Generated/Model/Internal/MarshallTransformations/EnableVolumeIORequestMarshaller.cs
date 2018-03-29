@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static EnableVolumeIORequestMarshaller _instance = new EnableVolumeIORequestMarshaller();        
+
+        internal static EnableVolumeIORequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EnableVolumeIORequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

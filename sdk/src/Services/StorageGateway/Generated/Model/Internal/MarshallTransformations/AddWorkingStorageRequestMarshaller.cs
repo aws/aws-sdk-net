@@ -93,7 +93,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddWorkingStorageRequestMarshaller _instance = new AddWorkingStorageRequestMarshaller();        
 
+        internal static AddWorkingStorageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddWorkingStorageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

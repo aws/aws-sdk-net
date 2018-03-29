@@ -93,7 +93,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateRadiusRequestMarshaller _instance = new UpdateRadiusRequestMarshaller();        
 
+        internal static UpdateRadiusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateRadiusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -66,7 +66,23 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
+        private static GetDiscoverySummaryRequestMarshaller _instance = new GetDiscoverySummaryRequestMarshaller();        
 
+        internal static GetDiscoverySummaryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDiscoverySummaryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

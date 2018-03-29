@@ -103,7 +103,23 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
 
             return request;
         }
+        private static ListFragmentsRequestMarshaller _instance = new ListFragmentsRequestMarshaller();        
 
+        internal static ListFragmentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListFragmentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

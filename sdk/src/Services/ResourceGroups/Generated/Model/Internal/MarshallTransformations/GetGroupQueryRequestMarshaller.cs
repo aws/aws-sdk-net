@@ -65,7 +65,23 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetGroupQueryRequestMarshaller _instance = new GetGroupQueryRequestMarshaller();        
 
+        internal static GetGroupQueryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetGroupQueryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

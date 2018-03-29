@@ -126,7 +126,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AttachTypedLinkRequestMarshaller _instance = new AttachTypedLinkRequestMarshaller();        
 
+        internal static AttachTypedLinkRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachTypedLinkRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListBranchesRequestMarshaller _instance = new ListBranchesRequestMarshaller();        
 
+        internal static ListBranchesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListBranchesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

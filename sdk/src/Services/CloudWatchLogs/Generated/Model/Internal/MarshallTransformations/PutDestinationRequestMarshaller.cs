@@ -94,7 +94,23 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutDestinationRequestMarshaller _instance = new PutDestinationRequestMarshaller();        
 
+        internal static PutDestinationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutDestinationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetJobUnlockCodeRequestMarshaller _instance = new GetJobUnlockCodeRequestMarshaller();        
 
+        internal static GetJobUnlockCodeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetJobUnlockCodeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

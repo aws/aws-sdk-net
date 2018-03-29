@@ -68,7 +68,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetGatewayResponseRequestMarshaller _instance = new GetGatewayResponseRequestMarshaller();        
 
+        internal static GetGatewayResponseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetGatewayResponseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

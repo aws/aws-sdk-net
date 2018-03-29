@@ -104,7 +104,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateByteMatchSetRequestMarshaller _instance = new UpdateByteMatchSetRequestMarshaller();        
 
+        internal static UpdateByteMatchSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateByteMatchSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

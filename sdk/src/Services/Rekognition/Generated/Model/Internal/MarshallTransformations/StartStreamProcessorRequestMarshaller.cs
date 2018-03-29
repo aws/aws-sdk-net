@@ -82,7 +82,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartStreamProcessorRequestMarshaller _instance = new StartStreamProcessorRequestMarshaller();        
 
+        internal static StartStreamProcessorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartStreamProcessorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

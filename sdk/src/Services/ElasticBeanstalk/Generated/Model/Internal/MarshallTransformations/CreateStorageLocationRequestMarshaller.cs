@@ -61,5 +61,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateStorageLocationRequestMarshaller _instance = new CreateStorageLocationRequestMarshaller();        
+
+        internal static CreateStorageLocationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateStorageLocationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

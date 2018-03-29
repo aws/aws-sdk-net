@@ -73,5 +73,23 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListJobsRequestMarshaller _instance = new ListJobsRequestMarshaller();        
+
+        internal static ListJobsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListJobsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

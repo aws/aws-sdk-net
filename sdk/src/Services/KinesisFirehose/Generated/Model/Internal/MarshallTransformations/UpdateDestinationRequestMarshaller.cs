@@ -149,7 +149,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateDestinationRequestMarshaller _instance = new UpdateDestinationRequestMarshaller();        
 
+        internal static UpdateDestinationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateDestinationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

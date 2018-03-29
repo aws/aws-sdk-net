@@ -65,5 +65,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static ListPhoneNumbersOptedOutRequestMarshaller _instance = new ListPhoneNumbersOptedOutRequestMarshaller();        
+
+        internal static ListPhoneNumbersOptedOutRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPhoneNumbersOptedOutRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

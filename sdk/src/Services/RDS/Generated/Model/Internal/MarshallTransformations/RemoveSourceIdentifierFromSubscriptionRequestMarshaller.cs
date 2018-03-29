@@ -69,5 +69,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RemoveSourceIdentifierFromSubscriptionRequestMarshaller _instance = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();        
+
+        internal static RemoveSourceIdentifierFromSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveSourceIdentifierFromSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

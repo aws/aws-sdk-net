@@ -61,5 +61,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListAvailableSolutionStacksRequestMarshaller _instance = new ListAvailableSolutionStacksRequestMarshaller();        
+
+        internal static ListAvailableSolutionStacksRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListAvailableSolutionStacksRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static NotifyApplicationStateRequestMarshaller _instance = new NotifyApplicationStateRequestMarshaller();        
 
+        internal static NotifyApplicationStateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static NotifyApplicationStateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

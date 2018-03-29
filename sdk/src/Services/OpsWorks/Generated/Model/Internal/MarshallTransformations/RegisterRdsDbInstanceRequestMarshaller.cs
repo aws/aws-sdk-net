@@ -100,7 +100,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RegisterRdsDbInstanceRequestMarshaller _instance = new RegisterRdsDbInstanceRequestMarshaller();        
 
+        internal static RegisterRdsDbInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RegisterRdsDbInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopStreamProcessorRequestMarshaller _instance = new StopStreamProcessorRequestMarshaller();        
 
+        internal static StopStreamProcessorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopStreamProcessorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

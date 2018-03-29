@@ -106,7 +106,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListShardsRequestMarshaller _instance = new ListShardsRequestMarshaller();        
 
+        internal static ListShardsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListShardsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -87,7 +87,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StopQueryExecutionRequestMarshaller _instance = new StopQueryExecutionRequestMarshaller();        
 
+        internal static StopQueryExecutionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StopQueryExecutionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

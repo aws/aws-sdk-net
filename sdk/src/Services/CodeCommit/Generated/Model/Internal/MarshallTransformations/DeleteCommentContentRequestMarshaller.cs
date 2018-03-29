@@ -82,7 +82,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteCommentContentRequestMarshaller _instance = new DeleteCommentContentRequestMarshaller();        
 
+        internal static DeleteCommentContentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCommentContentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

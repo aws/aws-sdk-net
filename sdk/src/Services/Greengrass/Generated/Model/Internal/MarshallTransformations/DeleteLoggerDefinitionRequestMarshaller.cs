@@ -65,7 +65,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteLoggerDefinitionRequestMarshaller _instance = new DeleteLoggerDefinitionRequestMarshaller();        
 
+        internal static DeleteLoggerDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteLoggerDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

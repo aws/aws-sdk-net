@@ -117,7 +117,23 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeWorkspacesRequestMarshaller _instance = new DescribeWorkspacesRequestMarshaller();        
 
+        internal static DescribeWorkspacesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeWorkspacesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -92,7 +92,23 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RegisterDeviceRequestMarshaller _instance = new RegisterDeviceRequestMarshaller();        
 
+        internal static RegisterDeviceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RegisterDeviceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

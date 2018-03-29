@@ -169,7 +169,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateFunctionConfigurationRequestMarshaller _instance = new UpdateFunctionConfigurationRequestMarshaller();        
 
+        internal static UpdateFunctionConfigurationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateFunctionConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

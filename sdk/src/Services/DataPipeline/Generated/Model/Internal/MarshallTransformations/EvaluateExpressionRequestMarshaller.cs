@@ -94,7 +94,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static EvaluateExpressionRequestMarshaller _instance = new EvaluateExpressionRequestMarshaller();        
 
+        internal static EvaluateExpressionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static EvaluateExpressionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

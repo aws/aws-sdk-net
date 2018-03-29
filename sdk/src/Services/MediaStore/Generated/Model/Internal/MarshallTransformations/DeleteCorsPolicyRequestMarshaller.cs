@@ -82,7 +82,23 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteCorsPolicyRequestMarshaller _instance = new DeleteCorsPolicyRequestMarshaller();        
 
+        internal static DeleteCorsPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCorsPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

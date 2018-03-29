@@ -120,7 +120,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SearchSkillGroupsRequestMarshaller _instance = new SearchSkillGroupsRequestMarshaller();        
 
+        internal static SearchSkillGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SearchSkillGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

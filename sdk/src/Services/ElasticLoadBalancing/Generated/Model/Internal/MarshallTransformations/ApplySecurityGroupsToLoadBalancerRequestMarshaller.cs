@@ -74,5 +74,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ApplySecurityGroupsToLoadBalancerRequestMarshaller _instance = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();        
+
+        internal static ApplySecurityGroupsToLoadBalancerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ApplySecurityGroupsToLoadBalancerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

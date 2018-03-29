@@ -105,7 +105,23 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePrivateDnsNamespaceRequestMarshaller _instance = new CreatePrivateDnsNamespaceRequestMarshaller();        
 
+        internal static CreatePrivateDnsNamespaceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePrivateDnsNamespaceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

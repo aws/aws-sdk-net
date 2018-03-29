@@ -68,7 +68,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetHostedZoneLimitRequestMarshaller _instance = new GetHostedZoneLimitRequestMarshaller();        
 
-        
+        internal static GetHostedZoneLimitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetHostedZoneLimitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

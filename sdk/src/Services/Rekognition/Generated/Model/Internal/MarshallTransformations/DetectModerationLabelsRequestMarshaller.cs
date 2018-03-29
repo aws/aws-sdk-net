@@ -93,7 +93,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DetectModerationLabelsRequestMarshaller _instance = new DetectModerationLabelsRequestMarshaller();        
 
+        internal static DetectModerationLabelsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetectModerationLabelsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

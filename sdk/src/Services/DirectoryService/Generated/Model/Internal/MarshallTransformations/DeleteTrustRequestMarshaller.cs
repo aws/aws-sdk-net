@@ -88,7 +88,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteTrustRequestMarshaller _instance = new DeleteTrustRequestMarshaller();        
 
+        internal static DeleteTrustRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteTrustRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

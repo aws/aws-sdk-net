@@ -88,7 +88,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateExpirationForHITRequestMarshaller _instance = new UpdateExpirationForHITRequestMarshaller();        
 
+        internal static UpdateExpirationForHITRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateExpirationForHITRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

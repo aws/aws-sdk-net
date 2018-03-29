@@ -87,7 +87,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchGetDeploymentsRequestMarshaller _instance = new BatchGetDeploymentsRequestMarshaller();        
 
+        internal static BatchGetDeploymentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchGetDeploymentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -107,7 +107,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DecryptRequestMarshaller _instance = new DecryptRequestMarshaller();        
 
+        internal static DecryptRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DecryptRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

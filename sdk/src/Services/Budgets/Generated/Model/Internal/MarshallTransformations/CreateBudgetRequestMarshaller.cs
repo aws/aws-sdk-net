@@ -109,7 +109,23 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateBudgetRequestMarshaller _instance = new CreateBudgetRequestMarshaller();        
 
+        internal static CreateBudgetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateBudgetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

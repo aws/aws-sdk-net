@@ -71,7 +71,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSegmentVersionRequestMarshaller _instance = new GetSegmentVersionRequestMarshaller();        
 
+        internal static GetSegmentVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSegmentVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

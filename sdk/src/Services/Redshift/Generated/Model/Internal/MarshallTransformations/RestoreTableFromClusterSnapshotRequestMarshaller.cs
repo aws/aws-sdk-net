@@ -93,5 +93,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RestoreTableFromClusterSnapshotRequestMarshaller _instance = new RestoreTableFromClusterSnapshotRequestMarshaller();        
+
+        internal static RestoreTableFromClusterSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreTableFromClusterSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -69,5 +69,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PurchaseReservedNodeOfferingRequestMarshaller _instance = new PurchaseReservedNodeOfferingRequestMarshaller();        
+
+        internal static PurchaseReservedNodeOfferingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PurchaseReservedNodeOfferingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

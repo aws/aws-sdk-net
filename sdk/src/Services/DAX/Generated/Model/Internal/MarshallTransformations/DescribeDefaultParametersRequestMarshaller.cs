@@ -88,7 +88,23 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDefaultParametersRequestMarshaller _instance = new DescribeDefaultParametersRequestMarshaller();        
 
+        internal static DescribeDefaultParametersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDefaultParametersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

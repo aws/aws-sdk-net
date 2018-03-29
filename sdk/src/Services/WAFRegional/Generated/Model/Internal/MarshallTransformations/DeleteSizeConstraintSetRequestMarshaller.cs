@@ -88,7 +88,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteSizeConstraintSetRequestMarshaller _instance = new DeleteSizeConstraintSetRequestMarshaller();        
 
+        internal static DeleteSizeConstraintSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteSizeConstraintSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

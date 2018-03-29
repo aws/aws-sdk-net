@@ -126,7 +126,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateMLModelRequestMarshaller _instance = new CreateMLModelRequestMarshaller();        
 
+        internal static CreateMLModelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateMLModelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

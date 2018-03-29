@@ -100,7 +100,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateQualificationWithWorkerRequestMarshaller _instance = new AssociateQualificationWithWorkerRequestMarshaller();        
 
+        internal static AssociateQualificationWithWorkerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateQualificationWithWorkerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

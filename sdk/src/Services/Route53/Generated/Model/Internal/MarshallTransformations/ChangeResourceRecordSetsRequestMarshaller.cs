@@ -193,7 +193,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ChangeResourceRecordSetsRequestMarshaller _instance = new ChangeResourceRecordSetsRequestMarshaller();        
 
-        
+        internal static ChangeResourceRecordSetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ChangeResourceRecordSetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

@@ -73,5 +73,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteNetworkAclEntryRequestMarshaller _instance = new DeleteNetworkAclEntryRequestMarshaller();        
+
+        internal static DeleteNetworkAclEntryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteNetworkAclEntryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

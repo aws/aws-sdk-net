@@ -98,7 +98,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateTagsForDomainRequestMarshaller _instance = new UpdateTagsForDomainRequestMarshaller();        
 
+        internal static UpdateTagsForDomainRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateTagsForDomainRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

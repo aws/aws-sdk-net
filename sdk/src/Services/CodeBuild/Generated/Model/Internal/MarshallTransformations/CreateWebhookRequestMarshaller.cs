@@ -88,7 +88,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateWebhookRequestMarshaller _instance = new CreateWebhookRequestMarshaller();        
 
+        internal static CreateWebhookRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateWebhookRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

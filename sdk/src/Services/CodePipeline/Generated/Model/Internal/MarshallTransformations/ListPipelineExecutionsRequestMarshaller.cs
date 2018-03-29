@@ -94,7 +94,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListPipelineExecutionsRequestMarshaller _instance = new ListPipelineExecutionsRequestMarshaller();        
 
+        internal static ListPipelineExecutionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListPipelineExecutionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

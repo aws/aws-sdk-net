@@ -62,7 +62,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetV2LoggingOptionsRequestMarshaller _instance = new GetV2LoggingOptionsRequestMarshaller();        
 
+        internal static GetV2LoggingOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetV2LoggingOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

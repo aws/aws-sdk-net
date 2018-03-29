@@ -72,7 +72,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListOTAUpdatesRequestMarshaller _instance = new ListOTAUpdatesRequestMarshaller();        
 
+        internal static ListOTAUpdatesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListOTAUpdatesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

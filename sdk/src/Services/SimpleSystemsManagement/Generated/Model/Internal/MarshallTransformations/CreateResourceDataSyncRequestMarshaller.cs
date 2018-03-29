@@ -93,7 +93,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateResourceDataSyncRequestMarshaller _instance = new CreateResourceDataSyncRequestMarshaller();        
 
+        internal static CreateResourceDataSyncRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateResourceDataSyncRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -104,7 +104,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddIpRoutesRequestMarshaller _instance = new AddIpRoutesRequestMarshaller();        
 
+        internal static AddIpRoutesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddIpRoutesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

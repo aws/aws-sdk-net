@@ -88,7 +88,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeDocumentPermissionRequestMarshaller _instance = new DescribeDocumentPermissionRequestMarshaller();        
 
+        internal static DescribeDocumentPermissionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeDocumentPermissionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

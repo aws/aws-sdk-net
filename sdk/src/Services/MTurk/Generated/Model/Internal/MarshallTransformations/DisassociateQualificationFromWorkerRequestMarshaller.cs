@@ -94,7 +94,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateQualificationFromWorkerRequestMarshaller _instance = new DisassociateQualificationFromWorkerRequestMarshaller();        
 
+        internal static DisassociateQualificationFromWorkerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateQualificationFromWorkerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -101,5 +101,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeConfigurationOptionsRequestMarshaller _instance = new DescribeConfigurationOptionsRequestMarshaller();        
+
+        internal static DescribeConfigurationOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeConfigurationOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

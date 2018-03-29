@@ -82,7 +82,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteUserProfileRequestMarshaller _instance = new DeleteUserProfileRequestMarshaller();        
 
+        internal static DeleteUserProfileRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteUserProfileRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -87,7 +87,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeUserProfilesRequestMarshaller _instance = new DescribeUserProfilesRequestMarshaller();        
 
+        internal static DescribeUserProfilesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeUserProfilesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

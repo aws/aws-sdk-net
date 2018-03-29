@@ -94,7 +94,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociatePrincipalFromPortfolioRequestMarshaller _instance = new DisassociatePrincipalFromPortfolioRequestMarshaller();        
 
+        internal static DisassociatePrincipalFromPortfolioRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociatePrincipalFromPortfolioRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

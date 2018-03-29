@@ -65,5 +65,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CheckDNSAvailabilityRequestMarshaller _instance = new CheckDNSAvailabilityRequestMarshaller();        
+
+        internal static CheckDNSAvailabilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CheckDNSAvailabilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

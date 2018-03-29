@@ -98,7 +98,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ModifyInstanceGroupsRequestMarshaller _instance = new ModifyInstanceGroupsRequestMarshaller();        
 
+        internal static ModifyInstanceGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyInstanceGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -93,7 +93,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetVisibleToAllUsersRequestMarshaller _instance = new SetVisibleToAllUsersRequestMarshaller();        
 
+        internal static SetVisibleToAllUsersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetVisibleToAllUsersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -69,5 +69,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetIpAddressTypeRequestMarshaller _instance = new SetIpAddressTypeRequestMarshaller();        
+
+        internal static SetIpAddressTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetIpAddressTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

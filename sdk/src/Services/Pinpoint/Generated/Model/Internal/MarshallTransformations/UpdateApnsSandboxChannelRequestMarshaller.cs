@@ -80,7 +80,23 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateApnsSandboxChannelRequestMarshaller _instance = new UpdateApnsSandboxChannelRequestMarshaller();        
 
+        internal static UpdateApnsSandboxChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateApnsSandboxChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

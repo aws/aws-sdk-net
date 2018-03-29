@@ -91,7 +91,23 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetCognitoEventsRequestMarshaller _instance = new SetCognitoEventsRequestMarshaller();        
 
+        internal static SetCognitoEventsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetCognitoEventsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

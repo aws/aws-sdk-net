@@ -82,7 +82,23 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetServiceRequestMarshaller _instance = new GetServiceRequestMarshaller();        
 
+        internal static GetServiceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetServiceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

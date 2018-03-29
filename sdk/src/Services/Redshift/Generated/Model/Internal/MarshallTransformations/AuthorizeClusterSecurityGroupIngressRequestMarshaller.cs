@@ -77,5 +77,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AuthorizeClusterSecurityGroupIngressRequestMarshaller _instance = new AuthorizeClusterSecurityGroupIngressRequestMarshaller();        
+
+        internal static AuthorizeClusterSecurityGroupIngressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AuthorizeClusterSecurityGroupIngressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

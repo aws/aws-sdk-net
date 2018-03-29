@@ -102,5 +102,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeHostReservationOfferingsRequestMarshaller _instance = new DescribeHostReservationOfferingsRequestMarshaller();        
+
+        internal static DescribeHostReservationOfferingsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeHostReservationOfferingsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

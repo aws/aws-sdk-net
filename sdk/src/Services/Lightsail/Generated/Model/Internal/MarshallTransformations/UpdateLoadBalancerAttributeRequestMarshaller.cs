@@ -94,7 +94,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateLoadBalancerAttributeRequestMarshaller _instance = new UpdateLoadBalancerAttributeRequestMarshaller();        
 
+        internal static UpdateLoadBalancerAttributeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateLoadBalancerAttributeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

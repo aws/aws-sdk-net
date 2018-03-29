@@ -88,7 +88,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static IncreaseStreamRetentionPeriodRequestMarshaller _instance = new IncreaseStreamRetentionPeriodRequestMarshaller();        
 
+        internal static IncreaseStreamRetentionPeriodRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static IncreaseStreamRetentionPeriodRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -74,5 +74,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RejectVpcEndpointConnectionsRequestMarshaller _instance = new RejectVpcEndpointConnectionsRequestMarshaller();        
+
+        internal static RejectVpcEndpointConnectionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RejectVpcEndpointConnectionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

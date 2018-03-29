@@ -83,7 +83,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateRoleToGroupRequestMarshaller _instance = new AssociateRoleToGroupRequestMarshaller();        
 
+        internal static AssociateRoleToGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateRoleToGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

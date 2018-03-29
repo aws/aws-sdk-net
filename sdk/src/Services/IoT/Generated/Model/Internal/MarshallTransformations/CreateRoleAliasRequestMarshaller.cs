@@ -89,7 +89,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRoleAliasRequestMarshaller _instance = new CreateRoleAliasRequestMarshaller();        
 
+        internal static CreateRoleAliasRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRoleAliasRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

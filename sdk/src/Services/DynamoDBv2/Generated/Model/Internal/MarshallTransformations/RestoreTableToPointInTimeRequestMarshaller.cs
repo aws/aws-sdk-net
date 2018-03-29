@@ -100,7 +100,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RestoreTableToPointInTimeRequestMarshaller _instance = new RestoreTableToPointInTimeRequestMarshaller();        
 
+        internal static RestoreTableToPointInTimeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RestoreTableToPointInTimeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

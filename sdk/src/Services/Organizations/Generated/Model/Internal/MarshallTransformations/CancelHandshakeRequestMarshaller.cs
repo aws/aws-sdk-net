@@ -82,7 +82,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CancelHandshakeRequestMarshaller _instance = new CancelHandshakeRequestMarshaller();        
 
+        internal static CancelHandshakeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelHandshakeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

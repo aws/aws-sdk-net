@@ -65,5 +65,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DisableSnapshotCopyRequestMarshaller _instance = new DisableSnapshotCopyRequestMarshaller();        
+
+        internal static DisableSnapshotCopyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisableSnapshotCopyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

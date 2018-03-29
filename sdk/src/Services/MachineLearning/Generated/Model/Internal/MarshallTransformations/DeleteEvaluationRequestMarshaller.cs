@@ -82,7 +82,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteEvaluationRequestMarshaller _instance = new DeleteEvaluationRequestMarshaller();        
 
+        internal static DeleteEvaluationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteEvaluationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

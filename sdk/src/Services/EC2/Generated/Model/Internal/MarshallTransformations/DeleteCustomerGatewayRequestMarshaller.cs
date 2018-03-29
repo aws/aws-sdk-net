@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteCustomerGatewayRequestMarshaller _instance = new DeleteCustomerGatewayRequestMarshaller();        
+
+        internal static DeleteCustomerGatewayRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCustomerGatewayRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

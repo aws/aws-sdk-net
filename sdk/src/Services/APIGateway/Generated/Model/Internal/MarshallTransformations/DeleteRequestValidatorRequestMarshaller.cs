@@ -68,7 +68,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteRequestValidatorRequestMarshaller _instance = new DeleteRequestValidatorRequestMarshaller();        
 
+        internal static DeleteRequestValidatorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteRequestValidatorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

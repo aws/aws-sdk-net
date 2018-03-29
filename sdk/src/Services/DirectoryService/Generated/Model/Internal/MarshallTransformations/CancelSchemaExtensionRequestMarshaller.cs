@@ -88,7 +88,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CancelSchemaExtensionRequestMarshaller _instance = new CancelSchemaExtensionRequestMarshaller();        
 
+        internal static CancelSchemaExtensionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelSchemaExtensionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

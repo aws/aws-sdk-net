@@ -82,7 +82,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteNetworkProfileRequestMarshaller _instance = new DeleteNetworkProfileRequestMarshaller();        
 
+        internal static DeleteNetworkProfileRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteNetworkProfileRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

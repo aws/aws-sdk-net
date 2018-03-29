@@ -80,7 +80,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetAppliedSchemaVersionRequestMarshaller _instance = new GetAppliedSchemaVersionRequestMarshaller();        
 
+        internal static GetAppliedSchemaVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAppliedSchemaVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

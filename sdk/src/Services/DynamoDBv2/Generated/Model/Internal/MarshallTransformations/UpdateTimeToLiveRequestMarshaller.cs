@@ -93,7 +93,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateTimeToLiveRequestMarshaller _instance = new UpdateTimeToLiveRequestMarshaller();        
 
+        internal static UpdateTimeToLiveRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateTimeToLiveRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

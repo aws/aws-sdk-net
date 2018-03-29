@@ -82,7 +82,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListVolumeRecoveryPointsRequestMarshaller _instance = new ListVolumeRecoveryPointsRequestMarshaller();        
 
+        internal static ListVolumeRecoveryPointsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListVolumeRecoveryPointsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

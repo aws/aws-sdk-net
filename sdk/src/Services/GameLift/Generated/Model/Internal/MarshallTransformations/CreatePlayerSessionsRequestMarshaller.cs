@@ -107,7 +107,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreatePlayerSessionsRequestMarshaller _instance = new CreatePlayerSessionsRequestMarshaller();        
 
+        internal static CreatePlayerSessionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreatePlayerSessionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

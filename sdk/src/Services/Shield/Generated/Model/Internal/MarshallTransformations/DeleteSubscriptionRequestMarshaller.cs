@@ -66,7 +66,23 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteSubscriptionRequestMarshaller _instance = new DeleteSubscriptionRequestMarshaller();        
 
+        internal static DeleteSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

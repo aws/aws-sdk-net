@@ -83,7 +83,23 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateChannelRequestMarshaller _instance = new UpdateChannelRequestMarshaller();        
 
+        internal static UpdateChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

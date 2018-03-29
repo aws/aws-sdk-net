@@ -128,5 +128,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PutMetricDataRequestMarshaller _instance = new PutMetricDataRequestMarshaller();        
+
+        internal static PutMetricDataRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutMetricDataRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

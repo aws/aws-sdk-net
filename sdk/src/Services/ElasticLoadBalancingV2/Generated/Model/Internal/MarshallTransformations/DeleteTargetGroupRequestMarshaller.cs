@@ -65,5 +65,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteTargetGroupRequestMarshaller _instance = new DeleteTargetGroupRequestMarshaller();        
+
+        internal static DeleteTargetGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteTargetGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

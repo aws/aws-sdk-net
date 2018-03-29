@@ -106,7 +106,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListConstraintsForPortfolioRequestMarshaller _instance = new ListConstraintsForPortfolioRequestMarshaller();        
 
+        internal static ListConstraintsForPortfolioRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListConstraintsForPortfolioRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

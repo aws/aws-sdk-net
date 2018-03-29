@@ -88,7 +88,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DetectKeyPhrasesRequestMarshaller _instance = new DetectKeyPhrasesRequestMarshaller();        
 
+        internal static DetectKeyPhrasesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DetectKeyPhrasesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

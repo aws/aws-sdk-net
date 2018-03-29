@@ -68,7 +68,23 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDataSourceRequestMarshaller _instance = new GetDataSourceRequestMarshaller();        
 
+        internal static GetDataSourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDataSourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

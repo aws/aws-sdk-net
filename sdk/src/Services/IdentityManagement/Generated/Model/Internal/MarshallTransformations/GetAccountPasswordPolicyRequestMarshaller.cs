@@ -61,5 +61,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetAccountPasswordPolicyRequestMarshaller _instance = new GetAccountPasswordPolicyRequestMarshaller();        
+
+        internal static GetAccountPasswordPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAccountPasswordPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DisassociateSubnetCidrBlockRequestMarshaller _instance = new DisassociateSubnetCidrBlockRequestMarshaller();        
+
+        internal static DisassociateSubnetCidrBlockRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateSubnetCidrBlockRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

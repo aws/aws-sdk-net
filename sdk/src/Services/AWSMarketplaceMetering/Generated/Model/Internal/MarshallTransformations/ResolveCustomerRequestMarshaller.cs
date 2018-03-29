@@ -82,7 +82,23 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ResolveCustomerRequestMarshaller _instance = new ResolveCustomerRequestMarshaller();        
 
+        internal static ResolveCustomerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResolveCustomerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

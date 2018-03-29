@@ -82,7 +82,23 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteEnvironmentRequestMarshaller _instance = new DeleteEnvironmentRequestMarshaller();        
 
+        internal static DeleteEnvironmentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteEnvironmentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

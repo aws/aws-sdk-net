@@ -88,7 +88,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetLocalConsolePasswordRequestMarshaller _instance = new SetLocalConsolePasswordRequestMarshaller();        
 
+        internal static SetLocalConsolePasswordRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetLocalConsolePasswordRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

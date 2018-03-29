@@ -100,7 +100,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutKeyPolicyRequestMarshaller _instance = new PutKeyPolicyRequestMarshaller();        
 
+        internal static PutKeyPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutKeyPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

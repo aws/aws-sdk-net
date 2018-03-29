@@ -75,7 +75,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListCertificatesByCARequestMarshaller _instance = new ListCertificatesByCARequestMarshaller();        
 
+        internal static ListCertificatesByCARequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListCertificatesByCARequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeInstanceAssociationsStatusRequestMarshaller _instance = new DescribeInstanceAssociationsStatusRequestMarshaller();        
 
+        internal static DescribeInstanceAssociationsStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeInstanceAssociationsStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

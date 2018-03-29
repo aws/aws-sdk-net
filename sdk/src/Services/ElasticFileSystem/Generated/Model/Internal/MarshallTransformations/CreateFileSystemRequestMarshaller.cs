@@ -98,7 +98,23 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateFileSystemRequestMarshaller _instance = new CreateFileSystemRequestMarshaller();        
 
+        internal static CreateFileSystemRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateFileSystemRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

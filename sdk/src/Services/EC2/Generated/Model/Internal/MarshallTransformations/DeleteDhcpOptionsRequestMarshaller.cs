@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteDhcpOptionsRequestMarshaller _instance = new DeleteDhcpOptionsRequestMarshaller();        
+
+        internal static DeleteDhcpOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDhcpOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -93,7 +93,23 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UntagProjectRequestMarshaller _instance = new UntagProjectRequestMarshaller();        
 
+        internal static UntagProjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UntagProjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

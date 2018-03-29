@@ -66,7 +66,23 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetBulkPublishDetailsRequestMarshaller _instance = new GetBulkPublishDetailsRequestMarshaller();        
 
+        internal static GetBulkPublishDetailsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetBulkPublishDetailsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

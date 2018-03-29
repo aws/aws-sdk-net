@@ -126,7 +126,23 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static GenerateDataSetRequestMarshaller _instance = new GenerateDataSetRequestMarshaller();        
 
+        internal static GenerateDataSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GenerateDataSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

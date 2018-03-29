@@ -80,5 +80,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateScalingParametersRequestMarshaller _instance = new UpdateScalingParametersRequestMarshaller();        
+
+        internal static UpdateScalingParametersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateScalingParametersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

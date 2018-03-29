@@ -87,7 +87,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchGetNamedQueryRequestMarshaller _instance = new BatchGetNamedQueryRequestMarshaller();        
 
+        internal static BatchGetNamedQueryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchGetNamedQueryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -62,7 +62,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetInvitationsCountRequestMarshaller _instance = new GetInvitationsCountRequestMarshaller();        
 
+        internal static GetInvitationsCountRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetInvitationsCountRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

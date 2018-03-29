@@ -62,7 +62,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetServiceRoleForAccountRequestMarshaller _instance = new GetServiceRoleForAccountRequestMarshaller();        
 
+        internal static GetServiceRoleForAccountRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetServiceRoleForAccountRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

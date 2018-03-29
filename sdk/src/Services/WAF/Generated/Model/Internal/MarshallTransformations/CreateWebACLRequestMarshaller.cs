@@ -105,7 +105,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateWebACLRequestMarshaller _instance = new CreateWebACLRequestMarshaller();        
 
+        internal static CreateWebACLRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateWebACLRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

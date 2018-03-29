@@ -66,7 +66,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeOperatingSystemsRequestMarshaller _instance = new DescribeOperatingSystemsRequestMarshaller();        
 
+        internal static DescribeOperatingSystemsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeOperatingSystemsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

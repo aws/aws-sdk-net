@@ -101,7 +101,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateThreatIntelSetRequestMarshaller _instance = new CreateThreatIntelSetRequestMarshaller();        
 
+        internal static CreateThreatIntelSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateThreatIntelSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

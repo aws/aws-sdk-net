@@ -69,5 +69,23 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetStatusRequestMarshaller _instance = new GetStatusRequestMarshaller();        
+
+        internal static GetStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

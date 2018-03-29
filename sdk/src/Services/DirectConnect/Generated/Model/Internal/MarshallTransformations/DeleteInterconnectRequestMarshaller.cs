@@ -82,7 +82,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteInterconnectRequestMarshaller _instance = new DeleteInterconnectRequestMarshaller();        
 
+        internal static DeleteInterconnectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteInterconnectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

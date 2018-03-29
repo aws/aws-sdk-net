@@ -99,7 +99,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeFleetCapacityRequestMarshaller _instance = new DescribeFleetCapacityRequestMarshaller();        
 
+        internal static DescribeFleetCapacityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeFleetCapacityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -77,5 +77,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static TerminateEnvironmentRequestMarshaller _instance = new TerminateEnvironmentRequestMarshaller();        
+
+        internal static TerminateEnvironmentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TerminateEnvironmentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -104,7 +104,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListOnPremisesInstancesRequestMarshaller _instance = new ListOnPremisesInstancesRequestMarshaller();        
 
+        internal static ListOnPremisesInstancesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListOnPremisesInstancesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

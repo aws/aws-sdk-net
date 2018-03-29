@@ -170,7 +170,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateNFSFileShareRequestMarshaller _instance = new CreateNFSFileShareRequestMarshaller();        
 
+        internal static CreateNFSFileShareRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateNFSFileShareRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

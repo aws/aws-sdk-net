@@ -65,5 +65,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeEventCategoriesRequestMarshaller _instance = new DescribeEventCategoriesRequestMarshaller();        
+
+        internal static DescribeEventCategoriesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeEventCategoriesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

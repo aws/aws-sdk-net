@@ -94,7 +94,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListBuildsForProjectRequestMarshaller _instance = new ListBuildsForProjectRequestMarshaller();        
 
+        internal static ListBuildsForProjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListBuildsForProjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

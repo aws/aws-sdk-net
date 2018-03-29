@@ -82,7 +82,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InvalidateProjectCacheRequestMarshaller _instance = new InvalidateProjectCacheRequestMarshaller();        
 
+        internal static InvalidateProjectCacheRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InvalidateProjectCacheRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

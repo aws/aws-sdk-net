@@ -65,5 +65,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteVirtualMFADeviceRequestMarshaller _instance = new DeleteVirtualMFADeviceRequestMarshaller();        
+
+        internal static DeleteVirtualMFADeviceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteVirtualMFADeviceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

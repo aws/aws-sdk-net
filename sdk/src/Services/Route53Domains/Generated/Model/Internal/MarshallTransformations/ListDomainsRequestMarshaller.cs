@@ -88,7 +88,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDomainsRequestMarshaller _instance = new ListDomainsRequestMarshaller();        
 
+        internal static ListDomainsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDomainsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

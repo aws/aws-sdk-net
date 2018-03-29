@@ -100,7 +100,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateDiskFromSnapshotRequestMarshaller _instance = new CreateDiskFromSnapshotRequestMarshaller();        
 
+        internal static CreateDiskFromSnapshotRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDiskFromSnapshotRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

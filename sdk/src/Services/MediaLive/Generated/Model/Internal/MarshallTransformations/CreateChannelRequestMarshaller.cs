@@ -157,7 +157,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateChannelRequestMarshaller _instance = new CreateChannelRequestMarshaller();        
 
+        internal static CreateChannelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateChannelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListHITsForQualificationTypeRequestMarshaller _instance = new ListHITsForQualificationTypeRequestMarshaller();        
 
+        internal static ListHITsForQualificationTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListHITsForQualificationTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

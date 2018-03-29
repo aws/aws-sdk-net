@@ -65,7 +65,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteInputSecurityGroupRequestMarshaller _instance = new DeleteInputSecurityGroupRequestMarshaller();        
 
+        internal static DeleteInputSecurityGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteInputSecurityGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

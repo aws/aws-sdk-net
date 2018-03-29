@@ -93,7 +93,23 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveTagsFromStreamRequestMarshaller _instance = new RemoveTagsFromStreamRequestMarshaller();        
 
+        internal static RemoveTagsFromStreamRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveTagsFromStreamRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

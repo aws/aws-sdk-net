@@ -88,7 +88,23 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListSqlInjectionMatchSetsRequestMarshaller _instance = new ListSqlInjectionMatchSetsRequestMarshaller();        
 
+        internal static ListSqlInjectionMatchSetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListSqlInjectionMatchSetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteBGPPeerRequestMarshaller _instance = new DeleteBGPPeerRequestMarshaller();        
 
+        internal static DeleteBGPPeerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteBGPPeerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

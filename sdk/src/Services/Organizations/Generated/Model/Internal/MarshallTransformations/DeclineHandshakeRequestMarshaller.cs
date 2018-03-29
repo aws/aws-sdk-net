@@ -82,7 +82,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeclineHandshakeRequestMarshaller _instance = new DeclineHandshakeRequestMarshaller();        
 
+        internal static DeclineHandshakeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeclineHandshakeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -73,5 +73,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeSpotFleetInstancesRequestMarshaller _instance = new DescribeSpotFleetInstancesRequestMarshaller();        
+
+        internal static DescribeSpotFleetInstancesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeSpotFleetInstancesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

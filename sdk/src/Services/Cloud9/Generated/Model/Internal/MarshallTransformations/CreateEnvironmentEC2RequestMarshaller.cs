@@ -118,7 +118,23 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateEnvironmentEC2RequestMarshaller _instance = new CreateEnvironmentEC2RequestMarshaller();        
 
+        internal static CreateEnvironmentEC2RequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateEnvironmentEC2RequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -74,5 +74,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AttachLoadBalancersRequestMarshaller _instance = new AttachLoadBalancersRequestMarshaller();        
+
+        internal static AttachLoadBalancersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachLoadBalancersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

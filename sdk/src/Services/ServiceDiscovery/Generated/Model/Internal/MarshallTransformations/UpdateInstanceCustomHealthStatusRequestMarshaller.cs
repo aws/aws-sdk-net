@@ -94,7 +94,23 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateInstanceCustomHealthStatusRequestMarshaller _instance = new UpdateInstanceCustomHealthStatusRequestMarshaller();        
 
+        internal static UpdateInstanceCustomHealthStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateInstanceCustomHealthStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

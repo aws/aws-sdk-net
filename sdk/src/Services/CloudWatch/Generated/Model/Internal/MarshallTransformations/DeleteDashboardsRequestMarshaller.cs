@@ -70,5 +70,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteDashboardsRequestMarshaller _instance = new DeleteDashboardsRequestMarshaller();        
+
+        internal static DeleteDashboardsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDashboardsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

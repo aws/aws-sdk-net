@@ -88,7 +88,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateContainerAgentRequestMarshaller _instance = new UpdateContainerAgentRequestMarshaller();        
 
+        internal static UpdateContainerAgentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateContainerAgentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

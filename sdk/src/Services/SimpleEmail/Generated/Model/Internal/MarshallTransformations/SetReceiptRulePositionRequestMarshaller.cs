@@ -73,5 +73,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetReceiptRulePositionRequestMarshaller _instance = new SetReceiptRulePositionRequestMarshaller();        
+
+        internal static SetReceiptRulePositionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetReceiptRulePositionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

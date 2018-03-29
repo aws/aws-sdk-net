@@ -93,7 +93,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CountPendingActivityTasksRequestMarshaller _instance = new CountPendingActivityTasksRequestMarshaller();        
 
+        internal static CountPendingActivityTasksRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CountPendingActivityTasksRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

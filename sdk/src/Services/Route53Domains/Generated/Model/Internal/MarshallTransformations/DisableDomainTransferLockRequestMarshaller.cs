@@ -82,7 +82,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisableDomainTransferLockRequestMarshaller _instance = new DisableDomainTransferLockRequestMarshaller();        
 
+        internal static DisableDomainTransferLockRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisableDomainTransferLockRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

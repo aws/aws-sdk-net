@@ -69,7 +69,23 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeProjectRequestMarshaller _instance = new DescribeProjectRequestMarshaller();        
 
+        internal static DescribeProjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeProjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

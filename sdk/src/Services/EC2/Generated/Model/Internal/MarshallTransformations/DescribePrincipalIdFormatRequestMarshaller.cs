@@ -78,5 +78,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribePrincipalIdFormatRequestMarshaller _instance = new DescribePrincipalIdFormatRequestMarshaller();        
+
+        internal static DescribePrincipalIdFormatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribePrincipalIdFormatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

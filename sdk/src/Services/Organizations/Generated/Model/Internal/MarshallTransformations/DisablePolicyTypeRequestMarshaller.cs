@@ -88,7 +88,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisablePolicyTypeRequestMarshaller _instance = new DisablePolicyTypeRequestMarshaller();        
 
+        internal static DisablePolicyTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisablePolicyTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

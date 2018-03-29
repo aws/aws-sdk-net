@@ -96,7 +96,23 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetOpenIdTokenRequestMarshaller _instance = new GetOpenIdTokenRequestMarshaller();        
 
+        internal static GetOpenIdTokenRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetOpenIdTokenRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

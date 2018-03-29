@@ -97,7 +97,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeJobQueuesRequestMarshaller _instance = new DescribeJobQueuesRequestMarshaller();        
 
+        internal static DescribeJobQueuesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeJobQueuesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

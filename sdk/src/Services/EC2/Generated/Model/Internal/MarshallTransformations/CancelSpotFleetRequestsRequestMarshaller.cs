@@ -74,5 +74,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CancelSpotFleetRequestsRequestMarshaller _instance = new CancelSpotFleetRequestsRequestMarshaller();        
+
+        internal static CancelSpotFleetRequestsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelSpotFleetRequestsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetPipelineDefinitionRequestMarshaller _instance = new GetPipelineDefinitionRequestMarshaller();        
 
+        internal static GetPipelineDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetPipelineDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

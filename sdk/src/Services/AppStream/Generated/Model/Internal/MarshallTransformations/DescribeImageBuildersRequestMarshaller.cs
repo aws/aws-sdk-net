@@ -99,7 +99,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeImageBuildersRequestMarshaller _instance = new DescribeImageBuildersRequestMarshaller();        
 
+        internal static DescribeImageBuildersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeImageBuildersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

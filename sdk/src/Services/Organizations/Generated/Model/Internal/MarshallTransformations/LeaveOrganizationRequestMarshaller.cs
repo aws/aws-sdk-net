@@ -66,7 +66,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static LeaveOrganizationRequestMarshaller _instance = new LeaveOrganizationRequestMarshaller();        
 
+        internal static LeaveOrganizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static LeaveOrganizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

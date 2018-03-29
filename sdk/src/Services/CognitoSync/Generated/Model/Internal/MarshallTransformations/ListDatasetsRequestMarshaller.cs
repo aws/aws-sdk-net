@@ -75,7 +75,23 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDatasetsRequestMarshaller _instance = new ListDatasetsRequestMarshaller();        
 
+        internal static ListDatasetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDatasetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

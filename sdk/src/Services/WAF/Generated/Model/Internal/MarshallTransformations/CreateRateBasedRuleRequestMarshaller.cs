@@ -106,7 +106,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateRateBasedRuleRequestMarshaller _instance = new CreateRateBasedRuleRequestMarshaller();        
 
+        internal static CreateRateBasedRuleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateRateBasedRuleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

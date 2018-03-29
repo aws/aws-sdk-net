@@ -88,7 +88,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteRegexPatternSetRequestMarshaller _instance = new DeleteRegexPatternSetRequestMarshaller();        
 
+        internal static DeleteRegexPatternSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteRegexPatternSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

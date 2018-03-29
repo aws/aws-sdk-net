@@ -89,7 +89,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TestInvokeAuthorizerRequestMarshaller _instance = new TestInvokeAuthorizerRequestMarshaller();        
 
+        internal static TestInvokeAuthorizerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestInvokeAuthorizerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

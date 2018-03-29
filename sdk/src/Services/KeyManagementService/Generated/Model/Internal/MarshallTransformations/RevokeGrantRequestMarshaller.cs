@@ -88,7 +88,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RevokeGrantRequestMarshaller _instance = new RevokeGrantRequestMarshaller();        
 
+        internal static RevokeGrantRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RevokeGrantRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -74,5 +74,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UnassignPrivateIpAddressesRequestMarshaller _instance = new UnassignPrivateIpAddressesRequestMarshaller();        
+
+        internal static UnassignPrivateIpAddressesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UnassignPrivateIpAddressesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

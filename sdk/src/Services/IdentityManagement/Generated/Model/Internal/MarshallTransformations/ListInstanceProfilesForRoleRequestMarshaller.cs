@@ -73,5 +73,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListInstanceProfilesForRoleRequestMarshaller _instance = new ListInstanceProfilesForRoleRequestMarshaller();        
+
+        internal static ListInstanceProfilesForRoleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListInstanceProfilesForRoleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

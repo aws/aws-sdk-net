@@ -69,5 +69,23 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteMessageRequestMarshaller _instance = new DeleteMessageRequestMarshaller();        
+
+        internal static DeleteMessageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteMessageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

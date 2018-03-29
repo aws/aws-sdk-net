@@ -81,5 +81,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static RevokeDBSecurityGroupIngressRequestMarshaller _instance = new RevokeDBSecurityGroupIngressRequestMarshaller();        
+
+        internal static RevokeDBSecurityGroupIngressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RevokeDBSecurityGroupIngressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

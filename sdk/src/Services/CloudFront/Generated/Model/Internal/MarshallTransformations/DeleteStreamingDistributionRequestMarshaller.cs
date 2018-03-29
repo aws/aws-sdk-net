@@ -68,7 +68,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteStreamingDistributionRequestMarshaller _instance = new DeleteStreamingDistributionRequestMarshaller();        
 
-        
+        internal static DeleteStreamingDistributionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteStreamingDistributionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

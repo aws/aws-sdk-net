@@ -93,7 +93,23 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PollForThirdPartyJobsRequestMarshaller _instance = new PollForThirdPartyJobsRequestMarshaller();        
 
+        internal static PollForThirdPartyJobsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PollForThirdPartyJobsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

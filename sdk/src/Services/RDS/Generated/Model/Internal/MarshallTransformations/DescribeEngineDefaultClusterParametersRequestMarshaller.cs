@@ -94,5 +94,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeEngineDefaultClusterParametersRequestMarshaller _instance = new DescribeEngineDefaultClusterParametersRequestMarshaller();        
+
+        internal static DescribeEngineDefaultClusterParametersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeEngineDefaultClusterParametersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

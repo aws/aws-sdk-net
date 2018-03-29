@@ -198,7 +198,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RegisterTaskWithMaintenanceWindowRequestMarshaller _instance = new RegisterTaskWithMaintenanceWindowRequestMarshaller();        
 
+        internal static RegisterTaskWithMaintenanceWindowRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RegisterTaskWithMaintenanceWindowRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -78,5 +78,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetAccountAuthorizationDetailsRequestMarshaller _instance = new GetAccountAuthorizationDetailsRequestMarshaller();        
+
+        internal static GetAccountAuthorizationDetailsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAccountAuthorizationDetailsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

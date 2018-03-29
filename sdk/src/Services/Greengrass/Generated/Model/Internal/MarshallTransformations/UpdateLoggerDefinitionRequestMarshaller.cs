@@ -83,7 +83,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateLoggerDefinitionRequestMarshaller _instance = new UpdateLoggerDefinitionRequestMarshaller();        
 
+        internal static UpdateLoggerDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateLoggerDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,5 +82,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ContinueUpdateRollbackRequestMarshaller _instance = new ContinueUpdateRollbackRequestMarshaller();        
+
+        internal static ContinueUpdateRollbackRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ContinueUpdateRollbackRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

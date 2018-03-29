@@ -110,7 +110,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateRateBasedRuleRequestMarshaller _instance = new UpdateRateBasedRuleRequestMarshaller();        
 
+        internal static UpdateRateBasedRuleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateRateBasedRuleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

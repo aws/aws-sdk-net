@@ -77,5 +77,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SetAlarmStateRequestMarshaller _instance = new SetAlarmStateRequestMarshaller();        
+
+        internal static SetAlarmStateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetAlarmStateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

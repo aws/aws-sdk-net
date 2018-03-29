@@ -82,7 +82,23 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetTagKeysRequestMarshaller _instance = new GetTagKeysRequestMarshaller();        
 
+        internal static GetTagKeysRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetTagKeysRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

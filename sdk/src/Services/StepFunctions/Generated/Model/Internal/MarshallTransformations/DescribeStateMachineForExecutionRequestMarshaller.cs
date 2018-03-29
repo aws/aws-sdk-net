@@ -82,7 +82,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeStateMachineForExecutionRequestMarshaller _instance = new DescribeStateMachineForExecutionRequestMarshaller();        
 
+        internal static DescribeStateMachineForExecutionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeStateMachineForExecutionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

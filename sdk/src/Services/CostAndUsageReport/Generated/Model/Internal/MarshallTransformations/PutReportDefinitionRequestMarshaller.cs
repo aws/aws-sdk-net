@@ -87,7 +87,23 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutReportDefinitionRequestMarshaller _instance = new PutReportDefinitionRequestMarshaller();        
 
+        internal static PutReportDefinitionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutReportDefinitionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

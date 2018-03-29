@@ -166,5 +166,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateDBInstanceReadReplicaRequestMarshaller _instance = new CreateDBInstanceReadReplicaRequestMarshaller();        
+
+        internal static CreateDBInstanceReadReplicaRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateDBInstanceReadReplicaRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

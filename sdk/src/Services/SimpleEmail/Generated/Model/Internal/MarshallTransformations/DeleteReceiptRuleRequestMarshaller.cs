@@ -69,5 +69,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteReceiptRuleRequestMarshaller _instance = new DeleteReceiptRuleRequestMarshaller();        
+
+        internal static DeleteReceiptRuleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteReceiptRuleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

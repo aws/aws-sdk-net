@@ -99,7 +99,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDiscoveredResourceCountsRequestMarshaller _instance = new GetDiscoveredResourceCountsRequestMarshaller();        
 
+        internal static GetDiscoveredResourceCountsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDiscoveredResourceCountsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

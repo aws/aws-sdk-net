@@ -82,7 +82,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteImportedKeyMaterialRequestMarshaller _instance = new DeleteImportedKeyMaterialRequestMarshaller();        
 
+        internal static DeleteImportedKeyMaterialRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteImportedKeyMaterialRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -73,5 +73,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateAppCookieStickinessPolicyRequestMarshaller _instance = new CreateAppCookieStickinessPolicyRequestMarshaller();        
+
+        internal static CreateAppCookieStickinessPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateAppCookieStickinessPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

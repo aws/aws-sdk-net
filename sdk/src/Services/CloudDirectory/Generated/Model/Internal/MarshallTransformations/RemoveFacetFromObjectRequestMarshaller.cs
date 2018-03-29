@@ -99,7 +99,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RemoveFacetFromObjectRequestMarshaller _instance = new RemoveFacetFromObjectRequestMarshaller();        
 
+        internal static RemoveFacetFromObjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RemoveFacetFromObjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

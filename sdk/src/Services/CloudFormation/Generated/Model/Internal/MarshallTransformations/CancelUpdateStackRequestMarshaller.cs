@@ -69,5 +69,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CancelUpdateStackRequestMarshaller _instance = new CancelUpdateStackRequestMarshaller();        
+
+        internal static CancelUpdateStackRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CancelUpdateStackRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

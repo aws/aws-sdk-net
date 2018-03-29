@@ -70,7 +70,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InvokeAsyncRequestMarshaller _instance = new InvokeAsyncRequestMarshaller();        
 
+        internal static InvokeAsyncRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InvokeAsyncRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -88,7 +88,23 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateSkillGroupWithRoomRequestMarshaller _instance = new AssociateSkillGroupWithRoomRequestMarshaller();        
 
+        internal static AssociateSkillGroupWithRoomRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateSkillGroupWithRoomRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

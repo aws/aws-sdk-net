@@ -82,7 +82,23 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteSubnetGroupRequestMarshaller _instance = new DeleteSubnetGroupRequestMarshaller();        
 
+        internal static DeleteSubnetGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteSubnetGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

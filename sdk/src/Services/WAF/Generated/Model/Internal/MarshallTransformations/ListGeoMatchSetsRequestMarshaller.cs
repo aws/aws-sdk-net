@@ -88,7 +88,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListGeoMatchSetsRequestMarshaller _instance = new ListGeoMatchSetsRequestMarshaller();        
 
+        internal static ListGeoMatchSetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListGeoMatchSetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

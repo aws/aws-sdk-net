@@ -119,7 +119,23 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InitiateDocumentVersionUploadRequestMarshaller _instance = new InitiateDocumentVersionUploadRequestMarshaller();        
 
+        internal static InitiateDocumentVersionUploadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InitiateDocumentVersionUploadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

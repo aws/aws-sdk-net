@@ -112,7 +112,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UploadLayerPartRequestMarshaller _instance = new UploadLayerPartRequestMarshaller();        
 
+        internal static UploadLayerPartRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UploadLayerPartRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

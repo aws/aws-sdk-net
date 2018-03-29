@@ -72,7 +72,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListDeviceDefinitionVersionsRequestMarshaller _instance = new ListDeviceDefinitionVersionsRequestMarshaller();        
 
+        internal static ListDeviceDefinitionVersionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListDeviceDefinitionVersionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

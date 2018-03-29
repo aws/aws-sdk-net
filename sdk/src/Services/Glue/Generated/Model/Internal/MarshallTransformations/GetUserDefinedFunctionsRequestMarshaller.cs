@@ -106,7 +106,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetUserDefinedFunctionsRequestMarshaller _instance = new GetUserDefinedFunctionsRequestMarshaller();        
 
+        internal static GetUserDefinedFunctionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetUserDefinedFunctionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

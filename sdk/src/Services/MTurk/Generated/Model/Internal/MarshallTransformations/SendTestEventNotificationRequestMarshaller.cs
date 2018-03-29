@@ -93,7 +93,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendTestEventNotificationRequestMarshaller _instance = new SendTestEventNotificationRequestMarshaller();        
 
+        internal static SendTestEventNotificationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendTestEventNotificationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

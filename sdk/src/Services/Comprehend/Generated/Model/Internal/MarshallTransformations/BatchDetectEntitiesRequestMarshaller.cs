@@ -93,7 +93,23 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchDetectEntitiesRequestMarshaller _instance = new BatchDetectEntitiesRequestMarshaller();        
 
+        internal static BatchDetectEntitiesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchDetectEntitiesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

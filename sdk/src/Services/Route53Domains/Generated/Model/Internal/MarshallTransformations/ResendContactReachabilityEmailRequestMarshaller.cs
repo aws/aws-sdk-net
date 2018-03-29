@@ -82,7 +82,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ResendContactReachabilityEmailRequestMarshaller _instance = new ResendContactReachabilityEmailRequestMarshaller();        
 
+        internal static ResendContactReachabilityEmailRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResendContactReachabilityEmailRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

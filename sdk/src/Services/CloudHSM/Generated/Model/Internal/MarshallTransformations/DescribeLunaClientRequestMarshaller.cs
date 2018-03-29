@@ -88,7 +88,23 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeLunaClientRequestMarshaller _instance = new DescribeLunaClientRequestMarshaller();        
 
+        internal static DescribeLunaClientRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeLunaClientRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

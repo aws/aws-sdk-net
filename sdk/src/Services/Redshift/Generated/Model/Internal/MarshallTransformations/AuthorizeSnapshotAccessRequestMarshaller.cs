@@ -73,5 +73,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AuthorizeSnapshotAccessRequestMarshaller _instance = new AuthorizeSnapshotAccessRequestMarshaller();        
+
+        internal static AuthorizeSnapshotAccessRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AuthorizeSnapshotAccessRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

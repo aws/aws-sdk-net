@@ -81,5 +81,23 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static UpdateJobRequestMarshaller _instance = new UpdateJobRequestMarshaller();        
+
+        internal static UpdateJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

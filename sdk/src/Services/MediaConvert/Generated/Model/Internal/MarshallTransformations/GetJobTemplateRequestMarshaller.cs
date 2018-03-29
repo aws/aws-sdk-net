@@ -65,7 +65,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetJobTemplateRequestMarshaller _instance = new GetJobTemplateRequestMarshaller();        
 
+        internal static GetJobTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetJobTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

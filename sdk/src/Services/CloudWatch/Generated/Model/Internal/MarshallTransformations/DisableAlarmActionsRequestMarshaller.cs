@@ -70,5 +70,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DisableAlarmActionsRequestMarshaller _instance = new DisableAlarmActionsRequestMarshaller();        
+
+        internal static DisableAlarmActionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisableAlarmActionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

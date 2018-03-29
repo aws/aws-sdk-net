@@ -103,7 +103,23 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateMountTargetRequestMarshaller _instance = new CreateMountTargetRequestMarshaller();        
 
+        internal static CreateMountTargetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateMountTargetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

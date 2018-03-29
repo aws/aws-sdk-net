@@ -105,7 +105,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeRepositoriesRequestMarshaller _instance = new DescribeRepositoriesRequestMarshaller();        
 
+        internal static DescribeRepositoriesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeRepositoriesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteProtectionRequestMarshaller _instance = new DeleteProtectionRequestMarshaller();        
 
+        internal static DeleteProtectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteProtectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

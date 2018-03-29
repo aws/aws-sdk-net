@@ -88,7 +88,23 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateBatchPredictionRequestMarshaller _instance = new UpdateBatchPredictionRequestMarshaller();        
 
+        internal static UpdateBatchPredictionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateBatchPredictionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

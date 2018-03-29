@@ -88,7 +88,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetInstanceAccessRequestMarshaller _instance = new GetInstanceAccessRequestMarshaller();        
 
+        internal static GetInstanceAccessRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetInstanceAccessRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

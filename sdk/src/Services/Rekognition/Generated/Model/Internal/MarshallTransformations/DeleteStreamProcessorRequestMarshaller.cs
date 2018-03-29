@@ -82,7 +82,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteStreamProcessorRequestMarshaller _instance = new DeleteStreamProcessorRequestMarshaller();        
 
+        internal static DeleteStreamProcessorRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteStreamProcessorRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

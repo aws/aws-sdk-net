@@ -69,5 +69,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeAvailabilityOptionsRequestMarshaller _instance = new DescribeAvailabilityOptionsRequestMarshaller();        
+
+        internal static DescribeAvailabilityOptionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAvailabilityOptionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

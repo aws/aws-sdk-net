@@ -106,7 +106,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateAuthEventFeedbackRequestMarshaller _instance = new UpdateAuthEventFeedbackRequestMarshaller();        
 
+        internal static UpdateAuthEventFeedbackRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateAuthEventFeedbackRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

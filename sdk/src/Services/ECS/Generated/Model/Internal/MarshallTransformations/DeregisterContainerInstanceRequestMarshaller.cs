@@ -94,7 +94,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeregisterContainerInstanceRequestMarshaller _instance = new DeregisterContainerInstanceRequestMarshaller();        
 
+        internal static DeregisterContainerInstanceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeregisterContainerInstanceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

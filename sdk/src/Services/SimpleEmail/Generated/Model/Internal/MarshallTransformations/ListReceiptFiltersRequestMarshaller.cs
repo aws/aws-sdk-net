@@ -61,5 +61,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ListReceiptFiltersRequestMarshaller _instance = new ListReceiptFiltersRequestMarshaller();        
+
+        internal static ListReceiptFiltersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListReceiptFiltersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

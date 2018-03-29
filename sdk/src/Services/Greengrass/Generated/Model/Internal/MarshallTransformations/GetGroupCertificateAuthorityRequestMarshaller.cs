@@ -68,7 +68,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetGroupCertificateAuthorityRequestMarshaller _instance = new GetGroupCertificateAuthorityRequestMarshaller();        
 
+        internal static GetGroupCertificateAuthorityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetGroupCertificateAuthorityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

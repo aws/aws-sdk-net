@@ -83,7 +83,23 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateSlotTypeVersionRequestMarshaller _instance = new CreateSlotTypeVersionRequestMarshaller();        
 
+        internal static CreateSlotTypeVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateSlotTypeVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

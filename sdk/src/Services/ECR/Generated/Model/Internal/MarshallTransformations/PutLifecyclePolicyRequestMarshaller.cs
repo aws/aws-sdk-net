@@ -94,7 +94,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutLifecyclePolicyRequestMarshaller _instance = new PutLifecyclePolicyRequestMarshaller();        
 
+        internal static PutLifecyclePolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutLifecyclePolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

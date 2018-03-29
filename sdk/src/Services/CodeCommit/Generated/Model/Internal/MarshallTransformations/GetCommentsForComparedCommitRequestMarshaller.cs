@@ -106,7 +106,23 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetCommentsForComparedCommitRequestMarshaller _instance = new GetCommentsForComparedCommitRequestMarshaller();        
 
+        internal static GetCommentsForComparedCommitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCommentsForComparedCommitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

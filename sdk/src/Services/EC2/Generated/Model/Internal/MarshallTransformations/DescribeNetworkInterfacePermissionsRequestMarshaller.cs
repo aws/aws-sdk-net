@@ -99,5 +99,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeNetworkInterfacePermissionsRequestMarshaller _instance = new DescribeNetworkInterfacePermissionsRequestMarshaller();        
+
+        internal static DescribeNetworkInterfacePermissionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeNetworkInterfacePermissionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

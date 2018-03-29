@@ -88,7 +88,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InitiateLayerUploadRequestMarshaller _instance = new InitiateLayerUploadRequestMarshaller();        
 
+        internal static InitiateLayerUploadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InitiateLayerUploadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

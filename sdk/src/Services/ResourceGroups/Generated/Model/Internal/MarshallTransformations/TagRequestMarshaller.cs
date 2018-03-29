@@ -91,7 +91,23 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TagRequestMarshaller _instance = new TagRequestMarshaller();        
 
+        internal static TagRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TagRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

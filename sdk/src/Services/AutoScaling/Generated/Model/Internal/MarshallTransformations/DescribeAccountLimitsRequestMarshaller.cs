@@ -61,5 +61,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeAccountLimitsRequestMarshaller _instance = new DescribeAccountLimitsRequestMarshaller();        
+
+        internal static DescribeAccountLimitsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAccountLimitsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

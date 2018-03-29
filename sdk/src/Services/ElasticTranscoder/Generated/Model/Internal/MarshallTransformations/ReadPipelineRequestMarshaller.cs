@@ -65,7 +65,23 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ReadPipelineRequestMarshaller _instance = new ReadPipelineRequestMarshaller();        
 
+        internal static ReadPipelineRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReadPipelineRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

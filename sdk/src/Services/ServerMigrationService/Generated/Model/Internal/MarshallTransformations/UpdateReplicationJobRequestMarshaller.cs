@@ -112,7 +112,23 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateReplicationJobRequestMarshaller _instance = new UpdateReplicationJobRequestMarshaller();        
 
+        internal static UpdateReplicationJobRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateReplicationJobRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

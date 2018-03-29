@@ -68,7 +68,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteCloudFrontOriginAccessIdentityRequestMarshaller _instance = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();        
 
-        
+        internal static DeleteCloudFrontOriginAccessIdentityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteCloudFrontOriginAccessIdentityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

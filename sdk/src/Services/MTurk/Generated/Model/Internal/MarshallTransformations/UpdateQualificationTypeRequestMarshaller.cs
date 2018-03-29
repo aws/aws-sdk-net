@@ -130,7 +130,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateQualificationTypeRequestMarshaller _instance = new UpdateQualificationTypeRequestMarshaller();        
 
+        internal static UpdateQualificationTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateQualificationTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteTrailRequestMarshaller _instance = new DeleteTrailRequestMarshaller();        
 
+        internal static DeleteTrailRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteTrailRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

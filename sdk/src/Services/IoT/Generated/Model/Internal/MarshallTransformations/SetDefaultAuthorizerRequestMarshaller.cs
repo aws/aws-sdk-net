@@ -80,7 +80,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetDefaultAuthorizerRequestMarshaller _instance = new SetDefaultAuthorizerRequestMarshaller();        
 
+        internal static SetDefaultAuthorizerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetDefaultAuthorizerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

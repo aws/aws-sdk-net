@@ -97,7 +97,23 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateGraphqlApiRequestMarshaller _instance = new CreateGraphqlApiRequestMarshaller();        
 
+        internal static CreateGraphqlApiRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateGraphqlApiRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -187,7 +187,23 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateBrokerRequestMarshaller _instance = new CreateBrokerRequestMarshaller();        
 
+        internal static CreateBrokerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateBrokerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

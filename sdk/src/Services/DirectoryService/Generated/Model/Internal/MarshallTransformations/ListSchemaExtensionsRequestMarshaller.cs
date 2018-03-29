@@ -94,7 +94,23 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListSchemaExtensionsRequestMarshaller _instance = new ListSchemaExtensionsRequestMarshaller();        
 
+        internal static ListSchemaExtensionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListSchemaExtensionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

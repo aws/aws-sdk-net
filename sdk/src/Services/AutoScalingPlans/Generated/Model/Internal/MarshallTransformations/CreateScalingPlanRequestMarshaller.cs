@@ -109,7 +109,23 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateScalingPlanRequestMarshaller _instance = new CreateScalingPlanRequestMarshaller();        
 
+        internal static CreateScalingPlanRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateScalingPlanRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

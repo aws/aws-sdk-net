@@ -66,7 +66,23 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ExportProjectRequestMarshaller _instance = new ExportProjectRequestMarshaller();        
 
+        internal static ExportProjectRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ExportProjectRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

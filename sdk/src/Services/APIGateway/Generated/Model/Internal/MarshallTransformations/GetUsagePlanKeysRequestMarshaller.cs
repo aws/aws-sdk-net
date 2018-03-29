@@ -75,7 +75,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetUsagePlanKeysRequestMarshaller _instance = new GetUsagePlanKeysRequestMarshaller();        
 
+        internal static GetUsagePlanKeysRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetUsagePlanKeysRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

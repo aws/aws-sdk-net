@@ -104,7 +104,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RespondDecisionTaskCompletedRequestMarshaller _instance = new RespondDecisionTaskCompletedRequestMarshaller();        
 
+        internal static RespondDecisionTaskCompletedRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RespondDecisionTaskCompletedRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

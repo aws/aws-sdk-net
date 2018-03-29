@@ -98,7 +98,23 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateParameterGroupRequestMarshaller _instance = new UpdateParameterGroupRequestMarshaller();        
 
+        internal static UpdateParameterGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateParameterGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

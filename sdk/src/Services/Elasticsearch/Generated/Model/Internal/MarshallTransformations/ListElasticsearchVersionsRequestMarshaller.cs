@@ -69,7 +69,23 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListElasticsearchVersionsRequestMarshaller _instance = new ListElasticsearchVersionsRequestMarshaller();        
 
+        internal static ListElasticsearchVersionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListElasticsearchVersionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

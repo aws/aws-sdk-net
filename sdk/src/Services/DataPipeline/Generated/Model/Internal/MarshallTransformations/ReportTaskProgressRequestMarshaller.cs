@@ -98,7 +98,23 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ReportTaskProgressRequestMarshaller _instance = new ReportTaskProgressRequestMarshaller();        
 
+        internal static ReportTaskProgressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ReportTaskProgressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

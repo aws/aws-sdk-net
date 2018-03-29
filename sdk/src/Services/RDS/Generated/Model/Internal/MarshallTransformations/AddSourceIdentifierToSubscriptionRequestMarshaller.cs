@@ -69,5 +69,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AddSourceIdentifierToSubscriptionRequestMarshaller _instance = new AddSourceIdentifierToSubscriptionRequestMarshaller();        
+
+        internal static AddSourceIdentifierToSubscriptionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddSourceIdentifierToSubscriptionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

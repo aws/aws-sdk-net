@@ -78,5 +78,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AssignIpv6AddressesRequestMarshaller _instance = new AssignIpv6AddressesRequestMarshaller();        
+
+        internal static AssignIpv6AddressesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssignIpv6AddressesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -78,5 +78,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static AttachClassicLinkVpcRequestMarshaller _instance = new AttachClassicLinkVpcRequestMarshaller();        
+
+        internal static AttachClassicLinkVpcRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachClassicLinkVpcRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

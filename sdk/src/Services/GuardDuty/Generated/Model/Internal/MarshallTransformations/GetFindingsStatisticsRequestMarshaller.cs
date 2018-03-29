@@ -99,7 +99,23 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetFindingsStatisticsRequestMarshaller _instance = new GetFindingsStatisticsRequestMarshaller();        
 
+        internal static GetFindingsStatisticsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetFindingsStatisticsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

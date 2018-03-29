@@ -93,7 +93,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeElasticLoadBalancersRequestMarshaller _instance = new DescribeElasticLoadBalancersRequestMarshaller();        
 
+        internal static DescribeElasticLoadBalancersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeElasticLoadBalancersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

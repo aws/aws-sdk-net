@@ -72,7 +72,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListVPCAssociationAuthorizationsRequestMarshaller _instance = new ListVPCAssociationAuthorizationsRequestMarshaller();        
 
-        
+        internal static ListVPCAssociationAuthorizationsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListVPCAssociationAuthorizationsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

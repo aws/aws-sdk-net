@@ -103,7 +103,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddTagsToOnPremisesInstancesRequestMarshaller _instance = new AddTagsToOnPremisesInstancesRequestMarshaller();        
 
+        internal static AddTagsToOnPremisesInstancesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddTagsToOnPremisesInstancesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

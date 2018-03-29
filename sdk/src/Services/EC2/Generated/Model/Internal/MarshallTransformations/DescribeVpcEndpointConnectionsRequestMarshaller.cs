@@ -90,5 +90,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeVpcEndpointConnectionsRequestMarshaller _instance = new DescribeVpcEndpointConnectionsRequestMarshaller();        
+
+        internal static DescribeVpcEndpointConnectionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeVpcEndpointConnectionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

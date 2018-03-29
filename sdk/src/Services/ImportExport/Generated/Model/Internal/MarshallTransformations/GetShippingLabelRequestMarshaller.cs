@@ -114,5 +114,23 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetShippingLabelRequestMarshaller _instance = new GetShippingLabelRequestMarshaller();        
+
+        internal static GetShippingLabelRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetShippingLabelRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

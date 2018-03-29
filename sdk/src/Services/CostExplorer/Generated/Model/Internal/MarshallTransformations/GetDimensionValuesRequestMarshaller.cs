@@ -111,7 +111,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDimensionValuesRequestMarshaller _instance = new GetDimensionValuesRequestMarshaller();        
 
+        internal static GetDimensionValuesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDimensionValuesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

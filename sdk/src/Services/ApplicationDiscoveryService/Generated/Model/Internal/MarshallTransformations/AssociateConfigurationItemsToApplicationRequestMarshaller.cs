@@ -93,7 +93,23 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
 
             return request;
         }
+        private static AssociateConfigurationItemsToApplicationRequestMarshaller _instance = new AssociateConfigurationItemsToApplicationRequestMarshaller();        
 
+        internal static AssociateConfigurationItemsToApplicationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateConfigurationItemsToApplicationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -66,7 +66,23 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSubscriptionStateRequestMarshaller _instance = new GetSubscriptionStateRequestMarshaller();        
 
+        internal static GetSubscriptionStateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSubscriptionStateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

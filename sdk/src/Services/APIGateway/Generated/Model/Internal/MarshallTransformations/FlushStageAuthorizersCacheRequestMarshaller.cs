@@ -68,7 +68,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static FlushStageAuthorizersCacheRequestMarshaller _instance = new FlushStageAuthorizersCacheRequestMarshaller();        
 
+        internal static FlushStageAuthorizersCacheRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static FlushStageAuthorizersCacheRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

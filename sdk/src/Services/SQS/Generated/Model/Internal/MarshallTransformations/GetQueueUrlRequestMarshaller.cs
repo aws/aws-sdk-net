@@ -69,5 +69,23 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetQueueUrlRequestMarshaller _instance = new GetQueueUrlRequestMarshaller();        
+
+        internal static GetQueueUrlRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetQueueUrlRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

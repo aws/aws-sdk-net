@@ -82,7 +82,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteQualificationTypeRequestMarshaller _instance = new DeleteQualificationTypeRequestMarshaller();        
 
+        internal static DeleteQualificationTypeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteQualificationTypeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -65,5 +65,23 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DomainMetadataRequestMarshaller _instance = new DomainMetadataRequestMarshaller();        
+
+        internal static DomainMetadataRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DomainMetadataRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

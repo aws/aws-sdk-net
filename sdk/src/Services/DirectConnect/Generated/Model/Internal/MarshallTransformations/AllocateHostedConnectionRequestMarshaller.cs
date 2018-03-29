@@ -106,7 +106,23 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AllocateHostedConnectionRequestMarshaller _instance = new AllocateHostedConnectionRequestMarshaller();        
 
+        internal static AllocateHostedConnectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AllocateHostedConnectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

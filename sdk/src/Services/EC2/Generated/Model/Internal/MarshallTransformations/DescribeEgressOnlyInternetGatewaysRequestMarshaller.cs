@@ -78,5 +78,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeEgressOnlyInternetGatewaysRequestMarshaller _instance = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();        
+
+        internal static DescribeEgressOnlyInternetGatewaysRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeEgressOnlyInternetGatewaysRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

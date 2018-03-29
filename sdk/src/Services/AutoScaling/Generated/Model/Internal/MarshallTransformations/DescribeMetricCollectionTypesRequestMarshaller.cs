@@ -61,5 +61,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeMetricCollectionTypesRequestMarshaller _instance = new DescribeMetricCollectionTypesRequestMarshaller();        
+
+        internal static DescribeMetricCollectionTypesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeMetricCollectionTypesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

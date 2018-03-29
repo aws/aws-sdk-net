@@ -96,7 +96,23 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateBasePathMappingRequestMarshaller _instance = new UpdateBasePathMappingRequestMarshaller();        
 
+        internal static UpdateBasePathMappingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateBasePathMappingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

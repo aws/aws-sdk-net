@@ -105,7 +105,23 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SearchFacesByImageRequestMarshaller _instance = new SearchFacesByImageRequestMarshaller();        
 
+        internal static SearchFacesByImageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SearchFacesByImageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

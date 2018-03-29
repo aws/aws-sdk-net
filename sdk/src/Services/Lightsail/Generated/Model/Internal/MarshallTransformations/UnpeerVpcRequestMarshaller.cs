@@ -66,7 +66,23 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UnpeerVpcRequestMarshaller _instance = new UnpeerVpcRequestMarshaller();        
 
+        internal static UnpeerVpcRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UnpeerVpcRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -73,5 +73,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static SetSubscriptionAttributesRequestMarshaller _instance = new SetSubscriptionAttributesRequestMarshaller();        
+
+        internal static SetSubscriptionAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetSubscriptionAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

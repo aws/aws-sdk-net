@@ -131,5 +131,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyVpcEndpointRequestMarshaller _instance = new ModifyVpcEndpointRequestMarshaller();        
+
+        internal static ModifyVpcEndpointRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyVpcEndpointRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

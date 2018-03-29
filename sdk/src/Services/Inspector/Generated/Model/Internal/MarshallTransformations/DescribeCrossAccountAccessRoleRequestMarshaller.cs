@@ -66,7 +66,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeCrossAccountAccessRoleRequestMarshaller _instance = new DescribeCrossAccountAccessRoleRequestMarshaller();        
 
+        internal static DescribeCrossAccountAccessRoleRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeCrossAccountAccessRoleRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

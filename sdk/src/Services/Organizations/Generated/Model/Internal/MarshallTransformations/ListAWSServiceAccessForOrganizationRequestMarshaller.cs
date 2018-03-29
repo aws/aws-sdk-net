@@ -88,7 +88,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListAWSServiceAccessForOrganizationRequestMarshaller _instance = new ListAWSServiceAccessForOrganizationRequestMarshaller();        
 
+        internal static ListAWSServiceAccessForOrganizationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListAWSServiceAccessForOrganizationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

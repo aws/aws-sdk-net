@@ -88,7 +88,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RecordActivityTaskHeartbeatRequestMarshaller _instance = new RecordActivityTaskHeartbeatRequestMarshaller();        
 
+        internal static RecordActivityTaskHeartbeatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RecordActivityTaskHeartbeatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

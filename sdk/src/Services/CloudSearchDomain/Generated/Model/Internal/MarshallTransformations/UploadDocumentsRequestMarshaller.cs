@@ -71,7 +71,23 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UploadDocumentsRequestMarshaller _instance = new UploadDocumentsRequestMarshaller();        
 
+        internal static UploadDocumentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UploadDocumentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

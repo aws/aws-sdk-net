@@ -98,7 +98,23 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static BatchMeterUsageRequestMarshaller _instance = new BatchMeterUsageRequestMarshaller();        
 
+        internal static BatchMeterUsageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static BatchMeterUsageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

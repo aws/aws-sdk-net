@@ -87,7 +87,23 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetAuthorizationTokenRequestMarshaller _instance = new GetAuthorizationTokenRequestMarshaller();        
 
+        internal static GetAuthorizationTokenRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetAuthorizationTokenRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

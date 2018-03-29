@@ -69,5 +69,23 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteIndexFieldRequestMarshaller _instance = new DeleteIndexFieldRequestMarshaller();        
+
+        internal static DeleteIndexFieldRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteIndexFieldRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

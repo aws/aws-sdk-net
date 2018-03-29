@@ -99,7 +99,23 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AddApplicationOutputRequestMarshaller _instance = new AddApplicationOutputRequestMarshaller();        
 
+        internal static AddApplicationOutputRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AddApplicationOutputRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

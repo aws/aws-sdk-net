@@ -88,7 +88,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AssociateElasticIpRequestMarshaller _instance = new AssociateElasticIpRequestMarshaller();        
 
+        internal static AssociateElasticIpRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AssociateElasticIpRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

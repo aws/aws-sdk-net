@@ -81,7 +81,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InitiateVaultLockRequestMarshaller _instance = new InitiateVaultLockRequestMarshaller();        
 
+        internal static InitiateVaultLockRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InitiateVaultLockRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

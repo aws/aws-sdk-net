@@ -133,7 +133,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static StartBuildRequestMarshaller _instance = new StartBuildRequestMarshaller();        
 
+        internal static StartBuildRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static StartBuildRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

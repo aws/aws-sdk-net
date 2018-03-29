@@ -94,7 +94,23 @@ namespace Amazon.Cloud9.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateEnvironmentMembershipRequestMarshaller _instance = new CreateEnvironmentMembershipRequestMarshaller();        
 
+        internal static CreateEnvironmentMembershipRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateEnvironmentMembershipRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

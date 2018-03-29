@@ -69,7 +69,23 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListBrokersRequestMarshaller _instance = new ListBrokersRequestMarshaller();        
 
+        internal static ListBrokersRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListBrokersRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

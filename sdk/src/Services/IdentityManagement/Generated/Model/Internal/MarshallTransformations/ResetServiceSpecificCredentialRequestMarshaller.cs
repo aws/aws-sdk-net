@@ -69,5 +69,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ResetServiceSpecificCredentialRequestMarshaller _instance = new ResetServiceSpecificCredentialRequestMarshaller();        
+
+        internal static ResetServiceSpecificCredentialRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResetServiceSpecificCredentialRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

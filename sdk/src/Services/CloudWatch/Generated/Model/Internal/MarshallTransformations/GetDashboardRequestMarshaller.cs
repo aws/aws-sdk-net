@@ -65,5 +65,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetDashboardRequestMarshaller _instance = new GetDashboardRequestMarshaller();        
+
+        internal static GetDashboardRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDashboardRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

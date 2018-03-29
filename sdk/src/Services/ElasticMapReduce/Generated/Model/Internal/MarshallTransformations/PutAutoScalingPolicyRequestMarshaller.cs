@@ -99,7 +99,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutAutoScalingPolicyRequestMarshaller _instance = new PutAutoScalingPolicyRequestMarshaller();        
 
+        internal static PutAutoScalingPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutAutoScalingPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

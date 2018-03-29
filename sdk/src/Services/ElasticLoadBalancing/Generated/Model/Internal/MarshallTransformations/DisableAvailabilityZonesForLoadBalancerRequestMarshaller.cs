@@ -74,5 +74,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DisableAvailabilityZonesForLoadBalancerRequestMarshaller _instance = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();        
+
+        internal static DisableAvailabilityZonesForLoadBalancerRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisableAvailabilityZonesForLoadBalancerRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

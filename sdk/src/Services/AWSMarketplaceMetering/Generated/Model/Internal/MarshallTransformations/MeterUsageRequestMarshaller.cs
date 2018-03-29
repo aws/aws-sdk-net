@@ -106,7 +106,23 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static MeterUsageRequestMarshaller _instance = new MeterUsageRequestMarshaller();        
 
+        internal static MeterUsageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static MeterUsageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

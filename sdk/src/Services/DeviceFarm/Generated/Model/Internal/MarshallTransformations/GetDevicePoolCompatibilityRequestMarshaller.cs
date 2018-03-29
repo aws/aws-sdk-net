@@ -105,7 +105,23 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetDevicePoolCompatibilityRequestMarshaller _instance = new GetDevicePoolCompatibilityRequestMarshaller();        
 
+        internal static GetDevicePoolCompatibilityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetDevicePoolCompatibilityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

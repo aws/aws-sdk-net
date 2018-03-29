@@ -69,7 +69,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListReusableDelegationSetsRequestMarshaller _instance = new ListReusableDelegationSetsRequestMarshaller();        
 
-        
+        internal static ListReusableDelegationSetsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListReusableDelegationSetsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

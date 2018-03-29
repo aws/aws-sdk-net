@@ -77,5 +77,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeEnvironmentManagedActionHistoryRequestMarshaller _instance = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();        
+
+        internal static DescribeEnvironmentManagedActionHistoryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeEnvironmentManagedActionHistoryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

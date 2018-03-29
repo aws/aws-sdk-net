@@ -66,7 +66,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.UseQueryString = true;
             return request;
         }
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListTagsForResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

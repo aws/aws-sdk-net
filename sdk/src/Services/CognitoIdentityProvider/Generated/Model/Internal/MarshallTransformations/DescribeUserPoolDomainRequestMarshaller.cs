@@ -82,7 +82,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeUserPoolDomainRequestMarshaller _instance = new DescribeUserPoolDomainRequestMarshaller();        
 
+        internal static DescribeUserPoolDomainRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeUserPoolDomainRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

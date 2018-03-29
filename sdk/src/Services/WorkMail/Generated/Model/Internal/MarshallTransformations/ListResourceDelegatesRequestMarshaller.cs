@@ -100,7 +100,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListResourceDelegatesRequestMarshaller _instance = new ListResourceDelegatesRequestMarshaller();        
 
+        internal static ListResourceDelegatesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListResourceDelegatesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

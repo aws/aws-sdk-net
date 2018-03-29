@@ -88,7 +88,23 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeAddressesRequestMarshaller _instance = new DescribeAddressesRequestMarshaller();        
 
+        internal static DescribeAddressesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAddressesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

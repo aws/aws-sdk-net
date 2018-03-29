@@ -94,7 +94,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static PutLifecycleEventHookExecutionStatusRequestMarshaller _instance = new PutLifecycleEventHookExecutionStatusRequestMarshaller();        
 
+        internal static PutLifecycleEventHookExecutionStatusRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PutLifecycleEventHookExecutionStatusRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

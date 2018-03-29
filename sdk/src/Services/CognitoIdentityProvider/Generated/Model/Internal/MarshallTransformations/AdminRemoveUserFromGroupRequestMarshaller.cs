@@ -94,7 +94,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AdminRemoveUserFromGroupRequestMarshaller _instance = new AdminRemoveUserFromGroupRequestMarshaller();        
 
+        internal static AdminRemoveUserFromGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AdminRemoveUserFromGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

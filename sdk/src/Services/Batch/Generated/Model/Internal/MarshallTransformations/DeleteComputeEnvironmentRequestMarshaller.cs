@@ -80,7 +80,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteComputeEnvironmentRequestMarshaller _instance = new DeleteComputeEnvironmentRequestMarshaller();        
 
+        internal static DeleteComputeEnvironmentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteComputeEnvironmentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

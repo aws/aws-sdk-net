@@ -82,7 +82,23 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetSizeConstraintSetRequestMarshaller _instance = new GetSizeConstraintSetRequestMarshaller();        
 
+        internal static GetSizeConstraintSetRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetSizeConstraintSetRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

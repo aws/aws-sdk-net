@@ -105,7 +105,23 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeEventAggregatesRequestMarshaller _instance = new DescribeEventAggregatesRequestMarshaller();        
 
+        internal static DescribeEventAggregatesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeEventAggregatesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

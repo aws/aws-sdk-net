@@ -94,7 +94,23 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListRetirableGrantsRequestMarshaller _instance = new ListRetirableGrantsRequestMarshaller();        
 
+        internal static ListRetirableGrantsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListRetirableGrantsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

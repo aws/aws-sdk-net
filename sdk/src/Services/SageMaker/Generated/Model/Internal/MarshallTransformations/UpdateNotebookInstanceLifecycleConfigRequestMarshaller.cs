@@ -114,7 +114,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateNotebookInstanceLifecycleConfigRequestMarshaller _instance = new UpdateNotebookInstanceLifecycleConfigRequestMarshaller();        
 
+        internal static UpdateNotebookInstanceLifecycleConfigRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateNotebookInstanceLifecycleConfigRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

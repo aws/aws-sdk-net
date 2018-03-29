@@ -65,7 +65,23 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetStreamingDistributionRequestMarshaller _instance = new GetStreamingDistributionRequestMarshaller();        
 
-        
+        internal static GetStreamingDistributionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetStreamingDistributionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

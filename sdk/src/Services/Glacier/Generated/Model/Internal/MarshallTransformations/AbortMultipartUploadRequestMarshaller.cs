@@ -69,7 +69,23 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AbortMultipartUploadRequestMarshaller _instance = new AbortMultipartUploadRequestMarshaller();        
 
+        internal static AbortMultipartUploadRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AbortMultipartUploadRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

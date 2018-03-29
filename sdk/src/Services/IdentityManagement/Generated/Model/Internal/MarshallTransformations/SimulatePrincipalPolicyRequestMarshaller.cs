@@ -141,5 +141,23 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static SimulatePrincipalPolicyRequestMarshaller _instance = new SimulatePrincipalPolicyRequestMarshaller();        
+
+        internal static SimulatePrincipalPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SimulatePrincipalPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

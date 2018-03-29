@@ -94,7 +94,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteProvisionedProductPlanRequestMarshaller _instance = new DeleteProvisionedProductPlanRequestMarshaller();        
 
+        internal static DeleteProvisionedProductPlanRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteProvisionedProductPlanRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

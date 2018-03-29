@@ -72,7 +72,23 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
 
             return request;
         }
+        private static ListApplicationVersionsRequestMarshaller _instance = new ListApplicationVersionsRequestMarshaller();        
 
+        internal static ListApplicationVersionsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListApplicationVersionsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

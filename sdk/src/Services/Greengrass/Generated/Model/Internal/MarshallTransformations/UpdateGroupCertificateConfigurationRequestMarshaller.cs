@@ -83,7 +83,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateGroupCertificateConfigurationRequestMarshaller _instance = new UpdateGroupCertificateConfigurationRequestMarshaller();        
 
+        internal static UpdateGroupCertificateConfigurationRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateGroupCertificateConfigurationRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

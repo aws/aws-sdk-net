@@ -94,7 +94,23 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static InitializeClusterRequestMarshaller _instance = new InitializeClusterRequestMarshaller();        
 
+        internal static InitializeClusterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static InitializeClusterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

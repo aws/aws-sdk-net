@@ -110,7 +110,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ModifyDocumentPermissionRequestMarshaller _instance = new ModifyDocumentPermissionRequestMarshaller();        
 
+        internal static ModifyDocumentPermissionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyDocumentPermissionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

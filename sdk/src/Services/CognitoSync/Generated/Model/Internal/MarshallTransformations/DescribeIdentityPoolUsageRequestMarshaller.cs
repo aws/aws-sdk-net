@@ -65,7 +65,23 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeIdentityPoolUsageRequestMarshaller _instance = new DescribeIdentityPoolUsageRequestMarshaller();        
 
+        internal static DescribeIdentityPoolUsageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeIdentityPoolUsageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

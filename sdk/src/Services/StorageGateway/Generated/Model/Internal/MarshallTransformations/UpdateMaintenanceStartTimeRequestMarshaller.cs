@@ -100,7 +100,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateMaintenanceStartTimeRequestMarshaller _instance = new UpdateMaintenanceStartTimeRequestMarshaller();        
 
+        internal static UpdateMaintenanceStartTimeRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateMaintenanceStartTimeRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

@@ -82,7 +82,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SendTaskHeartbeatRequestMarshaller _instance = new SendTaskHeartbeatRequestMarshaller();        
 
+        internal static SendTaskHeartbeatRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SendTaskHeartbeatRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

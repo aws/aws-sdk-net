@@ -100,7 +100,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListObjectParentPathsRequestMarshaller _instance = new ListObjectParentPathsRequestMarshaller();        
 
+        internal static ListObjectParentPathsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListObjectParentPathsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

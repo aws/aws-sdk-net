@@ -118,7 +118,23 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static GetResourceConfigHistoryRequestMarshaller _instance = new GetResourceConfigHistoryRequestMarshaller();        
 
+        internal static GetResourceConfigHistoryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetResourceConfigHistoryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

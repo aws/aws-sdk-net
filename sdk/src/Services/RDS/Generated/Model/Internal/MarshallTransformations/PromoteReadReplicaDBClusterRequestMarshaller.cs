@@ -65,5 +65,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static PromoteReadReplicaDBClusterRequestMarshaller _instance = new PromoteReadReplicaDBClusterRequestMarshaller();        
+
+        internal static PromoteReadReplicaDBClusterRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static PromoteReadReplicaDBClusterRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

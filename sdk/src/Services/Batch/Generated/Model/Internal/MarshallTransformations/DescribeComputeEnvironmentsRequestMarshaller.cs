@@ -97,7 +97,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeComputeEnvironmentsRequestMarshaller _instance = new DescribeComputeEnvironmentsRequestMarshaller();        
 
+        internal static DescribeComputeEnvironmentsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeComputeEnvironmentsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

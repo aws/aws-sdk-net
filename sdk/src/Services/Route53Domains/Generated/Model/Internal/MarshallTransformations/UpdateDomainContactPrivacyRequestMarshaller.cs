@@ -100,7 +100,23 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateDomainContactPrivacyRequestMarshaller _instance = new UpdateDomainContactPrivacyRequestMarshaller();        
 
+        internal static UpdateDomainContactPrivacyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateDomainContactPrivacyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

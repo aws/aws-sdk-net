@@ -65,5 +65,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static VerifyEmailAddressRequestMarshaller _instance = new VerifyEmailAddressRequestMarshaller();        
+
+        internal static VerifyEmailAddressRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static VerifyEmailAddressRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

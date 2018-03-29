@@ -82,7 +82,23 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteReplicationSubnetGroupRequestMarshaller _instance = new DeleteReplicationSubnetGroupRequestMarshaller();        
 
+        internal static DeleteReplicationSubnetGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteReplicationSubnetGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

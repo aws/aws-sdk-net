@@ -93,7 +93,23 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeWorkflowExecutionRequestMarshaller _instance = new DescribeWorkflowExecutionRequestMarshaller();        
 
+        internal static DescribeWorkflowExecutionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeWorkflowExecutionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

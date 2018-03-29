@@ -81,5 +81,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static ModifyInstancePlacementRequestMarshaller _instance = new ModifyInstancePlacementRequestMarshaller();        
+
+        internal static ModifyInstancePlacementRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ModifyInstancePlacementRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -94,7 +94,23 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListClusterJobsRequestMarshaller _instance = new ListClusterJobsRequestMarshaller();        
 
+        internal static ListClusterJobsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListClusterJobsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

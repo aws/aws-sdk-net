@@ -72,7 +72,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListVersionsByFunctionRequestMarshaller _instance = new ListVersionsByFunctionRequestMarshaller();        
 
+        internal static ListVersionsByFunctionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListVersionsByFunctionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

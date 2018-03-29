@@ -87,7 +87,23 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeLoadBasedAutoScalingRequestMarshaller _instance = new DescribeLoadBasedAutoScalingRequestMarshaller();        
 
+        internal static DescribeLoadBasedAutoScalingRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeLoadBasedAutoScalingRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

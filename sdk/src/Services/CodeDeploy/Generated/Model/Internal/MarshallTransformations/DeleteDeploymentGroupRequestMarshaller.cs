@@ -88,7 +88,23 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteDeploymentGroupRequestMarshaller _instance = new DeleteDeploymentGroupRequestMarshaller();        
 
+        internal static DeleteDeploymentGroupRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteDeploymentGroupRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

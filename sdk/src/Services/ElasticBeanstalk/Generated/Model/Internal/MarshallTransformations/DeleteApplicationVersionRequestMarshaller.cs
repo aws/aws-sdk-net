@@ -73,5 +73,23 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteApplicationVersionRequestMarshaller _instance = new DeleteApplicationVersionRequestMarshaller();        
+
+        internal static DeleteApplicationVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteApplicationVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

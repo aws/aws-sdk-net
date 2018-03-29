@@ -94,7 +94,23 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DisassociateDelegateFromResourceRequestMarshaller _instance = new DisassociateDelegateFromResourceRequestMarshaller();        
 
+        internal static DisassociateDelegateFromResourceRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DisassociateDelegateFromResourceRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

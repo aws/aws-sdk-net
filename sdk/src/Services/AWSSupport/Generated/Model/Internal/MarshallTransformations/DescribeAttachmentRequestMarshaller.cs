@@ -82,7 +82,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DescribeAttachmentRequestMarshaller _instance = new DescribeAttachmentRequestMarshaller();        
 
+        internal static DescribeAttachmentRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeAttachmentRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

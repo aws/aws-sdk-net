@@ -94,7 +94,23 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static DeleteApplicationOutputRequestMarshaller _instance = new DeleteApplicationOutputRequestMarshaller();        
 
+        internal static DeleteApplicationOutputRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteApplicationOutputRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

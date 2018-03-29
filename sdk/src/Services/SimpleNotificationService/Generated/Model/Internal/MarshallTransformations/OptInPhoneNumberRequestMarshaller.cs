@@ -65,5 +65,23 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             }
             return request;
         }
+                    private static OptInPhoneNumberRequestMarshaller _instance = new OptInPhoneNumberRequestMarshaller();        
+
+        internal static OptInPhoneNumberRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static OptInPhoneNumberRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

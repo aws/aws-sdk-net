@@ -69,7 +69,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ListInputSecurityGroupsRequestMarshaller _instance = new ListInputSecurityGroupsRequestMarshaller();        
 
+        internal static ListInputSecurityGroupsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ListInputSecurityGroupsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

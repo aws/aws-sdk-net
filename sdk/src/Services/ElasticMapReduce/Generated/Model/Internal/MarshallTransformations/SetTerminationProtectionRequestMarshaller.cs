@@ -93,7 +93,23 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static SetTerminationProtectionRequestMarshaller _instance = new SetTerminationProtectionRequestMarshaller();        
 
+        internal static SetTerminationProtectionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static SetTerminationProtectionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

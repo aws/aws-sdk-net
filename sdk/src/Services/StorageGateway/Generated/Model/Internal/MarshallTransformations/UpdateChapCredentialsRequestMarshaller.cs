@@ -100,7 +100,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateChapCredentialsRequestMarshaller _instance = new UpdateChapCredentialsRequestMarshaller();        
 
+        internal static UpdateChapCredentialsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateChapCredentialsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

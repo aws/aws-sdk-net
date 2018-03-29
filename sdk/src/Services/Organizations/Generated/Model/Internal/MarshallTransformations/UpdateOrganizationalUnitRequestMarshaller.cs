@@ -88,7 +88,23 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateOrganizationalUnitRequestMarshaller _instance = new UpdateOrganizationalUnitRequestMarshaller();        
 
+        internal static UpdateOrganizationalUnitRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateOrganizationalUnitRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

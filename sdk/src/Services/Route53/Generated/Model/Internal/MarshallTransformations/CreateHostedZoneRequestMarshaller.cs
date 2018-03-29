@@ -112,7 +112,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateHostedZoneRequestMarshaller _instance = new CreateHostedZoneRequestMarshaller();        
 
-        
+        internal static CreateHostedZoneRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateHostedZoneRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }    
 }

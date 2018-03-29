@@ -82,7 +82,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static ResolveCaseRequestMarshaller _instance = new ResolveCaseRequestMarshaller();        
 
+        internal static ResolveCaseRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static ResolveCaseRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

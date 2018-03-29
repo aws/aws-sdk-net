@@ -65,5 +65,23 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DecodeAuthorizationMessageRequestMarshaller _instance = new DecodeAuthorizationMessageRequestMarshaller();        
+
+        internal static DecodeAuthorizationMessageRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DecodeAuthorizationMessageRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

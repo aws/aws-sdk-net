@@ -96,7 +96,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static CreateResourceDefinitionVersionRequestMarshaller _instance = new CreateResourceDefinitionVersionRequestMarshaller();        
 
+        internal static CreateResourceDefinitionVersionRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateResourceDefinitionVersionRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

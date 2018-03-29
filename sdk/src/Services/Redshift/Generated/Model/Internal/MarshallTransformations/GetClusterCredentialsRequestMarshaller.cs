@@ -90,5 +90,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetClusterCredentialsRequestMarshaller _instance = new GetClusterCredentialsRequestMarshaller();        
+
+        internal static GetClusterCredentialsRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetClusterCredentialsRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

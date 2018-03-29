@@ -85,5 +85,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static CreateCustomVerificationEmailTemplateRequestMarshaller _instance = new CreateCustomVerificationEmailTemplateRequestMarshaller();        
+
+        internal static CreateCustomVerificationEmailTemplateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static CreateCustomVerificationEmailTemplateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -122,7 +122,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static UpdateFleetAttributesRequestMarshaller _instance = new UpdateFleetAttributesRequestMarshaller();        
 
+        internal static UpdateFleetAttributesRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateFleetAttributesRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

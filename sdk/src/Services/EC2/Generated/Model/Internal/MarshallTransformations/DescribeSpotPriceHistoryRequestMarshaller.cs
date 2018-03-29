@@ -120,5 +120,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DescribeSpotPriceHistoryRequestMarshaller _instance = new DescribeSpotPriceHistoryRequestMarshaller();        
+
+        internal static DescribeSpotPriceHistoryRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DescribeSpotPriceHistoryRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

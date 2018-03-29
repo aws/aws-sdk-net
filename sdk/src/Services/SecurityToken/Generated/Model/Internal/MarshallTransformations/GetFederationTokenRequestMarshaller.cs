@@ -73,5 +73,23 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetFederationTokenRequestMarshaller _instance = new GetFederationTokenRequestMarshaller();        
+
+        internal static GetFederationTokenRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetFederationTokenRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

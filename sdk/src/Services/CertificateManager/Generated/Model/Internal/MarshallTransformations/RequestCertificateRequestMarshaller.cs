@@ -132,7 +132,23 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static RequestCertificateRequestMarshaller _instance = new RequestCertificateRequestMarshaller();        
 
+        internal static RequestCertificateRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static RequestCertificateRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

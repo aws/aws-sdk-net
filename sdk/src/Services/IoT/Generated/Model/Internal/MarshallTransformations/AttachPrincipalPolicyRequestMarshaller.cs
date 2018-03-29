@@ -69,7 +69,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AttachPrincipalPolicyRequestMarshaller _instance = new AttachPrincipalPolicyRequestMarshaller();        
 
+        internal static AttachPrincipalPolicyRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AttachPrincipalPolicyRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

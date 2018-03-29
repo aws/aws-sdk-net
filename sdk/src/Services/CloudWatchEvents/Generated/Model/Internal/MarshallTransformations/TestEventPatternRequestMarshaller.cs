@@ -88,7 +88,23 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static TestEventPatternRequestMarshaller _instance = new TestEventPatternRequestMarshaller();        
 
+        internal static TestEventPatternRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static TestEventPatternRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }

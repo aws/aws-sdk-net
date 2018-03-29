@@ -61,5 +61,23 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static GetCallerIdentityRequestMarshaller _instance = new GetCallerIdentityRequestMarshaller();        
+
+        internal static GetCallerIdentityRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static GetCallerIdentityRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

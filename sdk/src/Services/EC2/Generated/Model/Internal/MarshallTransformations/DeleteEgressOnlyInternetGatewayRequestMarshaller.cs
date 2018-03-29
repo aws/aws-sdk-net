@@ -65,5 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
+                    private static DeleteEgressOnlyInternetGatewayRequestMarshaller _instance = new DeleteEgressOnlyInternetGatewayRequestMarshaller();        
+
+        internal static DeleteEgressOnlyInternetGatewayRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static DeleteEgressOnlyInternetGatewayRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
     }
 }

@@ -104,7 +104,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             return request;
         }
+        private static AdminLinkProviderForUserRequestMarshaller _instance = new AdminLinkProviderForUserRequestMarshaller();        
 
+        internal static AdminLinkProviderForUserRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static AdminLinkProviderForUserRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
 
     }
 }
