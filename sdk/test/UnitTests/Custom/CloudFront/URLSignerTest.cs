@@ -2,8 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Amazon.CloudFront;
-using System.Diagnostics;
-using System.Security;
+using ThirdParty.Json.LitJson;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -43,6 +43,83 @@ namespace AWSSDK_DotNet35.UnitTests
                 "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(2017, 4, 14));
 
             Assert.AreEqual(expectedSignedURL, signedURL);
+        }
+
+        [TestMethod]
+        [TestCategory("CloudFront")]
+        public void PolicyStatementWithNoAddress()
+        {
+            var resourcePath = "http://d111111abcdef8.cloudfront.net/game_download.zip";
+            var dateTime = new DateTime(2013, 1, 1, 10, 00, 0, DateTimeKind.Utc);
+            var policyWithEmptyString = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(
+                                    resourcePath,
+                                    dateTime,
+                                    "");
+
+            var policyWithNull = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(
+                                    resourcePath,
+                                    dateTime,
+                                    null);
+
+            Assert.AreEqual(policyWithEmptyString, policyWithNull);
+
+            foreach(var policy in new List<string> { policyWithEmptyString, policyWithNull })
+            {
+                var jsonObject = JsonMapper.ToObject(policy);
+
+                var statementList = jsonObject["Statement"];
+                Assert.IsTrue(statementList.IsArray);
+
+                var statement = statementList[0];
+                Assert.IsNotNull(statement);
+
+                var resource = statement["Resource"];
+                Assert.AreEqual(resource.ToString(), resourcePath);
+
+                var condition = statement["Condition"];
+                Assert.IsNotNull(condition);
+                Assert.IsTrue(condition.IsObject);
+
+                var IpAddress = condition["IpAddress"];
+                Assert.IsNull(IpAddress);
+
+                var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
+                Assert.AreEqual(1357034400, long.Parse(epochTime.ToString()));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("CloudFront")]
+        public void PolicyStatementWithAddress()
+        {
+            var resourcePath = "http://*";
+            var dateTime = new DateTime(2013, 1, 1, 10, 00, 0, DateTimeKind.Utc);
+            var ipRange = "192.0.2.0/24";
+            var cookies = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(
+                                    resourcePath,
+                                    dateTime,
+                                    ipRange);
+
+            var jsonObject = JsonMapper.ToObject(cookies);
+
+            var statementList = jsonObject["Statement"];
+            Assert.IsTrue(statementList.IsArray);
+
+            var statement = statementList[0];
+            Assert.IsNotNull(statement);
+
+            var resource = statement["Resource"];
+            Assert.AreEqual(resource.ToString(), resourcePath);
+
+            var condition = statement["Condition"];
+            Assert.IsNotNull(condition);
+            Assert.IsTrue(condition.IsObject);
+
+            var sourceIp = condition["IpAddress"]["AWS:SourceIp"];
+            Assert.AreEqual(ipRange, sourceIp.ToString());
+
+            var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
+            Assert.AreEqual(1357034400, long.Parse(epochTime.ToString()));
         }
     }
 }

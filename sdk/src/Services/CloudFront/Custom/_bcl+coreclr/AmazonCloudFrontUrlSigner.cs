@@ -374,8 +374,7 @@ namespace Amazon.CloudFront
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         /// <param name="limitToIpAddressCIDR">An optional range of client IP addresses that will be allowed
         /// to access the distribution, specified as a CIDR range. If
-        /// null, the CIDR will be <tt>0.0.0.0/0</tt> and any client will
-        /// be permitted.</param>
+        /// null or empty any client will be permitted.</param>
         /// <param name="activeFrom">An optional UTC time and date when the signed URL will become
         /// active. A value of DateTime.MinValue (the default value of DateTime) is ignored.
         /// </param>
@@ -401,8 +400,6 @@ namespace Amazon.CloudFront
             {
                 resourcePath = "*";
             }
-            string ipAddress = (string.IsNullOrEmpty(limitToIpAddressCIDR) ? "0.0.0.0/0" // No IP restriction
-                    : limitToIpAddressCIDR);
 
             string policy = "{\"Statement\": [{"
                     + "\"Resource\":\""
@@ -412,9 +409,10 @@ namespace Amazon.CloudFront
                     + "\"DateLessThan\":{\"AWS:EpochTime\":"
                     + AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime())
                     + "}"
-                    + ",\"IpAddress\":{\"AWS:SourceIp\":\""
-                    + ipAddress
-                    + "\"}"
+                // omitting IpAddress parameter indicates any ip address access
+                    + (string.IsNullOrEmpty(limitToIpAddressCIDR)
+                        ? ""
+                        : ",\"IpAddress\":{\"AWS:SourceIp\":\"" + limitToIpAddressCIDR + "\"}")
                 // Ignore epochDateGreaterThan if its value is DateTime.MinValue, the default value of DateTime.
                     + (activeFrom > DateTime.MinValue ? ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
                     + AWSSDKUtils.ConvertToUnixEpochSecondsString(activeFrom.ToUniversalTime()) + "}"
@@ -453,8 +451,7 @@ namespace Amazon.CloudFront
         /// </param>
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         /// <param name="limitToIpAddressCIDR">An optional range of client IP addresses that will be allowed
-        /// to access the distribution, specified as a CIDR range. If
-        /// null, the CIDR will be <tt>0.0.0.0/0</tt> and any client will
+        /// to access the distribution, specified as a CIDR range. If  null, or empty, any client will
         /// be permitted.</param>        
         /// <returns>A policy document describing the access permission to apply when
         /// generating a signed URL.</returns>
