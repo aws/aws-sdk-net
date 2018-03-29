@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This action is idempotent; it does not fail or return an error if you add an existing
+    /// This operation is idempotent; it does not fail or return an error if you add an existing
     /// client ID to the provider.
     /// </para>
     /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource
         /// to add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-        /// action.
+        /// operation.
         /// </para>
         /// </summary>
         public string OpenIDConnectProviderArn

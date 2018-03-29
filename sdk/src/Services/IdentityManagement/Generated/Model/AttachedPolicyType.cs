@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// An attached policy is a managed policy that has been attached to a user, group, or
     /// role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>,
     /// <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a>
-    /// actions. 
+    /// operations. 
     /// </para>
     ///  
     /// <para>

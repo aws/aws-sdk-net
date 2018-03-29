@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.
+    /// This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
     /// </para>
     /// </summary>
     public partial class AccessKeyLastUsed
@@ -45,7 +45,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property LastUsedDate. 
         /// <para>
         /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when the access key was most recently used. This field is null when:
+        /// format</a>, when the access key was most recently used. This field is null in the
+        /// following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS region where this access key was most recently used. This field is displays
-        /// "N/A" when:
+        /// "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -115,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The name of the AWS service with which this access key was most recently used. This
-        /// field displays "N/A" when:
+        /// field displays "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>

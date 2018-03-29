@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about AWS Organizations's effect on a policy simulation.
+    /// This is the response object from the UpdateRole operation.
     /// </summary>
-    public partial class OrganizationsDecisionDetail
+    public partial class UpdateRoleResponse : AmazonWebServiceResponse
     {
-        private bool? _allowedByOrganizations;
-
-        /// <summary>
-        /// Gets and sets the property AllowedByOrganizations. 
-        /// <para>
-        /// Specifies whether the simulated operation is allowed by the AWS Organizations service
-        /// control policies that impact the simulated user's account.
-        /// </para>
-        /// </summary>
-        public bool AllowedByOrganizations
-        {
-            get { return this._allowedByOrganizations.GetValueOrDefault(); }
-            set { this._allowedByOrganizations = value; }
-        }
-
-        // Check to see if AllowedByOrganizations property is set
-        internal bool IsSetAllowedByOrganizations()
-        {
-            return this._allowedByOrganizations.HasValue; 
-        }
 
     }
 }

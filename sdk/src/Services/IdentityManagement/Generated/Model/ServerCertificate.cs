@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    ///  This data type is used as a response element in the <a>GetServerCertificate</a> action.
+    ///  This data type is used as a response element in the <a>GetServerCertificate</a> operation.
     /// 
     /// </para>
     /// </summary>

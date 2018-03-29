@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListServerCertificates operation.
     /// Lists the server certificates stored in IAM that have the specified path prefix. If
-    /// none exist, the action returns an empty list.
+    /// none exist, the operation returns an empty list.
     /// 
     ///  
     /// <para>
@@ -39,9 +39,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about working with server certificates, including a list of AWS
-    /// services that can use the server certificates that you manage with IAM, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
-    /// with Server Certificates</a> in the <i>IAM User Guide</i>.
+    /// For more information about working with server certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working
+    /// with Server Certificates</a> in the <i>IAM User Guide</i>. This topic also includes
+    /// a list of AWS services that can use the server certificates that you manage with IAM.
     /// </para>
     /// </summary>
     public partial class ListServerCertificatesRequest : AmazonIdentityManagementServiceRequest
@@ -111,11 +111,11 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/), listing
-        /// all server certificates. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+        /// all server certificates. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
         /// pattern</a>) a string of characters consisting of either a forward slash (/) by itself
-        /// or a string that must begin and end with forward slashes, containing any ASCII character
-        /// from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// or a string that must begin and end with forward slashes. In addition, it can contain
+        /// any ASCII character from the ! (\u0021) through the DEL character (\u007F), including
+        /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string PathPrefix

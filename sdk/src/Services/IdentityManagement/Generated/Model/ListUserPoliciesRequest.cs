@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters. If there are no inline policies embedded with the specified user, the
-    /// action returns an empty list.
+    /// operation returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListUserPoliciesRequest : AmazonIdentityManagementServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates ListUserPoliciesRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user to list policies for. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="userName">The name of the user to list policies for. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
         public ListUserPoliciesRequest(string userName)
         {
             _userName = userName;
@@ -121,7 +121,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

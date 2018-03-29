@@ -30,15 +30,16 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
     /// Creates a new role for your AWS account. For more information about roles, go to <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with Roles</a>. For information about limitations on role names and the number of
-    /// roles you can create, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>.
+    /// For information about limitations on role names and the number of roles you can create,
+    /// go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
     /// on IAM Entities</a> in the <i>IAM User Guide</i>.
     /// </summary>
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
     {
         private string _assumeRolePolicyDocument;
         private string _description;
+        private int? _maxSessionDuration;
         private string _path;
         private string _roleName;
 
@@ -51,12 +52,23 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-        /// parameter is a string of characters consisting of any printable ASCII character ranging
-        /// from the space character (\u0020) through end of the ASCII character range as well
-        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
-        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
-        /// (\u000A), and carriage return (\u000D).
+        /// parameter is a string of characters consisting of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any printable ASCII character ranging from the space character (\u0020) through the
+        /// end of the ASCII character range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// \u00FF)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AssumeRolePolicyDocument
         {
@@ -73,7 +85,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A customer-provided description of the role.
+        /// A description of the role.
         /// </para>
         /// </summary>
         public string Description
@@ -89,6 +101,39 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxSessionDuration. 
+        /// <para>
+        /// The maximum session duration (in seconds) that you want to set for the specified role.
+        /// If you do not specify a value for this setting, the default maximum of one hour is
+        /// applied. This setting can have a value from 1 hour to 12 hours.
+        /// </para>
+        ///  
+        /// <para>
+        /// Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code>
+        /// API parameter or the <code>duration-seconds</code> CLI parameter to request a longer
+        /// session. The <code>MaxSessionDuration</code> setting determines the maximum duration
+        /// that can be requested using the <code>DurationSeconds</code> parameter. If users don't
+        /// specify a value for the <code>DurationSeconds</code> parameter, their security credentials
+        /// are valid for one hour by default. This applies when you use the <code>AssumeRole*</code>
+        /// API operations or the <code>assume-role*</code> CLI operations but does not apply
+        /// when you use those operations to create a console URL. For more information, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+        /// Roles</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int MaxSessionDuration
+        {
+            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            set { this._maxSessionDuration = value; }
+        }
+
+        // Check to see if MaxSessionDuration property is set
+        internal bool IsSetMaxSessionDuration()
+        {
+            return this._maxSessionDuration.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
         ///  The path to the role. For more information about paths, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -100,11 +145,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
-        /// that must begin and end with forward slashes, containing any ASCII character from
-        /// the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// that must begin and end with forward slashes. In addition, it can contain any ASCII
+        /// character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+        /// characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string Path

@@ -46,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">The name of the group. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="groupName">The name of the group. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
         public GetGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -61,7 +61,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string GroupName

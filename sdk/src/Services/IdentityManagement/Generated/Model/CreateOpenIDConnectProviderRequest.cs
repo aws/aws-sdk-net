@@ -35,21 +35,35 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// The OIDC provider that you create with this operation can be used as a principal in
-    /// a role's trust policy to establish a trust relationship between AWS and the OIDC provider.
+    /// a role's trust policy. Such a policy establishes a trust relationship between AWS
+    /// and the OIDC provider.
     /// </para>
     ///  
     /// <para>
-    /// When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider
-    /// (IdP) to trust, a list of client IDs (also known as audiences) that identify the application
-    /// or applications that are allowed to authenticate using the OIDC provider, and a list
-    /// of thumbprints of the server certificate(s) that the IdP uses. You get all of this
-    /// information from the OIDC IdP that you want to use for access to AWS.
+    /// When you create the IAM OIDC provider, you specify the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The URL of the OIDC identity provider (IdP) to trust
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A list of client IDs (also known as audiences) that identify the application or applications
+    /// that are allowed to authenticate using the OIDC provider
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A list of thumbprints of the server certificate(s) that the IdP uses.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You get all of this information from the OIDC IdP that you want to use to access AWS.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Because trust for the OIDC provider is ultimately derived from the IAM provider that
-    /// this action creates, it is a best practice to limit access to the <a>CreateOpenIDConnectProvider</a>
-    /// action to highly-privileged users.
+    /// Because trust for the OIDC provider is derived from the IAM provider that this operation
+    /// creates, it is best to limit access to the <a>CreateOpenIDConnectProvider</a> operation
+    /// to highly privileged users.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,7 +89,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// There is no defined format for a client ID. The <code>CreateOpenIDConnectProviderRequest</code>
-        /// action accepts client IDs up to 255 characters long.
+        /// operation accepts client IDs up to 255 characters long.
         /// </para>
         /// </summary>
         public List<string> ClientIDList
@@ -94,7 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ThumbprintList. 
         /// <para>
         /// A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's
-        /// server certificate(s). Typically this list includes only one entry. However, IAM lets
+        /// server certificates. Typically this list includes only one entry. However, IAM lets
         /// you have up to five thumbprints for an OIDC provider. This lets you maintain multiple
         /// thumbprints if the identity provider is rotating certificates.
         /// </para>
@@ -107,9 +121,10 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// You must provide at least one thumbprint when creating an IAM OIDC provider. For example,
-        /// if the OIDC provider is <code>server.example.com</code> and the provider stores its
-        /// keys at "https://keys.server.example.com/openid-connect", the thumbprint string would
-        /// be the hex-encoded SHA-1 hash value of the certificate used by https://keys.server.example.com.
+        /// assume that the OIDC provider is <code>server.example.com</code> and the provider
+        /// stores its keys at https://keys.server.example.com/openid-connect. In that case, the
+        /// thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used
+        /// by https://keys.server.example.com.
         /// </para>
         ///  
         /// <para>
@@ -132,10 +147,11 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of the identity provider. The URL must begin with "https://" and should correspond
-        /// to the <code>iss</code> claim in the provider's OpenID Connect ID tokens. Per the
-        /// OIDC standard, path components are allowed but query parameters are not. Typically
-        /// the URL consists of only a host name, like "https://server.example.org" or "https://example.com".
+        /// The URL of the identity provider. The URL must begin with <code>https://</code> and
+        /// should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID
+        /// tokens. Per the OIDC standard, path components are allowed but query parameters are
+        /// not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code>
+        /// or <code>https://example.com</code>.
         /// </para>
         ///  
         /// <para>

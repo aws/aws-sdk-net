@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
     /// parameters. If there are no inline policies embedded with the specified role, the
-    /// action returns an empty list.
+    /// operation returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListRolePoliciesRequest : AmazonIdentityManagementServiceRequest

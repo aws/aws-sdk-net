@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// An object that contains details about how a service-linked role is used.
+    /// An object that contains details about how a service-linked role is used, if that information
+    /// is returned by the service.
     /// 
     ///  
     /// <para>

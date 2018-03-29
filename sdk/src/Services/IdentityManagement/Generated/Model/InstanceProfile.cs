@@ -32,7 +32,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the following actions:
+    /// This data type is used as a response element in the following operations:
     /// </para>
     ///  <ul> <li> 
     /// <para>

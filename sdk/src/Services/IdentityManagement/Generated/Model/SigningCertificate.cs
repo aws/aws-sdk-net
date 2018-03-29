@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>UploadSigningCertificate</a>
-    /// and <a>ListSigningCertificates</a> actions. 
+    /// and <a>ListSigningCertificates</a> operations. 
     /// </para>
     /// </summary>
     public partial class SigningCertificate
@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <param name="userName">The name of the user the signing certificate is associated with.</param>
         /// <param name="certificateId">The ID for the signing certificate.</param>
         /// <param name="certificateBody">The contents of the signing certificate.</param>
-        /// <param name="status">The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while <code>Inactive</code> means it is not.</param>
+        /// <param name="status">The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</param>
         public SigningCertificate(string userName, string certificateId, string certificateBody, StatusType status)
         {
             _userName = userName;
@@ -103,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the signing certificate. <code>Active</code> means the key is valid
+        /// The status of the signing certificate. <code>Active</code> means that the key is valid
         /// for API calls, while <code>Inactive</code> means it is not.
         /// </para>
         /// </summary>

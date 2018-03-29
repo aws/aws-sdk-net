@@ -30,7 +30,12 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
     /// Adds the specified IAM role to the specified instance profile. An instance profile
-    /// can contain only one role, and this limit cannot be increased.
+    /// can contain only one role, and this limit cannot be increased. You can remove the
+    /// existing role and then add a different role to an instance profile. You must then
+    /// wait for the change to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+    /// consistency</a>. To force the change, you must <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
+    /// the instance profile</a> and then <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
+    /// the instance profile</a>, or you can stop your instance and then restart it.
     /// 
     ///  <note> 
     /// <para>
@@ -58,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string InstanceProfileName

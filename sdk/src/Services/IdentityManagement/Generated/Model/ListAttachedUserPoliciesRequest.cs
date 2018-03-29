@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
     /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
     /// policies to only those matching the specified path prefix. If there are no policies
     /// attached to the specified group (or none that match the specified path prefix), the
-    /// action returns an empty list.
+    /// operation returns an empty list.
     /// </para>
     /// </summary>
     public partial class ListAttachedUserPoliciesRequest : AmazonIdentityManagementServiceRequest
@@ -109,11 +109,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
-        /// that must begin and end with forward slashes, containing any ASCII character from
-        /// the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// that must begin and end with forward slashes. In addition, it can contain any ASCII
+        /// character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+        /// characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string PathPrefix
@@ -137,7 +137,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

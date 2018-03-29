@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the result of the simulation of a single API action call on a single resource.
+    /// Contains the result of the simulation of a single API operation call on a single resource.
     /// 
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EvalResourceDecision. 
         /// <para>
-        /// The result of the simulation of the simulated API action on the resource specified
+        /// The result of the simulation of the simulated API operation on the resource specified
         /// in <code>EvalResourceName</code>.
         /// </para>
         /// </summary>
@@ -106,9 +106,10 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MatchedStatements. 
         /// <para>
         /// A list of the statements in the input policies that determine the result for this
-        /// part of the simulation. Remember that even if multiple statements allow the action
-        /// on the resource, if <i>any</i> statement denies that action, then the explicit deny
-        /// overrides any allow, and the deny statement is the only entry included in the result.
+        /// part of the simulation. Remember that even if multiple statements allow the operation
+        /// on the resource, if <i>any</i> statement denies that operation, then the explicit
+        /// deny overrides any allow, and the deny statement is the only entry included in the
+        /// result.
         /// </para>
         /// </summary>
         public List<Statement> MatchedStatements

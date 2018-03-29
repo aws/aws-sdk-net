@@ -39,12 +39,13 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// To change an IAM group name the requester must have appropriate permissions on both
-    /// the source object and the target object. For example, to change "Managers" to "MGRs",
-    /// the entity making the request must have permission on both "Managers" and "MGRs",
-    /// or must have permission on all (*). For more information about permissions, see <a
-    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
-    /// and Policies</a>. 
+    /// The person making the request (the principal), must have permission to change the
+    /// role group with the old name and the new name. For example, to change the group named
+    /// <code>Managers</code> to <code>MGRs</code>, the principal must have a policy that
+    /// allows them to update both groups. If the principal has permission to update the <code>Managers</code>
+    /// group, but not the <code>MGRs</code> group, then the update fails. For more information
+    /// about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+    /// Management</a>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -62,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">Name of the IAM group to update. If you're changing the name of the group, this is the original name. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="groupName">Name of the IAM group to update. If you're changing the name of the group, this is the original name. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
         public UpdateGroupRequest(string groupName)
         {
             _groupName = groupName;
@@ -78,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string GroupName
@@ -102,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string NewGroupName
@@ -124,11 +125,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
-        /// that must begin and end with forward slashes, containing any ASCII character from
-        /// the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-        /// digits, and upper and lowercased letters.
+        /// that must begin and end with forward slashes. In addition, it can contain any ASCII
+        /// character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+        /// characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
         public string NewPath

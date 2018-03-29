@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This action is idempotent; it does not fail or return an error if you try to remove
+    /// This operation is idempotent; it does not fail or return an error if you try to remove
     /// a client ID that does not exist.
     /// </para>
     /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client
         /// ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
-        /// action.
+        /// operation.
         /// </para>
         ///  
         /// <para>

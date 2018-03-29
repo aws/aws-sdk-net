@@ -39,8 +39,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// This action is idempotent; it does not fail or return an error if you call the action
-    /// for a provider that does not exist.
+    /// This operation is idempotent; it does not fail or return an error if you call the
+    /// operation for a provider that does not exist.
     /// </para>
     /// </summary>
     public partial class DeleteOpenIDConnectProviderRequest : AmazonIdentityManagementServiceRequest
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object
         /// to delete. You can get a list of OpenID Connect provider resource ARNs by using the
-        /// <a>ListOpenIDConnectProviders</a> action.
+        /// <a>ListOpenIDConnectProviders</a> operation.
         /// </para>
         /// </summary>
         public string OpenIDConnectProviderArn

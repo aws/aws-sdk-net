@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
     /// Returns information about the signing certificates associated with the specified IAM
-    /// user. If there are none, the action returns an empty list.
+    /// user. If there are none, the operation returns an empty list.
     /// 
     ///  
     /// <para>
@@ -41,8 +41,9 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
     /// based on the AWS access key ID used to sign the request for this API. Because this
-    /// action works for access keys under the AWS account, you can use this action to manage
-    /// root credentials even if the AWS account has no associated users.
+    /// operation works for access keys under the AWS account, you can use this operation
+    /// to manage AWS account root user credentials even if the AWS account has no associated
+    /// users.
     /// </para>
     /// </summary>
     public partial class ListSigningCertificatesRequest : AmazonIdentityManagementServiceRequest
@@ -112,7 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

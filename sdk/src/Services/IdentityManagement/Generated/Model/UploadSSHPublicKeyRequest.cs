@@ -33,9 +33,9 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// The SSH public key uploaded by this action can be used only for authenticating the
-    /// associated IAM user to an AWS CodeCommit repository. For more information about using
-    /// SSH keys to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
+    /// The SSH public key uploaded by this operation can be used only for authenticating
+    /// the associated IAM user to an AWS CodeCommit repository. For more information about
+    /// using SSH keys to authenticate to an AWS CodeCommit repository, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set
     /// up AWS CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
     /// </para>
     /// </summary>
@@ -52,12 +52,23 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-        /// parameter is a string of characters consisting of any printable ASCII character ranging
-        /// from the space character (\u0020) through end of the ASCII character range as well
-        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
-        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
-        /// (\u000A), and carriage return (\u000D).
+        /// parameter is a string of characters consisting of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Any printable ASCII character ranging from the space character (\u0020) through the
+        /// end of the ASCII character range
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// \u00FF)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SSHPublicKeyBody
         {
@@ -80,7 +91,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

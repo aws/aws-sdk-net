@@ -33,7 +33,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a>
-    /// actions. 
+    /// operations. 
     /// </para>
     /// </summary>
     public partial class SSHPublicKey
@@ -102,9 +102,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the SSH public key. <code>Active</code> means the key can be used for
-        /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means the
-        /// key cannot be used.
+        /// The status of the SSH public key. <code>Active</code> means that the key can be used
+        /// for authentication with an AWS CodeCommit repository. <code>Inactive</code> means
+        /// that the key cannot be used.
         /// </para>
         /// </summary>
         public StatusType Status

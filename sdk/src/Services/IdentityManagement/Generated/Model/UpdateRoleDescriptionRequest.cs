@@ -29,7 +29,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRoleDescription operation.
-    /// Modifies the description of a role.
+    /// Use instead.
+    /// 
+    ///  
+    /// <para>
+    /// Modifies only the description of a role. This operation performs the same function
+    /// as the <code>Description</code> parameter in the <code>UpdateRole</code> operation.
+    /// </para>
     /// </summary>
     public partial class UpdateRoleDescriptionRequest : AmazonIdentityManagementServiceRequest
     {
