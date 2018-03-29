@@ -647,14 +647,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("            var marshaller = new ");
+            this.Write("            var marshaller = ");
             
             #line 242 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 243 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -848,14 +848,14 @@ AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(o
             #line default
             #line hidden
             this.Write("        \toptions = options == null?new AsyncOptions():options;\r\n            var m" +
-                    "arshaller = new ");
+                    "arshaller = ");
             
             #line 294 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 295 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));

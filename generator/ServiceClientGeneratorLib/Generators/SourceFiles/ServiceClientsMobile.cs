@@ -733,14 +733,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("Request request)\r\n        {\r\n            var marshaller = new ");
+            this.Write("Request request)\r\n        {\r\n            var marshaller = ");
             
             #line 292 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 293 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -894,14 +894,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
-                    "ancellationToken))\r\n        {\r\n            var marshaller = new ");
+                    "ancellationToken))\r\n        {\r\n            var marshaller = ");
             
             #line 334 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 335 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));

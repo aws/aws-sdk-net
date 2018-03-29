@@ -744,14 +744,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("Request request)\r\n        {\r\n            var marshaller = new ");
+            this.Write("Request request)\r\n        {\r\n            var marshaller = ");
             
             #line 288 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 289 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
@@ -821,14 +821,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             this.Write("Request request, AsyncCallback callback, object state)\r\n        {\r\n            va" +
-                    "r marshaller = new ");
+                    "r marshaller = ");
             
             #line 305 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("RequestMarshaller();\r\n            var unmarshaller = ");
+            this.Write("RequestMarshaller.Instance;\r\n            var unmarshaller = ");
             
             #line 306 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
