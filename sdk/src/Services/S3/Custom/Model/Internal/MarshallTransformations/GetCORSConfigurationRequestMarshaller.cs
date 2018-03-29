@@ -43,6 +43,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetCORSConfigurationRequestMarshaller _instance;
+
+	    public static GetCORSConfigurationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetCORSConfigurationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

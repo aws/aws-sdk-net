@@ -208,6 +208,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static PutLifecycleConfigurationRequestMarshaller _instance;
+
+	    public static PutLifecycleConfigurationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutLifecycleConfigurationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

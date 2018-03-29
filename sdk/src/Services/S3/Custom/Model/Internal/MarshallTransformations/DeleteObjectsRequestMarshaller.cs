@@ -99,6 +99,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static DeleteObjectsRequestMarshaller _instance;
+
+	    public static DeleteObjectsRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new DeleteObjectsRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

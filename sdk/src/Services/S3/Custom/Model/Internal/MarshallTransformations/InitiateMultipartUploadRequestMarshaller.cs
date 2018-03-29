@@ -87,6 +87,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static InitiateMultipartUploadRequestMarshaller _instance;
+
+	    public static InitiateMultipartUploadRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new InitiateMultipartUploadRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

@@ -50,6 +50,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static AbortMultipartUploadRequestMarshaller _instance;
+
+	    public static AbortMultipartUploadRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new AbortMultipartUploadRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

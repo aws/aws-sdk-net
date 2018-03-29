@@ -43,6 +43,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetBucketTaggingRequestMarshaller _instance;
+
+	    public static GetBucketTaggingRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetBucketTaggingRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

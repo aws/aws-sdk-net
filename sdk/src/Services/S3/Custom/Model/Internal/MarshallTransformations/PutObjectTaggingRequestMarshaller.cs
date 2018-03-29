@@ -69,6 +69,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+        private static PutObjectTaggingRequestMarshaller _instance;
+
+        public static PutObjectTaggingRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new PutObjectTaggingRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }
     

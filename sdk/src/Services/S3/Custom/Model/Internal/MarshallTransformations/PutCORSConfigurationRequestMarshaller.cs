@@ -155,6 +155,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return request;
         }
+
+	    private static PutCORSConfigurationRequestMarshaller _instance;
+
+	    public static PutCORSConfigurationRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new PutCORSConfigurationRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
 

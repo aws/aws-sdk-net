@@ -54,5 +54,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+        private static DeleteObjectTaggingRequestMarshaller _instance;
+
+        public static DeleteObjectTaggingRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new DeleteObjectTaggingRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }

@@ -42,6 +42,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+	    private static GetBucketVersioningRequestMarshaller _instance;
+
+	    public static GetBucketVersioningRequestMarshaller Instance
+	    {
+	        get
+	        {
+	            if (_instance == null)
+	            {
+	                _instance = new GetBucketVersioningRequestMarshaller();
+	            }
+	            return _instance;
+	        }
+	    }
     }
 }
     

@@ -39,6 +39,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             return request;
         }
+
+        private static HeadBucketRequestMarshaller _instance;
+
+        public static HeadBucketRequestMarshaller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new HeadBucketRequestMarshaller();
+                }
+                return _instance;
+            }
+        }
     }
 }
     
