@@ -112,7 +112,7 @@ namespace Amazon.IotData
         /// </exception>
         public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var marshaller = new DeleteThingShadowRequestMarshaller();
+            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, unmarshaller);
@@ -131,7 +131,7 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteThingShadow(DeleteThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteThingShadowRequestMarshaller();
+            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteThingShadowRequest>(request, marshaller, unmarshaller,
@@ -192,7 +192,7 @@ namespace Amazon.IotData
         /// </exception>
         public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var marshaller = new GetThingShadowRequestMarshaller();
+            var marshaller = GetThingShadowRequestMarshaller.Instance;
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, unmarshaller);
@@ -211,7 +211,7 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetThingShadow(GetThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetThingShadowRequestMarshaller();
+            var marshaller = GetThingShadowRequestMarshaller.Instance;
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetThingShadowRequest>(request, marshaller, unmarshaller,
@@ -260,7 +260,7 @@ namespace Amazon.IotData
         /// </exception>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
@@ -279,7 +279,7 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return BeginInvoke<PublishRequest>(request, marshaller, unmarshaller,
@@ -343,7 +343,7 @@ namespace Amazon.IotData
         /// </exception>
         public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var marshaller = new UpdateThingShadowRequestMarshaller();
+            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, unmarshaller);
@@ -362,7 +362,7 @@ namespace Amazon.IotData
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateThingShadow(UpdateThingShadowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateThingShadowRequestMarshaller();
+            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateThingShadowRequest>(request, marshaller, unmarshaller,

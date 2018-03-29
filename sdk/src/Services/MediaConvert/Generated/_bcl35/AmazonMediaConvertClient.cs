@@ -256,7 +256,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = new CancelJobRequestMarshaller();
+            var marshaller = CancelJobRequestMarshaller.Instance;
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
 
             return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
@@ -276,7 +276,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CancelJobRequestMarshaller();
+            var marshaller = CancelJobRequestMarshaller.Instance;
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<CancelJobRequest>(request, marshaller, unmarshaller,
@@ -331,7 +331,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = new CreateJobRequestMarshaller();
+            var marshaller = CreateJobRequestMarshaller.Instance;
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
 
             return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
@@ -351,7 +351,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateJobRequestMarshaller();
+            var marshaller = CreateJobRequestMarshaller.Instance;
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateJobRequest>(request, marshaller, unmarshaller,
@@ -406,7 +406,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
         public virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
         {
-            var marshaller = new CreateJobTemplateRequestMarshaller();
+            var marshaller = CreateJobTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
 
             return Invoke<CreateJobTemplateRequest,CreateJobTemplateResponse>(request, marshaller, unmarshaller);
@@ -426,7 +426,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateJobTemplate(CreateJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateJobTemplateRequestMarshaller();
+            var marshaller = CreateJobTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateJobTemplateRequest>(request, marshaller, unmarshaller,
@@ -480,7 +480,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
-            var marshaller = new CreatePresetRequestMarshaller();
+            var marshaller = CreatePresetRequestMarshaller.Instance;
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
             return Invoke<CreatePresetRequest,CreatePresetResponse>(request, marshaller, unmarshaller);
@@ -500,7 +500,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual IAsyncResult BeginCreatePreset(CreatePresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreatePresetRequestMarshaller();
+            var marshaller = CreatePresetRequestMarshaller.Instance;
             var unmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreatePresetRequest>(request, marshaller, unmarshaller,
@@ -555,7 +555,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var marshaller = new CreateQueueRequestMarshaller();
+            var marshaller = CreateQueueRequestMarshaller.Instance;
             var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
             return Invoke<CreateQueueRequest,CreateQueueResponse>(request, marshaller, unmarshaller);
@@ -575,7 +575,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateQueueRequestMarshaller();
+            var marshaller = CreateQueueRequestMarshaller.Instance;
             var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateQueueRequest>(request, marshaller, unmarshaller,
@@ -629,7 +629,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
         public virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
         {
-            var marshaller = new DeleteJobTemplateRequestMarshaller();
+            var marshaller = DeleteJobTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteJobTemplateRequest,DeleteJobTemplateResponse>(request, marshaller, unmarshaller);
@@ -649,7 +649,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteJobTemplate(DeleteJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteJobTemplateRequestMarshaller();
+            var marshaller = DeleteJobTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteJobTemplateRequest>(request, marshaller, unmarshaller,
@@ -703,7 +703,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
-            var marshaller = new DeletePresetRequestMarshaller();
+            var marshaller = DeletePresetRequestMarshaller.Instance;
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
             return Invoke<DeletePresetRequest,DeletePresetResponse>(request, marshaller, unmarshaller);
@@ -723,7 +723,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual IAsyncResult BeginDeletePreset(DeletePresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeletePresetRequestMarshaller();
+            var marshaller = DeletePresetRequestMarshaller.Instance;
             var unmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeletePresetRequest>(request, marshaller, unmarshaller,
@@ -777,7 +777,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var marshaller = new DeleteQueueRequestMarshaller();
+            var marshaller = DeleteQueueRequestMarshaller.Instance;
             var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
             return Invoke<DeleteQueueRequest,DeleteQueueResponse>(request, marshaller, unmarshaller);
@@ -797,7 +797,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteQueueRequestMarshaller();
+            var marshaller = DeleteQueueRequestMarshaller.Instance;
             var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteQueueRequest>(request, marshaller, unmarshaller,
@@ -852,7 +852,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var marshaller = new DescribeEndpointsRequestMarshaller();
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, unmarshaller);
@@ -872,7 +872,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEndpointsRequestMarshaller();
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
             var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEndpointsRequest>(request, marshaller, unmarshaller,
@@ -926,7 +926,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var marshaller = new GetJobRequestMarshaller();
+            var marshaller = GetJobRequestMarshaller.Instance;
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
 
             return Invoke<GetJobRequest,GetJobResponse>(request, marshaller, unmarshaller);
@@ -946,7 +946,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetJobRequestMarshaller();
+            var marshaller = GetJobRequestMarshaller.Instance;
             var unmarshaller = GetJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetJobRequest>(request, marshaller, unmarshaller,
@@ -1000,7 +1000,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobTemplate">REST API Reference for GetJobTemplate Operation</seealso>
         public virtual GetJobTemplateResponse GetJobTemplate(GetJobTemplateRequest request)
         {
-            var marshaller = new GetJobTemplateRequestMarshaller();
+            var marshaller = GetJobTemplateRequestMarshaller.Instance;
             var unmarshaller = GetJobTemplateResponseUnmarshaller.Instance;
 
             return Invoke<GetJobTemplateRequest,GetJobTemplateResponse>(request, marshaller, unmarshaller);
@@ -1020,7 +1020,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJobTemplate">REST API Reference for GetJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetJobTemplate(GetJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetJobTemplateRequestMarshaller();
+            var marshaller = GetJobTemplateRequestMarshaller.Instance;
             var unmarshaller = GetJobTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetJobTemplateRequest>(request, marshaller, unmarshaller,
@@ -1074,7 +1074,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPreset">REST API Reference for GetPreset Operation</seealso>
         public virtual GetPresetResponse GetPreset(GetPresetRequest request)
         {
-            var marshaller = new GetPresetRequestMarshaller();
+            var marshaller = GetPresetRequestMarshaller.Instance;
             var unmarshaller = GetPresetResponseUnmarshaller.Instance;
 
             return Invoke<GetPresetRequest,GetPresetResponse>(request, marshaller, unmarshaller);
@@ -1094,7 +1094,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetPreset">REST API Reference for GetPreset Operation</seealso>
         public virtual IAsyncResult BeginGetPreset(GetPresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetPresetRequestMarshaller();
+            var marshaller = GetPresetRequestMarshaller.Instance;
             var unmarshaller = GetPresetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetPresetRequest>(request, marshaller, unmarshaller,
@@ -1148,7 +1148,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual GetQueueResponse GetQueue(GetQueueRequest request)
         {
-            var marshaller = new GetQueueRequestMarshaller();
+            var marshaller = GetQueueRequestMarshaller.Instance;
             var unmarshaller = GetQueueResponseUnmarshaller.Instance;
 
             return Invoke<GetQueueRequest,GetQueueResponse>(request, marshaller, unmarshaller);
@@ -1168,7 +1168,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual IAsyncResult BeginGetQueue(GetQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetQueueRequestMarshaller();
+            var marshaller = GetQueueRequestMarshaller.Instance;
             var unmarshaller = GetQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetQueueRequest>(request, marshaller, unmarshaller,
@@ -1225,7 +1225,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
@@ -1245,7 +1245,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListJobsRequest>(request, marshaller, unmarshaller,
@@ -1301,7 +1301,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
         public virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
         {
-            var marshaller = new ListJobTemplatesRequestMarshaller();
+            var marshaller = ListJobTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
 
             return Invoke<ListJobTemplatesRequest,ListJobTemplatesResponse>(request, marshaller, unmarshaller);
@@ -1321,7 +1321,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
         public virtual IAsyncResult BeginListJobTemplates(ListJobTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListJobTemplatesRequestMarshaller();
+            var marshaller = ListJobTemplatesRequestMarshaller.Instance;
             var unmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListJobTemplatesRequest>(request, marshaller, unmarshaller,
@@ -1377,7 +1377,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
-            var marshaller = new ListPresetsRequestMarshaller();
+            var marshaller = ListPresetsRequestMarshaller.Instance;
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
             return Invoke<ListPresetsRequest,ListPresetsResponse>(request, marshaller, unmarshaller);
@@ -1397,7 +1397,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual IAsyncResult BeginListPresets(ListPresetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListPresetsRequestMarshaller();
+            var marshaller = ListPresetsRequestMarshaller.Instance;
             var unmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListPresetsRequest>(request, marshaller, unmarshaller,
@@ -1453,7 +1453,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var marshaller = new ListQueuesRequestMarshaller();
+            var marshaller = ListQueuesRequestMarshaller.Instance;
             var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
             return Invoke<ListQueuesRequest,ListQueuesResponse>(request, marshaller, unmarshaller);
@@ -1473,7 +1473,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListQueuesRequestMarshaller();
+            var marshaller = ListQueuesRequestMarshaller.Instance;
             var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListQueuesRequest>(request, marshaller, unmarshaller,
@@ -1527,7 +1527,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdateJobTemplate">REST API Reference for UpdateJobTemplate Operation</seealso>
         public virtual UpdateJobTemplateResponse UpdateJobTemplate(UpdateJobTemplateRequest request)
         {
-            var marshaller = new UpdateJobTemplateRequestMarshaller();
+            var marshaller = UpdateJobTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateJobTemplateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateJobTemplateRequest,UpdateJobTemplateResponse>(request, marshaller, unmarshaller);
@@ -1547,7 +1547,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdateJobTemplate">REST API Reference for UpdateJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateJobTemplate(UpdateJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateJobTemplateRequestMarshaller();
+            var marshaller = UpdateJobTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateJobTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateJobTemplateRequest>(request, marshaller, unmarshaller,
@@ -1601,7 +1601,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdatePreset">REST API Reference for UpdatePreset Operation</seealso>
         public virtual UpdatePresetResponse UpdatePreset(UpdatePresetRequest request)
         {
-            var marshaller = new UpdatePresetRequestMarshaller();
+            var marshaller = UpdatePresetRequestMarshaller.Instance;
             var unmarshaller = UpdatePresetResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePresetRequest,UpdatePresetResponse>(request, marshaller, unmarshaller);
@@ -1621,7 +1621,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdatePreset">REST API Reference for UpdatePreset Operation</seealso>
         public virtual IAsyncResult BeginUpdatePreset(UpdatePresetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdatePresetRequestMarshaller();
+            var marshaller = UpdatePresetRequestMarshaller.Instance;
             var unmarshaller = UpdatePresetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdatePresetRequest>(request, marshaller, unmarshaller,
@@ -1675,7 +1675,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
         {
-            var marshaller = new UpdateQueueRequestMarshaller();
+            var marshaller = UpdateQueueRequestMarshaller.Instance;
             var unmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
             return Invoke<UpdateQueueRequest,UpdateQueueResponse>(request, marshaller, unmarshaller);
@@ -1695,7 +1695,7 @@ namespace Amazon.MediaConvert
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueue(UpdateQueueRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateQueueRequestMarshaller();
+            var marshaller = UpdateQueueRequestMarshaller.Instance;
             var unmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateQueueRequest>(request, marshaller, unmarshaller,

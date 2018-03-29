@@ -312,7 +312,7 @@ namespace Amazon.AWSSupport
 
         internal virtual AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
         {
-            var marshaller = new AddAttachmentsToSetRequestMarshaller();
+            var marshaller = AddAttachmentsToSetRequestMarshaller.Instance;
             var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
 
             return Invoke<AddAttachmentsToSetRequest,AddAttachmentsToSetResponse>(request, marshaller, unmarshaller);
@@ -331,7 +331,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         public virtual Task<AddAttachmentsToSetResponse> AddAttachmentsToSetAsync(AddAttachmentsToSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddAttachmentsToSetRequestMarshaller();
+            var marshaller = AddAttachmentsToSetRequestMarshaller.Instance;
             var unmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddAttachmentsToSetRequest,AddAttachmentsToSetResponse>(request, marshaller, 
@@ -344,7 +344,7 @@ namespace Amazon.AWSSupport
 
         internal virtual AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
         {
-            var marshaller = new AddCommunicationToCaseRequestMarshaller();
+            var marshaller = AddCommunicationToCaseRequestMarshaller.Instance;
             var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
 
             return Invoke<AddCommunicationToCaseRequest,AddCommunicationToCaseResponse>(request, marshaller, unmarshaller);
@@ -363,7 +363,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         public virtual Task<AddCommunicationToCaseResponse> AddCommunicationToCaseAsync(AddCommunicationToCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddCommunicationToCaseRequestMarshaller();
+            var marshaller = AddCommunicationToCaseRequestMarshaller.Instance;
             var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddCommunicationToCaseRequest,AddCommunicationToCaseResponse>(request, marshaller, 
@@ -376,7 +376,7 @@ namespace Amazon.AWSSupport
 
         internal virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            var marshaller = new CreateCaseRequestMarshaller();
+            var marshaller = CreateCaseRequestMarshaller.Instance;
             var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
             return Invoke<CreateCaseRequest,CreateCaseResponse>(request, marshaller, unmarshaller);
@@ -395,7 +395,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCaseRequestMarshaller();
+            var marshaller = CreateCaseRequestMarshaller.Instance;
             var unmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCaseRequest,CreateCaseResponse>(request, marshaller, 
@@ -408,7 +408,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
         {
-            var marshaller = new DescribeAttachmentRequestMarshaller();
+            var marshaller = DescribeAttachmentRequestMarshaller.Instance;
             var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAttachmentRequest,DescribeAttachmentResponse>(request, marshaller, unmarshaller);
@@ -427,7 +427,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         public virtual Task<DescribeAttachmentResponse> DescribeAttachmentAsync(DescribeAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAttachmentRequestMarshaller();
+            var marshaller = DescribeAttachmentRequestMarshaller.Instance;
             var unmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAttachmentRequest,DescribeAttachmentResponse>(request, marshaller, 
@@ -440,7 +440,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
         {
-            var marshaller = new DescribeCasesRequestMarshaller();
+            var marshaller = DescribeCasesRequestMarshaller.Instance;
             var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCasesRequest,DescribeCasesResponse>(request, marshaller, unmarshaller);
@@ -459,7 +459,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         public virtual Task<DescribeCasesResponse> DescribeCasesAsync(DescribeCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCasesRequestMarshaller();
+            var marshaller = DescribeCasesRequestMarshaller.Instance;
             var unmarshaller = DescribeCasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCasesRequest,DescribeCasesResponse>(request, marshaller, 
@@ -472,7 +472,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
         {
-            var marshaller = new DescribeCommunicationsRequestMarshaller();
+            var marshaller = DescribeCommunicationsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCommunicationsRequest,DescribeCommunicationsResponse>(request, marshaller, unmarshaller);
@@ -491,7 +491,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         public virtual Task<DescribeCommunicationsResponse> DescribeCommunicationsAsync(DescribeCommunicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCommunicationsRequestMarshaller();
+            var marshaller = DescribeCommunicationsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCommunicationsRequest,DescribeCommunicationsResponse>(request, marshaller, 
@@ -508,7 +508,7 @@ namespace Amazon.AWSSupport
         }
         internal virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
@@ -558,7 +558,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, 
@@ -575,7 +575,7 @@ namespace Amazon.AWSSupport
         }
         internal virtual DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
         {
-            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
+            var marshaller = DescribeSeverityLevelsRequestMarshaller.Instance;
             var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSeverityLevelsRequest,DescribeSeverityLevelsResponse>(request, marshaller, unmarshaller);
@@ -614,7 +614,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         public virtual Task<DescribeSeverityLevelsResponse> DescribeSeverityLevelsAsync(DescribeSeverityLevelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeSeverityLevelsRequestMarshaller();
+            var marshaller = DescribeSeverityLevelsRequestMarshaller.Instance;
             var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSeverityLevelsRequest,DescribeSeverityLevelsResponse>(request, marshaller, 
@@ -627,7 +627,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
         {
-            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrustedAdvisorCheckRefreshStatusesRequest,DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, unmarshaller);
@@ -646,7 +646,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         public virtual Task<DescribeTrustedAdvisorCheckRefreshStatusesResponse> DescribeTrustedAdvisorCheckRefreshStatusesAsync(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrustedAdvisorCheckRefreshStatusesRequest,DescribeTrustedAdvisorCheckRefreshStatusesResponse>(request, marshaller, 
@@ -659,7 +659,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
         {
-            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckResultRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrustedAdvisorCheckResultRequest,DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, unmarshaller);
@@ -678,7 +678,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         public virtual Task<DescribeTrustedAdvisorCheckResultResponse> DescribeTrustedAdvisorCheckResultAsync(DescribeTrustedAdvisorCheckResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckResultRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrustedAdvisorCheckResultRequest,DescribeTrustedAdvisorCheckResultResponse>(request, marshaller, 
@@ -691,7 +691,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
         {
-            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorChecksRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrustedAdvisorChecksRequest,DescribeTrustedAdvisorChecksResponse>(request, marshaller, unmarshaller);
@@ -710,7 +710,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         public virtual Task<DescribeTrustedAdvisorChecksResponse> DescribeTrustedAdvisorChecksAsync(DescribeTrustedAdvisorChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorChecksRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrustedAdvisorChecksRequest,DescribeTrustedAdvisorChecksResponse>(request, marshaller, 
@@ -723,7 +723,7 @@ namespace Amazon.AWSSupport
 
         internal virtual DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
         {
-            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckSummariesRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrustedAdvisorCheckSummariesRequest,DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, unmarshaller);
@@ -742,7 +742,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         public virtual Task<DescribeTrustedAdvisorCheckSummariesResponse> DescribeTrustedAdvisorCheckSummariesAsync(DescribeTrustedAdvisorCheckSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+            var marshaller = DescribeTrustedAdvisorCheckSummariesRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrustedAdvisorCheckSummariesRequest,DescribeTrustedAdvisorCheckSummariesResponse>(request, marshaller, 
@@ -755,7 +755,7 @@ namespace Amazon.AWSSupport
 
         internal virtual RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
         {
-            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
+            var marshaller = RefreshTrustedAdvisorCheckRequestMarshaller.Instance;
             var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
 
             return Invoke<RefreshTrustedAdvisorCheckRequest,RefreshTrustedAdvisorCheckResponse>(request, marshaller, unmarshaller);
@@ -774,7 +774,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         public virtual Task<RefreshTrustedAdvisorCheckResponse> RefreshTrustedAdvisorCheckAsync(RefreshTrustedAdvisorCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
+            var marshaller = RefreshTrustedAdvisorCheckRequestMarshaller.Instance;
             var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
 
             return InvokeAsync<RefreshTrustedAdvisorCheckRequest,RefreshTrustedAdvisorCheckResponse>(request, marshaller, 
@@ -787,7 +787,7 @@ namespace Amazon.AWSSupport
 
         internal virtual ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
         {
-            var marshaller = new ResolveCaseRequestMarshaller();
+            var marshaller = ResolveCaseRequestMarshaller.Instance;
             var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
 
             return Invoke<ResolveCaseRequest,ResolveCaseResponse>(request, marshaller, unmarshaller);
@@ -806,7 +806,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         public virtual Task<ResolveCaseResponse> ResolveCaseAsync(ResolveCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResolveCaseRequestMarshaller();
+            var marshaller = ResolveCaseRequestMarshaller.Instance;
             var unmarshaller = ResolveCaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResolveCaseRequest,ResolveCaseResponse>(request, marshaller, 

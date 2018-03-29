@@ -257,7 +257,7 @@ namespace Amazon.StepFunctions
 
         internal virtual CreateActivityResponse CreateActivity(CreateActivityRequest request)
         {
-            var marshaller = new CreateActivityRequestMarshaller();
+            var marshaller = CreateActivityRequestMarshaller.Instance;
             var unmarshaller = CreateActivityResponseUnmarshaller.Instance;
 
             return Invoke<CreateActivityRequest,CreateActivityResponse>(request, marshaller, unmarshaller);
@@ -276,7 +276,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         public virtual Task<CreateActivityResponse> CreateActivityAsync(CreateActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateActivityRequestMarshaller();
+            var marshaller = CreateActivityRequestMarshaller.Instance;
             var unmarshaller = CreateActivityResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateActivityRequest,CreateActivityResponse>(request, marshaller, 
@@ -289,7 +289,7 @@ namespace Amazon.StepFunctions
 
         internal virtual CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request)
         {
-            var marshaller = new CreateStateMachineRequestMarshaller();
+            var marshaller = CreateStateMachineRequestMarshaller.Instance;
             var unmarshaller = CreateStateMachineResponseUnmarshaller.Instance;
 
             return Invoke<CreateStateMachineRequest,CreateStateMachineResponse>(request, marshaller, unmarshaller);
@@ -308,7 +308,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         public virtual Task<CreateStateMachineResponse> CreateStateMachineAsync(CreateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStateMachineRequestMarshaller();
+            var marshaller = CreateStateMachineRequestMarshaller.Instance;
             var unmarshaller = CreateStateMachineResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStateMachineRequest,CreateStateMachineResponse>(request, marshaller, 
@@ -321,7 +321,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DeleteActivityResponse DeleteActivity(DeleteActivityRequest request)
         {
-            var marshaller = new DeleteActivityRequestMarshaller();
+            var marshaller = DeleteActivityRequestMarshaller.Instance;
             var unmarshaller = DeleteActivityResponseUnmarshaller.Instance;
 
             return Invoke<DeleteActivityRequest,DeleteActivityResponse>(request, marshaller, unmarshaller);
@@ -340,7 +340,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         public virtual Task<DeleteActivityResponse> DeleteActivityAsync(DeleteActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteActivityRequestMarshaller();
+            var marshaller = DeleteActivityRequestMarshaller.Instance;
             var unmarshaller = DeleteActivityResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteActivityRequest,DeleteActivityResponse>(request, marshaller, 
@@ -353,7 +353,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request)
         {
-            var marshaller = new DeleteStateMachineRequestMarshaller();
+            var marshaller = DeleteStateMachineRequestMarshaller.Instance;
             var unmarshaller = DeleteStateMachineResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStateMachineRequest,DeleteStateMachineResponse>(request, marshaller, unmarshaller);
@@ -372,7 +372,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         public virtual Task<DeleteStateMachineResponse> DeleteStateMachineAsync(DeleteStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteStateMachineRequestMarshaller();
+            var marshaller = DeleteStateMachineRequestMarshaller.Instance;
             var unmarshaller = DeleteStateMachineResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStateMachineRequest,DeleteStateMachineResponse>(request, marshaller, 
@@ -385,7 +385,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DescribeActivityResponse DescribeActivity(DescribeActivityRequest request)
         {
-            var marshaller = new DescribeActivityRequestMarshaller();
+            var marshaller = DescribeActivityRequestMarshaller.Instance;
             var unmarshaller = DescribeActivityResponseUnmarshaller.Instance;
 
             return Invoke<DescribeActivityRequest,DescribeActivityResponse>(request, marshaller, unmarshaller);
@@ -404,7 +404,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         public virtual Task<DescribeActivityResponse> DescribeActivityAsync(DescribeActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeActivityRequestMarshaller();
+            var marshaller = DescribeActivityRequestMarshaller.Instance;
             var unmarshaller = DescribeActivityResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeActivityRequest,DescribeActivityResponse>(request, marshaller, 
@@ -417,7 +417,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
-            var marshaller = new DescribeExecutionRequestMarshaller();
+            var marshaller = DescribeExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeExecutionRequest,DescribeExecutionResponse>(request, marshaller, unmarshaller);
@@ -436,7 +436,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public virtual Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeExecutionRequestMarshaller();
+            var marshaller = DescribeExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExecutionRequest,DescribeExecutionResponse>(request, marshaller, 
@@ -449,7 +449,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request)
         {
-            var marshaller = new DescribeStateMachineRequestMarshaller();
+            var marshaller = DescribeStateMachineRequestMarshaller.Instance;
             var unmarshaller = DescribeStateMachineResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStateMachineRequest,DescribeStateMachineResponse>(request, marshaller, unmarshaller);
@@ -468,7 +468,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         public virtual Task<DescribeStateMachineResponse> DescribeStateMachineAsync(DescribeStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStateMachineRequestMarshaller();
+            var marshaller = DescribeStateMachineRequestMarshaller.Instance;
             var unmarshaller = DescribeStateMachineResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStateMachineRequest,DescribeStateMachineResponse>(request, marshaller, 
@@ -481,7 +481,7 @@ namespace Amazon.StepFunctions
 
         internal virtual DescribeStateMachineForExecutionResponse DescribeStateMachineForExecution(DescribeStateMachineForExecutionRequest request)
         {
-            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var marshaller = DescribeStateMachineForExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, unmarshaller);
@@ -500,7 +500,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">REST API Reference for DescribeStateMachineForExecution Operation</seealso>
         public virtual Task<DescribeStateMachineForExecutionResponse> DescribeStateMachineForExecutionAsync(DescribeStateMachineForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStateMachineForExecutionRequestMarshaller();
+            var marshaller = DescribeStateMachineForExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeStateMachineForExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStateMachineForExecutionRequest,DescribeStateMachineForExecutionResponse>(request, marshaller, 
@@ -513,7 +513,7 @@ namespace Amazon.StepFunctions
 
         internal virtual GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request)
         {
-            var marshaller = new GetActivityTaskRequestMarshaller();
+            var marshaller = GetActivityTaskRequestMarshaller.Instance;
             var unmarshaller = GetActivityTaskResponseUnmarshaller.Instance;
 
             return Invoke<GetActivityTaskRequest,GetActivityTaskResponse>(request, marshaller, unmarshaller);
@@ -532,7 +532,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         public virtual Task<GetActivityTaskResponse> GetActivityTaskAsync(GetActivityTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetActivityTaskRequestMarshaller();
+            var marshaller = GetActivityTaskRequestMarshaller.Instance;
             var unmarshaller = GetActivityTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetActivityTaskRequest,GetActivityTaskResponse>(request, marshaller, 
@@ -545,7 +545,7 @@ namespace Amazon.StepFunctions
 
         internal virtual GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request)
         {
-            var marshaller = new GetExecutionHistoryRequestMarshaller();
+            var marshaller = GetExecutionHistoryRequestMarshaller.Instance;
             var unmarshaller = GetExecutionHistoryResponseUnmarshaller.Instance;
 
             return Invoke<GetExecutionHistoryRequest,GetExecutionHistoryResponse>(request, marshaller, unmarshaller);
@@ -564,7 +564,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         public virtual Task<GetExecutionHistoryResponse> GetExecutionHistoryAsync(GetExecutionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetExecutionHistoryRequestMarshaller();
+            var marshaller = GetExecutionHistoryRequestMarshaller.Instance;
             var unmarshaller = GetExecutionHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetExecutionHistoryRequest,GetExecutionHistoryResponse>(request, marshaller, 
@@ -577,7 +577,7 @@ namespace Amazon.StepFunctions
 
         internal virtual ListActivitiesResponse ListActivities(ListActivitiesRequest request)
         {
-            var marshaller = new ListActivitiesRequestMarshaller();
+            var marshaller = ListActivitiesRequestMarshaller.Instance;
             var unmarshaller = ListActivitiesResponseUnmarshaller.Instance;
 
             return Invoke<ListActivitiesRequest,ListActivitiesResponse>(request, marshaller, unmarshaller);
@@ -596,7 +596,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         public virtual Task<ListActivitiesResponse> ListActivitiesAsync(ListActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListActivitiesRequestMarshaller();
+            var marshaller = ListActivitiesRequestMarshaller.Instance;
             var unmarshaller = ListActivitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListActivitiesRequest,ListActivitiesResponse>(request, marshaller, 
@@ -609,7 +609,7 @@ namespace Amazon.StepFunctions
 
         internal virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
-            var marshaller = new ListExecutionsRequestMarshaller();
+            var marshaller = ListExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<ListExecutionsRequest,ListExecutionsResponse>(request, marshaller, unmarshaller);
@@ -628,7 +628,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListExecutionsRequestMarshaller();
+            var marshaller = ListExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListExecutionsRequest,ListExecutionsResponse>(request, marshaller, 
@@ -641,7 +641,7 @@ namespace Amazon.StepFunctions
 
         internal virtual ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request)
         {
-            var marshaller = new ListStateMachinesRequestMarshaller();
+            var marshaller = ListStateMachinesRequestMarshaller.Instance;
             var unmarshaller = ListStateMachinesResponseUnmarshaller.Instance;
 
             return Invoke<ListStateMachinesRequest,ListStateMachinesResponse>(request, marshaller, unmarshaller);
@@ -660,7 +660,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         public virtual Task<ListStateMachinesResponse> ListStateMachinesAsync(ListStateMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListStateMachinesRequestMarshaller();
+            var marshaller = ListStateMachinesRequestMarshaller.Instance;
             var unmarshaller = ListStateMachinesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStateMachinesRequest,ListStateMachinesResponse>(request, marshaller, 
@@ -673,7 +673,7 @@ namespace Amazon.StepFunctions
 
         internal virtual SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request)
         {
-            var marshaller = new SendTaskFailureRequestMarshaller();
+            var marshaller = SendTaskFailureRequestMarshaller.Instance;
             var unmarshaller = SendTaskFailureResponseUnmarshaller.Instance;
 
             return Invoke<SendTaskFailureRequest,SendTaskFailureResponse>(request, marshaller, unmarshaller);
@@ -692,7 +692,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         public virtual Task<SendTaskFailureResponse> SendTaskFailureAsync(SendTaskFailureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SendTaskFailureRequestMarshaller();
+            var marshaller = SendTaskFailureRequestMarshaller.Instance;
             var unmarshaller = SendTaskFailureResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendTaskFailureRequest,SendTaskFailureResponse>(request, marshaller, 
@@ -705,7 +705,7 @@ namespace Amazon.StepFunctions
 
         internal virtual SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request)
         {
-            var marshaller = new SendTaskHeartbeatRequestMarshaller();
+            var marshaller = SendTaskHeartbeatRequestMarshaller.Instance;
             var unmarshaller = SendTaskHeartbeatResponseUnmarshaller.Instance;
 
             return Invoke<SendTaskHeartbeatRequest,SendTaskHeartbeatResponse>(request, marshaller, unmarshaller);
@@ -724,7 +724,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         public virtual Task<SendTaskHeartbeatResponse> SendTaskHeartbeatAsync(SendTaskHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SendTaskHeartbeatRequestMarshaller();
+            var marshaller = SendTaskHeartbeatRequestMarshaller.Instance;
             var unmarshaller = SendTaskHeartbeatResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendTaskHeartbeatRequest,SendTaskHeartbeatResponse>(request, marshaller, 
@@ -737,7 +737,7 @@ namespace Amazon.StepFunctions
 
         internal virtual SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request)
         {
-            var marshaller = new SendTaskSuccessRequestMarshaller();
+            var marshaller = SendTaskSuccessRequestMarshaller.Instance;
             var unmarshaller = SendTaskSuccessResponseUnmarshaller.Instance;
 
             return Invoke<SendTaskSuccessRequest,SendTaskSuccessResponse>(request, marshaller, unmarshaller);
@@ -756,7 +756,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         public virtual Task<SendTaskSuccessResponse> SendTaskSuccessAsync(SendTaskSuccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SendTaskSuccessRequestMarshaller();
+            var marshaller = SendTaskSuccessRequestMarshaller.Instance;
             var unmarshaller = SendTaskSuccessResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendTaskSuccessRequest,SendTaskSuccessResponse>(request, marshaller, 
@@ -769,7 +769,7 @@ namespace Amazon.StepFunctions
 
         internal virtual StartExecutionResponse StartExecution(StartExecutionRequest request)
         {
-            var marshaller = new StartExecutionRequestMarshaller();
+            var marshaller = StartExecutionRequestMarshaller.Instance;
             var unmarshaller = StartExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartExecutionRequest,StartExecutionResponse>(request, marshaller, unmarshaller);
@@ -788,7 +788,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         public virtual Task<StartExecutionResponse> StartExecutionAsync(StartExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartExecutionRequestMarshaller();
+            var marshaller = StartExecutionRequestMarshaller.Instance;
             var unmarshaller = StartExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartExecutionRequest,StartExecutionResponse>(request, marshaller, 
@@ -801,7 +801,7 @@ namespace Amazon.StepFunctions
 
         internal virtual StopExecutionResponse StopExecution(StopExecutionRequest request)
         {
-            var marshaller = new StopExecutionRequestMarshaller();
+            var marshaller = StopExecutionRequestMarshaller.Instance;
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StopExecutionRequest,StopExecutionResponse>(request, marshaller, unmarshaller);
@@ -820,7 +820,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         public virtual Task<StopExecutionResponse> StopExecutionAsync(StopExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopExecutionRequestMarshaller();
+            var marshaller = StopExecutionRequestMarshaller.Instance;
             var unmarshaller = StopExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopExecutionRequest,StopExecutionResponse>(request, marshaller, 
@@ -833,7 +833,7 @@ namespace Amazon.StepFunctions
 
         internal virtual UpdateStateMachineResponse UpdateStateMachine(UpdateStateMachineRequest request)
         {
-            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var marshaller = UpdateStateMachineRequestMarshaller.Instance;
             var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
 
             return Invoke<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, unmarshaller);
@@ -852,7 +852,7 @@ namespace Amazon.StepFunctions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine">REST API Reference for UpdateStateMachine Operation</seealso>
         public virtual Task<UpdateStateMachineResponse> UpdateStateMachineAsync(UpdateStateMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateStateMachineRequestMarshaller();
+            var marshaller = UpdateStateMachineRequestMarshaller.Instance;
             var unmarshaller = UpdateStateMachineResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStateMachineRequest,UpdateStateMachineResponse>(request, marshaller, 

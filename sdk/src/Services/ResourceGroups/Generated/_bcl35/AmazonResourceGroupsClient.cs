@@ -299,7 +299,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
@@ -319,7 +319,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller,
@@ -372,7 +372,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
@@ -392,7 +392,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller,
@@ -444,7 +444,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
@@ -464,7 +464,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGroupRequest>(request, marshaller, unmarshaller,
@@ -516,7 +516,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
         public virtual GetGroupQueryResponse GetGroupQuery(GetGroupQueryRequest request)
         {
-            var marshaller = new GetGroupQueryRequestMarshaller();
+            var marshaller = GetGroupQueryRequestMarshaller.Instance;
             var unmarshaller = GetGroupQueryResponseUnmarshaller.Instance;
 
             return Invoke<GetGroupQueryRequest,GetGroupQueryResponse>(request, marshaller, unmarshaller);
@@ -536,7 +536,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
         public virtual IAsyncResult BeginGetGroupQuery(GetGroupQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGroupQueryRequestMarshaller();
+            var marshaller = GetGroupQueryRequestMarshaller.Instance;
             var unmarshaller = GetGroupQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGroupQueryRequest>(request, marshaller, unmarshaller,
@@ -588,7 +588,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return Invoke<GetTagsRequest,GetTagsResponse>(request, marshaller, unmarshaller);
@@ -608,7 +608,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTagsRequest>(request, marshaller, unmarshaller,
@@ -664,7 +664,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual ListGroupResourcesResponse ListGroupResources(ListGroupResourcesRequest request)
         {
-            var marshaller = new ListGroupResourcesRequestMarshaller();
+            var marshaller = ListGroupResourcesRequestMarshaller.Instance;
             var unmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupResourcesRequest,ListGroupResourcesResponse>(request, marshaller, unmarshaller);
@@ -684,7 +684,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual IAsyncResult BeginListGroupResources(ListGroupResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListGroupResourcesRequestMarshaller();
+            var marshaller = ListGroupResourcesRequestMarshaller.Instance;
             var unmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListGroupResourcesRequest>(request, marshaller, unmarshaller,
@@ -733,7 +733,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
@@ -753,7 +753,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListGroupsRequest>(request, marshaller, unmarshaller,
@@ -807,7 +807,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
         {
-            var marshaller = new SearchResourcesRequestMarshaller();
+            var marshaller = SearchResourcesRequestMarshaller.Instance;
             var unmarshaller = SearchResourcesResponseUnmarshaller.Instance;
 
             return Invoke<SearchResourcesRequest,SearchResourcesResponse>(request, marshaller, unmarshaller);
@@ -827,7 +827,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual IAsyncResult BeginSearchResources(SearchResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SearchResourcesRequestMarshaller();
+            var marshaller = SearchResourcesRequestMarshaller.Instance;
             var unmarshaller = SearchResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<SearchResourcesRequest>(request, marshaller, unmarshaller,
@@ -880,7 +880,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
         public virtual TagResponse Tag(TagRequest request)
         {
-            var marshaller = new TagRequestMarshaller();
+            var marshaller = TagRequestMarshaller.Instance;
             var unmarshaller = TagResponseUnmarshaller.Instance;
 
             return Invoke<TagRequest,TagResponse>(request, marshaller, unmarshaller);
@@ -900,7 +900,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
         public virtual IAsyncResult BeginTag(TagRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagRequestMarshaller();
+            var marshaller = TagRequestMarshaller.Instance;
             var unmarshaller = TagResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagRequest>(request, marshaller, unmarshaller,
@@ -952,7 +952,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
         public virtual UntagResponse Untag(UntagRequest request)
         {
-            var marshaller = new UntagRequestMarshaller();
+            var marshaller = UntagRequestMarshaller.Instance;
             var unmarshaller = UntagResponseUnmarshaller.Instance;
 
             return Invoke<UntagRequest,UntagResponse>(request, marshaller, unmarshaller);
@@ -972,7 +972,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
         public virtual IAsyncResult BeginUntag(UntagRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagRequestMarshaller();
+            var marshaller = UntagRequestMarshaller.Instance;
             var unmarshaller = UntagResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagRequest>(request, marshaller, unmarshaller,
@@ -1025,7 +1025,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
@@ -1045,7 +1045,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGroupRequest>(request, marshaller, unmarshaller,
@@ -1097,7 +1097,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
         public virtual UpdateGroupQueryResponse UpdateGroupQuery(UpdateGroupQueryRequest request)
         {
-            var marshaller = new UpdateGroupQueryRequestMarshaller();
+            var marshaller = UpdateGroupQueryRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupQueryResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGroupQueryRequest,UpdateGroupQueryResponse>(request, marshaller, unmarshaller);
@@ -1117,7 +1117,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroupQuery(UpdateGroupQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGroupQueryRequestMarshaller();
+            var marshaller = UpdateGroupQueryRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGroupQueryRequest>(request, marshaller, unmarshaller,

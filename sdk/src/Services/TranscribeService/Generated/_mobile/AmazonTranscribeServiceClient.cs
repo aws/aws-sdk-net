@@ -234,7 +234,7 @@ namespace Amazon.TranscribeService
 
         internal virtual GetTranscriptionJobResponse GetTranscriptionJob(GetTranscriptionJobRequest request)
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<GetTranscriptionJobRequest,GetTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -253,7 +253,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual Task<GetTranscriptionJobResponse> GetTranscriptionJobAsync(GetTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTranscriptionJobRequest,GetTranscriptionJobResponse>(request, marshaller, 
@@ -266,7 +266,7 @@ namespace Amazon.TranscribeService
 
         internal virtual ListTranscriptionJobsResponse ListTranscriptionJobs(ListTranscriptionJobsRequest request)
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListTranscriptionJobsRequest,ListTranscriptionJobsResponse>(request, marshaller, unmarshaller);
@@ -285,7 +285,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual Task<ListTranscriptionJobsResponse> ListTranscriptionJobsAsync(ListTranscriptionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTranscriptionJobsRequest,ListTranscriptionJobsResponse>(request, marshaller, 
@@ -298,7 +298,7 @@ namespace Amazon.TranscribeService
 
         internal virtual StartTranscriptionJobResponse StartTranscriptionJob(StartTranscriptionJobRequest request)
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<StartTranscriptionJobRequest,StartTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -317,7 +317,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual Task<StartTranscriptionJobResponse> StartTranscriptionJobAsync(StartTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTranscriptionJobRequest,StartTranscriptionJobResponse>(request, marshaller, 

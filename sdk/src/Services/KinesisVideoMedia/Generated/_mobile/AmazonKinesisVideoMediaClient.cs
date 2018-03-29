@@ -72,7 +72,7 @@ namespace Amazon.KinesisVideoMedia
 
         internal virtual GetMediaResponse GetMedia(GetMediaRequest request)
         {
-            var marshaller = new GetMediaRequestMarshaller();
+            var marshaller = GetMediaRequestMarshaller.Instance;
             var unmarshaller = GetMediaResponseUnmarshaller.Instance;
 
             return Invoke<GetMediaRequest,GetMediaResponse>(request, marshaller, unmarshaller);
@@ -91,7 +91,7 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual Task<GetMediaResponse> GetMediaAsync(GetMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMediaRequestMarshaller();
+            var marshaller = GetMediaRequestMarshaller.Instance;
             var unmarshaller = GetMediaResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMediaRequest,GetMediaResponse>(request, marshaller, 

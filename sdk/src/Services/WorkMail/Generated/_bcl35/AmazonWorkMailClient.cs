@@ -290,7 +290,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request)
         {
-            var marshaller = new AssociateDelegateToResourceRequestMarshaller();
+            var marshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AssociateDelegateToResourceRequest,AssociateDelegateToResourceResponse>(request, marshaller, unmarshaller);
@@ -310,7 +310,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateDelegateToResource(AssociateDelegateToResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateDelegateToResourceRequestMarshaller();
+            var marshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateDelegateToResourceRequest>(request, marshaller, unmarshaller,
@@ -371,7 +371,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateMemberToGroup">REST API Reference for AssociateMemberToGroup Operation</seealso>
         public virtual AssociateMemberToGroupResponse AssociateMemberToGroup(AssociateMemberToGroupRequest request)
         {
-            var marshaller = new AssociateMemberToGroupRequestMarshaller();
+            var marshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             var unmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
             return Invoke<AssociateMemberToGroupRequest,AssociateMemberToGroupResponse>(request, marshaller, unmarshaller);
@@ -391,7 +391,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateMemberToGroup">REST API Reference for AssociateMemberToGroup Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToGroup(AssociateMemberToGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateMemberToGroupRequestMarshaller();
+            var marshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             var unmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateMemberToGroupRequest>(request, marshaller, unmarshaller,
@@ -454,7 +454,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
@@ -474,7 +474,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAliasRequest>(request, marshaller, unmarshaller,
@@ -535,7 +535,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
@@ -555,7 +555,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateGroupRequest>(request, marshaller, unmarshaller,
@@ -612,7 +612,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceRequest,CreateResourceResponse>(request, marshaller, unmarshaller);
@@ -632,7 +632,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateResourceRequest>(request, marshaller, unmarshaller,
@@ -697,7 +697,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
@@ -717,7 +717,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller,
@@ -768,7 +768,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
@@ -788,7 +788,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAliasRequest>(request, marshaller, unmarshaller,
@@ -846,7 +846,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
@@ -866,7 +866,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteGroupRequest>(request, marshaller, unmarshaller,
@@ -914,7 +914,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteResourceRequest,DeleteResourceResponse>(request, marshaller, unmarshaller);
@@ -934,7 +934,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteResourceRequest>(request, marshaller, unmarshaller,
@@ -994,7 +994,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -1014,7 +1014,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
@@ -1068,7 +1068,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual DeregisterFromWorkMailResponse DeregisterFromWorkMail(DeregisterFromWorkMailRequest request)
         {
-            var marshaller = new DeregisterFromWorkMailRequestMarshaller();
+            var marshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             var unmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterFromWorkMailRequest,DeregisterFromWorkMailResponse>(request, marshaller, unmarshaller);
@@ -1088,7 +1088,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual IAsyncResult BeginDeregisterFromWorkMail(DeregisterFromWorkMailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterFromWorkMailRequestMarshaller();
+            var marshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             var unmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterFromWorkMailRequest>(request, marshaller, unmarshaller,
@@ -1135,7 +1135,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var marshaller = new DescribeGroupRequestMarshaller();
+            var marshaller = DescribeGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGroupRequest,DescribeGroupResponse>(request, marshaller, unmarshaller);
@@ -1155,7 +1155,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeGroup(DescribeGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGroupRequestMarshaller();
+            var marshaller = DescribeGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGroupRequest>(request, marshaller, unmarshaller,
@@ -1195,7 +1195,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
         {
-            var marshaller = new DescribeOrganizationRequestMarshaller();
+            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOrganizationRequest,DescribeOrganizationResponse>(request, marshaller, unmarshaller);
@@ -1215,7 +1215,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganization(DescribeOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOrganizationRequestMarshaller();
+            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOrganizationRequest>(request, marshaller, unmarshaller,
@@ -1262,7 +1262,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual DescribeResourceResponse DescribeResource(DescribeResourceRequest request)
         {
-            var marshaller = new DescribeResourceRequestMarshaller();
+            var marshaller = DescribeResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourceRequest,DescribeResourceResponse>(request, marshaller, unmarshaller);
@@ -1282,7 +1282,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual IAsyncResult BeginDescribeResource(DescribeResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeResourceRequestMarshaller();
+            var marshaller = DescribeResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeResourceRequest>(request, marshaller, unmarshaller,
@@ -1329,7 +1329,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var marshaller = new DescribeUserRequestMarshaller();
+            var marshaller = DescribeUserRequestMarshaller.Instance;
             var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
@@ -1349,7 +1349,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual IAsyncResult BeginDescribeUser(DescribeUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeUserRequestMarshaller();
+            var marshaller = DescribeUserRequestMarshaller.Instance;
             var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeUserRequest>(request, marshaller, unmarshaller,
@@ -1400,7 +1400,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request)
         {
-            var marshaller = new DisassociateDelegateFromResourceRequestMarshaller();
+            var marshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateDelegateFromResourceRequest,DisassociateDelegateFromResourceResponse>(request, marshaller, unmarshaller);
@@ -1420,7 +1420,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateDelegateFromResourceRequestMarshaller();
+            var marshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateDelegateFromResourceRequest>(request, marshaller, unmarshaller,
@@ -1481,7 +1481,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateMemberFromGroup">REST API Reference for DisassociateMemberFromGroup Operation</seealso>
         public virtual DisassociateMemberFromGroupResponse DisassociateMemberFromGroup(DisassociateMemberFromGroupRequest request)
         {
-            var marshaller = new DisassociateMemberFromGroupRequestMarshaller();
+            var marshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             var unmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateMemberFromGroupRequest,DisassociateMemberFromGroupResponse>(request, marshaller, unmarshaller);
@@ -1501,7 +1501,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateMemberFromGroup">REST API Reference for DisassociateMemberFromGroup Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromGroup(DisassociateMemberFromGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateMemberFromGroupRequestMarshaller();
+            var marshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             var unmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateMemberFromGroupRequest>(request, marshaller, unmarshaller,
@@ -1552,7 +1552,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return Invoke<ListAliasesRequest,ListAliasesResponse>(request, marshaller, unmarshaller);
@@ -1572,7 +1572,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListAliasesRequest>(request, marshaller, unmarshaller,
@@ -1623,7 +1623,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request)
         {
-            var marshaller = new ListGroupMembersRequestMarshaller();
+            var marshaller = ListGroupMembersRequestMarshaller.Instance;
             var unmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupMembersRequest,ListGroupMembersResponse>(request, marshaller, unmarshaller);
@@ -1643,7 +1643,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual IAsyncResult BeginListGroupMembers(ListGroupMembersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListGroupMembersRequestMarshaller();
+            var marshaller = ListGroupMembersRequestMarshaller.Instance;
             var unmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListGroupMembersRequest>(request, marshaller, unmarshaller,
@@ -1690,7 +1690,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
@@ -1710,7 +1710,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListGroupsRequest>(request, marshaller, unmarshaller,
@@ -1746,7 +1746,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">REST API Reference for ListOrganizations Operation</seealso>
         public virtual ListOrganizationsResponse ListOrganizations(ListOrganizationsRequest request)
         {
-            var marshaller = new ListOrganizationsRequestMarshaller();
+            var marshaller = ListOrganizationsRequestMarshaller.Instance;
             var unmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
             return Invoke<ListOrganizationsRequest,ListOrganizationsResponse>(request, marshaller, unmarshaller);
@@ -1766,7 +1766,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">REST API Reference for ListOrganizations Operation</seealso>
         public virtual IAsyncResult BeginListOrganizations(ListOrganizationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListOrganizationsRequestMarshaller();
+            var marshaller = ListOrganizationsRequestMarshaller.Instance;
             var unmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListOrganizationsRequest>(request, marshaller, unmarshaller,
@@ -1818,7 +1818,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request)
         {
-            var marshaller = new ListResourceDelegatesRequestMarshaller();
+            var marshaller = ListResourceDelegatesRequestMarshaller.Instance;
             var unmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
             return Invoke<ListResourceDelegatesRequest,ListResourceDelegatesResponse>(request, marshaller, unmarshaller);
@@ -1838,7 +1838,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual IAsyncResult BeginListResourceDelegates(ListResourceDelegatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListResourceDelegatesRequestMarshaller();
+            var marshaller = ListResourceDelegatesRequestMarshaller.Instance;
             var unmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListResourceDelegatesRequest>(request, marshaller, unmarshaller,
@@ -1882,7 +1882,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return Invoke<ListResourcesRequest,ListResourcesResponse>(request, marshaller, unmarshaller);
@@ -1902,7 +1902,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListResourcesRequest>(request, marshaller, unmarshaller,
@@ -1946,7 +1946,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
@@ -1966,7 +1966,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller,
@@ -2045,7 +2045,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual RegisterToWorkMailResponse RegisterToWorkMail(RegisterToWorkMailRequest request)
         {
-            var marshaller = new RegisterToWorkMailRequestMarshaller();
+            var marshaller = RegisterToWorkMailRequestMarshaller.Instance;
             var unmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
             return Invoke<RegisterToWorkMailRequest,RegisterToWorkMailResponse>(request, marshaller, unmarshaller);
@@ -2065,7 +2065,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual IAsyncResult BeginRegisterToWorkMail(RegisterToWorkMailRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterToWorkMailRequestMarshaller();
+            var marshaller = RegisterToWorkMailRequestMarshaller.Instance;
             var unmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterToWorkMailRequest>(request, marshaller, unmarshaller,
@@ -2130,7 +2130,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         public virtual ResetPasswordResponse ResetPassword(ResetPasswordRequest request)
         {
-            var marshaller = new ResetPasswordRequestMarshaller();
+            var marshaller = ResetPasswordRequestMarshaller.Instance;
             var unmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
             return Invoke<ResetPasswordRequest,ResetPasswordResponse>(request, marshaller, unmarshaller);
@@ -2150,7 +2150,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         public virtual IAsyncResult BeginResetPassword(ResetPasswordRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ResetPasswordRequestMarshaller();
+            var marshaller = ResetPasswordRequestMarshaller.Instance;
             var unmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
             return BeginInvoke<ResetPasswordRequest>(request, marshaller, unmarshaller,
@@ -2228,7 +2228,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdatePrimaryEmailAddress">REST API Reference for UpdatePrimaryEmailAddress Operation</seealso>
         public virtual UpdatePrimaryEmailAddressResponse UpdatePrimaryEmailAddress(UpdatePrimaryEmailAddressRequest request)
         {
-            var marshaller = new UpdatePrimaryEmailAddressRequestMarshaller();
+            var marshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             var unmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePrimaryEmailAddressRequest,UpdatePrimaryEmailAddressResponse>(request, marshaller, unmarshaller);
@@ -2248,7 +2248,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdatePrimaryEmailAddress">REST API Reference for UpdatePrimaryEmailAddress Operation</seealso>
         public virtual IAsyncResult BeginUpdatePrimaryEmailAddress(UpdatePrimaryEmailAddressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdatePrimaryEmailAddressRequestMarshaller();
+            var marshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             var unmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdatePrimaryEmailAddressRequest>(request, marshaller, unmarshaller,
@@ -2320,7 +2320,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateResourceRequest,UpdateResourceResponse>(request, marshaller, unmarshaller);
@@ -2340,7 +2340,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateResourceRequest>(request, marshaller, unmarshaller,

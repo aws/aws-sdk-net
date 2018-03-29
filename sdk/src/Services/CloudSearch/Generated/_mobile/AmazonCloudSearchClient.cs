@@ -247,7 +247,7 @@ namespace Amazon.CloudSearch
 
         internal virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
-            var marshaller = new BuildSuggestersRequestMarshaller();
+            var marshaller = BuildSuggestersRequestMarshaller.Instance;
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
 
             return Invoke<BuildSuggestersRequest,BuildSuggestersResponse>(request, marshaller, unmarshaller);
@@ -265,7 +265,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BuildSuggestersRequestMarshaller();
+            var marshaller = BuildSuggestersRequestMarshaller.Instance;
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
 
             return InvokeAsync<BuildSuggestersRequest,BuildSuggestersResponse>(request, marshaller, 
@@ -278,7 +278,7 @@ namespace Amazon.CloudSearch
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
@@ -296,7 +296,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDomainRequest,CreateDomainResponse>(request, marshaller, 
@@ -309,7 +309,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
-            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var marshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
 
             return Invoke<DefineAnalysisSchemeRequest,DefineAnalysisSchemeResponse>(request, marshaller, unmarshaller);
@@ -327,7 +327,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var marshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DefineAnalysisSchemeRequest,DefineAnalysisSchemeResponse>(request, marshaller, 
@@ -340,7 +340,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
-            var marshaller = new DefineExpressionRequestMarshaller();
+            var marshaller = DefineExpressionRequestMarshaller.Instance;
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
 
             return Invoke<DefineExpressionRequest,DefineExpressionResponse>(request, marshaller, unmarshaller);
@@ -358,7 +358,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DefineExpressionRequestMarshaller();
+            var marshaller = DefineExpressionRequestMarshaller.Instance;
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DefineExpressionRequest,DefineExpressionResponse>(request, marshaller, 
@@ -371,7 +371,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
-            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var marshaller = DefineIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
             return Invoke<DefineIndexFieldRequest,DefineIndexFieldResponse>(request, marshaller, unmarshaller);
@@ -389,7 +389,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var marshaller = DefineIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
             return InvokeAsync<DefineIndexFieldRequest,DefineIndexFieldResponse>(request, marshaller, 
@@ -402,7 +402,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
-            var marshaller = new DefineSuggesterRequestMarshaller();
+            var marshaller = DefineSuggesterRequestMarshaller.Instance;
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
 
             return Invoke<DefineSuggesterRequest,DefineSuggesterResponse>(request, marshaller, unmarshaller);
@@ -420,7 +420,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DefineSuggesterRequestMarshaller();
+            var marshaller = DefineSuggesterRequestMarshaller.Instance;
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DefineSuggesterRequest,DefineSuggesterResponse>(request, marshaller, 
@@ -433,7 +433,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
-            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var marshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAnalysisSchemeRequest,DeleteAnalysisSchemeResponse>(request, marshaller, unmarshaller);
@@ -451,7 +451,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var marshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAnalysisSchemeRequest,DeleteAnalysisSchemeResponse>(request, marshaller, 
@@ -464,7 +464,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
@@ -482,7 +482,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, 
@@ -495,7 +495,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
-            var marshaller = new DeleteExpressionRequestMarshaller();
+            var marshaller = DeleteExpressionRequestMarshaller.Instance;
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteExpressionRequest,DeleteExpressionResponse>(request, marshaller, unmarshaller);
@@ -513,7 +513,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteExpressionRequestMarshaller();
+            var marshaller = DeleteExpressionRequestMarshaller.Instance;
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteExpressionRequest,DeleteExpressionResponse>(request, marshaller, 
@@ -526,7 +526,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
-            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var marshaller = DeleteIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIndexFieldRequest,DeleteIndexFieldResponse>(request, marshaller, unmarshaller);
@@ -544,7 +544,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var marshaller = DeleteIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIndexFieldRequest,DeleteIndexFieldResponse>(request, marshaller, 
@@ -557,7 +557,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
-            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var marshaller = DeleteSuggesterRequestMarshaller.Instance;
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSuggesterRequest,DeleteSuggesterResponse>(request, marshaller, unmarshaller);
@@ -575,7 +575,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var marshaller = DeleteSuggesterRequestMarshaller.Instance;
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSuggesterRequest,DeleteSuggesterResponse>(request, marshaller, 
@@ -588,7 +588,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
-            var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
+            var marshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAnalysisSchemesRequest,DescribeAnalysisSchemesResponse>(request, marshaller, unmarshaller);
@@ -606,7 +606,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
+            var marshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAnalysisSchemesRequest,DescribeAnalysisSchemesResponse>(request, marshaller, 
@@ -619,7 +619,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
-            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var marshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAvailabilityOptionsRequest,DescribeAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
@@ -637,7 +637,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var marshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAvailabilityOptionsRequest,DescribeAvailabilityOptionsResponse>(request, marshaller, 
@@ -654,7 +654,7 @@ namespace Amazon.CloudSearch
         }
         internal virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
-            var marshaller = new DescribeDomainsRequestMarshaller();
+            var marshaller = DescribeDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDomainsRequest,DescribeDomainsResponse>(request, marshaller, unmarshaller);
@@ -700,7 +700,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeDomainsRequestMarshaller();
+            var marshaller = DescribeDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDomainsRequest,DescribeDomainsResponse>(request, marshaller, 
@@ -713,7 +713,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
-            var marshaller = new DescribeExpressionsRequestMarshaller();
+            var marshaller = DescribeExpressionsRequestMarshaller.Instance;
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeExpressionsRequest,DescribeExpressionsResponse>(request, marshaller, unmarshaller);
@@ -731,7 +731,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeExpressionsRequestMarshaller();
+            var marshaller = DescribeExpressionsRequestMarshaller.Instance;
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExpressionsRequest,DescribeExpressionsResponse>(request, marshaller, 
@@ -744,7 +744,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
-            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var marshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeIndexFieldsRequest,DescribeIndexFieldsResponse>(request, marshaller, unmarshaller);
@@ -762,7 +762,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var marshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIndexFieldsRequest,DescribeIndexFieldsResponse>(request, marshaller, 
@@ -775,7 +775,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
-            var marshaller = new DescribeScalingParametersRequestMarshaller();
+            var marshaller = DescribeScalingParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeScalingParametersRequest,DescribeScalingParametersResponse>(request, marshaller, unmarshaller);
@@ -793,7 +793,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeScalingParametersRequestMarshaller();
+            var marshaller = DescribeScalingParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeScalingParametersRequest,DescribeScalingParametersResponse>(request, marshaller, 
@@ -806,7 +806,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
-            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var marshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServiceAccessPoliciesRequest,DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
@@ -824,7 +824,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var marshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeServiceAccessPoliciesRequest,DescribeServiceAccessPoliciesResponse>(request, marshaller, 
@@ -837,7 +837,7 @@ namespace Amazon.CloudSearch
 
         internal virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
-            var marshaller = new DescribeSuggestersRequestMarshaller();
+            var marshaller = DescribeSuggestersRequestMarshaller.Instance;
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSuggestersRequest,DescribeSuggestersResponse>(request, marshaller, unmarshaller);
@@ -855,7 +855,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeSuggestersRequestMarshaller();
+            var marshaller = DescribeSuggestersRequestMarshaller.Instance;
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSuggestersRequest,DescribeSuggestersResponse>(request, marshaller, 
@@ -868,7 +868,7 @@ namespace Amazon.CloudSearch
 
         internal virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
-            var marshaller = new IndexDocumentsRequestMarshaller();
+            var marshaller = IndexDocumentsRequestMarshaller.Instance;
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
             return Invoke<IndexDocumentsRequest,IndexDocumentsResponse>(request, marshaller, unmarshaller);
@@ -886,7 +886,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new IndexDocumentsRequestMarshaller();
+            var marshaller = IndexDocumentsRequestMarshaller.Instance;
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<IndexDocumentsRequest,IndexDocumentsResponse>(request, marshaller, 
@@ -903,7 +903,7 @@ namespace Amazon.CloudSearch
         }
         internal virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, unmarshaller);
@@ -938,7 +938,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, 
@@ -951,7 +951,7 @@ namespace Amazon.CloudSearch
 
         internal virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
-            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var marshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAvailabilityOptionsRequest,UpdateAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
@@ -969,7 +969,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var marshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAvailabilityOptionsRequest,UpdateAvailabilityOptionsResponse>(request, marshaller, 
@@ -982,7 +982,7 @@ namespace Amazon.CloudSearch
 
         internal virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
-            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var marshaller = UpdateScalingParametersRequestMarshaller.Instance;
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
 
             return Invoke<UpdateScalingParametersRequest,UpdateScalingParametersResponse>(request, marshaller, unmarshaller);
@@ -1000,7 +1000,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var marshaller = UpdateScalingParametersRequestMarshaller.Instance;
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateScalingParametersRequest,UpdateScalingParametersResponse>(request, marshaller, 
@@ -1013,7 +1013,7 @@ namespace Amazon.CloudSearch
 
         internal virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
-            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var marshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateServiceAccessPoliciesRequest,UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
@@ -1031,7 +1031,7 @@ namespace Amazon.CloudSearch
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var marshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServiceAccessPoliciesRequest,UpdateServiceAccessPoliciesResponse>(request, marshaller, 

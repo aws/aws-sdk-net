@@ -230,7 +230,7 @@ namespace Amazon.SecurityToken
         #region  AssumeRole
         internal virtual AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
@@ -248,7 +248,7 @@ namespace Amazon.SecurityToken
         public virtual void AssumeRoleAsync(AssumeRoleRequest request, AmazonServiceCallback<AssumeRoleRequest, AssumeRoleResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -265,7 +265,7 @@ namespace Amazon.SecurityToken
         #region  AssumeRoleWithSAML
         internal virtual AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
@@ -283,7 +283,7 @@ namespace Amazon.SecurityToken
         public virtual void AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest request, AmazonServiceCallback<AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -300,7 +300,7 @@ namespace Amazon.SecurityToken
         #region  AssumeRoleWithWebIdentity
         internal virtual AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
@@ -318,7 +318,7 @@ namespace Amazon.SecurityToken
         public virtual void AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest request, AmazonServiceCallback<AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -335,7 +335,7 @@ namespace Amazon.SecurityToken
         #region  DecodeAuthorizationMessage
         internal virtual DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
             return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
@@ -353,7 +353,7 @@ namespace Amazon.SecurityToken
         public virtual void DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest request, AmazonServiceCallback<DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -370,7 +370,7 @@ namespace Amazon.SecurityToken
         #region  GetCallerIdentity
         internal virtual GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
             return Invoke<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, unmarshaller);
@@ -388,7 +388,7 @@ namespace Amazon.SecurityToken
         public virtual void GetCallerIdentityAsync(GetCallerIdentityRequest request, AmazonServiceCallback<GetCallerIdentityRequest, GetCallerIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -405,7 +405,7 @@ namespace Amazon.SecurityToken
         #region  GetFederationToken
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
@@ -423,7 +423,7 @@ namespace Amazon.SecurityToken
         public virtual void GetFederationTokenAsync(GetFederationTokenRequest request, AmazonServiceCallback<GetFederationTokenRequest, GetFederationTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -516,7 +516,7 @@ namespace Amazon.SecurityToken
         }
         internal virtual GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
@@ -617,7 +617,7 @@ namespace Amazon.SecurityToken
         public virtual void GetSessionTokenAsync(GetSessionTokenRequest request, AmazonServiceCallback<GetSessionTokenRequest, GetSessionTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

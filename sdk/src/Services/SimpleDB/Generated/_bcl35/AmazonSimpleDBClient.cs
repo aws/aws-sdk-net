@@ -258,7 +258,7 @@ namespace Amazon.SimpleDB
         /// <returns>The response from the BatchDeleteAttributes service method, as returned by SimpleDB.</returns>
         public virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
-            var marshaller = new BatchDeleteAttributesRequestMarshaller();
+            var marshaller = BatchDeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
 
             return Invoke<BatchDeleteAttributesRequest,BatchDeleteAttributesResponse>(request, marshaller, unmarshaller);
@@ -277,7 +277,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginBatchDeleteAttributes(BatchDeleteAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchDeleteAttributesRequestMarshaller();
+            var marshaller = BatchDeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchDeleteAttributesRequest>(request, marshaller, unmarshaller,
@@ -385,7 +385,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
-            var marshaller = new BatchPutAttributesRequestMarshaller();
+            var marshaller = BatchPutAttributesRequestMarshaller.Instance;
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
 
             return Invoke<BatchPutAttributesRequest,BatchPutAttributesResponse>(request, marshaller, unmarshaller);
@@ -404,7 +404,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginBatchPutAttributes(BatchPutAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchPutAttributesRequestMarshaller();
+            var marshaller = BatchPutAttributesRequestMarshaller.Instance;
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchPutAttributesRequest>(request, marshaller, unmarshaller,
@@ -456,7 +456,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
@@ -475,7 +475,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDomainRequest>(request, marshaller, unmarshaller,
@@ -532,7 +532,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var marshaller = new DeleteAttributesRequestMarshaller();
+            var marshaller = DeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAttributesRequest,DeleteAttributesResponse>(request, marshaller, unmarshaller);
@@ -551,7 +551,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAttributesRequestMarshaller();
+            var marshaller = DeleteAttributesRequestMarshaller.Instance;
             var unmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAttributesRequest>(request, marshaller, unmarshaller,
@@ -587,7 +587,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
@@ -606,7 +606,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDomainRequest>(request, marshaller, unmarshaller,
@@ -645,7 +645,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
-            var marshaller = new DomainMetadataRequestMarshaller();
+            var marshaller = DomainMetadataRequestMarshaller.Instance;
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
 
             return Invoke<DomainMetadataRequest,DomainMetadataResponse>(request, marshaller, unmarshaller);
@@ -664,7 +664,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginDomainMetadata(DomainMetadataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DomainMetadataRequestMarshaller();
+            var marshaller = DomainMetadataRequestMarshaller.Instance;
             var unmarshaller = DomainMetadataResponseUnmarshaller.Instance;
 
             return BeginInvoke<DomainMetadataRequest>(request, marshaller, unmarshaller,
@@ -713,7 +713,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
-            var marshaller = new GetAttributesRequestMarshaller();
+            var marshaller = GetAttributesRequestMarshaller.Instance;
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<GetAttributesRequest,GetAttributesResponse>(request, marshaller, unmarshaller);
@@ -732,7 +732,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAttributes(GetAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAttributesRequestMarshaller();
+            var marshaller = GetAttributesRequestMarshaller.Instance;
             var unmarshaller = GetAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAttributesRequest>(request, marshaller, unmarshaller,
@@ -795,7 +795,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var marshaller = new ListDomainsRequestMarshaller();
+            var marshaller = ListDomainsRequestMarshaller.Instance;
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
             return Invoke<ListDomainsRequest,ListDomainsResponse>(request, marshaller, unmarshaller);
@@ -814,7 +814,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDomainsRequestMarshaller();
+            var marshaller = ListDomainsRequestMarshaller.Instance;
             var unmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDomainsRequest>(request, marshaller, unmarshaller,
@@ -908,7 +908,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var marshaller = new PutAttributesRequestMarshaller();
+            var marshaller = PutAttributesRequestMarshaller.Instance;
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
             return Invoke<PutAttributesRequest,PutAttributesResponse>(request, marshaller, unmarshaller);
@@ -927,7 +927,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutAttributesRequestMarshaller();
+            var marshaller = PutAttributesRequestMarshaller.Instance;
             var unmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutAttributesRequest>(request, marshaller, unmarshaller,
@@ -1002,7 +1002,7 @@ namespace Amazon.SimpleDB
         /// </exception>
         public virtual SelectResponse Select(SelectRequest request)
         {
-            var marshaller = new SelectRequestMarshaller();
+            var marshaller = SelectRequestMarshaller.Instance;
             var unmarshaller = SelectResponseUnmarshaller.Instance;
 
             return Invoke<SelectRequest,SelectResponse>(request, marshaller, unmarshaller);
@@ -1021,7 +1021,7 @@ namespace Amazon.SimpleDB
         ///         operation.</returns>
         public virtual IAsyncResult BeginSelect(SelectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SelectRequestMarshaller();
+            var marshaller = SelectRequestMarshaller.Instance;
             var unmarshaller = SelectResponseUnmarshaller.Instance;
 
             return BeginInvoke<SelectRequest>(request, marshaller, unmarshaller,

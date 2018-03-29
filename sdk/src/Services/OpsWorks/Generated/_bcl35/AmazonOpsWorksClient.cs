@@ -405,7 +405,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
         public virtual AssignInstanceResponse AssignInstance(AssignInstanceRequest request)
         {
-            var marshaller = new AssignInstanceRequestMarshaller();
+            var marshaller = AssignInstanceRequestMarshaller.Instance;
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
 
             return Invoke<AssignInstanceRequest,AssignInstanceResponse>(request, marshaller, unmarshaller);
@@ -425,7 +425,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
         public virtual IAsyncResult BeginAssignInstance(AssignInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssignInstanceRequestMarshaller();
+            var marshaller = AssignInstanceRequestMarshaller.Instance;
             var unmarshaller = AssignInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssignInstanceRequest>(request, marshaller, unmarshaller,
@@ -476,7 +476,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
         public virtual AssignVolumeResponse AssignVolume(AssignVolumeRequest request)
         {
-            var marshaller = new AssignVolumeRequestMarshaller();
+            var marshaller = AssignVolumeRequestMarshaller.Instance;
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
 
             return Invoke<AssignVolumeRequest,AssignVolumeResponse>(request, marshaller, unmarshaller);
@@ -496,7 +496,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
         public virtual IAsyncResult BeginAssignVolume(AssignVolumeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssignVolumeRequestMarshaller();
+            var marshaller = AssignVolumeRequestMarshaller.Instance;
             var unmarshaller = AssignVolumeResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssignVolumeRequest>(request, marshaller, unmarshaller,
@@ -546,7 +546,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
         public virtual AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
         {
-            var marshaller = new AssociateElasticIpRequestMarshaller();
+            var marshaller = AssociateElasticIpRequestMarshaller.Instance;
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
 
             return Invoke<AssociateElasticIpRequest,AssociateElasticIpResponse>(request, marshaller, unmarshaller);
@@ -566,7 +566,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
         public virtual IAsyncResult BeginAssociateElasticIp(AssociateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateElasticIpRequestMarshaller();
+            var marshaller = AssociateElasticIpRequestMarshaller.Instance;
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateElasticIpRequest>(request, marshaller, unmarshaller,
@@ -622,7 +622,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
         public virtual AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
         {
-            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
+            var marshaller = AttachElasticLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<AttachElasticLoadBalancerRequest,AttachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -642,7 +642,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
+            var marshaller = AttachElasticLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachElasticLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -690,7 +690,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
         public virtual CloneStackResponse CloneStack(CloneStackRequest request)
         {
-            var marshaller = new CloneStackRequestMarshaller();
+            var marshaller = CloneStackRequestMarshaller.Instance;
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
 
             return Invoke<CloneStackRequest,CloneStackResponse>(request, marshaller, unmarshaller);
@@ -710,7 +710,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
         public virtual IAsyncResult BeginCloneStack(CloneStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CloneStackRequestMarshaller();
+            var marshaller = CloneStackRequestMarshaller.Instance;
             var unmarshaller = CloneStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<CloneStackRequest>(request, marshaller, unmarshaller,
@@ -758,7 +758,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual CreateAppResponse CreateApp(CreateAppRequest request)
         {
-            var marshaller = new CreateAppRequestMarshaller();
+            var marshaller = CreateAppRequestMarshaller.Instance;
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
 
             return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
@@ -778,7 +778,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual IAsyncResult BeginCreateApp(CreateAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAppRequestMarshaller();
+            var marshaller = CreateAppRequestMarshaller.Instance;
             var unmarshaller = CreateAppResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAppRequest>(request, marshaller, unmarshaller,
@@ -827,7 +827,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
@@ -847,7 +847,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDeploymentRequest>(request, marshaller, unmarshaller,
@@ -895,7 +895,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
-            var marshaller = new CreateInstanceRequestMarshaller();
+            var marshaller = CreateInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstanceRequest,CreateInstanceResponse>(request, marshaller, unmarshaller);
@@ -915,7 +915,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateInstanceRequestMarshaller();
+            var marshaller = CreateInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateInstanceRequest>(request, marshaller, unmarshaller,
@@ -971,7 +971,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
         public virtual CreateLayerResponse CreateLayer(CreateLayerRequest request)
         {
-            var marshaller = new CreateLayerRequestMarshaller();
+            var marshaller = CreateLayerRequestMarshaller.Instance;
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
 
             return Invoke<CreateLayerRequest,CreateLayerResponse>(request, marshaller, unmarshaller);
@@ -991,7 +991,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
         public virtual IAsyncResult BeginCreateLayer(CreateLayerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateLayerRequestMarshaller();
+            var marshaller = CreateLayerRequestMarshaller.Instance;
             var unmarshaller = CreateLayerResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateLayerRequest>(request, marshaller, unmarshaller,
@@ -1036,7 +1036,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual CreateStackResponse CreateStack(CreateStackRequest request)
         {
-            var marshaller = new CreateStackRequestMarshaller();
+            var marshaller = CreateStackRequestMarshaller.Instance;
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return Invoke<CreateStackRequest,CreateStackResponse>(request, marshaller, unmarshaller);
@@ -1056,7 +1056,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public virtual IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateStackRequestMarshaller();
+            var marshaller = CreateStackRequestMarshaller.Instance;
             var unmarshaller = CreateStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateStackRequest>(request, marshaller, unmarshaller,
@@ -1100,7 +1100,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
-            var marshaller = new CreateUserProfileRequestMarshaller();
+            var marshaller = CreateUserProfileRequestMarshaller.Instance;
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, unmarshaller);
@@ -1120,7 +1120,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUserProfileRequestMarshaller();
+            var marshaller = CreateUserProfileRequestMarshaller.Instance;
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUserProfileRequest>(request, marshaller, unmarshaller,
@@ -1167,7 +1167,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
         {
-            var marshaller = new DeleteAppRequestMarshaller();
+            var marshaller = DeleteAppRequestMarshaller.Instance;
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
@@ -1187,7 +1187,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual IAsyncResult BeginDeleteApp(DeleteAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAppRequestMarshaller();
+            var marshaller = DeleteAppRequestMarshaller.Instance;
             var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAppRequest>(request, marshaller, unmarshaller,
@@ -1240,7 +1240,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, unmarshaller);
@@ -1260,7 +1260,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteInstanceRequest>(request, marshaller, unmarshaller,
@@ -1309,7 +1309,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
         public virtual DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
         {
-            var marshaller = new DeleteLayerRequestMarshaller();
+            var marshaller = DeleteLayerRequestMarshaller.Instance;
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLayerRequest,DeleteLayerResponse>(request, marshaller, unmarshaller);
@@ -1329,7 +1329,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
         public virtual IAsyncResult BeginDeleteLayer(DeleteLayerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteLayerRequestMarshaller();
+            var marshaller = DeleteLayerRequestMarshaller.Instance;
             var unmarshaller = DeleteLayerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteLayerRequest>(request, marshaller, unmarshaller,
@@ -1378,7 +1378,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
-            var marshaller = new DeleteStackRequestMarshaller();
+            var marshaller = DeleteStackRequestMarshaller.Instance;
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStackRequest,DeleteStackResponse>(request, marshaller, unmarshaller);
@@ -1398,7 +1398,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public virtual IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteStackRequestMarshaller();
+            var marshaller = DeleteStackRequestMarshaller.Instance;
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteStackRequest>(request, marshaller, unmarshaller,
@@ -1445,7 +1445,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
-            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, unmarshaller);
@@ -1465,7 +1465,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUserProfileRequest>(request, marshaller, unmarshaller,
@@ -1513,7 +1513,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
         public virtual DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request)
         {
-            var marshaller = new DeregisterEcsClusterRequestMarshaller();
+            var marshaller = DeregisterEcsClusterRequestMarshaller.Instance;
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterEcsClusterRequest,DeregisterEcsClusterResponse>(request, marshaller, unmarshaller);
@@ -1533,7 +1533,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
         public virtual IAsyncResult BeginDeregisterEcsCluster(DeregisterEcsClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterEcsClusterRequestMarshaller();
+            var marshaller = DeregisterEcsClusterRequestMarshaller.Instance;
             var unmarshaller = DeregisterEcsClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterEcsClusterRequest>(request, marshaller, unmarshaller,
@@ -1582,7 +1582,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
         public virtual DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
         {
-            var marshaller = new DeregisterElasticIpRequestMarshaller();
+            var marshaller = DeregisterElasticIpRequestMarshaller.Instance;
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterElasticIpRequest,DeregisterElasticIpResponse>(request, marshaller, unmarshaller);
@@ -1602,7 +1602,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
         public virtual IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterElasticIpRequestMarshaller();
+            var marshaller = DeregisterElasticIpRequestMarshaller.Instance;
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterElasticIpRequest>(request, marshaller, unmarshaller,
@@ -1651,7 +1651,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         public virtual DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request)
         {
-            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var marshaller = DeregisterInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterInstanceRequest,DeregisterInstanceResponse>(request, marshaller, unmarshaller);
@@ -1671,7 +1671,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         public virtual IAsyncResult BeginDeregisterInstance(DeregisterInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterInstanceRequestMarshaller();
+            var marshaller = DeregisterInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterInstanceRequest>(request, marshaller, unmarshaller,
@@ -1718,7 +1718,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
         public virtual DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request)
         {
-            var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
+            var marshaller = DeregisterRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterRdsDbInstanceRequest,DeregisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
@@ -1738,7 +1738,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
         public virtual IAsyncResult BeginDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterRdsDbInstanceRequestMarshaller();
+            var marshaller = DeregisterRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterRdsDbInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterRdsDbInstanceRequest>(request, marshaller, unmarshaller,
@@ -1787,7 +1787,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
         public virtual DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
         {
-            var marshaller = new DeregisterVolumeRequestMarshaller();
+            var marshaller = DeregisterVolumeRequestMarshaller.Instance;
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterVolumeRequest,DeregisterVolumeResponse>(request, marshaller, unmarshaller);
@@ -1807,7 +1807,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
         public virtual IAsyncResult BeginDeregisterVolume(DeregisterVolumeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterVolumeRequestMarshaller();
+            var marshaller = DeregisterVolumeRequestMarshaller.Instance;
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterVolumeRequest>(request, marshaller, unmarshaller,
@@ -1848,7 +1848,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
         public virtual DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request)
         {
-            var marshaller = new DescribeAgentVersionsRequestMarshaller();
+            var marshaller = DescribeAgentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAgentVersionsRequest,DescribeAgentVersionsResponse>(request, marshaller, unmarshaller);
@@ -1868,7 +1868,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAgentVersions(DescribeAgentVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAgentVersionsRequestMarshaller();
+            var marshaller = DescribeAgentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAgentVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAgentVersionsRequest>(request, marshaller, unmarshaller,
@@ -1919,7 +1919,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
         public virtual DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
         {
-            var marshaller = new DescribeAppsRequestMarshaller();
+            var marshaller = DescribeAppsRequestMarshaller.Instance;
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAppsRequest,DescribeAppsResponse>(request, marshaller, unmarshaller);
@@ -1939,7 +1939,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
         public virtual IAsyncResult BeginDescribeApps(DescribeAppsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAppsRequestMarshaller();
+            var marshaller = DescribeAppsRequestMarshaller.Instance;
             var unmarshaller = DescribeAppsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAppsRequest>(request, marshaller, unmarshaller,
@@ -1990,7 +1990,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
         public virtual DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
         {
-            var marshaller = new DescribeCommandsRequestMarshaller();
+            var marshaller = DescribeCommandsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCommandsRequest,DescribeCommandsResponse>(request, marshaller, unmarshaller);
@@ -2010,7 +2010,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
         public virtual IAsyncResult BeginDescribeCommands(DescribeCommandsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeCommandsRequestMarshaller();
+            var marshaller = DescribeCommandsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommandsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeCommandsRequest>(request, marshaller, unmarshaller,
@@ -2061,7 +2061,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
         public virtual DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
         {
-            var marshaller = new DescribeDeploymentsRequestMarshaller();
+            var marshaller = DescribeDeploymentsRequestMarshaller.Instance;
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDeploymentsRequest,DescribeDeploymentsResponse>(request, marshaller, unmarshaller);
@@ -2081,7 +2081,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeployments(DescribeDeploymentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDeploymentsRequestMarshaller();
+            var marshaller = DescribeDeploymentsRequestMarshaller.Instance;
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDeploymentsRequest>(request, marshaller, unmarshaller,
@@ -2135,7 +2135,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
         public virtual DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request)
         {
-            var marshaller = new DescribeEcsClustersRequestMarshaller();
+            var marshaller = DescribeEcsClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEcsClustersRequest,DescribeEcsClustersResponse>(request, marshaller, unmarshaller);
@@ -2155,7 +2155,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
         public virtual IAsyncResult BeginDescribeEcsClusters(DescribeEcsClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEcsClustersRequestMarshaller();
+            var marshaller = DescribeEcsClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeEcsClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEcsClustersRequest>(request, marshaller, unmarshaller,
@@ -2207,7 +2207,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
         public virtual DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
         {
-            var marshaller = new DescribeElasticIpsRequestMarshaller();
+            var marshaller = DescribeElasticIpsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticIpsRequest,DescribeElasticIpsResponse>(request, marshaller, unmarshaller);
@@ -2227,7 +2227,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
         public virtual IAsyncResult BeginDescribeElasticIps(DescribeElasticIpsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticIpsRequestMarshaller();
+            var marshaller = DescribeElasticIpsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticIpsRequest>(request, marshaller, unmarshaller,
@@ -2307,7 +2307,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         public virtual DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
         {
-            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
+            var marshaller = DescribeElasticLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticLoadBalancersRequest,DescribeElasticLoadBalancersResponse>(request, marshaller, unmarshaller);
@@ -2327,7 +2327,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
+            var marshaller = DescribeElasticLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticLoadBalancersRequest>(request, marshaller, unmarshaller,
@@ -2378,7 +2378,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            var marshaller = new DescribeInstancesRequestMarshaller();
+            var marshaller = DescribeInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeInstancesRequest,DescribeInstancesResponse>(request, marshaller, unmarshaller);
@@ -2398,7 +2398,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeInstancesRequestMarshaller();
+            var marshaller = DescribeInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeInstancesRequest>(request, marshaller, unmarshaller,
@@ -2449,7 +2449,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
         public virtual DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
         {
-            var marshaller = new DescribeLayersRequestMarshaller();
+            var marshaller = DescribeLayersRequestMarshaller.Instance;
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeLayersRequest,DescribeLayersResponse>(request, marshaller, unmarshaller);
@@ -2469,7 +2469,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
         public virtual IAsyncResult BeginDescribeLayers(DescribeLayersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeLayersRequestMarshaller();
+            var marshaller = DescribeLayersRequestMarshaller.Instance;
             var unmarshaller = DescribeLayersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeLayersRequest>(request, marshaller, unmarshaller,
@@ -2520,7 +2520,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
         public virtual DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
         {
-            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
+            var marshaller = DescribeLoadBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
 
             return Invoke<DescribeLoadBasedAutoScalingRequest,DescribeLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
@@ -2540,7 +2540,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
+            var marshaller = DescribeLoadBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeLoadBasedAutoScalingRequest>(request, marshaller, unmarshaller,
@@ -2600,7 +2600,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         public virtual DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
         {
-            var marshaller = new DescribeMyUserProfileRequestMarshaller();
+            var marshaller = DescribeMyUserProfileRequestMarshaller.Instance;
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMyUserProfileRequest,DescribeMyUserProfileResponse>(request, marshaller, unmarshaller);
@@ -2620,7 +2620,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         public virtual IAsyncResult BeginDescribeMyUserProfile(DescribeMyUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeMyUserProfileRequestMarshaller();
+            var marshaller = DescribeMyUserProfileRequestMarshaller.Instance;
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeMyUserProfileRequest>(request, marshaller, unmarshaller,
@@ -2653,7 +2653,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
         public virtual DescribeOperatingSystemsResponse DescribeOperatingSystems(DescribeOperatingSystemsRequest request)
         {
-            var marshaller = new DescribeOperatingSystemsRequestMarshaller();
+            var marshaller = DescribeOperatingSystemsRequestMarshaller.Instance;
             var unmarshaller = DescribeOperatingSystemsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOperatingSystemsRequest,DescribeOperatingSystemsResponse>(request, marshaller, unmarshaller);
@@ -2673,7 +2673,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">REST API Reference for DescribeOperatingSystems Operation</seealso>
         public virtual IAsyncResult BeginDescribeOperatingSystems(DescribeOperatingSystemsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOperatingSystemsRequestMarshaller();
+            var marshaller = DescribeOperatingSystemsRequestMarshaller.Instance;
             var unmarshaller = DescribeOperatingSystemsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOperatingSystemsRequest>(request, marshaller, unmarshaller,
@@ -2720,7 +2720,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
         public virtual DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
         {
-            var marshaller = new DescribePermissionsRequestMarshaller();
+            var marshaller = DescribePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribePermissionsRequest,DescribePermissionsResponse>(request, marshaller, unmarshaller);
@@ -2740,7 +2740,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribePermissions(DescribePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribePermissionsRequestMarshaller();
+            var marshaller = DescribePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribePermissionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribePermissionsRequest>(request, marshaller, unmarshaller,
@@ -2791,7 +2791,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
         public virtual DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
         {
-            var marshaller = new DescribeRaidArraysRequestMarshaller();
+            var marshaller = DescribeRaidArraysRequestMarshaller.Instance;
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRaidArraysRequest,DescribeRaidArraysResponse>(request, marshaller, unmarshaller);
@@ -2811,7 +2811,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
         public virtual IAsyncResult BeginDescribeRaidArrays(DescribeRaidArraysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRaidArraysRequestMarshaller();
+            var marshaller = DescribeRaidArraysRequestMarshaller.Instance;
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRaidArraysRequest>(request, marshaller, unmarshaller,
@@ -2862,7 +2862,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
         public virtual DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request)
         {
-            var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
+            var marshaller = DescribeRdsDbInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRdsDbInstancesRequest,DescribeRdsDbInstancesResponse>(request, marshaller, unmarshaller);
@@ -2882,7 +2882,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeRdsDbInstances(DescribeRdsDbInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRdsDbInstancesRequestMarshaller();
+            var marshaller = DescribeRdsDbInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeRdsDbInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRdsDbInstancesRequest>(request, marshaller, unmarshaller,
@@ -2962,7 +2962,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         public virtual DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
         {
-            var marshaller = new DescribeServiceErrorsRequestMarshaller();
+            var marshaller = DescribeServiceErrorsRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServiceErrorsRequest,DescribeServiceErrorsResponse>(request, marshaller, unmarshaller);
@@ -2982,7 +2982,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         public virtual IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeServiceErrorsRequestMarshaller();
+            var marshaller = DescribeServiceErrorsRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeServiceErrorsRequest>(request, marshaller, unmarshaller,
@@ -3029,7 +3029,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
         public virtual DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request)
         {
-            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var marshaller = DescribeStackProvisioningParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStackProvisioningParametersRequest,DescribeStackProvisioningParametersResponse>(request, marshaller, unmarshaller);
@@ -3049,7 +3049,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeStackProvisioningParametersRequestMarshaller();
+            var marshaller = DescribeStackProvisioningParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeStackProvisioningParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeStackProvisioningParametersRequest>(request, marshaller, unmarshaller,
@@ -3121,7 +3121,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
         {
-            var marshaller = new DescribeStacksRequestMarshaller();
+            var marshaller = DescribeStacksRequestMarshaller.Instance;
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStacksRequest,DescribeStacksResponse>(request, marshaller, unmarshaller);
@@ -3141,7 +3141,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         public virtual IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeStacksRequestMarshaller();
+            var marshaller = DescribeStacksRequestMarshaller.Instance;
             var unmarshaller = DescribeStacksResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeStacksRequest>(request, marshaller, unmarshaller,
@@ -3189,7 +3189,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
         public virtual DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
         {
-            var marshaller = new DescribeStackSummaryRequestMarshaller();
+            var marshaller = DescribeStackSummaryRequestMarshaller.Instance;
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStackSummaryRequest,DescribeStackSummaryResponse>(request, marshaller, unmarshaller);
@@ -3209,7 +3209,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
         public virtual IAsyncResult BeginDescribeStackSummary(DescribeStackSummaryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeStackSummaryRequestMarshaller();
+            var marshaller = DescribeStackSummaryRequestMarshaller.Instance;
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeStackSummaryRequest>(request, marshaller, unmarshaller,
@@ -3260,7 +3260,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
         public virtual DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
         {
-            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
+            var marshaller = DescribeTimeBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTimeBasedAutoScalingRequest,DescribeTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
@@ -3280,7 +3280,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
         public virtual IAsyncResult BeginDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
+            var marshaller = DescribeTimeBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTimeBasedAutoScalingRequest>(request, marshaller, unmarshaller,
@@ -3352,7 +3352,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         public virtual DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
         {
-            var marshaller = new DescribeUserProfilesRequestMarshaller();
+            var marshaller = DescribeUserProfilesRequestMarshaller.Instance;
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserProfilesRequest,DescribeUserProfilesResponse>(request, marshaller, unmarshaller);
@@ -3372,7 +3372,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         public virtual IAsyncResult BeginDescribeUserProfiles(DescribeUserProfilesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeUserProfilesRequestMarshaller();
+            var marshaller = DescribeUserProfilesRequestMarshaller.Instance;
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeUserProfilesRequest>(request, marshaller, unmarshaller,
@@ -3423,7 +3423,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
-            var marshaller = new DescribeVolumesRequestMarshaller();
+            var marshaller = DescribeVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVolumesRequest,DescribeVolumesResponse>(request, marshaller, unmarshaller);
@@ -3443,7 +3443,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeVolumesRequestMarshaller();
+            var marshaller = DescribeVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeVolumesRequest>(request, marshaller, unmarshaller,
@@ -3487,7 +3487,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
         public virtual DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
         {
-            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
+            var marshaller = DetachElasticLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<DetachElasticLoadBalancerRequest,DetachElasticLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -3507,7 +3507,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
+            var marshaller = DetachElasticLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachElasticLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -3556,7 +3556,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
         public virtual DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
         {
-            var marshaller = new DisassociateElasticIpRequestMarshaller();
+            var marshaller = DisassociateElasticIpRequestMarshaller.Instance;
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateElasticIpRequest,DisassociateElasticIpResponse>(request, marshaller, unmarshaller);
@@ -3576,7 +3576,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
         public virtual IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateElasticIpRequestMarshaller();
+            var marshaller = DisassociateElasticIpRequestMarshaller.Instance;
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateElasticIpRequest>(request, marshaller, unmarshaller,
@@ -3624,7 +3624,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
         public virtual GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
         {
-            var marshaller = new GetHostnameSuggestionRequestMarshaller();
+            var marshaller = GetHostnameSuggestionRequestMarshaller.Instance;
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
 
             return Invoke<GetHostnameSuggestionRequest,GetHostnameSuggestionResponse>(request, marshaller, unmarshaller);
@@ -3644,7 +3644,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
         public virtual IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetHostnameSuggestionRequestMarshaller();
+            var marshaller = GetHostnameSuggestionRequestMarshaller.Instance;
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetHostnameSuggestionRequest>(request, marshaller, unmarshaller,
@@ -3690,7 +3690,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
         public virtual GrantAccessResponse GrantAccess(GrantAccessRequest request)
         {
-            var marshaller = new GrantAccessRequestMarshaller();
+            var marshaller = GrantAccessRequestMarshaller.Instance;
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
 
             return Invoke<GrantAccessRequest,GrantAccessResponse>(request, marshaller, unmarshaller);
@@ -3710,7 +3710,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
         public virtual IAsyncResult BeginGrantAccess(GrantAccessRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GrantAccessRequestMarshaller();
+            var marshaller = GrantAccessRequestMarshaller.Instance;
             var unmarshaller = GrantAccessResponseUnmarshaller.Instance;
 
             return BeginInvoke<GrantAccessRequest>(request, marshaller, unmarshaller,
@@ -3749,7 +3749,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
@@ -3769,7 +3769,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
@@ -3817,7 +3817,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, unmarshaller);
@@ -3837,7 +3837,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RebootInstanceRequest>(request, marshaller, unmarshaller,
@@ -3887,7 +3887,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
         public virtual RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request)
         {
-            var marshaller = new RegisterEcsClusterRequestMarshaller();
+            var marshaller = RegisterEcsClusterRequestMarshaller.Instance;
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
 
             return Invoke<RegisterEcsClusterRequest,RegisterEcsClusterResponse>(request, marshaller, unmarshaller);
@@ -3907,7 +3907,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
         public virtual IAsyncResult BeginRegisterEcsCluster(RegisterEcsClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterEcsClusterRequestMarshaller();
+            var marshaller = RegisterEcsClusterRequestMarshaller.Instance;
             var unmarshaller = RegisterEcsClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterEcsClusterRequest>(request, marshaller, unmarshaller,
@@ -3958,7 +3958,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
         public virtual RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
         {
-            var marshaller = new RegisterElasticIpRequestMarshaller();
+            var marshaller = RegisterElasticIpRequestMarshaller.Instance;
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
 
             return Invoke<RegisterElasticIpRequest,RegisterElasticIpResponse>(request, marshaller, unmarshaller);
@@ -3978,7 +3978,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
         public virtual IAsyncResult BeginRegisterElasticIp(RegisterElasticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterElasticIpRequestMarshaller();
+            var marshaller = RegisterElasticIpRequestMarshaller.Instance;
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterElasticIpRequest>(request, marshaller, unmarshaller,
@@ -4044,7 +4044,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         public virtual RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request)
         {
-            var marshaller = new RegisterInstanceRequestMarshaller();
+            var marshaller = RegisterInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RegisterInstanceRequest,RegisterInstanceResponse>(request, marshaller, unmarshaller);
@@ -4064,7 +4064,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         public virtual IAsyncResult BeginRegisterInstance(RegisterInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterInstanceRequestMarshaller();
+            var marshaller = RegisterInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterInstanceRequest>(request, marshaller, unmarshaller,
@@ -4111,7 +4111,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
         public virtual RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request)
         {
-            var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
+            var marshaller = RegisterRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RegisterRdsDbInstanceRequest,RegisterRdsDbInstanceResponse>(request, marshaller, unmarshaller);
@@ -4131,7 +4131,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
         public virtual IAsyncResult BeginRegisterRdsDbInstance(RegisterRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterRdsDbInstanceRequestMarshaller();
+            var marshaller = RegisterRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterRdsDbInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterRdsDbInstanceRequest>(request, marshaller, unmarshaller,
@@ -4181,7 +4181,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
         public virtual RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
         {
-            var marshaller = new RegisterVolumeRequestMarshaller();
+            var marshaller = RegisterVolumeRequestMarshaller.Instance;
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
 
             return Invoke<RegisterVolumeRequest,RegisterVolumeResponse>(request, marshaller, unmarshaller);
@@ -4201,7 +4201,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
         public virtual IAsyncResult BeginRegisterVolume(RegisterVolumeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterVolumeRequestMarshaller();
+            var marshaller = RegisterVolumeRequestMarshaller.Instance;
             var unmarshaller = RegisterVolumeResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterVolumeRequest>(request, marshaller, unmarshaller,
@@ -4256,7 +4256,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
         public virtual SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
         {
-            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
+            var marshaller = SetLoadBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
 
             return Invoke<SetLoadBasedAutoScalingRequest,SetLoadBasedAutoScalingResponse>(request, marshaller, unmarshaller);
@@ -4276,7 +4276,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
         public virtual IAsyncResult BeginSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
+            var marshaller = SetLoadBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetLoadBasedAutoScalingRequest>(request, marshaller, unmarshaller,
@@ -4324,7 +4324,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
         public virtual SetPermissionResponse SetPermission(SetPermissionRequest request)
         {
-            var marshaller = new SetPermissionRequestMarshaller();
+            var marshaller = SetPermissionRequestMarshaller.Instance;
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
 
             return Invoke<SetPermissionRequest,SetPermissionResponse>(request, marshaller, unmarshaller);
@@ -4344,7 +4344,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
         public virtual IAsyncResult BeginSetPermission(SetPermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetPermissionRequestMarshaller();
+            var marshaller = SetPermissionRequestMarshaller.Instance;
             var unmarshaller = SetPermissionResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetPermissionRequest>(request, marshaller, unmarshaller,
@@ -4393,7 +4393,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
         public virtual SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
         {
-            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
+            var marshaller = SetTimeBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
 
             return Invoke<SetTimeBasedAutoScalingRequest,SetTimeBasedAutoScalingResponse>(request, marshaller, unmarshaller);
@@ -4413,7 +4413,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
         public virtual IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
+            var marshaller = SetTimeBasedAutoScalingRequestMarshaller.Instance;
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetTimeBasedAutoScalingRequest>(request, marshaller, unmarshaller,
@@ -4461,7 +4461,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StartInstanceRequest,StartInstanceResponse>(request, marshaller, unmarshaller);
@@ -4481,7 +4481,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartInstanceRequest>(request, marshaller, unmarshaller,
@@ -4528,7 +4528,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
         public virtual StartStackResponse StartStack(StartStackRequest request)
         {
-            var marshaller = new StartStackRequestMarshaller();
+            var marshaller = StartStackRequestMarshaller.Instance;
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
 
             return Invoke<StartStackRequest,StartStackResponse>(request, marshaller, unmarshaller);
@@ -4548,7 +4548,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
         public virtual IAsyncResult BeginStartStack(StartStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartStackRequestMarshaller();
+            var marshaller = StartStackRequestMarshaller.Instance;
             var unmarshaller = StartStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartStackRequest>(request, marshaller, unmarshaller,
@@ -4598,7 +4598,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StopInstanceRequest,StopInstanceResponse>(request, marshaller, unmarshaller);
@@ -4618,7 +4618,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopInstanceRequest>(request, marshaller, unmarshaller,
@@ -4665,7 +4665,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
         public virtual StopStackResponse StopStack(StopStackRequest request)
         {
-            var marshaller = new StopStackRequestMarshaller();
+            var marshaller = StopStackRequestMarshaller.Instance;
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
 
             return Invoke<StopStackRequest,StopStackResponse>(request, marshaller, unmarshaller);
@@ -4685,7 +4685,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
         public virtual IAsyncResult BeginStopStack(StopStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopStackRequestMarshaller();
+            var marshaller = StopStackRequestMarshaller.Instance;
             var unmarshaller = StopStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopStackRequest>(request, marshaller, unmarshaller,
@@ -4726,7 +4726,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -4746,7 +4746,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
@@ -4795,7 +4795,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
         public virtual UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request)
         {
-            var marshaller = new UnassignInstanceRequestMarshaller();
+            var marshaller = UnassignInstanceRequestMarshaller.Instance;
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
 
             return Invoke<UnassignInstanceRequest,UnassignInstanceResponse>(request, marshaller, unmarshaller);
@@ -4815,7 +4815,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
         public virtual IAsyncResult BeginUnassignInstance(UnassignInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UnassignInstanceRequestMarshaller();
+            var marshaller = UnassignInstanceRequestMarshaller.Instance;
             var unmarshaller = UnassignInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UnassignInstanceRequest>(request, marshaller, unmarshaller,
@@ -4864,7 +4864,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
         public virtual UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
         {
-            var marshaller = new UnassignVolumeRequestMarshaller();
+            var marshaller = UnassignVolumeRequestMarshaller.Instance;
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
 
             return Invoke<UnassignVolumeRequest,UnassignVolumeResponse>(request, marshaller, unmarshaller);
@@ -4884,7 +4884,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
         public virtual IAsyncResult BeginUnassignVolume(UnassignVolumeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UnassignVolumeRequestMarshaller();
+            var marshaller = UnassignVolumeRequestMarshaller.Instance;
             var unmarshaller = UnassignVolumeResponseUnmarshaller.Instance;
 
             return BeginInvoke<UnassignVolumeRequest>(request, marshaller, unmarshaller,
@@ -4923,7 +4923,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -4943,7 +4943,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
@@ -4990,7 +4990,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
         {
-            var marshaller = new UpdateAppRequestMarshaller();
+            var marshaller = UpdateAppRequestMarshaller.Instance;
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
@@ -5010,7 +5010,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual IAsyncResult BeginUpdateApp(UpdateAppRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAppRequestMarshaller();
+            var marshaller = UpdateAppRequestMarshaller.Instance;
             var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAppRequest>(request, marshaller, unmarshaller,
@@ -5058,7 +5058,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
         public virtual UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
         {
-            var marshaller = new UpdateElasticIpRequestMarshaller();
+            var marshaller = UpdateElasticIpRequestMarshaller.Instance;
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
 
             return Invoke<UpdateElasticIpRequest,UpdateElasticIpResponse>(request, marshaller, unmarshaller);
@@ -5078,7 +5078,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
         public virtual IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateElasticIpRequestMarshaller();
+            var marshaller = UpdateElasticIpRequestMarshaller.Instance;
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateElasticIpRequest>(request, marshaller, unmarshaller,
@@ -5125,7 +5125,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
-            var marshaller = new UpdateInstanceRequestMarshaller();
+            var marshaller = UpdateInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateInstanceRequest,UpdateInstanceResponse>(request, marshaller, unmarshaller);
@@ -5145,7 +5145,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateInstanceRequestMarshaller();
+            var marshaller = UpdateInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateInstanceRequest>(request, marshaller, unmarshaller,
@@ -5192,7 +5192,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
         public virtual UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
         {
-            var marshaller = new UpdateLayerRequestMarshaller();
+            var marshaller = UpdateLayerRequestMarshaller.Instance;
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
 
             return Invoke<UpdateLayerRequest,UpdateLayerResponse>(request, marshaller, unmarshaller);
@@ -5212,7 +5212,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
         public virtual IAsyncResult BeginUpdateLayer(UpdateLayerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateLayerRequestMarshaller();
+            var marshaller = UpdateLayerRequestMarshaller.Instance;
             var unmarshaller = UpdateLayerResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateLayerRequest>(request, marshaller, unmarshaller,
@@ -5278,7 +5278,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         public virtual UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
         {
-            var marshaller = new UpdateMyUserProfileRequestMarshaller();
+            var marshaller = UpdateMyUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMyUserProfileRequest,UpdateMyUserProfileResponse>(request, marshaller, unmarshaller);
@@ -5298,7 +5298,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateMyUserProfile(UpdateMyUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateMyUserProfileRequestMarshaller();
+            var marshaller = UpdateMyUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateMyUserProfileRequest>(request, marshaller, unmarshaller,
@@ -5345,7 +5345,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
         public virtual UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request)
         {
-            var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
+            var marshaller = UpdateRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRdsDbInstanceRequest,UpdateRdsDbInstanceResponse>(request, marshaller, unmarshaller);
@@ -5365,7 +5365,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateRdsDbInstance(UpdateRdsDbInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRdsDbInstanceRequestMarshaller();
+            var marshaller = UpdateRdsDbInstanceRequestMarshaller.Instance;
             var unmarshaller = UpdateRdsDbInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRdsDbInstanceRequest>(request, marshaller, unmarshaller,
@@ -5412,7 +5412,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual UpdateStackResponse UpdateStack(UpdateStackRequest request)
         {
-            var marshaller = new UpdateStackRequestMarshaller();
+            var marshaller = UpdateStackRequestMarshaller.Instance;
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
             return Invoke<UpdateStackRequest,UpdateStackResponse>(request, marshaller, unmarshaller);
@@ -5432,7 +5432,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public virtual IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateStackRequestMarshaller();
+            var marshaller = UpdateStackRequestMarshaller.Instance;
             var unmarshaller = UpdateStackResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateStackRequest>(request, marshaller, unmarshaller,
@@ -5479,7 +5479,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
-            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, unmarshaller);
@@ -5499,7 +5499,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateUserProfileRequest>(request, marshaller, unmarshaller,
@@ -5547,7 +5547,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
         {
-            var marshaller = new UpdateVolumeRequestMarshaller();
+            var marshaller = UpdateVolumeRequestMarshaller.Instance;
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
 
             return Invoke<UpdateVolumeRequest,UpdateVolumeResponse>(request, marshaller, unmarshaller);
@@ -5567,7 +5567,7 @@ namespace Amazon.OpsWorks
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual IAsyncResult BeginUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateVolumeRequestMarshaller();
+            var marshaller = UpdateVolumeRequestMarshaller.Instance;
             var unmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateVolumeRequest>(request, marshaller, unmarshaller,

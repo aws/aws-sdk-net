@@ -228,7 +228,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("AbortMultipartUpload is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -260,7 +260,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("CompleteMultipartUpload is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -346,7 +346,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("CopyObject is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CopyObjectRequestMarshaller();
+            var marshaller = CopyObjectRequestMarshaller.Instance;
             var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -436,7 +436,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("CopyPart is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CopyPartRequestMarshaller();
+            var marshaller = CopyPartRequestMarshaller.Instance;
             var unmarshaller = CopyPartResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -489,7 +489,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucket is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketRequestMarshaller();
+            var marshaller = DeleteBucketRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -521,7 +521,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketAnalyticsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -553,7 +553,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketEncryption is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketEncryptionRequestMarshaller();
+            var marshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -585,7 +585,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketInventoryConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -617,7 +617,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketMetricsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -669,7 +669,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketPolicy is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketPolicyRequestMarshaller();
+            var marshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -701,7 +701,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketReplication is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+            var marshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -753,7 +753,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketTaggingRequestMarshaller();
+            var marshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -805,7 +805,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteBucketWebsite is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteBucketWebsiteRequestMarshaller();
+            var marshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -857,7 +857,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteCORSConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteCORSConfigurationRequestMarshaller();
+            var marshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -909,7 +909,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteLifecycleConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
+            var marshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -991,7 +991,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteObject is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1018,7 +1018,7 @@ namespace Amazon.S3
         public virtual void DeleteObjectsAsync(DeleteObjectsRequest request, AmazonServiceCallback<DeleteObjectsRequest, DeleteObjectsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteObjectsRequestMarshaller();
+            var marshaller = DeleteObjectsRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1050,7 +1050,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("DeleteObjectTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var marshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1096,7 +1096,7 @@ namespace Amazon.S3
         public virtual void GetACLAsync(GetACLRequest request, AmazonServiceCallback<GetACLRequest, GetACLResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetACLRequestMarshaller();
+            var marshaller = GetACLRequestMarshaller.Instance;
             var unmarshaller = GetACLResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1142,7 +1142,7 @@ namespace Amazon.S3
         public virtual void GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, AmazonServiceCallback<GetBucketAccelerateConfigurationRequest, GetBucketAccelerateConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1169,7 +1169,7 @@ namespace Amazon.S3
         public virtual void GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, AmazonServiceCallback<GetBucketAnalyticsConfigurationRequest, GetBucketAnalyticsConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1196,7 +1196,7 @@ namespace Amazon.S3
         public virtual void GetBucketEncryptionAsync(GetBucketEncryptionRequest request, AmazonServiceCallback<GetBucketEncryptionRequest, GetBucketEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketEncryptionRequestMarshaller();
+            var marshaller = GetBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1223,7 +1223,7 @@ namespace Amazon.S3
         public virtual void GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, AmazonServiceCallback<GetBucketInventoryConfigurationRequest, GetBucketInventoryConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1269,7 +1269,7 @@ namespace Amazon.S3
         public virtual void GetBucketLocationAsync(GetBucketLocationRequest request, AmazonServiceCallback<GetBucketLocationRequest, GetBucketLocationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketLocationRequestMarshaller();
+            var marshaller = GetBucketLocationRequestMarshaller.Instance;
             var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1316,7 +1316,7 @@ namespace Amazon.S3
         public virtual void GetBucketLoggingAsync(GetBucketLoggingRequest request, AmazonServiceCallback<GetBucketLoggingRequest, GetBucketLoggingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketLoggingRequestMarshaller();
+            var marshaller = GetBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1343,7 +1343,7 @@ namespace Amazon.S3
         public virtual void GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, AmazonServiceCallback<GetBucketMetricsConfigurationRequest, GetBucketMetricsConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1389,7 +1389,7 @@ namespace Amazon.S3
         public virtual void GetBucketNotificationAsync(GetBucketNotificationRequest request, AmazonServiceCallback<GetBucketNotificationRequest, GetBucketNotificationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketNotificationRequestMarshaller();
+            var marshaller = GetBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1435,7 +1435,7 @@ namespace Amazon.S3
         public virtual void GetBucketPolicyAsync(GetBucketPolicyRequest request, AmazonServiceCallback<GetBucketPolicyRequest, GetBucketPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketPolicyRequestMarshaller();
+            var marshaller = GetBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1467,7 +1467,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("GetBucketReplication is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketReplicationRequestMarshaller();
+            var marshaller = GetBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1513,7 +1513,7 @@ namespace Amazon.S3
         public virtual void GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, AmazonServiceCallback<GetBucketRequestPaymentRequest, GetBucketRequestPaymentResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketRequestPaymentRequestMarshaller();
+            var marshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1540,7 +1540,7 @@ namespace Amazon.S3
         public virtual void GetBucketTaggingAsync(GetBucketTaggingRequest request, AmazonServiceCallback<GetBucketTaggingRequest, GetBucketTaggingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketTaggingRequestMarshaller();
+            var marshaller = GetBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1586,7 +1586,7 @@ namespace Amazon.S3
         public virtual void GetBucketVersioningAsync(GetBucketVersioningRequest request, AmazonServiceCallback<GetBucketVersioningRequest, GetBucketVersioningResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketVersioningRequestMarshaller();
+            var marshaller = GetBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1632,7 +1632,7 @@ namespace Amazon.S3
         public virtual void GetBucketWebsiteAsync(GetBucketWebsiteRequest request, AmazonServiceCallback<GetBucketWebsiteRequest, GetBucketWebsiteResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetBucketWebsiteRequestMarshaller();
+            var marshaller = GetBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1678,7 +1678,7 @@ namespace Amazon.S3
         public virtual void GetCORSConfigurationAsync(GetCORSConfigurationRequest request, AmazonServiceCallback<GetCORSConfigurationRequest, GetCORSConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetCORSConfigurationRequestMarshaller();
+            var marshaller = GetCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1724,7 +1724,7 @@ namespace Amazon.S3
         public virtual void GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, AmazonServiceCallback<GetLifecycleConfigurationRequest, GetLifecycleConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetLifecycleConfigurationRequestMarshaller();
+            var marshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1795,7 +1795,7 @@ namespace Amazon.S3
         public virtual void GetObjectAsync(GetObjectRequest request, AmazonServiceCallback<GetObjectRequest, GetObjectResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetObjectRequestMarshaller();
+            var marshaller = GetObjectRequestMarshaller.Instance;
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1877,7 +1877,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("GetObjectMetadata is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetObjectMetadataRequestMarshaller();
+            var marshaller = GetObjectMetadataRequestMarshaller.Instance;
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1904,7 +1904,7 @@ namespace Amazon.S3
         public virtual void GetObjectTaggingAsync(GetObjectTaggingRequest request, AmazonServiceCallback<GetObjectTaggingRequest, GetObjectTaggingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var marshaller = GetObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1952,7 +1952,7 @@ namespace Amazon.S3
         public virtual void GetObjectTorrentAsync(GetObjectTorrentRequest request, AmazonServiceCallback<GetObjectTorrentRequest, GetObjectTorrentResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetObjectTorrentRequestMarshaller();
+            var marshaller = GetObjectTorrentRequestMarshaller.Instance;
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1984,7 +1984,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("HeadBucket is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new HeadBucketRequestMarshaller();
+            var marshaller = HeadBucketRequestMarshaller.Instance;
             var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2046,7 +2046,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("InitiateMultipartUpload is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2073,7 +2073,7 @@ namespace Amazon.S3
         public virtual void ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, AmazonServiceCallback<ListBucketAnalyticsConfigurationsRequest, ListBucketAnalyticsConfigurationsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2100,7 +2100,7 @@ namespace Amazon.S3
         public virtual void ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, AmazonServiceCallback<ListBucketInventoryConfigurationsRequest, ListBucketInventoryConfigurationsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var marshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2127,7 +2127,7 @@ namespace Amazon.S3
         public virtual void ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, AmazonServiceCallback<ListBucketMetricsConfigurationsRequest, ListBucketMetricsConfigurationsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2171,7 +2171,7 @@ namespace Amazon.S3
         public virtual void ListBucketsAsync(ListBucketsRequest request, AmazonServiceCallback<ListBucketsRequest, ListBucketsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListBucketsRequestMarshaller();
+            var marshaller = ListBucketsRequestMarshaller.Instance;
             var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2245,7 +2245,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("ListMultipartUploads is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2314,7 +2314,7 @@ namespace Amazon.S3
         public virtual void ListObjectsAsync(ListObjectsRequest request, AmazonServiceCallback<ListObjectsRequest, ListObjectsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListObjectsRequestMarshaller();
+            var marshaller = ListObjectsRequestMarshaller.Instance;
             var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2341,7 +2341,7 @@ namespace Amazon.S3
         public virtual void ListObjectsV2Async(ListObjectsV2Request request, AmazonServiceCallback<ListObjectsV2Request, ListObjectsV2Response> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListObjectsV2RequestMarshaller();
+            var marshaller = ListObjectsV2RequestMarshaller.Instance;
             var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2397,7 +2397,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("ListParts is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListPartsRequestMarshaller();
+            var marshaller = ListPartsRequestMarshaller.Instance;
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2464,7 +2464,7 @@ namespace Amazon.S3
         public virtual void ListVersionsAsync(ListVersionsRequest request, AmazonServiceCallback<ListVersionsRequest, ListVersionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListVersionsRequestMarshaller();
+            var marshaller = ListVersionsRequestMarshaller.Instance;
             var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2496,7 +2496,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutACL is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutACLRequestMarshaller();
+            var marshaller = PutACLRequestMarshaller.Instance;
             var unmarshaller = PutACLResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2548,7 +2548,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucket is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketRequestMarshaller();
+            var marshaller = PutBucketRequestMarshaller.Instance;
             var unmarshaller = PutBucketResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2580,7 +2580,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketAccelerateConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2612,7 +2612,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketAnalyticsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2644,7 +2644,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketEncryption is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketEncryptionRequestMarshaller();
+            var marshaller = PutBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2676,7 +2676,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketInventoryConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2708,7 +2708,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketLogging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketLoggingRequestMarshaller();
+            var marshaller = PutBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2740,7 +2740,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketMetricsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2772,7 +2772,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketNotification is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketNotificationRequestMarshaller();
+            var marshaller = PutBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2852,7 +2852,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketPolicy is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketPolicyRequestMarshaller();
+            var marshaller = PutBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2884,7 +2884,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketReplication is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketReplicationRequestMarshaller();
+            var marshaller = PutBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2941,7 +2941,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketRequestPayment is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketRequestPaymentRequestMarshaller();
+            var marshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -2995,7 +2995,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketTaggingRequestMarshaller();
+            var marshaller = PutBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3027,7 +3027,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketVersioning is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketVersioningRequestMarshaller();
+            var marshaller = PutBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3081,7 +3081,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutBucketWebsite is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutBucketWebsiteRequestMarshaller();
+            var marshaller = PutBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3135,7 +3135,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutCORSConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutCORSConfigurationRequestMarshaller();
+            var marshaller = PutCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3190,7 +3190,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutLifecycleConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutLifecycleConfigurationRequestMarshaller();
+            var marshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3222,7 +3222,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutObject is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutObjectRequestMarshaller();
+            var marshaller = PutObjectRequestMarshaller.Instance;
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3254,7 +3254,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("PutObjectTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var marshaller = PutObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3373,7 +3373,7 @@ namespace Amazon.S3
         public virtual void RestoreObjectAsync(RestoreObjectRequest request, AmazonServiceCallback<RestoreObjectRequest, RestoreObjectResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RestoreObjectRequestMarshaller();
+            var marshaller = RestoreObjectRequestMarshaller.Instance;
             var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -3405,7 +3405,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("UploadPart is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
             }
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UploadPartRequestMarshaller();
+            var marshaller = UploadPartRequestMarshaller.Instance;
             var unmarshaller = UploadPartResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

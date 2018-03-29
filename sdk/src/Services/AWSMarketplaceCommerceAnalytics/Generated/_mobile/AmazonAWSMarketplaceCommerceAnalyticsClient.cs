@@ -234,7 +234,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         internal virtual GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
         {
-            var marshaller = new GenerateDataSetRequestMarshaller();
+            var marshaller = GenerateDataSetRequestMarshaller.Instance;
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
             return Invoke<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, unmarshaller);
@@ -253,7 +253,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GenerateDataSetRequestMarshaller();
+            var marshaller = GenerateDataSetRequestMarshaller.Instance;
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, 
@@ -266,7 +266,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         internal virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
-            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
             return Invoke<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, unmarshaller);
@@ -285,7 +285,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         public virtual Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, 

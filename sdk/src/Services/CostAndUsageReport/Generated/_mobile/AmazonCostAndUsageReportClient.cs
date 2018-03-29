@@ -234,7 +234,7 @@ namespace Amazon.CostAndUsageReport
 
         internal virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
-            var marshaller = new DeleteReportDefinitionRequestMarshaller();
+            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteReportDefinitionRequest,DeleteReportDefinitionResponse>(request, marshaller, unmarshaller);
@@ -253,7 +253,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteReportDefinitionRequestMarshaller();
+            var marshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             var unmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteReportDefinitionRequest,DeleteReportDefinitionResponse>(request, marshaller, 
@@ -266,7 +266,7 @@ namespace Amazon.CostAndUsageReport
 
         internal virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
-            var marshaller = new DescribeReportDefinitionsRequestMarshaller();
+            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeReportDefinitionsRequest,DescribeReportDefinitionsResponse>(request, marshaller, unmarshaller);
@@ -285,7 +285,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeReportDefinitionsRequestMarshaller();
+            var marshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
             var unmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeReportDefinitionsRequest,DescribeReportDefinitionsResponse>(request, marshaller, 
@@ -298,7 +298,7 @@ namespace Amazon.CostAndUsageReport
 
         internal virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
-            var marshaller = new PutReportDefinitionRequestMarshaller();
+            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
             return Invoke<PutReportDefinitionRequest,PutReportDefinitionResponse>(request, marshaller, unmarshaller);
@@ -317,7 +317,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutReportDefinitionRequestMarshaller();
+            var marshaller = PutReportDefinitionRequestMarshaller.Instance;
             var unmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutReportDefinitionRequest,PutReportDefinitionResponse>(request, marshaller, 

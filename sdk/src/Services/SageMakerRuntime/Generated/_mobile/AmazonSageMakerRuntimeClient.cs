@@ -234,7 +234,7 @@ namespace Amazon.SageMakerRuntime
 
         internal virtual InvokeEndpointResponse InvokeEndpoint(InvokeEndpointRequest request)
         {
-            var marshaller = new InvokeEndpointRequestMarshaller();
+            var marshaller = InvokeEndpointRequestMarshaller.Instance;
             var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
             return Invoke<InvokeEndpointRequest,InvokeEndpointResponse>(request, marshaller, unmarshaller);
@@ -253,7 +253,7 @@ namespace Amazon.SageMakerRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">REST API Reference for InvokeEndpoint Operation</seealso>
         public virtual Task<InvokeEndpointResponse> InvokeEndpointAsync(InvokeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InvokeEndpointRequestMarshaller();
+            var marshaller = InvokeEndpointRequestMarshaller.Instance;
             var unmarshaller = InvokeEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<InvokeEndpointRequest,InvokeEndpointResponse>(request, marshaller, 

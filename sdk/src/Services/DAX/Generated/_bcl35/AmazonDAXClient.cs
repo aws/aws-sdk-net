@@ -279,7 +279,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
@@ -299,7 +299,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateClusterRequest>(request, marshaller, unmarshaller,
@@ -348,7 +348,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         public virtual CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
         {
-            var marshaller = new CreateParameterGroupRequestMarshaller();
+            var marshaller = CreateParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateParameterGroupRequest,CreateParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -368,7 +368,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateParameterGroup(CreateParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateParameterGroupRequestMarshaller();
+            var marshaller = CreateParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -415,7 +415,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
         public virtual CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
         {
-            var marshaller = new CreateSubnetGroupRequestMarshaller();
+            var marshaller = CreateSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateSubnetGroupRequest,CreateSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -435,7 +435,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateSubnetGroup(CreateSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSubnetGroupRequestMarshaller();
+            var marshaller = CreateSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSubnetGroupRequest>(request, marshaller, unmarshaller,
@@ -490,7 +490,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
         public virtual DecreaseReplicationFactorResponse DecreaseReplicationFactor(DecreaseReplicationFactorRequest request)
         {
-            var marshaller = new DecreaseReplicationFactorRequestMarshaller();
+            var marshaller = DecreaseReplicationFactorRequestMarshaller.Instance;
             var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
 
             return Invoke<DecreaseReplicationFactorRequest,DecreaseReplicationFactorResponse>(request, marshaller, unmarshaller);
@@ -510,7 +510,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
         public virtual IAsyncResult BeginDecreaseReplicationFactor(DecreaseReplicationFactorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DecreaseReplicationFactorRequestMarshaller();
+            var marshaller = DecreaseReplicationFactorRequestMarshaller.Instance;
             var unmarshaller = DecreaseReplicationFactorResponseUnmarshaller.Instance;
 
             return BeginInvoke<DecreaseReplicationFactorRequest>(request, marshaller, unmarshaller,
@@ -558,7 +558,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var marshaller = new DeleteClusterRequestMarshaller();
+            var marshaller = DeleteClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteClusterRequest,DeleteClusterResponse>(request, marshaller, unmarshaller);
@@ -578,7 +578,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteClusterRequestMarshaller();
+            var marshaller = DeleteClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteClusterRequest>(request, marshaller, unmarshaller,
@@ -624,7 +624,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         public virtual DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
         {
-            var marshaller = new DeleteParameterGroupRequestMarshaller();
+            var marshaller = DeleteParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteParameterGroupRequest,DeleteParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -644,7 +644,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteParameterGroup(DeleteParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteParameterGroupRequestMarshaller();
+            var marshaller = DeleteParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -689,7 +689,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
         public virtual DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
         {
-            var marshaller = new DeleteSubnetGroupRequestMarshaller();
+            var marshaller = DeleteSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSubnetGroupRequest,DeleteSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -709,7 +709,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteSubnetGroup(DeleteSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSubnetGroupRequestMarshaller();
+            var marshaller = DeleteSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSubnetGroupRequest>(request, marshaller, unmarshaller,
@@ -774,7 +774,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var marshaller = new DescribeClustersRequestMarshaller();
+            var marshaller = DescribeClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeClustersRequest,DescribeClustersResponse>(request, marshaller, unmarshaller);
@@ -794,7 +794,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeClustersRequestMarshaller();
+            var marshaller = DescribeClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeClustersRequest>(request, marshaller, unmarshaller,
@@ -833,7 +833,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
         public virtual DescribeDefaultParametersResponse DescribeDefaultParameters(DescribeDefaultParametersRequest request)
         {
-            var marshaller = new DescribeDefaultParametersRequestMarshaller();
+            var marshaller = DescribeDefaultParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDefaultParametersRequest,DescribeDefaultParametersResponse>(request, marshaller, unmarshaller);
@@ -853,7 +853,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeDefaultParameters(DescribeDefaultParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDefaultParametersRequestMarshaller();
+            var marshaller = DescribeDefaultParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDefaultParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDefaultParametersRequest>(request, marshaller, unmarshaller,
@@ -900,7 +900,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
@@ -920,7 +920,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
@@ -963,7 +963,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         public virtual DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
         {
-            var marshaller = new DescribeParameterGroupsRequestMarshaller();
+            var marshaller = DescribeParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeParameterGroupsRequest,DescribeParameterGroupsResponse>(request, marshaller, unmarshaller);
@@ -983,7 +983,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeParameterGroups(DescribeParameterGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeParameterGroupsRequestMarshaller();
+            var marshaller = DescribeParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeParameterGroupsRequest>(request, marshaller, unmarshaller,
@@ -1025,7 +1025,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
-            var marshaller = new DescribeParametersRequestMarshaller();
+            var marshaller = DescribeParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, unmarshaller);
@@ -1045,7 +1045,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeParametersRequestMarshaller();
+            var marshaller = DescribeParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeParametersRequest>(request, marshaller, unmarshaller,
@@ -1082,7 +1082,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
         public virtual DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
         {
-            var marshaller = new DescribeSubnetGroupsRequestMarshaller();
+            var marshaller = DescribeSubnetGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSubnetGroupsRequest,DescribeSubnetGroupsResponse>(request, marshaller, unmarshaller);
@@ -1102,7 +1102,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeSubnetGroups(DescribeSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSubnetGroupsRequestMarshaller();
+            var marshaller = DescribeSubnetGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSubnetGroupsRequest>(request, marshaller, unmarshaller,
@@ -1160,7 +1160,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
         public virtual IncreaseReplicationFactorResponse IncreaseReplicationFactor(IncreaseReplicationFactorRequest request)
         {
-            var marshaller = new IncreaseReplicationFactorRequestMarshaller();
+            var marshaller = IncreaseReplicationFactorRequestMarshaller.Instance;
             var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
 
             return Invoke<IncreaseReplicationFactorRequest,IncreaseReplicationFactorResponse>(request, marshaller, unmarshaller);
@@ -1180,7 +1180,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
         public virtual IAsyncResult BeginIncreaseReplicationFactor(IncreaseReplicationFactorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new IncreaseReplicationFactorRequestMarshaller();
+            var marshaller = IncreaseReplicationFactorRequestMarshaller.Instance;
             var unmarshaller = IncreaseReplicationFactorResponseUnmarshaller.Instance;
 
             return BeginInvoke<IncreaseReplicationFactorRequest>(request, marshaller, unmarshaller,
@@ -1229,7 +1229,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
@@ -1249,7 +1249,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
@@ -1298,7 +1298,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
         public virtual RebootNodeResponse RebootNode(RebootNodeRequest request)
         {
-            var marshaller = new RebootNodeRequestMarshaller();
+            var marshaller = RebootNodeRequestMarshaller.Instance;
             var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
 
             return Invoke<RebootNodeRequest,RebootNodeResponse>(request, marshaller, unmarshaller);
@@ -1318,7 +1318,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
         public virtual IAsyncResult BeginRebootNode(RebootNodeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RebootNodeRequestMarshaller();
+            var marshaller = RebootNodeRequestMarshaller.Instance;
             var unmarshaller = RebootNodeResponseUnmarshaller.Instance;
 
             return BeginInvoke<RebootNodeRequest>(request, marshaller, unmarshaller,
@@ -1370,7 +1370,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -1390,7 +1390,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
@@ -1442,7 +1442,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -1462,7 +1462,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
@@ -1514,7 +1514,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var marshaller = new UpdateClusterRequestMarshaller();
+            var marshaller = UpdateClusterRequestMarshaller.Instance;
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
             return Invoke<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, unmarshaller);
@@ -1534,7 +1534,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateClusterRequestMarshaller();
+            var marshaller = UpdateClusterRequestMarshaller.Instance;
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateClusterRequest>(request, marshaller, unmarshaller,
@@ -1580,7 +1580,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         public virtual UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
         {
-            var marshaller = new UpdateParameterGroupRequestMarshaller();
+            var marshaller = UpdateParameterGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateParameterGroupRequest,UpdateParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -1600,7 +1600,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateParameterGroup(UpdateParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateParameterGroupRequestMarshaller();
+            var marshaller = UpdateParameterGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -1646,7 +1646,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
         public virtual UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
         {
-            var marshaller = new UpdateSubnetGroupRequestMarshaller();
+            var marshaller = UpdateSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSubnetGroupRequest,UpdateSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -1666,7 +1666,7 @@ namespace Amazon.DAX
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateSubnetGroup(UpdateSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateSubnetGroupRequestMarshaller();
+            var marshaller = UpdateSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateSubnetGroupRequest>(request, marshaller, unmarshaller,

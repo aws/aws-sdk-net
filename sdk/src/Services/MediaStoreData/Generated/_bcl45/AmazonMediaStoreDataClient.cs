@@ -90,7 +90,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
@@ -108,7 +108,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, 
@@ -138,7 +138,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">REST API Reference for DescribeObject Operation</seealso>
         public virtual DescribeObjectResponse DescribeObject(DescribeObjectRequest request)
         {
-            var marshaller = new DescribeObjectRequestMarshaller();
+            var marshaller = DescribeObjectRequestMarshaller.Instance;
             var unmarshaller = DescribeObjectResponseUnmarshaller.Instance;
 
             return Invoke<DescribeObjectRequest,DescribeObjectResponse>(request, marshaller, unmarshaller);
@@ -156,7 +156,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">REST API Reference for DescribeObject Operation</seealso>
         public virtual Task<DescribeObjectResponse> DescribeObjectAsync(DescribeObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeObjectRequestMarshaller();
+            var marshaller = DescribeObjectRequestMarshaller.Instance;
             var unmarshaller = DescribeObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeObjectRequest,DescribeObjectResponse>(request, marshaller, 
@@ -189,7 +189,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var marshaller = new GetObjectRequestMarshaller();
+            var marshaller = GetObjectRequestMarshaller.Instance;
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectRequest,GetObjectResponse>(request, marshaller, unmarshaller);
@@ -207,7 +207,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectRequestMarshaller();
+            var marshaller = GetObjectRequestMarshaller.Instance;
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectRequest,GetObjectResponse>(request, marshaller, 
@@ -234,7 +234,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">REST API Reference for ListItems Operation</seealso>
         public virtual ListItemsResponse ListItems(ListItemsRequest request)
         {
-            var marshaller = new ListItemsRequestMarshaller();
+            var marshaller = ListItemsRequestMarshaller.Instance;
             var unmarshaller = ListItemsResponseUnmarshaller.Instance;
 
             return Invoke<ListItemsRequest,ListItemsResponse>(request, marshaller, unmarshaller);
@@ -252,7 +252,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">REST API Reference for ListItems Operation</seealso>
         public virtual Task<ListItemsResponse> ListItemsAsync(ListItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListItemsRequestMarshaller();
+            var marshaller = ListItemsRequestMarshaller.Instance;
             var unmarshaller = ListItemsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListItemsRequest,ListItemsResponse>(request, marshaller, 
@@ -279,7 +279,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var marshaller = new PutObjectRequestMarshaller();
+            var marshaller = PutObjectRequestMarshaller.Instance;
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return Invoke<PutObjectRequest,PutObjectResponse>(request, marshaller, unmarshaller);
@@ -297,7 +297,7 @@ namespace Amazon.MediaStoreData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutObjectRequestMarshaller();
+            var marshaller = PutObjectRequestMarshaller.Instance;
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 

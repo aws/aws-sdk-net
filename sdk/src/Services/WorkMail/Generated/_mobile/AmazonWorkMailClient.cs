@@ -272,7 +272,7 @@ namespace Amazon.WorkMail
 
         internal virtual AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request)
         {
-            var marshaller = new AssociateDelegateToResourceRequestMarshaller();
+            var marshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AssociateDelegateToResourceRequest,AssociateDelegateToResourceResponse>(request, marshaller, unmarshaller);
@@ -291,7 +291,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual Task<AssociateDelegateToResourceResponse> AssociateDelegateToResourceAsync(AssociateDelegateToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssociateDelegateToResourceRequestMarshaller();
+            var marshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             var unmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateDelegateToResourceRequest,AssociateDelegateToResourceResponse>(request, marshaller, 
@@ -304,7 +304,7 @@ namespace Amazon.WorkMail
 
         internal virtual AssociateMemberToGroupResponse AssociateMemberToGroup(AssociateMemberToGroupRequest request)
         {
-            var marshaller = new AssociateMemberToGroupRequestMarshaller();
+            var marshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             var unmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
             return Invoke<AssociateMemberToGroupRequest,AssociateMemberToGroupResponse>(request, marshaller, unmarshaller);
@@ -323,7 +323,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateMemberToGroup">REST API Reference for AssociateMemberToGroup Operation</seealso>
         public virtual Task<AssociateMemberToGroupResponse> AssociateMemberToGroupAsync(AssociateMemberToGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AssociateMemberToGroupRequestMarshaller();
+            var marshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             var unmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateMemberToGroupRequest,AssociateMemberToGroupResponse>(request, marshaller, 
@@ -336,7 +336,7 @@ namespace Amazon.WorkMail
 
         internal virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
@@ -355,7 +355,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAliasRequest,CreateAliasResponse>(request, marshaller, 
@@ -368,7 +368,7 @@ namespace Amazon.WorkMail
 
         internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
@@ -387,7 +387,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateGroupRequest,CreateGroupResponse>(request, marshaller, 
@@ -400,7 +400,7 @@ namespace Amazon.WorkMail
 
         internal virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceRequest,CreateResourceResponse>(request, marshaller, unmarshaller);
@@ -419,7 +419,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual Task<CreateResourceResponse> CreateResourceAsync(CreateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateResourceRequest,CreateResourceResponse>(request, marshaller, 
@@ -432,7 +432,7 @@ namespace Amazon.WorkMail
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
@@ -451,7 +451,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
@@ -464,7 +464,7 @@ namespace Amazon.WorkMail
 
         internal virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, unmarshaller);
@@ -483,7 +483,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAliasRequestMarshaller();
+            var marshaller = DeleteAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, 
@@ -496,7 +496,7 @@ namespace Amazon.WorkMail
 
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
@@ -515,7 +515,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
@@ -528,7 +528,7 @@ namespace Amazon.WorkMail
 
         internal virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteResourceRequest,DeleteResourceResponse>(request, marshaller, unmarshaller);
@@ -547,7 +547,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteResourceRequest,DeleteResourceResponse>(request, marshaller, 
@@ -560,7 +560,7 @@ namespace Amazon.WorkMail
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -579,7 +579,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
@@ -592,7 +592,7 @@ namespace Amazon.WorkMail
 
         internal virtual DeregisterFromWorkMailResponse DeregisterFromWorkMail(DeregisterFromWorkMailRequest request)
         {
-            var marshaller = new DeregisterFromWorkMailRequestMarshaller();
+            var marshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             var unmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterFromWorkMailRequest,DeregisterFromWorkMailResponse>(request, marshaller, unmarshaller);
@@ -611,7 +611,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual Task<DeregisterFromWorkMailResponse> DeregisterFromWorkMailAsync(DeregisterFromWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeregisterFromWorkMailRequestMarshaller();
+            var marshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             var unmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterFromWorkMailRequest,DeregisterFromWorkMailResponse>(request, marshaller, 
@@ -624,7 +624,7 @@ namespace Amazon.WorkMail
 
         internal virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var marshaller = new DescribeGroupRequestMarshaller();
+            var marshaller = DescribeGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGroupRequest,DescribeGroupResponse>(request, marshaller, unmarshaller);
@@ -643,7 +643,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeGroupRequestMarshaller();
+            var marshaller = DescribeGroupRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGroupRequest,DescribeGroupResponse>(request, marshaller, 
@@ -656,7 +656,7 @@ namespace Amazon.WorkMail
 
         internal virtual DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
         {
-            var marshaller = new DescribeOrganizationRequestMarshaller();
+            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOrganizationRequest,DescribeOrganizationResponse>(request, marshaller, unmarshaller);
@@ -675,7 +675,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual Task<DescribeOrganizationResponse> DescribeOrganizationAsync(DescribeOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeOrganizationRequestMarshaller();
+            var marshaller = DescribeOrganizationRequestMarshaller.Instance;
             var unmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeOrganizationRequest,DescribeOrganizationResponse>(request, marshaller, 
@@ -688,7 +688,7 @@ namespace Amazon.WorkMail
 
         internal virtual DescribeResourceResponse DescribeResource(DescribeResourceRequest request)
         {
-            var marshaller = new DescribeResourceRequestMarshaller();
+            var marshaller = DescribeResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourceRequest,DescribeResourceResponse>(request, marshaller, unmarshaller);
@@ -707,7 +707,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual Task<DescribeResourceResponse> DescribeResourceAsync(DescribeResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeResourceRequestMarshaller();
+            var marshaller = DescribeResourceRequestMarshaller.Instance;
             var unmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeResourceRequest,DescribeResourceResponse>(request, marshaller, 
@@ -720,7 +720,7 @@ namespace Amazon.WorkMail
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var marshaller = new DescribeUserRequestMarshaller();
+            var marshaller = DescribeUserRequestMarshaller.Instance;
             var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
@@ -739,7 +739,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeUserRequestMarshaller();
+            var marshaller = DescribeUserRequestMarshaller.Instance;
             var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUserRequest,DescribeUserResponse>(request, marshaller, 
@@ -752,7 +752,7 @@ namespace Amazon.WorkMail
 
         internal virtual DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request)
         {
-            var marshaller = new DisassociateDelegateFromResourceRequestMarshaller();
+            var marshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateDelegateFromResourceRequest,DisassociateDelegateFromResourceResponse>(request, marshaller, unmarshaller);
@@ -771,7 +771,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual Task<DisassociateDelegateFromResourceResponse> DisassociateDelegateFromResourceAsync(DisassociateDelegateFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisassociateDelegateFromResourceRequestMarshaller();
+            var marshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             var unmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateDelegateFromResourceRequest,DisassociateDelegateFromResourceResponse>(request, marshaller, 
@@ -784,7 +784,7 @@ namespace Amazon.WorkMail
 
         internal virtual DisassociateMemberFromGroupResponse DisassociateMemberFromGroup(DisassociateMemberFromGroupRequest request)
         {
-            var marshaller = new DisassociateMemberFromGroupRequestMarshaller();
+            var marshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             var unmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateMemberFromGroupRequest,DisassociateMemberFromGroupResponse>(request, marshaller, unmarshaller);
@@ -803,7 +803,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateMemberFromGroup">REST API Reference for DisassociateMemberFromGroup Operation</seealso>
         public virtual Task<DisassociateMemberFromGroupResponse> DisassociateMemberFromGroupAsync(DisassociateMemberFromGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisassociateMemberFromGroupRequestMarshaller();
+            var marshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             var unmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateMemberFromGroupRequest,DisassociateMemberFromGroupResponse>(request, marshaller, 
@@ -816,7 +816,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return Invoke<ListAliasesRequest,ListAliasesResponse>(request, marshaller, unmarshaller);
@@ -835,7 +835,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAliasesRequestMarshaller();
+            var marshaller = ListAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAliasesRequest,ListAliasesResponse>(request, marshaller, 
@@ -848,7 +848,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request)
         {
-            var marshaller = new ListGroupMembersRequestMarshaller();
+            var marshaller = ListGroupMembersRequestMarshaller.Instance;
             var unmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupMembersRequest,ListGroupMembersResponse>(request, marshaller, unmarshaller);
@@ -867,7 +867,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual Task<ListGroupMembersResponse> ListGroupMembersAsync(ListGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGroupMembersRequestMarshaller();
+            var marshaller = ListGroupMembersRequestMarshaller.Instance;
             var unmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupMembersRequest,ListGroupMembersResponse>(request, marshaller, 
@@ -880,7 +880,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
@@ -899,7 +899,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupsRequest,ListGroupsResponse>(request, marshaller, 
@@ -912,7 +912,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListOrganizationsResponse ListOrganizations(ListOrganizationsRequest request)
         {
-            var marshaller = new ListOrganizationsRequestMarshaller();
+            var marshaller = ListOrganizationsRequestMarshaller.Instance;
             var unmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
             return Invoke<ListOrganizationsRequest,ListOrganizationsResponse>(request, marshaller, unmarshaller);
@@ -931,7 +931,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">REST API Reference for ListOrganizations Operation</seealso>
         public virtual Task<ListOrganizationsResponse> ListOrganizationsAsync(ListOrganizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListOrganizationsRequestMarshaller();
+            var marshaller = ListOrganizationsRequestMarshaller.Instance;
             var unmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOrganizationsRequest,ListOrganizationsResponse>(request, marshaller, 
@@ -944,7 +944,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request)
         {
-            var marshaller = new ListResourceDelegatesRequestMarshaller();
+            var marshaller = ListResourceDelegatesRequestMarshaller.Instance;
             var unmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
             return Invoke<ListResourceDelegatesRequest,ListResourceDelegatesResponse>(request, marshaller, unmarshaller);
@@ -963,7 +963,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual Task<ListResourceDelegatesResponse> ListResourceDelegatesAsync(ListResourceDelegatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListResourceDelegatesRequestMarshaller();
+            var marshaller = ListResourceDelegatesRequestMarshaller.Instance;
             var unmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResourceDelegatesRequest,ListResourceDelegatesResponse>(request, marshaller, 
@@ -976,7 +976,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return Invoke<ListResourcesRequest,ListResourcesResponse>(request, marshaller, unmarshaller);
@@ -995,7 +995,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResourcesRequest,ListResourcesResponse>(request, marshaller, 
@@ -1008,7 +1008,7 @@ namespace Amazon.WorkMail
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
@@ -1027,7 +1027,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
@@ -1040,7 +1040,7 @@ namespace Amazon.WorkMail
 
         internal virtual RegisterToWorkMailResponse RegisterToWorkMail(RegisterToWorkMailRequest request)
         {
-            var marshaller = new RegisterToWorkMailRequestMarshaller();
+            var marshaller = RegisterToWorkMailRequestMarshaller.Instance;
             var unmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
             return Invoke<RegisterToWorkMailRequest,RegisterToWorkMailResponse>(request, marshaller, unmarshaller);
@@ -1059,7 +1059,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual Task<RegisterToWorkMailResponse> RegisterToWorkMailAsync(RegisterToWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RegisterToWorkMailRequestMarshaller();
+            var marshaller = RegisterToWorkMailRequestMarshaller.Instance;
             var unmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterToWorkMailRequest,RegisterToWorkMailResponse>(request, marshaller, 
@@ -1072,7 +1072,7 @@ namespace Amazon.WorkMail
 
         internal virtual ResetPasswordResponse ResetPassword(ResetPasswordRequest request)
         {
-            var marshaller = new ResetPasswordRequestMarshaller();
+            var marshaller = ResetPasswordRequestMarshaller.Instance;
             var unmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
             return Invoke<ResetPasswordRequest,ResetPasswordResponse>(request, marshaller, unmarshaller);
@@ -1091,7 +1091,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         public virtual Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResetPasswordRequestMarshaller();
+            var marshaller = ResetPasswordRequestMarshaller.Instance;
             var unmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetPasswordRequest,ResetPasswordResponse>(request, marshaller, 
@@ -1104,7 +1104,7 @@ namespace Amazon.WorkMail
 
         internal virtual UpdatePrimaryEmailAddressResponse UpdatePrimaryEmailAddress(UpdatePrimaryEmailAddressRequest request)
         {
-            var marshaller = new UpdatePrimaryEmailAddressRequestMarshaller();
+            var marshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             var unmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePrimaryEmailAddressRequest,UpdatePrimaryEmailAddressResponse>(request, marshaller, unmarshaller);
@@ -1123,7 +1123,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdatePrimaryEmailAddress">REST API Reference for UpdatePrimaryEmailAddress Operation</seealso>
         public virtual Task<UpdatePrimaryEmailAddressResponse> UpdatePrimaryEmailAddressAsync(UpdatePrimaryEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdatePrimaryEmailAddressRequestMarshaller();
+            var marshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             var unmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePrimaryEmailAddressRequest,UpdatePrimaryEmailAddressResponse>(request, marshaller, 
@@ -1136,7 +1136,7 @@ namespace Amazon.WorkMail
 
         internal virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateResourceRequest,UpdateResourceResponse>(request, marshaller, unmarshaller);
@@ -1155,7 +1155,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateResourceRequest,UpdateResourceResponse>(request, marshaller, 

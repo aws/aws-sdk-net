@@ -246,7 +246,7 @@ namespace Amazon.Athena
 
         internal virtual BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
         {
-            var marshaller = new BatchGetNamedQueryRequestMarshaller();
+            var marshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetNamedQueryRequest,BatchGetNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -265,7 +265,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual Task<BatchGetNamedQueryResponse> BatchGetNamedQueryAsync(BatchGetNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetNamedQueryRequestMarshaller();
+            var marshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetNamedQueryRequest,BatchGetNamedQueryResponse>(request, marshaller, 
@@ -278,7 +278,7 @@ namespace Amazon.Athena
 
         internal virtual BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
         {
-            var marshaller = new BatchGetQueryExecutionRequestMarshaller();
+            var marshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetQueryExecutionRequest,BatchGetQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -297,7 +297,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual Task<BatchGetQueryExecutionResponse> BatchGetQueryExecutionAsync(BatchGetQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetQueryExecutionRequestMarshaller();
+            var marshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetQueryExecutionRequest,BatchGetQueryExecutionResponse>(request, marshaller, 
@@ -310,7 +310,7 @@ namespace Amazon.Athena
 
         internal virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
         {
-            var marshaller = new CreateNamedQueryRequestMarshaller();
+            var marshaller = CreateNamedQueryRequestMarshaller.Instance;
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<CreateNamedQueryRequest,CreateNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -329,7 +329,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual Task<CreateNamedQueryResponse> CreateNamedQueryAsync(CreateNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateNamedQueryRequestMarshaller();
+            var marshaller = CreateNamedQueryRequestMarshaller.Instance;
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateNamedQueryRequest,CreateNamedQueryResponse>(request, marshaller, 
@@ -342,7 +342,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
         {
-            var marshaller = new DeleteNamedQueryRequestMarshaller();
+            var marshaller = DeleteNamedQueryRequestMarshaller.Instance;
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNamedQueryRequest,DeleteNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -361,7 +361,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual Task<DeleteNamedQueryResponse> DeleteNamedQueryAsync(DeleteNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteNamedQueryRequestMarshaller();
+            var marshaller = DeleteNamedQueryRequestMarshaller.Instance;
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNamedQueryRequest,DeleteNamedQueryResponse>(request, marshaller, 
@@ -374,7 +374,7 @@ namespace Amazon.Athena
 
         internal virtual GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
         {
-            var marshaller = new GetNamedQueryRequestMarshaller();
+            var marshaller = GetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<GetNamedQueryRequest,GetNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -393,7 +393,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual Task<GetNamedQueryResponse> GetNamedQueryAsync(GetNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetNamedQueryRequestMarshaller();
+            var marshaller = GetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetNamedQueryRequest,GetNamedQueryResponse>(request, marshaller, 
@@ -406,7 +406,7 @@ namespace Amazon.Athena
 
         internal virtual GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
         {
-            var marshaller = new GetQueryExecutionRequestMarshaller();
+            var marshaller = GetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<GetQueryExecutionRequest,GetQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -425,7 +425,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual Task<GetQueryExecutionResponse> GetQueryExecutionAsync(GetQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetQueryExecutionRequestMarshaller();
+            var marshaller = GetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetQueryExecutionRequest,GetQueryExecutionResponse>(request, marshaller, 
@@ -438,7 +438,7 @@ namespace Amazon.Athena
 
         internal virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var marshaller = new GetQueryResultsRequestMarshaller();
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
             return Invoke<GetQueryResultsRequest,GetQueryResultsResponse>(request, marshaller, unmarshaller);
@@ -457,7 +457,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetQueryResultsRequestMarshaller();
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetQueryResultsRequest,GetQueryResultsResponse>(request, marshaller, 
@@ -470,7 +470,7 @@ namespace Amazon.Athena
 
         internal virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
         {
-            var marshaller = new ListNamedQueriesRequestMarshaller();
+            var marshaller = ListNamedQueriesRequestMarshaller.Instance;
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
             return Invoke<ListNamedQueriesRequest,ListNamedQueriesResponse>(request, marshaller, unmarshaller);
@@ -489,7 +489,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual Task<ListNamedQueriesResponse> ListNamedQueriesAsync(ListNamedQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListNamedQueriesRequestMarshaller();
+            var marshaller = ListNamedQueriesRequestMarshaller.Instance;
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNamedQueriesRequest,ListNamedQueriesResponse>(request, marshaller, 
@@ -502,7 +502,7 @@ namespace Amazon.Athena
 
         internal virtual ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
         {
-            var marshaller = new ListQueryExecutionsRequestMarshaller();
+            var marshaller = ListQueryExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<ListQueryExecutionsRequest,ListQueryExecutionsResponse>(request, marshaller, unmarshaller);
@@ -521,7 +521,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual Task<ListQueryExecutionsResponse> ListQueryExecutionsAsync(ListQueryExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListQueryExecutionsRequestMarshaller();
+            var marshaller = ListQueryExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListQueryExecutionsRequest,ListQueryExecutionsResponse>(request, marshaller, 
@@ -534,7 +534,7 @@ namespace Amazon.Athena
 
         internal virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
         {
-            var marshaller = new StartQueryExecutionRequestMarshaller();
+            var marshaller = StartQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartQueryExecutionRequest,StartQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -553,7 +553,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual Task<StartQueryExecutionResponse> StartQueryExecutionAsync(StartQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartQueryExecutionRequestMarshaller();
+            var marshaller = StartQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartQueryExecutionRequest,StartQueryExecutionResponse>(request, marshaller, 
@@ -566,7 +566,7 @@ namespace Amazon.Athena
 
         internal virtual StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
         {
-            var marshaller = new StopQueryExecutionRequestMarshaller();
+            var marshaller = StopQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StopQueryExecutionRequest,StopQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -585,7 +585,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual Task<StopQueryExecutionResponse> StopQueryExecutionAsync(StopQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopQueryExecutionRequestMarshaller();
+            var marshaller = StopQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopQueryExecutionRequest,StopQueryExecutionResponse>(request, marshaller, 

@@ -126,7 +126,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual SearchResponse Search(SearchRequest request)
         {
-            var marshaller = new SearchRequestMarshaller();
+            var marshaller = SearchRequestMarshaller.Instance;
             var unmarshaller = SearchResponseUnmarshaller.Instance;
 
             return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
@@ -145,7 +145,7 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public virtual IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SearchRequestMarshaller();
+            var marshaller = SearchRequestMarshaller.Instance;
             var unmarshaller = SearchResponseUnmarshaller.Instance;
 
             return BeginInvoke<SearchRequest>(request, marshaller, unmarshaller,
@@ -199,7 +199,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
-            var marshaller = new SuggestRequestMarshaller();
+            var marshaller = SuggestRequestMarshaller.Instance;
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
 
             return Invoke<SuggestRequest,SuggestResponse>(request, marshaller, unmarshaller);
@@ -218,7 +218,7 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public virtual IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SuggestRequestMarshaller();
+            var marshaller = SuggestRequestMarshaller.Instance;
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
 
             return BeginInvoke<SuggestRequest>(request, marshaller, unmarshaller,
@@ -276,7 +276,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
-            var marshaller = new UploadDocumentsRequestMarshaller();
+            var marshaller = UploadDocumentsRequestMarshaller.Instance;
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 
             return Invoke<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, unmarshaller);
@@ -295,7 +295,7 @@ namespace Amazon.CloudSearchDomain
         ///         operation.</returns>
         public virtual IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UploadDocumentsRequestMarshaller();
+            var marshaller = UploadDocumentsRequestMarshaller.Instance;
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<UploadDocumentsRequest>(request, marshaller, unmarshaller,

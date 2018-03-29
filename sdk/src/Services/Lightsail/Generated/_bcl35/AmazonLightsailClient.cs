@@ -282,7 +282,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         public virtual AllocateStaticIpResponse AllocateStaticIp(AllocateStaticIpRequest request)
         {
-            var marshaller = new AllocateStaticIpRequestMarshaller();
+            var marshaller = AllocateStaticIpRequestMarshaller.Instance;
             var unmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<AllocateStaticIpRequest,AllocateStaticIpResponse>(request, marshaller, unmarshaller);
@@ -302,7 +302,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         public virtual IAsyncResult BeginAllocateStaticIp(AllocateStaticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AllocateStaticIpRequestMarshaller();
+            var marshaller = AllocateStaticIpRequestMarshaller.Instance;
             var unmarshaller = AllocateStaticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<AllocateStaticIpRequest>(request, marshaller, unmarshaller,
@@ -367,7 +367,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
         public virtual AttachDiskResponse AttachDisk(AttachDiskRequest request)
         {
-            var marshaller = new AttachDiskRequestMarshaller();
+            var marshaller = AttachDiskRequestMarshaller.Instance;
             var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
             return Invoke<AttachDiskRequest,AttachDiskResponse>(request, marshaller, unmarshaller);
@@ -387,7 +387,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">REST API Reference for AttachDisk Operation</seealso>
         public virtual IAsyncResult BeginAttachDisk(AttachDiskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachDiskRequestMarshaller();
+            var marshaller = AttachDiskRequestMarshaller.Instance;
             var unmarshaller = AttachDiskResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachDiskRequest>(request, marshaller, unmarshaller,
@@ -457,7 +457,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
         public virtual AttachInstancesToLoadBalancerResponse AttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request)
         {
-            var marshaller = new AttachInstancesToLoadBalancerRequestMarshaller();
+            var marshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<AttachInstancesToLoadBalancerRequest,AttachInstancesToLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -477,7 +477,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">REST API Reference for AttachInstancesToLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginAttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachInstancesToLoadBalancerRequestMarshaller();
+            var marshaller = AttachInstancesToLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = AttachInstancesToLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachInstancesToLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -550,7 +550,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
         public virtual AttachLoadBalancerTlsCertificateResponse AttachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new AttachLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<AttachLoadBalancerTlsCertificateRequest,AttachLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -570,7 +570,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">REST API Reference for AttachLoadBalancerTlsCertificate Operation</seealso>
         public virtual IAsyncResult BeginAttachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = AttachLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = AttachLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachLoadBalancerTlsCertificateRequest>(request, marshaller, unmarshaller,
@@ -634,7 +634,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         public virtual AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request)
         {
-            var marshaller = new AttachStaticIpRequestMarshaller();
+            var marshaller = AttachStaticIpRequestMarshaller.Instance;
             var unmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<AttachStaticIpRequest,AttachStaticIpResponse>(request, marshaller, unmarshaller);
@@ -654,7 +654,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         public virtual IAsyncResult BeginAttachStaticIp(AttachStaticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AttachStaticIpRequestMarshaller();
+            var marshaller = AttachStaticIpRequestMarshaller.Instance;
             var unmarshaller = AttachStaticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<AttachStaticIpRequest>(request, marshaller, unmarshaller,
@@ -718,7 +718,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         public virtual CloseInstancePublicPortsResponse CloseInstancePublicPorts(CloseInstancePublicPortsRequest request)
         {
-            var marshaller = new CloseInstancePublicPortsRequestMarshaller();
+            var marshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<CloseInstancePublicPortsRequest,CloseInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -738,7 +738,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         public virtual IAsyncResult BeginCloseInstancePublicPorts(CloseInstancePublicPortsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CloseInstancePublicPortsRequestMarshaller();
+            var marshaller = CloseInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = CloseInstancePublicPortsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CloseInstancePublicPortsRequest>(request, marshaller, unmarshaller,
@@ -805,7 +805,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
         public virtual CreateDiskResponse CreateDisk(CreateDiskRequest request)
         {
-            var marshaller = new CreateDiskRequestMarshaller();
+            var marshaller = CreateDiskRequestMarshaller.Instance;
             var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskRequest,CreateDiskResponse>(request, marshaller, unmarshaller);
@@ -825,7 +825,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">REST API Reference for CreateDisk Operation</seealso>
         public virtual IAsyncResult BeginCreateDisk(CreateDiskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDiskRequestMarshaller();
+            var marshaller = CreateDiskRequestMarshaller.Instance;
             var unmarshaller = CreateDiskResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDiskRequest>(request, marshaller, unmarshaller,
@@ -893,7 +893,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
         public virtual CreateDiskFromSnapshotResponse CreateDiskFromSnapshot(CreateDiskFromSnapshotRequest request)
         {
-            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var marshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskFromSnapshotRequest,CreateDiskFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -913,7 +913,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">REST API Reference for CreateDiskFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateDiskFromSnapshot(CreateDiskFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDiskFromSnapshotRequestMarshaller();
+            var marshaller = CreateDiskFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskFromSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDiskFromSnapshotRequest>(request, marshaller, unmarshaller,
@@ -991,7 +991,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
         public virtual CreateDiskSnapshotResponse CreateDiskSnapshot(CreateDiskSnapshotRequest request)
         {
-            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var marshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDiskSnapshotRequest,CreateDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1011,7 +1011,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">REST API Reference for CreateDiskSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateDiskSnapshot(CreateDiskSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDiskSnapshotRequestMarshaller();
+            var marshaller = CreateDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDiskSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDiskSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1075,7 +1075,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
@@ -1095,7 +1095,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDomainRequest>(request, marshaller, unmarshaller,
@@ -1160,7 +1160,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         public virtual CreateDomainEntryResponse CreateDomainEntry(CreateDomainEntryRequest request)
         {
-            var marshaller = new CreateDomainEntryRequestMarshaller();
+            var marshaller = CreateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainEntryRequest,CreateDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -1180,7 +1180,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainEntry(CreateDomainEntryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDomainEntryRequestMarshaller();
+            var marshaller = CreateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = CreateDomainEntryResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDomainEntryRequest>(request, marshaller, unmarshaller,
@@ -1244,7 +1244,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         public virtual CreateInstancesResponse CreateInstances(CreateInstancesRequest request)
         {
-            var marshaller = new CreateInstancesRequestMarshaller();
+            var marshaller = CreateInstancesRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstancesRequest,CreateInstancesResponse>(request, marshaller, unmarshaller);
@@ -1264,7 +1264,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         public virtual IAsyncResult BeginCreateInstances(CreateInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateInstancesRequestMarshaller();
+            var marshaller = CreateInstancesRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateInstancesRequest>(request, marshaller, unmarshaller,
@@ -1329,7 +1329,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         public virtual CreateInstancesFromSnapshotResponse CreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request)
         {
-            var marshaller = new CreateInstancesFromSnapshotRequestMarshaller();
+            var marshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstancesFromSnapshotRequest,CreateInstancesFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1349,7 +1349,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateInstancesFromSnapshotRequestMarshaller();
+            var marshaller = CreateInstancesFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstancesFromSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateInstancesFromSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1414,7 +1414,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         public virtual CreateInstanceSnapshotResponse CreateInstanceSnapshot(CreateInstanceSnapshotRequest request)
         {
-            var marshaller = new CreateInstanceSnapshotRequestMarshaller();
+            var marshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstanceSnapshotRequest,CreateInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1434,7 +1434,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateInstanceSnapshot(CreateInstanceSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateInstanceSnapshotRequestMarshaller();
+            var marshaller = CreateInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateInstanceSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1498,7 +1498,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
-            var marshaller = new CreateKeyPairRequestMarshaller();
+            var marshaller = CreateKeyPairRequestMarshaller.Instance;
             var unmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<CreateKeyPairRequest,CreateKeyPairResponse>(request, marshaller, unmarshaller);
@@ -1518,7 +1518,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual IAsyncResult BeginCreateKeyPair(CreateKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateKeyPairRequestMarshaller();
+            var marshaller = CreateKeyPairRequestMarshaller.Instance;
             var unmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateKeyPairRequest>(request, marshaller, unmarshaller,
@@ -1592,7 +1592,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var marshaller = CreateLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<CreateLoadBalancerRequest,CreateLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -1612,7 +1612,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateLoadBalancerRequestMarshaller();
+            var marshaller = CreateLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -1681,7 +1681,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
         public virtual CreateLoadBalancerTlsCertificateResponse CreateLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new CreateLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<CreateLoadBalancerTlsCertificateRequest,CreateLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -1701,7 +1701,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">REST API Reference for CreateLoadBalancerTlsCertificate Operation</seealso>
         public virtual IAsyncResult BeginCreateLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = CreateLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = CreateLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateLoadBalancerTlsCertificateRequest>(request, marshaller, unmarshaller,
@@ -1772,7 +1772,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
         public virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
         {
-            var marshaller = new DeleteDiskRequestMarshaller();
+            var marshaller = DeleteDiskRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDiskRequest,DeleteDiskResponse>(request, marshaller, unmarshaller);
@@ -1792,7 +1792,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">REST API Reference for DeleteDisk Operation</seealso>
         public virtual IAsyncResult BeginDeleteDisk(DeleteDiskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDiskRequestMarshaller();
+            var marshaller = DeleteDiskRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDiskRequest>(request, marshaller, unmarshaller,
@@ -1865,7 +1865,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
         public virtual DeleteDiskSnapshotResponse DeleteDiskSnapshot(DeleteDiskSnapshotRequest request)
         {
-            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var marshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDiskSnapshotRequest,DeleteDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1885,7 +1885,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">REST API Reference for DeleteDiskSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteDiskSnapshot(DeleteDiskSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDiskSnapshotRequestMarshaller();
+            var marshaller = DeleteDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDiskSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDiskSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1949,7 +1949,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
@@ -1969,7 +1969,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDomainRequest>(request, marshaller, unmarshaller,
@@ -2033,7 +2033,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         public virtual DeleteDomainEntryResponse DeleteDomainEntry(DeleteDomainEntryRequest request)
         {
-            var marshaller = new DeleteDomainEntryRequestMarshaller();
+            var marshaller = DeleteDomainEntryRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainEntryRequest,DeleteDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -2053,7 +2053,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainEntry(DeleteDomainEntryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDomainEntryRequestMarshaller();
+            var marshaller = DeleteDomainEntryRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainEntryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDomainEntryRequest>(request, marshaller, unmarshaller,
@@ -2117,7 +2117,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceRequest,DeleteInstanceResponse>(request, marshaller, unmarshaller);
@@ -2137,7 +2137,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteInstanceRequestMarshaller();
+            var marshaller = DeleteInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteInstanceRequest>(request, marshaller, unmarshaller,
@@ -2201,7 +2201,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         public virtual DeleteInstanceSnapshotResponse DeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request)
         {
-            var marshaller = new DeleteInstanceSnapshotRequestMarshaller();
+            var marshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceSnapshotRequest,DeleteInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -2221,7 +2221,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteInstanceSnapshotRequestMarshaller();
+            var marshaller = DeleteInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteInstanceSnapshotRequest>(request, marshaller, unmarshaller,
@@ -2285,7 +2285,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
-            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var marshaller = DeleteKeyPairRequestMarshaller.Instance;
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<DeleteKeyPairRequest,DeleteKeyPairResponse>(request, marshaller, unmarshaller);
@@ -2305,7 +2305,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual IAsyncResult BeginDeleteKeyPair(DeleteKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteKeyPairRequestMarshaller();
+            var marshaller = DeleteKeyPairRequestMarshaller.Instance;
             var unmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteKeyPairRequest>(request, marshaller, unmarshaller,
@@ -2371,7 +2371,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var marshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLoadBalancerRequest,DeleteLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -2391,7 +2391,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteLoadBalancerRequestMarshaller();
+            var marshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -2455,7 +2455,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
         public virtual DeleteLoadBalancerTlsCertificateResponse DeleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request)
         {
-            var marshaller = new DeleteLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLoadBalancerTlsCertificateRequest,DeleteLoadBalancerTlsCertificateResponse>(request, marshaller, unmarshaller);
@@ -2475,7 +2475,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">REST API Reference for DeleteLoadBalancerTlsCertificate Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteLoadBalancerTlsCertificateRequestMarshaller();
+            var marshaller = DeleteLoadBalancerTlsCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteLoadBalancerTlsCertificateRequest>(request, marshaller, unmarshaller,
@@ -2541,7 +2541,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         public virtual DetachDiskResponse DetachDisk(DetachDiskRequest request)
         {
-            var marshaller = new DetachDiskRequestMarshaller();
+            var marshaller = DetachDiskRequestMarshaller.Instance;
             var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
             return Invoke<DetachDiskRequest,DetachDiskResponse>(request, marshaller, unmarshaller);
@@ -2561,7 +2561,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">REST API Reference for DetachDisk Operation</seealso>
         public virtual IAsyncResult BeginDetachDisk(DetachDiskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachDiskRequestMarshaller();
+            var marshaller = DetachDiskRequestMarshaller.Instance;
             var unmarshaller = DetachDiskResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachDiskRequest>(request, marshaller, unmarshaller,
@@ -2631,7 +2631,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
         public virtual DetachInstancesFromLoadBalancerResponse DetachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request)
         {
-            var marshaller = new DetachInstancesFromLoadBalancerRequestMarshaller();
+            var marshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<DetachInstancesFromLoadBalancerRequest,DetachInstancesFromLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -2651,7 +2651,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">REST API Reference for DetachInstancesFromLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDetachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachInstancesFromLoadBalancerRequestMarshaller();
+            var marshaller = DetachInstancesFromLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = DetachInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachInstancesFromLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -2715,7 +2715,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         public virtual DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request)
         {
-            var marshaller = new DetachStaticIpRequestMarshaller();
+            var marshaller = DetachStaticIpRequestMarshaller.Instance;
             var unmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<DetachStaticIpRequest,DetachStaticIpResponse>(request, marshaller, unmarshaller);
@@ -2735,7 +2735,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         public virtual IAsyncResult BeginDetachStaticIp(DetachStaticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DetachStaticIpRequestMarshaller();
+            var marshaller = DetachStaticIpRequestMarshaller.Instance;
             var unmarshaller = DetachStaticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<DetachStaticIpRequest>(request, marshaller, unmarshaller,
@@ -2799,7 +2799,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         public virtual DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request)
         {
-            var marshaller = new DownloadDefaultKeyPairRequestMarshaller();
+            var marshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             var unmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<DownloadDefaultKeyPairRequest,DownloadDefaultKeyPairResponse>(request, marshaller, unmarshaller);
@@ -2819,7 +2819,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         public virtual IAsyncResult BeginDownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DownloadDefaultKeyPairRequestMarshaller();
+            var marshaller = DownloadDefaultKeyPairRequestMarshaller.Instance;
             var unmarshaller = DownloadDefaultKeyPairResponseUnmarshaller.Instance;
 
             return BeginInvoke<DownloadDefaultKeyPairRequest>(request, marshaller, unmarshaller,
@@ -2883,7 +2883,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         public virtual GetActiveNamesResponse GetActiveNames(GetActiveNamesRequest request)
         {
-            var marshaller = new GetActiveNamesRequestMarshaller();
+            var marshaller = GetActiveNamesRequestMarshaller.Instance;
             var unmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
             return Invoke<GetActiveNamesRequest,GetActiveNamesResponse>(request, marshaller, unmarshaller);
@@ -2903,7 +2903,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         public virtual IAsyncResult BeginGetActiveNames(GetActiveNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetActiveNamesRequestMarshaller();
+            var marshaller = GetActiveNamesRequestMarshaller.Instance;
             var unmarshaller = GetActiveNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetActiveNamesRequest>(request, marshaller, unmarshaller,
@@ -2970,7 +2970,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         public virtual GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request)
         {
-            var marshaller = new GetBlueprintsRequestMarshaller();
+            var marshaller = GetBlueprintsRequestMarshaller.Instance;
             var unmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
             return Invoke<GetBlueprintsRequest,GetBlueprintsResponse>(request, marshaller, unmarshaller);
@@ -2990,7 +2990,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         public virtual IAsyncResult BeginGetBlueprints(GetBlueprintsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBlueprintsRequestMarshaller();
+            var marshaller = GetBlueprintsRequestMarshaller.Instance;
             var unmarshaller = GetBlueprintsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBlueprintsRequest>(request, marshaller, unmarshaller,
@@ -3055,7 +3055,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         public virtual GetBundlesResponse GetBundles(GetBundlesRequest request)
         {
-            var marshaller = new GetBundlesRequestMarshaller();
+            var marshaller = GetBundlesRequestMarshaller.Instance;
             var unmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
             return Invoke<GetBundlesRequest,GetBundlesResponse>(request, marshaller, unmarshaller);
@@ -3075,7 +3075,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         public virtual IAsyncResult BeginGetBundles(GetBundlesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBundlesRequestMarshaller();
+            var marshaller = GetBundlesRequestMarshaller.Instance;
             var unmarshaller = GetBundlesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBundlesRequest>(request, marshaller, unmarshaller,
@@ -3139,7 +3139,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
         public virtual GetDiskResponse GetDisk(GetDiskRequest request)
         {
-            var marshaller = new GetDiskRequestMarshaller();
+            var marshaller = GetDiskRequestMarshaller.Instance;
             var unmarshaller = GetDiskResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskRequest,GetDiskResponse>(request, marshaller, unmarshaller);
@@ -3159,7 +3159,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">REST API Reference for GetDisk Operation</seealso>
         public virtual IAsyncResult BeginGetDisk(GetDiskRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDiskRequestMarshaller();
+            var marshaller = GetDiskRequestMarshaller.Instance;
             var unmarshaller = GetDiskResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDiskRequest>(request, marshaller, unmarshaller,
@@ -3230,7 +3230,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
         public virtual GetDisksResponse GetDisks(GetDisksRequest request)
         {
-            var marshaller = new GetDisksRequestMarshaller();
+            var marshaller = GetDisksRequestMarshaller.Instance;
             var unmarshaller = GetDisksResponseUnmarshaller.Instance;
 
             return Invoke<GetDisksRequest,GetDisksResponse>(request, marshaller, unmarshaller);
@@ -3250,7 +3250,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">REST API Reference for GetDisks Operation</seealso>
         public virtual IAsyncResult BeginGetDisks(GetDisksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDisksRequestMarshaller();
+            var marshaller = GetDisksRequestMarshaller.Instance;
             var unmarshaller = GetDisksResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDisksRequest>(request, marshaller, unmarshaller,
@@ -3314,7 +3314,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
         public virtual GetDiskSnapshotResponse GetDiskSnapshot(GetDiskSnapshotRequest request)
         {
-            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var marshaller = GetDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskSnapshotRequest,GetDiskSnapshotResponse>(request, marshaller, unmarshaller);
@@ -3334,7 +3334,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot">REST API Reference for GetDiskSnapshot Operation</seealso>
         public virtual IAsyncResult BeginGetDiskSnapshot(GetDiskSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDiskSnapshotRequestMarshaller();
+            var marshaller = GetDiskSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDiskSnapshotRequest>(request, marshaller, unmarshaller,
@@ -3406,7 +3406,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
         public virtual GetDiskSnapshotsResponse GetDiskSnapshots(GetDiskSnapshotsRequest request)
         {
-            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var marshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<GetDiskSnapshotsRequest,GetDiskSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -3426,7 +3426,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">REST API Reference for GetDiskSnapshots Operation</seealso>
         public virtual IAsyncResult BeginGetDiskSnapshots(GetDiskSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDiskSnapshotsRequestMarshaller();
+            var marshaller = GetDiskSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetDiskSnapshotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDiskSnapshotsRequest>(request, marshaller, unmarshaller,
@@ -3490,7 +3490,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var marshaller = new GetDomainRequestMarshaller();
+            var marshaller = GetDomainRequestMarshaller.Instance;
             var unmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainRequest,GetDomainResponse>(request, marshaller, unmarshaller);
@@ -3510,7 +3510,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual IAsyncResult BeginGetDomain(GetDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDomainRequestMarshaller();
+            var marshaller = GetDomainRequestMarshaller.Instance;
             var unmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDomainRequest>(request, marshaller, unmarshaller,
@@ -3574,7 +3574,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         public virtual GetDomainsResponse GetDomains(GetDomainsRequest request)
         {
-            var marshaller = new GetDomainsRequestMarshaller();
+            var marshaller = GetDomainsRequestMarshaller.Instance;
             var unmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainsRequest,GetDomainsResponse>(request, marshaller, unmarshaller);
@@ -3594,7 +3594,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         public virtual IAsyncResult BeginGetDomains(GetDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDomainsRequestMarshaller();
+            var marshaller = GetDomainsRequestMarshaller.Instance;
             var unmarshaller = GetDomainsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDomainsRequest>(request, marshaller, unmarshaller,
@@ -3659,7 +3659,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
         {
-            var marshaller = new GetInstanceRequestMarshaller();
+            var marshaller = GetInstanceRequestMarshaller.Instance;
             var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceRequest,GetInstanceResponse>(request, marshaller, unmarshaller);
@@ -3679,7 +3679,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         public virtual IAsyncResult BeginGetInstance(GetInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceRequestMarshaller();
+            var marshaller = GetInstanceRequestMarshaller.Instance;
             var unmarshaller = GetInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceRequest>(request, marshaller, unmarshaller,
@@ -3744,7 +3744,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         public virtual GetInstanceAccessDetailsResponse GetInstanceAccessDetails(GetInstanceAccessDetailsRequest request)
         {
-            var marshaller = new GetInstanceAccessDetailsRequestMarshaller();
+            var marshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceAccessDetailsRequest,GetInstanceAccessDetailsResponse>(request, marshaller, unmarshaller);
@@ -3764,7 +3764,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceAccessDetails(GetInstanceAccessDetailsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceAccessDetailsRequestMarshaller();
+            var marshaller = GetInstanceAccessDetailsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceAccessDetailsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceAccessDetailsRequest>(request, marshaller, unmarshaller,
@@ -3829,7 +3829,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         public virtual GetInstanceMetricDataResponse GetInstanceMetricData(GetInstanceMetricDataRequest request)
         {
-            var marshaller = new GetInstanceMetricDataRequestMarshaller();
+            var marshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceMetricDataRequest,GetInstanceMetricDataResponse>(request, marshaller, unmarshaller);
@@ -3849,7 +3849,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceMetricData(GetInstanceMetricDataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceMetricDataRequestMarshaller();
+            var marshaller = GetInstanceMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetInstanceMetricDataResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceMetricDataRequest>(request, marshaller, unmarshaller,
@@ -3913,7 +3913,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         public virtual GetInstancePortStatesResponse GetInstancePortStates(GetInstancePortStatesRequest request)
         {
-            var marshaller = new GetInstancePortStatesRequestMarshaller();
+            var marshaller = GetInstancePortStatesRequestMarshaller.Instance;
             var unmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
             return Invoke<GetInstancePortStatesRequest,GetInstancePortStatesResponse>(request, marshaller, unmarshaller);
@@ -3933,7 +3933,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         public virtual IAsyncResult BeginGetInstancePortStates(GetInstancePortStatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstancePortStatesRequestMarshaller();
+            var marshaller = GetInstancePortStatesRequestMarshaller.Instance;
             var unmarshaller = GetInstancePortStatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstancePortStatesRequest>(request, marshaller, unmarshaller,
@@ -3997,7 +3997,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         public virtual GetInstancesResponse GetInstances(GetInstancesRequest request)
         {
-            var marshaller = new GetInstancesRequestMarshaller();
+            var marshaller = GetInstancesRequestMarshaller.Instance;
             var unmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
             return Invoke<GetInstancesRequest,GetInstancesResponse>(request, marshaller, unmarshaller);
@@ -4017,7 +4017,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         public virtual IAsyncResult BeginGetInstances(GetInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstancesRequestMarshaller();
+            var marshaller = GetInstancesRequestMarshaller.Instance;
             var unmarshaller = GetInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstancesRequest>(request, marshaller, unmarshaller,
@@ -4081,7 +4081,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         public virtual GetInstanceSnapshotResponse GetInstanceSnapshot(GetInstanceSnapshotRequest request)
         {
-            var marshaller = new GetInstanceSnapshotRequestMarshaller();
+            var marshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceSnapshotRequest,GetInstanceSnapshotResponse>(request, marshaller, unmarshaller);
@@ -4101,7 +4101,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceSnapshot(GetInstanceSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceSnapshotRequestMarshaller();
+            var marshaller = GetInstanceSnapshotRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceSnapshotRequest>(request, marshaller, unmarshaller,
@@ -4165,7 +4165,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         public virtual GetInstanceSnapshotsResponse GetInstanceSnapshots(GetInstanceSnapshotsRequest request)
         {
-            var marshaller = new GetInstanceSnapshotsRequestMarshaller();
+            var marshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceSnapshotsRequest,GetInstanceSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -4185,7 +4185,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceSnapshots(GetInstanceSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceSnapshotsRequestMarshaller();
+            var marshaller = GetInstanceSnapshotsRequestMarshaller.Instance;
             var unmarshaller = GetInstanceSnapshotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceSnapshotsRequest>(request, marshaller, unmarshaller,
@@ -4249,7 +4249,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         public virtual GetInstanceStateResponse GetInstanceState(GetInstanceStateRequest request)
         {
-            var marshaller = new GetInstanceStateRequestMarshaller();
+            var marshaller = GetInstanceStateRequestMarshaller.Instance;
             var unmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceStateRequest,GetInstanceStateResponse>(request, marshaller, unmarshaller);
@@ -4269,7 +4269,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceState(GetInstanceStateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetInstanceStateRequestMarshaller();
+            var marshaller = GetInstanceStateRequestMarshaller.Instance;
             var unmarshaller = GetInstanceStateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetInstanceStateRequest>(request, marshaller, unmarshaller,
@@ -4333,7 +4333,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         public virtual GetKeyPairResponse GetKeyPair(GetKeyPairRequest request)
         {
-            var marshaller = new GetKeyPairRequestMarshaller();
+            var marshaller = GetKeyPairRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<GetKeyPairRequest,GetKeyPairResponse>(request, marshaller, unmarshaller);
@@ -4353,7 +4353,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         public virtual IAsyncResult BeginGetKeyPair(GetKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetKeyPairRequestMarshaller();
+            var marshaller = GetKeyPairRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetKeyPairRequest>(request, marshaller, unmarshaller,
@@ -4417,7 +4417,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         public virtual GetKeyPairsResponse GetKeyPairs(GetKeyPairsRequest request)
         {
-            var marshaller = new GetKeyPairsRequestMarshaller();
+            var marshaller = GetKeyPairsRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
             return Invoke<GetKeyPairsRequest,GetKeyPairsResponse>(request, marshaller, unmarshaller);
@@ -4437,7 +4437,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         public virtual IAsyncResult BeginGetKeyPairs(GetKeyPairsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetKeyPairsRequestMarshaller();
+            var marshaller = GetKeyPairsRequestMarshaller.Instance;
             var unmarshaller = GetKeyPairsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetKeyPairsRequest>(request, marshaller, unmarshaller,
@@ -4501,7 +4501,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
         public virtual GetLoadBalancerResponse GetLoadBalancer(GetLoadBalancerRequest request)
         {
-            var marshaller = new GetLoadBalancerRequestMarshaller();
+            var marshaller = GetLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerRequest,GetLoadBalancerResponse>(request, marshaller, unmarshaller);
@@ -4521,7 +4521,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer">REST API Reference for GetLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginGetLoadBalancer(GetLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetLoadBalancerRequestMarshaller();
+            var marshaller = GetLoadBalancerRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetLoadBalancerRequest>(request, marshaller, unmarshaller,
@@ -4585,7 +4585,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
         public virtual GetLoadBalancerMetricDataResponse GetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request)
         {
-            var marshaller = new GetLoadBalancerMetricDataRequestMarshaller();
+            var marshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerMetricDataRequest,GetLoadBalancerMetricDataResponse>(request, marshaller, unmarshaller);
@@ -4605,7 +4605,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData">REST API Reference for GetLoadBalancerMetricData Operation</seealso>
         public virtual IAsyncResult BeginGetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetLoadBalancerMetricDataRequestMarshaller();
+            var marshaller = GetLoadBalancerMetricDataRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerMetricDataResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetLoadBalancerMetricDataRequest>(request, marshaller, unmarshaller,
@@ -4676,7 +4676,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
         public virtual GetLoadBalancersResponse GetLoadBalancers(GetLoadBalancersRequest request)
         {
-            var marshaller = new GetLoadBalancersRequestMarshaller();
+            var marshaller = GetLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancersRequest,GetLoadBalancersResponse>(request, marshaller, unmarshaller);
@@ -4696,7 +4696,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">REST API Reference for GetLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginGetLoadBalancers(GetLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetLoadBalancersRequestMarshaller();
+            var marshaller = GetLoadBalancersRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancersResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetLoadBalancersRequest>(request, marshaller, unmarshaller,
@@ -4771,7 +4771,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
         public virtual GetLoadBalancerTlsCertificatesResponse GetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request)
         {
-            var marshaller = new GetLoadBalancerTlsCertificatesRequestMarshaller();
+            var marshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<GetLoadBalancerTlsCertificatesRequest,GetLoadBalancerTlsCertificatesResponse>(request, marshaller, unmarshaller);
@@ -4791,7 +4791,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates">REST API Reference for GetLoadBalancerTlsCertificates Operation</seealso>
         public virtual IAsyncResult BeginGetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetLoadBalancerTlsCertificatesRequestMarshaller();
+            var marshaller = GetLoadBalancerTlsCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetLoadBalancerTlsCertificatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetLoadBalancerTlsCertificatesRequest>(request, marshaller, unmarshaller,
@@ -4856,7 +4856,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
-            var marshaller = new GetOperationRequestMarshaller();
+            var marshaller = GetOperationRequestMarshaller.Instance;
             var unmarshaller = GetOperationResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationRequest,GetOperationResponse>(request, marshaller, unmarshaller);
@@ -4876,7 +4876,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual IAsyncResult BeginGetOperation(GetOperationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetOperationRequestMarshaller();
+            var marshaller = GetOperationRequestMarshaller.Instance;
             var unmarshaller = GetOperationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetOperationRequest>(request, marshaller, unmarshaller,
@@ -4947,7 +4947,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         public virtual GetOperationsResponse GetOperations(GetOperationsRequest request)
         {
-            var marshaller = new GetOperationsRequestMarshaller();
+            var marshaller = GetOperationsRequestMarshaller.Instance;
             var unmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationsRequest,GetOperationsResponse>(request, marshaller, unmarshaller);
@@ -4967,7 +4967,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         public virtual IAsyncResult BeginGetOperations(GetOperationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetOperationsRequestMarshaller();
+            var marshaller = GetOperationsRequestMarshaller.Instance;
             var unmarshaller = GetOperationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetOperationsRequest>(request, marshaller, unmarshaller,
@@ -5031,7 +5031,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         public virtual GetOperationsForResourceResponse GetOperationsForResource(GetOperationsForResourceRequest request)
         {
-            var marshaller = new GetOperationsForResourceRequestMarshaller();
+            var marshaller = GetOperationsForResourceRequestMarshaller.Instance;
             var unmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<GetOperationsForResourceRequest,GetOperationsForResourceResponse>(request, marshaller, unmarshaller);
@@ -5051,7 +5051,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         public virtual IAsyncResult BeginGetOperationsForResource(GetOperationsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetOperationsForResourceRequestMarshaller();
+            var marshaller = GetOperationsForResourceRequestMarshaller.Instance;
             var unmarshaller = GetOperationsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetOperationsForResourceRequest>(request, marshaller, unmarshaller,
@@ -5116,7 +5116,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         public virtual GetRegionsResponse GetRegions(GetRegionsRequest request)
         {
-            var marshaller = new GetRegionsRequestMarshaller();
+            var marshaller = GetRegionsRequestMarshaller.Instance;
             var unmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
             return Invoke<GetRegionsRequest,GetRegionsResponse>(request, marshaller, unmarshaller);
@@ -5136,7 +5136,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         public virtual IAsyncResult BeginGetRegions(GetRegionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRegionsRequestMarshaller();
+            var marshaller = GetRegionsRequestMarshaller.Instance;
             var unmarshaller = GetRegionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRegionsRequest>(request, marshaller, unmarshaller,
@@ -5200,7 +5200,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         public virtual GetStaticIpResponse GetStaticIp(GetStaticIpRequest request)
         {
-            var marshaller = new GetStaticIpRequestMarshaller();
+            var marshaller = GetStaticIpRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<GetStaticIpRequest,GetStaticIpResponse>(request, marshaller, unmarshaller);
@@ -5220,7 +5220,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         public virtual IAsyncResult BeginGetStaticIp(GetStaticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetStaticIpRequestMarshaller();
+            var marshaller = GetStaticIpRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetStaticIpRequest>(request, marshaller, unmarshaller,
@@ -5284,7 +5284,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         public virtual GetStaticIpsResponse GetStaticIps(GetStaticIpsRequest request)
         {
-            var marshaller = new GetStaticIpsRequestMarshaller();
+            var marshaller = GetStaticIpsRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
             return Invoke<GetStaticIpsRequest,GetStaticIpsResponse>(request, marshaller, unmarshaller);
@@ -5304,7 +5304,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         public virtual IAsyncResult BeginGetStaticIps(GetStaticIpsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetStaticIpsRequestMarshaller();
+            var marshaller = GetStaticIpsRequestMarshaller.Instance;
             var unmarshaller = GetStaticIpsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetStaticIpsRequest>(request, marshaller, unmarshaller,
@@ -5368,7 +5368,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
-            var marshaller = new ImportKeyPairRequestMarshaller();
+            var marshaller = ImportKeyPairRequestMarshaller.Instance;
             var unmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
             return Invoke<ImportKeyPairRequest,ImportKeyPairResponse>(request, marshaller, unmarshaller);
@@ -5388,7 +5388,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual IAsyncResult BeginImportKeyPair(ImportKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ImportKeyPairRequestMarshaller();
+            var marshaller = ImportKeyPairRequestMarshaller.Instance;
             var unmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
             return BeginInvoke<ImportKeyPairRequest>(request, marshaller, unmarshaller,
@@ -5452,7 +5452,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         public virtual IsVpcPeeredResponse IsVpcPeered(IsVpcPeeredRequest request)
         {
-            var marshaller = new IsVpcPeeredRequestMarshaller();
+            var marshaller = IsVpcPeeredRequestMarshaller.Instance;
             var unmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
             return Invoke<IsVpcPeeredRequest,IsVpcPeeredResponse>(request, marshaller, unmarshaller);
@@ -5472,7 +5472,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         public virtual IAsyncResult BeginIsVpcPeered(IsVpcPeeredRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new IsVpcPeeredRequestMarshaller();
+            var marshaller = IsVpcPeeredRequestMarshaller.Instance;
             var unmarshaller = IsVpcPeeredResponseUnmarshaller.Instance;
 
             return BeginInvoke<IsVpcPeeredRequest>(request, marshaller, unmarshaller,
@@ -5536,7 +5536,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         public virtual OpenInstancePublicPortsResponse OpenInstancePublicPorts(OpenInstancePublicPortsRequest request)
         {
-            var marshaller = new OpenInstancePublicPortsRequestMarshaller();
+            var marshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<OpenInstancePublicPortsRequest,OpenInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -5556,7 +5556,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         public virtual IAsyncResult BeginOpenInstancePublicPorts(OpenInstancePublicPortsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new OpenInstancePublicPortsRequestMarshaller();
+            var marshaller = OpenInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = OpenInstancePublicPortsResponseUnmarshaller.Instance;
 
             return BeginInvoke<OpenInstancePublicPortsRequest>(request, marshaller, unmarshaller,
@@ -5620,7 +5620,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         public virtual PeerVpcResponse PeerVpc(PeerVpcRequest request)
         {
-            var marshaller = new PeerVpcRequestMarshaller();
+            var marshaller = PeerVpcRequestMarshaller.Instance;
             var unmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
             return Invoke<PeerVpcRequest,PeerVpcResponse>(request, marshaller, unmarshaller);
@@ -5640,7 +5640,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         public virtual IAsyncResult BeginPeerVpc(PeerVpcRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PeerVpcRequestMarshaller();
+            var marshaller = PeerVpcRequestMarshaller.Instance;
             var unmarshaller = PeerVpcResponseUnmarshaller.Instance;
 
             return BeginInvoke<PeerVpcRequest>(request, marshaller, unmarshaller,
@@ -5705,7 +5705,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
         public virtual PutInstancePublicPortsResponse PutInstancePublicPorts(PutInstancePublicPortsRequest request)
         {
-            var marshaller = new PutInstancePublicPortsRequestMarshaller();
+            var marshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
             return Invoke<PutInstancePublicPortsRequest,PutInstancePublicPortsResponse>(request, marshaller, unmarshaller);
@@ -5725,7 +5725,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">REST API Reference for PutInstancePublicPorts Operation</seealso>
         public virtual IAsyncResult BeginPutInstancePublicPorts(PutInstancePublicPortsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutInstancePublicPortsRequestMarshaller();
+            var marshaller = PutInstancePublicPortsRequestMarshaller.Instance;
             var unmarshaller = PutInstancePublicPortsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutInstancePublicPortsRequest>(request, marshaller, unmarshaller,
@@ -5791,7 +5791,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RebootInstanceRequest,RebootInstanceResponse>(request, marshaller, unmarshaller);
@@ -5811,7 +5811,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         public virtual IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RebootInstanceRequestMarshaller();
+            var marshaller = RebootInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RebootInstanceRequest>(request, marshaller, unmarshaller,
@@ -5875,7 +5875,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         public virtual ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request)
         {
-            var marshaller = new ReleaseStaticIpRequestMarshaller();
+            var marshaller = ReleaseStaticIpRequestMarshaller.Instance;
             var unmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
             return Invoke<ReleaseStaticIpRequest,ReleaseStaticIpResponse>(request, marshaller, unmarshaller);
@@ -5895,7 +5895,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         public virtual IAsyncResult BeginReleaseStaticIp(ReleaseStaticIpRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ReleaseStaticIpRequestMarshaller();
+            var marshaller = ReleaseStaticIpRequestMarshaller.Instance;
             var unmarshaller = ReleaseStaticIpResponseUnmarshaller.Instance;
 
             return BeginInvoke<ReleaseStaticIpRequest>(request, marshaller, unmarshaller,
@@ -5960,7 +5960,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StartInstanceRequest,StartInstanceResponse>(request, marshaller, unmarshaller);
@@ -5980,7 +5980,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         public virtual IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartInstanceRequestMarshaller();
+            var marshaller = StartInstanceRequestMarshaller.Instance;
             var unmarshaller = StartInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartInstanceRequest>(request, marshaller, unmarshaller,
@@ -6044,7 +6044,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StopInstanceRequest,StopInstanceResponse>(request, marshaller, unmarshaller);
@@ -6064,7 +6064,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         public virtual IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopInstanceRequestMarshaller();
+            var marshaller = StopInstanceRequestMarshaller.Instance;
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopInstanceRequest>(request, marshaller, unmarshaller,
@@ -6128,7 +6128,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         public virtual UnpeerVpcResponse UnpeerVpc(UnpeerVpcRequest request)
         {
-            var marshaller = new UnpeerVpcRequestMarshaller();
+            var marshaller = UnpeerVpcRequestMarshaller.Instance;
             var unmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
             return Invoke<UnpeerVpcRequest,UnpeerVpcResponse>(request, marshaller, unmarshaller);
@@ -6148,7 +6148,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         public virtual IAsyncResult BeginUnpeerVpc(UnpeerVpcRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UnpeerVpcRequestMarshaller();
+            var marshaller = UnpeerVpcRequestMarshaller.Instance;
             var unmarshaller = UnpeerVpcResponseUnmarshaller.Instance;
 
             return BeginInvoke<UnpeerVpcRequest>(request, marshaller, unmarshaller,
@@ -6212,7 +6212,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         public virtual UpdateDomainEntryResponse UpdateDomainEntry(UpdateDomainEntryRequest request)
         {
-            var marshaller = new UpdateDomainEntryRequestMarshaller();
+            var marshaller = UpdateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDomainEntryRequest,UpdateDomainEntryResponse>(request, marshaller, unmarshaller);
@@ -6232,7 +6232,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainEntry(UpdateDomainEntryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDomainEntryRequestMarshaller();
+            var marshaller = UpdateDomainEntryRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainEntryResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDomainEntryRequest>(request, marshaller, unmarshaller,
@@ -6297,7 +6297,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
         public virtual UpdateLoadBalancerAttributeResponse UpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request)
         {
-            var marshaller = new UpdateLoadBalancerAttributeRequestMarshaller();
+            var marshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             var unmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
             return Invoke<UpdateLoadBalancerAttributeRequest,UpdateLoadBalancerAttributeResponse>(request, marshaller, unmarshaller);
@@ -6317,7 +6317,7 @@ namespace Amazon.Lightsail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">REST API Reference for UpdateLoadBalancerAttribute Operation</seealso>
         public virtual IAsyncResult BeginUpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateLoadBalancerAttributeRequestMarshaller();
+            var marshaller = UpdateLoadBalancerAttributeRequestMarshaller.Instance;
             var unmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateLoadBalancerAttributeRequest>(request, marshaller, unmarshaller,

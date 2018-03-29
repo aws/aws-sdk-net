@@ -458,7 +458,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         public virtual AcknowledgeJobResponse AcknowledgeJob(AcknowledgeJobRequest request)
         {
-            var marshaller = new AcknowledgeJobRequestMarshaller();
+            var marshaller = AcknowledgeJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
 
             return Invoke<AcknowledgeJobRequest,AcknowledgeJobResponse>(request, marshaller, unmarshaller);
@@ -506,7 +506,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         public virtual Task<AcknowledgeJobResponse> AcknowledgeJobAsync(AcknowledgeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AcknowledgeJobRequestMarshaller();
+            var marshaller = AcknowledgeJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<AcknowledgeJobRequest,AcknowledgeJobResponse>(request, marshaller, 
@@ -570,7 +570,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         public virtual AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request)
         {
-            var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
+            var marshaller = AcknowledgeThirdPartyJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
 
             return Invoke<AcknowledgeThirdPartyJobRequest,AcknowledgeThirdPartyJobResponse>(request, marshaller, unmarshaller);
@@ -622,7 +622,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         public virtual Task<AcknowledgeThirdPartyJobResponse> AcknowledgeThirdPartyJobAsync(AcknowledgeThirdPartyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AcknowledgeThirdPartyJobRequestMarshaller();
+            var marshaller = AcknowledgeThirdPartyJobRequestMarshaller.Instance;
             var unmarshaller = AcknowledgeThirdPartyJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<AcknowledgeThirdPartyJobRequest,AcknowledgeThirdPartyJobResponse>(request, marshaller, 
@@ -651,7 +651,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         public virtual CreateCustomActionTypeResponse CreateCustomActionType(CreateCustomActionTypeRequest request)
         {
-            var marshaller = new CreateCustomActionTypeRequestMarshaller();
+            var marshaller = CreateCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
 
             return Invoke<CreateCustomActionTypeRequest,CreateCustomActionTypeResponse>(request, marshaller, unmarshaller);
@@ -669,7 +669,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         public virtual Task<CreateCustomActionTypeResponse> CreateCustomActionTypeAsync(CreateCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCustomActionTypeRequestMarshaller();
+            var marshaller = CreateCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = CreateCustomActionTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCustomActionTypeRequest,CreateCustomActionTypeResponse>(request, marshaller, 
@@ -749,7 +749,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var marshaller = new CreatePipelineRequestMarshaller();
+            var marshaller = CreatePipelineRequestMarshaller.Instance;
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
             return Invoke<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, unmarshaller);
@@ -807,7 +807,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePipelineRequestMarshaller();
+            var marshaller = CreatePipelineRequestMarshaller.Instance;
             var unmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePipelineRequest,CreatePipelineResponse>(request, marshaller, 
@@ -839,7 +839,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         public virtual DeleteCustomActionTypeResponse DeleteCustomActionType(DeleteCustomActionTypeRequest request)
         {
-            var marshaller = new DeleteCustomActionTypeRequestMarshaller();
+            var marshaller = DeleteCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCustomActionTypeRequest,DeleteCustomActionTypeResponse>(request, marshaller, unmarshaller);
@@ -857,7 +857,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         public virtual Task<DeleteCustomActionTypeResponse> DeleteCustomActionTypeAsync(DeleteCustomActionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCustomActionTypeRequestMarshaller();
+            var marshaller = DeleteCustomActionTypeRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomActionTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCustomActionTypeRequest,DeleteCustomActionTypeResponse>(request, marshaller, 
@@ -899,7 +899,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var marshaller = new DeletePipelineRequestMarshaller();
+            var marshaller = DeletePipelineRequestMarshaller.Instance;
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
             return Invoke<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, unmarshaller);
@@ -938,7 +938,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeletePipelineRequestMarshaller();
+            var marshaller = DeletePipelineRequestMarshaller.Instance;
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, 
@@ -968,7 +968,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         public virtual DisableStageTransitionResponse DisableStageTransition(DisableStageTransitionRequest request)
         {
-            var marshaller = new DisableStageTransitionRequestMarshaller();
+            var marshaller = DisableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
 
             return Invoke<DisableStageTransitionRequest,DisableStageTransitionResponse>(request, marshaller, unmarshaller);
@@ -986,7 +986,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         public virtual Task<DisableStageTransitionResponse> DisableStageTransitionAsync(DisableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisableStageTransitionRequestMarshaller();
+            var marshaller = DisableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = DisableStageTransitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableStageTransitionRequest,DisableStageTransitionResponse>(request, marshaller, 
@@ -1016,7 +1016,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         public virtual EnableStageTransitionResponse EnableStageTransition(EnableStageTransitionRequest request)
         {
-            var marshaller = new EnableStageTransitionRequestMarshaller();
+            var marshaller = EnableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
 
             return Invoke<EnableStageTransitionRequest,EnableStageTransitionResponse>(request, marshaller, unmarshaller);
@@ -1034,7 +1034,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         public virtual Task<EnableStageTransitionResponse> EnableStageTransitionAsync(EnableStageTransitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableStageTransitionRequestMarshaller();
+            var marshaller = EnableStageTransitionRequestMarshaller.Instance;
             var unmarshaller = EnableStageTransitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableStageTransitionRequest,EnableStageTransitionResponse>(request, marshaller, 
@@ -1100,7 +1100,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         public virtual GetJobDetailsResponse GetJobDetails(GetJobDetailsRequest request)
         {
-            var marshaller = new GetJobDetailsRequestMarshaller();
+            var marshaller = GetJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetJobDetailsRequest,GetJobDetailsResponse>(request, marshaller, unmarshaller);
@@ -1151,7 +1151,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         public virtual Task<GetJobDetailsResponse> GetJobDetailsAsync(GetJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetJobDetailsRequestMarshaller();
+            var marshaller = GetJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetJobDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJobDetailsRequest,GetJobDetailsResponse>(request, marshaller, 
@@ -1237,7 +1237,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual GetPipelineResponse GetPipeline(GetPipelineRequest request)
         {
-            var marshaller = new GetPipelineRequestMarshaller();
+            var marshaller = GetPipelineRequestMarshaller.Instance;
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineRequest,GetPipelineResponse>(request, marshaller, unmarshaller);
@@ -1315,7 +1315,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual Task<GetPipelineResponse> GetPipelineAsync(GetPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPipelineRequestMarshaller();
+            var marshaller = GetPipelineRequestMarshaller.Instance;
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPipelineRequest,GetPipelineResponse>(request, marshaller, 
@@ -1347,7 +1347,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         public virtual GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request)
         {
-            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var marshaller = GetPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineExecutionRequest,GetPipelineExecutionResponse>(request, marshaller, unmarshaller);
@@ -1365,7 +1365,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         public virtual Task<GetPipelineExecutionResponse> GetPipelineExecutionAsync(GetPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var marshaller = GetPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPipelineExecutionRequest,GetPipelineExecutionResponse>(request, marshaller, 
@@ -1413,7 +1413,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         public virtual GetPipelineStateResponse GetPipelineState(GetPipelineStateRequest request)
         {
-            var marshaller = new GetPipelineStateRequestMarshaller();
+            var marshaller = GetPipelineStateRequestMarshaller.Instance;
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
 
             return Invoke<GetPipelineStateRequest,GetPipelineStateResponse>(request, marshaller, unmarshaller);
@@ -1455,7 +1455,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         public virtual Task<GetPipelineStateResponse> GetPipelineStateAsync(GetPipelineStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPipelineStateRequestMarshaller();
+            var marshaller = GetPipelineStateRequestMarshaller.Instance;
             var unmarshaller = GetPipelineStateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPipelineStateRequest,GetPipelineStateResponse>(request, marshaller, 
@@ -1535,7 +1535,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         public virtual GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request)
         {
-            var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
+            var marshaller = GetThirdPartyJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetThirdPartyJobDetailsRequest,GetThirdPartyJobDetailsResponse>(request, marshaller, unmarshaller);
@@ -1594,7 +1594,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         public virtual Task<GetThirdPartyJobDetailsResponse> GetThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetThirdPartyJobDetailsRequestMarshaller();
+            var marshaller = GetThirdPartyJobDetailsRequestMarshaller.Instance;
             var unmarshaller = GetThirdPartyJobDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetThirdPartyJobDetailsRequest,GetThirdPartyJobDetailsResponse>(request, marshaller, 
@@ -1664,7 +1664,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         public virtual ListActionTypesResponse ListActionTypes(ListActionTypesRequest request)
         {
-            var marshaller = new ListActionTypesRequestMarshaller();
+            var marshaller = ListActionTypesRequestMarshaller.Instance;
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
 
             return Invoke<ListActionTypesRequest,ListActionTypesResponse>(request, marshaller, unmarshaller);
@@ -1730,7 +1730,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         public virtual Task<ListActionTypesResponse> ListActionTypesAsync(ListActionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListActionTypesRequestMarshaller();
+            var marshaller = ListActionTypesRequestMarshaller.Instance;
             var unmarshaller = ListActionTypesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListActionTypesRequest,ListActionTypesResponse>(request, marshaller, 
@@ -1761,7 +1761,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
         {
-            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var marshaller = ListPipelineExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<ListPipelineExecutionsRequest,ListPipelineExecutionsResponse>(request, marshaller, unmarshaller);
@@ -1779,7 +1779,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
         public virtual Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPipelineExecutionsRequestMarshaller();
+            var marshaller = ListPipelineExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPipelineExecutionsRequest,ListPipelineExecutionsResponse>(request, marshaller, 
@@ -1821,7 +1821,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var marshaller = new ListPipelinesRequestMarshaller();
+            var marshaller = ListPipelinesRequestMarshaller.Instance;
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
             return Invoke<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, unmarshaller);
@@ -1859,7 +1859,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPipelinesRequestMarshaller();
+            var marshaller = ListPipelinesRequestMarshaller.Instance;
             var unmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPipelinesRequest,ListPipelinesResponse>(request, marshaller, 
@@ -1895,7 +1895,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         public virtual PollForJobsResponse PollForJobs(PollForJobsRequest request)
         {
-            var marshaller = new PollForJobsRequestMarshaller();
+            var marshaller = PollForJobsRequestMarshaller.Instance;
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
 
             return Invoke<PollForJobsRequest,PollForJobsResponse>(request, marshaller, unmarshaller);
@@ -1913,7 +1913,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         public virtual Task<PollForJobsResponse> PollForJobsAsync(PollForJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PollForJobsRequestMarshaller();
+            var marshaller = PollForJobsRequestMarshaller.Instance;
             var unmarshaller = PollForJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PollForJobsRequest,PollForJobsResponse>(request, marshaller, 
@@ -1949,7 +1949,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         public virtual PollForThirdPartyJobsResponse PollForThirdPartyJobs(PollForThirdPartyJobsRequest request)
         {
-            var marshaller = new PollForThirdPartyJobsRequestMarshaller();
+            var marshaller = PollForThirdPartyJobsRequestMarshaller.Instance;
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
 
             return Invoke<PollForThirdPartyJobsRequest,PollForThirdPartyJobsResponse>(request, marshaller, unmarshaller);
@@ -1967,7 +1967,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         public virtual Task<PollForThirdPartyJobsResponse> PollForThirdPartyJobsAsync(PollForThirdPartyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PollForThirdPartyJobsRequestMarshaller();
+            var marshaller = PollForThirdPartyJobsRequestMarshaller.Instance;
             var unmarshaller = PollForThirdPartyJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PollForThirdPartyJobsRequest,PollForThirdPartyJobsResponse>(request, marshaller, 
@@ -2000,7 +2000,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         public virtual PutActionRevisionResponse PutActionRevision(PutActionRevisionRequest request)
         {
-            var marshaller = new PutActionRevisionRequestMarshaller();
+            var marshaller = PutActionRevisionRequestMarshaller.Instance;
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
 
             return Invoke<PutActionRevisionRequest,PutActionRevisionResponse>(request, marshaller, unmarshaller);
@@ -2018,7 +2018,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         public virtual Task<PutActionRevisionResponse> PutActionRevisionAsync(PutActionRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutActionRevisionRequestMarshaller();
+            var marshaller = PutActionRevisionRequestMarshaller.Instance;
             var unmarshaller = PutActionRevisionResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutActionRevisionRequest,PutActionRevisionResponse>(request, marshaller, 
@@ -2058,7 +2058,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         public virtual PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request)
         {
-            var marshaller = new PutApprovalResultRequestMarshaller();
+            var marshaller = PutApprovalResultRequestMarshaller.Instance;
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
 
             return Invoke<PutApprovalResultRequest,PutApprovalResultResponse>(request, marshaller, unmarshaller);
@@ -2076,7 +2076,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         public virtual Task<PutApprovalResultResponse> PutApprovalResultAsync(PutApprovalResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutApprovalResultRequestMarshaller();
+            var marshaller = PutApprovalResultRequestMarshaller.Instance;
             var unmarshaller = PutApprovalResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutApprovalResultRequest,PutApprovalResultResponse>(request, marshaller, 
@@ -2134,7 +2134,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         public virtual PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request)
         {
-            var marshaller = new PutJobFailureResultRequestMarshaller();
+            var marshaller = PutJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
 
             return Invoke<PutJobFailureResultRequest,PutJobFailureResultResponse>(request, marshaller, unmarshaller);
@@ -2182,7 +2182,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         public virtual Task<PutJobFailureResultResponse> PutJobFailureResultAsync(PutJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutJobFailureResultRequestMarshaller();
+            var marshaller = PutJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutJobFailureResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutJobFailureResultRequest,PutJobFailureResultResponse>(request, marshaller, 
@@ -2213,7 +2213,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         public virtual PutJobSuccessResultResponse PutJobSuccessResult(PutJobSuccessResultRequest request)
         {
-            var marshaller = new PutJobSuccessResultRequestMarshaller();
+            var marshaller = PutJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
 
             return Invoke<PutJobSuccessResultRequest,PutJobSuccessResultResponse>(request, marshaller, unmarshaller);
@@ -2231,7 +2231,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         public virtual Task<PutJobSuccessResultResponse> PutJobSuccessResultAsync(PutJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutJobSuccessResultRequestMarshaller();
+            var marshaller = PutJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutJobSuccessResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutJobSuccessResultRequest,PutJobSuccessResultResponse>(request, marshaller, 
@@ -2297,7 +2297,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         public virtual PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request)
         {
-            var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
 
             return Invoke<PutThirdPartyJobFailureResultRequest,PutThirdPartyJobFailureResultResponse>(request, marshaller, unmarshaller);
@@ -2350,7 +2350,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         public virtual Task<PutThirdPartyJobFailureResultResponse> PutThirdPartyJobFailureResultAsync(PutThirdPartyJobFailureResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutThirdPartyJobFailureResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobFailureResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobFailureResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutThirdPartyJobFailureResultRequest,PutThirdPartyJobFailureResultResponse>(request, marshaller, 
@@ -2384,7 +2384,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         public virtual PutThirdPartyJobSuccessResultResponse PutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request)
         {
-            var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
 
             return Invoke<PutThirdPartyJobSuccessResultRequest,PutThirdPartyJobSuccessResultResponse>(request, marshaller, unmarshaller);
@@ -2402,7 +2402,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         public virtual Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutThirdPartyJobSuccessResultRequestMarshaller();
+            var marshaller = PutThirdPartyJobSuccessResultRequestMarshaller.Instance;
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutThirdPartyJobSuccessResultRequest,PutThirdPartyJobSuccessResultResponse>(request, marshaller, 
@@ -2441,7 +2441,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         public virtual RetryStageExecutionResponse RetryStageExecution(RetryStageExecutionRequest request)
         {
-            var marshaller = new RetryStageExecutionRequestMarshaller();
+            var marshaller = RetryStageExecutionRequestMarshaller.Instance;
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
 
             return Invoke<RetryStageExecutionRequest,RetryStageExecutionResponse>(request, marshaller, unmarshaller);
@@ -2459,7 +2459,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         public virtual Task<RetryStageExecutionResponse> RetryStageExecutionAsync(RetryStageExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RetryStageExecutionRequestMarshaller();
+            var marshaller = RetryStageExecutionRequestMarshaller.Instance;
             var unmarshaller = RetryStageExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RetryStageExecutionRequest,RetryStageExecutionResponse>(request, marshaller, 
@@ -2509,7 +2509,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
         {
-            var marshaller = new StartPipelineExecutionRequestMarshaller();
+            var marshaller = StartPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartPipelineExecutionRequest,StartPipelineExecutionResponse>(request, marshaller, unmarshaller);
@@ -2552,7 +2552,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartPipelineExecutionRequestMarshaller();
+            var marshaller = StartPipelineExecutionRequestMarshaller.Instance;
             var unmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartPipelineExecutionRequest,StartPipelineExecutionResponse>(request, marshaller, 
@@ -2624,7 +2624,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var marshaller = new UpdatePipelineRequestMarshaller();
+            var marshaller = UpdatePipelineRequestMarshaller.Instance;
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
             return Invoke<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, unmarshaller);
@@ -2678,7 +2678,7 @@ namespace Amazon.CodePipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdatePipelineRequestMarshaller();
+            var marshaller = UpdatePipelineRequestMarshaller.Instance;
             var unmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePipelineRequest,UpdatePipelineResponse>(request, marshaller, 

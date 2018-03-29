@@ -269,7 +269,7 @@ namespace Amazon.Pricing
 
         internal virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, unmarshaller);
@@ -288,7 +288,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeServicesRequestMarshaller();
+            var marshaller = DescribeServicesRequestMarshaller.Instance;
             var unmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeServicesRequest,DescribeServicesResponse>(request, marshaller, 
@@ -301,7 +301,7 @@ namespace Amazon.Pricing
 
         internal virtual GetAttributeValuesResponse GetAttributeValues(GetAttributeValuesRequest request)
         {
-            var marshaller = new GetAttributeValuesRequestMarshaller();
+            var marshaller = GetAttributeValuesRequestMarshaller.Instance;
             var unmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
 
             return Invoke<GetAttributeValuesRequest,GetAttributeValuesResponse>(request, marshaller, unmarshaller);
@@ -320,7 +320,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual Task<GetAttributeValuesResponse> GetAttributeValuesAsync(GetAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAttributeValuesRequestMarshaller();
+            var marshaller = GetAttributeValuesRequestMarshaller.Instance;
             var unmarshaller = GetAttributeValuesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAttributeValuesRequest,GetAttributeValuesResponse>(request, marshaller, 
@@ -333,7 +333,7 @@ namespace Amazon.Pricing
 
         internal virtual GetProductsResponse GetProducts(GetProductsRequest request)
         {
-            var marshaller = new GetProductsRequestMarshaller();
+            var marshaller = GetProductsRequestMarshaller.Instance;
             var unmarshaller = GetProductsResponseUnmarshaller.Instance;
 
             return Invoke<GetProductsRequest,GetProductsResponse>(request, marshaller, unmarshaller);
@@ -352,7 +352,7 @@ namespace Amazon.Pricing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual Task<GetProductsResponse> GetProductsAsync(GetProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetProductsRequestMarshaller();
+            var marshaller = GetProductsRequestMarshaller.Instance;
             var unmarshaller = GetProductsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetProductsRequest,GetProductsResponse>(request, marshaller, 

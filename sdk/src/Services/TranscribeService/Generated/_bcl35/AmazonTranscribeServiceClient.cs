@@ -252,7 +252,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual GetTranscriptionJobResponse GetTranscriptionJob(GetTranscriptionJobRequest request)
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<GetTranscriptionJobRequest,GetTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -272,7 +272,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual IAsyncResult BeginGetTranscriptionJob(GetTranscriptionJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTranscriptionJobRequestMarshaller();
+            var marshaller = GetTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTranscriptionJobRequest>(request, marshaller, unmarshaller,
@@ -317,7 +317,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual ListTranscriptionJobsResponse ListTranscriptionJobs(ListTranscriptionJobsRequest request)
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListTranscriptionJobsRequest,ListTranscriptionJobsResponse>(request, marshaller, unmarshaller);
@@ -337,7 +337,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual IAsyncResult BeginListTranscriptionJobs(ListTranscriptionJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTranscriptionJobsRequestMarshaller();
+            var marshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             var unmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTranscriptionJobsRequest>(request, marshaller, unmarshaller,
@@ -386,7 +386,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual StartTranscriptionJobResponse StartTranscriptionJob(StartTranscriptionJobRequest request)
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return Invoke<StartTranscriptionJobRequest,StartTranscriptionJobResponse>(request, marshaller, unmarshaller);
@@ -406,7 +406,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual IAsyncResult BeginStartTranscriptionJob(StartTranscriptionJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartTranscriptionJobRequestMarshaller();
+            var marshaller = StartTranscriptionJobRequestMarshaller.Instance;
             var unmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartTranscriptionJobRequest>(request, marshaller, unmarshaller,

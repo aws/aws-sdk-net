@@ -236,7 +236,7 @@ namespace Amazon.Mobile
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
@@ -255,7 +255,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProjectRequest,CreateProjectResponse>(request, marshaller, 
@@ -268,7 +268,7 @@ namespace Amazon.Mobile
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
@@ -287,7 +287,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
@@ -300,7 +300,7 @@ namespace Amazon.Mobile
 
         internal virtual DescribeBundleResponse DescribeBundle(DescribeBundleRequest request)
         {
-            var marshaller = new DescribeBundleRequestMarshaller();
+            var marshaller = DescribeBundleRequestMarshaller.Instance;
             var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBundleRequest,DescribeBundleResponse>(request, marshaller, unmarshaller);
@@ -319,7 +319,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle">REST API Reference for DescribeBundle Operation</seealso>
         public virtual Task<DescribeBundleResponse> DescribeBundleAsync(DescribeBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeBundleRequestMarshaller();
+            var marshaller = DescribeBundleRequestMarshaller.Instance;
             var unmarshaller = DescribeBundleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBundleRequest,DescribeBundleResponse>(request, marshaller, 
@@ -332,7 +332,7 @@ namespace Amazon.Mobile
 
         internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var marshaller = new DescribeProjectRequestMarshaller();
+            var marshaller = DescribeProjectRequestMarshaller.Instance;
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, unmarshaller);
@@ -351,7 +351,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeProjectRequestMarshaller();
+            var marshaller = DescribeProjectRequestMarshaller.Instance;
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, 
@@ -364,7 +364,7 @@ namespace Amazon.Mobile
 
         internal virtual ExportBundleResponse ExportBundle(ExportBundleRequest request)
         {
-            var marshaller = new ExportBundleRequestMarshaller();
+            var marshaller = ExportBundleRequestMarshaller.Instance;
             var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
 
             return Invoke<ExportBundleRequest,ExportBundleResponse>(request, marshaller, unmarshaller);
@@ -383,7 +383,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundle">REST API Reference for ExportBundle Operation</seealso>
         public virtual Task<ExportBundleResponse> ExportBundleAsync(ExportBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ExportBundleRequestMarshaller();
+            var marshaller = ExportBundleRequestMarshaller.Instance;
             var unmarshaller = ExportBundleResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExportBundleRequest,ExportBundleResponse>(request, marshaller, 
@@ -396,7 +396,7 @@ namespace Amazon.Mobile
 
         internal virtual ExportProjectResponse ExportProject(ExportProjectRequest request)
         {
-            var marshaller = new ExportProjectRequestMarshaller();
+            var marshaller = ExportProjectRequestMarshaller.Instance;
             var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
 
             return Invoke<ExportProjectRequest,ExportProjectResponse>(request, marshaller, unmarshaller);
@@ -415,7 +415,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportProject">REST API Reference for ExportProject Operation</seealso>
         public virtual Task<ExportProjectResponse> ExportProjectAsync(ExportProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ExportProjectRequestMarshaller();
+            var marshaller = ExportProjectRequestMarshaller.Instance;
             var unmarshaller = ExportProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExportProjectRequest,ExportProjectResponse>(request, marshaller, 
@@ -428,7 +428,7 @@ namespace Amazon.Mobile
 
         internal virtual ListBundlesResponse ListBundles(ListBundlesRequest request)
         {
-            var marshaller = new ListBundlesRequestMarshaller();
+            var marshaller = ListBundlesRequestMarshaller.Instance;
             var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
 
             return Invoke<ListBundlesRequest,ListBundlesResponse>(request, marshaller, unmarshaller);
@@ -447,7 +447,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListBundles">REST API Reference for ListBundles Operation</seealso>
         public virtual Task<ListBundlesResponse> ListBundlesAsync(ListBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBundlesRequestMarshaller();
+            var marshaller = ListBundlesRequestMarshaller.Instance;
             var unmarshaller = ListBundlesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBundlesRequest,ListBundlesResponse>(request, marshaller, 
@@ -460,7 +460,7 @@ namespace Amazon.Mobile
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
@@ -479,7 +479,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
@@ -492,7 +492,7 @@ namespace Amazon.Mobile
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
@@ -511,7 +511,7 @@ namespace Amazon.Mobile
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 

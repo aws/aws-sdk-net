@@ -334,7 +334,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         public virtual ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request)
         {
-            var marshaller = new ActivateGatewayRequestMarshaller();
+            var marshaller = ActivateGatewayRequestMarshaller.Instance;
             var unmarshaller = ActivateGatewayResponseUnmarshaller.Instance;
 
             return Invoke<ActivateGatewayRequest,ActivateGatewayResponse>(request, marshaller, unmarshaller);
@@ -352,7 +352,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         public virtual Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ActivateGatewayRequestMarshaller();
+            var marshaller = ActivateGatewayRequestMarshaller.Instance;
             var unmarshaller = ActivateGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<ActivateGatewayRequest,ActivateGatewayResponse>(request, marshaller, 
@@ -389,7 +389,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         public virtual AddCacheResponse AddCache(AddCacheRequest request)
         {
-            var marshaller = new AddCacheRequestMarshaller();
+            var marshaller = AddCacheRequestMarshaller.Instance;
             var unmarshaller = AddCacheResponseUnmarshaller.Instance;
 
             return Invoke<AddCacheRequest,AddCacheResponse>(request, marshaller, unmarshaller);
@@ -407,7 +407,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         public virtual Task<AddCacheResponse> AddCacheAsync(AddCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddCacheRequestMarshaller();
+            var marshaller = AddCacheRequestMarshaller.Instance;
             var unmarshaller = AddCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddCacheRequest,AddCacheResponse>(request, marshaller, 
@@ -457,7 +457,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
@@ -475,7 +475,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
@@ -513,7 +513,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         public virtual AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request)
         {
-            var marshaller = new AddUploadBufferRequestMarshaller();
+            var marshaller = AddUploadBufferRequestMarshaller.Instance;
             var unmarshaller = AddUploadBufferResponseUnmarshaller.Instance;
 
             return Invoke<AddUploadBufferRequest,AddUploadBufferResponse>(request, marshaller, unmarshaller);
@@ -531,7 +531,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         public virtual Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddUploadBufferRequestMarshaller();
+            var marshaller = AddUploadBufferRequestMarshaller.Instance;
             var unmarshaller = AddUploadBufferResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddUploadBufferRequest,AddUploadBufferResponse>(request, marshaller, 
@@ -574,7 +574,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         public virtual AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request)
         {
-            var marshaller = new AddWorkingStorageRequestMarshaller();
+            var marshaller = AddWorkingStorageRequestMarshaller.Instance;
             var unmarshaller = AddWorkingStorageResponseUnmarshaller.Instance;
 
             return Invoke<AddWorkingStorageRequest,AddWorkingStorageResponse>(request, marshaller, unmarshaller);
@@ -592,7 +592,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         public virtual Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddWorkingStorageRequestMarshaller();
+            var marshaller = AddWorkingStorageRequestMarshaller.Instance;
             var unmarshaller = AddWorkingStorageResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddWorkingStorageRequest,AddWorkingStorageResponse>(request, marshaller, 
@@ -622,7 +622,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         public virtual CancelArchivalResponse CancelArchival(CancelArchivalRequest request)
         {
-            var marshaller = new CancelArchivalRequestMarshaller();
+            var marshaller = CancelArchivalRequestMarshaller.Instance;
             var unmarshaller = CancelArchivalResponseUnmarshaller.Instance;
 
             return Invoke<CancelArchivalRequest,CancelArchivalResponse>(request, marshaller, unmarshaller);
@@ -640,7 +640,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         public virtual Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CancelArchivalRequestMarshaller();
+            var marshaller = CancelArchivalRequestMarshaller.Instance;
             var unmarshaller = CancelArchivalResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelArchivalRequest,CancelArchivalResponse>(request, marshaller, 
@@ -671,7 +671,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         public virtual CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request)
         {
-            var marshaller = new CancelRetrievalRequestMarshaller();
+            var marshaller = CancelRetrievalRequestMarshaller.Instance;
             var unmarshaller = CancelRetrievalResponseUnmarshaller.Instance;
 
             return Invoke<CancelRetrievalRequest,CancelRetrievalResponse>(request, marshaller, unmarshaller);
@@ -689,7 +689,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         public virtual Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CancelRetrievalRequestMarshaller();
+            var marshaller = CancelRetrievalRequestMarshaller.Instance;
             var unmarshaller = CancelRetrievalResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelRetrievalRequest,CancelRetrievalResponse>(request, marshaller, 
@@ -740,7 +740,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         public virtual CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request)
         {
-            var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
+            var marshaller = CreateCachediSCSIVolumeRequestMarshaller.Instance;
             var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.Instance;
 
             return Invoke<CreateCachediSCSIVolumeRequest,CreateCachediSCSIVolumeResponse>(request, marshaller, unmarshaller);
@@ -758,7 +758,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         public virtual Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
+            var marshaller = CreateCachediSCSIVolumeRequestMarshaller.Instance;
             var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCachediSCSIVolumeRequest,CreateCachediSCSIVolumeResponse>(request, marshaller, 
@@ -804,7 +804,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
         public virtual CreateNFSFileShareResponse CreateNFSFileShare(CreateNFSFileShareRequest request)
         {
-            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var marshaller = CreateNFSFileShareRequestMarshaller.Instance;
             var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
 
             return Invoke<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, unmarshaller);
@@ -822,7 +822,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
         public virtual Task<CreateNFSFileShareResponse> CreateNFSFileShareAsync(CreateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var marshaller = CreateNFSFileShareRequestMarshaller.Instance;
             var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, 
@@ -888,7 +888,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var marshaller = new CreateSnapshotRequestMarshaller();
+            var marshaller = CreateSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
@@ -906,7 +906,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSnapshotRequestMarshaller();
+            var marshaller = CreateSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, 
@@ -962,7 +962,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         public virtual CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request)
         {
-            var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
+            var marshaller = CreateSnapshotFromVolumeRecoveryPointRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.Instance;
 
             return Invoke<CreateSnapshotFromVolumeRecoveryPointRequest,CreateSnapshotFromVolumeRecoveryPointResponse>(request, marshaller, unmarshaller);
@@ -980,7 +980,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         public virtual Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
+            var marshaller = CreateSnapshotFromVolumeRecoveryPointRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSnapshotFromVolumeRecoveryPointRequest,CreateSnapshotFromVolumeRecoveryPointResponse>(request, marshaller, 
@@ -1025,7 +1025,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         public virtual CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request)
         {
-            var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
+            var marshaller = CreateStorediSCSIVolumeRequestMarshaller.Instance;
             var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.Instance;
 
             return Invoke<CreateStorediSCSIVolumeRequest,CreateStorediSCSIVolumeResponse>(request, marshaller, unmarshaller);
@@ -1043,7 +1043,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         public virtual Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
+            var marshaller = CreateStorediSCSIVolumeRequestMarshaller.Instance;
             var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStorediSCSIVolumeRequest,CreateStorediSCSIVolumeResponse>(request, marshaller, 
@@ -1080,7 +1080,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         public virtual CreateTapesResponse CreateTapes(CreateTapesRequest request)
         {
-            var marshaller = new CreateTapesRequestMarshaller();
+            var marshaller = CreateTapesRequestMarshaller.Instance;
             var unmarshaller = CreateTapesResponseUnmarshaller.Instance;
 
             return Invoke<CreateTapesRequest,CreateTapesResponse>(request, marshaller, unmarshaller);
@@ -1098,7 +1098,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         public virtual Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateTapesRequestMarshaller();
+            var marshaller = CreateTapesRequestMarshaller.Instance;
             var unmarshaller = CreateTapesResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTapesRequest,CreateTapesResponse>(request, marshaller, 
@@ -1137,7 +1137,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         public virtual CreateTapeWithBarcodeResponse CreateTapeWithBarcode(CreateTapeWithBarcodeRequest request)
         {
-            var marshaller = new CreateTapeWithBarcodeRequestMarshaller();
+            var marshaller = CreateTapeWithBarcodeRequestMarshaller.Instance;
             var unmarshaller = CreateTapeWithBarcodeResponseUnmarshaller.Instance;
 
             return Invoke<CreateTapeWithBarcodeRequest,CreateTapeWithBarcodeResponse>(request, marshaller, unmarshaller);
@@ -1155,7 +1155,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         public virtual Task<CreateTapeWithBarcodeResponse> CreateTapeWithBarcodeAsync(CreateTapeWithBarcodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateTapeWithBarcodeRequestMarshaller();
+            var marshaller = CreateTapeWithBarcodeRequestMarshaller.Instance;
             var unmarshaller = CreateTapeWithBarcodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTapeWithBarcodeRequest,CreateTapeWithBarcodeResponse>(request, marshaller, 
@@ -1187,7 +1187,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         public virtual DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request)
         {
-            var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
+            var marshaller = DeleteBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBandwidthRateLimitRequest,DeleteBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
@@ -1205,7 +1205,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         public virtual Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
+            var marshaller = DeleteBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBandwidthRateLimitRequest,DeleteBandwidthRateLimitResponse>(request, marshaller, 
@@ -1235,7 +1235,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         public virtual DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request)
         {
-            var marshaller = new DeleteChapCredentialsRequestMarshaller();
+            var marshaller = DeleteChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteChapCredentialsRequest,DeleteChapCredentialsResponse>(request, marshaller, unmarshaller);
@@ -1253,7 +1253,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         public virtual Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteChapCredentialsRequestMarshaller();
+            var marshaller = DeleteChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteChapCredentialsRequest,DeleteChapCredentialsResponse>(request, marshaller, 
@@ -1283,7 +1283,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
         public virtual DeleteFileShareResponse DeleteFileShare(DeleteFileShareRequest request)
         {
-            var marshaller = new DeleteFileShareRequestMarshaller();
+            var marshaller = DeleteFileShareRequestMarshaller.Instance;
             var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, unmarshaller);
@@ -1301,7 +1301,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
         public virtual Task<DeleteFileShareResponse> DeleteFileShareAsync(DeleteFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFileShareRequestMarshaller();
+            var marshaller = DeleteFileShareRequestMarshaller.Instance;
             var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, 
@@ -1350,7 +1350,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var marshaller = new DeleteGatewayRequestMarshaller();
+            var marshaller = DeleteGatewayRequestMarshaller.Instance;
             var unmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGatewayRequest,DeleteGatewayResponse>(request, marshaller, unmarshaller);
@@ -1368,7 +1368,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteGatewayRequestMarshaller();
+            var marshaller = DeleteGatewayRequestMarshaller.Instance;
             var unmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGatewayRequest,DeleteGatewayResponse>(request, marshaller, 
@@ -1413,7 +1413,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public virtual DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
         {
-            var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
+            var marshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSnapshotScheduleRequest,DeleteSnapshotScheduleResponse>(request, marshaller, unmarshaller);
@@ -1431,7 +1431,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public virtual Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
+            var marshaller = DeleteSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSnapshotScheduleRequest,DeleteSnapshotScheduleResponse>(request, marshaller, 
@@ -1461,7 +1461,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         public virtual DeleteTapeResponse DeleteTape(DeleteTapeRequest request)
         {
-            var marshaller = new DeleteTapeRequestMarshaller();
+            var marshaller = DeleteTapeRequestMarshaller.Instance;
             var unmarshaller = DeleteTapeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTapeRequest,DeleteTapeResponse>(request, marshaller, unmarshaller);
@@ -1479,7 +1479,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         public virtual Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTapeRequestMarshaller();
+            var marshaller = DeleteTapeRequestMarshaller.Instance;
             var unmarshaller = DeleteTapeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTapeRequest,DeleteTapeResponse>(request, marshaller, 
@@ -1509,7 +1509,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         public virtual DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request)
         {
-            var marshaller = new DeleteTapeArchiveRequestMarshaller();
+            var marshaller = DeleteTapeArchiveRequestMarshaller.Instance;
             var unmarshaller = DeleteTapeArchiveResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTapeArchiveRequest,DeleteTapeArchiveResponse>(request, marshaller, unmarshaller);
@@ -1527,7 +1527,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         public virtual Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTapeArchiveRequestMarshaller();
+            var marshaller = DeleteTapeArchiveRequestMarshaller.Instance;
             var unmarshaller = DeleteTapeArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTapeArchiveRequest,DeleteTapeArchiveResponse>(request, marshaller, 
@@ -1575,7 +1575,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
-            var marshaller = new DeleteVolumeRequestMarshaller();
+            var marshaller = DeleteVolumeRequestMarshaller.Instance;
             var unmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVolumeRequest,DeleteVolumeResponse>(request, marshaller, unmarshaller);
@@ -1593,7 +1593,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteVolumeRequestMarshaller();
+            var marshaller = DeleteVolumeRequestMarshaller.Instance;
             var unmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVolumeRequest,DeleteVolumeResponse>(request, marshaller, 
@@ -1631,7 +1631,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         public virtual DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request)
         {
-            var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
+            var marshaller = DescribeBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBandwidthRateLimitRequest,DescribeBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
@@ -1649,7 +1649,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         public virtual Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
+            var marshaller = DescribeBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBandwidthRateLimitRequest,DescribeBandwidthRateLimitResponse>(request, marshaller, 
@@ -1685,7 +1685,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         public virtual DescribeCacheResponse DescribeCache(DescribeCacheRequest request)
         {
-            var marshaller = new DescribeCacheRequestMarshaller();
+            var marshaller = DescribeCacheRequestMarshaller.Instance;
             var unmarshaller = DescribeCacheResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCacheRequest,DescribeCacheResponse>(request, marshaller, unmarshaller);
@@ -1703,7 +1703,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         public virtual Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCacheRequestMarshaller();
+            var marshaller = DescribeCacheRequestMarshaller.Instance;
             var unmarshaller = DescribeCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCacheRequest,DescribeCacheResponse>(request, marshaller, 
@@ -1740,7 +1740,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         public virtual DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request)
         {
-            var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
+            var marshaller = DescribeCachediSCSIVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCachediSCSIVolumesRequest,DescribeCachediSCSIVolumesResponse>(request, marshaller, unmarshaller);
@@ -1758,7 +1758,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         public virtual Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
+            var marshaller = DescribeCachediSCSIVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCachediSCSIVolumesRequest,DescribeCachediSCSIVolumesResponse>(request, marshaller, 
@@ -1788,7 +1788,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         public virtual DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request)
         {
-            var marshaller = new DescribeChapCredentialsRequestMarshaller();
+            var marshaller = DescribeChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeChapCredentialsRequest,DescribeChapCredentialsResponse>(request, marshaller, unmarshaller);
@@ -1806,7 +1806,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         public virtual Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeChapCredentialsRequestMarshaller();
+            var marshaller = DescribeChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeChapCredentialsRequest,DescribeChapCredentialsResponse>(request, marshaller, 
@@ -1837,7 +1837,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         public virtual DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request)
         {
-            var marshaller = new DescribeGatewayInformationRequestMarshaller();
+            var marshaller = DescribeGatewayInformationRequestMarshaller.Instance;
             var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGatewayInformationRequest,DescribeGatewayInformationResponse>(request, marshaller, unmarshaller);
@@ -1855,7 +1855,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         public virtual Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeGatewayInformationRequestMarshaller();
+            var marshaller = DescribeGatewayInformationRequestMarshaller.Instance;
             var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGatewayInformationRequest,DescribeGatewayInformationResponse>(request, marshaller, 
@@ -1885,7 +1885,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         public virtual DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request)
         {
-            var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
+            var marshaller = DescribeMaintenanceStartTimeRequestMarshaller.Instance;
             var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMaintenanceStartTimeRequest,DescribeMaintenanceStartTimeResponse>(request, marshaller, unmarshaller);
@@ -1903,7 +1903,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         public virtual Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
+            var marshaller = DescribeMaintenanceStartTimeRequestMarshaller.Instance;
             var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMaintenanceStartTimeRequest,DescribeMaintenanceStartTimeResponse>(request, marshaller, 
@@ -1933,7 +1933,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
         public virtual DescribeNFSFileSharesResponse DescribeNFSFileShares(DescribeNFSFileSharesRequest request)
         {
-            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var marshaller = DescribeNFSFileSharesRequestMarshaller.Instance;
             var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, unmarshaller);
@@ -1951,7 +1951,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
         public virtual Task<DescribeNFSFileSharesResponse> DescribeNFSFileSharesAsync(DescribeNFSFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var marshaller = DescribeNFSFileSharesRequestMarshaller.Instance;
             var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, 
@@ -1982,7 +1982,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         public virtual DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
         {
-            var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
+            var marshaller = DescribeSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSnapshotScheduleRequest,DescribeSnapshotScheduleResponse>(request, marshaller, unmarshaller);
@@ -2000,7 +2000,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         public virtual Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
+            var marshaller = DescribeSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSnapshotScheduleRequest,DescribeSnapshotScheduleResponse>(request, marshaller, 
@@ -2032,7 +2032,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         public virtual DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request)
         {
-            var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
+            var marshaller = DescribeStorediSCSIVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStorediSCSIVolumesRequest,DescribeStorediSCSIVolumesResponse>(request, marshaller, unmarshaller);
@@ -2050,7 +2050,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         public virtual Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
+            var marshaller = DescribeStorediSCSIVolumesRequestMarshaller.Instance;
             var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStorediSCSIVolumesRequest,DescribeStorediSCSIVolumesResponse>(request, marshaller, 
@@ -2113,7 +2113,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public virtual DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request)
         {
-            var marshaller = new DescribeTapeArchivesRequestMarshaller();
+            var marshaller = DescribeTapeArchivesRequestMarshaller.Instance;
             var unmarshaller = DescribeTapeArchivesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTapeArchivesRequest,DescribeTapeArchivesResponse>(request, marshaller, unmarshaller);
@@ -2160,7 +2160,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public virtual Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTapeArchivesRequestMarshaller();
+            var marshaller = DescribeTapeArchivesRequestMarshaller.Instance;
             var unmarshaller = DescribeTapeArchivesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTapeArchivesRequest,DescribeTapeArchivesResponse>(request, marshaller, 
@@ -2198,7 +2198,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         public virtual DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request)
         {
-            var marshaller = new DescribeTapeRecoveryPointsRequestMarshaller();
+            var marshaller = DescribeTapeRecoveryPointsRequestMarshaller.Instance;
             var unmarshaller = DescribeTapeRecoveryPointsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTapeRecoveryPointsRequest,DescribeTapeRecoveryPointsResponse>(request, marshaller, unmarshaller);
@@ -2216,7 +2216,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         public virtual Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTapeRecoveryPointsRequestMarshaller();
+            var marshaller = DescribeTapeRecoveryPointsRequestMarshaller.Instance;
             var unmarshaller = DescribeTapeRecoveryPointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTapeRecoveryPointsRequest,DescribeTapeRecoveryPointsResponse>(request, marshaller, 
@@ -2248,7 +2248,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         public virtual DescribeTapesResponse DescribeTapes(DescribeTapesRequest request)
         {
-            var marshaller = new DescribeTapesRequestMarshaller();
+            var marshaller = DescribeTapesRequestMarshaller.Instance;
             var unmarshaller = DescribeTapesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTapesRequest,DescribeTapesResponse>(request, marshaller, unmarshaller);
@@ -2266,7 +2266,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         public virtual Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTapesRequestMarshaller();
+            var marshaller = DescribeTapesRequestMarshaller.Instance;
             var unmarshaller = DescribeTapesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTapesRequest,DescribeTapesResponse>(request, marshaller, 
@@ -2302,7 +2302,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         public virtual DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request)
         {
-            var marshaller = new DescribeUploadBufferRequestMarshaller();
+            var marshaller = DescribeUploadBufferRequestMarshaller.Instance;
             var unmarshaller = DescribeUploadBufferResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUploadBufferRequest,DescribeUploadBufferResponse>(request, marshaller, unmarshaller);
@@ -2320,7 +2320,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         public virtual Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeUploadBufferRequestMarshaller();
+            var marshaller = DescribeUploadBufferRequestMarshaller.Instance;
             var unmarshaller = DescribeUploadBufferResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUploadBufferRequest,DescribeUploadBufferResponse>(request, marshaller, 
@@ -2355,7 +2355,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         public virtual DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request)
         {
-            var marshaller = new DescribeVTLDevicesRequestMarshaller();
+            var marshaller = DescribeVTLDevicesRequestMarshaller.Instance;
             var unmarshaller = DescribeVTLDevicesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVTLDevicesRequest,DescribeVTLDevicesResponse>(request, marshaller, unmarshaller);
@@ -2373,7 +2373,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         public virtual Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeVTLDevicesRequestMarshaller();
+            var marshaller = DescribeVTLDevicesRequestMarshaller.Instance;
             var unmarshaller = DescribeVTLDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVTLDevicesRequest,DescribeVTLDevicesResponse>(request, marshaller, 
@@ -2415,7 +2415,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         public virtual DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request)
         {
-            var marshaller = new DescribeWorkingStorageRequestMarshaller();
+            var marshaller = DescribeWorkingStorageRequestMarshaller.Instance;
             var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.Instance;
 
             return Invoke<DescribeWorkingStorageRequest,DescribeWorkingStorageResponse>(request, marshaller, unmarshaller);
@@ -2433,7 +2433,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         public virtual Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeWorkingStorageRequestMarshaller();
+            var marshaller = DescribeWorkingStorageRequestMarshaller.Instance;
             var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeWorkingStorageRequest,DescribeWorkingStorageResponse>(request, marshaller, 
@@ -2475,7 +2475,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         public virtual DisableGatewayResponse DisableGateway(DisableGatewayRequest request)
         {
-            var marshaller = new DisableGatewayRequestMarshaller();
+            var marshaller = DisableGatewayRequestMarshaller.Instance;
             var unmarshaller = DisableGatewayResponseUnmarshaller.Instance;
 
             return Invoke<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, unmarshaller);
@@ -2493,7 +2493,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         public virtual Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisableGatewayRequestMarshaller();
+            var marshaller = DisableGatewayRequestMarshaller.Instance;
             var unmarshaller = DisableGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, 
@@ -2524,7 +2524,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
         public virtual ListFileSharesResponse ListFileShares(ListFileSharesRequest request)
         {
-            var marshaller = new ListFileSharesRequestMarshaller();
+            var marshaller = ListFileSharesRequestMarshaller.Instance;
             var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
 
             return Invoke<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, unmarshaller);
@@ -2542,7 +2542,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
         public virtual Task<ListFileSharesResponse> ListFileSharesAsync(ListFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFileSharesRequestMarshaller();
+            var marshaller = ListFileSharesRequestMarshaller.Instance;
             var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, 
@@ -2619,7 +2619,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var marshaller = new ListGatewaysRequestMarshaller();
+            var marshaller = ListGatewaysRequestMarshaller.Instance;
             var unmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
             return Invoke<ListGatewaysRequest,ListGatewaysResponse>(request, marshaller, unmarshaller);
@@ -2673,7 +2673,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGatewaysRequestMarshaller();
+            var marshaller = ListGatewaysRequestMarshaller.Instance;
             var unmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGatewaysRequest,ListGatewaysResponse>(request, marshaller, 
@@ -2713,7 +2713,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         public virtual ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request)
         {
-            var marshaller = new ListLocalDisksRequestMarshaller();
+            var marshaller = ListLocalDisksRequestMarshaller.Instance;
             var unmarshaller = ListLocalDisksResponseUnmarshaller.Instance;
 
             return Invoke<ListLocalDisksRequest,ListLocalDisksResponse>(request, marshaller, unmarshaller);
@@ -2731,7 +2731,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         public virtual Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListLocalDisksRequestMarshaller();
+            var marshaller = ListLocalDisksRequestMarshaller.Instance;
             var unmarshaller = ListLocalDisksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLocalDisksRequest,ListLocalDisksResponse>(request, marshaller, 
@@ -2761,7 +2761,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2779,7 +2779,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
@@ -2821,7 +2821,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         public virtual ListTapesResponse ListTapes(ListTapesRequest request)
         {
-            var marshaller = new ListTapesRequestMarshaller();
+            var marshaller = ListTapesRequestMarshaller.Instance;
             var unmarshaller = ListTapesResponseUnmarshaller.Instance;
 
             return Invoke<ListTapesRequest,ListTapesResponse>(request, marshaller, unmarshaller);
@@ -2839,7 +2839,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         public virtual Task<ListTapesResponse> ListTapesAsync(ListTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTapesRequestMarshaller();
+            var marshaller = ListTapesRequestMarshaller.Instance;
             var unmarshaller = ListTapesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTapesRequest,ListTapesResponse>(request, marshaller, 
@@ -2870,7 +2870,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         public virtual ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request)
         {
-            var marshaller = new ListVolumeInitiatorsRequestMarshaller();
+            var marshaller = ListVolumeInitiatorsRequestMarshaller.Instance;
             var unmarshaller = ListVolumeInitiatorsResponseUnmarshaller.Instance;
 
             return Invoke<ListVolumeInitiatorsRequest,ListVolumeInitiatorsResponse>(request, marshaller, unmarshaller);
@@ -2888,7 +2888,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         public virtual Task<ListVolumeInitiatorsResponse> ListVolumeInitiatorsAsync(ListVolumeInitiatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVolumeInitiatorsRequestMarshaller();
+            var marshaller = ListVolumeInitiatorsRequestMarshaller.Instance;
             var unmarshaller = ListVolumeInitiatorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVolumeInitiatorsRequest,ListVolumeInitiatorsResponse>(request, marshaller, 
@@ -2926,7 +2926,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         public virtual ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)
         {
-            var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
+            var marshaller = ListVolumeRecoveryPointsRequestMarshaller.Instance;
             var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.Instance;
 
             return Invoke<ListVolumeRecoveryPointsRequest,ListVolumeRecoveryPointsResponse>(request, marshaller, unmarshaller);
@@ -2944,7 +2944,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         public virtual Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
+            var marshaller = ListVolumeRecoveryPointsRequestMarshaller.Instance;
             var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVolumeRecoveryPointsRequest,ListVolumeRecoveryPointsResponse>(request, marshaller, 
@@ -2986,7 +2986,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         public virtual ListVolumesResponse ListVolumes(ListVolumesRequest request)
         {
-            var marshaller = new ListVolumesRequestMarshaller();
+            var marshaller = ListVolumesRequestMarshaller.Instance;
             var unmarshaller = ListVolumesResponseUnmarshaller.Instance;
 
             return Invoke<ListVolumesRequest,ListVolumesResponse>(request, marshaller, unmarshaller);
@@ -3004,7 +3004,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         public virtual Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVolumesRequestMarshaller();
+            var marshaller = ListVolumesRequestMarshaller.Instance;
             var unmarshaller = ListVolumesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVolumesRequest,ListVolumesResponse>(request, marshaller, 
@@ -3051,7 +3051,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">REST API Reference for NotifyWhenUploaded Operation</seealso>
         public virtual NotifyWhenUploadedResponse NotifyWhenUploaded(NotifyWhenUploadedRequest request)
         {
-            var marshaller = new NotifyWhenUploadedRequestMarshaller();
+            var marshaller = NotifyWhenUploadedRequestMarshaller.Instance;
             var unmarshaller = NotifyWhenUploadedResponseUnmarshaller.Instance;
 
             return Invoke<NotifyWhenUploadedRequest,NotifyWhenUploadedResponse>(request, marshaller, unmarshaller);
@@ -3069,7 +3069,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">REST API Reference for NotifyWhenUploaded Operation</seealso>
         public virtual Task<NotifyWhenUploadedResponse> NotifyWhenUploadedAsync(NotifyWhenUploadedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new NotifyWhenUploadedRequestMarshaller();
+            var marshaller = NotifyWhenUploadedRequestMarshaller.Instance;
             var unmarshaller = NotifyWhenUploadedResponseUnmarshaller.Instance;
 
             return InvokeAsync<NotifyWhenUploadedRequest,NotifyWhenUploadedResponse>(request, marshaller, 
@@ -3101,7 +3101,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">REST API Reference for RefreshCache Operation</seealso>
         public virtual RefreshCacheResponse RefreshCache(RefreshCacheRequest request)
         {
-            var marshaller = new RefreshCacheRequestMarshaller();
+            var marshaller = RefreshCacheRequestMarshaller.Instance;
             var unmarshaller = RefreshCacheResponseUnmarshaller.Instance;
 
             return Invoke<RefreshCacheRequest,RefreshCacheResponse>(request, marshaller, unmarshaller);
@@ -3119,7 +3119,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">REST API Reference for RefreshCache Operation</seealso>
         public virtual Task<RefreshCacheResponse> RefreshCacheAsync(RefreshCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RefreshCacheRequestMarshaller();
+            var marshaller = RefreshCacheRequestMarshaller.Instance;
             var unmarshaller = RefreshCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<RefreshCacheRequest,RefreshCacheResponse>(request, marshaller, 
@@ -3149,7 +3149,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
@@ -3167,7 +3167,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 
@@ -3249,7 +3249,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public virtual ResetCacheResponse ResetCache(ResetCacheRequest request)
         {
-            var marshaller = new ResetCacheRequestMarshaller();
+            var marshaller = ResetCacheRequestMarshaller.Instance;
             var unmarshaller = ResetCacheResponseUnmarshaller.Instance;
 
             return Invoke<ResetCacheRequest,ResetCacheResponse>(request, marshaller, unmarshaller);
@@ -3308,7 +3308,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public virtual Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResetCacheRequestMarshaller();
+            var marshaller = ResetCacheRequestMarshaller.Instance;
             var unmarshaller = ResetCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetCacheRequest,ResetCacheResponse>(request, marshaller, 
@@ -3348,7 +3348,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         public virtual RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request)
         {
-            var marshaller = new RetrieveTapeArchiveRequestMarshaller();
+            var marshaller = RetrieveTapeArchiveRequestMarshaller.Instance;
             var unmarshaller = RetrieveTapeArchiveResponseUnmarshaller.Instance;
 
             return Invoke<RetrieveTapeArchiveRequest,RetrieveTapeArchiveResponse>(request, marshaller, unmarshaller);
@@ -3366,7 +3366,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         public virtual Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RetrieveTapeArchiveRequestMarshaller();
+            var marshaller = RetrieveTapeArchiveRequestMarshaller.Instance;
             var unmarshaller = RetrieveTapeArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<RetrieveTapeArchiveRequest,RetrieveTapeArchiveResponse>(request, marshaller, 
@@ -3410,7 +3410,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         public virtual RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request)
         {
-            var marshaller = new RetrieveTapeRecoveryPointRequestMarshaller();
+            var marshaller = RetrieveTapeRecoveryPointRequestMarshaller.Instance;
             var unmarshaller = RetrieveTapeRecoveryPointResponseUnmarshaller.Instance;
 
             return Invoke<RetrieveTapeRecoveryPointRequest,RetrieveTapeRecoveryPointResponse>(request, marshaller, unmarshaller);
@@ -3428,7 +3428,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         public virtual Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RetrieveTapeRecoveryPointRequestMarshaller();
+            var marshaller = RetrieveTapeRecoveryPointRequestMarshaller.Instance;
             var unmarshaller = RetrieveTapeRecoveryPointResponseUnmarshaller.Instance;
 
             return InvokeAsync<RetrieveTapeRecoveryPointRequest,RetrieveTapeRecoveryPointResponse>(request, marshaller, 
@@ -3460,7 +3460,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         public virtual SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request)
         {
-            var marshaller = new SetLocalConsolePasswordRequestMarshaller();
+            var marshaller = SetLocalConsolePasswordRequestMarshaller.Instance;
             var unmarshaller = SetLocalConsolePasswordResponseUnmarshaller.Instance;
 
             return Invoke<SetLocalConsolePasswordRequest,SetLocalConsolePasswordResponse>(request, marshaller, unmarshaller);
@@ -3478,7 +3478,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         public virtual Task<SetLocalConsolePasswordResponse> SetLocalConsolePasswordAsync(SetLocalConsolePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetLocalConsolePasswordRequestMarshaller();
+            var marshaller = SetLocalConsolePasswordRequestMarshaller.Instance;
             var unmarshaller = SetLocalConsolePasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetLocalConsolePasswordRequest,SetLocalConsolePasswordResponse>(request, marshaller, 
@@ -3538,7 +3538,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         public virtual ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
         {
-            var marshaller = new ShutdownGatewayRequestMarshaller();
+            var marshaller = ShutdownGatewayRequestMarshaller.Instance;
             var unmarshaller = ShutdownGatewayResponseUnmarshaller.Instance;
 
             return Invoke<ShutdownGatewayRequest,ShutdownGatewayResponse>(request, marshaller, unmarshaller);
@@ -3556,7 +3556,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         public virtual Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ShutdownGatewayRequestMarshaller();
+            var marshaller = ShutdownGatewayRequestMarshaller.Instance;
             var unmarshaller = ShutdownGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<ShutdownGatewayRequest,ShutdownGatewayResponse>(request, marshaller, 
@@ -3601,7 +3601,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         public virtual StartGatewayResponse StartGateway(StartGatewayRequest request)
         {
-            var marshaller = new StartGatewayRequestMarshaller();
+            var marshaller = StartGatewayRequestMarshaller.Instance;
             var unmarshaller = StartGatewayResponseUnmarshaller.Instance;
 
             return Invoke<StartGatewayRequest,StartGatewayResponse>(request, marshaller, unmarshaller);
@@ -3619,7 +3619,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         public virtual Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartGatewayRequestMarshaller();
+            var marshaller = StartGatewayRequestMarshaller.Instance;
             var unmarshaller = StartGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartGatewayRequest,StartGatewayResponse>(request, marshaller, 
@@ -3662,7 +3662,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         public virtual UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request)
         {
-            var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
+            var marshaller = UpdateBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return Invoke<UpdateBandwidthRateLimitRequest,UpdateBandwidthRateLimitResponse>(request, marshaller, unmarshaller);
@@ -3680,7 +3680,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         public virtual Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
+            var marshaller = UpdateBandwidthRateLimitRequestMarshaller.Instance;
             var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateBandwidthRateLimitRequest,UpdateBandwidthRateLimitResponse>(request, marshaller, 
@@ -3718,7 +3718,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         public virtual UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
         {
-            var marshaller = new UpdateChapCredentialsRequestMarshaller();
+            var marshaller = UpdateChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateChapCredentialsRequest,UpdateChapCredentialsResponse>(request, marshaller, unmarshaller);
@@ -3736,7 +3736,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         public virtual Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateChapCredentialsRequestMarshaller();
+            var marshaller = UpdateChapCredentialsRequestMarshaller.Instance;
             var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateChapCredentialsRequest,UpdateChapCredentialsResponse>(request, marshaller, 
@@ -3775,7 +3775,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public virtual UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
         {
-            var marshaller = new UpdateGatewayInformationRequestMarshaller();
+            var marshaller = UpdateGatewayInformationRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGatewayInformationRequest,UpdateGatewayInformationResponse>(request, marshaller, unmarshaller);
@@ -3793,7 +3793,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public virtual Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateGatewayInformationRequestMarshaller();
+            var marshaller = UpdateGatewayInformationRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGatewayInformationRequest,UpdateGatewayInformationResponse>(request, marshaller, 
@@ -3840,7 +3840,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public virtual UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
         {
-            var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
+            var marshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGatewaySoftwareNowRequest,UpdateGatewaySoftwareNowResponse>(request, marshaller, unmarshaller);
@@ -3858,7 +3858,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public virtual Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
+            var marshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGatewaySoftwareNowRequest,UpdateGatewaySoftwareNowResponse>(request, marshaller, 
@@ -3888,7 +3888,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         public virtual UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request)
         {
-            var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
+            var marshaller = UpdateMaintenanceStartTimeRequestMarshaller.Instance;
             var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMaintenanceStartTimeRequest,UpdateMaintenanceStartTimeResponse>(request, marshaller, unmarshaller);
@@ -3906,7 +3906,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         public virtual Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
+            var marshaller = UpdateMaintenanceStartTimeRequestMarshaller.Instance;
             var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMaintenanceStartTimeRequest,UpdateMaintenanceStartTimeResponse>(request, marshaller, 
@@ -3970,7 +3970,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
         public virtual UpdateNFSFileShareResponse UpdateNFSFileShare(UpdateNFSFileShareRequest request)
         {
-            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var marshaller = UpdateNFSFileShareRequestMarshaller.Instance;
             var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
 
             return Invoke<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, unmarshaller);
@@ -3988,7 +3988,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
         public virtual Task<UpdateNFSFileShareResponse> UpdateNFSFileShareAsync(UpdateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var marshaller = UpdateNFSFileShareRequestMarshaller.Instance;
             var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, 
@@ -4031,7 +4031,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         public virtual UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)
         {
-            var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
+            var marshaller = UpdateSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSnapshotScheduleRequest,UpdateSnapshotScheduleResponse>(request, marshaller, unmarshaller);
@@ -4049,7 +4049,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         public virtual Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
+            var marshaller = UpdateSnapshotScheduleRequestMarshaller.Instance;
             var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSnapshotScheduleRequest,UpdateSnapshotScheduleResponse>(request, marshaller, 
@@ -4081,7 +4081,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         public virtual UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request)
         {
-            var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();
+            var marshaller = UpdateVTLDeviceTypeRequestMarshaller.Instance;
             var unmarshaller = UpdateVTLDeviceTypeResponseUnmarshaller.Instance;
 
             return Invoke<UpdateVTLDeviceTypeRequest,UpdateVTLDeviceTypeResponse>(request, marshaller, unmarshaller);
@@ -4099,7 +4099,7 @@ namespace Amazon.StorageGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         public virtual Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();
+            var marshaller = UpdateVTLDeviceTypeRequestMarshaller.Instance;
             var unmarshaller = UpdateVTLDeviceTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateVTLDeviceTypeRequest,UpdateVTLDeviceTypeResponse>(request, marshaller, 

@@ -320,7 +320,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
         {
-            var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
+            var marshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAffectedEntitiesRequest,DescribeAffectedEntitiesResponse>(request, marshaller, unmarshaller);
@@ -338,7 +338,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual Task<DescribeAffectedEntitiesResponse> DescribeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
+            var marshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAffectedEntitiesRequest,DescribeAffectedEntitiesResponse>(request, marshaller, 
@@ -360,7 +360,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request)
         {
-            var marshaller = new DescribeEntityAggregatesRequestMarshaller();
+            var marshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
             var unmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEntityAggregatesRequest,DescribeEntityAggregatesResponse>(request, marshaller, unmarshaller);
@@ -378,7 +378,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual Task<DescribeEntityAggregatesResponse> DescribeEntityAggregatesAsync(DescribeEntityAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEntityAggregatesRequestMarshaller();
+            var marshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
             var unmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEntityAggregatesRequest,DescribeEntityAggregatesResponse>(request, marshaller, 
@@ -404,7 +404,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
         {
-            var marshaller = new DescribeEventAggregatesRequestMarshaller();
+            var marshaller = DescribeEventAggregatesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventAggregatesRequest,DescribeEventAggregatesResponse>(request, marshaller, unmarshaller);
@@ -422,7 +422,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual Task<DescribeEventAggregatesResponse> DescribeEventAggregatesAsync(DescribeEventAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventAggregatesRequestMarshaller();
+            var marshaller = DescribeEventAggregatesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventAggregatesRequest,DescribeEventAggregatesResponse>(request, marshaller, 
@@ -455,7 +455,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
         {
-            var marshaller = new DescribeEventDetailsRequestMarshaller();
+            var marshaller = DescribeEventDetailsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventDetailsRequest,DescribeEventDetailsResponse>(request, marshaller, unmarshaller);
@@ -473,7 +473,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual Task<DescribeEventDetailsResponse> DescribeEventDetailsAsync(DescribeEventDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventDetailsRequestMarshaller();
+            var marshaller = DescribeEventDetailsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventDetailsRequest,DescribeEventDetailsResponse>(request, marshaller, 
@@ -510,7 +510,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
@@ -528,7 +528,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
@@ -556,7 +556,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)
         {
-            var marshaller = new DescribeEventTypesRequestMarshaller();
+            var marshaller = DescribeEventTypesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventTypesRequest,DescribeEventTypesResponse>(request, marshaller, unmarshaller);
@@ -574,7 +574,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual Task<DescribeEventTypesResponse> DescribeEventTypesAsync(DescribeEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventTypesRequestMarshaller();
+            var marshaller = DescribeEventTypesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventTypesRequest,DescribeEventTypesResponse>(request, marshaller, 

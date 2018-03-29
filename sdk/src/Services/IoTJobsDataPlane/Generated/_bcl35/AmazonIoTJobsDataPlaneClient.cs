@@ -115,7 +115,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         public virtual DescribeJobExecutionResponse DescribeJobExecution(DescribeJobExecutionRequest request)
         {
-            var marshaller = new DescribeJobExecutionRequestMarshaller();
+            var marshaller = DescribeJobExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeJobExecutionRequest,DescribeJobExecutionResponse>(request, marshaller, unmarshaller);
@@ -135,7 +135,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobExecution(DescribeJobExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeJobExecutionRequestMarshaller();
+            var marshaller = DescribeJobExecutionRequestMarshaller.Instance;
             var unmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeJobExecutionRequest>(request, marshaller, unmarshaller,
@@ -185,7 +185,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">REST API Reference for GetPendingJobExecutions Operation</seealso>
         public virtual GetPendingJobExecutionsResponse GetPendingJobExecutions(GetPendingJobExecutionsRequest request)
         {
-            var marshaller = new GetPendingJobExecutionsRequestMarshaller();
+            var marshaller = GetPendingJobExecutionsRequestMarshaller.Instance;
             var unmarshaller = GetPendingJobExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<GetPendingJobExecutionsRequest,GetPendingJobExecutionsResponse>(request, marshaller, unmarshaller);
@@ -205,7 +205,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">REST API Reference for GetPendingJobExecutions Operation</seealso>
         public virtual IAsyncResult BeginGetPendingJobExecutions(GetPendingJobExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetPendingJobExecutionsRequestMarshaller();
+            var marshaller = GetPendingJobExecutionsRequestMarshaller.Instance;
             var unmarshaller = GetPendingJobExecutionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetPendingJobExecutionsRequest>(request, marshaller, unmarshaller,
@@ -256,7 +256,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">REST API Reference for StartNextPendingJobExecution Operation</seealso>
         public virtual StartNextPendingJobExecutionResponse StartNextPendingJobExecution(StartNextPendingJobExecutionRequest request)
         {
-            var marshaller = new StartNextPendingJobExecutionRequestMarshaller();
+            var marshaller = StartNextPendingJobExecutionRequestMarshaller.Instance;
             var unmarshaller = StartNextPendingJobExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartNextPendingJobExecutionRequest,StartNextPendingJobExecutionResponse>(request, marshaller, unmarshaller);
@@ -276,7 +276,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">REST API Reference for StartNextPendingJobExecution Operation</seealso>
         public virtual IAsyncResult BeginStartNextPendingJobExecution(StartNextPendingJobExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartNextPendingJobExecutionRequestMarshaller();
+            var marshaller = StartNextPendingJobExecutionRequestMarshaller.Instance;
             var unmarshaller = StartNextPendingJobExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartNextPendingJobExecutionRequest>(request, marshaller, unmarshaller,
@@ -332,7 +332,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">REST API Reference for UpdateJobExecution Operation</seealso>
         public virtual UpdateJobExecutionResponse UpdateJobExecution(UpdateJobExecutionRequest request)
         {
-            var marshaller = new UpdateJobExecutionRequestMarshaller();
+            var marshaller = UpdateJobExecutionRequestMarshaller.Instance;
             var unmarshaller = UpdateJobExecutionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateJobExecutionRequest,UpdateJobExecutionResponse>(request, marshaller, unmarshaller);
@@ -352,7 +352,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">REST API Reference for UpdateJobExecution Operation</seealso>
         public virtual IAsyncResult BeginUpdateJobExecution(UpdateJobExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateJobExecutionRequestMarshaller();
+            var marshaller = UpdateJobExecutionRequestMarshaller.Instance;
             var unmarshaller = UpdateJobExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateJobExecutionRequest>(request, marshaller, unmarshaller,

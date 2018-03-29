@@ -244,7 +244,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
-            var marshaller = new AcceptInvitationRequestMarshaller();
+            var marshaller = AcceptInvitationRequestMarshaller.Instance;
             var unmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
             return Invoke<AcceptInvitationRequest,AcceptInvitationResponse>(request, marshaller, unmarshaller);
@@ -262,7 +262,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AcceptInvitationRequestMarshaller();
+            var marshaller = AcceptInvitationRequestMarshaller.Instance;
             var unmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
             return InvokeAsync<AcceptInvitationRequest,AcceptInvitationResponse>(request, marshaller, 
@@ -289,7 +289,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual ArchiveFindingsResponse ArchiveFindings(ArchiveFindingsRequest request)
         {
-            var marshaller = new ArchiveFindingsRequestMarshaller();
+            var marshaller = ArchiveFindingsRequestMarshaller.Instance;
             var unmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
 
             return Invoke<ArchiveFindingsRequest,ArchiveFindingsResponse>(request, marshaller, unmarshaller);
@@ -307,7 +307,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">REST API Reference for ArchiveFindings Operation</seealso>
         public virtual Task<ArchiveFindingsResponse> ArchiveFindingsAsync(ArchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ArchiveFindingsRequestMarshaller();
+            var marshaller = ArchiveFindingsRequestMarshaller.Instance;
             var unmarshaller = ArchiveFindingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ArchiveFindingsRequest,ArchiveFindingsResponse>(request, marshaller, 
@@ -336,7 +336,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">REST API Reference for CreateDetector Operation</seealso>
         public virtual CreateDetectorResponse CreateDetector(CreateDetectorRequest request)
         {
-            var marshaller = new CreateDetectorRequestMarshaller();
+            var marshaller = CreateDetectorRequestMarshaller.Instance;
             var unmarshaller = CreateDetectorResponseUnmarshaller.Instance;
 
             return Invoke<CreateDetectorRequest,CreateDetectorResponse>(request, marshaller, unmarshaller);
@@ -354,7 +354,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector">REST API Reference for CreateDetector Operation</seealso>
         public virtual Task<CreateDetectorResponse> CreateDetectorAsync(CreateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDetectorRequestMarshaller();
+            var marshaller = CreateDetectorRequestMarshaller.Instance;
             var unmarshaller = CreateDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDetectorRequest,CreateDetectorResponse>(request, marshaller, 
@@ -382,7 +382,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
         {
-            var marshaller = new CreateIPSetRequestMarshaller();
+            var marshaller = CreateIPSetRequestMarshaller.Instance;
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateIPSetRequest,CreateIPSetResponse>(request, marshaller, unmarshaller);
@@ -400,7 +400,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual Task<CreateIPSetResponse> CreateIPSetAsync(CreateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateIPSetRequestMarshaller();
+            var marshaller = CreateIPSetRequestMarshaller.Instance;
             var unmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIPSetRequest,CreateIPSetResponse>(request, marshaller, 
@@ -429,7 +429,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual CreateMembersResponse CreateMembers(CreateMembersRequest request)
         {
-            var marshaller = new CreateMembersRequestMarshaller();
+            var marshaller = CreateMembersRequestMarshaller.Instance;
             var unmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
             return Invoke<CreateMembersRequest,CreateMembersResponse>(request, marshaller, unmarshaller);
@@ -447,7 +447,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual Task<CreateMembersResponse> CreateMembersAsync(CreateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateMembersRequestMarshaller();
+            var marshaller = CreateMembersRequestMarshaller.Instance;
             var unmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateMembersRequest,CreateMembersResponse>(request, marshaller, 
@@ -476,7 +476,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual CreateSampleFindingsResponse CreateSampleFindings(CreateSampleFindingsRequest request)
         {
-            var marshaller = new CreateSampleFindingsRequestMarshaller();
+            var marshaller = CreateSampleFindingsRequestMarshaller.Instance;
             var unmarshaller = CreateSampleFindingsResponseUnmarshaller.Instance;
 
             return Invoke<CreateSampleFindingsRequest,CreateSampleFindingsResponse>(request, marshaller, unmarshaller);
@@ -494,7 +494,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">REST API Reference for CreateSampleFindings Operation</seealso>
         public virtual Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(CreateSampleFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSampleFindingsRequestMarshaller();
+            var marshaller = CreateSampleFindingsRequestMarshaller.Instance;
             var unmarshaller = CreateSampleFindingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSampleFindingsRequest,CreateSampleFindingsResponse>(request, marshaller, 
@@ -522,7 +522,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">REST API Reference for CreateThreatIntelSet Operation</seealso>
         public virtual CreateThreatIntelSetResponse CreateThreatIntelSet(CreateThreatIntelSetRequest request)
         {
-            var marshaller = new CreateThreatIntelSetRequestMarshaller();
+            var marshaller = CreateThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = CreateThreatIntelSetResponseUnmarshaller.Instance;
 
             return Invoke<CreateThreatIntelSetRequest,CreateThreatIntelSetResponse>(request, marshaller, unmarshaller);
@@ -540,7 +540,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">REST API Reference for CreateThreatIntelSet Operation</seealso>
         public virtual Task<CreateThreatIntelSetResponse> CreateThreatIntelSetAsync(CreateThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateThreatIntelSetRequestMarshaller();
+            var marshaller = CreateThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = CreateThreatIntelSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateThreatIntelSetRequest,CreateThreatIntelSetResponse>(request, marshaller, 
@@ -568,7 +568,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual DeclineInvitationsResponse DeclineInvitations(DeclineInvitationsRequest request)
         {
-            var marshaller = new DeclineInvitationsRequestMarshaller();
+            var marshaller = DeclineInvitationsRequestMarshaller.Instance;
             var unmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
             return Invoke<DeclineInvitationsRequest,DeclineInvitationsResponse>(request, marshaller, unmarshaller);
@@ -586,7 +586,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         public virtual Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeclineInvitationsRequestMarshaller();
+            var marshaller = DeclineInvitationsRequestMarshaller.Instance;
             var unmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeclineInvitationsRequest,DeclineInvitationsResponse>(request, marshaller, 
@@ -613,7 +613,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
         public virtual DeleteDetectorResponse DeleteDetector(DeleteDetectorRequest request)
         {
-            var marshaller = new DeleteDetectorRequestMarshaller();
+            var marshaller = DeleteDetectorRequestMarshaller.Instance;
             var unmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDetectorRequest,DeleteDetectorResponse>(request, marshaller, unmarshaller);
@@ -631,7 +631,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteDetector">REST API Reference for DeleteDetector Operation</seealso>
         public virtual Task<DeleteDetectorResponse> DeleteDetectorAsync(DeleteDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDetectorRequestMarshaller();
+            var marshaller = DeleteDetectorRequestMarshaller.Instance;
             var unmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDetectorRequest,DeleteDetectorResponse>(request, marshaller, 
@@ -659,7 +659,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual DeleteInvitationsResponse DeleteInvitations(DeleteInvitationsRequest request)
         {
-            var marshaller = new DeleteInvitationsRequestMarshaller();
+            var marshaller = DeleteInvitationsRequestMarshaller.Instance;
             var unmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInvitationsRequest,DeleteInvitationsResponse>(request, marshaller, unmarshaller);
@@ -677,7 +677,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteInvitations">REST API Reference for DeleteInvitations Operation</seealso>
         public virtual Task<DeleteInvitationsResponse> DeleteInvitationsAsync(DeleteInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInvitationsRequestMarshaller();
+            var marshaller = DeleteInvitationsRequestMarshaller.Instance;
             var unmarshaller = DeleteInvitationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInvitationsRequest,DeleteInvitationsResponse>(request, marshaller, 
@@ -704,7 +704,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
         {
-            var marshaller = new DeleteIPSetRequestMarshaller();
+            var marshaller = DeleteIPSetRequestMarshaller.Instance;
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIPSetRequest,DeleteIPSetResponse>(request, marshaller, unmarshaller);
@@ -722,7 +722,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual Task<DeleteIPSetResponse> DeleteIPSetAsync(DeleteIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteIPSetRequestMarshaller();
+            var marshaller = DeleteIPSetRequestMarshaller.Instance;
             var unmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteIPSetRequest,DeleteIPSetResponse>(request, marshaller, 
@@ -750,7 +750,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual DeleteMembersResponse DeleteMembers(DeleteMembersRequest request)
         {
-            var marshaller = new DeleteMembersRequestMarshaller();
+            var marshaller = DeleteMembersRequestMarshaller.Instance;
             var unmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMembersRequest,DeleteMembersResponse>(request, marshaller, unmarshaller);
@@ -768,7 +768,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual Task<DeleteMembersResponse> DeleteMembersAsync(DeleteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteMembersRequestMarshaller();
+            var marshaller = DeleteMembersRequestMarshaller.Instance;
             var unmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteMembersRequest,DeleteMembersResponse>(request, marshaller, 
@@ -795,7 +795,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">REST API Reference for DeleteThreatIntelSet Operation</seealso>
         public virtual DeleteThreatIntelSetResponse DeleteThreatIntelSet(DeleteThreatIntelSetRequest request)
         {
-            var marshaller = new DeleteThreatIntelSetRequestMarshaller();
+            var marshaller = DeleteThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = DeleteThreatIntelSetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteThreatIntelSetRequest,DeleteThreatIntelSetResponse>(request, marshaller, unmarshaller);
@@ -813,7 +813,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">REST API Reference for DeleteThreatIntelSet Operation</seealso>
         public virtual Task<DeleteThreatIntelSetResponse> DeleteThreatIntelSetAsync(DeleteThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteThreatIntelSetRequestMarshaller();
+            var marshaller = DeleteThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = DeleteThreatIntelSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteThreatIntelSetRequest,DeleteThreatIntelSetResponse>(request, marshaller, 
@@ -840,7 +840,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
-            var marshaller = new DisassociateFromMasterAccountRequestMarshaller();
+            var marshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
             var unmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateFromMasterAccountRequest,DisassociateFromMasterAccountResponse>(request, marshaller, unmarshaller);
@@ -858,7 +858,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisassociateFromMasterAccountRequestMarshaller();
+            var marshaller = DisassociateFromMasterAccountRequestMarshaller.Instance;
             var unmarshaller = DisassociateFromMasterAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateFromMasterAccountRequest,DisassociateFromMasterAccountResponse>(request, marshaller, 
@@ -886,7 +886,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         public virtual DisassociateMembersResponse DisassociateMembers(DisassociateMembersRequest request)
         {
-            var marshaller = new DisassociateMembersRequestMarshaller();
+            var marshaller = DisassociateMembersRequestMarshaller.Instance;
             var unmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateMembersRequest,DisassociateMembersResponse>(request, marshaller, unmarshaller);
@@ -904,7 +904,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">REST API Reference for DisassociateMembers Operation</seealso>
         public virtual Task<DisassociateMembersResponse> DisassociateMembersAsync(DisassociateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisassociateMembersRequestMarshaller();
+            var marshaller = DisassociateMembersRequestMarshaller.Instance;
             var unmarshaller = DisassociateMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateMembersRequest,DisassociateMembersResponse>(request, marshaller, 
@@ -931,7 +931,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">REST API Reference for GetDetector Operation</seealso>
         public virtual GetDetectorResponse GetDetector(GetDetectorRequest request)
         {
-            var marshaller = new GetDetectorRequestMarshaller();
+            var marshaller = GetDetectorRequestMarshaller.Instance;
             var unmarshaller = GetDetectorResponseUnmarshaller.Instance;
 
             return Invoke<GetDetectorRequest,GetDetectorResponse>(request, marshaller, unmarshaller);
@@ -949,7 +949,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetDetector">REST API Reference for GetDetector Operation</seealso>
         public virtual Task<GetDetectorResponse> GetDetectorAsync(GetDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDetectorRequestMarshaller();
+            var marshaller = GetDetectorRequestMarshaller.Instance;
             var unmarshaller = GetDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDetectorRequest,GetDetectorResponse>(request, marshaller, 
@@ -976,7 +976,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual GetFindingsResponse GetFindings(GetFindingsRequest request)
         {
-            var marshaller = new GetFindingsRequestMarshaller();
+            var marshaller = GetFindingsRequestMarshaller.Instance;
             var unmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
             return Invoke<GetFindingsRequest,GetFindingsResponse>(request, marshaller, unmarshaller);
@@ -994,7 +994,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings">REST API Reference for GetFindings Operation</seealso>
         public virtual Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFindingsRequestMarshaller();
+            var marshaller = GetFindingsRequestMarshaller.Instance;
             var unmarshaller = GetFindingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFindingsRequest,GetFindingsResponse>(request, marshaller, 
@@ -1021,7 +1021,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         public virtual GetFindingsStatisticsResponse GetFindingsStatistics(GetFindingsStatisticsRequest request)
         {
-            var marshaller = new GetFindingsStatisticsRequestMarshaller();
+            var marshaller = GetFindingsStatisticsRequestMarshaller.Instance;
             var unmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
 
             return Invoke<GetFindingsStatisticsRequest,GetFindingsStatisticsResponse>(request, marshaller, unmarshaller);
@@ -1039,7 +1039,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics">REST API Reference for GetFindingsStatistics Operation</seealso>
         public virtual Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(GetFindingsStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFindingsStatisticsRequestMarshaller();
+            var marshaller = GetFindingsStatisticsRequestMarshaller.Instance;
             var unmarshaller = GetFindingsStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFindingsStatisticsRequest,GetFindingsStatisticsResponse>(request, marshaller, 
@@ -1067,7 +1067,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request)
         {
-            var marshaller = new GetInvitationsCountRequestMarshaller();
+            var marshaller = GetInvitationsCountRequestMarshaller.Instance;
             var unmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
             return Invoke<GetInvitationsCountRequest,GetInvitationsCountResponse>(request, marshaller, unmarshaller);
@@ -1085,7 +1085,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         public virtual Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInvitationsCountRequestMarshaller();
+            var marshaller = GetInvitationsCountRequestMarshaller.Instance;
             var unmarshaller = GetInvitationsCountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInvitationsCountRequest,GetInvitationsCountResponse>(request, marshaller, 
@@ -1112,7 +1112,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
         {
-            var marshaller = new GetIPSetRequestMarshaller();
+            var marshaller = GetIPSetRequestMarshaller.Instance;
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return Invoke<GetIPSetRequest,GetIPSetResponse>(request, marshaller, unmarshaller);
@@ -1130,7 +1130,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual Task<GetIPSetResponse> GetIPSetAsync(GetIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetIPSetRequestMarshaller();
+            var marshaller = GetIPSetRequestMarshaller.Instance;
             var unmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIPSetRequest,GetIPSetResponse>(request, marshaller, 
@@ -1158,7 +1158,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
-            var marshaller = new GetMasterAccountRequestMarshaller();
+            var marshaller = GetMasterAccountRequestMarshaller.Instance;
             var unmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
             return Invoke<GetMasterAccountRequest,GetMasterAccountResponse>(request, marshaller, unmarshaller);
@@ -1176,7 +1176,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMasterAccountRequestMarshaller();
+            var marshaller = GetMasterAccountRequestMarshaller.Instance;
             var unmarshaller = GetMasterAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMasterAccountRequest,GetMasterAccountResponse>(request, marshaller, 
@@ -1204,7 +1204,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual GetMembersResponse GetMembers(GetMembersRequest request)
         {
-            var marshaller = new GetMembersRequestMarshaller();
+            var marshaller = GetMembersRequestMarshaller.Instance;
             var unmarshaller = GetMembersResponseUnmarshaller.Instance;
 
             return Invoke<GetMembersRequest,GetMembersResponse>(request, marshaller, unmarshaller);
@@ -1222,7 +1222,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMembersRequestMarshaller();
+            var marshaller = GetMembersRequestMarshaller.Instance;
             var unmarshaller = GetMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMembersRequest,GetMembersResponse>(request, marshaller, 
@@ -1249,7 +1249,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">REST API Reference for GetThreatIntelSet Operation</seealso>
         public virtual GetThreatIntelSetResponse GetThreatIntelSet(GetThreatIntelSetRequest request)
         {
-            var marshaller = new GetThreatIntelSetRequestMarshaller();
+            var marshaller = GetThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = GetThreatIntelSetResponseUnmarshaller.Instance;
 
             return Invoke<GetThreatIntelSetRequest,GetThreatIntelSetResponse>(request, marshaller, unmarshaller);
@@ -1267,7 +1267,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetThreatIntelSet">REST API Reference for GetThreatIntelSet Operation</seealso>
         public virtual Task<GetThreatIntelSetResponse> GetThreatIntelSetAsync(GetThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetThreatIntelSetRequestMarshaller();
+            var marshaller = GetThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = GetThreatIntelSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetThreatIntelSetRequest,GetThreatIntelSetResponse>(request, marshaller, 
@@ -1296,7 +1296,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         public virtual InviteMembersResponse InviteMembers(InviteMembersRequest request)
         {
-            var marshaller = new InviteMembersRequestMarshaller();
+            var marshaller = InviteMembersRequestMarshaller.Instance;
             var unmarshaller = InviteMembersResponseUnmarshaller.Instance;
 
             return Invoke<InviteMembersRequest,InviteMembersResponse>(request, marshaller, unmarshaller);
@@ -1314,7 +1314,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers">REST API Reference for InviteMembers Operation</seealso>
         public virtual Task<InviteMembersResponse> InviteMembersAsync(InviteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InviteMembersRequestMarshaller();
+            var marshaller = InviteMembersRequestMarshaller.Instance;
             var unmarshaller = InviteMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<InviteMembersRequest,InviteMembersResponse>(request, marshaller, 
@@ -1341,7 +1341,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         public virtual ListDetectorsResponse ListDetectors(ListDetectorsRequest request)
         {
-            var marshaller = new ListDetectorsRequestMarshaller();
+            var marshaller = ListDetectorsRequestMarshaller.Instance;
             var unmarshaller = ListDetectorsResponseUnmarshaller.Instance;
 
             return Invoke<ListDetectorsRequest,ListDetectorsResponse>(request, marshaller, unmarshaller);
@@ -1359,7 +1359,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListDetectors">REST API Reference for ListDetectors Operation</seealso>
         public virtual Task<ListDetectorsResponse> ListDetectorsAsync(ListDetectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDetectorsRequestMarshaller();
+            var marshaller = ListDetectorsRequestMarshaller.Instance;
             var unmarshaller = ListDetectorsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDetectorsRequest,ListDetectorsResponse>(request, marshaller, 
@@ -1386,7 +1386,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
-            var marshaller = new ListFindingsRequestMarshaller();
+            var marshaller = ListFindingsRequestMarshaller.Instance;
             var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
             return Invoke<ListFindingsRequest,ListFindingsResponse>(request, marshaller, unmarshaller);
@@ -1404,7 +1404,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public virtual Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFindingsRequestMarshaller();
+            var marshaller = ListFindingsRequestMarshaller.Instance;
             var unmarshaller = ListFindingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFindingsRequest,ListFindingsResponse>(request, marshaller, 
@@ -1431,7 +1431,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
-            var marshaller = new ListInvitationsRequestMarshaller();
+            var marshaller = ListInvitationsRequestMarshaller.Instance;
             var unmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
             return Invoke<ListInvitationsRequest,ListInvitationsResponse>(request, marshaller, unmarshaller);
@@ -1449,7 +1449,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListInvitationsRequestMarshaller();
+            var marshaller = ListInvitationsRequestMarshaller.Instance;
             var unmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInvitationsRequest,ListInvitationsResponse>(request, marshaller, 
@@ -1476,7 +1476,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
         {
-            var marshaller = new ListIPSetsRequestMarshaller();
+            var marshaller = ListIPSetsRequestMarshaller.Instance;
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListIPSetsRequest,ListIPSetsResponse>(request, marshaller, unmarshaller);
@@ -1494,7 +1494,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual Task<ListIPSetsResponse> ListIPSetsAsync(ListIPSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListIPSetsRequestMarshaller();
+            var marshaller = ListIPSetsRequestMarshaller.Instance;
             var unmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIPSetsRequest,ListIPSetsResponse>(request, marshaller, 
@@ -1521,7 +1521,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var marshaller = new ListMembersRequestMarshaller();
+            var marshaller = ListMembersRequestMarshaller.Instance;
             var unmarshaller = ListMembersResponseUnmarshaller.Instance;
 
             return Invoke<ListMembersRequest,ListMembersResponse>(request, marshaller, unmarshaller);
@@ -1539,7 +1539,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListMembersRequestMarshaller();
+            var marshaller = ListMembersRequestMarshaller.Instance;
             var unmarshaller = ListMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMembersRequest,ListMembersResponse>(request, marshaller, 
@@ -1566,7 +1566,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">REST API Reference for ListThreatIntelSets Operation</seealso>
         public virtual ListThreatIntelSetsResponse ListThreatIntelSets(ListThreatIntelSetsRequest request)
         {
-            var marshaller = new ListThreatIntelSetsRequestMarshaller();
+            var marshaller = ListThreatIntelSetsRequestMarshaller.Instance;
             var unmarshaller = ListThreatIntelSetsResponseUnmarshaller.Instance;
 
             return Invoke<ListThreatIntelSetsRequest,ListThreatIntelSetsResponse>(request, marshaller, unmarshaller);
@@ -1584,7 +1584,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">REST API Reference for ListThreatIntelSets Operation</seealso>
         public virtual Task<ListThreatIntelSetsResponse> ListThreatIntelSetsAsync(ListThreatIntelSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListThreatIntelSetsRequestMarshaller();
+            var marshaller = ListThreatIntelSetsRequestMarshaller.Instance;
             var unmarshaller = ListThreatIntelSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListThreatIntelSetsRequest,ListThreatIntelSetsResponse>(request, marshaller, 
@@ -1613,7 +1613,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">REST API Reference for StartMonitoringMembers Operation</seealso>
         public virtual StartMonitoringMembersResponse StartMonitoringMembers(StartMonitoringMembersRequest request)
         {
-            var marshaller = new StartMonitoringMembersRequestMarshaller();
+            var marshaller = StartMonitoringMembersRequestMarshaller.Instance;
             var unmarshaller = StartMonitoringMembersResponseUnmarshaller.Instance;
 
             return Invoke<StartMonitoringMembersRequest,StartMonitoringMembersResponse>(request, marshaller, unmarshaller);
@@ -1631,7 +1631,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">REST API Reference for StartMonitoringMembers Operation</seealso>
         public virtual Task<StartMonitoringMembersResponse> StartMonitoringMembersAsync(StartMonitoringMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartMonitoringMembersRequestMarshaller();
+            var marshaller = StartMonitoringMembersRequestMarshaller.Instance;
             var unmarshaller = StartMonitoringMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartMonitoringMembersRequest,StartMonitoringMembersResponse>(request, marshaller, 
@@ -1660,7 +1660,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">REST API Reference for StopMonitoringMembers Operation</seealso>
         public virtual StopMonitoringMembersResponse StopMonitoringMembers(StopMonitoringMembersRequest request)
         {
-            var marshaller = new StopMonitoringMembersRequestMarshaller();
+            var marshaller = StopMonitoringMembersRequestMarshaller.Instance;
             var unmarshaller = StopMonitoringMembersResponseUnmarshaller.Instance;
 
             return Invoke<StopMonitoringMembersRequest,StopMonitoringMembersResponse>(request, marshaller, unmarshaller);
@@ -1678,7 +1678,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">REST API Reference for StopMonitoringMembers Operation</seealso>
         public virtual Task<StopMonitoringMembersResponse> StopMonitoringMembersAsync(StopMonitoringMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopMonitoringMembersRequestMarshaller();
+            var marshaller = StopMonitoringMembersRequestMarshaller.Instance;
             var unmarshaller = StopMonitoringMembersResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopMonitoringMembersRequest,StopMonitoringMembersResponse>(request, marshaller, 
@@ -1705,7 +1705,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual UnarchiveFindingsResponse UnarchiveFindings(UnarchiveFindingsRequest request)
         {
-            var marshaller = new UnarchiveFindingsRequestMarshaller();
+            var marshaller = UnarchiveFindingsRequestMarshaller.Instance;
             var unmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
 
             return Invoke<UnarchiveFindingsRequest,UnarchiveFindingsResponse>(request, marshaller, unmarshaller);
@@ -1723,7 +1723,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">REST API Reference for UnarchiveFindings Operation</seealso>
         public virtual Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(UnarchiveFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UnarchiveFindingsRequestMarshaller();
+            var marshaller = UnarchiveFindingsRequestMarshaller.Instance;
             var unmarshaller = UnarchiveFindingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UnarchiveFindingsRequest,UnarchiveFindingsResponse>(request, marshaller, 
@@ -1750,7 +1750,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">REST API Reference for UpdateDetector Operation</seealso>
         public virtual UpdateDetectorResponse UpdateDetector(UpdateDetectorRequest request)
         {
-            var marshaller = new UpdateDetectorRequestMarshaller();
+            var marshaller = UpdateDetectorRequestMarshaller.Instance;
             var unmarshaller = UpdateDetectorResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDetectorRequest,UpdateDetectorResponse>(request, marshaller, unmarshaller);
@@ -1768,7 +1768,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">REST API Reference for UpdateDetector Operation</seealso>
         public virtual Task<UpdateDetectorResponse> UpdateDetectorAsync(UpdateDetectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDetectorRequestMarshaller();
+            var marshaller = UpdateDetectorRequestMarshaller.Instance;
             var unmarshaller = UpdateDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDetectorRequest,UpdateDetectorResponse>(request, marshaller, 
@@ -1795,7 +1795,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">REST API Reference for UpdateFindingsFeedback Operation</seealso>
         public virtual UpdateFindingsFeedbackResponse UpdateFindingsFeedback(UpdateFindingsFeedbackRequest request)
         {
-            var marshaller = new UpdateFindingsFeedbackRequestMarshaller();
+            var marshaller = UpdateFindingsFeedbackRequestMarshaller.Instance;
             var unmarshaller = UpdateFindingsFeedbackResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFindingsFeedbackRequest,UpdateFindingsFeedbackResponse>(request, marshaller, unmarshaller);
@@ -1813,7 +1813,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">REST API Reference for UpdateFindingsFeedback Operation</seealso>
         public virtual Task<UpdateFindingsFeedbackResponse> UpdateFindingsFeedbackAsync(UpdateFindingsFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateFindingsFeedbackRequestMarshaller();
+            var marshaller = UpdateFindingsFeedbackRequestMarshaller.Instance;
             var unmarshaller = UpdateFindingsFeedbackResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFindingsFeedbackRequest,UpdateFindingsFeedbackResponse>(request, marshaller, 
@@ -1840,7 +1840,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
         {
-            var marshaller = new UpdateIPSetRequestMarshaller();
+            var marshaller = UpdateIPSetRequestMarshaller.Instance;
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIPSetRequest,UpdateIPSetResponse>(request, marshaller, unmarshaller);
@@ -1858,7 +1858,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual Task<UpdateIPSetResponse> UpdateIPSetAsync(UpdateIPSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateIPSetRequestMarshaller();
+            var marshaller = UpdateIPSetRequestMarshaller.Instance;
             var unmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIPSetRequest,UpdateIPSetResponse>(request, marshaller, 
@@ -1885,7 +1885,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet">REST API Reference for UpdateThreatIntelSet Operation</seealso>
         public virtual UpdateThreatIntelSetResponse UpdateThreatIntelSet(UpdateThreatIntelSetRequest request)
         {
-            var marshaller = new UpdateThreatIntelSetRequestMarshaller();
+            var marshaller = UpdateThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = UpdateThreatIntelSetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateThreatIntelSetRequest,UpdateThreatIntelSetResponse>(request, marshaller, unmarshaller);
@@ -1903,7 +1903,7 @@ namespace Amazon.GuardDuty
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet">REST API Reference for UpdateThreatIntelSet Operation</seealso>
         public virtual Task<UpdateThreatIntelSetResponse> UpdateThreatIntelSetAsync(UpdateThreatIntelSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateThreatIntelSetRequestMarshaller();
+            var marshaller = UpdateThreatIntelSetRequestMarshaller.Instance;
             var unmarshaller = UpdateThreatIntelSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateThreatIntelSetRequest,UpdateThreatIntelSetResponse>(request, marshaller, 

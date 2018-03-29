@@ -309,7 +309,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AddClientIDToOpenIDConnectProviderResponse AddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request)
         {
-            var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
+            var marshaller = AddClientIDToOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return Invoke<AddClientIDToOpenIDConnectProviderRequest,AddClientIDToOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
@@ -328,7 +328,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         public virtual Task<AddClientIDToOpenIDConnectProviderResponse> AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddClientIDToOpenIDConnectProviderRequestMarshaller();
+            var marshaller = AddClientIDToOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = AddClientIDToOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddClientIDToOpenIDConnectProviderRequest,AddClientIDToOpenIDConnectProviderResponse>(request, marshaller, 
@@ -341,7 +341,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
         {
-            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
+            var marshaller = AddRoleToInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
 
             return Invoke<AddRoleToInstanceProfileRequest,AddRoleToInstanceProfileResponse>(request, marshaller, unmarshaller);
@@ -360,7 +360,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         public virtual Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
+            var marshaller = AddRoleToInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddRoleToInstanceProfileRequest,AddRoleToInstanceProfileResponse>(request, marshaller, 
@@ -373,7 +373,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
         {
-            var marshaller = new AddUserToGroupRequestMarshaller();
+            var marshaller = AddUserToGroupRequestMarshaller.Instance;
             var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
 
             return Invoke<AddUserToGroupRequest,AddUserToGroupResponse>(request, marshaller, unmarshaller);
@@ -392,7 +392,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         public virtual Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddUserToGroupRequestMarshaller();
+            var marshaller = AddUserToGroupRequestMarshaller.Instance;
             var unmarshaller = AddUserToGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddUserToGroupRequest,AddUserToGroupResponse>(request, marshaller, 
@@ -405,7 +405,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AttachGroupPolicyResponse AttachGroupPolicy(AttachGroupPolicyRequest request)
         {
-            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var marshaller = AttachGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, unmarshaller);
@@ -424,7 +424,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         public virtual Task<AttachGroupPolicyResponse> AttachGroupPolicyAsync(AttachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachGroupPolicyRequestMarshaller();
+            var marshaller = AttachGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachGroupPolicyRequest,AttachGroupPolicyResponse>(request, marshaller, 
@@ -437,7 +437,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request)
         {
-            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var marshaller = AttachRolePolicyRequestMarshaller.Instance;
             var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -456,7 +456,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         public virtual Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachRolePolicyRequestMarshaller();
+            var marshaller = AttachRolePolicyRequestMarshaller.Instance;
             var unmarshaller = AttachRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachRolePolicyRequest,AttachRolePolicyResponse>(request, marshaller, 
@@ -469,7 +469,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual AttachUserPolicyResponse AttachUserPolicy(AttachUserPolicyRequest request)
         {
-            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var marshaller = AttachUserPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
 
             return Invoke<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, unmarshaller);
@@ -488,7 +488,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         public virtual Task<AttachUserPolicyResponse> AttachUserPolicyAsync(AttachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachUserPolicyRequestMarshaller();
+            var marshaller = AttachUserPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachUserPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachUserPolicyRequest,AttachUserPolicyResponse>(request, marshaller, 
@@ -501,7 +501,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
         {
-            var marshaller = new ChangePasswordRequestMarshaller();
+            var marshaller = ChangePasswordRequestMarshaller.Instance;
             var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
 
             return Invoke<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, unmarshaller);
@@ -520,7 +520,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         public virtual Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ChangePasswordRequestMarshaller();
+            var marshaller = ChangePasswordRequestMarshaller.Instance;
             var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, 
@@ -537,7 +537,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
         {
-            var marshaller = new CreateAccessKeyRequestMarshaller();
+            var marshaller = CreateAccessKeyRequestMarshaller.Instance;
             var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
 
             return Invoke<CreateAccessKeyRequest,CreateAccessKeyResponse>(request, marshaller, unmarshaller);
@@ -604,7 +604,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         public virtual Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateAccessKeyRequestMarshaller();
+            var marshaller = CreateAccessKeyRequestMarshaller.Instance;
             var unmarshaller = CreateAccessKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAccessKeyRequest,CreateAccessKeyResponse>(request, marshaller, 
@@ -617,7 +617,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
         {
-            var marshaller = new CreateAccountAliasRequestMarshaller();
+            var marshaller = CreateAccountAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
 
             return Invoke<CreateAccountAliasRequest,CreateAccountAliasResponse>(request, marshaller, unmarshaller);
@@ -636,7 +636,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         public virtual Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateAccountAliasRequestMarshaller();
+            var marshaller = CreateAccountAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAccountAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAccountAliasRequest,CreateAccountAliasResponse>(request, marshaller, 
@@ -649,7 +649,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
@@ -668,7 +668,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateGroupRequestMarshaller();
+            var marshaller = CreateGroupRequestMarshaller.Instance;
             var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateGroupRequest,CreateGroupResponse>(request, marshaller, 
@@ -681,7 +681,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
         {
-            var marshaller = new CreateInstanceProfileRequestMarshaller();
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
             return Invoke<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, unmarshaller);
@@ -700,7 +700,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         public virtual Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateInstanceProfileRequestMarshaller();
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, 
@@ -713,7 +713,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
         {
-            var marshaller = new CreateLoginProfileRequestMarshaller();
+            var marshaller = CreateLoginProfileRequestMarshaller.Instance;
             var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
 
             return Invoke<CreateLoginProfileRequest,CreateLoginProfileResponse>(request, marshaller, unmarshaller);
@@ -732,7 +732,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         public virtual Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateLoginProfileRequestMarshaller();
+            var marshaller = CreateLoginProfileRequestMarshaller.Instance;
             var unmarshaller = CreateLoginProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLoginProfileRequest,CreateLoginProfileResponse>(request, marshaller, 
@@ -745,7 +745,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateOpenIDConnectProviderResponse CreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request)
         {
-            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var marshaller = CreateOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return Invoke<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
@@ -764,7 +764,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         public virtual Task<CreateOpenIDConnectProviderResponse> CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var marshaller = CreateOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = CreateOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateOpenIDConnectProviderRequest,CreateOpenIDConnectProviderResponse>(request, marshaller, 
@@ -777,7 +777,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
-            var marshaller = new CreatePolicyRequestMarshaller();
+            var marshaller = CreatePolicyRequestMarshaller.Instance;
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
             return Invoke<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, unmarshaller);
@@ -796,7 +796,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePolicyRequestMarshaller();
+            var marshaller = CreatePolicyRequestMarshaller.Instance;
             var unmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePolicyRequest,CreatePolicyResponse>(request, marshaller, 
@@ -809,7 +809,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request)
         {
-            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var marshaller = CreatePolicyVersionRequestMarshaller.Instance;
             var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, unmarshaller);
@@ -828,7 +828,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         public virtual Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePolicyVersionRequestMarshaller();
+            var marshaller = CreatePolicyVersionRequestMarshaller.Instance;
             var unmarshaller = CreatePolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePolicyVersionRequest,CreatePolicyVersionResponse>(request, marshaller, 
@@ -841,7 +841,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateRoleResponse CreateRole(CreateRoleRequest request)
         {
-            var marshaller = new CreateRoleRequestMarshaller();
+            var marshaller = CreateRoleRequestMarshaller.Instance;
             var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
 
             return Invoke<CreateRoleRequest,CreateRoleResponse>(request, marshaller, unmarshaller);
@@ -860,7 +860,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         public virtual Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateRoleRequestMarshaller();
+            var marshaller = CreateRoleRequestMarshaller.Instance;
             var unmarshaller = CreateRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoleRequest,CreateRoleResponse>(request, marshaller, 
@@ -873,7 +873,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request)
         {
-            var marshaller = new CreateSAMLProviderRequestMarshaller();
+            var marshaller = CreateSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
 
             return Invoke<CreateSAMLProviderRequest,CreateSAMLProviderResponse>(request, marshaller, unmarshaller);
@@ -892,7 +892,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         public virtual Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSAMLProviderRequestMarshaller();
+            var marshaller = CreateSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = CreateSAMLProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSAMLProviderRequest,CreateSAMLProviderResponse>(request, marshaller, 
@@ -905,7 +905,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateServiceLinkedRoleResponse CreateServiceLinkedRole(CreateServiceLinkedRoleRequest request)
         {
-            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var marshaller = CreateServiceLinkedRoleRequestMarshaller.Instance;
             var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
 
             return Invoke<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
@@ -924,7 +924,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
         public virtual Task<CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var marshaller = CreateServiceLinkedRoleRequestMarshaller.Instance;
             var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>(request, marshaller, 
@@ -937,7 +937,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request)
         {
-            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var marshaller = CreateServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return Invoke<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
@@ -956,7 +956,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
         public virtual Task<CreateServiceSpecificCredentialResponse> CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var marshaller = CreateServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>(request, marshaller, 
@@ -969,7 +969,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
@@ -988,7 +988,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
@@ -1001,7 +1001,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
         {
-            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
+            var marshaller = CreateVirtualMFADeviceRequestMarshaller.Instance;
             var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
 
             return Invoke<CreateVirtualMFADeviceRequest,CreateVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
@@ -1020,7 +1020,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         public virtual Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
+            var marshaller = CreateVirtualMFADeviceRequestMarshaller.Instance;
             var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVirtualMFADeviceRequest,CreateVirtualMFADeviceResponse>(request, marshaller, 
@@ -1033,7 +1033,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
         {
-            var marshaller = new DeactivateMFADeviceRequestMarshaller();
+            var marshaller = DeactivateMFADeviceRequestMarshaller.Instance;
             var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
 
             return Invoke<DeactivateMFADeviceRequest,DeactivateMFADeviceResponse>(request, marshaller, unmarshaller);
@@ -1052,7 +1052,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         public virtual Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeactivateMFADeviceRequestMarshaller();
+            var marshaller = DeactivateMFADeviceRequestMarshaller.Instance;
             var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeactivateMFADeviceRequest,DeactivateMFADeviceResponse>(request, marshaller, 
@@ -1065,7 +1065,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
         {
-            var marshaller = new DeleteAccessKeyRequestMarshaller();
+            var marshaller = DeleteAccessKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAccessKeyRequest,DeleteAccessKeyResponse>(request, marshaller, unmarshaller);
@@ -1084,7 +1084,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         public virtual Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAccessKeyRequestMarshaller();
+            var marshaller = DeleteAccessKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteAccessKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAccessKeyRequest,DeleteAccessKeyResponse>(request, marshaller, 
@@ -1097,7 +1097,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
         {
-            var marshaller = new DeleteAccountAliasRequestMarshaller();
+            var marshaller = DeleteAccountAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAccountAliasRequest,DeleteAccountAliasResponse>(request, marshaller, unmarshaller);
@@ -1116,7 +1116,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         public virtual Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAccountAliasRequestMarshaller();
+            var marshaller = DeleteAccountAliasRequestMarshaller.Instance;
             var unmarshaller = DeleteAccountAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAccountAliasRequest,DeleteAccountAliasResponse>(request, marshaller, 
@@ -1133,7 +1133,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
         {
-            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
+            var marshaller = DeleteAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAccountPasswordPolicyRequest,DeleteAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
@@ -1178,7 +1178,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         public virtual Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
+            var marshaller = DeleteAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAccountPasswordPolicyRequest,DeleteAccountPasswordPolicyResponse>(request, marshaller, 
@@ -1191,7 +1191,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
@@ -1210,7 +1210,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteGroupRequestMarshaller();
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
@@ -1223,7 +1223,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
         {
-            var marshaller = new DeleteGroupPolicyRequestMarshaller();
+            var marshaller = DeleteGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGroupPolicyRequest,DeleteGroupPolicyResponse>(request, marshaller, unmarshaller);
@@ -1242,7 +1242,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         public virtual Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteGroupPolicyRequestMarshaller();
+            var marshaller = DeleteGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGroupPolicyRequest,DeleteGroupPolicyResponse>(request, marshaller, 
@@ -1255,7 +1255,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
         {
-            var marshaller = new DeleteInstanceProfileRequestMarshaller();
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
             return Invoke<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, unmarshaller);
@@ -1274,7 +1274,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         public virtual Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteInstanceProfileRequestMarshaller();
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, 
@@ -1287,7 +1287,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
         {
-            var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var marshaller = DeleteLoginProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLoginProfileRequest,DeleteLoginProfileResponse>(request, marshaller, unmarshaller);
@@ -1306,7 +1306,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         public virtual Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLoginProfileRequestMarshaller();
+            var marshaller = DeleteLoginProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteLoginProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoginProfileRequest,DeleteLoginProfileResponse>(request, marshaller, 
@@ -1319,7 +1319,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteOpenIDConnectProviderResponse DeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request)
         {
-            var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
+            var marshaller = DeleteOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteOpenIDConnectProviderRequest,DeleteOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
@@ -1338,7 +1338,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         public virtual Task<DeleteOpenIDConnectProviderResponse> DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteOpenIDConnectProviderRequestMarshaller();
+            var marshaller = DeleteOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOpenIDConnectProviderRequest,DeleteOpenIDConnectProviderResponse>(request, marshaller, 
@@ -1351,7 +1351,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var marshaller = new DeletePolicyRequestMarshaller();
+            var marshaller = DeletePolicyRequestMarshaller.Instance;
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, unmarshaller);
@@ -1370,7 +1370,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeletePolicyRequestMarshaller();
+            var marshaller = DeletePolicyRequestMarshaller.Instance;
             var unmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePolicyRequest,DeletePolicyResponse>(request, marshaller, 
@@ -1383,7 +1383,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request)
         {
-            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var marshaller = DeletePolicyVersionRequestMarshaller.Instance;
             var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, unmarshaller);
@@ -1402,7 +1402,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         public virtual Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeletePolicyVersionRequestMarshaller();
+            var marshaller = DeletePolicyVersionRequestMarshaller.Instance;
             var unmarshaller = DeletePolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePolicyVersionRequest,DeletePolicyVersionResponse>(request, marshaller, 
@@ -1415,7 +1415,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
         {
-            var marshaller = new DeleteRoleRequestMarshaller();
+            var marshaller = DeleteRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRoleRequest,DeleteRoleResponse>(request, marshaller, unmarshaller);
@@ -1434,7 +1434,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         public virtual Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRoleRequestMarshaller();
+            var marshaller = DeleteRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRoleRequest,DeleteRoleResponse>(request, marshaller, 
@@ -1447,7 +1447,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
         {
-            var marshaller = new DeleteRolePolicyRequestMarshaller();
+            var marshaller = DeleteRolePolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRolePolicyRequest,DeleteRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -1466,7 +1466,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         public virtual Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRolePolicyRequestMarshaller();
+            var marshaller = DeleteRolePolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRolePolicyRequest,DeleteRolePolicyResponse>(request, marshaller, 
@@ -1479,7 +1479,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request)
         {
-            var marshaller = new DeleteSAMLProviderRequestMarshaller();
+            var marshaller = DeleteSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSAMLProviderRequest,DeleteSAMLProviderResponse>(request, marshaller, unmarshaller);
@@ -1498,7 +1498,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         public virtual Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSAMLProviderRequestMarshaller();
+            var marshaller = DeleteSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSAMLProviderRequest,DeleteSAMLProviderResponse>(request, marshaller, 
@@ -1511,7 +1511,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
         {
-            var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var marshaller = DeleteServerCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteServerCertificateRequest,DeleteServerCertificateResponse>(request, marshaller, unmarshaller);
@@ -1530,7 +1530,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         public virtual Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var marshaller = DeleteServerCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServerCertificateRequest,DeleteServerCertificateResponse>(request, marshaller, 
@@ -1543,7 +1543,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request)
         {
-            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
@@ -1562,7 +1562,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         public virtual Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
+            var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, 
@@ -1575,7 +1575,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request)
         {
-            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var marshaller = DeleteServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return Invoke<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
@@ -1594,7 +1594,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
         public virtual Task<DeleteServiceSpecificCredentialResponse> DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var marshaller = DeleteServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>(request, marshaller, 
@@ -1607,7 +1607,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
         {
-            var marshaller = new DeleteSigningCertificateRequestMarshaller();
+            var marshaller = DeleteSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSigningCertificateRequest,DeleteSigningCertificateResponse>(request, marshaller, unmarshaller);
@@ -1626,7 +1626,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         public virtual Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSigningCertificateRequestMarshaller();
+            var marshaller = DeleteSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSigningCertificateRequest,DeleteSigningCertificateResponse>(request, marshaller, 
@@ -1639,7 +1639,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request)
         {
-            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var marshaller = DeleteSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, unmarshaller);
@@ -1658,7 +1658,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         public virtual Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSSHPublicKeyRequestMarshaller();
+            var marshaller = DeleteSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteSSHPublicKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSSHPublicKeyRequest,DeleteSSHPublicKeyResponse>(request, marshaller, 
@@ -1671,7 +1671,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -1690,7 +1690,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
@@ -1703,7 +1703,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
         {
-            var marshaller = new DeleteUserPolicyRequestMarshaller();
+            var marshaller = DeleteUserPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserPolicyRequest,DeleteUserPolicyResponse>(request, marshaller, unmarshaller);
@@ -1722,7 +1722,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         public virtual Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteUserPolicyRequestMarshaller();
+            var marshaller = DeleteUserPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteUserPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserPolicyRequest,DeleteUserPolicyResponse>(request, marshaller, 
@@ -1735,7 +1735,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
         {
-            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var marshaller = DeleteVirtualMFADeviceRequestMarshaller.Instance;
             var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>(request, marshaller, unmarshaller);
@@ -1754,7 +1754,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         public virtual Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
+            var marshaller = DeleteVirtualMFADeviceRequestMarshaller.Instance;
             var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVirtualMFADeviceRequest,DeleteVirtualMFADeviceResponse>(request, marshaller, 
@@ -1767,7 +1767,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DetachGroupPolicyResponse DetachGroupPolicy(DetachGroupPolicyRequest request)
         {
-            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var marshaller = DetachGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, unmarshaller);
@@ -1786,7 +1786,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         public virtual Task<DetachGroupPolicyResponse> DetachGroupPolicyAsync(DetachGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachGroupPolicyRequestMarshaller();
+            var marshaller = DetachGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachGroupPolicyRequest,DetachGroupPolicyResponse>(request, marshaller, 
@@ -1799,7 +1799,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request)
         {
-            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var marshaller = DetachRolePolicyRequestMarshaller.Instance;
             var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -1818,7 +1818,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         public virtual Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachRolePolicyRequestMarshaller();
+            var marshaller = DetachRolePolicyRequestMarshaller.Instance;
             var unmarshaller = DetachRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachRolePolicyRequest,DetachRolePolicyResponse>(request, marshaller, 
@@ -1831,7 +1831,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual DetachUserPolicyResponse DetachUserPolicy(DetachUserPolicyRequest request)
         {
-            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var marshaller = DetachUserPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, unmarshaller);
@@ -1850,7 +1850,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         public virtual Task<DetachUserPolicyResponse> DetachUserPolicyAsync(DetachUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachUserPolicyRequestMarshaller();
+            var marshaller = DetachUserPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachUserPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachUserPolicyRequest,DetachUserPolicyResponse>(request, marshaller, 
@@ -1863,7 +1863,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
         {
-            var marshaller = new EnableMFADeviceRequestMarshaller();
+            var marshaller = EnableMFADeviceRequestMarshaller.Instance;
             var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
 
             return Invoke<EnableMFADeviceRequest,EnableMFADeviceResponse>(request, marshaller, unmarshaller);
@@ -1882,7 +1882,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         public virtual Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableMFADeviceRequestMarshaller();
+            var marshaller = EnableMFADeviceRequestMarshaller.Instance;
             var unmarshaller = EnableMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableMFADeviceRequest,EnableMFADeviceResponse>(request, marshaller, 
@@ -1899,7 +1899,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request)
         {
-            var marshaller = new GenerateCredentialReportRequestMarshaller();
+            var marshaller = GenerateCredentialReportRequestMarshaller.Instance;
             var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
 
             return Invoke<GenerateCredentialReportRequest,GenerateCredentialReportResponse>(request, marshaller, unmarshaller);
@@ -1942,7 +1942,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         public virtual Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(GenerateCredentialReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GenerateCredentialReportRequestMarshaller();
+            var marshaller = GenerateCredentialReportRequestMarshaller.Instance;
             var unmarshaller = GenerateCredentialReportResponseUnmarshaller.Instance;
 
             return InvokeAsync<GenerateCredentialReportRequest,GenerateCredentialReportResponse>(request, marshaller, 
@@ -1955,7 +1955,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request)
         {
-            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var marshaller = GetAccessKeyLastUsedRequestMarshaller.Instance;
             var unmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
 
             return Invoke<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>(request, marshaller, unmarshaller);
@@ -1974,7 +1974,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         public virtual Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAccessKeyLastUsedRequestMarshaller();
+            var marshaller = GetAccessKeyLastUsedRequestMarshaller.Instance;
             var unmarshaller = GetAccessKeyLastUsedResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccessKeyLastUsedRequest,GetAccessKeyLastUsedResponse>(request, marshaller, 
@@ -1987,7 +1987,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetAccountAuthorizationDetailsResponse GetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request)
         {
-            var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
+            var marshaller = GetAccountAuthorizationDetailsRequestMarshaller.Instance;
             var unmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
 
             return Invoke<GetAccountAuthorizationDetailsRequest,GetAccountAuthorizationDetailsResponse>(request, marshaller, unmarshaller);
@@ -2006,7 +2006,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         public virtual Task<GetAccountAuthorizationDetailsResponse> GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAccountAuthorizationDetailsRequestMarshaller();
+            var marshaller = GetAccountAuthorizationDetailsRequestMarshaller.Instance;
             var unmarshaller = GetAccountAuthorizationDetailsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccountAuthorizationDetailsRequest,GetAccountAuthorizationDetailsResponse>(request, marshaller, 
@@ -2023,7 +2023,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
         {
-            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
+            var marshaller = GetAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetAccountPasswordPolicyRequest,GetAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
@@ -2066,7 +2066,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         public virtual Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
+            var marshaller = GetAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccountPasswordPolicyRequest,GetAccountPasswordPolicyResponse>(request, marshaller, 
@@ -2083,7 +2083,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
         {
-            var marshaller = new GetAccountSummaryRequestMarshaller();
+            var marshaller = GetAccountSummaryRequestMarshaller.Instance;
             var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
 
             return Invoke<GetAccountSummaryRequest,GetAccountSummaryResponse>(request, marshaller, unmarshaller);
@@ -2126,7 +2126,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         public virtual Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAccountSummaryRequestMarshaller();
+            var marshaller = GetAccountSummaryRequestMarshaller.Instance;
             var unmarshaller = GetAccountSummaryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAccountSummaryRequest,GetAccountSummaryResponse>(request, marshaller, 
@@ -2139,7 +2139,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request)
         {
-            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var marshaller = GetContextKeysForCustomPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, unmarshaller);
@@ -2192,7 +2192,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         public virtual Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetContextKeysForCustomPolicyRequestMarshaller();
+            var marshaller = GetContextKeysForCustomPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContextKeysForCustomPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetContextKeysForCustomPolicyRequest,GetContextKeysForCustomPolicyResponse>(request, marshaller, 
@@ -2205,7 +2205,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request)
         {
-            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var marshaller = GetContextKeysForPrincipalPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, unmarshaller);
@@ -2324,7 +2324,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         public virtual Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetContextKeysForPrincipalPolicyRequestMarshaller();
+            var marshaller = GetContextKeysForPrincipalPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContextKeysForPrincipalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetContextKeysForPrincipalPolicyRequest,GetContextKeysForPrincipalPolicyResponse>(request, marshaller, 
@@ -2341,7 +2341,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request)
         {
-            var marshaller = new GetCredentialReportRequestMarshaller();
+            var marshaller = GetCredentialReportRequestMarshaller.Instance;
             var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
 
             return Invoke<GetCredentialReportRequest,GetCredentialReportResponse>(request, marshaller, unmarshaller);
@@ -2393,7 +2393,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         public virtual Task<GetCredentialReportResponse> GetCredentialReportAsync(GetCredentialReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCredentialReportRequestMarshaller();
+            var marshaller = GetCredentialReportRequestMarshaller.Instance;
             var unmarshaller = GetCredentialReportResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCredentialReportRequest,GetCredentialReportResponse>(request, marshaller, 
@@ -2406,7 +2406,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
@@ -2425,7 +2425,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetGroupRequestMarshaller();
+            var marshaller = GetGroupRequestMarshaller.Instance;
             var unmarshaller = GetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetGroupRequest,GetGroupResponse>(request, marshaller, 
@@ -2438,7 +2438,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
         {
-            var marshaller = new GetGroupPolicyRequestMarshaller();
+            var marshaller = GetGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetGroupPolicyRequest,GetGroupPolicyResponse>(request, marshaller, unmarshaller);
@@ -2457,7 +2457,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         public virtual Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetGroupPolicyRequestMarshaller();
+            var marshaller = GetGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = GetGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetGroupPolicyRequest,GetGroupPolicyResponse>(request, marshaller, 
@@ -2470,7 +2470,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
         {
-            var marshaller = new GetInstanceProfileRequestMarshaller();
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
 
             return Invoke<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, unmarshaller);
@@ -2489,7 +2489,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         public virtual Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetInstanceProfileRequestMarshaller();
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, 
@@ -2502,7 +2502,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
         {
-            var marshaller = new GetLoginProfileRequestMarshaller();
+            var marshaller = GetLoginProfileRequestMarshaller.Instance;
             var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
 
             return Invoke<GetLoginProfileRequest,GetLoginProfileResponse>(request, marshaller, unmarshaller);
@@ -2521,7 +2521,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         public virtual Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLoginProfileRequestMarshaller();
+            var marshaller = GetLoginProfileRequestMarshaller.Instance;
             var unmarshaller = GetLoginProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLoginProfileRequest,GetLoginProfileResponse>(request, marshaller, 
@@ -2534,7 +2534,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetOpenIDConnectProviderResponse GetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request)
         {
-            var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
+            var marshaller = GetOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return Invoke<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
@@ -2553,7 +2553,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         public virtual Task<GetOpenIDConnectProviderResponse> GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetOpenIDConnectProviderRequestMarshaller();
+            var marshaller = GetOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = GetOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOpenIDConnectProviderRequest,GetOpenIDConnectProviderResponse>(request, marshaller, 
@@ -2566,7 +2566,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var marshaller = new GetPolicyRequestMarshaller();
+            var marshaller = GetPolicyRequestMarshaller.Instance;
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetPolicyRequest,GetPolicyResponse>(request, marshaller, unmarshaller);
@@ -2585,7 +2585,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPolicyRequestMarshaller();
+            var marshaller = GetPolicyRequestMarshaller.Instance;
             var unmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPolicyRequest,GetPolicyResponse>(request, marshaller, 
@@ -2598,7 +2598,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
         {
-            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var marshaller = GetPolicyVersionRequestMarshaller.Instance;
             var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, unmarshaller);
@@ -2617,7 +2617,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public virtual Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetPolicyVersionRequestMarshaller();
+            var marshaller = GetPolicyVersionRequestMarshaller.Instance;
             var unmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPolicyVersionRequest,GetPolicyVersionResponse>(request, marshaller, 
@@ -2630,7 +2630,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetRoleResponse GetRole(GetRoleRequest request)
         {
-            var marshaller = new GetRoleRequestMarshaller();
+            var marshaller = GetRoleRequestMarshaller.Instance;
             var unmarshaller = GetRoleResponseUnmarshaller.Instance;
 
             return Invoke<GetRoleRequest,GetRoleResponse>(request, marshaller, unmarshaller);
@@ -2649,7 +2649,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         public virtual Task<GetRoleResponse> GetRoleAsync(GetRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetRoleRequestMarshaller();
+            var marshaller = GetRoleRequestMarshaller.Instance;
             var unmarshaller = GetRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRoleRequest,GetRoleResponse>(request, marshaller, 
@@ -2662,7 +2662,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
         {
-            var marshaller = new GetRolePolicyRequestMarshaller();
+            var marshaller = GetRolePolicyRequestMarshaller.Instance;
             var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetRolePolicyRequest,GetRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -2681,7 +2681,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         public virtual Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetRolePolicyRequestMarshaller();
+            var marshaller = GetRolePolicyRequestMarshaller.Instance;
             var unmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRolePolicyRequest,GetRolePolicyResponse>(request, marshaller, 
@@ -2694,7 +2694,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request)
         {
-            var marshaller = new GetSAMLProviderRequestMarshaller();
+            var marshaller = GetSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
 
             return Invoke<GetSAMLProviderRequest,GetSAMLProviderResponse>(request, marshaller, unmarshaller);
@@ -2713,7 +2713,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         public virtual Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSAMLProviderRequestMarshaller();
+            var marshaller = GetSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = GetSAMLProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSAMLProviderRequest,GetSAMLProviderResponse>(request, marshaller, 
@@ -2726,7 +2726,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
         {
-            var marshaller = new GetServerCertificateRequestMarshaller();
+            var marshaller = GetServerCertificateRequestMarshaller.Instance;
             var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
 
             return Invoke<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, unmarshaller);
@@ -2745,7 +2745,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         public virtual Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetServerCertificateRequestMarshaller();
+            var marshaller = GetServerCertificateRequestMarshaller.Instance;
             var unmarshaller = GetServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServerCertificateRequest,GetServerCertificateResponse>(request, marshaller, 
@@ -2758,7 +2758,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetServiceLinkedRoleDeletionStatusResponse GetServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request)
         {
-            var marshaller = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();
+            var marshaller = GetServiceLinkedRoleDeletionStatusRequestMarshaller.Instance;
             var unmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
 
             return Invoke<GetServiceLinkedRoleDeletionStatusRequest,GetServiceLinkedRoleDeletionStatusResponse>(request, marshaller, unmarshaller);
@@ -2777,7 +2777,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus">REST API Reference for GetServiceLinkedRoleDeletionStatus Operation</seealso>
         public virtual Task<GetServiceLinkedRoleDeletionStatusResponse> GetServiceLinkedRoleDeletionStatusAsync(GetServiceLinkedRoleDeletionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();
+            var marshaller = GetServiceLinkedRoleDeletionStatusRequestMarshaller.Instance;
             var unmarshaller = GetServiceLinkedRoleDeletionStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServiceLinkedRoleDeletionStatusRequest,GetServiceLinkedRoleDeletionStatusResponse>(request, marshaller, 
@@ -2790,7 +2790,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request)
         {
-            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var marshaller = GetSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
 
             return Invoke<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, unmarshaller);
@@ -2809,7 +2809,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         public virtual Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSSHPublicKeyRequestMarshaller();
+            var marshaller = GetSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = GetSSHPublicKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSSHPublicKeyRequest,GetSSHPublicKeyResponse>(request, marshaller, 
@@ -2826,7 +2826,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual GetUserResponse GetUser(GetUserRequest request)
         {
-            var marshaller = new GetUserRequestMarshaller();
+            var marshaller = GetUserRequestMarshaller.Instance;
             var unmarshaller = GetUserResponseUnmarshaller.Instance;
 
             return Invoke<GetUserRequest,GetUserResponse>(request, marshaller, unmarshaller);
@@ -2874,7 +2874,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         public virtual Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetUserRequestMarshaller();
+            var marshaller = GetUserRequestMarshaller.Instance;
             var unmarshaller = GetUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserRequest,GetUserResponse>(request, marshaller, 
@@ -2887,7 +2887,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
         {
-            var marshaller = new GetUserPolicyRequestMarshaller();
+            var marshaller = GetUserPolicyRequestMarshaller.Instance;
             var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetUserPolicyRequest,GetUserPolicyResponse>(request, marshaller, unmarshaller);
@@ -2906,7 +2906,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         public virtual Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetUserPolicyRequestMarshaller();
+            var marshaller = GetUserPolicyRequestMarshaller.Instance;
             var unmarshaller = GetUserPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserPolicyRequest,GetUserPolicyResponse>(request, marshaller, 
@@ -2923,7 +2923,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
         {
-            var marshaller = new ListAccessKeysRequestMarshaller();
+            var marshaller = ListAccessKeysRequestMarshaller.Instance;
             var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
 
             return Invoke<ListAccessKeysRequest,ListAccessKeysResponse>(request, marshaller, unmarshaller);
@@ -2984,7 +2984,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         public virtual Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAccessKeysRequestMarshaller();
+            var marshaller = ListAccessKeysRequestMarshaller.Instance;
             var unmarshaller = ListAccessKeysResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAccessKeysRequest,ListAccessKeysResponse>(request, marshaller, 
@@ -3001,7 +3001,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
         {
-            var marshaller = new ListAccountAliasesRequestMarshaller();
+            var marshaller = ListAccountAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
 
             return Invoke<ListAccountAliasesRequest,ListAccountAliasesResponse>(request, marshaller, unmarshaller);
@@ -3040,7 +3040,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         public virtual Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAccountAliasesRequestMarshaller();
+            var marshaller = ListAccountAliasesRequestMarshaller.Instance;
             var unmarshaller = ListAccountAliasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAccountAliasesRequest,ListAccountAliasesResponse>(request, marshaller, 
@@ -3053,7 +3053,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListAttachedGroupPoliciesResponse ListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request)
         {
-            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var marshaller = ListAttachedGroupPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3072,7 +3072,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         public virtual Task<ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAttachedGroupPoliciesRequestMarshaller();
+            var marshaller = ListAttachedGroupPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedGroupPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttachedGroupPoliciesRequest,ListAttachedGroupPoliciesResponse>(request, marshaller, 
@@ -3085,7 +3085,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest request)
         {
-            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var marshaller = ListAttachedRolePoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, unmarshaller);
@@ -3104,7 +3104,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         public virtual Task<ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAttachedRolePoliciesRequestMarshaller();
+            var marshaller = ListAttachedRolePoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedRolePoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttachedRolePoliciesRequest,ListAttachedRolePoliciesResponse>(request, marshaller, 
@@ -3117,7 +3117,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListAttachedUserPoliciesResponse ListAttachedUserPolicies(ListAttachedUserPoliciesRequest request)
         {
-            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var marshaller = ListAttachedUserPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3136,7 +3136,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         public virtual Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAttachedUserPoliciesRequestMarshaller();
+            var marshaller = ListAttachedUserPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedUserPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttachedUserPoliciesRequest,ListAttachedUserPoliciesResponse>(request, marshaller, 
@@ -3149,7 +3149,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListEntitiesForPolicyResponse ListEntitiesForPolicy(ListEntitiesForPolicyRequest request)
         {
-            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var marshaller = ListEntitiesForPolicyRequestMarshaller.Instance;
             var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
 
             return Invoke<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, unmarshaller);
@@ -3168,7 +3168,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         public virtual Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListEntitiesForPolicyRequestMarshaller();
+            var marshaller = ListEntitiesForPolicyRequestMarshaller.Instance;
             var unmarshaller = ListEntitiesForPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEntitiesForPolicyRequest,ListEntitiesForPolicyResponse>(request, marshaller, 
@@ -3181,7 +3181,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
         {
-            var marshaller = new ListGroupPoliciesRequestMarshaller();
+            var marshaller = ListGroupPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupPoliciesRequest,ListGroupPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3200,7 +3200,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         public virtual Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGroupPoliciesRequestMarshaller();
+            var marshaller = ListGroupPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListGroupPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupPoliciesRequest,ListGroupPoliciesResponse>(request, marshaller, 
@@ -3217,7 +3217,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
@@ -3260,7 +3260,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGroupsRequestMarshaller();
+            var marshaller = ListGroupsRequestMarshaller.Instance;
             var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupsRequest,ListGroupsResponse>(request, marshaller, 
@@ -3273,7 +3273,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
         {
-            var marshaller = new ListGroupsForUserRequestMarshaller();
+            var marshaller = ListGroupsForUserRequestMarshaller.Instance;
             var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
 
             return Invoke<ListGroupsForUserRequest,ListGroupsForUserResponse>(request, marshaller, unmarshaller);
@@ -3292,7 +3292,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         public virtual Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGroupsForUserRequestMarshaller();
+            var marshaller = ListGroupsForUserRequestMarshaller.Instance;
             var unmarshaller = ListGroupsForUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGroupsForUserRequest,ListGroupsForUserResponse>(request, marshaller, 
@@ -3309,7 +3309,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
         {
-            var marshaller = new ListInstanceProfilesRequestMarshaller();
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
             var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
 
             return Invoke<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, unmarshaller);
@@ -3355,7 +3355,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         public virtual Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListInstanceProfilesRequestMarshaller();
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
             var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, 
@@ -3368,7 +3368,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
         {
-            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
+            var marshaller = ListInstanceProfilesForRoleRequestMarshaller.Instance;
             var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
 
             return Invoke<ListInstanceProfilesForRoleRequest,ListInstanceProfilesForRoleResponse>(request, marshaller, unmarshaller);
@@ -3387,7 +3387,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         public virtual Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
+            var marshaller = ListInstanceProfilesForRoleRequestMarshaller.Instance;
             var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInstanceProfilesForRoleRequest,ListInstanceProfilesForRoleResponse>(request, marshaller, 
@@ -3404,7 +3404,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
         {
-            var marshaller = new ListMFADevicesRequestMarshaller();
+            var marshaller = ListMFADevicesRequestMarshaller.Instance;
             var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
 
             return Invoke<ListMFADevicesRequest,ListMFADevicesResponse>(request, marshaller, unmarshaller);
@@ -3454,7 +3454,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         public virtual Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListMFADevicesRequestMarshaller();
+            var marshaller = ListMFADevicesRequestMarshaller.Instance;
             var unmarshaller = ListMFADevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMFADevicesRequest,ListMFADevicesResponse>(request, marshaller, 
@@ -3467,7 +3467,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListOpenIDConnectProvidersResponse ListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request)
         {
-            var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
+            var marshaller = ListOpenIDConnectProvidersRequestMarshaller.Instance;
             var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
 
             return Invoke<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>(request, marshaller, unmarshaller);
@@ -3486,7 +3486,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         public virtual Task<ListOpenIDConnectProvidersResponse> ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListOpenIDConnectProvidersRequestMarshaller();
+            var marshaller = ListOpenIDConnectProvidersRequestMarshaller.Instance;
             var unmarshaller = ListOpenIDConnectProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOpenIDConnectProvidersRequest,ListOpenIDConnectProvidersResponse>(request, marshaller, 
@@ -3503,7 +3503,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var marshaller = new ListPoliciesRequestMarshaller();
+            var marshaller = ListPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3559,7 +3559,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPoliciesRequestMarshaller();
+            var marshaller = ListPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPoliciesRequest,ListPoliciesResponse>(request, marshaller, 
@@ -3572,7 +3572,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
         {
-            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var marshaller = ListPolicyVersionsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
 
             return Invoke<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, unmarshaller);
@@ -3591,7 +3591,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public virtual Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPolicyVersionsRequestMarshaller();
+            var marshaller = ListPolicyVersionsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPolicyVersionsRequest,ListPolicyVersionsResponse>(request, marshaller, 
@@ -3604,7 +3604,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
         {
-            var marshaller = new ListRolePoliciesRequestMarshaller();
+            var marshaller = ListRolePoliciesRequestMarshaller.Instance;
             var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListRolePoliciesRequest,ListRolePoliciesResponse>(request, marshaller, unmarshaller);
@@ -3623,7 +3623,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         public virtual Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListRolePoliciesRequestMarshaller();
+            var marshaller = ListRolePoliciesRequestMarshaller.Instance;
             var unmarshaller = ListRolePoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRolePoliciesRequest,ListRolePoliciesResponse>(request, marshaller, 
@@ -3640,7 +3640,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListRolesResponse ListRoles(ListRolesRequest request)
         {
-            var marshaller = new ListRolesRequestMarshaller();
+            var marshaller = ListRolesRequestMarshaller.Instance;
             var unmarshaller = ListRolesResponseUnmarshaller.Instance;
 
             return Invoke<ListRolesRequest,ListRolesResponse>(request, marshaller, unmarshaller);
@@ -3685,7 +3685,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         public virtual Task<ListRolesResponse> ListRolesAsync(ListRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListRolesRequestMarshaller();
+            var marshaller = ListRolesRequestMarshaller.Instance;
             var unmarshaller = ListRolesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRolesRequest,ListRolesResponse>(request, marshaller, 
@@ -3702,7 +3702,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request)
         {
-            var marshaller = new ListSAMLProvidersRequestMarshaller();
+            var marshaller = ListSAMLProvidersRequestMarshaller.Instance;
             var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
 
             return Invoke<ListSAMLProvidersRequest,ListSAMLProvidersResponse>(request, marshaller, unmarshaller);
@@ -3746,7 +3746,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         public virtual Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListSAMLProvidersRequestMarshaller();
+            var marshaller = ListSAMLProvidersRequestMarshaller.Instance;
             var unmarshaller = ListSAMLProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSAMLProvidersRequest,ListSAMLProvidersResponse>(request, marshaller, 
@@ -3763,7 +3763,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
         {
-            var marshaller = new ListServerCertificatesRequestMarshaller();
+            var marshaller = ListServerCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<ListServerCertificatesRequest,ListServerCertificatesResponse>(request, marshaller, unmarshaller);
@@ -3813,7 +3813,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         public virtual Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListServerCertificatesRequestMarshaller();
+            var marshaller = ListServerCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListServerCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListServerCertificatesRequest,ListServerCertificatesResponse>(request, marshaller, 
@@ -3826,7 +3826,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListServiceSpecificCredentialsResponse ListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request)
         {
-            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var marshaller = ListServiceSpecificCredentialsRequestMarshaller.Instance;
             var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>(request, marshaller, unmarshaller);
@@ -3845,7 +3845,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
         public virtual Task<ListServiceSpecificCredentialsResponse> ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var marshaller = ListServiceSpecificCredentialsRequestMarshaller.Instance;
             var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>(request, marshaller, 
@@ -3862,7 +3862,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
         {
-            var marshaller = new ListSigningCertificatesRequestMarshaller();
+            var marshaller = ListSigningCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<ListSigningCertificatesRequest,ListSigningCertificatesResponse>(request, marshaller, unmarshaller);
@@ -3918,7 +3918,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         public virtual Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListSigningCertificatesRequestMarshaller();
+            var marshaller = ListSigningCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListSigningCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSigningCertificatesRequest,ListSigningCertificatesResponse>(request, marshaller, 
@@ -3931,7 +3931,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request)
         {
-            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var marshaller = ListSSHPublicKeysRequestMarshaller.Instance;
             var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
 
             return Invoke<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, unmarshaller);
@@ -3950,7 +3950,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         public virtual Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListSSHPublicKeysRequestMarshaller();
+            var marshaller = ListSSHPublicKeysRequestMarshaller.Instance;
             var unmarshaller = ListSSHPublicKeysResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSSHPublicKeysRequest,ListSSHPublicKeysResponse>(request, marshaller, 
@@ -3963,7 +3963,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
         {
-            var marshaller = new ListUserPoliciesRequestMarshaller();
+            var marshaller = ListUserPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListUserPoliciesRequest,ListUserPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3982,7 +3982,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         public virtual Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListUserPoliciesRequestMarshaller();
+            var marshaller = ListUserPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListUserPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUserPoliciesRequest,ListUserPoliciesResponse>(request, marshaller, 
@@ -3999,7 +3999,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
@@ -4044,7 +4044,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListUsersRequestMarshaller();
+            var marshaller = ListUsersRequestMarshaller.Instance;
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
@@ -4061,7 +4061,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
         {
-            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
+            var marshaller = ListVirtualMFADevicesRequestMarshaller.Instance;
             var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
 
             return Invoke<ListVirtualMFADevicesRequest,ListVirtualMFADevicesResponse>(request, marshaller, unmarshaller);
@@ -4104,7 +4104,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         public virtual Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVirtualMFADevicesRequestMarshaller();
+            var marshaller = ListVirtualMFADevicesRequestMarshaller.Instance;
             var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVirtualMFADevicesRequest,ListVirtualMFADevicesResponse>(request, marshaller, 
@@ -4117,7 +4117,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
         {
-            var marshaller = new PutGroupPolicyRequestMarshaller();
+            var marshaller = PutGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutGroupPolicyRequest,PutGroupPolicyResponse>(request, marshaller, unmarshaller);
@@ -4136,7 +4136,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         public virtual Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutGroupPolicyRequestMarshaller();
+            var marshaller = PutGroupPolicyRequestMarshaller.Instance;
             var unmarshaller = PutGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutGroupPolicyRequest,PutGroupPolicyResponse>(request, marshaller, 
@@ -4149,7 +4149,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
         {
-            var marshaller = new PutRolePolicyRequestMarshaller();
+            var marshaller = PutRolePolicyRequestMarshaller.Instance;
             var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutRolePolicyRequest,PutRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -4168,7 +4168,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         public virtual Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutRolePolicyRequestMarshaller();
+            var marshaller = PutRolePolicyRequestMarshaller.Instance;
             var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRolePolicyRequest,PutRolePolicyResponse>(request, marshaller, 
@@ -4181,7 +4181,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
         {
-            var marshaller = new PutUserPolicyRequestMarshaller();
+            var marshaller = PutUserPolicyRequestMarshaller.Instance;
             var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutUserPolicyRequest,PutUserPolicyResponse>(request, marshaller, unmarshaller);
@@ -4200,7 +4200,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         public virtual Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutUserPolicyRequestMarshaller();
+            var marshaller = PutUserPolicyRequestMarshaller.Instance;
             var unmarshaller = PutUserPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutUserPolicyRequest,PutUserPolicyResponse>(request, marshaller, 
@@ -4213,7 +4213,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual RemoveClientIDFromOpenIDConnectProviderResponse RemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request)
         {
-            var marshaller = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();
+            var marshaller = RemoveClientIDFromOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return Invoke<RemoveClientIDFromOpenIDConnectProviderRequest,RemoveClientIDFromOpenIDConnectProviderResponse>(request, marshaller, unmarshaller);
@@ -4232,7 +4232,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         public virtual Task<RemoveClientIDFromOpenIDConnectProviderResponse> RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();
+            var marshaller = RemoveClientIDFromOpenIDConnectProviderRequestMarshaller.Instance;
             var unmarshaller = RemoveClientIDFromOpenIDConnectProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveClientIDFromOpenIDConnectProviderRequest,RemoveClientIDFromOpenIDConnectProviderResponse>(request, marshaller, 
@@ -4245,7 +4245,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
         {
-            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
+            var marshaller = RemoveRoleFromInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
 
             return Invoke<RemoveRoleFromInstanceProfileRequest,RemoveRoleFromInstanceProfileResponse>(request, marshaller, unmarshaller);
@@ -4264,7 +4264,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         public virtual Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
+            var marshaller = RemoveRoleFromInstanceProfileRequestMarshaller.Instance;
             var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveRoleFromInstanceProfileRequest,RemoveRoleFromInstanceProfileResponse>(request, marshaller, 
@@ -4277,7 +4277,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
         {
-            var marshaller = new RemoveUserFromGroupRequestMarshaller();
+            var marshaller = RemoveUserFromGroupRequestMarshaller.Instance;
             var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
 
             return Invoke<RemoveUserFromGroupRequest,RemoveUserFromGroupResponse>(request, marshaller, unmarshaller);
@@ -4296,7 +4296,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         public virtual Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveUserFromGroupRequestMarshaller();
+            var marshaller = RemoveUserFromGroupRequestMarshaller.Instance;
             var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveUserFromGroupRequest,RemoveUserFromGroupResponse>(request, marshaller, 
@@ -4309,7 +4309,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request)
         {
-            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var marshaller = ResetServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return Invoke<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
@@ -4328,7 +4328,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
         public virtual Task<ResetServiceSpecificCredentialResponse> ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var marshaller = ResetServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>(request, marshaller, 
@@ -4341,7 +4341,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
         {
-            var marshaller = new ResyncMFADeviceRequestMarshaller();
+            var marshaller = ResyncMFADeviceRequestMarshaller.Instance;
             var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
 
             return Invoke<ResyncMFADeviceRequest,ResyncMFADeviceResponse>(request, marshaller, unmarshaller);
@@ -4360,7 +4360,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         public virtual Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResyncMFADeviceRequestMarshaller();
+            var marshaller = ResyncMFADeviceRequestMarshaller.Instance;
             var unmarshaller = ResyncMFADeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResyncMFADeviceRequest,ResyncMFADeviceResponse>(request, marshaller, 
@@ -4373,7 +4373,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request)
         {
-            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var marshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
             return Invoke<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, unmarshaller);
@@ -4392,7 +4392,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         public virtual Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetDefaultPolicyVersionRequestMarshaller();
+            var marshaller = SetDefaultPolicyVersionRequestMarshaller.Instance;
             var unmarshaller = SetDefaultPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDefaultPolicyVersionRequest,SetDefaultPolicyVersionResponse>(request, marshaller, 
@@ -4405,7 +4405,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request)
         {
-            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var marshaller = SimulateCustomPolicyRequestMarshaller.Instance;
             var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
 
             return Invoke<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, unmarshaller);
@@ -4424,7 +4424,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         public virtual Task<SimulateCustomPolicyResponse> SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SimulateCustomPolicyRequestMarshaller();
+            var marshaller = SimulateCustomPolicyRequestMarshaller.Instance;
             var unmarshaller = SimulateCustomPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SimulateCustomPolicyRequest,SimulateCustomPolicyResponse>(request, marshaller, 
@@ -4437,7 +4437,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request)
         {
-            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var marshaller = SimulatePrincipalPolicyRequestMarshaller.Instance;
             var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
 
             return Invoke<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, unmarshaller);
@@ -4456,7 +4456,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         public virtual Task<SimulatePrincipalPolicyResponse> SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SimulatePrincipalPolicyRequestMarshaller();
+            var marshaller = SimulatePrincipalPolicyRequestMarshaller.Instance;
             var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, 
@@ -4469,7 +4469,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
         {
-            var marshaller = new UpdateAccessKeyRequestMarshaller();
+            var marshaller = UpdateAccessKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAccessKeyRequest,UpdateAccessKeyResponse>(request, marshaller, unmarshaller);
@@ -4488,7 +4488,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         public virtual Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateAccessKeyRequestMarshaller();
+            var marshaller = UpdateAccessKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateAccessKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAccessKeyRequest,UpdateAccessKeyResponse>(request, marshaller, 
@@ -4505,7 +4505,7 @@ namespace Amazon.IdentityManagement
         }
         internal virtual UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
         {
-            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
+            var marshaller = UpdateAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAccountPasswordPolicyRequest,UpdateAccountPasswordPolicyResponse>(request, marshaller, unmarshaller);
@@ -4569,7 +4569,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         public virtual Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
+            var marshaller = UpdateAccountPasswordPolicyRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAccountPasswordPolicyRequest,UpdateAccountPasswordPolicyResponse>(request, marshaller, 
@@ -4582,7 +4582,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
         {
-            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
+            var marshaller = UpdateAssumeRolePolicyRequestMarshaller.Instance;
             var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAssumeRolePolicyRequest,UpdateAssumeRolePolicyResponse>(request, marshaller, unmarshaller);
@@ -4601,7 +4601,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         public virtual Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
+            var marshaller = UpdateAssumeRolePolicyRequestMarshaller.Instance;
             var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAssumeRolePolicyRequest,UpdateAssumeRolePolicyResponse>(request, marshaller, 
@@ -4614,7 +4614,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
@@ -4633,7 +4633,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateGroupRequestMarshaller();
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, 
@@ -4646,7 +4646,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
         {
-            var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var marshaller = UpdateLoginProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
 
             return Invoke<UpdateLoginProfileRequest,UpdateLoginProfileResponse>(request, marshaller, unmarshaller);
@@ -4665,7 +4665,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         public virtual Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateLoginProfileRequestMarshaller();
+            var marshaller = UpdateLoginProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateLoginProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLoginProfileRequest,UpdateLoginProfileResponse>(request, marshaller, 
@@ -4678,7 +4678,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateOpenIDConnectProviderThumbprintResponse UpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request)
         {
-            var marshaller = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller();
+            var marshaller = UpdateOpenIDConnectProviderThumbprintRequestMarshaller.Instance;
             var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
 
             return Invoke<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>(request, marshaller, unmarshaller);
@@ -4697,7 +4697,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         public virtual Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateOpenIDConnectProviderThumbprintRequestMarshaller();
+            var marshaller = UpdateOpenIDConnectProviderThumbprintRequestMarshaller.Instance;
             var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>(request, marshaller, 
@@ -4710,7 +4710,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateRoleResponse UpdateRole(UpdateRoleRequest request)
         {
-            var marshaller = new UpdateRoleRequestMarshaller();
+            var marshaller = UpdateRoleRequestMarshaller.Instance;
             var unmarshaller = UpdateRoleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRoleRequest,UpdateRoleResponse>(request, marshaller, unmarshaller);
@@ -4729,7 +4729,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRole">REST API Reference for UpdateRole Operation</seealso>
         public virtual Task<UpdateRoleResponse> UpdateRoleAsync(UpdateRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateRoleRequestMarshaller();
+            var marshaller = UpdateRoleRequestMarshaller.Instance;
             var unmarshaller = UpdateRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRoleRequest,UpdateRoleResponse>(request, marshaller, 
@@ -4742,7 +4742,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateRoleDescriptionResponse UpdateRoleDescription(UpdateRoleDescriptionRequest request)
         {
-            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var marshaller = UpdateRoleDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>(request, marshaller, unmarshaller);
@@ -4761,7 +4761,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
         public virtual Task<UpdateRoleDescriptionResponse> UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var marshaller = UpdateRoleDescriptionRequestMarshaller.Instance;
             var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>(request, marshaller, 
@@ -4774,7 +4774,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request)
         {
-            var marshaller = new UpdateSAMLProviderRequestMarshaller();
+            var marshaller = UpdateSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSAMLProviderRequest,UpdateSAMLProviderResponse>(request, marshaller, unmarshaller);
@@ -4793,7 +4793,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         public virtual Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateSAMLProviderRequestMarshaller();
+            var marshaller = UpdateSAMLProviderRequestMarshaller.Instance;
             var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSAMLProviderRequest,UpdateSAMLProviderResponse>(request, marshaller, 
@@ -4806,7 +4806,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
         {
-            var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var marshaller = UpdateServerCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateServerCertificateRequest,UpdateServerCertificateResponse>(request, marshaller, unmarshaller);
@@ -4825,7 +4825,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         public virtual Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var marshaller = UpdateServerCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServerCertificateRequest,UpdateServerCertificateResponse>(request, marshaller, 
@@ -4838,7 +4838,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request)
         {
-            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var marshaller = UpdateServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return Invoke<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
@@ -4857,7 +4857,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
         public virtual Task<UpdateServiceSpecificCredentialResponse> UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var marshaller = UpdateServiceSpecificCredentialRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>(request, marshaller, 
@@ -4870,7 +4870,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
         {
-            var marshaller = new UpdateSigningCertificateRequestMarshaller();
+            var marshaller = UpdateSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSigningCertificateRequest,UpdateSigningCertificateResponse>(request, marshaller, unmarshaller);
@@ -4889,7 +4889,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         public virtual Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateSigningCertificateRequestMarshaller();
+            var marshaller = UpdateSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSigningCertificateRequest,UpdateSigningCertificateResponse>(request, marshaller, 
@@ -4902,7 +4902,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request)
         {
-            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var marshaller = UpdateSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, unmarshaller);
@@ -4921,7 +4921,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         public virtual Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateSSHPublicKeyRequestMarshaller();
+            var marshaller = UpdateSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateSSHPublicKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSSHPublicKeyRequest,UpdateSSHPublicKeyResponse>(request, marshaller, 
@@ -4934,7 +4934,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
@@ -4953,7 +4953,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserRequest,UpdateUserResponse>(request, marshaller, 
@@ -4966,7 +4966,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
         {
-            var marshaller = new UploadServerCertificateRequestMarshaller();
+            var marshaller = UploadServerCertificateRequestMarshaller.Instance;
             var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
 
             return Invoke<UploadServerCertificateRequest,UploadServerCertificateResponse>(request, marshaller, unmarshaller);
@@ -4985,7 +4985,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         public virtual Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadServerCertificateRequestMarshaller();
+            var marshaller = UploadServerCertificateRequestMarshaller.Instance;
             var unmarshaller = UploadServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadServerCertificateRequest,UploadServerCertificateResponse>(request, marshaller, 
@@ -4998,7 +4998,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
         {
-            var marshaller = new UploadSigningCertificateRequestMarshaller();
+            var marshaller = UploadSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
 
             return Invoke<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, unmarshaller);
@@ -5017,7 +5017,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         public virtual Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadSigningCertificateRequestMarshaller();
+            var marshaller = UploadSigningCertificateRequestMarshaller.Instance;
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadSigningCertificateRequest,UploadSigningCertificateResponse>(request, marshaller, 
@@ -5030,7 +5030,7 @@ namespace Amazon.IdentityManagement
 
         internal virtual UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request)
         {
-            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var marshaller = UploadSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
 
             return Invoke<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, unmarshaller);
@@ -5049,7 +5049,7 @@ namespace Amazon.IdentityManagement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         public virtual Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadSSHPublicKeyRequestMarshaller();
+            var marshaller = UploadSSHPublicKeyRequestMarshaller.Instance;
             var unmarshaller = UploadSSHPublicKeyResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadSSHPublicKeyRequest,UploadSSHPublicKeyResponse>(request, marshaller, 

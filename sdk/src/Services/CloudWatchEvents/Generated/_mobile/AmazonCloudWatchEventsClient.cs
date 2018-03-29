@@ -258,7 +258,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var marshaller = new DeleteRuleRequestMarshaller();
+            var marshaller = DeleteRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRuleRequest,DeleteRuleResponse>(request, marshaller, unmarshaller);
@@ -277,7 +277,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRuleRequestMarshaller();
+            var marshaller = DeleteRuleRequestMarshaller.Instance;
             var unmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRuleRequest,DeleteRuleResponse>(request, marshaller, 
@@ -290,7 +290,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
         {
-            var marshaller = new DescribeEventBusRequestMarshaller();
+            var marshaller = DescribeEventBusRequestMarshaller.Instance;
             var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventBusRequest,DescribeEventBusResponse>(request, marshaller, unmarshaller);
@@ -309,7 +309,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
         public virtual Task<DescribeEventBusResponse> DescribeEventBusAsync(DescribeEventBusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventBusRequestMarshaller();
+            var marshaller = DescribeEventBusRequestMarshaller.Instance;
             var unmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventBusRequest,DescribeEventBusResponse>(request, marshaller, 
@@ -322,7 +322,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
         {
-            var marshaller = new DescribeRuleRequestMarshaller();
+            var marshaller = DescribeRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRuleRequest,DescribeRuleResponse>(request, marshaller, unmarshaller);
@@ -341,7 +341,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual Task<DescribeRuleResponse> DescribeRuleAsync(DescribeRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeRuleRequestMarshaller();
+            var marshaller = DescribeRuleRequestMarshaller.Instance;
             var unmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRuleRequest,DescribeRuleResponse>(request, marshaller, 
@@ -354,7 +354,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual DisableRuleResponse DisableRule(DisableRuleRequest request)
         {
-            var marshaller = new DisableRuleRequestMarshaller();
+            var marshaller = DisableRuleRequestMarshaller.Instance;
             var unmarshaller = DisableRuleResponseUnmarshaller.Instance;
 
             return Invoke<DisableRuleRequest,DisableRuleResponse>(request, marshaller, unmarshaller);
@@ -373,7 +373,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         public virtual Task<DisableRuleResponse> DisableRuleAsync(DisableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisableRuleRequestMarshaller();
+            var marshaller = DisableRuleRequestMarshaller.Instance;
             var unmarshaller = DisableRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableRuleRequest,DisableRuleResponse>(request, marshaller, 
@@ -386,7 +386,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual EnableRuleResponse EnableRule(EnableRuleRequest request)
         {
-            var marshaller = new EnableRuleRequestMarshaller();
+            var marshaller = EnableRuleRequestMarshaller.Instance;
             var unmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
             return Invoke<EnableRuleRequest,EnableRuleResponse>(request, marshaller, unmarshaller);
@@ -405,7 +405,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         public virtual Task<EnableRuleResponse> EnableRuleAsync(EnableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableRuleRequestMarshaller();
+            var marshaller = EnableRuleRequestMarshaller.Instance;
             var unmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableRuleRequest,EnableRuleResponse>(request, marshaller, 
@@ -418,7 +418,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual ListRuleNamesByTargetResponse ListRuleNamesByTarget(ListRuleNamesByTargetRequest request)
         {
-            var marshaller = new ListRuleNamesByTargetRequestMarshaller();
+            var marshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             var unmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
 
             return Invoke<ListRuleNamesByTargetRequest,ListRuleNamesByTargetResponse>(request, marshaller, unmarshaller);
@@ -437,7 +437,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         public virtual Task<ListRuleNamesByTargetResponse> ListRuleNamesByTargetAsync(ListRuleNamesByTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListRuleNamesByTargetRequestMarshaller();
+            var marshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             var unmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRuleNamesByTargetRequest,ListRuleNamesByTargetResponse>(request, marshaller, 
@@ -454,7 +454,7 @@ namespace Amazon.CloudWatchEvents
         }
         internal virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var marshaller = new ListRulesRequestMarshaller();
+            var marshaller = ListRulesRequestMarshaller.Instance;
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
 
             return Invoke<ListRulesRequest,ListRulesResponse>(request, marshaller, unmarshaller);
@@ -492,7 +492,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListRulesRequestMarshaller();
+            var marshaller = ListRulesRequestMarshaller.Instance;
             var unmarshaller = ListRulesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRulesRequest,ListRulesResponse>(request, marshaller, 
@@ -505,7 +505,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request)
         {
-            var marshaller = new ListTargetsByRuleRequestMarshaller();
+            var marshaller = ListTargetsByRuleRequestMarshaller.Instance;
             var unmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
 
             return Invoke<ListTargetsByRuleRequest,ListTargetsByRuleResponse>(request, marshaller, unmarshaller);
@@ -524,7 +524,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         public virtual Task<ListTargetsByRuleResponse> ListTargetsByRuleAsync(ListTargetsByRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTargetsByRuleRequestMarshaller();
+            var marshaller = ListTargetsByRuleRequestMarshaller.Instance;
             var unmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTargetsByRuleRequest,ListTargetsByRuleResponse>(request, marshaller, 
@@ -537,7 +537,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
@@ -556,7 +556,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEventsRequest,PutEventsResponse>(request, marshaller, 
@@ -569,7 +569,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual PutPermissionResponse PutPermission(PutPermissionRequest request)
         {
-            var marshaller = new PutPermissionRequestMarshaller();
+            var marshaller = PutPermissionRequestMarshaller.Instance;
             var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
             return Invoke<PutPermissionRequest,PutPermissionResponse>(request, marshaller, unmarshaller);
@@ -588,7 +588,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual Task<PutPermissionResponse> PutPermissionAsync(PutPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutPermissionRequestMarshaller();
+            var marshaller = PutPermissionRequestMarshaller.Instance;
             var unmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutPermissionRequest,PutPermissionResponse>(request, marshaller, 
@@ -601,7 +601,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual PutRuleResponse PutRule(PutRuleRequest request)
         {
-            var marshaller = new PutRuleRequestMarshaller();
+            var marshaller = PutRuleRequestMarshaller.Instance;
             var unmarshaller = PutRuleResponseUnmarshaller.Instance;
 
             return Invoke<PutRuleRequest,PutRuleResponse>(request, marshaller, unmarshaller);
@@ -620,7 +620,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         public virtual Task<PutRuleResponse> PutRuleAsync(PutRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutRuleRequestMarshaller();
+            var marshaller = PutRuleRequestMarshaller.Instance;
             var unmarshaller = PutRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRuleRequest,PutRuleResponse>(request, marshaller, 
@@ -633,7 +633,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual PutTargetsResponse PutTargets(PutTargetsRequest request)
         {
-            var marshaller = new PutTargetsRequestMarshaller();
+            var marshaller = PutTargetsRequestMarshaller.Instance;
             var unmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
             return Invoke<PutTargetsRequest,PutTargetsResponse>(request, marshaller, unmarshaller);
@@ -652,7 +652,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         public virtual Task<PutTargetsResponse> PutTargetsAsync(PutTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutTargetsRequestMarshaller();
+            var marshaller = PutTargetsRequestMarshaller.Instance;
             var unmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTargetsRequest,PutTargetsResponse>(request, marshaller, 
@@ -665,7 +665,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
             return Invoke<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, unmarshaller);
@@ -684,7 +684,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemovePermissionRequest,RemovePermissionResponse>(request, marshaller, 
@@ -697,7 +697,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request)
         {
-            var marshaller = new RemoveTargetsRequestMarshaller();
+            var marshaller = RemoveTargetsRequestMarshaller.Instance;
             var unmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTargetsRequest,RemoveTargetsResponse>(request, marshaller, unmarshaller);
@@ -716,7 +716,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         public virtual Task<RemoveTargetsResponse> RemoveTargetsAsync(RemoveTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTargetsRequestMarshaller();
+            var marshaller = RemoveTargetsRequestMarshaller.Instance;
             var unmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTargetsRequest,RemoveTargetsResponse>(request, marshaller, 
@@ -729,7 +729,7 @@ namespace Amazon.CloudWatchEvents
 
         internal virtual TestEventPatternResponse TestEventPattern(TestEventPatternRequest request)
         {
-            var marshaller = new TestEventPatternRequestMarshaller();
+            var marshaller = TestEventPatternRequestMarshaller.Instance;
             var unmarshaller = TestEventPatternResponseUnmarshaller.Instance;
 
             return Invoke<TestEventPatternRequest,TestEventPatternResponse>(request, marshaller, unmarshaller);
@@ -748,7 +748,7 @@ namespace Amazon.CloudWatchEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         public virtual Task<TestEventPatternResponse> TestEventPatternAsync(TestEventPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TestEventPatternRequestMarshaller();
+            var marshaller = TestEventPatternRequestMarshaller.Instance;
             var unmarshaller = TestEventPatternResponseUnmarshaller.Instance;
 
             return InvokeAsync<TestEventPatternRequest,TestEventPatternResponse>(request, marshaller, 

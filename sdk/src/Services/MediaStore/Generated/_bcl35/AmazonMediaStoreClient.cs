@@ -245,7 +245,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual CreateContainerResponse CreateContainer(CreateContainerRequest request)
         {
-            var marshaller = new CreateContainerRequestMarshaller();
+            var marshaller = CreateContainerRequestMarshaller.Instance;
             var unmarshaller = CreateContainerResponseUnmarshaller.Instance;
 
             return Invoke<CreateContainerRequest,CreateContainerResponse>(request, marshaller, unmarshaller);
@@ -265,7 +265,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual IAsyncResult BeginCreateContainer(CreateContainerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateContainerRequestMarshaller();
+            var marshaller = CreateContainerRequestMarshaller.Instance;
             var unmarshaller = CreateContainerResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateContainerRequest>(request, marshaller, unmarshaller,
@@ -309,7 +309,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual DeleteContainerResponse DeleteContainer(DeleteContainerRequest request)
         {
-            var marshaller = new DeleteContainerRequestMarshaller();
+            var marshaller = DeleteContainerRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteContainerRequest,DeleteContainerResponse>(request, marshaller, unmarshaller);
@@ -329,7 +329,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual IAsyncResult BeginDeleteContainer(DeleteContainerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteContainerRequestMarshaller();
+            var marshaller = DeleteContainerRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteContainerRequest>(request, marshaller, unmarshaller,
@@ -374,7 +374,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual DeleteContainerPolicyResponse DeleteContainerPolicy(DeleteContainerPolicyRequest request)
         {
-            var marshaller = new DeleteContainerPolicyRequestMarshaller();
+            var marshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteContainerPolicyRequest,DeleteContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -394,7 +394,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteContainerPolicy(DeleteContainerPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteContainerPolicyRequestMarshaller();
+            var marshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteContainerPolicyRequest>(request, marshaller, unmarshaller,
@@ -447,7 +447,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request)
         {
-            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var marshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCorsPolicyRequest,DeleteCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -467,7 +467,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteCorsPolicy(DeleteCorsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var marshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteCorsPolicyRequest>(request, marshaller, unmarshaller,
@@ -511,7 +511,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual DescribeContainerResponse DescribeContainer(DescribeContainerRequest request)
         {
-            var marshaller = new DescribeContainerRequestMarshaller();
+            var marshaller = DescribeContainerRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerResponseUnmarshaller.Instance;
 
             return Invoke<DescribeContainerRequest,DescribeContainerResponse>(request, marshaller, unmarshaller);
@@ -531,7 +531,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual IAsyncResult BeginDescribeContainer(DescribeContainerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeContainerRequestMarshaller();
+            var marshaller = DescribeContainerRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeContainerRequest>(request, marshaller, unmarshaller,
@@ -578,7 +578,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual GetContainerPolicyResponse GetContainerPolicy(GetContainerPolicyRequest request)
         {
-            var marshaller = new GetContainerPolicyRequestMarshaller();
+            var marshaller = GetContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetContainerPolicyRequest,GetContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -598,7 +598,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetContainerPolicy(GetContainerPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetContainerPolicyRequestMarshaller();
+            var marshaller = GetContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetContainerPolicyRequest>(request, marshaller, unmarshaller,
@@ -650,7 +650,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request)
         {
-            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var marshaller = GetCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetCorsPolicyRequest,GetCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -670,7 +670,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetCorsPolicy(GetCorsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var marshaller = GetCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetCorsPolicyRequest>(request, marshaller, unmarshaller,
@@ -720,7 +720,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual ListContainersResponse ListContainers(ListContainersRequest request)
         {
-            var marshaller = new ListContainersRequestMarshaller();
+            var marshaller = ListContainersRequestMarshaller.Instance;
             var unmarshaller = ListContainersResponseUnmarshaller.Instance;
 
             return Invoke<ListContainersRequest,ListContainersResponse>(request, marshaller, unmarshaller);
@@ -740,7 +740,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual IAsyncResult BeginListContainers(ListContainersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListContainersRequestMarshaller();
+            var marshaller = ListContainersRequestMarshaller.Instance;
             var unmarshaller = ListContainersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListContainersRequest>(request, marshaller, unmarshaller,
@@ -792,7 +792,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual PutContainerPolicyResponse PutContainerPolicy(PutContainerPolicyRequest request)
         {
-            var marshaller = new PutContainerPolicyRequestMarshaller();
+            var marshaller = PutContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutContainerPolicyRequest,PutContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -812,7 +812,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutContainerPolicy(PutContainerPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutContainerPolicyRequestMarshaller();
+            var marshaller = PutContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutContainerPolicyRequest>(request, marshaller, unmarshaller,
@@ -866,7 +866,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request)
         {
-            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var marshaller = PutCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutCorsPolicyRequest,PutCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -886,7 +886,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutCorsPolicy(PutCorsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var marshaller = PutCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutCorsPolicyRequest>(request, marshaller, unmarshaller,

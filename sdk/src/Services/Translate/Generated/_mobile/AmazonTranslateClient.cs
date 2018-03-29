@@ -235,7 +235,7 @@ namespace Amazon.Translate
 
         internal virtual TranslateTextResponse TranslateText(TranslateTextRequest request)
         {
-            var marshaller = new TranslateTextRequestMarshaller();
+            var marshaller = TranslateTextRequestMarshaller.Instance;
             var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
             return Invoke<TranslateTextRequest,TranslateTextResponse>(request, marshaller, unmarshaller);
@@ -254,7 +254,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual Task<TranslateTextResponse> TranslateTextAsync(TranslateTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TranslateTextRequestMarshaller();
+            var marshaller = TranslateTextRequestMarshaller.Instance;
             var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
             return InvokeAsync<TranslateTextRequest,TranslateTextResponse>(request, marshaller, 

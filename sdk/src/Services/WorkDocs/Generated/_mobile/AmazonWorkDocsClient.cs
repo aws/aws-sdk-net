@@ -270,7 +270,7 @@ namespace Amazon.WorkDocs
 
         internal virtual AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
         {
-            var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
+            var marshaller = AbortDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return Invoke<AbortDocumentVersionUploadRequest,AbortDocumentVersionUploadResponse>(request, marshaller, unmarshaller);
@@ -289,7 +289,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
         public virtual Task<AbortDocumentVersionUploadResponse> AbortDocumentVersionUploadAsync(AbortDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
+            var marshaller = AbortDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortDocumentVersionUploadRequest,AbortDocumentVersionUploadResponse>(request, marshaller, 
@@ -302,7 +302,7 @@ namespace Amazon.WorkDocs
 
         internal virtual ActivateUserResponse ActivateUser(ActivateUserRequest request)
         {
-            var marshaller = new ActivateUserRequestMarshaller();
+            var marshaller = ActivateUserRequestMarshaller.Instance;
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
 
             return Invoke<ActivateUserRequest,ActivateUserResponse>(request, marshaller, unmarshaller);
@@ -321,7 +321,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
         public virtual Task<ActivateUserResponse> ActivateUserAsync(ActivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ActivateUserRequestMarshaller();
+            var marshaller = ActivateUserRequestMarshaller.Instance;
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<ActivateUserRequest,ActivateUserResponse>(request, marshaller, 
@@ -334,7 +334,7 @@ namespace Amazon.WorkDocs
 
         internal virtual AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
         {
-            var marshaller = new AddResourcePermissionsRequestMarshaller();
+            var marshaller = AddResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<AddResourcePermissionsRequest,AddResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -353,7 +353,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
         public virtual Task<AddResourcePermissionsResponse> AddResourcePermissionsAsync(AddResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddResourcePermissionsRequestMarshaller();
+            var marshaller = AddResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddResourcePermissionsRequest,AddResourcePermissionsResponse>(request, marshaller, 
@@ -366,7 +366,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateCommentResponse CreateComment(CreateCommentRequest request)
         {
-            var marshaller = new CreateCommentRequestMarshaller();
+            var marshaller = CreateCommentRequestMarshaller.Instance;
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
 
             return Invoke<CreateCommentRequest,CreateCommentResponse>(request, marshaller, unmarshaller);
@@ -385,7 +385,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
         public virtual Task<CreateCommentResponse> CreateCommentAsync(CreateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCommentRequestMarshaller();
+            var marshaller = CreateCommentRequestMarshaller.Instance;
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCommentRequest,CreateCommentResponse>(request, marshaller, 
@@ -398,7 +398,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
         {
-            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var marshaller = CreateCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
 
             return Invoke<CreateCustomMetadataRequest,CreateCustomMetadataResponse>(request, marshaller, unmarshaller);
@@ -417,7 +417,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
         public virtual Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(CreateCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var marshaller = CreateCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCustomMetadataRequest,CreateCustomMetadataResponse>(request, marshaller, 
@@ -430,7 +430,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateFolderResponse CreateFolder(CreateFolderRequest request)
         {
-            var marshaller = new CreateFolderRequestMarshaller();
+            var marshaller = CreateFolderRequestMarshaller.Instance;
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
             return Invoke<CreateFolderRequest,CreateFolderResponse>(request, marshaller, unmarshaller);
@@ -449,7 +449,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         public virtual Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateFolderRequestMarshaller();
+            var marshaller = CreateFolderRequestMarshaller.Instance;
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFolderRequest,CreateFolderResponse>(request, marshaller, 
@@ -462,7 +462,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
         {
-            var marshaller = new CreateLabelsRequestMarshaller();
+            var marshaller = CreateLabelsRequestMarshaller.Instance;
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
 
             return Invoke<CreateLabelsRequest,CreateLabelsResponse>(request, marshaller, unmarshaller);
@@ -481,7 +481,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
         public virtual Task<CreateLabelsResponse> CreateLabelsAsync(CreateLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateLabelsRequestMarshaller();
+            var marshaller = CreateLabelsRequestMarshaller.Instance;
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLabelsRequest,CreateLabelsResponse>(request, marshaller, 
@@ -494,7 +494,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
         {
-            var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
+            var marshaller = CreateNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<CreateNotificationSubscriptionRequest,CreateNotificationSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -513,7 +513,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
         public virtual Task<CreateNotificationSubscriptionResponse> CreateNotificationSubscriptionAsync(CreateNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
+            var marshaller = CreateNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateNotificationSubscriptionRequest,CreateNotificationSubscriptionResponse>(request, marshaller, 
@@ -526,7 +526,7 @@ namespace Amazon.WorkDocs
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
@@ -545,7 +545,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
@@ -558,7 +558,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
         {
-            var marshaller = new DeactivateUserRequestMarshaller();
+            var marshaller = DeactivateUserRequestMarshaller.Instance;
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
 
             return Invoke<DeactivateUserRequest,DeactivateUserResponse>(request, marshaller, unmarshaller);
@@ -577,7 +577,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
         public virtual Task<DeactivateUserResponse> DeactivateUserAsync(DeactivateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeactivateUserRequestMarshaller();
+            var marshaller = DeactivateUserRequestMarshaller.Instance;
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeactivateUserRequest,DeactivateUserResponse>(request, marshaller, 
@@ -590,7 +590,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
         {
-            var marshaller = new DeleteCommentRequestMarshaller();
+            var marshaller = DeleteCommentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCommentRequest,DeleteCommentResponse>(request, marshaller, unmarshaller);
@@ -609,7 +609,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
         public virtual Task<DeleteCommentResponse> DeleteCommentAsync(DeleteCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCommentRequestMarshaller();
+            var marshaller = DeleteCommentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCommentRequest,DeleteCommentResponse>(request, marshaller, 
@@ -622,7 +622,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
         {
-            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var marshaller = DeleteCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCustomMetadataRequest,DeleteCustomMetadataResponse>(request, marshaller, unmarshaller);
@@ -641,7 +641,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
         public virtual Task<DeleteCustomMetadataResponse> DeleteCustomMetadataAsync(DeleteCustomMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var marshaller = DeleteCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCustomMetadataRequest,DeleteCustomMetadataResponse>(request, marshaller, 
@@ -654,7 +654,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
-            var marshaller = new DeleteDocumentRequestMarshaller();
+            var marshaller = DeleteDocumentRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, unmarshaller);
@@ -673,7 +673,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual Task<DeleteDocumentResponse> DeleteDocumentAsync(DeleteDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDocumentRequestMarshaller();
+            var marshaller = DeleteDocumentRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, 
@@ -686,7 +686,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
         {
-            var marshaller = new DeleteFolderRequestMarshaller();
+            var marshaller = DeleteFolderRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFolderRequest,DeleteFolderResponse>(request, marshaller, unmarshaller);
@@ -705,7 +705,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         public virtual Task<DeleteFolderResponse> DeleteFolderAsync(DeleteFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFolderRequestMarshaller();
+            var marshaller = DeleteFolderRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFolderRequest,DeleteFolderResponse>(request, marshaller, 
@@ -718,7 +718,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
         {
-            var marshaller = new DeleteFolderContentsRequestMarshaller();
+            var marshaller = DeleteFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFolderContentsRequest,DeleteFolderContentsResponse>(request, marshaller, unmarshaller);
@@ -737,7 +737,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
         public virtual Task<DeleteFolderContentsResponse> DeleteFolderContentsAsync(DeleteFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFolderContentsRequestMarshaller();
+            var marshaller = DeleteFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFolderContentsRequest,DeleteFolderContentsResponse>(request, marshaller, 
@@ -750,7 +750,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
         {
-            var marshaller = new DeleteLabelsRequestMarshaller();
+            var marshaller = DeleteLabelsRequestMarshaller.Instance;
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLabelsRequest,DeleteLabelsResponse>(request, marshaller, unmarshaller);
@@ -769,7 +769,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
         public virtual Task<DeleteLabelsResponse> DeleteLabelsAsync(DeleteLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLabelsRequestMarshaller();
+            var marshaller = DeleteLabelsRequestMarshaller.Instance;
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLabelsRequest,DeleteLabelsResponse>(request, marshaller, 
@@ -782,7 +782,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
         {
-            var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
+            var marshaller = DeleteNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNotificationSubscriptionRequest,DeleteNotificationSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -801,7 +801,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
         public virtual Task<DeleteNotificationSubscriptionResponse> DeleteNotificationSubscriptionAsync(DeleteNotificationSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
+            var marshaller = DeleteNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNotificationSubscriptionRequest,DeleteNotificationSubscriptionResponse>(request, marshaller, 
@@ -814,7 +814,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -833,7 +833,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
@@ -846,7 +846,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
         {
-            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var marshaller = DescribeActivitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, unmarshaller);
@@ -865,7 +865,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
         public virtual Task<DescribeActivitiesResponse> DescribeActivitiesAsync(DescribeActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var marshaller = DescribeActivitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, 
@@ -878,7 +878,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
         {
-            var marshaller = new DescribeCommentsRequestMarshaller();
+            var marshaller = DescribeCommentsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCommentsRequest,DescribeCommentsResponse>(request, marshaller, unmarshaller);
@@ -897,7 +897,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
         public virtual Task<DescribeCommentsResponse> DescribeCommentsAsync(DescribeCommentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCommentsRequestMarshaller();
+            var marshaller = DescribeCommentsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCommentsRequest,DescribeCommentsResponse>(request, marshaller, 
@@ -910,7 +910,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
         {
-            var marshaller = new DescribeDocumentVersionsRequestMarshaller();
+            var marshaller = DescribeDocumentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDocumentVersionsRequest,DescribeDocumentVersionsResponse>(request, marshaller, unmarshaller);
@@ -929,7 +929,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
         public virtual Task<DescribeDocumentVersionsResponse> DescribeDocumentVersionsAsync(DescribeDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeDocumentVersionsRequestMarshaller();
+            var marshaller = DescribeDocumentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDocumentVersionsRequest,DescribeDocumentVersionsResponse>(request, marshaller, 
@@ -942,7 +942,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
         {
-            var marshaller = new DescribeFolderContentsRequestMarshaller();
+            var marshaller = DescribeFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFolderContentsRequest,DescribeFolderContentsResponse>(request, marshaller, unmarshaller);
@@ -961,7 +961,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
         public virtual Task<DescribeFolderContentsResponse> DescribeFolderContentsAsync(DescribeFolderContentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeFolderContentsRequestMarshaller();
+            var marshaller = DescribeFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFolderContentsRequest,DescribeFolderContentsResponse>(request, marshaller, 
@@ -974,7 +974,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeGroupsResponse DescribeGroups(DescribeGroupsRequest request)
         {
-            var marshaller = new DescribeGroupsRequestMarshaller();
+            var marshaller = DescribeGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGroupsRequest,DescribeGroupsResponse>(request, marshaller, unmarshaller);
@@ -993,7 +993,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
         public virtual Task<DescribeGroupsResponse> DescribeGroupsAsync(DescribeGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeGroupsRequestMarshaller();
+            var marshaller = DescribeGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeGroupsRequest,DescribeGroupsResponse>(request, marshaller, 
@@ -1006,7 +1006,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
         {
-            var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
+            var marshaller = DescribeNotificationSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeNotificationSubscriptionsRequest,DescribeNotificationSubscriptionsResponse>(request, marshaller, unmarshaller);
@@ -1025,7 +1025,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
         public virtual Task<DescribeNotificationSubscriptionsResponse> DescribeNotificationSubscriptionsAsync(DescribeNotificationSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
+            var marshaller = DescribeNotificationSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeNotificationSubscriptionsRequest,DescribeNotificationSubscriptionsResponse>(request, marshaller, 
@@ -1038,7 +1038,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
         {
-            var marshaller = new DescribeResourcePermissionsRequestMarshaller();
+            var marshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourcePermissionsRequest,DescribeResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -1057,7 +1057,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
         public virtual Task<DescribeResourcePermissionsResponse> DescribeResourcePermissionsAsync(DescribeResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeResourcePermissionsRequestMarshaller();
+            var marshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeResourcePermissionsRequest,DescribeResourcePermissionsResponse>(request, marshaller, 
@@ -1070,7 +1070,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
         {
-            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var marshaller = DescribeRootFoldersRequestMarshaller.Instance;
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, unmarshaller);
@@ -1089,7 +1089,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
         public virtual Task<DescribeRootFoldersResponse> DescribeRootFoldersAsync(DescribeRootFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var marshaller = DescribeRootFoldersRequestMarshaller.Instance;
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, 
@@ -1102,7 +1102,7 @@ namespace Amazon.WorkDocs
 
         internal virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
-            var marshaller = new DescribeUsersRequestMarshaller();
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, unmarshaller);
@@ -1121,7 +1121,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeUsersRequestMarshaller();
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, 
@@ -1134,7 +1134,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
         {
-            var marshaller = new GetCurrentUserRequestMarshaller();
+            var marshaller = GetCurrentUserRequestMarshaller.Instance;
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
 
             return Invoke<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, unmarshaller);
@@ -1153,7 +1153,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
         public virtual Task<GetCurrentUserResponse> GetCurrentUserAsync(GetCurrentUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCurrentUserRequestMarshaller();
+            var marshaller = GetCurrentUserRequestMarshaller.Instance;
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, 
@@ -1166,7 +1166,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
-            var marshaller = new GetDocumentRequestMarshaller();
+            var marshaller = GetDocumentRequestMarshaller.Instance;
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentRequest,GetDocumentResponse>(request, marshaller, unmarshaller);
@@ -1185,7 +1185,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDocumentRequestMarshaller();
+            var marshaller = GetDocumentRequestMarshaller.Instance;
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDocumentRequest,GetDocumentResponse>(request, marshaller, 
@@ -1198,7 +1198,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
         {
-            var marshaller = new GetDocumentPathRequestMarshaller();
+            var marshaller = GetDocumentPathRequestMarshaller.Instance;
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentPathRequest,GetDocumentPathResponse>(request, marshaller, unmarshaller);
@@ -1217,7 +1217,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
         public virtual Task<GetDocumentPathResponse> GetDocumentPathAsync(GetDocumentPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDocumentPathRequestMarshaller();
+            var marshaller = GetDocumentPathRequestMarshaller.Instance;
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDocumentPathRequest,GetDocumentPathResponse>(request, marshaller, 
@@ -1230,7 +1230,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
         {
-            var marshaller = new GetDocumentVersionRequestMarshaller();
+            var marshaller = GetDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentVersionRequest,GetDocumentVersionResponse>(request, marshaller, unmarshaller);
@@ -1249,7 +1249,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
         public virtual Task<GetDocumentVersionResponse> GetDocumentVersionAsync(GetDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDocumentVersionRequestMarshaller();
+            var marshaller = GetDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDocumentVersionRequest,GetDocumentVersionResponse>(request, marshaller, 
@@ -1262,7 +1262,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetFolderResponse GetFolder(GetFolderRequest request)
         {
-            var marshaller = new GetFolderRequestMarshaller();
+            var marshaller = GetFolderRequestMarshaller.Instance;
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
 
             return Invoke<GetFolderRequest,GetFolderResponse>(request, marshaller, unmarshaller);
@@ -1281,7 +1281,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
         public virtual Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFolderRequestMarshaller();
+            var marshaller = GetFolderRequestMarshaller.Instance;
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFolderRequest,GetFolderResponse>(request, marshaller, 
@@ -1294,7 +1294,7 @@ namespace Amazon.WorkDocs
 
         internal virtual GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
         {
-            var marshaller = new GetFolderPathRequestMarshaller();
+            var marshaller = GetFolderPathRequestMarshaller.Instance;
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
 
             return Invoke<GetFolderPathRequest,GetFolderPathResponse>(request, marshaller, unmarshaller);
@@ -1313,7 +1313,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
         public virtual Task<GetFolderPathResponse> GetFolderPathAsync(GetFolderPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFolderPathRequestMarshaller();
+            var marshaller = GetFolderPathRequestMarshaller.Instance;
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFolderPathRequest,GetFolderPathResponse>(request, marshaller, 
@@ -1326,7 +1326,7 @@ namespace Amazon.WorkDocs
 
         internal virtual InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
         {
-            var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
+            var marshaller = InitiateDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return Invoke<InitiateDocumentVersionUploadRequest,InitiateDocumentVersionUploadResponse>(request, marshaller, unmarshaller);
@@ -1345,7 +1345,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
         public virtual Task<InitiateDocumentVersionUploadResponse> InitiateDocumentVersionUploadAsync(InitiateDocumentVersionUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
+            var marshaller = InitiateDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateDocumentVersionUploadRequest,InitiateDocumentVersionUploadResponse>(request, marshaller, 
@@ -1358,7 +1358,7 @@ namespace Amazon.WorkDocs
 
         internal virtual RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
         {
-            var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
+            var marshaller = RemoveAllResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveAllResourcePermissionsRequest,RemoveAllResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -1377,7 +1377,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
         public virtual Task<RemoveAllResourcePermissionsResponse> RemoveAllResourcePermissionsAsync(RemoveAllResourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
+            var marshaller = RemoveAllResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveAllResourcePermissionsRequest,RemoveAllResourcePermissionsResponse>(request, marshaller, 
@@ -1390,7 +1390,7 @@ namespace Amazon.WorkDocs
 
         internal virtual RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
         {
-            var marshaller = new RemoveResourcePermissionRequestMarshaller();
+            var marshaller = RemoveResourcePermissionRequestMarshaller.Instance;
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
 
             return Invoke<RemoveResourcePermissionRequest,RemoveResourcePermissionResponse>(request, marshaller, unmarshaller);
@@ -1409,7 +1409,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
         public virtual Task<RemoveResourcePermissionResponse> RemoveResourcePermissionAsync(RemoveResourcePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveResourcePermissionRequestMarshaller();
+            var marshaller = RemoveResourcePermissionRequestMarshaller.Instance;
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveResourcePermissionRequest,RemoveResourcePermissionResponse>(request, marshaller, 
@@ -1422,7 +1422,7 @@ namespace Amazon.WorkDocs
 
         internal virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
-            var marshaller = new UpdateDocumentRequestMarshaller();
+            var marshaller = UpdateDocumentRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, unmarshaller);
@@ -1441,7 +1441,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDocumentRequestMarshaller();
+            var marshaller = UpdateDocumentRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, 
@@ -1454,7 +1454,7 @@ namespace Amazon.WorkDocs
 
         internal virtual UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
         {
-            var marshaller = new UpdateDocumentVersionRequestMarshaller();
+            var marshaller = UpdateDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentVersionRequest,UpdateDocumentVersionResponse>(request, marshaller, unmarshaller);
@@ -1473,7 +1473,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
         public virtual Task<UpdateDocumentVersionResponse> UpdateDocumentVersionAsync(UpdateDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDocumentVersionRequestMarshaller();
+            var marshaller = UpdateDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDocumentVersionRequest,UpdateDocumentVersionResponse>(request, marshaller, 
@@ -1486,7 +1486,7 @@ namespace Amazon.WorkDocs
 
         internal virtual UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
         {
-            var marshaller = new UpdateFolderRequestMarshaller();
+            var marshaller = UpdateFolderRequestMarshaller.Instance;
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFolderRequest,UpdateFolderResponse>(request, marshaller, unmarshaller);
@@ -1505,7 +1505,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         public virtual Task<UpdateFolderResponse> UpdateFolderAsync(UpdateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateFolderRequestMarshaller();
+            var marshaller = UpdateFolderRequestMarshaller.Instance;
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFolderRequest,UpdateFolderResponse>(request, marshaller, 
@@ -1518,7 +1518,7 @@ namespace Amazon.WorkDocs
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
@@ -1537,7 +1537,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserRequest,UpdateUserResponse>(request, marshaller, 

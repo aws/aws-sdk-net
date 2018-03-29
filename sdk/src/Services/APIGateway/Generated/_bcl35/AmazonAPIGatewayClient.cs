@@ -269,7 +269,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
-            var marshaller = new CreateApiKeyRequestMarshaller();
+            var marshaller = CreateApiKeyRequestMarshaller.Instance;
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
             return Invoke<CreateApiKeyRequest,CreateApiKeyResponse>(request, marshaller, unmarshaller);
@@ -288,7 +288,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateApiKeyRequestMarshaller();
+            var marshaller = CreateApiKeyRequestMarshaller.Instance;
             var unmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateApiKeyRequest>(request, marshaller, unmarshaller,
@@ -338,7 +338,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
-            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
             return Invoke<CreateAuthorizerRequest,CreateAuthorizerResponse>(request, marshaller, unmarshaller);
@@ -357,7 +357,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAuthorizerRequestMarshaller();
+            var marshaller = CreateAuthorizerRequestMarshaller.Instance;
             var unmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAuthorizerRequest>(request, marshaller, unmarshaller,
@@ -404,7 +404,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
-            var marshaller = new CreateBasePathMappingRequestMarshaller();
+            var marshaller = CreateBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
 
             return Invoke<CreateBasePathMappingRequest,CreateBasePathMappingResponse>(request, marshaller, unmarshaller);
@@ -423,7 +423,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateBasePathMapping(CreateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateBasePathMappingRequestMarshaller();
+            var marshaller = CreateBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateBasePathMappingRequest>(request, marshaller, unmarshaller,
@@ -478,7 +478,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
@@ -497,7 +497,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDeploymentRequest>(request, marshaller, unmarshaller,
@@ -547,7 +547,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
-            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var marshaller = CreateDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
 
             return Invoke<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, unmarshaller);
@@ -566,7 +566,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var marshaller = CreateDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDocumentationPartRequest>(request, marshaller, unmarshaller,
@@ -616,7 +616,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
-            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var marshaller = CreateDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, unmarshaller);
@@ -635,7 +635,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var marshaller = CreateDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDocumentationVersionRequest>(request, marshaller, unmarshaller,
@@ -679,7 +679,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
-            var marshaller = new CreateDomainNameRequestMarshaller();
+            var marshaller = CreateDomainNameRequestMarshaller.Instance;
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainNameRequest,CreateDomainNameResponse>(request, marshaller, unmarshaller);
@@ -698,7 +698,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDomainNameRequestMarshaller();
+            var marshaller = CreateDomainNameRequestMarshaller.Instance;
             var unmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDomainNameRequest>(request, marshaller, unmarshaller,
@@ -748,7 +748,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var marshaller = new CreateModelRequestMarshaller();
+            var marshaller = CreateModelRequestMarshaller.Instance;
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
 
             return Invoke<CreateModelRequest,CreateModelResponse>(request, marshaller, unmarshaller);
@@ -767,7 +767,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateModelRequestMarshaller();
+            var marshaller = CreateModelRequestMarshaller.Instance;
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateModelRequest>(request, marshaller, unmarshaller,
@@ -814,7 +814,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
-            var marshaller = new CreateRequestValidatorRequestMarshaller();
+            var marshaller = CreateRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
 
             return Invoke<CreateRequestValidatorRequest,CreateRequestValidatorResponse>(request, marshaller, unmarshaller);
@@ -833,7 +833,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRequestValidatorRequestMarshaller();
+            var marshaller = CreateRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRequestValidatorRequest>(request, marshaller, unmarshaller,
@@ -883,7 +883,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return Invoke<CreateResourceRequest,CreateResourceResponse>(request, marshaller, unmarshaller);
@@ -902,7 +902,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateResourceRequestMarshaller();
+            var marshaller = CreateResourceRequestMarshaller.Instance;
             var unmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateResourceRequest>(request, marshaller, unmarshaller,
@@ -946,7 +946,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
-            var marshaller = new CreateRestApiRequestMarshaller();
+            var marshaller = CreateRestApiRequestMarshaller.Instance;
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
 
             return Invoke<CreateRestApiRequest,CreateRestApiResponse>(request, marshaller, unmarshaller);
@@ -965,7 +965,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateRestApi(CreateRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateRestApiRequestMarshaller();
+            var marshaller = CreateRestApiRequestMarshaller.Instance;
             var unmarshaller = CreateRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateRestApiRequest>(request, marshaller, unmarshaller,
@@ -1016,7 +1016,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
-            var marshaller = new CreateStageRequestMarshaller();
+            var marshaller = CreateStageRequestMarshaller.Instance;
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
 
             return Invoke<CreateStageRequest,CreateStageResponse>(request, marshaller, unmarshaller);
@@ -1035,7 +1035,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateStageRequestMarshaller();
+            var marshaller = CreateStageRequestMarshaller.Instance;
             var unmarshaller = CreateStageResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateStageRequest>(request, marshaller, unmarshaller,
@@ -1086,7 +1086,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
-            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var marshaller = CreateUsagePlanRequestMarshaller.Instance;
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
 
             return Invoke<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, unmarshaller);
@@ -1105,7 +1105,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var marshaller = CreateUsagePlanRequestMarshaller.Instance;
             var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUsagePlanRequest>(request, marshaller, unmarshaller,
@@ -1152,7 +1152,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
-            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var marshaller = CreateUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
 
             return Invoke<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, unmarshaller);
@@ -1171,7 +1171,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var marshaller = CreateUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUsagePlanKeyRequest>(request, marshaller, unmarshaller,
@@ -1214,7 +1214,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
         {
-            var marshaller = new CreateVpcLinkRequestMarshaller();
+            var marshaller = CreateVpcLinkRequestMarshaller.Instance;
             var unmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
 
             return Invoke<CreateVpcLinkRequest,CreateVpcLinkResponse>(request, marshaller, unmarshaller);
@@ -1233,7 +1233,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateVpcLinkRequestMarshaller();
+            var marshaller = CreateVpcLinkRequestMarshaller.Instance;
             var unmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateVpcLinkRequest>(request, marshaller, unmarshaller,
@@ -1273,7 +1273,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
-            var marshaller = new DeleteApiKeyRequestMarshaller();
+            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteApiKeyRequest,DeleteApiKeyResponse>(request, marshaller, unmarshaller);
@@ -1292,7 +1292,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteApiKeyRequestMarshaller();
+            var marshaller = DeleteApiKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteApiKeyRequest>(request, marshaller, unmarshaller,
@@ -1342,7 +1342,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
-            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAuthorizerRequest,DeleteAuthorizerResponse>(request, marshaller, unmarshaller);
@@ -1361,7 +1361,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAuthorizerRequestMarshaller();
+            var marshaller = DeleteAuthorizerRequestMarshaller.Instance;
             var unmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAuthorizerRequest>(request, marshaller, unmarshaller,
@@ -1408,7 +1408,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
-            var marshaller = new DeleteBasePathMappingRequestMarshaller();
+            var marshaller = DeleteBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBasePathMappingRequest,DeleteBasePathMappingResponse>(request, marshaller, unmarshaller);
@@ -1427,7 +1427,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBasePathMapping(DeleteBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBasePathMappingRequestMarshaller();
+            var marshaller = DeleteBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBasePathMappingRequest>(request, marshaller, unmarshaller,
@@ -1471,7 +1471,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
-            var marshaller = new DeleteClientCertificateRequestMarshaller();
+            var marshaller = DeleteClientCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteClientCertificateRequest,DeleteClientCertificateResponse>(request, marshaller, unmarshaller);
@@ -1490,7 +1490,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteClientCertificate(DeleteClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteClientCertificateRequestMarshaller();
+            var marshaller = DeleteClientCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteClientCertificateRequest>(request, marshaller, unmarshaller,
@@ -1535,7 +1535,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var marshaller = new DeleteDeploymentRequestMarshaller();
+            var marshaller = DeleteDeploymentRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDeploymentRequest,DeleteDeploymentResponse>(request, marshaller, unmarshaller);
@@ -1554,7 +1554,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDeploymentRequestMarshaller();
+            var marshaller = DeleteDeploymentRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDeploymentRequest>(request, marshaller, unmarshaller,
@@ -1601,7 +1601,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
-            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var marshaller = DeleteDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, unmarshaller);
@@ -1620,7 +1620,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var marshaller = DeleteDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDocumentationPartRequest>(request, marshaller, unmarshaller,
@@ -1667,7 +1667,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
-            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var marshaller = DeleteDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, unmarshaller);
@@ -1686,7 +1686,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var marshaller = DeleteDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDocumentationVersionRequest>(request, marshaller, unmarshaller,
@@ -1726,7 +1726,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
-            var marshaller = new DeleteDomainNameRequestMarshaller();
+            var marshaller = DeleteDomainNameRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainNameRequest,DeleteDomainNameResponse>(request, marshaller, unmarshaller);
@@ -1745,7 +1745,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDomainNameRequestMarshaller();
+            var marshaller = DeleteDomainNameRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDomainNameRequest>(request, marshaller, unmarshaller,
@@ -1793,7 +1793,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
-            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var marshaller = DeleteGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGatewayResponseRequest,DeleteGatewayResponseResponse>(request, marshaller, unmarshaller);
@@ -1812,7 +1812,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteGatewayResponseRequestMarshaller();
+            var marshaller = DeleteGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteGatewayResponseRequest>(request, marshaller, unmarshaller,
@@ -1855,7 +1855,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var marshaller = new DeleteIntegrationRequestMarshaller();
+            var marshaller = DeleteIntegrationRequestMarshaller.Instance;
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIntegrationRequest,DeleteIntegrationResponse>(request, marshaller, unmarshaller);
@@ -1874,7 +1874,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIntegrationRequestMarshaller();
+            var marshaller = DeleteIntegrationRequestMarshaller.Instance;
             var unmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIntegrationRequest>(request, marshaller, unmarshaller,
@@ -1921,7 +1921,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
-            var marshaller = new DeleteIntegrationResponseRequestMarshaller();
+            var marshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIntegrationResponseRequest,DeleteIntegrationResponseResponse>(request, marshaller, unmarshaller);
@@ -1940,7 +1940,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIntegrationResponseRequestMarshaller();
+            var marshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIntegrationResponseRequest>(request, marshaller, unmarshaller,
@@ -1983,7 +1983,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
-            var marshaller = new DeleteMethodRequestMarshaller();
+            var marshaller = DeleteMethodRequestMarshaller.Instance;
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMethodRequest,DeleteMethodResponse>(request, marshaller, unmarshaller);
@@ -2002,7 +2002,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteMethod(DeleteMethodRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteMethodRequestMarshaller();
+            var marshaller = DeleteMethodRequestMarshaller.Instance;
             var unmarshaller = DeleteMethodResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteMethodRequest>(request, marshaller, unmarshaller,
@@ -2049,7 +2049,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
-            var marshaller = new DeleteMethodResponseRequestMarshaller();
+            var marshaller = DeleteMethodResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMethodResponseRequest,DeleteMethodResponseResponse>(request, marshaller, unmarshaller);
@@ -2068,7 +2068,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteMethodResponse(DeleteMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteMethodResponseRequestMarshaller();
+            var marshaller = DeleteMethodResponseRequestMarshaller.Instance;
             var unmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteMethodResponseRequest>(request, marshaller, unmarshaller,
@@ -2115,7 +2115,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var marshaller = new DeleteModelRequestMarshaller();
+            var marshaller = DeleteModelRequestMarshaller.Instance;
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteModelRequest,DeleteModelResponse>(request, marshaller, unmarshaller);
@@ -2134,7 +2134,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteModelRequestMarshaller();
+            var marshaller = DeleteModelRequestMarshaller.Instance;
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteModelRequest>(request, marshaller, unmarshaller,
@@ -2181,7 +2181,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
-            var marshaller = new DeleteRequestValidatorRequestMarshaller();
+            var marshaller = DeleteRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRequestValidatorRequest,DeleteRequestValidatorResponse>(request, marshaller, unmarshaller);
@@ -2200,7 +2200,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRequestValidatorRequestMarshaller();
+            var marshaller = DeleteRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRequestValidatorRequest>(request, marshaller, unmarshaller,
@@ -2247,7 +2247,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteResourceRequest,DeleteResourceResponse>(request, marshaller, unmarshaller);
@@ -2266,7 +2266,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteResourceRequestMarshaller();
+            var marshaller = DeleteResourceRequestMarshaller.Instance;
             var unmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteResourceRequest>(request, marshaller, unmarshaller,
@@ -2310,7 +2310,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
-            var marshaller = new DeleteRestApiRequestMarshaller();
+            var marshaller = DeleteRestApiRequestMarshaller.Instance;
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRestApiRequest,DeleteRestApiResponse>(request, marshaller, unmarshaller);
@@ -2329,7 +2329,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteRestApi(DeleteRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteRestApiRequestMarshaller();
+            var marshaller = DeleteRestApiRequestMarshaller.Instance;
             var unmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteRestApiRequest>(request, marshaller, unmarshaller,
@@ -2373,7 +2373,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
-            var marshaller = new DeleteStageRequestMarshaller();
+            var marshaller = DeleteStageRequestMarshaller.Instance;
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStageRequest,DeleteStageResponse>(request, marshaller, unmarshaller);
@@ -2392,7 +2392,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteStageRequestMarshaller();
+            var marshaller = DeleteStageRequestMarshaller.Instance;
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteStageRequest>(request, marshaller, unmarshaller,
@@ -2436,7 +2436,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
-            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var marshaller = DeleteUsagePlanRequestMarshaller.Instance;
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, unmarshaller);
@@ -2455,7 +2455,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var marshaller = DeleteUsagePlanRequestMarshaller.Instance;
             var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUsagePlanRequest>(request, marshaller, unmarshaller,
@@ -2503,7 +2503,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
-            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var marshaller = DeleteUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, unmarshaller);
@@ -2522,7 +2522,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var marshaller = DeleteUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUsagePlanKeyRequest>(request, marshaller, unmarshaller,
@@ -2566,7 +2566,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
         {
-            var marshaller = new DeleteVpcLinkRequestMarshaller();
+            var marshaller = DeleteVpcLinkRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVpcLinkRequest,DeleteVpcLinkResponse>(request, marshaller, unmarshaller);
@@ -2585,7 +2585,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteVpcLinkRequestMarshaller();
+            var marshaller = DeleteVpcLinkRequestMarshaller.Instance;
             var unmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteVpcLinkRequest>(request, marshaller, unmarshaller,
@@ -2629,7 +2629,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
-            var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
+            var marshaller = FlushStageAuthorizersCacheRequestMarshaller.Instance;
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
 
             return Invoke<FlushStageAuthorizersCacheRequest,FlushStageAuthorizersCacheResponse>(request, marshaller, unmarshaller);
@@ -2648,7 +2648,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new FlushStageAuthorizersCacheRequestMarshaller();
+            var marshaller = FlushStageAuthorizersCacheRequestMarshaller.Instance;
             var unmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
 
             return BeginInvoke<FlushStageAuthorizersCacheRequest>(request, marshaller, unmarshaller,
@@ -2692,7 +2692,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
-            var marshaller = new FlushStageCacheRequestMarshaller();
+            var marshaller = FlushStageCacheRequestMarshaller.Instance;
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
 
             return Invoke<FlushStageCacheRequest,FlushStageCacheResponse>(request, marshaller, unmarshaller);
@@ -2711,7 +2711,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginFlushStageCache(FlushStageCacheRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new FlushStageCacheRequestMarshaller();
+            var marshaller = FlushStageCacheRequestMarshaller.Instance;
             var unmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
 
             return BeginInvoke<FlushStageCacheRequest>(request, marshaller, unmarshaller,
@@ -2751,7 +2751,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
-            var marshaller = new GenerateClientCertificateRequestMarshaller();
+            var marshaller = GenerateClientCertificateRequestMarshaller.Instance;
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
 
             return Invoke<GenerateClientCertificateRequest,GenerateClientCertificateResponse>(request, marshaller, unmarshaller);
@@ -2770,7 +2770,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGenerateClientCertificate(GenerateClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GenerateClientCertificateRequestMarshaller();
+            var marshaller = GenerateClientCertificateRequestMarshaller.Instance;
             var unmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GenerateClientCertificateRequest>(request, marshaller, unmarshaller,
@@ -2810,7 +2810,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var marshaller = new GetAccountRequestMarshaller();
+            var marshaller = GetAccountRequestMarshaller.Instance;
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
 
             return Invoke<GetAccountRequest,GetAccountResponse>(request, marshaller, unmarshaller);
@@ -2829,7 +2829,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAccountRequestMarshaller();
+            var marshaller = GetAccountRequestMarshaller.Instance;
             var unmarshaller = GetAccountResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAccountRequest>(request, marshaller, unmarshaller,
@@ -2869,7 +2869,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
-            var marshaller = new GetApiKeyRequestMarshaller();
+            var marshaller = GetApiKeyRequestMarshaller.Instance;
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
 
             return Invoke<GetApiKeyRequest,GetApiKeyResponse>(request, marshaller, unmarshaller);
@@ -2888,7 +2888,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApiKey(GetApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetApiKeyRequestMarshaller();
+            var marshaller = GetApiKeyRequestMarshaller.Instance;
             var unmarshaller = GetApiKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetApiKeyRequest>(request, marshaller, unmarshaller,
@@ -2929,7 +2929,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
-            var marshaller = new GetApiKeysRequestMarshaller();
+            var marshaller = GetApiKeysRequestMarshaller.Instance;
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
 
             return Invoke<GetApiKeysRequest,GetApiKeysResponse>(request, marshaller, unmarshaller);
@@ -2948,7 +2948,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetApiKeys(GetApiKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetApiKeysRequestMarshaller();
+            var marshaller = GetApiKeysRequestMarshaller.Instance;
             var unmarshaller = GetApiKeysResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetApiKeysRequest>(request, marshaller, unmarshaller,
@@ -2991,7 +2991,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
-            var marshaller = new GetAuthorizerRequestMarshaller();
+            var marshaller = GetAuthorizerRequestMarshaller.Instance;
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
             return Invoke<GetAuthorizerRequest,GetAuthorizerResponse>(request, marshaller, unmarshaller);
@@ -3010,7 +3010,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAuthorizerRequestMarshaller();
+            var marshaller = GetAuthorizerRequestMarshaller.Instance;
             var unmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAuthorizerRequest>(request, marshaller, unmarshaller,
@@ -3057,7 +3057,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
-            var marshaller = new GetAuthorizersRequestMarshaller();
+            var marshaller = GetAuthorizersRequestMarshaller.Instance;
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
             return Invoke<GetAuthorizersRequest,GetAuthorizersResponse>(request, marshaller, unmarshaller);
@@ -3076,7 +3076,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetAuthorizersRequestMarshaller();
+            var marshaller = GetAuthorizersRequestMarshaller.Instance;
             var unmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetAuthorizersRequest>(request, marshaller, unmarshaller,
@@ -3116,7 +3116,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
-            var marshaller = new GetBasePathMappingRequestMarshaller();
+            var marshaller = GetBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
 
             return Invoke<GetBasePathMappingRequest,GetBasePathMappingResponse>(request, marshaller, unmarshaller);
@@ -3135,7 +3135,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBasePathMapping(GetBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBasePathMappingRequestMarshaller();
+            var marshaller = GetBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBasePathMappingRequest>(request, marshaller, unmarshaller,
@@ -3175,7 +3175,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
-            var marshaller = new GetBasePathMappingsRequestMarshaller();
+            var marshaller = GetBasePathMappingsRequestMarshaller.Instance;
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
 
             return Invoke<GetBasePathMappingsRequest,GetBasePathMappingsResponse>(request, marshaller, unmarshaller);
@@ -3194,7 +3194,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetBasePathMappings(GetBasePathMappingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetBasePathMappingsRequestMarshaller();
+            var marshaller = GetBasePathMappingsRequestMarshaller.Instance;
             var unmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetBasePathMappingsRequest>(request, marshaller, unmarshaller,
@@ -3234,7 +3234,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
-            var marshaller = new GetClientCertificateRequestMarshaller();
+            var marshaller = GetClientCertificateRequestMarshaller.Instance;
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
 
             return Invoke<GetClientCertificateRequest,GetClientCertificateResponse>(request, marshaller, unmarshaller);
@@ -3253,7 +3253,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetClientCertificate(GetClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetClientCertificateRequestMarshaller();
+            var marshaller = GetClientCertificateRequestMarshaller.Instance;
             var unmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetClientCertificateRequest>(request, marshaller, unmarshaller,
@@ -3294,7 +3294,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
-            var marshaller = new GetClientCertificatesRequestMarshaller();
+            var marshaller = GetClientCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<GetClientCertificatesRequest,GetClientCertificatesResponse>(request, marshaller, unmarshaller);
@@ -3313,7 +3313,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetClientCertificates(GetClientCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetClientCertificatesRequestMarshaller();
+            var marshaller = GetClientCertificatesRequestMarshaller.Instance;
             var unmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetClientCertificatesRequest>(request, marshaller, unmarshaller,
@@ -3357,7 +3357,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var marshaller = new GetDeploymentRequestMarshaller();
+            var marshaller = GetDeploymentRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, unmarshaller);
@@ -3376,7 +3376,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDeploymentRequestMarshaller();
+            var marshaller = GetDeploymentRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDeploymentRequest>(request, marshaller, unmarshaller,
@@ -3421,7 +3421,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
-            var marshaller = new GetDeploymentsRequestMarshaller();
+            var marshaller = GetDeploymentsRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentsRequest,GetDeploymentsResponse>(request, marshaller, unmarshaller);
@@ -3440,7 +3440,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDeploymentsRequestMarshaller();
+            var marshaller = GetDeploymentsRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDeploymentsRequest>(request, marshaller, unmarshaller,
@@ -3480,7 +3480,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
-            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var marshaller = GetDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, unmarshaller);
@@ -3499,7 +3499,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var marshaller = GetDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentationPartRequest>(request, marshaller, unmarshaller,
@@ -3543,7 +3543,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
-            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var marshaller = GetDocumentationPartsRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, unmarshaller);
@@ -3562,7 +3562,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var marshaller = GetDocumentationPartsRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentationPartsRequest>(request, marshaller, unmarshaller,
@@ -3602,7 +3602,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
-            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var marshaller = GetDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, unmarshaller);
@@ -3621,7 +3621,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var marshaller = GetDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentationVersionRequest>(request, marshaller, unmarshaller,
@@ -3665,7 +3665,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
-            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var marshaller = GetDocumentationVersionsRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, unmarshaller);
@@ -3684,7 +3684,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var marshaller = GetDocumentationVersionsRequestMarshaller.Instance;
             var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentationVersionsRequest>(request, marshaller, unmarshaller,
@@ -3729,7 +3729,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
-            var marshaller = new GetDomainNameRequestMarshaller();
+            var marshaller = GetDomainNameRequestMarshaller.Instance;
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainNameRequest,GetDomainNameResponse>(request, marshaller, unmarshaller);
@@ -3748,7 +3748,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDomainNameRequestMarshaller();
+            var marshaller = GetDomainNameRequestMarshaller.Instance;
             var unmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDomainNameRequest>(request, marshaller, unmarshaller,
@@ -3789,7 +3789,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
-            var marshaller = new GetDomainNamesRequestMarshaller();
+            var marshaller = GetDomainNamesRequestMarshaller.Instance;
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
             return Invoke<GetDomainNamesRequest,GetDomainNamesResponse>(request, marshaller, unmarshaller);
@@ -3808,7 +3808,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDomainNamesRequestMarshaller();
+            var marshaller = GetDomainNamesRequestMarshaller.Instance;
             var unmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDomainNamesRequest>(request, marshaller, unmarshaller,
@@ -3855,7 +3855,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
-            var marshaller = new GetExportRequestMarshaller();
+            var marshaller = GetExportRequestMarshaller.Instance;
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
 
             return Invoke<GetExportRequest,GetExportResponse>(request, marshaller, unmarshaller);
@@ -3874,7 +3874,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetExportRequestMarshaller();
+            var marshaller = GetExportRequestMarshaller.Instance;
             var unmarshaller = GetExportResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetExportRequest>(request, marshaller, unmarshaller,
@@ -3914,7 +3914,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
-            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var marshaller = GetGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
 
             return Invoke<GetGatewayResponseRequest,GetGatewayResponseResponse>(request, marshaller, unmarshaller);
@@ -3933,7 +3933,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGatewayResponseRequestMarshaller();
+            var marshaller = GetGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGatewayResponseRequest>(request, marshaller, unmarshaller,
@@ -3980,7 +3980,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
-            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var marshaller = GetGatewayResponsesRequestMarshaller.Instance;
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
 
             return Invoke<GetGatewayResponsesRequest,GetGatewayResponsesResponse>(request, marshaller, unmarshaller);
@@ -3999,7 +3999,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetGatewayResponsesRequestMarshaller();
+            var marshaller = GetGatewayResponsesRequestMarshaller.Instance;
             var unmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetGatewayResponsesRequest>(request, marshaller, unmarshaller,
@@ -4039,7 +4039,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var marshaller = new GetIntegrationRequestMarshaller();
+            var marshaller = GetIntegrationRequestMarshaller.Instance;
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
             return Invoke<GetIntegrationRequest,GetIntegrationResponse>(request, marshaller, unmarshaller);
@@ -4058,7 +4058,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIntegrationRequestMarshaller();
+            var marshaller = GetIntegrationRequestMarshaller.Instance;
             var unmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIntegrationRequest>(request, marshaller, unmarshaller,
@@ -4098,7 +4098,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
-            var marshaller = new GetIntegrationResponseRequestMarshaller();
+            var marshaller = GetIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
             return Invoke<GetIntegrationResponseRequest,GetIntegrationResponseResponse>(request, marshaller, unmarshaller);
@@ -4117,7 +4117,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetIntegrationResponseRequestMarshaller();
+            var marshaller = GetIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetIntegrationResponseRequest>(request, marshaller, unmarshaller,
@@ -4157,7 +4157,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
-            var marshaller = new GetMethodRequestMarshaller();
+            var marshaller = GetMethodRequestMarshaller.Instance;
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
 
             return Invoke<GetMethodRequest,GetMethodResponse>(request, marshaller, unmarshaller);
@@ -4176,7 +4176,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetMethod(GetMethodRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetMethodRequestMarshaller();
+            var marshaller = GetMethodRequestMarshaller.Instance;
             var unmarshaller = GetMethodResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetMethodRequest>(request, marshaller, unmarshaller,
@@ -4216,7 +4216,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
-            var marshaller = new GetMethodResponseRequestMarshaller();
+            var marshaller = GetMethodResponseRequestMarshaller.Instance;
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
 
             return Invoke<GetMethodResponseRequest,GetMethodResponseResponse>(request, marshaller, unmarshaller);
@@ -4235,7 +4235,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetMethodResponse(GetMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetMethodResponseRequestMarshaller();
+            var marshaller = GetMethodResponseRequestMarshaller.Instance;
             var unmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetMethodResponseRequest>(request, marshaller, unmarshaller,
@@ -4275,7 +4275,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
-            var marshaller = new GetModelRequestMarshaller();
+            var marshaller = GetModelRequestMarshaller.Instance;
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
 
             return Invoke<GetModelRequest,GetModelResponse>(request, marshaller, unmarshaller);
@@ -4294,7 +4294,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetModelRequestMarshaller();
+            var marshaller = GetModelRequestMarshaller.Instance;
             var unmarshaller = GetModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetModelRequest>(request, marshaller, unmarshaller,
@@ -4338,7 +4338,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
-            var marshaller = new GetModelsRequestMarshaller();
+            var marshaller = GetModelsRequestMarshaller.Instance;
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
 
             return Invoke<GetModelsRequest,GetModelsResponse>(request, marshaller, unmarshaller);
@@ -4357,7 +4357,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetModelsRequestMarshaller();
+            var marshaller = GetModelsRequestMarshaller.Instance;
             var unmarshaller = GetModelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetModelsRequest>(request, marshaller, unmarshaller,
@@ -4402,7 +4402,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
-            var marshaller = new GetModelTemplateRequestMarshaller();
+            var marshaller = GetModelTemplateRequestMarshaller.Instance;
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
             return Invoke<GetModelTemplateRequest,GetModelTemplateResponse>(request, marshaller, unmarshaller);
@@ -4421,7 +4421,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetModelTemplateRequestMarshaller();
+            var marshaller = GetModelTemplateRequestMarshaller.Instance;
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetModelTemplateRequest>(request, marshaller, unmarshaller,
@@ -4461,7 +4461,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
-            var marshaller = new GetRequestValidatorRequestMarshaller();
+            var marshaller = GetRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
 
             return Invoke<GetRequestValidatorRequest,GetRequestValidatorResponse>(request, marshaller, unmarshaller);
@@ -4480,7 +4480,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRequestValidatorRequestMarshaller();
+            var marshaller = GetRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRequestValidatorRequest>(request, marshaller, unmarshaller,
@@ -4524,7 +4524,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
-            var marshaller = new GetRequestValidatorsRequestMarshaller();
+            var marshaller = GetRequestValidatorsRequestMarshaller.Instance;
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
 
             return Invoke<GetRequestValidatorsRequest,GetRequestValidatorsResponse>(request, marshaller, unmarshaller);
@@ -4543,7 +4543,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRequestValidatorsRequestMarshaller();
+            var marshaller = GetRequestValidatorsRequestMarshaller.Instance;
             var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRequestValidatorsRequest>(request, marshaller, unmarshaller,
@@ -4583,7 +4583,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
-            var marshaller = new GetResourceRequestMarshaller();
+            var marshaller = GetResourceRequestMarshaller.Instance;
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
 
             return Invoke<GetResourceRequest,GetResourceResponse>(request, marshaller, unmarshaller);
@@ -4602,7 +4602,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetResource(GetResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetResourceRequestMarshaller();
+            var marshaller = GetResourceRequestMarshaller.Instance;
             var unmarshaller = GetResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetResourceRequest>(request, marshaller, unmarshaller,
@@ -4646,7 +4646,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
-            var marshaller = new GetResourcesRequestMarshaller();
+            var marshaller = GetResourcesRequestMarshaller.Instance;
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
             return Invoke<GetResourcesRequest,GetResourcesResponse>(request, marshaller, unmarshaller);
@@ -4665,7 +4665,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetResourcesRequestMarshaller();
+            var marshaller = GetResourcesRequestMarshaller.Instance;
             var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetResourcesRequest>(request, marshaller, unmarshaller,
@@ -4705,7 +4705,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
-            var marshaller = new GetRestApiRequestMarshaller();
+            var marshaller = GetRestApiRequestMarshaller.Instance;
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
 
             return Invoke<GetRestApiRequest,GetRestApiResponse>(request, marshaller, unmarshaller);
@@ -4724,7 +4724,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetRestApi(GetRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRestApiRequestMarshaller();
+            var marshaller = GetRestApiRequestMarshaller.Instance;
             var unmarshaller = GetRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRestApiRequest>(request, marshaller, unmarshaller,
@@ -4765,7 +4765,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
-            var marshaller = new GetRestApisRequestMarshaller();
+            var marshaller = GetRestApisRequestMarshaller.Instance;
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
 
             return Invoke<GetRestApisRequest,GetRestApisResponse>(request, marshaller, unmarshaller);
@@ -4784,7 +4784,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetRestApis(GetRestApisRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetRestApisRequestMarshaller();
+            var marshaller = GetRestApisRequestMarshaller.Instance;
             var unmarshaller = GetRestApisResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetRestApisRequest>(request, marshaller, unmarshaller,
@@ -4831,7 +4831,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
-            var marshaller = new GetSdkRequestMarshaller();
+            var marshaller = GetSdkRequestMarshaller.Instance;
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
 
             return Invoke<GetSdkRequest,GetSdkResponse>(request, marshaller, unmarshaller);
@@ -4850,7 +4850,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSdk(GetSdkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSdkRequestMarshaller();
+            var marshaller = GetSdkRequestMarshaller.Instance;
             var unmarshaller = GetSdkResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSdkRequest>(request, marshaller, unmarshaller,
@@ -4890,7 +4890,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
-            var marshaller = new GetSdkTypeRequestMarshaller();
+            var marshaller = GetSdkTypeRequestMarshaller.Instance;
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
 
             return Invoke<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, unmarshaller);
@@ -4909,7 +4909,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSdkTypeRequestMarshaller();
+            var marshaller = GetSdkTypeRequestMarshaller.Instance;
             var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSdkTypeRequest>(request, marshaller, unmarshaller,
@@ -4946,7 +4946,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
-            var marshaller = new GetSdkTypesRequestMarshaller();
+            var marshaller = GetSdkTypesRequestMarshaller.Instance;
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
 
             return Invoke<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, unmarshaller);
@@ -4965,7 +4965,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSdkTypesRequestMarshaller();
+            var marshaller = GetSdkTypesRequestMarshaller.Instance;
             var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSdkTypesRequest>(request, marshaller, unmarshaller,
@@ -5005,7 +5005,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
-            var marshaller = new GetStageRequestMarshaller();
+            var marshaller = GetStageRequestMarshaller.Instance;
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
 
             return Invoke<GetStageRequest,GetStageResponse>(request, marshaller, unmarshaller);
@@ -5024,7 +5024,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetStageRequestMarshaller();
+            var marshaller = GetStageRequestMarshaller.Instance;
             var unmarshaller = GetStageResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetStageRequest>(request, marshaller, unmarshaller,
@@ -5064,7 +5064,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
-            var marshaller = new GetStagesRequestMarshaller();
+            var marshaller = GetStagesRequestMarshaller.Instance;
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
 
             return Invoke<GetStagesRequest,GetStagesResponse>(request, marshaller, unmarshaller);
@@ -5083,7 +5083,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetStagesRequestMarshaller();
+            var marshaller = GetStagesRequestMarshaller.Instance;
             var unmarshaller = GetStagesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetStagesRequest>(request, marshaller, unmarshaller,
@@ -5130,7 +5130,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return Invoke<GetTagsRequest,GetTagsResponse>(request, marshaller, unmarshaller);
@@ -5149,7 +5149,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTagsRequest>(request, marshaller, unmarshaller,
@@ -5193,7 +5193,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
-            var marshaller = new GetUsageRequestMarshaller();
+            var marshaller = GetUsageRequestMarshaller.Instance;
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
 
             return Invoke<GetUsageRequest,GetUsageResponse>(request, marshaller, unmarshaller);
@@ -5212,7 +5212,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUsageRequestMarshaller();
+            var marshaller = GetUsageRequestMarshaller.Instance;
             var unmarshaller = GetUsageResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUsageRequest>(request, marshaller, unmarshaller,
@@ -5256,7 +5256,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
-            var marshaller = new GetUsagePlanRequestMarshaller();
+            var marshaller = GetUsagePlanRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
 
             return Invoke<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, unmarshaller);
@@ -5275,7 +5275,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUsagePlanRequestMarshaller();
+            var marshaller = GetUsagePlanRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUsagePlanRequest>(request, marshaller, unmarshaller,
@@ -5319,7 +5319,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
-            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var marshaller = GetUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
 
             return Invoke<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, unmarshaller);
@@ -5338,7 +5338,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var marshaller = GetUsagePlanKeyRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUsagePlanKeyRequest>(request, marshaller, unmarshaller,
@@ -5383,7 +5383,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
-            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var marshaller = GetUsagePlanKeysRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
 
             return Invoke<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, unmarshaller);
@@ -5402,7 +5402,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var marshaller = GetUsagePlanKeysRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUsagePlanKeysRequest>(request, marshaller, unmarshaller,
@@ -5449,7 +5449,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
-            var marshaller = new GetUsagePlansRequestMarshaller();
+            var marshaller = GetUsagePlansRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
 
             return Invoke<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, unmarshaller);
@@ -5468,7 +5468,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetUsagePlansRequestMarshaller();
+            var marshaller = GetUsagePlansRequestMarshaller.Instance;
             var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetUsagePlansRequest>(request, marshaller, unmarshaller,
@@ -5508,7 +5508,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
         {
-            var marshaller = new GetVpcLinkRequestMarshaller();
+            var marshaller = GetVpcLinkRequestMarshaller.Instance;
             var unmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
 
             return Invoke<GetVpcLinkRequest,GetVpcLinkResponse>(request, marshaller, unmarshaller);
@@ -5527,7 +5527,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetVpcLinkRequestMarshaller();
+            var marshaller = GetVpcLinkRequestMarshaller.Instance;
             var unmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetVpcLinkRequest>(request, marshaller, unmarshaller,
@@ -5568,7 +5568,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
         {
-            var marshaller = new GetVpcLinksRequestMarshaller();
+            var marshaller = GetVpcLinksRequestMarshaller.Instance;
             var unmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
 
             return Invoke<GetVpcLinksRequest,GetVpcLinksResponse>(request, marshaller, unmarshaller);
@@ -5587,7 +5587,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetVpcLinksRequestMarshaller();
+            var marshaller = GetVpcLinksRequestMarshaller.Instance;
             var unmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetVpcLinksRequest>(request, marshaller, unmarshaller,
@@ -5637,7 +5637,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
-            var marshaller = new ImportApiKeysRequestMarshaller();
+            var marshaller = ImportApiKeysRequestMarshaller.Instance;
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
 
             return Invoke<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, unmarshaller);
@@ -5656,7 +5656,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ImportApiKeysRequestMarshaller();
+            var marshaller = ImportApiKeysRequestMarshaller.Instance;
             var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
 
             return BeginInvoke<ImportApiKeysRequest>(request, marshaller, unmarshaller,
@@ -5703,7 +5703,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
-            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var marshaller = ImportDocumentationPartsRequestMarshaller.Instance;
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
 
             return Invoke<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, unmarshaller);
@@ -5722,7 +5722,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var marshaller = ImportDocumentationPartsRequestMarshaller.Instance;
             var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ImportDocumentationPartsRequest>(request, marshaller, unmarshaller,
@@ -5770,7 +5770,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
-            var marshaller = new ImportRestApiRequestMarshaller();
+            var marshaller = ImportRestApiRequestMarshaller.Instance;
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
 
             return Invoke<ImportRestApiRequest,ImportRestApiResponse>(request, marshaller, unmarshaller);
@@ -5789,7 +5789,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ImportRestApiRequestMarshaller();
+            var marshaller = ImportRestApiRequestMarshaller.Instance;
             var unmarshaller = ImportRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<ImportRestApiRequest>(request, marshaller, unmarshaller,
@@ -5837,7 +5837,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
-            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var marshaller = PutGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
 
             return Invoke<PutGatewayResponseRequest,PutGatewayResponseResponse>(request, marshaller, unmarshaller);
@@ -5856,7 +5856,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutGatewayResponseRequestMarshaller();
+            var marshaller = PutGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutGatewayResponseRequest>(request, marshaller, unmarshaller,
@@ -5903,7 +5903,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
-            var marshaller = new PutIntegrationRequestMarshaller();
+            var marshaller = PutIntegrationRequestMarshaller.Instance;
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
             return Invoke<PutIntegrationRequest,PutIntegrationResponse>(request, marshaller, unmarshaller);
@@ -5922,7 +5922,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutIntegrationRequestMarshaller();
+            var marshaller = PutIntegrationRequestMarshaller.Instance;
             var unmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutIntegrationRequest>(request, marshaller, unmarshaller,
@@ -5972,7 +5972,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
-            var marshaller = new PutIntegrationResponseRequestMarshaller();
+            var marshaller = PutIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
 
             return Invoke<PutIntegrationResponseRequest,PutIntegrationResponseResponse>(request, marshaller, unmarshaller);
@@ -5991,7 +5991,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutIntegrationResponse(PutIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutIntegrationResponseRequestMarshaller();
+            var marshaller = PutIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutIntegrationResponseRequest>(request, marshaller, unmarshaller,
@@ -6041,7 +6041,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
-            var marshaller = new PutMethodRequestMarshaller();
+            var marshaller = PutMethodRequestMarshaller.Instance;
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
 
             return Invoke<PutMethodRequest,PutMethodResponse>(request, marshaller, unmarshaller);
@@ -6060,7 +6060,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutMethod(PutMethodRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutMethodRequestMarshaller();
+            var marshaller = PutMethodRequestMarshaller.Instance;
             var unmarshaller = PutMethodResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutMethodRequest>(request, marshaller, unmarshaller,
@@ -6110,7 +6110,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
-            var marshaller = new PutMethodResponseRequestMarshaller();
+            var marshaller = PutMethodResponseRequestMarshaller.Instance;
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
             return Invoke<PutMethodResponseRequest,PutMethodResponseResponse>(request, marshaller, unmarshaller);
@@ -6129,7 +6129,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutMethodResponse(PutMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutMethodResponseRequestMarshaller();
+            var marshaller = PutMethodResponseRequestMarshaller.Instance;
             var unmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutMethodResponseRequest>(request, marshaller, unmarshaller,
@@ -6181,7 +6181,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
-            var marshaller = new PutRestApiRequestMarshaller();
+            var marshaller = PutRestApiRequestMarshaller.Instance;
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
 
             return Invoke<PutRestApiRequest,PutRestApiResponse>(request, marshaller, unmarshaller);
@@ -6200,7 +6200,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutRestApiRequestMarshaller();
+            var marshaller = PutRestApiRequestMarshaller.Instance;
             var unmarshaller = PutRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutRestApiRequest>(request, marshaller, unmarshaller,
@@ -6250,7 +6250,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -6269,7 +6269,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
@@ -6317,7 +6317,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
-            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var marshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
             return Invoke<TestInvokeAuthorizerRequest,TestInvokeAuthorizerResponse>(request, marshaller, unmarshaller);
@@ -6336,7 +6336,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TestInvokeAuthorizerRequestMarshaller();
+            var marshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
             var unmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
             return BeginInvoke<TestInvokeAuthorizerRequest>(request, marshaller, unmarshaller,
@@ -6381,7 +6381,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
-            var marshaller = new TestInvokeMethodRequestMarshaller();
+            var marshaller = TestInvokeMethodRequestMarshaller.Instance;
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
 
             return Invoke<TestInvokeMethodRequest,TestInvokeMethodResponse>(request, marshaller, unmarshaller);
@@ -6400,7 +6400,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginTestInvokeMethod(TestInvokeMethodRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TestInvokeMethodRequestMarshaller();
+            var marshaller = TestInvokeMethodRequestMarshaller.Instance;
             var unmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
 
             return BeginInvoke<TestInvokeMethodRequest>(request, marshaller, unmarshaller,
@@ -6447,7 +6447,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -6466,7 +6466,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
@@ -6510,7 +6510,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
-            var marshaller = new UpdateAccountRequestMarshaller();
+            var marshaller = UpdateAccountRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAccountRequest,UpdateAccountResponse>(request, marshaller, unmarshaller);
@@ -6529,7 +6529,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAccountRequestMarshaller();
+            var marshaller = UpdateAccountRequestMarshaller.Instance;
             var unmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAccountRequest>(request, marshaller, unmarshaller,
@@ -6576,7 +6576,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
-            var marshaller = new UpdateApiKeyRequestMarshaller();
+            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApiKeyRequest,UpdateApiKeyResponse>(request, marshaller, unmarshaller);
@@ -6595,7 +6595,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateApiKeyRequestMarshaller();
+            var marshaller = UpdateApiKeyRequestMarshaller.Instance;
             var unmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateApiKeyRequest>(request, marshaller, unmarshaller,
@@ -6642,7 +6642,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
-            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAuthorizerRequest,UpdateAuthorizerResponse>(request, marshaller, unmarshaller);
@@ -6661,7 +6661,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAuthorizerRequestMarshaller();
+            var marshaller = UpdateAuthorizerRequestMarshaller.Instance;
             var unmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAuthorizerRequest>(request, marshaller, unmarshaller,
@@ -6708,7 +6708,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
-            var marshaller = new UpdateBasePathMappingRequestMarshaller();
+            var marshaller = UpdateBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
 
             return Invoke<UpdateBasePathMappingRequest,UpdateBasePathMappingResponse>(request, marshaller, unmarshaller);
@@ -6727,7 +6727,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateBasePathMapping(UpdateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateBasePathMappingRequestMarshaller();
+            var marshaller = UpdateBasePathMappingRequestMarshaller.Instance;
             var unmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateBasePathMappingRequest>(request, marshaller, unmarshaller,
@@ -6771,7 +6771,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
-            var marshaller = new UpdateClientCertificateRequestMarshaller();
+            var marshaller = UpdateClientCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateClientCertificateRequest,UpdateClientCertificateResponse>(request, marshaller, unmarshaller);
@@ -6790,7 +6790,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateClientCertificate(UpdateClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateClientCertificateRequestMarshaller();
+            var marshaller = UpdateClientCertificateRequestMarshaller.Instance;
             var unmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateClientCertificateRequest>(request, marshaller, unmarshaller,
@@ -6838,7 +6838,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
-            var marshaller = new UpdateDeploymentRequestMarshaller();
+            var marshaller = UpdateDeploymentRequestMarshaller.Instance;
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDeploymentRequest,UpdateDeploymentResponse>(request, marshaller, unmarshaller);
@@ -6857,7 +6857,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDeploymentRequestMarshaller();
+            var marshaller = UpdateDeploymentRequestMarshaller.Instance;
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDeploymentRequest>(request, marshaller, unmarshaller,
@@ -6907,7 +6907,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
-            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var marshaller = UpdateDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, unmarshaller);
@@ -6926,7 +6926,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var marshaller = UpdateDocumentationPartRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDocumentationPartRequest>(request, marshaller, unmarshaller,
@@ -6973,7 +6973,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
-            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var marshaller = UpdateDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, unmarshaller);
@@ -6992,7 +6992,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var marshaller = UpdateDocumentationVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDocumentationVersionRequest>(request, marshaller, unmarshaller,
@@ -7039,7 +7039,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
-            var marshaller = new UpdateDomainNameRequestMarshaller();
+            var marshaller = UpdateDomainNameRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDomainNameRequest,UpdateDomainNameResponse>(request, marshaller, unmarshaller);
@@ -7058,7 +7058,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDomainNameRequestMarshaller();
+            var marshaller = UpdateDomainNameRequestMarshaller.Instance;
             var unmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDomainNameRequest>(request, marshaller, unmarshaller,
@@ -7102,7 +7102,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
-            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var marshaller = UpdateGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
 
             return Invoke<UpdateGatewayResponseRequest,UpdateGatewayResponseResponse>(request, marshaller, unmarshaller);
@@ -7121,7 +7121,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateGatewayResponseRequestMarshaller();
+            var marshaller = UpdateGatewayResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateGatewayResponseRequest>(request, marshaller, unmarshaller,
@@ -7168,7 +7168,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
-            var marshaller = new UpdateIntegrationRequestMarshaller();
+            var marshaller = UpdateIntegrationRequestMarshaller.Instance;
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIntegrationRequest,UpdateIntegrationResponse>(request, marshaller, unmarshaller);
@@ -7187,7 +7187,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateIntegrationRequestMarshaller();
+            var marshaller = UpdateIntegrationRequestMarshaller.Instance;
             var unmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateIntegrationRequest>(request, marshaller, unmarshaller,
@@ -7234,7 +7234,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
-            var marshaller = new UpdateIntegrationResponseRequestMarshaller();
+            var marshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIntegrationResponseRequest,UpdateIntegrationResponseResponse>(request, marshaller, unmarshaller);
@@ -7253,7 +7253,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateIntegrationResponseRequestMarshaller();
+            var marshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateIntegrationResponseRequest>(request, marshaller, unmarshaller,
@@ -7300,7 +7300,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
-            var marshaller = new UpdateMethodRequestMarshaller();
+            var marshaller = UpdateMethodRequestMarshaller.Instance;
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMethodRequest,UpdateMethodResponse>(request, marshaller, unmarshaller);
@@ -7319,7 +7319,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateMethod(UpdateMethodRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateMethodRequestMarshaller();
+            var marshaller = UpdateMethodRequestMarshaller.Instance;
             var unmarshaller = UpdateMethodResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateMethodRequest>(request, marshaller, unmarshaller,
@@ -7369,7 +7369,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
-            var marshaller = new UpdateMethodResponseRequestMarshaller();
+            var marshaller = UpdateMethodResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMethodResponseRequest,UpdateMethodResponseResponse>(request, marshaller, unmarshaller);
@@ -7388,7 +7388,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateMethodResponse(UpdateMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateMethodResponseRequestMarshaller();
+            var marshaller = UpdateMethodResponseRequestMarshaller.Instance;
             var unmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateMethodResponseRequest>(request, marshaller, unmarshaller,
@@ -7435,7 +7435,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var marshaller = new UpdateModelRequestMarshaller();
+            var marshaller = UpdateModelRequestMarshaller.Instance;
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
             return Invoke<UpdateModelRequest,UpdateModelResponse>(request, marshaller, unmarshaller);
@@ -7454,7 +7454,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateModelRequestMarshaller();
+            var marshaller = UpdateModelRequestMarshaller.Instance;
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateModelRequest>(request, marshaller, unmarshaller,
@@ -7498,7 +7498,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
-            var marshaller = new UpdateRequestValidatorRequestMarshaller();
+            var marshaller = UpdateRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRequestValidatorRequest,UpdateRequestValidatorResponse>(request, marshaller, unmarshaller);
@@ -7517,7 +7517,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRequestValidatorRequestMarshaller();
+            var marshaller = UpdateRequestValidatorRequestMarshaller.Instance;
             var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRequestValidatorRequest>(request, marshaller, unmarshaller,
@@ -7564,7 +7564,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateResourceRequest,UpdateResourceResponse>(request, marshaller, unmarshaller);
@@ -7583,7 +7583,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateResourceRequestMarshaller();
+            var marshaller = UpdateResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateResourceRequest>(request, marshaller, unmarshaller,
@@ -7630,7 +7630,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
-            var marshaller = new UpdateRestApiRequestMarshaller();
+            var marshaller = UpdateRestApiRequestMarshaller.Instance;
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRestApiRequest,UpdateRestApiResponse>(request, marshaller, unmarshaller);
@@ -7649,7 +7649,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateRestApi(UpdateRestApiRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRestApiRequestMarshaller();
+            var marshaller = UpdateRestApiRequestMarshaller.Instance;
             var unmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRestApiRequest>(request, marshaller, unmarshaller,
@@ -7696,7 +7696,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
-            var marshaller = new UpdateStageRequestMarshaller();
+            var marshaller = UpdateStageRequestMarshaller.Instance;
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
             return Invoke<UpdateStageRequest,UpdateStageResponse>(request, marshaller, unmarshaller);
@@ -7715,7 +7715,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateStageRequestMarshaller();
+            var marshaller = UpdateStageRequestMarshaller.Instance;
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateStageRequest>(request, marshaller, unmarshaller,
@@ -7760,7 +7760,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
-            var marshaller = new UpdateUsageRequestMarshaller();
+            var marshaller = UpdateUsageRequestMarshaller.Instance;
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, unmarshaller);
@@ -7779,7 +7779,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateUsageRequestMarshaller();
+            var marshaller = UpdateUsageRequestMarshaller.Instance;
             var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateUsageRequest>(request, marshaller, unmarshaller,
@@ -7826,7 +7826,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
-            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var marshaller = UpdateUsagePlanRequestMarshaller.Instance;
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, unmarshaller);
@@ -7845,7 +7845,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var marshaller = UpdateUsagePlanRequestMarshaller.Instance;
             var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateUsagePlanRequest>(request, marshaller, unmarshaller,
@@ -7892,7 +7892,7 @@ namespace Amazon.APIGateway
         /// </exception>
         public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
         {
-            var marshaller = new UpdateVpcLinkRequestMarshaller();
+            var marshaller = UpdateVpcLinkRequestMarshaller.Instance;
             var unmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
 
             return Invoke<UpdateVpcLinkRequest,UpdateVpcLinkResponse>(request, marshaller, unmarshaller);
@@ -7911,7 +7911,7 @@ namespace Amazon.APIGateway
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateVpcLinkRequestMarshaller();
+            var marshaller = UpdateVpcLinkRequestMarshaller.Instance;
             var unmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateVpcLinkRequest>(request, marshaller, unmarshaller,

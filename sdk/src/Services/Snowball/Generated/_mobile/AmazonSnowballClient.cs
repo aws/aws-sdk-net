@@ -241,7 +241,7 @@ namespace Amazon.Snowball
 
         internal virtual CancelClusterResponse CancelCluster(CancelClusterRequest request)
         {
-            var marshaller = new CancelClusterRequestMarshaller();
+            var marshaller = CancelClusterRequestMarshaller.Instance;
             var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
 
             return Invoke<CancelClusterRequest,CancelClusterResponse>(request, marshaller, unmarshaller);
@@ -260,7 +260,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public virtual Task<CancelClusterResponse> CancelClusterAsync(CancelClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CancelClusterRequestMarshaller();
+            var marshaller = CancelClusterRequestMarshaller.Instance;
             var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelClusterRequest,CancelClusterResponse>(request, marshaller, 
@@ -273,7 +273,7 @@ namespace Amazon.Snowball
 
         internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var marshaller = new CancelJobRequestMarshaller();
+            var marshaller = CancelJobRequestMarshaller.Instance;
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
 
             return Invoke<CancelJobRequest,CancelJobResponse>(request, marshaller, unmarshaller);
@@ -292,7 +292,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CancelJobRequestMarshaller();
+            var marshaller = CancelJobRequestMarshaller.Instance;
             var unmarshaller = CancelJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelJobRequest,CancelJobResponse>(request, marshaller, 
@@ -305,7 +305,7 @@ namespace Amazon.Snowball
 
         internal virtual CreateAddressResponse CreateAddress(CreateAddressRequest request)
         {
-            var marshaller = new CreateAddressRequestMarshaller();
+            var marshaller = CreateAddressRequestMarshaller.Instance;
             var unmarshaller = CreateAddressResponseUnmarshaller.Instance;
 
             return Invoke<CreateAddressRequest,CreateAddressResponse>(request, marshaller, unmarshaller);
@@ -324,7 +324,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public virtual Task<CreateAddressResponse> CreateAddressAsync(CreateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateAddressRequestMarshaller();
+            var marshaller = CreateAddressRequestMarshaller.Instance;
             var unmarshaller = CreateAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAddressRequest,CreateAddressResponse>(request, marshaller, 
@@ -337,7 +337,7 @@ namespace Amazon.Snowball
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
@@ -356,7 +356,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateClusterRequestMarshaller();
+            var marshaller = CreateClusterRequestMarshaller.Instance;
             var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateClusterRequest,CreateClusterResponse>(request, marshaller, 
@@ -369,7 +369,7 @@ namespace Amazon.Snowball
 
         internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var marshaller = new CreateJobRequestMarshaller();
+            var marshaller = CreateJobRequestMarshaller.Instance;
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
 
             return Invoke<CreateJobRequest,CreateJobResponse>(request, marshaller, unmarshaller);
@@ -388,7 +388,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateJobRequestMarshaller();
+            var marshaller = CreateJobRequestMarshaller.Instance;
             var unmarshaller = CreateJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateJobRequest,CreateJobResponse>(request, marshaller, 
@@ -401,7 +401,7 @@ namespace Amazon.Snowball
 
         internal virtual DescribeAddressResponse DescribeAddress(DescribeAddressRequest request)
         {
-            var marshaller = new DescribeAddressRequestMarshaller();
+            var marshaller = DescribeAddressRequestMarshaller.Instance;
             var unmarshaller = DescribeAddressResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAddressRequest,DescribeAddressResponse>(request, marshaller, unmarshaller);
@@ -420,7 +420,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public virtual Task<DescribeAddressResponse> DescribeAddressAsync(DescribeAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAddressRequestMarshaller();
+            var marshaller = DescribeAddressRequestMarshaller.Instance;
             var unmarshaller = DescribeAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAddressRequest,DescribeAddressResponse>(request, marshaller, 
@@ -433,7 +433,7 @@ namespace Amazon.Snowball
 
         internal virtual DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
-            var marshaller = new DescribeAddressesRequestMarshaller();
+            var marshaller = DescribeAddressesRequestMarshaller.Instance;
             var unmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAddressesRequest,DescribeAddressesResponse>(request, marshaller, unmarshaller);
@@ -452,7 +452,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public virtual Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAddressesRequestMarshaller();
+            var marshaller = DescribeAddressesRequestMarshaller.Instance;
             var unmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAddressesRequest,DescribeAddressesResponse>(request, marshaller, 
@@ -465,7 +465,7 @@ namespace Amazon.Snowball
 
         internal virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var marshaller = new DescribeClusterRequestMarshaller();
+            var marshaller = DescribeClusterRequestMarshaller.Instance;
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
             return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
@@ -484,7 +484,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeClusterRequestMarshaller();
+            var marshaller = DescribeClusterRequestMarshaller.Instance;
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, 
@@ -497,7 +497,7 @@ namespace Amazon.Snowball
 
         internal virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var marshaller = new DescribeJobRequestMarshaller();
+            var marshaller = DescribeJobRequestMarshaller.Instance;
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
             return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
@@ -516,7 +516,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeJobRequestMarshaller();
+            var marshaller = DescribeJobRequestMarshaller.Instance;
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeJobRequest,DescribeJobResponse>(request, marshaller, 
@@ -529,7 +529,7 @@ namespace Amazon.Snowball
 
         internal virtual GetJobManifestResponse GetJobManifest(GetJobManifestRequest request)
         {
-            var marshaller = new GetJobManifestRequestMarshaller();
+            var marshaller = GetJobManifestRequestMarshaller.Instance;
             var unmarshaller = GetJobManifestResponseUnmarshaller.Instance;
 
             return Invoke<GetJobManifestRequest,GetJobManifestResponse>(request, marshaller, unmarshaller);
@@ -548,7 +548,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public virtual Task<GetJobManifestResponse> GetJobManifestAsync(GetJobManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetJobManifestRequestMarshaller();
+            var marshaller = GetJobManifestRequestMarshaller.Instance;
             var unmarshaller = GetJobManifestResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJobManifestRequest,GetJobManifestResponse>(request, marshaller, 
@@ -561,7 +561,7 @@ namespace Amazon.Snowball
 
         internal virtual GetJobUnlockCodeResponse GetJobUnlockCode(GetJobUnlockCodeRequest request)
         {
-            var marshaller = new GetJobUnlockCodeRequestMarshaller();
+            var marshaller = GetJobUnlockCodeRequestMarshaller.Instance;
             var unmarshaller = GetJobUnlockCodeResponseUnmarshaller.Instance;
 
             return Invoke<GetJobUnlockCodeRequest,GetJobUnlockCodeResponse>(request, marshaller, unmarshaller);
@@ -580,7 +580,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public virtual Task<GetJobUnlockCodeResponse> GetJobUnlockCodeAsync(GetJobUnlockCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetJobUnlockCodeRequestMarshaller();
+            var marshaller = GetJobUnlockCodeRequestMarshaller.Instance;
             var unmarshaller = GetJobUnlockCodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJobUnlockCodeRequest,GetJobUnlockCodeResponse>(request, marshaller, 
@@ -593,7 +593,7 @@ namespace Amazon.Snowball
 
         internal virtual GetSnowballUsageResponse GetSnowballUsage(GetSnowballUsageRequest request)
         {
-            var marshaller = new GetSnowballUsageRequestMarshaller();
+            var marshaller = GetSnowballUsageRequestMarshaller.Instance;
             var unmarshaller = GetSnowballUsageResponseUnmarshaller.Instance;
 
             return Invoke<GetSnowballUsageRequest,GetSnowballUsageResponse>(request, marshaller, unmarshaller);
@@ -612,7 +612,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public virtual Task<GetSnowballUsageResponse> GetSnowballUsageAsync(GetSnowballUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSnowballUsageRequestMarshaller();
+            var marshaller = GetSnowballUsageRequestMarshaller.Instance;
             var unmarshaller = GetSnowballUsageResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSnowballUsageRequest,GetSnowballUsageResponse>(request, marshaller, 
@@ -625,7 +625,7 @@ namespace Amazon.Snowball
 
         internal virtual ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request)
         {
-            var marshaller = new ListClusterJobsRequestMarshaller();
+            var marshaller = ListClusterJobsRequestMarshaller.Instance;
             var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListClusterJobsRequest,ListClusterJobsResponse>(request, marshaller, unmarshaller);
@@ -644,7 +644,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public virtual Task<ListClusterJobsResponse> ListClusterJobsAsync(ListClusterJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListClusterJobsRequestMarshaller();
+            var marshaller = ListClusterJobsRequestMarshaller.Instance;
             var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClusterJobsRequest,ListClusterJobsResponse>(request, marshaller, 
@@ -657,7 +657,7 @@ namespace Amazon.Snowball
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
@@ -676,7 +676,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
@@ -689,7 +689,7 @@ namespace Amazon.Snowball
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
@@ -708,7 +708,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
@@ -721,7 +721,7 @@ namespace Amazon.Snowball
 
         internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var marshaller = new UpdateClusterRequestMarshaller();
+            var marshaller = UpdateClusterRequestMarshaller.Instance;
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
             return Invoke<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, unmarshaller);
@@ -740,7 +740,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateClusterRequestMarshaller();
+            var marshaller = UpdateClusterRequestMarshaller.Instance;
             var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, 
@@ -753,7 +753,7 @@ namespace Amazon.Snowball
 
         internal virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var marshaller = new UpdateJobRequestMarshaller();
+            var marshaller = UpdateJobRequestMarshaller.Instance;
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
             return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
@@ -772,7 +772,7 @@ namespace Amazon.Snowball
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateJobRequestMarshaller();
+            var marshaller = UpdateJobRequestMarshaller.Instance;
             var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateJobRequest,UpdateJobResponse>(request, marshaller, 

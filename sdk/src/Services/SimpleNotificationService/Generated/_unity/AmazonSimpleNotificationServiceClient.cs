@@ -235,7 +235,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AddPermissionRequestMarshaller();
+            var marshaller = AddPermissionRequestMarshaller.Instance;
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -263,7 +263,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void CheckIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request, AmazonServiceCallback<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CheckIfPhoneNumberIsOptedOutRequestMarshaller();
+            var marshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
             var unmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -375,7 +375,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, AmazonServiceCallback<ConfirmSubscriptionRequest, ConfirmSubscriptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ConfirmSubscriptionRequestMarshaller();
+            var marshaller = ConfirmSubscriptionRequestMarshaller.Instance;
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -403,7 +403,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, AmazonServiceCallback<CreatePlatformApplicationRequest, CreatePlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreatePlatformApplicationRequestMarshaller();
+            var marshaller = CreatePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -431,7 +431,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, AmazonServiceCallback<CreatePlatformEndpointRequest, CreatePlatformEndpointResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreatePlatformEndpointRequestMarshaller();
+            var marshaller = CreatePlatformEndpointRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -494,7 +494,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void CreateTopicAsync(CreateTopicRequest request, AmazonServiceCallback<CreateTopicRequest, CreateTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateTopicRequestMarshaller();
+            var marshaller = CreateTopicRequestMarshaller.Instance;
             var unmarshaller = CreateTopicResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -522,7 +522,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void DeleteEndpointAsync(DeleteEndpointRequest request, AmazonServiceCallback<DeleteEndpointRequest, DeleteEndpointResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteEndpointRequestMarshaller();
+            var marshaller = DeleteEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -550,7 +550,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, AmazonServiceCallback<DeletePlatformApplicationRequest, DeletePlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeletePlatformApplicationRequestMarshaller();
+            var marshaller = DeletePlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -612,7 +612,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void DeleteTopicAsync(DeleteTopicRequest request, AmazonServiceCallback<DeleteTopicRequest, DeleteTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteTopicRequestMarshaller();
+            var marshaller = DeleteTopicRequestMarshaller.Instance;
             var unmarshaller = DeleteTopicResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -640,7 +640,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void GetEndpointAttributesAsync(GetEndpointAttributesRequest request, AmazonServiceCallback<GetEndpointAttributesRequest, GetEndpointAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetEndpointAttributesRequestMarshaller();
+            var marshaller = GetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -668,7 +668,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, AmazonServiceCallback<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -696,7 +696,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void GetSMSAttributesAsync(GetSMSAttributesRequest request, AmazonServiceCallback<GetSMSAttributesRequest, GetSMSAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetSMSAttributesRequestMarshaller();
+            var marshaller = GetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -756,7 +756,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, AmazonServiceCallback<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetSubscriptionAttributesRequestMarshaller();
+            var marshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -817,7 +817,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void GetTopicAttributesAsync(GetTopicAttributesRequest request, AmazonServiceCallback<GetTopicAttributesRequest, GetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetTopicAttributesRequestMarshaller();
+            var marshaller = GetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -845,7 +845,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, AmazonServiceCallback<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
+            var marshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -873,7 +873,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request, AmazonServiceCallback<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListPhoneNumbersOptedOutRequestMarshaller();
+            var marshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
             var unmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -935,7 +935,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, AmazonServiceCallback<ListPlatformApplicationsRequest, ListPlatformApplicationsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListPlatformApplicationsRequestMarshaller();
+            var marshaller = ListPlatformApplicationsRequestMarshaller.Instance;
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1025,7 +1025,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListSubscriptionsAsync(ListSubscriptionsRequest request, AmazonServiceCallback<ListSubscriptionsRequest, ListSubscriptionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListSubscriptionsRequestMarshaller();
+            var marshaller = ListSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1125,7 +1125,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, AmazonServiceCallback<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
+            var marshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1215,7 +1215,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void ListTopicsAsync(ListTopicsRequest request, AmazonServiceCallback<ListTopicsRequest, ListTopicsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListTopicsRequestMarshaller();
+            var marshaller = ListTopicsRequestMarshaller.Instance;
             var unmarshaller = ListTopicsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1243,7 +1243,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void OptInPhoneNumberAsync(OptInPhoneNumberRequest request, AmazonServiceCallback<OptInPhoneNumberRequest, OptInPhoneNumberResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new OptInPhoneNumberRequestMarshaller();
+            var marshaller = OptInPhoneNumberRequestMarshaller.Instance;
             var unmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1391,7 +1391,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void PublishAsync(PublishRequest request, AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1453,7 +1453,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1481,7 +1481,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SetEndpointAttributesAsync(SetEndpointAttributesRequest request, AmazonServiceCallback<SetEndpointAttributesRequest, SetEndpointAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetEndpointAttributesRequestMarshaller();
+            var marshaller = SetEndpointAttributesRequestMarshaller.Instance;
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1509,7 +1509,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, AmazonServiceCallback<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
+            var marshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1537,7 +1537,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SetSMSAttributesAsync(SetSMSAttributesRequest request, AmazonServiceCallback<SetSMSAttributesRequest, SetSMSAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetSMSAttributesRequestMarshaller();
+            var marshaller = SetSMSAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1601,7 +1601,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, AmazonServiceCallback<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetSubscriptionAttributesRequestMarshaller();
+            var marshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1665,7 +1665,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SetTopicAttributesAsync(SetTopicAttributesRequest request, AmazonServiceCallback<SetTopicAttributesRequest, SetTopicAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetTopicAttributesRequestMarshaller();
+            var marshaller = SetTopicAttributesRequestMarshaller.Instance;
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1735,7 +1735,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void SubscribeAsync(SubscribeRequest request, AmazonServiceCallback<SubscribeRequest, SubscribeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SubscribeRequestMarshaller();
+            var marshaller = SubscribeRequestMarshaller.Instance;
             var unmarshaller = SubscribeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1800,7 +1800,7 @@ namespace Amazon.SimpleNotificationService
         public virtual void UnsubscribeAsync(UnsubscribeRequest request, AmazonServiceCallback<UnsubscribeRequest, UnsubscribeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UnsubscribeRequestMarshaller();
+            var marshaller = UnsubscribeRequestMarshaller.Instance;
             var unmarshaller = UnsubscribeResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

@@ -243,7 +243,7 @@ namespace Amazon.Lex
 
         internal virtual PostContentResponse PostContent(PostContentRequest request)
         {
-            var marshaller = new PostContentRequestMarshaller();
+            var marshaller = PostContentRequestMarshaller.Instance;
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
 
             return Invoke<PostContentRequest,PostContentResponse>(request, marshaller, unmarshaller);
@@ -262,7 +262,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         public virtual Task<PostContentResponse> PostContentAsync(PostContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PostContentRequestMarshaller();
+            var marshaller = PostContentRequestMarshaller.Instance;
             var unmarshaller = PostContentResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostContentRequest,PostContentResponse>(request, marshaller, 
@@ -275,7 +275,7 @@ namespace Amazon.Lex
 
         internal virtual PostTextResponse PostText(PostTextRequest request)
         {
-            var marshaller = new PostTextRequestMarshaller();
+            var marshaller = PostTextRequestMarshaller.Instance;
             var unmarshaller = PostTextResponseUnmarshaller.Instance;
 
             return Invoke<PostTextRequest,PostTextResponse>(request, marshaller, unmarshaller);
@@ -294,7 +294,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         public virtual Task<PostTextResponse> PostTextAsync(PostTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PostTextRequestMarshaller();
+            var marshaller = PostTextRequestMarshaller.Instance;
             var unmarshaller = PostTextResponseUnmarshaller.Instance;
 
             return InvokeAsync<PostTextRequest,PostTextResponse>(request, marshaller, 

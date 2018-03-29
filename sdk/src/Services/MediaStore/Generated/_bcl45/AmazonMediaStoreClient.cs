@@ -248,7 +248,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual CreateContainerResponse CreateContainer(CreateContainerRequest request)
         {
-            var marshaller = new CreateContainerRequestMarshaller();
+            var marshaller = CreateContainerRequestMarshaller.Instance;
             var unmarshaller = CreateContainerResponseUnmarshaller.Instance;
 
             return Invoke<CreateContainerRequest,CreateContainerResponse>(request, marshaller, unmarshaller);
@@ -266,7 +266,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual Task<CreateContainerResponse> CreateContainerAsync(CreateContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateContainerRequestMarshaller();
+            var marshaller = CreateContainerRequestMarshaller.Instance;
             var unmarshaller = CreateContainerResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateContainerRequest,CreateContainerResponse>(request, marshaller, 
@@ -298,7 +298,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual DeleteContainerResponse DeleteContainer(DeleteContainerRequest request)
         {
-            var marshaller = new DeleteContainerRequestMarshaller();
+            var marshaller = DeleteContainerRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerResponseUnmarshaller.Instance;
 
             return Invoke<DeleteContainerRequest,DeleteContainerResponse>(request, marshaller, unmarshaller);
@@ -316,7 +316,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual Task<DeleteContainerResponse> DeleteContainerAsync(DeleteContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteContainerRequestMarshaller();
+            var marshaller = DeleteContainerRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteContainerRequest,DeleteContainerResponse>(request, marshaller, 
@@ -349,7 +349,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual DeleteContainerPolicyResponse DeleteContainerPolicy(DeleteContainerPolicyRequest request)
         {
-            var marshaller = new DeleteContainerPolicyRequestMarshaller();
+            var marshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteContainerPolicyRequest,DeleteContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -367,7 +367,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual Task<DeleteContainerPolicyResponse> DeleteContainerPolicyAsync(DeleteContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteContainerPolicyRequestMarshaller();
+            var marshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteContainerPolicyRequest,DeleteContainerPolicyResponse>(request, marshaller, 
@@ -408,7 +408,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request)
         {
-            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var marshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCorsPolicyRequest,DeleteCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -426,7 +426,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual Task<DeleteCorsPolicyResponse> DeleteCorsPolicyAsync(DeleteCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCorsPolicyRequestMarshaller();
+            var marshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCorsPolicyRequest,DeleteCorsPolicyResponse>(request, marshaller, 
@@ -458,7 +458,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual DescribeContainerResponse DescribeContainer(DescribeContainerRequest request)
         {
-            var marshaller = new DescribeContainerRequestMarshaller();
+            var marshaller = DescribeContainerRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerResponseUnmarshaller.Instance;
 
             return Invoke<DescribeContainerRequest,DescribeContainerResponse>(request, marshaller, unmarshaller);
@@ -476,7 +476,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual Task<DescribeContainerResponse> DescribeContainerAsync(DescribeContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeContainerRequestMarshaller();
+            var marshaller = DescribeContainerRequestMarshaller.Instance;
             var unmarshaller = DescribeContainerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeContainerRequest,DescribeContainerResponse>(request, marshaller, 
@@ -511,7 +511,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual GetContainerPolicyResponse GetContainerPolicy(GetContainerPolicyRequest request)
         {
-            var marshaller = new GetContainerPolicyRequestMarshaller();
+            var marshaller = GetContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetContainerPolicyRequest,GetContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -529,7 +529,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual Task<GetContainerPolicyResponse> GetContainerPolicyAsync(GetContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetContainerPolicyRequestMarshaller();
+            var marshaller = GetContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetContainerPolicyRequest,GetContainerPolicyResponse>(request, marshaller, 
@@ -569,7 +569,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request)
         {
-            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var marshaller = GetCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetCorsPolicyRequest,GetCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -587,7 +587,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCorsPolicyRequestMarshaller();
+            var marshaller = GetCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCorsPolicyRequest,GetCorsPolicyResponse>(request, marshaller, 
@@ -625,7 +625,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual ListContainersResponse ListContainers(ListContainersRequest request)
         {
-            var marshaller = new ListContainersRequestMarshaller();
+            var marshaller = ListContainersRequestMarshaller.Instance;
             var unmarshaller = ListContainersResponseUnmarshaller.Instance;
 
             return Invoke<ListContainersRequest,ListContainersResponse>(request, marshaller, unmarshaller);
@@ -643,7 +643,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual Task<ListContainersResponse> ListContainersAsync(ListContainersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListContainersRequestMarshaller();
+            var marshaller = ListContainersRequestMarshaller.Instance;
             var unmarshaller = ListContainersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContainersRequest,ListContainersResponse>(request, marshaller, 
@@ -683,7 +683,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual PutContainerPolicyResponse PutContainerPolicy(PutContainerPolicyRequest request)
         {
-            var marshaller = new PutContainerPolicyRequestMarshaller();
+            var marshaller = PutContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutContainerPolicyRequest,PutContainerPolicyResponse>(request, marshaller, unmarshaller);
@@ -701,7 +701,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual Task<PutContainerPolicyResponse> PutContainerPolicyAsync(PutContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutContainerPolicyRequestMarshaller();
+            var marshaller = PutContainerPolicyRequestMarshaller.Instance;
             var unmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutContainerPolicyRequest,PutContainerPolicyResponse>(request, marshaller, 
@@ -743,7 +743,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request)
         {
-            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var marshaller = PutCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutCorsPolicyRequest,PutCorsPolicyResponse>(request, marshaller, unmarshaller);
@@ -761,7 +761,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutCorsPolicyRequestMarshaller();
+            var marshaller = PutCorsPolicyRequestMarshaller.Instance;
             var unmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutCorsPolicyRequest,PutCorsPolicyResponse>(request, marshaller, 

@@ -116,7 +116,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">REST API Reference for GetMediaForFragmentList Operation</seealso>
         public virtual GetMediaForFragmentListResponse GetMediaForFragmentList(GetMediaForFragmentListRequest request)
         {
-            var marshaller = new GetMediaForFragmentListRequestMarshaller();
+            var marshaller = GetMediaForFragmentListRequestMarshaller.Instance;
             var unmarshaller = GetMediaForFragmentListResponseUnmarshaller.Instance;
 
             return Invoke<GetMediaForFragmentListRequest,GetMediaForFragmentListResponse>(request, marshaller, unmarshaller);
@@ -134,7 +134,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">REST API Reference for GetMediaForFragmentList Operation</seealso>
         public virtual Task<GetMediaForFragmentListResponse> GetMediaForFragmentListAsync(GetMediaForFragmentListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMediaForFragmentListRequestMarshaller();
+            var marshaller = GetMediaForFragmentListRequestMarshaller.Instance;
             var unmarshaller = GetMediaForFragmentListResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMediaForFragmentListRequest,GetMediaForFragmentListResponse>(request, marshaller, 
@@ -170,7 +170,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">REST API Reference for ListFragments Operation</seealso>
         public virtual ListFragmentsResponse ListFragments(ListFragmentsRequest request)
         {
-            var marshaller = new ListFragmentsRequestMarshaller();
+            var marshaller = ListFragmentsRequestMarshaller.Instance;
             var unmarshaller = ListFragmentsResponseUnmarshaller.Instance;
 
             return Invoke<ListFragmentsRequest,ListFragmentsResponse>(request, marshaller, unmarshaller);
@@ -188,7 +188,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">REST API Reference for ListFragments Operation</seealso>
         public virtual Task<ListFragmentsResponse> ListFragmentsAsync(ListFragmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFragmentsRequestMarshaller();
+            var marshaller = ListFragmentsRequestMarshaller.Instance;
             var unmarshaller = ListFragmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFragmentsRequest,ListFragmentsResponse>(request, marshaller, 

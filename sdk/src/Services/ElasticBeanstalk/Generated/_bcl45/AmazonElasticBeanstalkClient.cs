@@ -263,7 +263,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
         public virtual AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request)
         {
-            var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
+            var marshaller = AbortEnvironmentUpdateRequestMarshaller.Instance;
             var unmarshaller = AbortEnvironmentUpdateResponseUnmarshaller.Instance;
 
             return Invoke<AbortEnvironmentUpdateRequest,AbortEnvironmentUpdateResponse>(request, marshaller, unmarshaller);
@@ -281,7 +281,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
         public virtual Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AbortEnvironmentUpdateRequestMarshaller();
+            var marshaller = AbortEnvironmentUpdateRequestMarshaller.Instance;
             var unmarshaller = AbortEnvironmentUpdateResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortEnvironmentUpdateRequest,AbortEnvironmentUpdateResponse>(request, marshaller, 
@@ -310,7 +310,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
         public virtual ApplyEnvironmentManagedActionResponse ApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request)
         {
-            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var marshaller = ApplyEnvironmentManagedActionRequestMarshaller.Instance;
             var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
 
             return Invoke<ApplyEnvironmentManagedActionRequest,ApplyEnvironmentManagedActionResponse>(request, marshaller, unmarshaller);
@@ -328,7 +328,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplyEnvironmentManagedAction">REST API Reference for ApplyEnvironmentManagedAction Operation</seealso>
         public virtual Task<ApplyEnvironmentManagedActionResponse> ApplyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ApplyEnvironmentManagedActionRequestMarshaller();
+            var marshaller = ApplyEnvironmentManagedActionRequestMarshaller.Instance;
             var unmarshaller = ApplyEnvironmentManagedActionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ApplyEnvironmentManagedActionRequest,ApplyEnvironmentManagedActionResponse>(request, marshaller, 
@@ -349,7 +349,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
         public virtual CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
         {
-            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
+            var marshaller = CheckDNSAvailabilityRequestMarshaller.Instance;
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
 
             return Invoke<CheckDNSAvailabilityRequest,CheckDNSAvailabilityResponse>(request, marshaller, unmarshaller);
@@ -367,7 +367,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailability">REST API Reference for CheckDNSAvailability Operation</seealso>
         public virtual Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CheckDNSAvailabilityRequestMarshaller();
+            var marshaller = CheckDNSAvailabilityRequestMarshaller.Instance;
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.Instance;
 
             return InvokeAsync<CheckDNSAvailabilityRequest,CheckDNSAvailabilityResponse>(request, marshaller, 
@@ -399,7 +399,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
         public virtual ComposeEnvironmentsResponse ComposeEnvironments(ComposeEnvironmentsRequest request)
         {
-            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var marshaller = ComposeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
 
             return Invoke<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, unmarshaller);
@@ -417,7 +417,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments">REST API Reference for ComposeEnvironments Operation</seealso>
         public virtual Task<ComposeEnvironmentsResponse> ComposeEnvironmentsAsync(ComposeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ComposeEnvironmentsRequestMarshaller();
+            var marshaller = ComposeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = ComposeEnvironmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ComposeEnvironmentsRequest,ComposeEnvironmentsResponse>(request, marshaller, 
@@ -442,7 +442,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
@@ -460,7 +460,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, 
@@ -539,7 +539,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
         {
-            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var marshaller = CreateApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreateApplicationVersionRequest,CreateApplicationVersionResponse>(request, marshaller, unmarshaller);
@@ -557,7 +557,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateApplicationVersionRequestMarshaller();
+            var marshaller = CreateApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateApplicationVersionRequest,CreateApplicationVersionResponse>(request, marshaller, 
@@ -607,7 +607,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
         public virtual CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
         {
-            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var marshaller = CreateConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
 
             return Invoke<CreateConfigurationTemplateRequest,CreateConfigurationTemplateResponse>(request, marshaller, unmarshaller);
@@ -625,7 +625,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateConfigurationTemplate">REST API Reference for CreateConfigurationTemplate Operation</seealso>
         public virtual Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateConfigurationTemplateRequestMarshaller();
+            var marshaller = CreateConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateConfigurationTemplateRequest,CreateConfigurationTemplateResponse>(request, marshaller, 
@@ -652,7 +652,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var marshaller = CreateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<CreateEnvironmentRequest,CreateEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -670,7 +670,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateEnvironmentRequestMarshaller();
+            var marshaller = CreateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEnvironmentRequest,CreateEnvironmentResponse>(request, marshaller, 
@@ -700,7 +700,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
         public virtual CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request)
         {
-            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var marshaller = CreatePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
 
             return Invoke<CreatePlatformVersionRequest,CreatePlatformVersionResponse>(request, marshaller, unmarshaller);
@@ -718,7 +718,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
         public virtual Task<CreatePlatformVersionResponse> CreatePlatformVersionAsync(CreatePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var marshaller = CreatePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePlatformVersionRequest,CreatePlatformVersionResponse>(request, marshaller, 
@@ -777,7 +777,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
         public virtual CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
         {
-            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var marshaller = CreateStorageLocationRequestMarshaller.Instance;
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
 
             return Invoke<CreateStorageLocationRequest,CreateStorageLocationResponse>(request, marshaller, unmarshaller);
@@ -822,7 +822,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation">REST API Reference for CreateStorageLocation Operation</seealso>
         public virtual Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStorageLocationRequestMarshaller();
+            var marshaller = CreateStorageLocationRequestMarshaller.Instance;
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStorageLocationRequest,CreateStorageLocationResponse>(request, marshaller, 
@@ -854,7 +854,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var marshaller = new DeleteApplicationRequestMarshaller();
+            var marshaller = DeleteApplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
@@ -872,7 +872,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteApplicationRequestMarshaller();
+            var marshaller = DeleteApplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, 
@@ -928,7 +928,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
         public virtual DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
         {
-            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var marshaller = DeleteApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteApplicationVersionRequest,DeleteApplicationVersionResponse>(request, marshaller, unmarshaller);
@@ -946,7 +946,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">REST API Reference for DeleteApplicationVersion Operation</seealso>
         public virtual Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteApplicationVersionRequestMarshaller();
+            var marshaller = DeleteApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteApplicationVersionRequest,DeleteApplicationVersionResponse>(request, marshaller, 
@@ -979,7 +979,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
         public virtual DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
         {
-            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var marshaller = DeleteConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConfigurationTemplateRequest,DeleteConfigurationTemplateResponse>(request, marshaller, unmarshaller);
@@ -997,7 +997,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">REST API Reference for DeleteConfigurationTemplate Operation</seealso>
         public virtual Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
+            var marshaller = DeleteConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConfigurationTemplateRequest,DeleteConfigurationTemplateResponse>(request, marshaller, 
@@ -1028,7 +1028,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
         public virtual DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
         {
-            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
+            var marshaller = DeleteEnvironmentConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEnvironmentConfigurationRequest,DeleteEnvironmentConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1046,7 +1046,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
         public virtual Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
+            var marshaller = DeleteEnvironmentConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEnvironmentConfigurationRequest,DeleteEnvironmentConfigurationResponse>(request, marshaller, 
@@ -1081,7 +1081,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
         public virtual DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request)
         {
-            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var marshaller = DeletePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
 
             return Invoke<DeletePlatformVersionRequest,DeletePlatformVersionResponse>(request, marshaller, unmarshaller);
@@ -1099,7 +1099,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
         public virtual Task<DeletePlatformVersionResponse> DeletePlatformVersionAsync(DeletePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var marshaller = DeletePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePlatformVersionRequest,DeletePlatformVersionResponse>(request, marshaller, 
@@ -1129,7 +1129,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
@@ -1147,7 +1147,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
@@ -1180,7 +1180,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
         public virtual DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
         {
-            var marshaller = new DescribeApplicationsRequestMarshaller();
+            var marshaller = DescribeApplicationsRequestMarshaller.Instance;
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeApplicationsRequest,DescribeApplicationsResponse>(request, marshaller, unmarshaller);
@@ -1212,7 +1212,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
         public virtual Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeApplicationsRequestMarshaller();
+            var marshaller = DescribeApplicationsRequestMarshaller.Instance;
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeApplicationsRequest,DescribeApplicationsResponse>(request, marshaller, 
@@ -1245,7 +1245,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
         public virtual DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
         {
-            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
+            var marshaller = DescribeApplicationVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeApplicationVersionsRequest,DescribeApplicationVersionsResponse>(request, marshaller, unmarshaller);
@@ -1277,7 +1277,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeApplicationVersions">REST API Reference for DescribeApplicationVersions Operation</seealso>
         public virtual Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeApplicationVersionsRequestMarshaller();
+            var marshaller = DescribeApplicationVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeApplicationVersionsRequest,DescribeApplicationVersionsResponse>(request, marshaller, 
@@ -1322,7 +1322,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
         public virtual DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
         {
-            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var marshaller = DescribeConfigurationOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationOptionsRequest,DescribeConfigurationOptionsResponse>(request, marshaller, unmarshaller);
@@ -1360,7 +1360,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationOptions">REST API Reference for DescribeConfigurationOptions Operation</seealso>
         public virtual Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
+            var marshaller = DescribeConfigurationOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConfigurationOptionsRequest,DescribeConfigurationOptionsResponse>(request, marshaller, 
@@ -1403,7 +1403,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
         public virtual DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
         {
-            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var marshaller = DescribeConfigurationSettingsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConfigurationSettingsRequest,DescribeConfigurationSettingsResponse>(request, marshaller, unmarshaller);
@@ -1421,7 +1421,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeConfigurationSettings">REST API Reference for DescribeConfigurationSettings Operation</seealso>
         public virtual Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
+            var marshaller = DescribeConfigurationSettingsRequestMarshaller.Instance;
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeConfigurationSettingsRequest,DescribeConfigurationSettingsResponse>(request, marshaller, 
@@ -1450,7 +1450,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
         public virtual DescribeEnvironmentHealthResponse DescribeEnvironmentHealth(DescribeEnvironmentHealthRequest request)
         {
-            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var marshaller = DescribeEnvironmentHealthRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentHealthRequest,DescribeEnvironmentHealthResponse>(request, marshaller, unmarshaller);
@@ -1468,7 +1468,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentHealth">REST API Reference for DescribeEnvironmentHealth Operation</seealso>
         public virtual Task<DescribeEnvironmentHealthResponse> DescribeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentHealthRequestMarshaller();
+            var marshaller = DescribeEnvironmentHealthRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentHealthResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentHealthRequest,DescribeEnvironmentHealthResponse>(request, marshaller, 
@@ -1492,7 +1492,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
         public virtual DescribeEnvironmentManagedActionHistoryResponse DescribeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request)
         {
-            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var marshaller = DescribeEnvironmentManagedActionHistoryRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentManagedActionHistoryRequest,DescribeEnvironmentManagedActionHistoryResponse>(request, marshaller, unmarshaller);
@@ -1510,7 +1510,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionHistory">REST API Reference for DescribeEnvironmentManagedActionHistory Operation</seealso>
         public virtual Task<DescribeEnvironmentManagedActionHistoryResponse> DescribeEnvironmentManagedActionHistoryAsync(DescribeEnvironmentManagedActionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentManagedActionHistoryRequestMarshaller();
+            var marshaller = DescribeEnvironmentManagedActionHistoryRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentManagedActionHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentManagedActionHistoryRequest,DescribeEnvironmentManagedActionHistoryResponse>(request, marshaller, 
@@ -1534,7 +1534,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
         public virtual DescribeEnvironmentManagedActionsResponse DescribeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request)
         {
-            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var marshaller = DescribeEnvironmentManagedActionsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentManagedActionsRequest,DescribeEnvironmentManagedActionsResponse>(request, marshaller, unmarshaller);
@@ -1552,7 +1552,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActions">REST API Reference for DescribeEnvironmentManagedActions Operation</seealso>
         public virtual Task<DescribeEnvironmentManagedActionsResponse> DescribeEnvironmentManagedActionsAsync(DescribeEnvironmentManagedActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentManagedActionsRequestMarshaller();
+            var marshaller = DescribeEnvironmentManagedActionsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentManagedActionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentManagedActionsRequest,DescribeEnvironmentManagedActionsResponse>(request, marshaller, 
@@ -1576,7 +1576,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
         public virtual DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
         {
-            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var marshaller = DescribeEnvironmentResourcesRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentResourcesRequest,DescribeEnvironmentResourcesResponse>(request, marshaller, unmarshaller);
@@ -1594,7 +1594,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
         public virtual Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
+            var marshaller = DescribeEnvironmentResourcesRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentResourcesRequest,DescribeEnvironmentResourcesResponse>(request, marshaller, 
@@ -1627,7 +1627,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
         public virtual DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
         {
-            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var marshaller = DescribeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, unmarshaller);
@@ -1659,7 +1659,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">REST API Reference for DescribeEnvironments Operation</seealso>
         public virtual Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEnvironmentsRequestMarshaller();
+            var marshaller = DescribeEnvironmentsRequestMarshaller.Instance;
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEnvironmentsRequest,DescribeEnvironmentsResponse>(request, marshaller, 
@@ -1704,7 +1704,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
@@ -1742,7 +1742,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, 
@@ -1772,7 +1772,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
         public virtual DescribeInstancesHealthResponse DescribeInstancesHealth(DescribeInstancesHealthRequest request)
         {
-            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var marshaller = DescribeInstancesHealthRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
 
             return Invoke<DescribeInstancesHealthRequest,DescribeInstancesHealthResponse>(request, marshaller, unmarshaller);
@@ -1790,7 +1790,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealth">REST API Reference for DescribeInstancesHealth Operation</seealso>
         public virtual Task<DescribeInstancesHealthResponse> DescribeInstancesHealthAsync(DescribeInstancesHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeInstancesHealthRequestMarshaller();
+            var marshaller = DescribeInstancesHealthRequestMarshaller.Instance;
             var unmarshaller = DescribeInstancesHealthResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstancesHealthRequest,DescribeInstancesHealthResponse>(request, marshaller, 
@@ -1817,7 +1817,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
         public virtual DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request)
         {
-            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var marshaller = DescribePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
 
             return Invoke<DescribePlatformVersionRequest,DescribePlatformVersionResponse>(request, marshaller, unmarshaller);
@@ -1835,7 +1835,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
         public virtual Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var marshaller = DescribePlatformVersionRequestMarshaller.Instance;
             var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePlatformVersionRequest,DescribePlatformVersionResponse>(request, marshaller, 
@@ -1870,7 +1870,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
         public virtual ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
         {
-            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
+            var marshaller = ListAvailableSolutionStacksRequestMarshaller.Instance;
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
 
             return Invoke<ListAvailableSolutionStacksRequest,ListAvailableSolutionStacksResponse>(request, marshaller, unmarshaller);
@@ -1903,7 +1903,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
         public virtual Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
+            var marshaller = ListAvailableSolutionStacksRequestMarshaller.Instance;
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAvailableSolutionStacksRequest,ListAvailableSolutionStacksResponse>(request, marshaller, 
@@ -1930,7 +1930,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
         public virtual ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request)
         {
-            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var marshaller = ListPlatformVersionsRequestMarshaller.Instance;
             var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
 
             return Invoke<ListPlatformVersionsRequest,ListPlatformVersionsResponse>(request, marshaller, unmarshaller);
@@ -1948,7 +1948,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
         public virtual Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var marshaller = ListPlatformVersionsRequestMarshaller.Instance;
             var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPlatformVersionsRequest,ListPlatformVersionsResponse>(request, marshaller, 
@@ -1986,7 +1986,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2004,7 +2004,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
@@ -2029,7 +2029,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
         public virtual RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
         {
-            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var marshaller = RebuildEnvironmentRequestMarshaller.Instance;
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<RebuildEnvironmentRequest,RebuildEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -2047,7 +2047,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
         public virtual Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RebuildEnvironmentRequestMarshaller();
+            var marshaller = RebuildEnvironmentRequestMarshaller.Instance;
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebuildEnvironmentRequest,RebuildEnvironmentResponse>(request, marshaller, 
@@ -2094,7 +2094,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
         public virtual RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
         {
-            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
+            var marshaller = RequestEnvironmentInfoRequestMarshaller.Instance;
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
 
             return Invoke<RequestEnvironmentInfoRequest,RequestEnvironmentInfoResponse>(request, marshaller, unmarshaller);
@@ -2112,7 +2112,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RequestEnvironmentInfo">REST API Reference for RequestEnvironmentInfo Operation</seealso>
         public virtual Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RequestEnvironmentInfoRequestMarshaller();
+            var marshaller = RequestEnvironmentInfoRequestMarshaller.Instance;
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.Instance;
 
             return InvokeAsync<RequestEnvironmentInfoRequest,RequestEnvironmentInfoResponse>(request, marshaller, 
@@ -2134,7 +2134,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
         public virtual RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
         {
-            var marshaller = new RestartAppServerRequestMarshaller();
+            var marshaller = RestartAppServerRequestMarshaller.Instance;
             var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
 
             return Invoke<RestartAppServerRequest,RestartAppServerResponse>(request, marshaller, unmarshaller);
@@ -2152,7 +2152,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RestartAppServer">REST API Reference for RestartAppServer Operation</seealso>
         public virtual Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RestartAppServerRequestMarshaller();
+            var marshaller = RestartAppServerRequestMarshaller.Instance;
             var unmarshaller = RestartAppServerResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestartAppServerRequest,RestartAppServerResponse>(request, marshaller, 
@@ -2183,7 +2183,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
         public virtual RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
         {
-            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
+            var marshaller = RetrieveEnvironmentInfoRequestMarshaller.Instance;
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
 
             return Invoke<RetrieveEnvironmentInfoRequest,RetrieveEnvironmentInfoResponse>(request, marshaller, unmarshaller);
@@ -2201,7 +2201,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfo">REST API Reference for RetrieveEnvironmentInfo Operation</seealso>
         public virtual Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
+            var marshaller = RetrieveEnvironmentInfoRequestMarshaller.Instance;
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.Instance;
 
             return InvokeAsync<RetrieveEnvironmentInfoRequest,RetrieveEnvironmentInfoResponse>(request, marshaller, 
@@ -2222,7 +2222,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
         public virtual SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
         {
-            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
+            var marshaller = SwapEnvironmentCNAMEsRequestMarshaller.Instance;
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
 
             return Invoke<SwapEnvironmentCNAMEsRequest,SwapEnvironmentCNAMEsResponse>(request, marshaller, unmarshaller);
@@ -2240,7 +2240,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SwapEnvironmentCNAMEs">REST API Reference for SwapEnvironmentCNAMEs Operation</seealso>
         public virtual Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
+            var marshaller = SwapEnvironmentCNAMEsRequestMarshaller.Instance;
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SwapEnvironmentCNAMEsRequest,SwapEnvironmentCNAMEsResponse>(request, marshaller, 
@@ -2264,7 +2264,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
         public virtual TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
         {
-            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var marshaller = TerminateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<TerminateEnvironmentRequest,TerminateEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -2282,7 +2282,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
         public virtual Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TerminateEnvironmentRequestMarshaller();
+            var marshaller = TerminateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateEnvironmentRequest,TerminateEnvironmentResponse>(request, marshaller, 
@@ -2310,7 +2310,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
@@ -2328,7 +2328,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, 
@@ -2352,7 +2352,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
         public virtual UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request)
         {
-            var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
+            var marshaller = UpdateApplicationResourceLifecycleRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApplicationResourceLifecycleRequest,UpdateApplicationResourceLifecycleResponse>(request, marshaller, unmarshaller);
@@ -2370,7 +2370,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
         public virtual Task<UpdateApplicationResourceLifecycleResponse> UpdateApplicationResourceLifecycleAsync(UpdateApplicationResourceLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
+            var marshaller = UpdateApplicationResourceLifecycleRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApplicationResourceLifecycleRequest,UpdateApplicationResourceLifecycleResponse>(request, marshaller, 
@@ -2398,7 +2398,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
         public virtual UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
         {
-            var marshaller = new UpdateApplicationVersionRequestMarshaller();
+            var marshaller = UpdateApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApplicationVersionRequest,UpdateApplicationVersionResponse>(request, marshaller, unmarshaller);
@@ -2416,7 +2416,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">REST API Reference for UpdateApplicationVersion Operation</seealso>
         public virtual Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateApplicationVersionRequestMarshaller();
+            var marshaller = UpdateApplicationVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApplicationVersionRequest,UpdateApplicationVersionResponse>(request, marshaller, 
@@ -2459,7 +2459,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
         public virtual UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
         {
-            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var marshaller = UpdateConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConfigurationTemplateRequest,UpdateConfigurationTemplateResponse>(request, marshaller, unmarshaller);
@@ -2477,7 +2477,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">REST API Reference for UpdateConfigurationTemplate Operation</seealso>
         public virtual Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
+            var marshaller = UpdateConfigurationTemplateRequestMarshaller.Instance;
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationTemplateRequest,UpdateConfigurationTemplateResponse>(request, marshaller, 
@@ -2519,7 +2519,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var marshaller = UpdateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, unmarshaller);
@@ -2537,7 +2537,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateEnvironmentRequestMarshaller();
+            var marshaller = UpdateEnvironmentRequestMarshaller.Instance;
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEnvironmentRequest,UpdateEnvironmentResponse>(request, marshaller, 
@@ -2609,7 +2609,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
         public virtual UpdateTagsForResourceResponse UpdateTagsForResource(UpdateTagsForResourceRequest request)
         {
-            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var marshaller = UpdateTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTagsForResourceRequest,UpdateTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2627,7 +2627,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource">REST API Reference for UpdateTagsForResource Operation</seealso>
         public virtual Task<UpdateTagsForResourceResponse> UpdateTagsForResourceAsync(UpdateTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateTagsForResourceRequestMarshaller();
+            var marshaller = UpdateTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = UpdateTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTagsForResourceRequest,UpdateTagsForResourceResponse>(request, marshaller, 
@@ -2661,7 +2661,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
         public virtual ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
         {
-            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var marshaller = ValidateConfigurationSettingsRequestMarshaller.Instance;
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
 
             return Invoke<ValidateConfigurationSettingsRequest,ValidateConfigurationSettingsResponse>(request, marshaller, unmarshaller);
@@ -2679,7 +2679,7 @@ namespace Amazon.ElasticBeanstalk
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ValidateConfigurationSettings">REST API Reference for ValidateConfigurationSettings Operation</seealso>
         public virtual Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
+            var marshaller = ValidateConfigurationSettingsRequestMarshaller.Instance;
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ValidateConfigurationSettingsRequest,ValidateConfigurationSettingsResponse>(request, marshaller, 

@@ -280,7 +280,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
@@ -298,7 +298,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, 
@@ -386,7 +386,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         public virtual CreateHapgResponse CreateHapg(CreateHapgRequest request)
         {
-            var marshaller = new CreateHapgRequestMarshaller();
+            var marshaller = CreateHapgRequestMarshaller.Instance;
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
 
             return Invoke<CreateHapgRequest,CreateHapgResponse>(request, marshaller, unmarshaller);
@@ -448,7 +448,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg">REST API Reference for CreateHapg Operation</seealso>
         public virtual Task<CreateHapgResponse> CreateHapgAsync(CreateHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateHapgRequestMarshaller();
+            var marshaller = CreateHapgRequestMarshaller.Instance;
             var unmarshaller = CreateHapgResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateHapgRequest,CreateHapgResponse>(request, marshaller, 
@@ -508,7 +508,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         public virtual CreateHsmResponse CreateHsm(CreateHsmRequest request)
         {
-            var marshaller = new CreateHsmRequestMarshaller();
+            var marshaller = CreateHsmRequestMarshaller.Instance;
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
             return Invoke<CreateHsmRequest,CreateHsmResponse>(request, marshaller, unmarshaller);
@@ -526,7 +526,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         public virtual Task<CreateHsmResponse> CreateHsmAsync(CreateHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateHsmRequestMarshaller();
+            var marshaller = CreateHsmRequestMarshaller.Instance;
             var unmarshaller = CreateHsmResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateHsmRequest,CreateHsmResponse>(request, marshaller, 
@@ -572,7 +572,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         public virtual CreateLunaClientResponse CreateLunaClient(CreateLunaClientRequest request)
         {
-            var marshaller = new CreateLunaClientRequestMarshaller();
+            var marshaller = CreateLunaClientRequestMarshaller.Instance;
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
 
             return Invoke<CreateLunaClientRequest,CreateLunaClientResponse>(request, marshaller, unmarshaller);
@@ -590,7 +590,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient">REST API Reference for CreateLunaClient Operation</seealso>
         public virtual Task<CreateLunaClientResponse> CreateLunaClientAsync(CreateLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateLunaClientRequestMarshaller();
+            var marshaller = CreateLunaClientRequestMarshaller.Instance;
             var unmarshaller = CreateLunaClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLunaClientRequest,CreateLunaClientResponse>(request, marshaller, 
@@ -676,7 +676,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         public virtual DeleteHapgResponse DeleteHapg(DeleteHapgRequest request)
         {
-            var marshaller = new DeleteHapgRequestMarshaller();
+            var marshaller = DeleteHapgRequestMarshaller.Instance;
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
 
             return Invoke<DeleteHapgRequest,DeleteHapgResponse>(request, marshaller, unmarshaller);
@@ -737,7 +737,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg">REST API Reference for DeleteHapg Operation</seealso>
         public virtual Task<DeleteHapgResponse> DeleteHapgAsync(DeleteHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteHapgRequestMarshaller();
+            var marshaller = DeleteHapgRequestMarshaller.Instance;
             var unmarshaller = DeleteHapgResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHapgRequest,DeleteHapgResponse>(request, marshaller, 
@@ -825,7 +825,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         public virtual DeleteHsmResponse DeleteHsm(DeleteHsmRequest request)
         {
-            var marshaller = new DeleteHsmRequestMarshaller();
+            var marshaller = DeleteHsmRequestMarshaller.Instance;
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
             return Invoke<DeleteHsmRequest,DeleteHsmResponse>(request, marshaller, unmarshaller);
@@ -887,7 +887,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm">REST API Reference for DeleteHsm Operation</seealso>
         public virtual Task<DeleteHsmResponse> DeleteHsmAsync(DeleteHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteHsmRequestMarshaller();
+            var marshaller = DeleteHsmRequestMarshaller.Instance;
             var unmarshaller = DeleteHsmResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHsmRequest,DeleteHsmResponse>(request, marshaller, 
@@ -973,7 +973,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         public virtual DeleteLunaClientResponse DeleteLunaClient(DeleteLunaClientRequest request)
         {
-            var marshaller = new DeleteLunaClientRequestMarshaller();
+            var marshaller = DeleteLunaClientRequestMarshaller.Instance;
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLunaClientRequest,DeleteLunaClientResponse>(request, marshaller, unmarshaller);
@@ -1034,7 +1034,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient">REST API Reference for DeleteLunaClient Operation</seealso>
         public virtual Task<DeleteLunaClientResponse> DeleteLunaClientAsync(DeleteLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLunaClientRequestMarshaller();
+            var marshaller = DeleteLunaClientRequestMarshaller.Instance;
             var unmarshaller = DeleteLunaClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLunaClientRequest,DeleteLunaClientResponse>(request, marshaller, 
@@ -1120,7 +1120,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         public virtual DescribeHapgResponse DescribeHapg(DescribeHapgRequest request)
         {
-            var marshaller = new DescribeHapgRequestMarshaller();
+            var marshaller = DescribeHapgRequestMarshaller.Instance;
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
 
             return Invoke<DescribeHapgRequest,DescribeHapgResponse>(request, marshaller, unmarshaller);
@@ -1181,7 +1181,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg">REST API Reference for DescribeHapg Operation</seealso>
         public virtual Task<DescribeHapgResponse> DescribeHapgAsync(DescribeHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeHapgRequestMarshaller();
+            var marshaller = DescribeHapgRequestMarshaller.Instance;
             var unmarshaller = DescribeHapgResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeHapgRequest,DescribeHapgResponse>(request, marshaller, 
@@ -1269,7 +1269,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         public virtual DescribeHsmResponse DescribeHsm(DescribeHsmRequest request)
         {
-            var marshaller = new DescribeHsmRequestMarshaller();
+            var marshaller = DescribeHsmRequestMarshaller.Instance;
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
 
             return Invoke<DescribeHsmRequest,DescribeHsmResponse>(request, marshaller, unmarshaller);
@@ -1331,7 +1331,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm">REST API Reference for DescribeHsm Operation</seealso>
         public virtual Task<DescribeHsmResponse> DescribeHsmAsync(DescribeHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeHsmRequestMarshaller();
+            var marshaller = DescribeHsmRequestMarshaller.Instance;
             var unmarshaller = DescribeHsmResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeHsmRequest,DescribeHsmResponse>(request, marshaller, 
@@ -1377,7 +1377,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         public virtual DescribeLunaClientResponse DescribeLunaClient(DescribeLunaClientRequest request)
         {
-            var marshaller = new DescribeLunaClientRequestMarshaller();
+            var marshaller = DescribeLunaClientRequestMarshaller.Instance;
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
 
             return Invoke<DescribeLunaClientRequest,DescribeLunaClientResponse>(request, marshaller, unmarshaller);
@@ -1395,7 +1395,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient">REST API Reference for DescribeLunaClient Operation</seealso>
         public virtual Task<DescribeLunaClientResponse> DescribeLunaClientAsync(DescribeLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeLunaClientRequestMarshaller();
+            var marshaller = DescribeLunaClientRequestMarshaller.Instance;
             var unmarshaller = DescribeLunaClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLunaClientRequest,DescribeLunaClientResponse>(request, marshaller, 
@@ -1442,7 +1442,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         public virtual GetConfigResponse GetConfig(GetConfigRequest request)
         {
-            var marshaller = new GetConfigRequestMarshaller();
+            var marshaller = GetConfigRequestMarshaller.Instance;
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
 
             return Invoke<GetConfigRequest,GetConfigResponse>(request, marshaller, unmarshaller);
@@ -1460,7 +1460,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig">REST API Reference for GetConfig Operation</seealso>
         public virtual Task<GetConfigResponse> GetConfigAsync(GetConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetConfigRequestMarshaller();
+            var marshaller = GetConfigRequestMarshaller.Instance;
             var unmarshaller = GetConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConfigRequest,GetConfigResponse>(request, marshaller, 
@@ -1544,7 +1544,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         public virtual ListAvailableZonesResponse ListAvailableZones(ListAvailableZonesRequest request)
         {
-            var marshaller = new ListAvailableZonesRequestMarshaller();
+            var marshaller = ListAvailableZonesRequestMarshaller.Instance;
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
 
             return Invoke<ListAvailableZonesRequest,ListAvailableZonesResponse>(request, marshaller, unmarshaller);
@@ -1603,7 +1603,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones">REST API Reference for ListAvailableZones Operation</seealso>
         public virtual Task<ListAvailableZonesResponse> ListAvailableZonesAsync(ListAvailableZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAvailableZonesRequestMarshaller();
+            var marshaller = ListAvailableZonesRequestMarshaller.Instance;
             var unmarshaller = ListAvailableZonesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAvailableZonesRequest,ListAvailableZonesResponse>(request, marshaller, 
@@ -1701,7 +1701,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         public virtual ListHapgsResponse ListHapgs(ListHapgsRequest request)
         {
-            var marshaller = new ListHapgsRequestMarshaller();
+            var marshaller = ListHapgsRequestMarshaller.Instance;
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
 
             return Invoke<ListHapgsRequest,ListHapgsResponse>(request, marshaller, unmarshaller);
@@ -1767,7 +1767,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs">REST API Reference for ListHapgs Operation</seealso>
         public virtual Task<ListHapgsResponse> ListHapgsAsync(ListHapgsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListHapgsRequestMarshaller();
+            var marshaller = ListHapgsRequestMarshaller.Instance;
             var unmarshaller = ListHapgsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListHapgsRequest,ListHapgsResponse>(request, marshaller, 
@@ -1865,7 +1865,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         public virtual ListHsmsResponse ListHsms(ListHsmsRequest request)
         {
-            var marshaller = new ListHsmsRequestMarshaller();
+            var marshaller = ListHsmsRequestMarshaller.Instance;
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
 
             return Invoke<ListHsmsRequest,ListHsmsResponse>(request, marshaller, unmarshaller);
@@ -1931,7 +1931,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms">REST API Reference for ListHsms Operation</seealso>
         public virtual Task<ListHsmsResponse> ListHsmsAsync(ListHsmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListHsmsRequestMarshaller();
+            var marshaller = ListHsmsRequestMarshaller.Instance;
             var unmarshaller = ListHsmsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListHsmsRequest,ListHsmsResponse>(request, marshaller, 
@@ -2029,7 +2029,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         public virtual ListLunaClientsResponse ListLunaClients(ListLunaClientsRequest request)
         {
-            var marshaller = new ListLunaClientsRequestMarshaller();
+            var marshaller = ListLunaClientsRequestMarshaller.Instance;
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
 
             return Invoke<ListLunaClientsRequest,ListLunaClientsResponse>(request, marshaller, unmarshaller);
@@ -2095,7 +2095,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients">REST API Reference for ListLunaClients Operation</seealso>
         public virtual Task<ListLunaClientsResponse> ListLunaClientsAsync(ListLunaClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListLunaClientsRequestMarshaller();
+            var marshaller = ListLunaClientsRequestMarshaller.Instance;
             var unmarshaller = ListLunaClientsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLunaClientsRequest,ListLunaClientsResponse>(request, marshaller, 
@@ -2141,7 +2141,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2159,7 +2159,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
@@ -2205,7 +2205,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         public virtual ModifyHapgResponse ModifyHapg(ModifyHapgRequest request)
         {
-            var marshaller = new ModifyHapgRequestMarshaller();
+            var marshaller = ModifyHapgRequestMarshaller.Instance;
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
 
             return Invoke<ModifyHapgRequest,ModifyHapgResponse>(request, marshaller, unmarshaller);
@@ -2223,7 +2223,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg">REST API Reference for ModifyHapg Operation</seealso>
         public virtual Task<ModifyHapgResponse> ModifyHapgAsync(ModifyHapgRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ModifyHapgRequestMarshaller();
+            var marshaller = ModifyHapgRequestMarshaller.Instance;
             var unmarshaller = ModifyHapgResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyHapgRequest,ModifyHapgResponse>(request, marshaller, 
@@ -2277,7 +2277,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         public virtual ModifyHsmResponse ModifyHsm(ModifyHsmRequest request)
         {
-            var marshaller = new ModifyHsmRequestMarshaller();
+            var marshaller = ModifyHsmRequestMarshaller.Instance;
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
 
             return Invoke<ModifyHsmRequest,ModifyHsmResponse>(request, marshaller, unmarshaller);
@@ -2295,7 +2295,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">REST API Reference for ModifyHsm Operation</seealso>
         public virtual Task<ModifyHsmResponse> ModifyHsmAsync(ModifyHsmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ModifyHsmRequestMarshaller();
+            var marshaller = ModifyHsmRequestMarshaller.Instance;
             var unmarshaller = ModifyHsmResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyHsmRequest,ModifyHsmResponse>(request, marshaller, 
@@ -2340,7 +2340,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         public virtual ModifyLunaClientResponse ModifyLunaClient(ModifyLunaClientRequest request)
         {
-            var marshaller = new ModifyLunaClientRequestMarshaller();
+            var marshaller = ModifyLunaClientRequestMarshaller.Instance;
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
 
             return Invoke<ModifyLunaClientRequest,ModifyLunaClientResponse>(request, marshaller, unmarshaller);
@@ -2358,7 +2358,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient">REST API Reference for ModifyLunaClient Operation</seealso>
         public virtual Task<ModifyLunaClientResponse> ModifyLunaClientAsync(ModifyLunaClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ModifyLunaClientRequestMarshaller();
+            var marshaller = ModifyLunaClientRequestMarshaller.Instance;
             var unmarshaller = ModifyLunaClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyLunaClientRequest,ModifyLunaClientResponse>(request, marshaller, 
@@ -2409,7 +2409,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
@@ -2427,7 +2427,7 @@ namespace Amazon.CloudHSM
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, 

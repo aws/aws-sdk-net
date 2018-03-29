@@ -129,7 +129,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual SearchResponse Search(SearchRequest request)
         {
-            var marshaller = new SearchRequestMarshaller();
+            var marshaller = SearchRequestMarshaller.Instance;
             var unmarshaller = SearchResponseUnmarshaller.Instance;
 
             return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
@@ -146,7 +146,7 @@ namespace Amazon.CloudSearchDomain
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SearchRequestMarshaller();
+            var marshaller = SearchRequestMarshaller.Instance;
             var unmarshaller = SearchResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchRequest,SearchResponse>(request, marshaller, 
@@ -189,7 +189,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
-            var marshaller = new SuggestRequestMarshaller();
+            var marshaller = SuggestRequestMarshaller.Instance;
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
 
             return Invoke<SuggestRequest,SuggestResponse>(request, marshaller, unmarshaller);
@@ -206,7 +206,7 @@ namespace Amazon.CloudSearchDomain
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SuggestRequestMarshaller();
+            var marshaller = SuggestRequestMarshaller.Instance;
             var unmarshaller = SuggestResponseUnmarshaller.Instance;
 
             return InvokeAsync<SuggestRequest,SuggestResponse>(request, marshaller, 
@@ -253,7 +253,7 @@ namespace Amazon.CloudSearchDomain
         /// </exception>
         public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
-            var marshaller = new UploadDocumentsRequestMarshaller();
+            var marshaller = UploadDocumentsRequestMarshaller.Instance;
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 
             return Invoke<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, unmarshaller);
@@ -270,7 +270,7 @@ namespace Amazon.CloudSearchDomain
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UploadDocumentsResponse> UploadDocumentsAsync(UploadDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadDocumentsRequestMarshaller();
+            var marshaller = UploadDocumentsRequestMarshaller.Instance;
             var unmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadDocumentsRequest,UploadDocumentsResponse>(request, marshaller, 

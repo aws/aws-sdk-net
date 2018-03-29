@@ -242,7 +242,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
-            var marshaller = new BatchGetTracesRequestMarshaller();
+            var marshaller = BatchGetTracesRequestMarshaller.Instance;
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetTracesRequest,BatchGetTracesResponse>(request, marshaller, unmarshaller);
@@ -261,7 +261,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchGetTracesRequestMarshaller();
+            var marshaller = BatchGetTracesRequestMarshaller.Instance;
             var unmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchGetTracesRequest>(request, marshaller, unmarshaller,
@@ -302,7 +302,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
-            var marshaller = new GetServiceGraphRequestMarshaller();
+            var marshaller = GetServiceGraphRequestMarshaller.Instance;
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
             return Invoke<GetServiceGraphRequest,GetServiceGraphResponse>(request, marshaller, unmarshaller);
@@ -321,7 +321,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetServiceGraphRequestMarshaller();
+            var marshaller = GetServiceGraphRequestMarshaller.Instance;
             var unmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetServiceGraphRequest>(request, marshaller, unmarshaller,
@@ -358,7 +358,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
-            var marshaller = new GetTraceGraphRequestMarshaller();
+            var marshaller = GetTraceGraphRequestMarshaller.Instance;
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
             return Invoke<GetTraceGraphRequest,GetTraceGraphResponse>(request, marshaller, unmarshaller);
@@ -377,7 +377,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTraceGraphRequestMarshaller();
+            var marshaller = GetTraceGraphRequestMarshaller.Instance;
             var unmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTraceGraphRequest>(request, marshaller, unmarshaller,
@@ -441,7 +441,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
-            var marshaller = new GetTraceSummariesRequestMarshaller();
+            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
             return Invoke<GetTraceSummariesRequest,GetTraceSummariesResponse>(request, marshaller, unmarshaller);
@@ -460,7 +460,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTraceSummariesRequestMarshaller();
+            var marshaller = GetTraceSummariesRequestMarshaller.Instance;
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTraceSummariesRequest>(request, marshaller, unmarshaller,
@@ -497,7 +497,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
-            var marshaller = new PutTelemetryRecordsRequestMarshaller();
+            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
             return Invoke<PutTelemetryRecordsRequest,PutTelemetryRecordsResponse>(request, marshaller, unmarshaller);
@@ -516,7 +516,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutTelemetryRecordsRequestMarshaller();
+            var marshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             var unmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutTelemetryRecordsRequest>(request, marshaller, unmarshaller,
@@ -619,7 +619,7 @@ namespace Amazon.XRay
         /// </exception>
         public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
-            var marshaller = new PutTraceSegmentsRequestMarshaller();
+            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return Invoke<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, unmarshaller);
@@ -638,7 +638,7 @@ namespace Amazon.XRay
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutTraceSegmentsRequestMarshaller();
+            var marshaller = PutTraceSegmentsRequestMarshaller.Instance;
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutTraceSegmentsRequest>(request, marshaller, unmarshaller,

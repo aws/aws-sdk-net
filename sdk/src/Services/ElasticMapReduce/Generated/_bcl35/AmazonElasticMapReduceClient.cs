@@ -250,7 +250,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
         public virtual AddInstanceFleetResponse AddInstanceFleet(AddInstanceFleetRequest request)
         {
-            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var marshaller = AddInstanceFleetRequestMarshaller.Instance;
             var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
 
             return Invoke<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, unmarshaller);
@@ -270,7 +270,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
         public virtual IAsyncResult BeginAddInstanceFleet(AddInstanceFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var marshaller = AddInstanceFleetRequestMarshaller.Instance;
             var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddInstanceFleetRequest>(request, marshaller, unmarshaller,
@@ -307,7 +307,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public virtual AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
-            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var marshaller = AddInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
 
             return Invoke<AddInstanceGroupsRequest,AddInstanceGroupsResponse>(request, marshaller, unmarshaller);
@@ -327,7 +327,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public virtual IAsyncResult BeginAddInstanceGroups(AddInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddInstanceGroupsRequestMarshaller();
+            var marshaller = AddInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = AddInstanceGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddInstanceGroupsRequest>(request, marshaller, unmarshaller,
@@ -393,7 +393,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public virtual AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
-            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var marshaller = AddJobFlowStepsRequestMarshaller.Instance;
             var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
 
             return Invoke<AddJobFlowStepsRequest,AddJobFlowStepsResponse>(request, marshaller, unmarshaller);
@@ -413,7 +413,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public virtual IAsyncResult BeginAddJobFlowSteps(AddJobFlowStepsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddJobFlowStepsRequestMarshaller();
+            var marshaller = AddJobFlowStepsRequestMarshaller.Instance;
             var unmarshaller = AddJobFlowStepsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddJobFlowStepsRequest>(request, marshaller, unmarshaller,
@@ -455,7 +455,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
@@ -475,7 +475,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
@@ -519,7 +519,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public virtual CancelStepsResponse CancelSteps(CancelStepsRequest request)
         {
-            var marshaller = new CancelStepsRequestMarshaller();
+            var marshaller = CancelStepsRequestMarshaller.Instance;
             var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
 
             return Invoke<CancelStepsRequest,CancelStepsResponse>(request, marshaller, unmarshaller);
@@ -539,7 +539,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public virtual IAsyncResult BeginCancelSteps(CancelStepsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CancelStepsRequestMarshaller();
+            var marshaller = CancelStepsRequestMarshaller.Instance;
             var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CancelStepsRequest>(request, marshaller, unmarshaller,
@@ -579,7 +579,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
-            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
@@ -599,7 +599,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateSecurityConfiguration(CreateSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSecurityConfigurationRequest>(request, marshaller, unmarshaller,
@@ -638,7 +638,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
         {
-            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
@@ -658,7 +658,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSecurityConfigurationRequest>(request, marshaller, unmarshaller,
@@ -716,7 +716,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var marshaller = new DescribeClusterRequestMarshaller();
+            var marshaller = DescribeClusterRequestMarshaller.Instance;
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
             return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
@@ -736,7 +736,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeClusterRequestMarshaller();
+            var marshaller = DescribeClusterRequestMarshaller.Instance;
             var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeClusterRequest>(request, marshaller, unmarshaller,
@@ -856,7 +856,7 @@ namespace Amazon.ElasticMapReduce
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public virtual DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
-            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var marshaller = DescribeJobFlowsRequestMarshaller.Instance;
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, unmarshaller);
@@ -877,7 +877,7 @@ namespace Amazon.ElasticMapReduce
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public virtual IAsyncResult BeginDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeJobFlowsRequestMarshaller();
+            var marshaller = DescribeJobFlowsRequestMarshaller.Instance;
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeJobFlowsRequest>(request, marshaller, unmarshaller,
@@ -917,7 +917,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public virtual DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
         {
-            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var marshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, unmarshaller);
@@ -937,7 +937,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var marshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
             var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSecurityConfigurationRequest>(request, marshaller, unmarshaller,
@@ -993,7 +993,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public virtual DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
-            var marshaller = new DescribeStepRequestMarshaller();
+            var marshaller = DescribeStepRequestMarshaller.Instance;
             var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStepRequest,DescribeStepResponse>(request, marshaller, unmarshaller);
@@ -1013,7 +1013,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public virtual IAsyncResult BeginDescribeStep(DescribeStepRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeStepRequestMarshaller();
+            var marshaller = DescribeStepRequestMarshaller.Instance;
             var unmarshaller = DescribeStepResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeStepRequest>(request, marshaller, unmarshaller,
@@ -1069,7 +1069,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public virtual ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
-            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var marshaller = ListBootstrapActionsRequestMarshaller.Instance;
             var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
 
             return Invoke<ListBootstrapActionsRequest,ListBootstrapActionsResponse>(request, marshaller, unmarshaller);
@@ -1089,7 +1089,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public virtual IAsyncResult BeginListBootstrapActions(ListBootstrapActionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var marshaller = ListBootstrapActionsRequestMarshaller.Instance;
             var unmarshaller = ListBootstrapActionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListBootstrapActionsRequest>(request, marshaller, unmarshaller,
@@ -1153,7 +1153,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
@@ -1173,7 +1173,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListClustersRequestMarshaller();
+            var marshaller = ListClustersRequestMarshaller.Instance;
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListClustersRequest>(request, marshaller, unmarshaller,
@@ -1219,7 +1219,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
         public virtual ListInstanceFleetsResponse ListInstanceFleets(ListInstanceFleetsRequest request)
         {
-            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var marshaller = ListInstanceFleetsRequestMarshaller.Instance;
             var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
 
             return Invoke<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, unmarshaller);
@@ -1239,7 +1239,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
         public virtual IAsyncResult BeginListInstanceFleets(ListInstanceFleetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var marshaller = ListInstanceFleetsRequestMarshaller.Instance;
             var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListInstanceFleetsRequest>(request, marshaller, unmarshaller,
@@ -1295,7 +1295,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public virtual ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
-            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var marshaller = ListInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListInstanceGroupsRequest,ListInstanceGroupsResponse>(request, marshaller, unmarshaller);
@@ -1315,7 +1315,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public virtual IAsyncResult BeginListInstanceGroups(ListInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var marshaller = ListInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = ListInstanceGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListInstanceGroupsRequest>(request, marshaller, unmarshaller,
@@ -1375,7 +1375,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var marshaller = new ListInstancesRequestMarshaller();
+            var marshaller = ListInstancesRequestMarshaller.Instance;
             var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
             return Invoke<ListInstancesRequest,ListInstancesResponse>(request, marshaller, unmarshaller);
@@ -1395,7 +1395,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual IAsyncResult BeginListInstances(ListInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListInstancesRequestMarshaller();
+            var marshaller = ListInstancesRequestMarshaller.Instance;
             var unmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListInstancesRequest>(request, marshaller, unmarshaller,
@@ -1437,7 +1437,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public virtual ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
         {
-            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var marshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -1457,7 +1457,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListSecurityConfigurations(ListSecurityConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var marshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListSecurityConfigurationsRequest>(request, marshaller, unmarshaller,
@@ -1515,7 +1515,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            var marshaller = new ListStepsRequestMarshaller();
+            var marshaller = ListStepsRequestMarshaller.Instance;
             var unmarshaller = ListStepsResponseUnmarshaller.Instance;
 
             return Invoke<ListStepsRequest,ListStepsResponse>(request, marshaller, unmarshaller);
@@ -1535,7 +1535,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual IAsyncResult BeginListSteps(ListStepsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListStepsRequestMarshaller();
+            var marshaller = ListStepsRequestMarshaller.Instance;
             var unmarshaller = ListStepsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListStepsRequest>(request, marshaller, unmarshaller,
@@ -1583,7 +1583,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
         public virtual ModifyInstanceFleetResponse ModifyInstanceFleet(ModifyInstanceFleetRequest request)
         {
-            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var marshaller = ModifyInstanceFleetRequestMarshaller.Instance;
             var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
 
             return Invoke<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, unmarshaller);
@@ -1603,7 +1603,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceFleet(ModifyInstanceFleetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var marshaller = ModifyInstanceFleetRequestMarshaller.Instance;
             var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyInstanceFleetRequest>(request, marshaller, unmarshaller,
@@ -1642,7 +1642,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public virtual ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
-            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var marshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller);
@@ -1662,7 +1662,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceGroups(ModifyInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyInstanceGroupsRequestMarshaller();
+            var marshaller = ModifyInstanceGroupsRequestMarshaller.Instance;
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyInstanceGroupsRequest>(request, marshaller, unmarshaller,
@@ -1698,7 +1698,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public virtual PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
         {
-            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var marshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
@@ -1718,7 +1718,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutAutoScalingPolicy(PutAutoScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var marshaller = PutAutoScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutAutoScalingPolicyRequest>(request, marshaller, unmarshaller,
@@ -1752,7 +1752,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public virtual RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
         {
-            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var marshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
 
             return Invoke<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
@@ -1772,7 +1772,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public virtual IAsyncResult BeginRemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var marshaller = RemoveAutoScalingPolicyRequestMarshaller.Instance;
             var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveAutoScalingPolicyRequest>(request, marshaller, unmarshaller,
@@ -1819,7 +1819,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var marshaller = new RemoveTagsRequestMarshaller();
+            var marshaller = RemoveTagsRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
@@ -1839,7 +1839,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveTagsRequestMarshaller();
+            var marshaller = RemoveTagsRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveTagsRequest>(request, marshaller, unmarshaller,
@@ -1912,7 +1912,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public virtual RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
-            var marshaller = new RunJobFlowRequestMarshaller();
+            var marshaller = RunJobFlowRequestMarshaller.Instance;
             var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
 
             return Invoke<RunJobFlowRequest,RunJobFlowResponse>(request, marshaller, unmarshaller);
@@ -1932,7 +1932,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public virtual IAsyncResult BeginRunJobFlow(RunJobFlowRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RunJobFlowRequestMarshaller();
+            var marshaller = RunJobFlowRequestMarshaller.Instance;
             var unmarshaller = RunJobFlowResponseUnmarshaller.Instance;
 
             return BeginInvoke<RunJobFlowRequest>(request, marshaller, unmarshaller,
@@ -1991,7 +1991,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public virtual SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
-            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var marshaller = SetTerminationProtectionRequestMarshaller.Instance;
             var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
 
             return Invoke<SetTerminationProtectionRequest,SetTerminationProtectionResponse>(request, marshaller, unmarshaller);
@@ -2011,7 +2011,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public virtual IAsyncResult BeginSetTerminationProtection(SetTerminationProtectionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetTerminationProtectionRequestMarshaller();
+            var marshaller = SetTerminationProtectionRequestMarshaller.Instance;
             var unmarshaller = SetTerminationProtectionResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetTerminationProtectionRequest>(request, marshaller, unmarshaller,
@@ -2052,7 +2052,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public virtual SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
-            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var marshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
             var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
 
             return Invoke<SetVisibleToAllUsersRequest,SetVisibleToAllUsersResponse>(request, marshaller, unmarshaller);
@@ -2072,7 +2072,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public virtual IAsyncResult BeginSetVisibleToAllUsers(SetVisibleToAllUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SetVisibleToAllUsersRequestMarshaller();
+            var marshaller = SetVisibleToAllUsersRequestMarshaller.Instance;
             var unmarshaller = SetVisibleToAllUsersResponseUnmarshaller.Instance;
 
             return BeginInvoke<SetVisibleToAllUsersRequest>(request, marshaller, unmarshaller,
@@ -2120,7 +2120,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public virtual TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
-            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var marshaller = TerminateJobFlowsRequestMarshaller.Instance;
             var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
             return Invoke<TerminateJobFlowsRequest,TerminateJobFlowsResponse>(request, marshaller, unmarshaller);
@@ -2140,7 +2140,7 @@ namespace Amazon.ElasticMapReduce
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public virtual IAsyncResult BeginTerminateJobFlows(TerminateJobFlowsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TerminateJobFlowsRequestMarshaller();
+            var marshaller = TerminateJobFlowsRequestMarshaller.Instance;
             var unmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
             return BeginInvoke<TerminateJobFlowsRequest>(request, marshaller, unmarshaller,

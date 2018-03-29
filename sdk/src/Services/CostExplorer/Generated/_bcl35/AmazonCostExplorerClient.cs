@@ -269,7 +269,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual GetCostAndUsageResponse GetCostAndUsage(GetCostAndUsageRequest request)
         {
-            var marshaller = new GetCostAndUsageRequestMarshaller();
+            var marshaller = GetCostAndUsageRequestMarshaller.Instance;
             var unmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
 
             return Invoke<GetCostAndUsageRequest,GetCostAndUsageResponse>(request, marshaller, unmarshaller);
@@ -289,7 +289,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual IAsyncResult BeginGetCostAndUsage(GetCostAndUsageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetCostAndUsageRequestMarshaller();
+            var marshaller = GetCostAndUsageRequestMarshaller.Instance;
             var unmarshaller = GetCostAndUsageResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetCostAndUsageRequest>(request, marshaller, unmarshaller,
@@ -332,7 +332,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual GetDimensionValuesResponse GetDimensionValues(GetDimensionValuesRequest request)
         {
-            var marshaller = new GetDimensionValuesRequestMarshaller();
+            var marshaller = GetDimensionValuesRequestMarshaller.Instance;
             var unmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
 
             return Invoke<GetDimensionValuesRequest,GetDimensionValuesResponse>(request, marshaller, unmarshaller);
@@ -352,7 +352,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual IAsyncResult BeginGetDimensionValues(GetDimensionValuesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDimensionValuesRequestMarshaller();
+            var marshaller = GetDimensionValuesRequestMarshaller.Instance;
             var unmarshaller = GetDimensionValuesResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDimensionValuesRequest>(request, marshaller, unmarshaller,
@@ -428,7 +428,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
         public virtual GetReservationCoverageResponse GetReservationCoverage(GetReservationCoverageRequest request)
         {
-            var marshaller = new GetReservationCoverageRequestMarshaller();
+            var marshaller = GetReservationCoverageRequestMarshaller.Instance;
             var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
 
             return Invoke<GetReservationCoverageRequest,GetReservationCoverageResponse>(request, marshaller, unmarshaller);
@@ -448,7 +448,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage">REST API Reference for GetReservationCoverage Operation</seealso>
         public virtual IAsyncResult BeginGetReservationCoverage(GetReservationCoverageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetReservationCoverageRequestMarshaller();
+            var marshaller = GetReservationCoverageRequestMarshaller.Instance;
             var unmarshaller = GetReservationCoverageResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetReservationCoverageRequest>(request, marshaller, unmarshaller,
@@ -511,7 +511,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
         public virtual GetReservationPurchaseRecommendationResponse GetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request)
         {
-            var marshaller = new GetReservationPurchaseRecommendationRequestMarshaller();
+            var marshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
             var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
 
             return Invoke<GetReservationPurchaseRecommendationRequest,GetReservationPurchaseRecommendationResponse>(request, marshaller, unmarshaller);
@@ -531,7 +531,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">REST API Reference for GetReservationPurchaseRecommendation Operation</seealso>
         public virtual IAsyncResult BeginGetReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetReservationPurchaseRecommendationRequestMarshaller();
+            var marshaller = GetReservationPurchaseRecommendationRequestMarshaller.Instance;
             var unmarshaller = GetReservationPurchaseRecommendationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetReservationPurchaseRecommendationRequest>(request, marshaller, unmarshaller,
@@ -576,7 +576,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">REST API Reference for GetReservationUtilization Operation</seealso>
         public virtual GetReservationUtilizationResponse GetReservationUtilization(GetReservationUtilizationRequest request)
         {
-            var marshaller = new GetReservationUtilizationRequestMarshaller();
+            var marshaller = GetReservationUtilizationRequestMarshaller.Instance;
             var unmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
 
             return Invoke<GetReservationUtilizationRequest,GetReservationUtilizationResponse>(request, marshaller, unmarshaller);
@@ -596,7 +596,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization">REST API Reference for GetReservationUtilization Operation</seealso>
         public virtual IAsyncResult BeginGetReservationUtilization(GetReservationUtilizationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetReservationUtilizationRequestMarshaller();
+            var marshaller = GetReservationUtilizationRequestMarshaller.Instance;
             var unmarshaller = GetReservationUtilizationResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetReservationUtilizationRequest>(request, marshaller, unmarshaller,
@@ -639,7 +639,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return Invoke<GetTagsRequest,GetTagsResponse>(request, marshaller, unmarshaller);
@@ -659,7 +659,7 @@ namespace Amazon.CostExplorer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetTagsRequestMarshaller();
+            var marshaller = GetTagsRequestMarshaller.Instance;
             var unmarshaller = GetTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetTagsRequest>(request, marshaller, unmarshaller,

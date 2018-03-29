@@ -326,7 +326,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
         public virtual BatchDeleteBuildsResponse BatchDeleteBuilds(BatchDeleteBuildsRequest request)
         {
-            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var marshaller = BatchDeleteBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
 
             return Invoke<BatchDeleteBuildsRequest,BatchDeleteBuildsResponse>(request, marshaller, unmarshaller);
@@ -346,7 +346,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteBuilds(BatchDeleteBuildsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var marshaller = BatchDeleteBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchDeleteBuildsRequest>(request, marshaller, unmarshaller,
@@ -382,7 +382,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public virtual BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
         {
-            var marshaller = new BatchGetBuildsRequestMarshaller();
+            var marshaller = BatchGetBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetBuildsRequest,BatchGetBuildsResponse>(request, marshaller, unmarshaller);
@@ -402,7 +402,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public virtual IAsyncResult BeginBatchGetBuilds(BatchGetBuildsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchGetBuildsRequestMarshaller();
+            var marshaller = BatchGetBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchGetBuildsRequest>(request, marshaller, unmarshaller,
@@ -438,7 +438,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public virtual BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request)
         {
-            var marshaller = new BatchGetProjectsRequestMarshaller();
+            var marshaller = BatchGetProjectsRequestMarshaller.Instance;
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetProjectsRequest,BatchGetProjectsResponse>(request, marshaller, unmarshaller);
@@ -458,7 +458,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public virtual IAsyncResult BeginBatchGetProjects(BatchGetProjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchGetProjectsRequestMarshaller();
+            var marshaller = BatchGetProjectsRequestMarshaller.Instance;
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchGetProjectsRequest>(request, marshaller, unmarshaller,
@@ -501,7 +501,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
@@ -521,7 +521,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateProjectRequest>(request, marshaller, unmarshaller,
@@ -582,7 +582,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         public virtual CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
         {
-            var marshaller = new CreateWebhookRequestMarshaller();
+            var marshaller = CreateWebhookRequestMarshaller.Instance;
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
 
             return Invoke<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, unmarshaller);
@@ -602,7 +602,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         public virtual IAsyncResult BeginCreateWebhook(CreateWebhookRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateWebhookRequestMarshaller();
+            var marshaller = CreateWebhookRequestMarshaller.Instance;
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateWebhookRequest>(request, marshaller, unmarshaller,
@@ -638,7 +638,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
@@ -658,7 +658,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteProjectRequest>(request, marshaller, unmarshaller,
@@ -702,7 +702,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
         {
-            var marshaller = new DeleteWebhookRequestMarshaller();
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
 
             return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
@@ -722,7 +722,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual IAsyncResult BeginDeleteWebhook(DeleteWebhookRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteWebhookRequestMarshaller();
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteWebhookRequest>(request, marshaller, unmarshaller,
@@ -761,7 +761,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
         public virtual InvalidateProjectCacheResponse InvalidateProjectCache(InvalidateProjectCacheRequest request)
         {
-            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var marshaller = InvalidateProjectCacheRequestMarshaller.Instance;
             var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
 
             return Invoke<InvalidateProjectCacheRequest,InvalidateProjectCacheResponse>(request, marshaller, unmarshaller);
@@ -781,7 +781,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
         public virtual IAsyncResult BeginInvalidateProjectCache(InvalidateProjectCacheRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var marshaller = InvalidateProjectCacheRequestMarshaller.Instance;
             var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
 
             return BeginInvoke<InvalidateProjectCacheRequest>(request, marshaller, unmarshaller,
@@ -817,7 +817,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return Invoke<ListBuildsRequest,ListBuildsResponse>(request, marshaller, unmarshaller);
@@ -837,7 +837,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListBuildsRequest>(request, marshaller, unmarshaller,
@@ -877,7 +877,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public virtual ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request)
         {
-            var marshaller = new ListBuildsForProjectRequestMarshaller();
+            var marshaller = ListBuildsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
 
             return Invoke<ListBuildsForProjectRequest,ListBuildsForProjectResponse>(request, marshaller, unmarshaller);
@@ -897,7 +897,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public virtual IAsyncResult BeginListBuildsForProject(ListBuildsForProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListBuildsForProjectRequestMarshaller();
+            var marshaller = ListBuildsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListBuildsForProjectRequest>(request, marshaller, unmarshaller,
@@ -930,7 +930,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public virtual ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
         {
-            var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
+            var marshaller = ListCuratedEnvironmentImagesRequestMarshaller.Instance;
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
 
             return Invoke<ListCuratedEnvironmentImagesRequest,ListCuratedEnvironmentImagesResponse>(request, marshaller, unmarshaller);
@@ -950,7 +950,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public virtual IAsyncResult BeginListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
+            var marshaller = ListCuratedEnvironmentImagesRequestMarshaller.Instance;
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListCuratedEnvironmentImagesRequest>(request, marshaller, unmarshaller,
@@ -987,7 +987,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
@@ -1007,7 +1007,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListProjectsRequest>(request, marshaller, unmarshaller,
@@ -1049,7 +1049,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public virtual StartBuildResponse StartBuild(StartBuildRequest request)
         {
-            var marshaller = new StartBuildRequestMarshaller();
+            var marshaller = StartBuildRequestMarshaller.Instance;
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
 
             return Invoke<StartBuildRequest,StartBuildResponse>(request, marshaller, unmarshaller);
@@ -1069,7 +1069,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public virtual IAsyncResult BeginStartBuild(StartBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartBuildRequestMarshaller();
+            var marshaller = StartBuildRequestMarshaller.Instance;
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartBuildRequest>(request, marshaller, unmarshaller,
@@ -1108,7 +1108,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public virtual StopBuildResponse StopBuild(StopBuildRequest request)
         {
-            var marshaller = new StopBuildRequestMarshaller();
+            var marshaller = StopBuildRequestMarshaller.Instance;
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
 
             return Invoke<StopBuildRequest,StopBuildResponse>(request, marshaller, unmarshaller);
@@ -1128,7 +1128,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public virtual IAsyncResult BeginStopBuild(StopBuildRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopBuildRequestMarshaller();
+            var marshaller = StopBuildRequestMarshaller.Instance;
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopBuildRequest>(request, marshaller, unmarshaller,
@@ -1167,7 +1167,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
@@ -1187,7 +1187,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateProjectRequest>(request, marshaller, unmarshaller,
@@ -1229,7 +1229,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         public virtual UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request)
         {
-            var marshaller = new UpdateWebhookRequestMarshaller();
+            var marshaller = UpdateWebhookRequestMarshaller.Instance;
             var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
 
             return Invoke<UpdateWebhookRequest,UpdateWebhookResponse>(request, marshaller, unmarshaller);
@@ -1249,7 +1249,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         public virtual IAsyncResult BeginUpdateWebhook(UpdateWebhookRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateWebhookRequestMarshaller();
+            var marshaller = UpdateWebhookRequestMarshaller.Instance;
             var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateWebhookRequest>(request, marshaller, unmarshaller,

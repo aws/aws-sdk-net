@@ -434,7 +434,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleRequest,AssumeRoleResponse>(request, marshaller, unmarshaller);
@@ -454,7 +454,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public virtual IAsyncResult BeginAssumeRole(AssumeRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssumeRoleRequestMarshaller();
+            var marshaller = AssumeRoleRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssumeRoleRequest>(request, marshaller, unmarshaller,
@@ -620,7 +620,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithSAMLRequest,AssumeRoleWithSAMLResponse>(request, marshaller, unmarshaller);
@@ -640,7 +640,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public virtual IAsyncResult BeginAssumeRoleWithSAML(AssumeRoleWithSAMLRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
+            var marshaller = AssumeRoleWithSAMLRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssumeRoleWithSAMLRequest>(request, marshaller, unmarshaller,
@@ -837,7 +837,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
             return Invoke<AssumeRoleWithWebIdentityRequest,AssumeRoleWithWebIdentityResponse>(request, marshaller, unmarshaller);
@@ -857,7 +857,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public virtual IAsyncResult BeginAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
+            var marshaller = AssumeRoleWithWebIdentityRequestMarshaller.Instance;
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssumeRoleWithWebIdentityRequest>(request, marshaller, unmarshaller,
@@ -944,7 +944,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
             return Invoke<DecodeAuthorizationMessageRequest,DecodeAuthorizationMessageResponse>(request, marshaller, unmarshaller);
@@ -964,7 +964,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public virtual IAsyncResult BeginDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
+            var marshaller = DecodeAuthorizationMessageRequestMarshaller.Instance;
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.Instance;
 
             return BeginInvoke<DecodeAuthorizationMessageRequest>(request, marshaller, unmarshaller,
@@ -997,7 +997,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
             return Invoke<GetCallerIdentityRequest,GetCallerIdentityResponse>(request, marshaller, unmarshaller);
@@ -1017,7 +1017,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public virtual IAsyncResult BeginGetCallerIdentity(GetCallerIdentityRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetCallerIdentityRequestMarshaller();
+            var marshaller = GetCallerIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCallerIdentityResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetCallerIdentityRequest>(request, marshaller, unmarshaller,
@@ -1167,7 +1167,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
@@ -1187,7 +1187,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public virtual IAsyncResult BeginGetFederationToken(GetFederationTokenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetFederationTokenRequestMarshaller();
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetFederationTokenRequest>(request, marshaller, unmarshaller,
@@ -1361,7 +1361,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetSessionTokenRequest,GetSessionTokenResponse>(request, marshaller, unmarshaller);
@@ -1381,7 +1381,7 @@ namespace Amazon.SecurityToken
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public virtual IAsyncResult BeginGetSessionToken(GetSessionTokenRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSessionTokenRequestMarshaller();
+            var marshaller = GetSessionTokenRequestMarshaller.Instance;
             var unmarshaller = GetSessionTokenResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSessionTokenRequest>(request, marshaller, unmarshaller,

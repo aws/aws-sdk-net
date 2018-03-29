@@ -259,7 +259,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
         {
-            var marshaller = new BatchGetNamedQueryRequestMarshaller();
+            var marshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetNamedQueryRequest,BatchGetNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -279,7 +279,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginBatchGetNamedQuery(BatchGetNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchGetNamedQueryRequestMarshaller();
+            var marshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchGetNamedQueryRequest>(request, marshaller, unmarshaller,
@@ -322,7 +322,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
         {
-            var marshaller = new BatchGetQueryExecutionRequestMarshaller();
+            var marshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetQueryExecutionRequest,BatchGetQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -342,7 +342,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginBatchGetQueryExecution(BatchGetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BatchGetQueryExecutionRequestMarshaller();
+            var marshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<BatchGetQueryExecutionRequest>(request, marshaller, unmarshaller,
@@ -388,7 +388,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
         {
-            var marshaller = new CreateNamedQueryRequestMarshaller();
+            var marshaller = CreateNamedQueryRequestMarshaller.Instance;
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<CreateNamedQueryRequest,CreateNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -408,7 +408,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginCreateNamedQuery(CreateNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateNamedQueryRequestMarshaller();
+            var marshaller = CreateNamedQueryRequestMarshaller.Instance;
             var unmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateNamedQueryRequest>(request, marshaller, unmarshaller,
@@ -454,7 +454,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
         {
-            var marshaller = new DeleteNamedQueryRequestMarshaller();
+            var marshaller = DeleteNamedQueryRequestMarshaller.Instance;
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNamedQueryRequest,DeleteNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -474,7 +474,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginDeleteNamedQuery(DeleteNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteNamedQueryRequestMarshaller();
+            var marshaller = DeleteNamedQueryRequestMarshaller.Instance;
             var unmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteNamedQueryRequest>(request, marshaller, unmarshaller,
@@ -514,7 +514,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
         {
-            var marshaller = new GetNamedQueryRequestMarshaller();
+            var marshaller = GetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
             return Invoke<GetNamedQueryRequest,GetNamedQueryResponse>(request, marshaller, unmarshaller);
@@ -534,7 +534,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginGetNamedQuery(GetNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetNamedQueryRequestMarshaller();
+            var marshaller = GetNamedQueryRequestMarshaller.Instance;
             var unmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetNamedQueryRequest>(request, marshaller, unmarshaller,
@@ -575,7 +575,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
         {
-            var marshaller = new GetQueryExecutionRequestMarshaller();
+            var marshaller = GetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<GetQueryExecutionRequest,GetQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -595,7 +595,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginGetQueryExecution(GetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetQueryExecutionRequestMarshaller();
+            var marshaller = GetQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetQueryExecutionRequest>(request, marshaller, unmarshaller,
@@ -637,7 +637,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var marshaller = new GetQueryResultsRequestMarshaller();
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
             return Invoke<GetQueryResultsRequest,GetQueryResultsResponse>(request, marshaller, unmarshaller);
@@ -657,7 +657,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResults(GetQueryResultsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetQueryResultsRequestMarshaller();
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
             var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetQueryResultsRequest>(request, marshaller, unmarshaller,
@@ -703,7 +703,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
         {
-            var marshaller = new ListNamedQueriesRequestMarshaller();
+            var marshaller = ListNamedQueriesRequestMarshaller.Instance;
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
             return Invoke<ListNamedQueriesRequest,ListNamedQueriesResponse>(request, marshaller, unmarshaller);
@@ -723,7 +723,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual IAsyncResult BeginListNamedQueries(ListNamedQueriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListNamedQueriesRequestMarshaller();
+            var marshaller = ListNamedQueriesRequestMarshaller.Instance;
             var unmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListNamedQueriesRequest>(request, marshaller, unmarshaller,
@@ -769,7 +769,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
         {
-            var marshaller = new ListQueryExecutionsRequestMarshaller();
+            var marshaller = ListQueryExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
             return Invoke<ListQueryExecutionsRequest,ListQueryExecutionsResponse>(request, marshaller, unmarshaller);
@@ -789,7 +789,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual IAsyncResult BeginListQueryExecutions(ListQueryExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListQueryExecutionsRequestMarshaller();
+            var marshaller = ListQueryExecutionsRequestMarshaller.Instance;
             var unmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListQueryExecutionsRequest>(request, marshaller, unmarshaller,
@@ -838,7 +838,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
         {
-            var marshaller = new StartQueryExecutionRequestMarshaller();
+            var marshaller = StartQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StartQueryExecutionRequest,StartQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -858,7 +858,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginStartQueryExecution(StartQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartQueryExecutionRequestMarshaller();
+            var marshaller = StartQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartQueryExecutionRequest>(request, marshaller, unmarshaller,
@@ -904,7 +904,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
         {
-            var marshaller = new StopQueryExecutionRequestMarshaller();
+            var marshaller = StopQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
             return Invoke<StopQueryExecutionRequest,StopQueryExecutionResponse>(request, marshaller, unmarshaller);
@@ -924,7 +924,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginStopQueryExecution(StopQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopQueryExecutionRequestMarshaller();
+            var marshaller = StopQueryExecutionRequestMarshaller.Instance;
             var unmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopQueryExecutionRequest>(request, marshaller, unmarshaller,

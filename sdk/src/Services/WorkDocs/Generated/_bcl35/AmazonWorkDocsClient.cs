@@ -291,7 +291,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
         public virtual AbortDocumentVersionUploadResponse AbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request)
         {
-            var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
+            var marshaller = AbortDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return Invoke<AbortDocumentVersionUploadRequest,AbortDocumentVersionUploadResponse>(request, marshaller, unmarshaller);
@@ -311,7 +311,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload">REST API Reference for AbortDocumentVersionUpload Operation</seealso>
         public virtual IAsyncResult BeginAbortDocumentVersionUpload(AbortDocumentVersionUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
+            var marshaller = AbortDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = AbortDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return BeginInvoke<AbortDocumentVersionUploadRequest>(request, marshaller, unmarshaller,
@@ -360,7 +360,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
         public virtual ActivateUserResponse ActivateUser(ActivateUserRequest request)
         {
-            var marshaller = new ActivateUserRequestMarshaller();
+            var marshaller = ActivateUserRequestMarshaller.Instance;
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
 
             return Invoke<ActivateUserRequest,ActivateUserResponse>(request, marshaller, unmarshaller);
@@ -380,7 +380,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser">REST API Reference for ActivateUser Operation</seealso>
         public virtual IAsyncResult BeginActivateUser(ActivateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ActivateUserRequestMarshaller();
+            var marshaller = ActivateUserRequestMarshaller.Instance;
             var unmarshaller = ActivateUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<ActivateUserRequest>(request, marshaller, unmarshaller,
@@ -427,7 +427,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
         public virtual AddResourcePermissionsResponse AddResourcePermissions(AddResourcePermissionsRequest request)
         {
-            var marshaller = new AddResourcePermissionsRequestMarshaller();
+            var marshaller = AddResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<AddResourcePermissionsRequest,AddResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -447,7 +447,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions">REST API Reference for AddResourcePermissions Operation</seealso>
         public virtual IAsyncResult BeginAddResourcePermissions(AddResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddResourcePermissionsRequestMarshaller();
+            var marshaller = AddResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = AddResourcePermissionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddResourcePermissionsRequest>(request, marshaller, unmarshaller,
@@ -503,7 +503,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
         public virtual CreateCommentResponse CreateComment(CreateCommentRequest request)
         {
-            var marshaller = new CreateCommentRequestMarshaller();
+            var marshaller = CreateCommentRequestMarshaller.Instance;
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
 
             return Invoke<CreateCommentRequest,CreateCommentResponse>(request, marshaller, unmarshaller);
@@ -523,7 +523,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment">REST API Reference for CreateComment Operation</seealso>
         public virtual IAsyncResult BeginCreateComment(CreateCommentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateCommentRequestMarshaller();
+            var marshaller = CreateCommentRequestMarshaller.Instance;
             var unmarshaller = CreateCommentResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateCommentRequest>(request, marshaller, unmarshaller,
@@ -579,7 +579,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
         public virtual CreateCustomMetadataResponse CreateCustomMetadata(CreateCustomMetadataRequest request)
         {
-            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var marshaller = CreateCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
 
             return Invoke<CreateCustomMetadataRequest,CreateCustomMetadataResponse>(request, marshaller, unmarshaller);
@@ -599,7 +599,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata">REST API Reference for CreateCustomMetadata Operation</seealso>
         public virtual IAsyncResult BeginCreateCustomMetadata(CreateCustomMetadataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateCustomMetadataRequestMarshaller();
+            var marshaller = CreateCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = CreateCustomMetadataResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateCustomMetadataRequest>(request, marshaller, unmarshaller,
@@ -657,7 +657,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         public virtual CreateFolderResponse CreateFolder(CreateFolderRequest request)
         {
-            var marshaller = new CreateFolderRequestMarshaller();
+            var marshaller = CreateFolderRequestMarshaller.Instance;
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
             return Invoke<CreateFolderRequest,CreateFolderResponse>(request, marshaller, unmarshaller);
@@ -677,7 +677,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         public virtual IAsyncResult BeginCreateFolder(CreateFolderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateFolderRequestMarshaller();
+            var marshaller = CreateFolderRequestMarshaller.Instance;
             var unmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateFolderRequest>(request, marshaller, unmarshaller,
@@ -729,7 +729,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
         public virtual CreateLabelsResponse CreateLabels(CreateLabelsRequest request)
         {
-            var marshaller = new CreateLabelsRequestMarshaller();
+            var marshaller = CreateLabelsRequestMarshaller.Instance;
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
 
             return Invoke<CreateLabelsRequest,CreateLabelsResponse>(request, marshaller, unmarshaller);
@@ -749,7 +749,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels">REST API Reference for CreateLabels Operation</seealso>
         public virtual IAsyncResult BeginCreateLabels(CreateLabelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateLabelsRequestMarshaller();
+            var marshaller = CreateLabelsRequestMarshaller.Instance;
             var unmarshaller = CreateLabelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateLabelsRequest>(request, marshaller, unmarshaller,
@@ -798,7 +798,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
         public virtual CreateNotificationSubscriptionResponse CreateNotificationSubscription(CreateNotificationSubscriptionRequest request)
         {
-            var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
+            var marshaller = CreateNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<CreateNotificationSubscriptionRequest,CreateNotificationSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -818,7 +818,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">REST API Reference for CreateNotificationSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateNotificationSubscription(CreateNotificationSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
+            var marshaller = CreateNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateNotificationSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -868,7 +868,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
@@ -888,7 +888,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUserRequestMarshaller();
+            var marshaller = CreateUserRequestMarshaller.Instance;
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller,
@@ -937,7 +937,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
         public virtual DeactivateUserResponse DeactivateUser(DeactivateUserRequest request)
         {
-            var marshaller = new DeactivateUserRequestMarshaller();
+            var marshaller = DeactivateUserRequestMarshaller.Instance;
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
 
             return Invoke<DeactivateUserRequest,DeactivateUserResponse>(request, marshaller, unmarshaller);
@@ -957,7 +957,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser">REST API Reference for DeactivateUser Operation</seealso>
         public virtual IAsyncResult BeginDeactivateUser(DeactivateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeactivateUserRequestMarshaller();
+            var marshaller = DeactivateUserRequestMarshaller.Instance;
             var unmarshaller = DeactivateUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeactivateUserRequest>(request, marshaller, unmarshaller,
@@ -1013,7 +1013,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
         public virtual DeleteCommentResponse DeleteComment(DeleteCommentRequest request)
         {
-            var marshaller = new DeleteCommentRequestMarshaller();
+            var marshaller = DeleteCommentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCommentRequest,DeleteCommentResponse>(request, marshaller, unmarshaller);
@@ -1033,7 +1033,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment">REST API Reference for DeleteComment Operation</seealso>
         public virtual IAsyncResult BeginDeleteComment(DeleteCommentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteCommentRequestMarshaller();
+            var marshaller = DeleteCommentRequestMarshaller.Instance;
             var unmarshaller = DeleteCommentResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteCommentRequest>(request, marshaller, unmarshaller,
@@ -1085,7 +1085,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
         public virtual DeleteCustomMetadataResponse DeleteCustomMetadata(DeleteCustomMetadataRequest request)
         {
-            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var marshaller = DeleteCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCustomMetadataRequest,DeleteCustomMetadataResponse>(request, marshaller, unmarshaller);
@@ -1105,7 +1105,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata">REST API Reference for DeleteCustomMetadata Operation</seealso>
         public virtual IAsyncResult BeginDeleteCustomMetadata(DeleteCustomMetadataRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteCustomMetadataRequestMarshaller();
+            var marshaller = DeleteCustomMetadataRequestMarshaller.Instance;
             var unmarshaller = DeleteCustomMetadataResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteCustomMetadataRequest>(request, marshaller, unmarshaller,
@@ -1160,7 +1160,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
-            var marshaller = new DeleteDocumentRequestMarshaller();
+            var marshaller = DeleteDocumentRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDocumentRequest,DeleteDocumentResponse>(request, marshaller, unmarshaller);
@@ -1180,7 +1180,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDocumentRequestMarshaller();
+            var marshaller = DeleteDocumentRequestMarshaller.Instance;
             var unmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDocumentRequest>(request, marshaller, unmarshaller,
@@ -1235,7 +1235,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         public virtual DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
         {
-            var marshaller = new DeleteFolderRequestMarshaller();
+            var marshaller = DeleteFolderRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFolderRequest,DeleteFolderResponse>(request, marshaller, unmarshaller);
@@ -1255,7 +1255,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         public virtual IAsyncResult BeginDeleteFolder(DeleteFolderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteFolderRequestMarshaller();
+            var marshaller = DeleteFolderRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteFolderRequest>(request, marshaller, unmarshaller,
@@ -1304,7 +1304,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
         public virtual DeleteFolderContentsResponse DeleteFolderContents(DeleteFolderContentsRequest request)
         {
-            var marshaller = new DeleteFolderContentsRequestMarshaller();
+            var marshaller = DeleteFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFolderContentsRequest,DeleteFolderContentsResponse>(request, marshaller, unmarshaller);
@@ -1324,7 +1324,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents">REST API Reference for DeleteFolderContents Operation</seealso>
         public virtual IAsyncResult BeginDeleteFolderContents(DeleteFolderContentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteFolderContentsRequestMarshaller();
+            var marshaller = DeleteFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DeleteFolderContentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteFolderContentsRequest>(request, marshaller, unmarshaller,
@@ -1373,7 +1373,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
         public virtual DeleteLabelsResponse DeleteLabels(DeleteLabelsRequest request)
         {
-            var marshaller = new DeleteLabelsRequestMarshaller();
+            var marshaller = DeleteLabelsRequestMarshaller.Instance;
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLabelsRequest,DeleteLabelsResponse>(request, marshaller, unmarshaller);
@@ -1393,7 +1393,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels">REST API Reference for DeleteLabels Operation</seealso>
         public virtual IAsyncResult BeginDeleteLabels(DeleteLabelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteLabelsRequestMarshaller();
+            var marshaller = DeleteLabelsRequestMarshaller.Instance;
             var unmarshaller = DeleteLabelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteLabelsRequest>(request, marshaller, unmarshaller,
@@ -1438,7 +1438,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
         public virtual DeleteNotificationSubscriptionResponse DeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request)
         {
-            var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
+            var marshaller = DeleteNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNotificationSubscriptionRequest,DeleteNotificationSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -1458,7 +1458,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription">REST API Reference for DeleteNotificationSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotificationSubscription(DeleteNotificationSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
+            var marshaller = DeleteNotificationSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteNotificationSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -1507,7 +1507,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
@@ -1527,7 +1527,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUserRequestMarshaller();
+            var marshaller = DeleteUserRequestMarshaller.Instance;
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
@@ -1576,7 +1576,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
         public virtual DescribeActivitiesResponse DescribeActivities(DescribeActivitiesRequest request)
         {
-            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var marshaller = DescribeActivitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeActivitiesRequest,DescribeActivitiesResponse>(request, marshaller, unmarshaller);
@@ -1596,7 +1596,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities">REST API Reference for DescribeActivities Operation</seealso>
         public virtual IAsyncResult BeginDescribeActivities(DescribeActivitiesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeActivitiesRequestMarshaller();
+            var marshaller = DescribeActivitiesRequestMarshaller.Instance;
             var unmarshaller = DescribeActivitiesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeActivitiesRequest>(request, marshaller, unmarshaller,
@@ -1648,7 +1648,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
         public virtual DescribeCommentsResponse DescribeComments(DescribeCommentsRequest request)
         {
-            var marshaller = new DescribeCommentsRequestMarshaller();
+            var marshaller = DescribeCommentsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCommentsRequest,DescribeCommentsResponse>(request, marshaller, unmarshaller);
@@ -1668,7 +1668,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments">REST API Reference for DescribeComments Operation</seealso>
         public virtual IAsyncResult BeginDescribeComments(DescribeCommentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeCommentsRequestMarshaller();
+            var marshaller = DescribeCommentsRequestMarshaller.Instance;
             var unmarshaller = DescribeCommentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeCommentsRequest>(request, marshaller, unmarshaller,
@@ -1728,7 +1728,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
         public virtual DescribeDocumentVersionsResponse DescribeDocumentVersions(DescribeDocumentVersionsRequest request)
         {
-            var marshaller = new DescribeDocumentVersionsRequestMarshaller();
+            var marshaller = DescribeDocumentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDocumentVersionsRequest,DescribeDocumentVersionsResponse>(request, marshaller, unmarshaller);
@@ -1748,7 +1748,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions">REST API Reference for DescribeDocumentVersions Operation</seealso>
         public virtual IAsyncResult BeginDescribeDocumentVersions(DescribeDocumentVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDocumentVersionsRequestMarshaller();
+            var marshaller = DescribeDocumentVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDocumentVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDocumentVersionsRequest>(request, marshaller, unmarshaller,
@@ -1807,7 +1807,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
         public virtual DescribeFolderContentsResponse DescribeFolderContents(DescribeFolderContentsRequest request)
         {
-            var marshaller = new DescribeFolderContentsRequestMarshaller();
+            var marshaller = DescribeFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFolderContentsRequest,DescribeFolderContentsResponse>(request, marshaller, unmarshaller);
@@ -1827,7 +1827,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents">REST API Reference for DescribeFolderContents Operation</seealso>
         public virtual IAsyncResult BeginDescribeFolderContents(DescribeFolderContentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeFolderContentsRequestMarshaller();
+            var marshaller = DescribeFolderContentsRequestMarshaller.Instance;
             var unmarshaller = DescribeFolderContentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeFolderContentsRequest>(request, marshaller, unmarshaller,
@@ -1873,7 +1873,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
         public virtual DescribeGroupsResponse DescribeGroups(DescribeGroupsRequest request)
         {
-            var marshaller = new DescribeGroupsRequestMarshaller();
+            var marshaller = DescribeGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeGroupsRequest,DescribeGroupsResponse>(request, marshaller, unmarshaller);
@@ -1893,7 +1893,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">REST API Reference for DescribeGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeGroups(DescribeGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeGroupsRequestMarshaller();
+            var marshaller = DescribeGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeGroupsRequest>(request, marshaller, unmarshaller,
@@ -1935,7 +1935,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
         public virtual DescribeNotificationSubscriptionsResponse DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request)
         {
-            var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
+            var marshaller = DescribeNotificationSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeNotificationSubscriptionsRequest,DescribeNotificationSubscriptionsResponse>(request, marshaller, unmarshaller);
@@ -1955,7 +1955,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions">REST API Reference for DescribeNotificationSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
+            var marshaller = DescribeNotificationSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationSubscriptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeNotificationSubscriptionsRequest>(request, marshaller, unmarshaller,
@@ -2001,7 +2001,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
         public virtual DescribeResourcePermissionsResponse DescribeResourcePermissions(DescribeResourcePermissionsRequest request)
         {
-            var marshaller = new DescribeResourcePermissionsRequestMarshaller();
+            var marshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeResourcePermissionsRequest,DescribeResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -2021,7 +2021,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions">REST API Reference for DescribeResourcePermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribeResourcePermissions(DescribeResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeResourcePermissionsRequestMarshaller();
+            var marshaller = DescribeResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = DescribeResourcePermissionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeResourcePermissionsRequest>(request, marshaller, unmarshaller,
@@ -2073,7 +2073,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
         public virtual DescribeRootFoldersResponse DescribeRootFolders(DescribeRootFoldersRequest request)
         {
-            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var marshaller = DescribeRootFoldersRequestMarshaller.Instance;
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeRootFoldersRequest,DescribeRootFoldersResponse>(request, marshaller, unmarshaller);
@@ -2093,7 +2093,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">REST API Reference for DescribeRootFolders Operation</seealso>
         public virtual IAsyncResult BeginDescribeRootFolders(DescribeRootFoldersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeRootFoldersRequestMarshaller();
+            var marshaller = DescribeRootFoldersRequestMarshaller.Instance;
             var unmarshaller = DescribeRootFoldersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeRootFoldersRequest>(request, marshaller, unmarshaller,
@@ -2150,7 +2150,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
-            var marshaller = new DescribeUsersRequestMarshaller();
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, unmarshaller);
@@ -2170,7 +2170,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeUsersRequestMarshaller();
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
             var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeUsersRequest>(request, marshaller, unmarshaller,
@@ -2220,7 +2220,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
         public virtual GetCurrentUserResponse GetCurrentUser(GetCurrentUserRequest request)
         {
-            var marshaller = new GetCurrentUserRequestMarshaller();
+            var marshaller = GetCurrentUserRequestMarshaller.Instance;
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
 
             return Invoke<GetCurrentUserRequest,GetCurrentUserResponse>(request, marshaller, unmarshaller);
@@ -2240,7 +2240,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser">REST API Reference for GetCurrentUser Operation</seealso>
         public virtual IAsyncResult BeginGetCurrentUser(GetCurrentUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetCurrentUserRequestMarshaller();
+            var marshaller = GetCurrentUserRequestMarshaller.Instance;
             var unmarshaller = GetCurrentUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetCurrentUserRequest>(request, marshaller, unmarshaller,
@@ -2295,7 +2295,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
-            var marshaller = new GetDocumentRequestMarshaller();
+            var marshaller = GetDocumentRequestMarshaller.Instance;
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentRequest,GetDocumentResponse>(request, marshaller, unmarshaller);
@@ -2315,7 +2315,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public virtual IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentRequestMarshaller();
+            var marshaller = GetDocumentRequestMarshaller.Instance;
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentRequest>(request, marshaller, unmarshaller,
@@ -2372,7 +2372,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
         public virtual GetDocumentPathResponse GetDocumentPath(GetDocumentPathRequest request)
         {
-            var marshaller = new GetDocumentPathRequestMarshaller();
+            var marshaller = GetDocumentPathRequestMarshaller.Instance;
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentPathRequest,GetDocumentPathResponse>(request, marshaller, unmarshaller);
@@ -2392,7 +2392,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath">REST API Reference for GetDocumentPath Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentPath(GetDocumentPathRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentPathRequestMarshaller();
+            var marshaller = GetDocumentPathRequestMarshaller.Instance;
             var unmarshaller = GetDocumentPathResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentPathRequest>(request, marshaller, unmarshaller,
@@ -2447,7 +2447,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
         public virtual GetDocumentVersionResponse GetDocumentVersion(GetDocumentVersionRequest request)
         {
-            var marshaller = new GetDocumentVersionRequestMarshaller();
+            var marshaller = GetDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetDocumentVersionRequest,GetDocumentVersionResponse>(request, marshaller, unmarshaller);
@@ -2467,7 +2467,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion">REST API Reference for GetDocumentVersion Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentVersion(GetDocumentVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDocumentVersionRequestMarshaller();
+            var marshaller = GetDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = GetDocumentVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDocumentVersionRequest>(request, marshaller, unmarshaller,
@@ -2522,7 +2522,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
         public virtual GetFolderResponse GetFolder(GetFolderRequest request)
         {
-            var marshaller = new GetFolderRequestMarshaller();
+            var marshaller = GetFolderRequestMarshaller.Instance;
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
 
             return Invoke<GetFolderRequest,GetFolderResponse>(request, marshaller, unmarshaller);
@@ -2542,7 +2542,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder">REST API Reference for GetFolder Operation</seealso>
         public virtual IAsyncResult BeginGetFolder(GetFolderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetFolderRequestMarshaller();
+            var marshaller = GetFolderRequestMarshaller.Instance;
             var unmarshaller = GetFolderResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetFolderRequest>(request, marshaller, unmarshaller,
@@ -2599,7 +2599,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
         public virtual GetFolderPathResponse GetFolderPath(GetFolderPathRequest request)
         {
-            var marshaller = new GetFolderPathRequestMarshaller();
+            var marshaller = GetFolderPathRequestMarshaller.Instance;
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
 
             return Invoke<GetFolderPathRequest,GetFolderPathResponse>(request, marshaller, unmarshaller);
@@ -2619,7 +2619,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath">REST API Reference for GetFolderPath Operation</seealso>
         public virtual IAsyncResult BeginGetFolderPath(GetFolderPathRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetFolderPathRequestMarshaller();
+            var marshaller = GetFolderPathRequestMarshaller.Instance;
             var unmarshaller = GetFolderPathResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetFolderPathRequest>(request, marshaller, unmarshaller,
@@ -2699,7 +2699,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
         public virtual InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)
         {
-            var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
+            var marshaller = InitiateDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return Invoke<InitiateDocumentVersionUploadRequest,InitiateDocumentVersionUploadResponse>(request, marshaller, unmarshaller);
@@ -2719,7 +2719,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload">REST API Reference for InitiateDocumentVersionUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
+            var marshaller = InitiateDocumentVersionUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateDocumentVersionUploadResponseUnmarshaller.Instance;
 
             return BeginInvoke<InitiateDocumentVersionUploadRequest>(request, marshaller, unmarshaller,
@@ -2765,7 +2765,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
         public virtual RemoveAllResourcePermissionsResponse RemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request)
         {
-            var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
+            var marshaller = RemoveAllResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveAllResourcePermissionsRequest,RemoveAllResourcePermissionsResponse>(request, marshaller, unmarshaller);
@@ -2785,7 +2785,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions">REST API Reference for RemoveAllResourcePermissions Operation</seealso>
         public virtual IAsyncResult BeginRemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
+            var marshaller = RemoveAllResourcePermissionsRequestMarshaller.Instance;
             var unmarshaller = RemoveAllResourcePermissionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveAllResourcePermissionsRequest>(request, marshaller, unmarshaller,
@@ -2831,7 +2831,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
         public virtual RemoveResourcePermissionResponse RemoveResourcePermission(RemoveResourcePermissionRequest request)
         {
-            var marshaller = new RemoveResourcePermissionRequestMarshaller();
+            var marshaller = RemoveResourcePermissionRequestMarshaller.Instance;
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
 
             return Invoke<RemoveResourcePermissionRequest,RemoveResourcePermissionResponse>(request, marshaller, unmarshaller);
@@ -2851,7 +2851,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission">REST API Reference for RemoveResourcePermission Operation</seealso>
         public virtual IAsyncResult BeginRemoveResourcePermission(RemoveResourcePermissionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveResourcePermissionRequestMarshaller();
+            var marshaller = RemoveResourcePermissionRequestMarshaller.Instance;
             var unmarshaller = RemoveResourcePermissionResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveResourcePermissionRequest>(request, marshaller, unmarshaller,
@@ -2913,7 +2913,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
-            var marshaller = new UpdateDocumentRequestMarshaller();
+            var marshaller = UpdateDocumentRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, unmarshaller);
@@ -2933,7 +2933,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDocumentRequestMarshaller();
+            var marshaller = UpdateDocumentRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDocumentRequest>(request, marshaller, unmarshaller,
@@ -2998,7 +2998,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
         public virtual UpdateDocumentVersionResponse UpdateDocumentVersion(UpdateDocumentVersionRequest request)
         {
-            var marshaller = new UpdateDocumentVersionRequestMarshaller();
+            var marshaller = UpdateDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDocumentVersionRequest,UpdateDocumentVersionResponse>(request, marshaller, unmarshaller);
@@ -3018,7 +3018,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion">REST API Reference for UpdateDocumentVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentVersion(UpdateDocumentVersionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateDocumentVersionRequestMarshaller();
+            var marshaller = UpdateDocumentVersionRequestMarshaller.Instance;
             var unmarshaller = UpdateDocumentVersionResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateDocumentVersionRequest>(request, marshaller, unmarshaller,
@@ -3080,7 +3080,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         public virtual UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
         {
-            var marshaller = new UpdateFolderRequestMarshaller();
+            var marshaller = UpdateFolderRequestMarshaller.Instance;
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFolderRequest,UpdateFolderResponse>(request, marshaller, unmarshaller);
@@ -3100,7 +3100,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         public virtual IAsyncResult BeginUpdateFolder(UpdateFolderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateFolderRequestMarshaller();
+            var marshaller = UpdateFolderRequestMarshaller.Instance;
             var unmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateFolderRequest>(request, marshaller, unmarshaller,
@@ -3159,7 +3159,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserRequest,UpdateUserResponse>(request, marshaller, unmarshaller);
@@ -3179,7 +3179,7 @@ namespace Amazon.WorkDocs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateUserRequestMarshaller();
+            var marshaller = UpdateUserRequestMarshaller.Instance;
             var unmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateUserRequest>(request, marshaller, unmarshaller,

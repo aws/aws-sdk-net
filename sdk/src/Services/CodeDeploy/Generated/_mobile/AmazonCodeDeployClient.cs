@@ -328,7 +328,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual AddTagsToOnPremisesInstancesResponse AddTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest request)
         {
-            var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
+            var marshaller = AddTagsToOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = AddTagsToOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToOnPremisesInstancesRequest,AddTagsToOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
@@ -347,7 +347,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">REST API Reference for AddTagsToOnPremisesInstances Operation</seealso>
         public virtual Task<AddTagsToOnPremisesInstancesResponse> AddTagsToOnPremisesInstancesAsync(AddTagsToOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
+            var marshaller = AddTagsToOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = AddTagsToOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToOnPremisesInstancesRequest,AddTagsToOnPremisesInstancesResponse>(request, marshaller, 
@@ -360,7 +360,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetApplicationRevisionsResponse BatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request)
         {
-            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var marshaller = BatchGetApplicationRevisionsRequestMarshaller.Instance;
             var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, unmarshaller);
@@ -379,7 +379,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">REST API Reference for BatchGetApplicationRevisions Operation</seealso>
         public virtual Task<BatchGetApplicationRevisionsResponse> BatchGetApplicationRevisionsAsync(BatchGetApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
+            var marshaller = BatchGetApplicationRevisionsRequestMarshaller.Instance;
             var unmarshaller = BatchGetApplicationRevisionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetApplicationRevisionsRequest,BatchGetApplicationRevisionsResponse>(request, marshaller, 
@@ -392,7 +392,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetApplicationsResponse BatchGetApplications(BatchGetApplicationsRequest request)
         {
-            var marshaller = new BatchGetApplicationsRequestMarshaller();
+            var marshaller = BatchGetApplicationsRequestMarshaller.Instance;
             var unmarshaller = BatchGetApplicationsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetApplicationsRequest,BatchGetApplicationsResponse>(request, marshaller, unmarshaller);
@@ -411,7 +411,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">REST API Reference for BatchGetApplications Operation</seealso>
         public virtual Task<BatchGetApplicationsResponse> BatchGetApplicationsAsync(BatchGetApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetApplicationsRequestMarshaller();
+            var marshaller = BatchGetApplicationsRequestMarshaller.Instance;
             var unmarshaller = BatchGetApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetApplicationsRequest,BatchGetApplicationsResponse>(request, marshaller, 
@@ -424,7 +424,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetDeploymentGroupsResponse BatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request)
         {
-            var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
+            var marshaller = BatchGetDeploymentGroupsRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentGroupsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetDeploymentGroupsRequest,BatchGetDeploymentGroupsResponse>(request, marshaller, unmarshaller);
@@ -443,7 +443,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">REST API Reference for BatchGetDeploymentGroups Operation</seealso>
         public virtual Task<BatchGetDeploymentGroupsResponse> BatchGetDeploymentGroupsAsync(BatchGetDeploymentGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
+            var marshaller = BatchGetDeploymentGroupsRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDeploymentGroupsRequest,BatchGetDeploymentGroupsResponse>(request, marshaller, 
@@ -456,7 +456,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request)
         {
-            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var marshaller = BatchGetDeploymentInstancesRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, unmarshaller);
@@ -475,7 +475,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
         public virtual Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
+            var marshaller = BatchGetDeploymentInstancesRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDeploymentInstancesRequest,BatchGetDeploymentInstancesResponse>(request, marshaller, 
@@ -488,7 +488,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetDeploymentsResponse BatchGetDeployments(BatchGetDeploymentsRequest request)
         {
-            var marshaller = new BatchGetDeploymentsRequestMarshaller();
+            var marshaller = BatchGetDeploymentsRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetDeploymentsRequest,BatchGetDeploymentsResponse>(request, marshaller, unmarshaller);
@@ -507,7 +507,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         public virtual Task<BatchGetDeploymentsResponse> BatchGetDeploymentsAsync(BatchGetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetDeploymentsRequestMarshaller();
+            var marshaller = BatchGetDeploymentsRequestMarshaller.Instance;
             var unmarshaller = BatchGetDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDeploymentsRequest,BatchGetDeploymentsResponse>(request, marshaller, 
@@ -520,7 +520,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual BatchGetOnPremisesInstancesResponse BatchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest request)
         {
-            var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
+            var marshaller = BatchGetOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = BatchGetOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetOnPremisesInstancesRequest,BatchGetOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
@@ -539,7 +539,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">REST API Reference for BatchGetOnPremisesInstances Operation</seealso>
         public virtual Task<BatchGetOnPremisesInstancesResponse> BatchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
+            var marshaller = BatchGetOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = BatchGetOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetOnPremisesInstancesRequest,BatchGetOnPremisesInstancesResponse>(request, marshaller, 
@@ -552,7 +552,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ContinueDeploymentResponse ContinueDeployment(ContinueDeploymentRequest request)
         {
-            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var marshaller = ContinueDeploymentRequestMarshaller.Instance;
             var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, unmarshaller);
@@ -571,7 +571,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">REST API Reference for ContinueDeployment Operation</seealso>
         public virtual Task<ContinueDeploymentResponse> ContinueDeploymentAsync(ContinueDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var marshaller = ContinueDeploymentRequestMarshaller.Instance;
             var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, 
@@ -584,7 +584,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, unmarshaller);
@@ -603,7 +603,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateApplicationRequestMarshaller();
+            var marshaller = CreateApplicationRequestMarshaller.Instance;
             var unmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateApplicationRequest,CreateApplicationResponse>(request, marshaller, 
@@ -616,7 +616,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, unmarshaller);
@@ -635,7 +635,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDeploymentRequestMarshaller();
+            var marshaller = CreateDeploymentRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, 
@@ -648,7 +648,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request)
         {
-            var marshaller = new CreateDeploymentConfigRequestMarshaller();
+            var marshaller = CreateDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentConfigResponseUnmarshaller.Instance;
 
             return Invoke<CreateDeploymentConfigRequest,CreateDeploymentConfigResponse>(request, marshaller, unmarshaller);
@@ -667,7 +667,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public virtual Task<CreateDeploymentConfigResponse> CreateDeploymentConfigAsync(CreateDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDeploymentConfigRequestMarshaller();
+            var marshaller = CreateDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDeploymentConfigRequest,CreateDeploymentConfigResponse>(request, marshaller, 
@@ -680,7 +680,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual CreateDeploymentGroupResponse CreateDeploymentGroup(CreateDeploymentGroupRequest request)
         {
-            var marshaller = new CreateDeploymentGroupRequestMarshaller();
+            var marshaller = CreateDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateDeploymentGroupRequest,CreateDeploymentGroupResponse>(request, marshaller, unmarshaller);
@@ -699,7 +699,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">REST API Reference for CreateDeploymentGroup Operation</seealso>
         public virtual Task<CreateDeploymentGroupResponse> CreateDeploymentGroupAsync(CreateDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDeploymentGroupRequestMarshaller();
+            var marshaller = CreateDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDeploymentGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDeploymentGroupRequest,CreateDeploymentGroupResponse>(request, marshaller, 
@@ -712,7 +712,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var marshaller = new DeleteApplicationRequestMarshaller();
+            var marshaller = DeleteApplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, unmarshaller);
@@ -731,7 +731,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteApplicationRequestMarshaller();
+            var marshaller = DeleteApplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteApplicationRequest,DeleteApplicationResponse>(request, marshaller, 
@@ -744,7 +744,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual DeleteDeploymentConfigResponse DeleteDeploymentConfig(DeleteDeploymentConfigRequest request)
         {
-            var marshaller = new DeleteDeploymentConfigRequestMarshaller();
+            var marshaller = DeleteDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentConfigResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDeploymentConfigRequest,DeleteDeploymentConfigResponse>(request, marshaller, unmarshaller);
@@ -763,7 +763,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">REST API Reference for DeleteDeploymentConfig Operation</seealso>
         public virtual Task<DeleteDeploymentConfigResponse> DeleteDeploymentConfigAsync(DeleteDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDeploymentConfigRequestMarshaller();
+            var marshaller = DeleteDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDeploymentConfigRequest,DeleteDeploymentConfigResponse>(request, marshaller, 
@@ -776,7 +776,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual DeleteDeploymentGroupResponse DeleteDeploymentGroup(DeleteDeploymentGroupRequest request)
         {
-            var marshaller = new DeleteDeploymentGroupRequestMarshaller();
+            var marshaller = DeleteDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDeploymentGroupRequest,DeleteDeploymentGroupResponse>(request, marshaller, unmarshaller);
@@ -795,7 +795,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">REST API Reference for DeleteDeploymentGroup Operation</seealso>
         public virtual Task<DeleteDeploymentGroupResponse> DeleteDeploymentGroupAsync(DeleteDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDeploymentGroupRequestMarshaller();
+            var marshaller = DeleteDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDeploymentGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDeploymentGroupRequest,DeleteDeploymentGroupResponse>(request, marshaller, 
@@ -808,7 +808,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual DeleteGitHubAccountTokenResponse DeleteGitHubAccountToken(DeleteGitHubAccountTokenRequest request)
         {
-            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var marshaller = DeleteGitHubAccountTokenRequestMarshaller.Instance;
             var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
 
             return Invoke<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, unmarshaller);
@@ -827,7 +827,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken">REST API Reference for DeleteGitHubAccountToken Operation</seealso>
         public virtual Task<DeleteGitHubAccountTokenResponse> DeleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteGitHubAccountTokenRequestMarshaller();
+            var marshaller = DeleteGitHubAccountTokenRequestMarshaller.Instance;
             var unmarshaller = DeleteGitHubAccountTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteGitHubAccountTokenRequest,DeleteGitHubAccountTokenResponse>(request, marshaller, 
@@ -840,7 +840,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual DeregisterOnPremisesInstanceResponse DeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request)
         {
-            var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
+            var marshaller = DeregisterOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterOnPremisesInstanceRequest,DeregisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
@@ -859,7 +859,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">REST API Reference for DeregisterOnPremisesInstance Operation</seealso>
         public virtual Task<DeregisterOnPremisesInstanceResponse> DeregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
+            var marshaller = DeregisterOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = DeregisterOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterOnPremisesInstanceRequest,DeregisterOnPremisesInstanceResponse>(request, marshaller, 
@@ -872,7 +872,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var marshaller = new GetApplicationRequestMarshaller();
+            var marshaller = GetApplicationRequestMarshaller.Instance;
             var unmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
             return Invoke<GetApplicationRequest,GetApplicationResponse>(request, marshaller, unmarshaller);
@@ -891,7 +891,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetApplicationRequestMarshaller();
+            var marshaller = GetApplicationRequestMarshaller.Instance;
             var unmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetApplicationRequest,GetApplicationResponse>(request, marshaller, 
@@ -904,7 +904,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetApplicationRevisionResponse GetApplicationRevision(GetApplicationRevisionRequest request)
         {
-            var marshaller = new GetApplicationRevisionRequestMarshaller();
+            var marshaller = GetApplicationRevisionRequestMarshaller.Instance;
             var unmarshaller = GetApplicationRevisionResponseUnmarshaller.Instance;
 
             return Invoke<GetApplicationRevisionRequest,GetApplicationRevisionResponse>(request, marshaller, unmarshaller);
@@ -923,7 +923,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">REST API Reference for GetApplicationRevision Operation</seealso>
         public virtual Task<GetApplicationRevisionResponse> GetApplicationRevisionAsync(GetApplicationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetApplicationRevisionRequestMarshaller();
+            var marshaller = GetApplicationRevisionRequestMarshaller.Instance;
             var unmarshaller = GetApplicationRevisionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetApplicationRevisionRequest,GetApplicationRevisionResponse>(request, marshaller, 
@@ -936,7 +936,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var marshaller = new GetDeploymentRequestMarshaller();
+            var marshaller = GetDeploymentRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, unmarshaller);
@@ -955,7 +955,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDeploymentRequestMarshaller();
+            var marshaller = GetDeploymentRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentRequest,GetDeploymentResponse>(request, marshaller, 
@@ -968,7 +968,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetDeploymentConfigResponse GetDeploymentConfig(GetDeploymentConfigRequest request)
         {
-            var marshaller = new GetDeploymentConfigRequestMarshaller();
+            var marshaller = GetDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentConfigResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentConfigRequest,GetDeploymentConfigResponse>(request, marshaller, unmarshaller);
@@ -987,7 +987,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">REST API Reference for GetDeploymentConfig Operation</seealso>
         public virtual Task<GetDeploymentConfigResponse> GetDeploymentConfigAsync(GetDeploymentConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDeploymentConfigRequestMarshaller();
+            var marshaller = GetDeploymentConfigRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentConfigRequest,GetDeploymentConfigResponse>(request, marshaller, 
@@ -1000,7 +1000,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetDeploymentGroupResponse GetDeploymentGroup(GetDeploymentGroupRequest request)
         {
-            var marshaller = new GetDeploymentGroupRequestMarshaller();
+            var marshaller = GetDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentGroupResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentGroupRequest,GetDeploymentGroupResponse>(request, marshaller, unmarshaller);
@@ -1019,7 +1019,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">REST API Reference for GetDeploymentGroup Operation</seealso>
         public virtual Task<GetDeploymentGroupResponse> GetDeploymentGroupAsync(GetDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDeploymentGroupRequestMarshaller();
+            var marshaller = GetDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentGroupRequest,GetDeploymentGroupResponse>(request, marshaller, 
@@ -1032,7 +1032,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetDeploymentInstanceResponse GetDeploymentInstance(GetDeploymentInstanceRequest request)
         {
-            var marshaller = new GetDeploymentInstanceRequestMarshaller();
+            var marshaller = GetDeploymentInstanceRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentInstanceResponseUnmarshaller.Instance;
 
             return Invoke<GetDeploymentInstanceRequest,GetDeploymentInstanceResponse>(request, marshaller, unmarshaller);
@@ -1051,7 +1051,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
         public virtual Task<GetDeploymentInstanceResponse> GetDeploymentInstanceAsync(GetDeploymentInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDeploymentInstanceRequestMarshaller();
+            var marshaller = GetDeploymentInstanceRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentInstanceRequest,GetDeploymentInstanceResponse>(request, marshaller, 
@@ -1064,7 +1064,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual GetOnPremisesInstanceResponse GetOnPremisesInstance(GetOnPremisesInstanceRequest request)
         {
-            var marshaller = new GetOnPremisesInstanceRequestMarshaller();
+            var marshaller = GetOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = GetOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return Invoke<GetOnPremisesInstanceRequest,GetOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
@@ -1083,7 +1083,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">REST API Reference for GetOnPremisesInstance Operation</seealso>
         public virtual Task<GetOnPremisesInstanceResponse> GetOnPremisesInstanceAsync(GetOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetOnPremisesInstanceRequestMarshaller();
+            var marshaller = GetOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = GetOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOnPremisesInstanceRequest,GetOnPremisesInstanceResponse>(request, marshaller, 
@@ -1096,7 +1096,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListApplicationRevisionsResponse ListApplicationRevisions(ListApplicationRevisionsRequest request)
         {
-            var marshaller = new ListApplicationRevisionsRequestMarshaller();
+            var marshaller = ListApplicationRevisionsRequestMarshaller.Instance;
             var unmarshaller = ListApplicationRevisionsResponseUnmarshaller.Instance;
 
             return Invoke<ListApplicationRevisionsRequest,ListApplicationRevisionsResponse>(request, marshaller, unmarshaller);
@@ -1115,7 +1115,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">REST API Reference for ListApplicationRevisions Operation</seealso>
         public virtual Task<ListApplicationRevisionsResponse> ListApplicationRevisionsAsync(ListApplicationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListApplicationRevisionsRequestMarshaller();
+            var marshaller = ListApplicationRevisionsRequestMarshaller.Instance;
             var unmarshaller = ListApplicationRevisionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListApplicationRevisionsRequest,ListApplicationRevisionsResponse>(request, marshaller, 
@@ -1132,7 +1132,7 @@ namespace Amazon.CodeDeploy
         }
         internal virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var marshaller = new ListApplicationsRequestMarshaller();
+            var marshaller = ListApplicationsRequestMarshaller.Instance;
             var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
             return Invoke<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, unmarshaller);
@@ -1169,7 +1169,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListApplicationsRequestMarshaller();
+            var marshaller = ListApplicationsRequestMarshaller.Instance;
             var unmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListApplicationsRequest,ListApplicationsResponse>(request, marshaller, 
@@ -1186,7 +1186,7 @@ namespace Amazon.CodeDeploy
         }
         internal virtual ListDeploymentConfigsResponse ListDeploymentConfigs(ListDeploymentConfigsRequest request)
         {
-            var marshaller = new ListDeploymentConfigsRequestMarshaller();
+            var marshaller = ListDeploymentConfigsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentConfigsResponseUnmarshaller.Instance;
 
             return Invoke<ListDeploymentConfigsRequest,ListDeploymentConfigsResponse>(request, marshaller, unmarshaller);
@@ -1223,7 +1223,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">REST API Reference for ListDeploymentConfigs Operation</seealso>
         public virtual Task<ListDeploymentConfigsResponse> ListDeploymentConfigsAsync(ListDeploymentConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDeploymentConfigsRequestMarshaller();
+            var marshaller = ListDeploymentConfigsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeploymentConfigsRequest,ListDeploymentConfigsResponse>(request, marshaller, 
@@ -1236,7 +1236,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListDeploymentGroupsResponse ListDeploymentGroups(ListDeploymentGroupsRequest request)
         {
-            var marshaller = new ListDeploymentGroupsRequestMarshaller();
+            var marshaller = ListDeploymentGroupsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ListDeploymentGroupsRequest,ListDeploymentGroupsResponse>(request, marshaller, unmarshaller);
@@ -1255,7 +1255,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">REST API Reference for ListDeploymentGroups Operation</seealso>
         public virtual Task<ListDeploymentGroupsResponse> ListDeploymentGroupsAsync(ListDeploymentGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDeploymentGroupsRequestMarshaller();
+            var marshaller = ListDeploymentGroupsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeploymentGroupsRequest,ListDeploymentGroupsResponse>(request, marshaller, 
@@ -1268,7 +1268,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListDeploymentInstancesResponse ListDeploymentInstances(ListDeploymentInstancesRequest request)
         {
-            var marshaller = new ListDeploymentInstancesRequestMarshaller();
+            var marshaller = ListDeploymentInstancesRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentInstancesResponseUnmarshaller.Instance;
 
             return Invoke<ListDeploymentInstancesRequest,ListDeploymentInstancesResponse>(request, marshaller, unmarshaller);
@@ -1287,7 +1287,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
         public virtual Task<ListDeploymentInstancesResponse> ListDeploymentInstancesAsync(ListDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDeploymentInstancesRequestMarshaller();
+            var marshaller = ListDeploymentInstancesRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeploymentInstancesRequest,ListDeploymentInstancesResponse>(request, marshaller, 
@@ -1300,7 +1300,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var marshaller = new ListDeploymentsRequestMarshaller();
+            var marshaller = ListDeploymentsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
             return Invoke<ListDeploymentsRequest,ListDeploymentsResponse>(request, marshaller, unmarshaller);
@@ -1319,7 +1319,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDeploymentsRequestMarshaller();
+            var marshaller = ListDeploymentsRequestMarshaller.Instance;
             var unmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeploymentsRequest,ListDeploymentsResponse>(request, marshaller, 
@@ -1332,7 +1332,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListGitHubAccountTokenNamesResponse ListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request)
         {
-            var marshaller = new ListGitHubAccountTokenNamesRequestMarshaller();
+            var marshaller = ListGitHubAccountTokenNamesRequestMarshaller.Instance;
             var unmarshaller = ListGitHubAccountTokenNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListGitHubAccountTokenNamesRequest,ListGitHubAccountTokenNamesResponse>(request, marshaller, unmarshaller);
@@ -1351,7 +1351,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames">REST API Reference for ListGitHubAccountTokenNames Operation</seealso>
         public virtual Task<ListGitHubAccountTokenNamesResponse> ListGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListGitHubAccountTokenNamesRequestMarshaller();
+            var marshaller = ListGitHubAccountTokenNamesRequestMarshaller.Instance;
             var unmarshaller = ListGitHubAccountTokenNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGitHubAccountTokenNamesRequest,ListGitHubAccountTokenNamesResponse>(request, marshaller, 
@@ -1364,7 +1364,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual ListOnPremisesInstancesResponse ListOnPremisesInstances(ListOnPremisesInstancesRequest request)
         {
-            var marshaller = new ListOnPremisesInstancesRequestMarshaller();
+            var marshaller = ListOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = ListOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return Invoke<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
@@ -1383,7 +1383,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">REST API Reference for ListOnPremisesInstances Operation</seealso>
         public virtual Task<ListOnPremisesInstancesResponse> ListOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListOnPremisesInstancesRequestMarshaller();
+            var marshaller = ListOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = ListOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOnPremisesInstancesRequest,ListOnPremisesInstancesResponse>(request, marshaller, 
@@ -1396,7 +1396,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual PutLifecycleEventHookExecutionStatusResponse PutLifecycleEventHookExecutionStatus(PutLifecycleEventHookExecutionStatusRequest request)
         {
-            var marshaller = new PutLifecycleEventHookExecutionStatusRequestMarshaller();
+            var marshaller = PutLifecycleEventHookExecutionStatusRequestMarshaller.Instance;
             var unmarshaller = PutLifecycleEventHookExecutionStatusResponseUnmarshaller.Instance;
 
             return Invoke<PutLifecycleEventHookExecutionStatusRequest,PutLifecycleEventHookExecutionStatusResponse>(request, marshaller, unmarshaller);
@@ -1415,7 +1415,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">REST API Reference for PutLifecycleEventHookExecutionStatus Operation</seealso>
         public virtual Task<PutLifecycleEventHookExecutionStatusResponse> PutLifecycleEventHookExecutionStatusAsync(PutLifecycleEventHookExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutLifecycleEventHookExecutionStatusRequestMarshaller();
+            var marshaller = PutLifecycleEventHookExecutionStatusRequestMarshaller.Instance;
             var unmarshaller = PutLifecycleEventHookExecutionStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutLifecycleEventHookExecutionStatusRequest,PutLifecycleEventHookExecutionStatusResponse>(request, marshaller, 
@@ -1428,7 +1428,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual RegisterApplicationRevisionResponse RegisterApplicationRevision(RegisterApplicationRevisionRequest request)
         {
-            var marshaller = new RegisterApplicationRevisionRequestMarshaller();
+            var marshaller = RegisterApplicationRevisionRequestMarshaller.Instance;
             var unmarshaller = RegisterApplicationRevisionResponseUnmarshaller.Instance;
 
             return Invoke<RegisterApplicationRevisionRequest,RegisterApplicationRevisionResponse>(request, marshaller, unmarshaller);
@@ -1447,7 +1447,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">REST API Reference for RegisterApplicationRevision Operation</seealso>
         public virtual Task<RegisterApplicationRevisionResponse> RegisterApplicationRevisionAsync(RegisterApplicationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RegisterApplicationRevisionRequestMarshaller();
+            var marshaller = RegisterApplicationRevisionRequestMarshaller.Instance;
             var unmarshaller = RegisterApplicationRevisionResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterApplicationRevisionRequest,RegisterApplicationRevisionResponse>(request, marshaller, 
@@ -1460,7 +1460,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual RegisterOnPremisesInstanceResponse RegisterOnPremisesInstance(RegisterOnPremisesInstanceRequest request)
         {
-            var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
+            var marshaller = RegisterOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RegisterOnPremisesInstanceRequest,RegisterOnPremisesInstanceResponse>(request, marshaller, unmarshaller);
@@ -1479,7 +1479,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">REST API Reference for RegisterOnPremisesInstance Operation</seealso>
         public virtual Task<RegisterOnPremisesInstanceResponse> RegisterOnPremisesInstanceAsync(RegisterOnPremisesInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
+            var marshaller = RegisterOnPremisesInstanceRequestMarshaller.Instance;
             var unmarshaller = RegisterOnPremisesInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RegisterOnPremisesInstanceRequest,RegisterOnPremisesInstanceResponse>(request, marshaller, 
@@ -1492,7 +1492,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual RemoveTagsFromOnPremisesInstancesResponse RemoveTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request)
         {
-            var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
+            var marshaller = RemoveTagsFromOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, unmarshaller);
@@ -1511,7 +1511,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">REST API Reference for RemoveTagsFromOnPremisesInstances Operation</seealso>
         public virtual Task<RemoveTagsFromOnPremisesInstancesResponse> RemoveTagsFromOnPremisesInstancesAsync(RemoveTagsFromOnPremisesInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
+            var marshaller = RemoveTagsFromOnPremisesInstancesRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, 
@@ -1524,7 +1524,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual SkipWaitTimeForInstanceTerminationResponse SkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request)
         {
-            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var marshaller = SkipWaitTimeForInstanceTerminationRequestMarshaller.Instance;
             var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
 
             return Invoke<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, unmarshaller);
@@ -1543,7 +1543,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
         public virtual Task<SkipWaitTimeForInstanceTerminationResponse> SkipWaitTimeForInstanceTerminationAsync(SkipWaitTimeForInstanceTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var marshaller = SkipWaitTimeForInstanceTerminationRequestMarshaller.Instance;
             var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
 
             return InvokeAsync<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, 
@@ -1556,7 +1556,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual StopDeploymentResponse StopDeployment(StopDeploymentRequest request)
         {
-            var marshaller = new StopDeploymentRequestMarshaller();
+            var marshaller = StopDeploymentRequestMarshaller.Instance;
             var unmarshaller = StopDeploymentResponseUnmarshaller.Instance;
 
             return Invoke<StopDeploymentRequest,StopDeploymentResponse>(request, marshaller, unmarshaller);
@@ -1575,7 +1575,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">REST API Reference for StopDeployment Operation</seealso>
         public virtual Task<StopDeploymentResponse> StopDeploymentAsync(StopDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopDeploymentRequestMarshaller();
+            var marshaller = StopDeploymentRequestMarshaller.Instance;
             var unmarshaller = StopDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopDeploymentRequest,StopDeploymentResponse>(request, marshaller, 
@@ -1588,7 +1588,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, unmarshaller);
@@ -1607,7 +1607,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateApplicationRequestMarshaller();
+            var marshaller = UpdateApplicationRequestMarshaller.Instance;
             var unmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateApplicationRequest,UpdateApplicationResponse>(request, marshaller, 
@@ -1620,7 +1620,7 @@ namespace Amazon.CodeDeploy
 
         internal virtual UpdateDeploymentGroupResponse UpdateDeploymentGroup(UpdateDeploymentGroupRequest request)
         {
-            var marshaller = new UpdateDeploymentGroupRequestMarshaller();
+            var marshaller = UpdateDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateDeploymentGroupResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDeploymentGroupRequest,UpdateDeploymentGroupResponse>(request, marshaller, unmarshaller);
@@ -1639,7 +1639,7 @@ namespace Amazon.CodeDeploy
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">REST API Reference for UpdateDeploymentGroup Operation</seealso>
         public virtual Task<UpdateDeploymentGroupResponse> UpdateDeploymentGroupAsync(UpdateDeploymentGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDeploymentGroupRequestMarshaller();
+            var marshaller = UpdateDeploymentGroupRequestMarshaller.Instance;
             var unmarshaller = UpdateDeploymentGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDeploymentGroupRequest,UpdateDeploymentGroupResponse>(request, marshaller, 

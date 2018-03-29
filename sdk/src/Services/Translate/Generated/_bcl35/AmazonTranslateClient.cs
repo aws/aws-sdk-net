@@ -283,7 +283,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual TranslateTextResponse TranslateText(TranslateTextRequest request)
         {
-            var marshaller = new TranslateTextRequestMarshaller();
+            var marshaller = TranslateTextRequestMarshaller.Instance;
             var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
             return Invoke<TranslateTextRequest,TranslateTextResponse>(request, marshaller, unmarshaller);
@@ -303,7 +303,7 @@ namespace Amazon.Translate
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         public virtual IAsyncResult BeginTranslateText(TranslateTextRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TranslateTextRequestMarshaller();
+            var marshaller = TranslateTextRequestMarshaller.Instance;
             var unmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
             return BeginInvoke<TranslateTextRequest>(request, marshaller, unmarshaller,

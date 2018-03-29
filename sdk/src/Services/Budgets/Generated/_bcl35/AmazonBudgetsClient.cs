@@ -290,7 +290,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
-            var marshaller = new CreateBudgetRequestMarshaller();
+            var marshaller = CreateBudgetRequestMarshaller.Instance;
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
             return Invoke<CreateBudgetRequest,CreateBudgetResponse>(request, marshaller, unmarshaller);
@@ -309,7 +309,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateBudgetRequestMarshaller();
+            var marshaller = CreateBudgetRequestMarshaller.Instance;
             var unmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateBudgetRequest>(request, marshaller, unmarshaller,
@@ -356,7 +356,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
         {
-            var marshaller = new CreateNotificationRequestMarshaller();
+            var marshaller = CreateNotificationRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
 
             return Invoke<CreateNotificationRequest,CreateNotificationResponse>(request, marshaller, unmarshaller);
@@ -375,7 +375,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateNotificationRequestMarshaller();
+            var marshaller = CreateNotificationRequestMarshaller.Instance;
             var unmarshaller = CreateNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateNotificationRequest>(request, marshaller, unmarshaller,
@@ -422,7 +422,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
-            var marshaller = new CreateSubscriberRequestMarshaller();
+            var marshaller = CreateSubscriberRequestMarshaller.Instance;
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
             return Invoke<CreateSubscriberRequest,CreateSubscriberResponse>(request, marshaller, unmarshaller);
@@ -441,7 +441,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateSubscriber(CreateSubscriberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSubscriberRequestMarshaller();
+            var marshaller = CreateSubscriberRequestMarshaller.Instance;
             var unmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSubscriberRequest>(request, marshaller, unmarshaller,
@@ -487,7 +487,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
-            var marshaller = new DeleteBudgetRequestMarshaller();
+            var marshaller = DeleteBudgetRequestMarshaller.Instance;
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBudgetRequest,DeleteBudgetResponse>(request, marshaller, unmarshaller);
@@ -506,7 +506,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteBudgetRequestMarshaller();
+            var marshaller = DeleteBudgetRequestMarshaller.Instance;
             var unmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteBudgetRequest>(request, marshaller, unmarshaller,
@@ -552,7 +552,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
         {
-            var marshaller = new DeleteNotificationRequestMarshaller();
+            var marshaller = DeleteNotificationRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteNotificationRequest,DeleteNotificationResponse>(request, marshaller, unmarshaller);
@@ -571,7 +571,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteNotificationRequestMarshaller();
+            var marshaller = DeleteNotificationRequestMarshaller.Instance;
             var unmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteNotificationRequest>(request, marshaller, unmarshaller,
@@ -617,7 +617,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
-            var marshaller = new DeleteSubscriberRequestMarshaller();
+            var marshaller = DeleteSubscriberRequestMarshaller.Instance;
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSubscriberRequest,DeleteSubscriberResponse>(request, marshaller, unmarshaller);
@@ -636,7 +636,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteSubscriber(DeleteSubscriberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSubscriberRequestMarshaller();
+            var marshaller = DeleteSubscriberRequestMarshaller.Instance;
             var unmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSubscriberRequest>(request, marshaller, unmarshaller,
@@ -676,7 +676,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DescribeBudgetResponse DescribeBudget(DescribeBudgetRequest request)
         {
-            var marshaller = new DescribeBudgetRequestMarshaller();
+            var marshaller = DescribeBudgetRequestMarshaller.Instance;
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBudgetRequest,DescribeBudgetResponse>(request, marshaller, unmarshaller);
@@ -695,7 +695,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeBudget(DescribeBudgetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeBudgetRequestMarshaller();
+            var marshaller = DescribeBudgetRequestMarshaller.Instance;
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeBudgetRequest>(request, marshaller, unmarshaller,
@@ -741,7 +741,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DescribeBudgetsResponse DescribeBudgets(DescribeBudgetsRequest request)
         {
-            var marshaller = new DescribeBudgetsRequestMarshaller();
+            var marshaller = DescribeBudgetsRequestMarshaller.Instance;
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBudgetsRequest,DescribeBudgetsResponse>(request, marshaller, unmarshaller);
@@ -760,7 +760,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeBudgets(DescribeBudgetsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeBudgetsRequestMarshaller();
+            var marshaller = DescribeBudgetsRequestMarshaller.Instance;
             var unmarshaller = DescribeBudgetsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeBudgetsRequest>(request, marshaller, unmarshaller,
@@ -806,7 +806,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DescribeNotificationsForBudgetResponse DescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request)
         {
-            var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
+            var marshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
 
             return Invoke<DescribeNotificationsForBudgetRequest,DescribeNotificationsForBudgetResponse>(request, marshaller, unmarshaller);
@@ -825,7 +825,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeNotificationsForBudgetRequestMarshaller();
+            var marshaller = DescribeNotificationsForBudgetRequestMarshaller.Instance;
             var unmarshaller = DescribeNotificationsForBudgetResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeNotificationsForBudgetRequest>(request, marshaller, unmarshaller,
@@ -871,7 +871,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual DescribeSubscribersForNotificationResponse DescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request)
         {
-            var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
+            var marshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSubscribersForNotificationRequest,DescribeSubscribersForNotificationResponse>(request, marshaller, unmarshaller);
@@ -890,7 +890,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeSubscribersForNotification(DescribeSubscribersForNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSubscribersForNotificationRequestMarshaller();
+            var marshaller = DescribeSubscribersForNotificationRequestMarshaller.Instance;
             var unmarshaller = DescribeSubscribersForNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSubscribersForNotificationRequest>(request, marshaller, unmarshaller,
@@ -932,7 +932,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
-            var marshaller = new UpdateBudgetRequestMarshaller();
+            var marshaller = UpdateBudgetRequestMarshaller.Instance;
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateBudgetRequest,UpdateBudgetResponse>(request, marshaller, unmarshaller);
@@ -951,7 +951,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateBudgetRequestMarshaller();
+            var marshaller = UpdateBudgetRequestMarshaller.Instance;
             var unmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateBudgetRequest>(request, marshaller, unmarshaller,
@@ -994,7 +994,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual UpdateNotificationResponse UpdateNotification(UpdateNotificationRequest request)
         {
-            var marshaller = new UpdateNotificationRequestMarshaller();
+            var marshaller = UpdateNotificationRequestMarshaller.Instance;
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateNotificationRequest,UpdateNotificationResponse>(request, marshaller, unmarshaller);
@@ -1013,7 +1013,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateNotification(UpdateNotificationRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateNotificationRequestMarshaller();
+            var marshaller = UpdateNotificationRequestMarshaller.Instance;
             var unmarshaller = UpdateNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateNotificationRequest>(request, marshaller, unmarshaller,
@@ -1056,7 +1056,7 @@ namespace Amazon.Budgets
         /// </exception>
         public virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
-            var marshaller = new UpdateSubscriberRequestMarshaller();
+            var marshaller = UpdateSubscriberRequestMarshaller.Instance;
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSubscriberRequest,UpdateSubscriberResponse>(request, marshaller, unmarshaller);
@@ -1075,7 +1075,7 @@ namespace Amazon.Budgets
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateSubscriber(UpdateSubscriberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateSubscriberRequestMarshaller();
+            var marshaller = UpdateSubscriberRequestMarshaller.Instance;
             var unmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateSubscriberRequest>(request, marshaller, unmarshaller,

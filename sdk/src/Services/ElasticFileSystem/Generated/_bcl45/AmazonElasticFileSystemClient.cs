@@ -428,7 +428,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request)
         {
-            var marshaller = new CreateFileSystemRequestMarshaller();
+            var marshaller = CreateFileSystemRequestMarshaller.Instance;
             var unmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
             return Invoke<CreateFileSystemRequest,CreateFileSystemResponse>(request, marshaller, unmarshaller);
@@ -544,7 +544,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateFileSystemRequestMarshaller();
+            var marshaller = CreateFileSystemRequestMarshaller.Instance;
             var unmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFileSystemRequest,CreateFileSystemResponse>(request, marshaller, 
@@ -758,7 +758,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public virtual CreateMountTargetResponse CreateMountTarget(CreateMountTargetRequest request)
         {
-            var marshaller = new CreateMountTargetRequestMarshaller();
+            var marshaller = CreateMountTargetRequestMarshaller.Instance;
             var unmarshaller = CreateMountTargetResponseUnmarshaller.Instance;
 
             return Invoke<CreateMountTargetRequest,CreateMountTargetResponse>(request, marshaller, unmarshaller);
@@ -776,7 +776,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public virtual Task<CreateMountTargetResponse> CreateMountTargetAsync(CreateMountTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateMountTargetRequestMarshaller();
+            var marshaller = CreateMountTargetRequestMarshaller.Instance;
             var unmarshaller = CreateMountTargetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateMountTargetRequest,CreateMountTargetResponse>(request, marshaller, 
@@ -818,7 +818,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var marshaller = new CreateTagsRequestMarshaller();
+            var marshaller = CreateTagsRequestMarshaller.Instance;
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
             return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
@@ -836,7 +836,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateTagsRequestMarshaller();
+            var marshaller = CreateTagsRequestMarshaller.Instance;
             var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
@@ -944,7 +944,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual DeleteFileSystemResponse DeleteFileSystem(DeleteFileSystemRequest request)
         {
-            var marshaller = new DeleteFileSystemRequestMarshaller();
+            var marshaller = DeleteFileSystemRequestMarshaller.Instance;
             var unmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFileSystemRequest,DeleteFileSystemResponse>(request, marshaller, unmarshaller);
@@ -1016,7 +1016,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFileSystemRequestMarshaller();
+            var marshaller = DeleteFileSystemRequestMarshaller.Instance;
             var unmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFileSystemRequest,DeleteFileSystemResponse>(request, marshaller, 
@@ -1152,7 +1152,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual DeleteMountTargetResponse DeleteMountTarget(DeleteMountTargetRequest request)
         {
-            var marshaller = new DeleteMountTargetRequestMarshaller();
+            var marshaller = DeleteMountTargetRequestMarshaller.Instance;
             var unmarshaller = DeleteMountTargetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMountTargetRequest,DeleteMountTargetResponse>(request, marshaller, unmarshaller);
@@ -1238,7 +1238,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public virtual Task<DeleteMountTargetResponse> DeleteMountTargetAsync(DeleteMountTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteMountTargetRequestMarshaller();
+            var marshaller = DeleteMountTargetRequestMarshaller.Instance;
             var unmarshaller = DeleteMountTargetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteMountTargetRequest,DeleteMountTargetResponse>(request, marshaller, 
@@ -1279,7 +1279,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
@@ -1297,7 +1297,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
@@ -1365,7 +1365,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public virtual DescribeFileSystemsResponse DescribeFileSystems(DescribeFileSystemsRequest request)
         {
-            var marshaller = new DescribeFileSystemsRequestMarshaller();
+            var marshaller = DescribeFileSystemsRequestMarshaller.Instance;
             var unmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeFileSystemsRequest,DescribeFileSystemsResponse>(request, marshaller, unmarshaller);
@@ -1383,7 +1383,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public virtual Task<DescribeFileSystemsResponse> DescribeFileSystemsAsync(DescribeFileSystemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeFileSystemsRequestMarshaller();
+            var marshaller = DescribeFileSystemsRequestMarshaller.Instance;
             var unmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFileSystemsRequest,DescribeFileSystemsResponse>(request, marshaller, 
@@ -1465,7 +1465,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual DescribeMountTargetsResponse DescribeMountTargets(DescribeMountTargetsRequest request)
         {
-            var marshaller = new DescribeMountTargetsRequestMarshaller();
+            var marshaller = DescribeMountTargetsRequestMarshaller.Instance;
             var unmarshaller = DescribeMountTargetsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMountTargetsRequest,DescribeMountTargetsResponse>(request, marshaller, unmarshaller);
@@ -1524,7 +1524,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public virtual Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(DescribeMountTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeMountTargetsRequestMarshaller();
+            var marshaller = DescribeMountTargetsRequestMarshaller.Instance;
             var unmarshaller = DescribeMountTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMountTargetsRequest,DescribeMountTargetsResponse>(request, marshaller, 
@@ -1622,7 +1622,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request)
         {
-            var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
+            var marshaller = DescribeMountTargetSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMountTargetSecurityGroupsRequest,DescribeMountTargetSecurityGroupsResponse>(request, marshaller, unmarshaller);
@@ -1689,7 +1689,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public virtual Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(DescribeMountTargetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
+            var marshaller = DescribeMountTargetSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMountTargetSecurityGroupsRequest,DescribeMountTargetSecurityGroupsResponse>(request, marshaller, 
@@ -1763,7 +1763,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
@@ -1818,7 +1818,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
@@ -1884,7 +1884,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public virtual ModifyMountTargetSecurityGroupsResponse ModifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request)
         {
-            var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();
+            var marshaller = ModifyMountTargetSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return Invoke<ModifyMountTargetSecurityGroupsRequest,ModifyMountTargetSecurityGroupsResponse>(request, marshaller, unmarshaller);
@@ -1902,7 +1902,7 @@ namespace Amazon.ElasticFileSystem
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public virtual Task<ModifyMountTargetSecurityGroupsResponse> ModifyMountTargetSecurityGroupsAsync(ModifyMountTargetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();
+            var marshaller = ModifyMountTargetSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyMountTargetSecurityGroupsRequest,ModifyMountTargetSecurityGroupsResponse>(request, marshaller, 

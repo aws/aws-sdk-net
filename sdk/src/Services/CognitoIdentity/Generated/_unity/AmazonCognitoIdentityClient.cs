@@ -209,7 +209,7 @@ namespace Amazon.CognitoIdentity
         #region  CreateIdentityPool
         internal virtual CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
-            var marshaller = new CreateIdentityPoolRequestMarshaller();
+            var marshaller = CreateIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
 
             return Invoke<CreateIdentityPoolRequest,CreateIdentityPoolResponse>(request, marshaller, unmarshaller);
@@ -227,7 +227,7 @@ namespace Amazon.CognitoIdentity
         public virtual void CreateIdentityPoolAsync(CreateIdentityPoolRequest request, AmazonServiceCallback<CreateIdentityPoolRequest, CreateIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateIdentityPoolRequestMarshaller();
+            var marshaller = CreateIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = CreateIdentityPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -244,7 +244,7 @@ namespace Amazon.CognitoIdentity
         #region  DeleteIdentities
         internal virtual DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
-            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var marshaller = DeleteIdentitiesRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIdentitiesRequest,DeleteIdentitiesResponse>(request, marshaller, unmarshaller);
@@ -262,7 +262,7 @@ namespace Amazon.CognitoIdentity
         public virtual void DeleteIdentitiesAsync(DeleteIdentitiesRequest request, AmazonServiceCallback<DeleteIdentitiesRequest, DeleteIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteIdentitiesRequestMarshaller();
+            var marshaller = DeleteIdentitiesRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentitiesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -279,7 +279,7 @@ namespace Amazon.CognitoIdentity
         #region  DeleteIdentityPool
         internal virtual DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
-            var marshaller = new DeleteIdentityPoolRequestMarshaller();
+            var marshaller = DeleteIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIdentityPoolRequest,DeleteIdentityPoolResponse>(request, marshaller, unmarshaller);
@@ -338,7 +338,7 @@ namespace Amazon.CognitoIdentity
         public virtual void DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, AmazonServiceCallback<DeleteIdentityPoolRequest, DeleteIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteIdentityPoolRequestMarshaller();
+            var marshaller = DeleteIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = DeleteIdentityPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -355,7 +355,7 @@ namespace Amazon.CognitoIdentity
         #region  DescribeIdentity
         internal virtual DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
-            var marshaller = new DescribeIdentityRequestMarshaller();
+            var marshaller = DescribeIdentityRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
 
             return Invoke<DescribeIdentityRequest,DescribeIdentityResponse>(request, marshaller, unmarshaller);
@@ -414,7 +414,7 @@ namespace Amazon.CognitoIdentity
         public virtual void DescribeIdentityAsync(DescribeIdentityRequest request, AmazonServiceCallback<DescribeIdentityRequest, DescribeIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeIdentityRequestMarshaller();
+            var marshaller = DescribeIdentityRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -431,7 +431,7 @@ namespace Amazon.CognitoIdentity
         #region  DescribeIdentityPool
         internal virtual DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
-            var marshaller = new DescribeIdentityPoolRequestMarshaller();
+            var marshaller = DescribeIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
 
             return Invoke<DescribeIdentityPoolRequest,DescribeIdentityPoolResponse>(request, marshaller, unmarshaller);
@@ -490,7 +490,7 @@ namespace Amazon.CognitoIdentity
         public virtual void DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, AmazonServiceCallback<DescribeIdentityPoolRequest, DescribeIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeIdentityPoolRequestMarshaller();
+            var marshaller = DescribeIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = DescribeIdentityPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -507,7 +507,7 @@ namespace Amazon.CognitoIdentity
         #region  GetCredentialsForIdentity
         internal virtual GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
-            var marshaller = new GetCredentialsForIdentityRequestMarshaller();
+            var marshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
 
             return Invoke<GetCredentialsForIdentityRequest,GetCredentialsForIdentityResponse>(request, marshaller, unmarshaller);
@@ -633,7 +633,7 @@ namespace Amazon.CognitoIdentity
         public virtual void GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, AmazonServiceCallback<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetCredentialsForIdentityRequestMarshaller();
+            var marshaller = GetCredentialsForIdentityRequestMarshaller.Instance;
             var unmarshaller = GetCredentialsForIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -650,7 +650,7 @@ namespace Amazon.CognitoIdentity
         #region  GetId
         internal virtual GetIdResponse GetId(GetIdRequest request)
         {
-            var marshaller = new GetIdRequestMarshaller();
+            var marshaller = GetIdRequestMarshaller.Instance;
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
 
             return Invoke<GetIdRequest,GetIdResponse>(request, marshaller, unmarshaller);
@@ -668,7 +668,7 @@ namespace Amazon.CognitoIdentity
         public virtual void GetIdAsync(GetIdRequest request, AmazonServiceCallback<GetIdRequest, GetIdResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetIdRequestMarshaller();
+            var marshaller = GetIdRequestMarshaller.Instance;
             var unmarshaller = GetIdResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -685,7 +685,7 @@ namespace Amazon.CognitoIdentity
         #region  GetIdentityPoolRoles
         internal virtual GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
-            var marshaller = new GetIdentityPoolRolesRequestMarshaller();
+            var marshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
 
             return Invoke<GetIdentityPoolRolesRequest,GetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
@@ -746,7 +746,7 @@ namespace Amazon.CognitoIdentity
         public virtual void GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, AmazonServiceCallback<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetIdentityPoolRolesRequestMarshaller();
+            var marshaller = GetIdentityPoolRolesRequestMarshaller.Instance;
             var unmarshaller = GetIdentityPoolRolesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -763,7 +763,7 @@ namespace Amazon.CognitoIdentity
         #region  GetOpenIdToken
         internal virtual GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
-            var marshaller = new GetOpenIdTokenRequestMarshaller();
+            var marshaller = GetOpenIdTokenRequestMarshaller.Instance;
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
 
             return Invoke<GetOpenIdTokenRequest,GetOpenIdTokenResponse>(request, marshaller, unmarshaller);
@@ -833,7 +833,7 @@ namespace Amazon.CognitoIdentity
         public virtual void GetOpenIdTokenAsync(GetOpenIdTokenRequest request, AmazonServiceCallback<GetOpenIdTokenRequest, GetOpenIdTokenResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetOpenIdTokenRequestMarshaller();
+            var marshaller = GetOpenIdTokenRequestMarshaller.Instance;
             var unmarshaller = GetOpenIdTokenResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -850,7 +850,7 @@ namespace Amazon.CognitoIdentity
         #region  GetOpenIdTokenForDeveloperIdentity
         internal virtual GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
-            var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
+            var marshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
 
             return Invoke<GetOpenIdTokenForDeveloperIdentityRequest,GetOpenIdTokenForDeveloperIdentityResponse>(request, marshaller, unmarshaller);
@@ -868,7 +868,7 @@ namespace Amazon.CognitoIdentity
         public virtual void GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, AmazonServiceCallback<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
+            var marshaller = GetOpenIdTokenForDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -885,7 +885,7 @@ namespace Amazon.CognitoIdentity
         #region  ListIdentities
         internal virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            var marshaller = new ListIdentitiesRequestMarshaller();
+            var marshaller = ListIdentitiesRequestMarshaller.Instance;
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
             return Invoke<ListIdentitiesRequest,ListIdentitiesResponse>(request, marshaller, unmarshaller);
@@ -903,7 +903,7 @@ namespace Amazon.CognitoIdentity
         public virtual void ListIdentitiesAsync(ListIdentitiesRequest request, AmazonServiceCallback<ListIdentitiesRequest, ListIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListIdentitiesRequestMarshaller();
+            var marshaller = ListIdentitiesRequestMarshaller.Instance;
             var unmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -920,7 +920,7 @@ namespace Amazon.CognitoIdentity
         #region  ListIdentityPools
         internal virtual ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
-            var marshaller = new ListIdentityPoolsRequestMarshaller();
+            var marshaller = ListIdentityPoolsRequestMarshaller.Instance;
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
 
             return Invoke<ListIdentityPoolsRequest,ListIdentityPoolsResponse>(request, marshaller, unmarshaller);
@@ -938,7 +938,7 @@ namespace Amazon.CognitoIdentity
         public virtual void ListIdentityPoolsAsync(ListIdentityPoolsRequest request, AmazonServiceCallback<ListIdentityPoolsRequest, ListIdentityPoolsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListIdentityPoolsRequestMarshaller();
+            var marshaller = ListIdentityPoolsRequestMarshaller.Instance;
             var unmarshaller = ListIdentityPoolsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -955,7 +955,7 @@ namespace Amazon.CognitoIdentity
         #region  LookupDeveloperIdentity
         internal virtual LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
-            var marshaller = new LookupDeveloperIdentityRequestMarshaller();
+            var marshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
 
             return Invoke<LookupDeveloperIdentityRequest,LookupDeveloperIdentityResponse>(request, marshaller, unmarshaller);
@@ -973,7 +973,7 @@ namespace Amazon.CognitoIdentity
         public virtual void LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, AmazonServiceCallback<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new LookupDeveloperIdentityRequestMarshaller();
+            var marshaller = LookupDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = LookupDeveloperIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -990,7 +990,7 @@ namespace Amazon.CognitoIdentity
         #region  MergeDeveloperIdentities
         internal virtual MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
-            var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
+            var marshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
 
             return Invoke<MergeDeveloperIdentitiesRequest,MergeDeveloperIdentitiesResponse>(request, marshaller, unmarshaller);
@@ -1008,7 +1008,7 @@ namespace Amazon.CognitoIdentity
         public virtual void MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, AmazonServiceCallback<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
+            var marshaller = MergeDeveloperIdentitiesRequestMarshaller.Instance;
             var unmarshaller = MergeDeveloperIdentitiesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1025,7 +1025,7 @@ namespace Amazon.CognitoIdentity
         #region  SetIdentityPoolRoles
         internal virtual SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
-            var marshaller = new SetIdentityPoolRolesRequestMarshaller();
+            var marshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
 
             return Invoke<SetIdentityPoolRolesRequest,SetIdentityPoolRolesResponse>(request, marshaller, unmarshaller);
@@ -1092,7 +1092,7 @@ namespace Amazon.CognitoIdentity
         public virtual void SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, AmazonServiceCallback<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetIdentityPoolRolesRequestMarshaller();
+            var marshaller = SetIdentityPoolRolesRequestMarshaller.Instance;
             var unmarshaller = SetIdentityPoolRolesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1109,7 +1109,7 @@ namespace Amazon.CognitoIdentity
         #region  UnlinkDeveloperIdentity
         internal virtual UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
-            var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
+            var marshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
 
             return Invoke<UnlinkDeveloperIdentityRequest,UnlinkDeveloperIdentityResponse>(request, marshaller, unmarshaller);
@@ -1127,7 +1127,7 @@ namespace Amazon.CognitoIdentity
         public virtual void UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, AmazonServiceCallback<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
+            var marshaller = UnlinkDeveloperIdentityRequestMarshaller.Instance;
             var unmarshaller = UnlinkDeveloperIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1144,7 +1144,7 @@ namespace Amazon.CognitoIdentity
         #region  UnlinkIdentity
         internal virtual UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
-            var marshaller = new UnlinkIdentityRequestMarshaller();
+            var marshaller = UnlinkIdentityRequestMarshaller.Instance;
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
 
             return Invoke<UnlinkIdentityRequest,UnlinkIdentityResponse>(request, marshaller, unmarshaller);
@@ -1162,7 +1162,7 @@ namespace Amazon.CognitoIdentity
         public virtual void UnlinkIdentityAsync(UnlinkIdentityRequest request, AmazonServiceCallback<UnlinkIdentityRequest, UnlinkIdentityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UnlinkIdentityRequestMarshaller();
+            var marshaller = UnlinkIdentityRequestMarshaller.Instance;
             var unmarshaller = UnlinkIdentityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1179,7 +1179,7 @@ namespace Amazon.CognitoIdentity
         #region  UpdateIdentityPool
         internal virtual UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
-            var marshaller = new UpdateIdentityPoolRequestMarshaller();
+            var marshaller = UpdateIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
 
             return Invoke<UpdateIdentityPoolRequest,UpdateIdentityPoolResponse>(request, marshaller, unmarshaller);
@@ -1197,7 +1197,7 @@ namespace Amazon.CognitoIdentity
         public virtual void UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, AmazonServiceCallback<UpdateIdentityPoolRequest, UpdateIdentityPoolResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateIdentityPoolRequestMarshaller();
+            var marshaller = UpdateIdentityPoolRequestMarshaller.Instance;
             var unmarshaller = UpdateIdentityPoolResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

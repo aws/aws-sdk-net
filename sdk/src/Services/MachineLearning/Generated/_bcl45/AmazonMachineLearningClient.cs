@@ -263,7 +263,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
@@ -281,7 +281,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
@@ -330,7 +330,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">REST API Reference for CreateBatchPrediction Operation</seealso>
         public virtual CreateBatchPredictionResponse CreateBatchPrediction(CreateBatchPredictionRequest request)
         {
-            var marshaller = new CreateBatchPredictionRequestMarshaller();
+            var marshaller = CreateBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = CreateBatchPredictionResponseUnmarshaller.Instance;
 
             return Invoke<CreateBatchPredictionRequest,CreateBatchPredictionResponse>(request, marshaller, unmarshaller);
@@ -348,7 +348,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateBatchPrediction">REST API Reference for CreateBatchPrediction Operation</seealso>
         public virtual Task<CreateBatchPredictionResponse> CreateBatchPredictionAsync(CreateBatchPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateBatchPredictionRequestMarshaller();
+            var marshaller = CreateBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = CreateBatchPredictionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateBatchPredictionRequest,CreateBatchPredictionResponse>(request, marshaller, 
@@ -399,7 +399,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">REST API Reference for CreateDataSourceFromRDS Operation</seealso>
         public virtual CreateDataSourceFromRDSResponse CreateDataSourceFromRDS(CreateDataSourceFromRDSRequest request)
         {
-            var marshaller = new CreateDataSourceFromRDSRequestMarshaller();
+            var marshaller = CreateDataSourceFromRDSRequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromRDSResponseUnmarshaller.Instance;
 
             return Invoke<CreateDataSourceFromRDSRequest,CreateDataSourceFromRDSResponse>(request, marshaller, unmarshaller);
@@ -417,7 +417,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDS">REST API Reference for CreateDataSourceFromRDS Operation</seealso>
         public virtual Task<CreateDataSourceFromRDSResponse> CreateDataSourceFromRDSAsync(CreateDataSourceFromRDSRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDataSourceFromRDSRequestMarshaller();
+            var marshaller = CreateDataSourceFromRDSRequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromRDSResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDataSourceFromRDSRequest,CreateDataSourceFromRDSResponse>(request, marshaller, 
@@ -493,7 +493,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">REST API Reference for CreateDataSourceFromRedshift Operation</seealso>
         public virtual CreateDataSourceFromRedshiftResponse CreateDataSourceFromRedshift(CreateDataSourceFromRedshiftRequest request)
         {
-            var marshaller = new CreateDataSourceFromRedshiftRequestMarshaller();
+            var marshaller = CreateDataSourceFromRedshiftRequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromRedshiftResponseUnmarshaller.Instance;
 
             return Invoke<CreateDataSourceFromRedshiftRequest,CreateDataSourceFromRedshiftResponse>(request, marshaller, unmarshaller);
@@ -511,7 +511,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">REST API Reference for CreateDataSourceFromRedshift Operation</seealso>
         public virtual Task<CreateDataSourceFromRedshiftResponse> CreateDataSourceFromRedshiftAsync(CreateDataSourceFromRedshiftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDataSourceFromRedshiftRequestMarshaller();
+            var marshaller = CreateDataSourceFromRedshiftRequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromRedshiftResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDataSourceFromRedshiftRequest,CreateDataSourceFromRedshiftResponse>(request, marshaller, 
@@ -580,7 +580,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">REST API Reference for CreateDataSourceFromS3 Operation</seealso>
         public virtual CreateDataSourceFromS3Response CreateDataSourceFromS3(CreateDataSourceFromS3Request request)
         {
-            var marshaller = new CreateDataSourceFromS3RequestMarshaller();
+            var marshaller = CreateDataSourceFromS3RequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromS3ResponseUnmarshaller.Instance;
 
             return Invoke<CreateDataSourceFromS3Request,CreateDataSourceFromS3Response>(request, marshaller, unmarshaller);
@@ -598,7 +598,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3">REST API Reference for CreateDataSourceFromS3 Operation</seealso>
         public virtual Task<CreateDataSourceFromS3Response> CreateDataSourceFromS3Async(CreateDataSourceFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDataSourceFromS3RequestMarshaller();
+            var marshaller = CreateDataSourceFromS3RequestMarshaller.Instance;
             var unmarshaller = CreateDataSourceFromS3ResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDataSourceFromS3Request,CreateDataSourceFromS3Response>(request, marshaller, 
@@ -650,7 +650,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">REST API Reference for CreateEvaluation Operation</seealso>
         public virtual CreateEvaluationResponse CreateEvaluation(CreateEvaluationRequest request)
         {
-            var marshaller = new CreateEvaluationRequestMarshaller();
+            var marshaller = CreateEvaluationRequestMarshaller.Instance;
             var unmarshaller = CreateEvaluationResponseUnmarshaller.Instance;
 
             return Invoke<CreateEvaluationRequest,CreateEvaluationResponse>(request, marshaller, unmarshaller);
@@ -668,7 +668,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateEvaluation">REST API Reference for CreateEvaluation Operation</seealso>
         public virtual Task<CreateEvaluationResponse> CreateEvaluationAsync(CreateEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateEvaluationRequestMarshaller();
+            var marshaller = CreateEvaluationRequestMarshaller.Instance;
             var unmarshaller = CreateEvaluationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateEvaluationRequest,CreateEvaluationResponse>(request, marshaller, 
@@ -726,7 +726,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">REST API Reference for CreateMLModel Operation</seealso>
         public virtual CreateMLModelResponse CreateMLModel(CreateMLModelRequest request)
         {
-            var marshaller = new CreateMLModelRequestMarshaller();
+            var marshaller = CreateMLModelRequestMarshaller.Instance;
             var unmarshaller = CreateMLModelResponseUnmarshaller.Instance;
 
             return Invoke<CreateMLModelRequest,CreateMLModelResponse>(request, marshaller, unmarshaller);
@@ -744,7 +744,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModel">REST API Reference for CreateMLModel Operation</seealso>
         public virtual Task<CreateMLModelResponse> CreateMLModelAsync(CreateMLModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateMLModelRequestMarshaller();
+            var marshaller = CreateMLModelRequestMarshaller.Instance;
             var unmarshaller = CreateMLModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateMLModelRequest,CreateMLModelResponse>(request, marshaller, 
@@ -802,7 +802,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         public virtual CreateRealtimeEndpointResponse CreateRealtimeEndpoint(CreateRealtimeEndpointRequest request)
         {
-            var marshaller = new CreateRealtimeEndpointRequestMarshaller();
+            var marshaller = CreateRealtimeEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateRealtimeEndpointResponseUnmarshaller.Instance;
 
             return Invoke<CreateRealtimeEndpointRequest,CreateRealtimeEndpointResponse>(request, marshaller, unmarshaller);
@@ -849,7 +849,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpoint">REST API Reference for CreateRealtimeEndpoint Operation</seealso>
         public virtual Task<CreateRealtimeEndpointResponse> CreateRealtimeEndpointAsync(CreateRealtimeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateRealtimeEndpointRequestMarshaller();
+            var marshaller = CreateRealtimeEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateRealtimeEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRealtimeEndpointRequest,CreateRealtimeEndpointResponse>(request, marshaller, 
@@ -927,7 +927,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         public virtual DeleteBatchPredictionResponse DeleteBatchPrediction(DeleteBatchPredictionRequest request)
         {
-            var marshaller = new DeleteBatchPredictionRequestMarshaller();
+            var marshaller = DeleteBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = DeleteBatchPredictionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBatchPredictionRequest,DeleteBatchPredictionResponse>(request, marshaller, unmarshaller);
@@ -984,7 +984,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">REST API Reference for DeleteBatchPrediction Operation</seealso>
         public virtual Task<DeleteBatchPredictionResponse> DeleteBatchPredictionAsync(DeleteBatchPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBatchPredictionRequestMarshaller();
+            var marshaller = DeleteBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = DeleteBatchPredictionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBatchPredictionRequest,DeleteBatchPredictionResponse>(request, marshaller, 
@@ -1058,7 +1058,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var marshaller = new DeleteDataSourceRequestMarshaller();
+            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
             var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDataSourceRequest,DeleteDataSourceResponse>(request, marshaller, unmarshaller);
@@ -1113,7 +1113,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDataSourceRequestMarshaller();
+            var marshaller = DeleteDataSourceRequestMarshaller.Instance;
             var unmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDataSourceRequest,DeleteDataSourceResponse>(request, marshaller, 
@@ -1191,7 +1191,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         public virtual DeleteEvaluationResponse DeleteEvaluation(DeleteEvaluationRequest request)
         {
-            var marshaller = new DeleteEvaluationRequestMarshaller();
+            var marshaller = DeleteEvaluationRequestMarshaller.Instance;
             var unmarshaller = DeleteEvaluationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEvaluationRequest,DeleteEvaluationResponse>(request, marshaller, unmarshaller);
@@ -1248,7 +1248,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">REST API Reference for DeleteEvaluation Operation</seealso>
         public virtual Task<DeleteEvaluationResponse> DeleteEvaluationAsync(DeleteEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteEvaluationRequestMarshaller();
+            var marshaller = DeleteEvaluationRequestMarshaller.Instance;
             var unmarshaller = DeleteEvaluationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEvaluationRequest,DeleteEvaluationResponse>(request, marshaller, 
@@ -1322,7 +1322,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         public virtual DeleteMLModelResponse DeleteMLModel(DeleteMLModelRequest request)
         {
-            var marshaller = new DeleteMLModelRequestMarshaller();
+            var marshaller = DeleteMLModelRequestMarshaller.Instance;
             var unmarshaller = DeleteMLModelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteMLModelRequest,DeleteMLModelResponse>(request, marshaller, unmarshaller);
@@ -1377,7 +1377,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">REST API Reference for DeleteMLModel Operation</seealso>
         public virtual Task<DeleteMLModelResponse> DeleteMLModelAsync(DeleteMLModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteMLModelRequestMarshaller();
+            var marshaller = DeleteMLModelRequestMarshaller.Instance;
             var unmarshaller = DeleteMLModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteMLModelRequest,DeleteMLModelResponse>(request, marshaller, 
@@ -1431,7 +1431,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         public virtual DeleteRealtimeEndpointResponse DeleteRealtimeEndpoint(DeleteRealtimeEndpointRequest request)
         {
-            var marshaller = new DeleteRealtimeEndpointRequestMarshaller();
+            var marshaller = DeleteRealtimeEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteRealtimeEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DeleteRealtimeEndpointRequest,DeleteRealtimeEndpointResponse>(request, marshaller, unmarshaller);
@@ -1476,7 +1476,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpoint">REST API Reference for DeleteRealtimeEndpoint Operation</seealso>
         public virtual Task<DeleteRealtimeEndpointResponse> DeleteRealtimeEndpointAsync(DeleteRealtimeEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRealtimeEndpointRequestMarshaller();
+            var marshaller = DeleteRealtimeEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteRealtimeEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRealtimeEndpointRequest,DeleteRealtimeEndpointResponse>(request, marshaller, 
@@ -1515,7 +1515,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
@@ -1533,7 +1533,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTagsRequestMarshaller();
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
@@ -1561,7 +1561,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">REST API Reference for DescribeBatchPredictions Operation</seealso>
         public virtual DescribeBatchPredictionsResponse DescribeBatchPredictions(DescribeBatchPredictionsRequest request)
         {
-            var marshaller = new DescribeBatchPredictionsRequestMarshaller();
+            var marshaller = DescribeBatchPredictionsRequestMarshaller.Instance;
             var unmarshaller = DescribeBatchPredictionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeBatchPredictionsRequest,DescribeBatchPredictionsResponse>(request, marshaller, unmarshaller);
@@ -1579,7 +1579,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictions">REST API Reference for DescribeBatchPredictions Operation</seealso>
         public virtual Task<DescribeBatchPredictionsResponse> DescribeBatchPredictionsAsync(DescribeBatchPredictionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeBatchPredictionsRequestMarshaller();
+            var marshaller = DescribeBatchPredictionsRequestMarshaller.Instance;
             var unmarshaller = DescribeBatchPredictionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBatchPredictionsRequest,DescribeBatchPredictionsResponse>(request, marshaller, 
@@ -1606,7 +1606,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">REST API Reference for DescribeDataSources Operation</seealso>
         public virtual DescribeDataSourcesResponse DescribeDataSources(DescribeDataSourcesRequest request)
         {
-            var marshaller = new DescribeDataSourcesRequestMarshaller();
+            var marshaller = DescribeDataSourcesRequestMarshaller.Instance;
             var unmarshaller = DescribeDataSourcesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDataSourcesRequest,DescribeDataSourcesResponse>(request, marshaller, unmarshaller);
@@ -1624,7 +1624,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeDataSources">REST API Reference for DescribeDataSources Operation</seealso>
         public virtual Task<DescribeDataSourcesResponse> DescribeDataSourcesAsync(DescribeDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeDataSourcesRequestMarshaller();
+            var marshaller = DescribeDataSourcesRequestMarshaller.Instance;
             var unmarshaller = DescribeDataSourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDataSourcesRequest,DescribeDataSourcesResponse>(request, marshaller, 
@@ -1652,7 +1652,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">REST API Reference for DescribeEvaluations Operation</seealso>
         public virtual DescribeEvaluationsResponse DescribeEvaluations(DescribeEvaluationsRequest request)
         {
-            var marshaller = new DescribeEvaluationsRequestMarshaller();
+            var marshaller = DescribeEvaluationsRequestMarshaller.Instance;
             var unmarshaller = DescribeEvaluationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEvaluationsRequest,DescribeEvaluationsResponse>(request, marshaller, unmarshaller);
@@ -1670,7 +1670,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluations">REST API Reference for DescribeEvaluations Operation</seealso>
         public virtual Task<DescribeEvaluationsResponse> DescribeEvaluationsAsync(DescribeEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeEvaluationsRequestMarshaller();
+            var marshaller = DescribeEvaluationsRequestMarshaller.Instance;
             var unmarshaller = DescribeEvaluationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEvaluationsRequest,DescribeEvaluationsResponse>(request, marshaller, 
@@ -1697,7 +1697,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">REST API Reference for DescribeMLModels Operation</seealso>
         public virtual DescribeMLModelsResponse DescribeMLModels(DescribeMLModelsRequest request)
         {
-            var marshaller = new DescribeMLModelsRequestMarshaller();
+            var marshaller = DescribeMLModelsRequestMarshaller.Instance;
             var unmarshaller = DescribeMLModelsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeMLModelsRequest,DescribeMLModelsResponse>(request, marshaller, unmarshaller);
@@ -1715,7 +1715,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeMLModels">REST API Reference for DescribeMLModels Operation</seealso>
         public virtual Task<DescribeMLModelsResponse> DescribeMLModelsAsync(DescribeMLModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeMLModelsRequestMarshaller();
+            var marshaller = DescribeMLModelsRequestMarshaller.Instance;
             var unmarshaller = DescribeMLModelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMLModelsRequest,DescribeMLModelsResponse>(request, marshaller, 
@@ -1745,7 +1745,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
@@ -1763,7 +1763,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeTagsRequestMarshaller();
+            var marshaller = DescribeTagsRequestMarshaller.Instance;
             var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
@@ -1819,7 +1819,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         public virtual GetBatchPredictionResponse GetBatchPrediction(GetBatchPredictionRequest request)
         {
-            var marshaller = new GetBatchPredictionRequestMarshaller();
+            var marshaller = GetBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = GetBatchPredictionResponseUnmarshaller.Instance;
 
             return Invoke<GetBatchPredictionRequest,GetBatchPredictionResponse>(request, marshaller, unmarshaller);
@@ -1865,7 +1865,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetBatchPrediction">REST API Reference for GetBatchPrediction Operation</seealso>
         public virtual Task<GetBatchPredictionResponse> GetBatchPredictionAsync(GetBatchPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBatchPredictionRequestMarshaller();
+            var marshaller = GetBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = GetBatchPredictionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBatchPredictionRequest,GetBatchPredictionResponse>(request, marshaller, 
@@ -1969,7 +1969,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var marshaller = new GetDataSourceRequestMarshaller();
+            var marshaller = GetDataSourceRequestMarshaller.Instance;
             var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
             return Invoke<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, unmarshaller);
@@ -2059,7 +2059,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDataSourceRequestMarshaller();
+            var marshaller = GetDataSourceRequestMarshaller.Instance;
             var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, 
@@ -2115,7 +2115,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         public virtual GetEvaluationResponse GetEvaluation(GetEvaluationRequest request)
         {
-            var marshaller = new GetEvaluationRequestMarshaller();
+            var marshaller = GetEvaluationRequestMarshaller.Instance;
             var unmarshaller = GetEvaluationResponseUnmarshaller.Instance;
 
             return Invoke<GetEvaluationRequest,GetEvaluationResponse>(request, marshaller, unmarshaller);
@@ -2161,7 +2161,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetEvaluation">REST API Reference for GetEvaluation Operation</seealso>
         public virtual Task<GetEvaluationResponse> GetEvaluationAsync(GetEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetEvaluationRequestMarshaller();
+            var marshaller = GetEvaluationRequestMarshaller.Instance;
             var unmarshaller = GetEvaluationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEvaluationRequest,GetEvaluationResponse>(request, marshaller, 
@@ -2259,7 +2259,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         public virtual GetMLModelResponse GetMLModel(GetMLModelRequest request)
         {
-            var marshaller = new GetMLModelRequestMarshaller();
+            var marshaller = GetMLModelRequestMarshaller.Instance;
             var unmarshaller = GetMLModelResponseUnmarshaller.Instance;
 
             return Invoke<GetMLModelRequest,GetMLModelResponse>(request, marshaller, unmarshaller);
@@ -2345,7 +2345,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
         public virtual Task<GetMLModelResponse> GetMLModelAsync(GetMLModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetMLModelRequestMarshaller();
+            var marshaller = GetMLModelRequestMarshaller.Instance;
             var unmarshaller = GetMLModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetMLModelRequest,GetMLModelResponse>(request, marshaller, 
@@ -2431,7 +2431,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         public virtual PredictResponse Predict(PredictRequest request)
         {
-            var marshaller = new PredictRequestMarshaller();
+            var marshaller = PredictRequestMarshaller.Instance;
             var unmarshaller = PredictResponseUnmarshaller.Instance;
 
             return Invoke<PredictRequest,PredictResponse>(request, marshaller, unmarshaller);
@@ -2494,7 +2494,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">REST API Reference for Predict Operation</seealso>
         public virtual Task<PredictResponse> PredictAsync(PredictRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PredictRequestMarshaller();
+            var marshaller = PredictRequestMarshaller.Instance;
             var unmarshaller = PredictResponseUnmarshaller.Instance;
 
             return InvokeAsync<PredictRequest,PredictResponse>(request, marshaller, 
@@ -2562,7 +2562,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         public virtual UpdateBatchPredictionResponse UpdateBatchPrediction(UpdateBatchPredictionRequest request)
         {
-            var marshaller = new UpdateBatchPredictionRequestMarshaller();
+            var marshaller = UpdateBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = UpdateBatchPredictionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateBatchPredictionRequest,UpdateBatchPredictionResponse>(request, marshaller, unmarshaller);
@@ -2615,7 +2615,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateBatchPrediction">REST API Reference for UpdateBatchPrediction Operation</seealso>
         public virtual Task<UpdateBatchPredictionResponse> UpdateBatchPredictionAsync(UpdateBatchPredictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateBatchPredictionRequestMarshaller();
+            var marshaller = UpdateBatchPredictionRequestMarshaller.Instance;
             var unmarshaller = UpdateBatchPredictionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateBatchPredictionRequest,UpdateBatchPredictionResponse>(request, marshaller, 
@@ -2683,7 +2683,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var marshaller = new UpdateDataSourceRequestMarshaller();
+            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
             var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, unmarshaller);
@@ -2736,7 +2736,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDataSourceRequestMarshaller();
+            var marshaller = UpdateDataSourceRequestMarshaller.Instance;
             var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, 
@@ -2804,7 +2804,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         public virtual UpdateEvaluationResponse UpdateEvaluation(UpdateEvaluationRequest request)
         {
-            var marshaller = new UpdateEvaluationRequestMarshaller();
+            var marshaller = UpdateEvaluationRequestMarshaller.Instance;
             var unmarshaller = UpdateEvaluationResponseUnmarshaller.Instance;
 
             return Invoke<UpdateEvaluationRequest,UpdateEvaluationResponse>(request, marshaller, unmarshaller);
@@ -2857,7 +2857,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateEvaluation">REST API Reference for UpdateEvaluation Operation</seealso>
         public virtual Task<UpdateEvaluationResponse> UpdateEvaluationAsync(UpdateEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateEvaluationRequestMarshaller();
+            var marshaller = UpdateEvaluationRequestMarshaller.Instance;
             var unmarshaller = UpdateEvaluationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateEvaluationRequest,UpdateEvaluationResponse>(request, marshaller, 
@@ -2927,7 +2927,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         public virtual UpdateMLModelResponse UpdateMLModel(UpdateMLModelRequest request)
         {
-            var marshaller = new UpdateMLModelRequestMarshaller();
+            var marshaller = UpdateMLModelRequestMarshaller.Instance;
             var unmarshaller = UpdateMLModelResponseUnmarshaller.Instance;
 
             return Invoke<UpdateMLModelRequest,UpdateMLModelResponse>(request, marshaller, unmarshaller);
@@ -2982,7 +2982,7 @@ namespace Amazon.MachineLearning
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
         public virtual Task<UpdateMLModelResponse> UpdateMLModelAsync(UpdateMLModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateMLModelRequestMarshaller();
+            var marshaller = UpdateMLModelRequestMarshaller.Instance;
             var unmarshaller = UpdateMLModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMLModelRequest,UpdateMLModelResponse>(request, marshaller, 

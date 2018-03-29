@@ -263,7 +263,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request)
         {
-            var marshaller = new DeleteLexiconRequestMarshaller();
+            var marshaller = DeleteLexiconRequestMarshaller.Instance;
             var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLexiconRequest,DeleteLexiconResponse>(request, marshaller, unmarshaller);
@@ -283,7 +283,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public virtual IAsyncResult BeginDeleteLexicon(DeleteLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteLexiconRequestMarshaller();
+            var marshaller = DeleteLexiconRequestMarshaller.Instance;
             var unmarshaller = DeleteLexiconResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteLexiconRequest>(request, marshaller, unmarshaller,
@@ -347,7 +347,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request)
         {
-            var marshaller = new DescribeVoicesRequestMarshaller();
+            var marshaller = DescribeVoicesRequestMarshaller.Instance;
             var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVoicesRequest,DescribeVoicesResponse>(request, marshaller, unmarshaller);
@@ -367,7 +367,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public virtual IAsyncResult BeginDescribeVoices(DescribeVoicesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeVoicesRequestMarshaller();
+            var marshaller = DescribeVoicesRequestMarshaller.Instance;
             var unmarshaller = DescribeVoicesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeVoicesRequest>(request, marshaller, unmarshaller,
@@ -416,7 +416,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual GetLexiconResponse GetLexicon(GetLexiconRequest request)
         {
-            var marshaller = new GetLexiconRequestMarshaller();
+            var marshaller = GetLexiconRequestMarshaller.Instance;
             var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
             return Invoke<GetLexiconRequest,GetLexiconResponse>(request, marshaller, unmarshaller);
@@ -436,7 +436,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public virtual IAsyncResult BeginGetLexicon(GetLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetLexiconRequestMarshaller();
+            var marshaller = GetLexiconRequestMarshaller.Instance;
             var unmarshaller = GetLexiconResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetLexiconRequest>(request, marshaller, unmarshaller,
@@ -477,7 +477,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
         {
-            var marshaller = new ListLexiconsRequestMarshaller();
+            var marshaller = ListLexiconsRequestMarshaller.Instance;
             var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
             return Invoke<ListLexiconsRequest,ListLexiconsResponse>(request, marshaller, unmarshaller);
@@ -497,7 +497,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public virtual IAsyncResult BeginListLexicons(ListLexiconsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListLexiconsRequestMarshaller();
+            var marshaller = ListLexiconsRequestMarshaller.Instance;
             var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListLexiconsRequest>(request, marshaller, unmarshaller,
@@ -564,7 +564,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual PutLexiconResponse PutLexicon(PutLexiconRequest request)
         {
-            var marshaller = new PutLexiconRequestMarshaller();
+            var marshaller = PutLexiconRequestMarshaller.Instance;
             var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
             return Invoke<PutLexiconRequest,PutLexiconResponse>(request, marshaller, unmarshaller);
@@ -584,7 +584,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public virtual IAsyncResult BeginPutLexicon(PutLexiconRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PutLexiconRequestMarshaller();
+            var marshaller = PutLexiconRequestMarshaller.Instance;
             var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
             return BeginInvoke<PutLexiconRequest>(request, marshaller, unmarshaller,
@@ -654,7 +654,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)
         {
-            var marshaller = new SynthesizeSpeechRequestMarshaller();
+            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
             var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
             return Invoke<SynthesizeSpeechRequest,SynthesizeSpeechResponse>(request, marshaller, unmarshaller);
@@ -674,7 +674,7 @@ namespace Amazon.Polly
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual IAsyncResult BeginSynthesizeSpeech(SynthesizeSpeechRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new SynthesizeSpeechRequestMarshaller();
+            var marshaller = SynthesizeSpeechRequestMarshaller.Instance;
             var unmarshaller = SynthesizeSpeechResponseUnmarshaller.Instance;
 
             return BeginInvoke<SynthesizeSpeechRequest>(request, marshaller, unmarshaller,

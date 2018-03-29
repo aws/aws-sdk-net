@@ -129,7 +129,7 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual GetMediaResponse GetMedia(GetMediaRequest request)
         {
-            var marshaller = new GetMediaRequestMarshaller();
+            var marshaller = GetMediaRequestMarshaller.Instance;
             var unmarshaller = GetMediaResponseUnmarshaller.Instance;
 
             return Invoke<GetMediaRequest,GetMediaResponse>(request, marshaller, unmarshaller);
@@ -149,7 +149,7 @@ namespace Amazon.KinesisVideoMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">REST API Reference for GetMedia Operation</seealso>
         public virtual IAsyncResult BeginGetMedia(GetMediaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetMediaRequestMarshaller();
+            var marshaller = GetMediaRequestMarshaller.Instance;
             var unmarshaller = GetMediaResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetMediaRequest>(request, marshaller, unmarshaller,

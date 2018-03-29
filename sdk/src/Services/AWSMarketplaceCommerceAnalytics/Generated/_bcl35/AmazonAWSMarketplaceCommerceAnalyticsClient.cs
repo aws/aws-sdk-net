@@ -245,7 +245,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request)
         {
-            var marshaller = new GenerateDataSetRequestMarshaller();
+            var marshaller = GenerateDataSetRequestMarshaller.Instance;
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
             return Invoke<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, unmarshaller);
@@ -265,7 +265,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public virtual IAsyncResult BeginGenerateDataSet(GenerateDataSetRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GenerateDataSetRequestMarshaller();
+            var marshaller = GenerateDataSetRequestMarshaller.Instance;
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
             return BeginInvoke<GenerateDataSetRequest>(request, marshaller, unmarshaller,
@@ -309,7 +309,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         public virtual StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
         {
-            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
             return Invoke<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, unmarshaller);
@@ -329,7 +329,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         public virtual IAsyncResult BeginStartSupportDataExport(StartSupportDataExportRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var marshaller = StartSupportDataExportRequestMarshaller.Instance;
             var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartSupportDataExportRequest>(request, marshaller, unmarshaller,

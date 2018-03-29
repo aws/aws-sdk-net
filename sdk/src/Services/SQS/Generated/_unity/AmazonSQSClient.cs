@@ -320,7 +320,7 @@ namespace Amazon.SQS
         public virtual void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AddPermissionRequestMarshaller();
+            var marshaller = AddPermissionRequestMarshaller.Instance;
             var unmarshaller = AddPermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -425,7 +425,7 @@ namespace Amazon.SQS
         public virtual void ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, AmazonServiceCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var marshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
             var unmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -512,7 +512,7 @@ namespace Amazon.SQS
         public virtual void ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, AmazonServiceCallback<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var marshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
             var unmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -632,7 +632,7 @@ namespace Amazon.SQS
         public virtual void CreateQueueAsync(CreateQueueRequest request, AmazonServiceCallback<CreateQueueRequest, CreateQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateQueueRequestMarshaller();
+            var marshaller = CreateQueueRequestMarshaller.Instance;
             var unmarshaller = CreateQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -712,7 +712,7 @@ namespace Amazon.SQS
         public virtual void DeleteMessageAsync(DeleteMessageRequest request, AmazonServiceCallback<DeleteMessageRequest, DeleteMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteMessageRequestMarshaller();
+            var marshaller = DeleteMessageRequestMarshaller.Instance;
             var unmarshaller = DeleteMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -798,7 +798,7 @@ namespace Amazon.SQS
         public virtual void DeleteMessageBatchAsync(DeleteMessageBatchRequest request, AmazonServiceCallback<DeleteMessageBatchRequest, DeleteMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var marshaller = DeleteMessageBatchRequestMarshaller.Instance;
             var unmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -865,7 +865,7 @@ namespace Amazon.SQS
         public virtual void DeleteQueueAsync(DeleteQueueRequest request, AmazonServiceCallback<DeleteQueueRequest, DeleteQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteQueueRequestMarshaller();
+            var marshaller = DeleteQueueRequestMarshaller.Instance;
             var unmarshaller = DeleteQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -939,7 +939,7 @@ namespace Amazon.SQS
         public virtual void GetQueueAttributesAsync(GetQueueAttributesRequest request, AmazonServiceCallback<GetQueueAttributesRequest, GetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var marshaller = GetQueueAttributesRequestMarshaller.Instance;
             var unmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1000,7 +1000,7 @@ namespace Amazon.SQS
         public virtual void GetQueueUrlAsync(GetQueueUrlRequest request, AmazonServiceCallback<GetQueueUrlRequest, GetQueueUrlResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetQueueUrlRequestMarshaller();
+            var marshaller = GetQueueUrlRequestMarshaller.Instance;
             var unmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1028,7 +1028,7 @@ namespace Amazon.SQS
         public virtual void ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, AmazonServiceCallback<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var marshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
             var unmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1078,7 +1078,7 @@ namespace Amazon.SQS
         public virtual void ListQueuesAsync(ListQueuesRequest request, AmazonServiceCallback<ListQueuesRequest, ListQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListQueuesRequestMarshaller();
+            var marshaller = ListQueuesRequestMarshaller.Instance;
             var unmarshaller = ListQueuesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1106,7 +1106,7 @@ namespace Amazon.SQS
         public virtual void ListQueueTagsAsync(ListQueueTagsRequest request, AmazonServiceCallback<ListQueueTagsRequest, ListQueueTagsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListQueueTagsRequestMarshaller();
+            var marshaller = ListQueueTagsRequestMarshaller.Instance;
             var unmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1175,7 +1175,7 @@ namespace Amazon.SQS
         public virtual void PurgeQueueAsync(PurgeQueueRequest request, AmazonServiceCallback<PurgeQueueRequest, PurgeQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PurgeQueueRequestMarshaller();
+            var marshaller = PurgeQueueRequestMarshaller.Instance;
             var unmarshaller = PurgeQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1295,7 +1295,7 @@ namespace Amazon.SQS
         public virtual void ReceiveMessageAsync(ReceiveMessageRequest request, AmazonServiceCallback<ReceiveMessageRequest, ReceiveMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ReceiveMessageRequestMarshaller();
+            var marshaller = ReceiveMessageRequestMarshaller.Instance;
             var unmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1346,7 +1346,7 @@ namespace Amazon.SQS
         public virtual void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RemovePermissionRequestMarshaller();
+            var marshaller = RemovePermissionRequestMarshaller.Instance;
             var unmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1420,7 +1420,7 @@ namespace Amazon.SQS
         public virtual void SendMessageAsync(SendMessageRequest request, AmazonServiceCallback<SendMessageRequest, SendMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SendMessageRequestMarshaller();
+            var marshaller = SendMessageRequestMarshaller.Instance;
             var unmarshaller = SendMessageResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1540,7 +1540,7 @@ namespace Amazon.SQS
         public virtual void SendMessageBatchAsync(SendMessageBatchRequest request, AmazonServiceCallback<SendMessageBatchRequest, SendMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SendMessageBatchRequestMarshaller();
+            var marshaller = SendMessageBatchRequestMarshaller.Instance;
             var unmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1603,7 +1603,7 @@ namespace Amazon.SQS
         public virtual void SetQueueAttributesAsync(SetQueueAttributesRequest request, AmazonServiceCallback<SetQueueAttributesRequest, SetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var marshaller = SetQueueAttributesRequestMarshaller.Instance;
             var unmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1631,7 +1631,7 @@ namespace Amazon.SQS
         public virtual void TagQueueAsync(TagQueueRequest request, AmazonServiceCallback<TagQueueRequest, TagQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new TagQueueRequestMarshaller();
+            var marshaller = TagQueueRequestMarshaller.Instance;
             var unmarshaller = TagQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -1659,7 +1659,7 @@ namespace Amazon.SQS
         public virtual void UntagQueueAsync(UntagQueueRequest request, AmazonServiceCallback<UntagQueueRequest, UntagQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UntagQueueRequestMarshaller();
+            var marshaller = UntagQueueRequestMarshaller.Instance;
             var unmarshaller = UntagQueueResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

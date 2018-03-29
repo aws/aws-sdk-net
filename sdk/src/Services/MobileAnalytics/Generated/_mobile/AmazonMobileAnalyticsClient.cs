@@ -235,7 +235,7 @@ namespace Amazon.MobileAnalytics
 
         internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
@@ -253,7 +253,7 @@ namespace Amazon.MobileAnalytics
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEventsRequest,PutEventsResponse>(request, marshaller, 

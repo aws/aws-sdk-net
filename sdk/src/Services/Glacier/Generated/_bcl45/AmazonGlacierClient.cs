@@ -327,7 +327,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -344,7 +344,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, 
@@ -397,7 +397,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
-            var marshaller = new AbortVaultLockRequestMarshaller();
+            var marshaller = AbortVaultLockRequestMarshaller.Instance;
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
             return Invoke<AbortVaultLockRequest,AbortVaultLockResponse>(request, marshaller, unmarshaller);
@@ -414,7 +414,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<AbortVaultLockResponse> AbortVaultLockAsync(AbortVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AbortVaultLockRequestMarshaller();
+            var marshaller = AbortVaultLockRequestMarshaller.Instance;
             var unmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortVaultLockRequest,AbortVaultLockResponse>(request, marshaller, 
@@ -455,7 +455,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
-            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var marshaller = AddTagsToVaultRequestMarshaller.Instance;
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, unmarshaller);
@@ -472,7 +472,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<AddTagsToVaultResponse> AddTagsToVaultAsync(AddTagsToVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsToVaultRequestMarshaller();
+            var marshaller = AddTagsToVaultRequestMarshaller.Instance;
             var unmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToVaultRequest,AddTagsToVaultResponse>(request, marshaller, 
@@ -555,7 +555,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -572,7 +572,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, 
@@ -625,7 +625,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
-            var marshaller = new CompleteVaultLockRequestMarshaller();
+            var marshaller = CompleteVaultLockRequestMarshaller.Instance;
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
             return Invoke<CompleteVaultLockRequest,CompleteVaultLockResponse>(request, marshaller, unmarshaller);
@@ -642,7 +642,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CompleteVaultLockResponse> CompleteVaultLockAsync(CompleteVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CompleteVaultLockRequestMarshaller();
+            var marshaller = CompleteVaultLockRequestMarshaller.Instance;
             var unmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<CompleteVaultLockRequest,CompleteVaultLockResponse>(request, marshaller, 
@@ -707,7 +707,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
-            var marshaller = new CreateVaultRequestMarshaller();
+            var marshaller = CreateVaultRequestMarshaller.Instance;
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
             return Invoke<CreateVaultRequest,CreateVaultResponse>(request, marshaller, unmarshaller);
@@ -724,7 +724,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateVaultRequestMarshaller();
+            var marshaller = CreateVaultRequestMarshaller.Instance;
             var unmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVaultRequest,CreateVaultResponse>(request, marshaller, 
@@ -791,7 +791,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var marshaller = new DeleteArchiveRequestMarshaller();
+            var marshaller = DeleteArchiveRequestMarshaller.Instance;
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
             return Invoke<DeleteArchiveRequest,DeleteArchiveResponse>(request, marshaller, unmarshaller);
@@ -808,7 +808,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteArchiveRequestMarshaller();
+            var marshaller = DeleteArchiveRequestMarshaller.Instance;
             var unmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteArchiveRequest,DeleteArchiveResponse>(request, marshaller, 
@@ -868,7 +868,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
-            var marshaller = new DeleteVaultRequestMarshaller();
+            var marshaller = DeleteVaultRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVaultRequest,DeleteVaultResponse>(request, marshaller, unmarshaller);
@@ -885,7 +885,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteVaultRequestMarshaller();
+            var marshaller = DeleteVaultRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVaultRequest,DeleteVaultResponse>(request, marshaller, 
@@ -929,7 +929,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
-            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var marshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
@@ -946,7 +946,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteVaultAccessPolicyResponse> DeleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
+            var marshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVaultAccessPolicyRequest,DeleteVaultAccessPolicyResponse>(request, marshaller, 
@@ -997,7 +997,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
-            var marshaller = new DeleteVaultNotificationsRequestMarshaller();
+            var marshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteVaultNotificationsRequest,DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller);
@@ -1014,7 +1014,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteVaultNotificationsRequestMarshaller();
+            var marshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVaultNotificationsRequest,DeleteVaultNotificationsResponse>(request, marshaller, 
@@ -1076,7 +1076,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var marshaller = new DescribeJobRequestMarshaller();
+            var marshaller = DescribeJobRequestMarshaller.Instance;
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
             return Invoke<DescribeJobRequest,DescribeJobResponse>(request, marshaller, unmarshaller);
@@ -1093,7 +1093,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeJobRequestMarshaller();
+            var marshaller = DescribeJobRequestMarshaller.Instance;
             var unmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeJobRequest,DescribeJobResponse>(request, marshaller, 
@@ -1149,7 +1149,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
-            var marshaller = new DescribeVaultRequestMarshaller();
+            var marshaller = DescribeVaultRequestMarshaller.Instance;
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
             return Invoke<DescribeVaultRequest,DescribeVaultResponse>(request, marshaller, unmarshaller);
@@ -1166,7 +1166,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeVaultRequestMarshaller();
+            var marshaller = DescribeVaultRequestMarshaller.Instance;
             var unmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVaultRequest,DescribeVaultResponse>(request, marshaller, 
@@ -1198,7 +1198,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
-            var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
+            var marshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
@@ -1215,7 +1215,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetDataRetrievalPolicyResponse> GetDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
+            var marshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             var unmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataRetrievalPolicyRequest,GetDataRetrievalPolicyResponse>(request, marshaller, 
@@ -1304,7 +1304,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
-            var marshaller = new GetJobOutputRequestMarshaller();
+            var marshaller = GetJobOutputRequestMarshaller.Instance;
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
             return Invoke<GetJobOutputRequest,GetJobOutputResponse>(request, marshaller, unmarshaller);
@@ -1321,7 +1321,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetJobOutputRequestMarshaller();
+            var marshaller = GetJobOutputRequestMarshaller.Instance;
             var unmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetJobOutputRequest,GetJobOutputResponse>(request, marshaller, 
@@ -1359,7 +1359,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
-            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var marshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
@@ -1376,7 +1376,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetVaultAccessPolicyResponse> GetVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetVaultAccessPolicyRequestMarshaller();
+            var marshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetVaultAccessPolicyRequest,GetVaultAccessPolicyResponse>(request, marshaller, 
@@ -1441,7 +1441,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
-            var marshaller = new GetVaultLockRequestMarshaller();
+            var marshaller = GetVaultLockRequestMarshaller.Instance;
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
             return Invoke<GetVaultLockRequest,GetVaultLockResponse>(request, marshaller, unmarshaller);
@@ -1458,7 +1458,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetVaultLockResponse> GetVaultLockAsync(GetVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetVaultLockRequestMarshaller();
+            var marshaller = GetVaultLockRequestMarshaller.Instance;
             var unmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetVaultLockRequest,GetVaultLockResponse>(request, marshaller, 
@@ -1515,7 +1515,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
-            var marshaller = new GetVaultNotificationsRequestMarshaller();
+            var marshaller = GetVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
             return Invoke<GetVaultNotificationsRequest,GetVaultNotificationsResponse>(request, marshaller, unmarshaller);
@@ -1532,7 +1532,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetVaultNotificationsRequestMarshaller();
+            var marshaller = GetVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetVaultNotificationsRequest,GetVaultNotificationsResponse>(request, marshaller, 
@@ -1576,7 +1576,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
-            var marshaller = new InitiateJobRequestMarshaller();
+            var marshaller = InitiateJobRequestMarshaller.Instance;
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
             return Invoke<InitiateJobRequest,InitiateJobResponse>(request, marshaller, unmarshaller);
@@ -1593,7 +1593,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InitiateJobRequestMarshaller();
+            var marshaller = InitiateJobRequestMarshaller.Instance;
             var unmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateJobRequest,InitiateJobResponse>(request, marshaller, 
@@ -1670,7 +1670,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -1687,7 +1687,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, 
@@ -1767,7 +1767,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
-            var marshaller = new InitiateVaultLockRequestMarshaller();
+            var marshaller = InitiateVaultLockRequestMarshaller.Instance;
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
             return Invoke<InitiateVaultLockRequest,InitiateVaultLockResponse>(request, marshaller, unmarshaller);
@@ -1784,7 +1784,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<InitiateVaultLockResponse> InitiateVaultLockAsync(InitiateVaultLockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InitiateVaultLockRequestMarshaller();
+            var marshaller = InitiateVaultLockRequestMarshaller.Instance;
             var unmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateVaultLockRequest,InitiateVaultLockResponse>(request, marshaller, 
@@ -1863,7 +1863,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return Invoke<ListJobsRequest,ListJobsResponse>(request, marshaller, unmarshaller);
@@ -1880,7 +1880,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListJobsRequestMarshaller();
+            var marshaller = ListJobsRequestMarshaller.Instance;
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
@@ -1949,7 +1949,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
             return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
@@ -1966,7 +1966,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, 
@@ -2028,7 +2028,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var marshaller = new ListPartsRequestMarshaller();
+            var marshaller = ListPartsRequestMarshaller.Instance;
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
 
             return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
@@ -2045,7 +2045,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPartsRequestMarshaller();
+            var marshaller = ListPartsRequestMarshaller.Instance;
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPartsRequest,ListPartsResponse>(request, marshaller, 
@@ -2074,7 +2074,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
-            var marshaller = new ListProvisionedCapacityRequestMarshaller();
+            var marshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
             return Invoke<ListProvisionedCapacityRequest,ListProvisionedCapacityResponse>(request, marshaller, unmarshaller);
@@ -2091,7 +2091,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListProvisionedCapacityRequestMarshaller();
+            var marshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProvisionedCapacityRequest,ListProvisionedCapacityResponse>(request, marshaller, 
@@ -2126,7 +2126,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
-            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var marshaller = ListTagsForVaultRequestMarshaller.Instance;
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, unmarshaller);
@@ -2143,7 +2143,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListTagsForVaultResponse> ListTagsForVaultAsync(ListTagsForVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForVaultRequestMarshaller();
+            var marshaller = ListTagsForVaultRequestMarshaller.Instance;
             var unmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForVaultRequest,ListTagsForVaultResponse>(request, marshaller, 
@@ -2254,7 +2254,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
-            var marshaller = new ListVaultsRequestMarshaller();
+            var marshaller = ListVaultsRequestMarshaller.Instance;
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
             return Invoke<ListVaultsRequest,ListVaultsResponse>(request, marshaller, unmarshaller);
@@ -2324,7 +2324,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVaultsRequestMarshaller();
+            var marshaller = ListVaultsRequestMarshaller.Instance;
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVaultsRequest,ListVaultsResponse>(request, marshaller, 
@@ -2356,7 +2356,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
-            var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
+            var marshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
             return Invoke<PurchaseProvisionedCapacityRequest,PurchaseProvisionedCapacityResponse>(request, marshaller, unmarshaller);
@@ -2373,7 +2373,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
+            var marshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
             return InvokeAsync<PurchaseProvisionedCapacityRequest,PurchaseProvisionedCapacityResponse>(request, marshaller, 
@@ -2409,7 +2409,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
-            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var marshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, unmarshaller);
@@ -2426,7 +2426,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<RemoveTagsFromVaultResponse> RemoveTagsFromVaultAsync(RemoveTagsFromVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTagsFromVaultRequestMarshaller();
+            var marshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromVaultRequest,RemoveTagsFromVaultResponse>(request, marshaller, 
@@ -2465,7 +2465,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
-            var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
+            var marshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
             return Invoke<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, unmarshaller);
@@ -2482,7 +2482,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SetDataRetrievalPolicyResponse> SetDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
+            var marshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             var unmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetDataRetrievalPolicyRequest,SetDataRetrievalPolicyResponse>(request, marshaller, 
@@ -2520,7 +2520,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
-            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var marshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return Invoke<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, unmarshaller);
@@ -2537,7 +2537,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SetVaultAccessPolicyResponse> SetVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetVaultAccessPolicyRequestMarshaller();
+            var marshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             var unmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetVaultAccessPolicyRequest,SetVaultAccessPolicyResponse>(request, marshaller, 
@@ -2614,7 +2614,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
-            var marshaller = new SetVaultNotificationsRequestMarshaller();
+            var marshaller = SetVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
             return Invoke<SetVaultNotificationsRequest,SetVaultNotificationsResponse>(request, marshaller, unmarshaller);
@@ -2631,7 +2631,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new SetVaultNotificationsRequestMarshaller();
+            var marshaller = SetVaultNotificationsRequestMarshaller.Instance;
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetVaultNotificationsRequest,SetVaultNotificationsResponse>(request, marshaller, 
@@ -2715,7 +2715,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
-            var marshaller = new UploadArchiveRequestMarshaller();
+            var marshaller = UploadArchiveRequestMarshaller.Instance;
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
             return Invoke<UploadArchiveRequest,UploadArchiveResponse>(request, marshaller, unmarshaller);
@@ -2732,7 +2732,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadArchiveRequestMarshaller();
+            var marshaller = UploadArchiveRequestMarshaller.Instance;
             var unmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadArchiveRequest,UploadArchiveResponse>(request, marshaller, 
@@ -2827,7 +2827,7 @@ namespace Amazon.Glacier
         /// </exception>
         public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
-            var marshaller = new UploadMultipartPartRequestMarshaller();
+            var marshaller = UploadMultipartPartRequestMarshaller.Instance;
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
             return Invoke<UploadMultipartPartRequest,UploadMultipartPartResponse>(request, marshaller, unmarshaller);
@@ -2844,7 +2844,7 @@ namespace Amazon.Glacier
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadMultipartPartRequestMarshaller();
+            var marshaller = UploadMultipartPartRequestMarshaller.Instance;
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadMultipartPartRequest,UploadMultipartPartResponse>(request, marshaller, 

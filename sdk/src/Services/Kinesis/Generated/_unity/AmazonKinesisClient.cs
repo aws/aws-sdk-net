@@ -183,7 +183,7 @@ namespace Amazon.Kinesis
         public virtual void AddTagsToStreamAsync(AddTagsToStreamRequest request, AmazonServiceCallback<AddTagsToStreamRequest, AddTagsToStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new AddTagsToStreamRequestMarshaller();
+            var marshaller = AddTagsToStreamRequestMarshaller.Instance;
             var unmarshaller = AddTagsToStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -211,7 +211,7 @@ namespace Amazon.Kinesis
         public virtual void CreateStreamAsync(CreateStreamRequest request, AmazonServiceCallback<CreateStreamRequest, CreateStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateStreamRequestMarshaller();
+            var marshaller = CreateStreamRequestMarshaller.Instance;
             var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -285,7 +285,7 @@ namespace Amazon.Kinesis
         public virtual void DecreaseStreamRetentionPeriodAsync(DecreaseStreamRetentionPeriodRequest request, AmazonServiceCallback<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
+            var marshaller = DecreaseStreamRetentionPeriodRequestMarshaller.Instance;
             var unmarshaller = DecreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -313,7 +313,7 @@ namespace Amazon.Kinesis
         public virtual void DeleteStreamAsync(DeleteStreamRequest request, AmazonServiceCallback<DeleteStreamRequest, DeleteStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteStreamRequestMarshaller();
+            var marshaller = DeleteStreamRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -341,7 +341,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeLimitsRequestMarshaller();
+            var marshaller = DescribeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -369,7 +369,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeStreamAsync(DescribeStreamRequest request, AmazonServiceCallback<DescribeStreamRequest, DescribeStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeStreamRequestMarshaller();
+            var marshaller = DescribeStreamRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -397,7 +397,7 @@ namespace Amazon.Kinesis
         public virtual void DescribeStreamSummaryAsync(DescribeStreamSummaryRequest request, AmazonServiceCallback<DescribeStreamSummaryRequest, DescribeStreamSummaryResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeStreamSummaryRequestMarshaller();
+            var marshaller = DescribeStreamSummaryRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamSummaryResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -425,7 +425,7 @@ namespace Amazon.Kinesis
         public virtual void DisableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request, AmazonServiceCallback<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DisableEnhancedMonitoringRequestMarshaller();
+            var marshaller = DisableEnhancedMonitoringRequestMarshaller.Instance;
             var unmarshaller = DisableEnhancedMonitoringResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -453,7 +453,7 @@ namespace Amazon.Kinesis
         public virtual void EnableEnhancedMonitoringAsync(EnableEnhancedMonitoringRequest request, AmazonServiceCallback<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new EnableEnhancedMonitoringRequestMarshaller();
+            var marshaller = EnableEnhancedMonitoringRequestMarshaller.Instance;
             var unmarshaller = EnableEnhancedMonitoringResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -481,7 +481,7 @@ namespace Amazon.Kinesis
         public virtual void GetRecordsAsync(GetRecordsRequest request, AmazonServiceCallback<GetRecordsRequest, GetRecordsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetRecordsRequestMarshaller();
+            var marshaller = GetRecordsRequestMarshaller.Instance;
             var unmarshaller = GetRecordsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -509,7 +509,7 @@ namespace Amazon.Kinesis
         public virtual void GetShardIteratorAsync(GetShardIteratorRequest request, AmazonServiceCallback<GetShardIteratorRequest, GetShardIteratorResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new GetShardIteratorRequestMarshaller();
+            var marshaller = GetShardIteratorRequestMarshaller.Instance;
             var unmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -586,7 +586,7 @@ namespace Amazon.Kinesis
         public virtual void IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, AmazonServiceCallback<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
+            var marshaller = IncreaseStreamRetentionPeriodRequestMarshaller.Instance;
             var unmarshaller = IncreaseStreamRetentionPeriodResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -614,7 +614,7 @@ namespace Amazon.Kinesis
         public virtual void ListShardsAsync(ListShardsRequest request, AmazonServiceCallback<ListShardsRequest, ListShardsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListShardsRequestMarshaller();
+            var marshaller = ListShardsRequestMarshaller.Instance;
             var unmarshaller = ListShardsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -686,7 +686,7 @@ namespace Amazon.Kinesis
         public virtual void ListStreamsAsync(ListStreamsRequest request, AmazonServiceCallback<ListStreamsRequest, ListStreamsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListStreamsRequestMarshaller();
+            var marshaller = ListStreamsRequestMarshaller.Instance;
             var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -714,7 +714,7 @@ namespace Amazon.Kinesis
         public virtual void ListTagsForStreamAsync(ListTagsForStreamRequest request, AmazonServiceCallback<ListTagsForStreamRequest, ListTagsForStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListTagsForStreamRequestMarshaller();
+            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
             var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -742,7 +742,7 @@ namespace Amazon.Kinesis
         public virtual void MergeShardsAsync(MergeShardsRequest request, AmazonServiceCallback<MergeShardsRequest, MergeShardsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new MergeShardsRequestMarshaller();
+            var marshaller = MergeShardsRequestMarshaller.Instance;
             var unmarshaller = MergeShardsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -770,7 +770,7 @@ namespace Amazon.Kinesis
         public virtual void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordRequestMarshaller();
+            var marshaller = PutRecordRequestMarshaller.Instance;
             var unmarshaller = PutRecordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -798,7 +798,7 @@ namespace Amazon.Kinesis
         public virtual void PutRecordsAsync(PutRecordsRequest request, AmazonServiceCallback<PutRecordsRequest, PutRecordsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordsRequestMarshaller();
+            var marshaller = PutRecordsRequestMarshaller.Instance;
             var unmarshaller = PutRecordsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -826,7 +826,7 @@ namespace Amazon.Kinesis
         public virtual void RemoveTagsFromStreamAsync(RemoveTagsFromStreamRequest request, AmazonServiceCallback<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new RemoveTagsFromStreamRequestMarshaller();
+            var marshaller = RemoveTagsFromStreamRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -854,7 +854,7 @@ namespace Amazon.Kinesis
         public virtual void SplitShardAsync(SplitShardRequest request, AmazonServiceCallback<SplitShardRequest, SplitShardResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new SplitShardRequestMarshaller();
+            var marshaller = SplitShardRequestMarshaller.Instance;
             var unmarshaller = SplitShardResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -882,7 +882,7 @@ namespace Amazon.Kinesis
         public virtual void StartStreamEncryptionAsync(StartStreamEncryptionRequest request, AmazonServiceCallback<StartStreamEncryptionRequest, StartStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StartStreamEncryptionRequestMarshaller();
+            var marshaller = StartStreamEncryptionRequestMarshaller.Instance;
             var unmarshaller = StartStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -910,7 +910,7 @@ namespace Amazon.Kinesis
         public virtual void StopStreamEncryptionAsync(StopStreamEncryptionRequest request, AmazonServiceCallback<StopStreamEncryptionRequest, StopStreamEncryptionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new StopStreamEncryptionRequestMarshaller();
+            var marshaller = StopStreamEncryptionRequestMarshaller.Instance;
             var unmarshaller = StopStreamEncryptionResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -938,7 +938,7 @@ namespace Amazon.Kinesis
         public virtual void UpdateShardCountAsync(UpdateShardCountRequest request, AmazonServiceCallback<UpdateShardCountRequest, UpdateShardCountResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateShardCountRequestMarshaller();
+            var marshaller = UpdateShardCountRequestMarshaller.Instance;
             var unmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

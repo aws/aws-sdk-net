@@ -79,7 +79,7 @@ namespace Amazon.IotData
 
         internal virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var marshaller = new DeleteThingShadowRequestMarshaller();
+            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, unmarshaller);
@@ -97,7 +97,7 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteThingShadowRequestMarshaller();
+            var marshaller = DeleteThingShadowRequestMarshaller.Instance;
             var unmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteThingShadowRequest,DeleteThingShadowResponse>(request, marshaller, 
@@ -110,7 +110,7 @@ namespace Amazon.IotData
 
         internal virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var marshaller = new GetThingShadowRequestMarshaller();
+            var marshaller = GetThingShadowRequestMarshaller.Instance;
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, unmarshaller);
@@ -128,7 +128,7 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetThingShadowRequestMarshaller();
+            var marshaller = GetThingShadowRequestMarshaller.Instance;
             var unmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetThingShadowRequest,GetThingShadowResponse>(request, marshaller, 
@@ -141,7 +141,7 @@ namespace Amazon.IotData
 
         internal virtual PublishResponse Publish(PublishRequest request)
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return Invoke<PublishRequest,PublishResponse>(request, marshaller, unmarshaller);
@@ -159,7 +159,7 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PublishRequestMarshaller();
+            var marshaller = PublishRequestMarshaller.Instance;
             var unmarshaller = PublishResponseUnmarshaller.Instance;
 
             return InvokeAsync<PublishRequest,PublishResponse>(request, marshaller, 
@@ -172,7 +172,7 @@ namespace Amazon.IotData
 
         internal virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var marshaller = new UpdateThingShadowRequestMarshaller();
+            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
             return Invoke<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, unmarshaller);
@@ -190,7 +190,7 @@ namespace Amazon.IotData
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateThingShadowRequestMarshaller();
+            var marshaller = UpdateThingShadowRequestMarshaller.Instance;
             var unmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateThingShadowRequest,UpdateThingShadowResponse>(request, marshaller, 

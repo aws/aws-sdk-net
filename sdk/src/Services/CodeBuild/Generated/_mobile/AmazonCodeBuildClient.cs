@@ -323,7 +323,7 @@ namespace Amazon.CodeBuild
 
         internal virtual BatchDeleteBuildsResponse BatchDeleteBuilds(BatchDeleteBuildsRequest request)
         {
-            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var marshaller = BatchDeleteBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
 
             return Invoke<BatchDeleteBuildsRequest,BatchDeleteBuildsResponse>(request, marshaller, unmarshaller);
@@ -342,7 +342,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds">REST API Reference for BatchDeleteBuilds Operation</seealso>
         public virtual Task<BatchDeleteBuildsResponse> BatchDeleteBuildsAsync(BatchDeleteBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchDeleteBuildsRequestMarshaller();
+            var marshaller = BatchDeleteBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchDeleteBuildsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchDeleteBuildsRequest,BatchDeleteBuildsResponse>(request, marshaller, 
@@ -355,7 +355,7 @@ namespace Amazon.CodeBuild
 
         internal virtual BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
         {
-            var marshaller = new BatchGetBuildsRequestMarshaller();
+            var marshaller = BatchGetBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetBuildsRequest,BatchGetBuildsResponse>(request, marshaller, unmarshaller);
@@ -374,7 +374,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public virtual Task<BatchGetBuildsResponse> BatchGetBuildsAsync(BatchGetBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetBuildsRequestMarshaller();
+            var marshaller = BatchGetBuildsRequestMarshaller.Instance;
             var unmarshaller = BatchGetBuildsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetBuildsRequest,BatchGetBuildsResponse>(request, marshaller, 
@@ -387,7 +387,7 @@ namespace Amazon.CodeBuild
 
         internal virtual BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request)
         {
-            var marshaller = new BatchGetProjectsRequestMarshaller();
+            var marshaller = BatchGetProjectsRequestMarshaller.Instance;
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
 
             return Invoke<BatchGetProjectsRequest,BatchGetProjectsResponse>(request, marshaller, unmarshaller);
@@ -406,7 +406,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public virtual Task<BatchGetProjectsResponse> BatchGetProjectsAsync(BatchGetProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchGetProjectsRequestMarshaller();
+            var marshaller = BatchGetProjectsRequestMarshaller.Instance;
             var unmarshaller = BatchGetProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetProjectsRequest,BatchGetProjectsResponse>(request, marshaller, 
@@ -419,7 +419,7 @@ namespace Amazon.CodeBuild
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
@@ -438,7 +438,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProjectRequest,CreateProjectResponse>(request, marshaller, 
@@ -451,7 +451,7 @@ namespace Amazon.CodeBuild
 
         internal virtual CreateWebhookResponse CreateWebhook(CreateWebhookRequest request)
         {
-            var marshaller = new CreateWebhookRequestMarshaller();
+            var marshaller = CreateWebhookRequestMarshaller.Instance;
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
 
             return Invoke<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, unmarshaller);
@@ -470,7 +470,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">REST API Reference for CreateWebhook Operation</seealso>
         public virtual Task<CreateWebhookResponse> CreateWebhookAsync(CreateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateWebhookRequestMarshaller();
+            var marshaller = CreateWebhookRequestMarshaller.Instance;
             var unmarshaller = CreateWebhookResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateWebhookRequest,CreateWebhookResponse>(request, marshaller, 
@@ -483,7 +483,7 @@ namespace Amazon.CodeBuild
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
@@ -502,7 +502,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, 
@@ -515,7 +515,7 @@ namespace Amazon.CodeBuild
 
         internal virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
         {
-            var marshaller = new DeleteWebhookRequestMarshaller();
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
 
             return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
@@ -534,7 +534,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         public virtual Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteWebhookRequestMarshaller();
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, 
@@ -547,7 +547,7 @@ namespace Amazon.CodeBuild
 
         internal virtual InvalidateProjectCacheResponse InvalidateProjectCache(InvalidateProjectCacheRequest request)
         {
-            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var marshaller = InvalidateProjectCacheRequestMarshaller.Instance;
             var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
 
             return Invoke<InvalidateProjectCacheRequest,InvalidateProjectCacheResponse>(request, marshaller, unmarshaller);
@@ -566,7 +566,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache">REST API Reference for InvalidateProjectCache Operation</seealso>
         public virtual Task<InvalidateProjectCacheResponse> InvalidateProjectCacheAsync(InvalidateProjectCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InvalidateProjectCacheRequestMarshaller();
+            var marshaller = InvalidateProjectCacheRequestMarshaller.Instance;
             var unmarshaller = InvalidateProjectCacheResponseUnmarshaller.Instance;
 
             return InvokeAsync<InvalidateProjectCacheRequest,InvalidateProjectCacheResponse>(request, marshaller, 
@@ -579,7 +579,7 @@ namespace Amazon.CodeBuild
 
         internal virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return Invoke<ListBuildsRequest,ListBuildsResponse>(request, marshaller, unmarshaller);
@@ -598,7 +598,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBuildsRequestMarshaller();
+            var marshaller = ListBuildsRequestMarshaller.Instance;
             var unmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBuildsRequest,ListBuildsResponse>(request, marshaller, 
@@ -611,7 +611,7 @@ namespace Amazon.CodeBuild
 
         internal virtual ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request)
         {
-            var marshaller = new ListBuildsForProjectRequestMarshaller();
+            var marshaller = ListBuildsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
 
             return Invoke<ListBuildsForProjectRequest,ListBuildsForProjectResponse>(request, marshaller, unmarshaller);
@@ -630,7 +630,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public virtual Task<ListBuildsForProjectResponse> ListBuildsForProjectAsync(ListBuildsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBuildsForProjectRequestMarshaller();
+            var marshaller = ListBuildsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListBuildsForProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBuildsForProjectRequest,ListBuildsForProjectResponse>(request, marshaller, 
@@ -643,7 +643,7 @@ namespace Amazon.CodeBuild
 
         internal virtual ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
         {
-            var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
+            var marshaller = ListCuratedEnvironmentImagesRequestMarshaller.Instance;
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
 
             return Invoke<ListCuratedEnvironmentImagesRequest,ListCuratedEnvironmentImagesResponse>(request, marshaller, unmarshaller);
@@ -662,7 +662,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public virtual Task<ListCuratedEnvironmentImagesResponse> ListCuratedEnvironmentImagesAsync(ListCuratedEnvironmentImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
+            var marshaller = ListCuratedEnvironmentImagesRequestMarshaller.Instance;
             var unmarshaller = ListCuratedEnvironmentImagesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCuratedEnvironmentImagesRequest,ListCuratedEnvironmentImagesResponse>(request, marshaller, 
@@ -675,7 +675,7 @@ namespace Amazon.CodeBuild
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
@@ -694,7 +694,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
@@ -707,7 +707,7 @@ namespace Amazon.CodeBuild
 
         internal virtual StartBuildResponse StartBuild(StartBuildRequest request)
         {
-            var marshaller = new StartBuildRequestMarshaller();
+            var marshaller = StartBuildRequestMarshaller.Instance;
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
 
             return Invoke<StartBuildRequest,StartBuildResponse>(request, marshaller, unmarshaller);
@@ -726,7 +726,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public virtual Task<StartBuildResponse> StartBuildAsync(StartBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StartBuildRequestMarshaller();
+            var marshaller = StartBuildRequestMarshaller.Instance;
             var unmarshaller = StartBuildResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartBuildRequest,StartBuildResponse>(request, marshaller, 
@@ -739,7 +739,7 @@ namespace Amazon.CodeBuild
 
         internal virtual StopBuildResponse StopBuild(StopBuildRequest request)
         {
-            var marshaller = new StopBuildRequestMarshaller();
+            var marshaller = StopBuildRequestMarshaller.Instance;
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
 
             return Invoke<StopBuildRequest,StopBuildResponse>(request, marshaller, unmarshaller);
@@ -758,7 +758,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public virtual Task<StopBuildResponse> StopBuildAsync(StopBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new StopBuildRequestMarshaller();
+            var marshaller = StopBuildRequestMarshaller.Instance;
             var unmarshaller = StopBuildResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopBuildRequest,StopBuildResponse>(request, marshaller, 
@@ -771,7 +771,7 @@ namespace Amazon.CodeBuild
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
@@ -790,7 +790,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
@@ -803,7 +803,7 @@ namespace Amazon.CodeBuild
 
         internal virtual UpdateWebhookResponse UpdateWebhook(UpdateWebhookRequest request)
         {
-            var marshaller = new UpdateWebhookRequestMarshaller();
+            var marshaller = UpdateWebhookRequestMarshaller.Instance;
             var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
 
             return Invoke<UpdateWebhookRequest,UpdateWebhookResponse>(request, marshaller, unmarshaller);
@@ -822,7 +822,7 @@ namespace Amazon.CodeBuild
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">REST API Reference for UpdateWebhook Operation</seealso>
         public virtual Task<UpdateWebhookResponse> UpdateWebhookAsync(UpdateWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateWebhookRequestMarshaller();
+            var marshaller = UpdateWebhookRequestMarshaller.Instance;
             var unmarshaller = UpdateWebhookResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateWebhookRequest,UpdateWebhookResponse>(request, marshaller, 

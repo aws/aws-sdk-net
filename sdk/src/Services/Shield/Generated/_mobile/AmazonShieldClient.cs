@@ -242,7 +242,7 @@ namespace Amazon.Shield
 
         internal virtual CreateProtectionResponse CreateProtection(CreateProtectionRequest request)
         {
-            var marshaller = new CreateProtectionRequestMarshaller();
+            var marshaller = CreateProtectionRequestMarshaller.Instance;
             var unmarshaller = CreateProtectionResponseUnmarshaller.Instance;
 
             return Invoke<CreateProtectionRequest,CreateProtectionResponse>(request, marshaller, unmarshaller);
@@ -261,7 +261,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         public virtual Task<CreateProtectionResponse> CreateProtectionAsync(CreateProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateProtectionRequestMarshaller();
+            var marshaller = CreateProtectionRequestMarshaller.Instance;
             var unmarshaller = CreateProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProtectionRequest,CreateProtectionResponse>(request, marshaller, 
@@ -274,7 +274,7 @@ namespace Amazon.Shield
 
         internal virtual CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request)
         {
-            var marshaller = new CreateSubscriptionRequestMarshaller();
+            var marshaller = CreateSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<CreateSubscriptionRequest,CreateSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -293,7 +293,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         public virtual Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSubscriptionRequestMarshaller();
+            var marshaller = CreateSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSubscriptionRequest,CreateSubscriptionResponse>(request, marshaller, 
@@ -306,7 +306,7 @@ namespace Amazon.Shield
 
         internal virtual DeleteProtectionResponse DeleteProtection(DeleteProtectionRequest request)
         {
-            var marshaller = new DeleteProtectionRequestMarshaller();
+            var marshaller = DeleteProtectionRequestMarshaller.Instance;
             var unmarshaller = DeleteProtectionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProtectionRequest,DeleteProtectionResponse>(request, marshaller, unmarshaller);
@@ -325,7 +325,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         public virtual Task<DeleteProtectionResponse> DeleteProtectionAsync(DeleteProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteProtectionRequestMarshaller();
+            var marshaller = DeleteProtectionRequestMarshaller.Instance;
             var unmarshaller = DeleteProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProtectionRequest,DeleteProtectionResponse>(request, marshaller, 
@@ -338,7 +338,7 @@ namespace Amazon.Shield
 
         internal virtual DeleteSubscriptionResponse DeleteSubscription(DeleteSubscriptionRequest request)
         {
-            var marshaller = new DeleteSubscriptionRequestMarshaller();
+            var marshaller = DeleteSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSubscriptionRequest,DeleteSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -357,7 +357,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         public virtual Task<DeleteSubscriptionResponse> DeleteSubscriptionAsync(DeleteSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSubscriptionRequestMarshaller();
+            var marshaller = DeleteSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSubscriptionRequest,DeleteSubscriptionResponse>(request, marshaller, 
@@ -370,7 +370,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeAttackResponse DescribeAttack(DescribeAttackRequest request)
         {
-            var marshaller = new DescribeAttackRequestMarshaller();
+            var marshaller = DescribeAttackRequestMarshaller.Instance;
             var unmarshaller = DescribeAttackResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAttackRequest,DescribeAttackResponse>(request, marshaller, unmarshaller);
@@ -389,7 +389,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         public virtual Task<DescribeAttackResponse> DescribeAttackAsync(DescribeAttackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeAttackRequestMarshaller();
+            var marshaller = DescribeAttackRequestMarshaller.Instance;
             var unmarshaller = DescribeAttackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAttackRequest,DescribeAttackResponse>(request, marshaller, 
@@ -402,7 +402,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeProtectionResponse DescribeProtection(DescribeProtectionRequest request)
         {
-            var marshaller = new DescribeProtectionRequestMarshaller();
+            var marshaller = DescribeProtectionRequestMarshaller.Instance;
             var unmarshaller = DescribeProtectionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProtectionRequest,DescribeProtectionResponse>(request, marshaller, unmarshaller);
@@ -421,7 +421,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         public virtual Task<DescribeProtectionResponse> DescribeProtectionAsync(DescribeProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeProtectionRequestMarshaller();
+            var marshaller = DescribeProtectionRequestMarshaller.Instance;
             var unmarshaller = DescribeProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeProtectionRequest,DescribeProtectionResponse>(request, marshaller, 
@@ -434,7 +434,7 @@ namespace Amazon.Shield
 
         internal virtual DescribeSubscriptionResponse DescribeSubscription(DescribeSubscriptionRequest request)
         {
-            var marshaller = new DescribeSubscriptionRequestMarshaller();
+            var marshaller = DescribeSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DescribeSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSubscriptionRequest,DescribeSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -453,7 +453,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         public virtual Task<DescribeSubscriptionResponse> DescribeSubscriptionAsync(DescribeSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeSubscriptionRequestMarshaller();
+            var marshaller = DescribeSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DescribeSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSubscriptionRequest,DescribeSubscriptionResponse>(request, marshaller, 
@@ -466,7 +466,7 @@ namespace Amazon.Shield
 
         internal virtual GetSubscriptionStateResponse GetSubscriptionState(GetSubscriptionStateRequest request)
         {
-            var marshaller = new GetSubscriptionStateRequestMarshaller();
+            var marshaller = GetSubscriptionStateRequestMarshaller.Instance;
             var unmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
 
             return Invoke<GetSubscriptionStateRequest,GetSubscriptionStateResponse>(request, marshaller, unmarshaller);
@@ -485,7 +485,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">REST API Reference for GetSubscriptionState Operation</seealso>
         public virtual Task<GetSubscriptionStateResponse> GetSubscriptionStateAsync(GetSubscriptionStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSubscriptionStateRequestMarshaller();
+            var marshaller = GetSubscriptionStateRequestMarshaller.Instance;
             var unmarshaller = GetSubscriptionStateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSubscriptionStateRequest,GetSubscriptionStateResponse>(request, marshaller, 
@@ -498,7 +498,7 @@ namespace Amazon.Shield
 
         internal virtual ListAttacksResponse ListAttacks(ListAttacksRequest request)
         {
-            var marshaller = new ListAttacksRequestMarshaller();
+            var marshaller = ListAttacksRequestMarshaller.Instance;
             var unmarshaller = ListAttacksResponseUnmarshaller.Instance;
 
             return Invoke<ListAttacksRequest,ListAttacksResponse>(request, marshaller, unmarshaller);
@@ -517,7 +517,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         public virtual Task<ListAttacksResponse> ListAttacksAsync(ListAttacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAttacksRequestMarshaller();
+            var marshaller = ListAttacksRequestMarshaller.Instance;
             var unmarshaller = ListAttacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttacksRequest,ListAttacksResponse>(request, marshaller, 
@@ -530,7 +530,7 @@ namespace Amazon.Shield
 
         internal virtual ListProtectionsResponse ListProtections(ListProtectionsRequest request)
         {
-            var marshaller = new ListProtectionsRequestMarshaller();
+            var marshaller = ListProtectionsRequestMarshaller.Instance;
             var unmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
             return Invoke<ListProtectionsRequest,ListProtectionsResponse>(request, marshaller, unmarshaller);
@@ -549,7 +549,7 @@ namespace Amazon.Shield
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         public virtual Task<ListProtectionsResponse> ListProtectionsAsync(ListProtectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListProtectionsRequestMarshaller();
+            var marshaller = ListProtectionsRequestMarshaller.Instance;
             var unmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProtectionsRequest,ListProtectionsResponse>(request, marshaller, 

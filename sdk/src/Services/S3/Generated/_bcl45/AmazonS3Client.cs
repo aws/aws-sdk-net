@@ -280,7 +280,7 @@ namespace Amazon.S3
         /// <returns>The response from the AbortMultipartUpload service method, as returned by S3.</returns>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -324,7 +324,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AbortMultipartUploadRequestMarshaller();
+            var marshaller = AbortMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<AbortMultipartUploadRequest,AbortMultipartUploadResponse>(request, marshaller, 
@@ -344,7 +344,7 @@ namespace Amazon.S3
         /// <returns>The response from the CompleteMultipartUpload service method, as returned by S3.</returns>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -361,7 +361,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CompleteMultipartUploadRequestMarshaller();
+            var marshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<CompleteMultipartUploadRequest,CompleteMultipartUploadResponse>(request, marshaller, 
@@ -423,7 +423,7 @@ namespace Amazon.S3
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
         public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            var marshaller = new CopyObjectRequestMarshaller();
+            var marshaller = CopyObjectRequestMarshaller.Instance;
             var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
             return Invoke<CopyObjectRequest,CopyObjectResponse>(request, marshaller, unmarshaller);
@@ -488,7 +488,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CopyObjectRequestMarshaller();
+            var marshaller = CopyObjectRequestMarshaller.Instance;
             var unmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<CopyObjectRequest,CopyObjectResponse>(request, marshaller, 
@@ -554,7 +554,7 @@ namespace Amazon.S3
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
-            var marshaller = new CopyPartRequestMarshaller();
+            var marshaller = CopyPartRequestMarshaller.Instance;
             var unmarshaller = CopyPartResponseUnmarshaller.Instance;
 
             return Invoke<CopyPartRequest,CopyPartResponse>(request, marshaller, unmarshaller);
@@ -623,7 +623,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CopyPartRequestMarshaller();
+            var marshaller = CopyPartRequestMarshaller.Instance;
             var unmarshaller = CopyPartResponseUnmarshaller.Instance;
 
             return InvokeAsync<CopyPartRequest,CopyPartResponse>(request, marshaller, 
@@ -659,7 +659,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var marshaller = new DeleteBucketRequestMarshaller();
+            var marshaller = DeleteBucketRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, unmarshaller);
@@ -694,7 +694,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketRequestMarshaller();
+            var marshaller = DeleteBucketRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, 
@@ -715,7 +715,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -732,7 +732,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketAnalyticsConfigurationResponse> DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, 
@@ -752,7 +752,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
         public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
         {
-            var marshaller = new DeleteBucketEncryptionRequestMarshaller();
+            var marshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketEncryptionRequest,DeleteBucketEncryptionResponse>(request, marshaller, unmarshaller);
@@ -769,7 +769,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketEncryptionResponse> DeleteBucketEncryptionAsync(DeleteBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketEncryptionRequestMarshaller();
+            var marshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketEncryptionRequest,DeleteBucketEncryptionResponse>(request, marshaller, 
@@ -789,7 +789,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
-            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
@@ -806,7 +806,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketInventoryConfigurationResponse> DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, 
@@ -827,7 +827,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
-            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -844,7 +844,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketMetricsConfigurationResponse> DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, 
@@ -878,7 +878,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var marshaller = new DeleteBucketPolicyRequestMarshaller();
+            var marshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketPolicyRequest,DeleteBucketPolicyResponse>(request, marshaller, unmarshaller);
@@ -912,7 +912,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketPolicyRequestMarshaller();
+            var marshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketPolicyRequest,DeleteBucketPolicyResponse>(request, marshaller, 
@@ -932,7 +932,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketReplication service method, as returned by S3.</returns>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+            var marshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketReplicationRequest,DeleteBucketReplicationResponse>(request, marshaller, unmarshaller);
@@ -949,7 +949,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+            var marshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketReplicationRequest,DeleteBucketReplicationResponse>(request, marshaller, 
@@ -983,7 +983,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketTagging service method, as returned by S3.</returns>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var marshaller = new DeleteBucketTaggingRequestMarshaller();
+            var marshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketTaggingRequest,DeleteBucketTaggingResponse>(request, marshaller, unmarshaller);
@@ -1017,7 +1017,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketTaggingRequestMarshaller();
+            var marshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketTaggingRequest,DeleteBucketTaggingResponse>(request, marshaller, 
@@ -1051,7 +1051,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteBucketWebsite service method, as returned by S3.</returns>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
-            var marshaller = new DeleteBucketWebsiteRequestMarshaller();
+            var marshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
             return Invoke<DeleteBucketWebsiteRequest,DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller);
@@ -1085,7 +1085,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteBucketWebsiteRequestMarshaller();
+            var marshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketWebsiteRequest,DeleteBucketWebsiteResponse>(request, marshaller, 
@@ -1119,7 +1119,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteCORSConfiguration service method, as returned by S3.</returns>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
-            var marshaller = new DeleteCORSConfigurationRequestMarshaller();
+            var marshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCORSConfigurationRequest,DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1153,7 +1153,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCORSConfigurationRequestMarshaller();
+            var marshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCORSConfigurationRequest,DeleteCORSConfigurationResponse>(request, marshaller, 
@@ -1187,7 +1187,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
-            var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
+            var marshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<DeleteLifecycleConfigurationRequest,DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1221,7 +1221,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
+            var marshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLifecycleConfigurationRequest,DeleteLifecycleConfigurationResponse>(request, marshaller, 
@@ -1281,7 +1281,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
@@ -1342,7 +1342,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, 
@@ -1363,7 +1363,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObjects service method, as returned by S3.</returns>
         public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
-            var marshaller = new DeleteObjectsRequestMarshaller();
+            var marshaller = DeleteObjectsRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectsRequest,DeleteObjectsResponse>(request, marshaller, unmarshaller);
@@ -1380,7 +1380,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteObjectsRequestMarshaller();
+            var marshaller = DeleteObjectsRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectsRequest,DeleteObjectsResponse>(request, marshaller, 
@@ -1400,7 +1400,7 @@ namespace Amazon.S3
         /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
         public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
-            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var marshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, unmarshaller);
@@ -1417,7 +1417,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var marshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, 
@@ -1451,7 +1451,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetACL service method, as returned by S3.</returns>
         public virtual GetACLResponse GetACL(GetACLRequest request)
         {
-            var marshaller = new GetACLRequestMarshaller();
+            var marshaller = GetACLRequestMarshaller.Instance;
             var unmarshaller = GetACLResponseUnmarshaller.Instance;
 
             return Invoke<GetACLRequest,GetACLResponse>(request, marshaller, unmarshaller);
@@ -1485,7 +1485,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetACLResponse> GetACLAsync(GetACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetACLRequestMarshaller();
+            var marshaller = GetACLRequestMarshaller.Instance;
             var unmarshaller = GetACLResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetACLRequest,GetACLResponse>(request, marshaller, 
@@ -1519,7 +1519,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketAccelerateConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
-            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1553,7 +1553,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>(request, marshaller, 
@@ -1574,7 +1574,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1591,7 +1591,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, 
@@ -1611,7 +1611,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
         public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
         {
-            var marshaller = new GetBucketEncryptionRequestMarshaller();
+            var marshaller = GetBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketEncryptionRequest,GetBucketEncryptionResponse>(request, marshaller, unmarshaller);
@@ -1628,7 +1628,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketEncryptionResponse> GetBucketEncryptionAsync(GetBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketEncryptionRequestMarshaller();
+            var marshaller = GetBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketEncryptionRequest,GetBucketEncryptionResponse>(request, marshaller, 
@@ -1648,7 +1648,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
-            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1665,7 +1665,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketInventoryConfigurationResponse> GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, 
@@ -1699,7 +1699,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketLocation service method, as returned by S3.</returns>
         public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
-            var marshaller = new GetBucketLocationRequestMarshaller();
+            var marshaller = GetBucketLocationRequestMarshaller.Instance;
             var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketLocationRequest,GetBucketLocationResponse>(request, marshaller, unmarshaller);
@@ -1733,7 +1733,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketLocationRequestMarshaller();
+            var marshaller = GetBucketLocationRequestMarshaller.Instance;
             var unmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketLocationRequest,GetBucketLocationResponse>(request, marshaller, 
@@ -1769,7 +1769,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketLogging service method, as returned by S3.</returns>
         public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
-            var marshaller = new GetBucketLoggingRequestMarshaller();
+            var marshaller = GetBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, unmarshaller);
@@ -1804,7 +1804,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketLoggingRequestMarshaller();
+            var marshaller = GetBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, 
@@ -1825,7 +1825,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
-            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -1842,7 +1842,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketMetricsConfigurationResponse> GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, 
@@ -1876,7 +1876,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketNotification service method, as returned by S3.</returns>
         public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
-            var marshaller = new GetBucketNotificationRequestMarshaller();
+            var marshaller = GetBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketNotificationRequest,GetBucketNotificationResponse>(request, marshaller, unmarshaller);
@@ -1910,7 +1910,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketNotificationRequestMarshaller();
+            var marshaller = GetBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketNotificationRequest,GetBucketNotificationResponse>(request, marshaller, 
@@ -1944,7 +1944,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var marshaller = new GetBucketPolicyRequestMarshaller();
+            var marshaller = GetBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, unmarshaller);
@@ -1978,7 +1978,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketPolicyRequestMarshaller();
+            var marshaller = GetBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketPolicyRequest,GetBucketPolicyResponse>(request, marshaller, 
@@ -1998,7 +1998,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketReplication service method, as returned by S3.</returns>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var marshaller = new GetBucketReplicationRequestMarshaller();
+            var marshaller = GetBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketReplicationRequest,GetBucketReplicationResponse>(request, marshaller, unmarshaller);
@@ -2015,7 +2015,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketReplicationRequestMarshaller();
+            var marshaller = GetBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketReplicationRequest,GetBucketReplicationResponse>(request, marshaller, 
@@ -2049,7 +2049,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketRequestPayment service method, as returned by S3.</returns>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
-            var marshaller = new GetBucketRequestPaymentRequestMarshaller();
+            var marshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketRequestPaymentRequest,GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
@@ -2083,7 +2083,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketRequestPaymentRequestMarshaller();
+            var marshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketRequestPaymentRequest,GetBucketRequestPaymentResponse>(request, marshaller, 
@@ -2103,7 +2103,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketTagging service method, as returned by S3.</returns>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var marshaller = new GetBucketTaggingRequestMarshaller();
+            var marshaller = GetBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketTaggingRequest,GetBucketTaggingResponse>(request, marshaller, unmarshaller);
@@ -2120,7 +2120,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketTaggingRequestMarshaller();
+            var marshaller = GetBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketTaggingRequest,GetBucketTaggingResponse>(request, marshaller, 
@@ -2154,7 +2154,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketVersioning service method, as returned by S3.</returns>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var marshaller = new GetBucketVersioningRequestMarshaller();
+            var marshaller = GetBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketVersioningRequest,GetBucketVersioningResponse>(request, marshaller, unmarshaller);
@@ -2188,7 +2188,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketVersioningRequestMarshaller();
+            var marshaller = GetBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketVersioningRequest,GetBucketVersioningResponse>(request, marshaller, 
@@ -2222,7 +2222,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetBucketWebsite service method, as returned by S3.</returns>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
-            var marshaller = new GetBucketWebsiteRequestMarshaller();
+            var marshaller = GetBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
             return Invoke<GetBucketWebsiteRequest,GetBucketWebsiteResponse>(request, marshaller, unmarshaller);
@@ -2256,7 +2256,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetBucketWebsiteRequestMarshaller();
+            var marshaller = GetBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketWebsiteRequest,GetBucketWebsiteResponse>(request, marshaller, 
@@ -2290,7 +2290,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetCORSConfiguration service method, as returned by S3.</returns>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
-            var marshaller = new GetCORSConfigurationRequestMarshaller();
+            var marshaller = GetCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetCORSConfigurationRequest,GetCORSConfigurationResponse>(request, marshaller, unmarshaller);
@@ -2324,7 +2324,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCORSConfigurationRequestMarshaller();
+            var marshaller = GetCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCORSConfigurationRequest,GetCORSConfigurationResponse>(request, marshaller, 
@@ -2358,7 +2358,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
-            var marshaller = new GetLifecycleConfigurationRequestMarshaller();
+            var marshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<GetLifecycleConfigurationRequest,GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
@@ -2392,7 +2392,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetLifecycleConfigurationRequestMarshaller();
+            var marshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLifecycleConfigurationRequest,GetLifecycleConfigurationResponse>(request, marshaller, 
@@ -2446,7 +2446,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var marshaller = new GetObjectRequestMarshaller();
+            var marshaller = GetObjectRequestMarshaller.Instance;
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectRequest,GetObjectResponse>(request, marshaller, unmarshaller);
@@ -2503,7 +2503,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectRequestMarshaller();
+            var marshaller = GetObjectRequestMarshaller.Instance;
             var unmarshaller = GetObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectRequest,GetObjectResponse>(request, marshaller, 
@@ -2563,7 +2563,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
         public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
-            var marshaller = new GetObjectMetadataRequestMarshaller();
+            var marshaller = GetObjectMetadataRequestMarshaller.Instance;
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, unmarshaller);
@@ -2624,7 +2624,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectMetadataRequestMarshaller();
+            var marshaller = GetObjectMetadataRequestMarshaller.Instance;
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, 
@@ -2644,7 +2644,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
         public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
-            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var marshaller = GetObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, unmarshaller);
@@ -2661,7 +2661,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetObjectTaggingResponse> GetObjectTaggingAsync(GetObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var marshaller = GetObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, 
@@ -2697,7 +2697,7 @@ namespace Amazon.S3
         /// <returns>The response from the GetObjectTorrent service method, as returned by S3.</returns>
         public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
-            var marshaller = new GetObjectTorrentRequestMarshaller();
+            var marshaller = GetObjectTorrentRequestMarshaller.Instance;
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, unmarshaller);
@@ -2733,7 +2733,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectTorrentRequestMarshaller();
+            var marshaller = GetObjectTorrentRequestMarshaller.Instance;
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, 
@@ -2754,7 +2754,7 @@ namespace Amazon.S3
         /// <returns>The response from the HeadBucket service method, as returned by S3.</returns>
         internal virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
-            var marshaller = new HeadBucketRequestMarshaller();
+            var marshaller = HeadBucketRequestMarshaller.Instance;
             var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
             return Invoke<HeadBucketRequest,HeadBucketResponse>(request, marshaller, unmarshaller);
@@ -2771,7 +2771,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         internal virtual Task<HeadBucketResponse> HeadBucketAsync(HeadBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new HeadBucketRequestMarshaller();
+            var marshaller = HeadBucketRequestMarshaller.Instance;
             var unmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
             return InvokeAsync<HeadBucketRequest,HeadBucketResponse>(request, marshaller, 
@@ -2823,7 +2823,7 @@ namespace Amazon.S3
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return Invoke<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, unmarshaller);
@@ -2867,7 +2867,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new InitiateMultipartUploadRequestMarshaller();
+            var marshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, 
@@ -2887,7 +2887,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
-            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -2904,7 +2904,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListBucketAnalyticsConfigurationsResponse> ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, 
@@ -2924,7 +2924,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
-            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var marshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -2941,7 +2941,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListBucketInventoryConfigurationsResponse> ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var marshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, 
@@ -2961,7 +2961,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
         public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
-            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
             return Invoke<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, unmarshaller);
@@ -2978,7 +2978,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListBucketMetricsConfigurationsResponse> ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var marshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, 
@@ -3009,7 +3009,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
         public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
-            var marshaller = new ListBucketsRequestMarshaller();
+            var marshaller = ListBucketsRequestMarshaller.Instance;
             var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
             return Invoke<ListBucketsRequest,ListBucketsResponse>(request, marshaller, unmarshaller);
@@ -3039,7 +3039,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListBucketsRequestMarshaller();
+            var marshaller = ListBucketsRequestMarshaller.Instance;
             var unmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBucketsRequest,ListBucketsResponse>(request, marshaller, 
@@ -3089,7 +3089,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
             return Invoke<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, unmarshaller);
@@ -3142,7 +3142,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListMultipartUploadsRequestMarshaller();
+            var marshaller = ListMultipartUploadsRequestMarshaller.Instance;
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListMultipartUploadsRequest,ListMultipartUploadsResponse>(request, marshaller, 
@@ -3195,7 +3195,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
-            var marshaller = new ListObjectsRequestMarshaller();
+            var marshaller = ListObjectsRequestMarshaller.Instance;
             var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectsRequest,ListObjectsResponse>(request, marshaller, unmarshaller);
@@ -3250,7 +3250,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectsRequestMarshaller();
+            var marshaller = ListObjectsRequestMarshaller.Instance;
             var unmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectsRequest,ListObjectsResponse>(request, marshaller, 
@@ -3273,7 +3273,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListObjectsV2 service method, as returned by S3.</returns>
         public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
-            var marshaller = new ListObjectsV2RequestMarshaller();
+            var marshaller = ListObjectsV2RequestMarshaller.Instance;
             var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, unmarshaller);
@@ -3290,7 +3290,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListObjectsV2Response> ListObjectsV2Async(ListObjectsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectsV2RequestMarshaller();
+            var marshaller = ListObjectsV2RequestMarshaller.Instance;
             var unmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectsV2Request,ListObjectsV2Response>(request, marshaller, 
@@ -3328,7 +3328,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListParts service method, as returned by S3.</returns>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var marshaller = new ListPartsRequestMarshaller();
+            var marshaller = ListPartsRequestMarshaller.Instance;
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
 
             return Invoke<ListPartsRequest,ListPartsResponse>(request, marshaller, unmarshaller);
@@ -3366,7 +3366,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPartsRequestMarshaller();
+            var marshaller = ListPartsRequestMarshaller.Instance;
             var unmarshaller = ListPartsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPartsRequest,ListPartsResponse>(request, marshaller, 
@@ -3416,7 +3416,7 @@ namespace Amazon.S3
         /// <returns>The response from the ListVersions service method, as returned by S3.</returns>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var marshaller = new ListVersionsRequestMarshaller();
+            var marshaller = ListVersionsRequestMarshaller.Instance;
             var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
             return Invoke<ListVersionsRequest,ListVersionsResponse>(request, marshaller, unmarshaller);
@@ -3469,7 +3469,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListVersionsRequestMarshaller();
+            var marshaller = ListVersionsRequestMarshaller.Instance;
             var unmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVersionsRequest,ListVersionsResponse>(request, marshaller, 
@@ -3489,7 +3489,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutACL service method, as returned by S3.</returns>
         public virtual PutACLResponse PutACL(PutACLRequest request)
         {
-            var marshaller = new PutACLRequestMarshaller();
+            var marshaller = PutACLRequestMarshaller.Instance;
             var unmarshaller = PutACLResponseUnmarshaller.Instance;
 
             return Invoke<PutACLRequest,PutACLResponse>(request, marshaller, unmarshaller);
@@ -3506,7 +3506,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutACLResponse> PutACLAsync(PutACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutACLRequestMarshaller();
+            var marshaller = PutACLRequestMarshaller.Instance;
             var unmarshaller = PutACLResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutACLRequest,PutACLResponse>(request, marshaller, 
@@ -3540,7 +3540,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
         public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
-            var marshaller = new PutBucketRequestMarshaller();
+            var marshaller = PutBucketRequestMarshaller.Instance;
             var unmarshaller = PutBucketResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketRequest,PutBucketResponse>(request, marshaller, unmarshaller);
@@ -3574,7 +3574,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketRequestMarshaller();
+            var marshaller = PutBucketRequestMarshaller.Instance;
             var unmarshaller = PutBucketResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketRequest,PutBucketResponse>(request, marshaller, 
@@ -3594,7 +3594,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketAccelerateConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
-            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse>(request, marshaller, unmarshaller);
@@ -3611,7 +3611,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketAccelerateConfigurationResponse> PutBucketAccelerateConfigurationAsync(PutBucketAccelerateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketAccelerateConfigurationRequestMarshaller();
+            var marshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketAccelerateConfigurationRequest,PutBucketAccelerateConfigurationResponse>(request, marshaller, 
@@ -3632,7 +3632,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
-            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -3649,7 +3649,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var marshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, 
@@ -3670,7 +3670,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
         public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
         {
-            var marshaller = new PutBucketEncryptionRequestMarshaller();
+            var marshaller = PutBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketEncryptionRequest,PutBucketEncryptionResponse>(request, marshaller, unmarshaller);
@@ -3687,7 +3687,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketEncryptionResponse> PutBucketEncryptionAsync(PutBucketEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketEncryptionRequestMarshaller();
+            var marshaller = PutBucketEncryptionRequestMarshaller.Instance;
             var unmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketEncryptionRequest,PutBucketEncryptionResponse>(request, marshaller, 
@@ -3707,7 +3707,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
-            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
@@ -3724,7 +3724,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketInventoryConfigurationResponse> PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var marshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, 
@@ -3746,7 +3746,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketLogging service method, as returned by S3.</returns>
         public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
-            var marshaller = new PutBucketLoggingRequestMarshaller();
+            var marshaller = PutBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, unmarshaller);
@@ -3763,7 +3763,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketLoggingRequestMarshaller();
+            var marshaller = PutBucketLoggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, 
@@ -3783,7 +3783,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
         public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
-            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
@@ -3800,7 +3800,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketMetricsConfigurationResponse> PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var marshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, 
@@ -3820,7 +3820,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketNotification service method, as returned by S3.</returns>
         public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
-            var marshaller = new PutBucketNotificationRequestMarshaller();
+            var marshaller = PutBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketNotificationRequest,PutBucketNotificationResponse>(request, marshaller, unmarshaller);
@@ -3837,7 +3837,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketNotificationRequestMarshaller();
+            var marshaller = PutBucketNotificationRequestMarshaller.Instance;
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketNotificationRequest,PutBucketNotificationResponse>(request, marshaller, 
@@ -3894,7 +3894,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var marshaller = new PutBucketPolicyRequestMarshaller();
+            var marshaller = PutBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, unmarshaller);
@@ -3953,7 +3953,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketPolicyRequestMarshaller();
+            var marshaller = PutBucketPolicyRequestMarshaller.Instance;
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketPolicyRequest,PutBucketPolicyResponse>(request, marshaller, 
@@ -3973,7 +3973,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketReplication service method, as returned by S3.</returns>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var marshaller = new PutBucketReplicationRequestMarshaller();
+            var marshaller = PutBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketReplicationRequest,PutBucketReplicationResponse>(request, marshaller, unmarshaller);
@@ -3990,7 +3990,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketReplicationRequestMarshaller();
+            var marshaller = PutBucketReplicationRequestMarshaller.Instance;
             var unmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketReplicationRequest,PutBucketReplicationResponse>(request, marshaller, 
@@ -4032,7 +4032,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketRequestPayment service method, as returned by S3.</returns>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
-            var marshaller = new PutBucketRequestPaymentRequestMarshaller();
+            var marshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketRequestPaymentRequest,PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller);
@@ -4071,7 +4071,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketRequestPaymentRequestMarshaller();
+            var marshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketRequestPaymentRequest,PutBucketRequestPaymentResponse>(request, marshaller, 
@@ -4107,7 +4107,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketTagging service method, as returned by S3.</returns>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var marshaller = new PutBucketTaggingRequestMarshaller();
+            var marshaller = PutBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketTaggingRequest,PutBucketTaggingResponse>(request, marshaller, unmarshaller);
@@ -4143,7 +4143,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketTaggingRequestMarshaller();
+            var marshaller = PutBucketTaggingRequestMarshaller.Instance;
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketTaggingRequest,PutBucketTaggingResponse>(request, marshaller, 
@@ -4164,7 +4164,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketVersioning service method, as returned by S3.</returns>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var marshaller = new PutBucketVersioningRequestMarshaller();
+            var marshaller = PutBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketVersioningRequest,PutBucketVersioningResponse>(request, marshaller, unmarshaller);
@@ -4181,7 +4181,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketVersioningRequestMarshaller();
+            var marshaller = PutBucketVersioningRequestMarshaller.Instance;
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketVersioningRequest,PutBucketVersioningResponse>(request, marshaller, 
@@ -4217,7 +4217,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutBucketWebsite service method, as returned by S3.</returns>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
-            var marshaller = new PutBucketWebsiteRequestMarshaller();
+            var marshaller = PutBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
             return Invoke<PutBucketWebsiteRequest,PutBucketWebsiteResponse>(request, marshaller, unmarshaller);
@@ -4253,7 +4253,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutBucketWebsiteRequestMarshaller();
+            var marshaller = PutBucketWebsiteRequestMarshaller.Instance;
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketWebsiteRequest,PutBucketWebsiteResponse>(request, marshaller, 
@@ -4289,7 +4289,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutCORSConfiguration service method, as returned by S3.</returns>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
-            var marshaller = new PutCORSConfigurationRequestMarshaller();
+            var marshaller = PutCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutCORSConfigurationRequest,PutCORSConfigurationResponse>(request, marshaller, unmarshaller);
@@ -4325,7 +4325,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutCORSConfigurationRequestMarshaller();
+            var marshaller = PutCORSConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutCORSConfigurationRequest,PutCORSConfigurationResponse>(request, marshaller, 
@@ -4363,7 +4363,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutLifecycleConfiguration service method, as returned by S3.</returns>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
-            var marshaller = new PutLifecycleConfigurationRequestMarshaller();
+            var marshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return Invoke<PutLifecycleConfigurationRequest,PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller);
@@ -4400,7 +4400,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutLifecycleConfigurationRequestMarshaller();
+            var marshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutLifecycleConfigurationRequest,PutLifecycleConfigurationResponse>(request, marshaller, 
@@ -4420,7 +4420,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutObject service method, as returned by S3.</returns>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var marshaller = new PutObjectRequestMarshaller();
+            var marshaller = PutObjectRequestMarshaller.Instance;
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return Invoke<PutObjectRequest,PutObjectResponse>(request, marshaller, unmarshaller);
@@ -4437,7 +4437,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutObjectRequestMarshaller();
+            var marshaller = PutObjectRequestMarshaller.Instance;
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 
@@ -4457,7 +4457,7 @@ namespace Amazon.S3
         /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
         public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
-            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var marshaller = PutObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
             return Invoke<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, unmarshaller);
@@ -4474,7 +4474,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var marshaller = PutObjectTaggingRequestMarshaller.Instance;
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, 
@@ -4566,7 +4566,7 @@ namespace Amazon.S3
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
-            var marshaller = new RestoreObjectRequestMarshaller();
+            var marshaller = RestoreObjectRequestMarshaller.Instance;
             var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
             return Invoke<RestoreObjectRequest,RestoreObjectResponse>(request, marshaller, unmarshaller);
@@ -4667,7 +4667,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RestoreObjectRequestMarshaller();
+            var marshaller = RestoreObjectRequestMarshaller.Instance;
             var unmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreObjectRequest,RestoreObjectResponse>(request, marshaller, 
@@ -4695,7 +4695,7 @@ namespace Amazon.S3
         /// <returns>The response from the UploadPart service method, as returned by S3.</returns>
         public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
-            var marshaller = new UploadPartRequestMarshaller();
+            var marshaller = UploadPartRequestMarshaller.Instance;
             var unmarshaller = UploadPartResponseUnmarshaller.Instance;
 
             return Invoke<UploadPartRequest,UploadPartResponse>(request, marshaller, unmarshaller);
@@ -4712,7 +4712,7 @@ namespace Amazon.S3
         /// <returns>The task object representing the asynchronous operation.</returns>
         public virtual Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UploadPartRequestMarshaller();
+            var marshaller = UploadPartRequestMarshaller.Instance;
             var unmarshaller = UploadPartResponseUnmarshaller.Instance;
 
             return InvokeAsync<UploadPartRequest,UploadPartResponse>(request, marshaller, 

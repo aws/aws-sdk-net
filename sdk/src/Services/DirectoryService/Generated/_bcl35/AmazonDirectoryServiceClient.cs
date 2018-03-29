@@ -286,7 +286,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
         {
-            var marshaller = new AddIpRoutesRequestMarshaller();
+            var marshaller = AddIpRoutesRequestMarshaller.Instance;
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
 
             return Invoke<AddIpRoutesRequest,AddIpRoutesResponse>(request, marshaller, unmarshaller);
@@ -306,7 +306,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginAddIpRoutes(AddIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddIpRoutesRequestMarshaller();
+            var marshaller = AddIpRoutesRequestMarshaller.Instance;
             var unmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddIpRoutesRequest>(request, marshaller, unmarshaller,
@@ -356,7 +356,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
@@ -376,7 +376,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
@@ -421,7 +421,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
         {
-            var marshaller = new CancelSchemaExtensionRequestMarshaller();
+            var marshaller = CancelSchemaExtensionRequestMarshaller.Instance;
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
 
             return Invoke<CancelSchemaExtensionRequest,CancelSchemaExtensionResponse>(request, marshaller, unmarshaller);
@@ -441,7 +441,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual IAsyncResult BeginCancelSchemaExtension(CancelSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CancelSchemaExtensionRequestMarshaller();
+            var marshaller = CancelSchemaExtensionRequestMarshaller.Instance;
             var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CancelSchemaExtensionRequest>(request, marshaller, unmarshaller,
@@ -495,7 +495,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
-            var marshaller = new ConnectDirectoryRequestMarshaller();
+            var marshaller = ConnectDirectoryRequestMarshaller.Instance;
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<ConnectDirectoryRequest,ConnectDirectoryResponse>(request, marshaller, unmarshaller);
@@ -515,7 +515,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual IAsyncResult BeginConnectDirectory(ConnectDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ConnectDirectoryRequestMarshaller();
+            var marshaller = ConnectDirectoryRequestMarshaller.Instance;
             var unmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<ConnectDirectoryRequest>(request, marshaller, unmarshaller,
@@ -571,7 +571,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return Invoke<CreateAliasRequest,CreateAliasResponse>(request, marshaller, unmarshaller);
@@ -591,7 +591,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateAliasRequestMarshaller();
+            var marshaller = CreateAliasRequestMarshaller.Instance;
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateAliasRequest>(request, marshaller, unmarshaller,
@@ -649,7 +649,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
-            var marshaller = new CreateComputerRequestMarshaller();
+            var marshaller = CreateComputerRequestMarshaller.Instance;
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
 
             return Invoke<CreateComputerRequest,CreateComputerResponse>(request, marshaller, unmarshaller);
@@ -669,7 +669,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual IAsyncResult BeginCreateComputer(CreateComputerRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateComputerRequestMarshaller();
+            var marshaller = CreateComputerRequestMarshaller.Instance;
             var unmarshaller = CreateComputerResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateComputerRequest>(request, marshaller, unmarshaller,
@@ -725,7 +725,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
         {
-            var marshaller = new CreateConditionalForwarderRequestMarshaller();
+            var marshaller = CreateConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
 
             return Invoke<CreateConditionalForwarderRequest,CreateConditionalForwarderResponse>(request, marshaller, unmarshaller);
@@ -745,7 +745,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginCreateConditionalForwarder(CreateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateConditionalForwarderRequestMarshaller();
+            var marshaller = CreateConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateConditionalForwarderRequest>(request, marshaller, unmarshaller,
@@ -799,7 +799,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, unmarshaller);
@@ -819,7 +819,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDirectoryRequest>(request, marshaller, unmarshaller,
@@ -876,7 +876,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
         {
-            var marshaller = new CreateMicrosoftADRequestMarshaller();
+            var marshaller = CreateMicrosoftADRequestMarshaller.Instance;
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
 
             return Invoke<CreateMicrosoftADRequest,CreateMicrosoftADResponse>(request, marshaller, unmarshaller);
@@ -896,7 +896,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual IAsyncResult BeginCreateMicrosoftAD(CreateMicrosoftADRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateMicrosoftADRequestMarshaller();
+            var marshaller = CreateMicrosoftADRequestMarshaller.Instance;
             var unmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateMicrosoftADRequest>(request, marshaller, unmarshaller,
@@ -952,7 +952,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var marshaller = new CreateSnapshotRequestMarshaller();
+            var marshaller = CreateSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateSnapshotRequest,CreateSnapshotResponse>(request, marshaller, unmarshaller);
@@ -972,7 +972,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateSnapshotRequestMarshaller();
+            var marshaller = CreateSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1033,7 +1033,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual CreateTrustResponse CreateTrust(CreateTrustRequest request)
         {
-            var marshaller = new CreateTrustRequestMarshaller();
+            var marshaller = CreateTrustRequestMarshaller.Instance;
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
 
             return Invoke<CreateTrustRequest,CreateTrustResponse>(request, marshaller, unmarshaller);
@@ -1053,7 +1053,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual IAsyncResult BeginCreateTrust(CreateTrustRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateTrustRequestMarshaller();
+            var marshaller = CreateTrustRequestMarshaller.Instance;
             var unmarshaller = CreateTrustResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateTrustRequest>(request, marshaller, unmarshaller,
@@ -1104,7 +1104,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
         {
-            var marshaller = new DeleteConditionalForwarderRequestMarshaller();
+            var marshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
 
             return Invoke<DeleteConditionalForwarderRequest,DeleteConditionalForwarderResponse>(request, marshaller, unmarshaller);
@@ -1124,7 +1124,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginDeleteConditionalForwarder(DeleteConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteConditionalForwarderRequestMarshaller();
+            var marshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteConditionalForwarderRequest>(request, marshaller, unmarshaller,
@@ -1174,7 +1174,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, unmarshaller);
@@ -1194,7 +1194,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDirectoryRequest>(request, marshaller, unmarshaller,
@@ -1239,7 +1239,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var marshaller = DeleteSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSnapshotRequest,DeleteSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1259,7 +1259,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSnapshotRequestMarshaller();
+            var marshaller = DeleteSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1308,7 +1308,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
         {
-            var marshaller = new DeleteTrustRequestMarshaller();
+            var marshaller = DeleteTrustRequestMarshaller.Instance;
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTrustRequest,DeleteTrustResponse>(request, marshaller, unmarshaller);
@@ -1328,7 +1328,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrust(DeleteTrustRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteTrustRequestMarshaller();
+            var marshaller = DeleteTrustRequestMarshaller.Instance;
             var unmarshaller = DeleteTrustResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteTrustRequest>(request, marshaller, unmarshaller,
@@ -1373,7 +1373,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
         {
-            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var marshaller = DeregisterEventTopicRequestMarshaller.Instance;
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
             return Invoke<DeregisterEventTopicRequest,DeregisterEventTopicResponse>(request, marshaller, unmarshaller);
@@ -1393,7 +1393,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual IAsyncResult BeginDeregisterEventTopic(DeregisterEventTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeregisterEventTopicRequestMarshaller();
+            var marshaller = DeregisterEventTopicRequestMarshaller.Instance;
             var unmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeregisterEventTopicRequest>(request, marshaller, unmarshaller,
@@ -1450,7 +1450,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
         {
-            var marshaller = new DescribeConditionalForwardersRequestMarshaller();
+            var marshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeConditionalForwardersRequest,DescribeConditionalForwardersResponse>(request, marshaller, unmarshaller);
@@ -1470,7 +1470,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual IAsyncResult BeginDescribeConditionalForwarders(DescribeConditionalForwardersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeConditionalForwardersRequestMarshaller();
+            var marshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
             var unmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeConditionalForwardersRequest>(request, marshaller, unmarshaller,
@@ -1580,7 +1580,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
-            var marshaller = new DescribeDirectoriesRequestMarshaller();
+            var marshaller = DescribeDirectoriesRequestMarshaller.Instance;
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDirectoriesRequest,DescribeDirectoriesResponse>(request, marshaller, unmarshaller);
@@ -1600,7 +1600,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectories(DescribeDirectoriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDirectoriesRequestMarshaller();
+            var marshaller = DescribeDirectoriesRequestMarshaller.Instance;
             var unmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDirectoriesRequest>(request, marshaller, unmarshaller,
@@ -1651,7 +1651,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
         {
-            var marshaller = new DescribeDomainControllersRequestMarshaller();
+            var marshaller = DescribeDomainControllersRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDomainControllersRequest,DescribeDomainControllersResponse>(request, marshaller, unmarshaller);
@@ -1671,7 +1671,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomainControllers(DescribeDomainControllersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDomainControllersRequestMarshaller();
+            var marshaller = DescribeDomainControllersRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDomainControllersRequest>(request, marshaller, unmarshaller,
@@ -1723,7 +1723,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
         {
-            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var marshaller = DescribeEventTopicsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventTopicsRequest,DescribeEventTopicsResponse>(request, marshaller, unmarshaller);
@@ -1743,7 +1743,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventTopics(DescribeEventTopicsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEventTopicsRequestMarshaller();
+            var marshaller = DescribeEventTopicsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEventTopicsRequest>(request, marshaller, unmarshaller,
@@ -1803,7 +1803,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var marshaller = DescribeSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -1823,7 +1823,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSnapshotsRequestMarshaller();
+            var marshaller = DescribeSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSnapshotsRequest>(request, marshaller, unmarshaller,
@@ -1880,7 +1880,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
         {
-            var marshaller = new DescribeTrustsRequestMarshaller();
+            var marshaller = DescribeTrustsRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeTrustsRequest,DescribeTrustsResponse>(request, marshaller, unmarshaller);
@@ -1900,7 +1900,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrusts(DescribeTrustsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeTrustsRequestMarshaller();
+            var marshaller = DescribeTrustsRequestMarshaller.Instance;
             var unmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeTrustsRequest>(request, marshaller, unmarshaller,
@@ -1943,7 +1943,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
-            var marshaller = new DisableRadiusRequestMarshaller();
+            var marshaller = DisableRadiusRequestMarshaller.Instance;
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
 
             return Invoke<DisableRadiusRequest,DisableRadiusResponse>(request, marshaller, unmarshaller);
@@ -1963,7 +1963,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual IAsyncResult BeginDisableRadius(DisableRadiusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisableRadiusRequestMarshaller();
+            var marshaller = DisableRadiusRequestMarshaller.Instance;
             var unmarshaller = DisableRadiusResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisableRadiusRequest>(request, marshaller, unmarshaller,
@@ -2011,7 +2011,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
-            var marshaller = new DisableSsoRequestMarshaller();
+            var marshaller = DisableSsoRequestMarshaller.Instance;
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
 
             return Invoke<DisableSsoRequest,DisableSsoResponse>(request, marshaller, unmarshaller);
@@ -2031,7 +2031,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual IAsyncResult BeginDisableSso(DisableSsoRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisableSsoRequestMarshaller();
+            var marshaller = DisableSsoRequestMarshaller.Instance;
             var unmarshaller = DisableSsoResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisableSsoRequest>(request, marshaller, unmarshaller,
@@ -2080,7 +2080,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
-            var marshaller = new EnableRadiusRequestMarshaller();
+            var marshaller = EnableRadiusRequestMarshaller.Instance;
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
 
             return Invoke<EnableRadiusRequest,EnableRadiusResponse>(request, marshaller, unmarshaller);
@@ -2100,7 +2100,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual IAsyncResult BeginEnableRadius(EnableRadiusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new EnableRadiusRequestMarshaller();
+            var marshaller = EnableRadiusRequestMarshaller.Instance;
             var unmarshaller = EnableRadiusResponseUnmarshaller.Instance;
 
             return BeginInvoke<EnableRadiusRequest>(request, marshaller, unmarshaller,
@@ -2148,7 +2148,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
-            var marshaller = new EnableSsoRequestMarshaller();
+            var marshaller = EnableSsoRequestMarshaller.Instance;
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
 
             return Invoke<EnableSsoRequest,EnableSsoResponse>(request, marshaller, unmarshaller);
@@ -2168,7 +2168,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual IAsyncResult BeginEnableSso(EnableSsoRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new EnableSsoRequestMarshaller();
+            var marshaller = EnableSsoRequestMarshaller.Instance;
             var unmarshaller = EnableSsoResponseUnmarshaller.Instance;
 
             return BeginInvoke<EnableSsoRequest>(request, marshaller, unmarshaller,
@@ -2230,7 +2230,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
-            var marshaller = new GetDirectoryLimitsRequestMarshaller();
+            var marshaller = GetDirectoryLimitsRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
 
             return Invoke<GetDirectoryLimitsRequest,GetDirectoryLimitsResponse>(request, marshaller, unmarshaller);
@@ -2250,7 +2250,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual IAsyncResult BeginGetDirectoryLimits(GetDirectoryLimitsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetDirectoryLimitsRequestMarshaller();
+            var marshaller = GetDirectoryLimitsRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetDirectoryLimitsRequest>(request, marshaller, unmarshaller,
@@ -2292,7 +2292,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
-            var marshaller = new GetSnapshotLimitsRequestMarshaller();
+            var marshaller = GetSnapshotLimitsRequestMarshaller.Instance;
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
             return Invoke<GetSnapshotLimitsRequest,GetSnapshotLimitsResponse>(request, marshaller, unmarshaller);
@@ -2312,7 +2312,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual IAsyncResult BeginGetSnapshotLimits(GetSnapshotLimitsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetSnapshotLimitsRequestMarshaller();
+            var marshaller = GetSnapshotLimitsRequestMarshaller.Instance;
             var unmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetSnapshotLimitsRequest>(request, marshaller, unmarshaller,
@@ -2360,7 +2360,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
         {
-            var marshaller = new ListIpRoutesRequestMarshaller();
+            var marshaller = ListIpRoutesRequestMarshaller.Instance;
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
             return Invoke<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, unmarshaller);
@@ -2380,7 +2380,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginListIpRoutes(ListIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListIpRoutesRequestMarshaller();
+            var marshaller = ListIpRoutesRequestMarshaller.Instance;
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListIpRoutesRequest>(request, marshaller, unmarshaller,
@@ -2425,7 +2425,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
         {
-            var marshaller = new ListSchemaExtensionsRequestMarshaller();
+            var marshaller = ListSchemaExtensionsRequestMarshaller.Instance;
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
 
             return Invoke<ListSchemaExtensionsRequest,ListSchemaExtensionsResponse>(request, marshaller, unmarshaller);
@@ -2445,7 +2445,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual IAsyncResult BeginListSchemaExtensions(ListSchemaExtensionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListSchemaExtensionsRequestMarshaller();
+            var marshaller = ListSchemaExtensionsRequestMarshaller.Instance;
             var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListSchemaExtensionsRequest>(request, marshaller, unmarshaller,
@@ -2493,7 +2493,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -2513,7 +2513,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
@@ -2562,7 +2562,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
         {
-            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var marshaller = RegisterEventTopicRequestMarshaller.Instance;
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
             return Invoke<RegisterEventTopicRequest,RegisterEventTopicResponse>(request, marshaller, unmarshaller);
@@ -2582,7 +2582,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual IAsyncResult BeginRegisterEventTopic(RegisterEventTopicRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RegisterEventTopicRequestMarshaller();
+            var marshaller = RegisterEventTopicRequestMarshaller.Instance;
             var unmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
             return BeginInvoke<RegisterEventTopicRequest>(request, marshaller, unmarshaller,
@@ -2630,7 +2630,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
         {
-            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var marshaller = RemoveIpRoutesRequestMarshaller.Instance;
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
 
             return Invoke<RemoveIpRoutesRequest,RemoveIpRoutesResponse>(request, marshaller, unmarshaller);
@@ -2650,7 +2650,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginRemoveIpRoutes(RemoveIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveIpRoutesRequestMarshaller();
+            var marshaller = RemoveIpRoutesRequestMarshaller.Instance;
             var unmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveIpRoutesRequest>(request, marshaller, unmarshaller,
@@ -2695,7 +2695,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
@@ -2715,7 +2715,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
@@ -2773,7 +2773,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
-            var marshaller = new RestoreFromSnapshotRequestMarshaller();
+            var marshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -2793,7 +2793,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginRestoreFromSnapshot(RestoreFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreFromSnapshotRequestMarshaller();
+            var marshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreFromSnapshotRequest>(request, marshaller, unmarshaller,
@@ -2846,7 +2846,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
         {
-            var marshaller = new StartSchemaExtensionRequestMarshaller();
+            var marshaller = StartSchemaExtensionRequestMarshaller.Instance;
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
 
             return Invoke<StartSchemaExtensionRequest,StartSchemaExtensionResponse>(request, marshaller, unmarshaller);
@@ -2866,7 +2866,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual IAsyncResult BeginStartSchemaExtension(StartSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartSchemaExtensionRequestMarshaller();
+            var marshaller = StartSchemaExtensionRequestMarshaller.Instance;
             var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartSchemaExtensionRequest>(request, marshaller, unmarshaller,
@@ -2917,7 +2917,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
         {
-            var marshaller = new UpdateConditionalForwarderRequestMarshaller();
+            var marshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
             return Invoke<UpdateConditionalForwarderRequest,UpdateConditionalForwarderResponse>(request, marshaller, unmarshaller);
@@ -2937,7 +2937,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginUpdateConditionalForwarder(UpdateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateConditionalForwarderRequestMarshaller();
+            var marshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
             var unmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateConditionalForwarderRequest>(request, marshaller, unmarshaller,
@@ -2996,7 +2996,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
         {
-            var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
+            var marshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
 
             return Invoke<UpdateNumberOfDomainControllersRequest,UpdateNumberOfDomainControllersResponse>(request, marshaller, unmarshaller);
@@ -3016,7 +3016,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual IAsyncResult BeginUpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateNumberOfDomainControllersRequestMarshaller();
+            var marshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
             var unmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateNumberOfDomainControllersRequest>(request, marshaller, unmarshaller,
@@ -3062,7 +3062,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {
-            var marshaller = new UpdateRadiusRequestMarshaller();
+            var marshaller = UpdateRadiusRequestMarshaller.Instance;
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
             return Invoke<UpdateRadiusRequest,UpdateRadiusResponse>(request, marshaller, unmarshaller);
@@ -3082,7 +3082,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual IAsyncResult BeginUpdateRadius(UpdateRadiusRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateRadiusRequestMarshaller();
+            var marshaller = UpdateRadiusRequestMarshaller.Instance;
             var unmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateRadiusRequest>(request, marshaller, unmarshaller,
@@ -3137,7 +3137,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
         {
-            var marshaller = new VerifyTrustRequestMarshaller();
+            var marshaller = VerifyTrustRequestMarshaller.Instance;
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
 
             return Invoke<VerifyTrustRequest,VerifyTrustResponse>(request, marshaller, unmarshaller);
@@ -3157,7 +3157,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual IAsyncResult BeginVerifyTrust(VerifyTrustRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new VerifyTrustRequestMarshaller();
+            var marshaller = VerifyTrustRequestMarshaller.Instance;
             var unmarshaller = VerifyTrustResponseUnmarshaller.Instance;
 
             return BeginInvoke<VerifyTrustRequest>(request, marshaller, unmarshaller,

@@ -252,7 +252,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var marshaller = new CreateChannelRequestMarshaller();
+            var marshaller = CreateChannelRequestMarshaller.Instance;
             var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
             return Invoke<CreateChannelRequest,CreateChannelResponse>(request, marshaller, unmarshaller);
@@ -272,7 +272,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateChannelRequestMarshaller();
+            var marshaller = CreateChannelRequestMarshaller.Instance;
             var unmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateChannelRequest>(request, marshaller, unmarshaller,
@@ -323,7 +323,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateOriginEndpoint">REST API Reference for CreateOriginEndpoint Operation</seealso>
         public virtual CreateOriginEndpointResponse CreateOriginEndpoint(CreateOriginEndpointRequest request)
         {
-            var marshaller = new CreateOriginEndpointRequestMarshaller();
+            var marshaller = CreateOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateOriginEndpointResponseUnmarshaller.Instance;
 
             return Invoke<CreateOriginEndpointRequest,CreateOriginEndpointResponse>(request, marshaller, unmarshaller);
@@ -343,7 +343,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateOriginEndpoint">REST API Reference for CreateOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateOriginEndpoint(CreateOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateOriginEndpointRequestMarshaller();
+            var marshaller = CreateOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = CreateOriginEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateOriginEndpointRequest>(request, marshaller, unmarshaller,
@@ -394,7 +394,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var marshaller = new DeleteChannelRequestMarshaller();
+            var marshaller = DeleteChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
             return Invoke<DeleteChannelRequest,DeleteChannelResponse>(request, marshaller, unmarshaller);
@@ -414,7 +414,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteChannelRequestMarshaller();
+            var marshaller = DeleteChannelRequestMarshaller.Instance;
             var unmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteChannelRequest>(request, marshaller, unmarshaller,
@@ -465,7 +465,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DeleteOriginEndpoint">REST API Reference for DeleteOriginEndpoint Operation</seealso>
         public virtual DeleteOriginEndpointResponse DeleteOriginEndpoint(DeleteOriginEndpointRequest request)
         {
-            var marshaller = new DeleteOriginEndpointRequestMarshaller();
+            var marshaller = DeleteOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteOriginEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DeleteOriginEndpointRequest,DeleteOriginEndpointResponse>(request, marshaller, unmarshaller);
@@ -485,7 +485,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DeleteOriginEndpoint">REST API Reference for DeleteOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteOriginEndpoint(DeleteOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteOriginEndpointRequestMarshaller();
+            var marshaller = DeleteOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = DeleteOriginEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteOriginEndpointRequest>(request, marshaller, unmarshaller,
@@ -536,7 +536,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var marshaller = new DescribeChannelRequestMarshaller();
+            var marshaller = DescribeChannelRequestMarshaller.Instance;
             var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
             return Invoke<DescribeChannelRequest,DescribeChannelResponse>(request, marshaller, unmarshaller);
@@ -556,7 +556,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual IAsyncResult BeginDescribeChannel(DescribeChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeChannelRequestMarshaller();
+            var marshaller = DescribeChannelRequestMarshaller.Instance;
             var unmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeChannelRequest>(request, marshaller, unmarshaller,
@@ -607,7 +607,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeOriginEndpoint">REST API Reference for DescribeOriginEndpoint Operation</seealso>
         public virtual DescribeOriginEndpointResponse DescribeOriginEndpoint(DescribeOriginEndpointRequest request)
         {
-            var marshaller = new DescribeOriginEndpointRequestMarshaller();
+            var marshaller = DescribeOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = DescribeOriginEndpointResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOriginEndpointRequest,DescribeOriginEndpointResponse>(request, marshaller, unmarshaller);
@@ -627,7 +627,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DescribeOriginEndpoint">REST API Reference for DescribeOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDescribeOriginEndpoint(DescribeOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOriginEndpointRequestMarshaller();
+            var marshaller = DescribeOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = DescribeOriginEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOriginEndpointRequest>(request, marshaller, unmarshaller,
@@ -678,7 +678,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var marshaller = new ListChannelsRequestMarshaller();
+            var marshaller = ListChannelsRequestMarshaller.Instance;
             var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return Invoke<ListChannelsRequest,ListChannelsResponse>(request, marshaller, unmarshaller);
@@ -698,7 +698,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListChannelsRequestMarshaller();
+            var marshaller = ListChannelsRequestMarshaller.Instance;
             var unmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListChannelsRequest>(request, marshaller, unmarshaller,
@@ -749,7 +749,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListOriginEndpoints">REST API Reference for ListOriginEndpoints Operation</seealso>
         public virtual ListOriginEndpointsResponse ListOriginEndpoints(ListOriginEndpointsRequest request)
         {
-            var marshaller = new ListOriginEndpointsRequestMarshaller();
+            var marshaller = ListOriginEndpointsRequestMarshaller.Instance;
             var unmarshaller = ListOriginEndpointsResponseUnmarshaller.Instance;
 
             return Invoke<ListOriginEndpointsRequest,ListOriginEndpointsResponse>(request, marshaller, unmarshaller);
@@ -769,7 +769,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListOriginEndpoints">REST API Reference for ListOriginEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListOriginEndpoints(ListOriginEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListOriginEndpointsRequestMarshaller();
+            var marshaller = ListOriginEndpointsRequestMarshaller.Instance;
             var unmarshaller = ListOriginEndpointsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListOriginEndpointsRequest>(request, marshaller, unmarshaller,
@@ -820,7 +820,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
         public virtual RotateChannelCredentialsResponse RotateChannelCredentials(RotateChannelCredentialsRequest request)
         {
-            var marshaller = new RotateChannelCredentialsRequestMarshaller();
+            var marshaller = RotateChannelCredentialsRequestMarshaller.Instance;
             var unmarshaller = RotateChannelCredentialsResponseUnmarshaller.Instance;
 
             return Invoke<RotateChannelCredentialsRequest,RotateChannelCredentialsResponse>(request, marshaller, unmarshaller);
@@ -840,7 +840,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
         public virtual IAsyncResult BeginRotateChannelCredentials(RotateChannelCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RotateChannelCredentialsRequestMarshaller();
+            var marshaller = RotateChannelCredentialsRequestMarshaller.Instance;
             var unmarshaller = RotateChannelCredentialsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RotateChannelCredentialsRequest>(request, marshaller, unmarshaller,
@@ -891,7 +891,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var marshaller = new UpdateChannelRequestMarshaller();
+            var marshaller = UpdateChannelRequestMarshaller.Instance;
             var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
             return Invoke<UpdateChannelRequest,UpdateChannelResponse>(request, marshaller, unmarshaller);
@@ -911,7 +911,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateChannelRequestMarshaller();
+            var marshaller = UpdateChannelRequestMarshaller.Instance;
             var unmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateChannelRequest>(request, marshaller, unmarshaller,
@@ -962,7 +962,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UpdateOriginEndpoint">REST API Reference for UpdateOriginEndpoint Operation</seealso>
         public virtual UpdateOriginEndpointResponse UpdateOriginEndpoint(UpdateOriginEndpointRequest request)
         {
-            var marshaller = new UpdateOriginEndpointRequestMarshaller();
+            var marshaller = UpdateOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = UpdateOriginEndpointResponseUnmarshaller.Instance;
 
             return Invoke<UpdateOriginEndpointRequest,UpdateOriginEndpointResponse>(request, marshaller, unmarshaller);
@@ -982,7 +982,7 @@ namespace Amazon.MediaPackage
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UpdateOriginEndpoint">REST API Reference for UpdateOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginUpdateOriginEndpoint(UpdateOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateOriginEndpointRequestMarshaller();
+            var marshaller = UpdateOriginEndpointRequestMarshaller.Instance;
             var unmarshaller = UpdateOriginEndpointResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateOriginEndpointRequest>(request, marshaller, unmarshaller,

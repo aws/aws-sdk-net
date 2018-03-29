@@ -169,7 +169,7 @@ namespace Amazon.MobileAnalytics
         #region  PutEvents
         internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
@@ -186,7 +186,7 @@ namespace Amazon.MobileAnalytics
         public virtual void PutEventsAsync(PutEventsRequest request, AmazonServiceCallback<PutEventsRequest, PutEventsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutEventsRequestMarshaller();
+            var marshaller = PutEventsRequestMarshaller.Instance;
             var unmarshaller = PutEventsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

@@ -281,7 +281,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         public virtual AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request)
         {
-            var marshaller = new AddTagsToCertificateRequestMarshaller();
+            var marshaller = AddTagsToCertificateRequestMarshaller.Instance;
             var unmarshaller = AddTagsToCertificateResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToCertificateRequest,AddTagsToCertificateResponse>(request, marshaller, unmarshaller);
@@ -299,7 +299,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         public virtual Task<AddTagsToCertificateResponse> AddTagsToCertificateAsync(AddTagsToCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddTagsToCertificateRequestMarshaller();
+            var marshaller = AddTagsToCertificateRequestMarshaller.Instance;
             var unmarshaller = AddTagsToCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsToCertificateRequest,AddTagsToCertificateResponse>(request, marshaller, 
@@ -377,7 +377,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var marshaller = new DeleteCertificateRequestMarshaller();
+            var marshaller = DeleteCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, unmarshaller);
@@ -434,7 +434,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteCertificateRequestMarshaller();
+            var marshaller = DeleteCertificateRequestMarshaller.Instance;
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, 
@@ -484,7 +484,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
-            var marshaller = new DescribeCertificateRequestMarshaller();
+            var marshaller = DescribeCertificateRequestMarshaller.Instance;
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCertificateRequest,DescribeCertificateResponse>(request, marshaller, unmarshaller);
@@ -527,7 +527,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual Task<DescribeCertificateResponse> DescribeCertificateAsync(DescribeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeCertificateRequestMarshaller();
+            var marshaller = DescribeCertificateRequestMarshaller.Instance;
             var unmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCertificateRequest,DescribeCertificateResponse>(request, marshaller, 
@@ -593,7 +593,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public virtual GetCertificateResponse GetCertificate(GetCertificateRequest request)
         {
-            var marshaller = new GetCertificateRequestMarshaller();
+            var marshaller = GetCertificateRequestMarshaller.Instance;
             var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
 
             return Invoke<GetCertificateRequest,GetCertificateResponse>(request, marshaller, unmarshaller);
@@ -644,7 +644,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public virtual Task<GetCertificateResponse> GetCertificateAsync(GetCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetCertificateRequestMarshaller();
+            var marshaller = GetCertificateRequestMarshaller.Instance;
             var unmarshaller = GetCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCertificateRequest,GetCertificateResponse>(request, marshaller, 
@@ -742,7 +742,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
-            var marshaller = new ImportCertificateRequestMarshaller();
+            var marshaller = ImportCertificateRequestMarshaller.Instance;
             var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
             return Invoke<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, unmarshaller);
@@ -760,7 +760,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ImportCertificateRequestMarshaller();
+            var marshaller = ImportCertificateRequestMarshaller.Instance;
             var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, 
@@ -797,7 +797,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
-            var marshaller = new ListCertificatesRequestMarshaller();
+            var marshaller = ListCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, unmarshaller);
@@ -831,7 +831,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual Task<ListCertificatesResponse> ListCertificatesAsync(ListCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListCertificatesRequestMarshaller();
+            var marshaller = ListCertificatesRequestMarshaller.Instance;
             var unmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCertificatesRequest,ListCertificatesResponse>(request, marshaller, 
@@ -862,7 +862,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         public virtual ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request)
         {
-            var marshaller = new ListTagsForCertificateRequestMarshaller();
+            var marshaller = ListTagsForCertificateRequestMarshaller.Instance;
             var unmarshaller = ListTagsForCertificateResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForCertificateRequest,ListTagsForCertificateResponse>(request, marshaller, unmarshaller);
@@ -880,7 +880,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         public virtual Task<ListTagsForCertificateResponse> ListTagsForCertificateAsync(ListTagsForCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForCertificateRequestMarshaller();
+            var marshaller = ListTagsForCertificateRequestMarshaller.Instance;
             var unmarshaller = ListTagsForCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForCertificateRequest,ListTagsForCertificateResponse>(request, marshaller, 
@@ -922,7 +922,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public virtual RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request)
         {
-            var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
+            var marshaller = RemoveTagsFromCertificateRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromCertificateResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromCertificateRequest,RemoveTagsFromCertificateResponse>(request, marshaller, unmarshaller);
@@ -940,7 +940,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public virtual Task<RemoveTagsFromCertificateResponse> RemoveTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
+            var marshaller = RemoveTagsFromCertificateRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromCertificateRequest,RemoveTagsFromCertificateResponse>(request, marshaller, 
@@ -1026,7 +1026,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual RequestCertificateResponse RequestCertificate(RequestCertificateRequest request)
         {
-            var marshaller = new RequestCertificateRequestMarshaller();
+            var marshaller = RequestCertificateRequestMarshaller.Instance;
             var unmarshaller = RequestCertificateResponseUnmarshaller.Instance;
 
             return Invoke<RequestCertificateRequest,RequestCertificateResponse>(request, marshaller, unmarshaller);
@@ -1087,7 +1087,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public virtual Task<RequestCertificateResponse> RequestCertificateAsync(RequestCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RequestCertificateRequestMarshaller();
+            var marshaller = RequestCertificateRequestMarshaller.Instance;
             var unmarshaller = RequestCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<RequestCertificateRequest,RequestCertificateResponse>(request, marshaller, 
@@ -1130,7 +1130,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         public virtual ResendValidationEmailResponse ResendValidationEmail(ResendValidationEmailRequest request)
         {
-            var marshaller = new ResendValidationEmailRequestMarshaller();
+            var marshaller = ResendValidationEmailRequestMarshaller.Instance;
             var unmarshaller = ResendValidationEmailResponseUnmarshaller.Instance;
 
             return Invoke<ResendValidationEmailRequest,ResendValidationEmailResponse>(request, marshaller, unmarshaller);
@@ -1148,7 +1148,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         public virtual Task<ResendValidationEmailResponse> ResendValidationEmailAsync(ResendValidationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ResendValidationEmailRequestMarshaller();
+            var marshaller = ResendValidationEmailRequestMarshaller.Instance;
             var unmarshaller = ResendValidationEmailResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResendValidationEmailRequest,ResendValidationEmailResponse>(request, marshaller, 
@@ -1188,7 +1188,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">REST API Reference for UpdateCertificateOptions Operation</seealso>
         public virtual UpdateCertificateOptionsResponse UpdateCertificateOptions(UpdateCertificateOptionsRequest request)
         {
-            var marshaller = new UpdateCertificateOptionsRequestMarshaller();
+            var marshaller = UpdateCertificateOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateCertificateOptionsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateCertificateOptionsRequest,UpdateCertificateOptionsResponse>(request, marshaller, unmarshaller);
@@ -1206,7 +1206,7 @@ namespace Amazon.CertificateManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions">REST API Reference for UpdateCertificateOptions Operation</seealso>
         public virtual Task<UpdateCertificateOptionsResponse> UpdateCertificateOptionsAsync(UpdateCertificateOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateCertificateOptionsRequestMarshaller();
+            var marshaller = UpdateCertificateOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateCertificateOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCertificateOptionsRequest,UpdateCertificateOptionsResponse>(request, marshaller, 

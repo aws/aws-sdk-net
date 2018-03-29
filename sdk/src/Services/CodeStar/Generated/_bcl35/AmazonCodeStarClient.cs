@@ -349,7 +349,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
         public virtual AssociateTeamMemberResponse AssociateTeamMember(AssociateTeamMemberRequest request)
         {
-            var marshaller = new AssociateTeamMemberRequestMarshaller();
+            var marshaller = AssociateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
 
             return Invoke<AssociateTeamMemberRequest,AssociateTeamMemberResponse>(request, marshaller, unmarshaller);
@@ -369,7 +369,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/AssociateTeamMember">REST API Reference for AssociateTeamMember Operation</seealso>
         public virtual IAsyncResult BeginAssociateTeamMember(AssociateTeamMemberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AssociateTeamMemberRequestMarshaller();
+            var marshaller = AssociateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = AssociateTeamMemberResponseUnmarshaller.Instance;
 
             return BeginInvoke<AssociateTeamMemberRequest>(request, marshaller, unmarshaller,
@@ -426,7 +426,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateProjectRequest,CreateProjectResponse>(request, marshaller, unmarshaller);
@@ -446,7 +446,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateProjectRequestMarshaller();
+            var marshaller = CreateProjectRequestMarshaller.Instance;
             var unmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateProjectRequest>(request, marshaller, unmarshaller,
@@ -489,7 +489,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
         {
-            var marshaller = new CreateUserProfileRequestMarshaller();
+            var marshaller = CreateUserProfileRequestMarshaller.Instance;
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<CreateUserProfileRequest,CreateUserProfileResponse>(request, marshaller, unmarshaller);
@@ -509,7 +509,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateUserProfileRequestMarshaller();
+            var marshaller = CreateUserProfileRequestMarshaller.Instance;
             var unmarshaller = CreateUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateUserProfileRequest>(request, marshaller, unmarshaller,
@@ -553,7 +553,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteProjectRequest,DeleteProjectResponse>(request, marshaller, unmarshaller);
@@ -573,7 +573,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteProjectRequestMarshaller();
+            var marshaller = DeleteProjectRequestMarshaller.Instance;
             var unmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteProjectRequest>(request, marshaller, unmarshaller,
@@ -611,7 +611,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
         {
-            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<DeleteUserProfileRequest,DeleteUserProfileResponse>(request, marshaller, unmarshaller);
@@ -631,7 +631,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteUserProfileRequestMarshaller();
+            var marshaller = DeleteUserProfileRequestMarshaller.Instance;
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteUserProfileRequest>(request, marshaller, unmarshaller,
@@ -680,7 +680,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var marshaller = new DescribeProjectRequestMarshaller();
+            var marshaller = DescribeProjectRequestMarshaller.Instance;
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
             return Invoke<DescribeProjectRequest,DescribeProjectResponse>(request, marshaller, unmarshaller);
@@ -700,7 +700,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeProjectRequestMarshaller();
+            var marshaller = DescribeProjectRequestMarshaller.Instance;
             var unmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeProjectRequest>(request, marshaller, unmarshaller,
@@ -739,7 +739,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual DescribeUserProfileResponse DescribeUserProfile(DescribeUserProfileRequest request)
         {
-            var marshaller = new DescribeUserProfileRequestMarshaller();
+            var marshaller = DescribeUserProfileRequestMarshaller.Instance;
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<DescribeUserProfileRequest,DescribeUserProfileResponse>(request, marshaller, unmarshaller);
@@ -759,7 +759,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DescribeUserProfile">REST API Reference for DescribeUserProfile Operation</seealso>
         public virtual IAsyncResult BeginDescribeUserProfile(DescribeUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeUserProfileRequestMarshaller();
+            var marshaller = DescribeUserProfileRequestMarshaller.Instance;
             var unmarshaller = DescribeUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeUserProfileRequest>(request, marshaller, unmarshaller,
@@ -808,7 +808,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
         public virtual DisassociateTeamMemberResponse DisassociateTeamMember(DisassociateTeamMemberRequest request)
         {
-            var marshaller = new DisassociateTeamMemberRequestMarshaller();
+            var marshaller = DisassociateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateTeamMemberRequest,DisassociateTeamMemberResponse>(request, marshaller, unmarshaller);
@@ -828,7 +828,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/DisassociateTeamMember">REST API Reference for DisassociateTeamMember Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTeamMember(DisassociateTeamMemberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateTeamMemberRequestMarshaller();
+            var marshaller = DisassociateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = DisassociateTeamMemberResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateTeamMemberRequest>(request, marshaller, unmarshaller,
@@ -867,7 +867,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return Invoke<ListProjectsRequest,ListProjectsResponse>(request, marshaller, unmarshaller);
@@ -887,7 +887,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListProjectsRequestMarshaller();
+            var marshaller = ListProjectsRequestMarshaller.Instance;
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListProjectsRequest>(request, marshaller, unmarshaller,
@@ -929,7 +929,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return Invoke<ListResourcesRequest,ListResourcesResponse>(request, marshaller, unmarshaller);
@@ -949,7 +949,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListResourcesRequestMarshaller();
+            var marshaller = ListResourcesRequestMarshaller.Instance;
             var unmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListResourcesRequest>(request, marshaller, unmarshaller,
@@ -991,7 +991,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
         public virtual ListTagsForProjectResponse ListTagsForProject(ListTagsForProjectRequest request)
         {
-            var marshaller = new ListTagsForProjectRequestMarshaller();
+            var marshaller = ListTagsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForProjectRequest,ListTagsForProjectResponse>(request, marshaller, unmarshaller);
@@ -1011,7 +1011,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject">REST API Reference for ListTagsForProject Operation</seealso>
         public virtual IAsyncResult BeginListTagsForProject(ListTagsForProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsForProjectRequestMarshaller();
+            var marshaller = ListTagsForProjectRequestMarshaller.Instance;
             var unmarshaller = ListTagsForProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsForProjectRequest>(request, marshaller, unmarshaller,
@@ -1053,7 +1053,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
         public virtual ListTeamMembersResponse ListTeamMembers(ListTeamMembersRequest request)
         {
-            var marshaller = new ListTeamMembersRequestMarshaller();
+            var marshaller = ListTeamMembersRequestMarshaller.Instance;
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
 
             return Invoke<ListTeamMembersRequest,ListTeamMembersResponse>(request, marshaller, unmarshaller);
@@ -1073,7 +1073,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTeamMembers">REST API Reference for ListTeamMembers Operation</seealso>
         public virtual IAsyncResult BeginListTeamMembers(ListTeamMembersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTeamMembersRequestMarshaller();
+            var marshaller = ListTeamMembersRequestMarshaller.Instance;
             var unmarshaller = ListTeamMembersResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTeamMembersRequest>(request, marshaller, unmarshaller,
@@ -1112,7 +1112,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
         public virtual ListUserProfilesResponse ListUserProfiles(ListUserProfilesRequest request)
         {
-            var marshaller = new ListUserProfilesRequestMarshaller();
+            var marshaller = ListUserProfilesRequestMarshaller.Instance;
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
 
             return Invoke<ListUserProfilesRequest,ListUserProfilesResponse>(request, marshaller, unmarshaller);
@@ -1132,7 +1132,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListUserProfiles">REST API Reference for ListUserProfiles Operation</seealso>
         public virtual IAsyncResult BeginListUserProfiles(ListUserProfilesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListUserProfilesRequestMarshaller();
+            var marshaller = ListUserProfilesRequestMarshaller.Instance;
             var unmarshaller = ListUserProfilesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListUserProfilesRequest>(request, marshaller, unmarshaller,
@@ -1178,7 +1178,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
         public virtual TagProjectResponse TagProject(TagProjectRequest request)
         {
-            var marshaller = new TagProjectRequestMarshaller();
+            var marshaller = TagProjectRequestMarshaller.Instance;
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
 
             return Invoke<TagProjectRequest,TagProjectResponse>(request, marshaller, unmarshaller);
@@ -1198,7 +1198,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject">REST API Reference for TagProject Operation</seealso>
         public virtual IAsyncResult BeginTagProject(TagProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new TagProjectRequestMarshaller();
+            var marshaller = TagProjectRequestMarshaller.Instance;
             var unmarshaller = TagProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<TagProjectRequest>(request, marshaller, unmarshaller,
@@ -1244,7 +1244,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
         public virtual UntagProjectResponse UntagProject(UntagProjectRequest request)
         {
-            var marshaller = new UntagProjectRequestMarshaller();
+            var marshaller = UntagProjectRequestMarshaller.Instance;
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
 
             return Invoke<UntagProjectRequest,UntagProjectResponse>(request, marshaller, unmarshaller);
@@ -1264,7 +1264,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject">REST API Reference for UntagProject Operation</seealso>
         public virtual IAsyncResult BeginUntagProject(UntagProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UntagProjectRequestMarshaller();
+            var marshaller = UntagProjectRequestMarshaller.Instance;
             var unmarshaller = UntagProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<UntagProjectRequest>(request, marshaller, unmarshaller,
@@ -1303,7 +1303,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return Invoke<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, unmarshaller);
@@ -1323,7 +1323,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateProjectRequestMarshaller();
+            var marshaller = UpdateProjectRequestMarshaller.Instance;
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateProjectRequest>(request, marshaller, unmarshaller,
@@ -1380,7 +1380,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
         public virtual UpdateTeamMemberResponse UpdateTeamMember(UpdateTeamMemberRequest request)
         {
-            var marshaller = new UpdateTeamMemberRequestMarshaller();
+            var marshaller = UpdateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTeamMemberRequest,UpdateTeamMemberResponse>(request, marshaller, unmarshaller);
@@ -1400,7 +1400,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateTeamMember">REST API Reference for UpdateTeamMember Operation</seealso>
         public virtual IAsyncResult BeginUpdateTeamMember(UpdateTeamMemberRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateTeamMemberRequestMarshaller();
+            var marshaller = UpdateTeamMemberRequestMarshaller.Instance;
             var unmarshaller = UpdateTeamMemberResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateTeamMemberRequest>(request, marshaller, unmarshaller,
@@ -1441,7 +1441,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
         {
-            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
             return Invoke<UpdateUserProfileRequest,UpdateUserProfileResponse>(request, marshaller, unmarshaller);
@@ -1461,7 +1461,7 @@ namespace Amazon.CodeStar
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateUserProfileRequestMarshaller();
+            var marshaller = UpdateUserProfileRequestMarshaller.Instance;
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateUserProfileRequest>(request, marshaller, unmarshaller,

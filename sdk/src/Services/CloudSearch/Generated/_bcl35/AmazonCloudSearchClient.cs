@@ -259,7 +259,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
-            var marshaller = new BuildSuggestersRequestMarshaller();
+            var marshaller = BuildSuggestersRequestMarshaller.Instance;
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
 
             return Invoke<BuildSuggestersRequest,BuildSuggestersResponse>(request, marshaller, unmarshaller);
@@ -278,7 +278,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginBuildSuggesters(BuildSuggestersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new BuildSuggestersRequestMarshaller();
+            var marshaller = BuildSuggestersRequestMarshaller.Instance;
             var unmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
 
             return BeginInvoke<BuildSuggestersRequest>(request, marshaller, unmarshaller,
@@ -322,7 +322,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateDomainRequest,CreateDomainResponse>(request, marshaller, unmarshaller);
@@ -341,7 +341,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDomainRequestMarshaller();
+            var marshaller = CreateDomainRequestMarshaller.Instance;
             var unmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDomainRequest>(request, marshaller, unmarshaller,
@@ -394,7 +394,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
-            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var marshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
 
             return Invoke<DefineAnalysisSchemeRequest,DefineAnalysisSchemeResponse>(request, marshaller, unmarshaller);
@@ -413,7 +413,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDefineAnalysisScheme(DefineAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var marshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
 
             return BeginInvoke<DefineAnalysisSchemeRequest>(request, marshaller, unmarshaller,
@@ -466,7 +466,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
-            var marshaller = new DefineExpressionRequestMarshaller();
+            var marshaller = DefineExpressionRequestMarshaller.Instance;
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
 
             return Invoke<DefineExpressionRequest,DefineExpressionResponse>(request, marshaller, unmarshaller);
@@ -485,7 +485,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDefineExpression(DefineExpressionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DefineExpressionRequestMarshaller();
+            var marshaller = DefineExpressionRequestMarshaller.Instance;
             var unmarshaller = DefineExpressionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DefineExpressionRequest>(request, marshaller, unmarshaller,
@@ -542,7 +542,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
-            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var marshaller = DefineIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
             return Invoke<DefineIndexFieldRequest,DefineIndexFieldResponse>(request, marshaller, unmarshaller);
@@ -561,7 +561,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDefineIndexField(DefineIndexFieldRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DefineIndexFieldRequestMarshaller();
+            var marshaller = DefineIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
             return BeginInvoke<DefineIndexFieldRequest>(request, marshaller, unmarshaller,
@@ -615,7 +615,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
-            var marshaller = new DefineSuggesterRequestMarshaller();
+            var marshaller = DefineSuggesterRequestMarshaller.Instance;
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
 
             return Invoke<DefineSuggesterRequest,DefineSuggesterResponse>(request, marshaller, unmarshaller);
@@ -634,7 +634,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDefineSuggester(DefineSuggesterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DefineSuggesterRequestMarshaller();
+            var marshaller = DefineSuggesterRequestMarshaller.Instance;
             var unmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DefineSuggesterRequest>(request, marshaller, unmarshaller,
@@ -682,7 +682,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
-            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var marshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
 
             return Invoke<DeleteAnalysisSchemeRequest,DeleteAnalysisSchemeResponse>(request, marshaller, unmarshaller);
@@ -701,7 +701,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteAnalysisScheme(DeleteAnalysisSchemeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var marshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteAnalysisSchemeRequest>(request, marshaller, unmarshaller,
@@ -743,7 +743,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDomainRequest,DeleteDomainResponse>(request, marshaller, unmarshaller);
@@ -762,7 +762,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDomainRequestMarshaller();
+            var marshaller = DeleteDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDomainRequest>(request, marshaller, unmarshaller,
@@ -811,7 +811,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
-            var marshaller = new DeleteExpressionRequestMarshaller();
+            var marshaller = DeleteExpressionRequestMarshaller.Instance;
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteExpressionRequest,DeleteExpressionResponse>(request, marshaller, unmarshaller);
@@ -830,7 +830,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteExpression(DeleteExpressionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteExpressionRequestMarshaller();
+            var marshaller = DeleteExpressionRequestMarshaller.Instance;
             var unmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteExpressionRequest>(request, marshaller, unmarshaller,
@@ -879,7 +879,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
-            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var marshaller = DeleteIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
             return Invoke<DeleteIndexFieldRequest,DeleteIndexFieldResponse>(request, marshaller, unmarshaller);
@@ -898,7 +898,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteIndexField(DeleteIndexFieldRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteIndexFieldRequestMarshaller();
+            var marshaller = DeleteIndexFieldRequestMarshaller.Instance;
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteIndexFieldRequest>(request, marshaller, unmarshaller,
@@ -946,7 +946,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
-            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var marshaller = DeleteSuggesterRequestMarshaller.Instance;
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSuggesterRequest,DeleteSuggesterResponse>(request, marshaller, unmarshaller);
@@ -965,7 +965,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteSuggester(DeleteSuggesterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var marshaller = DeleteSuggesterRequestMarshaller.Instance;
             var unmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteSuggesterRequest>(request, marshaller, unmarshaller,
@@ -1015,7 +1015,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
-            var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
+            var marshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAnalysisSchemesRequest,DescribeAnalysisSchemesResponse>(request, marshaller, unmarshaller);
@@ -1034,7 +1034,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
+            var marshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAnalysisSchemesRequest>(request, marshaller, unmarshaller,
@@ -1091,7 +1091,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
-            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var marshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAvailabilityOptionsRequest,DescribeAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
@@ -1110,7 +1110,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var marshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAvailabilityOptionsRequest>(request, marshaller, unmarshaller,
@@ -1179,7 +1179,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
-            var marshaller = new DescribeDomainsRequestMarshaller();
+            var marshaller = DescribeDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDomainsRequest,DescribeDomainsResponse>(request, marshaller, unmarshaller);
@@ -1198,7 +1198,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeDomains(DescribeDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDomainsRequestMarshaller();
+            var marshaller = DescribeDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDomainsRequest>(request, marshaller, unmarshaller,
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
-            var marshaller = new DescribeExpressionsRequestMarshaller();
+            var marshaller = DescribeExpressionsRequestMarshaller.Instance;
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeExpressionsRequest,DescribeExpressionsResponse>(request, marshaller, unmarshaller);
@@ -1266,7 +1266,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeExpressions(DescribeExpressionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeExpressionsRequestMarshaller();
+            var marshaller = DescribeExpressionsRequestMarshaller.Instance;
             var unmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeExpressionsRequest>(request, marshaller, unmarshaller,
@@ -1315,7 +1315,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
-            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var marshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeIndexFieldsRequest,DescribeIndexFieldsResponse>(request, marshaller, unmarshaller);
@@ -1334,7 +1334,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeIndexFields(DescribeIndexFieldsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeIndexFieldsRequestMarshaller();
+            var marshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeIndexFieldsRequest>(request, marshaller, unmarshaller,
@@ -1381,7 +1381,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
-            var marshaller = new DescribeScalingParametersRequestMarshaller();
+            var marshaller = DescribeScalingParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeScalingParametersRequest,DescribeScalingParametersResponse>(request, marshaller, unmarshaller);
@@ -1400,7 +1400,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeScalingParameters(DescribeScalingParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeScalingParametersRequestMarshaller();
+            var marshaller = DescribeScalingParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeScalingParametersRequest>(request, marshaller, unmarshaller,
@@ -1448,7 +1448,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
-            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var marshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeServiceAccessPoliciesRequest,DescribeServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
@@ -1467,7 +1467,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
+            var marshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeServiceAccessPoliciesRequest>(request, marshaller, unmarshaller,
@@ -1516,7 +1516,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
-            var marshaller = new DescribeSuggestersRequestMarshaller();
+            var marshaller = DescribeSuggestersRequestMarshaller.Instance;
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSuggestersRequest,DescribeSuggestersResponse>(request, marshaller, unmarshaller);
@@ -1535,7 +1535,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeSuggesters(DescribeSuggestersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSuggestersRequestMarshaller();
+            var marshaller = DescribeSuggestersRequestMarshaller.Instance;
             var unmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSuggestersRequest>(request, marshaller, unmarshaller,
@@ -1580,7 +1580,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
-            var marshaller = new IndexDocumentsRequestMarshaller();
+            var marshaller = IndexDocumentsRequestMarshaller.Instance;
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
             return Invoke<IndexDocumentsRequest,IndexDocumentsResponse>(request, marshaller, unmarshaller);
@@ -1599,7 +1599,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginIndexDocuments(IndexDocumentsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new IndexDocumentsRequestMarshaller();
+            var marshaller = IndexDocumentsRequestMarshaller.Instance;
             var unmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
             return BeginInvoke<IndexDocumentsRequest>(request, marshaller, unmarshaller,
@@ -1646,7 +1646,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, unmarshaller);
@@ -1665,7 +1665,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDomainNamesRequest>(request, marshaller, unmarshaller,
@@ -1723,7 +1723,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
-            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var marshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return Invoke<UpdateAvailabilityOptionsRequest,UpdateAvailabilityOptionsResponse>(request, marshaller, unmarshaller);
@@ -1742,7 +1742,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var marshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateAvailabilityOptionsRequest>(request, marshaller, unmarshaller,
@@ -1798,7 +1798,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
-            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var marshaller = UpdateScalingParametersRequestMarshaller.Instance;
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
 
             return Invoke<UpdateScalingParametersRequest,UpdateScalingParametersResponse>(request, marshaller, unmarshaller);
@@ -1817,7 +1817,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateScalingParameters(UpdateScalingParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var marshaller = UpdateScalingParametersRequestMarshaller.Instance;
             var unmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateScalingParametersRequest>(request, marshaller, unmarshaller,
@@ -1868,7 +1868,7 @@ namespace Amazon.CloudSearch
         /// </exception>
         public virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
-            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var marshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateServiceAccessPoliciesRequest,UpdateServiceAccessPoliciesResponse>(request, marshaller, unmarshaller);
@@ -1887,7 +1887,7 @@ namespace Amazon.CloudSearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
+            var marshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateServiceAccessPoliciesRequest>(request, marshaller, unmarshaller,

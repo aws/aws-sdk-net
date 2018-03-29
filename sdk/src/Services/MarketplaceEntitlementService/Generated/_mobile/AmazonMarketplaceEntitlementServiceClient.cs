@@ -253,7 +253,7 @@ namespace Amazon.MarketplaceEntitlementService
 
         internal virtual GetEntitlementsResponse GetEntitlements(GetEntitlementsRequest request)
         {
-            var marshaller = new GetEntitlementsRequestMarshaller();
+            var marshaller = GetEntitlementsRequestMarshaller.Instance;
             var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
             return Invoke<GetEntitlementsRequest,GetEntitlementsResponse>(request, marshaller, unmarshaller);
@@ -272,7 +272,7 @@ namespace Amazon.MarketplaceEntitlementService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlements">REST API Reference for GetEntitlements Operation</seealso>
         public virtual Task<GetEntitlementsResponse> GetEntitlementsAsync(GetEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetEntitlementsRequestMarshaller();
+            var marshaller = GetEntitlementsRequestMarshaller.Instance;
             var unmarshaller = GetEntitlementsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEntitlementsRequest,GetEntitlementsResponse>(request, marshaller, 

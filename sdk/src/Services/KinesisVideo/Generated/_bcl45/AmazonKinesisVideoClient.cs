@@ -275,7 +275,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
-            var marshaller = new CreateStreamRequestMarshaller();
+            var marshaller = CreateStreamRequestMarshaller.Instance;
             var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
             return Invoke<CreateStreamRequest,CreateStreamResponse>(request, marshaller, unmarshaller);
@@ -293,7 +293,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateStreamRequestMarshaller();
+            var marshaller = CreateStreamRequestMarshaller.Instance;
             var unmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateStreamRequest,CreateStreamResponse>(request, marshaller, 
@@ -349,7 +349,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
-            var marshaller = new DeleteStreamRequestMarshaller();
+            var marshaller = DeleteStreamRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
             return Invoke<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, unmarshaller);
@@ -367,7 +367,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteStreamRequestMarshaller();
+            var marshaller = DeleteStreamRequestMarshaller.Instance;
             var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, 
@@ -402,7 +402,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var marshaller = new DescribeStreamRequestMarshaller();
+            var marshaller = DescribeStreamRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
             return Invoke<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, unmarshaller);
@@ -420,7 +420,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStreamRequestMarshaller();
+            var marshaller = DescribeStreamRequestMarshaller.Instance;
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
@@ -467,7 +467,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual GetDataEndpointResponse GetDataEndpoint(GetDataEndpointRequest request)
         {
-            var marshaller = new GetDataEndpointRequestMarshaller();
+            var marshaller = GetDataEndpointRequestMarshaller.Instance;
             var unmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
 
             return Invoke<GetDataEndpointRequest,GetDataEndpointResponse>(request, marshaller, unmarshaller);
@@ -485,7 +485,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual Task<GetDataEndpointResponse> GetDataEndpointAsync(GetDataEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDataEndpointRequestMarshaller();
+            var marshaller = GetDataEndpointRequestMarshaller.Instance;
             var unmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataEndpointRequest,GetDataEndpointResponse>(request, marshaller, 
@@ -514,7 +514,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var marshaller = new ListStreamsRequestMarshaller();
+            var marshaller = ListStreamsRequestMarshaller.Instance;
             var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
             return Invoke<ListStreamsRequest,ListStreamsResponse>(request, marshaller, unmarshaller);
@@ -532,7 +532,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListStreamsRequestMarshaller();
+            var marshaller = ListStreamsRequestMarshaller.Instance;
             var unmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStreamsRequest,ListStreamsResponse>(request, marshaller, 
@@ -575,7 +575,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
-            var marshaller = new ListTagsForStreamRequestMarshaller();
+            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
             var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForStreamRequest,ListTagsForStreamResponse>(request, marshaller, unmarshaller);
@@ -593,7 +593,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual Task<ListTagsForStreamResponse> ListTagsForStreamAsync(ListTagsForStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForStreamRequestMarshaller();
+            var marshaller = ListTagsForStreamRequestMarshaller.Instance;
             var unmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForStreamRequest,ListTagsForStreamResponse>(request, marshaller, 
@@ -652,7 +652,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual TagStreamResponse TagStream(TagStreamRequest request)
         {
-            var marshaller = new TagStreamRequestMarshaller();
+            var marshaller = TagStreamRequestMarshaller.Instance;
             var unmarshaller = TagStreamResponseUnmarshaller.Instance;
 
             return Invoke<TagStreamRequest,TagStreamResponse>(request, marshaller, unmarshaller);
@@ -670,7 +670,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual Task<TagStreamResponse> TagStreamAsync(TagStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TagStreamRequestMarshaller();
+            var marshaller = TagStreamRequestMarshaller.Instance;
             var unmarshaller = TagStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<TagStreamRequest,TagStreamResponse>(request, marshaller, 
@@ -714,7 +714,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual UntagStreamResponse UntagStream(UntagStreamRequest request)
         {
-            var marshaller = new UntagStreamRequestMarshaller();
+            var marshaller = UntagStreamRequestMarshaller.Instance;
             var unmarshaller = UntagStreamResponseUnmarshaller.Instance;
 
             return Invoke<UntagStreamRequest,UntagStreamResponse>(request, marshaller, unmarshaller);
@@ -732,7 +732,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual Task<UntagStreamResponse> UntagStreamAsync(UntagStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UntagStreamRequestMarshaller();
+            var marshaller = UntagStreamRequestMarshaller.Instance;
             var unmarshaller = UntagStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagStreamRequest,UntagStreamResponse>(request, marshaller, 
@@ -805,7 +805,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual UpdateDataRetentionResponse UpdateDataRetention(UpdateDataRetentionRequest request)
         {
-            var marshaller = new UpdateDataRetentionRequestMarshaller();
+            var marshaller = UpdateDataRetentionRequestMarshaller.Instance;
             var unmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
             return Invoke<UpdateDataRetentionRequest,UpdateDataRetentionResponse>(request, marshaller, unmarshaller);
@@ -823,7 +823,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual Task<UpdateDataRetentionResponse> UpdateDataRetentionAsync(UpdateDataRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDataRetentionRequestMarshaller();
+            var marshaller = UpdateDataRetentionRequestMarshaller.Instance;
             var unmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataRetentionRequest,UpdateDataRetentionResponse>(request, marshaller, 
@@ -881,7 +881,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
         {
-            var marshaller = new UpdateStreamRequestMarshaller();
+            var marshaller = UpdateStreamRequestMarshaller.Instance;
             var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
             return Invoke<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, unmarshaller);
@@ -899,7 +899,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateStreamRequestMarshaller();
+            var marshaller = UpdateStreamRequestMarshaller.Instance;
             var unmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStreamRequest,UpdateStreamResponse>(request, marshaller, 

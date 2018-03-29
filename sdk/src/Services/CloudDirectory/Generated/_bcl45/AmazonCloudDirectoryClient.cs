@@ -283,7 +283,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         public virtual AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request)
         {
-            var marshaller = new AddFacetToObjectRequestMarshaller();
+            var marshaller = AddFacetToObjectRequestMarshaller.Instance;
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
 
             return Invoke<AddFacetToObjectRequest,AddFacetToObjectResponse>(request, marshaller, unmarshaller);
@@ -301,7 +301,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         public virtual Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AddFacetToObjectRequestMarshaller();
+            var marshaller = AddFacetToObjectRequestMarshaller.Instance;
             var unmarshaller = AddFacetToObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddFacetToObjectRequest,AddFacetToObjectResponse>(request, marshaller, 
@@ -358,7 +358,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         public virtual ApplySchemaResponse ApplySchema(ApplySchemaRequest request)
         {
-            var marshaller = new ApplySchemaRequestMarshaller();
+            var marshaller = ApplySchemaRequestMarshaller.Instance;
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
 
             return Invoke<ApplySchemaRequest,ApplySchemaResponse>(request, marshaller, unmarshaller);
@@ -376,7 +376,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         public virtual Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ApplySchemaRequestMarshaller();
+            var marshaller = ApplySchemaRequestMarshaller.Instance;
             var unmarshaller = ApplySchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<ApplySchemaRequest,ApplySchemaResponse>(request, marshaller, 
@@ -456,7 +456,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public virtual AttachObjectResponse AttachObject(AttachObjectRequest request)
         {
-            var marshaller = new AttachObjectRequestMarshaller();
+            var marshaller = AttachObjectRequestMarshaller.Instance;
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
 
             return Invoke<AttachObjectRequest,AttachObjectResponse>(request, marshaller, unmarshaller);
@@ -474,7 +474,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
         public virtual Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachObjectRequestMarshaller();
+            var marshaller = AttachObjectRequestMarshaller.Instance;
             var unmarshaller = AttachObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachObjectRequest,AttachObjectResponse>(request, marshaller, 
@@ -535,7 +535,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual AttachPolicyResponse AttachPolicy(AttachPolicyRequest request)
         {
-            var marshaller = new AttachPolicyRequestMarshaller();
+            var marshaller = AttachPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
             return Invoke<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, unmarshaller);
@@ -553,7 +553,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         public virtual Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachPolicyRequestMarshaller();
+            var marshaller = AttachPolicyRequestMarshaller.Instance;
             var unmarshaller = AttachPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachPolicyRequest,AttachPolicyResponse>(request, marshaller, 
@@ -618,7 +618,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         public virtual AttachToIndexResponse AttachToIndex(AttachToIndexRequest request)
         {
-            var marshaller = new AttachToIndexRequestMarshaller();
+            var marshaller = AttachToIndexRequestMarshaller.Instance;
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
 
             return Invoke<AttachToIndexRequest,AttachToIndexResponse>(request, marshaller, unmarshaller);
@@ -636,7 +636,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         public virtual Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachToIndexRequestMarshaller();
+            var marshaller = AttachToIndexRequestMarshaller.Instance;
             var unmarshaller = AttachToIndexResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachToIndexRequest,AttachToIndexResponse>(request, marshaller, 
@@ -704,7 +704,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         public virtual AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request)
         {
-            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var marshaller = AttachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
 
             return Invoke<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, unmarshaller);
@@ -722,7 +722,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         public virtual Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new AttachTypedLinkRequestMarshaller();
+            var marshaller = AttachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = AttachTypedLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachTypedLinkRequest,AttachTypedLinkResponse>(request, marshaller, 
@@ -773,7 +773,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
         public virtual BatchReadResponse BatchRead(BatchReadRequest request)
         {
-            var marshaller = new BatchReadRequestMarshaller();
+            var marshaller = BatchReadRequestMarshaller.Instance;
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
 
             return Invoke<BatchReadRequest,BatchReadResponse>(request, marshaller, unmarshaller);
@@ -791,7 +791,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
         public virtual Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchReadRequestMarshaller();
+            var marshaller = BatchReadRequestMarshaller.Instance;
             var unmarshaller = BatchReadResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchReadRequest,BatchReadResponse>(request, marshaller, 
@@ -846,7 +846,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         public virtual BatchWriteResponse BatchWrite(BatchWriteRequest request)
         {
-            var marshaller = new BatchWriteRequestMarshaller();
+            var marshaller = BatchWriteRequestMarshaller.Instance;
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
 
             return Invoke<BatchWriteRequest,BatchWriteResponse>(request, marshaller, unmarshaller);
@@ -864,7 +864,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         public virtual Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new BatchWriteRequestMarshaller();
+            var marshaller = BatchWriteRequestMarshaller.Instance;
             var unmarshaller = BatchWriteResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchWriteRequest,BatchWriteResponse>(request, marshaller, 
@@ -923,7 +923,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, unmarshaller);
@@ -941,7 +941,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateDirectoryRequestMarshaller();
+            var marshaller = CreateDirectoryRequestMarshaller.Instance;
             var unmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDirectoryRequest,CreateDirectoryResponse>(request, marshaller, 
@@ -1003,7 +1003,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         public virtual CreateFacetResponse CreateFacet(CreateFacetRequest request)
         {
-            var marshaller = new CreateFacetRequestMarshaller();
+            var marshaller = CreateFacetRequestMarshaller.Instance;
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
 
             return Invoke<CreateFacetRequest,CreateFacetResponse>(request, marshaller, unmarshaller);
@@ -1021,7 +1021,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         public virtual Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateFacetRequestMarshaller();
+            var marshaller = CreateFacetRequestMarshaller.Instance;
             var unmarshaller = CreateFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFacetRequest,CreateFacetResponse>(request, marshaller, 
@@ -1087,7 +1087,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var marshaller = new CreateIndexRequestMarshaller();
+            var marshaller = CreateIndexRequestMarshaller.Instance;
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
             return Invoke<CreateIndexRequest,CreateIndexResponse>(request, marshaller, unmarshaller);
@@ -1105,7 +1105,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateIndexRequestMarshaller();
+            var marshaller = CreateIndexRequestMarshaller.Instance;
             var unmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateIndexRequest,CreateIndexResponse>(request, marshaller, 
@@ -1176,7 +1176,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
         public virtual CreateObjectResponse CreateObject(CreateObjectRequest request)
         {
-            var marshaller = new CreateObjectRequestMarshaller();
+            var marshaller = CreateObjectRequestMarshaller.Instance;
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
 
             return Invoke<CreateObjectRequest,CreateObjectResponse>(request, marshaller, unmarshaller);
@@ -1194,7 +1194,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
         public virtual Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateObjectRequestMarshaller();
+            var marshaller = CreateObjectRequestMarshaller.Instance;
             var unmarshaller = CreateObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateObjectRequest,CreateObjectResponse>(request, marshaller, 
@@ -1267,7 +1267,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var marshaller = new CreateSchemaRequestMarshaller();
+            var marshaller = CreateSchemaRequestMarshaller.Instance;
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
             return Invoke<CreateSchemaRequest,CreateSchemaResponse>(request, marshaller, unmarshaller);
@@ -1285,7 +1285,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateSchemaRequestMarshaller();
+            var marshaller = CreateSchemaRequestMarshaller.Instance;
             var unmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSchemaRequest,CreateSchemaResponse>(request, marshaller, 
@@ -1347,7 +1347,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         public virtual CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request)
         {
-            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var marshaller = CreateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -1365,7 +1365,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         public virtual Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new CreateTypedLinkFacetRequestMarshaller();
+            var marshaller = CreateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = CreateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTypedLinkFacetRequest,CreateTypedLinkFacetResponse>(request, marshaller, 
@@ -1424,7 +1424,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, unmarshaller);
@@ -1442,7 +1442,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteDirectoryRequestMarshaller();
+            var marshaller = DeleteDirectoryRequestMarshaller.Instance;
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, 
@@ -1501,7 +1501,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         public virtual DeleteFacetResponse DeleteFacet(DeleteFacetRequest request)
         {
-            var marshaller = new DeleteFacetRequestMarshaller();
+            var marshaller = DeleteFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteFacetRequest,DeleteFacetResponse>(request, marshaller, unmarshaller);
@@ -1519,7 +1519,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         public virtual Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteFacetRequestMarshaller();
+            var marshaller = DeleteFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFacetRequest,DeleteFacetResponse>(request, marshaller, 
@@ -1578,7 +1578,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return Invoke<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, unmarshaller);
@@ -1596,7 +1596,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteObjectRequestMarshaller();
+            var marshaller = DeleteObjectRequestMarshaller.Instance;
             var unmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectRequest,DeleteObjectResponse>(request, marshaller, 
@@ -1651,7 +1651,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var marshaller = new DeleteSchemaRequestMarshaller();
+            var marshaller = DeleteSchemaRequestMarshaller.Instance;
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
             return Invoke<DeleteSchemaRequest,DeleteSchemaResponse>(request, marshaller, unmarshaller);
@@ -1669,7 +1669,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteSchemaRequestMarshaller();
+            var marshaller = DeleteSchemaRequestMarshaller.Instance;
             var unmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteSchemaRequest,DeleteSchemaResponse>(request, marshaller, 
@@ -1724,7 +1724,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         public virtual DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request)
         {
-            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var marshaller = DeleteTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -1742,7 +1742,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         public virtual Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteTypedLinkFacetRequestMarshaller();
+            var marshaller = DeleteTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = DeleteTypedLinkFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTypedLinkFacetRequest,DeleteTypedLinkFacetResponse>(request, marshaller, 
@@ -1802,7 +1802,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         public virtual DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request)
         {
-            var marshaller = new DetachFromIndexRequestMarshaller();
+            var marshaller = DetachFromIndexRequestMarshaller.Instance;
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
 
             return Invoke<DetachFromIndexRequest,DetachFromIndexResponse>(request, marshaller, unmarshaller);
@@ -1820,7 +1820,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         public virtual Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachFromIndexRequestMarshaller();
+            var marshaller = DetachFromIndexRequestMarshaller.Instance;
             var unmarshaller = DetachFromIndexResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachFromIndexRequest,DetachFromIndexResponse>(request, marshaller, 
@@ -1875,7 +1875,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
         public virtual DetachObjectResponse DetachObject(DetachObjectRequest request)
         {
-            var marshaller = new DetachObjectRequestMarshaller();
+            var marshaller = DetachObjectRequestMarshaller.Instance;
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
 
             return Invoke<DetachObjectRequest,DetachObjectResponse>(request, marshaller, unmarshaller);
@@ -1893,7 +1893,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
         public virtual Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachObjectRequestMarshaller();
+            var marshaller = DetachObjectRequestMarshaller.Instance;
             var unmarshaller = DetachObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachObjectRequest,DetachObjectResponse>(request, marshaller, 
@@ -1953,7 +1953,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual DetachPolicyResponse DetachPolicy(DetachPolicyRequest request)
         {
-            var marshaller = new DetachPolicyRequestMarshaller();
+            var marshaller = DetachPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
             return Invoke<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, unmarshaller);
@@ -1971,7 +1971,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         public virtual Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachPolicyRequestMarshaller();
+            var marshaller = DetachPolicyRequestMarshaller.Instance;
             var unmarshaller = DetachPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachPolicyRequest,DetachPolicyResponse>(request, marshaller, 
@@ -2031,7 +2031,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         public virtual DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request)
         {
-            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var marshaller = DetachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
 
             return Invoke<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, unmarshaller);
@@ -2049,7 +2049,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         public virtual Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DetachTypedLinkRequestMarshaller();
+            var marshaller = DetachTypedLinkRequestMarshaller.Instance;
             var unmarshaller = DetachTypedLinkResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachTypedLinkRequest,DetachTypedLinkResponse>(request, marshaller, 
@@ -2105,7 +2105,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         public virtual DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request)
         {
-            var marshaller = new DisableDirectoryRequestMarshaller();
+            var marshaller = DisableDirectoryRequestMarshaller.Instance;
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<DisableDirectoryRequest,DisableDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2123,7 +2123,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         public virtual Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DisableDirectoryRequestMarshaller();
+            var marshaller = DisableDirectoryRequestMarshaller.Instance;
             var unmarshaller = DisableDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableDirectoryRequest,DisableDirectoryResponse>(request, marshaller, 
@@ -2179,7 +2179,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         public virtual EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request)
         {
-            var marshaller = new EnableDirectoryRequestMarshaller();
+            var marshaller = EnableDirectoryRequestMarshaller.Instance;
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<EnableDirectoryRequest,EnableDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2197,7 +2197,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         public virtual Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableDirectoryRequestMarshaller();
+            var marshaller = EnableDirectoryRequestMarshaller.Instance;
             var unmarshaller = EnableDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableDirectoryRequest,EnableDirectoryResponse>(request, marshaller, 
@@ -2248,7 +2248,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         public virtual GetAppliedSchemaVersionResponse GetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request)
         {
-            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var marshaller = GetAppliedSchemaVersionRequestMarshaller.Instance;
             var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
 
             return Invoke<GetAppliedSchemaVersionRequest,GetAppliedSchemaVersionResponse>(request, marshaller, unmarshaller);
@@ -2266,7 +2266,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         public virtual Task<GetAppliedSchemaVersionResponse> GetAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetAppliedSchemaVersionRequestMarshaller();
+            var marshaller = GetAppliedSchemaVersionRequestMarshaller.Instance;
             var unmarshaller = GetAppliedSchemaVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAppliedSchemaVersionRequest,GetAppliedSchemaVersionResponse>(request, marshaller, 
@@ -2314,7 +2314,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         public virtual GetDirectoryResponse GetDirectory(GetDirectoryRequest request)
         {
-            var marshaller = new GetDirectoryRequestMarshaller();
+            var marshaller = GetDirectoryRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
 
             return Invoke<GetDirectoryRequest,GetDirectoryResponse>(request, marshaller, unmarshaller);
@@ -2332,7 +2332,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         public virtual Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetDirectoryRequestMarshaller();
+            var marshaller = GetDirectoryRequestMarshaller.Instance;
             var unmarshaller = GetDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDirectoryRequest,GetDirectoryResponse>(request, marshaller, 
@@ -2388,7 +2388,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
         public virtual GetFacetResponse GetFacet(GetFacetRequest request)
         {
-            var marshaller = new GetFacetRequestMarshaller();
+            var marshaller = GetFacetRequestMarshaller.Instance;
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
 
             return Invoke<GetFacetRequest,GetFacetResponse>(request, marshaller, unmarshaller);
@@ -2406,7 +2406,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
         public virtual Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetFacetRequestMarshaller();
+            var marshaller = GetFacetRequestMarshaller.Instance;
             var unmarshaller = GetFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFacetRequest,GetFacetResponse>(request, marshaller, 
@@ -2460,7 +2460,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         public virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)
         {
-            var marshaller = new GetObjectInformationRequestMarshaller();
+            var marshaller = GetObjectInformationRequestMarshaller.Instance;
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
 
             return Invoke<GetObjectInformationRequest,GetObjectInformationResponse>(request, marshaller, unmarshaller);
@@ -2478,7 +2478,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         public virtual Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetObjectInformationRequestMarshaller();
+            var marshaller = GetObjectInformationRequestMarshaller.Instance;
             var unmarshaller = GetObjectInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectInformationRequest,GetObjectInformationResponse>(request, marshaller, 
@@ -2533,7 +2533,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         public virtual GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request)
         {
-            var marshaller = new GetSchemaAsJsonRequestMarshaller();
+            var marshaller = GetSchemaAsJsonRequestMarshaller.Instance;
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
 
             return Invoke<GetSchemaAsJsonRequest,GetSchemaAsJsonResponse>(request, marshaller, unmarshaller);
@@ -2551,7 +2551,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         public virtual Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetSchemaAsJsonRequestMarshaller();
+            var marshaller = GetSchemaAsJsonRequestMarshaller.Instance;
             var unmarshaller = GetSchemaAsJsonResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSchemaAsJsonRequest,GetSchemaAsJsonResponse>(request, marshaller, 
@@ -2610,7 +2610,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         public virtual GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request)
         {
-            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var marshaller = GetTypedLinkFacetInformationRequestMarshaller.Instance;
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
 
             return Invoke<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, unmarshaller);
@@ -2628,7 +2628,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         public virtual Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new GetTypedLinkFacetInformationRequestMarshaller();
+            var marshaller = GetTypedLinkFacetInformationRequestMarshaller.Instance;
             var unmarshaller = GetTypedLinkFacetInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTypedLinkFacetInformationRequest,GetTypedLinkFacetInformationResponse>(request, marshaller, 
@@ -2683,7 +2683,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         public virtual ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request)
         {
-            var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
+            var marshaller = ListAppliedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListAppliedSchemaArnsRequest,ListAppliedSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -2701,7 +2701,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         public virtual Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
+            var marshaller = ListAppliedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListAppliedSchemaArnsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAppliedSchemaArnsRequest,ListAppliedSchemaArnsResponse>(request, marshaller, 
@@ -2755,7 +2755,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         public virtual ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request)
         {
-            var marshaller = new ListAttachedIndicesRequestMarshaller();
+            var marshaller = ListAttachedIndicesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
 
             return Invoke<ListAttachedIndicesRequest,ListAttachedIndicesResponse>(request, marshaller, unmarshaller);
@@ -2773,7 +2773,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         public virtual Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListAttachedIndicesRequestMarshaller();
+            var marshaller = ListAttachedIndicesRequestMarshaller.Instance;
             var unmarshaller = ListAttachedIndicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttachedIndicesRequest,ListAttachedIndicesResponse>(request, marshaller, 
@@ -2827,7 +2827,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         public virtual ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request)
         {
-            var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
+            var marshaller = ListDevelopmentSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListDevelopmentSchemaArnsRequest,ListDevelopmentSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -2845,7 +2845,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         public virtual Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
+            var marshaller = ListDevelopmentSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListDevelopmentSchemaArnsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDevelopmentSchemaArnsRequest,ListDevelopmentSchemaArnsResponse>(request, marshaller, 
@@ -2896,7 +2896,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         public virtual ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request)
         {
-            var marshaller = new ListDirectoriesRequestMarshaller();
+            var marshaller = ListDirectoriesRequestMarshaller.Instance;
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
 
             return Invoke<ListDirectoriesRequest,ListDirectoriesResponse>(request, marshaller, unmarshaller);
@@ -2914,7 +2914,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         public virtual Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListDirectoriesRequestMarshaller();
+            var marshaller = ListDirectoriesRequestMarshaller.Instance;
             var unmarshaller = ListDirectoriesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDirectoriesRequest,ListDirectoriesResponse>(request, marshaller, 
@@ -2971,7 +2971,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         public virtual ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request)
         {
-            var marshaller = new ListFacetAttributesRequestMarshaller();
+            var marshaller = ListFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListFacetAttributesRequest,ListFacetAttributesResponse>(request, marshaller, unmarshaller);
@@ -2989,7 +2989,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         public virtual Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFacetAttributesRequestMarshaller();
+            var marshaller = ListFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListFacetAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFacetAttributesRequest,ListFacetAttributesResponse>(request, marshaller, 
@@ -3043,7 +3043,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         public virtual ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request)
         {
-            var marshaller = new ListFacetNamesRequestMarshaller();
+            var marshaller = ListFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListFacetNamesRequest,ListFacetNamesResponse>(request, marshaller, unmarshaller);
@@ -3061,7 +3061,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         public virtual Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListFacetNamesRequestMarshaller();
+            var marshaller = ListFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListFacetNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFacetNamesRequest,ListFacetNamesResponse>(request, marshaller, 
@@ -3125,7 +3125,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         public virtual ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request)
         {
-            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var marshaller = ListIncomingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
 
             return Invoke<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, unmarshaller);
@@ -3143,7 +3143,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         public virtual Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListIncomingTypedLinksRequestMarshaller();
+            var marshaller = ListIncomingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListIncomingTypedLinksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIncomingTypedLinksRequest,ListIncomingTypedLinksResponse>(request, marshaller, 
@@ -3200,7 +3200,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
         public virtual ListIndexResponse ListIndex(ListIndexRequest request)
         {
-            var marshaller = new ListIndexRequestMarshaller();
+            var marshaller = ListIndexRequestMarshaller.Instance;
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
 
             return Invoke<ListIndexRequest,ListIndexResponse>(request, marshaller, unmarshaller);
@@ -3218,7 +3218,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
         public virtual Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListIndexRequestMarshaller();
+            var marshaller = ListIndexRequestMarshaller.Instance;
             var unmarshaller = ListIndexResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIndexRequest,ListIndexResponse>(request, marshaller, 
@@ -3282,7 +3282,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         public virtual ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request)
         {
-            var marshaller = new ListObjectAttributesRequestMarshaller();
+            var marshaller = ListObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectAttributesRequest,ListObjectAttributesResponse>(request, marshaller, unmarshaller);
@@ -3300,7 +3300,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         public virtual Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectAttributesRequestMarshaller();
+            var marshaller = ListObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = ListObjectAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectAttributesRequest,ListObjectAttributesResponse>(request, marshaller, 
@@ -3364,7 +3364,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         public virtual ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request)
         {
-            var marshaller = new ListObjectChildrenRequestMarshaller();
+            var marshaller = ListObjectChildrenRequestMarshaller.Instance;
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectChildrenRequest,ListObjectChildrenResponse>(request, marshaller, unmarshaller);
@@ -3382,7 +3382,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         public virtual Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectChildrenRequestMarshaller();
+            var marshaller = ListObjectChildrenRequestMarshaller.Instance;
             var unmarshaller = ListObjectChildrenResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectChildrenRequest,ListObjectChildrenResponse>(request, marshaller, 
@@ -3451,7 +3451,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         public virtual ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request)
         {
-            var marshaller = new ListObjectParentPathsRequestMarshaller();
+            var marshaller = ListObjectParentPathsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectParentPathsRequest,ListObjectParentPathsResponse>(request, marshaller, unmarshaller);
@@ -3469,7 +3469,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         public virtual Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectParentPathsRequestMarshaller();
+            var marshaller = ListObjectParentPathsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectParentPathsRequest,ListObjectParentPathsResponse>(request, marshaller, 
@@ -3532,7 +3532,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         public virtual ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request)
         {
-            var marshaller = new ListObjectParentsRequestMarshaller();
+            var marshaller = ListObjectParentsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectParentsRequest,ListObjectParentsResponse>(request, marshaller, unmarshaller);
@@ -3550,7 +3550,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         public virtual Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectParentsRequestMarshaller();
+            var marshaller = ListObjectParentsRequestMarshaller.Instance;
             var unmarshaller = ListObjectParentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectParentsRequest,ListObjectParentsResponse>(request, marshaller, 
@@ -3607,7 +3607,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         public virtual ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request)
         {
-            var marshaller = new ListObjectPoliciesRequestMarshaller();
+            var marshaller = ListObjectPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
 
             return Invoke<ListObjectPoliciesRequest,ListObjectPoliciesResponse>(request, marshaller, unmarshaller);
@@ -3625,7 +3625,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         public virtual Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListObjectPoliciesRequestMarshaller();
+            var marshaller = ListObjectPoliciesRequestMarshaller.Instance;
             var unmarshaller = ListObjectPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListObjectPoliciesRequest,ListObjectPoliciesResponse>(request, marshaller, 
@@ -3689,7 +3689,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         public virtual ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request)
         {
-            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var marshaller = ListOutgoingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
 
             return Invoke<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, unmarshaller);
@@ -3707,7 +3707,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         public virtual Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListOutgoingTypedLinksRequestMarshaller();
+            var marshaller = ListOutgoingTypedLinksRequestMarshaller.Instance;
             var unmarshaller = ListOutgoingTypedLinksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOutgoingTypedLinksRequest,ListOutgoingTypedLinksResponse>(request, marshaller, 
@@ -3770,7 +3770,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         public virtual ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request)
         {
-            var marshaller = new ListPolicyAttachmentsRequestMarshaller();
+            var marshaller = ListPolicyAttachmentsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
 
             return Invoke<ListPolicyAttachmentsRequest,ListPolicyAttachmentsResponse>(request, marshaller, unmarshaller);
@@ -3788,7 +3788,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         public virtual Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPolicyAttachmentsRequestMarshaller();
+            var marshaller = ListPolicyAttachmentsRequestMarshaller.Instance;
             var unmarshaller = ListPolicyAttachmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPolicyAttachmentsRequest,ListPolicyAttachmentsResponse>(request, marshaller, 
@@ -3843,7 +3843,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         public virtual ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request)
         {
-            var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
+            var marshaller = ListPublishedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
 
             return Invoke<ListPublishedSchemaArnsRequest,ListPublishedSchemaArnsResponse>(request, marshaller, unmarshaller);
@@ -3861,7 +3861,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         public virtual Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
+            var marshaller = ListPublishedSchemaArnsRequestMarshaller.Instance;
             var unmarshaller = ListPublishedSchemaArnsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPublishedSchemaArnsRequest,ListPublishedSchemaArnsResponse>(request, marshaller, 
@@ -3919,7 +3919,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -3937,7 +3937,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
@@ -3996,7 +3996,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         public virtual ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request)
         {
-            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
 
             return Invoke<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, unmarshaller);
@@ -4014,7 +4014,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         public virtual Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTypedLinkFacetAttributesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetAttributesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTypedLinkFacetAttributesRequest,ListTypedLinkFacetAttributesResponse>(request, marshaller, 
@@ -4070,7 +4070,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         public virtual ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request)
         {
-            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, unmarshaller);
@@ -4088,7 +4088,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         public virtual Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new ListTypedLinkFacetNamesRequestMarshaller();
+            var marshaller = ListTypedLinkFacetNamesRequestMarshaller.Instance;
             var unmarshaller = ListTypedLinkFacetNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTypedLinkFacetNamesRequest,ListTypedLinkFacetNamesResponse>(request, marshaller, 
@@ -4153,7 +4153,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         public virtual LookupPolicyResponse LookupPolicy(LookupPolicyRequest request)
         {
-            var marshaller = new LookupPolicyRequestMarshaller();
+            var marshaller = LookupPolicyRequestMarshaller.Instance;
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
 
             return Invoke<LookupPolicyRequest,LookupPolicyResponse>(request, marshaller, unmarshaller);
@@ -4171,7 +4171,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         public virtual Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new LookupPolicyRequestMarshaller();
+            var marshaller = LookupPolicyRequestMarshaller.Instance;
             var unmarshaller = LookupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<LookupPolicyRequest,LookupPolicyResponse>(request, marshaller, 
@@ -4225,7 +4225,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         public virtual PublishSchemaResponse PublishSchema(PublishSchemaRequest request)
         {
-            var marshaller = new PublishSchemaRequestMarshaller();
+            var marshaller = PublishSchemaRequestMarshaller.Instance;
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
 
             return Invoke<PublishSchemaRequest,PublishSchemaResponse>(request, marshaller, unmarshaller);
@@ -4243,7 +4243,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         public virtual Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PublishSchemaRequestMarshaller();
+            var marshaller = PublishSchemaRequestMarshaller.Instance;
             var unmarshaller = PublishSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<PublishSchemaRequest,PublishSchemaResponse>(request, marshaller, 
@@ -4299,7 +4299,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         public virtual PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request)
         {
-            var marshaller = new PutSchemaFromJsonRequestMarshaller();
+            var marshaller = PutSchemaFromJsonRequestMarshaller.Instance;
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
 
             return Invoke<PutSchemaFromJsonRequest,PutSchemaFromJsonResponse>(request, marshaller, unmarshaller);
@@ -4317,7 +4317,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         public virtual Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new PutSchemaFromJsonRequestMarshaller();
+            var marshaller = PutSchemaFromJsonRequestMarshaller.Instance;
             var unmarshaller = PutSchemaFromJsonResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutSchemaFromJsonRequest,PutSchemaFromJsonResponse>(request, marshaller, 
@@ -4375,7 +4375,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         public virtual RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request)
         {
-            var marshaller = new RemoveFacetFromObjectRequestMarshaller();
+            var marshaller = RemoveFacetFromObjectRequestMarshaller.Instance;
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
 
             return Invoke<RemoveFacetFromObjectRequest,RemoveFacetFromObjectResponse>(request, marshaller, unmarshaller);
@@ -4393,7 +4393,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         public virtual Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new RemoveFacetFromObjectRequestMarshaller();
+            var marshaller = RemoveFacetFromObjectRequestMarshaller.Instance;
             var unmarshaller = RemoveFacetFromObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveFacetFromObjectRequest,RemoveFacetFromObjectResponse>(request, marshaller, 
@@ -4449,7 +4449,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
@@ -4467,7 +4467,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new TagResourceRequestMarshaller();
+            var marshaller = TagResourceRequestMarshaller.Instance;
             var unmarshaller = TagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
@@ -4523,7 +4523,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
@@ -4541,7 +4541,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UntagResourceRequestMarshaller();
+            var marshaller = UntagResourceRequestMarshaller.Instance;
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
@@ -4615,7 +4615,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         public virtual UpdateFacetResponse UpdateFacet(UpdateFacetRequest request)
         {
-            var marshaller = new UpdateFacetRequestMarshaller();
+            var marshaller = UpdateFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateFacetRequest,UpdateFacetResponse>(request, marshaller, unmarshaller);
@@ -4633,7 +4633,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         public virtual Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateFacetRequestMarshaller();
+            var marshaller = UpdateFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFacetRequest,UpdateFacetResponse>(request, marshaller, 
@@ -4691,7 +4691,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         public virtual UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request)
         {
-            var marshaller = new UpdateObjectAttributesRequestMarshaller();
+            var marshaller = UpdateObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
 
             return Invoke<UpdateObjectAttributesRequest,UpdateObjectAttributesResponse>(request, marshaller, unmarshaller);
@@ -4709,7 +4709,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         public virtual Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateObjectAttributesRequestMarshaller();
+            var marshaller = UpdateObjectAttributesRequestMarshaller.Instance;
             var unmarshaller = UpdateObjectAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateObjectAttributesRequest,UpdateObjectAttributesResponse>(request, marshaller, 
@@ -4760,7 +4760,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
-            var marshaller = new UpdateSchemaRequestMarshaller();
+            var marshaller = UpdateSchemaRequestMarshaller.Instance;
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpdateSchemaRequest,UpdateSchemaResponse>(request, marshaller, unmarshaller);
@@ -4778,7 +4778,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateSchemaRequestMarshaller();
+            var marshaller = UpdateSchemaRequestMarshaller.Instance;
             var unmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSchemaRequest,UpdateSchemaResponse>(request, marshaller, 
@@ -4843,7 +4843,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         public virtual UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request)
         {
-            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var marshaller = UpdateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return Invoke<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, unmarshaller);
@@ -4861,7 +4861,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         public virtual Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateTypedLinkFacetRequestMarshaller();
+            var marshaller = UpdateTypedLinkFacetRequestMarshaller.Instance;
             var unmarshaller = UpdateTypedLinkFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTypedLinkFacetRequest,UpdateTypedLinkFacetResponse>(request, marshaller, 
@@ -4922,7 +4922,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         public virtual UpgradeAppliedSchemaResponse UpgradeAppliedSchema(UpgradeAppliedSchemaRequest request)
         {
-            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var marshaller = UpgradeAppliedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpgradeAppliedSchemaRequest,UpgradeAppliedSchemaResponse>(request, marshaller, unmarshaller);
@@ -4940,7 +4940,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         public virtual Task<UpgradeAppliedSchemaResponse> UpgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpgradeAppliedSchemaRequestMarshaller();
+            var marshaller = UpgradeAppliedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradeAppliedSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpgradeAppliedSchemaRequest,UpgradeAppliedSchemaResponse>(request, marshaller, 
@@ -5001,7 +5001,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         public virtual UpgradePublishedSchemaResponse UpgradePublishedSchema(UpgradePublishedSchemaRequest request)
         {
-            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var marshaller = UpgradePublishedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
 
             return Invoke<UpgradePublishedSchemaRequest,UpgradePublishedSchemaResponse>(request, marshaller, unmarshaller);
@@ -5019,7 +5019,7 @@ namespace Amazon.CloudDirectory
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         public virtual Task<UpgradePublishedSchemaResponse> UpgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpgradePublishedSchemaRequestMarshaller();
+            var marshaller = UpgradePublishedSchemaRequestMarshaller.Instance;
             var unmarshaller = UpgradePublishedSchemaResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpgradePublishedSchemaRequest,UpgradePublishedSchemaResponse>(request, marshaller, 

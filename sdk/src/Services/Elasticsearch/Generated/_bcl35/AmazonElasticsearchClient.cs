@@ -260,7 +260,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsRequest,AddTagsResponse>(request, marshaller, unmarshaller);
@@ -279,7 +279,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddTagsRequestMarshaller();
+            var marshaller = AddTagsRequestMarshaller.Instance;
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddTagsRequest>(request, marshaller, unmarshaller,
@@ -338,7 +338,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
         {
-            var marshaller = new CreateElasticsearchDomainRequestMarshaller();
+            var marshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
 
             return Invoke<CreateElasticsearchDomainRequest,CreateElasticsearchDomainResponse>(request, marshaller, unmarshaller);
@@ -357,7 +357,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginCreateElasticsearchDomain(CreateElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateElasticsearchDomainRequestMarshaller();
+            var marshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateElasticsearchDomainRequest>(request, marshaller, unmarshaller,
@@ -403,7 +403,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
         {
-            var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
+            var marshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
 
             return Invoke<DeleteElasticsearchDomainRequest,DeleteElasticsearchDomainResponse>(request, marshaller, unmarshaller);
@@ -422,7 +422,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
+            var marshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteElasticsearchDomainRequest>(request, marshaller, unmarshaller,
@@ -467,7 +467,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request)
         {
-            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var marshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
             return Invoke<DeleteElasticsearchServiceRoleRequest,DeleteElasticsearchServiceRoleResponse>(request, marshaller, unmarshaller);
@@ -486,7 +486,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteElasticsearchServiceRoleRequestMarshaller();
+            var marshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
             var unmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteElasticsearchServiceRoleRequest>(request, marshaller, unmarshaller,
@@ -532,7 +532,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
         {
-            var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticsearchDomainRequest,DescribeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
@@ -551,7 +551,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticsearchDomainRequest>(request, marshaller, unmarshaller,
@@ -597,7 +597,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
         {
-            var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticsearchDomainConfigRequest,DescribeElasticsearchDomainConfigResponse>(request, marshaller, unmarshaller);
@@ -616,7 +616,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticsearchDomainConfigRequest>(request, marshaller, unmarshaller,
@@ -658,7 +658,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
         {
-            var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticsearchDomainsRequest,DescribeElasticsearchDomainsResponse>(request, marshaller, unmarshaller);
@@ -677,7 +677,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
+            var marshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticsearchDomainsRequest>(request, marshaller, unmarshaller,
@@ -732,7 +732,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
         {
-            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var marshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeElasticsearchInstanceTypeLimitsRequest,DescribeElasticsearchInstanceTypeLimitsResponse>(request, marshaller, unmarshaller);
@@ -751,7 +751,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var marshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
             var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeElasticsearchInstanceTypeLimitsRequest>(request, marshaller, unmarshaller,
@@ -788,7 +788,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return Invoke<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, unmarshaller);
@@ -807,7 +807,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListDomainNames(ListDomainNamesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListDomainNamesRequestMarshaller();
+            var marshaller = ListDomainNamesRequestMarshaller.Instance;
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListDomainNamesRequest>(request, marshaller, unmarshaller,
@@ -852,7 +852,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
         {
-            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var marshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
 
             return Invoke<ListElasticsearchInstanceTypesRequest,ListElasticsearchInstanceTypesResponse>(request, marshaller, unmarshaller);
@@ -871,7 +871,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var marshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
             var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListElasticsearchInstanceTypesRequest>(request, marshaller, unmarshaller,
@@ -916,7 +916,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
         {
-            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var marshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
 
             return Invoke<ListElasticsearchVersionsRequest,ListElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
@@ -935,7 +935,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var marshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
             var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListElasticsearchVersionsRequest>(request, marshaller, unmarshaller,
@@ -980,7 +980,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
@@ -999,7 +999,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsRequestMarshaller();
+            var marshaller = ListTagsRequestMarshaller.Instance;
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsRequest>(request, marshaller, unmarshaller,
@@ -1040,7 +1040,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var marshaller = new RemoveTagsRequestMarshaller();
+            var marshaller = RemoveTagsRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsRequest,RemoveTagsResponse>(request, marshaller, unmarshaller);
@@ -1059,7 +1059,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveTagsRequestMarshaller();
+            var marshaller = RemoveTagsRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveTagsRequest>(request, marshaller, unmarshaller,
@@ -1113,7 +1113,7 @@ namespace Amazon.Elasticsearch
         /// </exception>
         public virtual UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
         {
-            var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
+            var marshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return Invoke<UpdateElasticsearchDomainConfigRequest,UpdateElasticsearchDomainConfigResponse>(request, marshaller, unmarshaller);
@@ -1132,7 +1132,7 @@ namespace Amazon.Elasticsearch
         ///         operation.</returns>
         public virtual IAsyncResult BeginUpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
+            var marshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateElasticsearchDomainConfigRequest>(request, marshaller, unmarshaller,

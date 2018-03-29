@@ -184,7 +184,7 @@ namespace Amazon.KinesisFirehose
         public virtual void CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, AmazonServiceCallback<CreateDeliveryStreamRequest, CreateDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new CreateDeliveryStreamRequestMarshaller();
+            var marshaller = CreateDeliveryStreamRequestMarshaller.Instance;
             var unmarshaller = CreateDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -256,7 +256,7 @@ namespace Amazon.KinesisFirehose
         public virtual void DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DeleteDeliveryStreamRequestMarshaller();
+            var marshaller = DeleteDeliveryStreamRequestMarshaller.Instance;
             var unmarshaller = DeleteDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -284,7 +284,7 @@ namespace Amazon.KinesisFirehose
         public virtual void DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, AmazonServiceCallback<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new DescribeDeliveryStreamRequestMarshaller();
+            var marshaller = DescribeDeliveryStreamRequestMarshaller.Instance;
             var unmarshaller = DescribeDeliveryStreamResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -341,7 +341,7 @@ namespace Amazon.KinesisFirehose
         public virtual void ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, AmazonServiceCallback<ListDeliveryStreamsRequest, ListDeliveryStreamsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new ListDeliveryStreamsRequestMarshaller();
+            var marshaller = ListDeliveryStreamsRequestMarshaller.Instance;
             var unmarshaller = ListDeliveryStreamsResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -448,7 +448,7 @@ namespace Amazon.KinesisFirehose
         public virtual void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordRequestMarshaller();
+            var marshaller = PutRecordRequestMarshaller.Instance;
             var unmarshaller = PutRecordResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -582,7 +582,7 @@ namespace Amazon.KinesisFirehose
         public virtual void PutRecordBatchAsync(PutRecordBatchRequest request, AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new PutRecordBatchRequestMarshaller();
+            var marshaller = PutRecordBatchRequestMarshaller.Instance;
             var unmarshaller = PutRecordBatchResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )
@@ -610,7 +610,7 @@ namespace Amazon.KinesisFirehose
         public virtual void UpdateDestinationAsync(UpdateDestinationRequest request, AmazonServiceCallback<UpdateDestinationRequest, UpdateDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
-            var marshaller = new UpdateDestinationRequestMarshaller();
+            var marshaller = UpdateDestinationRequestMarshaller.Instance;
             var unmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
             if(callback !=null )

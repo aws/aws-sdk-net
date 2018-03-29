@@ -265,7 +265,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         public virtual CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request)
         {
-            var marshaller = new CreateReplicationJobRequestMarshaller();
+            var marshaller = CreateReplicationJobRequestMarshaller.Instance;
             var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
 
             return Invoke<CreateReplicationJobRequest,CreateReplicationJobResponse>(request, marshaller, unmarshaller);
@@ -285,7 +285,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob">REST API Reference for CreateReplicationJob Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicationJob(CreateReplicationJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateReplicationJobRequestMarshaller();
+            var marshaller = CreateReplicationJobRequestMarshaller.Instance;
             var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateReplicationJobRequest>(request, marshaller, unmarshaller,
@@ -338,7 +338,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         public virtual DeleteReplicationJobResponse DeleteReplicationJob(DeleteReplicationJobRequest request)
         {
-            var marshaller = new DeleteReplicationJobRequestMarshaller();
+            var marshaller = DeleteReplicationJobRequestMarshaller.Instance;
             var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
 
             return Invoke<DeleteReplicationJobRequest,DeleteReplicationJobResponse>(request, marshaller, unmarshaller);
@@ -358,7 +358,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob">REST API Reference for DeleteReplicationJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicationJob(DeleteReplicationJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteReplicationJobRequestMarshaller();
+            var marshaller = DeleteReplicationJobRequestMarshaller.Instance;
             var unmarshaller = DeleteReplicationJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteReplicationJobRequest>(request, marshaller, unmarshaller,
@@ -407,7 +407,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         public virtual DeleteServerCatalogResponse DeleteServerCatalog(DeleteServerCatalogRequest request)
         {
-            var marshaller = new DeleteServerCatalogRequestMarshaller();
+            var marshaller = DeleteServerCatalogRequestMarshaller.Instance;
             var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
 
             return Invoke<DeleteServerCatalogRequest,DeleteServerCatalogResponse>(request, marshaller, unmarshaller);
@@ -427,7 +427,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog">REST API Reference for DeleteServerCatalog Operation</seealso>
         public virtual IAsyncResult BeginDeleteServerCatalog(DeleteServerCatalogRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteServerCatalogRequestMarshaller();
+            var marshaller = DeleteServerCatalogRequestMarshaller.Instance;
             var unmarshaller = DeleteServerCatalogResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteServerCatalogRequest>(request, marshaller, unmarshaller,
@@ -476,7 +476,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         public virtual DisassociateConnectorResponse DisassociateConnector(DisassociateConnectorRequest request)
         {
-            var marshaller = new DisassociateConnectorRequestMarshaller();
+            var marshaller = DisassociateConnectorRequestMarshaller.Instance;
             var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
 
             return Invoke<DisassociateConnectorRequest,DisassociateConnectorResponse>(request, marshaller, unmarshaller);
@@ -496,7 +496,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector">REST API Reference for DisassociateConnector Operation</seealso>
         public virtual IAsyncResult BeginDisassociateConnector(DisassociateConnectorRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DisassociateConnectorRequestMarshaller();
+            var marshaller = DisassociateConnectorRequestMarshaller.Instance;
             var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
 
             return BeginInvoke<DisassociateConnectorRequest>(request, marshaller, unmarshaller,
@@ -533,7 +533,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         public virtual GetConnectorsResponse GetConnectors(GetConnectorsRequest request)
         {
-            var marshaller = new GetConnectorsRequestMarshaller();
+            var marshaller = GetConnectorsRequestMarshaller.Instance;
             var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
 
             return Invoke<GetConnectorsRequest,GetConnectorsResponse>(request, marshaller, unmarshaller);
@@ -553,7 +553,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors">REST API Reference for GetConnectors Operation</seealso>
         public virtual IAsyncResult BeginGetConnectors(GetConnectorsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetConnectorsRequestMarshaller();
+            var marshaller = GetConnectorsRequestMarshaller.Instance;
             var unmarshaller = GetConnectorsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetConnectorsRequest>(request, marshaller, unmarshaller,
@@ -598,7 +598,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         public virtual GetReplicationJobsResponse GetReplicationJobs(GetReplicationJobsRequest request)
         {
-            var marshaller = new GetReplicationJobsRequestMarshaller();
+            var marshaller = GetReplicationJobsRequestMarshaller.Instance;
             var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
 
             return Invoke<GetReplicationJobsRequest,GetReplicationJobsResponse>(request, marshaller, unmarshaller);
@@ -618,7 +618,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs">REST API Reference for GetReplicationJobs Operation</seealso>
         public virtual IAsyncResult BeginGetReplicationJobs(GetReplicationJobsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetReplicationJobsRequestMarshaller();
+            var marshaller = GetReplicationJobsRequestMarshaller.Instance;
             var unmarshaller = GetReplicationJobsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetReplicationJobsRequest>(request, marshaller, unmarshaller,
@@ -663,7 +663,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         public virtual GetReplicationRunsResponse GetReplicationRuns(GetReplicationRunsRequest request)
         {
-            var marshaller = new GetReplicationRunsRequestMarshaller();
+            var marshaller = GetReplicationRunsRequestMarshaller.Instance;
             var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
 
             return Invoke<GetReplicationRunsRequest,GetReplicationRunsResponse>(request, marshaller, unmarshaller);
@@ -683,7 +683,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns">REST API Reference for GetReplicationRuns Operation</seealso>
         public virtual IAsyncResult BeginGetReplicationRuns(GetReplicationRunsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetReplicationRunsRequestMarshaller();
+            var marshaller = GetReplicationRunsRequestMarshaller.Instance;
             var unmarshaller = GetReplicationRunsResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetReplicationRunsRequest>(request, marshaller, unmarshaller,
@@ -720,7 +720,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         public virtual GetServersResponse GetServers(GetServersRequest request)
         {
-            var marshaller = new GetServersRequestMarshaller();
+            var marshaller = GetServersRequestMarshaller.Instance;
             var unmarshaller = GetServersResponseUnmarshaller.Instance;
 
             return Invoke<GetServersRequest,GetServersResponse>(request, marshaller, unmarshaller);
@@ -740,7 +740,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers">REST API Reference for GetServers Operation</seealso>
         public virtual IAsyncResult BeginGetServers(GetServersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new GetServersRequestMarshaller();
+            var marshaller = GetServersRequestMarshaller.Instance;
             var unmarshaller = GetServersResponseUnmarshaller.Instance;
 
             return BeginInvoke<GetServersRequest>(request, marshaller, unmarshaller,
@@ -795,7 +795,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         public virtual ImportServerCatalogResponse ImportServerCatalog(ImportServerCatalogRequest request)
         {
-            var marshaller = new ImportServerCatalogRequestMarshaller();
+            var marshaller = ImportServerCatalogRequestMarshaller.Instance;
             var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
 
             return Invoke<ImportServerCatalogRequest,ImportServerCatalogResponse>(request, marshaller, unmarshaller);
@@ -815,7 +815,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog">REST API Reference for ImportServerCatalog Operation</seealso>
         public virtual IAsyncResult BeginImportServerCatalog(ImportServerCatalogRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ImportServerCatalogRequestMarshaller();
+            var marshaller = ImportServerCatalogRequestMarshaller.Instance;
             var unmarshaller = ImportServerCatalogResponseUnmarshaller.Instance;
 
             return BeginInvoke<ImportServerCatalogRequest>(request, marshaller, unmarshaller,
@@ -869,7 +869,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         public virtual StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
         {
-            var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
+            var marshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
             var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
 
             return Invoke<StartOnDemandReplicationRunRequest,StartOnDemandReplicationRunResponse>(request, marshaller, unmarshaller);
@@ -889,7 +889,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun">REST API Reference for StartOnDemandReplicationRun Operation</seealso>
         public virtual IAsyncResult BeginStartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartOnDemandReplicationRunRequestMarshaller();
+            var marshaller = StartOnDemandReplicationRunRequestMarshaller.Instance;
             var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartOnDemandReplicationRunRequest>(request, marshaller, unmarshaller,
@@ -948,7 +948,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         public virtual UpdateReplicationJobResponse UpdateReplicationJob(UpdateReplicationJobRequest request)
         {
-            var marshaller = new UpdateReplicationJobRequestMarshaller();
+            var marshaller = UpdateReplicationJobRequestMarshaller.Instance;
             var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
 
             return Invoke<UpdateReplicationJobRequest,UpdateReplicationJobResponse>(request, marshaller, unmarshaller);
@@ -968,7 +968,7 @@ namespace Amazon.ServerMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob">REST API Reference for UpdateReplicationJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateReplicationJob(UpdateReplicationJobRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new UpdateReplicationJobRequestMarshaller();
+            var marshaller = UpdateReplicationJobRequestMarshaller.Instance;
             var unmarshaller = UpdateReplicationJobResponseUnmarshaller.Instance;
 
             return BeginInvoke<UpdateReplicationJobRequest>(request, marshaller, unmarshaller,

@@ -329,7 +329,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
         {
-            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var marshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, unmarshaller);
@@ -349,7 +349,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual IAsyncResult BeginAddRoleToDBCluster(AddRoleToDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var marshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddRoleToDBClusterRequest>(request, marshaller, unmarshaller,
@@ -388,7 +388,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
         {
-            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var marshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<AddSourceIdentifierToSubscriptionRequest,AddSourceIdentifierToSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -408,7 +408,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual IAsyncResult BeginAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
+            var marshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddSourceIdentifierToSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -458,7 +458,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return Invoke<AddTagsToResourceRequest,AddTagsToResourceResponse>(request, marshaller, unmarshaller);
@@ -478,7 +478,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AddTagsToResourceRequestMarshaller();
+            var marshaller = AddTagsToResourceRequestMarshaller.Instance;
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<AddTagsToResourceRequest>(request, marshaller, unmarshaller,
@@ -514,7 +514,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
-            var marshaller = new ApplyPendingMaintenanceActionRequestMarshaller();
+            var marshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             var unmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
             return Invoke<ApplyPendingMaintenanceActionRequest,ApplyPendingMaintenanceActionResponse>(request, marshaller, unmarshaller);
@@ -534,7 +534,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual IAsyncResult BeginApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ApplyPendingMaintenanceActionRequestMarshaller();
+            var marshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             var unmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
             return BeginInvoke<ApplyPendingMaintenanceActionRequest>(request, marshaller, unmarshaller,
@@ -597,7 +597,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">REST API Reference for AuthorizeDBSecurityGroupIngress Operation</seealso>
         public virtual AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
         {
-            var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
+            var marshaller = AuthorizeDBSecurityGroupIngressRequestMarshaller.Instance;
             var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return Invoke<AuthorizeDBSecurityGroupIngressRequest,AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
@@ -617,7 +617,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">REST API Reference for AuthorizeDBSecurityGroupIngress Operation</seealso>
         public virtual IAsyncResult BeginAuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
+            var marshaller = AuthorizeDBSecurityGroupIngressRequestMarshaller.Instance;
             var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return BeginInvoke<AuthorizeDBSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
@@ -659,7 +659,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
         {
-            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var marshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -679,7 +679,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginCopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var marshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -819,7 +819,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
-            var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
+            var marshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CopyDBClusterSnapshotRequest,CopyDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
@@ -839,7 +839,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
+            var marshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyDBClusterSnapshotRequest>(request, marshaller, unmarshaller,
@@ -881,7 +881,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
         {
-            var marshaller = new CopyDBParameterGroupRequestMarshaller();
+            var marshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<CopyDBParameterGroupRequest,CopyDBParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -901,7 +901,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginCopyDBParameterGroup(CopyDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyDBParameterGroupRequestMarshaller();
+            var marshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyDBParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -962,7 +962,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">REST API Reference for CopyDBSnapshot Operation</seealso>
         public virtual CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
         {
-            var marshaller = new CopyDBSnapshotRequestMarshaller();
+            var marshaller = CopyDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CopyDBSnapshotRequest,CopyDBSnapshotResponse>(request, marshaller, unmarshaller);
@@ -982,7 +982,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">REST API Reference for CopyDBSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCopyDBSnapshot(CopyDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyDBSnapshotRequestMarshaller();
+            var marshaller = CopyDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyDBSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1024,7 +1024,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public virtual CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request)
         {
-            var marshaller = new CopyOptionGroupRequestMarshaller();
+            var marshaller = CopyOptionGroupRequestMarshaller.Instance;
             var unmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
 
             return Invoke<CopyOptionGroupRequest,CopyOptionGroupResponse>(request, marshaller, unmarshaller);
@@ -1044,7 +1044,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public virtual IAsyncResult BeginCopyOptionGroup(CopyOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CopyOptionGroupRequestMarshaller();
+            var marshaller = CopyOptionGroupRequestMarshaller.Instance;
             var unmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CopyOptionGroupRequest>(request, marshaller, unmarshaller,
@@ -1143,7 +1143,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
-            var marshaller = new CreateDBClusterRequestMarshaller();
+            var marshaller = CreateDBClusterRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBClusterRequest,CreateDBClusterResponse>(request, marshaller, unmarshaller);
@@ -1163,7 +1163,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateDBCluster(CreateDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBClusterRequestMarshaller();
+            var marshaller = CreateDBClusterRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBClusterRequest>(request, marshaller, unmarshaller,
@@ -1236,7 +1236,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
         {
-            var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
+            var marshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBClusterParameterGroupRequest,CreateDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -1256,7 +1256,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
+            var marshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -1306,7 +1306,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
         {
-            var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
+            var marshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBClusterSnapshotRequest,CreateDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1326,7 +1326,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
+            var marshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBClusterSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1423,7 +1423,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
-            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var marshaller = CreateDBInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBInstanceRequest,CreateDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -1443,7 +1443,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateDBInstance(CreateDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBInstanceRequestMarshaller();
+            var marshaller = CreateDBInstanceRequestMarshaller.Instance;
             var unmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBInstanceRequest>(request, marshaller, unmarshaller,
@@ -1556,7 +1556,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
         {
-            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var marshaller = CreateDBInstanceReadReplicaRequestMarshaller.Instance;
             var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBInstanceReadReplicaRequest,CreateDBInstanceReadReplicaResponse>(request, marshaller, unmarshaller);
@@ -1576,7 +1576,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual IAsyncResult BeginCreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var marshaller = CreateDBInstanceReadReplicaRequestMarshaller.Instance;
             var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBInstanceReadReplicaRequest>(request, marshaller, unmarshaller,
@@ -1639,7 +1639,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
-            var marshaller = new CreateDBParameterGroupRequestMarshaller();
+            var marshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBParameterGroupRequest,CreateDBParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -1659,7 +1659,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDBParameterGroup(CreateDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBParameterGroupRequestMarshaller();
+            var marshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -1702,7 +1702,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">REST API Reference for CreateDBSecurityGroup Operation</seealso>
         public virtual CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
-            var marshaller = new CreateDBSecurityGroupRequestMarshaller();
+            var marshaller = CreateDBSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBSecurityGroupRequest,CreateDBSecurityGroupResponse>(request, marshaller, unmarshaller);
@@ -1722,7 +1722,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">REST API Reference for CreateDBSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDBSecurityGroup(CreateDBSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBSecurityGroupRequestMarshaller();
+            var marshaller = CreateDBSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBSecurityGroupRequest>(request, marshaller, unmarshaller,
@@ -1767,7 +1767,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">REST API Reference for CreateDBSnapshot Operation</seealso>
         public virtual CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
         {
-            var marshaller = new CreateDBSnapshotRequestMarshaller();
+            var marshaller = CreateDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBSnapshotRequest,CreateDBSnapshotResponse>(request, marshaller, unmarshaller);
@@ -1787,7 +1787,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">REST API Reference for CreateDBSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateDBSnapshot(CreateDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBSnapshotRequestMarshaller();
+            var marshaller = CreateDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBSnapshotRequest>(request, marshaller, unmarshaller,
@@ -1839,7 +1839,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
-            var marshaller = new CreateDBSubnetGroupRequestMarshaller();
+            var marshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateDBSubnetGroupRequest,CreateDBSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -1859,7 +1859,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDBSubnetGroup(CreateDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateDBSubnetGroupRequestMarshaller();
+            var marshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateDBSubnetGroupRequest>(request, marshaller, unmarshaller,
@@ -1934,7 +1934,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<CreateEventSubscriptionRequest,CreateEventSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -1954,7 +1954,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateEventSubscriptionRequestMarshaller();
+            var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateEventSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -1993,7 +1993,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public virtual CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
         {
-            var marshaller = new CreateOptionGroupRequestMarshaller();
+            var marshaller = CreateOptionGroupRequestMarshaller.Instance;
             var unmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
 
             return Invoke<CreateOptionGroupRequest,CreateOptionGroupResponse>(request, marshaller, unmarshaller);
@@ -2013,7 +2013,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateOptionGroup(CreateOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new CreateOptionGroupRequestMarshaller();
+            var marshaller = CreateOptionGroupRequestMarshaller.Instance;
             var unmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<CreateOptionGroupRequest>(request, marshaller, unmarshaller,
@@ -2069,7 +2069,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
         {
-            var marshaller = new DeleteDBClusterRequestMarshaller();
+            var marshaller = DeleteDBClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBClusterRequest,DeleteDBClusterResponse>(request, marshaller, unmarshaller);
@@ -2089,7 +2089,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBCluster(DeleteDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBClusterRequestMarshaller();
+            var marshaller = DeleteDBClusterRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBClusterRequest>(request, marshaller, unmarshaller,
@@ -2137,7 +2137,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
         {
-            var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
+            var marshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBClusterParameterGroupRequest,DeleteDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -2157,7 +2157,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
+            var marshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -2207,7 +2207,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
         {
-            var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
+            var marshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBClusterSnapshotRequest,DeleteDBClusterSnapshotResponse>(request, marshaller, unmarshaller);
@@ -2227,7 +2227,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
+            var marshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBClusterSnapshotRequest>(request, marshaller, unmarshaller,
@@ -2312,7 +2312,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
-            var marshaller = new DeleteDBInstanceRequestMarshaller();
+            var marshaller = DeleteDBInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBInstanceRequest,DeleteDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -2332,7 +2332,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBInstance(DeleteDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBInstanceRequestMarshaller();
+            var marshaller = DeleteDBInstanceRequestMarshaller.Instance;
             var unmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBInstanceRequest>(request, marshaller, unmarshaller,
@@ -2374,7 +2374,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
-            var marshaller = new DeleteDBParameterGroupRequestMarshaller();
+            var marshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBParameterGroupRequest,DeleteDBParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -2394,7 +2394,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBParameterGroup(DeleteDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBParameterGroupRequestMarshaller();
+            var marshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -2439,7 +2439,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         public virtual DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
-            var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
+            var marshaller = DeleteDBSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBSecurityGroupRequest,DeleteDBSecurityGroupResponse>(request, marshaller, unmarshaller);
@@ -2459,7 +2459,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
+            var marshaller = DeleteDBSecurityGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBSecurityGroupRequest>(request, marshaller, unmarshaller,
@@ -2504,7 +2504,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">REST API Reference for DeleteDBSnapshot Operation</seealso>
         public virtual DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
-            var marshaller = new DeleteDBSnapshotRequestMarshaller();
+            var marshaller = DeleteDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBSnapshotRequest,DeleteDBSnapshotResponse>(request, marshaller, unmarshaller);
@@ -2524,7 +2524,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">REST API Reference for DeleteDBSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBSnapshot(DeleteDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBSnapshotRequestMarshaller();
+            var marshaller = DeleteDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBSnapshotRequest>(request, marshaller, unmarshaller,
@@ -2572,7 +2572,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
-            var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
+            var marshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteDBSubnetGroupRequest,DeleteDBSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -2592,7 +2592,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
+            var marshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteDBSubnetGroupRequest>(request, marshaller, unmarshaller,
@@ -2632,7 +2632,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<DeleteEventSubscriptionRequest,DeleteEventSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -2652,7 +2652,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteEventSubscriptionRequestMarshaller();
+            var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteEventSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -2691,7 +2691,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         public virtual DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
         {
-            var marshaller = new DeleteOptionGroupRequestMarshaller();
+            var marshaller = DeleteOptionGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
             return Invoke<DeleteOptionGroupRequest,DeleteOptionGroupResponse>(request, marshaller, unmarshaller);
@@ -2711,7 +2711,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteOptionGroup(DeleteOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DeleteOptionGroupRequestMarshaller();
+            var marshaller = DeleteOptionGroupRequestMarshaller.Instance;
             var unmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<DeleteOptionGroupRequest>(request, marshaller, unmarshaller,
@@ -2771,7 +2771,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
@@ -2791,7 +2791,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeAccountAttributesRequest>(request, marshaller, unmarshaller,
@@ -2827,7 +2827,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
         {
-            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var marshaller = DescribeCertificatesRequestMarshaller.Instance;
             var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, unmarshaller);
@@ -2847,7 +2847,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual IAsyncResult BeginDescribeCertificates(DescribeCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var marshaller = DescribeCertificatesRequestMarshaller.Instance;
             var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeCertificatesRequest>(request, marshaller, unmarshaller,
@@ -2891,7 +2891,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
         {
-            var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
+            var marshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBClusterParameterGroupsRequest,DescribeDBClusterParameterGroupsResponse>(request, marshaller, unmarshaller);
@@ -2911,7 +2911,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
+            var marshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBClusterParameterGroupsRequest>(request, marshaller, unmarshaller,
@@ -2953,7 +2953,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
         {
-            var marshaller = new DescribeDBClusterParametersRequestMarshaller();
+            var marshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBClusterParametersRequest,DescribeDBClusterParametersResponse>(request, marshaller, unmarshaller);
@@ -2973,7 +2973,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBClusterParameters(DescribeDBClusterParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBClusterParametersRequestMarshaller();
+            var marshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBClusterParametersRequest>(request, marshaller, unmarshaller,
@@ -3015,7 +3015,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
         {
-            var marshaller = new DescribeDBClustersRequestMarshaller();
+            var marshaller = DescribeDBClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBClustersRequest,DescribeDBClustersResponse>(request, marshaller, unmarshaller);
@@ -3035,7 +3035,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBClusters(DescribeDBClustersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBClustersRequestMarshaller();
+            var marshaller = DescribeDBClustersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBClustersRequest>(request, marshaller, unmarshaller,
@@ -3087,7 +3087,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request)
         {
-            var marshaller = new DescribeDBClusterSnapshotAttributesRequestMarshaller();
+            var marshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBClusterSnapshotAttributesRequest,DescribeDBClusterSnapshotAttributesResponse>(request, marshaller, unmarshaller);
@@ -3107,7 +3107,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBClusterSnapshotAttributesRequestMarshaller();
+            var marshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBClusterSnapshotAttributesRequest>(request, marshaller, unmarshaller,
@@ -3149,7 +3149,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
         {
-            var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
+            var marshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBClusterSnapshotsRequest,DescribeDBClusterSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -3169,7 +3169,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
+            var marshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBClusterSnapshotsRequest>(request, marshaller, unmarshaller,
@@ -3213,7 +3213,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
-            var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
+            var marshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBEngineVersionsRequest,DescribeDBEngineVersionsResponse>(request, marshaller, unmarshaller);
@@ -3233,7 +3233,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBEngineVersions(DescribeDBEngineVersionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
+            var marshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBEngineVersionsRequest>(request, marshaller, unmarshaller,
@@ -3283,7 +3283,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
-            var marshaller = new DescribeDBInstancesRequestMarshaller();
+            var marshaller = DescribeDBInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBInstancesRequest,DescribeDBInstancesResponse>(request, marshaller, unmarshaller);
@@ -3303,7 +3303,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBInstances(DescribeDBInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBInstancesRequestMarshaller();
+            var marshaller = DescribeDBInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBInstancesRequest>(request, marshaller, unmarshaller,
@@ -3339,7 +3339,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
         {
-            var marshaller = new DescribeDBLogFilesRequestMarshaller();
+            var marshaller = DescribeDBLogFilesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBLogFilesRequest,DescribeDBLogFilesResponse>(request, marshaller, unmarshaller);
@@ -3359,7 +3359,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBLogFiles(DescribeDBLogFilesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBLogFilesRequestMarshaller();
+            var marshaller = DescribeDBLogFilesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBLogFilesRequest>(request, marshaller, unmarshaller,
@@ -3413,7 +3413,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
-            var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
+            var marshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBParameterGroupsRequest,DescribeDBParameterGroupsResponse>(request, marshaller, unmarshaller);
@@ -3433,7 +3433,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBParameterGroups(DescribeDBParameterGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
+            var marshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBParameterGroupsRequest>(request, marshaller, unmarshaller,
@@ -3469,7 +3469,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
         {
-            var marshaller = new DescribeDBParametersRequestMarshaller();
+            var marshaller = DescribeDBParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBParametersRequest,DescribeDBParametersResponse>(request, marshaller, unmarshaller);
@@ -3489,7 +3489,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBParameters(DescribeDBParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBParametersRequestMarshaller();
+            var marshaller = DescribeDBParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBParametersRequest>(request, marshaller, unmarshaller,
@@ -3543,7 +3543,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public virtual DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
-            var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
+            var marshaller = DescribeDBSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBSecurityGroupsRequest,DescribeDBSecurityGroupsResponse>(request, marshaller, unmarshaller);
@@ -3563,7 +3563,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
+            var marshaller = DescribeDBSecurityGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBSecurityGroupsRequest>(request, marshaller, unmarshaller,
@@ -3614,7 +3614,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public virtual DescribeDBSnapshotAttributesResponse DescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request)
         {
-            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var marshaller = DescribeDBSnapshotAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBSnapshotAttributesRequest,DescribeDBSnapshotAttributesResponse>(request, marshaller, unmarshaller);
@@ -3634,7 +3634,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
+            var marshaller = DescribeDBSnapshotAttributesRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBSnapshotAttributesRequest>(request, marshaller, unmarshaller,
@@ -3684,7 +3684,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public virtual DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
         {
-            var marshaller = new DescribeDBSnapshotsRequestMarshaller();
+            var marshaller = DescribeDBSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBSnapshotsRequest,DescribeDBSnapshotsResponse>(request, marshaller, unmarshaller);
@@ -3704,7 +3704,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBSnapshots(DescribeDBSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBSnapshotsRequestMarshaller();
+            var marshaller = DescribeDBSnapshotsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBSnapshotsRequest>(request, marshaller, unmarshaller,
@@ -3768,7 +3768,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
-            var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
+            var marshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeDBSubnetGroupsRequest,DescribeDBSubnetGroupsResponse>(request, marshaller, unmarshaller);
@@ -3788,7 +3788,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
+            var marshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeDBSubnetGroupsRequest>(request, marshaller, unmarshaller,
@@ -3828,7 +3828,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
         {
-            var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
+            var marshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEngineDefaultClusterParametersRequest,DescribeEngineDefaultClusterParametersResponse>(request, marshaller, unmarshaller);
@@ -3848,7 +3848,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
+            var marshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEngineDefaultClusterParametersRequest>(request, marshaller, unmarshaller,
@@ -3882,7 +3882,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
-            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var marshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEngineDefaultParametersRequest,DescribeEngineDefaultParametersResponse>(request, marshaller, unmarshaller);
@@ -3902,7 +3902,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual IAsyncResult BeginDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
+            var marshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEngineDefaultParametersRequest>(request, marshaller, unmarshaller,
@@ -3952,7 +3952,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventCategoriesRequest,DescribeEventCategoriesResponse>(request, marshaller, unmarshaller);
@@ -3972,7 +3972,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEventCategoriesRequestMarshaller();
+            var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEventCategoriesRequest>(request, marshaller, unmarshaller,
@@ -4022,7 +4022,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventsRequest,DescribeEventsResponse>(request, marshaller, unmarshaller);
@@ -4042,7 +4042,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEventsRequestMarshaller();
+            var marshaller = DescribeEventsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEventsRequest>(request, marshaller, unmarshaller,
@@ -4106,7 +4106,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeEventSubscriptionsRequest,DescribeEventSubscriptionsResponse>(request, marshaller, unmarshaller);
@@ -4126,7 +4126,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
+            var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeEventSubscriptionsRequest>(request, marshaller, unmarshaller,
@@ -4159,7 +4159,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">REST API Reference for DescribeOptionGroupOptions Operation</seealso>
         public virtual DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
         {
-            var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
+            var marshaller = DescribeOptionGroupOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOptionGroupOptionsRequest,DescribeOptionGroupOptionsResponse>(request, marshaller, unmarshaller);
@@ -4179,7 +4179,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">REST API Reference for DescribeOptionGroupOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
+            var marshaller = DescribeOptionGroupOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOptionGroupOptionsRequest>(request, marshaller, unmarshaller,
@@ -4229,7 +4229,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public virtual DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
         {
-            var marshaller = new DescribeOptionGroupsRequestMarshaller();
+            var marshaller = DescribeOptionGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOptionGroupsRequest,DescribeOptionGroupsResponse>(request, marshaller, unmarshaller);
@@ -4249,7 +4249,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeOptionGroups(DescribeOptionGroupsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOptionGroupsRequestMarshaller();
+            var marshaller = DescribeOptionGroupsRequestMarshaller.Instance;
             var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOptionGroupsRequest>(request, marshaller, unmarshaller,
@@ -4282,7 +4282,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
         {
-            var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
+            var marshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeOrderableDBInstanceOptionsRequest,DescribeOrderableDBInstanceOptionsResponse>(request, marshaller, unmarshaller);
@@ -4302,7 +4302,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
+            var marshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeOrderableDBInstanceOptionsRequest>(request, marshaller, unmarshaller,
@@ -4339,7 +4339,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
-            var marshaller = new DescribePendingMaintenanceActionsRequestMarshaller();
+            var marshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             var unmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribePendingMaintenanceActionsRequest,DescribePendingMaintenanceActionsResponse>(request, marshaller, unmarshaller);
@@ -4359,7 +4359,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual IAsyncResult BeginDescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribePendingMaintenanceActionsRequestMarshaller();
+            var marshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             var unmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribePendingMaintenanceActionsRequest>(request, marshaller, unmarshaller,
@@ -4411,7 +4411,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public virtual DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
         {
-            var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
+            var marshaller = DescribeReservedDBInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
 
             return Invoke<DescribeReservedDBInstancesRequest,DescribeReservedDBInstancesResponse>(request, marshaller, unmarshaller);
@@ -4431,7 +4431,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedDBInstances(DescribeReservedDBInstancesRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
+            var marshaller = DescribeReservedDBInstancesRequestMarshaller.Instance;
             var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeReservedDBInstancesRequest>(request, marshaller, unmarshaller,
@@ -4481,7 +4481,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public virtual DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
         {
-            var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
+            var marshaller = DescribeReservedDBInstancesOfferingsRequestMarshaller.Instance;
             var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeReservedDBInstancesOfferingsRequest,DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, unmarshaller);
@@ -4501,7 +4501,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
+            var marshaller = DescribeReservedDBInstancesOfferingsRequestMarshaller.Instance;
             var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeReservedDBInstancesOfferingsRequest>(request, marshaller, unmarshaller,
@@ -4535,7 +4535,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">REST API Reference for DescribeSourceRegions Operation</seealso>
         public virtual DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request)
         {
-            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var marshaller = DescribeSourceRegionsRequestMarshaller.Instance;
             var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeSourceRegionsRequest,DescribeSourceRegionsResponse>(request, marshaller, unmarshaller);
@@ -4555,7 +4555,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">REST API Reference for DescribeSourceRegions Operation</seealso>
         public virtual IAsyncResult BeginDescribeSourceRegions(DescribeSourceRegionsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var marshaller = DescribeSourceRegionsRequestMarshaller.Instance;
             var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeSourceRegionsRequest>(request, marshaller, unmarshaller,
@@ -4595,7 +4595,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
         {
-            var marshaller = new DescribeValidDBInstanceModificationsRequestMarshaller();
+            var marshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             var unmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
             return Invoke<DescribeValidDBInstanceModificationsRequest,DescribeValidDBInstanceModificationsResponse>(request, marshaller, unmarshaller);
@@ -4615,7 +4615,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual IAsyncResult BeginDescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DescribeValidDBInstanceModificationsRequestMarshaller();
+            var marshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             var unmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
             return BeginInvoke<DescribeValidDBInstanceModificationsRequest>(request, marshaller, unmarshaller,
@@ -4654,7 +4654,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public virtual DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
         {
-            var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
+            var marshaller = DownloadDBLogFilePortionRequestMarshaller.Instance;
             var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
             return Invoke<DownloadDBLogFilePortionRequest,DownloadDBLogFilePortionResponse>(request, marshaller, unmarshaller);
@@ -4674,7 +4674,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public virtual IAsyncResult BeginDownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
+            var marshaller = DownloadDBLogFilePortionRequestMarshaller.Instance;
             var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
             return BeginInvoke<DownloadDBLogFilePortionRequest>(request, marshaller, unmarshaller,
@@ -4735,7 +4735,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {
-            var marshaller = new FailoverDBClusterRequestMarshaller();
+            var marshaller = FailoverDBClusterRequestMarshaller.Instance;
             var unmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<FailoverDBClusterRequest,FailoverDBClusterResponse>(request, marshaller, unmarshaller);
@@ -4755,7 +4755,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual IAsyncResult BeginFailoverDBCluster(FailoverDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new FailoverDBClusterRequestMarshaller();
+            var marshaller = FailoverDBClusterRequestMarshaller.Instance;
             var unmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<FailoverDBClusterRequest>(request, marshaller, unmarshaller,
@@ -4803,7 +4803,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
@@ -4823,7 +4823,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
@@ -4896,7 +4896,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
-            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var marshaller = ModifyDBClusterRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBClusterRequest,ModifyDBClusterResponse>(request, marshaller, unmarshaller);
@@ -4916,7 +4916,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual IAsyncResult BeginModifyDBCluster(ModifyDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var marshaller = ModifyDBClusterRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBClusterRequest>(request, marshaller, unmarshaller,
@@ -4985,7 +4985,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
         {
-            var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
+            var marshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBClusterParameterGroupRequest,ModifyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -5005,7 +5005,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
+            var marshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -5069,7 +5069,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request)
         {
-            var marshaller = new ModifyDBClusterSnapshotAttributeRequestMarshaller();
+            var marshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBClusterSnapshotAttributeRequest,ModifyDBClusterSnapshotAttributeResponse>(request, marshaller, unmarshaller);
@@ -5089,7 +5089,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBClusterSnapshotAttributeRequestMarshaller();
+            var marshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             var unmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBClusterSnapshotAttributeRequest>(request, marshaller, unmarshaller,
@@ -5181,7 +5181,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
-            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var marshaller = ModifyDBInstanceRequestMarshaller.Instance;
             var unmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBInstanceRequest,ModifyDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -5201,7 +5201,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual IAsyncResult BeginModifyDBInstance(ModifyDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBInstanceRequestMarshaller();
+            var marshaller = ModifyDBInstanceRequestMarshaller.Instance;
             var unmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBInstanceRequest>(request, marshaller, unmarshaller,
@@ -5265,7 +5265,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
-            var marshaller = new ModifyDBParameterGroupRequestMarshaller();
+            var marshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBParameterGroupRequest,ModifyDBParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -5285,7 +5285,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyDBParameterGroup(ModifyDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBParameterGroupRequestMarshaller();
+            var marshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -5327,7 +5327,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         public virtual ModifyDBSnapshotResponse ModifyDBSnapshot(ModifyDBSnapshotRequest request)
         {
-            var marshaller = new ModifyDBSnapshotRequestMarshaller();
+            var marshaller = ModifyDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBSnapshotRequest,ModifyDBSnapshotResponse>(request, marshaller, unmarshaller);
@@ -5347,7 +5347,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         public virtual IAsyncResult BeginModifyDBSnapshot(ModifyDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBSnapshotRequestMarshaller();
+            var marshaller = ModifyDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBSnapshotRequest>(request, marshaller, unmarshaller,
@@ -5410,7 +5410,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">REST API Reference for ModifyDBSnapshotAttribute Operation</seealso>
         public virtual ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request)
         {
-            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var marshaller = ModifyDBSnapshotAttributeRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBSnapshotAttributeRequest,ModifyDBSnapshotAttributeResponse>(request, marshaller, unmarshaller);
@@ -5430,7 +5430,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">REST API Reference for ModifyDBSnapshotAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
+            var marshaller = ModifyDBSnapshotAttributeRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBSnapshotAttributeRequest>(request, marshaller, unmarshaller,
@@ -5482,7 +5482,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
-            var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
+            var marshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
             return Invoke<ModifyDBSubnetGroupRequest,ModifyDBSubnetGroupResponse>(request, marshaller, unmarshaller);
@@ -5502,7 +5502,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
+            var marshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyDBSubnetGroupRequest>(request, marshaller, unmarshaller,
@@ -5563,7 +5563,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<ModifyEventSubscriptionRequest,ModifyEventSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -5583,7 +5583,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyEventSubscriptionRequestMarshaller();
+            var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyEventSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -5622,7 +5622,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         public virtual ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
         {
-            var marshaller = new ModifyOptionGroupRequestMarshaller();
+            var marshaller = ModifyOptionGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
 
             return Invoke<ModifyOptionGroupRequest,ModifyOptionGroupResponse>(request, marshaller, unmarshaller);
@@ -5642,7 +5642,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyOptionGroup(ModifyOptionGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ModifyOptionGroupRequestMarshaller();
+            var marshaller = ModifyOptionGroupRequestMarshaller.Instance;
             var unmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ModifyOptionGroupRequest>(request, marshaller, unmarshaller,
@@ -5696,7 +5696,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public virtual PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
         {
-            var marshaller = new PromoteReadReplicaRequestMarshaller();
+            var marshaller = PromoteReadReplicaRequestMarshaller.Instance;
             var unmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
 
             return Invoke<PromoteReadReplicaRequest,PromoteReadReplicaResponse>(request, marshaller, unmarshaller);
@@ -5716,7 +5716,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public virtual IAsyncResult BeginPromoteReadReplica(PromoteReadReplicaRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PromoteReadReplicaRequestMarshaller();
+            var marshaller = PromoteReadReplicaRequestMarshaller.Instance;
             var unmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
 
             return BeginInvoke<PromoteReadReplicaRequest>(request, marshaller, unmarshaller,
@@ -5755,7 +5755,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
         {
-            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var marshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<PromoteReadReplicaDBClusterRequest,PromoteReadReplicaDBClusterResponse>(request, marshaller, unmarshaller);
@@ -5775,7 +5775,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual IAsyncResult BeginPromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
+            var marshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             var unmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<PromoteReadReplicaDBClusterRequest>(request, marshaller, unmarshaller,
@@ -5817,7 +5817,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">REST API Reference for PurchaseReservedDBInstancesOffering Operation</seealso>
         public virtual PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
         {
-            var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
+            var marshaller = PurchaseReservedDBInstancesOfferingRequestMarshaller.Instance;
             var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
 
             return Invoke<PurchaseReservedDBInstancesOfferingRequest,PurchaseReservedDBInstancesOfferingResponse>(request, marshaller, unmarshaller);
@@ -5837,7 +5837,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">REST API Reference for PurchaseReservedDBInstancesOffering Operation</seealso>
         public virtual IAsyncResult BeginPurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
+            var marshaller = PurchaseReservedDBInstancesOfferingRequestMarshaller.Instance;
             var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
 
             return BeginInvoke<PurchaseReservedDBInstancesOfferingRequest>(request, marshaller, unmarshaller,
@@ -5891,7 +5891,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
-            var marshaller = new RebootDBInstanceRequestMarshaller();
+            var marshaller = RebootDBInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<RebootDBInstanceRequest,RebootDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -5911,7 +5911,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual IAsyncResult BeginRebootDBInstance(RebootDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RebootDBInstanceRequestMarshaller();
+            var marshaller = RebootDBInstanceRequestMarshaller.Instance;
             var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RebootDBInstanceRequest>(request, marshaller, unmarshaller,
@@ -5956,7 +5956,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
         {
-            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var marshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
             return Invoke<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, unmarshaller);
@@ -5976,7 +5976,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual IAsyncResult BeginRemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var marshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveRoleFromDBClusterRequest>(request, marshaller, unmarshaller,
@@ -6015,7 +6015,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
-            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var marshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
             return Invoke<RemoveSourceIdentifierFromSubscriptionRequest,RemoveSourceIdentifierFromSubscriptionResponse>(request, marshaller, unmarshaller);
@@ -6035,7 +6035,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual IAsyncResult BeginRemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
+            var marshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveSourceIdentifierFromSubscriptionRequest>(request, marshaller, unmarshaller,
@@ -6083,7 +6083,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return Invoke<RemoveTagsFromResourceRequest,RemoveTagsFromResourceResponse>(request, marshaller, unmarshaller);
@@ -6103,7 +6103,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RemoveTagsFromResourceRequestMarshaller();
+            var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return BeginInvoke<RemoveTagsFromResourceRequest>(request, marshaller, unmarshaller,
@@ -6162,7 +6162,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
         {
-            var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
+            var marshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<ResetDBClusterParameterGroupRequest,ResetDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -6182,7 +6182,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
+            var marshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ResetDBClusterParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -6229,7 +6229,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
-            var marshaller = new ResetDBParameterGroupRequestMarshaller();
+            var marshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
             return Invoke<ResetDBParameterGroupRequest,ResetDBParameterGroupResponse>(request, marshaller, unmarshaller);
@@ -6249,7 +6249,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual IAsyncResult BeginResetDBParameterGroup(ResetDBParameterGroupRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new ResetDBParameterGroupRequestMarshaller();
+            var marshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
             return BeginInvoke<ResetDBParameterGroupRequest>(request, marshaller, unmarshaller,
@@ -6333,7 +6333,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
         public virtual RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
         {
-            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var marshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, unmarshaller);
@@ -6353,7 +6353,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBClusterFromS3(RestoreDBClusterFromS3Request request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var marshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBClusterFromS3Request>(request, marshaller, unmarshaller,
@@ -6461,7 +6461,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
-            var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
+            var marshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBClusterFromSnapshotRequest,RestoreDBClusterFromSnapshotResponse>(request, marshaller, unmarshaller);
@@ -6481,7 +6481,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
+            var marshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBClusterFromSnapshotRequest>(request, marshaller, unmarshaller,
@@ -6586,7 +6586,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
-            var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
+            var marshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBClusterToPointInTimeRequest,RestoreDBClusterToPointInTimeResponse>(request, marshaller, unmarshaller);
@@ -6606,7 +6606,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
+            var marshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             var unmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBClusterToPointInTimeRequest>(request, marshaller, unmarshaller,
@@ -6730,7 +6730,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
-            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var marshaller = RestoreDBInstanceFromDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBInstanceFromDBSnapshotRequest,RestoreDBInstanceFromDBSnapshotResponse>(request, marshaller, unmarshaller);
@@ -6750,7 +6750,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var marshaller = RestoreDBInstanceFromDBSnapshotRequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBInstanceFromDBSnapshotRequest>(request, marshaller, unmarshaller,
@@ -6847,7 +6847,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request)
         {
-            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var marshaller = RestoreDBInstanceFromS3RequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBInstanceFromS3Request,RestoreDBInstanceFromS3Response>(request, marshaller, unmarshaller);
@@ -6867,7 +6867,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var marshaller = RestoreDBInstanceFromS3RequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBInstanceFromS3Request>(request, marshaller, unmarshaller,
@@ -6986,7 +6986,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
-            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var marshaller = RestoreDBInstanceToPointInTimeRequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
 
             return Invoke<RestoreDBInstanceToPointInTimeRequest,RestoreDBInstanceToPointInTimeResponse>(request, marshaller, unmarshaller);
@@ -7006,7 +7006,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual IAsyncResult BeginRestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var marshaller = RestoreDBInstanceToPointInTimeRequestMarshaller.Instance;
             var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
 
             return BeginInvoke<RestoreDBInstanceToPointInTimeRequest>(request, marshaller, unmarshaller,
@@ -7056,7 +7056,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">REST API Reference for RevokeDBSecurityGroupIngress Operation</seealso>
         public virtual RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
         {
-            var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
+            var marshaller = RevokeDBSecurityGroupIngressRequestMarshaller.Instance;
             var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return Invoke<RevokeDBSecurityGroupIngressRequest,RevokeDBSecurityGroupIngressResponse>(request, marshaller, unmarshaller);
@@ -7076,7 +7076,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">REST API Reference for RevokeDBSecurityGroupIngress Operation</seealso>
         public virtual IAsyncResult BeginRevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
+            var marshaller = RevokeDBSecurityGroupIngressRequestMarshaller.Instance;
             var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return BeginInvoke<RevokeDBSecurityGroupIngressRequest>(request, marshaller, unmarshaller,
@@ -7159,7 +7159,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
         {
-            var marshaller = new StartDBInstanceRequestMarshaller();
+            var marshaller = StartDBInstanceRequestMarshaller.Instance;
             var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -7179,7 +7179,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual IAsyncResult BeginStartDBInstance(StartDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StartDBInstanceRequestMarshaller();
+            var marshaller = StartDBInstanceRequestMarshaller.Instance;
             var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StartDBInstanceRequest>(request, marshaller, unmarshaller,
@@ -7237,7 +7237,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
         public virtual StopDBInstanceResponse StopDBInstance(StopDBInstanceRequest request)
         {
-            var marshaller = new StopDBInstanceRequestMarshaller();
+            var marshaller = StopDBInstanceRequestMarshaller.Instance;
             var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
 
             return Invoke<StopDBInstanceRequest,StopDBInstanceResponse>(request, marshaller, unmarshaller);
@@ -7257,7 +7257,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
         public virtual IAsyncResult BeginStopDBInstance(StopDBInstanceRequest request, AsyncCallback callback, object state)
         {
-            var marshaller = new StopDBInstanceRequestMarshaller();
+            var marshaller = StopDBInstanceRequestMarshaller.Instance;
             var unmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
 
             return BeginInvoke<StopDBInstanceRequest>(request, marshaller, unmarshaller,
