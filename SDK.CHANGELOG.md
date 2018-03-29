@@ -1,3 +1,16 @@
+### 3.3.256.0 (2018-03-28 23:32 UTC)
+* IdentityManagement (3.3.6.0)
+	* Add support for Longer Role Sessions. Four APIs manage max session duration: GetRole, ListRoles, CreateRole, and the new API UpdateRole. The max session duration integer attribute is measured in seconds.
+* MTurk (3.3.2.0)
+	* Added a new attribute "ActionsGuarded" to QualificationRequirement: This update allows MTurk Requester customers using the AWS SDK to control which Workers can see and preview their HITs. We now support hiding HITs from unqualified Workers' search results.
+* SecurityToken (3.3.4.0)
+	* Change utilizes the Max Session Duration attribute introduced for IAM Roles and allows STS customers to request session duration up to the Max Session Duration of 12 hours from AssumeRole based APIs.
+* Core 3.3.21.18
+	* Amazon GuardDuty API operations are now supported in the EU (Paris) region.
+Amazon Workspaces is now available in ap-northeast-2
+
+
+
 ### 3.3.255.0 (2018-03-27 19:18 UTC)
 * CertificateManager (3.3.4.0)
 	* AWS Certificate Manager has added support for customers to disable Certificate Transparency logging on a per-certificate basis.
