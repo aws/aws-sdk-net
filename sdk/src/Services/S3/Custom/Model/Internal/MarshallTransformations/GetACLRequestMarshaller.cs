@@ -49,15 +49,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return request;
         }
 
-        private static AbortMultipartUploadRequestMarshaller _instance;
+        private static GetACLRequestMarshaller _instance;
 
-        public static AbortMultipartUploadRequestMarshaller Instance
+        public static GetACLRequestMarshaller Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new AbortMultipartUploadRequestMarshaller();
+                    _instance = new GetACLRequestMarshaller();
                 }
                 return _instance;
             }

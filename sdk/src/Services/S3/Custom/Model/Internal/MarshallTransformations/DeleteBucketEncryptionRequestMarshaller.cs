@@ -40,15 +40,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return request;
         }
 
-        private static AbortMultipartUploadRequestMarshaller _instance;
+        private static DeleteBucketEncryptionRequestMarshaller _instance;
 
-        public static AbortMultipartUploadRequestMarshaller Instance
+        public static DeleteBucketEncryptionRequestMarshaller Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new AbortMultipartUploadRequestMarshaller();
+                    _instance = new DeleteBucketEncryptionRequestMarshaller();
                 }
                 return _instance;
             }
