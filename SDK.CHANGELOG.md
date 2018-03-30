@@ -1,3 +1,13 @@
+### 3.3.257.0 (2018-03-30 00:18 UTC)
+* AlexaForBusiness (3.3.2.0)
+	* Adds operations for creating and managing address books of phone contacts for use in A4B managed shared devices.
+* CloudFormation (3.3.10.0)
+	* Enabling resource level permission control for StackSets APIs. Adding support for customers to use customized AdministrationRole to create security boundaries between different users.
+* Greengrass (3.3.3.0)
+	* Greengrass APIs now support creating Machine Learning resource types and configuring binary data as the input payload for Greengrass Lambda functions.
+* SimpleSystemsManagement (3.3.18.0)
+	* This Patch Manager release supports creating patch baselines for CentOS.
+
 ### 3.3.256.1 (2018-03-29 06:46 UTC)
 * Core 3.3.21.19
 	* Convert all request marshallers to singletons
