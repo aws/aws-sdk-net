@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AssociateContactWithAddressBookRequest.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AssociateContactWithAddressBookRequest.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.AssociateDeviceWithRoomRequest.DeviceArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -14,6 +22,60 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.AssociateSkillGroupWithRoomRequest.SkillGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateAddressBookRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateAddressBookRequest.Description</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateAddressBookRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateAddressBookResponse.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.DisplayName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.FirstName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.LastName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactRequest.PhoneNumber</property>
+    <pattern>^\+\d{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateContactResponse.ContactArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -128,6 +190,14 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeleteAddressBookRequest.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeleteContactRequest.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeleteProfileRequest.ProfileArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -162,6 +232,14 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DisassociateContactFromAddressBookRequest.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DisassociateContactFromAddressBookRequest.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DisassociateDeviceFromRoomRequest.DeviceArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -171,6 +249,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DisassociateSkillGroupFromRoomRequest.SkillGroupArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetAddressBookRequest.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.GetContactRequest.ContactArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -276,6 +362,36 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchAddressBooksRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchAddressBooksRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchAddressBooksResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchContactsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchContactsRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.SearchContactsResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.SearchDevicesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -371,6 +487,48 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateAddressBookRequest.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateAddressBookRequest.Description</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateAddressBookRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.DisplayName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.FirstName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.LastName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateContactRequest.PhoneNumber</property>
+    <pattern>^\+\d{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateDeviceRequest.DeviceArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -440,6 +598,90 @@
     <min>1</min>
     <max>100</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBook.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBook.Description</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBook.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBookData.AddressBookArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBookData.Description</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.AddressBookData.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Contact.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Contact.DisplayName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Contact.FirstName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Contact.LastName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.Contact.PhoneNumber</property>
+    <pattern>^\+\d{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ContactData.ContactArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ContactData.DisplayName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ContactData.FirstName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ContactData.LastName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ContactData.PhoneNumber</property>
+    <pattern>^\+\d{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.Device.DeviceArn</property>

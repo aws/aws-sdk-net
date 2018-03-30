@@ -41,6 +41,46 @@ namespace Amazon.AlexaForBusiness
     {
 
         
+        #region  AssociateContactWithAddressBook
+
+
+        /// <summary>
+        /// Associates a contact to a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateContactWithAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        IAsyncResult BeginAssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateContactWithAddressBook.</param>
+        /// 
+        /// <returns>Returns a  AssociateContactWithAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        AssociateContactWithAddressBookResponse EndAssociateContactWithAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
 
@@ -125,6 +165,100 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  AssociateSkillGroupWithRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
         AssociateSkillGroupWithRoomResponse EndAssociateSkillGroupWithRoom(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateAddressBook
+
+
+        /// <summary>
+        /// Creates an address book with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        IAsyncResult BeginCreateAddressBook(CreateAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddressBook.</param>
+        /// 
+        /// <returns>Returns a  CreateAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        CreateAddressBookResponse EndCreateAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateContact
+
+
+        /// <summary>
+        /// Creates a contact with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        CreateContactResponse CreateContact(CreateContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        IAsyncResult BeginCreateContact(CreateContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContact.</param>
+        /// 
+        /// <returns>Returns a  CreateContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        CreateContactResponse EndCreateContact(IAsyncResult asyncResult);
 
         #endregion
         
@@ -313,6 +447,92 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  CreateUserResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
         CreateUserResponse EndCreateUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAddressBook
+
+
+        /// <summary>
+        /// Deletes an address book by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        IAsyncResult BeginDeleteAddressBook(DeleteAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAddressBook.</param>
+        /// 
+        /// <returns>Returns a  DeleteAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        DeleteAddressBookResponse EndDeleteAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteContact
+
+
+        /// <summary>
+        /// Deletes a contact by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        DeleteContactResponse DeleteContact(DeleteContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        IAsyncResult BeginDeleteContact(DeleteContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContact.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        DeleteContactResponse EndDeleteContact(IAsyncResult asyncResult);
 
         #endregion
         
@@ -528,6 +748,46 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateContactFromAddressBook
+
+
+        /// <summary>
+        /// Disassociates a contact from a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateContactFromAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        IAsyncResult BeginDisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateContactFromAddressBook.</param>
+        /// 
+        /// <returns>Returns a  DisassociateContactFromAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        DisassociateContactFromAddressBookResponse EndDisassociateContactFromAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateDeviceFromRoom
 
 
@@ -608,6 +868,92 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  DisassociateSkillGroupFromRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
         DisassociateSkillGroupFromRoomResponse EndDisassociateSkillGroupFromRoom(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAddressBook
+
+
+        /// <summary>
+        /// Gets address the book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        GetAddressBookResponse GetAddressBook(GetAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        IAsyncResult BeginGetAddressBook(GetAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAddressBook.</param>
+        /// 
+        /// <returns>Returns a  GetAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        GetAddressBookResponse EndGetAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetContact
+
+
+        /// <summary>
+        /// Gets the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        GetContactResponse GetContact(GetContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        IAsyncResult BeginGetContact(GetContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContact.</param>
+        /// 
+        /// <returns>Returns a  GetContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        GetContactResponse EndGetContact(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1037,6 +1383,86 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchAddressBooks
+
+
+        /// <summary>
+        /// Searches address books and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks service method.</param>
+        /// 
+        /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchAddressBooks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        IAsyncResult BeginSearchAddressBooks(SearchAddressBooksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchAddressBooks.</param>
+        /// 
+        /// <returns>Returns a  SearchAddressBooksResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        SearchAddressBooksResponse EndSearchAddressBooks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchContacts
+
+
+        /// <summary>
+        /// Searches contacts and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
+        /// 
+        /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        SearchContactsResponse SearchContacts(SearchContactsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        IAsyncResult BeginSearchContacts(SearchContactsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContacts.</param>
+        /// 
+        /// <returns>Returns a  SearchContactsResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        SearchContactsResponse EndSearchContacts(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchDevices
 
 
@@ -1409,6 +1835,95 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  UntagResourceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAddressBook
+
+
+        /// <summary>
+        /// Updates address book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        IAsyncResult BeginUpdateAddressBook(UpdateAddressBookRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAddressBook.</param>
+        /// 
+        /// <returns>Returns a  UpdateAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        UpdateAddressBookResponse EndUpdateAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateContact
+
+
+        /// <summary>
+        /// Updates the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        UpdateContactResponse UpdateContact(UpdateContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        IAsyncResult BeginUpdateContact(UpdateContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContact.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        UpdateContactResponse EndUpdateContact(IAsyncResult asyncResult);
 
         #endregion
         

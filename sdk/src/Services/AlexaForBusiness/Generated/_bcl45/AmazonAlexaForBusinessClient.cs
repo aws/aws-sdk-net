@@ -231,6 +231,45 @@ namespace Amazon.AlexaForBusiness
         #endregion
 
         
+        #region  AssociateContactWithAddressBook
+
+
+        /// <summary>
+        /// Associates a contact to a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        public virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
+        {
+            var marshaller = AssociateContactWithAddressBookRequestMarshaller.Instance;
+            var unmarshaller = AssociateContactWithAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContactWithAddressBookRequest,AssociateContactWithAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        public virtual Task<AssociateContactWithAddressBookResponse> AssociateContactWithAddressBookAsync(AssociateContactWithAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateContactWithAddressBookRequestMarshaller.Instance;
+            var unmarshaller = AssociateContactWithAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateContactWithAddressBookRequest,AssociateContactWithAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
 
@@ -311,6 +350,98 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = AssociateSkillGroupWithRoomResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateSkillGroupWithRoomRequest,AssociateSkillGroupWithRoomResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAddressBook
+
+
+        /// <summary>
+        /// Creates an address book with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        public virtual CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request)
+        {
+            var marshaller = CreateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = CreateAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressBookRequest,CreateAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        public virtual Task<CreateAddressBookResponse> CreateAddressBookAsync(CreateAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = CreateAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAddressBookRequest,CreateAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContact
+
+
+        /// <summary>
+        /// Creates a contact with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse CreateContact(CreateContactRequest request)
+        {
+            var marshaller = CreateContactRequestMarshaller.Instance;
+            var unmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactRequest,CreateContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateContactRequestMarshaller.Instance;
+            var unmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactRequest,CreateContactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -495,6 +626,90 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = CreateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAddressBook
+
+
+        /// <summary>
+        /// Deletes an address book by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        public virtual DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request)
+        {
+            var marshaller = DeleteAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DeleteAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAddressBookRequest,DeleteAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        public virtual Task<DeleteAddressBookResponse> DeleteAddressBookAsync(DeleteAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DeleteAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAddressBookRequest,DeleteAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteContact
+
+
+        /// <summary>
+        /// Deletes a contact by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
+        {
+            var marshaller = DeleteContactRequestMarshaller.Instance;
+            var unmarshaller = DeleteContactResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactRequest,DeleteContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual Task<DeleteContactResponse> DeleteContactAsync(DeleteContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteContactRequestMarshaller.Instance;
+            var unmarshaller = DeleteContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContactRequest,DeleteContactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -707,6 +922,45 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateContactFromAddressBook
+
+
+        /// <summary>
+        /// Disassociates a contact from a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        public virtual DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request)
+        {
+            var marshaller = DisassociateContactFromAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DisassociateContactFromAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContactFromAddressBookRequest,DisassociateContactFromAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        public virtual Task<DisassociateContactFromAddressBookResponse> DisassociateContactFromAddressBookAsync(DisassociateContactFromAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateContactFromAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DisassociateContactFromAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateContactFromAddressBookRequest,DisassociateContactFromAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateDeviceFromRoom
 
 
@@ -783,6 +1037,90 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = DisassociateSkillGroupFromRoomResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateSkillGroupFromRoomRequest,DisassociateSkillGroupFromRoomResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAddressBook
+
+
+        /// <summary>
+        /// Gets address the book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        public virtual GetAddressBookResponse GetAddressBook(GetAddressBookRequest request)
+        {
+            var marshaller = GetAddressBookRequestMarshaller.Instance;
+            var unmarshaller = GetAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressBookRequest,GetAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        public virtual Task<GetAddressBookResponse> GetAddressBookAsync(GetAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAddressBookRequestMarshaller.Instance;
+            var unmarshaller = GetAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAddressBookRequest,GetAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContact
+
+
+        /// <summary>
+        /// Gets the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual GetContactResponse GetContact(GetContactRequest request)
+        {
+            var marshaller = GetContactRequestMarshaller.Instance;
+            var unmarshaller = GetContactResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactRequest,GetContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual Task<GetContactResponse> GetContactAsync(GetContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetContactRequestMarshaller.Instance;
+            var unmarshaller = GetContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContactRequest,GetContactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1204,6 +1542,84 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchAddressBooks
+
+
+        /// <summary>
+        /// Searches address books and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks service method.</param>
+        /// 
+        /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        public virtual SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request)
+        {
+            var marshaller = SearchAddressBooksRequestMarshaller.Instance;
+            var unmarshaller = SearchAddressBooksResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAddressBooksRequest,SearchAddressBooksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        public virtual Task<SearchAddressBooksResponse> SearchAddressBooksAsync(SearchAddressBooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SearchAddressBooksRequestMarshaller.Instance;
+            var unmarshaller = SearchAddressBooksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchAddressBooksRequest,SearchAddressBooksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchContacts
+
+
+        /// <summary>
+        /// Searches contacts and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
+        /// 
+        /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
+        {
+            var marshaller = SearchContactsRequestMarshaller.Instance;
+            var unmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactsRequest,SearchContactsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual Task<SearchContactsResponse> SearchContactsAsync(SearchContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SearchContactsRequestMarshaller.Instance;
+            var unmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchContactsRequest,SearchContactsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchDevices
 
 
@@ -1565,6 +1981,93 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAddressBook
+
+
+        /// <summary>
+        /// Updates address book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        public virtual UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request)
+        {
+            var marshaller = UpdateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAddressBookRequest,UpdateAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        public virtual Task<UpdateAddressBookResponse> UpdateAddressBookAsync(UpdateAddressBookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAddressBookRequest,UpdateAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContact
+
+
+        /// <summary>
+        /// Updates the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
+        {
+            var marshaller = UpdateContactRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactRequest,UpdateContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateContactRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactRequest,UpdateContactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

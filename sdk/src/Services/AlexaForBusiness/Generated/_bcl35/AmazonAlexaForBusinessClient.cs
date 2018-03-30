@@ -229,6 +229,59 @@ namespace Amazon.AlexaForBusiness
         #endregion
 
         
+        #region  AssociateContactWithAddressBook
+
+        /// <summary>
+        /// Associates a contact to a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        public virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
+        {
+            var marshaller = AssociateContactWithAddressBookRequestMarshaller.Instance;
+            var unmarshaller = AssociateContactWithAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateContactWithAddressBookRequest,AssociateContactWithAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateContactWithAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginAssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateContactWithAddressBookRequestMarshaller.Instance;
+            var unmarshaller = AssociateContactWithAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateContactWithAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateContactWithAddressBook.</param>
+        /// 
+        /// <returns>Returns a  AssociateContactWithAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        public virtual AssociateContactWithAddressBookResponse EndAssociateContactWithAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateContactWithAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
         /// <summary>
@@ -338,6 +391,126 @@ namespace Amazon.AlexaForBusiness
         public virtual AssociateSkillGroupWithRoomResponse EndAssociateSkillGroupWithRoom(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateSkillGroupWithRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAddressBook
+
+        /// <summary>
+        /// Creates an address book with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        public virtual CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request)
+        {
+            var marshaller = CreateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = CreateAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddressBookRequest,CreateAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginCreateAddressBook(CreateAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = CreateAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddressBook.</param>
+        /// 
+        /// <returns>Returns a  CreateAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        public virtual CreateAddressBookResponse EndCreateAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateContact
+
+        /// <summary>
+        /// Creates a contact with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse CreateContact(CreateContactRequest request)
+        {
+            var marshaller = CreateContactRequestMarshaller.Instance;
+            var unmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactRequest,CreateContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual IAsyncResult BeginCreateContact(CreateContactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateContactRequestMarshaller.Instance;
+            var unmarshaller = CreateContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateContactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContact.</param>
+        /// 
+        /// <returns>Returns a  CreateContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        public virtual CreateContactResponse EndCreateContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContactResponse>(asyncResult);
         }
 
         #endregion
@@ -578,6 +751,118 @@ namespace Amazon.AlexaForBusiness
         public virtual CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAddressBook
+
+        /// <summary>
+        /// Deletes an address book by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        public virtual DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request)
+        {
+            var marshaller = DeleteAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DeleteAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAddressBookRequest,DeleteAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAddressBook(DeleteAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DeleteAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAddressBook.</param>
+        /// 
+        /// <returns>Returns a  DeleteAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        public virtual DeleteAddressBookResponse EndDeleteAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteContact
+
+        /// <summary>
+        /// Deletes a contact by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
+        {
+            var marshaller = DeleteContactRequestMarshaller.Instance;
+            var unmarshaller = DeleteContactResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactRequest,DeleteContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContact(DeleteContactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteContactRequestMarshaller.Instance;
+            var unmarshaller = DeleteContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteContactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContact.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        public virtual DeleteContactResponse EndDeleteContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContactResponse>(asyncResult);
         }
 
         #endregion
@@ -859,6 +1144,59 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateContactFromAddressBook
+
+        /// <summary>
+        /// Disassociates a contact from a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        public virtual DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request)
+        {
+            var marshaller = DisassociateContactFromAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DisassociateContactFromAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateContactFromAddressBookRequest,DisassociateContactFromAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateContactFromAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateContactFromAddressBookRequestMarshaller.Instance;
+            var unmarshaller = DisassociateContactFromAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateContactFromAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateContactFromAddressBook.</param>
+        /// 
+        /// <returns>Returns a  DisassociateContactFromAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        public virtual DisassociateContactFromAddressBookResponse EndDisassociateContactFromAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateContactFromAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateDeviceFromRoom
 
         /// <summary>
@@ -964,6 +1302,118 @@ namespace Amazon.AlexaForBusiness
         public virtual DisassociateSkillGroupFromRoomResponse EndDisassociateSkillGroupFromRoom(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateSkillGroupFromRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAddressBook
+
+        /// <summary>
+        /// Gets address the book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        public virtual GetAddressBookResponse GetAddressBook(GetAddressBookRequest request)
+        {
+            var marshaller = GetAddressBookRequestMarshaller.Instance;
+            var unmarshaller = GetAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<GetAddressBookRequest,GetAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginGetAddressBook(GetAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetAddressBookRequestMarshaller.Instance;
+            var unmarshaller = GetAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAddressBook.</param>
+        /// 
+        /// <returns>Returns a  GetAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        public virtual GetAddressBookResponse EndGetAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetContact
+
+        /// <summary>
+        /// Gets the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual GetContactResponse GetContact(GetContactRequest request)
+        {
+            var marshaller = GetContactRequestMarshaller.Instance;
+            var unmarshaller = GetContactResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactRequest,GetContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual IAsyncResult BeginGetContact(GetContactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetContactRequestMarshaller.Instance;
+            var unmarshaller = GetContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetContactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContact.</param>
+        /// 
+        /// <returns>Returns a  GetContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        public virtual GetContactResponse EndGetContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetContactResponse>(asyncResult);
         }
 
         #endregion
@@ -1524,6 +1974,112 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchAddressBooks
+
+        /// <summary>
+        /// Searches address books and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks service method.</param>
+        /// 
+        /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        public virtual SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request)
+        {
+            var marshaller = SearchAddressBooksRequestMarshaller.Instance;
+            var unmarshaller = SearchAddressBooksResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAddressBooksRequest,SearchAddressBooksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchAddressBooks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        public virtual IAsyncResult BeginSearchAddressBooks(SearchAddressBooksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = SearchAddressBooksRequestMarshaller.Instance;
+            var unmarshaller = SearchAddressBooksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchAddressBooksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchAddressBooks.</param>
+        /// 
+        /// <returns>Returns a  SearchAddressBooksResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        public virtual SearchAddressBooksResponse EndSearchAddressBooks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchAddressBooksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchContacts
+
+        /// <summary>
+        /// Searches contacts and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
+        /// 
+        /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual SearchContactsResponse SearchContacts(SearchContactsRequest request)
+        {
+            var marshaller = SearchContactsRequestMarshaller.Instance;
+            var unmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactsRequest,SearchContactsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual IAsyncResult BeginSearchContacts(SearchContactsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = SearchContactsRequestMarshaller.Instance;
+            var unmarshaller = SearchContactsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchContactsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchContacts.</param>
+        /// 
+        /// <returns>Returns a  SearchContactsResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        public virtual SearchContactsResponse EndSearchContacts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchContactsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchDevices
 
         /// <summary>
@@ -2012,6 +2568,121 @@ namespace Amazon.AlexaForBusiness
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAddressBook
+
+        /// <summary>
+        /// Updates address book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        public virtual UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request)
+        {
+            var marshaller = UpdateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAddressBookRequest,UpdateAddressBookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAddressBook
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAddressBook(UpdateAddressBookRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateAddressBookRequestMarshaller.Instance;
+            var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateAddressBookRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAddressBook.</param>
+        /// 
+        /// <returns>Returns a  UpdateAddressBookResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        public virtual UpdateAddressBookResponse EndUpdateAddressBook(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateContact
+
+        /// <summary>
+        /// Updates the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
+        {
+            var marshaller = UpdateContactRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactRequest,UpdateContactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual IAsyncResult BeginUpdateContact(UpdateContactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateContactRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateContactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContact.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        public virtual UpdateContactResponse EndUpdateContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateContactResponse>(asyncResult);
         }
 
         #endregion

@@ -43,6 +43,33 @@ namespace Amazon.AlexaForBusiness
     {
 
         
+        #region  AssociateContactWithAddressBook
+
+
+        /// <summary>
+        /// Associates a contact to a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateContactWithAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        Task<AssociateContactWithAddressBookResponse> AssociateContactWithAddressBookAsync(AssociateContactWithAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateDeviceWithRoom
 
 
@@ -101,6 +128,74 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
         Task<AssociateSkillGroupWithRoomResponse> AssociateSkillGroupWithRoomAsync(AssociateSkillGroupWithRoomRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAddressBook
+
+
+        /// <summary>
+        /// Creates an address book with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        Task<CreateAddressBookResponse> CreateAddressBookAsync(CreateAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateContact
+
+
+        /// <summary>
+        /// Creates a contact with the specified details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        CreateContactResponse CreateContact(CreateContactRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -237,6 +332,66 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAddressBook
+
+
+        /// <summary>
+        /// Deletes an address book by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        Task<DeleteAddressBookResponse> DeleteAddressBookAsync(DeleteAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteContact
+
+
+        /// <summary>
+        /// Deletes a contact by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        DeleteContactResponse DeleteContact(DeleteContactRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        Task<DeleteContactResponse> DeleteContactAsync(DeleteContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -387,6 +542,33 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateContactFromAddressBook
+
+
+        /// <summary>
+        /// Disassociates a contact from a given address book.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateContactFromAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateContactFromAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        Task<DisassociateContactFromAddressBookResponse> DisassociateContactFromAddressBookAsync(DisassociateContactFromAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateDeviceFromRoom
 
 
@@ -441,6 +623,66 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
         Task<DisassociateSkillGroupFromRoomResponse> DisassociateSkillGroupFromRoomAsync(DisassociateSkillGroupFromRoomRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAddressBook
+
+
+        /// <summary>
+        /// Gets address the book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the GetAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        GetAddressBookResponse GetAddressBook(GetAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        Task<GetAddressBookResponse> GetAddressBookAsync(GetAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetContact
+
+
+        /// <summary>
+        /// Gets the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContact service method.</param>
+        /// 
+        /// <returns>The response from the GetContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        GetContactResponse GetContact(GetContactRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        Task<GetContactResponse> GetContactAsync(GetContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -740,6 +982,60 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  SearchAddressBooks
+
+
+        /// <summary>
+        /// Searches address books and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks service method.</param>
+        /// 
+        /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchAddressBooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchAddressBooks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        Task<SearchAddressBooksResponse> SearchAddressBooksAsync(SearchAddressBooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchContacts
+
+
+        /// <summary>
+        /// Searches contacts and lists the ones that meet a set of filter and sort criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts service method.</param>
+        /// 
+        /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        SearchContactsResponse SearchContacts(SearchContactsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchContacts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        Task<SearchContactsResponse> SearchContactsAsync(SearchContactsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchDevices
 
 
@@ -995,6 +1291,69 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAddressBook
+
+
+        /// <summary>
+        /// Updates address book details by the address book ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
+        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAddressBook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        Task<UpdateAddressBookResponse> UpdateAddressBookAsync(UpdateAddressBookRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateContact
+
+
+        /// <summary>
+        /// Updates the contact details by the contact ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        UpdateContactResponse UpdateContact(UpdateContactRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        Task<UpdateContactResponse> UpdateContactAsync(UpdateContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
