@@ -9,10 +9,18 @@
 	* This Patch Manager release supports creating patch baselines for CentOS.
 
 ### 3.3.256.1 (2018-03-29 06:46 UTC)
+* CloudFront (3.3.6.4)
+	* Fixed issue with Url siginer not supporting IPv6
+* RDS (3.3.21.5)
+	* Fixed encoding issue when computing a presigned URL.
+* S3 (3.3.17.3)	
+	* Add configuration on PutObject and UploadPart to turn off chunk encoding.
 * Core 3.3.21.19
 	* Convert all request marshallers to singletons
-Isolate usage of HttpClient to better handle different platforms the SDK runs on
- 
+	* Isolate usage of HttpClient to better handle different platforms the SDK runs on
+	* Lower default chunked upload size to avoid creating LOH sized objects.
+	* Remove an unnecessary await in DefaultRetryPolicy
+	* Ensure service url has a trailing '/' to avoid issues when concatenating host and resource path.
 	* All services packages updated to require new Core
 
 ### 3.3.256.0 (2018-03-28 23:32 UTC)
