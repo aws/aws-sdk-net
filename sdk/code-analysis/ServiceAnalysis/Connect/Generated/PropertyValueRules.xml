@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactResponse.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StopContactRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+</property-value-rules>

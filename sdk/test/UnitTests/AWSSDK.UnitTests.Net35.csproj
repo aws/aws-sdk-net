@@ -67,6 +67,7 @@
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Comprehend\AWSSDK.Comprehend.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Connect\AWSSDK.Connect.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostExplorer\AWSSDK.CostExplorer.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj"/>

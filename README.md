@@ -151,6 +151,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Comprehend is an AWS service for gaining insight into the content of text and documents. It can be used to determine the topics contained in your documents, the topics they discuss, the  predominant sentiment expressed in them, the predominant language used, and more. For more information, go to the Amazon Comprehend product page. To get started, see the Amazon Comprehend Developer Guide.
 * [AWSSDK.ConfigService](https://www.nuget.org/packages/AWSSDK.ConfigService/)
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+* [AWSSDK.Connect](https://www.nuget.org/packages/AWSSDK.Connect/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.CostAndUsageReport](https://www.nuget.org/packages/AWSSDK.CostAndUsageReport/)
 	* The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences.
 * [AWSSDK.CostExplorer](https://www.nuget.org/packages/AWSSDK.CostExplorer/)
