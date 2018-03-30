@@ -60,6 +60,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/comprehend/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/connect/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
@@ -193,6 +194,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Comprehend.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Connect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />

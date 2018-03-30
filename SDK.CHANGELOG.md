@@ -1,3 +1,13 @@
+### 3.3.258.0 (2018-03-30 20:23 UTC)
+* CertificateManager (3.3.4.2)
+	* Documentation updates for acm
+* Connect (3.3.0.0)
+	* Amazon Connect is a contact center as a service (CCaS) solution that offers easy, self-service configuration and enables dynamic, personal, and natural customer engagement at any scale. With this release of the Amazon Connect SDK, Outbound APIs (StartOutboundVoiceContact, StopContact) are now generally available. This release supports CTR generation for calls generated through the new APIs. Additionally IAM permissions are supported for the new APIs. 
+* Core 3.3.21.20
+	* Adding FIPS endpoint for CodeBuild service
+
+
+
 ### 3.3.257.0 (2018-03-30 00:18 UTC)
 * AlexaForBusiness (3.3.2.0)
 	* Adds operations for creating and managing address books of phone contacts for use in A4B managed shared devices.

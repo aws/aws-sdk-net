@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.257.0",
-    "CoreVersion"    : "3.3.21.19",
+    "ProductVersion" : "3.3.258.0",
+    "CoreVersion"    : "3.3.21.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -505,7 +505,7 @@
             "InPreview"               : false
         },
         "CertificateManager"              : {
-            "Version" : "3.3.4.1",
+            "Version" : "3.3.4.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -1053,6 +1053,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
+            },
+            "InPreview"               : false
+        },
+        "Connect"                         : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.21.20"
             },
             "InPreview"               : false
         }
