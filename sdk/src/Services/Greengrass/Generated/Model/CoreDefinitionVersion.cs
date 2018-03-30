@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on core definition version
+    /// Information about a core definition version.
     /// </summary>
     public partial class CoreDefinitionVersion
     {
         private List<Core> _cores = new List<Core>();
 
         /// <summary>
-        /// Gets and sets the property Cores. Cores in the definition version.
+        /// Gets and sets the property Cores. A list of cores in the core definition version.
         /// </summary>
         public List<Core> Cores
         {

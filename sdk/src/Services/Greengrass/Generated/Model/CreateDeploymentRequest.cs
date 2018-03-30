@@ -40,8 +40,8 @@ namespace Amazon.Greengrass.Model
         private string _groupVersionId;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -56,7 +56,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. Id of the deployment if you wish to redeploy
+        /// Gets and sets the property DeploymentId. The ID of the deployment if you wish to redeploy
         /// a previous deployment.
         /// </summary>
         public string DeploymentId
@@ -72,8 +72,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentType. Type of deployment. When used in CreateDeployment,
-        /// only NewDeployment and Redeployment are valid.
+        /// Gets and sets the property DeploymentType. The type of deployment. When used in ''CreateDeployment'',
+        /// only ''NewDeployment'' and ''Redeployment'' are valid.
         /// </summary>
         public DeploymentType DeploymentType
         {
@@ -88,7 +88,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {
@@ -103,7 +103,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupVersionId. Group Version you wish to deploy.
+        /// Gets and sets the property GroupVersionId. The ID of the group version to be deployed.
         /// </summary>
         public string GroupVersionId
         {

@@ -29,14 +29,14 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDeviceDefinition operation.
-    /// Deletes a device definition. The device definition must not have been used in a deployment.
+    /// Deletes a device definition.
     /// </summary>
     public partial class DeleteDeviceDefinitionRequest : AmazonGreengrassRequest
     {
         private string _deviceDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property DeviceDefinitionId. device definition Id
+        /// Gets and sets the property DeviceDefinitionId. The ID of the device definition.
         /// </summary>
         public string DeviceDefinitionId
         {

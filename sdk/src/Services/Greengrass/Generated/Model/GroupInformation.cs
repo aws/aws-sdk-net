@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the group
+    /// Information about a group.
     /// </summary>
     public partial class GroupInformation
     {
@@ -41,7 +41,7 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Arn. Arn of a group.
+        /// Gets and sets the property Arn. The ARN of the group.
         /// </summary>
         public string Arn
         {
@@ -56,7 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp of when the group was created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the group was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -71,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of a group.
+        /// Gets and sets the property Id. The ID of the group.
         /// </summary>
         public string Id
         {
@@ -86,7 +87,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedTimestamp. Last updated timestamp of the group.
+        /// Gets and sets the property LastUpdatedTimestamp. The time, in milliseconds since the
+        /// epoch, when the group was last updated.
         /// </summary>
         public string LastUpdatedTimestamp
         {
@@ -101,7 +103,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersion. Last version of the group.
+        /// Gets and sets the property LatestVersion. The latest version of the group.
         /// </summary>
         public string LatestVersion
         {
@@ -116,7 +118,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersionArn. Latest version arn of the group.
+        /// Gets and sets the property LatestVersionArn. The ARN of the latest version of the
+        /// group.
         /// </summary>
         public string LatestVersionArn
         {
@@ -131,7 +134,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Name of a group.
+        /// Gets and sets the property Name. The name of the group.
         /// </summary>
         public string Name
         {

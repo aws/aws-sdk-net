@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on subscription definition version
+    /// Information about a subscription definition version.
     /// </summary>
     public partial class SubscriptionDefinitionVersion
     {
         private List<Subscription> _subscriptions = new List<Subscription>();
 
         /// <summary>
-        /// Gets and sets the property Subscriptions. Subscriptions in the version.
+        /// Gets and sets the property Subscriptions. A list of subscriptions.
         /// </summary>
         public List<Subscription> Subscriptions
         {

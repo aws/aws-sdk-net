@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Connectivity Info
+    /// Information about a Greengrass core's connectivity.
     /// </summary>
     public partial class ConnectivityInfo
     {
@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private int? _portNumber;
 
         /// <summary>
-        /// Gets and sets the property HostAddress. Endpoint for the GGC. Can be an IP address
-        /// or DNS.
+        /// Gets and sets the property HostAddress. The endpoint for the Greengrass core. Can
+        /// be an IP address or DNS.
         /// </summary>
         public string HostAddress
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Element Id for this entry in the list.
+        /// Gets and sets the property Id. The ID of the connectivity information.
         /// </summary>
         public string Id
         {
@@ -84,7 +84,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PortNumber. Port of the GGC. Usually 8883.
+        /// Gets and sets the property PortNumber. The port of the Greengrass core. Usually 8883.
         /// </summary>
         public int PortNumber
         {

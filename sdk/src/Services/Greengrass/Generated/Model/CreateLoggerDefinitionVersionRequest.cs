@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private List<Logger> _loggers = new List<Logger>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. logger definition Id
+        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
         /// </summary>
         public string LoggerDefinitionId
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Loggers. List of loggers.
+        /// Gets and sets the property Loggers. A list of loggers.
         /// </summary>
         public List<Logger> Loggers
         {

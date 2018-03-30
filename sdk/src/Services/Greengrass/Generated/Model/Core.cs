@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the core
+    /// Information about a core.
     /// </summary>
     public partial class Core
     {
@@ -38,7 +38,8 @@ namespace Amazon.Greengrass.Model
         private string _thingArn;
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. Certificate arn of the core.
+        /// Gets and sets the property CertificateArn. The ARN of the certificate associated with
+        /// the core.
         /// </summary>
         public string CertificateArn
         {
@@ -53,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Element Id for this entry in the list.
+        /// Gets and sets the property Id. The ID of the core.
         /// </summary>
         public string Id
         {
@@ -68,8 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SyncShadow. If true, the local shadow value automatically
-        /// syncs with the cloud's shadow state.
+        /// Gets and sets the property SyncShadow. If true, the core's local shadow is automatically
+        /// synced with the cloud.
         /// </summary>
         public bool SyncShadow
         {
@@ -84,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThingArn. Thing arn of the core.
+        /// Gets and sets the property ThingArn. The ARN of the thing which is the core.
         /// </summary>
         public string ThingArn
         {

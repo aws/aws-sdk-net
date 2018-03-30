@@ -31,7 +31,7 @@ namespace Amazon.Greengrass.Model
     /// Container for the parameters to the CreateResourceDefinition operation.
     /// Creates a resource definition which contains a list of resources to be used in a group.
     /// You can create an initial version of the definition by providing a list of resources
-    /// now, or use ``CreateResourceDefinitionVersion`` later.
+    /// now, or use ''CreateResourceDefinitionVersion'' later.
     /// </summary>
     public partial class CreateResourceDefinitionRequest : AmazonGreengrassRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -56,7 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the resource definition.
         /// </summary>
         public ResourceDefinitionVersion InitialVersion
         {
@@ -71,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Name of the resource definition
+        /// Gets and sets the property Name. The name of the resource definition.
         /// </summary>
         public string Name
         {

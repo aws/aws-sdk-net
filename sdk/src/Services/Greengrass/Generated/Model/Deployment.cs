@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the deployment
+    /// Information about a deployment.
     /// </summary>
     public partial class Deployment
     {
@@ -39,7 +39,8 @@ namespace Amazon.Greengrass.Model
         private string _groupArn;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. Timestamp when the deployment was created.
+        /// Gets and sets the property CreatedAt. The time, in milliseconds since the epoch, when
+        /// the deployment was created.
         /// </summary>
         public string CreatedAt
         {
@@ -54,7 +55,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentArn. Arn of the deployment.
+        /// Gets and sets the property DeploymentArn. The ARN of the deployment.
         /// </summary>
         public string DeploymentArn
         {
@@ -69,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. Id of the deployment.
+        /// Gets and sets the property DeploymentId. The ID of the deployment.
         /// </summary>
         public string DeploymentId
         {
@@ -84,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentType. The type of deployment.
+        /// Gets and sets the property DeploymentType. The type of the deployment.
         /// </summary>
         public DeploymentType DeploymentType
         {
@@ -99,7 +100,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupArn. Arn of the group for this deployment.
+        /// Gets and sets the property GroupArn. The ARN of the group for this deployment.
         /// </summary>
         public string GroupArn
         {

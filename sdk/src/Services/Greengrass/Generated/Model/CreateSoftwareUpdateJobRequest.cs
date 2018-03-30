@@ -29,8 +29,10 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSoftwareUpdateJob operation.
-    /// Creates an Iot Job that will trigger your Greengrass Cores to update the software
-    /// they are running.
+    /// Creates a software update for a core or group of cores (specified as an IoT thing
+    /// group.) Use this to update the OTA Agent as well as the Greengrass core software.
+    /// It makes use of the IoT Jobs feature which provides additional commands to manage
+    /// a Greengrass core software update job.
     /// </summary>
     public partial class CreateSoftwareUpdateJobRequest : AmazonGreengrassRequest
     {
@@ -43,8 +45,8 @@ namespace Amazon.Greengrass.Model
         private UpdateTargetsOperatingSystem _updateTargetsOperatingSystem;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {

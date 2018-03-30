@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private string _thingName;
 
         /// <summary>
-        /// Gets and sets the property ConnectivityInfo. Connectivity info list
+        /// Gets and sets the property ConnectivityInfo. A list of connectivity info.
         /// </summary>
         public List<ConnectivityInfo> ConnectivityInfo
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThingName. Thing Name
+        /// Gets and sets the property ThingName. The thing name.
         /// </summary>
         public string ThingName
         {

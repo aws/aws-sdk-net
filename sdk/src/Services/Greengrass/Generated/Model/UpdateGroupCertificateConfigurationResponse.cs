@@ -37,8 +37,8 @@ namespace Amazon.Greengrass.Model
         private string _groupId;
 
         /// <summary>
-        /// Gets and sets the property CertificateAuthorityExpiryInMilliseconds. Amount of time
-        /// when the certificate authority expires in milliseconds.
+        /// Gets and sets the property CertificateAuthorityExpiryInMilliseconds. The amount of
+        /// time remaining before the certificate authority expires, in milliseconds.
         /// </summary>
         public string CertificateAuthorityExpiryInMilliseconds
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateExpiryInMilliseconds. Amount of time when the
-        /// certificate expires in milliseconds.
+        /// Gets and sets the property CertificateExpiryInMilliseconds. The amount of time remaining
+        /// before the certificate expires, in milliseconds.
         /// </summary>
         public string CertificateExpiryInMilliseconds
         {
@@ -69,8 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. Id of the group the certificate configuration
-        /// belongs to.
+        /// Gets and sets the property GroupId. The ID of the group certificate configuration.
         /// </summary>
         public string GroupId
         {

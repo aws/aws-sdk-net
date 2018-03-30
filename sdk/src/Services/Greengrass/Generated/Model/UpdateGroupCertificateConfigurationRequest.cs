@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroupCertificateConfiguration operation.
-    /// Updates the Cert expiry time for a group.
+    /// Updates the Certificate expiry time for a group.
     /// </summary>
     public partial class UpdateGroupCertificateConfigurationRequest : AmazonGreengrassRequest
     {
@@ -37,8 +37,8 @@ namespace Amazon.Greengrass.Model
         private string _groupId;
 
         /// <summary>
-        /// Gets and sets the property CertificateExpiryInMilliseconds. Amount of time when the
-        /// certificate expires in milliseconds.
+        /// Gets and sets the property CertificateExpiryInMilliseconds. The amount of time remaining
+        /// before the certificate expires, in milliseconds.
         /// </summary>
         public string CertificateExpiryInMilliseconds
         {
@@ -53,7 +53,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {

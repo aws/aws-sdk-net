@@ -35,7 +35,7 @@ namespace Amazon.Greengrass.Model
         private string _groupCertificateAuthorityArn;
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorityArn. Arn of the group certificate
+        /// Gets and sets the property GroupCertificateAuthorityArn. The ARN of the group certificate
         /// authority.
         /// </summary>
         public string GroupCertificateAuthorityArn

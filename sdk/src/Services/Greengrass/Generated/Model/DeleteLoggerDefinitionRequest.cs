@@ -29,14 +29,14 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoggerDefinition operation.
-    /// Deletes a logger definition. The logger definition must not have been used in a deployment.
+    /// Deletes a logger definition.
     /// </summary>
     public partial class DeleteLoggerDefinitionRequest : AmazonGreengrassRequest
     {
         private string _loggerDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. logger definition Id
+        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
         /// </summary>
         public string LoggerDefinitionId
         {

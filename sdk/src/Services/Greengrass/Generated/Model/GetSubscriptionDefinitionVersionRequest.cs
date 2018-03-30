@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _subscriptionDefinitionVersionId;
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionId. subscription definition Id
+        /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
         public string SubscriptionDefinitionId
         {
@@ -52,8 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionVersionId. subscription definition
-        /// version Id
+        /// Gets and sets the property SubscriptionDefinitionVersionId. The ID of the subscription
+        /// definition version.
         /// </summary>
         public string SubscriptionDefinitionVersionId
         {

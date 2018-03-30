@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _iotJobId;
 
         /// <summary>
-        /// Gets and sets the property IotJobArn. The Iot Job Arn corresponding to this update.
+        /// Gets and sets the property IotJobArn. The IoT Job ARN corresponding to this update.
         /// </summary>
         public string IotJobArn
         {
@@ -51,7 +51,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IotJobId. The Iot Job Id corresponding to this update.
+        /// Gets and sets the property IotJobId. The IoT Job Id corresponding to this update.
         /// </summary>
         public string IotJobId
         {

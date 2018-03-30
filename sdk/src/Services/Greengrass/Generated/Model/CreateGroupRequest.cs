@@ -29,8 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Creates a group. You may optionally provide the initial version of the group or use
-    /// ''CreateGroupVersion'' at a later time.
+    /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion''
+    /// at a later time.
     /// </summary>
     public partial class CreateGroupRequest : AmazonGreengrassRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -55,7 +55,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the group.
         /// </summary>
         public GroupVersion InitialVersion
         {
@@ -70,7 +71,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the group
+        /// Gets and sets the property Name. The name of the group.
         /// </summary>
         public string Name
         {

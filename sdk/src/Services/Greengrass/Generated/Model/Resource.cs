@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the resource.
+    /// Information about a resource.
     /// </summary>
     public partial class Resource
     {
@@ -37,7 +37,9 @@ namespace Amazon.Greengrass.Model
         private ResourceDataContainer _resourceDataContainer;
 
         /// <summary>
-        /// Gets and sets the property Id. Resource Id.
+        /// Gets and sets the property Id. The resource ID, used to refer to a resource in the
+        /// Lambda function configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+        /// This must be unique within a Greengrass group.
         /// </summary>
         public string Id
         {
@@ -52,7 +54,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. A descriptive resource name.
+        /// Gets and sets the property Name. The descriptive resource name, which is displayed
+        /// on the Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+        /// This must be unique within a Greengrass group.
         /// </summary>
         public string Name
         {

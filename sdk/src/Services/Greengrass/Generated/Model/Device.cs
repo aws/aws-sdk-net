@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on a Device
+    /// Information about a device.
     /// </summary>
     public partial class Device
     {
@@ -38,7 +38,8 @@ namespace Amazon.Greengrass.Model
         private string _thingArn;
 
         /// <summary>
-        /// Gets and sets the property CertificateArn. Certificate arn of the device.
+        /// Gets and sets the property CertificateArn. The ARN of the certificate associated with
+        /// the device.
         /// </summary>
         public string CertificateArn
         {
@@ -53,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Element Id for this entry in the list.
+        /// Gets and sets the property Id. The ID of the device.
         /// </summary>
         public string Id
         {
@@ -68,8 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SyncShadow. If true, the local shadow value automatically
-        /// syncs with the cloud's shadow state.
+        /// Gets and sets the property SyncShadow. If true, the device's local shadow will be
+        /// automatically synced with the cloud.
         /// </summary>
         public bool SyncShadow
         {
@@ -84,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ThingArn. Thing arn of the device.
+        /// Gets and sets the property ThingArn. The thing ARN of the device.
         /// </summary>
         public string ThingArn
         {

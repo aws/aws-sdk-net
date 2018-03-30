@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionId. the unique Id of the lambda definition
+        /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
         public string FunctionDefinitionId
         {
@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the definition
+        /// Gets and sets the property Name. The name of the definition.
         /// </summary>
         public string Name
         {

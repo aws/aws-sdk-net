@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _loggerDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. logger definition Id
+        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
         /// </summary>
         public string LoggerDefinitionId
         {

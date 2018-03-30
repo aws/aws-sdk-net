@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Attributes that define the Local Device Resource.
+    /// Attributes that define a local device resource.
     /// </summary>
     public partial class LocalDeviceResourceData
     {
@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _sourcePath;
 
         /// <summary>
-        /// Gets and sets the property GroupOwnerSetting. Group owner related settings for local
+        /// Gets and sets the property GroupOwnerSetting. Group/owner related settings for local
         /// resources.
         /// </summary>
         public GroupOwnerSetting GroupOwnerSetting
@@ -52,7 +52,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourcePath. Local source path of the resource.
+        /// Gets and sets the property SourcePath. The local absolute path of the device resource.
+        /// The source path for a device resource can refer only to a character device or block
+        /// device under ''/dev''.
         /// </summary>
         public string SourcePath
         {

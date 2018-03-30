@@ -54,8 +54,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp of when the resource definition
-        /// version was created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the resource definition version was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. Information on definition.
+        /// Gets and sets the property Definition. Information about the definition.
         /// </summary>
         public ResourceDefinitionVersion Definition
         {
@@ -85,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the resource definition the version belongs to.
+        /// Gets and sets the property Id. The ID of the resource definition version.
         /// </summary>
         public string Id
         {
@@ -100,7 +100,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of the resource definition version.
+        /// Gets and sets the property Version. The version of the resource definition version.
         /// </summary>
         public string Version
         {

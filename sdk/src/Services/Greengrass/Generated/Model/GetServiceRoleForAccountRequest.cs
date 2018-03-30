@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceRoleForAccount operation.
-    /// Retrieves the service role that is attached to the account.
+    /// Retrieves the service role that is attached to your account.
     /// </summary>
     public partial class GetServiceRoleForAccountRequest : AmazonGreengrassRequest
     {

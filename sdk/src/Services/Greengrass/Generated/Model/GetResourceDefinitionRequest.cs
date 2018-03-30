@@ -29,15 +29,15 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceDefinition operation.
-    /// Retrieves information about a resource definition, such as its creation time and latest
-    /// version.
+    /// Retrieves information about a resource definition, including its creation time and
+    /// latest version.
     /// </summary>
     public partial class GetResourceDefinitionRequest : AmazonGreengrassRequest
     {
         private string _resourceDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionId. Resource definition Id.
+        /// Gets and sets the property ResourceDefinitionId. The ID of the resource definition.
         /// </summary>
         public string ResourceDefinitionId
         {

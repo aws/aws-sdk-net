@@ -29,15 +29,14 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriptionDefinition operation.
-    /// Deletes a subscription definition. The subscription definition must not have been
-    /// used in a deployment.
+    /// Deletes a subscription definition.
     /// </summary>
     public partial class DeleteSubscriptionDefinitionRequest : AmazonGreengrassRequest
     {
         private string _subscriptionDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionId. subscription definition Id
+        /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
         public string SubscriptionDefinitionId
         {

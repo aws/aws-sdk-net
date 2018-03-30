@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _message;
 
         /// <summary>
-        /// Gets and sets the property ConnectivityInfo. Connectivity info list
+        /// Gets and sets the property ConnectivityInfo. Connectivity info list.
         /// </summary>
         public List<ConnectivityInfo> ConnectivityInfo
         {
@@ -51,7 +51,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message. Response Text
+        /// Gets and sets the property Message. A message about the connectivity info request.
         /// </summary>
         public string Message
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on group version
+    /// Information about a group version.
     /// </summary>
     public partial class GroupVersion
     {
@@ -40,8 +40,8 @@ namespace Amazon.Greengrass.Model
         private string _subscriptionDefinitionVersionArn;
 
         /// <summary>
-        /// Gets and sets the property CoreDefinitionVersionArn. Core definition version arn for
-        /// this group.
+        /// Gets and sets the property CoreDefinitionVersionArn. The ARN of the core definition
+        /// version for this group.
         /// </summary>
         public string CoreDefinitionVersionArn
         {
@@ -56,8 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceDefinitionVersionArn. Device definition version arn
-        /// for this group.
+        /// Gets and sets the property DeviceDefinitionVersionArn. The ARN of the device definition
+        /// version for this group.
         /// </summary>
         public string DeviceDefinitionVersionArn
         {
@@ -72,8 +72,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionVersionArn. Function definition version
-        /// arn for this group.
+        /// Gets and sets the property FunctionDefinitionVersionArn. The ARN of the function definition
+        /// version for this group.
         /// </summary>
         public string FunctionDefinitionVersionArn
         {
@@ -88,8 +88,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionVersionArn. Logger definition version arn
-        /// for this group.
+        /// Gets and sets the property LoggerDefinitionVersionArn. The ARN of the logger definition
+        /// version for this group.
         /// </summary>
         public string LoggerDefinitionVersionArn
         {
@@ -104,8 +104,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionVersionArn. Resource definition version
-        /// arn for this group.
+        /// Gets and sets the property ResourceDefinitionVersionArn. The resource definition version
+        /// ARN for this group.
         /// </summary>
         public string ResourceDefinitionVersionArn
         {
@@ -120,8 +120,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionVersionArn. Subscription definition
-        /// version arn for this group.
+        /// Gets and sets the property SubscriptionDefinitionVersionArn. The ARN of the subscription
+        /// definition version for this group.
         /// </summary>
         public string SubscriptionDefinitionVersionArn
         {

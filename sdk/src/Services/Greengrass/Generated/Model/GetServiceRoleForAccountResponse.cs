@@ -36,8 +36,8 @@ namespace Amazon.Greengrass.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property AssociatedAt. Time when the service role was associated
-        /// to the account.
+        /// Gets and sets the property AssociatedAt. The time when the service role was associated
+        /// with the account.
         /// </summary>
         public string AssociatedAt
         {
@@ -52,7 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. Role arn which is associated to the account.
+        /// Gets and sets the property RoleArn. The ARN of the role which is associated with the
+        /// account.
         /// </summary>
         public string RoleArn
         {

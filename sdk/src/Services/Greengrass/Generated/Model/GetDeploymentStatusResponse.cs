@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private string _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property DeploymentStatus. Status of the deployment.
+        /// Gets and sets the property DeploymentStatus. The status of the deployment.
         /// </summary>
         public string DeploymentStatus
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorDetails. The error Details
+        /// Gets and sets the property ErrorDetails. Error details
         /// </summary>
         public List<ErrorDetail> ErrorDetails
         {
@@ -84,7 +84,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage. Error Message
+        /// Gets and sets the property ErrorMessage. Error message
         /// </summary>
         public string ErrorMessage
         {
@@ -99,7 +99,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. Last time the deployment status was updated.
+        /// Gets and sets the property UpdatedAt. The time, in milliseconds since the epoch, when
+        /// the deployment status was updated.
         /// </summary>
         public string UpdatedAt
         {

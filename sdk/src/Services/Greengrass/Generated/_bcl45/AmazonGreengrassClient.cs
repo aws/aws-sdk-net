@@ -234,18 +234,18 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role with a group. The role will be used by the AWS Greengrass core in
-        /// order to access AWS cloud services. The role's permissions will allow Greengrass core
-        /// Lambda functions to perform actions against the cloud.
+        /// Associates a role with a group. Your AWS Greengrass core will use the role to access
+        /// AWS cloud services. The role's permissions should allow Greengrass core Lambda functions
+        /// to perform actions against the cloud.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRoleToGroup service method.</param>
         /// 
         /// <returns>The response from the AssociateRoleToGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">REST API Reference for AssociateRoleToGroup Operation</seealso>
         public virtual AssociateRoleToGroupResponse AssociateRoleToGroup(AssociateRoleToGroupRequest request)
@@ -281,18 +281,18 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role to
-        /// access your Lambda functions and AWS IoT resources. This is necessary for deployments
-        /// to succeed. It needs to have minimum permissions in policy ``AWSGreengrassResourceAccessRolePolicy``
+        /// Associates a role with your account. AWS Greengrass will use the role to access your
+        /// Lambda functions and AWS IoT resources. This is necessary for deployments to succeed.
+        /// The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
         /// 
         /// <returns>The response from the AssociateServiceRoleToAccount service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">REST API Reference for AssociateServiceRoleToAccount Operation</seealso>
         public virtual AssociateServiceRoleToAccountResponse AssociateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request)
@@ -328,15 +328,15 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a core definition. You may optionally provide the initial version of the core
-        /// definition or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass
-        /// Groups must each contain exactly 1 AWS Greengrass Core.
+        /// Creates a core definition. You may provide the initial version of the core definition
+        /// now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups
+        /// must each contain exactly one AWS Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateCoreDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">REST API Reference for CreateCoreDefinition Operation</seealso>
         public virtual CreateCoreDefinitionResponse CreateCoreDefinition(CreateCoreDefinitionRequest request)
@@ -373,13 +373,13 @@ namespace Amazon.Greengrass
 
         /// <summary>
         /// Creates a version of a core definition that has already been defined. AWS Greengrass
-        /// Groups must each contain exactly 1 AWS Greengrass Core.
+        /// groups must each contain exactly one AWS Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinitionVersion service method.</param>
         /// 
         /// <returns>The response from the CreateCoreDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">REST API Reference for CreateCoreDefinitionVersion Operation</seealso>
         public virtual CreateCoreDefinitionVersionResponse CreateCoreDefinitionVersion(CreateCoreDefinitionVersionRequest request)
@@ -421,7 +421,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateDeployment service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
@@ -457,14 +457,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a device definition. You may optinally provide the initial version of the
-        /// device definition or use ``CreateDeviceDefinitionVersion`` at a later time.
+        /// Creates a device definition. You may provide the initial version of the device definition
+        /// now or use ''CreateDeviceDefinitionVersion'' at a later time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeviceDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateDeviceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">REST API Reference for CreateDeviceDefinition Operation</seealso>
         public virtual CreateDeviceDefinitionResponse CreateDeviceDefinition(CreateDeviceDefinitionRequest request)
@@ -506,7 +506,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateDeviceDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion">REST API Reference for CreateDeviceDefinitionVersion Operation</seealso>
         public virtual CreateDeviceDefinitionVersionResponse CreateDeviceDefinitionVersion(CreateDeviceDefinitionVersionRequest request)
@@ -545,13 +545,13 @@ namespace Amazon.Greengrass
         /// Creates a Lambda function definition which contains a list of Lambda functions and
         /// their configurations to be used in a group. You can create an initial version of the
         /// definition by providing a list of Lambda functions and their configurations now, or
-        /// use ``CreateFunctionDefinitionVersion`` later.
+        /// use ''CreateFunctionDefinitionVersion'' later.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunctionDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateFunctionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">REST API Reference for CreateFunctionDefinition Operation</seealso>
         public virtual CreateFunctionDefinitionResponse CreateFunctionDefinition(CreateFunctionDefinitionRequest request)
@@ -587,13 +587,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Create a version of a Lambda function definition that has already been defined.
+        /// Creates a version of a Lambda function definition that has already been defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunctionDefinitionVersion service method.</param>
         /// 
         /// <returns>The response from the CreateFunctionDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">REST API Reference for CreateFunctionDefinitionVersion Operation</seealso>
         public virtual CreateFunctionDefinitionVersionResponse CreateFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest request)
@@ -629,14 +629,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a group. You may optionally provide the initial version of the group or use
-        /// ''CreateGroupVersion'' at a later time.
+        /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion''
+        /// at a later time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
         /// <returns>The response from the CreateGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
@@ -678,10 +678,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateGroupCertificateAuthority service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority">REST API Reference for CreateGroupCertificateAuthority Operation</seealso>
         public virtual CreateGroupCertificateAuthorityResponse CreateGroupCertificateAuthority(CreateGroupCertificateAuthorityRequest request)
@@ -723,7 +723,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateGroupVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion">REST API Reference for CreateGroupVersion Operation</seealso>
         public virtual CreateGroupVersionResponse CreateGroupVersion(CreateGroupVersionRequest request)
@@ -759,14 +759,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a logger definition. You may optionally provide the initial version of the
-        /// logger definition or use ``CreateLoggerDefinitionVersion`` at a later time.
+        /// Creates a logger definition. You may provide the initial version of the logger definition
+        /// now or use ''CreateLoggerDefinitionVersion'' at a later time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoggerDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateLoggerDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">REST API Reference for CreateLoggerDefinition Operation</seealso>
         public virtual CreateLoggerDefinitionResponse CreateLoggerDefinition(CreateLoggerDefinitionRequest request)
@@ -808,7 +808,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateLoggerDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion">REST API Reference for CreateLoggerDefinitionVersion Operation</seealso>
         public virtual CreateLoggerDefinitionVersionResponse CreateLoggerDefinitionVersion(CreateLoggerDefinitionVersionRequest request)
@@ -846,13 +846,13 @@ namespace Amazon.Greengrass
         /// <summary>
         /// Creates a resource definition which contains a list of resources to be used in a group.
         /// You can create an initial version of the definition by providing a list of resources
-        /// now, or use ``CreateResourceDefinitionVersion`` later.
+        /// now, or use ''CreateResourceDefinitionVersion'' later.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateResourceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">REST API Reference for CreateResourceDefinition Operation</seealso>
         public virtual CreateResourceDefinitionResponse CreateResourceDefinition(CreateResourceDefinitionRequest request)
@@ -888,13 +888,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Create a version of a resource definition that has already been defined.
+        /// Creates a version of a resource definition that has already been defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDefinitionVersion service method.</param>
         /// 
         /// <returns>The response from the CreateResourceDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">REST API Reference for CreateResourceDefinitionVersion Operation</seealso>
         public virtual CreateResourceDefinitionVersionResponse CreateResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request)
@@ -930,17 +930,19 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates an Iot Job that will trigger your Greengrass Cores to update the software
-        /// they are running.
+        /// Creates a software update for a core or group of cores (specified as an IoT thing
+        /// group.) Use this to update the OTA Agent as well as the Greengrass core software.
+        /// It makes use of the IoT Jobs feature which provides additional commands to manage
+        /// a Greengrass core software update job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSoftwareUpdateJob service method.</param>
         /// 
         /// <returns>The response from the CreateSoftwareUpdateJob service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">REST API Reference for CreateSoftwareUpdateJob Operation</seealso>
         public virtual CreateSoftwareUpdateJobResponse CreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request)
@@ -976,15 +978,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a subscription definition. You may optionally provide the initial version
-        /// of the subscription definition or use ``CreateSubscriptionDefinitionVersion`` at a
-        /// later time.
+        /// Creates a subscription definition. You may provide the initial version of the subscription
+        /// definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscriptionDefinition service method.</param>
         /// 
         /// <returns>The response from the CreateSubscriptionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">REST API Reference for CreateSubscriptionDefinition Operation</seealso>
         public virtual CreateSubscriptionDefinitionResponse CreateSubscriptionDefinition(CreateSubscriptionDefinitionRequest request)
@@ -1026,7 +1027,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the CreateSubscriptionDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
         public virtual CreateSubscriptionDefinitionVersionResponse CreateSubscriptionDefinitionVersion(CreateSubscriptionDefinitionVersionRequest request)
@@ -1062,13 +1063,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a core definition. The core definition must not have been used in a deployment.
+        /// Deletes a core definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCoreDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteCoreDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">REST API Reference for DeleteCoreDefinition Operation</seealso>
         public virtual DeleteCoreDefinitionResponse DeleteCoreDefinition(DeleteCoreDefinitionRequest request)
@@ -1104,13 +1105,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a device definition. The device definition must not have been used in a deployment.
+        /// Deletes a device definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteDeviceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">REST API Reference for DeleteDeviceDefinition Operation</seealso>
         public virtual DeleteDeviceDefinitionResponse DeleteDeviceDefinition(DeleteDeviceDefinitionRequest request)
@@ -1146,14 +1147,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a Lambda function definition. The Lambda function definition must not have
-        /// been used in a deployment.
+        /// Deletes a Lambda function definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteFunctionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">REST API Reference for DeleteFunctionDefinition Operation</seealso>
         public virtual DeleteFunctionDefinitionResponse DeleteFunctionDefinition(DeleteFunctionDefinitionRequest request)
@@ -1189,13 +1189,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a group. The group must not have been used in deployment.
+        /// Deletes a group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
@@ -1231,13 +1231,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a logger definition. The logger definition must not have been used in a deployment.
+        /// Deletes a logger definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoggerDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteLoggerDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">REST API Reference for DeleteLoggerDefinition Operation</seealso>
         public virtual DeleteLoggerDefinitionResponse DeleteLoggerDefinition(DeleteLoggerDefinitionRequest request)
@@ -1279,7 +1279,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the DeleteResourceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition">REST API Reference for DeleteResourceDefinition Operation</seealso>
         public virtual DeleteResourceDefinitionResponse DeleteResourceDefinition(DeleteResourceDefinitionRequest request)
@@ -1315,14 +1315,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Deletes a subscription definition. The subscription definition must not have been
-        /// used in a deployment.
+        /// Deletes a subscription definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionDefinition service method.</param>
         /// 
         /// <returns>The response from the DeleteSubscriptionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">REST API Reference for DeleteSubscriptionDefinition Operation</seealso>
         public virtual DeleteSubscriptionDefinitionResponse DeleteSubscriptionDefinition(DeleteSubscriptionDefinitionRequest request)
@@ -1364,10 +1363,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the DisassociateRoleFromGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup">REST API Reference for DisassociateRoleFromGroup Operation</seealso>
         public virtual DisassociateRoleFromGroupResponse DisassociateRoleFromGroup(DisassociateRoleFromGroupRequest request)
@@ -1403,14 +1402,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Disassociates the service role from the account. Without a service role, deployments
+        /// Disassociates the service role from your account. Without a service role, deployments
         /// will not work.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceRoleFromAccount service method.</param>
         /// 
         /// <returns>The response from the DisassociateServiceRoleFromAccount service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">REST API Reference for DisassociateServiceRoleFromAccount Operation</seealso>
         public virtual DisassociateServiceRoleFromAccountResponse DisassociateServiceRoleFromAccount(DisassociateServiceRoleFromAccountRequest request)
@@ -1452,10 +1451,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetAssociatedRole service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole">REST API Reference for GetAssociatedRole Operation</seealso>
         public virtual GetAssociatedRoleResponse GetAssociatedRole(GetAssociatedRoleRequest request)
@@ -1497,10 +1496,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetConnectivityInfo service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
         public virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
@@ -1542,7 +1541,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetCoreDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition">REST API Reference for GetCoreDefinition Operation</seealso>
         public virtual GetCoreDefinitionResponse GetCoreDefinition(GetCoreDefinitionRequest request)
@@ -1584,7 +1583,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetCoreDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion">REST API Reference for GetCoreDefinitionVersion Operation</seealso>
         public virtual GetCoreDefinitionVersionResponse GetCoreDefinitionVersion(GetCoreDefinitionVersionRequest request)
@@ -1626,7 +1625,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetDeploymentStatus service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus">REST API Reference for GetDeploymentStatus Operation</seealso>
         public virtual GetDeploymentStatusResponse GetDeploymentStatus(GetDeploymentStatusRequest request)
@@ -1668,7 +1667,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetDeviceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition">REST API Reference for GetDeviceDefinition Operation</seealso>
         public virtual GetDeviceDefinitionResponse GetDeviceDefinition(GetDeviceDefinitionRequest request)
@@ -1710,7 +1709,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetDeviceDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion">REST API Reference for GetDeviceDefinitionVersion Operation</seealso>
         public virtual GetDeviceDefinitionVersionResponse GetDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest request)
@@ -1746,14 +1745,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Retrieves information about a Lambda function definition, such as its creation time
+        /// Retrieves information about a Lambda function definition, including its creation time
         /// and latest version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionDefinition service method.</param>
         /// 
         /// <returns>The response from the GetFunctionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">REST API Reference for GetFunctionDefinition Operation</seealso>
         public virtual GetFunctionDefinitionResponse GetFunctionDefinition(GetFunctionDefinitionRequest request)
@@ -1789,14 +1788,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Retrieves information about a Lambda function definition version, such as which Lambda
-        /// functions are included in the version and their configurations.
+        /// Retrieves information about a Lambda function definition version, including which
+        /// Lambda functions are included in the version and their configurations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunctionDefinitionVersion service method.</param>
         /// 
         /// <returns>The response from the GetFunctionDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">REST API Reference for GetFunctionDefinitionVersion Operation</seealso>
         public virtual GetFunctionDefinitionVersionResponse GetFunctionDefinitionVersion(GetFunctionDefinitionVersionRequest request)
@@ -1838,7 +1837,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
@@ -1880,10 +1879,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetGroupCertificateAuthority service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority">REST API Reference for GetGroupCertificateAuthority Operation</seealso>
         public virtual GetGroupCertificateAuthorityResponse GetGroupCertificateAuthority(GetGroupCertificateAuthorityRequest request)
@@ -1925,10 +1924,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetGroupCertificateConfiguration service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration">REST API Reference for GetGroupCertificateConfiguration Operation</seealso>
         public virtual GetGroupCertificateConfigurationResponse GetGroupCertificateConfiguration(GetGroupCertificateConfigurationRequest request)
@@ -1970,7 +1969,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetGroupVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion">REST API Reference for GetGroupVersion Operation</seealso>
         public virtual GetGroupVersionResponse GetGroupVersion(GetGroupVersionRequest request)
@@ -2012,7 +2011,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetLoggerDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition">REST API Reference for GetLoggerDefinition Operation</seealso>
         public virtual GetLoggerDefinitionResponse GetLoggerDefinition(GetLoggerDefinitionRequest request)
@@ -2054,7 +2053,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetLoggerDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion">REST API Reference for GetLoggerDefinitionVersion Operation</seealso>
         public virtual GetLoggerDefinitionVersionResponse GetLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest request)
@@ -2090,14 +2089,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Retrieves information about a resource definition, such as its creation time and latest
-        /// version.
+        /// Retrieves information about a resource definition, including its creation time and
+        /// latest version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinition service method.</param>
         /// 
         /// <returns>The response from the GetResourceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">REST API Reference for GetResourceDefinition Operation</seealso>
         public virtual GetResourceDefinitionResponse GetResourceDefinition(GetResourceDefinitionRequest request)
@@ -2133,14 +2132,14 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Retrieves information about a resource definition version, such as which resources
+        /// Retrieves information about a resource definition version, including which resources
         /// are included in the version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceDefinitionVersion service method.</param>
         /// 
         /// <returns>The response from the GetResourceDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">REST API Reference for GetResourceDefinitionVersion Operation</seealso>
         public virtual GetResourceDefinitionVersionResponse GetResourceDefinitionVersion(GetResourceDefinitionVersionRequest request)
@@ -2176,13 +2175,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Retrieves the service role that is attached to the account.
+        /// Retrieves the service role that is attached to your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceRoleForAccount service method.</param>
         /// 
         /// <returns>The response from the GetServiceRoleForAccount service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">REST API Reference for GetServiceRoleForAccount Operation</seealso>
         public virtual GetServiceRoleForAccountResponse GetServiceRoleForAccount(GetServiceRoleForAccountRequest request)
@@ -2224,7 +2223,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetSubscriptionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition">REST API Reference for GetSubscriptionDefinition Operation</seealso>
         public virtual GetSubscriptionDefinitionResponse GetSubscriptionDefinition(GetSubscriptionDefinitionRequest request)
@@ -2266,7 +2265,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the GetSubscriptionDefinitionVersion service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion">REST API Reference for GetSubscriptionDefinitionVersion Operation</seealso>
         public virtual GetSubscriptionDefinitionVersionResponse GetSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest request)
@@ -2341,13 +2340,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Lists versions of a core definition.
+        /// Lists the versions of a core definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreDefinitionVersions service method.</param>
         /// 
         /// <returns>The response from the ListCoreDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">REST API Reference for ListCoreDefinitionVersions Operation</seealso>
         public virtual ListCoreDefinitionVersionsResponse ListCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request)
@@ -2389,7 +2388,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListDeployments service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
@@ -2470,7 +2469,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListDeviceDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions">REST API Reference for ListDeviceDefinitionVersions Operation</seealso>
         public virtual ListDeviceDefinitionVersionsResponse ListDeviceDefinitionVersions(ListDeviceDefinitionVersionsRequest request)
@@ -2551,7 +2550,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListFunctionDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions">REST API Reference for ListFunctionDefinitionVersions Operation</seealso>
         public virtual ListFunctionDefinitionVersionsResponse ListFunctionDefinitionVersions(ListFunctionDefinitionVersionsRequest request)
@@ -2593,10 +2592,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListGroupCertificateAuthorities service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities">REST API Reference for ListGroupCertificateAuthorities Operation</seealso>
         public virtual ListGroupCertificateAuthoritiesResponse ListGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest request)
@@ -2671,13 +2670,13 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// List the versions of a group.
+        /// Lists the versions of a group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupVersions service method.</param>
         /// 
         /// <returns>The response from the ListGroupVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">REST API Reference for ListGroupVersions Operation</seealso>
         public virtual ListGroupVersionsResponse ListGroupVersions(ListGroupVersionsRequest request)
@@ -2758,7 +2757,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListLoggerDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions">REST API Reference for ListLoggerDefinitionVersions Operation</seealso>
         public virtual ListLoggerDefinitionVersionsResponse ListLoggerDefinitionVersions(ListLoggerDefinitionVersionsRequest request)
@@ -2839,7 +2838,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListResourceDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions">REST API Reference for ListResourceDefinitionVersions Operation</seealso>
         public virtual ListResourceDefinitionVersionsResponse ListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request)
@@ -2920,7 +2919,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ListSubscriptionDefinitionVersions service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions">REST API Reference for ListSubscriptionDefinitionVersions Operation</seealso>
         public virtual ListSubscriptionDefinitionVersionsResponse ListSubscriptionDefinitionVersions(ListSubscriptionDefinitionVersionsRequest request)
@@ -2962,7 +2961,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the ResetDeployments service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
         public virtual ResetDeploymentsResponse ResetDeployments(ResetDeploymentsRequest request)
@@ -3006,10 +3005,10 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateConnectivityInfo service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
         public virtual UpdateConnectivityInfoResponse UpdateConnectivityInfo(UpdateConnectivityInfoRequest request)
@@ -3051,7 +3050,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateCoreDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition">REST API Reference for UpdateCoreDefinition Operation</seealso>
         public virtual UpdateCoreDefinitionResponse UpdateCoreDefinition(UpdateCoreDefinitionRequest request)
@@ -3093,7 +3092,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateDeviceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition">REST API Reference for UpdateDeviceDefinition Operation</seealso>
         public virtual UpdateDeviceDefinitionResponse UpdateDeviceDefinition(UpdateDeviceDefinitionRequest request)
@@ -3135,7 +3134,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateFunctionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition">REST API Reference for UpdateFunctionDefinition Operation</seealso>
         public virtual UpdateFunctionDefinitionResponse UpdateFunctionDefinition(UpdateFunctionDefinitionRequest request)
@@ -3177,7 +3176,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateGroup service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
@@ -3213,16 +3212,16 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Updates the Cert expiry time for a group.
+        /// Updates the Certificate expiry time for a group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroupCertificateConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateGroupCertificateConfiguration service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">REST API Reference for UpdateGroupCertificateConfiguration Operation</seealso>
         public virtual UpdateGroupCertificateConfigurationResponse UpdateGroupCertificateConfiguration(UpdateGroupCertificateConfigurationRequest request)
@@ -3264,7 +3263,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateLoggerDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition">REST API Reference for UpdateLoggerDefinition Operation</seealso>
         public virtual UpdateLoggerDefinitionResponse UpdateLoggerDefinition(UpdateLoggerDefinitionRequest request)
@@ -3306,7 +3305,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateResourceDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition">REST API Reference for UpdateResourceDefinition Operation</seealso>
         public virtual UpdateResourceDefinitionResponse UpdateResourceDefinition(UpdateResourceDefinitionRequest request)
@@ -3348,7 +3347,7 @@ namespace Amazon.Greengrass
         /// 
         /// <returns>The response from the UpdateSubscriptionDefinition service method, as returned by Greengrass.</returns>
         /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
-        /// General Error
+        /// General error information.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition">REST API Reference for UpdateSubscriptionDefinition Operation</seealso>
         public virtual UpdateSubscriptionDefinitionResponse UpdateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request)

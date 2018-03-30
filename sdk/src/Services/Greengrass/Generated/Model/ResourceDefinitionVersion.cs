@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on resource definition version
+    /// Information about a resource definition version.
     /// </summary>
     public partial class ResourceDefinitionVersion
     {
         private List<Resource> _resources = new List<Resource>();
 
         /// <summary>
-        /// Gets and sets the property Resources. List of resources.
+        /// Gets and sets the property Resources. A list of resources.
         /// </summary>
         public List<Resource> Resources
         {

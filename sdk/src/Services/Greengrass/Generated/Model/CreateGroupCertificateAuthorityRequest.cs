@@ -37,8 +37,8 @@ namespace Amazon.Greengrass.Model
         private string _groupId;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -53,7 +53,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {

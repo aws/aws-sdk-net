@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// ErrorDetail
+    /// Details about the error.
     /// </summary>
     public partial class ErrorDetail
     {
@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _detailedErrorMessage;
 
         /// <summary>
-        /// Gets and sets the property DetailedErrorCode. Detailed Error Code
+        /// Gets and sets the property DetailedErrorCode. A detailed error code.
         /// </summary>
         public string DetailedErrorCode
         {
@@ -51,7 +51,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DetailedErrorMessage. Detailed Error Message
+        /// Gets and sets the property DetailedErrorMessage. A detailed error message.
         /// </summary>
         public string DetailedErrorMessage
         {

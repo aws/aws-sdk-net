@@ -32,7 +32,7 @@ namespace Amazon.Greengrass.Model
     /// Creates a Lambda function definition which contains a list of Lambda functions and
     /// their configurations to be used in a group. You can create an initial version of the
     /// definition by providing a list of Lambda functions and their configurations now, or
-    /// use ``CreateFunctionDefinitionVersion`` later.
+    /// use ''CreateFunctionDefinitionVersion'' later.
     /// </summary>
     public partial class CreateFunctionDefinitionRequest : AmazonGreengrassRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -57,7 +57,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the function definition.
         /// </summary>
         public FunctionDefinitionVersion InitialVersion
         {
@@ -72,7 +73,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the function definition
+        /// Gets and sets the property Name. The name of the function definition.
         /// </summary>
         public string Name
         {

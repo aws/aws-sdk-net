@@ -28,15 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the function definition version
+    /// Information about a function definition version.
     /// </summary>
     public partial class FunctionDefinitionVersion
     {
         private List<Function> _functions = new List<Function>();
 
         /// <summary>
-        /// Gets and sets the property Functions. Lambda functions in this function definition
-        /// version.
+        /// Gets and sets the property Functions. A list of Lambda functions in this function
+        /// definition version.
         /// </summary>
         public List<Function> Functions
         {

@@ -47,6 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj"/>
     <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj"/>
   </ItemGroup>
 

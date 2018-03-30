@@ -29,16 +29,17 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateServiceRoleToAccount operation.
-    /// Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role to
-    /// access your Lambda functions and AWS IoT resources. This is necessary for deployments
-    /// to succeed. It needs to have minimum permissions in policy ``AWSGreengrassResourceAccessRolePolicy``
+    /// Associates a role with your account. AWS Greengrass will use the role to access your
+    /// Lambda functions and AWS IoT resources. This is necessary for deployments to succeed.
+    /// The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
     /// </summary>
     public partial class AssociateServiceRoleToAccountRequest : AmazonGreengrassRequest
     {
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. Role arn you wish to associate with this account.
+        /// Gets and sets the property RoleArn. The ARN of the service role you wish to associate
+        /// with your account.
         /// </summary>
         public string RoleArn
         {

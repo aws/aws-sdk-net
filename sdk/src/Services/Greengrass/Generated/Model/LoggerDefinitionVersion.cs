@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on logger definition version
+    /// Information about a logger definition version.
     /// </summary>
     public partial class LoggerDefinitionVersion
     {
         private List<Logger> _loggers = new List<Logger>();
 
         /// <summary>
-        /// Gets and sets the property Loggers. List of loggers.
+        /// Gets and sets the property Loggers. A list of loggers.
         /// </summary>
         public List<Logger> Loggers
         {

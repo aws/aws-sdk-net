@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _groupId;
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. the deployment Id
+        /// Gets and sets the property DeploymentId. The ID of the deployment.
         /// </summary>
         public string DeploymentId
         {
@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {

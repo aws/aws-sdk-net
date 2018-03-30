@@ -28,16 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// A container of data for all resource types.
+    /// A container for resource data. The container takes only one of the following supported
+    /// resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
+    /// ''S3MachineLearningModelResourceData''.
     /// </summary>
     public partial class ResourceDataContainer
     {
         private LocalDeviceResourceData _localDeviceResourceData;
         private LocalVolumeResourceData _localVolumeResourceData;
+        private S3MachineLearningModelResourceData _s3MachineLearningModelResourceData;
+        private SageMakerMachineLearningModelResourceData _sageMakerMachineLearningModelResourceData;
 
         /// <summary>
-        /// Gets and sets the property LocalDeviceResourceData. Attributes that define the Local
-        /// Device Resource.
+        /// Gets and sets the property LocalDeviceResourceData. Attributes that define the local
+        /// device resource.
         /// </summary>
         public LocalDeviceResourceData LocalDeviceResourceData
         {
@@ -52,8 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocalVolumeResourceData. Attributes that define the Local
-        /// Volume Resource.
+        /// Gets and sets the property LocalVolumeResourceData. Attributes that define the local
+        /// volume resource.
         /// </summary>
         public LocalVolumeResourceData LocalVolumeResourceData
         {
@@ -65,6 +69,38 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetLocalVolumeResourceData()
         {
             return this._localVolumeResourceData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3MachineLearningModelResourceData. Attributes that define
+        /// an S3 machine learning resource.
+        /// </summary>
+        public S3MachineLearningModelResourceData S3MachineLearningModelResourceData
+        {
+            get { return this._s3MachineLearningModelResourceData; }
+            set { this._s3MachineLearningModelResourceData = value; }
+        }
+
+        // Check to see if S3MachineLearningModelResourceData property is set
+        internal bool IsSetS3MachineLearningModelResourceData()
+        {
+            return this._s3MachineLearningModelResourceData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerMachineLearningModelResourceData. Attributes that
+        /// define an SageMaker machine learning resource.
+        /// </summary>
+        public SageMakerMachineLearningModelResourceData SageMakerMachineLearningModelResourceData
+        {
+            get { return this._sageMakerMachineLearningModelResourceData; }
+            set { this._sageMakerMachineLearningModelResourceData = value; }
+        }
+
+        // Check to see if SageMakerMachineLearningModelResourceData property is set
+        internal bool IsSetSageMakerMachineLearningModelResourceData()
+        {
+            return this._sageMakerMachineLearningModelResourceData != null;
         }
 
     }

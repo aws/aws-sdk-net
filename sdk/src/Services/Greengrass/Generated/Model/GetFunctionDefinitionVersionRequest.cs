@@ -29,8 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFunctionDefinitionVersion operation.
-    /// Retrieves information about a Lambda function definition version, such as which Lambda
-    /// functions are included in the version and their configurations.
+    /// Retrieves information about a Lambda function definition version, including which
+    /// Lambda functions are included in the version and their configurations.
     /// </summary>
     public partial class GetFunctionDefinitionVersionRequest : AmazonGreengrassRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _functionDefinitionVersionId;
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionId. the unique Id of the lambda definition
+        /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
         public string FunctionDefinitionId
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionVersionId. Function definition version
-        /// Id
+        /// Gets and sets the property FunctionDefinitionVersionId. The ID of the function definition
+        /// version.
         /// </summary>
         public string FunctionDefinitionVersionId
         {

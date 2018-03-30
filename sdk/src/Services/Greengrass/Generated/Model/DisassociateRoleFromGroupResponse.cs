@@ -35,8 +35,8 @@ namespace Amazon.Greengrass.Model
         private string _disassociatedAt;
 
         /// <summary>
-        /// Gets and sets the property DisassociatedAt. Time when the role was disassociated from
-        /// the group.
+        /// Gets and sets the property DisassociatedAt. The time, in milliseconds since the epoch,
+        /// when the role was disassociated from the group.
         /// </summary>
         public string DisassociatedAt
         {

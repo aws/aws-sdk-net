@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Versions. Versions
+        /// Gets and sets the property Versions. Information about a version.
         /// </summary>
         public List<VersionInformation> Versions
         {

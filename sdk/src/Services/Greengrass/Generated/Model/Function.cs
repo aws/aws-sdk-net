@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on function
+    /// Information about a Lambda function.
     /// </summary>
     public partial class Function
     {
@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _id;
 
         /// <summary>
-        /// Gets and sets the property FunctionArn. Arn of the Lambda function.
+        /// Gets and sets the property FunctionArn. The ARN of the Lambda function.
         /// </summary>
         public string FunctionArn
         {
@@ -52,7 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FunctionConfiguration. Configuration of the function
+        /// Gets and sets the property FunctionConfiguration. The configuration of the Lambda
+        /// function.
         /// </summary>
         public FunctionConfiguration FunctionConfiguration
         {
@@ -67,7 +68,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the function in this version.
+        /// Gets and sets the property Id. The ID of the Lambda function.
         /// </summary>
         public string Id
         {

@@ -67,6 +67,28 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetS3MachineLearningModelResourceData())
+            {
+                context.Writer.WritePropertyName("S3MachineLearningModelResourceData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3MachineLearningModelResourceDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3MachineLearningModelResourceData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSageMakerMachineLearningModelResourceData())
+            {
+                context.Writer.WritePropertyName("SageMakerMachineLearningModelResourceData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SageMakerMachineLearningModelResourceDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.SageMakerMachineLearningModelResourceData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

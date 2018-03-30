@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private string _subscriptionDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Specifies the maximum number of list results
-        /// to be returned in this page
+        /// Gets and sets the property MaxResults. The maximum number of results to be returned
+        /// per request.
         /// </summary>
         public string MaxResults
         {
@@ -54,8 +54,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. Specifies the pagination token used when iterating
-        /// through a paginated request
+        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
+        /// if there are no additional results.
         /// </summary>
         public string NextToken
         {
@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionId. subscription definition Id
+        /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
         public string SubscriptionDefinitionId
         {

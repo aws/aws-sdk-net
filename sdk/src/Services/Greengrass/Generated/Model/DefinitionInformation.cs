@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the Definition
+    /// Information about a definition.
     /// </summary>
     public partial class DefinitionInformation
     {
@@ -41,7 +41,7 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Arn. Arn of the definition.
+        /// Gets and sets the property Arn. The ARN of the definition.
         /// </summary>
         public string Arn
         {
@@ -56,8 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp of when the definition was
-        /// created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the definition was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -72,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the definition.
+        /// Gets and sets the property Id. The ID of the definition.
         /// </summary>
         public string Id
         {
@@ -87,7 +87,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedTimestamp. Last updated timestamp of the definition.
+        /// Gets and sets the property LastUpdatedTimestamp. The time, in milliseconds since the
+        /// epoch, when the definition was last updated.
         /// </summary>
         public string LastUpdatedTimestamp
         {
@@ -102,7 +103,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersion. Last version of the definition.
+        /// Gets and sets the property LatestVersion. The latest version of the definition.
         /// </summary>
         public string LatestVersion
         {
@@ -117,7 +118,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersionArn. Latest version arn of the definition.
+        /// Gets and sets the property LatestVersionArn. The ARN of the latest version of the
+        /// definition.
         /// </summary>
         public string LatestVersionArn
         {
@@ -132,7 +134,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. Name of the definition.
+        /// Gets and sets the property Name. The name of the definition.
         /// </summary>
         public string Name
         {

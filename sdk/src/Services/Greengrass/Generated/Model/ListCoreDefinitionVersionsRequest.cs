@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCoreDefinitionVersions operation.
-    /// Lists versions of a core definition.
+    /// Lists the versions of a core definition.
     /// </summary>
     public partial class ListCoreDefinitionVersionsRequest : AmazonGreengrassRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CoreDefinitionId. core definition Id
+        /// Gets and sets the property CoreDefinitionId. The ID of the core definition.
         /// </summary>
         public string CoreDefinitionId
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. Specifies the maximum number of list results
-        /// to be returned in this page
+        /// Gets and sets the property MaxResults. The maximum number of results to be returned
+        /// per request.
         /// </summary>
         public string MaxResults
         {
@@ -69,8 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. Specifies the pagination token used when iterating
-        /// through a paginated request
+        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
+        /// if there are no additional results.
         /// </summary>
         public string NextToken
         {

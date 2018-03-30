@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceDefinitionVersion operation.
-    /// Retrieves information about a resource definition version, such as which resources
+    /// Retrieves information about a resource definition version, including which resources
     /// are included in the version.
     /// </summary>
     public partial class GetResourceDefinitionVersionRequest : AmazonGreengrassRequest
@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _resourceDefinitionVersionId;
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionId. Resource definition Id.
+        /// Gets and sets the property ResourceDefinitionId. The ID of the resource definition.
         /// </summary>
         public string ResourceDefinitionId
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionVersionId. Resource definition version
-        /// Id.
+        /// Gets and sets the property ResourceDefinitionVersionId. The ID of the resource definition
+        /// version.
         /// </summary>
         public string ResourceDefinitionVersionId
         {

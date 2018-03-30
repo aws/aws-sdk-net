@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Deployments. List of deployments for the requested groups
+        /// Gets and sets the property Deployments. A list of deployments for the requested groups.
         /// </summary>
         public List<Deployment> Deployments
         {

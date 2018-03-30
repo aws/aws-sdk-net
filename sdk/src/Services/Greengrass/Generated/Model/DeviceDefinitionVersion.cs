@@ -28,14 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on device definition version
+    /// Information about a device definition version.
     /// </summary>
     public partial class DeviceDefinitionVersion
     {
         private List<Device> _devices = new List<Device>();
 
         /// <summary>
-        /// Gets and sets the property Devices. Devices in the definition version.
+        /// Gets and sets the property Devices. A list of devices in the definition version.
         /// </summary>
         public List<Device> Devices
         {

@@ -45,6 +45,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncodingType())
+            {
+                context.Writer.WritePropertyName("EncodingType");
+                context.Writer.Write(requestObject.EncodingType);
+            }
+
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");

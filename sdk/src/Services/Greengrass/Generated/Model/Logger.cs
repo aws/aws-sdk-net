@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on the Logger
+    /// Information about a logger
     /// </summary>
     public partial class Logger
     {
@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private LoggerType _type;
 
         /// <summary>
-        /// Gets and sets the property Component. The component that will be subject to logs
+        /// Gets and sets the property Component. The component that will be subject to logging.
         /// </summary>
         public LoggerComponent Component
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Element Id for this entry in the list.
+        /// Gets and sets the property Id. The id of the logger.
         /// </summary>
         public string Id
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Level. The level of the logs
+        /// Gets and sets the property Level. The level of the logs.
         /// </summary>
         public LoggerLevel Level
         {
@@ -84,8 +84,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Space. Amount of hardware space, in KB, to use if file
-        /// system is used for logging purposes.
+        /// Gets and sets the property Space. The amount of file space, in KB, to use if the local
+        /// file system is used for logging purposes.
         /// </summary>
         public int Space
         {
@@ -100,7 +100,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. The type which will be use for log output
+        /// Gets and sets the property Type. The type of log output which will be used.
         /// </summary>
         public LoggerType Type
         {

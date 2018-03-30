@@ -29,14 +29,14 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes a group. The group must not have been used in deployment.
+    /// Deletes a group.
     /// </summary>
     public partial class DeleteGroupRequest : AmazonGreengrassRequest
     {
         private string _groupId;
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {

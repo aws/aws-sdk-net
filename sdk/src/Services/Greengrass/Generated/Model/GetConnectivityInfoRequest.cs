@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _thingName;
 
         /// <summary>
-        /// Gets and sets the property ThingName. Thing Name
+        /// Gets and sets the property ThingName. The thing name.
         /// </summary>
         public string ThingName
         {

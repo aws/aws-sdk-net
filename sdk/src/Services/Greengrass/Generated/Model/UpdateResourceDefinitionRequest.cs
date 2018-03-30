@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _resourceDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property Name. name of the definition
+        /// Gets and sets the property Name. The name of the definition.
         /// </summary>
         public string Name
         {
@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionId. Resource definition Id.
+        /// Gets and sets the property ResourceDefinitionId. The ID of the resource definition.
         /// </summary>
         public string ResourceDefinitionId
         {

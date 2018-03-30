@@ -76,6 +76,18 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocalVolumeResourceData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3MachineLearningModelResourceData", targetDepth))
+                {
+                    var unmarshaller = S3MachineLearningModelResourceDataUnmarshaller.Instance;
+                    unmarshalledObject.S3MachineLearningModelResourceData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SageMakerMachineLearningModelResourceData", targetDepth))
+                {
+                    var unmarshaller = SageMakerMachineLearningModelResourceDataUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerMachineLearningModelResourceData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

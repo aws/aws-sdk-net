@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _groupVersionId;
 
         /// <summary>
-        /// Gets and sets the property GroupId. The unique Id of the AWS Greengrass Group
+        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
         /// </summary>
         public string GroupId
         {
@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupVersionId. Group version Id
+        /// Gets and sets the property GroupVersionId. The ID of the group version.
         /// </summary>
         public string GroupVersionId
         {

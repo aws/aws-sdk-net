@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Attributes that define the Local Volume Resource.
+    /// Attributes that define a local volume resource.
     /// </summary>
     public partial class LocalVolumeResourceData
     {
@@ -37,7 +37,8 @@ namespace Amazon.Greengrass.Model
         private string _sourcePath;
 
         /// <summary>
-        /// Gets and sets the property DestinationPath. Local destination path of the resource.
+        /// Gets and sets the property DestinationPath. The absolute local path of the resource
+        /// inside the lambda environment.
         /// </summary>
         public string DestinationPath
         {
@@ -52,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupOwnerSetting. Group owner related settings for local
-        /// resources.
+        /// Gets and sets the property GroupOwnerSetting. Allows you to configure additional group
+        /// privileges for the Lambda process. This field is optional.
         /// </summary>
         public GroupOwnerSetting GroupOwnerSetting
         {
@@ -68,7 +69,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourcePath. Local source path of the resource.
+        /// Gets and sets the property SourcePath. The local absolute path of the volume resource
+        /// on the host. The source path for a volume resource type cannot start with ''/proc''
+        /// or ''/sys''.
         /// </summary>
         public string SourcePath
         {

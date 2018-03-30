@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on subscription
+    /// Information about a subscription.
     /// </summary>
     public partial class Subscription
     {
@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _target;
 
         /// <summary>
-        /// Gets and sets the property Id. Element Id for this entry in the list.
+        /// Gets and sets the property Id. The id of the subscription.
         /// </summary>
         public string Id
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source. Source of the subscription. Can be a thing arn,
-        /// lambda arn or word 'cloud'
+        /// Gets and sets the property Source. The source of the subscription. Can be a thing
+        /// ARN, a Lambda function ARN, 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
         /// </summary>
         public string Source
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subject. Subject of the message.
+        /// Gets and sets the property Subject. The subject of the message.
         /// </summary>
         public string Subject
         {
@@ -84,8 +84,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Target. Where the message is sent to. Can be a thing arn,
-        /// lambda arn or word 'cloud'.
+        /// Gets and sets the property Target. Where the message is sent to. Can be a thing ARN,
+        /// a Lambda function ARN, 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
         /// </summary>
         public string Target
         {

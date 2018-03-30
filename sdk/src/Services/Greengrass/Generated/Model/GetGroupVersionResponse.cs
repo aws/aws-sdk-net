@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property Arn. Arn of the group version.
+        /// Gets and sets the property Arn. The ARN of the group version.
         /// </summary>
         public string Arn
         {
@@ -54,8 +54,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp when the group version was
-        /// created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the group version was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. Information on the definition
+        /// Gets and sets the property Definition. Information about the group version definition.
         /// </summary>
         public GroupVersion Definition
         {
@@ -85,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the group version.
+        /// Gets and sets the property Id. The ID of the group version.
         /// </summary>
         public string Id
         {
@@ -100,7 +100,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Unique Id for a version of the Group.
+        /// Gets and sets the property Version. The unique ID for the version of the group.
         /// </summary>
         public string Version
         {

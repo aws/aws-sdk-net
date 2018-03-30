@@ -29,15 +29,14 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFunctionDefinition operation.
-    /// Deletes a Lambda function definition. The Lambda function definition must not have
-    /// been used in a deployment.
+    /// Deletes a Lambda function definition.
     /// </summary>
     public partial class DeleteFunctionDefinitionRequest : AmazonGreengrassRequest
     {
         private string _functionDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionId. the unique Id of the lambda definition
+        /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
         public string FunctionDefinitionId
         {

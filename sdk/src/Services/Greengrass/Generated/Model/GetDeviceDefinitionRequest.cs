@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _deviceDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property DeviceDefinitionId. device definition Id
+        /// Gets and sets the property DeviceDefinitionId. The ID of the device definition.
         /// </summary>
         public string DeviceDefinitionId
         {

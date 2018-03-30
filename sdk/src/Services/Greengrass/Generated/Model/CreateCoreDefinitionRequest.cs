@@ -29,9 +29,9 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCoreDefinition operation.
-    /// Creates a core definition. You may optionally provide the initial version of the core
-    /// definition or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass
-    /// Groups must each contain exactly 1 AWS Greengrass Core.
+    /// Creates a core definition. You may provide the initial version of the core definition
+    /// now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups
+    /// must each contain exactly one AWS Greengrass core.
     /// </summary>
     public partial class CreateCoreDefinitionRequest : AmazonGreengrassRequest
     {
@@ -40,8 +40,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -56,7 +56,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the core definition.
         /// </summary>
         public CoreDefinitionVersion InitialVersion
         {
@@ -71,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the core definition
+        /// Gets and sets the property Name. The name of the core definition.
         /// </summary>
         public string Name
         {

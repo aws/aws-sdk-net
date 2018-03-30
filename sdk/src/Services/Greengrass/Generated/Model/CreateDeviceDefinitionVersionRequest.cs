@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private List<Device> _devices = new List<Device>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceDefinitionId. device definition Id
+        /// Gets and sets the property DeviceDefinitionId. The ID of the device definition.
         /// </summary>
         public string DeviceDefinitionId
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Devices. Devices in the definition version.
+        /// Gets and sets the property Devices. A list of devices in the definition version.
         /// </summary>
         public List<Device> Devices
         {

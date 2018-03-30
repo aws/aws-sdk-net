@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information on group certificate authority properties
+    /// Information about a certificate authority for a group.
     /// </summary>
     public partial class GroupCertificateAuthorityProperties
     {
@@ -36,8 +36,8 @@ namespace Amazon.Greengrass.Model
         private string _groupCertificateAuthorityId;
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorityArn. Arn of the certificate authority
-        /// for the group.
+        /// Gets and sets the property GroupCertificateAuthorityArn. The ARN of the certificate
+        /// authority for the group.
         /// </summary>
         public string GroupCertificateAuthorityArn
         {
@@ -52,8 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorityId. Id of the certificate authority
-        /// for the group.
+        /// Gets and sets the property GroupCertificateAuthorityId. The ID of the certificate
+        /// authority for the group.
         /// </summary>
         public string GroupCertificateAuthorityId
         {

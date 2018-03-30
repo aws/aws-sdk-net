@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateServiceRoleFromAccount operation.
-    /// Disassociates the service role from the account. Without a service role, deployments
+    /// Disassociates the service role from your account. Without a service role, deployments
     /// will not work.
     /// </summary>
     public partial class DisassociateServiceRoleFromAccountRequest : AmazonGreengrassRequest

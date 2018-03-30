@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Policy for the function to access a resource.
+    /// A policy used by the function to access a resource.
     /// </summary>
     public partial class ResourceAccessPolicy
     {
@@ -36,7 +36,8 @@ namespace Amazon.Greengrass.Model
         private string _resourceId;
 
         /// <summary>
-        /// Gets and sets the property Permission. The function's access permission to the resource.
+        /// Gets and sets the property Permission. The permissions that the Lambda function has
+        /// to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
         /// </summary>
         public Permission Permission
         {
@@ -51,8 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceId. Id of the resource. A reference to the resource
-        /// definiton.
+        /// Gets and sets the property ResourceId. The ID of the resource. (This ID is assigned
+        /// to the resource when you create the resource definiton.)
         /// </summary>
         public string ResourceId
         {

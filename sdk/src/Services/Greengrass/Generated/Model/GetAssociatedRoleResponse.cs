@@ -36,8 +36,8 @@ namespace Amazon.Greengrass.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property AssociatedAt. Time when the role was associated for the
-        /// group.
+        /// Gets and sets the property AssociatedAt. The time when the role was associated with
+        /// the group.
         /// </summary>
         public string AssociatedAt
         {
@@ -52,7 +52,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleArn. Arn of the role that is associated with the group.
+        /// Gets and sets the property RoleArn. The ARN of the role that is associated with the
+        /// group.
         /// </summary>
         public string RoleArn
         {

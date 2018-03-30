@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property Arn. Arn of the core definition version.
+        /// Gets and sets the property Arn. The ARN of the core definition version.
         /// </summary>
         public string Arn
         {
@@ -54,8 +54,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp of when the core definition
-        /// version was created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the core definition version was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Definition. Information on definition
+        /// Gets and sets the property Definition. Information about the core definition version.
         /// </summary>
         public CoreDefinitionVersion Definition
         {
@@ -85,7 +85,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the core definition the version belongs to.
+        /// Gets and sets the property Id. The ID of the core definition version.
         /// </summary>
         public string Id
         {
@@ -100,7 +100,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of the core definition version.
+        /// Gets and sets the property Version. The version of the core definition version.
         /// </summary>
         public string Version
         {

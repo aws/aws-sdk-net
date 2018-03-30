@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _subscriptionDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property Name. name of the definition
+        /// Gets and sets the property Name. The name of the definition.
         /// </summary>
         public string Name
         {
@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionId. subscription definition Id
+        /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
         public string SubscriptionDefinitionId
         {

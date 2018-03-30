@@ -30,7 +30,7 @@ namespace Amazon.Greengrass.Model
     /// <summary>
     /// Container for the parameters to the CreateCoreDefinitionVersion operation.
     /// Creates a version of a core definition that has already been defined. AWS Greengrass
-    /// Groups must each contain exactly 1 AWS Greengrass Core.
+    /// groups must each contain exactly one AWS Greengrass core.
     /// </summary>
     public partial class CreateCoreDefinitionVersionRequest : AmazonGreengrassRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.Greengrass.Model
         private List<Core> _cores = new List<Core>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -55,7 +55,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CoreDefinitionId. core definition Id
+        /// Gets and sets the property CoreDefinitionId. The ID of the core definition.
         /// </summary>
         public string CoreDefinitionId
         {
@@ -70,7 +70,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Cores. Cores in the definition version.
+        /// Gets and sets the property Cores. A list of cores in the core definition version.
         /// </summary>
         public List<Core> Cores
         {

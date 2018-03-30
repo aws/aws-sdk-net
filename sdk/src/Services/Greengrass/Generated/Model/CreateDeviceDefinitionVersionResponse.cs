@@ -38,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property Arn. Arn of the version.
+        /// Gets and sets the property Arn. The ARN of the version.
         /// </summary>
         public string Arn
         {
@@ -53,7 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp. Timestamp of when the version was created.
+        /// Gets and sets the property CreationTimestamp. The time, in milliseconds since the
+        /// epoch, when the version was created.
         /// </summary>
         public string CreationTimestamp
         {
@@ -68,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Id of the resource container.
+        /// Gets and sets the property Id. The ID of the version.
         /// </summary>
         public string Id
         {
@@ -83,7 +84,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Unique Id of a version.
+        /// Gets and sets the property Version. The unique ID of the version.
         /// </summary>
         public string Version
         {

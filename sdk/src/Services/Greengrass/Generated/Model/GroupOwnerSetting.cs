@@ -36,7 +36,9 @@ namespace Amazon.Greengrass.Model
         private string _groupOwner;
 
         /// <summary>
-        /// Gets and sets the property AutoAddGroupOwner. Eanble the auto added group owner.
+        /// Gets and sets the property AutoAddGroupOwner. If true, GreenGrass automatically adds
+        /// the specified Linux OS group owner of the resource to the Lambda process privileges.
+        /// Thus the Lambda process will have the file access permissions of the added Linux group.
         /// </summary>
         public bool AutoAddGroupOwner
         {
@@ -51,7 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupOwner. Name of the group owner.
+        /// Gets and sets the property GroupOwner. The name of the Linux OS group whose privileges
+        /// will be added to the Lambda process. This field is optional.
         /// </summary>
         public string GroupOwner
         {

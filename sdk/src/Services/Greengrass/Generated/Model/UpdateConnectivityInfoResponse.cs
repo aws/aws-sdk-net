@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property Message. Response Text
+        /// Gets and sets the property Message. A message about the connectivity info update request.
         /// </summary>
         public string Message
         {
@@ -51,7 +51,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. New Version
+        /// Gets and sets the property Version. The new version of the connectivity info.
         /// </summary>
         public string Version
         {

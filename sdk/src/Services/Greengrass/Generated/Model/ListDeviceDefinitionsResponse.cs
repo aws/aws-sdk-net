@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Definitions. Definitions
+        /// Gets and sets the property Definitions. Information about a definition.
         /// </summary>
         public List<DefinitionInformation> Definitions
         {

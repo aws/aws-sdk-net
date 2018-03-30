@@ -29,8 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeviceDefinition operation.
-    /// Creates a device definition. You may optinally provide the initial version of the
-    /// device definition or use ``CreateDeviceDefinitionVersion`` at a later time.
+    /// Creates a device definition. You may provide the initial version of the device definition
+    /// now or use ''CreateDeviceDefinitionVersion'' at a later time.
     /// </summary>
     public partial class CreateDeviceDefinitionRequest : AmazonGreengrassRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -55,7 +55,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the device definition.
         /// </summary>
         public DeviceDefinitionVersion InitialVersion
         {
@@ -70,7 +71,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the device definition
+        /// Gets and sets the property Name. The name of the device definition.
         /// </summary>
         public string Name
         {

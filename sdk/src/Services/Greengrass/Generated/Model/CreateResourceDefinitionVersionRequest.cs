@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResourceDefinitionVersion operation.
-    /// Create a version of a resource definition that has already been defined.
+    /// Creates a version of a resource definition that has already been defined.
     /// </summary>
     public partial class CreateResourceDefinitionVersionRequest : AmazonGreengrassRequest
     {
@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private List<Resource> _resources = new List<Resource>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionId. Resource definition Id.
+        /// Gets and sets the property ResourceDefinitionId. The ID of the resource definition.
         /// </summary>
         public string ResourceDefinitionId
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources. List of resources.
+        /// Gets and sets the property Resources. A list of resources.
         /// </summary>
         public List<Resource> Resources
         {

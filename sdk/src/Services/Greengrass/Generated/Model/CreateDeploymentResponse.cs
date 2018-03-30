@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _deploymentId;
 
         /// <summary>
-        /// Gets and sets the property DeploymentArn. The arn of the deployment.
+        /// Gets and sets the property DeploymentArn. The ARN of the deployment.
         /// </summary>
         public string DeploymentArn
         {
@@ -51,7 +51,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentId. The id of the deployment.
+        /// Gets and sets the property DeploymentId. The ID of the deployment.
         /// </summary>
         public string DeploymentId
         {

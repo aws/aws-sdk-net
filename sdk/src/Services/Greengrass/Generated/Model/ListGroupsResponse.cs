@@ -36,7 +36,7 @@ namespace Amazon.Greengrass.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Groups. Groups
+        /// Gets and sets the property Groups. Information about a group.
         /// </summary>
         public List<GroupInformation> Groups
         {

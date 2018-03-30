@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFunctionDefinition operation.
-    /// Retrieves information about a Lambda function definition, such as its creation time
+    /// Retrieves information about a Lambda function definition, including its creation time
     /// and latest version.
     /// </summary>
     public partial class GetFunctionDefinitionRequest : AmazonGreengrassRequest
@@ -37,7 +37,7 @@ namespace Amazon.Greengrass.Model
         private string _functionDefinitionId;
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionId. the unique Id of the lambda definition
+        /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
         public string FunctionDefinitionId
         {

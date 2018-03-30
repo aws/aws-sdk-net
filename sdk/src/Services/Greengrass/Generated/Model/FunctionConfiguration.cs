@@ -28,10 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Configuration of the function
+    /// The configuration of the Lambda function.
     /// </summary>
     public partial class FunctionConfiguration
     {
+        private EncodingType _encodingType;
         private FunctionConfigurationEnvironment _environment;
         private string _execArgs;
         private string _executable;
@@ -40,7 +41,23 @@ namespace Amazon.Greengrass.Model
         private int? _timeout;
 
         /// <summary>
-        /// Gets and sets the property Environment. Environment of the function configuration
+        /// Gets and sets the property EncodingType. The expected encoding type of the input payload
+        /// for the function. The default is ''json''.
+        /// </summary>
+        public EncodingType EncodingType
+        {
+            get { return this._encodingType; }
+            set { this._encodingType = value; }
+        }
+
+        // Check to see if EncodingType property is set
+        internal bool IsSetEncodingType()
+        {
+            return this._encodingType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. The environment configuration of the function.
         /// </summary>
         public FunctionConfigurationEnvironment Environment
         {
@@ -55,7 +72,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExecArgs. Execution Arguments
+        /// Gets and sets the property ExecArgs. The execution arguments.
         /// </summary>
         public string ExecArgs
         {
@@ -70,7 +87,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Executable. Executable
+        /// Gets and sets the property Executable. The name of the function executable.
         /// </summary>
         public string Executable
         {
@@ -85,8 +102,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemorySize. The memory size, in KB, you configured for
-        /// the function.
+        /// Gets and sets the property MemorySize. The memory size, in KB, which the function
+        /// requires.
         /// </summary>
         public int MemorySize
         {
@@ -101,8 +118,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pinned. Whether the function is pinned or not. Pinned means
-        /// the function is long-lived and starts when the core starts.
+        /// Gets and sets the property Pinned. True if the function is pinned. Pinned means the
+        /// function is long-lived and starts when the core starts.
         /// </summary>
         public bool Pinned
         {
@@ -117,8 +134,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timeout. The function execution time at which Lambda should
-        /// terminate the function. This timeout still applies to pinned lambdas for each request.
+        /// Gets and sets the property Timeout. The allowed function execution time, after which
+        /// Lambda should terminate the function. This timeout still applies to pinned lambdas
+        /// for each request.
         /// </summary>
         public int Timeout
         {

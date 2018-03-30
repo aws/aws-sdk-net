@@ -29,7 +29,7 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFunctionDefinitionVersion operation.
-    /// Create a version of a Lambda function definition that has already been defined.
+    /// Creates a version of a Lambda function definition that has already been defined.
     /// </summary>
     public partial class CreateFunctionDefinitionVersionRequest : AmazonGreengrassRequest
     {
@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private List<Function> _functions = new List<Function>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FunctionDefinitionId. the unique Id of the lambda definition
+        /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
         /// </summary>
         public string FunctionDefinitionId
         {
@@ -69,8 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Functions. Lambda functions in this function definition
-        /// version.
+        /// Gets and sets the property Functions. A list of Lambda functions in this function
+        /// definition version.
         /// </summary>
         public List<Function> Functions
         {

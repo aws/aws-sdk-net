@@ -38,8 +38,8 @@ namespace Amazon.Greengrass.Model
         private List<Subscription> _subscriptions = new List<Subscription>();
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -54,7 +54,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionDefinitionId. subscription definition Id
+        /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.
         /// </summary>
         public string SubscriptionDefinitionId
         {
@@ -69,7 +69,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subscriptions. Subscriptions in the version.
+        /// Gets and sets the property Subscriptions. A list of subscriptions.
         /// </summary>
         public List<Subscription> Subscriptions
         {

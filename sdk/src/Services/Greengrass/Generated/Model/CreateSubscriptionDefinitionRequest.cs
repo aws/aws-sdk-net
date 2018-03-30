@@ -29,9 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubscriptionDefinition operation.
-    /// Creates a subscription definition. You may optionally provide the initial version
-    /// of the subscription definition or use ``CreateSubscriptionDefinitionVersion`` at a
-    /// later time.
+    /// Creates a subscription definition. You may provide the initial version of the subscription
+    /// definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time.
     /// </summary>
     public partial class CreateSubscriptionDefinitionRequest : AmazonGreengrassRequest
     {
@@ -40,8 +39,8 @@ namespace Amazon.Greengrass.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property AmznClientToken. The client token used to request idempotent
-        /// operations.
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
         /// </summary>
         public string AmznClientToken
         {
@@ -56,7 +55,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialVersion. Information on the initial version
+        /// Gets and sets the property InitialVersion. Information about the initial version of
+        /// the subscription definition.
         /// </summary>
         public SubscriptionDefinitionVersion InitialVersion
         {
@@ -71,7 +71,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. name of the subscription definition
+        /// Gets and sets the property Name. The name of the subscription definition.
         /// </summary>
         public string Name
         {

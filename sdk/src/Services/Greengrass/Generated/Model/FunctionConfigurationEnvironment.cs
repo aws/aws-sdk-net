@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Environment of the function configuration
+    /// The environment configuration of the function.
     /// </summary>
     public partial class FunctionConfigurationEnvironment
     {
@@ -37,7 +37,9 @@ namespace Amazon.Greengrass.Model
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AccessSysfs. Flag to allow lambda access sys filesystem.
+        /// Gets and sets the property AccessSysfs. If true, the Lambda function is allowed to
+        /// access the host's /sys folder. Use this when the Lambda function needs to read device
+        /// information from /sys.
         /// </summary>
         public bool AccessSysfs
         {
@@ -52,8 +54,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceAccessPolicies. Policies for the function to access
-        /// resources.
+        /// Gets and sets the property ResourceAccessPolicies. A list of the resources, with their
+        /// permissions, to which the Lambda function will be granted access. A Lambda function
+        /// can have at most 10 resources.
         /// </summary>
         public List<ResourceAccessPolicy> ResourceAccessPolicies
         {
@@ -68,7 +71,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Variables. Environment variables for the lambda function.
+        /// Gets and sets the property Variables. Environment variables for the Lambda function's
+        /// configuration.
         /// </summary>
         public Dictionary<string, string> Variables
         {

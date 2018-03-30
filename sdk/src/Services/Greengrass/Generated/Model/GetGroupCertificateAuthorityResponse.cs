@@ -37,8 +37,8 @@ namespace Amazon.Greengrass.Model
         private string _pemEncodedCertificate;
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorityArn. Arn of the certificate authority
-        /// for the group.
+        /// Gets and sets the property GroupCertificateAuthorityArn. The ARN of the certificate
+        /// authority for the group.
         /// </summary>
         public string GroupCertificateAuthorityArn
         {
@@ -53,8 +53,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorityId. Id of the certificate authority
-        /// for the group.
+        /// Gets and sets the property GroupCertificateAuthorityId. The ID of the certificate
+        /// authority for the group.
         /// </summary>
         public string GroupCertificateAuthorityId
         {
@@ -69,8 +69,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PemEncodedCertificate. PEM encoded certificate for the
-        /// group.
+        /// Gets and sets the property PemEncodedCertificate. The PEM encoded certificate for
+        /// the group.
         /// </summary>
         public string PemEncodedCertificate
         {

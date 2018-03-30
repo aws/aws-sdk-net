@@ -35,7 +35,7 @@ namespace Amazon.Greengrass.Model
         private List<GroupCertificateAuthorityProperties> _groupCertificateAuthorities = new List<GroupCertificateAuthorityProperties>();
 
         /// <summary>
-        /// Gets and sets the property GroupCertificateAuthorities. List of certificate authorities
+        /// Gets and sets the property GroupCertificateAuthorities. A list of certificate authorities
         /// associated with the group.
         /// </summary>
         public List<GroupCertificateAuthorityProperties> GroupCertificateAuthorities
