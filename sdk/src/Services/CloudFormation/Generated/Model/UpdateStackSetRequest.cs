@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class UpdateStackSetRequest : AmazonCloudFormationRequest
     {
+        private string _administrationRoleARN;
         private List<string> _capabilities = new List<string>();
         private string _description;
         private string _operationId;
@@ -51,6 +52,38 @@ namespace Amazon.CloudFormation.Model
         private string _templateBody;
         private string _templateURL;
         private bool? _usePreviousTemplate;
+
+        /// <summary>
+        /// Gets and sets the property AdministrationRoleARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify an IAM role only if you are using customized administrator roles to control
+        /// which users or groups can manage specific stack sets within the same administrator
+        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify a customized administrator role, AWS CloudFormation uses that role
+        /// to update the stack. If you do not specify a customized administrator role, AWS CloudFormation
+        /// performs the update using the role previously associated with the stack set, so long
+        /// as you have permissions to perform operations on the stack set.
+        /// </para>
+        /// </summary>
+        public string AdministrationRoleARN
+        {
+            get { return this._administrationRoleARN; }
+            set { this._administrationRoleARN = value; }
+        }
+
+        // Check to see if AdministrationRoleARN property is set
+        internal bool IsSetAdministrationRoleARN()
+        {
+            return this._administrationRoleARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Capabilities. 

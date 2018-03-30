@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class CreateStackSetRequest : AmazonCloudFormationRequest
     {
+        private string _administrationRoleARN;
         private List<string> _capabilities = new List<string>();
         private string _clientRequestToken;
         private string _description;
@@ -41,6 +42,32 @@ namespace Amazon.CloudFormation.Model
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
         private string _templateURL;
+
+        /// <summary>
+        /// Gets and sets the property AdministrationRoleARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify an IAM role only if you are using customized administrator roles to control
+        /// which users or groups can manage specific stack sets within the same administrator
+        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AdministrationRoleARN
+        {
+            get { return this._administrationRoleARN; }
+            set { this._administrationRoleARN = value; }
+        }
+
+        // Check to see if AdministrationRoleARN property is set
+        internal bool IsSetAdministrationRoleARN()
+        {
+            return this._administrationRoleARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Capabilities. 

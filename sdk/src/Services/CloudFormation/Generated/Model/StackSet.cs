@@ -35,14 +35,41 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class StackSet
     {
+        private string _administrationRoleARN;
         private List<string> _capabilities = new List<string>();
         private string _description;
         private List<Parameter> _parameters = new List<Parameter>();
+        private string _stackSetARN;
         private string _stackSetId;
         private string _stackSetName;
         private StackSetStatus _status;
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
+
+        /// <summary>
+        /// Gets and sets the property AdministrationRoleARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the IAM role used to create or update the stack
+        /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized administrator roles to control which users or groups can manage specific
+        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AdministrationRoleARN
+        {
+            get { return this._administrationRoleARN; }
+            set { this._administrationRoleARN = value; }
+        }
+
+        // Check to see if AdministrationRoleARN property is set
+        internal bool IsSetAdministrationRoleARN()
+        {
+            return this._administrationRoleARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
@@ -100,6 +127,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackSetARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the stack set.
+        /// </para>
+        /// </summary>
+        public string StackSetARN
+        {
+            get { return this._stackSetARN; }
+            set { this._stackSetARN = value; }
+        }
+
+        // Check to see if StackSetARN property is set
+        internal bool IsSetStackSetARN()
+        {
+            return this._stackSetARN != null;
         }
 
         /// <summary>

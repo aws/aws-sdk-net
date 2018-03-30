@@ -36,26 +36,8 @@ namespace Amazon.CloudFormation.Model
     /// Rollback triggers enable you to have AWS CloudFormation monitor the state of your
     /// application during stack creation and updating, and to roll back that operation if
     /// the application breaches the threshold of any of the alarms you've specified. For
-    /// each rollback trigger you create, you specify the Cloudwatch alarm that CloudFormation
-    /// should monitor. CloudFormation monitors the specified alarms during the stack create
-    /// or update operation, and for the specified amount of time after all resources have
-    /// been deployed. If any of the alarms goes to ALERT state during the stack operation
-    /// or the monitoring period, CloudFormation rolls back the entire stack operation. If
-    /// the monitoring period expires without any alarms going to ALERT state, CloudFormation
-    /// proceeds to dispose of old resources as usual.
-    /// </para>
-    ///  
-    /// <para>
-    /// By default, CloudFormation only rolls back stack operations if an alarm goes to ALERT
-    /// state, not INSUFFICIENT_DATA state. To have CloudFormation roll back the stack operation
-    /// if an alarm goes to INSUFFICIENT_DATA state as well, edit the CloudWatch alarm to
-    /// treat missing data as <code>breaching</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html">Configuring
-    /// How CloudWatch Alarms Treats Missing Data</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// AWS CloudFormation does not monitor rollback triggers when it rolls back a stack during
-    /// an update operation.
+    /// more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor
+    /// and Roll Back Stack Operations</a>.
     /// </para>
     /// </summary>
     public partial class RollbackConfiguration
@@ -68,15 +50,16 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The amount of time, in minutes, during which CloudFormation should monitor all the
         /// rollback triggers after the stack creation or update operation deploys all necessary
-        /// resources. If any of the alarms goes to ALERT state during the stack operation or
-        /// this monitoring period, CloudFormation rolls back the entire stack operation. Then,
-        /// for update operations, if the monitoring period expires without any alarms going to
-        /// ALERT state CloudFormation proceeds to dispose of old resources as usual.
+        /// resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is 0 minutes.
         /// </para>
         ///  
         /// <para>
         /// If you specify a monitoring period but do not specify any rollback triggers, CloudFormation
-        /// still waits the specified period of time before cleaning up old resources for update
+        /// still waits the specified period of time before cleaning up old resources after update
         /// operations. You can use this monitoring period to perform any manual stack validation
         /// desired, and manually cancel the stack creation or update (using <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>,
         /// for example) as necessary.
@@ -114,25 +97,24 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you don't specify this parameter, AWS CloudFormation uses the rollback triggers
-        /// previously specified for this stack, if any.
+        /// To use the rollback triggers previously specified for this stack, if any, don't specify
+        /// this parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify any rollback triggers using this parameter, you must specify all the
-        /// triggers that you want used for this stack, even triggers you've specifed before (for
-        /// example, when creating the stack or during a previous stack update). Any triggers
-        /// that you don't include in the updated list of triggers are no longer applied to the
-        /// stack.
+        /// To specify new or updated rollback triggers, you must specify <i>all</i> the triggers
+        /// that you want used for this stack, even triggers you've specifed before (for example,
+        /// when creating the stack or during a previous stack update). Any triggers that you
+        /// don't include in the updated list of triggers are no longer applied to the stack.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an empty list, AWS CloudFormation removes all currently specified triggers.
+        /// To remove all currently specified triggers, specify an empty list for this parameter.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If a specified Cloudwatch alarm is missing, the entire stack operation fails and is
-        /// rolled back. 
+        /// If a specified trigger is missing, the entire stack operation fails and is rolled
+        /// back. 
         /// </para>
         /// </summary>
         public List<RollbackTrigger> RollbackTriggers

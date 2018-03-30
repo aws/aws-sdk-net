@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StackSetOperation
     {
         private StackSetOperationAction _action;
+        private string _administrationRoleARN;
         private DateTime? _creationTimestamp;
         private DateTime? _endTimestamp;
         private string _operationId;
@@ -60,6 +61,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministrationRoleARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the IAM role used to perform this stack set operation.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized administrator roles to control which users or groups can manage specific
+        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AdministrationRoleARN
+        {
+            get { return this._administrationRoleARN; }
+            set { this._administrationRoleARN = value; }
+        }
+
+        // Check to see if AdministrationRoleARN property is set
+        internal bool IsSetAdministrationRoleARN()
+        {
+            return this._administrationRoleARN != null;
         }
 
         /// <summary>

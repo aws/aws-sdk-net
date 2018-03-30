@@ -29,7 +29,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// A rollback trigger AWS CloudFormation monitors during creation and updating of stacks.
-    /// If any of the alarms you specify goes to ALERT state during the stack operation or
+    /// If any of the alarms you specify goes to ALARM state during the stack operation or
     /// within the specified monitoring period afterwards, CloudFormation rolls back the entire
     /// stack operation.
     /// </summary>
@@ -42,6 +42,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the rollback trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a specified trigger is missing, the entire stack operation fails and is rolled
+        /// back. 
         /// </para>
         /// </summary>
         public string Arn

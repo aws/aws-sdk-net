@@ -109,6 +109,11 @@
     <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.CreateStackSetRequest.AdministrationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.CreateStackSetRequest.ClientRequestToken</property>
     <min>1</min>
     <max>128</max>
@@ -507,6 +512,11 @@
     <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.AdministrationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.UpdateStackSetRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -651,6 +661,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSet.AdministrationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSet.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -658,6 +673,11 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSet.TemplateBody</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperation.AdministrationRoleARN</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperation.OperationId</property>

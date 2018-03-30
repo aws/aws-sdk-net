@@ -60,6 +60,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AdministrationRoleARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdministrationRoleARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreationTimestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

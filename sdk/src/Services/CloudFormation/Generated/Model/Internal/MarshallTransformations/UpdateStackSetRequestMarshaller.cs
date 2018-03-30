@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAdministrationRoleARN())
+                {
+                    request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
+                }
                 if(publicRequest.IsSetCapabilities())
                 {
                     int publicRequestlistValueIndex = 1;
