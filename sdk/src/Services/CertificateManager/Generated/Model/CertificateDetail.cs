@@ -330,7 +330,7 @@ namespace Amazon.CertificateManager.Model
         /// Value that specifies whether to add the certificate to a transparency log. Certificate
         /// transparency makes it possible to detect SSL certificates that have been mistakenly
         /// or maliciously issued. A browser might respond to certificate that has not been logged
-        /// by showing an error message. The logs are cryptographicaly secure. 
+        /// by showing an error message. The logs are cryptographically secure. 
         /// </para>
         /// </summary>
         public CertificateOptions Options

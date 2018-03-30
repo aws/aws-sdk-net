@@ -33,8 +33,8 @@ namespace Amazon.CertificateManager.Model
     /// browsers require that public certificates issued for your domain be recorded in a
     /// log. Certificates that are not logged typically generate a browser error. Transparency
     /// makes it possible for you to detect SSL/TLS certificates that have been mistakenly
-    /// or maliciously issued for your domain. For general information, see <a href="acm/latest/userguide/acm-concepts.html">ACM
-    /// Concepts</a>.
+    /// or maliciously issued for your domain. For general information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+    /// Transparency Logging</a>.
     /// </summary>
     public partial class CertificateOptions
     {

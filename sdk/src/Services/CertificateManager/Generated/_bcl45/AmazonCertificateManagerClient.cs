@@ -956,22 +956,27 @@ namespace Amazon.CertificateManager
         /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
         /// you must specify the fully qualified domain name (FQDN) for your site in the <code>DomainName</code>
         /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
-        /// parameter if users can reach your site by using other names. 
+        /// parameter. 
         /// 
         ///  
         /// <para>
-        /// For each domain name you specify, email is sent to the domain owner to request approval
-        /// to issue the certificate. Email is sent to three registered contact addresses in the
-        /// WHOIS database and to five common system administration addresses formed from the
-        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
-        /// Domain Ownership</a>. 
+        /// Each domain name that you specify must be validated to verify that you own or control
+        /// the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validation</a>. We recommend that you use DNS validation. 
         /// </para>
         ///  
         /// <para>
-        /// After receiving approval from the domain owner, the ACM certificate is issued. For
-        /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>. 
+        /// If you choose email validation, email is sent to the domain owner to request approval
+        /// to issue the certificate. Email is sent to three registered contact addresses in the
+        /// WHOIS database and to five common system administration addresses formed from the
+        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+        /// with Email</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After receiving approval from the domain owner, the ACM certificate is issued.
         /// </para>
         /// </summary>
         /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
@@ -996,22 +1001,27 @@ namespace Amazon.CertificateManager
         /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
         /// you must specify the fully qualified domain name (FQDN) for your site in the <code>DomainName</code>
         /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
-        /// parameter if users can reach your site by using other names. 
+        /// parameter. 
         /// 
         ///  
         /// <para>
-        /// For each domain name you specify, email is sent to the domain owner to request approval
-        /// to issue the certificate. Email is sent to three registered contact addresses in the
-        /// WHOIS database and to five common system administration addresses formed from the
-        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
-        /// Domain Ownership</a>. 
+        /// Each domain name that you specify must be validated to verify that you own or control
+        /// the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validation</a>. We recommend that you use DNS validation. 
         /// </para>
         ///  
         /// <para>
-        /// After receiving approval from the domain owner, the ACM certificate is issued. For
-        /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>. 
+        /// If you choose email validation, email is sent to the domain owner to request approval
+        /// to issue the certificate. Email is sent to three registered contact addresses in the
+        /// WHOIS database and to five common system administration addresses formed from the
+        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+        /// with Email</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After receiving approval from the domain owner, the ACM certificate is issued.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
@@ -1037,22 +1047,27 @@ namespace Amazon.CertificateManager
         /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
         /// you must specify the fully qualified domain name (FQDN) for your site in the <code>DomainName</code>
         /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
-        /// parameter if users can reach your site by using other names. 
+        /// parameter. 
         /// 
         ///  
         /// <para>
-        /// For each domain name you specify, email is sent to the domain owner to request approval
-        /// to issue the certificate. Email is sent to three registered contact addresses in the
-        /// WHOIS database and to five common system administration addresses formed from the
-        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate
-        /// Domain Ownership</a>. 
+        /// Each domain name that you specify must be validated to verify that you own or control
+        /// the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// validation</a>. We recommend that you use DNS validation. 
         /// </para>
         ///  
         /// <para>
-        /// After receiving approval from the domain owner, the ACM certificate is issued. For
-        /// more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
-        /// Certificate Manager User Guide</a>. 
+        /// If you choose email validation, email is sent to the domain owner to request approval
+        /// to issue the certificate. Email is sent to three registered contact addresses in the
+        /// WHOIS database and to five common system administration addresses formed from the
+        /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+        /// with Email</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// After receiving approval from the domain owner, the ACM certificate is issued.
         /// </para>
         /// </summary>
         /// <param name="domainName"> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.   The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </param>
@@ -1163,7 +1178,7 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Updates a certificate. Currently, you can use this function to specify whether to
         /// opt in to or out of recording your certificate in a certificate transparency log.
-        /// For more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">
         /// Opting Out of Certificate Transparency Logging</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateOptions service method.</param>
