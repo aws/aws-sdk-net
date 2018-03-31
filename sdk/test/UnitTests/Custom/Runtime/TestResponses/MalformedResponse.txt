@@ -1,0 +1,10 @@
+﻿HTTP/1.1 200 OK
+x-amz-id-2: TFD+oMfRT5nVXm81tex2+Uh8R/VZRaztjPALzXknR7IC3RGfVPhpuiiHMtL0fFKF
+x-amz-request-id: 357B62B8E32948B9
+X-Amz-Cf-Id: -UUNhfhfx0J622sdKihbDfqEvIa94CkVQvcb4AGlNmRbpbInOTYXSA==
+Date: Mon, 23 Jun 2014 03:31:12 GMT
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Server: AmazonS3
+
+this is NOT xml

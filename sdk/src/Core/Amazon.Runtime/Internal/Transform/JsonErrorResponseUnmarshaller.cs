@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,9 @@ using Amazon.Runtime.Internal;
 using System;
 using Amazon.Util;
 using System.Xml;
-
+using ThirdParty.Json.LitJson;
+using System.Text;
+using System.IO;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -39,34 +41,19 @@ namespace Amazon.Runtime.Internal.Transform
             if (context.Peek() == 60) //starts with '<' so assuming XML.
             {
                 ErrorResponseUnmarshaller xmlUnmarshaller = new ErrorResponseUnmarshaller();
-                XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(context.Stream, false, null);
-                response = xmlUnmarshaller.Unmarshall(xmlContext);
+                using (var stream = new MemoryStream(context.GetResponseBodyBytes()))
+                {
+                    XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(stream, false, null);
+                    response = xmlUnmarshaller.Unmarshall(xmlContext);
+                }
             }
             else
             {
-                string type = null;
-                string message = null;
-                string code = null;
+                string type;
+                string message;
+                string code;
+                GetValuesFromJsonIfPossible(context, out type, out message, out code);
 
-                while (context.Read())
-                {
-                    if (context.TestExpression("__type"))
-                    {
-                        type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("message"))
-                    {
-                        message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("code"))
-                    {
-                        code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        continue;
-                    }
-                }
-                
                 // If an error code was not found, check for the x-amzn-ErrorType header. 
                 // This header is returned by rest-json services.
                 if (string.IsNullOrEmpty(type) &&
@@ -104,7 +91,26 @@ namespace Amazon.Runtime.Internal.Transform
                 }
 
                 // strip extra data from type, leaving only the exception type name
-                type = type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
+                type = type == null ? null : type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
+
+                // if no message was found create a generic message
+                if (string.IsNullOrEmpty(message))
+                {
+                    if (string.IsNullOrEmpty(type))
+                    {
+                        if (string.IsNullOrEmpty(context.ResponseBody))
+                            message = "The service returned an error. See inner exception for details.";
+                        else
+                            message = "The service returned an error with HTTP Body: " + context.ResponseBody;
+                    }
+                    else
+                    {
+                        if (string.IsNullOrEmpty(context.ResponseBody))
+                            message = "The service returned an error with Error Code " + type + ".";
+                        else
+                            message = "The service returned an error with Error Code " + type + " and HTTP Body: " + context.ResponseBody;
+                    }
+                }
 
                 response = new ErrorResponse
                 {
@@ -116,6 +122,44 @@ namespace Amazon.Runtime.Internal.Transform
             }
             
             return response;
+        }
+
+        private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, out string type, out string message, out string code)
+        {
+            code = null;
+            type = null;
+            message = null;
+
+            while (TryReadContext(context))
+            {
+                if (context.TestExpression("__type"))
+                {
+                    type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("message"))
+                {
+                    message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("code"))
+                {
+                    code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    continue;
+                }
+            }
+        }
+
+        private static bool TryReadContext(JsonUnmarshallerContext context)
+        {
+            try
+            {
+                return context.Read();
+            }
+            catch (JsonException)
+            {
+                return false;
+            }
         }
 
         private static JsonErrorResponseUnmarshaller instance;

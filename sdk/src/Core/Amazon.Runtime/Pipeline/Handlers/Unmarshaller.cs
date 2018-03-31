@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -146,7 +146,8 @@ namespace Amazon.Runtime.Internal
                         // Else, there was an issue with the response body, throw AmazonUnmarshallingException
                         var requestId = responseContext.HttpResponse.GetHeaderValue(HeaderKeys.RequestIdHeader);
                         var body = context.ResponseBody;
-                        throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e);
+                        throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e,
+                            statusCode: responseContext.HttpResponse.StatusCode);
                     }
                 }
                 finally

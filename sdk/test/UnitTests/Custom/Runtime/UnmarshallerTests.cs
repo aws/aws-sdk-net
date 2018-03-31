@@ -1,4 +1,18 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ * Copyright 2015-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +31,8 @@ using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using AWSSDK_DotNet35.UnitTests.TestTools;
 
 namespace AWSSDK.UnitTests
 {
@@ -30,7 +46,90 @@ namespace AWSSDK.UnitTests
             RuntimePipeline.AddHandler(Handler);
         }
 
-        [TestMethod][TestCategory("UnitTest")]
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestListBucketsResponseUnmarshallingException200OK()
+        {
+            Tester.Reset();
+
+            var context = CreateTestContext();
+            var request = new ListBucketsRequest();
+            ((RequestContext)context.RequestContext).OriginalRequest = request;
+            ((RequestContext)context.RequestContext).Request = new ListBucketsRequestMarshaller().Marshall(request);
+            ((RequestContext)context.RequestContext).Unmarshaller = new ListBucketsResponseUnmarshaller();
+
+            var response = MockWebResponse.CreateFromResource("MalformedResponse.txt")
+                as HttpWebResponse;
+            context.ResponseContext.HttpResponse = new HttpWebRequestResponseData(response);
+
+            try
+            {
+                RuntimePipeline.InvokeSync(context);
+                Assert.Fail();
+            }
+            catch (AmazonUnmarshallingException aue)
+            {
+                Assert.IsTrue(aue.Message.Contains("HTTP Status Code: 200 OK"));
+                Assert.AreEqual(HttpStatusCode.OK, aue.StatusCode);
+                Assert.IsNotNull(aue.InnerException);
+                Assert.AreEqual("Data at the root level is invalid. Line 1, position 1.", aue.InnerException.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestJsonResponseUnmarshaller_UnmarshallResponse()
+        {
+            var fakeResponseData = new FakeResponseData();
+            fakeResponseData.StatusCode = HttpStatusCode.OK;
+            var unmarshaller = new BadJsonResponseUnmarshaller();
+            var unmarshallerContext = new JsonUnmarshallerContext(new MemoryStream(), true, fakeResponseData);
+
+            try
+            {
+                unmarshaller.UnmarshallResponse(unmarshallerContext);
+                Assert.Fail();
+            }
+            catch (AmazonUnmarshallingException aue)
+            {
+                Assert.IsTrue(aue.Message.Contains("HTTP Status Code: 200 OK"));
+                Assert.AreEqual(HttpStatusCode.OK, aue.StatusCode);
+                Assert.IsNotNull(aue.InnerException);
+                Assert.AreEqual("Error in Unmarshall", aue.InnerException.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestHttpErrorResponseExceptionHandler_HandleException()
+        {
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = HttpStatusCode.ServiceUnavailable;
+
+            var handler = new HttpErrorResponseExceptionHandler(Logger.GetLogger(GetType()));
+            var context = CreateTestContext(null, new BadJsonResponseUnmarshaller());
+            context.ResponseContext.Response = new AmazonWebServiceResponse();
+            context.ResponseContext.Response.HttpStatusCode = HttpStatusCode.ServiceUnavailable;
+
+            try
+            {
+                handler.Handle(context, new HttpErrorResponseException(webResponseData));
+                Assert.Fail();
+            }
+            catch (AmazonUnmarshallingException aue)
+            {
+                Assert.IsTrue(aue.Message.Contains("HTTP Status Code: 503 ServiceUnavailable"));
+                Assert.AreEqual(HttpStatusCode.ServiceUnavailable, aue.StatusCode);
+                Assert.IsNotNull(aue.InnerException);
+                Assert.AreEqual("Error in UnmarshallException", aue.InnerException.Message);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void TestListBucketsResponseUnmarshalling()
         {
@@ -58,7 +157,8 @@ namespace AWSSDK.UnitTests
 
 #if BCL45
 
-        [TestMethod][TestCategory("UnitTest")]
+        [TestMethod]
+        [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]
         public async Task TestListBucketsResponseUnmarshallingAsync()
@@ -77,7 +177,7 @@ namespace AWSSDK.UnitTests
 
             var listBucketsResponse = await RuntimePipeline.InvokeAsync<ListBucketsResponse>(context);
 
-            Assert.AreEqual(1, Tester.CallCount);            
+            Assert.AreEqual(1, Tester.CallCount);
             Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(ListBucketsResponse));
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
         }
@@ -121,7 +221,7 @@ namespace AWSSDK.UnitTests
         {
             string errorRepsonse = "<html><body>Error: <br> The Error Message</body></html>";
             var stream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(errorRepsonse));
-            var responseData = new FakeResponseData {StatusCode = HttpStatusCode.BadGateway };
+            var responseData = new FakeResponseData { StatusCode = HttpStatusCode.BadGateway };
 
             XmlUnmarshallerContext context = new XmlUnmarshallerContext(stream, false, responseData);
 
@@ -157,5 +257,19 @@ namespace AWSSDK.UnitTests
                 return false;
             }
         }
+
+        private class BadJsonResponseUnmarshaller : JsonResponseUnmarshaller
+        {
+            public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input)
+            {
+                throw new Exception("Error in Unmarshall");
+            }
+
+            public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
+            {
+                throw new Exception("Error in UnmarshallException");
+            }
+        }
+
     }
 }
