@@ -34,6 +34,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private AccessPoliciesStatus _accessPolicies;
         private AdvancedOptionsStatus _advancedOptions;
+        private CognitoOptionsStatus _cognitoOptions;
         private EBSOptionsStatus _ebsOptions;
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
         private ElasticsearchVersionStatus _elasticsearchVersion;
@@ -77,6 +78,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAdvancedOptions()
         {
             return this._advancedOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoOptions. 
+        /// <para>
+        /// The <code>CognitoOptions</code> for the specified domain. For more information, see
+        /// <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+        /// target="_blank">Amazon Cognito Authentication for Kibana</a>.
+        /// </para>
+        /// </summary>
+        public CognitoOptionsStatus CognitoOptions
+        {
+            get { return this._cognitoOptions; }
+            set { this._cognitoOptions = value; }
+        }
+
+        // Check to see if CognitoOptions property is set
+        internal bool IsSetCognitoOptions()
+        {
+            return this._cognitoOptions != null;
         }
 
         /// <summary>

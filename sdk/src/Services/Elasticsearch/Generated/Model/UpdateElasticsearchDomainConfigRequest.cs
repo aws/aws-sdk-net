@@ -36,6 +36,7 @@ namespace Amazon.Elasticsearch.Model
     {
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private CognitoOptions _cognitoOptions;
         private string _domainName;
         private EBSOptions _ebsOptions;
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
@@ -80,6 +81,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetAdvancedOptions()
         {
             return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoOptions. 
+        /// <para>
+        /// Options to specify the Cognito user and identity pools for Kibana authentication.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+        /// target="_blank">Amazon Cognito Authentication for Kibana</a>.
+        /// </para>
+        /// </summary>
+        public CognitoOptions CognitoOptions
+        {
+            get { return this._cognitoOptions; }
+            set { this._cognitoOptions = value; }
+        }
+
+        // Check to see if CognitoOptions property is set
+        internal bool IsSetCognitoOptions()
+        {
+            return this._cognitoOptions != null;
         }
 
         /// <summary>

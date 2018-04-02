@@ -35,6 +35,7 @@ namespace Amazon.Elasticsearch.Model
         private string _accessPolicies;
         private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
         private string _arn;
+        private CognitoOptions _cognitoOptions;
         private bool? _created;
         private bool? _deleted;
         private string _domainId;
@@ -104,6 +105,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CognitoOptions. 
+        /// <para>
+        /// The <code>CognitoOptions</code> for the specified domain. For more information, see
+        /// <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+        /// target="_blank">Amazon Cognito Authentication for Kibana</a>.
+        /// </para>
+        /// </summary>
+        public CognitoOptions CognitoOptions
+        {
+            get { return this._cognitoOptions; }
+            set { this._cognitoOptions = value; }
+        }
+
+        // Check to see if CognitoOptions property is set
+        internal bool IsSetCognitoOptions()
+        {
+            return this._cognitoOptions != null;
         }
 
         /// <summary>

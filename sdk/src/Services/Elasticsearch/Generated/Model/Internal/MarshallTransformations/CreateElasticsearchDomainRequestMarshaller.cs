@@ -85,6 +85,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCognitoOptions())
+                {
+                    context.Writer.WritePropertyName("CognitoOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CognitoOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CognitoOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");

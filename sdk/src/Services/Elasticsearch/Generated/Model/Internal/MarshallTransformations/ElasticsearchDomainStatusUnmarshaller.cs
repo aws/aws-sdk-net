@@ -82,6 +82,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CognitoOptions", targetDepth))
+                {
+                    var unmarshaller = CognitoOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CognitoOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Created", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
