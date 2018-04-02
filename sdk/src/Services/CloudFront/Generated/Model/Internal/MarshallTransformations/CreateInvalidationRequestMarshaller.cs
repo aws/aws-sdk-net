@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2017-03-25/distribution/{DistributionId}/invalidation";
+            string uriResourcePath = "/2017-10-30/distribution/{DistributionId}/invalidation";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
@@ -65,28 +65,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2017-03-25/");                                
+                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2017-10-30/");                                
                 if(publicRequest.InvalidationBatch.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2017-03-25/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
 
                 
                 if (publicRequest.InvalidationBatch.Paths != null) 
                 {
-                    xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2017-03-25/");            
+                    xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2017-10-30/");            
                     var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
                     if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2017-03-25/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2017-10-30/");
                         foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
                         {
-                            xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2017-03-25/");
+                            xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2017-10-30/");
                             xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
-                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2017-03-25/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
+                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
     
                     xmlWriter.WriteEndElement();
                 }

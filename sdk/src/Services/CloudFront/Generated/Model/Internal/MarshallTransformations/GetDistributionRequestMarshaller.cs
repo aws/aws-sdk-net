@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2017-03-25/distribution/{Id}";
+            string uriResourcePath = "/2017-10-30/distribution/{Id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
             uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));

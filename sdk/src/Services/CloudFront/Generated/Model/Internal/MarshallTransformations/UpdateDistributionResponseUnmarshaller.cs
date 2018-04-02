@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -95,6 +95,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("CNAMEAlreadyExists"))
             {
                 return new CNAMEAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"))
+            {
+                return new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalUpdate"))
             {
@@ -192,6 +196,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 return new NoSuchDistributionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchFieldLevelEncryptionConfig"))
+            {
+                return new NoSuchFieldLevelEncryptionConfigException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOrigin"))
             {
                 return new NoSuchOriginException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -215,6 +223,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionCNAMEs"))
             {
                 return new TooManyDistributionCNAMEsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"))
+            {
+                return new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsWithLambdaAssociations"))
             {

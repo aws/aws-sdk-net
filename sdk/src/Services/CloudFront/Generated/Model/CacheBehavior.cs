@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -72,6 +72,7 @@ namespace Amazon.CloudFront.Model
         private AllowedMethods _allowedMethods;
         private bool? _compress;
         private long? _defaultTTL;
+        private string _fieldLevelEncryptionId;
         private ForwardedValues _forwardedValues;
         private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
@@ -140,6 +141,21 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetDefaultTTL()
         {
             return this._defaultTTL.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldLevelEncryptionId.
+        /// </summary>
+        public string FieldLevelEncryptionId
+        {
+            get { return this._fieldLevelEncryptionId; }
+            set { this._fieldLevelEncryptionId = value; }
+        }
+
+        // Check to see if FieldLevelEncryptionId property is set
+        internal bool IsSetFieldLevelEncryptionId()
+        {
+            return this._fieldLevelEncryptionId != null;
         }
 
         /// <summary>

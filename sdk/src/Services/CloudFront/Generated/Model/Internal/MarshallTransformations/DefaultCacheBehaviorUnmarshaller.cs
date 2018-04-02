@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,6 +71,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = LongUnmarshaller.Instance;
                         unmarshalledObject.DefaultTTL = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("FieldLevelEncryptionId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FieldLevelEncryptionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ForwardedValues", targetDepth))

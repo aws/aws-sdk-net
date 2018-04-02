@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 
 
@@ -76,7 +76,7 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of origin access
         /// identities allowed.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
 
 
@@ -89,7 +89,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -113,6 +113,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -189,6 +193,9 @@ namespace Amazon.CloudFront
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -204,6 +211,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -234,7 +245,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
 
 
@@ -247,7 +258,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -270,6 +281,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -349,6 +364,9 @@ namespace Amazon.CloudFront
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -364,6 +382,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -394,7 +416,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request);
 
 
@@ -407,8 +429,110 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionConfig
+
+
+        /// <summary>
+        /// Create a new field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigAlreadyExistsException">
+        /// The specified configuration for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionConfigsException">
+        /// The maximum number of configurations for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        Task<CreateFieldLevelEncryptionConfigResponse> CreateFieldLevelEncryptionConfigAsync(CreateFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionProfile
+
+
+        /// <summary>
+        /// Create a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionProfilesException">
+        /// The maximum number of profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        Task<CreateFieldLevelEncryptionProfileResponse> CreateFieldLevelEncryptionProfileAsync(CreateFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -444,7 +568,7 @@ namespace Amazon.CloudFront
         /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
         /// or invalidation objects.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
 
 
@@ -457,8 +581,46 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePublicKey
+
+
+        /// <summary>
+        /// Add a new public key to CloudFront to use, for example, for field-level encryption.
+        /// You can add a maximum of 10 public keys with one AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
+        /// The specified public key already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysException">
+        /// The maximum number of public keys for field-level encryption have been created. To
+        /// create a new public key, delete one of the existing keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        Task<CreatePublicKeyResponse> CreatePublicKeyAsync(CreatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -544,7 +706,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
 
 
@@ -557,7 +719,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -612,7 +774,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request);
 
 
@@ -625,7 +787,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -653,7 +815,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
 
 
@@ -678,7 +840,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
 
 
@@ -705,7 +867,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -718,7 +880,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -746,7 +908,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution();
 
 
@@ -771,7 +933,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
 
 
@@ -798,7 +960,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -811,8 +973,134 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionConfig
+
+
+        /// <summary>
+        /// Remove a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigInUseException">
+        /// The specified configuration for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionProfile
+
+
+        /// <summary>
+        /// Remove a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileInUseException">
+        /// The specified profile for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePublicKey
+
+
+        /// <summary>
+        /// Remove a public key you previously added to CloudFront.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
+        /// The specified public key is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -837,7 +1125,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request);
 
 
@@ -850,7 +1138,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -936,7 +1224,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution();
 
 
@@ -1019,7 +1307,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
 
 
@@ -1104,7 +1392,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1117,7 +1405,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1136,7 +1424,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
 
 
@@ -1152,7 +1440,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
 
 
@@ -1170,7 +1458,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1183,7 +1471,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1202,7 +1490,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
 
 
@@ -1218,7 +1506,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
 
 
@@ -1236,7 +1524,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1249,7 +1537,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1268,7 +1556,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         GetDistributionResponse GetDistribution();
 
 
@@ -1284,7 +1572,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         GetDistributionResponse GetDistribution(GetDistributionRequest request);
 
 
@@ -1302,7 +1590,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1315,7 +1603,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1334,7 +1622,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         GetDistributionConfigResponse GetDistributionConfig();
 
 
@@ -1350,7 +1638,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
 
 
@@ -1368,7 +1656,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1381,8 +1669,140 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFieldLevelEncryption
+
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryption service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        Task<GetFieldLevelEncryptionResponse> GetFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionConfig
+
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        Task<GetFieldLevelEncryptionConfigResponse> GetFieldLevelEncryptionConfigAsync(GetFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfile
+
+
+        /// <summary>
+        /// Get the field-level encryption profile information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        Task<GetFieldLevelEncryptionProfileResponse> GetFieldLevelEncryptionProfileAsync(GetFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfileConfig
+
+
+        /// <summary>
+        /// Get the field-level encryption profile configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionProfileConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfileConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        Task<GetFieldLevelEncryptionProfileConfigResponse> GetFieldLevelEncryptionProfileConfigAsync(GetFieldLevelEncryptionProfileConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1404,7 +1824,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
         /// The specified invalidation does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
 
 
@@ -1417,8 +1837,74 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPublicKey
+
+
+        /// <summary>
+        /// Get the public key information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPublicKeyConfig
+
+
+        /// <summary>
+        /// Return public key configuration informaation
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicKeyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKeyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        Task<GetPublicKeyConfigResponse> GetPublicKeyConfigAsync(GetPublicKeyConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1436,7 +1922,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         GetStreamingDistributionResponse GetStreamingDistribution();
 
 
@@ -1452,7 +1938,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
 
 
@@ -1470,7 +1956,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1483,7 +1969,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1502,7 +1988,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
 
 
@@ -1518,7 +2004,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
 
 
@@ -1536,7 +2022,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1549,7 +2035,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1565,7 +2051,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
 
 
@@ -1578,7 +2064,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
 
 
@@ -1593,7 +2079,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1606,7 +2092,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1622,7 +2108,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         ListDistributionsResponse ListDistributions();
 
 
@@ -1635,7 +2121,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
 
 
@@ -1650,7 +2136,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1663,7 +2149,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1683,7 +2169,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request);
 
 
@@ -1696,8 +2182,70 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionConfigs
+
+
+        /// <summary>
+        /// List all field-level encryption configurations that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        Task<ListFieldLevelEncryptionConfigsResponse> ListFieldLevelEncryptionConfigsAsync(ListFieldLevelEncryptionConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionProfiles
+
+
+        /// <summary>
+        /// Request a list of field-level encryption profiles that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        Task<ListFieldLevelEncryptionProfilesResponse> ListFieldLevelEncryptionProfilesAsync(ListFieldLevelEncryptionProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1719,7 +2267,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
 
 
@@ -1732,8 +2280,38 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListPublicKeys
+
+
+        /// <summary>
+        /// List all public keys that have been added to CloudFront for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1748,7 +2326,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         ListStreamingDistributionsResponse ListStreamingDistributions();
 
 
@@ -1761,7 +2339,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
 
 
@@ -1776,7 +2354,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1789,7 +2367,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1815,7 +2393,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -1828,7 +2406,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1854,7 +2432,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -1867,7 +2445,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1893,7 +2471,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -1906,7 +2484,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1945,7 +2523,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
 
 
@@ -1958,7 +2536,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2053,6 +2631,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
@@ -2130,6 +2712,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -2148,6 +2733,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
         /// Processing your request would cause the maximum number of distributions with Lambda
@@ -2174,7 +2763,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
 
 
@@ -2187,8 +2776,179 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionConfig
+
+
+        /// <summary>
+        /// Update a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        Task<UpdateFieldLevelEncryptionConfigResponse> UpdateFieldLevelEncryptionConfigAsync(UpdateFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionProfile
+
+
+        /// <summary>
+        /// Update a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        Task<UpdateFieldLevelEncryptionProfileResponse> UpdateFieldLevelEncryptionProfileAsync(UpdateFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePublicKey
+
+
+        /// <summary>
+        /// Update public key information. Note that the only value you can change is the comment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotChangeImmutablePublicKeyFieldsException">
+        /// You can't change the value of a public key.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2241,7 +3001,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
 
 
@@ -2254,7 +3014,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

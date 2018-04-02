@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 
 
@@ -143,6 +143,72 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void CreateFieldLevelEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFieldLevelEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<CreateFieldLevelEncryptionConfigRequest>();
+            var marshaller = new CreateFieldLevelEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateFieldLevelEncryptionConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateFieldLevelEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void CreateFieldLevelEncryptionProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFieldLevelEncryptionProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateFieldLevelEncryptionProfileRequest>();
+            var marshaller = new CreateFieldLevelEncryptionProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateFieldLevelEncryptionProfile", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateFieldLevelEncryptionProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void CreateInvalidationMarshallTest()
         {
             var operation = service_model.FindOperation("CreateInvalidation");
@@ -167,6 +233,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateInvalidationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void CreatePublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePublicKey");
+
+            var request = InstantiateClassGenerator.Execute<CreatePublicKeyRequest>();
+            var marshaller = new CreatePublicKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreatePublicKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreatePublicKeyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -267,6 +366,57 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("DeleteDistribution", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void DeleteFieldLevelEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFieldLevelEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFieldLevelEncryptionConfigRequest>();
+            var marshaller = new DeleteFieldLevelEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteFieldLevelEncryptionConfig", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void DeleteFieldLevelEncryptionProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFieldLevelEncryptionProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFieldLevelEncryptionProfileRequest>();
+            var marshaller = new DeleteFieldLevelEncryptionProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteFieldLevelEncryptionProfile", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void DeletePublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePublicKey");
+
+            var request = InstantiateClassGenerator.Execute<DeletePublicKeyRequest>();
+            var marshaller = new DeletePublicKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeletePublicKey", request, internalRequest, service_model);            
 
         }
 
@@ -437,6 +587,134 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void GetFieldLevelEncryptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFieldLevelEncryption");
+
+            var request = InstantiateClassGenerator.Execute<GetFieldLevelEncryptionRequest>();
+            var marshaller = new GetFieldLevelEncryptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFieldLevelEncryption", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFieldLevelEncryptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetFieldLevelEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFieldLevelEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetFieldLevelEncryptionConfigRequest>();
+            var marshaller = new GetFieldLevelEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFieldLevelEncryptionConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFieldLevelEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetFieldLevelEncryptionProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFieldLevelEncryptionProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetFieldLevelEncryptionProfileRequest>();
+            var marshaller = new GetFieldLevelEncryptionProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFieldLevelEncryptionProfile", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFieldLevelEncryptionProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetFieldLevelEncryptionProfileConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetFieldLevelEncryptionProfileConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetFieldLevelEncryptionProfileConfigRequest>();
+            var marshaller = new GetFieldLevelEncryptionProfileConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetFieldLevelEncryptionProfileConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetFieldLevelEncryptionProfileConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void GetInvalidationMarshallTest()
         {
             var operation = service_model.FindOperation("GetInvalidation");
@@ -460,6 +738,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetInvalidationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetPublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPublicKey");
+
+            var request = InstantiateClassGenerator.Execute<GetPublicKeyRequest>();
+            var marshaller = new GetPublicKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPublicKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPublicKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void GetPublicKeyConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetPublicKeyConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetPublicKeyConfigRequest>();
+            var marshaller = new GetPublicKeyConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetPublicKeyConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetPublicKeyConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -625,6 +967,68 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
+        public void ListFieldLevelEncryptionConfigsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListFieldLevelEncryptionConfigs");
+
+            var request = InstantiateClassGenerator.Execute<ListFieldLevelEncryptionConfigsRequest>();
+            var marshaller = new ListFieldLevelEncryptionConfigsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListFieldLevelEncryptionConfigs", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListFieldLevelEncryptionConfigsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void ListFieldLevelEncryptionProfilesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListFieldLevelEncryptionProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListFieldLevelEncryptionProfilesRequest>();
+            var marshaller = new ListFieldLevelEncryptionProfilesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListFieldLevelEncryptionProfiles", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListFieldLevelEncryptionProfilesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
         public void ListInvalidationsMarshallTest()
         {
             var operation = service_model.FindOperation("ListInvalidations");
@@ -648,6 +1052,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListInvalidationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void ListPublicKeysMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPublicKeys");
+
+            var request = InstantiateClassGenerator.Execute<ListPublicKeysRequest>();
+            var marshaller = new ListPublicKeysRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListPublicKeys", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListPublicKeysResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -808,6 +1243,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateDistributionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void UpdateFieldLevelEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateFieldLevelEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFieldLevelEncryptionConfigRequest>();
+            var marshaller = new UpdateFieldLevelEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateFieldLevelEncryptionConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateFieldLevelEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void UpdateFieldLevelEncryptionProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateFieldLevelEncryptionProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFieldLevelEncryptionProfileRequest>();
+            var marshaller = new UpdateFieldLevelEncryptionProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateFieldLevelEncryptionProfile", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateFieldLevelEncryptionProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("CloudFront")]
+        public void UpdatePublicKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdatePublicKey");
+
+            var request = InstantiateClassGenerator.Execute<UpdatePublicKeyRequest>();
+            var marshaller = new UpdatePublicKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdatePublicKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"ETag","ETag_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdatePublicKeyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

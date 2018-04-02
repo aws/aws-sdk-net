@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 
 
@@ -261,7 +261,7 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of origin access
         /// identities allowed.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -281,7 +281,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -298,7 +298,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  CreateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual CreateCloudFrontOriginAccessIdentityResponse EndCreateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCloudFrontOriginAccessIdentityResponse>(asyncResult);
@@ -324,6 +324,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -400,6 +404,9 @@ namespace Amazon.CloudFront
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -415,6 +422,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -445,7 +456,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
         {
             var marshaller = CreateDistributionRequestMarshaller.Instance;
@@ -465,7 +476,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateDistributionRequestMarshaller.Instance;
@@ -482,7 +493,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDistribution.</param>
         /// 
         /// <returns>Returns a  CreateDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDistributionResponse>(asyncResult);
@@ -507,6 +518,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
@@ -586,6 +601,9 @@ namespace Amazon.CloudFront
         /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
         /// header is set.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -601,6 +619,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
         /// Processing your request would cause you to exceed the maximum number of distributions
@@ -631,7 +653,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request)
         {
             var marshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
@@ -651,7 +673,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistributionWithTags
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual IAsyncResult BeginCreateDistributionWithTags(CreateDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
@@ -668,10 +690,164 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDistributionWithTags.</param>
         /// 
         /// <returns>Returns a  CreateDistributionWithTagsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual CreateDistributionWithTagsResponse EndCreateDistributionWithTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDistributionWithTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionConfig
+
+        /// <summary>
+        /// Create a new field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigAlreadyExistsException">
+        /// The specified configuration for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionConfigsException">
+        /// The maximum number of configurations for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFieldLevelEncryptionConfigRequest,CreateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFieldLevelEncryptionConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFieldLevelEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateFieldLevelEncryptionConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual CreateFieldLevelEncryptionConfigResponse EndCreateFieldLevelEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFieldLevelEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionProfile
+
+        /// <summary>
+        /// Create a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionProfilesException">
+        /// The maximum number of profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFieldLevelEncryptionProfileRequest,CreateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFieldLevelEncryptionProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFieldLevelEncryptionProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateFieldLevelEncryptionProfileResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual CreateFieldLevelEncryptionProfileResponse EndCreateFieldLevelEncryptionProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFieldLevelEncryptionProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -707,7 +883,7 @@ namespace Amazon.CloudFront
         /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
         /// or invalidation objects.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
         {
             var marshaller = CreateInvalidationRequestMarshaller.Instance;
@@ -727,7 +903,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInvalidation
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateInvalidationRequestMarshaller.Instance;
@@ -744,10 +920,74 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvalidation.</param>
         /// 
         /// <returns>Returns a  CreateInvalidationResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInvalidationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePublicKey
+
+        /// <summary>
+        /// Add a new public key to CloudFront to use, for example, for field-level encryption.
+        /// You can add a maximum of 10 public keys with one AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the CreatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyAlreadyExistsException">
+        /// The specified public key already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysException">
+        /// The maximum number of public keys for field-level encryption have been created. To
+        /// create a new public key, delete one of the existing keys.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        public virtual CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request)
+        {
+            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublicKeyRequest,CreatePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePublicKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        public virtual IAsyncResult BeginCreatePublicKey(CreatePublicKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePublicKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePublicKey.</param>
+        /// 
+        /// <returns>Returns a  CreatePublicKeyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        public virtual CreatePublicKeyResponse EndCreatePublicKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePublicKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -833,7 +1073,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
         {
             var marshaller = CreateStreamingDistributionRequestMarshaller.Instance;
@@ -853,7 +1093,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateStreamingDistributionRequestMarshaller.Instance;
@@ -870,7 +1110,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  CreateStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamingDistributionResponse>(asyncResult);
@@ -927,7 +1167,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request)
         {
             var marshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
@@ -947,7 +1187,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistributionWithTags
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
@@ -964,7 +1204,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistributionWithTags.</param>
         /// 
         /// <returns>Returns a  CreateStreamingDistributionWithTagsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual CreateStreamingDistributionWithTagsResponse EndCreateStreamingDistributionWithTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamingDistributionWithTagsResponse>(asyncResult);
@@ -994,7 +1234,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity()
         {
             return DeleteCloudFrontOriginAccessIdentity(new DeleteCloudFrontOriginAccessIdentityRequest());
@@ -1021,7 +1261,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -1041,7 +1281,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -1058,7 +1298,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCloudFrontOriginAccessIdentityResponse>(asyncResult);
@@ -1088,7 +1328,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution()
         {
             return DeleteDistribution(new DeleteDistributionRequest());
@@ -1115,7 +1355,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
         {
             var marshaller = DeleteDistributionRequestMarshaller.Instance;
@@ -1135,7 +1375,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = DeleteDistributionRequestMarshaller.Instance;
@@ -1152,10 +1392,214 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDistribution.</param>
         /// 
         /// <returns>Returns a  DeleteDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDistributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionConfig
+
+        /// <summary>
+        /// Remove a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionConfigInUseException">
+        /// The specified configuration for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        public virtual DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFieldLevelEncryptionConfigRequest,DeleteFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFieldLevelEncryptionConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFieldLevelEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteFieldLevelEncryptionConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        public virtual DeleteFieldLevelEncryptionConfigResponse EndDeleteFieldLevelEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFieldLevelEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionProfile
+
+        /// <summary>
+        /// Remove a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileInUseException">
+        /// The specified profile for field-level encryption is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        public virtual DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFieldLevelEncryptionProfileRequest,DeleteFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFieldLevelEncryptionProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFieldLevelEncryptionProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteFieldLevelEncryptionProfileResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        public virtual DeleteFieldLevelEncryptionProfileResponse EndDeleteFieldLevelEncryptionProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFieldLevelEncryptionProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePublicKey
+
+        /// <summary>
+        /// Remove a public key you previously added to CloudFront.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
+        /// The specified public key is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        public virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
+        {
+            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublicKeyRequest,DeletePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePublicKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        public virtual IAsyncResult BeginDeletePublicKey(DeletePublicKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePublicKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePublicKey.</param>
+        /// 
+        /// <returns>Returns a  DeletePublicKeyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        public virtual DeletePublicKeyResponse EndDeletePublicKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePublicKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -1180,7 +1624,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         public virtual DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request)
         {
             var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
@@ -1200,7 +1644,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceLinkedRole
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         public virtual IAsyncResult BeginDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
@@ -1217,7 +1661,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceLinkedRole.</param>
         /// 
         /// <returns>Returns a  DeleteServiceLinkedRoleResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         public virtual DeleteServiceLinkedRoleResponse EndDeleteServiceLinkedRole(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteServiceLinkedRoleResponse>(asyncResult);
@@ -1305,7 +1749,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution()
         {
             return DeleteStreamingDistribution(new DeleteStreamingDistributionRequest());
@@ -1390,7 +1834,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
         {
             var marshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
@@ -1410,7 +1854,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
@@ -1427,7 +1871,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  DeleteStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStreamingDistributionResponse>(asyncResult);
@@ -1448,7 +1892,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity()
         {
             return GetCloudFrontOriginAccessIdentity(new GetCloudFrontOriginAccessIdentityRequest());
@@ -1466,7 +1910,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -1486,7 +1930,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -1503,7 +1947,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityResponse EndGetCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCloudFrontOriginAccessIdentityResponse>(asyncResult);
@@ -1524,7 +1968,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig()
         {
             return GetCloudFrontOriginAccessIdentityConfig(new GetCloudFrontOriginAccessIdentityConfigRequest());
@@ -1542,7 +1986,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
         {
             var marshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
@@ -1562,7 +2006,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentityConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
@@ -1579,7 +2023,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentityConfig.</param>
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCloudFrontOriginAccessIdentityConfigResponse>(asyncResult);
@@ -1600,7 +2044,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual GetDistributionResponse GetDistribution()
         {
             return GetDistribution(new GetDistributionRequest());
@@ -1618,7 +2062,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual GetDistributionResponse GetDistribution(GetDistributionRequest request)
         {
             var marshaller = GetDistributionRequestMarshaller.Instance;
@@ -1638,7 +2082,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetDistributionRequestMarshaller.Instance;
@@ -1655,7 +2099,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistribution.</param>
         /// 
         /// <returns>Returns a  GetDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDistributionResponse>(asyncResult);
@@ -1676,7 +2120,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual GetDistributionConfigResponse GetDistributionConfig()
         {
             return GetDistributionConfig(new GetDistributionConfigRequest());
@@ -1694,7 +2138,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
         {
             var marshaller = GetDistributionConfigRequestMarshaller.Instance;
@@ -1714,7 +2158,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistributionConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetDistributionConfigRequestMarshaller.Instance;
@@ -1731,10 +2175,246 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionConfig.</param>
         /// 
         /// <returns>Returns a  GetDistributionConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDistributionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryption
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryption service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        public virtual GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionRequest,GetFieldLevelEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFieldLevelEncryption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        public virtual IAsyncResult BeginGetFieldLevelEncryption(GetFieldLevelEncryptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFieldLevelEncryptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFieldLevelEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFieldLevelEncryption.</param>
+        /// 
+        /// <returns>Returns a  GetFieldLevelEncryptionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        public virtual GetFieldLevelEncryptionResponse EndGetFieldLevelEncryption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFieldLevelEncryptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionConfig
+
+        /// <summary>
+        /// Get the field-level encryption configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        public virtual GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionConfigRequest,GetFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFieldLevelEncryptionConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFieldLevelEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  GetFieldLevelEncryptionConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        public virtual GetFieldLevelEncryptionConfigResponse EndGetFieldLevelEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFieldLevelEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfile
+
+        /// <summary>
+        /// Get the field-level encryption profile information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        public virtual GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionProfileRequest,GetFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFieldLevelEncryptionProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFieldLevelEncryptionProfile.</param>
+        /// 
+        /// <returns>Returns a  GetFieldLevelEncryptionProfileResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        public virtual GetFieldLevelEncryptionProfileResponse EndGetFieldLevelEncryptionProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFieldLevelEncryptionProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfileConfig
+
+        /// <summary>
+        /// Get the field-level encryption profile configuration information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFieldLevelEncryptionProfileConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        public virtual GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionProfileConfigRequest,GetFieldLevelEncryptionProfileConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfileConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFieldLevelEncryptionProfileConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFieldLevelEncryptionProfileConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFieldLevelEncryptionProfileConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFieldLevelEncryptionProfileConfig.</param>
+        /// 
+        /// <returns>Returns a  GetFieldLevelEncryptionProfileConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        public virtual GetFieldLevelEncryptionProfileConfigResponse EndGetFieldLevelEncryptionProfileConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFieldLevelEncryptionProfileConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1756,7 +2436,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
         /// The specified invalidation does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
         {
             var marshaller = GetInvalidationRequestMarshaller.Instance;
@@ -1776,7 +2456,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidation
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetInvalidationRequestMarshaller.Instance;
@@ -1793,10 +2473,128 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvalidation.</param>
         /// 
         /// <returns>Returns a  GetInvalidationResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInvalidationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPublicKey
+
+        /// <summary>
+        /// Get the public key information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        public virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
+        {
+            var marshaller = GetPublicKeyRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicKeyRequest,GetPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        public virtual IAsyncResult BeginGetPublicKey(GetPublicKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetPublicKeyRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPublicKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicKey.</param>
+        /// 
+        /// <returns>Returns a  GetPublicKeyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        public virtual GetPublicKeyResponse EndGetPublicKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPublicKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPublicKeyConfig
+
+        /// <summary>
+        /// Return public key configuration informaation
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicKeyConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        public virtual GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request)
+        {
+            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicKeyConfigRequest,GetPublicKeyConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKeyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPublicKeyConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetPublicKeyConfig(GetPublicKeyConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPublicKeyConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPublicKeyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPublicKeyConfig.</param>
+        /// 
+        /// <returns>Returns a  GetPublicKeyConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        public virtual GetPublicKeyConfigResponse EndGetPublicKeyConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPublicKeyConfigResponse>(asyncResult);
         }
 
         #endregion
@@ -1814,7 +2612,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual GetStreamingDistributionResponse GetStreamingDistribution()
         {
             return GetStreamingDistribution(new GetStreamingDistributionRequest());
@@ -1832,7 +2630,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
         {
             var marshaller = GetStreamingDistributionRequestMarshaller.Instance;
@@ -1852,7 +2650,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetStreamingDistributionRequestMarshaller.Instance;
@@ -1869,7 +2667,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  GetStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStreamingDistributionResponse>(asyncResult);
@@ -1890,7 +2688,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig()
         {
             return GetStreamingDistributionConfig(new GetStreamingDistributionConfigRequest());
@@ -1908,7 +2706,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
         {
             var marshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
@@ -1928,7 +2726,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistributionConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
@@ -1945,7 +2743,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistributionConfig.</param>
         /// 
         /// <returns>Returns a  GetStreamingDistributionConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetStreamingDistributionConfigResponse>(asyncResult);
@@ -1963,7 +2761,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities()
         {
             return ListCloudFrontOriginAccessIdentities(new ListCloudFrontOriginAccessIdentitiesRequest());
@@ -1978,7 +2776,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
         {
             var marshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
@@ -1998,7 +2796,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCloudFrontOriginAccessIdentities
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
@@ -2015,7 +2813,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCloudFrontOriginAccessIdentities.</param>
         /// 
         /// <returns>Returns a  ListCloudFrontOriginAccessIdentitiesResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCloudFrontOriginAccessIdentitiesResponse>(asyncResult);
@@ -2033,7 +2831,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse ListDistributions()
         {
             return ListDistributions(new ListDistributionsRequest());
@@ -2048,7 +2846,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
         {
             var marshaller = ListDistributionsRequestMarshaller.Instance;
@@ -2068,7 +2866,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributions
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListDistributionsRequestMarshaller.Instance;
@@ -2085,7 +2883,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributions.</param>
         /// 
         /// <returns>Returns a  ListDistributionsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual ListDistributionsResponse EndListDistributions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsResponse>(asyncResult);
@@ -2107,7 +2905,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request)
         {
             var marshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
@@ -2127,7 +2925,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByWebACLId
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
@@ -2144,10 +2942,124 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByWebACLId.</param>
         /// 
         /// <returns>Returns a  ListDistributionsByWebACLIdResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual ListDistributionsByWebACLIdResponse EndListDistributionsByWebACLId(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsByWebACLIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionConfigs
+
+        /// <summary>
+        /// List all field-level encryption configurations that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListFieldLevelEncryptionConfigs service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        public virtual ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request)
+        {
+            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFieldLevelEncryptionConfigsRequest,ListFieldLevelEncryptionConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFieldLevelEncryptionConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListFieldLevelEncryptionConfigsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFieldLevelEncryptionConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFieldLevelEncryptionConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListFieldLevelEncryptionConfigsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        public virtual ListFieldLevelEncryptionConfigsResponse EndListFieldLevelEncryptionConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFieldLevelEncryptionConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionProfiles
+
+        /// <summary>
+        /// Request a list of field-level encryption profiles that have been created in CloudFront
+        /// for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListFieldLevelEncryptionProfiles service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        public virtual ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request)
+        {
+            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFieldLevelEncryptionProfilesRequest,ListFieldLevelEncryptionProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFieldLevelEncryptionProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListFieldLevelEncryptionProfilesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFieldLevelEncryptionProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFieldLevelEncryptionProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListFieldLevelEncryptionProfilesResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        public virtual ListFieldLevelEncryptionProfilesResponse EndListFieldLevelEncryptionProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFieldLevelEncryptionProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -2169,7 +3081,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
         {
             var marshaller = ListInvalidationsRequestMarshaller.Instance;
@@ -2189,7 +3101,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListInvalidationsRequestMarshaller.Instance;
@@ -2206,10 +3118,66 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvalidations.</param>
         /// 
         /// <returns>Returns a  ListInvalidationsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInvalidationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPublicKeys
+
+        /// <summary>
+        /// List all public keys that have been added to CloudFront for this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListPublicKeys service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
+        {
+            var marshaller = ListPublicKeysRequestMarshaller.Instance;
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPublicKeys
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        public virtual IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListPublicKeysRequestMarshaller.Instance;
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListPublicKeysRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPublicKeys.</param>
+        /// 
+        /// <returns>Returns a  ListPublicKeysResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        public virtual ListPublicKeysResponse EndListPublicKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPublicKeysResponse>(asyncResult);
         }
 
         #endregion
@@ -2224,7 +3192,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse ListStreamingDistributions()
         {
             return ListStreamingDistributions(new ListStreamingDistributionsRequest());
@@ -2239,7 +3207,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
         {
             var marshaller = ListStreamingDistributionsRequestMarshaller.Instance;
@@ -2259,7 +3227,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreamingDistributions
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListStreamingDistributionsRequestMarshaller.Instance;
@@ -2276,7 +3244,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreamingDistributions.</param>
         /// 
         /// <returns>Returns a  ListStreamingDistributionsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStreamingDistributionsResponse>(asyncResult);
@@ -2304,7 +3272,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = ListTagsForResourceRequestMarshaller.Instance;
@@ -2324,7 +3292,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = ListTagsForResourceRequestMarshaller.Instance;
@@ -2341,7 +3309,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -2369,7 +3337,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var marshaller = TagResourceRequestMarshaller.Instance;
@@ -2389,7 +3357,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = TagResourceRequestMarshaller.Instance;
@@ -2406,7 +3374,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -2434,7 +3402,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var marshaller = UntagResourceRequestMarshaller.Instance;
@@ -2454,7 +3422,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = UntagResourceRequestMarshaller.Instance;
@@ -2471,7 +3439,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -2512,7 +3480,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
         {
             var marshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -2532,7 +3500,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -2549,7 +3517,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  UpdateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCloudFrontOriginAccessIdentityResponse>(asyncResult);
@@ -2646,6 +3614,10 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
+        /// The specified configuration for field-level encryption can't be associated with the
+        /// specified cache behavior.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
@@ -2723,6 +3695,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
         /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
@@ -2741,6 +3716,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException">
+        /// The maximum number of distributions have been associated with the specified configuration
+        /// for field-level encryption.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
         /// Processing your request would cause the maximum number of distributions with Lambda
@@ -2767,7 +3746,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
         {
             var marshaller = UpdateDistributionRequestMarshaller.Instance;
@@ -2787,7 +3766,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = UpdateDistributionRequestMarshaller.Instance;
@@ -2804,10 +3783,259 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistribution.</param>
         /// 
         /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDistributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionConfig
+
+        /// <summary>
+        /// Update a field-level encryption configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFieldLevelEncryptionConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
+        /// The specified configuration for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
+        /// No profile specified for the field-level encryption query argument.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionContentTypeProfilesException">
+        /// The maximum number of content type profiles for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionQueryArgProfilesException">
+        /// The maximum number of query arg profiles for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFieldLevelEncryptionConfigRequest,UpdateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFieldLevelEncryptionConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateFieldLevelEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFieldLevelEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateFieldLevelEncryptionConfigResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual UpdateFieldLevelEncryptionConfigResponse EndUpdateFieldLevelEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFieldLevelEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionProfile
+
+        /// <summary>
+        /// Update a field-level encryption profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFieldLevelEncryptionProfile service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileAlreadyExistsException">
+        /// The specified profile for field-level encryption already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.FieldLevelEncryptionProfileSizeExceededException">
+        /// The maximum size of a profile for field-level encryption was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
+        /// The specified profile for field-level encryption doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
+        /// The maximum number of encryption entities for field-level encryption have been created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionFieldPatternsException">
+        /// The maximum number of field patterns for field-level encryption have been created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFieldLevelEncryptionProfileRequest,UpdateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFieldLevelEncryptionProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateFieldLevelEncryptionProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFieldLevelEncryptionProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateFieldLevelEncryptionProfileResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual UpdateFieldLevelEncryptionProfileResponse EndUpdateFieldLevelEncryptionProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFieldLevelEncryptionProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePublicKey
+
+        /// <summary>
+        /// Update public key information. Note that the only value you can change is the comment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePublicKey service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotChangeImmutablePublicKeyFieldsException">
+        /// You can't change the value of a public key.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// Origin and <code>CallerReference</code> cannot be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
+        /// The specified public key doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        public virtual UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request)
+        {
+            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePublicKeyRequest,UpdatePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePublicKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePublicKey(UpdatePublicKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdatePublicKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePublicKey.</param>
+        /// 
+        /// <returns>Returns a  UpdatePublicKeyResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        public virtual UpdatePublicKeyResponse EndUpdatePublicKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePublicKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -2860,7 +4088,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers don't exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
         {
             var marshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
@@ -2880,7 +4108,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
@@ -2897,7 +4125,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  UpdateStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStreamingDistributionResponse>(asyncResult);

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/2017-03-25/origin-access-identity/cloudfront/{Id}/config";
+            string uriResourcePath = "/2017-10-30/origin-access-identity/cloudfront/{Id}/config";
         
             if(publicRequest.IsSetIfMatch())
                 request.Headers["If-Match"] = publicRequest.IfMatch;
@@ -68,12 +68,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2017-03-25/");                                
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2017-10-30/");                                
                 if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2017-03-25/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
 
                 if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2017-03-25/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
 
 
                 xmlWriter.WriteEndElement();

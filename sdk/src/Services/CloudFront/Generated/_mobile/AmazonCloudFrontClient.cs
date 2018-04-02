@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
  */
 
 
@@ -256,7 +256,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -288,7 +288,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public virtual Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDistributionRequestMarshaller.Instance;
@@ -320,13 +320,77 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public virtual Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDistributionWithTagsRequestMarshaller.Instance;
             var unmarshaller = CreateDistributionWithTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDistributionWithTagsRequest,CreateDistributionWithTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionConfig
+
+        internal virtual CreateFieldLevelEncryptionConfigResponse CreateFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFieldLevelEncryptionConfigRequest,CreateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig">REST API Reference for CreateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual Task<CreateFieldLevelEncryptionConfigResponse> CreateFieldLevelEncryptionConfigAsync(CreateFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFieldLevelEncryptionConfigRequest,CreateFieldLevelEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFieldLevelEncryptionProfile
+
+        internal virtual CreateFieldLevelEncryptionProfileResponse CreateFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFieldLevelEncryptionProfileRequest,CreateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile">REST API Reference for CreateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual Task<CreateFieldLevelEncryptionProfileResponse> CreateFieldLevelEncryptionProfileAsync(CreateFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFieldLevelEncryptionProfileRequest,CreateFieldLevelEncryptionProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -352,13 +416,45 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public virtual Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateInvalidationRequestMarshaller.Instance;
             var unmarshaller = CreateInvalidationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInvalidationRequest,CreateInvalidationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePublicKey
+
+        internal virtual CreatePublicKeyResponse CreatePublicKey(CreatePublicKeyRequest request)
+        {
+            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePublicKeyRequest,CreatePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey">REST API Reference for CreatePublicKey Operation</seealso>
+        public virtual Task<CreatePublicKeyResponse> CreatePublicKeyAsync(CreatePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = CreatePublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePublicKeyRequest,CreatePublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -384,7 +480,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public virtual Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateStreamingDistributionRequestMarshaller.Instance;
@@ -416,7 +512,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public virtual Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateStreamingDistributionWithTagsRequestMarshaller.Instance;
@@ -466,7 +562,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteCloudFrontOriginAccessIdentityAsync(new DeleteCloudFrontOriginAccessIdentityRequest(), cancellationToken);
@@ -482,7 +578,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -532,7 +628,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteDistributionAsync(new DeleteDistributionRequest(), cancellationToken);
@@ -548,13 +644,109 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public virtual Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDistributionRequestMarshaller.Instance;
             var unmarshaller = DeleteDistributionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDistributionRequest,DeleteDistributionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionConfig
+
+        internal virtual DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFieldLevelEncryptionConfigRequest,DeleteFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
+        public virtual Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFieldLevelEncryptionConfigRequest,DeleteFieldLevelEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFieldLevelEncryptionProfile
+
+        internal virtual DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFieldLevelEncryptionProfileRequest,DeleteFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
+        public virtual Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFieldLevelEncryptionProfileRequest,DeleteFieldLevelEncryptionProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePublicKey
+
+        internal virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
+        {
+            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublicKeyRequest,DeletePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
+        public virtual Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeletePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePublicKeyRequest,DeletePublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -580,7 +772,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
         public virtual Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
@@ -688,7 +880,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteStreamingDistributionAsync(new DeleteStreamingDistributionRequest(), cancellationToken);
@@ -704,7 +896,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public virtual Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteStreamingDistributionRequestMarshaller.Instance;
@@ -745,7 +937,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityAsync(new GetCloudFrontOriginAccessIdentityRequest(), cancellationToken);
@@ -761,7 +953,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -802,7 +994,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityConfigAsync(new GetCloudFrontOriginAccessIdentityConfigRequest(), cancellationToken);
@@ -818,7 +1010,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public virtual Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.Instance;
@@ -859,7 +1051,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionAsync(new GetDistributionRequest(), cancellationToken);
@@ -875,7 +1067,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public virtual Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetDistributionRequestMarshaller.Instance;
@@ -916,7 +1108,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionConfigAsync(new GetDistributionConfigRequest(), cancellationToken);
@@ -932,13 +1124,141 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public virtual Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetDistributionConfigRequestMarshaller.Instance;
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDistributionConfigRequest,GetDistributionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryption
+
+        internal virtual GetFieldLevelEncryptionResponse GetFieldLevelEncryption(GetFieldLevelEncryptionRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionRequest,GetFieldLevelEncryptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption">REST API Reference for GetFieldLevelEncryption Operation</seealso>
+        public virtual Task<GetFieldLevelEncryptionResponse> GetFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFieldLevelEncryptionRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFieldLevelEncryptionRequest,GetFieldLevelEncryptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionConfig
+
+        internal virtual GetFieldLevelEncryptionConfigResponse GetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionConfigRequest,GetFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig">REST API Reference for GetFieldLevelEncryptionConfig Operation</seealso>
+        public virtual Task<GetFieldLevelEncryptionConfigResponse> GetFieldLevelEncryptionConfigAsync(GetFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFieldLevelEncryptionConfigRequest,GetFieldLevelEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfile
+
+        internal virtual GetFieldLevelEncryptionProfileResponse GetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionProfileRequest,GetFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile">REST API Reference for GetFieldLevelEncryptionProfile Operation</seealso>
+        public virtual Task<GetFieldLevelEncryptionProfileResponse> GetFieldLevelEncryptionProfileAsync(GetFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFieldLevelEncryptionProfileRequest,GetFieldLevelEncryptionProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFieldLevelEncryptionProfileConfig
+
+        internal virtual GetFieldLevelEncryptionProfileConfigResponse GetFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request)
+        {
+            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetFieldLevelEncryptionProfileConfigRequest,GetFieldLevelEncryptionProfileConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFieldLevelEncryptionProfileConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFieldLevelEncryptionProfileConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig">REST API Reference for GetFieldLevelEncryptionProfileConfig Operation</seealso>
+        public virtual Task<GetFieldLevelEncryptionProfileConfigResponse> GetFieldLevelEncryptionProfileConfigAsync(GetFieldLevelEncryptionProfileConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFieldLevelEncryptionProfileConfigRequestMarshaller.Instance;
+            var unmarshaller = GetFieldLevelEncryptionProfileConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFieldLevelEncryptionProfileConfigRequest,GetFieldLevelEncryptionProfileConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -964,13 +1284,77 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public virtual Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetInvalidationRequestMarshaller.Instance;
             var unmarshaller = GetInvalidationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetInvalidationRequest,GetInvalidationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPublicKey
+
+        internal virtual GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request)
+        {
+            var marshaller = GetPublicKeyRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicKeyRequest,GetPublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
+        public virtual Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetPublicKeyRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPublicKeyRequest,GetPublicKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPublicKeyConfig
+
+        internal virtual GetPublicKeyConfigResponse GetPublicKeyConfig(GetPublicKeyConfigRequest request)
+        {
+            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicKeyConfigRequest,GetPublicKeyConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicKeyConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig">REST API Reference for GetPublicKeyConfig Operation</seealso>
+        public virtual Task<GetPublicKeyConfigResponse> GetPublicKeyConfigAsync(GetPublicKeyConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetPublicKeyConfigRequestMarshaller.Instance;
+            var unmarshaller = GetPublicKeyConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPublicKeyConfigRequest,GetPublicKeyConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1005,7 +1389,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionAsync(new GetStreamingDistributionRequest(), cancellationToken);
@@ -1021,7 +1405,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public virtual Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetStreamingDistributionRequestMarshaller.Instance;
@@ -1062,7 +1446,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionConfigAsync(new GetStreamingDistributionConfigRequest(), cancellationToken);
@@ -1078,7 +1462,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public virtual Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetStreamingDistributionConfigRequestMarshaller.Instance;
@@ -1116,7 +1500,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListCloudFrontOriginAccessIdentitiesAsync(new ListCloudFrontOriginAccessIdentitiesRequest(), cancellationToken);
@@ -1132,7 +1516,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public virtual Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListCloudFrontOriginAccessIdentitiesRequestMarshaller.Instance;
@@ -1170,7 +1554,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDistributionsAsync(new ListDistributionsRequest(), cancellationToken);
@@ -1186,7 +1570,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public virtual Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListDistributionsRequestMarshaller.Instance;
@@ -1218,13 +1602,77 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public virtual Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListDistributionsByWebACLIdRequestMarshaller.Instance;
             var unmarshaller = ListDistributionsByWebACLIdResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDistributionsByWebACLIdRequest,ListDistributionsByWebACLIdResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionConfigs
+
+        internal virtual ListFieldLevelEncryptionConfigsResponse ListFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request)
+        {
+            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFieldLevelEncryptionConfigsRequest,ListFieldLevelEncryptionConfigsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionConfigs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs">REST API Reference for ListFieldLevelEncryptionConfigs Operation</seealso>
+        public virtual Task<ListFieldLevelEncryptionConfigsResponse> ListFieldLevelEncryptionConfigsAsync(ListFieldLevelEncryptionConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListFieldLevelEncryptionConfigsRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFieldLevelEncryptionConfigsRequest,ListFieldLevelEncryptionConfigsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFieldLevelEncryptionProfiles
+
+        internal virtual ListFieldLevelEncryptionProfilesResponse ListFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request)
+        {
+            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFieldLevelEncryptionProfilesRequest,ListFieldLevelEncryptionProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFieldLevelEncryptionProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFieldLevelEncryptionProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles">REST API Reference for ListFieldLevelEncryptionProfiles Operation</seealso>
+        public virtual Task<ListFieldLevelEncryptionProfilesResponse> ListFieldLevelEncryptionProfilesAsync(ListFieldLevelEncryptionProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListFieldLevelEncryptionProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListFieldLevelEncryptionProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFieldLevelEncryptionProfilesRequest,ListFieldLevelEncryptionProfilesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1250,13 +1698,45 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public virtual Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListInvalidationsRequestMarshaller.Instance;
             var unmarshaller = ListInvalidationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInvalidationsRequest,ListInvalidationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPublicKeys
+
+        internal virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
+        {
+            var marshaller = ListPublicKeysRequestMarshaller.Instance;
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPublicKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPublicKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
+        public virtual Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListPublicKeysRequestMarshaller.Instance;
+            var unmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPublicKeysRequest,ListPublicKeysResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1288,7 +1768,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListStreamingDistributionsAsync(new ListStreamingDistributionsRequest(), cancellationToken);
@@ -1304,7 +1784,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public virtual Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListStreamingDistributionsRequestMarshaller.Instance;
@@ -1336,7 +1816,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListTagsForResourceRequestMarshaller.Instance;
@@ -1368,7 +1848,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = TagResourceRequestMarshaller.Instance;
@@ -1400,7 +1880,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = UntagResourceRequestMarshaller.Instance;
@@ -1432,7 +1912,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public virtual Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = UpdateCloudFrontOriginAccessIdentityRequestMarshaller.Instance;
@@ -1464,13 +1944,109 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public virtual Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = UpdateDistributionRequestMarshaller.Instance;
             var unmarshaller = UpdateDistributionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDistributionRequest,UpdateDistributionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionConfig
+
+        internal virtual UpdateFieldLevelEncryptionConfigResponse UpdateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request)
+        {
+            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFieldLevelEncryptionConfigRequest,UpdateFieldLevelEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig">REST API Reference for UpdateFieldLevelEncryptionConfig Operation</seealso>
+        public virtual Task<UpdateFieldLevelEncryptionConfigResponse> UpdateFieldLevelEncryptionConfigAsync(UpdateFieldLevelEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFieldLevelEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFieldLevelEncryptionConfigRequest,UpdateFieldLevelEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFieldLevelEncryptionProfile
+
+        internal virtual UpdateFieldLevelEncryptionProfileResponse UpdateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request)
+        {
+            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFieldLevelEncryptionProfileRequest,UpdateFieldLevelEncryptionProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFieldLevelEncryptionProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFieldLevelEncryptionProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile">REST API Reference for UpdateFieldLevelEncryptionProfile Operation</seealso>
+        public virtual Task<UpdateFieldLevelEncryptionProfileResponse> UpdateFieldLevelEncryptionProfileAsync(UpdateFieldLevelEncryptionProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFieldLevelEncryptionProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateFieldLevelEncryptionProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFieldLevelEncryptionProfileRequest,UpdateFieldLevelEncryptionProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePublicKey
+
+        internal virtual UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request)
+        {
+            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePublicKeyRequest,UpdatePublicKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePublicKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePublicKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
+        public virtual Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdatePublicKeyRequestMarshaller.Instance;
+            var unmarshaller = UpdatePublicKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePublicKeyRequest,UpdatePublicKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1496,7 +2072,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public virtual Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = UpdateStreamingDistributionRequestMarshaller.Instance;
