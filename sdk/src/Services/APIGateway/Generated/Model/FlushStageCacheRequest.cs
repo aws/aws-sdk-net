@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -57,7 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the stage to flush its cache.
+        /// [Required] The name of the stage to flush its cache.
         /// </para>
         /// </summary>
         public string StageName

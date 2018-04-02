@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content-type for the model.
+        /// [Required] The content-type for the model.
         /// </para>
         /// </summary>
         public string ContentType
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the model. Must be alphanumeric.
+        /// [Required] The name of the model. Must be alphanumeric.
         /// </para>
         /// </summary>
         public string Name
@@ -96,7 +96,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
+        /// [Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -115,8 +115,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// The schema for the model. For <code>application/json</code> models, this should be
-        /// <a href="http://json-schema.org/documentation.html" target="_blank">JSON-schema draft
-        /// v4</a> model.
+        /// <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON
+        /// schema draft 4</a> model.
         /// </para>
         /// </summary>
         public string Schema

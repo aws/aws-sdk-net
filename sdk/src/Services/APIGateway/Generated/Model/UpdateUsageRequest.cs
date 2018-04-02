@@ -41,8 +41,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the API key associated with the usage plan in which a temporary
-        /// extension is granted to the remaining quota.
+        /// [Required] The identifier of the API key associated with the usage plan in which a
+        /// temporary extension is granted to the remaining quota.
         /// </para>
         /// </summary>
         public string KeyId
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// The Id of the usage plan associated with the usage data.
+        /// [Required] The Id of the usage plan associated with the usage data.
         /// </para>
         /// </summary>
         public string UsagePlanId

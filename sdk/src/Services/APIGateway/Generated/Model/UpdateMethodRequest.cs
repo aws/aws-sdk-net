@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// The HTTP verb of the <a>Method</a> resource.
+        /// [Required] The HTTP verb of the <a>Method</a> resource.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The <a>Resource</a> identifier for the <a>Method</a> resource.
+        /// [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -96,7 +96,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

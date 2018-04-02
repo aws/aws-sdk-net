@@ -43,8 +43,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of returned results per page. The <a>GatewayResponses</a> collection
-        /// does not support pagination and the limit does not apply here.
+        /// The maximum number of returned results per page. The default value is 25 and the maximum
+        /// value is 500. The <a>GatewayResponses</a> collection does not support pagination and
+        /// the limit does not apply here.
         /// </para>
         /// </summary>
         public int Limit
@@ -81,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

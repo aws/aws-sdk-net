@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BasePath. 
         /// <para>
-        /// The base path name of the <a>BasePathMapping</a> resource to delete.
+        /// [Required] The base path name of the <a>BasePathMapping</a> resource to delete.
         /// </para>
         /// </summary>
         public string BasePath
@@ -57,7 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name of the <a>BasePathMapping</a> resource to delete.
+        /// [Required] The domain name of the <a>BasePathMapping</a> resource to delete.
         /// </para>
         /// </summary>
         public string DomainName

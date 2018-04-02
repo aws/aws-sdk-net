@@ -41,9 +41,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The POST request body containing external API definitions. Currently, only Swagger
-        /// definition JSON files are supported. The maximum size of the API definition file is
-        /// 2MB.
+        /// [Required] The POST request body containing external API definitions. Currently, only
+        /// Swagger definition JSON files are supported. The maximum size of the API definition
+        /// file is 2MB.
         /// </para>
         /// </summary>
         public MemoryStream Body

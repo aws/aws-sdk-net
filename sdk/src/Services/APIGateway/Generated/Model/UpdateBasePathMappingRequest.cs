@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property BasePath. 
         /// <para>
-        /// The base path of the <a>BasePathMapping</a> resource to change.
+        /// [Required] The base path of the <a>BasePathMapping</a> resource to change.
         /// </para>
         /// </summary>
         public string BasePath
@@ -58,7 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name of the <a>BasePathMapping</a> resource to change.
+        /// [Required] The domain name of the <a>BasePathMapping</a> resource to change.
         /// </para>
         /// </summary>
         public string DomainName

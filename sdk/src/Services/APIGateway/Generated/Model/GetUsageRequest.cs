@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The ending date (e.g., 2016-12-31) of the usage data.
+        /// [Required] The ending date (e.g., 2016-12-31) of the usage data.
         /// </para>
         /// </summary>
         public string EndDate
@@ -79,7 +79,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of returned results per page.
+        /// The maximum number of returned results per page. The default value is 25 and the maximum
+        /// value is 500.
         /// </para>
         /// </summary>
         public int Limit
@@ -115,7 +116,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The starting date (e.g., 2016-01-01) of the usage data.
+        /// [Required] The starting date (e.g., 2016-01-01) of the usage data.
         /// </para>
         /// </summary>
         public string StartDate
@@ -133,7 +134,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// The Id of the usage plan associated with the usage data.
+        /// [Required] The Id of the usage plan associated with the usage data.
         /// </para>
         /// </summary>
         public string UsagePlanId

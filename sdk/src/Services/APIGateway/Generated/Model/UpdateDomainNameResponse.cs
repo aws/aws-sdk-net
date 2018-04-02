@@ -181,7 +181,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <a>DomainName</a> resource.
+        /// The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
         /// </para>
         /// </summary>
         public string Name

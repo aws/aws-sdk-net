@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTags operation.
-    /// Gets the Tags collection for a given resource.
+    /// Gets the <a>Tags</a> collection for a given resource.
     /// </summary>
     public partial class GetTagsRequest : AmazonAPIGatewayRequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// (Not currently supported) The maximum number of returned results per page.
+        /// (Not currently supported) The maximum number of returned results per page. The default
+        /// value is 25 and the maximum value is 500.
         /// </para>
         /// </summary>
         public int Limit
@@ -76,8 +77,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the
-        /// only taggable resource.
+        /// [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+        /// At present, <a>Stage</a> is the only taggable resource.
         /// </para>
         /// </summary>
         public string ResourceArn

@@ -156,7 +156,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -192,8 +192,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up
-        /// to 128 characters and must not start with "aws:". Tag value can be up to 256 characters.
+        /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
+        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
+        /// value can be up to 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the usage plan.
+        /// [Required] The name of the usage plan.
         /// </para>
         /// </summary>
         public string Name

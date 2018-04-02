@@ -43,14 +43,15 @@ namespace Amazon.APIGateway.Model
         private string _id;
         private int? _minimumCompressionSize;
         private string _name;
+        private string _policy;
         private string _version;
         private List<string> _warnings = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ApiKeySource. 
         /// <para>
-        /// The source of the API key for metring requests according to a usage plan. Valid values
-        /// are <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code>
+        /// The source of the API key for metering requests according to a usage plan. Valid values
+        /// are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code>
         /// header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the
         /// <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul> 
         /// </para>
@@ -162,10 +163,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MinimumCompressionSize. 
         /// <para>
-        /// A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes,
-        /// inclusive) or disable (null) compression on an API. When compression is enabled, compression
-        /// or decompression are not applied on the payload if the payload size is smaller than
-        /// this value. Setting it to zero allows compression for any payload size.
+        /// A nullable integer that is used to enable compression (with non-negative between 0
+        /// and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on
+        /// an API. When compression is enabled, compression or decompression is not applied on
+        /// the payload if the payload size is smaller than this value. Setting it to zero allows
+        /// compression for any payload size.
         /// </para>
         /// </summary>
         public int MinimumCompressionSize
@@ -196,6 +198,22 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. A stringified JSON policy document that applies
+        /// to this RestApi regardless of the caller and <a>Method</a> configuration.
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>

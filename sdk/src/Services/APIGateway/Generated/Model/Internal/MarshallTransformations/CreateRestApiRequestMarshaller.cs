@@ -117,6 +117,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPolicy())
+                {
+                    context.Writer.WritePropertyName("policy");
+                    context.Writer.Write(publicRequest.Policy);
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("version");

@@ -38,7 +38,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ApiKey. 
         /// <para>
-        /// The identifier of the <a>ApiKey</a> resource to be deleted.
+        /// [Required] The identifier of the <a>ApiKey</a> resource to be deleted.
         /// </para>
         /// </summary>
         public string ApiKey

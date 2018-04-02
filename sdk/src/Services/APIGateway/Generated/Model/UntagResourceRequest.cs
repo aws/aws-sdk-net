@@ -29,7 +29,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes Tags from a given resource.
+    /// Removes a tag from a given resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonAPIGatewayRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the
-        /// only taggable resource.
+        /// [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+        /// At present, <a>Stage</a> is the only taggable resource.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -58,7 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The Tag keys to delete.
+        /// [Required] The Tag keys to delete.
         /// </para>
         /// </summary>
         public List<string> TagKeys

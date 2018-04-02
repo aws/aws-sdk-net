@@ -39,8 +39,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of returned results per page. The value is 25 by default and could
-        /// be between 1 - 500.
+        /// The maximum number of returned results per page. The default value is 25 and the maximum
+        /// value is 500.
         /// </para>
         /// </summary>
         public int Limit

@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// The identifier of the <a>ClientCertificate</a> resource to be updated.
+        /// [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
         /// </para>
         /// </summary>
         public string ClientCertificateId

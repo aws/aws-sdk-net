@@ -62,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name of the <a>BasePathMapping</a> resource to create.
+        /// [Required] The domain name of the <a>BasePathMapping</a> resource to create.
         /// </para>
         /// </summary>
         public string DomainName
@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

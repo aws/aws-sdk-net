@@ -58,7 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UsagePlanId. 
         /// <para>
-        /// The Id of the to-be-updated usage plan.
+        /// [Required] The Id of the to-be-updated usage plan.
         /// </para>
         /// </summary>
         public string UsagePlanId

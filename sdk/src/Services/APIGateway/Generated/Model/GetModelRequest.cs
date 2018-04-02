@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the model as an identifier.
+        /// [Required] The name of the model as an identifier.
         /// </para>
         /// </summary>
         public string ModelName
@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The <a>RestApi</a> identifier under which the <a>Model</a> exists.
+        /// [Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.
         /// </para>
         /// </summary>
         public string RestApiId

@@ -44,9 +44,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The PUT request body containing external API definitions. Currently, only Swagger
-        /// definition JSON files are supported. The maximum size of the API definition file is
-        /// 2MB.
+        /// [Required] The PUT request body containing external API definitions. Currently, only
+        /// Swagger definition JSON files are supported. The maximum size of the API definition
+        /// file is 2MB.
         /// </para>
         /// </summary>
         public MemoryStream Body
@@ -123,7 +123,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

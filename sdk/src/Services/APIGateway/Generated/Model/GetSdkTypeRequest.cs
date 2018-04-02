@@ -38,7 +38,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the queried <a>SdkType</a> instance.
+        /// [Required] The identifier of the queried <a>SdkType</a> instance.
         /// </para>
         /// </summary>
         public string Id

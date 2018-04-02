@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The identifier of the <a>Deployment</a> resource to get information about.
+        /// [Required] The identifier of the <a>Deployment</a> resource to get information about.
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -82,7 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

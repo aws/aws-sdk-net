@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -83,7 +83,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SdkType. 
         /// <para>
-        /// The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
+        /// [Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
         /// <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS),
         /// and <code>ruby</code> are supported.
         /// </para>
@@ -103,7 +103,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the <a>Stage</a> that the SDK will use.
+        /// [Required] The name of the <a>Stage</a> that the SDK will use.
         /// </para>
         /// </summary>
         public string StageName

@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the <a>DomainName</a> resource to be changed.
+        /// [Required] The name of the <a>DomainName</a> resource to be changed.
         /// </para>
         /// </summary>
         public string DomainName

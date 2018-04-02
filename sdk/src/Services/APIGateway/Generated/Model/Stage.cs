@@ -293,7 +293,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A collection of Tags associated with a given resource.
+        /// The collection of tags. Each tag element is associated with a given resource.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

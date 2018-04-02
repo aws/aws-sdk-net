@@ -99,6 +99,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("policy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Policy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// Specifies a put integration response request's HTTP method.
+        /// [Required] Specifies a put integration response request's HTTP method.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -98,7 +98,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// Specifies a put integration response request's resource identifier.
+        /// [Required] Specifies a put integration response request's resource identifier.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -160,7 +160,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId
@@ -196,8 +196,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Specifies the status code that is used to map the integration response to an existing
-        /// <a>MethodResponse</a>.
+        /// [Required] Specifies the status code that is used to map the integration response
+        /// to an existing <a>MethodResponse</a>.
         /// </para>
         /// </summary>
         public string StatusCode

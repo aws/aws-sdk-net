@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerId. 
         /// <para>
-        /// The identifier of the <a>Authorizer</a> resource.
+        /// [Required] The identifier of the <a>Authorizer</a> resource.
         /// </para>
         /// </summary>
         public string AuthorizerId
@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The string identifier of the associated <a>RestApi</a>.
+        /// [Required] The string identifier of the associated <a>RestApi</a>.
         /// </para>
         /// </summary>
         public string RestApiId

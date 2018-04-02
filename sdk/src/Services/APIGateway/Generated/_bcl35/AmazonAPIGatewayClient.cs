@@ -5107,7 +5107,7 @@ namespace Amazon.APIGateway
         #region  GetTags
 
         /// <summary>
-        /// Gets the Tags collection for a given resource.
+        /// Gets the <a>Tags</a> collection for a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// 
@@ -6224,7 +6224,7 @@ namespace Amazon.APIGateway
         #region  TagResource
 
         /// <summary>
-        /// Adds or updates Tags on a gievn resource.
+        /// Adds or updates a tag on a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6424,7 +6424,7 @@ namespace Amazon.APIGateway
         #region  UntagResource
 
         /// <summary>
-        /// Removes Tags from a given resource.
+        /// Removes a tag from a given resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

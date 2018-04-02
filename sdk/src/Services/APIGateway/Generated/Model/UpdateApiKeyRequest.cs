@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ApiKey. 
         /// <para>
-        /// The identifier of the <a>ApiKey</a> resource to be updated.
+        /// [Required] The identifier of the <a>ApiKey</a> resource to be updated.
         /// </para>
         /// </summary>
         public string ApiKey

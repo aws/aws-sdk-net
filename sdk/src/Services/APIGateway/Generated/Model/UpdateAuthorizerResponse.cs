@@ -154,9 +154,10 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property IdentitySource. 
         /// <para>
         /// The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code>
-        /// authorizer, this is required and specifies the request header mapping expression for
-        /// the custom header holding the authorization token submitted by the client. For example,
-        /// if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li><li>For
+        /// or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
+        /// request header mapping expression for the custom header holding the authorization
+        /// token submitted by the client. For example, if the token header name is <code>Auth</code>,
+        /// the header mapping expression is <code>method.request.header.Auth</code>.</li><li>For
         /// the <code>REQUEST</code> authorizer, this is required when authorization caching is
         /// enabled. The value is a comma-separated string of one or more mapping expressions
         /// of the specified request parameters. For example, if an <code>Auth</code> header,
@@ -168,8 +169,7 @@ namespace Amazon.APIGateway.Model
         /// the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
         /// Unauthorized response without calling the Lambda function. The valid value is a string
         /// of comma-separated mapping expressions of the specified request parameters. When the
-        /// authorization caching is not enabled, this property is optional.</li><li>For a <code>COGNITO_USER_POOLS</code>
-        /// authorizer, this property is not used.</li></ul>
+        /// authorization caching is not enabled, this property is optional.</li></ul>
         /// </para>
         /// </summary>
         public string IdentitySource
@@ -188,11 +188,11 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
         /// A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers,
-        /// this value is a regular expression. API Gateway will match the incoming token from
-        /// the client against the specified regular expression. It will invoke the authorizer's
-        /// Lambda function there is a match. Otherwise, it will return a 401 Unauthorized response
-        /// without calling the Lambda function. The validation expression does not apply to the
-        /// <code>REQUEST</code> authorizer.
+        /// this value is a regular expression. API Gateway will match the <code>aud</code> field
+        /// of the incoming token from the client against the specified regular expression. It
+        /// will invoke the authorizer's Lambda function when there is a match. Otherwise, it
+        /// will return a 401 Unauthorized response without calling the Lambda function. The validation
+        /// expression does not apply to the <code>REQUEST</code> authorizer.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression
@@ -249,9 +249,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function
-        /// using a single authorization token submitted in a custom header, <code>REQUEST</code>
-        /// for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code>
+        /// The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using
+        /// a single authorization token submitted in a custom header, <code>REQUEST</code> for
+        /// a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code>
         /// for using an Amazon Cognito user pool.
         /// </para>
         /// </summary>
