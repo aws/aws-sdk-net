@@ -88,7 +88,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Returns the list of tags associated with the function.
+        /// Returns the list of tags associated with the function. For more information, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a>
+        /// in the <b>AWS Lambda Developer Guide</b>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

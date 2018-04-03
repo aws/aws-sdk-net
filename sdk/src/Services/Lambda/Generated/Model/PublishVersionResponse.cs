@@ -92,7 +92,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-        /// SQS queue or Amazon SNS topic.
+        /// SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. 
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig

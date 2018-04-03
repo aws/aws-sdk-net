@@ -67,7 +67,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
         /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-        /// SQS queue or Amazon SNS topic.
+        /// SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. 
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig
@@ -257,7 +257,8 @@ namespace Amazon.Lambda.Model
         /// To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime
         /// v2.7, set the value to "python2.7". To use the Node.js runtime v6.10, set the value
         /// to "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-        /// use the Python runtime v3.6, set the value to "python3.6".
+        /// use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the .NET
+        /// Core runtime v2.0, set the value to "dotnetcore2.0".
         /// </para>
         ///  <note> 
         /// <para>

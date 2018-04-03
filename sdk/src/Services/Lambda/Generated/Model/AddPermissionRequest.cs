@@ -37,8 +37,8 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a>. 
+    /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
+    /// Functions</a>. 
     /// </para>
     ///  
     /// <para>

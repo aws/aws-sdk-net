@@ -30,6 +30,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+    /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+    /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonLambdaRequest
     {
@@ -39,7 +41,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the function.
+        /// The ARN (Amazon Resource Name) of the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+        /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
         /// </para>
         /// </summary>
         public string Resource
@@ -57,7 +60,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The list of tag keys to be deleted from the function.
+        /// The list of tag keys to be deleted from the function. For more information, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a>
+        /// in the <b>AWS Lambda Developer Guide</b>.
         /// </para>
         /// </summary>
         public List<string> TagKeys

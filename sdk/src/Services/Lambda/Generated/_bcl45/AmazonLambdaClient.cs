@@ -45,7 +45,7 @@ namespace Amazon.Lambda
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
     /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
     /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+    /// Lambda: How it Works</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </para>
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
@@ -247,8 +247,8 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a>. 
+        /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
+        /// Functions</a>. 
         /// </para>
         ///  
         /// <para>
@@ -399,13 +399,7 @@ namespace Amazon.Lambda
         /// This association between a stream source and a Lambda function is called the event
         /// source mapping.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
-        /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// You provide mapping information (for example, which stream to read from and which
         /// Lambda function to invoke) in the request body.
@@ -413,7 +407,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
-        /// with multiple AWS Lambda function. A given Lambda function can be associated with
+        /// with multiple AWS Lambda functions. A given Lambda function can be associated with
         /// multiple AWS event sources.
         /// </para>
         ///  
@@ -1969,7 +1963,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Returns a list of tags assigned to a function when supplied the function ARN (Amazon
-        /// Resource Name).
+        /// Resource Name). For more information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+        /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -2284,7 +2279,9 @@ namespace Amazon.Lambda
         /// <summary>
         /// Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda
         /// function ARN (Amazon Resource Name). If a key is specified without a value, Lambda
-        /// creates a tag with the specified key and a value of null.
+        /// creates a tag with the specified key and a value of null. For more information, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+        /// Functions</a> in the <b>AWS Lambda Developer Guide</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2339,6 +2336,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+        /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+        /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

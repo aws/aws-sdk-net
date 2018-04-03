@@ -30,7 +30,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListTags operation.
     /// Returns a list of tags assigned to a function when supplied the function ARN (Amazon
-    /// Resource Name).
+    /// Resource Name). For more information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+    /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </summary>
     public partial class ListTagsRequest : AmazonLambdaRequest
     {
@@ -39,7 +40,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the function.
+        /// The ARN (Amazon Resource Name) of the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
+        /// Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.
         /// </para>
         /// </summary>
         public string Resource

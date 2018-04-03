@@ -38,13 +38,7 @@ namespace Amazon.Lambda.Model
     /// This association between a stream source and a Lambda function is called the event
     /// source mapping.
     /// </para>
-    ///  <important> 
-    /// <para>
-    /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
-    /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
-    /// </para>
-    ///  </important> 
+    ///  
     /// <para>
     /// You provide mapping information (for example, which stream to read from and which
     /// Lambda function to invoke) in the request body.
@@ -52,7 +46,7 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
-    /// with multiple AWS Lambda function. A given Lambda function can be associated with
+    /// with multiple AWS Lambda functions. A given Lambda function can be associated with
     /// multiple AWS event sources.
     /// </para>
     ///  
@@ -180,9 +174,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in the stream where AWS Lambda should start reading. Valid only for Kinesis
-        /// streams. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
-        /// in the <i>Amazon Kinesis API Reference</i>. 
+        /// The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading.
+        /// For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
+        /// in the <i>Amazon Kinesis API Reference Guide</i> or <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
+        /// in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value
+        /// is supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+        /// streams</a>. 
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -204,7 +201,8 @@ namespace Amazon.Lambda.Model
         /// iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist,
         /// the iterator returned is for the next (later) record. If the timestamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
-        /// (TRIM_HORIZON). Valid only for Kinesis streams. 
+        /// (TRIM_HORIZON). Valid only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
+        /// streams</a>. 
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp
