@@ -1,3 +1,11 @@
+### 3.3.260.0 (2018-04-03 22:20 UTC)
+* DeviceFarm (3.3.5.0)
+	* Added Private Device Management feature. Customers can now manage their private devices efficiently - view their status, set labels and apply profiles on them. Customers can also schedule automated tests and remote access sessions on individual instances in their private device fleet.
+* Lambda (3.3.13.0)
+	* added nodejs8.10 as a valid runtime
+* Translate (3.3.1.0)
+	* This release increases the maximum size of input text to 5,000 bytes. Amazon Translate now supports automatic language detection of the input text. The translation models have been improved to increase accuracy. See the documentation for more information.
+
 ### 3.3.259.0 (2018-04-02 20:49 UTC)
 * APIGateway (3.3.17.0)
 	* Amazon API Gateway now supports resource policies for APIs making it easier to set access controls for invoking APIs.

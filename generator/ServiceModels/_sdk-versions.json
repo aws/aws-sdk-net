@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.259.0",
+    "ProductVersion" : "3.3.260.0",
     "CoreVersion"    : "3.3.21.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -127,7 +127,7 @@
             "InPreview"               : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.12.3",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -953,7 +953,7 @@
             "InPreview"               : false
         },
         "Translate"                       : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
