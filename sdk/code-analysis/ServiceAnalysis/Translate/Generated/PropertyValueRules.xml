@@ -13,7 +13,7 @@
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextRequest.Text</property>
     <min>1</min>
-    <max>1000</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.SourceLanguageCode</property>
@@ -27,6 +27,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Translate.Model.TranslateTextResponse.TranslatedText</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.DetectedLanguageLowConfidenceException.DetectedLanguageCode</property>
+    <min>2</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Translate.Model.DetectedLanguageLowConfidenceException.Message</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

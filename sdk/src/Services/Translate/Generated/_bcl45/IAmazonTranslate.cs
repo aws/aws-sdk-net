@@ -70,11 +70,23 @@ namespace Amazon.Translate
         /// <para>
         /// Spanish (es)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// To have Amazon Translate determine the source language of your text, you can specify
+        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+        /// Amazon Translate will call Amazon Comprehend to determine the source language.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TranslateText service method.</param>
         /// 
         /// <returns>The response from the TranslateText service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.DetectedLanguageLowConfidenceException">
+        /// The confidence that Amazon Comprehend accurately detected the source language is low.
+        /// If a low confidence level is acceptable for your application, you can use the language
+        /// in the exception to call Amazon Translate again. For more information, see the <a
+        /// href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a>
+        /// operation in the <i>Amazon Comprehend Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Translate.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>

@@ -57,7 +57,12 @@ namespace Amazon.Translate.Model
     /// <para>
     /// Spanish (es)
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// To have Amazon Translate determine the source language of your text, you can specify
+    /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+    /// Amazon Translate will call Amazon Comprehend to determine the source language.
+    /// </para>
     /// </summary>
     public partial class TranslateTextRequest : AmazonTranslateRequest
     {
@@ -70,6 +75,12 @@ namespace Amazon.Translate.Model
         /// <para>
         /// One of the supported language codes for the source text. If the <code>TargetLanguageCode</code>
         /// is not "en", the <code>SourceLanguageCode</code> must be "en".
+        /// </para>
+        ///  
+        /// <para>
+        /// To have Amazon Translate determine the source language of your text, you can specify
+        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+        /// Amazon Translate will call Amazon Comprehend to determine the source language.
         /// </para>
         /// </summary>
         public string SourceLanguageCode
