@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Configuration settings for a remote access session, including billing method.
+    /// This is the response object from the GetDeviceInstance operation.
     /// </summary>
-    public partial class CreateRemoteAccessSessionConfiguration
+    public partial class GetDeviceInstanceResponse : AmazonWebServiceResponse
     {
-        private BillingMethod _billingMethod;
+        private DeviceInstance _deviceInstance;
 
         /// <summary>
-        /// Gets and sets the property BillingMethod. 
+        /// Gets and sets the property DeviceInstance. 
         /// <para>
-        /// The billing method for the remote access session.
+        /// An object containing information about your device instance.
         /// </para>
         /// </summary>
-        public BillingMethod BillingMethod
+        public DeviceInstance DeviceInstance
         {
-            get { return this._billingMethod; }
-            set { this._billingMethod = value; }
+            get { return this._deviceInstance; }
+            set { this._deviceInstance = value; }
         }
 
-        // Check to see if BillingMethod property is set
-        internal bool IsSetBillingMethod()
+        // Check to see if DeviceInstance property is set
+        internal bool IsSetDeviceInstance()
         {
-            return this._billingMethod != null;
+            return this._deviceInstance != null;
         }
 
     }

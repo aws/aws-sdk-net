@@ -40,6 +40,7 @@ namespace Amazon.DeviceFarm.Model
         private DeviceFormFactor _formFactor;
         private long? _heapSize;
         private string _image;
+        private List<DeviceInstance> _instances = new List<DeviceInstance>();
         private string _manufacturer;
         private long? _memory;
         private string _model;
@@ -208,6 +209,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// The instances belonging to this device.
+        /// </para>
+        /// </summary>
+        public List<DeviceInstance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
         }
 
         /// <summary>

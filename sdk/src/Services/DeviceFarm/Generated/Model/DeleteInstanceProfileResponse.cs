@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Configuration settings for a remote access session, including billing method.
+    /// This is the response object from the DeleteInstanceProfile operation.
     /// </summary>
-    public partial class CreateRemoteAccessSessionConfiguration
+    public partial class DeleteInstanceProfileResponse : AmazonWebServiceResponse
     {
-        private BillingMethod _billingMethod;
-
-        /// <summary>
-        /// Gets and sets the property BillingMethod. 
-        /// <para>
-        /// The billing method for the remote access session.
-        /// </para>
-        /// </summary>
-        public BillingMethod BillingMethod
-        {
-            get { return this._billingMethod; }
-            set { this._billingMethod = value; }
-        }
-
-        // Check to see if BillingMethod property is set
-        internal bool IsSetBillingMethod()
-        {
-            return this._billingMethod != null;
-        }
 
     }
 }

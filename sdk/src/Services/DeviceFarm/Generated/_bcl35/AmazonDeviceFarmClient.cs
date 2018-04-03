@@ -289,6 +289,71 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateInstanceProfile
+
+        /// <summary>
+        /// Creates a profile that can be applied to one or more private fleet device instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstanceProfile service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
+        {
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceProfileResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual CreateInstanceProfileResponse EndCreateInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateNetworkProfile
 
         /// <summary>
@@ -638,6 +703,71 @@ namespace Amazon.DeviceFarm
         public virtual DeleteDevicePoolResponse EndDeleteDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDevicePoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteInstanceProfile
+
+        /// <summary>
+        /// Deletes a profile that can be applied to one or more private device instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstanceProfile service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
+        {
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceProfileResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual DeleteInstanceProfileResponse EndDeleteInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -1159,6 +1289,71 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetDeviceInstance
+
+        /// <summary>
+        /// Returns information about a device instance belonging to a private device fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeviceInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetDeviceInstance service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
+        public virtual GetDeviceInstanceResponse GetDeviceInstance(GetDeviceInstanceRequest request)
+        {
+            var marshaller = GetDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeviceInstanceRequest,GetDeviceInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeviceInstance operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeviceInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
+        public virtual IAsyncResult BeginGetDeviceInstance(GetDeviceInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDeviceInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeviceInstance.</param>
+        /// 
+        /// <returns>Returns a  GetDeviceInstanceResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
+        public virtual GetDeviceInstanceResponse EndGetDeviceInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeviceInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDevicePool
 
         /// <summary>
@@ -1312,6 +1507,71 @@ namespace Amazon.DeviceFarm
         public virtual GetDevicePoolCompatibilityResponse EndGetDevicePoolCompatibility(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDevicePoolCompatibilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetInstanceProfile
+
+        /// <summary>
+        /// Returns information about the specified instance profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetInstanceProfile service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
+        public virtual GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
+        {
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetInstanceProfile(GetInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  GetInstanceProfileResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
+        public virtual GetInstanceProfileResponse EndGetInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInstanceProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -2201,6 +2461,72 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListDeviceInstances
+
+        /// <summary>
+        /// Returns information about the private device instances associated with one or more
+        /// AWS accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListDeviceInstances service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
+        public virtual ListDeviceInstancesResponse ListDeviceInstances(ListDeviceInstancesRequest request)
+        {
+            var marshaller = ListDeviceInstancesRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeviceInstancesRequest,ListDeviceInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeviceInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceInstances operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
+        public virtual IAsyncResult BeginListDeviceInstances(ListDeviceInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListDeviceInstancesRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDeviceInstancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeviceInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeviceInstances.</param>
+        /// 
+        /// <returns>Returns a  ListDeviceInstancesResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
+        public virtual ListDeviceInstancesResponse EndListDeviceInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDeviceInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDevicePools
 
         /// <summary>
@@ -2327,6 +2653,71 @@ namespace Amazon.DeviceFarm
         public virtual ListDevicesResponse EndListDevices(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDevicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstanceProfiles
+
+        /// <summary>
+        /// Returns information about all the instance profiles in an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceProfiles service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
+        public virtual ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
+        {
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListInstanceProfiles(ListInstanceProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstanceProfilesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstanceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListInstanceProfilesResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
+        public virtual ListInstanceProfilesResponse EndListInstanceProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstanceProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -3542,6 +3933,71 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  UpdateDeviceInstance
+
+        /// <summary>
+        /// Updates information about an existing private device instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDeviceInstance service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
+        public virtual UpdateDeviceInstanceResponse UpdateDeviceInstance(UpdateDeviceInstanceRequest request)
+        {
+            var marshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeviceInstanceRequest,UpdateDeviceInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceInstance operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeviceInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDeviceInstance(UpdateDeviceInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDeviceInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeviceInstance.</param>
+        /// 
+        /// <returns>Returns a  UpdateDeviceInstanceResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
+        public virtual UpdateDeviceInstanceResponse EndUpdateDeviceInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDeviceInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateDevicePool
 
         /// <summary>
@@ -3605,6 +4061,71 @@ namespace Amazon.DeviceFarm
         public virtual UpdateDevicePoolResponse EndUpdateDevicePool(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDevicePoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceProfile
+
+        /// <summary>
+        /// Updates information about an existing private device instance profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceProfile service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
+        public virtual UpdateInstanceProfileResponse UpdateInstanceProfile(UpdateInstanceProfileRequest request)
+        {
+            var marshaller = UpdateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceProfileRequest,UpdateInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceProfile operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInstanceProfile(UpdateInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceProfileResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
+        public virtual UpdateInstanceProfileResponse EndUpdateInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInstanceProfileResponse>(asyncResult);
         }
 
         #endregion

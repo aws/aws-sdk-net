@@ -112,6 +112,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instances", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeviceInstance, DeviceInstanceUnmarshaller>(DeviceInstanceUnmarshaller.Instance);
+                    unmarshalledObject.Instances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manufacturer", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

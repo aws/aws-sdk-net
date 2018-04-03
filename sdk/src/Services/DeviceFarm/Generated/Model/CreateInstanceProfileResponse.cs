@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Configuration settings for a remote access session, including billing method.
+    /// This is the response object from the CreateInstanceProfile operation.
     /// </summary>
-    public partial class CreateRemoteAccessSessionConfiguration
+    public partial class CreateInstanceProfileResponse : AmazonWebServiceResponse
     {
-        private BillingMethod _billingMethod;
+        private InstanceProfile _instanceProfile;
 
         /// <summary>
-        /// Gets and sets the property BillingMethod. 
+        /// Gets and sets the property InstanceProfile. 
         /// <para>
-        /// The billing method for the remote access session.
+        /// An object containing information about your instance profile.
         /// </para>
         /// </summary>
-        public BillingMethod BillingMethod
+        public InstanceProfile InstanceProfile
         {
-            get { return this._billingMethod; }
-            set { this._billingMethod = value; }
+            get { return this._instanceProfile; }
+            set { this._instanceProfile = value; }
         }
 
-        // Check to see if BillingMethod property is set
-        internal bool IsSetBillingMethod()
+        // Check to see if InstanceProfile property is set
+        internal bool IsSetInstanceProfile()
         {
-            return this._billingMethod != null;
+            return this._instanceProfile != null;
         }
 
     }

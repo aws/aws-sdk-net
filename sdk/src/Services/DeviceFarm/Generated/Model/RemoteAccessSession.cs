@@ -41,6 +41,7 @@ namespace Amazon.DeviceFarm.Model
         private string _deviceUdid;
         private string _endpoint;
         private string _hostAddress;
+        private string _instanceArn;
         private InteractionMode _interactionMode;
         private string _message;
         private string _name;
@@ -48,6 +49,7 @@ namespace Amazon.DeviceFarm.Model
         private string _remoteRecordAppArn;
         private bool? _remoteRecordEnabled;
         private ExecutionResult _result;
+        private bool? _skipAppResign;
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
@@ -218,6 +220,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetHostAddress()
         {
             return this._hostAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceArn
+        {
+            get { return this._instanceArn; }
+            set { this._instanceArn = value; }
+        }
+
+        // Check to see if InstanceArn property is set
+        internal bool IsSetInstanceArn()
+        {
+            return this._instanceArn != null;
         }
 
         /// <summary>
@@ -392,6 +412,31 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipAppResign. 
+        /// <para>
+        /// When set to <code>true</code>, for private devices, Device Farm will not sign your
+        /// app again. For public devices, Device Farm always signs your apps again and this parameter
+        /// has no effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how Device Farm re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+        /// </para>
+        /// </summary>
+        public bool SkipAppResign
+        {
+            get { return this._skipAppResign.GetValueOrDefault(); }
+            set { this._skipAppResign = value; }
+        }
+
+        // Check to see if SkipAppResign property is set
+        internal bool IsSetSkipAppResign()
+        {
+            return this._skipAppResign.HasValue; 
         }
 
         /// <summary>

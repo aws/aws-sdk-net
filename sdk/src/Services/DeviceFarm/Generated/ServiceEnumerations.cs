@@ -343,6 +343,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly DeviceAttribute FORM_FACTOR = new DeviceAttribute("FORM_FACTOR");
         /// <summary>
+        /// Constant INSTANCE_ARN for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute INSTANCE_ARN = new DeviceAttribute("INSTANCE_ARN");
+        /// <summary>
+        /// Constant INSTANCE_LABELS for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute INSTANCE_LABELS = new DeviceAttribute("INSTANCE_LABELS");
+        /// <summary>
         /// Constant MANUFACTURER for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute MANUFACTURER = new DeviceAttribute("MANUFACTURER");
@@ -732,6 +740,64 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStatus.
+    /// </summary>
+    public class InstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus AVAILABLE = new InstanceStatus("AVAILABLE");
+        /// <summary>
+        /// Constant IN_USE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus IN_USE = new InstanceStatus("IN_USE");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus NOT_AVAILABLE = new InstanceStatus("NOT_AVAILABLE");
+        /// <summary>
+        /// Constant PREPARING for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus PREPARING = new InstanceStatus("PREPARING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStatus FindValue(string value)
+        {
+            return FindValue<InstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStatus(string value)
         {
             return FindValue(value);
         }

@@ -36,6 +36,7 @@ namespace Amazon.DeviceFarm.Model
         private bool? _accountsCleanup;
         private bool? _appPackagesCleanup;
         private int? _jobTimeoutMinutes;
+        private bool? _skipAppResign;
 
         /// <summary>
         /// Gets and sets the property AccountsCleanup. 
@@ -89,6 +90,31 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetJobTimeoutMinutes()
         {
             return this._jobTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipAppResign. 
+        /// <para>
+        /// When set to <code>true</code>, for private devices, Device Farm will not sign your
+        /// app again. For public devices, Device Farm always signs your apps again and this parameter
+        /// has no effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how Device Farm re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+        /// </para>
+        /// </summary>
+        public bool SkipAppResign
+        {
+            get { return this._skipAppResign.GetValueOrDefault(); }
+            set { this._skipAppResign = value; }
+        }
+
+        // Check to see if SkipAppResign property is set
+        internal bool IsSetSkipAppResign()
+        {
+            return this._skipAppResign.HasValue; 
         }
 
     }

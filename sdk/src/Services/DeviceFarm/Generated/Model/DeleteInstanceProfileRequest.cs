@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Configuration settings for a remote access session, including billing method.
+    /// Container for the parameters to the DeleteInstanceProfile operation.
+    /// Deletes a profile that can be applied to one or more private device instances.
     /// </summary>
-    public partial class CreateRemoteAccessSessionConfiguration
+    public partial class DeleteInstanceProfileRequest : AmazonDeviceFarmRequest
     {
-        private BillingMethod _billingMethod;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property BillingMethod. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The billing method for the remote access session.
+        /// The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.
         /// </para>
         /// </summary>
-        public BillingMethod BillingMethod
+        public string Arn
         {
-            get { return this._billingMethod; }
-            set { this._billingMethod = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if BillingMethod property is set
-        internal bool IsSetBillingMethod()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._billingMethod != null;
+            return this._arn != null;
         }
 
     }

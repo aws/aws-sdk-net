@@ -69,6 +69,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// APPIUM_VERSION: The Appium version for the test.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_LABELS: The label of the device instance.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public DeviceAttribute Attribute

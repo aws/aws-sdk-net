@@ -263,6 +263,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateInstanceProfile
+
+        internal virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
+        {
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
+        public virtual Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateInstanceProfileRequest,CreateInstanceProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateNetworkProfile
 
         internal virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
@@ -448,6 +480,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDevicePoolRequest,DeleteDevicePoolResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteInstanceProfile
+
+        internal virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
+        {
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
+        public virtual Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInstanceProfileRequest,DeleteInstanceProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -739,6 +803,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetDeviceInstance
+
+        internal virtual GetDeviceInstanceResponse GetDeviceInstance(GetDeviceInstanceRequest request)
+        {
+            var marshaller = GetDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeviceInstanceRequest,GetDeviceInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeviceInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
+        public virtual Task<GetDeviceInstanceResponse> GetDeviceInstanceAsync(GetDeviceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeviceInstanceRequest,GetDeviceInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDevicePool
 
         internal virtual GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
@@ -828,6 +924,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDevicePoolCompatibilityRequest,GetDevicePoolCompatibilityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInstanceProfile
+
+        internal virtual GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
+        {
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
+        public virtual Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInstanceProfileRequest,GetInstanceProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1365,6 +1493,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListDeviceInstances
+
+        internal virtual ListDeviceInstancesResponse ListDeviceInstances(ListDeviceInstancesRequest request)
+        {
+            var marshaller = ListDeviceInstancesRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeviceInstancesRequest,ListDeviceInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeviceInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
+        public virtual Task<ListDeviceInstancesResponse> ListDeviceInstancesAsync(ListDeviceInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDeviceInstancesRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeviceInstancesRequest,ListDeviceInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDevicePools
 
         internal virtual ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
@@ -1424,6 +1584,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDevicesRequest,ListDevicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInstanceProfiles
+
+        internal virtual ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
+        {
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
+        public virtual Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListInstanceProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInstanceProfilesRequest,ListInstanceProfilesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2005,6 +2197,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  UpdateDeviceInstance
+
+        internal virtual UpdateDeviceInstanceResponse UpdateDeviceInstance(UpdateDeviceInstanceRequest request)
+        {
+            var marshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeviceInstanceRequest,UpdateDeviceInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeviceInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
+        public virtual Task<UpdateDeviceInstanceResponse> UpdateDeviceInstanceAsync(UpdateDeviceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
+            var unmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDeviceInstanceRequest,UpdateDeviceInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDevicePool
 
         internal virtual UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
@@ -2032,6 +2256,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDevicePoolRequest,UpdateDevicePoolResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceProfile
+
+        internal virtual UpdateInstanceProfileResponse UpdateInstanceProfile(UpdateInstanceProfileRequest request)
+        {
+            var marshaller = UpdateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceProfileRequest,UpdateInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
+        public virtual Task<UpdateInstanceProfileResponse> UpdateInstanceProfileAsync(UpdateInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateInstanceProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateInstanceProfileRequest,UpdateInstanceProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

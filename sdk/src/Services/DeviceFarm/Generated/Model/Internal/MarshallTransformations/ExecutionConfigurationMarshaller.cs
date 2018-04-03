@@ -63,6 +63,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.JobTimeoutMinutes);
             }
 
+            if(requestObject.IsSetSkipAppResign())
+            {
+                context.Writer.WritePropertyName("skipAppResign");
+                context.Writer.Write(requestObject.SkipAppResign);
+            }
+
         }
 
         /// <summary>

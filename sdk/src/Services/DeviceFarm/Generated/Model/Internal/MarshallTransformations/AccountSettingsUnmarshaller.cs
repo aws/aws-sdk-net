@@ -88,6 +88,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxSlots = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("skipAppResign", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SkipAppResign = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trialMinutes", targetDepth))
                 {
                     var unmarshaller = TrialMinutesUnmarshaller.Instance;

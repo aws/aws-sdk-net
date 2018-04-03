@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _created;
         private Device _device;
         private DeviceMinutes _deviceMinutes;
+        private string _instanceArn;
         private string _message;
         private string _name;
         private ExecutionResult _result;
@@ -133,6 +134,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDeviceMinutes()
         {
             return this._deviceMinutes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the instance.
+        /// </para>
+        /// </summary>
+        public string InstanceArn
+        {
+            get { return this._instanceArn; }
+            set { this._instanceArn = value; }
+        }
+
+        // Check to see if InstanceArn property is set
+        internal bool IsSetInstanceArn()
+        {
+            return this._instanceArn != null;
         }
 
         /// <summary>

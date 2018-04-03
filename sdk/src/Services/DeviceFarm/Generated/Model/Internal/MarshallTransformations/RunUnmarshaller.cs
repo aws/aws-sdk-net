@@ -196,6 +196,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Seed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("skipAppResign", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SkipAppResign = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("started", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

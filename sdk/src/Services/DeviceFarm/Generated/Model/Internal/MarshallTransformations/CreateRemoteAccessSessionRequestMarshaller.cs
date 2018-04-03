@@ -90,6 +90,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceArn);
                 }
 
+                if(publicRequest.IsSetInstanceArn())
+                {
+                    context.Writer.WritePropertyName("instanceArn");
+                    context.Writer.Write(publicRequest.InstanceArn);
+                }
+
                 if(publicRequest.IsSetInteractionMode())
                 {
                     context.Writer.WritePropertyName("interactionMode");
@@ -124,6 +130,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("remoteRecordEnabled");
                     context.Writer.Write(publicRequest.RemoteRecordEnabled);
+                }
+
+                if(publicRequest.IsSetSkipAppResign())
+                {
+                    context.Writer.WritePropertyName("skipAppResign");
+                    context.Writer.Write(publicRequest.SkipAppResign);
                 }
 
                 if(publicRequest.IsSetSshPublicKey())
