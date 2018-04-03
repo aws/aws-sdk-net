@@ -9,7 +9,7 @@ using System.Threading;
 namespace Amazon.Runtime.Internal.Util
 {
 
-    internal class InternalConsoleLogger : InternalLogger
+    internal class InternalConsoleLogger : BaseLogger
     {
 		//mapped to android logcat
 		enum LogLevel

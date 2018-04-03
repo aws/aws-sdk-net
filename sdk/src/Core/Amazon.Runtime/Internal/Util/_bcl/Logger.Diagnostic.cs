@@ -26,7 +26,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for System.Diagnostics.TraceSource logger.
     /// </summary>
-    internal class InternalSystemDiagnosticsLogger : InternalLogger
+    internal class InternalSystemDiagnosticsLogger : BaseLogger
     {
         volatile int eventId = 0;
         TraceSource trace;

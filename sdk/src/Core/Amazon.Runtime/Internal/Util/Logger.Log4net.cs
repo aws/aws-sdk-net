@@ -27,7 +27,7 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Logger wrapper for reflected log4net logging methods.
     /// </summary>
-    internal class InternalLog4netLogger : InternalLogger
+    internal class InternalLog4netLogger : BaseLogger
     {
         enum LoadState { Uninitialized, Failed, Loading, Success };
 

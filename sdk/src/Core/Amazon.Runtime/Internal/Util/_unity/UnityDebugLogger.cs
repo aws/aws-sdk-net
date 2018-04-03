@@ -20,7 +20,7 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    internal class UnityDebugLogger : InternalLogger
+    internal class UnityDebugLogger : BaseLogger
     {
 
         public UnityDebugLogger(Type declaringType)

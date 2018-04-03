@@ -605,6 +605,11 @@ namespace Amazon
         /// </summary>
         UnityLogger = 8
 #endif
+        ,
+        /// <summary>
+        /// Log using a custom provider specified in AWSConfigs.LoggingConfig.CustomLogger.
+        /// </summary>
+        Custom = 32
     }
 
     /// <summary>
