@@ -106,8 +106,7 @@ namespace Amazon.SageMaker.Model
         /// The registry path of the Docker image that contains the training algorithm and algorithm-specific
         /// metadata, including the input mode. For more information about algorithms provided
         /// by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// For information about providing your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-        /// Your Own Algorithms </a>. 
+        /// For information about providing your own algorithms, see <a>your-algorithms</a>. 
         /// </para>
         /// </summary>
         public AlgorithmSpecification AlgorithmSpecification

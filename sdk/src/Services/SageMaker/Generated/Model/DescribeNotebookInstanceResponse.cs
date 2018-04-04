@@ -70,7 +70,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
-        /// Describes whether the notebook instance has internet access.
+        /// Describes whether Amazon SageMaker provides internet access to the notebook instance.
+        /// If this value is set to <i>Disabled, he notebook instance does not have internet access,
+        /// and cannot connect to Amazon SageMaker training and endpoint services</i>.
         /// </para>
         ///  
         /// <para>
