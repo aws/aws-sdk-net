@@ -227,7 +227,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property DatapointsToAlarm. 
         /// <para>
-        /// The number of datapoints that must be breaching to trigger the alarm.
+        /// The number of datapoints that must be breaching to trigger the alarm. This is used
+        /// only if you are setting an "M out of N" alarm. In that case, this value is the M.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+        /// an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         public int DatapointsToAlarm
@@ -290,9 +293,15 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
-        /// The number of periods over which data is compared to the specified threshold. An alarm's
-        /// total current evaluation period can be no longer than one day, so this number multiplied
-        /// by <code>Period</code> cannot be more than 86,400 seconds.
+        /// The number of periods over which data is compared to the specified threshold. If you
+        /// are setting an alarm which requires that a number of consecutive data points be breaching
+        /// to trigger the alarm, this value specifies that number. If you are setting an "M out
+        /// of N" alarm, this value is the N.
+        /// </para>
+        ///  
+        /// <para>
+        /// An alarm's total current evaluation period can be no longer than one day, so this
+        /// number multiplied by <code>Period</code> cannot be more than 86,400 seconds.
         /// </para>
         /// </summary>
         public int EvaluationPeriods
@@ -438,7 +447,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code>
-        /// call with a <code>StorageResolution</code> of 1. If you specify a Period of 10 or
+        /// call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or
         /// 30 for a metric that does not have sub-minute resolution, the alarm still attempts
         /// to gather data at the period rate that you specify. In this case, it does not receive
         /// data for the attempts that do not correspond to a one-minute data resolution, and

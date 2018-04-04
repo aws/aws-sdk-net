@@ -339,8 +339,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The unit for a given metric. Metrics may be reported in multiple units. Not supplying
-        /// a unit results in all units being returned. If the metric only ever reports one unit,
-        /// specifying a unit has no effect.
+        /// a unit results in all units being returned. If you specify only a unit that the metric
+        /// does not report, the results of the call are null.
         /// </para>
         /// </summary>
         public StandardUnit Unit

@@ -221,6 +221,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudWatch")]
+        public void GetMetricDataMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMetricData");
+
+            var request = InstantiateClassGenerator.Execute<GetMetricDataRequest>();
+            var marshaller = new GetMetricDataRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetMetricDataResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetMetricDataResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudWatch")]
         public void GetMetricStatisticsMarshallTest()
         {
             var operation = service_model.FindOperation("GetMetricStatistics");

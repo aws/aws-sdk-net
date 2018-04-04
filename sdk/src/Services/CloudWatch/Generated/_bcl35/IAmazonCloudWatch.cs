@@ -449,6 +449,63 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetMetricData
+
+
+        /// <summary>
+        /// You can use the <code>GetMetricData</code> API to retrieve as many as 100 different
+        /// metrics in a single request, with a total of as many as 100,800 datapoints. You can
+        /// also optionally perform math expressions on the values of the returned statistics,
+        /// to create new time series that represent new insights into your data. For example,
+        /// using Lambda metrics, you could divide the Errors metric by the Invocations metric
+        /// to get an error rate time series. For more information about metric math expressions,
+        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
+        /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
+        /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricData service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        GetMetricDataResponse GetMetricData(GetMetricDataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        IAsyncResult BeginGetMetricData(GetMetricDataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricData.</param>
+        /// 
+        /// <returns>Returns a  GetMetricDataResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        GetMetricDataResponse EndGetMetricData(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMetricStatistics
 
 

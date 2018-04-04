@@ -137,6 +137,56 @@ namespace Amazon.CloudWatch
 
 
     /// <summary>
+    /// Constants used for properties of type ScanBy.
+    /// </summary>
+    public class ScanBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TimestampAscending for ScanBy
+        /// </summary>
+        public static readonly ScanBy TimestampAscending = new ScanBy("TimestampAscending");
+        /// <summary>
+        /// Constant TimestampDescending for ScanBy
+        /// </summary>
+        public static readonly ScanBy TimestampDescending = new ScanBy("TimestampDescending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanBy FindValue(string value)
+        {
+            return FindValue<ScanBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StandardUnit.
     /// </summary>
     public class StandardUnit : ConstantClass
@@ -396,6 +446,60 @@ namespace Amazon.CloudWatch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Statistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusCode.
+    /// </summary>
+    public class StatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Complete for StatusCode
+        /// </summary>
+        public static readonly StatusCode Complete = new StatusCode("Complete");
+        /// <summary>
+        /// Constant InternalError for StatusCode
+        /// </summary>
+        public static readonly StatusCode InternalError = new StatusCode("InternalError");
+        /// <summary>
+        /// Constant PartialData for StatusCode
+        /// </summary>
+        public static readonly StatusCode PartialData = new StatusCode("PartialData");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusCode FindValue(string value)
+        {
+            return FindValue<StatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusCode(string value)
         {
             return FindValue(value);
         }

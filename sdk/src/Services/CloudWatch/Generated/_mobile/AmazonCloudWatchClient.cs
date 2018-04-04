@@ -556,6 +556,38 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetMetricData
+
+        internal virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMetricStatistics
 
         internal virtual GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
