@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteAggregationAuthorizationRequest.AuthorizedAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteAggregationAuthorizationRequest.AuthorizedAwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteConfigRuleRequest.ConfigRuleName</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteConfigurationAggregatorRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteConfigurationRecorderRequest.ConfigurationRecorderName</property>
@@ -21,9 +36,34 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeletePendingAggregationRequestRequest.RequesterAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeletePendingAggregationRequestRequest.RequesterAwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeliverConfigSnapshotRequest.DeliveryChannelName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeAggregateComplianceByConfigRulesRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeAggregateComplianceByConfigRulesRequest.Limit</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeAggregationAuthorizationsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DescribeComplianceByResourceRequest.Limit</property>
@@ -44,6 +84,68 @@
     <property>Amazon.ConfigService.Model.DescribeConfigRuleEvaluationStatusRequest.Limit</property>
     <min>0</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeConfigurationAggregatorsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeConfigurationAggregatorSourcesStatusRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeConfigurationAggregatorSourcesStatusRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribePendingAggregationRequestsRequest.Limit</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateComplianceDetailsByConfigRuleRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConfigRuleComplianceSummaryRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConfigRuleComplianceSummaryRequest.Limit</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetAggregateConfigRuleComplianceSummaryResponse.GroupByKey</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByConfigRuleRequest.ConfigRuleName</property>
@@ -81,6 +183,21 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutAggregationAuthorizationRequest.AuthorizedAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutAggregationAuthorizationRequest.AuthorizedAwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutConfigurationAggregatorRequest.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.StartConfigurationRecorderRequest.ConfigurationRecorderName</property>
     <min>1</min>
     <max>256</max>
@@ -89,6 +206,62 @@
     <property>Amazon.ConfigService.Model.StopConfigurationRecorderRequest.ConfigurationRecorderName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConfigRule.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConfigRule.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceByConfigRule.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateComplianceCount.GroupName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregatedSourceStatus.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateEvaluationResult.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateEvaluationResult.Annotation</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregateEvaluationResult.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregationAuthorization.AuthorizedAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AggregationAuthorization.AuthorizedAwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.BaseConfigurationItem.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.BaseConfigurationItem.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ComplianceByConfigRule.ConfigRuleName</property>
@@ -126,7 +299,49 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigRuleComplianceFilters.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigRuleComplianceFilters.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigRuleComplianceFilters.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigRuleComplianceSummaryFilters.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigRuleComplianceSummaryFilters.AwsRegion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigRuleEvaluationStatus.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationAggregator.ConfigurationAggregatorArn</property>
+    <pattern>arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:config-aggregator/config-aggregator-[a-z\d]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationAggregator.ConfigurationAggregatorName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationItem.AccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationItem.AwsRegion</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -174,6 +389,15 @@
     <property>Amazon.ConfigService.Model.EvaluationResultQualifier.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PendingAggregationRequest.RequesterAccountId</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PendingAggregationRequest.RequesterAwsRegion</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Scope.ComplianceResourceId</property>

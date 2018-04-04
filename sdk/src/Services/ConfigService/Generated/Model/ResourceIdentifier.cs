@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource (for example., <code>sg-xxxxxx</code>).
+        /// The ID of the resource (for example, <code>sg-xxxxxx</code>).
         /// </para>
         /// </summary>
         public string ResourceId

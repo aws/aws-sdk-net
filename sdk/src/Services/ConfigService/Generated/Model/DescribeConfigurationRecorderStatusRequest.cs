@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationRecorderStatus operation.
     /// Returns the current status of the specified configuration recorder. If a configuration
-    /// recorder is not specified, this action returns the status of all configuration recorder
+    /// recorder is not specified, this action returns the status of all configuration recorders
     /// associated with the account.
     /// 
     ///  <note> 

@@ -29,10 +29,10 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEvaluationResults operation.
-    /// Deletes the evaluation results for the specified Config rule. You can specify one
-    /// Config rule per request. After you delete the evaluation results, you can call the
-    /// <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources against
-    /// the rule.
+    /// Deletes the evaluation results for the specified AWS Config rule. You can specify
+    /// one AWS Config rule per request. After you delete the evaluation results, you can
+    /// call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources
+    /// against the rule.
     /// </summary>
     public partial class DeleteEvaluationResultsRequest : AmazonConfigServiceRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
         /// <para>
-        /// The name of the Config rule for which you want to delete the evaluation results.
+        /// The name of the AWS Config rule for which you want to delete the evaluation results.
         /// </para>
         /// </summary>
         public string ConfigRuleName

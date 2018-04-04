@@ -71,7 +71,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
         /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
         /// </para>
         /// </summary>
@@ -90,7 +90,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> string returned on a previous page that you use to get
+        /// The <code>nextToken</code> string returned on a previous page that you use to get
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>

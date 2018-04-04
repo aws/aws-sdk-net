@@ -44,7 +44,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceId. 
         /// <para>
-        /// The IDs of the only AWS resource that you want to trigger an evaluation for the rule.
+        /// The ID of the only AWS resource that you want to trigger an evaluation for the rule.
         /// If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.
         /// </para>
         /// </summary>

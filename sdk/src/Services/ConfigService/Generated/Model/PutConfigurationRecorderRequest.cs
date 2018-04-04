@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code>
+    /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
     /// of an existing recorder. To change the role, call the action on the existing configuration
     /// recorder and specify a role.
     /// </para>

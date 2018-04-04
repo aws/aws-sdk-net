@@ -66,7 +66,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// For a list of supported resource types, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
-    /// resource types</a>.
+    /// Resource Types</a>.
     /// </para>
     ///  
     /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// If you set this option to <code>true</code>, when AWS Config adds support for a new
-        /// type of regional resource, it automatically starts recording resources of that type.
+        /// type of regional resource, it starts recording resources of that type automatically.
         /// </para>
         ///  
         /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.ConfigService.Model
         ///  
         /// <para>
         /// If you set this option to <code>true</code>, when AWS Config adds support for a new
-        /// type of global resource, it automatically starts recording resources of that type.
+        /// type of global resource, it starts recording resources of that type automatically.
         /// </para>
         ///  
         /// <para>

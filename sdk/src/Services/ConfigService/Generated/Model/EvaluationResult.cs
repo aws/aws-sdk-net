@@ -29,7 +29,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// The details of an AWS Config evaluation. Provides the AWS resource that was evaluated,
-    /// the compliance of the resource, related timestamps, and supplementary information.
+    /// the compliance of the resource, related time stamps, and supplementary information.
     /// </summary>
     public partial class EvaluationResult
     {

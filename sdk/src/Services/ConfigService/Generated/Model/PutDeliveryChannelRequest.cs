@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property DeliveryChannel. 
         /// <para>
         /// The configuration delivery channel object that delivers the configuration information
-        /// to an Amazon S3 bucket, and to an Amazon SNS topic.
+        /// to an Amazon S3 bucket and to an Amazon SNS topic.
         /// </para>
         /// </summary>
         public DeliveryChannel DeliveryChannel

@@ -91,7 +91,7 @@ namespace Amazon.ConfigService.Model
         ///  </li> <li> 
         /// <para>
         /// You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify
-        /// the resource type, <code>"AWS::EC2::Instances"</code> in the request.
+        /// the resource type, <code>"AWS::EC2::Instances"</code>, in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,7 +29,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// The number of AWS resources of a specific type that are compliant or noncompliant,
-    /// up to a maximum of 100 for each compliance.
+    /// up to a maximum of 100 for each.
     /// </summary>
     public partial class ComplianceSummaryByResourceType
     {
@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ComplianceSummary. 
         /// <para>
         /// The number of AWS resources that are compliant or noncompliant, up to a maximum of
-        /// 100 for each compliance.
+        /// 100 for each.
         /// </para>
         /// </summary>
         public ComplianceSummary ComplianceSummary

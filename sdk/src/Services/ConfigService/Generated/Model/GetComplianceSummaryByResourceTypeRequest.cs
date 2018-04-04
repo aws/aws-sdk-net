@@ -45,8 +45,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For this request, you can specify an AWS resource type such as <code>AWS::EC2::Instance</code>,
-        /// and you can specify that the resource type is an AWS account by specifying <code>AWS::::Account</code>.
+        /// For this request, you can specify an AWS resource type such as <code>AWS::EC2::Instance</code>.
+        /// You can specify that the resource type is an AWS account by specifying <code>AWS::::Account</code>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes

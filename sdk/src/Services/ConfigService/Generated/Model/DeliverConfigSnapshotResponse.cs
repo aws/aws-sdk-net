@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The output for the <a>DeliverConfigSnapshot</a> action in JSON format.
+    /// The output for the <a>DeliverConfigSnapshot</a> action, in JSON format.
     /// </summary>
     public partial class DeliverConfigSnapshotResponse : AmazonWebServiceResponse
     {

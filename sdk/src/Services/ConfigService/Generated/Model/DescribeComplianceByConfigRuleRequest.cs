@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant
+    /// A rule is compliant if all of the evaluated resources comply with it. It is noncompliant
     /// if any of these resources do not comply.
     /// </para>
     ///  
@@ -51,10 +51,9 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-    /// Verify that the role that you assigned to your configuration recorder includes the
-    /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
-    /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-    /// permission.
+    /// Verify that the role you assigned to your configuration recorder includes the <code>config:PutEvaluations</code>
+    /// permission. If the rule is a custom rule, verify that the AWS Lambda execution role
+    /// includes the <code>config:PutEvaluations</code> permission.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -112,7 +111,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> string returned on a previous page that you use to get
+        /// The <code>nextToken</code> string returned on a previous page that you use to get
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>

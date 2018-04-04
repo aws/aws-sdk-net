@@ -50,15 +50,15 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The resource types (EC2 instances, IAM users, and S3 buckets)
+    /// The resource types (EC2 instances, IAM users, and S3 buckets).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The number of each resource type (25, 20, and 15)
+    /// The number of each resource type (25, 20, and 15).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The total number of all resources (60)
+    /// The total number of all resources (60).
     /// </para>
     ///  </li> </ul> </li> </ol> 
     /// <para>
@@ -69,20 +69,20 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
-    /// receive resource counts in the following situations:
+    /// If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you might not
+    /// immediately receive resource counts in the following situations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You are a new AWS Config customer
+    /// You are a new AWS Config customer.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You just enabled resource recording
+    /// You just enabled resource recording.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// It may take a few minutes for AWS Config to record and count your resources. Wait
+    /// It might take a few minutes for AWS Config to record and count your resources. Wait
     /// a few minutes and then retry the <a>GetDiscoveredResourceCounts</a> action. 
     /// </para>
     ///  </note>
@@ -97,7 +97,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of <a>ResourceCount</a> objects returned on each page. The default
-        /// is 100. You cannot specify a limit greater than 100. If you specify 0, AWS Config
+        /// is 100. You cannot specify a number greater than 100. If you specify 0, AWS Config
         /// uses the default.
         /// </para>
         /// </summary>
@@ -135,8 +135,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The comma-separated list that specifies the resource types that you want the AWS Config
-        /// to return. For example, (<code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).
+        /// The comma-separated list that specifies the resource types that you want AWS Config
+        /// to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).
         /// </para>
         ///  
         /// <para>

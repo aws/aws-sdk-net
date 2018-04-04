@@ -117,23 +117,23 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ConfigRuleState. 
         /// <para>
         /// Indicates whether the AWS Config rule is active or is currently being deleted by AWS
-        /// Config. It can also indicate the evaluation status for the Config rule.
+        /// Config. It can also indicate the evaluation status for the AWS Config rule.
         /// </para>
         ///  
         /// <para>
         /// AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after
         /// you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources
-        /// against the Config rule.
+        /// against the AWS Config rule.
         /// </para>
         ///  
         /// <para>
         /// AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily
         /// after you use the <code>DeleteEvaluationResults</code> request to delete the current
-        /// evaluation results for the Config rule.
+        /// evaluation results for the AWS Config rule.
         /// </para>
         ///  
         /// <para>
-        /// AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you
+        /// AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you
         /// use the <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
         /// deletes the rule, the rule and all of its evaluations are erased and are no longer
         /// available.
@@ -172,7 +172,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property InputParameters. 
         /// <para>
-        /// A string in JSON format that is passed to the AWS Config rule Lambda function.
+        /// A string, in JSON format, that is passed to the AWS Config rule Lambda function.
         /// </para>
         /// </summary>
         public string InputParameters

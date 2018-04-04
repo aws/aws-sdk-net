@@ -99,7 +99,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of evaluation results returned on each page. The default is 10.
-        /// You cannot specify a limit greater than 100. If you specify 0, AWS Config uses the
+        /// You cannot specify a number greater than 100. If you specify 0, AWS Config uses the
         /// default.
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> string returned on a previous page that you use to get
+        /// The <code>nextToken</code> string returned on a previous page that you use to get
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>
@@ -157,8 +157,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The types of AWS resources for which you want compliance information; for example,
-        /// <code>AWS::EC2::Instance</code>. For this action, you can specify that the resource
+        /// The types of AWS resources for which you want compliance information (for example,
+        /// <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource
         /// type is an AWS account by specifying <code>AWS::::Account</code>.
         /// </para>
         /// </summary>

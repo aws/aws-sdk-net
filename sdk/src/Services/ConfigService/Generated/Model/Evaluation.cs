@@ -109,7 +109,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value
         /// for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example,
-        /// an AWS Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+        /// an AWS Lambda function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
         /// value to AWS Config.
         /// </para>
         /// </summary>

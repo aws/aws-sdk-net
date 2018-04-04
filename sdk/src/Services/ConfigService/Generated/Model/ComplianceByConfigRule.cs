@@ -29,7 +29,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the
-    /// resources that the rule evaluated comply with it, and it is noncompliant if any of
+    /// resources that the rule evaluated comply with it. A rule is noncompliant if any of
     /// these resources do not comply.
     /// </summary>
     public partial class ComplianceByConfigRule

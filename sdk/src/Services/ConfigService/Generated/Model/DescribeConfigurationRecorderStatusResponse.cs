@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeConfigurationRecorderStatus</a> action in JSON format.
+    /// The output for the <a>DescribeConfigurationRecorderStatus</a> action, in JSON format.
     /// </summary>
     public partial class DescribeConfigurationRecorderStatusResponse : AmazonWebServiceResponse
     {

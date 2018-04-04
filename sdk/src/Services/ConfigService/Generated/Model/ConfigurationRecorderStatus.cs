@@ -170,7 +170,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Recording. 
         /// <para>
-        /// Specifies whether the recorder is currently recording or not.
+        /// Specifies whether or not the recorder is currently recording.
         /// </para>
         /// </summary>
         public bool Recording

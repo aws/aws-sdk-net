@@ -25,6 +25,110 @@ namespace Amazon.ConfigService
 {
 
     /// <summary>
+    /// Constants used for properties of type AggregatedSourceStatusType.
+    /// </summary>
+    public class AggregatedSourceStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType FAILED = new AggregatedSourceStatusType("FAILED");
+        /// <summary>
+        /// Constant OUTDATED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType OUTDATED = new AggregatedSourceStatusType("OUTDATED");
+        /// <summary>
+        /// Constant SUCCEEDED for AggregatedSourceStatusType
+        /// </summary>
+        public static readonly AggregatedSourceStatusType SUCCEEDED = new AggregatedSourceStatusType("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedSourceStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedSourceStatusType FindValue(string value)
+        {
+            return FindValue<AggregatedSourceStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedSourceStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AggregatedSourceType.
+    /// </summary>
+    public class AggregatedSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for AggregatedSourceType
+        /// </summary>
+        public static readonly AggregatedSourceType ACCOUNT = new AggregatedSourceType("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATION for AggregatedSourceType
+        /// </summary>
+        public static readonly AggregatedSourceType ORGANIZATION = new AggregatedSourceType("ORGANIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregatedSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregatedSourceType FindValue(string value)
+        {
+            return FindValue<AggregatedSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregatedSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChronologicalOrder.
     /// </summary>
     public class ChronologicalOrder : ConstantClass
@@ -126,6 +230,56 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComplianceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigRuleComplianceSummaryGroupKey.
+    /// </summary>
+    public class ConfigRuleComplianceSummaryGroupKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for ConfigRuleComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly ConfigRuleComplianceSummaryGroupKey ACCOUNT_ID = new ConfigRuleComplianceSummaryGroupKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant AWS_REGION for ConfigRuleComplianceSummaryGroupKey
+        /// </summary>
+        public static readonly ConfigRuleComplianceSummaryGroupKey AWS_REGION = new ConfigRuleComplianceSummaryGroupKey("AWS_REGION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigRuleComplianceSummaryGroupKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigRuleComplianceSummaryGroupKey FindValue(string value)
+        {
+            return FindValue<ConfigRuleComplianceSummaryGroupKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigRuleComplianceSummaryGroupKey(string value)
         {
             return FindValue(value);
         }

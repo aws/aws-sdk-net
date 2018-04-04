@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingGroup. 
         /// <para>
-        /// Specifies the types of AWS resource for which AWS Config records configuration changes.
+        /// Specifies the types of AWS resources for which AWS Config records configuration changes.
         /// </para>
         /// </summary>
         public RecordingGroup RecordingGroup

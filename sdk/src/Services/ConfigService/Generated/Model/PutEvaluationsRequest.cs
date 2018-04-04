@@ -62,7 +62,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResultToken. 
         /// <para>
         /// An encrypted token that associates an evaluation with an AWS Config rule. Identifies
-        /// the rule and the event that triggered the evaluation
+        /// the rule and the event that triggered the evaluation.
         /// </para>
         /// </summary>
         public string ResultToken

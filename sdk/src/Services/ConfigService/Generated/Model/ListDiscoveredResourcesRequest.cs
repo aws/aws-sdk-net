@@ -37,7 +37,8 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can specify either resource IDs or a resource name but not both in the same request.
+    /// You can specify either resource IDs or a resource name, but not both, in the same
+    /// request.
     /// </para>
     ///  </note> 
     /// <para>
@@ -79,7 +80,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of resource identifiers returned on each page. The default is 100.
-        /// You cannot specify a limit greater than 100. If you specify 0, AWS Config uses the
+        /// You cannot specify a number greater than 100. If you specify 0, AWS Config uses the
         /// default.
         /// </para>
         /// </summary>

@@ -34,14 +34,14 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// You can use this action for custom Config rules and AWS managed Config rules. A custom
-    /// Config rule is a rule that you develop and maintain. An AWS managed Config rule is
-    /// a customizable, predefined rule that AWS Config provides.
+    /// You can use this action for custom AWS Config rules and AWS managed Config rules.
+    /// A custom AWS Config rule is a rule that you develop and maintain. An AWS managed Config
+    /// rule is a customizable, predefined rule that AWS Config provides.
     /// </para>
     ///  
     /// <para>
-    /// If you are adding a new custom Config rule, you must first create the AWS Lambda function
-    /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+    /// If you are adding a new custom AWS Config rule, you must first create the AWS Lambda
+    /// function that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
     /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
     /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
     /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
@@ -72,7 +72,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+    /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
     /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
     /// </para>
     ///  

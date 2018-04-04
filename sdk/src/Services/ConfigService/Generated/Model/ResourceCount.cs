@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type, for example <code>"AWS::EC2::Instance"</code>.
+        /// The resource type (for example, <code>"AWS::EC2::Instance"</code>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

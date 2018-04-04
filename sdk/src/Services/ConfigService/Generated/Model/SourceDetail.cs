@@ -61,8 +61,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The frequency that you want AWS Config to run evaluations for a custom rule with a
-        /// periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>,
+        /// The frequency at which you want AWS Config to run evaluations for a custom rule with
+        /// a periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>,
         /// then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
         /// </para>
         ///  <note> 
@@ -122,9 +122,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you want your custom rule to be triggered by configuration changes, specify two
-        /// SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and
-        /// one for <code>OversizedConfigurationItemChangeNotification</code>.
+        /// If you want your custom rule to be triggered by configuration changes, specify both
+        /// <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+        /// 
         /// </para>
         /// </summary>
         public MessageType MessageType
