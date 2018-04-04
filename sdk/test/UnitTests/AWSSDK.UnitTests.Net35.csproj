@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net35.csproj"/>
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj"/>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ACMPCA\AWSSDK.ACMPCA.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AlexaForBusiness\AWSSDK.AlexaForBusiness.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj"/>
@@ -89,6 +90,7 @@
     <ProjectReference Include="..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\FMS\AWSSDK.FMS.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glue\AWSSDK.Glue.Net35.csproj"/>
@@ -139,6 +141,7 @@
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj"/>

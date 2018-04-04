@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj"/>
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj"/>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ACMPCA\AWSSDK.ACMPCA.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\AlexaForBusiness\AWSSDK.AlexaForBusiness.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net45.csproj"/>
@@ -86,6 +87,7 @@
     <ProjectReference Include="..\..\src\Services\ElasticMapReduce\AWSSDK.ElasticMapReduce.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\FMS\AWSSDK.FMS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glue\AWSSDK.Glue.Net45.csproj"/>
@@ -136,6 +138,7 @@
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj"/>

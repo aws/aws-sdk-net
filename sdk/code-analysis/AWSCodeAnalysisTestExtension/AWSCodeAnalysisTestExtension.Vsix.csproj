@@ -52,6 +52,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="../ServiceAnalysis/ACMPCA/AWSSDK.ACMPCA.CodeAnalysis.csproj">
+      <Project>{9101C77B-4FF4-4323-88E2-A16F1052D157}</Project>
+      <Name>AWSSDK.ACMPCA.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AlexaForBusiness/AWSSDK.AlexaForBusiness.CodeAnalysis.csproj">
       <Project>{7EE289B8-FE3B-4BB9-B670-8B131271EF36}</Project>
       <Name>AWSSDK.AlexaForBusiness.CodeAnalysis</Name>
@@ -495,6 +499,10 @@
     <ProjectReference Include="../ServiceAnalysis/SageMakerRuntime/AWSSDK.SageMakerRuntime.CodeAnalysis.csproj">
       <Project>{7ECDC6EC-0C8C-4484-A75A-3D048D267B3C}</Project>
       <Name>AWSSDK.SageMakerRuntime.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SecretsManager/AWSSDK.SecretsManager.CodeAnalysis.csproj">
+      <Project>{CC45DFC3-33E9-4495-9491-2D82B19E8E13}</Project>
+      <Name>AWSSDK.SecretsManager.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>

@@ -22,6 +22,7 @@
   </ProjectOptions>
   <Targets>
     <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/src/Services/acmpca/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net35/</Directory>
@@ -81,6 +82,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glue/bin/Release/net35/</Directory>
@@ -131,6 +133,7 @@
       <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/secretsmanager/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/serverlessapplicationrepository/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net35/</Directory>
@@ -156,6 +159,7 @@
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ACMPCA.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -215,6 +219,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glue.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -265,6 +270,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecretsManager.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerlessApplicationRepository.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
