@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Describes the output of a transcription job.
+    /// This is the response object from the DeleteVocabulary operation.
     /// </summary>
-    public partial class Transcript
+    public partial class DeleteVocabularyResponse : AmazonWebServiceResponse
     {
-        private string _transcriptFileUri;
-
-        /// <summary>
-        /// Gets and sets the property TranscriptFileUri. 
-        /// <para>
-        /// The S3 location where the transcription result is stored. Use this URI to access the
-        /// results of the transcription job. 
-        /// </para>
-        /// </summary>
-        public string TranscriptFileUri
-        {
-            get { return this._transcriptFileUri; }
-            set { this._transcriptFileUri = value; }
-        }
-
-        // Check to see if TranscriptFileUri property is set
-        internal bool IsSetTranscriptFileUri()
-        {
-            return this._transcriptFileUri != null;
-        }
 
     }
 }

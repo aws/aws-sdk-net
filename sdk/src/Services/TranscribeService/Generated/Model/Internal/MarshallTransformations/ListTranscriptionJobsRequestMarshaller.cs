@@ -67,6 +67,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetJobNameContains())
+                {
+                    context.Writer.WritePropertyName("JobNameContains");
+                    context.Writer.Write(publicRequest.JobNameContains);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

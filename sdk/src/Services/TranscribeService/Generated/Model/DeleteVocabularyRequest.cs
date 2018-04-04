@@ -28,32 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTranscriptionJob operation.
-    /// Returns information about a transcription job. To see the status of the job, check
-    /// the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>,
-    /// the job is finished and you can find the results at the location specified in the
-    /// <code>TranscriptionFileUri</code> field.
+    /// Container for the parameters to the DeleteVocabulary operation.
+    /// Deletes a vocabulary from Amazon Transcribe.
     /// </summary>
-    public partial class GetTranscriptionJobRequest : AmazonTranscribeServiceRequest
+    public partial class DeleteVocabularyRequest : AmazonTranscribeServiceRequest
     {
-        private string _transcriptionJobName;
+        private string _vocabularyName;
 
         /// <summary>
-        /// Gets and sets the property TranscriptionJobName. 
+        /// Gets and sets the property VocabularyName. 
         /// <para>
-        /// The name of the job.
+        /// The name of the vocabulary to delete. 
         /// </para>
         /// </summary>
-        public string TranscriptionJobName
+        public string VocabularyName
         {
-            get { return this._transcriptionJobName; }
-            set { this._transcriptionJobName = value; }
+            get { return this._vocabularyName; }
+            set { this._vocabularyName = value; }
         }
 
-        // Check to see if TranscriptionJobName property is set
-        internal bool IsSetTranscriptionJobName()
+        // Check to see if VocabularyName property is set
+        internal bool IsSetVocabularyName()
         {
-            return this._transcriptionJobName != null;
+            return this._vocabularyName != null;
         }
 
     }

@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.CreateVocabularyRequest.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.CreateVocabularyResponse.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.DeleteVocabularyRequest.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.GetTranscriptionJobRequest.TranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetVocabularyRequest.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetVocabularyResponse.DownloadUri</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetVocabularyResponse.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.JobNameContains</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
@@ -20,6 +61,25 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListVocabulariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListVocabulariesRequest.NameContains</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListVocabulariesRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.ListVocabulariesResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaSampleRateHertz</property>
     <min>8000</min>
     <max>48000</max>
@@ -31,9 +91,32 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.UpdateVocabularyRequest.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.UpdateVocabularyResponse.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.Media.MediaFileUri</property>
     <min>1</min>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.Settings.MaxSpeakerLabels</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.Settings.VocabularyName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.Transcript.TranscriptFileUri</property>
@@ -53,6 +136,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.TranscriptionJobSummary.TranscriptionJobName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.VocabularyInfo.VocabularyName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>

@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService.Model
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
+        private Settings _settings;
         private Transcript _transcript;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
@@ -172,6 +173,24 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// Optional settings for the transcription job.
+        /// </para>
+        /// </summary>
+        public Settings Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Transcript. 
         /// <para>
         /// An object that describes the output of the transcription job.
@@ -210,7 +229,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobStatus. 
         /// <para>
-        /// The identifier assigned to the job when it was created.
+        /// The status of the transcription job.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus

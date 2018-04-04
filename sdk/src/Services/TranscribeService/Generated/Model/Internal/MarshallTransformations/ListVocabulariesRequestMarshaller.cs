@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartTranscriptionJob Request Marshaller
+    /// ListVocabularies Request Marshaller
     /// </summary>       
-    public class StartTranscriptionJobRequestMarshaller : IMarshaller<IRequest, StartTranscriptionJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListVocabulariesRequestMarshaller : IMarshaller<IRequest, ListVocabulariesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartTranscriptionJobRequest)input);
+            return this.Marshall((ListVocabulariesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartTranscriptionJobRequest publicRequest)
+        public IRequest Marshall(ListVocabulariesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.StartTranscriptionJob";
+            string target = "Transcribe.ListVocabularies";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,50 +67,28 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLanguageCode())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetMedia())
+                if(publicRequest.IsSetNameContains())
                 {
-                    context.Writer.WritePropertyName("Media");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MediaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Media, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("NameContains");
+                    context.Writer.Write(publicRequest.NameContains);
                 }
 
-                if(publicRequest.IsSetMediaFormat())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("MediaFormat");
-                    context.Writer.Write(publicRequest.MediaFormat);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetMediaSampleRateHertz())
+                if(publicRequest.IsSetStateEquals())
                 {
-                    context.Writer.WritePropertyName("MediaSampleRateHertz");
-                    context.Writer.Write(publicRequest.MediaSampleRateHertz);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("Settings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Settings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTranscriptionJobName())
-                {
-                    context.Writer.WritePropertyName("TranscriptionJobName");
-                    context.Writer.Write(publicRequest.TranscriptionJobName);
+                    context.Writer.WritePropertyName("StateEquals");
+                    context.Writer.Write(publicRequest.StateEquals);
                 }
 
         
@@ -122,9 +100,9 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartTranscriptionJobRequestMarshaller _instance = new StartTranscriptionJobRequestMarshaller();        
+        private static ListVocabulariesRequestMarshaller _instance = new ListVocabulariesRequestMarshaller();        
 
-        internal static StartTranscriptionJobRequestMarshaller GetInstance()
+        internal static ListVocabulariesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +110,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartTranscriptionJobRequestMarshaller Instance
+        public static ListVocabulariesRequestMarshaller Instance
         {
             get
             {

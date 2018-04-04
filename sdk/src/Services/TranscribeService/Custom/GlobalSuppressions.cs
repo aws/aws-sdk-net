@@ -17,3 +17,5 @@ using System.Diagnostics.CodeAnalysis;
 
 
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope="type", Target="Amazon.TranscribeService.Model.Media")]
+
+[module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope="type", Target="Amazon.TranscribeService.Model.Settings")]

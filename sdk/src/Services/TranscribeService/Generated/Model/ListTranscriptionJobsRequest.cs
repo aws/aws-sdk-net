@@ -33,14 +33,35 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ListTranscriptionJobsRequest : AmazonTranscribeServiceRequest
     {
+        private string _jobNameContains;
         private int? _maxResults;
         private string _nextToken;
         private TranscriptionJobStatus _status;
 
         /// <summary>
+        /// Gets and sets the property JobNameContains. 
+        /// <para>
+        /// When specified, the jobs returned in the list are limited to jobs whose name contains
+        /// the specified string.
+        /// </para>
+        /// </summary>
+        public string JobNameContains
+        {
+            get { return this._jobNameContains; }
+            set { this._jobNameContains = value; }
+        }
+
+        // Check to see if JobNameContains property is set
+        internal bool IsSetJobNameContains()
+        {
+            return this._jobNameContains != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of jobs to return in the response.
+        /// The maximum number of jobs to return in the response. If there are fewer results in
+        /// the list, this response contains only the actual results.
         /// </para>
         /// </summary>
         public int MaxResults

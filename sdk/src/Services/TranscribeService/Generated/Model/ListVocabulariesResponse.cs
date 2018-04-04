@@ -28,21 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// This is the response object from the ListTranscriptionJobs operation.
+    /// This is the response object from the ListVocabularies operation.
     /// </summary>
-    public partial class ListTranscriptionJobsResponse : AmazonWebServiceResponse
+    public partial class ListVocabulariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
         private TranscriptionJobStatus _status;
-        private List<TranscriptionJobSummary> _transcriptionJobSummaries = new List<TranscriptionJobSummary>();
+        private List<VocabularyInfo> _vocabularies = new List<VocabularyInfo>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time.
+        /// The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
         /// The maximum size of the page is set by the <code>MaxResults</code> parameter. If there
         /// are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-        /// token. Include the token in the next request to the <code>ListTranscriptionJobs</code>
+        /// token. Include the token in the next request to the <code>ListVocabularies</code>
         /// operation to return in the next page of jobs.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The requested status of the jobs returned.
+        /// The requested vocabulary state.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus Status
@@ -77,21 +77,22 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TranscriptionJobSummaries. 
+        /// Gets and sets the property Vocabularies. 
         /// <para>
-        /// A list of objects containing summary information for a transcription job.
+        /// A list of objects that describe the vocabularies that match the search criteria in
+        /// the request.
         /// </para>
         /// </summary>
-        public List<TranscriptionJobSummary> TranscriptionJobSummaries
+        public List<VocabularyInfo> Vocabularies
         {
-            get { return this._transcriptionJobSummaries; }
-            set { this._transcriptionJobSummaries = value; }
+            get { return this._vocabularies; }
+            set { this._vocabularies = value; }
         }
 
-        // Check to see if TranscriptionJobSummaries property is set
-        internal bool IsSetTranscriptionJobSummaries()
+        // Check to see if Vocabularies property is set
+        internal bool IsSetVocabularies()
         {
-            return this._transcriptionJobSummaries != null && this._transcriptionJobSummaries.Count > 0; 
+            return this._vocabularies != null && this._vocabularies.Count > 0; 
         }
 
     }

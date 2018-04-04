@@ -37,6 +37,7 @@ namespace Amazon.TranscribeService.Model
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
+        private Settings _settings;
         private string _transcriptionJobName;
 
         /// <summary>
@@ -109,6 +110,25 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetMediaSampleRateHertz()
         {
             return this._mediaSampleRateHertz.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// A <code>Settings</code> object that provides optional settings for a transcription
+        /// job.
+        /// </para>
+        /// </summary>
+        public Settings Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
         }
 
         /// <summary>
