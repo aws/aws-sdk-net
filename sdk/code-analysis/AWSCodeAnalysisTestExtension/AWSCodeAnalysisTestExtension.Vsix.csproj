@@ -292,6 +292,10 @@
       <Project>{F5D912DD-225A-4E52-A6C6-5F631A90E51C}</Project>
       <Name>AWSSDK.ElasticTranscoder.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/FMS/AWSSDK.FMS.CodeAnalysis.csproj">
+      <Project>{7814E166-D2B9-432C-B5D7-49E0B665B400}</Project>
+      <Name>AWSSDK.FMS.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/GameLift/AWSSDK.GameLift.CodeAnalysis.csproj">
       <Project>{4AD60585-F9A0-41FD-BDBB-A2F8659CB2A5}</Project>
       <Name>AWSSDK.GameLift.CodeAnalysis</Name>
