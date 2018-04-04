@@ -254,6 +254,9 @@
         "PutBucketNotification": {
             "exclude": true
         },
+        "SelectObjectContent": {
+          "exclude": true
+        },
 
         "PutBucketNotificationConfiguration": {
             "name": "PutBucketNotification"
@@ -268,7 +271,7 @@
             "name": "GetBucketNotification"
         },
 
-        "GetBucketReplication": { 
+        "GetBucketReplication": {
             "documentation": "Retrieves the replication configuration for the given Amazon S3 bucket."
         }
     }

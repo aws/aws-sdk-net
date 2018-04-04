@@ -493,33 +493,31 @@ namespace Amazon.S3
     }
 
     /// <summary>
-    /// Specifies the Storage Class of of an S3 object. Possible values
-    /// are: <list type="bullet">
-    /// <item>ReducedRedundancy: provides a 99.99% durability guarantee</item>
-    /// <item>Standard: provides a 99.999999999% durability guarantee</item>
-    /// </list>
+    /// S3 Storage Class Definitions
     /// </summary>
     public sealed class S3StorageClass : ConstantClass
     {
         /// <summary>
         /// The STANDARD storage class, which is the default
-        /// storage class for S3 objects. Provides a 99.999999999%
-        /// durability guarantee.
+        /// storage class for S3.
+        /// <para></para>
+        /// Durability 99.999999999%; Availability 99.99% over a given year.
         /// </summary>
         public static readonly S3StorageClass Standard = new S3StorageClass("STANDARD");
+
         /// <summary>
-        /// The REDUCED_REDUNDANCY storage class for S3 objects. This
-        /// provides a reduced (99.99%) durability guarantee at a lower
-        /// cost as compared to the STANDARD storage class. Use this
-        /// storage class for non-mission critical data or for data 
-        /// that doesn’t require the higher level of durability that S3
-        /// provides with the STANDARD storage class.
+        /// REDUCED_REDUNDANCY provides the same availability as standard, but at a lower durability.
+        /// <para></para>
+        /// Durability 99.99%; Availability 99.99% over a given year.
         /// </summary>
         public static readonly S3StorageClass ReducedRedundancy = new S3StorageClass("REDUCED_REDUNDANCY");
+
         /// <summary>
         /// The GLACIER storage is for object that are stored in Amazon Glacier.
         /// This storage class is for objects that are for archival purpose and 
         /// get operations are rare.
+        /// <para></para>
+        /// Durability 99.999999999%
         /// </summary>
         public static readonly S3StorageClass Glacier = new S3StorageClass("GLACIER");
 
@@ -527,8 +525,18 @@ namespace Amazon.S3
         /// The STANDARD_IA storage is for infrequently accessed objects.
         /// This storage class is for objects that are long-lived and less frequently accessed,
         /// like backups and older data.
+        /// <para></para>
+        /// Durability 99.999999999%; Availability 99.9% over a given year.
         /// </summary>
         public static readonly S3StorageClass StandardInfrequentAccess = new S3StorageClass("STANDARD_IA");
+
+        /// <summary>
+        /// The ONEZONE_IA storage is for infrequently accessed objects. It is similiar to STANDARD_IA, but
+        /// only stores object data within one Availablity Zone in a given region.
+        /// <para></para>
+        /// Durability 99.999999999%; Availability 99% over a given year.
+        /// </summary>
+        public static readonly S3StorageClass OneZoneInfrequentAccess = new S3StorageClass("ONEZONE_IA");
 
         /// <summary>
         /// Construct an instance of S3StorageClass.
