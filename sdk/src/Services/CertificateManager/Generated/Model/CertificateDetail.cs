@@ -34,6 +34,7 @@ namespace Amazon.CertificateManager.Model
     public partial class CertificateDetail
     {
         private string _certificateArn;
+        private string _certificateAuthorityArn;
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
@@ -48,6 +49,7 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _notAfter;
         private DateTime? _notBefore;
         private CertificateOptions _options;
+        private RenewalEligibility _renewalEligibility;
         private RenewalSummary _renewalSummary;
         private RevocationReason _revocationReason;
         private DateTime? _revokedAt;
@@ -76,6 +78,30 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateAuthorityArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that
+        /// issued the certificate. This has the following format: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string CertificateAuthorityArn
+        {
+            get { return this._certificateAuthorityArn; }
+            set { this._certificateAuthorityArn = value; }
+        }
+
+        // Check to see if CertificateAuthorityArn property is set
+        internal bool IsSetCertificateAuthorityArn()
+        {
+            return this._certificateAuthorityArn != null;
         }
 
         /// <summary>
@@ -159,7 +185,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason the certificate request failed. This value exists only when the certificate
-        /// status is <code>FAILED</code>. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+        /// status is <code>FAILED</code>. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
         /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>
@@ -346,9 +372,27 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RenewalEligibility. 
+        /// <para>
+        /// Specifies whether the certificate is eligible for renewal.
+        /// </para>
+        /// </summary>
+        public RenewalEligibility RenewalEligibility
+        {
+            get { return this._renewalEligibility; }
+            set { this._renewalEligibility = value; }
+        }
+
+        // Check to see if RenewalEligibility property is set
+        internal bool IsSetRenewalEligibility()
+        {
+            return this._renewalEligibility != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RenewalSummary. 
         /// <para>
-        /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for the certificate. This field exists only when the certificate type
         /// is <code>AMAZON_ISSUED</code>.
         /// </para>
@@ -502,9 +546,9 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
         /// For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>.
-        /// ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// ACM does not provide <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for imported certificates. For more information about the differences
-        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
         /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>

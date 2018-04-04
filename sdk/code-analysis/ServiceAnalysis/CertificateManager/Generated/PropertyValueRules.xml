@@ -19,6 +19,35 @@
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ExportCertificateRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ExportCertificateRequest.Passphrase</property>
+    <min>4</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ExportCertificateResponse.Certificate</property>
+    <min>1</min>
+    <max>32768</max>
+    <pattern>-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ExportCertificateResponse.CertificateChain</property>
+    <min>1</min>
+    <max>2097152</max>
+    <pattern>(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ExportCertificateResponse.PrivateKey</property>
+    <min>1</min>
+    <max>524288</max>
+    <pattern>-{5}BEGIN PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END PRIVATE KEY-{5}(\u000D?\u000A)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.GetCertificateRequest.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
@@ -93,6 +122,12 @@
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.RequestCertificateRequest.CertificateAuthorityArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.RequestCertificateRequest.DomainName</property>
     <min>1</min>
     <max>253</max>
@@ -136,6 +171,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.CertificateDetail.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.CertificateDetail.CertificateAuthorityArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*</pattern>

@@ -67,6 +67,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateAuthorityArn())
+                {
+                    context.Writer.WritePropertyName("CertificateAuthorityArn");
+                    context.Writer.Write(publicRequest.CertificateAuthorityArn);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");

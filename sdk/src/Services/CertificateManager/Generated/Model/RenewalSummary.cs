@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+    /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
     /// renewal</a> for the certificate. This structure exists only when the certificate type
     /// is <code>AMAZON_ISSUED</code>.
     /// </summary>
@@ -41,7 +41,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
         /// Contains information about the validation of each domain name in the certificate,
-        /// as it pertains to ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// as it pertains to ACM's <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
         /// renewal</a>. This is different from the initial validation that occurs as a result
         /// of the <a>RequestCertificate</a> request. This field exists only when the certificate
         /// type is <code>AMAZON_ISSUED</code>.
@@ -62,7 +62,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property RenewalStatus. 
         /// <para>
-        /// The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// The status of ACM's <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> of the certificate.
         /// </para>
         /// </summary>

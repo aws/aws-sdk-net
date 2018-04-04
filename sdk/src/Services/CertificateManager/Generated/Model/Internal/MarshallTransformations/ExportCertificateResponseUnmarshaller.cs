@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateCertificateOptions operation
+    /// Response Unmarshaller for ExportCertificate operation
     /// </summary>  
-    public class UpdateCertificateOptionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ExportCertificateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,31 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateCertificateOptionsResponse response = new UpdateCertificateOptionsResponse();
+            ExportCertificateResponse response = new ExportCertificateResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Certificate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Certificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CertificateChain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CertificateChain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PrivateKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -65,13 +88,9 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             {
                 return new InvalidArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RequestInProgressException"))
             {
-                return new InvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new RequestInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -80,9 +99,9 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             return new AmazonCertificateManagerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateCertificateOptionsResponseUnmarshaller _instance = new UpdateCertificateOptionsResponseUnmarshaller();        
+        private static ExportCertificateResponseUnmarshaller _instance = new ExportCertificateResponseUnmarshaller();        
 
-        internal static UpdateCertificateOptionsResponseUnmarshaller GetInstance()
+        internal static ExportCertificateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +109,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateCertificateOptionsResponseUnmarshaller Instance
+        public static ExportCertificateResponseUnmarshaller Instance
         {
             get
             {

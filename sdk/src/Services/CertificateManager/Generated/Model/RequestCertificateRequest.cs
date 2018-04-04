@@ -37,8 +37,8 @@ namespace Amazon.CertificateManager.Model
     ///  
     /// <para>
     /// Each domain name that you specify must be validated to verify that you own or control
-    /// the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
-    /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+    /// the domain. You can use <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
+    /// validation</a> or <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
     /// validation</a>. We recommend that you use DNS validation. 
     /// </para>
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.CertificateManager.Model
     /// to issue the certificate. Email is sent to three registered contact addresses in the
     /// WHOIS database and to five common system administration addresses formed from the
     /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-    /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+    /// For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
     /// with Email</a>. 
     /// </para>
     ///  
@@ -57,12 +57,40 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class RequestCertificateRequest : AmazonCertificateManagerRequest
     {
+        private string _certificateAuthorityArn;
         private string _domainName;
         private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
         private string _idempotencyToken;
         private CertificateOptions _options;
         private List<string> _subjectAlternativeNames = new List<string>();
         private ValidationMethod _validationMethod;
+
+        /// <summary>
+        /// Gets and sets the property CertificateAuthorityArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will
+        /// be used to issue the certificate. For more information about private CAs, see the
+        /// <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+        /// Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must
+        /// have the following form: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string CertificateAuthorityArn
+        {
+            get { return this._certificateAuthorityArn; }
+            set { this._certificateAuthorityArn = value; }
+        }
+
+        // Check to see if CertificateAuthorityArn property is set
+        internal bool IsSetCertificateAuthorityArn()
+        {
+            return this._certificateAuthorityArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -139,7 +167,7 @@ namespace Amazon.CertificateManager.Model
         /// a certificate transparency log. Certificate transparency makes it possible to detect
         /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates
         /// that have not been logged typically produce an error message in a browser. For more
-        /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+        /// information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
         /// Out of Certificate Transparency Logging</a>.
         /// </para>
         /// </summary>
@@ -163,7 +191,7 @@ namespace Amazon.CertificateManager.Model
         /// the <code>DomainName</code> field is www.example.com if users can reach your site
         /// by using either name. The maximum number of domain names that you can add to an ACM
         /// certificate is 100. However, the initial limit is 10 domain names. If you need more
-        /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
+        /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
         /// </para>
         ///  
         /// <para>
@@ -205,8 +233,8 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property ValidationMethod. 
         /// <para>
         /// The method you want to use to validate that you own or control domain. You can <a
-        /// href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
-        /// with DNS</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
+        /// href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
+        /// with DNS</a> or <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
         /// with email</a>. We recommend that you use DNS validation. 
         /// </para>
         /// </summary>

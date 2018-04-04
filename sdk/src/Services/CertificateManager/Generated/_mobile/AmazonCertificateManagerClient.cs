@@ -43,7 +43,7 @@ namespace Amazon.CertificateManager
     ///  
     /// <para>
     /// You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications.
-    /// For general information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">
+    /// For general information about using ACM, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/">
     /// <i>AWS Certificate Manager User Guide</i> </a>.
     /// </para>
     /// </summary>
@@ -399,6 +399,38 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  ExportCertificate
+
+        internal virtual ExportCertificateResponse ExportCertificate(ExportCertificateRequest request)
+        {
+            var marshaller = ExportCertificateRequestMarshaller.Instance;
+            var unmarshaller = ExportCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ExportCertificateRequest,ExportCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">REST API Reference for ExportCertificate Operation</seealso>
+        public virtual Task<ExportCertificateResponse> ExportCertificateAsync(ExportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ExportCertificateRequestMarshaller.Instance;
+            var unmarshaller = ExportCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportCertificateRequest,ExportCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCertificate
 
         internal virtual GetCertificateResponse GetCertificate(GetCertificateRequest request)
@@ -633,8 +665,8 @@ namespace Amazon.CertificateManager
         ///  
         /// <para>
         /// Each domain name that you specify must be validated to verify that you own or control
-        /// the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
-        /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+        /// the domain. You can use <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
+        /// validation</a> or <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
         /// validation</a>. We recommend that you use DNS validation. 
         /// </para>
         ///  
@@ -643,7 +675,7 @@ namespace Amazon.CertificateManager
         /// to issue the certificate. Email is sent to three registered contact addresses in the
         /// WHOIS database and to five common system administration addresses formed from the
         /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate
+        /// For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
         /// with Email</a>. 
         /// </para>
         ///  
@@ -657,6 +689,9 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
+        /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
         /// One or more values in the <a>DomainValidationOption</a> structure is incorrect.
         /// </exception>
