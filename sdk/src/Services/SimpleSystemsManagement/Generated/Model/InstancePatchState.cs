@@ -237,7 +237,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OwnerInformation. 
         /// <para>
-        /// Placeholder information, this field will always be empty in the current release of
+        /// Placeholder information. This field will always be empty in the current release of
         /// the service.
         /// </para>
         /// </summary>

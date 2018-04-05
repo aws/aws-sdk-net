@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Automation. 
         /// <para>
-        /// The parameters for a AUTOMATION task type.
+        /// The parameters for an AUTOMATION task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowAutomationParameters Automation

@@ -49,6 +49,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the registered, managed instance as it will appear in the Amazon EC2 console
         /// or when you use the AWS command line tools to list EC2 resources.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not enter personally identifiable information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string DefaultInstanceName
         {
@@ -65,9 +70,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A userdefined description of the resource that you want to register with Amazon EC2.
+        /// A user-defined description of the resource that you want to register with Amazon EC2.
         /// 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not enter personally identifiable information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Description
         {

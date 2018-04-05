@@ -90,6 +90,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A structure containing information about an Amazon S3 bucket to write instance-level
         /// logs to. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+        /// options in the <code>TaskInvocationParameters</code> structure. For information about
+        /// how Systems Manager handles these options for the supported Maintenance Window task
+        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LoggingInfo LoggingInfo
         {
@@ -198,8 +207,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags). Instances are specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
-        /// Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// The targets (either instances or Maintenance Window targets).
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify instances using the following format: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify Maintenance Window targets using the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+        /// 
         /// </para>
         /// </summary>
         public List<Target> Targets
@@ -256,6 +281,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The parameters that should be passed to the task when it is executed.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
+        /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Systems Manager handles these options for the
+        /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, MaintenanceWindowTaskParameterValueExpression> TaskParameters
         {
@@ -290,7 +323,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The id of the Maintenance Window the task should be added to.
+        /// The ID of the Maintenance Window the task should be added to.
         /// </para>
         /// </summary>
         public string WindowId

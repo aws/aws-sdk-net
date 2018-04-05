@@ -32,35 +32,35 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
     /// but you can change the following values:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+    /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
     /// to AWS-RunShellScript.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Service role ARN.
+    /// ServiceRoleArn
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Task parameters.
+    /// TaskInvocationParameters
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Task priority.
+    /// Priority
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Task MaxConcurrency and MaxErrors.
+    /// MaxConcurrency
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Log location.
+    /// MaxErrors
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// If a parameter is null, then the corresponding field is not modified. Also, if you
-    /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
+    /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
     /// action are required for this request. Optional fields that aren't specified are set
     /// to null.
     /// </para>
@@ -105,6 +105,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The new logging location in Amazon S3 to specify.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+        /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+        /// options in the <code>TaskInvocationParameters</code> structure. For information about
+        /// how Systems Manager handles these options for the supported Maintenance Window task
+        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LoggingInfo LoggingInfo
         {
@@ -291,7 +300,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters to modify. The map has the following format:
+        /// The parameters to modify.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
+        /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Systems Manager handles these options for the
+        /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The map has the following format:
         /// </para>
         ///  
         /// <para>

@@ -230,8 +230,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskParameters. 
         /// <para>
-        /// The parameters passed to the task when it was executed. The map has the following
-        /// format:
+        /// The parameters passed to the task when it was executed.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
+        /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+        /// structure. For information about how Systems Manager handles these options for the
+        /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The map has the following format:
         /// </para>
         ///  
         /// <para>

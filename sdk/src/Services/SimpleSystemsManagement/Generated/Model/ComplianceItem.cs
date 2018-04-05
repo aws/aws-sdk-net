@@ -104,7 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// An ID for the compliance item. For example, if the compliance item is a Windows patch,
-        /// the ID could be the number of the KB article. Here's an example: KB4010320.
+        /// the ID could be the number of the KB article; for example: KB4010320.
         /// </para>
         /// </summary>
         public string Id
@@ -197,7 +197,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Title. 
         /// <para>
         /// A title for the compliance item. For example, if the compliance item is a Windows
-        /// patch, the title could be the title of the KB article for the patch. Here's an example:
+        /// patch, the title could be the title of the KB article for the patch; for example:
         /// Security Update for Active Directory Federation Services.
         /// </para>
         /// </summary>

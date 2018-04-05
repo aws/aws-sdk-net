@@ -116,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Title. 
         /// <para>
         /// The title of the compliance item. For example, if the compliance item is a Windows
-        /// patch, the title could be the title of the KB article for the patch. Here's an example:
+        /// patch, the title could be the title of the KB article for the patch; for example:
         /// Security Update for Active Directory Federation Services. 
         /// </para>
         /// </summary>

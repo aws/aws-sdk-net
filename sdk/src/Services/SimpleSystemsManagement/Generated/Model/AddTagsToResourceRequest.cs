@@ -69,13 +69,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of
-        /// the resource, such as mw-01234361858c9b57b for a Maintenance Window.
+        /// Use the ID of the resource. Here are some examples:
+        /// </para>
+        ///  
+        /// <para>
+        /// ManagedInstance: mi-012345abcde
+        /// </para>
+        ///  
+        /// <para>
+        /// MaintenanceWindow: mw-012345abcde
+        /// </para>
+        ///  
+        /// <para>
+        /// PatchBaseline: pb-012345abcde
         /// </para>
         ///  
         /// <para>
         /// For the Document and Parameter values, use the name of the resource.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The ManagedInstance type for this API action is only for on-premises managed instances.
+        /// You must specify the the name of the managed instance in the following format: mi-ID_number.
+        /// For example, mi-1a2b3c4d5e6f.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ResourceId
         {
@@ -94,6 +112,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Specifies the type of resource you are tagging.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The ManagedInstance type for this API action is for on-premises managed instances.
+        /// You must specify the the name of the managed instance in the following format: mi-ID_number.
+        /// For example, mi-1a2b3c4d5e6f.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ResourceTypeForTagging ResourceType
         {
@@ -114,6 +139,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to have a value, specify the parameter with no value, and we set the value to an empty
         /// string. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not enter personally identifiable information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<Tag> Tags
         {
