@@ -1,3 +1,7 @@
+### 3.3.261.1 (2018-04-05 19:28 UTC)
+* SimpleSystemsManagement (3.3.18.1)
+	* Documentation updates for ec2
+
 ### 3.3.261.0 (2018-04-04 18:20 UTC)
 * ACMPCA (3.3.0.0)
 	* AWS Certificate Manager (ACM) Private Certificate Authority (CA) is a managed private CA service that helps you easily and securely manage the lifecycle of your private certificates. ACM Private CA provides you a highly-available private CA service without the upfront investment and ongoing maintenance costs of operating your own private CA. ACM Private CA extends ACM's certificate management capabilities to private certificates, enabling you to manage public and private certificates centrally.
