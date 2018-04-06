@@ -154,6 +154,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeout", targetDepth))
+                {
+                    var unmarshaller = JobTimeoutUnmarshaller.Instance;
+                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

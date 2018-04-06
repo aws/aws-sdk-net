@@ -39,6 +39,7 @@ namespace Amazon.Batch.Model
         private RetryStrategy _retryStrategy;
         private int? _revision;
         private string _status;
+        private JobTimeout _timeout;
         private string _type;
 
         /// <summary>
@@ -168,6 +169,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The timeout configuration for jobs that are submitted with this job definition. You
+        /// can specify a timeout duration after which AWS Batch terminates your jobs if they
+        /// have not finished.
+        /// </para>
+        /// </summary>
+        public JobTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
         /// <summary>

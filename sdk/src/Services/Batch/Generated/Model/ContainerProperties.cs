@@ -178,6 +178,13 @@ namespace Amazon.Batch.Model
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. You must specify at least 4 MiB of memory for a job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are trying to maximize your resource utilization by providing your jobs as
+        /// much memory as possible for a particular instance type, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+        /// Management</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int Memory
         {

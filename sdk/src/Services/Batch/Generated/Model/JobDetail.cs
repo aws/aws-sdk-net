@@ -47,6 +47,7 @@ namespace Amazon.Batch.Model
         private JobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
+        private JobTimeout _timeout;
 
         /// <summary>
         /// Gets and sets the property ArrayProperties. 
@@ -105,10 +106,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was created. For non-array jobs and parent array
-        /// jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a>
-        /// was called). For array child jobs, this is when the child job was spawned by its parent
-        /// and entered the <code>PENDING</code> state.
+        /// The Unix time stamp (in seconds and milliseconds) for when the job was created. For
+        /// non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code>
+        /// state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+        /// the child job was spawned by its parent and entered the <code>PENDING</code> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -253,8 +254,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was started (when the job transitioned from the
-        /// <code>STARTING</code> state to the <code>RUNNING</code> state).
+        /// The Unix time stamp (in seconds and milliseconds) for when the job was started (when
+        /// the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
+        /// state).
         /// </para>
         /// </summary>
         public long StartedAt
@@ -309,9 +311,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was stopped (when the job transitioned from the
-        /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
-        /// <code>FAILED</code>).
+        /// The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when
+        /// the job transitioned from the <code>RUNNING</code> state to a terminal state, such
+        /// as <code>SUCCEEDED</code> or <code>FAILED</code>).
         /// </para>
         /// </summary>
         public long StoppedAt
@@ -324,6 +326,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetStoppedAt()
         {
             return this._stoppedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The timeout configuration for the job. 
+        /// </para>
+        /// </summary>
+        public JobTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
     }

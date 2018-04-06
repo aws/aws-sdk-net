@@ -146,6 +146,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTimeout())
+                {
+                    context.Writer.WritePropertyName("timeout");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobTimeoutMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Timeout, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

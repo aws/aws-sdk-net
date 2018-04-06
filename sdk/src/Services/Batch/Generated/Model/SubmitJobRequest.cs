@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
+        private JobTimeout _timeout;
 
         /// <summary>
         /// Gets and sets the property ArrayProperties. 
@@ -207,6 +208,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout
+        /// duration after which AWS Batch terminates your jobs if they have not finished. If
+        /// a job is terminated due to a timeout, it is not retried. The minimum value for the
+        /// timeout is 60 seconds. This configuration overrides any timeout configuration specified
+        /// in the job definition. For array jobs, child jobs have the same timeout configuration
+        /// as the parent job. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+        /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public JobTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
     }

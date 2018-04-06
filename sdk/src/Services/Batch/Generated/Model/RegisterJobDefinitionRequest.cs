@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private string _jobDefinitionName;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
+        private JobTimeout _timeout;
         private JobDefinitionType _type;
 
         /// <summary>
@@ -102,7 +103,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The retry strategy to use for failed jobs that are submitted with this job definition.
         /// Any retry strategy that is specified during a <a>SubmitJob</a> operation overrides
-        /// the retry strategy defined here.
+        /// the retry strategy defined here. If a job is terminated due to a timeout, it is not
+        /// retried. 
         /// </para>
         /// </summary>
         public RetryStrategy RetryStrategy
@@ -115,6 +117,29 @@ namespace Amazon.Batch.Model
         internal bool IsSetRetryStrategy()
         {
             return this._retryStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The timeout configuration for jobs that are submitted with this job definition, after
+        /// which AWS Batch terminates your jobs if they have not finished. If a job is terminated
+        /// due to a timeout, it is not retried. The minimum value for the timeout is 60 seconds.
+        /// Any timeout configuration that is specified during a <a>SubmitJob</a> operation overrides
+        /// the timeout configuration defined here. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+        /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public JobTimeout Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
         }
 
         /// <summary>
