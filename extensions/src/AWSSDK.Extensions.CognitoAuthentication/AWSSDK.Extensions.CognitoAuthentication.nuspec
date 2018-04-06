@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AWSSDK.Extensions.CognitoAuthentication</id>
-    <version>0.9.3</version>
+    <version>0.9.4</version>
     <title>CognitoAuthentication</title>
     <authors>Amazon Web Services</authors>
     <description>An extension library to assist in the Amazon Cognito User Pools authentication process.</description>

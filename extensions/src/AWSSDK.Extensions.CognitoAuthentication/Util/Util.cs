@@ -17,6 +17,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Reflection;
 
 using Amazon.Runtime;
 using Amazon.CognitoIdentityProvider.Model;
@@ -145,7 +146,15 @@ namespace Amazon.Extensions.CognitoAuthentication
             if (args == null || !args.Headers.ContainsKey(UserAgentHeader))
                 return;
 
-            args.Headers[UserAgentHeader] = args.Headers[UserAgentHeader] + " AWSDotNetCognito/" + "0.9.0";
+
+            args.Headers[UserAgentHeader] = args.Headers[UserAgentHeader] + " AWSDotNetCognito/" + GetAssemblyFileVersion();
+        }
+
+        internal static string GetAssemblyFileVersion()
+        {
+            var assembly = typeof(Util).GetTypeInfo().Assembly;
+            AssemblyFileVersionAttribute attribute = assembly.GetCustomAttribute(typeof(AssemblyFileVersionAttribute)) as AssemblyFileVersionAttribute;
+            return attribute == null ? "Unknown" : attribute.Version;
         }
     }
 }
