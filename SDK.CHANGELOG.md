@@ -1,3 +1,7 @@
+### 3.3.262.0 (2018-04-06 19:43 UTC)
+* Batch (3.3.5.0)
+	* Support for Timeout in SubmitJob and RegisterJobDefinition
+
 ### 3.3.261.1 (2018-04-05 19:28 UTC)
 * SimpleSystemsManagement (3.3.18.1)
 	* Documentation updates for ec2
