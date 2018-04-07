@@ -47,6 +47,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\ServiceModels\**\*.*" Exclude="..\ServiceModels\*.json">
+      <Link>ServiceModels\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
+    <None Include="..\ServiceModels\*.json">
+      <Link>ServiceManifest\%(Filename)%(Extension)</Link>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
