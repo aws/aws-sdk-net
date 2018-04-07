@@ -85,7 +85,7 @@ namespace Amazon.Runtime
             lock (this._refreshLock)
             {
                 // If credentials are expired, update
-                if (ShouldUpdate)
+                if (CredentialsEmptyOrExpired())
                 {
                     currentState = GenerateNewCredentials();
                     UpdateToGeneratedCredentials(currentState);
@@ -99,13 +99,33 @@ namespace Amazon.Runtime
         public async override System.Threading.Tasks.Task<ImmutableCredentials> GetCredentialsAsync()
         {
             // If credentials are expired, update
-            if (ShouldUpdate)
+            if (CredentialsEmptyOrExpired())
             {
-                var state = await GenerateNewCredentialsAsync().ConfigureAwait(false);
+                System.Threading.Tasks.Task<CredentialsRefreshState> stateTask = null;
+                CredentialsRefreshState state = null;
                 lock (this._refreshLock)
                 {
-                    currentState = state;
-                    UpdateToGeneratedCredentials(currentState);
+                    // Double lock check
+                    if (CredentialsEmptyOrExpired())
+                    {
+                        stateTask = GenerateNewCredentialsAsync();
+                        if (stateTask.IsCompleted)
+                        {
+                            state = stateTask.Result;
+                            currentState = state;
+                            UpdateToGeneratedCredentials(currentState);
+                        }
+                    }
+                }
+                
+                if (stateTask != null && state == null)
+                {
+                    state = await stateTask.ConfigureAwait(false);
+                    lock (this._refreshLock)
+                    {
+                        currentState = state;
+                        UpdateToGeneratedCredentials(currentState);
+                    }
                 }
             }
 
@@ -120,8 +140,7 @@ namespace Amazon.Runtime
 
         private void UpdateToGeneratedCredentials(CredentialsRefreshState state)
         {
-            // Check if the new credentials are already expired
-            if (ShouldUpdate)
+            if (CredentialsEmptyOrExpired())
             {
                 string errorMessage;
                 if (state == null)
@@ -138,7 +157,7 @@ namespace Amazon.Runtime
             // Offset the Expiration by PreemptExpiryTime
             state.Expiration -= PreemptExpiryTime;
 
-            if (ShouldUpdate)
+            if (CredentialsEmptyOrExpired())
             {
                 // This could happen if the default value of PreemptExpiryTime is
                 // overriden and set too high such that ShouldUpdate returns true.
@@ -154,23 +173,20 @@ namespace Amazon.Runtime
         }
 
         // Test credentials existence and expiration time
-        private bool ShouldUpdate
+        private bool CredentialsEmptyOrExpired()
         {
-            get
-            {
-                // should update if:
+            // should update if:
 
-                //  credentials have not been loaded yet
-                if (currentState == null)
-                    return true;
+            //  credentials have not been loaded yet
+            if (currentState == null)
+                return true;
 
-                //  it's past the expiration time
+            //  it's past the expiration time
 #pragma warning disable CS0612 // Type or member is obsolete
-                var now = AWSSDKUtils.CorrectedUtcNow;
+            var now = AWSSDKUtils.CorrectedUtcNow;
 #pragma warning restore CS0612 // Type or member is obsolete
-                var exp = currentState.Expiration.ToUniversalTime();
-                return (now > exp);
-            }
+            var exp = currentState.Expiration.ToUniversalTime();
+            return (now > exp);
         }
 
         /// <summary>
@@ -193,7 +209,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         protected virtual System.Threading.Tasks.Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
-            return System.Threading.Tasks.Task.Run(() => this.GenerateNewCredentials());
+            return System.Threading.Tasks.Task.FromResult(this.GenerateNewCredentials());
         }
 #endif
 
