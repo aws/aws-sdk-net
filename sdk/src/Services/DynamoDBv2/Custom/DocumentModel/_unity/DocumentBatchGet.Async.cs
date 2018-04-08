@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { ExecuteHelper(true); },
+                () => { ExecuteHelper(); },
                 asyncOptions,
                 callback);
         }
@@ -64,7 +64,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { ExecuteHelper(true); },
+                () => { ExecuteHelper(); },
                 asyncOptions,
                 callback);
         }

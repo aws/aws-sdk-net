@@ -19,7 +19,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -30,7 +32,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public abstract partial class BatchGet
     {
-        #region Internal/protected properties
+#region Internal/protected properties
 
         /// <summary>
         /// Gets and sets the UntypedResults property.
@@ -42,10 +44,10 @@ namespace Amazon.DynamoDBv2.DataModel
         internal DocumentBatchGet DocumentBatch { get; set; }
         internal ItemStorageConfig ItemStorageConfig { get; set; }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         internal BatchGet(DynamoDBContext context, DynamoDBFlatConfig config)
         {
@@ -54,10 +56,10 @@ namespace Amazon.DynamoDBv2.DataModel
             Keys = new List<Key>();
         }
         
-        #endregion
+#endregion
 
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// List of results retrieved from DynamoDB.
@@ -70,10 +72,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool ConsistentRead { get; set; }
 
-        #endregion
+#endregion
 
 
-        #region Protected methods
+#region Protected methods
 
         /// <summary>
         /// Executes a server call to batch-get the items requested.
@@ -81,21 +83,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         internal protected abstract void ExecuteHelper();
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Executes an asynchronous server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
         internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
+#endif
+#endregion
 
-        #endregion
 
-
-        #region Internal methods
+#region Internal methods
 
         internal abstract void CreateDocumentBatch();
         internal abstract void PopulateResults(List<Document> items);
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -104,7 +107,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public class BatchGet<T> : BatchGet
     {
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// List of results retrieved from DynamoDB.
@@ -112,10 +115,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         new public List<T> Results { get { return TypedResults; } }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
 
         /// <summary>
         /// Add a single item to get, identified by its hash primary key.
@@ -161,10 +164,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchGet(this, otherBatches);
         }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         internal BatchGet(DynamoDBContext context, DynamoDBFlatConfig config)
             : base(context, config)
@@ -172,10 +175,10 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
         }
 
-        #endregion
+#endregion
 
 
-        #region Internal/protected/private members
+#region Internal/protected/private members
 
         /// <summary>
         /// Executes the batch get
@@ -187,6 +190,7 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateResults(DocumentBatch.Results);
         }
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Executes the batch get asynchronously
         /// </summary>
@@ -196,6 +200,7 @@ namespace Amazon.DynamoDBv2.DataModel
             await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults(DocumentBatch.Results);
         }
+#endif
 
         /// <summary>
         /// Gets and sets the TypedResults property.
@@ -227,7 +232,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -236,14 +241,14 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial class MultiTableBatchGet
     {
-        #region Private members
+#region Private members
 
         private List<BatchGet> allBatches = new List<BatchGet>();
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         /// <summary>
         /// Constructs a MultiTableBatchGet object from a number of
@@ -262,10 +267,10 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches.AddRange(rest);
         }
 
-        #endregion
+#endregion
 
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// Gets the total number of primary keys to be loaded from DynamoDB,
@@ -284,10 +289,10 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
 
         /// <summary>
         /// Add a BatchGet object to the multi-table batch request
@@ -315,6 +320,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
@@ -331,7 +337,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 batch.PopulateResults(batch.DocumentBatch.Results);
             }
         }
+#endif
 
-        #endregion
+#endregion
     }
 }

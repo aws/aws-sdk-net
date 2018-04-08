@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginExecute(AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(); return null; }, callback, state);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginExecute(AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { ExecuteHelper(); return null; }, callback, state);
         }
 
         /// <summary>

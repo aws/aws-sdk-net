@@ -16,7 +16,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 
@@ -28,7 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial class DynamoDBContext : IDynamoDBContext
     {
-        #region Private members
+#region Private members
 
         private bool disposed;
         private bool ownClient;
@@ -38,18 +40,18 @@ namespace Amazon.DynamoDBv2.DataModel
         internal DynamoDBContextConfig Config { get; private set; }
         internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 
-        #endregion
+#endregion
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// This cache is a way to store Converters for objects which provides a way to expand Context
         /// </summary>
         public Dictionary<Type, IPropertyConverter> ConverterCache { get; private set; }
 
-        #endregion
+#endregion
 
-        #region Constructors
+#region Constructors
 
 #if !(PCL || UNITY || CORECLR)
 
@@ -118,9 +120,9 @@ namespace Amazon.DynamoDBv2.DataModel
             this.StorageConfigCache = new ItemStorageConfigCache(this);
         }
 
-        #endregion
+#endregion
 
-        #region Dispose Pattern Implementation
+#region Dispose Pattern Implementation
 
         /// <summary>
         /// Implements the Dispose pattern
@@ -160,9 +162,9 @@ namespace Amazon.DynamoDBv2.DataModel
             this.Dispose(false);
         }
 
-        #endregion
+#endregion
 
-        #region Factory Creates
+#region Factory Creates
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -235,9 +237,9 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 
-        #endregion
+#endregion
 
-        #region Save/serialize
+#region Save/serialize
 
         private void SaveHelper<T>(T value, DynamoDBOperationConfig operationConfig)
         {
@@ -266,6 +268,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+#if AWS_ASYNC_API 
         private async Task SaveHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) return;
@@ -293,6 +296,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 PopulateInstance(storage, value, flatConfig);
             }
         }
+#endif
 
         /// <summary>
         /// Serializes an object to a Document.
@@ -323,9 +327,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return storage.Document;
         }
 
-        #endregion
+#endregion
 
-        #region Load/deserialize
+#region Load/deserialize
 
         private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
@@ -335,6 +339,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
+#if AWS_ASYNC_API 
         private Task<T> LoadHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
@@ -342,6 +347,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Key key = MakeKey(hashKey, rangeKey, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
+#endif
 
         private T LoadHelper<T>(T keyObject, DynamoDBOperationConfig operationConfig)
         {
@@ -351,6 +357,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return LoadHelper<T>(key, flatConfig, storageConfig);
         }
 
+#if AWS_ASYNC_API 
         private Task<T> LoadHelperAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
@@ -358,6 +365,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Key key = MakeKey<T>(keyObject, storageConfig, flatConfig);
             return LoadHelperAsync<T>(key, flatConfig, storageConfig, cancellationToken);
         }
+#endif
 
         private T LoadHelper<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
@@ -375,6 +383,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return instance;
         }
 
+#if AWS_ASYNC_API 
         private async Task<T> LoadHelperAsync<T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
             GetItemOperationConfig getConfig = new GetItemOperationConfig
@@ -390,6 +399,7 @@ namespace Amazon.DynamoDBv2.DataModel
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
         }
+#endif
 
         /// <summary>
         /// Deserializes a document to an instance of type T.
@@ -468,9 +478,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
 
-        #region Delete
+#region Delete
 
         private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
@@ -482,6 +492,7 @@ namespace Amazon.DynamoDBv2.DataModel
             table.DeleteHelper(key, null);
         }
 
+#if AWS_ASYNC_API 
         private Task DeleteHelperAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.Config);
@@ -491,6 +502,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Table table = GetTargetTable(storageConfig, config);
             return table.DeleteHelperAsync(key, null, cancellationToken);
         }
+#endif
 
         private void DeleteHelper<T>(T value, DynamoDBOperationConfig operationConfig)
         {
@@ -515,6 +527,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+#if AWS_ASYNC_API 
         private async Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
@@ -538,7 +551,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     cancellationToken).ConfigureAwait(false);
             }
         }
+#endif
 
-        #endregion
+#endregion
     }
 }

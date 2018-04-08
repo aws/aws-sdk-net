@@ -17,7 +17,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 
@@ -28,15 +30,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class DocumentBatchGet
     {
-        #region Internal properties
+#region Internal properties
 
         internal Table TargetTable { get; private set; }
         internal List<Key> Keys { get; private set; }
 
-        #endregion
+#endregion
 
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// List of results retrieved from DynamoDB.
@@ -54,10 +56,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public bool ConsistentRead { get; set; }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         /// <summary>
         /// Constructs a DocumentBatchGet instance for a specific table.
@@ -69,10 +71,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Keys = new List<Key>();
         }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
 
         /// <summary>
         /// Add a single item to get, identified by its hash primary key.
@@ -116,10 +118,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new MultiTableDocumentBatchGet(this, otherBatch);
         }
 
-        #endregion
+#endregion
 
 
-        #region Internal methods
+#region Internal methods
         
         internal void ExecuteHelper()
         {
@@ -140,7 +142,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Results = new List<Document>();
             }
         }
-        
+
+#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchGet resultsObject = new MultiBatchGet
@@ -160,6 +163,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Results = new List<Document>();
             }
         }
+#endif
 
         internal void AddKey(Document document)
         {
@@ -171,7 +175,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Keys.Add(key);
         }
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -179,7 +183,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class MultiTableDocumentBatchGet
     {
-        #region Properties
+#region Properties
 
         /// <summary>
         /// List of DocumentBatchGet objects to include in the multi-table
@@ -203,10 +207,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         /// <summary>
         /// Constructs a MultiTableDocumentBatchGet object from a number of
@@ -221,10 +225,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Batches = new List<DocumentBatchGet>(batches);
         }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
         
         /// <summary>
         /// Add a DocumentBatchGet object to the multi-table batch request.
@@ -235,9 +239,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Batches.Add(batch);
         }
 
-        #endregion
+#endregion
 
-        #region Internal methods
+#region Internal methods
 
         internal void ExecuteHelper()
         {
@@ -262,6 +266,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+#if AWS_ASYNC_API 
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchGet resultsObject = new MultiBatchGet
@@ -284,8 +289,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
+#endif
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -312,6 +318,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetItemsHelper();
         }
 
+#if AWS_ASYNC_API 
         /// <summary>
         /// Gets items configured in Batches from the server asynchronously
         /// </summary>
@@ -341,6 +348,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return itemsAsDocuments;
         }
+#endif
 
         internal Dictionary<string, List<Document>> GetItemsHelper()
         {
@@ -363,6 +371,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return itemsAsDocuments;
         }
 
+#if AWS_ASYNC_API 
         private async Task<Results> GetAttributeItemsAsync(CancellationToken cancellationToken)
         {
             var results = new Results(Batches);
@@ -389,6 +398,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return results;
         }
+#endif
 
         private Results GetAttributeItems()
         {
@@ -417,7 +427,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return results;
         }
 
-#if PCL|| UNITY || CORECLR
+#if PCL || UNITY || CORECLR
         private static void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
 #else
         private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
@@ -438,7 +448,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             } while (request.RequestItems.Count > 0);
         }
 
-#if PCL|| UNITY || CORECLR
+#if AWS_ASYNC_API 
+#if PCL || UNITY || CORECLR
         private static async Task CallUntilCompletionAsync(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
 #else
         private static async Task CallUntilCompletionAsync(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
@@ -458,6 +469,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.RequestItems = serviceResponse.UnprocessedKeys;
             } while (request.RequestItems.Count > 0);
         }
+#endif
 
         private static BatchGetItemRequest CreateRequest(Dictionary<string, RequestSet> set)
         {

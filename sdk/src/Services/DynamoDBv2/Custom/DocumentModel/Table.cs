@@ -20,13 +20,15 @@ using Amazon.Runtime;
 using Amazon.Util;
 using System.Linq;
 using System.Threading;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
-using System.Threading.Tasks;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -36,7 +38,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class Table
     {
-        #region Private/internal members
+#region Private/internal members
 
         internal enum DynamoDBConsumer
         {
@@ -57,9 +59,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal IAmazonDynamoDB DDBClient { get; private set; }
 #endif
 
-        #endregion
+#endregion
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// Name of the table.
@@ -106,10 +108,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public List<AttributeDefinition> Attributes { get; set; }
 
-        #endregion
+#endregion
 
 
-        #region Private/internal methods
+#region Private/internal methods
 
         private static DynamoDBEntryType GetType(string attributeType)
         {
@@ -359,10 +361,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return doc.ToAttributeMap(conversion, this.StoreAsEpoch);
         }
 
-        #endregion
+#endregion
 
 
-        #region Constructor/factory
+#region Constructor/factory
 
         private Table(IAmazonDynamoDB ddbClient, TableConfig config)
         {
@@ -508,9 +510,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #endif
-        #endregion
+#endregion
 
-        #region Conversion methods
+#region Conversion methods
 
         /// <summary>
         /// Creates a Document from an attribute map.
@@ -553,9 +555,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        #endregion
+#endregion
 
-        #region PutItem
+#region PutItem
 
         internal Document PutItemHelper(Document doc, PutItemOperationConfig config)
         {
@@ -602,6 +604,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+#if AWS_ASYNC_API 
         internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new PutItemOperationConfig();
@@ -646,11 +649,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
+#endif
 
-        #endregion
+#endregion
 
 
-        #region GetItem
+#region GetItem
 
         internal Document GetItemHelper(Key key, GetItemOperationConfig config)
         {
@@ -674,6 +678,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
+#if AWS_ASYNC_API 
         internal async Task<Document> GetItemHelperAsync(Key key, GetItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new GetItemOperationConfig();
@@ -695,11 +700,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return null;
             return this.FromAttributeMap(attributeMap);
         }
+#endif
 
-        #endregion
+#endregion
 
 
-        #region UpdateItem
+#region UpdateItem
 
         internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config)
         {
@@ -707,11 +713,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return UpdateHelper(doc, key, config);
         }
 
+#if AWS_ASYNC_API 
         internal Task<Document> UpdateHelperAsync(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
             return UpdateHelperAsync(doc, key, config, cancellationToken);
         }
+#endif
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config)
         {
@@ -792,6 +800,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+#if AWS_ASYNC_API 
         internal async Task<Document> UpdateHelperAsync(Document doc, Key key, UpdateItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new UpdateItemOperationConfig();
@@ -870,6 +879,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
+#endif
 
         // Checks if key attributes have been updated
         private bool HaveKeysChanged(Document doc)
@@ -882,10 +892,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return false;
         }
 
-        #endregion
+#endregion
 
 
-        #region DeleteItem
+#region DeleteItem
 
         internal Document DeleteHelper(Key key, DeleteItemOperationConfig config)
         {
@@ -930,6 +940,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+#if AWS_ASYNC_API 
         internal async Task<Document> DeleteHelperAsync(Key key, DeleteItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new DeleteItemOperationConfig();
@@ -972,11 +983,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             return ret;
         }
+#endif
 
-        #endregion
+#endregion
 
 
-        #region Scan
+#region Scan
 
         /// <summary>
         /// Initiates a Search object to Scan a DynamoDB table, with the
@@ -1047,10 +1059,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        #endregion
+#endregion
 
 
-        #region Query
+#region Query
 
         /// <summary>
         /// Initiates a Search object to Query a DynamoDB table, with the
@@ -1143,10 +1155,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        #endregion
+#endregion
 
 
-        #region BatchGet
+#region BatchGet
 
         /// <summary>
         /// Creates a DocumentBatchGet object for the current table, allowing
@@ -1158,10 +1170,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new DocumentBatchGet(this);
         }
 
-        #endregion
+#endregion
 
 
-        #region BatchWrite
+#region BatchWrite
 
         /// <summary>
         /// Creates a DocumentBatchWrite object for the current table, allowing
@@ -1173,6 +1185,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new DocumentBatchWrite(this);
         }
 
-        #endregion
+#endregion
     }
 }

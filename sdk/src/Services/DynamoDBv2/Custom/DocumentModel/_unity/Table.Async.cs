@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return PutItemHelper(doc, null, true); },
+                () => { return PutItemHelper(doc, null); },
                 asyncOptions,
                 callback);
         }
@@ -113,7 +113,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return PutItemHelper(doc, config, true); },
+                () => { return PutItemHelper(doc, config); },
                 asyncOptions,
                 callback);
         }
@@ -132,7 +132,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(hashKey, null), null, true); },
+                () => { return GetItemHelper(MakeKey(hashKey, null), null); },
                 asyncOptions,
                 callback);
         }
@@ -149,7 +149,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(hashKey, rangeKey), null, true); },
+                () => { return GetItemHelper(MakeKey(hashKey, rangeKey), null); },
                 asyncOptions,
                 callback);
         }
@@ -166,7 +166,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(hashKey, null), config, true); },
+                () => { return GetItemHelper(MakeKey(hashKey, null), config); },
                 asyncOptions,
                 callback);
         }
@@ -184,7 +184,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(hashKey, rangeKey), config, true); },
+                () => { return GetItemHelper(MakeKey(hashKey, rangeKey), config); },
                 asyncOptions,
                 callback);
         }
@@ -200,7 +200,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(key), null, true); },
+                () => { return GetItemHelper(MakeKey(key), null); },
                 asyncOptions,
                 callback);
         }
@@ -217,7 +217,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return GetItemHelper(MakeKey(key), config, true); },
+                () => { return GetItemHelper(MakeKey(key), config); },
                 asyncOptions,
                 callback);
         }
@@ -237,7 +237,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(doc), null, true); },
+                () => { return UpdateHelper(doc, MakeKey(doc), null); },
                 asyncOptions,
                 callback);
         }
@@ -254,7 +254,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(hashKey, null), null, true); },
+                () => { return UpdateHelper(doc, MakeKey(hashKey, null), null); },
                 asyncOptions,
                 callback);
         }
@@ -272,7 +272,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(hashKey, rangeKey), null, true); },
+                () => { return UpdateHelper(doc, MakeKey(hashKey, rangeKey), null); },
                 asyncOptions,
                 callback);
         }
@@ -289,7 +289,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(key), null, true); },
+                () => { return UpdateHelper(doc, MakeKey(key), null); },
                 asyncOptions,
                 callback);
         }
@@ -306,7 +306,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(doc), config, true); },
+                () => { return UpdateHelper(doc, MakeKey(doc), config); },
                 asyncOptions,
                 callback);
         }
@@ -324,7 +324,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(hashKey, null), config, true); },
+                () => { return UpdateHelper(doc, MakeKey(hashKey, null), config); },
                 asyncOptions,
                 callback);
         }
@@ -343,7 +343,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, true); },
+                () => { return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config); },
                 asyncOptions,
                 callback);
         }
@@ -361,7 +361,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Document>(
-                () => { return UpdateHelper(doc, MakeKey(key), config, true); },
+                () => { return UpdateHelper(doc, MakeKey(key), config); },
                 asyncOptions,
                 callback);
         }
@@ -381,7 +381,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(document), null, true); },
+                () => { DeleteHelper(MakeKey(document), null); },
                 asyncOptions,
                 callback);
         }
@@ -397,7 +397,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(hashKey, null), null, true); },
+                () => { DeleteHelper(MakeKey(hashKey, null), null); },
                 asyncOptions,
                 callback);
         }
@@ -414,7 +414,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(hashKey, rangeKey), null, true); },
+                () => { DeleteHelper(MakeKey(hashKey, rangeKey), null); },
                 asyncOptions,
                 callback);
         }
@@ -430,7 +430,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(key), null, true); },
+                () => { DeleteHelper(MakeKey(key), null); },
                 asyncOptions,
                 callback);
         }
@@ -447,7 +447,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(document), config, true); },
+                () => { DeleteHelper(MakeKey(document), config); },
                 asyncOptions,
                 callback);
         }
@@ -464,7 +464,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(hashKey, null), config, true); },
+                () => { DeleteHelper(MakeKey(hashKey, null), config); },
                 asyncOptions,
                 callback);
         }
@@ -482,7 +482,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(hashKey, rangeKey), config, true); },
+                () => { DeleteHelper(MakeKey(hashKey, rangeKey), config); },
                 asyncOptions,
                 callback);
         }
@@ -499,7 +499,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { DeleteHelper(MakeKey(key), config, true); },
+                () => { DeleteHelper(MakeKey(key), config); },
                 asyncOptions,
                 callback);
         }

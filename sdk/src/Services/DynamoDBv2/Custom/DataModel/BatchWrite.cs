@@ -20,7 +20,9 @@ using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -31,16 +33,16 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public abstract partial class BatchWrite
     {
-        #region Internal/protected properties
+#region Internal/protected properties
 
         internal DynamoDBContext Context { get; set; }
         internal DynamoDBFlatConfig Config { get; set; }
         internal DocumentBatchWrite DocumentBatch { get; set; }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
         {
@@ -48,22 +50,24 @@ namespace Amazon.DynamoDBv2.DataModel
             Config = config;
         }
         
-        #endregion
+#endregion
 
 
-        #region Protected methods
+#region Protected methods
 
         /// <summary>
         /// Executes a server call to batch-write/delete the items requested.
         /// </summary>
         internal protected abstract void ExecuteHelper();
-        
+
+#if AWS_ASYNC_API
         /// <summary>
         /// Executes an asynchronous server call to batch-write/delete the items requested.
         /// </summary>
         internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
+#endif
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -72,7 +76,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public class BatchWrite<T> : BatchWrite
     {
-        #region Public combine methods
+#region Public combine methods
 
         /// <summary>
         /// Creates a MultiTableBatchWrite object that is a combination
@@ -88,10 +92,10 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableBatchWrite(this, otherBatches);
         }
 
-        #endregion
+#endregion
 
 
-        #region Public Put methods
+#region Public Put methods
 
         /// <summary>
         /// Add a number of items to be put in the current batch operation
@@ -120,10 +124,10 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentBatch.AddDocumentToPut(storage.Document);
         }
 
-        #endregion
+#endregion
 
 
-        #region Public Delete methods
+#region Public Delete methods
 
         /// <summary>
         /// Add a number of items to be deleted in the current batch operation
@@ -173,10 +177,10 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentBatch.AddKeyToDelete(Context.MakeKey(hashKey, rangeKey, StorageConfig, Config));
         }
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
             : base(context, config)
@@ -196,10 +200,10 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentBatch = table.CreateBatchWrite();
         }
 
-        #endregion
+#endregion
 
 
-        #region Internal/protected/private members
+#region Internal/protected/private members
 
         internal ItemStorageConfig StorageConfig { get; set; }
 
@@ -211,6 +215,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentBatch.ExecuteHelper();
         }
 
+#if AWS_ASYNC_API
         /// <summary>
         /// Execute the batch write asynchronously.
         /// </summary>
@@ -218,8 +223,9 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return DocumentBatch.ExecuteHelperAsync(cancellationToken);
         }
+#endif
 
-        #endregion
+#endregion
     }
 
     /// <summary>
@@ -228,14 +234,14 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial class MultiTableBatchWrite
     {
-        #region Private members
+#region Private members
 
         private List<BatchWrite> allBatches = new List<BatchWrite>();
 
-        #endregion
+#endregion
 
 
-        #region Constructor
+#region Constructor
 
         /// <summary>
         /// Constructs a MultiTableBatchGet object from a number of
@@ -254,10 +260,10 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches.AddRange(rest);
         }
 
-        #endregion
+#endregion
 
 
-        #region Public methods
+#region Public methods
 
         /// <summary>
         /// Add a BatchWrite object to the multi-table batch request
@@ -278,6 +284,7 @@ namespace Amazon.DynamoDBv2.DataModel
             superBatch.ExecuteHelper();
         }
 
+#if AWS_ASYNC_API
         internal Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiTableDocumentBatchWrite superBatch = new MultiTableDocumentBatchWrite();
@@ -287,7 +294,8 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return superBatch.ExecuteHelperAsync(cancellationToken);
         }
+#endif
 
-        #endregion
+#endregion
     }
 }

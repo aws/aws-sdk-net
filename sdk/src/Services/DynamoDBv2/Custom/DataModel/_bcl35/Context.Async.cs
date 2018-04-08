@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginSave<T>(T value, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginSave<T>(T value, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, operationConfig, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { SaveHelper<T>(value, operationConfig); return null; }, callback, state);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(object hashKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, null), callback, state);
         }
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
@@ -106,7 +106,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(object hashKey, object rangeKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, null), callback, state);
         }
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
@@ -122,7 +122,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(object hashKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, operationConfig, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, null, operationConfig), callback, state);
         }
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
@@ -139,7 +139,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, operationConfig, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(hashKey, rangeKey, operationConfig), callback, state);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(T keyObject, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(keyObject, null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(keyObject, null), callback, state);
         }
         /// <summary>
         /// Initiates the asynchronous execution of the Load operation.
@@ -171,7 +171,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginLoad<T>(T keyObject, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(keyObject, operationConfig, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => LoadHelper<T>(keyObject, operationConfig), callback, state);
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(T value, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, null); return null; }, callback, state);
         }
         /// <summary>
         /// Initiates the asynchronous execution of the Delete operation.
@@ -220,7 +220,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(T value, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, operationConfig, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(value, operationConfig); return null; }, callback, state);
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(object hashKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(object hashKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, operationConfig, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, null, operationConfig); return null; }, callback, state);
         }
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(object hashKey, object rangeKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace Amazon.DynamoDBv2.DataModel
         ///         operation.</returns>
         public IAsyncResult BeginDelete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, operationConfig, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper<T>(hashKey, rangeKey, operationConfig); return null; }, callback, state);
         }
 
         /// <summary>
@@ -318,7 +318,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public IAsyncResult BeginExecuteBatchGet(BatchGet[] batches, AsyncCallback callback, object state)
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
-            return DynamoDBAsyncExecutor.BeginOperation(() => { superBatch.ExecuteHelper(true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { superBatch.ExecuteHelper(); return null; }, callback, state);
         }
 
         /// <summary>
@@ -348,7 +348,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public IAsyncResult BeginExecuteBatchWrite(BatchWrite[] batches, AsyncCallback callback, object state)
         {
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
-            return DynamoDBAsyncExecutor.BeginOperation(() => { superBatch.ExecuteHelper(true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { superBatch.ExecuteHelper(); return null; }, callback, state);
         }
 
         /// <summary>

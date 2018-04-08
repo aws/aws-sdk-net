@@ -20,7 +20,9 @@ using System.Linq;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using System.Globalization;
+#if AWS_ASYNC_API
 using System.Threading.Tasks;
+#endif
 using System.Threading;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -30,7 +32,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class Search
     {
-        #region Internal constructors
+#region Internal constructors
 
         internal Search()
             : this((SearchType)0)
@@ -43,10 +45,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Reset();
         }
 
-        #endregion
+#endregion
 
 
-        #region Public properties
+#region Public properties
 
         /// <summary>
         /// Name of the table being searched
@@ -198,10 +200,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public SelectValues Select { get; internal set; }
 
-        #endregion
+#endregion
 
 
-        #region Private/internal members
+#region Private/internal members
 
         internal List<Document> GetNextSetHelper()
         {
@@ -304,6 +306,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+#if AWS_ASYNC_API 
         internal async Task<List<Document>> GetNextSetHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
@@ -404,6 +407,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return ret;
         }
+#endif
 
         internal List<Document> GetRemainingHelper()
         {
@@ -420,6 +424,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
+#if AWS_ASYNC_API 
         internal async Task<List<Document>> GetRemainingHelperAsync(CancellationToken cancellationToken)
         {
             List<Document> ret = new List<Document>();
@@ -434,6 +439,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return ret;
         }
+#endif
 
         private int count;
 
@@ -574,6 +580,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             CollectResults = true;
         }
 
-        #endregion
+#endregion
     }
 }
