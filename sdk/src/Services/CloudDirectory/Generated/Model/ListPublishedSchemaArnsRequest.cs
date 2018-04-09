@@ -29,8 +29,9 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPublishedSchemaArns operation.
-    /// Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided,
-    /// lists the minor version.
+    /// Lists the major version families of each published schema. If a major version ARN
+    /// is provided as <code>SchemaArn</code>, the minor version revisions in that family
+    /// are listed instead.
     /// </summary>
     public partial class ListPublishedSchemaArnsRequest : AmazonCloudDirectoryRequest
     {

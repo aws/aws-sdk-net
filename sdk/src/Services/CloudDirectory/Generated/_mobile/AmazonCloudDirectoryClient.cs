@@ -1135,6 +1135,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetObjectAttributes
+
+        internal virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectAttributesRequest,GetObjectAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual Task<GetObjectAttributesResponse> GetObjectAttributesAsync(GetObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectAttributesRequest,GetObjectAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectInformation
 
         internal virtual GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request)

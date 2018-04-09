@@ -45,6 +45,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchReadOperation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGetObjectAttributes())
+            {
+                context.Writer.WritePropertyName("GetObjectAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchGetObjectAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.GetObjectAttributes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGetObjectInformation())
             {
                 context.Writer.WritePropertyName("GetObjectInformation");

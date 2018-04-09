@@ -28,58 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddFacetToObject operation.
-    /// Adds a new <a>Facet</a> to an object. An object can have more than one facet applied
-    /// on it.
+    /// Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a>
+    /// operation. For more information, see <a>GetObjectAttributes</a> and <a>BatchReadRequest$Operations</a>.
     /// </summary>
-    public partial class AddFacetToObjectRequest : AmazonCloudDirectoryRequest
+    public partial class BatchGetObjectAttributes
     {
-        private string _directoryArn;
-        private List<AttributeKeyAndValue> _objectAttributeList = new List<AttributeKeyAndValue>();
+        private List<string> _attributeNames = new List<string>();
         private ObjectReference _objectReference;
         private SchemaFacet _schemaFacet;
 
         /// <summary>
-        /// Gets and sets the property DirectoryArn. 
+        /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
-        /// the object resides. For more information, see <a>arns</a>.
+        /// List of attribute names whose values will be retrieved.
         /// </para>
         /// </summary>
-        public string DirectoryArn
+        public List<string> AttributeNames
         {
-            get { return this._directoryArn; }
-            set { this._directoryArn = value; }
+            get { return this._attributeNames; }
+            set { this._attributeNames = value; }
         }
 
-        // Check to see if DirectoryArn property is set
-        internal bool IsSetDirectoryArn()
+        // Check to see if AttributeNames property is set
+        internal bool IsSetAttributeNames()
         {
-            return this._directoryArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectAttributeList. 
-        /// <para>
-        /// Attributes on the facet that you are adding to the object.
-        /// </para>
-        /// </summary>
-        public List<AttributeKeyAndValue> ObjectAttributeList
-        {
-            get { return this._objectAttributeList; }
-            set { this._objectAttributeList = value; }
-        }
-
-        // Check to see if ObjectAttributeList property is set
-        internal bool IsSetObjectAttributeList()
-        {
-            return this._objectAttributeList != null && this._objectAttributeList.Count > 0; 
+            return this._attributeNames != null && this._attributeNames.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// A reference to the object you are adding the specified facet to.
+        /// Reference that identifies the object whose attributes will be retrieved.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference
@@ -97,7 +76,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a>
+        /// Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a>
         /// for details.
         /// </para>
         /// </summary>

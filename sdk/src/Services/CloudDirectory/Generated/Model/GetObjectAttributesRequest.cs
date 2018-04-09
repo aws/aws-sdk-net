@@ -28,22 +28,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddFacetToObject operation.
-    /// Adds a new <a>Facet</a> to an object. An object can have more than one facet applied
-    /// on it.
+    /// Container for the parameters to the GetObjectAttributes operation.
+    /// Retrieves attributes within a facet that are associated with an object.
     /// </summary>
-    public partial class AddFacetToObjectRequest : AmazonCloudDirectoryRequest
+    public partial class GetObjectAttributesRequest : AmazonCloudDirectoryRequest
     {
+        private List<string> _attributeNames = new List<string>();
+        private ConsistencyLevel _consistencyLevel;
         private string _directoryArn;
-        private List<AttributeKeyAndValue> _objectAttributeList = new List<AttributeKeyAndValue>();
         private ObjectReference _objectReference;
         private SchemaFacet _schemaFacet;
+
+        /// <summary>
+        /// Gets and sets the property AttributeNames. 
+        /// <para>
+        /// List of attribute names whose values will be retrieved.
+        /// </para>
+        /// </summary>
+        public List<string> AttributeNames
+        {
+            get { return this._attributeNames; }
+            set { this._attributeNames = value; }
+        }
+
+        // Check to see if AttributeNames property is set
+        internal bool IsSetAttributeNames()
+        {
+            return this._attributeNames != null && this._attributeNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConsistencyLevel. 
+        /// <para>
+        /// The consistency level at which to retrieve the attributes on an object.
+        /// </para>
+        /// </summary>
+        public ConsistencyLevel ConsistencyLevel
+        {
+            get { return this._consistencyLevel; }
+            set { this._consistencyLevel = value; }
+        }
+
+        // Check to see if ConsistencyLevel property is set
+        internal bool IsSetConsistencyLevel()
+        {
+            return this._consistencyLevel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
-        /// the object resides. For more information, see <a>arns</a>.
+        /// the object resides.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -59,27 +95,9 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ObjectAttributeList. 
-        /// <para>
-        /// Attributes on the facet that you are adding to the object.
-        /// </para>
-        /// </summary>
-        public List<AttributeKeyAndValue> ObjectAttributeList
-        {
-            get { return this._objectAttributeList; }
-            set { this._objectAttributeList = value; }
-        }
-
-        // Check to see if ObjectAttributeList property is set
-        internal bool IsSetObjectAttributeList()
-        {
-            return this._objectAttributeList != null && this._objectAttributeList.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// A reference to the object you are adding the specified facet to.
+        /// Reference that identifies the object whose attributes will be retrieved.
         /// </para>
         /// </summary>
         public ObjectReference ObjectReference
@@ -97,7 +115,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a>
+        /// Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a>
         /// for details.
         /// </para>
         /// </summary>

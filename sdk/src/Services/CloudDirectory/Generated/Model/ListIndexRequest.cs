@@ -29,7 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIndex operation.
-    /// Lists objects and indexed values attached to the index.
+    /// Lists objects attached to the specified index.
     /// </summary>
     public partial class ListIndexRequest : AmazonCloudDirectoryRequest
     {

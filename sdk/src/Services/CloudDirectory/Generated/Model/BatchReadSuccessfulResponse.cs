@@ -32,6 +32,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchReadSuccessfulResponse
     {
+        private BatchGetObjectAttributesResponse _getObjectAttributes;
         private BatchGetObjectInformationResponse _getObjectInformation;
         private BatchListAttachedIndicesResponse _listAttachedIndices;
         private BatchListIncomingTypedLinksResponse _listIncomingTypedLinks;
@@ -43,6 +44,24 @@ namespace Amazon.CloudDirectory.Model
         private BatchListOutgoingTypedLinksResponse _listOutgoingTypedLinks;
         private BatchListPolicyAttachmentsResponse _listPolicyAttachments;
         private BatchLookupPolicyResponse _lookupPolicy;
+
+        /// <summary>
+        /// Gets and sets the property GetObjectAttributes. 
+        /// <para>
+        /// Retrieves attributes within a facet that are associated with an object.
+        /// </para>
+        /// </summary>
+        public BatchGetObjectAttributesResponse GetObjectAttributes
+        {
+            get { return this._getObjectAttributes; }
+            set { this._getObjectAttributes = value; }
+        }
+
+        // Check to see if GetObjectAttributes property is set
+        internal bool IsSetGetObjectAttributes()
+        {
+            return this._getObjectAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GetObjectInformation. 

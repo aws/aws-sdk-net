@@ -165,6 +165,10 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public static readonly BatchWriteExceptionType NotIndexException = new BatchWriteExceptionType("NotIndexException");
         /// <summary>
+        /// Constant NotNodeException for BatchWriteExceptionType
+        /// </summary>
+        public static readonly BatchWriteExceptionType NotNodeException = new BatchWriteExceptionType("NotNodeException");
+        /// <summary>
         /// Constant NotPolicyException for BatchWriteExceptionType
         /// </summary>
         public static readonly BatchWriteExceptionType NotPolicyException = new BatchWriteExceptionType("NotPolicyException");

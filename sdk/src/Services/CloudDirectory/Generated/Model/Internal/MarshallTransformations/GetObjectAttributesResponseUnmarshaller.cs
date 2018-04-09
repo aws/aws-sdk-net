@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateDirectory operation
+    /// Response Unmarshaller for GetObjectAttributes operation
     /// </summary>  
-    public class CreateDirectoryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetObjectAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateDirectoryResponse response = new CreateDirectoryResponse();
+            GetObjectAttributesResponse response = new GetObjectAttributesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AppliedSchemaArn", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AppliedSchemaArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DirectoryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DirectoryArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ObjectIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ObjectIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AttributeKeyAndValue, AttributeKeyAndValueUnmarshaller>(AttributeKeyAndValueUnmarshaller.Instance);
+                    response.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,9 +76,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectoryAlreadyExistsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectoryNotEnabledException"))
             {
-                return new DirectoryAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DirectoryNotEnabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FacetValidationException"))
+            {
+                return new FacetValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
             {
@@ -125,9 +111,9 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             return new AmazonCloudDirectoryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateDirectoryResponseUnmarshaller _instance = new CreateDirectoryResponseUnmarshaller();        
+        private static GetObjectAttributesResponseUnmarshaller _instance = new GetObjectAttributesResponseUnmarshaller();        
 
-        internal static CreateDirectoryResponseUnmarshaller GetInstance()
+        internal static GetObjectAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +121,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDirectoryResponseUnmarshaller Instance
+        public static GetObjectAttributesResponseUnmarshaller Instance
         {
             get
             {

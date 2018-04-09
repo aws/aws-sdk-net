@@ -238,7 +238,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Adds a new <a>Facet</a> to an object.
+        /// Adds a new <a>Facet</a> to an object. An object can have more than one facet applied
+        /// on it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddFacetToObject service method.</param>
         /// 
@@ -247,7 +248,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -408,7 +409,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -497,16 +498,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -575,7 +573,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.IndexedAttributeMissingException">
         /// An object has been attempted to be attached to an object that does not have the appropriate
@@ -589,6 +587,11 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
+        /// Indicates that an attempt to attach an object with the same link name or to apply
+        /// a schema with the same name has occurred. Rename the link or the schema and then try
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -660,7 +663,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -744,7 +747,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -817,7 +820,7 @@ namespace Amazon.CloudDirectory
         /// A <code>BatchWrite</code> exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -895,9 +898,6 @@ namespace Amazon.CloudDirectory
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -1044,7 +1044,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -1130,7 +1130,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -1141,9 +1141,6 @@ namespace Amazon.CloudDirectory
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -1542,7 +1539,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1764,7 +1761,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1843,7 +1840,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -1857,6 +1854,10 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
+        /// Occurs when any invalid operations are performed on an object that is not a node,
+        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -1915,16 +1916,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -1995,7 +1993,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -2415,6 +2413,82 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetObjectAttributes
+
+
+        /// <summary>
+        /// Retrieves attributes within a facet that are associated with an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectAttributesRequest,GetObjectAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        public virtual Task<GetObjectAttributesResponse> GetObjectAttributesAsync(GetObjectAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetObjectAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectAttributesRequest,GetObjectAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectInformation
 
 
@@ -2428,7 +2502,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -2723,7 +2797,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3086,7 +3160,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -3156,7 +3230,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists objects and indexed values attached to the index.
+        /// Lists objects attached to the specified index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndex service method.</param>
         /// 
@@ -3165,7 +3239,11 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3175,6 +3253,9 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -3240,7 +3321,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -3251,9 +3332,6 @@ namespace Amazon.CloudDirectory
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3322,16 +3400,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3416,7 +3491,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3494,16 +3569,13 @@ namespace Amazon.CloudDirectory
         /// Cannot list the parents of a <a>Directory</a> root.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3572,7 +3644,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3650,7 +3722,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -3729,16 +3801,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -3801,8 +3870,9 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided,
-        /// lists the minor version.
+        /// Lists the major version families of each published schema. If a major version ARN
+        /// is provided as <code>SchemaArn</code>, the minor version revisions in that family
+        /// are listed instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// 
@@ -4115,16 +4185,13 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
         /// transient error in which case you can retry your request until it succeeds. Otherwise,
         /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
         /// site to see if there are any operational issues with the service.
-        /// </exception>
-        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
-        /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
         /// Indicates that the provided ARN value is not valid.
@@ -4339,7 +4406,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with
@@ -4655,7 +4722,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
-        /// An operation can only operate on a directory that is not enabled.
+        /// Operations are only permitted on enabled directories.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
         /// The <a>Facet</a> that you provided was not well formed or could not be validated with

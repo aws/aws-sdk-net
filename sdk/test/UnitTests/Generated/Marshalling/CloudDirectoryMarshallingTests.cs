@@ -925,6 +925,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void GetObjectAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetObjectAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetObjectAttributesRequest>();
+            var marshaller = new GetObjectAttributesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetObjectAttributes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetObjectAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void GetObjectInformationMarshallTest()
         {
             var operation = service_model.FindOperation("GetObjectInformation");
