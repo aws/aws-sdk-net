@@ -524,6 +524,38 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteMailboxPermissions
+
+        internal virtual DeleteMailboxPermissionsResponse DeleteMailboxPermissions(DeleteMailboxPermissionsRequest request)
+        {
+            var marshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMailboxPermissionsRequest,DeleteMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMailboxPermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
+        public virtual Task<DeleteMailboxPermissionsResponse> DeleteMailboxPermissionsAsync(DeleteMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMailboxPermissionsRequest,DeleteMailboxPermissionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteResource
 
         internal virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
@@ -908,6 +940,38 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListMailboxPermissions
+
+        internal virtual ListMailboxPermissionsResponse ListMailboxPermissions(ListMailboxPermissionsRequest request)
+        {
+            var marshaller = ListMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMailboxPermissionsRequest,ListMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMailboxPermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
+        public virtual Task<ListMailboxPermissionsResponse> ListMailboxPermissionsAsync(ListMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMailboxPermissionsRequest,ListMailboxPermissionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListOrganizations
 
         internal virtual ListOrganizationsResponse ListOrganizations(ListOrganizationsRequest request)
@@ -1031,6 +1095,38 @@ namespace Amazon.WorkMail
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutMailboxPermissions
+
+        internal virtual PutMailboxPermissionsResponse PutMailboxPermissions(PutMailboxPermissionsRequest request)
+        {
+            var marshaller = PutMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutMailboxPermissionsRequest,PutMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMailboxPermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
+        public virtual Task<PutMailboxPermissionsResponse> PutMailboxPermissionsAsync(PutMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutMailboxPermissionsRequest,PutMailboxPermissionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

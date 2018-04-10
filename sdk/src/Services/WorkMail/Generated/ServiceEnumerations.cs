@@ -129,6 +129,60 @@ namespace Amazon.WorkMail
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionType.
+    /// </summary>
+    public class PermissionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_ACCESS for PermissionType
+        /// </summary>
+        public static readonly PermissionType FULL_ACCESS = new PermissionType("FULL_ACCESS");
+        /// <summary>
+        /// Constant SEND_AS for PermissionType
+        /// </summary>
+        public static readonly PermissionType SEND_AS = new PermissionType("SEND_AS");
+        /// <summary>
+        /// Constant SEND_ON_BEHALF for PermissionType
+        /// </summary>
+        public static readonly PermissionType SEND_ON_BEHALF = new PermissionType("SEND_ON_BEHALF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionType FindValue(string value)
+        {
+            return FindValue<PermissionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

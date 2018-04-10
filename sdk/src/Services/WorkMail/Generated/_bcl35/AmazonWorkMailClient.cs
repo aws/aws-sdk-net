@@ -888,6 +888,77 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  DeleteMailboxPermissions
+
+        /// <summary>
+        /// Deletes permissions granted to a user or group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMailboxPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMailboxPermissions service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on an entity that isn't in the expected state, such
+        /// as trying to update a deleted user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its entities.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
+        public virtual DeleteMailboxPermissionsResponse DeleteMailboxPermissions(DeleteMailboxPermissionsRequest request)
+        {
+            var marshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMailboxPermissionsRequest,DeleteMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMailboxPermissions operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMailboxPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMailboxPermissions(DeleteMailboxPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteMailboxPermissionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMailboxPermissions.</param>
+        /// 
+        /// <returns>Returns a  DeleteMailboxPermissionsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
+        public virtual DeleteMailboxPermissionsResponse EndDeleteMailboxPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteResource
 
         /// <summary>
@@ -1732,6 +1803,73 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListMailboxPermissions
+
+        /// <summary>
+        /// Lists the mailbox permissions associated with a mailbox.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMailboxPermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListMailboxPermissions service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its entities.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
+        public virtual ListMailboxPermissionsResponse ListMailboxPermissions(ListMailboxPermissionsRequest request)
+        {
+            var marshaller = ListMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMailboxPermissionsRequest,ListMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMailboxPermissions operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMailboxPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
+        public virtual IAsyncResult BeginListMailboxPermissions(ListMailboxPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListMailboxPermissionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMailboxPermissions.</param>
+        /// 
+        /// <returns>Returns a  ListMailboxPermissionsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
+        public virtual ListMailboxPermissionsResponse EndListMailboxPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMailboxPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListOrganizations
 
         /// <summary>
@@ -1984,6 +2122,78 @@ namespace Amazon.WorkMail
         public virtual ListUsersResponse EndListUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutMailboxPermissions
+
+        /// <summary>
+        /// Sets permissions for a user or group. This replaces any pre-existing permissions set
+        /// for the entity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMailboxPermissions service method.</param>
+        /// 
+        /// <returns>The response from the PutMailboxPermissions service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the entity is valid, but it does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
+        /// You are performing an operation on an entity that isn't in the expected state, such
+        /// as trying to update a deleted user.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state (Active or Synchronizing) to perform certain
+        /// operations on the organization or its entities.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
+        public virtual PutMailboxPermissionsResponse PutMailboxPermissions(PutMailboxPermissionsRequest request)
+        {
+            var marshaller = PutMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutMailboxPermissionsRequest,PutMailboxPermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMailboxPermissions operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMailboxPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
+        public virtual IAsyncResult BeginPutMailboxPermissions(PutMailboxPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutMailboxPermissionsRequestMarshaller.Instance;
+            var unmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutMailboxPermissionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMailboxPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMailboxPermissions.</param>
+        /// 
+        /// <returns>Returns a  PutMailboxPermissionsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
+        public virtual PutMailboxPermissionsResponse EndPutMailboxPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutMailboxPermissionsResponse>(asyncResult);
         }
 
         #endregion

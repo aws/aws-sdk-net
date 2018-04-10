@@ -120,6 +120,20 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.GranteeId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteMailboxPermissionsRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteResourceRequest.OrganizationId</property>
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
@@ -354,6 +368,30 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListMailboxPermissionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListOrganizationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -429,6 +467,20 @@
     <property>Amazon.WorkMail.Model.ListUsersResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.EntityId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.GranteeId</property>
+    <min>12</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.PutMailboxPermissionsRequest.OrganizationId</property>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.RegisterToWorkMailRequest.Email</property>
@@ -589,6 +641,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.OrganizationSummary.State</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.Permission.GranteeId</property>
+    <min>12</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
