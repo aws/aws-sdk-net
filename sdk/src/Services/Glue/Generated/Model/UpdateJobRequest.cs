@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobUpdate. 
         /// <para>
-        /// Specifies the values with which to update the job.
+        /// Specifies the values with which to update the job definition.
         /// </para>
         /// </summary>
         public JobUpdate JobUpdate

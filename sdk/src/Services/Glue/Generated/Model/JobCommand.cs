@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies code that executes a job.
+    /// Specifies code executed when a job is run.
     /// </summary>
     public partial class JobCommand
     {

@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobRuns operation.
-    /// Retrieves metadata for all runs of a given job.
+    /// Retrieves metadata for all runs of a given job definition.
     /// </summary>
     public partial class GetJobRunsRequest : AmazonGlueRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job for which to retrieve all job runs.
+        /// The name of the job definition for which to retrieve all job runs.
         /// </para>
         /// </summary>
         public string JobName

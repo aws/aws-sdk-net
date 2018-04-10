@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private int? _attempt;
         private DateTime? _completedOn;
         private string _errorMessage;
+        private int? _executionTime;
         private string _id;
         private string _jobName;
         private JobRunState _jobRunState;
@@ -44,6 +45,7 @@ namespace Amazon.Glue.Model
         private List<Predecessor> _predecessorRuns = new List<Predecessor>();
         private string _previousRunId;
         private DateTime? _startedOn;
+        private int? _timeout;
         private string _triggerName;
 
         /// <summary>
@@ -88,7 +90,7 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -159,6 +161,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionTime. 
+        /// <para>
+        /// The amount of time (in seconds) that the job run consumed resources.
+        /// </para>
+        /// </summary>
+        public int ExecutionTime
+        {
+            get { return this._executionTime.GetValueOrDefault(); }
+            set { this._executionTime = value; }
+        }
+
+        // Check to see if ExecutionTime property is set
+        internal bool IsSetExecutionTime()
+        {
+            return this._executionTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of this job run.
@@ -179,7 +199,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job being run.
+        /// The name of the job definition being used in this run.
         /// </para>
         /// </summary>
         public string JobName
@@ -283,6 +303,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetStartedOn()
         {
             return this._startedOn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The job run timeout in minutes.
+        /// </para>
+        /// </summary>
+        public int Timeout
+        {
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout.HasValue; 
         }
 
         /// <summary>

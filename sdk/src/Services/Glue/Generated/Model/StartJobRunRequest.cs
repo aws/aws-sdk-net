@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StartJobRun operation.
-    /// Runs a job.
+    /// Starts a job run using a job definition.
     /// </summary>
     public partial class StartJobRunRequest : AmazonGlueRequest
     {
@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _jobName;
         private string _jobRunId;
+        private int? _timeout;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -64,7 +65,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Arguments. 
         /// <para>
         /// The job arguments specifically for this run. They override the equivalent default
-        /// arguments set for the job itself.
+        /// arguments set for in the job definition itself.
         /// </para>
         ///  
         /// <para>
@@ -80,7 +81,7 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -99,7 +100,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job to start.
+        /// The name of the job definition to use.
         /// </para>
         /// </summary>
         public string JobName
@@ -130,6 +131,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobRunId()
         {
             return this._jobRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The job run timeout in minutes. It overrides the timeout value of the job.
+        /// </para>
+        /// </summary>
+        public int Timeout
+        {
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout.HasValue; 
         }
 
     }

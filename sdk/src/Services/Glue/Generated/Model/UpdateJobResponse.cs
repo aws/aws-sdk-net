@@ -37,7 +37,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Returns the name of the updated job.
+        /// Returns the name of the updated job definition.
         /// </para>
         /// </summary>
         public string JobName

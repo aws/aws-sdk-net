@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the predecessor job.
+        /// The name of the job definition used by the predecessor job run.
         /// </para>
         /// </summary>
         public string JobName

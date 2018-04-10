@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Jobs. 
         /// <para>
-        /// A list of jobs.
+        /// A list of job definitions.
         /// </para>
         /// </summary>
         public List<Job> Jobs
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A continuation token, if not all jobs have yet been returned.
+        /// A continuation token, if not all job definitions have yet been returned.
         /// </para>
         /// </summary>
         public string NextToken

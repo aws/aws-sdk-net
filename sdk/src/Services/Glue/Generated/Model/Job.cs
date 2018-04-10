@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a job.
+    /// Specifies a job definition.
     /// </summary>
     public partial class Job
     {
@@ -44,14 +44,16 @@ namespace Amazon.Glue.Model
         private int? _maxRetries;
         private string _name;
         private string _role;
+        private int? _timeout;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2
-        /// to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+        /// The number of AWS Glue data processing units (DPUs) allocated to runs of this job.
+        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
+        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+        /// pricing page</a>.
         /// </para>
         /// </summary>
         public int AllocatedCapacity
@@ -105,7 +107,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreatedOn. 
         /// <para>
-        /// The time and date that this job specification was created.
+        /// The time and date that this job definition was created.
         /// </para>
         /// </summary>
         public DateTime CreatedOn
@@ -139,7 +141,7 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -158,7 +160,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of this job.
+        /// Description of the job being defined.
         /// </para>
         /// </summary>
         public string Description
@@ -195,7 +197,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastModifiedOn. 
         /// <para>
-        /// The last point in time when this job specification was modified.
+        /// The last point in time when this job definition was modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedOn
@@ -231,7 +233,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxRetries. 
         /// <para>
-        /// The maximum number of times to retry this job if it fails.
+        /// The maximum number of times to retry this job after a JobRun fails.
         /// </para>
         /// </summary>
         public int MaxRetries
@@ -249,7 +251,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name you assign to this job.
+        /// The name you assign to this job definition.
         /// </para>
         /// </summary>
         public string Name
@@ -267,7 +269,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The name of the IAM role associated with this job.
+        /// The name or ARN of the IAM role associated with this job.
         /// </para>
         /// </summary>
         public string Role
@@ -280,6 +282,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The job timeout in minutes.
+        /// </para>
+        /// </summary>
+        public int Timeout
+        {
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout.HasValue; 
         }
 
     }

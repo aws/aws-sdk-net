@@ -94,6 +94,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExecutionTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timeout", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TriggerName", targetDepth))

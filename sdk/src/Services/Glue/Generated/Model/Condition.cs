@@ -76,7 +76,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+        /// The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT
+        /// and FAILED.
         /// </para>
         /// </summary>
         public JobRunState State

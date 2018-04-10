@@ -99,6 +99,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobRunId);
                 }
 
+                if(publicRequest.IsSetTimeout())
+                {
+                    context.Writer.WritePropertyName("Timeout");
+                    context.Writer.Write(publicRequest.Timeout);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

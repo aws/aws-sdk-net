@@ -29,7 +29,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobs operation.
-    /// Retrieves all current jobs.
+    /// Retrieves all current job definitions.
     /// </summary>
     public partial class GetJobsRequest : AmazonGlueRequest
     {

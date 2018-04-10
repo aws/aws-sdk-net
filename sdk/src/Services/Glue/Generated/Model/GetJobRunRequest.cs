@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the job being run.
+        /// Name of the job definition being run.
         /// </para>
         /// </summary>
         public string JobName

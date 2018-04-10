@@ -298,6 +298,10 @@ namespace Amazon.Glue
         /// Constant SUCCEEDED for JobRunState
         /// </summary>
         public static readonly JobRunState SUCCEEDED = new JobRunState("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMEOUT for JobRunState
+        /// </summary>
+        public static readonly JobRunState TIMEOUT = new JobRunState("TIMEOUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

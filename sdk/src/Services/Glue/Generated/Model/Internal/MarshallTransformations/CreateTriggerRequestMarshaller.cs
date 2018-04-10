@@ -112,6 +112,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Schedule);
                 }
 
+                if(publicRequest.IsSetStartOnCreation())
+                {
+                    context.Writer.WritePropertyName("StartOnCreation");
+                    context.Writer.Write(publicRequest.StartOnCreation);
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");

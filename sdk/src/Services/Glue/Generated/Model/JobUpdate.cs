@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies information used to update an existing job. Note that the previous job definition
-    /// will be completely overwritten by this information.
+    /// Specifies information used to update an existing job definition. Note that the previous
+    /// job definition will be completely overwritten by this information.
     /// </summary>
     public partial class JobUpdate
     {
@@ -42,6 +42,7 @@ namespace Amazon.Glue.Model
         private string _logUri;
         private int? _maxRetries;
         private string _role;
+        private int? _timeout;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -120,7 +121,7 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// For information about the key-value pairs that AWS Glue consumes to set up your job,
-        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+        /// see the <a href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
         /// Parameters Used by AWS Glue</a> topic in the developer guide.
         /// </para>
         /// </summary>
@@ -139,7 +140,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the job.
+        /// Description of the job being defined.
         /// </para>
         /// </summary>
         public string Description
@@ -212,7 +213,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The name of the IAM role associated with this job (required).
+        /// The name or ARN of the IAM role associated with this job (required).
         /// </para>
         /// </summary>
         public string Role
@@ -225,6 +226,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// The job timeout in minutes. The default is 2880 minutes (48 hours).
+        /// </para>
+        /// </summary>
+        public int Timeout
+        {
+            get { return this._timeout.GetValueOrDefault(); }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout.HasValue; 
         }
 
     }

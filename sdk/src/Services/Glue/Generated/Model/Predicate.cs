@@ -56,7 +56,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Logical. 
         /// <para>
-        /// Currently "OR" is not supported.
+        /// Optional field if only one condition is listed. If multiple conditions are listed,
+        /// then this field is required.
         /// </para>
         /// </summary>
         public Logical Logical

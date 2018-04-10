@@ -354,7 +354,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops one or more job runs for a specified Job.
+        /// Stops one or more job runs for a specified job definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchStopJobRun service method.</param>
         /// 
@@ -679,7 +679,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a new job.
+        /// Creates a new job definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -1272,7 +1272,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Deletes a specified job. If the job is not found, no exception is thrown.
+        /// Deletes a specified job definition. If the job definition is not found, no exception
+        /// is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// 
@@ -2298,7 +2299,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves metadata for all runs of a given job.
+        /// Retrieves metadata for all runs of a given job definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobRuns service method.</param>
         /// 
@@ -2350,7 +2351,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves all current jobs.
+        /// Retrieves all current job definitions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobs service method.</param>
         /// 
@@ -3227,7 +3228,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Runs a job.
+        /// Starts a job run using a job definition.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartJobRun service method.</param>
         /// 

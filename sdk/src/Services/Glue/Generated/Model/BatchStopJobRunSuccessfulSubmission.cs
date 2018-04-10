@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The Name of the Job in question.
+        /// The name of the job definition used in the job run that was stopped.
         /// </para>
         /// </summary>
         public string JobName
@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunId. 
         /// <para>
-        /// The JobRunId of the JobRun in question.
+        /// The JobRunId of the job run that was stopped.
         /// </para>
         /// </summary>
         public string JobRunId

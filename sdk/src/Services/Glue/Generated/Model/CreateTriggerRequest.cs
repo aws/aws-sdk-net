@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private string _name;
         private Predicate _predicate;
         private string _schedule;
+        private bool? _startOnCreation;
         private TriggerType _type;
 
         /// <summary>
@@ -138,6 +139,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartOnCreation. 
+        /// <para>
+        /// Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported
+        /// for ON_DEMAND triggers.
+        /// </para>
+        /// </summary>
+        public bool StartOnCreation
+        {
+            get { return this._startOnCreation.GetValueOrDefault(); }
+            set { this._startOnCreation = value; }
+        }
+
+        // Check to see if StartOnCreation property is set
+        internal bool IsSetStartOnCreation()
+        {
+            return this._startOnCreation.HasValue; 
         }
 
         /// <summary>
