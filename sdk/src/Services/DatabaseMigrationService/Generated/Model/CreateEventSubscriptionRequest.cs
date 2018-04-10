@@ -171,7 +171,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        /// The name of the DMS event notification subscription. 
+        /// The name of the AWS DMS event notification subscription. 
         /// </para>
         ///  
         /// <para>

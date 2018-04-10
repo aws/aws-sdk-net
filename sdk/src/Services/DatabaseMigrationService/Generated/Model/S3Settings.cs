@@ -140,7 +140,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExternalTableDefinition. 
         /// <para>
-        ///  
+        ///  The external table definition. 
         /// </para>
         /// </summary>
         public string ExternalTableDefinition

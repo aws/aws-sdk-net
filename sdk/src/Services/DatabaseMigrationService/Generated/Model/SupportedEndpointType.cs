@@ -33,6 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class SupportedEndpointType
     {
         private ReplicationEndpointTypeValue _endpointType;
+        private string _engineDisplayName;
         private string _engineName;
         private bool? _supportsCDC;
 
@@ -55,10 +56,30 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineDisplayName. 
+        /// <para>
+        /// The expanded name for the engine name. For example, if the <code>EngineName</code>
+        /// parameter is "aurora," this value would be "Amazon Aurora MySQL."
+        /// </para>
+        /// </summary>
+        public string EngineDisplayName
+        {
+            get { return this._engineDisplayName; }
+            set { this._engineDisplayName = value; }
+        }
+
+        // Check to see if EngineDisplayName property is set
+        internal bool IsSetEngineDisplayName()
+        {
+            return this._engineDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The database engine name. Valid values, depending on the EndPointType, include mysql,
-        /// oracle, postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+        /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb,
+        /// sybase, sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName

@@ -36,6 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
         private string _engineVersion;
+        private DateTime? _freeUntil;
         private DateTime? _instanceCreateTime;
         private string _kmsKeyId;
         private bool? _multiAZ;
@@ -125,6 +126,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FreeUntil. 
+        /// <para>
+        ///  The expiration date of the free replication instance that is part of the Free DMS
+        /// program. 
+        /// </para>
+        /// </summary>
+        public DateTime FreeUntil
+        {
+            get { return this._freeUntil.GetValueOrDefault(); }
+            set { this._freeUntil = value; }
+        }
+
+        // Check to see if FreeUntil property is set
+        internal bool IsSetFreeUntil()
+        {
+            return this._freeUntil.HasValue; 
         }
 
         /// <summary>

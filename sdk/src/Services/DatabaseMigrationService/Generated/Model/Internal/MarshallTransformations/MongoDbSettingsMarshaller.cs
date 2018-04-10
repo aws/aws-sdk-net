@@ -81,6 +81,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExtractDocId);
             }
 
+            if(requestObject.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.Write(requestObject.KmsKeyId);
+            }
+
             if(requestObject.IsSetNestingLevel())
             {
                 context.Writer.WritePropertyName("NestingLevel");

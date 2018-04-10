@@ -70,6 +70,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngineDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EngineDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

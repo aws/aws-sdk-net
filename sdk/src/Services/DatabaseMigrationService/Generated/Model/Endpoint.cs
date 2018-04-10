@@ -38,14 +38,17 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _endpointArn;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
+        private string _engineDisplayName;
         private string _engineName;
         private string _externalId;
+        private string _externalTableDefinition;
         private string _extraConnectionAttributes;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
         private int? _port;
         private S3Settings _s3Settings;
         private string _serverName;
+        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private string _status;
         private string _username;
@@ -162,10 +165,30 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineDisplayName. 
+        /// <para>
+        /// The expanded name for the engine name. For example, if the <code>EngineName</code>
+        /// parameter is "aurora," this value would be "Amazon Aurora MySQL."
+        /// </para>
+        /// </summary>
+        public string EngineDisplayName
+        {
+            get { return this._engineDisplayName; }
+            set { this._engineDisplayName = value; }
+        }
+
+        // Check to see if EngineDisplayName property is set
+        internal bool IsSetEngineDisplayName()
+        {
+            return this._engineDisplayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The database engine name. Valid values, depending on the EndPointType, include mysql,
-        /// oracle, postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+        /// oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb,
+        /// sybase, sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName
@@ -198,6 +221,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExternalId()
         {
             return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalTableDefinition. 
+        /// <para>
+        /// The external table definition.
+        /// </para>
+        /// </summary>
+        public string ExternalTableDefinition
+        {
+            get { return this._externalTableDefinition; }
+            set { this._externalTableDefinition = value; }
+        }
+
+        // Check to see if ExternalTableDefinition property is set
+        internal bool IsSetExternalTableDefinition()
+        {
+            return this._externalTableDefinition != null;
         }
 
         /// <summary>
@@ -311,6 +352,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// </para>
+        /// </summary>
+        public string ServiceAccessRoleArn
+        {
+            get { return this._serviceAccessRoleArn; }
+            set { this._serviceAccessRoleArn = value; }
+        }
+
+        // Check to see if ServiceAccessRoleArn property is set
+        internal bool IsSetServiceAccessRoleArn()
+        {
+            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

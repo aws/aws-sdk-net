@@ -64,6 +64,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CdcStartPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CdcStartPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CdcStopPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CdcStopPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastFailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +86,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecoveryCheckpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecoveryCheckpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceArn", targetDepth))

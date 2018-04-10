@@ -39,6 +39,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
+        private string _externalTableDefinition;
         private string _extraConnectionAttributes;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
@@ -46,6 +47,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _port;
         private S3Settings _s3Settings;
         private string _serverName;
+        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private List<Tag> _tags = new List<Tag>();
         private string _username;
@@ -150,8 +152,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The type of engine for the endpoint. Valid values, depending on the EndPointType,
-        /// include mysql, oracle, postgres, mariadb, aurora, redshift, S3, sybase, dynamodb,
-        /// mongodb, and sqlserver.
+        /// include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3,
+        /// db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
         /// </para>
         /// </summary>
         public string EngineName
@@ -164,6 +166,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetEngineName()
         {
             return this._engineName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalTableDefinition. 
+        /// <para>
+        /// The external table definition. 
+        /// </para>
+        /// </summary>
+        public string ExternalTableDefinition
+        {
+            get { return this._externalTableDefinition; }
+            set { this._externalTableDefinition = value; }
+        }
+
+        // Check to see if ExternalTableDefinition property is set
+        internal bool IsSetExternalTableDefinition()
+        {
+            return this._externalTableDefinition != null;
         }
 
         /// <summary>
@@ -265,8 +285,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3Settings. 
         /// <para>
-        /// Settings in JSON format for the target S3 endpoint. For more information about the
-        /// available settings, see the <b>Extra Connection Attributes</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
+        /// Settings in JSON format for the target Amazon S3 endpoint. For more information about
+        /// the available settings, see the <b>Extra Connection Attributes</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
         /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
         /// </para>
         /// </summary>
@@ -298,6 +318,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessRoleArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) for the service access role you want to use to create
+        /// the endpoint. 
+        /// </para>
+        /// </summary>
+        public string ServiceAccessRoleArn
+        {
+            get { return this._serviceAccessRoleArn; }
+            set { this._serviceAccessRoleArn = value; }
+        }
+
+        // Check to see if ServiceAccessRoleArn property is set
+        internal bool IsSetServiceAccessRoleArn()
+        {
+            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

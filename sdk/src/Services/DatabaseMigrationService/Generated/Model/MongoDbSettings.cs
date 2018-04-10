@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _databaseName;
         private string _docsToInvestigate;
         private string _extractDocId;
+        private string _kmsKeyId;
         private NestingLevelValue _nestingLevel;
         private string _password;
         private int? _port;
@@ -183,6 +184,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExtractDocId()
         {
             return this._extractDocId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        ///  The KMS key identifier that will be used to encrypt the connection parameters. If
+        /// you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
+        /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
+        /// Your AWS account has a different default encryption key for each AWS region. 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

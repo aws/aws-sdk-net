@@ -78,7 +78,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ReplicationInstanceTaskLogs. 
         /// <para>
         /// An array of replication task log metadata. Each member of the array contains the replication
-        /// task name, ARN, and task log size (in bytes).
+        /// task name, ARN, and task log size (in bytes). 
         /// </para>
         /// </summary>
         public List<ReplicationInstanceTaskLog> ReplicationInstanceTaskLogs

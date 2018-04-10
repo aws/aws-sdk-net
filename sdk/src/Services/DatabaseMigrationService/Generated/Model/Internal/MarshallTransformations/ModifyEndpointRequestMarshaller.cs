@@ -114,6 +114,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EngineName);
                 }
 
+                if(publicRequest.IsSetExternalTableDefinition())
+                {
+                    context.Writer.WritePropertyName("ExternalTableDefinition");
+                    context.Writer.Write(publicRequest.ExternalTableDefinition);
+                }
+
                 if(publicRequest.IsSetExtraConnectionAttributes())
                 {
                     context.Writer.WritePropertyName("ExtraConnectionAttributes");
@@ -158,6 +164,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ServerName");
                     context.Writer.Write(publicRequest.ServerName);
+                }
+
+                if(publicRequest.IsSetServiceAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
                 }
 
                 if(publicRequest.IsSetSslMode())

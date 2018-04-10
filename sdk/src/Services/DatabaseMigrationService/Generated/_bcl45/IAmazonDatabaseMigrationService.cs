@@ -54,10 +54,10 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Adds metadata tags to a DMS resource, including replication instance, endpoint, security
-        /// group, and migration task. These tags can also be used with cost allocation reporting
-        /// to track cost associated with DMS resources, or used in a Condition statement in an
-        /// IAM policy for DMS.
+        /// Adds metadata tags to an AWS DMS resource, including replication instance, endpoint,
+        /// security group, and migration task. These tags can also be used with cost allocation
+        /// reporting to track cost associated with DMS resources, or used in a Condition statement
+        /// in an IAM policy for DMS.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -1538,6 +1538,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
         /// 
         /// <returns>The response from the StartReplicationTask service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
