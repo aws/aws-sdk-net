@@ -110,6 +110,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The Targets parameter includes too many tags. Remove one or more tags and try the
         /// command again.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
@@ -3256,12 +3259,6 @@ namespace Amazon.SimpleSystemsManagement
         /// Retrieves the default patch baseline. Note that Systems Manager supports creating
         /// multiple default patch baselines. For example, you can create a default patch baseline
         /// for each operating system.
-        /// 
-        ///  
-        /// <para>
-        /// If you do not specify an operating system value, the default patch baseline for Windows
-        /// is returned.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
         /// 
@@ -5670,6 +5667,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource type is not valid. For example, if you are attempting to tag an instance,
         /// the instance must be a registered, managed instance.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
@@ -6457,35 +6457,35 @@ namespace Amazon.SimpleSystemsManagement
         /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
         /// but you can change the following values:
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+        /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
         /// to AWS-RunShellScript.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// ServiceRoleArn
+        /// Service role ARN.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// TaskInvocationParameters
+        /// Task parameters.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// Priority
+        /// Task priority.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// MaxConcurrency
+        /// Task MaxConcurrency and MaxErrors.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// MaxErrors
+        /// Log location.
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// If a parameter is null, then the corresponding field is not modified. Also, if you
-        /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
+        /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
         /// action are required for this request. Optional fields that aren't specified are set
         /// to null.
         /// </para>

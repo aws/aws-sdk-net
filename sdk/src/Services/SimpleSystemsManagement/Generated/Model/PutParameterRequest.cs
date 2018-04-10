@@ -66,11 +66,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Information about the parameter that you want to add to the system.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Do not enter personally identifiable information in this field.
-        /// </para>
-        ///  </important>
         /// </summary>
         public string Description
         {

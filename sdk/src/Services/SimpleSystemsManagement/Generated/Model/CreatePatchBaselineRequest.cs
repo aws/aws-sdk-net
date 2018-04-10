@@ -75,13 +75,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A list of explicitly approved patches for the baseline.
         /// </para>
-        ///  
-        /// <para>
-        /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
-        /// </para>
         /// </summary>
         public List<string> ApprovedPatches
         {
@@ -99,8 +92,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApprovedPatchesComplianceLevel. 
         /// <para>
         /// Defines the compliance level for approved patches. This means that if an approved
-        /// patch is reported as missing, this is the severity of the compliance violation. The
-        /// default value is UNSPECIFIED.
+        /// patch is reported as missing, this is the severity of the compliance violation. Valid
+        /// compliance severity levels include the following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL,
+        /// UNSPECIFIED. The default value is UNSPECIFIED.
         /// </para>
         /// </summary>
         public PatchComplianceLevel ApprovedPatchesComplianceLevel
@@ -229,13 +223,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property RejectedPatches. 
         /// <para>
         /// A list of explicitly rejected patches for the baseline.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about accepted formats for lists of approved patches and rejected
-        /// patches, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-        /// Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems Manager
-        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> RejectedPatches
