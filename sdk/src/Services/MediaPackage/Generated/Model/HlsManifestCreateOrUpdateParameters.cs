@@ -28,19 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// An HTTP Live Streaming (HLS) packaging configuration.
+    /// A HTTP Live Streaming (HLS) manifest configuration.
     /// </summary>
-    public partial class HlsPackage
+    public partial class HlsManifestCreateOrUpdateParameters
     {
         private AdMarkers _adMarkers;
-        private HlsEncryption _encryption;
+        private string _id;
         private bool? _includeIframeOnlyStream;
+        private string _manifestName;
         private PlaylistType _playlistType;
         private int? _playlistWindowSeconds;
         private int? _programDateTimeIntervalSeconds;
-        private int? _segmentDurationSeconds;
-        private StreamSelection _streamSelection;
-        private bool? _useAudioRenditionGroup;
 
         /// <summary>
         /// Gets and sets the property AdMarkers. This setting controls how ad markers are included
@@ -62,18 +60,19 @@ namespace Amazon.MediaPackage.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encryption.
+        /// Gets and sets the property Id. The ID of the manifest. The ID must be unique within
+        /// the OriginEndpoint and it cannot be changed after it is created.
         /// </summary>
-        public HlsEncryption Encryption
+        public string Id
         {
-            get { return this._encryption; }
-            set { this._encryption = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Encryption property is set
-        internal bool IsSetEncryption()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._encryption != null;
+            return this._id != null;
         }
 
         /// <summary>
@@ -90,6 +89,23 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetIncludeIframeOnlyStream()
         {
             return this._includeIframeOnlyStream.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestName. An optional short string appended to the
+        /// end of the OriginEndpoint URL. If not specified, defaults to the manifestName for
+        /// the OriginEndpoint.
+        /// </summary>
+        public string ManifestName
+        {
+            get { return this._manifestName; }
+            set { this._manifestName = value; }
+        }
+
+        // Check to see if ManifestName property is set
+        internal bool IsSetManifestName()
+        {
+            return this._manifestName != null;
         }
 
         /// <summary>
@@ -145,53 +161,6 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetProgramDateTimeIntervalSeconds()
         {
             return this._programDateTimeIntervalSeconds.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each fragment.
-        /// Actual fragments will berounded to the nearest multiple of the source fragment duration.
-        /// </summary>
-        public int SegmentDurationSeconds
-        {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
-            set { this._segmentDurationSeconds = value; }
-        }
-
-        // Check to see if SegmentDurationSeconds property is set
-        internal bool IsSetSegmentDurationSeconds()
-        {
-            return this._segmentDurationSeconds.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property StreamSelection.
-        /// </summary>
-        public StreamSelection StreamSelection
-        {
-            get { return this._streamSelection; }
-            set { this._streamSelection = value; }
-        }
-
-        // Check to see if StreamSelection property is set
-        internal bool IsSetStreamSelection()
-        {
-            return this._streamSelection != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UseAudioRenditionGroup. When enabled, audio streams will
-        /// be placed in rendition groups in the output.
-        /// </summary>
-        public bool UseAudioRenditionGroup
-        {
-            get { return this._useAudioRenditionGroup.GetValueOrDefault(); }
-            set { this._useAudioRenditionGroup = value; }
-        }
-
-        // Check to see if UseAudioRenditionGroup property is set
-        internal bool IsSetUseAudioRenditionGroup()
-        {
-            return this._useAudioRenditionGroup.HasValue; 
         }
 
     }

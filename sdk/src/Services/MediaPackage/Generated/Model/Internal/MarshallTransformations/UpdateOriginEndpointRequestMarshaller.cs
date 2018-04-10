@@ -68,6 +68,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCmafPackage())
+                {
+                    context.Writer.WritePropertyName("cmafPackage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmafPackageCreateOrUpdateParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmafPackage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDashPackage())
                 {
                     context.Writer.WritePropertyName("dashPackage");

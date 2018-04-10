@@ -71,6 +71,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ChannelId);
                 }
 
+                if(publicRequest.IsSetCmafPackage())
+                {
+                    context.Writer.WritePropertyName("cmafPackage");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CmafPackageCreateOrUpdateParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CmafPackage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDashPackage())
                 {
                     context.Writer.WritePropertyName("dashPackage");

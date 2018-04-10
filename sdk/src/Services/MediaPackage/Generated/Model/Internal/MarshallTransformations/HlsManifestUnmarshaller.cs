@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OriginEndpoint Object
+    /// Response Unmarshaller for HlsManifest Object
     /// </summary>  
-    public class OriginEndpointUnmarshaller : IUnmarshaller<OriginEndpoint, XmlUnmarshallerContext>, IUnmarshaller<OriginEndpoint, JsonUnmarshallerContext>
+    public class HlsManifestUnmarshaller : IUnmarshaller<HlsManifest, XmlUnmarshallerContext>, IUnmarshaller<HlsManifest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OriginEndpoint IUnmarshaller<OriginEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HlsManifest IUnmarshaller<HlsManifest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,21 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OriginEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public HlsManifest Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OriginEndpoint unmarshalledObject = new OriginEndpoint();
+            HlsManifest unmarshalledObject = new HlsManifest();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("adMarkers", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("channelId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cmafPackage", targetDepth))
-                {
-                    var unmarshaller = CmafPackageUnmarshaller.Instance;
-                    unmarshalledObject.CmafPackage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dashPackage", targetDepth))
-                {
-                    var unmarshaller = DashPackageUnmarshaller.Instance;
-                    unmarshalledObject.DashPackage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("hlsPackage", targetDepth))
-                {
-                    var unmarshaller = HlsPackageUnmarshaller.Instance;
-                    unmarshalledObject.HlsPackage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -106,28 +76,34 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeIframeOnlyStream", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("mssPackage", targetDepth))
+                if (context.TestExpression("playlistType", targetDepth))
                 {
-                    var unmarshaller = MssPackageUnmarshaller.Instance;
-                    unmarshalledObject.MssPackage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlaylistType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("startoverWindowSeconds", targetDepth))
+                if (context.TestExpression("playlistWindowSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.StartoverWindowSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlaylistWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("timeDelaySeconds", targetDepth))
+                if (context.TestExpression("programDateTimeIntervalSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TimeDelaySeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("url", targetDepth))
@@ -136,24 +112,18 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("whitelist", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Whitelist = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static OriginEndpointUnmarshaller _instance = new OriginEndpointUnmarshaller();        
+        private static HlsManifestUnmarshaller _instance = new HlsManifestUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OriginEndpointUnmarshaller Instance
+        public static HlsManifestUnmarshaller Instance
         {
             get
             {

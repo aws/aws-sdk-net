@@ -34,6 +34,7 @@ namespace Amazon.MediaPackage.Model
     public partial class CreateOriginEndpointRequest : AmazonMediaPackageRequest
     {
         private string _channelId;
+        private CmafPackageCreateOrUpdateParameters _cmafPackage;
         private DashPackage _dashPackage;
         private string _description;
         private HlsPackage _hlsPackage;
@@ -58,6 +59,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetChannelId()
         {
             return this._channelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmafPackage.
+        /// </summary>
+        public CmafPackageCreateOrUpdateParameters CmafPackage
+        {
+            get { return this._cmafPackage; }
+            set { this._cmafPackage = value; }
+        }
+
+        // Check to see if CmafPackage property is set
+        internal bool IsSetCmafPackage()
+        {
+            return this._cmafPackage != null;
         }
 
         /// <summary>
