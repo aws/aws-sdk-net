@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.262.0",
+    "ProductVersion" : "3.3.263.0",
     "CoreVersion"    : "3.3.21.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -721,7 +721,7 @@
             "InPreview"               : false
         },
         "CloudDirectory"                  : {
-            "Version" : "3.3.6.3",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"

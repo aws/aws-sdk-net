@@ -1,3 +1,7 @@
+### 3.3.263.0 (2018-04-10 00:37 UTC)
+* CloudDirectory (3.3.7.0)
+	* Cloud Directory customers can fetch attributes within a facet on an object with the new GetObjectAttributes API and can fetch attributes from multiple facets or objects with the BatchGetObjectAttributes operation.
+
 ### 3.3.262.0 (2018-04-06 19:43 UTC)
 * Batch (3.3.5.0)
 	* Support for Timeout in SubmitJob and RegisterJobDefinition
