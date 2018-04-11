@@ -1,3 +1,15 @@
+### 3.3.264.0 (2018-04-10 23:42 UTC)
+* DatabaseMigrationService (3.3.7.0)
+	* Native Change Data Capture start point and task recovery support in Database Migration Service.  
+* Glue (3.3.7.0)
+	* "AWS Glue now supports timeout values for ETL jobs. With this release, all new ETL jobs have a default timeout value of 48 hours. AWS Glue also now supports the ability to start a schedule or job events trigger when it is created."
+* MediaPackage (3.3.1.0)
+	* Adds a new OriginEndpoint package type CmafPackage in MediaPackage. Origin endpoints can now be configured to use the Common Media Application Format (CMAF) media streaming format. This version of CmafPackage only supports HTTP Live Streaming (HLS) manifests with fragmented MP4.
+* SimpleSystemsManagement (3.3.19.0)
+	* Added TooManyUpdates exception for AddTagsToResource and RemoveTagsFromResource API
+* WorkMail (3.3.1.0)
+	* Amazon WorkMail adds the ability to grant users and groups with "Full Access", "Send As" and "Send on Behalf" permissions on a given mailbox.
+
 ### 3.3.263.0 (2018-04-10 00:37 UTC)
 * CloudDirectory (3.3.7.0)
 	* Cloud Directory customers can fetch attributes within a facet on an object with the new GetObjectAttributes API and can fetch attributes from multiple facets or objects with the BatchGetObjectAttributes operation.

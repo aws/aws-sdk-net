@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.263.0",
+    "ProductVersion" : "3.3.264.0",
     "CoreVersion"    : "3.3.21.20",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.18.1",
+            "Version" : "3.3.19.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -521,7 +521,7 @@
             "InPreview"               : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.6.3",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.6.1",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -865,7 +865,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -1033,7 +1033,7 @@
             "InPreview"               : false
         },
         "WorkMail"                        : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
