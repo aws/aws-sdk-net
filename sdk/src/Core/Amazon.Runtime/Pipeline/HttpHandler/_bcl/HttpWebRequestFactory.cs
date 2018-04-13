@@ -29,6 +29,42 @@ namespace Amazon.Runtime.Internal
     /// </summary>    
     public class HttpWebRequestFactory : IHttpRequestFactory<Stream>
     {
+        private const SecurityProtocolType Tls11 = (SecurityProtocolType)0x00000300; // 0x00000300 adds support for TLS 1.1
+        private const SecurityProtocolType Tls12 = (SecurityProtocolType)0x00000C00; // 0x00000C00 adds support for TLS 1.2
+        private const SecurityProtocolType SupportedTls = Tls11 | Tls12;
+        private const SecurityProtocolType SystemDefault = (SecurityProtocolType)0x00000000; // 0x00000000 SystemDefault was introduced in .NET 4.7
+
+        private static ILogger _logger;
+
+        // Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
+        // do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
+        // version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2.
+        static HttpWebRequestFactory()
+        {
+            _logger = Logger.GetLogger(typeof(HttpWebRequestFactory));
+
+            if (ServicePointManager.SecurityProtocol == SystemDefault) return;
+
+            var existingSecurityProtocol = ServicePointManager.SecurityProtocol;
+            try
+            {
+                ServicePointManager.SecurityProtocol |= SupportedTls;
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotSupportedException)
+                {
+                    _logger.InfoFormat("TLS version 1.1 or 1.2 are not supported on this system. Some AWS services will refuse traffic." +
+                                       " Please consider updating to a system that supports newer security protocols.");
+                }
+                else
+                {
+                    _logger.InfoFormat("Unexpected error " + ex.GetType().Name + " encountered when trying to set Security Protocol.\n" + ex);
+                }
+                ServicePointManager.SecurityProtocol = existingSecurityProtocol;
+            }
+        }
+
         /// <summary>
         /// Creates an HTTP request for the given URI.
         /// </summary>
