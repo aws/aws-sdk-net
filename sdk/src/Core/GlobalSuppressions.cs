@@ -22,6 +22,8 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Runtime.Internal.Util.S3Uri.#.ctor(System.Uri)")]
 [module: SuppressMessage("AwsSdkRules", "CR1004:PreventRegionEndpointUseRule", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#DetermineRegion(System.String)")]
 
+// This private static logger variable is used for testing.
+[module: SuppressMessage("AwsSdkRules", "CR1002:PreventStaticLoggersRule", Scope="member", Target="Amazon.Runtime.Internal.HttpWebRequestFactory.#_logger")]
 
 // Avoid empty interfaces
 [module: SuppressMessage("Microsoft.Design", "CA1040:AvoidEmptyInterfaces", Scope="type", Target="Amazon.Runtime.IAsyncResponseContext")]
@@ -265,6 +267,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.PersistenceManager.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackCredentialsFactory.#.cctor()")]
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.Internal.HttpWebRequestFactory.#.cctor()")]
 
 // Abstract types should not have constructors
 [module: SuppressMessage("Microsoft.Design", "CA1012:AbstractTypesShouldNotHaveConstructors", Scope = "type", Target = "Amazon.Runtime.ClientConfig")]
