@@ -21,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
 using Amazon.Extensions.NETCore.Setup;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -45,7 +46,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         /// <summary>
         /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
-        /// created until it is requested. If the ServiceLifetime property is set to Singleon, the default, then the same
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.
         /// </summary>
         /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
@@ -59,7 +60,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         /// <summary>
         /// Adds the Amazon service client to the dependency injection framework. The Amazon service client is not
-        /// created until it is requested. If the ServiceLifetime property is set to Singleon, the default, then the same
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
         /// instance will be reused for the lifetime of the process and the object should not be disposed.
         /// </summary>
         /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
@@ -74,6 +75,40 @@ namespace Microsoft.Extensions.DependencyInjection
 
             var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
             collection.Add(descriptor);
+            return collection;
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
+            return TryAddAWSService<T>(collection, null, lifetime);
+        }
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework if the service type hasn't already been registered.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton,
+        /// the default, then the same instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3.</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddAWSService<T>(this IServiceCollection collection, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
+            Func<IServiceProvider, object> factory =
+                new ClientFactory(typeof(T), options).CreateServiceClient;
+
+            var descriptor = new ServiceDescriptor(typeof(T), factory, lifetime);
+            collection.TryAdd(descriptor);
             return collection;
         }
     }

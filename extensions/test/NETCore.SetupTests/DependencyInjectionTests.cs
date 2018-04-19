@@ -11,6 +11,7 @@ using Xunit;
 using Amazon;
 using Amazon.S3;
 using Amazon.Extensions.NETCore.Setup;
+using NETCore.SetupTests.TestClasses;
 
 namespace DependencyInjectionTests
 {
@@ -54,6 +55,30 @@ namespace DependencyInjectionTests
             Assert.Equal(RegionEndpoint.EUCentral1, controller.S3Client.Config.RegionEndpoint);
         }
 
+        [Fact]
+        public void TryAddServiceDontOverrideWhenAlreadySetup()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+
+            var mockS3 = new FakeS3();
+            services.AddSingleton<IAmazonS3>(mockS3);
+
+            services.AddDefaultAWSOptions(config.GetAWSOptions());
+            services.TryAddAWSService<IAmazonS3>(new AWSOptions { Region = RegionEndpoint.EUCentral1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+            var s3 = controller.S3Client;
+            Assert.NotNull(s3);
+            Assert.True(s3.GetType() == typeof(FakeS3));
+        }
+
         public class TestController
         {
             public IAmazonS3 S3Client { get; private set; }
@@ -62,6 +87,5 @@ namespace DependencyInjectionTests
                 S3Client = s3Client;
             }
         }
-
     }
 }
