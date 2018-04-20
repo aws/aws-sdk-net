@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
         private ArchiveOutputSettings _archiveOutputSettings;
         private HlsOutputSettings _hlsOutputSettings;
         private MsSmoothOutputSettings _msSmoothOutputSettings;
+        private RtmpOutputSettings _rtmpOutputSettings;
         private UdpOutputSettings _udpOutputSettings;
 
         /// <summary>
@@ -80,6 +81,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMsSmoothOutputSettings()
         {
             return this._msSmoothOutputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RtmpOutputSettings.
+        /// </summary>
+        public RtmpOutputSettings RtmpOutputSettings
+        {
+            get { return this._rtmpOutputSettings; }
+            set { this._rtmpOutputSettings = value; }
+        }
+
+        // Check to see if RtmpOutputSettings property is set
+        internal bool IsSetRtmpOutputSettings()
+        {
+            return this._rtmpOutputSettings != null;
         }
 
         /// <summary>

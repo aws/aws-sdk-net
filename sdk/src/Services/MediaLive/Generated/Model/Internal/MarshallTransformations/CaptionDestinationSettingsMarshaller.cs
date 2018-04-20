@@ -100,6 +100,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRtmpCaptionInfoDestinationSettings())
+            {
+                context.Writer.WritePropertyName("rtmpCaptionInfoDestinationSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RtmpCaptionInfoDestinationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RtmpCaptionInfoDestinationSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScte20PlusEmbeddedDestinationSettings())
             {
                 context.Writer.WritePropertyName("scte20PlusEmbeddedDestinationSettings");

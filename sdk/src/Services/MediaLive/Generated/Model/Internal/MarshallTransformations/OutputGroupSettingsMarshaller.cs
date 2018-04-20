@@ -78,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRtmpGroupSettings())
+            {
+                context.Writer.WritePropertyName("rtmpGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RtmpGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RtmpGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUdpGroupSettings())
             {
                 context.Writer.WritePropertyName("udpGroupSettings");

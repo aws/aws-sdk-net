@@ -123,6 +123,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TimedMetadataBehavior);
             }
 
+            if(requestObject.IsSetTimedMetadataPid())
+            {
+                context.Writer.WritePropertyName("timedMetadataPid");
+                context.Writer.Write(requestObject.TimedMetadataPid);
+            }
+
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");

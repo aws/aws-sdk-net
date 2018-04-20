@@ -89,8 +89,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property CertificateMode. If set to verifyAuthenticity, verify the
         /// https certificate chain to a trusted Certificate Authority (CA).  This will cause
-        /// https outputs to self-signed certificates to fail unless those certificates are manually
-        /// added to the OS trusted keystore.
+        /// https outputs to self-signed certificates to fail.
         /// </summary>
         public SmoothGroupCertificateMode CertificateMode
         {

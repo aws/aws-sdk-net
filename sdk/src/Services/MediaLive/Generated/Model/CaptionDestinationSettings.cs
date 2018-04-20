@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private DvbSubDestinationSettings _dvbSubDestinationSettings;
         private EmbeddedDestinationSettings _embeddedDestinationSettings;
         private EmbeddedPlusScte20DestinationSettings _embeddedPlusScte20DestinationSettings;
+        private RtmpCaptionInfoDestinationSettings _rtmpCaptionInfoDestinationSettings;
         private Scte20PlusEmbeddedDestinationSettings _scte20PlusEmbeddedDestinationSettings;
         private Scte27DestinationSettings _scte27DestinationSettings;
         private SmpteTtDestinationSettings _smpteTtDestinationSettings;
@@ -117,6 +118,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEmbeddedPlusScte20DestinationSettings()
         {
             return this._embeddedPlusScte20DestinationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RtmpCaptionInfoDestinationSettings.
+        /// </summary>
+        public RtmpCaptionInfoDestinationSettings RtmpCaptionInfoDestinationSettings
+        {
+            get { return this._rtmpCaptionInfoDestinationSettings; }
+            set { this._rtmpCaptionInfoDestinationSettings = value; }
+        }
+
+        // Check to see if RtmpCaptionInfoDestinationSettings property is set
+        internal bool IsSetRtmpCaptionInfoDestinationSettings()
+        {
+            return this._rtmpCaptionInfoDestinationSettings != null;
         }
 
         /// <summary>

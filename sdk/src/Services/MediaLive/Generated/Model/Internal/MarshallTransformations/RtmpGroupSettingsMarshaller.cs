@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputDestinationSettings Marshaller
+    /// RtmpGroupSettings Marshaller
     /// </summary>       
-    public class OutputDestinationSettingsMarshaller : IRequestMarshaller<OutputDestinationSettings, JsonMarshallerContext> 
+    public class RtmpGroupSettingsMarshaller : IRequestMarshaller<RtmpGroupSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(RtmpGroupSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPasswordParam())
+            if(requestObject.IsSetAuthenticationScheme())
             {
-                context.Writer.WritePropertyName("passwordParam");
-                context.Writer.Write(requestObject.PasswordParam);
+                context.Writer.WritePropertyName("authenticationScheme");
+                context.Writer.Write(requestObject.AuthenticationScheme);
             }
 
-            if(requestObject.IsSetStreamName())
+            if(requestObject.IsSetCacheFullBehavior())
             {
-                context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WritePropertyName("cacheFullBehavior");
+                context.Writer.Write(requestObject.CacheFullBehavior);
             }
 
-            if(requestObject.IsSetUrl())
+            if(requestObject.IsSetCacheLength())
             {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("cacheLength");
+                context.Writer.Write(requestObject.CacheLength);
             }
 
-            if(requestObject.IsSetUsername())
+            if(requestObject.IsSetCaptionData())
             {
-                context.Writer.WritePropertyName("username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WritePropertyName("captionData");
+                context.Writer.Write(requestObject.CaptionData);
+            }
+
+            if(requestObject.IsSetRestartDelay())
+            {
+                context.Writer.WritePropertyName("restartDelay");
+                context.Writer.Write(requestObject.RestartDelay);
             }
 
         }
@@ -74,7 +80,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OutputDestinationSettingsMarshaller Instance = new OutputDestinationSettingsMarshaller();
+        public readonly static RtmpGroupSettingsMarshaller Instance = new RtmpGroupSettingsMarshaller();
 
     }
 }

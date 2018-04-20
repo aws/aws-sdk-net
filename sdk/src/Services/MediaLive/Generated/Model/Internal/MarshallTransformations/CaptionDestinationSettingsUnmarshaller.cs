@@ -94,6 +94,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.EmbeddedPlusScte20DestinationSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rtmpCaptionInfoDestinationSettings", targetDepth))
+                {
+                    var unmarshaller = RtmpCaptionInfoDestinationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.RtmpCaptionInfoDestinationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte20PlusEmbeddedDestinationSettings", targetDepth))
                 {
                     var unmarshaller = Scte20PlusEmbeddedDestinationSettingsUnmarshaller.Instance;

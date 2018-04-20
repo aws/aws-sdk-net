@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputDestinationSettings Marshaller
+    /// RtmpOutputSettings Marshaller
     /// </summary>       
-    public class OutputDestinationSettingsMarshaller : IRequestMarshaller<OutputDestinationSettings, JsonMarshallerContext> 
+    public class RtmpOutputSettingsMarshaller : IRequestMarshaller<RtmpOutputSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(RtmpOutputSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPasswordParam())
+            if(requestObject.IsSetCertificateMode())
             {
-                context.Writer.WritePropertyName("passwordParam");
-                context.Writer.Write(requestObject.PasswordParam);
+                context.Writer.WritePropertyName("certificateMode");
+                context.Writer.Write(requestObject.CertificateMode);
             }
 
-            if(requestObject.IsSetStreamName())
+            if(requestObject.IsSetConnectionRetryInterval())
             {
-                context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WritePropertyName("connectionRetryInterval");
+                context.Writer.Write(requestObject.ConnectionRetryInterval);
             }
 
-            if(requestObject.IsSetUrl())
+            if(requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutputLocationRefMarshaller.Instance;
+                marshaller.Marshall(requestObject.Destination, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetUsername())
+            if(requestObject.IsSetNumRetries())
             {
-                context.Writer.WritePropertyName("username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WritePropertyName("numRetries");
+                context.Writer.Write(requestObject.NumRetries);
             }
 
         }
@@ -74,7 +79,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OutputDestinationSettingsMarshaller Instance = new OutputDestinationSettingsMarshaller();
+        public readonly static RtmpOutputSettingsMarshaller Instance = new RtmpOutputSettingsMarshaller();
 
     }
 }

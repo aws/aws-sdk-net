@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class OutputDestinationSettings
     {
         private string _passwordParam;
+        private string _streamName;
         private string _url;
         private string _username;
 
@@ -50,6 +51,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPasswordParam()
         {
             return this._passwordParam != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamName. Stream name for RTMP destinations (URLs of
+        /// type rtmp://)
+        /// </summary>
+        public string StreamName
+        {
+            get { return this._streamName; }
+            set { this._streamName = value; }
+        }
+
+        // Check to see if StreamName property is set
+        internal bool IsSetStreamName()
+        {
+            return this._streamName != null;
         }
 
         /// <summary>

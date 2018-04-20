@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputDestinationSettings Object
+    /// Response Unmarshaller for RtmpCaptionInfoDestinationSettings Object
     /// </summary>  
-    public class OutputDestinationSettingsUnmarshaller : IUnmarshaller<OutputDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<OutputDestinationSettings, JsonUnmarshallerContext>
+    public class RtmpCaptionInfoDestinationSettingsUnmarshaller : IUnmarshaller<RtmpCaptionInfoDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<RtmpCaptionInfoDestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputDestinationSettings IUnmarshaller<OutputDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RtmpCaptionInfoDestinationSettings IUnmarshaller<RtmpCaptionInfoDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,53 +53,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public RtmpCaptionInfoDestinationSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputDestinationSettings unmarshalledObject = new OutputDestinationSettings();
+            RtmpCaptionInfoDestinationSettings unmarshalledObject = new RtmpCaptionInfoDestinationSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("passwordParam", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PasswordParam = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static OutputDestinationSettingsUnmarshaller _instance = new OutputDestinationSettingsUnmarshaller();        
+        private static RtmpCaptionInfoDestinationSettingsUnmarshaller _instance = new RtmpCaptionInfoDestinationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputDestinationSettingsUnmarshaller Instance
+        public static RtmpCaptionInfoDestinationSettingsUnmarshaller Instance
         {
             get
             {

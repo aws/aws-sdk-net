@@ -142,6 +142,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimedMetadataBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timedMetadataPid", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimedMetadataPid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("transportStreamId", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

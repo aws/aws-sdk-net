@@ -515,6 +515,22 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.RtmpGroupSettings.CacheLength</property>
+    <min>30</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.RtmpGroupSettings.RestartDelay</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.RtmpOutputSettings.ConnectionRetryInterval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.RtmpOutputSettings.NumRetries</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Scte20SourceSettings.Source608ChannelNumber</property>
     <min>1</min>
     <max>4</max>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputSettings Object
+    /// Response Unmarshaller for RtmpGroupSettings Object
     /// </summary>  
-    public class OutputSettingsUnmarshaller : IUnmarshaller<OutputSettings, XmlUnmarshallerContext>, IUnmarshaller<OutputSettings, JsonUnmarshallerContext>
+    public class RtmpGroupSettingsUnmarshaller : IUnmarshaller<RtmpGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<RtmpGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputSettings IUnmarshaller<OutputSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RtmpGroupSettings IUnmarshaller<RtmpGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,45 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputSettings Unmarshall(JsonUnmarshallerContext context)
+        public RtmpGroupSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputSettings unmarshalledObject = new OutputSettings();
+            RtmpGroupSettings unmarshalledObject = new RtmpGroupSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("archiveOutputSettings", targetDepth))
+                if (context.TestExpression("authenticationScheme", targetDepth))
                 {
-                    var unmarshaller = ArchiveOutputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ArchiveOutputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationScheme = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("hlsOutputSettings", targetDepth))
+                if (context.TestExpression("cacheFullBehavior", targetDepth))
                 {
-                    var unmarshaller = HlsOutputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsOutputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CacheFullBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("msSmoothOutputSettings", targetDepth))
+                if (context.TestExpression("cacheLength", targetDepth))
                 {
-                    var unmarshaller = MsSmoothOutputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MsSmoothOutputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CacheLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rtmpOutputSettings", targetDepth))
+                if (context.TestExpression("captionData", targetDepth))
                 {
-                    var unmarshaller = RtmpOutputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RtmpOutputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CaptionData = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("udpOutputSettings", targetDepth))
+                if (context.TestExpression("restartDelay", targetDepth))
                 {
-                    var unmarshaller = UdpOutputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.UdpOutputSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RestartDelay = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputSettingsUnmarshaller _instance = new OutputSettingsUnmarshaller();        
+        private static RtmpGroupSettingsUnmarshaller _instance = new RtmpGroupSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputSettingsUnmarshaller Instance
+        public static RtmpGroupSettingsUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputDestinationSettings Marshaller
+    /// RtmpCaptionInfoDestinationSettings Marshaller
     /// </summary>       
-    public class OutputDestinationSettingsMarshaller : IRequestMarshaller<OutputDestinationSettings, JsonMarshallerContext> 
+    public class RtmpCaptionInfoDestinationSettingsMarshaller : IRequestMarshaller<RtmpCaptionInfoDestinationSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,38 +43,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDestinationSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(RtmpCaptionInfoDestinationSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetPasswordParam())
-            {
-                context.Writer.WritePropertyName("passwordParam");
-                context.Writer.Write(requestObject.PasswordParam);
-            }
-
-            if(requestObject.IsSetStreamName())
-            {
-                context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
-            }
-
-            if(requestObject.IsSetUrl())
-            {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
-            }
-
-            if(requestObject.IsSetUsername())
-            {
-                context.Writer.WritePropertyName("username");
-                context.Writer.Write(requestObject.Username);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OutputDestinationSettingsMarshaller Instance = new OutputDestinationSettingsMarshaller();
+        public readonly static RtmpCaptionInfoDestinationSettingsMarshaller Instance = new RtmpCaptionInfoDestinationSettingsMarshaller();
 
     }
 }

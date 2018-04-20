@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
         private ArchiveGroupSettings _archiveGroupSettings;
         private HlsGroupSettings _hlsGroupSettings;
         private MsSmoothGroupSettings _msSmoothGroupSettings;
+        private RtmpGroupSettings _rtmpGroupSettings;
         private UdpGroupSettings _udpGroupSettings;
 
         /// <summary>
@@ -80,6 +81,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetMsSmoothGroupSettings()
         {
             return this._msSmoothGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RtmpGroupSettings.
+        /// </summary>
+        public RtmpGroupSettings RtmpGroupSettings
+        {
+            get { return this._rtmpGroupSettings; }
+            set { this._rtmpGroupSettings = value; }
+        }
+
+        // Check to see if RtmpGroupSettings property is set
+        internal bool IsSetRtmpGroupSettings()
+        {
+            return this._rtmpGroupSettings != null;
         }
 
         /// <summary>
