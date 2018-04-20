@@ -1,3 +1,23 @@
+### 3.3.265.0 (2018-04-20 00:33 UTC)
+* CodePipeline (3.3.3.0)
+	* Added new SourceRevision structure to Execution Summary with accompanying definitions as needed in the AWS CodePipeline API Guide.
+* CostExplorer (3.3.3.0)
+	* Starting today, you can identify opportunities for Amazon RDS cost savings using AWS Cost Explorer's API to access your Amazon RDS Reserved Instance Purchase Recommendations
+* DeviceFarm (3.3.6.0)
+	* Adding support for VPCEndpoint feature. Allows customers to be able to access their private endpoints/services running in their VPC during test automation.
+* EC2 (3.3.48.0)
+	* Added support for customers to see the time at which a Dedicated Host was allocated or released.
+* RDS (3.3.22.0)
+	* The ModifyDBCluster operation now includes an EngineVersion parameter. You can use this to upgrade the engine for a clustered database.
+* SecretsManager (3.3.0.1)
+	* Documentation updates
+* SimpleSystemsManagement (3.3.20.0)
+	* Added new APIs DeleteInventory and DescribeInventoryDeletions, for customers to delete their custom inventory data.
+* Core 3.3.21.21
+	* The new CloudHSM is now available in the AWS GovCloud (US).
+
+
+
 ### 3.3.264.0 (2018-04-10 23:42 UTC)
 * DatabaseMigrationService (3.3.7.0)
 	* Native Change Data Capture start point and task recovery support in Database Migration Service.  

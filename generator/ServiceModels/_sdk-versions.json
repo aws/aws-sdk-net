@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.264.0",
-    "CoreVersion"    : "3.3.21.20",
+    "ProductVersion" : "3.3.265.0",
+    "CoreVersion"    : "3.3.21.21",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -127,7 +127,7 @@
             "InPreview"               : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.3.5.0",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.47.3",
+            "Version" : "3.3.48.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.21.5",
+            "Version" : "3.3.22.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.19.0",
+            "Version" : "3.3.20.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -417,7 +417,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.2.6",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.2.1",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.19"
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.21.20"
