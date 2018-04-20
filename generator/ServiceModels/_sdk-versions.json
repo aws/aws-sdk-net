@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.266.0",
+    "ProductVersion" : "3.3.267.0",
     "CoreVersion"    : "3.3.22.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -441,7 +441,7 @@
             "InPreview"               : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.3.3.4",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.0"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.0"
