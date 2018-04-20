@@ -35,9 +35,9 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The AWS Secrets Manager console uses only the <code>SecretString</code> field. To
-    /// add binary data to a secret with the <code>SecretBinary</code> field you must use
-    /// the AWS CLI or one of the AWS SDKs.
+    /// The Secrets Manager console uses only the <code>SecretString</code> field. To add
+    /// binary data to a secret with the <code>SecretBinary</code> field you must use the
+    /// AWS CLI or one of the AWS SDKs.
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
@@ -65,17 +65,17 @@ namespace Amazon.SecretsManager.Model
     /// Manager also automatically moves the staging label <code>AWSPREVIOUS</code> to the
     /// version that <code>AWSCURRENT</code> was removed from.
     /// </para>
-    ///  </li> </ul> <important> <ul> <li> 
+    ///  </li> </ul> <note> <ul> <li> 
     /// <para>
     /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
     /// and <code>SecretBinary</code> for a secret in the same account as the calling user
-    /// and that secret doesn't specify a KMS encryption key, AWS Secrets Manager uses the
-    /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-    /// If this key doesn't already exist in your account then AWS Secrets Manager creates
-    /// it for you automatically. All users in the same AWS account automatically have access
-    /// to use the default CMK. Note that if an AWS Secrets Manager API call results in AWS
-    /// having to create the account's AWS-managed CMK, it can result in a one-time significant
-    /// delay in returning the result.
+    /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
+    /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+    /// If this key doesn't already exist in your account then Secrets Manager creates it
+    /// for you automatically. All users in the same AWS account automatically have access
+    /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
+    /// to create the account's AWS-managed CMK, it can result in a one-time significant delay
+    /// in returning the result.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.SecretsManager.Model
     /// using credentials from a different account then the KMS key policy must grant cross-account
     /// access to that other account's user or role.
     /// </para>
-    ///  </li> </ul> </important> 
+    ///  </li> </ul> </note> 
     /// <para>
     ///  <b>Minimum permissions</b> 
     /// </para>
@@ -151,7 +151,7 @@ namespace Amazon.SecretsManager.Model
         /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
         /// that in the request. If you don't use the SDK and instead generate a raw HTTP request
-        /// to the AWS Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
+        /// to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
         /// yourself for new versions and include that value in the request. 
         /// </para>
         ///  </note> 
@@ -229,11 +229,6 @@ namespace Amazon.SecretsManager.Model
         /// the Amazon Resource Name (ARN) or the friendly name of the secret. The secret must
         /// already exist.
         /// </para>
-        ///  
-        /// <para>
-        /// The secret name can consist of uppercase letters, lowercase letters, digits, and any
-        /// of the following characters: /_+=.@-    Spaces are not permitted.
-        /// </para>
         /// </summary>
         public string SecretId
         {
@@ -297,7 +292,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager
+        /// If you do not specify a value for <code>VersionStages</code> then Secrets Manager
         /// automatically moves the staging label <code>AWSCURRENT</code> to this new version.
         /// </para>
         /// </summary>

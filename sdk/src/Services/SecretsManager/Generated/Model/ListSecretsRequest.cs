@@ -29,8 +29,8 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecrets operation.
-    /// Lists all of the secrets that are stored by AWS Secrets Manager in the AWS account.
-    /// To list the versions currently stored for a specific secret, use <a>ListSecretVersionIds</a>.
+    /// Lists all of the secrets that are stored by Secrets Manager in the AWS account. To
+    /// list the versions currently stored for a specific secret, use <a>ListSecretVersionIds</a>.
     /// The encrypted fields <code>SecretString</code> and <code>SecretBinary</code> are not
     /// included in the output. To get that information, call the <a>GetSecretValue</a> operation.
     /// 
@@ -77,7 +77,7 @@ namespace Amazon.SecretsManager.Model
         /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
         /// response element is present and has a value (isn't null). Include that value as the
         /// <code>NextToken</code> request parameter in the next call to the operation to get
-        /// the next part of the results. Note that AWS Secrets Manager might return fewer results
+        /// the next part of the results. Note that Secrets Manager might return fewer results
         /// than the maximum even when there are more results available. You should check <code>NextToken</code>
         /// after every operation to ensure that you receive all of the results.
         /// </para>

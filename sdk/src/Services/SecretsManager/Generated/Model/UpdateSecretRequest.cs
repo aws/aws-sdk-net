@@ -39,10 +39,10 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The AWS Secrets Manager console uses only the <code>SecretString</code> parameter
-    /// and therefore limits you to encrypting and storing only a text string. To encrypt
-    /// and store binary data as part of the version of a secret, you must use either the
-    /// AWS CLI or one of the AWS SDKs.
+    /// The Secrets Manager console uses only the <code>SecretString</code> parameter and
+    /// therefore limits you to encrypting and storing only a text string. To encrypt and
+    /// store binary data as part of the version of a secret, you must use either the AWS
+    /// CLI or one of the AWS SDKs.
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
@@ -58,17 +58,17 @@ namespace Amazon.SecretsManager.Model
     /// parameter already exists, the operation generates an error. You cannot modify an existing
     /// version, you can only create new ones.
     /// </para>
-    ///  </li> </ul> <important> <ul> <li> 
+    ///  </li> </ul> <note> <ul> <li> 
     /// <para>
     /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
     /// and <code>SecretBinary</code> for a secret in the same account as the calling user
-    /// and that secret doesn't specify a KMS encryption key, AWS Secrets Manager uses the
-    /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-    /// If this key doesn't already exist in your account then AWS Secrets Manager creates
-    /// it for you automatically. All users in the same AWS account automatically have access
-    /// to use the default CMK. Note that if an AWS Secrets Manager API call results in AWS
-    /// having to create the account's AWS-managed CMK, it can result in a one-time significant
-    /// delay in returning the result.
+    /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
+    /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+    /// If this key doesn't already exist in your account then Secrets Manager creates it
+    /// for you automatically. All users in the same AWS account automatically have access
+    /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
+    /// to create the account's AWS-managed CMK, it can result in a one-time significant delay
+    /// in returning the result.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.SecretsManager.Model
     /// using credentials from a different account then the KMS key policy must grant cross-account
     /// access to that other account's user or role.
     /// </para>
-    ///  </li> </ul> </important> 
+    ///  </li> </ul> </note> 
     /// <para>
     ///  <b>Minimum permissions</b> 
     /// </para>
@@ -145,7 +145,7 @@ namespace Amazon.SecretsManager.Model
         /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
         /// that in the request. If you don't use the SDK and instead generate a raw HTTP request
-        /// to the AWS Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
+        /// to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
         /// yourself for new versions and include that value in the request.
         /// </para>
         ///  
@@ -222,8 +222,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If you don't specify this value, then Secrets Manager defaults to using the default
         /// CMK in the account (the one named <code>aws/secretsmanager</code>). If a KMS CMK with
-        /// that name doesn't exist, then AWS Secrets Manager creates it for you automatically
-        /// the first time it needs to encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
+        /// that name doesn't exist, then Secrets Manager creates it for you automatically the
+        /// first time it needs to encrypt a version's <code>Plaintext</code> or <code>PlaintextString</code>
         /// fields.
         /// </para>
         ///  <important> 

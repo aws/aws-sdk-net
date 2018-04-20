@@ -29,8 +29,8 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecret operation.
-    /// Creates a new secret. A secret in AWS Secrets Manager consists of both the protected
-    /// secret data and the important information needed to manage the secret.
+    /// Creates a new secret. A secret in Secrets Manager consists of both the protected secret
+    /// data and the important information needed to manage the secret.
     /// 
     ///  
     /// <para>
@@ -50,17 +50,17 @@ namespace Amazon.SecretsManager.Model
     /// an initial secret version and, if you don't supply a staging label, automatically
     /// maps the new version's ID to the staging label <code>AWSCURRENT</code>.
     /// </para>
-    ///  <important> <ul> <li> 
+    ///  <note> <ul> <li> 
     /// <para>
     /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
     /// and <code>SecretBinary</code> for a secret in the same account as the calling user
-    /// and that secret doesn't specify a KMS encryption key, AWS Secrets Manager uses the
-    /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
-    /// If this key doesn't already exist in your account then AWS Secrets Manager creates
-    /// it for you automatically. All users in the same AWS account automatically have access
-    /// to use the default CMK. Note that if an AWS Secrets Manager API call results in AWS
-    /// having to create the account's AWS-managed CMK, it can result in a one-time significant
-    /// delay in returning the result.
+    /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
+    /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+    /// If this key doesn't already exist in your account then Secrets Manager creates it
+    /// for you automatically. All users in the same AWS account automatically have access
+    /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
+    /// to create the account's AWS-managed CMK, it can result in a one-time significant delay
+    /// in returning the result.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,11 @@ namespace Amazon.SecretsManager.Model
     /// using credentials from a different account then the KMS key policy must grant cross-account
     /// access to that other account's user or role.
     /// </para>
-    ///  </li> </ul> </important> 
+    ///  </li> </ul> </note> 
+    /// <para>
+    ///  
+    /// </para>
+    ///  
     /// <para>
     ///  <b>Minimum permissions</b> 
     /// </para>
@@ -151,8 +155,8 @@ namespace Amazon.SecretsManager.Model
         /// If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes
         /// as the value for this parameter in the request. If you don't use the SDK and instead
-        /// generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-        /// must generate a <code>ClientRequestToken</code> yourself for the new version and include
+        /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+        /// generate a <code>ClientRequestToken</code> yourself for the new version and include
         /// that value in the request.
         /// </para>
         ///  </note> 
@@ -226,8 +230,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If you don't specify this value, then Secrets Manager defaults to using the AWS account's
         /// default CMK (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that
-        /// name doesn't yet exist, then AWS Secrets Manager creates it for you automatically
-        /// the first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code>
+        /// name doesn't yet exist, then Secrets Manager creates it for you automatically the
+        /// first time it needs to encrypt a version's <code>SecretString</code> or <code>SecretBinary</code>
         /// fields.
         /// </para>
         ///  <important> 
@@ -254,9 +258,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the friendly name of the new secret. The secret name can consist of uppercase
-        /// letters, lowercase letters, digits, and any of the following characters: /_+=.@-    Spaces
-        /// are not permitted.
+        /// Specifies the friendly name of the new secret.
         /// </para>
         /// </summary>
         public string Name
@@ -370,8 +372,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
-        /// AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is
-        /// a different tag from one with key "abc".
+        /// Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different
+        /// tag from one with key "abc".
         /// </para>
         ///  </li> <li> 
         /// <para>

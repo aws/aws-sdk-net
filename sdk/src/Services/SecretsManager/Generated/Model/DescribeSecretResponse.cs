@@ -112,7 +112,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
         /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of
-        /// the secret. If you don't provide a key, then AWS Secrets Manager defaults to encrypting
+        /// the secret. If you don't provide a key, then Secrets Manager defaults to encrypting
         /// the secret fields with the default KMS CMK (the one named <code>awssecretsmanager</code>)
         /// for this account.
         /// </para>
@@ -229,7 +229,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RotationLambdaARN. 
         /// <para>
-        /// The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret
+        /// The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret
         /// either automatically per the schedule or manually by a call to <code>RotateSecret</code>.
         /// </para>
         /// </summary>
