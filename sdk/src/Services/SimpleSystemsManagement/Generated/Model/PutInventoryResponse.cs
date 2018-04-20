@@ -32,6 +32,25 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class PutInventoryResponse : AmazonWebServiceResponse
     {
+        private string _message;
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// Information about the request.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
     }
 }

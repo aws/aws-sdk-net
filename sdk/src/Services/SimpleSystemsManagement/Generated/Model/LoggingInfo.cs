@@ -29,6 +29,16 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Information about an Amazon S3 bucket to write instance-level logs to.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+    /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+    /// options in the <code>TaskInvocationParameters</code> structure. For information about
+    /// how Systems Manager handles these options for the supported Maintenance Window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LoggingInfo
     {

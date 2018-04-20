@@ -114,6 +114,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to have a value, specify the parameter with no value, and we set the value to an empty
         /// string. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not enter personally identifiable information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public List<Tag> Tags
         {

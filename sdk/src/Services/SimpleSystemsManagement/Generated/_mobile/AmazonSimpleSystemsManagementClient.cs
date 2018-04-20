@@ -982,6 +982,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteInventory
+
+        internal virtual DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request)
+        {
+            var marshaller = DeleteInventoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        public virtual Task<DeleteInventoryResponse> DeleteInventoryAsync(DeleteInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteInventoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMaintenanceWindow
 
         internal virtual DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request)
@@ -1862,6 +1894,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInventoryDeletions
+
+        internal virtual DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request)
+        {
+            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInventoryDeletions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInventoryDeletions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        public virtual Task<DescribeInventoryDeletionsResponse> DescribeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

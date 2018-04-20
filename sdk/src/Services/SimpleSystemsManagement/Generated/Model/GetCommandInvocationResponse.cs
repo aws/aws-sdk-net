@@ -317,8 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the parent command for this invocation. This status can be different
-        /// than StatusDetails.
+        /// The status of this invocation plugin. This status can be different than StatusDetails.
         /// </para>
         /// </summary>
         public CommandInvocationStatus Status

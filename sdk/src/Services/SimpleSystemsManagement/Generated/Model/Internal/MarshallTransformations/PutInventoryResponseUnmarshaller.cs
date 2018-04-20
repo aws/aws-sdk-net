@@ -47,6 +47,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         {
             PutInventoryResponse response = new PutInventoryResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Message", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Message = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

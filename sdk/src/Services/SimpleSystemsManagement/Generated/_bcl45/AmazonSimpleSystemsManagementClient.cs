@@ -1777,6 +1777,63 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteInventory
+
+
+        /// <summary>
+        /// Delete a custom inventory type, or the data associated with a custom Inventory type.
+        /// Deleting a custom inventory type is also referred to as deleting a custom inventory
+        /// schema.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInventory service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInventory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeleteInventoryParametersException">
+        /// One or more of the parameters specified for the delete operation is not valid. Verify
+        /// all parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOptionException">
+        /// The delete inventory option specified is not valid. Verify the option and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        public virtual DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request)
+        {
+            var marshaller = DeleteInventoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        public virtual Task<DeleteInventoryResponse> DeleteInventoryAsync(DeleteInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteInventoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteInventoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteInventoryRequest,DeleteInventoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMaintenanceWindow
 
 
@@ -3320,6 +3377,55 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInventoryDeletions
+
+
+        /// <summary>
+        /// Describes a specific delete inventory operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInventoryDeletions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInventoryDeletions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeletionIdException">
+        /// The ID specified for the delete operation does not exist or is not valide. Verify
+        /// the ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        public virtual DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request)
+        {
+            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInventoryDeletions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInventoryDeletions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        public virtual Task<DescribeInventoryDeletionsResponse> DescribeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeInventoryDeletionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeInventoryDeletionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInventoryDeletionsRequest,DescribeInventoryDeletionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -7475,35 +7581,35 @@ namespace Amazon.SimpleSystemsManagement
         /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
         /// but you can change the following values:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+        /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
         /// to AWS-RunShellScript.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Service role ARN.
+        /// ServiceRoleArn
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task parameters.
+        /// TaskInvocationParameters
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task priority.
+        /// Priority
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task MaxConcurrency and MaxErrors.
+        /// MaxConcurrency
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Log location.
+        /// MaxErrors
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// If a parameter is null, then the corresponding field is not modified. Also, if you
-        /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
+        /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
         /// action are required for this request. Optional fields that aren't specified are set
         /// to null.
         /// </para>

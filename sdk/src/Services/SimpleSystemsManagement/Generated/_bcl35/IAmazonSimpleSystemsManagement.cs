@@ -1218,6 +1218,64 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteInventory
+
+
+        /// <summary>
+        /// Delete a custom inventory type, or the data associated with a custom Inventory type.
+        /// Deleting a custom inventory type is also referred to as deleting a custom inventory
+        /// schema.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInventory service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInventory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeleteInventoryParametersException">
+        /// One or more of the parameters specified for the delete operation is not valid. Verify
+        /// all parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOptionException">
+        /// The delete inventory option specified is not valid. Verify the option and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        DeleteInventoryResponse DeleteInventory(DeleteInventoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInventory operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInventory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        IAsyncResult BeginDeleteInventory(DeleteInventoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInventory.</param>
+        /// 
+        /// <returns>Returns a  DeleteInventoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory">REST API Reference for DeleteInventory Operation</seealso>
+        DeleteInventoryResponse EndDeleteInventory(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteMaintenanceWindow
 
 
@@ -2625,6 +2683,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  DescribeInstancePatchStatesForPatchGroupResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         DescribeInstancePatchStatesForPatchGroupResponse EndDescribeInstancePatchStatesForPatchGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeInventoryDeletions
+
+
+        /// <summary>
+        /// Describes a specific delete inventory operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInventoryDeletions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInventoryDeletions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDeletionIdException">
+        /// The ID specified for the delete operation does not exist or is not valide. Verify
+        /// the ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        DescribeInventoryDeletionsResponse DescribeInventoryDeletions(DescribeInventoryDeletionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInventoryDeletions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInventoryDeletions operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInventoryDeletions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        IAsyncResult BeginDescribeInventoryDeletions(DescribeInventoryDeletionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInventoryDeletions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInventoryDeletions.</param>
+        /// 
+        /// <returns>Returns a  DescribeInventoryDeletionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions">REST API Reference for DescribeInventoryDeletions Operation</seealso>
+        DescribeInventoryDeletionsResponse EndDescribeInventoryDeletions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6457,35 +6565,35 @@ namespace Amazon.SimpleSystemsManagement
         /// Modifies a task assigned to a Maintenance Window. You can't change the task type,
         /// but you can change the following values:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+        /// TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
         /// to AWS-RunShellScript.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Service role ARN.
+        /// ServiceRoleArn
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task parameters.
+        /// TaskInvocationParameters
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task priority.
+        /// Priority
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Task MaxConcurrency and MaxErrors.
+        /// MaxConcurrency
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Log location.
+        /// MaxErrors
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// If a parameter is null, then the corresponding field is not modified. Also, if you
-        /// set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow
+        /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
         /// action are required for this request. Optional fields that aren't specified are set
         /// to null.
         /// </para>

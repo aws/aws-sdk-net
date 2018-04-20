@@ -150,8 +150,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
         /// If this time is reached and the command has not already started executing, it will
-        /// not execute. Calculated based on the ExpiresAfter user input provided as part of the
-        /// SendCommand API.
+        /// not run. Calculated based on the ExpiresAfter user input provided as part of the SendCommand
+        /// API.
         /// </para>
         /// </summary>
         public DateTime ExpiresAfter

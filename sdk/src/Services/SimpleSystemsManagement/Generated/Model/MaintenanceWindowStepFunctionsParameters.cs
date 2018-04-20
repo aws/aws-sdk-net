@@ -28,7 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for the STEP_FUNCTION execution.
+    /// The parameters for a STEP_FUNCTION task.
+    /// 
+    ///  
+    /// <para>
+    /// For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a>
+    /// and <a>UpdateMaintenanceWindowTask</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+    /// logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code>
+    /// options in the <code>TaskInvocationParameters</code> structure. For information about
+    /// how Systems Manager handles these options for the supported Maintenance Window task
+    /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
+    /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+    /// structure. For information about how Systems Manager handles these options for the
+    /// supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code>
+    /// and <code>LoggingInfo</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class MaintenanceWindowStepFunctionsParameters
     {
