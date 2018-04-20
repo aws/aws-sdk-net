@@ -61,8 +61,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering option. If no value is specified, <b>BufferingHints</b> object default
-        /// values are used.
+        /// The buffering option. If no value is specified, <code>BufferingHints</code> object
+        /// default values are used.
         /// </para>
         /// </summary>
         public BufferingHints BufferingHints
@@ -140,11 +140,11 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files.
-        /// You can specify an extra prefix to be added in front of the time format prefix. If
-        /// the prefix ends with a slash, it appears as a folder in the S3 bucket. For more information,
-        /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-        /// S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
+        /// The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon
+        /// S3 files. You can specify an extra prefix to be added in front of the time format
+        /// prefix. If the prefix ends with a slash, it appears as a folder in the S3 bucket.
+        /// For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+        /// S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Prefix
@@ -162,7 +162,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the AWS credentials.
+        /// The Amazon Resource Name (ARN) of the AWS credentials.
         /// </para>
         /// </summary>
         public string RoleARN

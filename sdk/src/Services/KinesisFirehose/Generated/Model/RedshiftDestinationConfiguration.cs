@@ -137,8 +137,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon
-        /// Redshift. Default value is 3600 (60 minutes).
+        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to
+        /// Amazon Redshift. Default value is 3600 (60 minutes).
         /// </para>
         /// </summary>
         public RedshiftRetryOptions RetryOptions
@@ -156,7 +156,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the AWS credentials.
+        /// The Amazon Resource Name (ARN) of the AWS credentials.
         /// </para>
         /// </summary>
         public string RoleARN
@@ -216,9 +216,9 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified
-        /// in <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift
-        /// <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression
-        /// formats.
+        /// in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+        /// Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support
+        /// these compression formats.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3Configuration

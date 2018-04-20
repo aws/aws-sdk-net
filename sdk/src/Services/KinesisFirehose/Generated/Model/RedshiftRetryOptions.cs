@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Configures retry behavior in case Kinesis Firehose is unable to deliver documents
+    /// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents
     /// to Amazon Redshift.
     /// </summary>
     public partial class RedshiftRetryOptions
@@ -38,10 +38,11 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The length of time during which Kinesis Firehose retries delivery after a failure,
+        /// The length of time during which Kinesis Data Firehose retries delivery after a failure,
         /// starting from the initial request and including the first attempt. The default value
-        /// is 3600 seconds (60 minutes). Kinesis Firehose does not retry if the value of <code>DurationInSeconds</code>
-        /// is 0 (zero) or if the first delivery attempt takes longer than the current value.
+        /// is 3600 seconds (60 minutes). Kinesis Data Firehose does not retry if the value of
+        /// <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+        /// longer than the current value.
         /// </para>
         /// </summary>
         public int DurationInSeconds

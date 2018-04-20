@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes an encryption key for a destination in Amazon S3.
+    /// This is the response object from the UntagDeliveryStream operation.
     /// </summary>
-    public partial class KMSEncryptionConfig
+    public partial class UntagDeliveryStreamResponse : AmazonWebServiceResponse
     {
-        private string _awskmsKeyARN;
-
-        /// <summary>
-        /// Gets and sets the property AWSKMSKeyARN. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS
-        /// Region as the destination Amazon S3 bucket.
-        /// </para>
-        /// </summary>
-        public string AWSKMSKeyARN
-        {
-            get { return this._awskmsKeyARN; }
-            set { this._awskmsKeyARN = value; }
-        }
-
-        // Check to see if AWSKMSKeyARN property is set
-        internal bool IsSetAWSKMSKeyARN()
-        {
-            return this._awskmsKeyARN != null;
-        }
 
     }
 }

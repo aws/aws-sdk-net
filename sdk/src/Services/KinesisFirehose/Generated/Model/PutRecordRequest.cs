@@ -29,50 +29,50 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecord operation.
-    /// Writes a single data record into an Amazon Kinesis Firehose delivery stream. To write
-    /// multiple data records into a delivery stream, use <a>PutRecordBatch</a>. Applications
-    /// using these operations are referred to as producers.
+    /// Writes a single data record into an Amazon Kinesis Data Firehose delivery stream.
+    /// To write multiple data records into a delivery stream, use <a>PutRecordBatch</a>.
+    /// Applications using these operations are referred to as producers.
     /// 
     ///  
     /// <para>
     /// By default, each delivery stream can take in up to 2,000 transactions per second,
-    /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
+    /// 5,000 records per second, or 5 MB per second. Note that if you use <code>PutRecord</code>
     /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
     /// for each delivery stream. For more information about limits and how to request an
     /// increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-    /// Kinesis Firehose Limits</a>. 
+    /// Kinesis Data Firehose Limits</a>. 
     /// </para>
     ///  
     /// <para>
-    /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
-    /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
-    /// kind of data, for example, a segment from a log file, geographic location data, website
-    /// clickstream data, and so on.
+    /// You must specify the name of the delivery stream and the data record when using <code>PutRecord</code>.
+    /// The data record consists of a data blob that can be up to 1,000 KB in size and any
+    /// kind of data. For example, it can be a segment from a log file, geographic location
+    /// data, website clickstream data, and so on.
     /// </para>
     ///  
     /// <para>
-    /// Kinesis Firehose buffers records before delivering them to the destination. To disambiguate
-    /// the data blobs at the destination, a common solution is to use delimiters in the data,
-    /// such as a newline (<code>\n</code>) or some other character unique within the data.
-    /// This allows the consumer application to parse individual data items when reading the
-    /// data from the destination.
+    /// Kinesis Data Firehose buffers records before delivering them to the destination. To
+    /// disambiguate the data blobs at the destination, a common solution is to use delimiters
+    /// in the data, such as a newline (<code>\n</code>) or some other character unique within
+    /// the data. This allows the consumer application to parse individual data items when
+    /// reading the data from the destination.
     /// </para>
     ///  
     /// <para>
-    /// The <a>PutRecord</a> operation returns a <b>RecordId</b>, which is a unique string
-    /// assigned to each record. Producer applications can use this ID for purposes such as
-    /// auditability and investigation.
+    /// The <code>PutRecord</code> operation returns a <code>RecordId</code>, which is a unique
+    /// string assigned to each record. Producer applications can use this ID for purposes
+    /// such as auditability and investigation.
     /// </para>
     ///  
     /// <para>
-    /// If the <a>PutRecord</a> operation throws a <b>ServiceUnavailableException</b>, back
-    /// off and retry. If the exception persists, it is possible that the throughput limits
-    /// have been exceeded for the delivery stream. 
+    /// If the <code>PutRecord</code> operation throws a <code>ServiceUnavailableException</code>,
+    /// back off and retry. If the exception persists, it is possible that the throughput
+    /// limits have been exceeded for the delivery stream. 
     /// </para>
     ///  
     /// <para>
-    /// Data records sent to Kinesis Firehose are stored for 24 hours from the time they are
-    /// added to a delivery stream as it attempts to send the records to the destination.
+    /// Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they
+    /// are added to a delivery stream as it attempts to send the records to the destination.
     /// If the destination is unreachable for more than 24 hours, the data is no longer available.
     /// </para>
     /// </summary>

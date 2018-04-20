@@ -126,8 +126,8 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-        /// a source.
+        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
+        /// as a source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -201,7 +201,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>,
-        /// a <a>SourceDescription</a> object describing the source Kinesis stream.
+        /// a <a>SourceDescription</a> object describing the source Kinesis data stream.
         /// </para>
         /// </summary>
         public SourceDescription Source

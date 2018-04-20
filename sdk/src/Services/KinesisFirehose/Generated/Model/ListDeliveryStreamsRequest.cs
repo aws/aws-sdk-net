@@ -34,11 +34,11 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// The number of delivery streams might be too large to return using a single call to
-    /// <a>ListDeliveryStreams</a>. You can limit the number of delivery streams returned,
+    /// <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned,
     /// using the <b>Limit</b> parameter. To determine whether there are more delivery streams
-    /// to list, check the value of <b>HasMoreDeliveryStreams</b> in the output. If there
-    /// are more delivery streams to list, you can request them by specifying the name of
-    /// the last delivery stream returned in the call in the <b>ExclusiveStartDeliveryStreamName</b>
+    /// to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If
+    /// there are more delivery streams to list, you can request them by specifying the name
+    /// of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code>
     /// parameter of a subsequent call.
     /// </para>
     /// </summary>
@@ -59,8 +59,8 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-        /// a source.
+        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
+        /// as a source.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as
-    /// the source for a delivery stream.
+    /// Metadata that you can assign to a delivery stream, consisting of a key-value pair.
     /// </summary>
-    public partial class KinesisStreamSourceConfiguration
+    public partial class Tag
     {
-        private string _kinesisStreamARN;
-        private string _roleARN;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property KinesisStreamARN. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The ARN of the source Kinesis data stream.
+        /// A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
+        /// Unicode letters, digits, white space, _ . / = + - % @
         /// </para>
         /// </summary>
-        public string KinesisStreamARN
+        public string Key
         {
-            get { return this._kinesisStreamARN; }
-            set { this._kinesisStreamARN = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if KinesisStreamARN property is set
-        internal bool IsSetKinesisStreamARN()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._kinesisStreamARN != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RoleARN. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The ARN of the role that provides access to the source Kinesis data stream.
+        /// An optional string, which you can use to describe or define the tag. Maximum length:
+        /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = +
+        /// - % @
         /// </para>
         /// </summary>
-        public string RoleARN
+        public string Value
         {
-            get { return this._roleARN; }
-            set { this._roleARN = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if RoleARN property is set
-        internal bool IsSetRoleARN()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._roleARN != null;
+            return this._value != null;
         }
 
     }

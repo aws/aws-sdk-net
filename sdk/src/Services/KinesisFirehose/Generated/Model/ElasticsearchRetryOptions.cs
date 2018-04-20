@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Configures retry behavior in case Kinesis Firehose is unable to deliver documents
+    /// Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents
     /// to Amazon ES.
     /// </summary>
     public partial class ElasticsearchRetryOptions
@@ -39,9 +39,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
         /// After an initial failure to deliver to Amazon ES, the total amount of time during
-        /// which Kinesis Firehose re-attempts delivery (including the first attempt). After this
-        /// time has elapsed, the failed documents are written to Amazon S3. Default value is
-        /// 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
+        /// which Kinesis Data Firehose re-attempts delivery (including the first attempt). After
+        /// this time has elapsed, the failed documents are written to Amazon S3. Default value
+        /// is 300 seconds (5 minutes). A value of 0 (zero) results in no retries.
         /// </para>
         /// </summary>
         public int DurationInSeconds

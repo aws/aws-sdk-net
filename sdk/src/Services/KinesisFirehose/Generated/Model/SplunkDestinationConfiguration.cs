@@ -63,9 +63,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECAcknowledgmentTimeoutInSeconds. 
         /// <para>
-        /// The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk
-        /// after it sends it data. At the end of the timeout period Kinesis Firehose either tries
-        /// to send the data again or considers it an error, based on your retry settings.
+        /// The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from
+        /// Splunk after it sends it data. At the end of the timeout period, Kinesis Data Firehose
+        /// either tries to send the data again or considers it an error, based on your retry
+        /// settings.
         /// </para>
         /// </summary>
         public int HECAcknowledgmentTimeoutInSeconds
@@ -83,7 +84,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECEndpoint. 
         /// <para>
-        /// The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+        /// The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your
+        /// data.
         /// </para>
         /// </summary>
         public string HECEndpoint
@@ -101,7 +103,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECEndpointType. 
         /// <para>
-        /// This type can be either "Raw" or "Event".
+        /// This type can be either "Raw" or "Event."
         /// </para>
         /// </summary>
         public HECEndpointType HECEndpointType
@@ -119,7 +121,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECToken. 
         /// <para>
-        /// This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+        /// This is a GUID that you obtain from your Splunk cluster when you create a new HEC
+        /// endpoint.
         /// </para>
         /// </summary>
         public string HECToken
@@ -155,8 +158,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or
-        /// if it doesn't receive an acknowledgment of receipt from Splunk.
+        /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk,
+        /// or if it doesn't receive an acknowledgment of receipt from Splunk.
         /// </para>
         /// </summary>
         public SplunkRetryOptions RetryOptions
@@ -175,10 +178,10 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-        /// Kinesis Firehose writes any data that could not be indexed to the configured Amazon
-        /// S3 destination. When set to <code>AllDocuments</code>, Kinesis Firehose delivers all
-        /// incoming records to Amazon S3, and also writes failed documents to Amazon S3. Default
-        /// value is <code>FailedDocumentsOnly</code>. 
+        /// Kinesis Data Firehose writes any data that could not be indexed to the configured
+        /// Amazon S3 destination. When set to <code>AllDocuments</code>, Kinesis Data Firehose
+        /// delivers all incoming records to Amazon S3, and also writes failed documents to Amazon
+        /// S3. Default value is <code>FailedDocumentsOnly</code>. 
         /// </para>
         /// </summary>
         public SplunkS3BackupMode S3BackupMode

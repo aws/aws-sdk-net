@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Details about a Kinesis stream used as the source for a Kinesis Firehose delivery
-    /// stream.
+    /// Details about a Kinesis data stream used as the source for a Kinesis Data Firehose
+    /// delivery stream.
     /// </summary>
     public partial class SourceDescription
     {
@@ -38,7 +38,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamSourceDescription. 
         /// <para>
-        /// The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+        /// The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
         /// </para>
         /// </summary>
         public KinesisStreamSourceDescription KinesisStreamSourceDescription

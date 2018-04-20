@@ -28,22 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDeliveryStream operation.
-    /// Describes the specified delivery stream and gets the status. For example, after your
-    /// delivery stream is created, call <code>DescribeDeliveryStream</code> to see whether
-    /// the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent
-    /// to it.
+    /// Container for the parameters to the ListTagsForDeliveryStream operation.
+    /// Lists the tags for the specified delivery stream. This operation has a limit of five
+    /// transactions per second per account.
     /// </summary>
-    public partial class DescribeDeliveryStreamRequest : AmazonKinesisFirehoseRequest
+    public partial class ListTagsForDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
         private string _deliveryStreamName;
-        private string _exclusiveStartDestinationId;
+        private string _exclusiveStartTagKey;
         private int? _limit;
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream.
+        /// The name of the delivery stream whose tags you want to list.
         /// </para>
         /// </summary>
         public string DeliveryStreamName
@@ -59,29 +57,31 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExclusiveStartDestinationId. 
+        /// Gets and sets the property ExclusiveStartTagKey. 
         /// <para>
-        /// The ID of the destination to start returning the destination information. Currently,
-        /// Kinesis Data Firehose supports one destination per delivery stream.
+        /// The key to use as the starting point for the list of tags. If you set this parameter,
+        /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.
         /// </para>
         /// </summary>
-        public string ExclusiveStartDestinationId
+        public string ExclusiveStartTagKey
         {
-            get { return this._exclusiveStartDestinationId; }
-            set { this._exclusiveStartDestinationId = value; }
+            get { return this._exclusiveStartTagKey; }
+            set { this._exclusiveStartTagKey = value; }
         }
 
-        // Check to see if ExclusiveStartDestinationId property is set
-        internal bool IsSetExclusiveStartDestinationId()
+        // Check to see if ExclusiveStartTagKey property is set
+        internal bool IsSetExclusiveStartTagKey()
         {
-            return this._exclusiveStartDestinationId != null;
+            return this._exclusiveStartTagKey != null;
         }
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The limit on the number of destinations to return. Currently, you can have one destination
-        /// per delivery stream.
+        /// The number of tags to return. If this number is less than the total number of tags
+        /// associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code>
+        /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to
+        /// the last key in the response. 
         /// </para>
         /// </summary>
         public int Limit
