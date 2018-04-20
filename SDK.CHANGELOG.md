@@ -1,3 +1,8 @@
+### 3.3.266.0 (2018-04-20 04:18 UTC)
+* Core 3.3.22.0
+	* For the .NET Framework 3.5 and .NET Framework 4.5 environments AWS service clients will now add TLS 1.1 and TLS 1.2 to the chain of supported security protocols if the environment has been patched to support TLS 1.1 and TLS 1.2
+	* All services packages updated to require new Core
+
 ### 3.3.265.0 (2018-04-20 00:33 UTC)
 * CodePipeline (3.3.3.0)
 	* Added new SourceRevision structure to Execution Summary with accompanying definitions as needed in the AWS CodePipeline API Guide.
