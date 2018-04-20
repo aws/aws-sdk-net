@@ -34,6 +34,7 @@ namespace Amazon.CodePipeline.Model
     {
         private DateTime? _lastUpdateTime;
         private string _pipelineExecutionId;
+        private List<SourceRevision> _sourceRevisions = new List<SourceRevision>();
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
 
@@ -71,6 +72,21 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineExecutionId()
         {
             return this._pipelineExecutionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRevisions.
+        /// </summary>
+        public List<SourceRevision> SourceRevisions
+        {
+            get { return this._sourceRevisions; }
+            set { this._sourceRevisions = value; }
+        }
+
+        // Check to see if SourceRevisions property is set
+        internal bool IsSetSourceRevisions()
+        {
+            return this._sourceRevisions != null && this._sourceRevisions.Count > 0; 
         }
 
         /// <summary>

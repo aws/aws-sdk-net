@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PipelineExecutionSummary Object
+    /// Response Unmarshaller for SourceRevision Object
     /// </summary>  
-    public class PipelineExecutionSummaryUnmarshaller : IUnmarshaller<PipelineExecutionSummary, XmlUnmarshallerContext>, IUnmarshaller<PipelineExecutionSummary, JsonUnmarshallerContext>
+    public class SourceRevisionUnmarshaller : IUnmarshaller<SourceRevision, XmlUnmarshallerContext>, IUnmarshaller<SourceRevision, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PipelineExecutionSummary IUnmarshaller<PipelineExecutionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SourceRevision IUnmarshaller<SourceRevision, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PipelineExecutionSummary Unmarshall(JsonUnmarshallerContext context)
+        public SourceRevision Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PipelineExecutionSummary unmarshalledObject = new PipelineExecutionSummary();
+            SourceRevision unmarshalledObject = new SourceRevision();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("lastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelineExecutionId", targetDepth))
+                if (context.TestExpression("actionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecutionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceRevisions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<SourceRevision, SourceRevisionUnmarshaller>(SourceRevisionUnmarshaller.Instance);
-                    unmarshalledObject.SourceRevisions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("revisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revisionSummary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevisionSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revisionUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevisionUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static PipelineExecutionSummaryUnmarshaller _instance = new PipelineExecutionSummaryUnmarshaller();        
+        private static SourceRevisionUnmarshaller _instance = new SourceRevisionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PipelineExecutionSummaryUnmarshaller Instance
+        public static SourceRevisionUnmarshaller Instance
         {
             get
             {
