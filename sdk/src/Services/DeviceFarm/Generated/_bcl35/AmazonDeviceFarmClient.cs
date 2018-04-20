@@ -641,6 +641,69 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateVPCEConfiguration
+
+        /// <summary>
+        /// Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud
+        /// (VPC) endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCEConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateVPCEConfiguration service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
+        public virtual CreateVPCEConfigurationResponse CreateVPCEConfiguration(CreateVPCEConfigurationRequest request)
+        {
+            var marshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVPCEConfigurationRequest,CreateVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCEConfiguration operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVPCEConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateVPCEConfiguration(CreateVPCEConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateVPCEConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVPCEConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateVPCEConfigurationResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
+        public virtual CreateVPCEConfigurationResponse EndCreateVPCEConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVPCEConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDevicePool
 
         /// <summary>
@@ -1103,6 +1166,72 @@ namespace Amazon.DeviceFarm
         public virtual DeleteUploadResponse EndDeleteUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVPCEConfiguration
+
+        /// <summary>
+        /// Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCEConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVPCEConfiguration service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InvalidOperationException">
+        /// There was an error with the update request, or you do not have sufficient permissions
+        /// to update this VPC endpoint configuration.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
+        public virtual DeleteVPCEConfigurationResponse DeleteVPCEConfiguration(DeleteVPCEConfigurationRequest request)
+        {
+            var marshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVPCEConfigurationRequest,DeleteVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCEConfiguration operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVPCEConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVPCEConfiguration(DeleteVPCEConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteVPCEConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVPCEConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteVPCEConfigurationResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
+        public virtual DeleteVPCEConfigurationResponse EndDeleteVPCEConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVPCEConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2326,6 +2455,69 @@ namespace Amazon.DeviceFarm
         public virtual GetUploadResponse EndGetUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetVPCEConfiguration
+
+        /// <summary>
+        /// Returns information about the configuration settings for your Amazon Virtual Private
+        /// Cloud (VPC) endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVPCEConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVPCEConfiguration service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
+        public virtual GetVPCEConfigurationResponse GetVPCEConfiguration(GetVPCEConfigurationRequest request)
+        {
+            var marshaller = GetVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetVPCEConfigurationRequest,GetVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVPCEConfiguration operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVPCEConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetVPCEConfiguration(GetVPCEConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetVPCEConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVPCEConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetVPCEConfigurationResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
+        public virtual GetVPCEConfigurationResponse EndGetVPCEConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVPCEConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -3587,6 +3779,66 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListVPCEConfigurations
+
+        /// <summary>
+        /// Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations
+        /// in the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCEConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListVPCEConfigurations service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
+        public virtual ListVPCEConfigurationsResponse ListVPCEConfigurations(ListVPCEConfigurationsRequest request)
+        {
+            var marshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVPCEConfigurationsRequest,ListVPCEConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVPCEConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCEConfigurations operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVPCEConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListVPCEConfigurations(ListVPCEConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListVPCEConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVPCEConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVPCEConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListVPCEConfigurationsResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
+        public virtual ListVPCEConfigurationsResponse EndListVPCEConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVPCEConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PurchaseOffering
 
         /// <summary>
@@ -4256,6 +4508,73 @@ namespace Amazon.DeviceFarm
         public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVPCEConfiguration
+
+        /// <summary>
+        /// Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVPCEConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVPCEConfiguration service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.InvalidOperationException">
+        /// There was an error with the update request, or you do not have sufficient permissions
+        /// to update this VPC endpoint configuration.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
+        public virtual UpdateVPCEConfigurationResponse UpdateVPCEConfiguration(UpdateVPCEConfigurationRequest request)
+        {
+            var marshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVPCEConfigurationRequest,UpdateVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVPCEConfiguration operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVPCEConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVPCEConfiguration(UpdateVPCEConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateVPCEConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVPCEConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateVPCEConfigurationResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
+        public virtual UpdateVPCEConfigurationResponse EndUpdateVPCEConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVPCEConfigurationResponse>(asyncResult);
         }
 
         #endregion

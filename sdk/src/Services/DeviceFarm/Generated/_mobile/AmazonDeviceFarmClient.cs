@@ -453,6 +453,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateVPCEConfiguration
+
+        internal virtual CreateVPCEConfigurationResponse CreateVPCEConfiguration(CreateVPCEConfigurationRequest request)
+        {
+            var marshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVPCEConfigurationRequest,CreateVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCEConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
+        public virtual Task<CreateVPCEConfigurationResponse> CreateVPCEConfigurationAsync(CreateVPCEConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVPCEConfigurationRequest,CreateVPCEConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDevicePool
 
         internal virtual DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
@@ -672,6 +704,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = DeleteUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUploadRequest,DeleteUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVPCEConfiguration
+
+        internal virtual DeleteVPCEConfigurationResponse DeleteVPCEConfiguration(DeleteVPCEConfigurationRequest request)
+        {
+            var marshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVPCEConfigurationRequest,DeleteVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCEConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
+        public virtual Task<DeleteVPCEConfigurationResponse> DeleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVPCEConfigurationRequest,DeleteVPCEConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1429,6 +1493,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetVPCEConfiguration
+
+        internal virtual GetVPCEConfigurationResponse GetVPCEConfiguration(GetVPCEConfigurationRequest request)
+        {
+            var marshaller = GetVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetVPCEConfigurationRequest,GetVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVPCEConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
+        public virtual Task<GetVPCEConfigurationResponse> GetVPCEConfigurationAsync(GetVPCEConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVPCEConfigurationRequest,GetVPCEConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InstallToRemoteAccessSession
 
         internal virtual InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
@@ -2037,6 +2133,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListVPCEConfigurations
+
+        internal virtual ListVPCEConfigurationsResponse ListVPCEConfigurations(ListVPCEConfigurationsRequest request)
+        {
+            var marshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVPCEConfigurationsRequest,ListVPCEConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVPCEConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCEConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
+        public virtual Task<ListVPCEConfigurationsResponse> ListVPCEConfigurationsAsync(ListVPCEConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVPCEConfigurationsRequest,ListVPCEConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PurchaseOffering
 
         internal virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
@@ -2352,6 +2480,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVPCEConfiguration
+
+        internal virtual UpdateVPCEConfigurationResponse UpdateVPCEConfiguration(UpdateVPCEConfigurationRequest request)
+        {
+            var marshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVPCEConfigurationRequest,UpdateVPCEConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVPCEConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVPCEConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
+        public virtual Task<UpdateVPCEConfigurationResponse> UpdateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVPCEConfigurationRequest,UpdateVPCEConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

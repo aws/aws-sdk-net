@@ -41,6 +41,7 @@ namespace Amazon.DeviceFarm.Model
         private Location _location;
         private string _networkProfileArn;
         private Radios _radios;
+        private List<string> _vpceConfigurationArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AuxiliaryApps. 
@@ -186,6 +187,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetRadios()
         {
             return this._radios != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpceConfigurationArns. 
+        /// <para>
+        /// An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+        /// </para>
+        /// </summary>
+        public List<string> VpceConfigurationArns
+        {
+            get { return this._vpceConfigurationArns; }
+            set { this._vpceConfigurationArns = value; }
+        }
+
+        // Check to see if VpceConfigurationArns property is set
+        internal bool IsSetVpceConfigurationArns()
+        {
+            return this._vpceConfigurationArns != null && this._vpceConfigurationArns.Count > 0; 
         }
 
     }

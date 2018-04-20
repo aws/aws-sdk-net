@@ -34,6 +34,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class GetDevicePoolCompatibilityRequest : AmazonDeviceFarmRequest
     {
         private string _appArn;
+        private ScheduleRunConfiguration _configuration;
         private string _devicePoolArn;
         private ScheduleRunTest _test;
         private TestType _testType;
@@ -54,6 +55,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetAppArn()
         {
             return this._appArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// An object containing information about the settings for a run.
+        /// </para>
+        /// </summary>
+        public ScheduleRunConfiguration Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>

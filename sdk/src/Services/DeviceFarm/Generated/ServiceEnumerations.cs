@@ -339,6 +339,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly DeviceAttribute ARN = new DeviceAttribute("ARN");
         /// <summary>
+        /// Constant FLEET_TYPE for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute FLEET_TYPE = new DeviceAttribute("FLEET_TYPE");
+        /// <summary>
         /// Constant FORM_FACTOR for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute FORM_FACTOR = new DeviceAttribute("FORM_FACTOR");
@@ -632,6 +636,10 @@ namespace Amazon.DeviceFarm
         /// Constant PARSING_FAILED for ExecutionResultCode
         /// </summary>
         public static readonly ExecutionResultCode PARSING_FAILED = new ExecutionResultCode("PARSING_FAILED");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_SETUP_FAILED for ExecutionResultCode
+        /// </summary>
+        public static readonly ExecutionResultCode VPC_ENDPOINT_SETUP_FAILED = new ExecutionResultCode("VPC_ENDPOINT_SETUP_FAILED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

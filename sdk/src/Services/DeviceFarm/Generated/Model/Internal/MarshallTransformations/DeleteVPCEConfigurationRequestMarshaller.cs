@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetDevicePoolCompatibility Request Marshaller
+    /// DeleteVPCEConfiguration Request Marshaller
     /// </summary>       
-    public class GetDevicePoolCompatibilityRequestMarshaller : IMarshaller<IRequest, GetDevicePoolCompatibilityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteVPCEConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteVPCEConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetDevicePoolCompatibilityRequest)input);
+            return this.Marshall((DeleteVPCEConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetDevicePoolCompatibilityRequest publicRequest)
+        public IRequest Marshall(DeleteVPCEConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.GetDevicePoolCompatibility";
+            string target = "DeviceFarm_20150623.DeleteVPCEConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,44 +67,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                if(publicRequest.IsSetArn())
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
-                }
-
-                if(publicRequest.IsSetConfiguration())
-                {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDevicePoolArn())
-                {
-                    context.Writer.WritePropertyName("devicePoolArn");
-                    context.Writer.Write(publicRequest.DevicePoolArn);
-                }
-
-                if(publicRequest.IsSetTest())
-                {
-                    context.Writer.WritePropertyName("test");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunTestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Test, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTestType())
-                {
-                    context.Writer.WritePropertyName("testType");
-                    context.Writer.Write(publicRequest.TestType);
+                    context.Writer.WritePropertyName("arn");
+                    context.Writer.Write(publicRequest.Arn);
                 }
 
         
@@ -116,9 +82,9 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetDevicePoolCompatibilityRequestMarshaller _instance = new GetDevicePoolCompatibilityRequestMarshaller();        
+        private static DeleteVPCEConfigurationRequestMarshaller _instance = new DeleteVPCEConfigurationRequestMarshaller();        
 
-        internal static GetDevicePoolCompatibilityRequestMarshaller GetInstance()
+        internal static DeleteVPCEConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +92,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDevicePoolCompatibilityRequestMarshaller Instance
+        public static DeleteVPCEConfigurationRequestMarshaller Instance
         {
             get
             {

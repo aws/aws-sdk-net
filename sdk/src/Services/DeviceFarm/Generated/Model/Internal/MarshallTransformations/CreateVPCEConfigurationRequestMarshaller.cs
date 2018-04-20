@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetDevicePoolCompatibility Request Marshaller
+    /// CreateVPCEConfiguration Request Marshaller
     /// </summary>       
-    public class GetDevicePoolCompatibilityRequestMarshaller : IMarshaller<IRequest, GetDevicePoolCompatibilityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateVPCEConfigurationRequestMarshaller : IMarshaller<IRequest, CreateVPCEConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetDevicePoolCompatibilityRequest)input);
+            return this.Marshall((CreateVPCEConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetDevicePoolCompatibilityRequest publicRequest)
+        public IRequest Marshall(CreateVPCEConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.GetDevicePoolCompatibility";
+            string target = "DeviceFarm_20150623.CreateVPCEConfiguration";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,44 +67,28 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                if(publicRequest.IsSetServiceDnsName())
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
+                    context.Writer.WritePropertyName("serviceDnsName");
+                    context.Writer.Write(publicRequest.ServiceDnsName);
                 }
 
-                if(publicRequest.IsSetConfiguration())
+                if(publicRequest.IsSetVpceConfigurationDescription())
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("vpceConfigurationDescription");
+                    context.Writer.Write(publicRequest.VpceConfigurationDescription);
                 }
 
-                if(publicRequest.IsSetDevicePoolArn())
+                if(publicRequest.IsSetVpceConfigurationName())
                 {
-                    context.Writer.WritePropertyName("devicePoolArn");
-                    context.Writer.Write(publicRequest.DevicePoolArn);
+                    context.Writer.WritePropertyName("vpceConfigurationName");
+                    context.Writer.Write(publicRequest.VpceConfigurationName);
                 }
 
-                if(publicRequest.IsSetTest())
+                if(publicRequest.IsSetVpceServiceName())
                 {
-                    context.Writer.WritePropertyName("test");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunTestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Test, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTestType())
-                {
-                    context.Writer.WritePropertyName("testType");
-                    context.Writer.Write(publicRequest.TestType);
+                    context.Writer.WritePropertyName("vpceServiceName");
+                    context.Writer.Write(publicRequest.VpceServiceName);
                 }
 
         
@@ -116,9 +100,9 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetDevicePoolCompatibilityRequestMarshaller _instance = new GetDevicePoolCompatibilityRequestMarshaller();        
+        private static CreateVPCEConfigurationRequestMarshaller _instance = new CreateVPCEConfigurationRequestMarshaller();        
 
-        internal static GetDevicePoolCompatibilityRequestMarshaller GetInstance()
+        internal static CreateVPCEConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +110,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetDevicePoolCompatibilityRequestMarshaller Instance
+        public static CreateVPCEConfigurationRequestMarshaller Instance
         {
             get
             {

@@ -113,6 +113,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVpceConfigurationArns())
+            {
+                context.Writer.WritePropertyName("vpceConfigurationArns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVpceConfigurationArnsListValue in requestObject.VpceConfigurationArns)
+                {
+                        context.Writer.Write(requestObjectVpceConfigurationArnsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
