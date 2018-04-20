@@ -142,12 +142,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second
-        /// (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
+        /// The number of I/O operations per second (IOPS) to provision for the volume, with a
+        /// maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions.
+        /// For exceptions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS Volume Types</a>.
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes 
+        /// This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -291,7 +293,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Defaults: If no volume type is specified, the default is <code>standard</code> in
+        /// us-east-1, eu-west-1, eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1,
+        /// ap-northeast-2, ap-southeast-1, ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1.
+        /// In all other regions, EBS defaults to <code>gp2</code>.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

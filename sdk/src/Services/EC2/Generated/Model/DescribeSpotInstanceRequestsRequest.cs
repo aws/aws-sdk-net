@@ -111,7 +111,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launch.group-id</code> - The security group for the instance.
+        ///  <code>launch.group-id</code> - The ID of the security group for the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>launch.group-name</code> - The name of the security group for the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

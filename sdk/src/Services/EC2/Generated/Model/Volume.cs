@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code>
+        /// Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code>
         /// volumes.
         /// </para>
         ///  

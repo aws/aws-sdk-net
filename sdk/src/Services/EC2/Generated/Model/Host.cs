@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Host
     {
+        private DateTime? _allocationTime;
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private AvailableCapacity _availableCapacity;
@@ -40,7 +41,26 @@ namespace Amazon.EC2.Model
         private HostProperties _hostProperties;
         private string _hostReservationId;
         private List<HostInstance> _instances = new List<HostInstance>();
+        private DateTime? _releaseTime;
         private AllocationState _state;
+
+        /// <summary>
+        /// Gets and sets the property AllocationTime. 
+        /// <para>
+        /// The time that the Dedicated Host was allocated.
+        /// </para>
+        /// </summary>
+        public DateTime AllocationTime
+        {
+            get { return this._allocationTime.GetValueOrDefault(); }
+            set { this._allocationTime = value; }
+        }
+
+        // Check to see if AllocationTime property is set
+        internal bool IsSetAllocationTime()
+        {
+            return this._allocationTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
@@ -187,6 +207,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstances()
         {
             return this._instances != null && this._instances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleaseTime. 
+        /// <para>
+        /// The time that the Dedicated Host was released.
+        /// </para>
+        /// </summary>
+        public DateTime ReleaseTime
+        {
+            get { return this._releaseTime.GetValueOrDefault(); }
+            set { this._releaseTime = value; }
+        }
+
+        // Check to see if ReleaseTime property is set
+        internal bool IsSetReleaseTime()
+        {
+            return this._releaseTime.HasValue; 
         }
 
         /// <summary>

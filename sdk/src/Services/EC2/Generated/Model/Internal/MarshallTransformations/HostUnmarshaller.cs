@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allocationTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.AllocationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("autoPlacement", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -101,6 +107,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = HostInstanceUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("releaseTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ReleaseTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))

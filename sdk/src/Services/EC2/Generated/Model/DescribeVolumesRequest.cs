@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code>
-        /// | <code>detaching</code> | <code>detached</code>).
+        /// | <code>detaching</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -194,9 +194,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PresignedUrl. 
         /// <para>
-        /// The pre-signed URL parameter is required when copying an encrypted snapshot with the
-        /// Amazon EC2 Query API; it is available as an optional parameter in all other cases.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
+        /// When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must
+        /// supply a pre-signed URL. This parameter is optional for unencrypted snapshots. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
         /// Requests</a>.
         /// </para>
         ///  
