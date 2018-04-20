@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _enableIAMDatabaseAuthentication;
+        private string _engineVersion;
         private string _masterUserPassword;
         private string _newDBClusterIdentifier;
         private string _optionGroupName;
@@ -181,6 +182,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnableIAMDatabaseAuthentication()
         {
             return this._enableIAMDatabaseAuthentication.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless the ApplyImmediately parameter is set to true.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>
