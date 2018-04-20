@@ -33,6 +33,7 @@ namespace Amazon.CostExplorer.Model
     public partial class InstanceDetails
     {
         private EC2InstanceDetails _ec2InstanceDetails;
+        private RDSInstanceDetails _rdsInstanceDetails;
 
         /// <summary>
         /// Gets and sets the property EC2InstanceDetails. 
@@ -50,6 +51,24 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetEC2InstanceDetails()
         {
             return this._ec2InstanceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RDSInstanceDetails. 
+        /// <para>
+        /// The RDS instances that AWS recommends that you purchase.
+        /// </para>
+        /// </summary>
+        public RDSInstanceDetails RDSInstanceDetails
+        {
+            get { return this._rdsInstanceDetails; }
+            set { this._rdsInstanceDetails = value; }
+        }
+
+        // Check to see if RDSInstanceDetails property is set
+        internal bool IsSetRDSInstanceDetails()
+        {
+            return this._rdsInstanceDetails != null;
         }
 
     }

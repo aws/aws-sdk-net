@@ -34,7 +34,7 @@ namespace Amazon.CostExplorer
     /// The Cost Explorer API allows you to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.
     /// You can also query for granular data, such as the number of daily write operations
-    /// for DynamoDB database tables in your production environment. 
+    /// for Amazon DynamoDB database tables in your production environment. 
     /// 
     ///  
     /// <para>
@@ -48,7 +48,11 @@ namespace Amazon.CostExplorer
     /// <para>
     /// https://ce.us-east-1.amazonaws.com
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about costs associated with the Cost Explorer API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
+    /// Cost Management Pricing</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCostExplorer : IAmazonService, IDisposable
     {

@@ -203,8 +203,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedReservationCostForLookbackPeriod. 
         /// <para>
-        /// How much AWS estimates that you spent on Reserved Instances during the specified historical
-        /// period.
+        /// How much AWS estimates that you would have spent for all usage during the specified
+        /// historical period if you had had a reservation.
         /// </para>
         /// </summary>
         public string EstimatedReservationCostForLookbackPeriod

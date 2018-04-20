@@ -196,7 +196,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ServiceSpecification. 
         /// <para>
-        /// The specific service, such as EC2, that you want recommendations for.
+        /// The hardware specifications for the service instances that you want recommendations
+        /// for, such as standard or convertible EC2 instances.
         /// </para>
         /// </summary>
         public ServiceSpecification ServiceSpecification

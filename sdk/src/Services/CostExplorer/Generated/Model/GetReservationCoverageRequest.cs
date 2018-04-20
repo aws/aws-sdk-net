@@ -41,6 +41,18 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// CACHE_ENGINE
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DATABASE_ENGINE
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DEPLOYMENT_OPTION
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// INSTANCE_TYPE
     /// </para>
     ///  </li> <li> 
@@ -49,11 +61,23 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// OPERATING_SYSTEM
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// PLATFORM
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// REGION
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// SERVICE
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TAG
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,6 +108,18 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CACHE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DATABASE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INSTANCE_TYPE
         /// </para>
         ///  </li> <li> 
@@ -92,11 +128,23 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// OPERATING_SYSTEM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// PLATFORM
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// REGION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SERVICE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -131,8 +179,8 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code>
-        /// isn't set, the response object doesn't include the <code>Granularity</code>, either
-        /// <code>MONTHLY</code> or <code>DAILY</code>.
+        /// isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
+        /// or <code>DAILY</code>.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -158,6 +206,18 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CACHE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DATABASE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INSTANCE_TYPE
         /// </para>
         ///  </li> <li> 
@@ -166,11 +226,19 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// OPERATING_SYSTEM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// PLATFORM
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// REGION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG
         /// </para>
         ///  </li> <li> 
         /// <para>

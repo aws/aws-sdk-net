@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer
     /// The Cost Explorer API allows you to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.
     /// You can also query for granular data, such as the number of daily write operations
-    /// for DynamoDB database tables in your production environment. 
+    /// for Amazon DynamoDB database tables in your production environment. 
     /// 
     ///  
     /// <para>
@@ -53,7 +53,11 @@ namespace Amazon.CostExplorer
     /// <para>
     /// https://ce.us-east-1.amazonaws.com
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about costs associated with the Cost Explorer API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
+    /// Cost Management Pricing</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonCostExplorerClient : AmazonServiceClient, IAmazonCostExplorer
     {
@@ -269,6 +273,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">REST API Reference for GetCostAndUsage Operation</seealso>
         public virtual GetCostAndUsageResponse GetCostAndUsage(GetCostAndUsageRequest request)
         {
@@ -303,7 +311,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves all available filter values for a specific filter over a period of time.
+        /// Retrieves all available filter values for a specified filter over a period of time.
         /// You can search the dimension values for an arbitrary string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDimensionValues service method.</param>
@@ -312,11 +320,18 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
         /// The pagination token is invalid. Try again without a pagination token.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues">REST API Reference for GetDimensionValues Operation</seealso>
         public virtual GetDimensionValuesResponse GetDimensionValues(GetDimensionValuesRequest request)
@@ -364,6 +379,18 @@ namespace Amazon.CostExplorer
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CACHE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DATABASE_ENGINE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INSTANCE_TYPE
         /// </para>
         ///  </li> <li> 
@@ -372,11 +399,23 @@ namespace Amazon.CostExplorer
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// OPERATING_SYSTEM
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// PLATFORM
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// REGION
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SERVICE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -503,10 +542,10 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// You can retrieve the reservation utilization for your account. Master accounts in
-        /// an organization in AWS Organizations have access to their associated member accounts.
-        /// You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
-        /// to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// have access to member accounts. You can filter data by dimensions in a time period.
+        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+        /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationUtilization service method.</param>
         /// 
@@ -554,8 +593,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// You can query for available tag keys and tag values for a specified period. You can
-        /// search the tag values for an arbitrary string.
+        /// Queries for available tag keys and tag values for a specified period. You can search
+        /// the tag values for an arbitrary string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// 
@@ -563,11 +602,18 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
         /// The pagination token is invalid. Try again without a pagination token.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)

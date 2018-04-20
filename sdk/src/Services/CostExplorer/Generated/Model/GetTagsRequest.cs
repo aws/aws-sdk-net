@@ -29,8 +29,8 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTags operation.
-    /// You can query for available tag keys and tag values for a specified period. You can
-    /// search the tag values for an arbitrary string.
+    /// Queries for available tag keys and tag values for a specified period. You can search
+    /// the tag values for an arbitrary string.
     /// </summary>
     public partial class GetTagsRequest : AmazonCostExplorerRequest
     {

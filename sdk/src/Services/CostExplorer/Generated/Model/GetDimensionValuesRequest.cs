@@ -29,7 +29,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDimensionValues operation.
-    /// Retrieves all available filter values for a specific filter over a period of time.
+    /// Retrieves all available filter values for a specified filter over a period of time.
     /// You can search the dimension values for an arbitrary string.
     /// </summary>
     public partial class GetDimensionValuesRequest : AmazonCostExplorerRequest
@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set the context to <code>CostAndUsage</code>, you can use the following dimensions
+        /// If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions
         /// for searching:
         /// </para>
         ///  <ul> <li> 
@@ -61,7 +61,17 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of instance. An example is an EC2 <code>m4.xlarge</code>.
+        /// DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora
+        /// or MySQL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such
+        /// as Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,7 +80,15 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -79,13 +97,13 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVICE - The AWS service such as DynamoDB.
+        /// SERVICE - The AWS service such as Amazon DynamoDB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// USAGE_TYPE - The type of usage. An example is <code>DataTransfer-In-Bytes</code>.
-        /// The response for the <code>GetDimensionValues</code> operation includes a unit attribute,
-        /// examples of which include GB and Hrs.
+        /// USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response
+        /// for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples
+        /// include GB and Hrs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -108,7 +126,16 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of instance. An example is an EC2 <code>m4.xlarge</code>.
+        /// CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
+        /// values are <code>SingleAZ</code> and <code>MultiAZ</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -117,9 +144,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM - The specific combination of operating system, license model, and software
-        /// on an instance. For example, a Windows instance with SQL Server Web and no license,
-        /// or a Red Hat Enterprise Linux instance.
+        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,8 +152,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SCOPE - The scope of a Reserved Instance (RI). Values are regional or a single Availability
-        /// Zone.
+        /// SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional
+        /// or a single Availability Zone.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).
         /// </para>
         ///  </li> <li> 
         /// <para>

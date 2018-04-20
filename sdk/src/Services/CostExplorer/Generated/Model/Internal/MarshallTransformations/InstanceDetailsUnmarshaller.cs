@@ -70,6 +70,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RDSInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
