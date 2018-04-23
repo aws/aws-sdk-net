@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
+#if BCL45
 using Amazon.S3;
+#endif
 using Amazon;
 using Amazon.Runtime.Internal.Util;
 

@@ -6,6 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <PackageId>AWSSDK.Core</PackageId>
+    <BaseIntermediateOutputPath>./obj/netstandard1.3</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -35,22 +36,23 @@
   </Choose>
 
   <ItemGroup>
-    <Compile Remove="**/_pcl/**"/>
-    <Compile Remove="**/_pcl-sl/**"/>
-    <Compile Remove="**/_bcl35/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_bcl/**"/>
-    <Compile Remove="**/_bcl+sl/**"/>
-    <Compile Remove="**/_bcl+unity/**"/>
-    <Compile Remove="**/_unity/**"/>
-    <Compile Remove="**/_android/**"/>
-    <Compile Remove="**/_ios/**"/>
-    <Compile Remove="**/_pclReference/**"/>
-    <Compile Remove="**/_win8/**"/>
-    <Compile Remove="**/_winPhone81/**"/>
-    <Compile Remove="**/_winPhoneSilverlight8/**"/>
-    <Compile Remove="**/_winstorage/**"/>
-    <Compile Remove="**/Custom/SyncManager/**"/>
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="**/_pcl/**" />
+    <Compile Remove="**/_pcl-sl/**" />
+    <Compile Remove="**/_bcl35/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/_bcl/**" />
+    <Compile Remove="**/_bcl+sl/**" />
+    <Compile Remove="**/_bcl+unity/**" />
+    <Compile Remove="**/_unity/**" />
+    <Compile Remove="**/_android/**" />
+    <Compile Remove="**/_ios/**" />
+    <Compile Remove="**/_pclReference/**" />
+    <Compile Remove="**/_win8/**" />
+    <Compile Remove="**/_winPhone81/**" />
+    <Compile Remove="**/_winPhoneSilverlight8/**" />
+    <Compile Remove="**/_winstorage/**" />
+    <Compile Remove="**/Custom/SyncManager/**" />
   </ItemGroup>
 
   <ItemGroup>

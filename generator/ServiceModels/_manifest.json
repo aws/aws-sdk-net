@@ -5,7 +5,7 @@
             "targetFramework": "net35",
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "template": "VS2017ProjectFile",
-            "excludeFolders": [ "_android", "_async", "_bcl45", "_bcl45+coreclr", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "excludeFolders": [ "_android", "_async", "_bcl45", "_bcl45+coreclr", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8", "obj"],
             "nugetTargetPlatform": "net35",
             "frameworkPathOverride" : "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v3.5\\Profile\\Client",
             "frameworkReferences" : [
@@ -18,7 +18,7 @@
             "targetFramework": "net45",
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "template": "VS2017ProjectFile",
-            "excludeFolders": [ "_android", "_bcl35", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8"],
+            "excludeFolders": [ "_android", "_bcl35", "_coreclr", "_ios", "_mobile", "_pcl", "_pcl-sl", "_pclReference", "_unity", "_win8", "_winPhone81", "_winPhoneSilverlight8", "obj"],
             "nugetTargetPlatform": "net45",
             "frameworkReferences" : [
                 {"name": "System.Configuration"}
@@ -121,7 +121,7 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager"]
+            "excludeFolders": ["_pcl", "_pcl-sl", "_bcl35", "_bcl45", "_bcl", "_bcl+sl", "_bcl+unity", "_unity", "_android", "_ios", "_pclReference", "_win8", "_winPhone81", "_winPhoneSilverlight8", "_winstorage", "Custom/SyncManager", "obj"]
         }
     ],
     "unittestprojects":[
@@ -129,9 +129,9 @@
             "name": "Net35",
             "targetFramework" : "net45",
             "defineConstants": "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE",
-            "excludeFolders": ["_bcl45"],
+            "excludeFolders": ["_bcl45", "obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
             "packageReferences" : [
                 {
                     "include" : "MSTest.TestAdapter",
@@ -158,8 +158,9 @@
             "name": "Net45",
             "targetFramework" : "net45",
             "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE",
+			"excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "Custom\\CloudFront\\sample.rsa.private.key.txt"],
+            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
             "packageReferences" : [
                 {
                     "include" : "MSTest.TestAdapter",

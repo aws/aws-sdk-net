@@ -13,17 +13,37 @@ namespace ServiceClientGenerator
 
         private GeneratorOptions _options;
         private IEnumerable<ProjectFileConfiguration> _configurations;
+        private string _serviceName;
+        private bool _isLegacyProj;
 
         public UnitTestProjectFileCreator(GeneratorOptions options, IEnumerable<ProjectFileConfiguration> configurations)
         {
             _options = options;
             _configurations = configurations;
+            _isLegacyProj = true;
         }
+        public UnitTestProjectFileCreator(GeneratorOptions options, IEnumerable<ProjectFileConfiguration> configurations, string serviceName)
+        {
+            _options = options;
+            _configurations = configurations;
+            _serviceName = serviceName;
+            _isLegacyProj = false;
+        }
+
         public void Execute(string unitTestRoot, IEnumerable<ServiceConfiguration> serviceConfigurations, bool useDllReference)
         {
             foreach (var configuration in _configurations)
             {
-                string projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
+                string projectName;
+                if (_isLegacyProj)
+                {
+                    projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
+                }
+                else
+                {
+                    projectName = string.Format("AWSSDK.UnitTests.{0}.{1}.csproj", _serviceName, configuration.Name);
+                }
+                    
                 string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
                 IList<ProjectFileCreator.ProjectReference> commonReferences;
                 IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
@@ -31,10 +51,17 @@ namespace ServiceClientGenerator
 
                 if (useDllReference)
                 {
-                    projectName = string.Format("Build.UnitTests.{0}.partial.csproj", configuration.Name);
+                    if (_isLegacyProj)
+                    {
+                        projectName = string.Format("Build.UnitTests.{0}.partial.csproj", configuration.Name);
+                    }
+                    else
+                    {
+                        projectName = string.Format("Build.UnitTests.{0}.{1}.partial.csproj", _serviceName, configuration.Name);
+                    }
                     serviceProjectReferences = null;
                     dllProjectReferences = ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name);
-                    
+
                 }
                 else
                 {
@@ -45,12 +72,10 @@ namespace ServiceClientGenerator
 
                 var session = new Dictionary<string, object>
                 {
-                    {"AssemblyName",            string.Format("AWSSDK.UnitTests.{0}", configuration.Name)},
                     {"TargetFramework",         configuration.TargetFrameworkVersion },
                     {"DefineConstants",         "DEBUG;" + configuration.CompilationConstants},
                     {"Reference",               configuration.FrameworkReferences},
                     {"CompileRemoveList",       configuration.PlatformExcludeFolders},
-                    {"EmbeddedResources",       configuration.EmbeddedResources},
                     {"Services",                configuration.VisualStudioServices},
                     {"ReferencePath",           configuration.ReferencePath},
                     {"FrameworkPathOverride",   configuration.FrameworkPathOverride },
@@ -59,16 +84,35 @@ namespace ServiceClientGenerator
                     {"NoWarn",                  configuration.NoWarn},
                     {"OutputPathOverride",      configuration.OutputPathOverride },
                     {"SignBinaries",            false},
+                    {"ConfigurationName",       configuration.Name}
                 };
+                if (_isLegacyProj)
+                {
+                    session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
+                    session["ExternalFilesInclude"] = "../Services/*/UnitTests/Custom/*.cs";
+                    session["EmbeddedResources"] = configuration.EmbeddedResources;
+                    session["SetBaseIntermediateOutputPath"] = false;
+                }
+                else
+                {
+                    session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}.{1}", _serviceName, configuration.Name);
+                    //Check for embedded resources
+                    var embeddedResourcePath = Path.Combine(unitTestRoot, "Custom", "EmbeddedResource");
+                    if (Directory.Exists(embeddedResourcePath))
+                    {
+                        session["EmbeddedResources"] = new List<string> { Path.Combine("Custom", "EmbeddedResource", "*") };
+                    }
+                    session["SetBaseIntermediateOutputPath"] = true;
+                }
 
                 if (useDllReference) session.Add("ServiceDllReferences", dllProjectReferences);
                 if (serviceProjectReferences != null)
                 {
-                    session.Add("ProjectReferenceList", commonReferences.Concat(serviceProjectReferences).ToList());
+                    session["ProjectReferenceList"] = commonReferences.Concat(serviceProjectReferences).ToList();
                 }
                 else
                 {
-                    session.Add("ProjectReferenceList", commonReferences);
+                    session["ProjectReferenceList"] = commonReferences;
                 }
 
                 GenerateProjectFile(session, unitTestRoot, projectName);
@@ -78,7 +122,7 @@ namespace ServiceClientGenerator
         private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, string projectType, bool useDllReference)
         {
             IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
-            
+
             //
             // Core project reference
             //
@@ -86,6 +130,10 @@ namespace ServiceClientGenerator
             {
                 string coreProjectName = string.Format("AWSSDK.Core.{0}", projectType);
                 string coreIncludePath = Path.Combine("..", "..", "src", "Core", coreProjectName + ".csproj");
+                if (!_isLegacyProj)
+                {
+                    coreIncludePath = Path.Combine("..", "..", coreIncludePath);
+                }
                 string coreProjectPath = Path.Combine(unitTestRoot, coreIncludePath);
 
                 references.Add(new ProjectFileCreator.ProjectReference
@@ -104,7 +152,10 @@ namespace ServiceClientGenerator
             //
             string commonTestProjectName = "AWSSDK.CommonTest";
             string commonTestIncludePath = Path.Combine("..", "Common", commonTestProjectName + ".csproj");
-            string commonTestPath = Path.Combine(unitTestRoot, commonTestIncludePath);
+            if (!_isLegacyProj)
+            {
+                commonTestIncludePath = Path.Combine("..", "..", commonTestIncludePath);
+            }
 
             references.Add(new ProjectFileCreator.ProjectReference
             {
@@ -112,18 +163,24 @@ namespace ServiceClientGenerator
                 IncludePath = commonTestIncludePath
             });
 
-            //
-            // Some unit tests require references in ServiceClientGeneratorLib
-            //
-            string generatorLibProjectName = "ServiceClientGeneratorLib";
-            string generatorLibProjectPath = string.Format("..\\..\\..\\generator\\ServiceClientGeneratorLib\\{0}.csproj", generatorLibProjectName);
+            string projectName, projectPath;
+
+            if (_isLegacyProj)
+            {
+                projectName = "ServiceClientGeneratorLib";
+                projectPath = string.Format("..\\..\\..\\generator\\ServiceClientGeneratorLib\\{0}.csproj", projectName);
+            }
+            else
+            {
+                projectName = "AWSSDK.UnitTestUtilities";
+                projectPath = Path.Combine("..", "..", "..", "UnitTests", "Custom", projectName + ".csproj");
+            }
 
             references.Add(new ProjectFileCreator.ProjectReference
             {
-                Name = generatorLibProjectName,
-                IncludePath = generatorLibProjectPath
+                Name = projectName,
+                IncludePath = projectPath
             });
-
             return references;
         }
 
@@ -134,10 +191,14 @@ namespace ServiceClientGenerator
             HashSet<string> guidSet = new HashSet<string>();
             List<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
 
-            foreach(var configuration in serviceConfigurations)
+            foreach (var configuration in serviceConfigurations)
             {
                 string projectName = string.Format("{0}.{1}", configuration.AssemblyTitle, projectType);
                 string includePath = Path.Combine("..", "..", "src", "Services", configuration.ServiceFolderName, projectName + ".csproj");
+                if (!_isLegacyProj)
+                {
+                    includePath = Path.Combine("..", "..", includePath);
+                }
                 string guid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, includePath));
 
                 if (guidSet.Contains(guid))
@@ -198,7 +259,7 @@ namespace ServiceClientGenerator
             return references;
         }
 
-        private void GenerateProjectFile(   IDictionary<string, object> session,
+        private void GenerateProjectFile(IDictionary<string, object> session,
                                             string unitTestProjectRoot,
                                             string projectFilename)
         {

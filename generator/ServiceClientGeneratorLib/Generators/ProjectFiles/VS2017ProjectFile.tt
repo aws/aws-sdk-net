@@ -12,7 +12,14 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
     <PackageId><#=this.Session["AssemblyName"]#></PackageId>
-
+<#
+    if ((bool)Session["SetBaseIntermediateOutputPath"])
+    {
+#>
+	<BaseIntermediateOutputPath>./obj/<#=this.Session["ConfigurationName"]#></BaseIntermediateOutputPath>
+<#
+    }
+#>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -83,6 +90,15 @@
 <#
     }
 
+    if(this.Session.ContainsKey("ExternalFilesInclude"))
+    {
+#>
+  <ItemGroup>
+    <Compile Include="<#=this.Session["ExternalFilesInclude"]#>"/>
+  </ItemGroup>
+<#
+    }
+
     if(this.Session.ContainsKey("CompileRemoveList") && this.Session["CompileRemoveList"] != null)
     {
 #>
@@ -91,6 +107,14 @@
         IList<string> compileRemoveList = this.Session["CompileRemoveList"] as IList<string>;
         foreach(var compileRemoveEntry in compileRemoveList)
         {
+		  if(compileRemoveEntry.ToString()=="bin"||compileRemoveEntry.ToString()=="obj")
+		  {
+#>
+    <Compile Remove="**/<#=compileRemoveEntry.ToString()#>/**"/>
+	<None Remove="**/<#=compileRemoveEntry.ToString()#>/**" />
+<#
+			continue;
+		  }
 #>
     <Compile Remove="**/<#=compileRemoveEntry.ToString()#>/**"/>
 <#

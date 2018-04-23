@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.IntegrationTestUtilities.Net45</AssemblyName>
+    <PackageId>AWSSDK.IntegrationTestUtilities.Net45</PackageId>
+    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="**\**" />
+    <Compile Include="Tests/General.CommonUtilities.cs" />
+    <Compile Include="Utils/**" />
+    <Compile Include="Tests/TestBase.cs" />
+    <None Remove="Config\**" />
+    <None Remove="Tests\CloudTrailBucketPolicy.json" />
+    <None Remove="Tests\ListObjectsResponse.xml" />
+    <None Remove="obj/**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+
+    <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.97" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\IdentityManagement\AWSSDK.IdentityManagement.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+</Project>

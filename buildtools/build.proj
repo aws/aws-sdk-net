@@ -1,4 +1,4 @@
-<Project ToolsVersion="14.0" 
+<Project ToolsVersion="14.0"
     DefaultTargets="full-build-nodocs"
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
@@ -7,9 +7,10 @@
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <PartialBuildList Condition="'$(PartialBuildList)'==''"></PartialBuildList>
+        <ServiceList>Core</ServiceList>
 
 		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
-		
+
         <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
 
         <SmokeBuild></SmokeBuild>
@@ -29,7 +30,7 @@
 	<PropertyGroup>
 		<GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
 	</PropertyGroup>
-	
+
     <!-- properties used in documentation generation -->
     <PropertyGroup>
         <!-- resources folder where test settings should be placed -->
@@ -37,6 +38,18 @@
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
 
+    <Choose>
+        <When Condition="$(ServiceList.Contains('Core'))">
+            <ItemGroup>
+                <ServiceName Include="..\sdk\src\Services\**\*.sln"/>
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <ItemGroup>
+                <ServiceName Include="$(ServiceList)" />
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
     <Choose>
         <When Condition="'$(PartialBuildList)'==''">
             <PropertyGroup>
@@ -130,6 +143,8 @@
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
 
+    <Target Name="full-build-service" DependsOnTargets="test-sdk-service"/>
+
     <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
 
     <Target Name="restore-nuget">
@@ -137,6 +152,11 @@
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(PCLSolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(UnitySolutionsFile)"/>
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
+    </Target>
+
+    <Target Name="restore-nuget-service">
+        <Message Text="Restore nuget packages"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\src\Services\%(ServiceName.FileName)"/>
     </Target>
 
     <Target Name="run-generator">
@@ -172,6 +192,14 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(Net45SolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 
+    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator;restore-nuget-service;">
+        <Message Text="Restore and compile service solution "/>
+        <Exec Command="dotnet restore -f  %(ServiceName.Filename).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.Filename)"/>
+        <Exec Command="dotnet clean -c $(Configuration) %(ServiceName.FileName).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
+    </Target>
+
+
 	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
 		<MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
 					Targets="Clean;Build"
@@ -191,7 +219,7 @@
         <Exec Command="dotnet clean -c $(Configuration) $(CoreCLRSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(CoreCLRSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
-	
+
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
 		<Message Text="Compile the Unity SDK"/>
 		<MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
@@ -200,6 +228,8 @@
 	</Target>
 
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
+
+    <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-desktop-service;run-unit-tests-service;run-integ-tests-service" />
 
     <Target Name="validate-integ-tests" DependsOnTargets="build-custom-tasks">
         <ValidateIntegTests
@@ -244,6 +274,60 @@
             TestContainer="..\sdk\test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj"
             Configuration="$(Configuration)"
             Categories="$(CoreCLRTestCategories)"/>
+    </Target>
+
+    <Target Name="build-tests-service">
+        <Exec Command="dotnet restore -f  AWSSDK.UnitTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+
+        <Exec Command="dotnet restore -f  AWSSDK.UnitTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
+    </Target>
+
+    <Target Name="run-unit-tests-service" DependsOnTargets="build-tests-service;build-test-wrapper" >
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\AWSSDK.UnitTests.%(ServiceName.FileName).Net35.csproj"
+            Configuration="$(Configuration)"
+            Categories="$(BCLUnitTestCategories)"
+            Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\Generated') Or Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\Custom')"/>
+
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\AWSSDK.UnitTests.%(ServiceName.FileName).Net45.csproj"
+            Configuration="$(Configuration)"
+            Categories="$(BCLUnitTestCategories)"
+            Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\Generated') Or Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests\Custom')"/>
+    </Target>
+
+    <Target Name="build-integ-tests-service">
+        <Message Text="Build Integ tests csproj"/>
+        <Exec Command="dotnet restore -f  AWSSDK.IntegrationTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).Net35.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+
+        <Exec Command="dotnet restore -f  AWSSDK.IntegrationTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).Net45.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+    </Target>
+
+    <Target Name="run-integ-tests-service" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="build-test-wrapper">
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests\AWSSDK.IntegrationTests.%(ServiceName.FileName).Net45.csproj"
+            Configuration="$(Configuration)"
+            Categories="$(IntegCategoriesToTest)"
+            Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
+
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests\AWSSDK.IntegrationTests.%(ServiceName.FileName).Net35.csproj"
+            Configuration="$(Configuration)"
+            Categories="$(IntegCategoriesToTest)"
+            Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"
+            />
     </Target>
 
     <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;validate-integ-tests">
@@ -341,8 +425,8 @@
 			/>
 		-->
 	</Target>
-	
-	
+
+
     <Target Name="build-netcore-extensions" >
         <!-- depends: restore-nuget;run-generator -->
         <Exec Command="dotnet restore -f  AWSSDK.Extensions.sln"  WorkingDirectory="..\extensions"/>
@@ -356,7 +440,7 @@
 
     <Target Name="build-cognito-auth-extension-coreCLR" >
         <Message Text="Build and Test Cognito Authentication Extension"/>
-        
+
         <Exec Command="dotnet restore -f  CognitoAuthentication.CoreCLR.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet clean CognitoAuthentication.CoreCLR.sln"      WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CognitoAuthentication.CoreCLR.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
@@ -364,7 +448,7 @@
 
     <Target Name="build-cognito-auth-extension-net45" >
         <Message Text="Build and Test Cognito Authentication Extension"/>
-        
+
         <Exec Command="dotnet restore -f  CognitoAuthentication.NET45.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet clean CognitoAuthentication.NET45.sln"      WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CognitoAuthentication.NET45.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
@@ -374,7 +458,7 @@
             <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"/> 
+            Configuration="$(Configuration)"/>
          <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.IntegrationTests\CognitoAuthentication.IntegrationTests.CoreCLR.csproj"
@@ -400,8 +484,8 @@
     <Target Name="package-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR;test-cognito-auth-extension">
         <MakeDir Directories="..\Deployment\nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.CognitoAuthentication.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.CognitoAuthentication" />
-    </Target>   
-	
+    </Target>
+
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
         <PropertyGroup>
@@ -413,14 +497,14 @@
 
     <Target Name="copy-service-models" DependsOnTargets="copy-assemblies">
         <Message Text="Collating service models for downstream tooling" />
-		
+
 		<ItemGroup>
 			<ServiceModels Include="..\generator\ServiceModels\**\*" />
 		</ItemGroup>
-		
+
 		<Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)\models\%(RecursiveDir)" />
 	</Target>
-	
+
     <!-- TEST TARGETS/TASKS -->
 
     <Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)') And ($(Configuration) == 'Release')">
@@ -468,7 +552,7 @@
             <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\CloudFront\sample.rsa.private.key.txt" />
         </ItemGroup>
-		
+
 		<ItemGroup>
 			<FileException Include="generator\ServiceModels\elasticbeanstalk\elasticbeanstalk.examples.json" />
 			<FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />

@@ -47,6 +47,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=pro
 EndProject
 <#
     }
+if(this.Session.ContainsKey("IntegrationTestDependencies"))
+{
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
+EndProject
+<#
+    foreach(var project in (List<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
+    {
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+    }
+}
 #>
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +131,16 @@ Global
 		<#=project.ProjectGuid#> = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 <#
     }
+	if(this.Session.ContainsKey("IntegrationTestDependencies"))
+	{
+	    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
+		{
+#>
+		<#=project.ProjectGuid#> = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
+<#
+		}
+	}
+
 #>
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

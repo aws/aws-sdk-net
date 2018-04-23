@@ -6,6 +6,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <PackageId>AWSSDK.Core</PackageId>
+    <BaseIntermediateOutputPath>./obj/net35</BaseIntermediateOutputPath>
+
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -15,7 +17,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-
+    
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
@@ -36,6 +38,7 @@
   </Choose>
 
   <ItemGroup>
+    <Compile Remove="**/obj/**" />
     <Compile Remove="**/_android/**" />
     <Compile Remove="**/_async/**" />
     <Compile Remove="**/_bcl45/**" />

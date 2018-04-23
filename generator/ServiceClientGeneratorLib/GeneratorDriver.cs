@@ -75,6 +75,12 @@ namespace ServiceClientGenerator
         /// </summary>
         public string SampleFilesRoot { get; private set; }
 
+        /// <summary>
+        /// The folder under which all of the unit files for the service
+        /// will exist.
+        /// </summary>
+        public string ServiceUnitTestFilesRoot { get; private set; }
+
         private readonly HashSet<Shape> _structuresToProcess = new HashSet<Shape>();
 
         private readonly HashSet<string> _processedStructures = new HashSet<string>();
@@ -106,7 +112,7 @@ namespace ServiceClientGenerator
         private static readonly Dictionary<string, ProjectFileCreator.ProjectConfigurationData> NewlyCreatedProjectFiles
             = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
-        public HashSet<string> FilesWrittenToGeneratorFolder {get; private set;}
+        public HashSet<string> FilesWrittenToGeneratorFolder { get; private set; }
 
 
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
@@ -126,6 +132,7 @@ namespace ServiceClientGenerator
                 : Configuration.Namespace;
 
             ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
+            ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, "ServiceAnalysis", serviceNameRoot);
@@ -475,7 +482,7 @@ namespace ServiceClientGenerator
                 // Check to see if the exceptions has already been generated for a previous operation.
                 if (!this._processedStructures.Contains(exception.Name))
                 {
-                    
+
 
                     var generator = new ExceptionClass()
                     {
@@ -642,17 +649,36 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Method to create/update legacy unit test projects
+        /// </summary>
         public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options)
         {
-            Console.WriteLine("Updating unit test project files.");
             string unitTestRoot = Path.Combine(options.SdkRootFolder, "test", "UnitTests");
             var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations);
+            UpdateUnitTestProjects(generationManifest.ServiceConfigurations, options, unitTestRoot, creator);
+        }
 
-            creator.Execute(unitTestRoot, generationManifest.ServiceConfigurations, false);
+        /// <summary>
+        /// Adding Method to create/update service specific unit test projects
+        /// </summary>
+        public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options, string serviceTestFilesRoot, ServiceConfiguration serviceConfiguration)
+        {
+            Console.WriteLine("Updating unit test project files.");
+            string unitTestRoot = Path.Combine(serviceTestFilesRoot, "UnitTests");
+            var creator = new UnitTestProjectFileCreator(options, generationManifest.UnitTestProjectFileConfigurations, serviceConfiguration.ServiceFolderName);
+
+            UpdateUnitTestProjects(new[] { serviceConfiguration }, options, unitTestRoot, creator);
+        }
+
+        private static void UpdateUnitTestProjects(IEnumerable<ServiceConfiguration> serviceConfigurations, GeneratorOptions options, string unitTestRoot, UnitTestProjectFileCreator creator)
+        {
+            Console.WriteLine("Updating unit test project files.");
+            creator.Execute(unitTestRoot, serviceConfigurations, false);
 
             if ((options.PartialBuildList != null) && (options.PartialBuildList.Count() != 0))
             {
-                creator.Execute(unitTestRoot, generationManifest.ServiceConfigurations, true);
+                creator.Execute(unitTestRoot, serviceConfigurations, true);
             }
         }
 
@@ -1023,7 +1049,7 @@ namespace ServiceClientGenerator
                 androidPclVariant = Configuration.PclVariants.Contains("Android");
             }
 
-            
+
             var pclTargetFrameworks = ProjectFileConfigurations.Where(pc => pc.Name.Equals("PCL")).First().SharedNugetTargetFrameworks;
 
             var session = new Dictionary<string, object>
@@ -1109,7 +1135,7 @@ namespace ServiceClientGenerator
             WriteFile(GeneratedFilesRoot, subNamespace, fileName, text, true, true, out outputFile);
             FilesWrittenToGeneratorFolder.Add(outputFile);
         }
-        
+
         /// <summary>
         /// Runs the generator and saves the content in the test directory.
         /// </summary>
@@ -1122,6 +1148,7 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? MarshallingTestsSubFolder : Path.Combine(MarshallingTestsSubFolder, subNamespace);
             WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
+            WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
         void ExecuteGeneratorAssemblyInfo()
@@ -1153,6 +1180,7 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Path.Combine(CustomizationTestsSubFolder, subNamespace);
             WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
+            WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
         internal static bool WriteFile(string baseOutputDir,
@@ -1312,7 +1340,7 @@ namespace ServiceClientGenerator
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
                     File.Delete(file);
-    }
+                }
             }
         }
     }

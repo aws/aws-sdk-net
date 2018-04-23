@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="../Services/*/IntegrationTests/*.cs"/>
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Core\AWSSDK.Core.Net45.csproj" />
     <ProjectReference Include="..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>

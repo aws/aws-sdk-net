@@ -58,6 +58,7 @@ namespace ServiceClientGenerator
                         {
                             generatedFiles.TryAdd(file, file);
                         }
+                        GeneratorDriver.UpdateUnitTestProjects(generationManifest, options, driver.ServiceUnitTestFilesRoot, serviceConfig);
                     });
 
                     var files = new HashSet<string>(generatedFiles.Values);
@@ -108,6 +109,7 @@ namespace ServiceClientGenerator
                     returnCode = -1;
                 }
                 else
+
                     throw;
             }
 

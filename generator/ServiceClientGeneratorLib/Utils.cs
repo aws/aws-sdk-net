@@ -57,6 +57,8 @@ namespace ServiceClientGenerator
 
         public static string GetProjectGuid(string projectPath)
         {
+            if (!File.Exists(projectPath))
+                return NewProjectGuid;
             var xdoc = new XmlDocument();
             xdoc.Load(projectPath);
             var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
@@ -117,7 +119,7 @@ namespace ServiceClientGenerator
             return result;
         }
 
-        public static Member GetMemberByName(this IList<Member> self, string name )
+        public static Member GetMemberByName(this IList<Member> self, string name)
         {
             return self.Where(m => m.ModeledName.Equals(name, StringComparison.OrdinalIgnoreCase))
                        .SingleOrDefault();

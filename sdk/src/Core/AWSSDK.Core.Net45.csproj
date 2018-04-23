@@ -6,6 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Core</AssemblyName>
     <PackageId>AWSSDK.Core</PackageId>
+    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -33,6 +34,7 @@
   </Choose>
 
   <ItemGroup>
+	  <Compile Remove="**/obj/**" />
     <Compile Remove="**/_coreclr/**" />
     <Compile Remove="**/_mobile/**" />
     <Compile Remove="**/_pcl/**" />
