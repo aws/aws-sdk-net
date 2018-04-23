@@ -1,3 +1,11 @@
+### 3.3.268.0 (2018-04-23 20:36 UTC)
+* AutoScalingPlans (3.3.1.0)
+	* The release adds the operation UpdateScalingPlan for updating a scaling plan and the support for tag filters as an application source.
+* IoT (3.3.10.0)
+	* Add IotAnalyticsAction which sends message data to an AWS IoT Analytics channel
+* IoTAnalytics (3.3.0.0)
+	* Introducing AWS IoT Analytics SDK. AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect large amounts of device data, process messages, store them, and then query the data and run sophisticated analytics to make accurate decisions in your IoT applications and machine learning use cases. AWS IoT Analytics enables advanced data exploration through integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight.
+
 ### 3.3.267.0 (2018-04-20 19:05 UTC)
 * KinesisFirehose (3.3.4.0)
 	* With this release, Amazon Kinesis Data Firehose allows you to tag your delivery streams. Tags are metadata that you can create and use to manage your delivery streams. For more information about tagging, see AWS Tagging Strategies. For technical documentation, look for the tagging operations in the Amazon Kinesis Firehose API reference.

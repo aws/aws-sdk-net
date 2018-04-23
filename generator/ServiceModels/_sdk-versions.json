@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.267.0",
+    "ProductVersion" : "3.3.268.0",
     "CoreVersion"    : "3.3.22.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.9.3",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.0"
@@ -1041,7 +1041,7 @@
             "InPreview"               : false
         },
         "AutoScalingPlans"                : {
-            "Version" : "3.3.0.5",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.0"
@@ -1082,6 +1082,14 @@
         },
         "ACMPCA"                          : {
             "Version" : "3.3.0.1",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.22.0"
+            },
+            "InPreview"               : false
+        },
+        "IoTAnalytics"                    : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.0"
