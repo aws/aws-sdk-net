@@ -100,6 +100,7 @@
     <ProjectReference Include="..\..\src\Services\ImportExport\AWSSDK.ImportExport.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\IoTAnalytics\AWSSDK.IoTAnalytics.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoTJobsDataPlane\AWSSDK.IoTJobsDataPlane.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj"/>
