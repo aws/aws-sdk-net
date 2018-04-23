@@ -31,9 +31,11 @@ namespace Amazon.AutoScalingPlans
     /// <summary>
     /// Interface for accessing AutoScalingPlans
     ///
+    /// AWS Auto Scaling 
+    /// <para>
     /// Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application
     /// and configure dynamic scaling for your scalable resources.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To get started, create a scaling plan with a set of instructions used to configure
@@ -212,6 +214,52 @@ namespace Amazon.AutoScalingPlans
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">REST API Reference for DescribeScalingPlans Operation</seealso>
         Task<DescribeScalingPlansResponse> DescribeScalingPlansAsync(DescribeScalingPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateScalingPlan
+
+
+        /// <summary>
+        /// Updates the scaling plan for the specified scaling plan.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a scaling plan if it is in the process of being created, updated,
+        /// or deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScalingPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateScalingPlan service method, as returned by AutoScalingPlans.</returns>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.ConcurrentUpdateException">
+        /// Concurrent updates caused an exception, for example, if you request an update to a
+        /// scaling plan that already has a pending update.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.ObjectNotFoundException">
+        /// The specified object could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the parameters provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">REST API Reference for UpdateScalingPlan Operation</seealso>
+        UpdateScalingPlanResponse UpdateScalingPlan(UpdateScalingPlanRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScalingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScalingPlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan">REST API Reference for UpdateScalingPlan Operation</seealso>
+        Task<UpdateScalingPlanResponse> UpdateScalingPlanAsync(UpdateScalingPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

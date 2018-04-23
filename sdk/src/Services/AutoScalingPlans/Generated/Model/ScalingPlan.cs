@@ -39,6 +39,7 @@ namespace Amazon.AutoScalingPlans.Model
         private long? _scalingPlanVersion;
         private ScalingPlanStatusCode _statusCode;
         private string _statusMessage;
+        private DateTime? _statusStartTime;
 
         /// <summary>
         /// Gets and sets the property ApplicationSource. 
@@ -190,6 +191,24 @@ namespace Amazon.AutoScalingPlans.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusStartTime. 
+        /// <para>
+        /// The Unix timestamp when the scaling plan entered the current status.
+        /// </para>
+        /// </summary>
+        public DateTime StatusStartTime
+        {
+            get { return this._statusStartTime.GetValueOrDefault(); }
+            set { this._statusStartTime = value; }
+        }
+
+        // Check to see if StatusStartTime property is set
+        internal bool IsSetStatusStartTime()
+        {
+            return this._statusStartTime.HasValue; 
         }
 
     }

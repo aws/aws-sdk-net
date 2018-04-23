@@ -16,6 +16,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.UpdateScalingPlanRequest.ScalingPlanName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScalingPlans.Model.ApplicationSource.CloudFormationStackARN</property>
   </property-value-rule>
   <property-value-rule>
@@ -53,5 +58,10 @@
     <property>Amazon.AutoScalingPlans.Model.ScalingPolicy.PolicyName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.TagFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
 </property-value-rules>

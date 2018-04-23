@@ -59,7 +59,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <para>
         /// Identifies the resource associated with the metric type. You can't specify a resource
         /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
-        /// a target group attached to the Auto Scaling group, Spot Fleet request, or ECS service.
+        /// a target group for an Application Load Balancer attached to the Auto Scaling group,
+        /// Spot Fleet request, or ECS service.
         /// </para>
         ///  
         /// <para>

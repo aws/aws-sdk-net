@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplicationSource Object
+    /// Response Unmarshaller for TagFilter Object
     /// </summary>  
-    public class ApplicationSourceUnmarshaller : IUnmarshaller<ApplicationSource, XmlUnmarshallerContext>, IUnmarshaller<ApplicationSource, JsonUnmarshallerContext>
+    public class TagFilterUnmarshaller : IUnmarshaller<TagFilter, XmlUnmarshallerContext>, IUnmarshaller<TagFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApplicationSource IUnmarshaller<ApplicationSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TagFilter IUnmarshaller<TagFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ApplicationSource Unmarshall(JsonUnmarshallerContext context)
+        public TagFilter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ApplicationSource unmarshalledObject = new ApplicationSource();
+            TagFilter unmarshalledObject = new TagFilter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudFormationStackARN", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CloudFormationStackARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TagFilters", targetDepth))
+                if (context.TestExpression("Values", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance);
-                    unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApplicationSourceUnmarshaller _instance = new ApplicationSourceUnmarshaller();        
+        private static TagFilterUnmarshaller _instance = new TagFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplicationSourceUnmarshaller Instance
+        public static TagFilterUnmarshaller Instance
         {
             get
             {

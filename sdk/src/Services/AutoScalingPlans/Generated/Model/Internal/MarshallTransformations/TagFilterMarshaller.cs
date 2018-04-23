@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ApplicationSource Marshaller
+    /// TagFilter Marshaller
     /// </summary>       
-    public class ApplicationSourceMarshaller : IRequestMarshaller<ApplicationSource, JsonMarshallerContext> 
+    public class TagFilterMarshaller : IRequestMarshaller<TagFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,21 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ApplicationSource requestObject, JsonMarshallerContext context)
+        public void Marshall(TagFilter requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCloudFormationStackARN())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("CloudFormationStackARN");
-                context.Writer.Write(requestObject.CloudFormationStackARN);
+                context.Writer.WritePropertyName("Key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetTagFilters())
+            if(requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("TagFilters");
+                context.Writer.WritePropertyName("Values");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectTagFiltersListValue in requestObject.TagFilters)
+                foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TagFilterMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTagFiltersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectValuesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -72,7 +67,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ApplicationSourceMarshaller Instance = new ApplicationSourceMarshaller();
+        public readonly static TagFilterMarshaller Instance = new TagFilterMarshaller();
 
     }
 }

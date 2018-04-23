@@ -28,27 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateScalingPlan operation.
-    /// Creates a scaling plan.
+    /// Container for the parameters to the UpdateScalingPlan operation.
+    /// Updates the scaling plan for the specified scaling plan.
     /// 
     ///  
     /// <para>
-    /// A scaling plan contains a set of instructions used to configure dynamic scaling for
-    /// the scalable resources in your application. AWS Auto Scaling creates target tracking
-    /// scaling policies based on the scaling instructions in your scaling plan.
+    /// You cannot update a scaling plan if it is in the process of being created, updated,
+    /// or deleted.
     /// </para>
     /// </summary>
-    public partial class CreateScalingPlanRequest : AmazonAutoScalingPlansRequest
+    public partial class UpdateScalingPlanRequest : AmazonAutoScalingPlansRequest
     {
         private ApplicationSource _applicationSource;
         private List<ScalingInstruction> _scalingInstructions = new List<ScalingInstruction>();
         private string _scalingPlanName;
+        private long? _scalingPlanVersion;
 
         /// <summary>
         /// Gets and sets the property ApplicationSource. 
         /// <para>
-        /// A CloudFormation stack or set of tags. You can create one scaling plan per application
-        /// source.
+        /// A CloudFormation stack or set of tags.
         /// </para>
         /// </summary>
         public ApplicationSource ApplicationSource
@@ -84,8 +83,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanName. 
         /// <para>
-        /// The name of the scaling plan. Names cannot contain vertical bars, colons, or forward
-        /// slashes.
+        /// The name of the scaling plan.
         /// </para>
         /// </summary>
         public string ScalingPlanName
@@ -98,6 +96,24 @@ namespace Amazon.AutoScalingPlans.Model
         internal bool IsSetScalingPlanName()
         {
             return this._scalingPlanName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingPlanVersion. 
+        /// <para>
+        /// The version number.
+        /// </para>
+        /// </summary>
+        public long ScalingPlanVersion
+        {
+            get { return this._scalingPlanVersion.GetValueOrDefault(); }
+            set { this._scalingPlanVersion = value; }
+        }
+
+        // Check to see if ScalingPlanVersion property is set
+        internal bool IsSetScalingPlanVersion()
+        {
+            return this._scalingPlanVersion.HasValue; 
         }
 
     }

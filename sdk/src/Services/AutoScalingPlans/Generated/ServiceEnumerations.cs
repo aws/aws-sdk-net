@@ -330,6 +330,14 @@ namespace Amazon.AutoScalingPlans
         /// Constant DeletionInProgress for ScalingPlanStatusCode
         /// </summary>
         public static readonly ScalingPlanStatusCode DeletionInProgress = new ScalingPlanStatusCode("DeletionInProgress");
+        /// <summary>
+        /// Constant UpdateFailed for ScalingPlanStatusCode
+        /// </summary>
+        public static readonly ScalingPlanStatusCode UpdateFailed = new ScalingPlanStatusCode("UpdateFailed");
+        /// <summary>
+        /// Constant UpdateInProgress for ScalingPlanStatusCode
+        /// </summary>
+        public static readonly ScalingPlanStatusCode UpdateInProgress = new ScalingPlanStatusCode("UpdateInProgress");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

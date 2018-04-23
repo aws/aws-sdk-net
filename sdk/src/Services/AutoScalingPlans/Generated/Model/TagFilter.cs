@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Represents an application source.
+    /// Represents a tag.
     /// </summary>
-    public partial class ApplicationSource
+    public partial class TagFilter
     {
-        private string _cloudFormationStackARN;
-        private List<TagFilter> _tagFilters = new List<TagFilter>();
+        private string _key;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CloudFormationStackARN. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a CloudFormation stack.
+        /// The tag key.
         /// </para>
         /// </summary>
-        public string CloudFormationStackARN
+        public string Key
         {
-            get { return this._cloudFormationStackARN; }
-            set { this._cloudFormationStackARN = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if CloudFormationStackARN property is set
-        internal bool IsSetCloudFormationStackARN()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._cloudFormationStackARN != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TagFilters. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// A set of tags (up to 50).
+        /// The tag values (0 to 20).
         /// </para>
         /// </summary>
-        public List<TagFilter> TagFilters
+        public List<string> Values
         {
-            get { return this._tagFilters; }
-            set { this._tagFilters = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if TagFilters property is set
-        internal bool IsSetTagFilters()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._tagFilters != null && this._tagFilters.Count > 0; 
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

@@ -106,6 +106,12 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StatusStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StatusStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
