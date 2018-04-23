@@ -29,7 +29,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateThing operation.
-    /// Creates a thing record in the thing registry.
+    /// Creates a thing record in the registry.
     /// </summary>
     public partial class CreateThingRequest : AmazonIoTRequest
     {

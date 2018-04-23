@@ -136,7 +136,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerVersion.
+        /// Gets and sets the property CustomerVersion. 
+        /// <para>
+        /// The customer version of the certificate.
+        /// </para>
         /// </summary>
         public int CustomerVersion
         {
@@ -151,7 +154,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GenerationId.
+        /// Gets and sets the property GenerationId. 
+        /// <para>
+        /// The generation ID of the certificate.
+        /// </para>
         /// </summary>
         public string GenerationId
         {

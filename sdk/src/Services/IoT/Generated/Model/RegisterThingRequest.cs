@@ -39,7 +39,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for provisioning a thing.
+        /// The parameters for provisioning a thing. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+        /// Provisioning</a> for more information.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -57,7 +58,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The provisioning template. 
+        /// The provisioning template. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+        /// Provisioning</a> for more information.
         /// </para>
         /// </summary>
         public string TemplateBody

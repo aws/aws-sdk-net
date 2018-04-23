@@ -42,7 +42,10 @@ namespace Amazon.IoT.Model
         private string _policyVersionId;
 
         /// <summary>
-        /// Gets and sets the property CreationDate.
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The date the policy version was created.
+        /// </para>
         /// </summary>
         public DateTime CreationDate
         {
@@ -57,7 +60,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GenerationId.
+        /// Gets and sets the property GenerationId. 
+        /// <para>
+        /// The generation ID of the policy version.
+        /// </para>
         /// </summary>
         public string GenerationId
         {
@@ -90,7 +96,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate.
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date the policy version was last modified.
+        /// </para>
         /// </summary>
         public DateTime LastModifiedDate
         {

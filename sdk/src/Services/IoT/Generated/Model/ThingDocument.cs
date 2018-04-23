@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Shadow. 
         /// <para>
-        /// The thing shadow.
+        /// The shadow.
         /// </para>
         /// </summary>
         public string Shadow

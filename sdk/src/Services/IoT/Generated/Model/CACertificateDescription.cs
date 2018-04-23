@@ -135,7 +135,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerVersion.
+        /// Gets and sets the property CustomerVersion. 
+        /// <para>
+        /// The customer version of the CA certificate.
+        /// </para>
         /// </summary>
         public int CustomerVersion
         {
@@ -150,7 +153,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GenerationId.
+        /// Gets and sets the property GenerationId. 
+        /// <para>
+        /// The generation ID of the CA certificate.
+        /// </para>
         /// </summary>
         public string GenerationId
         {
@@ -165,7 +171,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate.
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// The date the CA certificate was last modified.
+        /// </para>
         /// </summary>
         public DateTime LastModifiedDate
         {

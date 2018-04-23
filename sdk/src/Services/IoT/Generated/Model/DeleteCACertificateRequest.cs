@@ -38,7 +38,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// The ID of the certificate to delete.
+        /// The ID of the certificate to delete. (The last part of the certificate ARN contains
+        /// the certificate ID.)
         /// </para>
         /// </summary>
         public string CertificateId

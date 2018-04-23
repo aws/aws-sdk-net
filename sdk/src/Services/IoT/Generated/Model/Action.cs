@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private DynamoDBv2Action _dynamodBv2;
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
+        private IotAnalyticsAction _iotAnalytics;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -153,6 +154,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetFirehose()
         {
             return this._firehose != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotAnalytics. 
+        /// <para>
+        /// Sends message data to an AWS IoT Analytics channel.
+        /// </para>
+        /// </summary>
+        public IotAnalyticsAction IotAnalytics
+        {
+            get { return this._iotAnalytics; }
+            set { this._iotAnalytics = value; }
+        }
+
+        // Check to see if IotAnalytics property is set
+        internal bool IsSetIotAnalytics()
+        {
+            return this._iotAnalytics != null;
         }
 
         /// <summary>

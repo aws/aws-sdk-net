@@ -38,12 +38,12 @@ namespace Amazon.IoT
     ///
     /// AWS IoT 
     /// <para>
-    /// AWS IoT provides secure, bi-directional communication between Internet-connected things
+    /// AWS IoT provides secure, bi-directional communication between Internet-connected devices
     /// (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud.
     /// You can discover your custom IoT-Data endpoint to communicate with, configure rules
     /// for data processing and integration with other services, organize resources associated
-    /// with each thing (Thing Registry), configure logging, and create and manage policies
-    /// and credentials to authenticate things.
+    /// with each device (Registry), configure logging, and create and manage policies and
+    /// credentials to authenticate devices.
     /// </para>
     ///  
     /// <para>
@@ -549,7 +549,7 @@ namespace Amazon.IoT
         /// PENDING_TRANSFER to INACTIVE.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1610,7 +1610,7 @@ namespace Amazon.IoT
         /// certificate to the INACTIVE status.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2301,7 +2301,7 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets information about the specified certificate.
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4807,7 +4807,7 @@ namespace Amazon.IoT
         /// the certificate will be returned to the source's account in the INACTIVE state.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5322,7 +5322,7 @@ namespace Amazon.IoT
         /// API to detach them.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="targetAwsAccount">The AWS account.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5473,7 +5473,7 @@ namespace Amazon.IoT
         /// certificate.
         /// </para>
         /// </summary>
-        /// <param name="certificateId">The ID of the certificate.</param>
+        /// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</param>
         /// <param name="newStatus">The new status.  <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an exception being thrown. PENDING_TRANSFER is a status used internally by AWS IoT. It is not intended for developer use.  <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

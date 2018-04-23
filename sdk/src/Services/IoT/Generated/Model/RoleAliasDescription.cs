@@ -131,7 +131,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleAliasArn.
+        /// Gets and sets the property RoleAliasArn. 
+        /// <para>
+        /// The ARN of the role alias.
+        /// </para>
         /// </summary>
         public string RoleAliasArn
         {
