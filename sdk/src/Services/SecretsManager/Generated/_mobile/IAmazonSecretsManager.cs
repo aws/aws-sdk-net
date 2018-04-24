@@ -66,7 +66,7 @@ namespace Amazon.SecretsManager
     /// We recommend that you use the AWS SDKs to make programmatic API calls to Secrets Manager.
     /// However, you also can use the Secrets Manager HTTP Query API to make direct calls
     /// to the Secrets Manager web service. To learn more about the Secrets Manager HTTP Query
-    /// API, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/orgs_query-requests.html">Making
+    /// API, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/query-requests.html">Making
     /// Query Requests</a> in the <i>AWS Secrets Manager User Guide</i>. 
     /// </para>
     ///  

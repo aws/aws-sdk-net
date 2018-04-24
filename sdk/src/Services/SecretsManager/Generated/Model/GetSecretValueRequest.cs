@@ -29,8 +29,8 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSecretValue operation.
-    /// Retrieves the contents of the encrypted fields <code>SecretString</code> and <code>SecretBinary</code>
-    /// from the specified version of a secret.
+    /// Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code>
+    /// from the specified version of a secret, whichever contains content.
     /// 
     ///  
     /// <para>

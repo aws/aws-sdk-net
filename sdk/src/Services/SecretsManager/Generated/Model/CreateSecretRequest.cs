@@ -44,16 +44,16 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// You provide the secret data to be encrypted by putting text in the <code>SecretString</code>
-    /// parameter or binary data in the <code>SecretBinary</code> parameter. If you include
-    /// <code>SecretString</code> or <code>SecretBinary</code> then Secrets Manager also creates
-    /// an initial secret version and, if you don't supply a staging label, automatically
-    /// maps the new version's ID to the staging label <code>AWSCURRENT</code>.
+    /// You provide the secret data to be encrypted by putting text in either the <code>SecretString</code>
+    /// parameter or binary data in the <code>SecretBinary</code> parameter, but not both.
+    /// If you include <code>SecretString</code> or <code>SecretBinary</code> then Secrets
+    /// Manager also creates an initial secret version and, if you don't supply a staging
+    /// label, automatically maps the new version's ID to the staging label <code>AWSCURRENT</code>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
-    /// and <code>SecretBinary</code> for a secret in the same account as the calling user
+    /// or <code>SecretBinary</code> for a secret in the same account as the calling user
     /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
     /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
     /// If this key doesn't already exist in your account then Secrets Manager creates it
@@ -223,7 +223,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to
-        /// be used to encrypt the <code>SecretString</code> and <code>SecretBinary</code> values
+        /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values
         /// in the versions stored in this secret.
         /// </para>
         ///  
@@ -283,13 +283,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value.
-        /// They cannot both be empty.
-        /// </para>
-        ///  
-        /// <para>
-        /// This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>,
-        /// but the two parameters jointly share a maximum size limit.
+        /// Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but
+        /// not both. They cannot both be empty.
         /// </para>
         ///  
         /// <para>
@@ -317,13 +312,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value.
-        /// They cannot both be empty.
-        /// </para>
-        ///  
-        /// <para>
-        /// This string value is stored separately from the <code>SecretBinary</code>, but the
-        /// two parameters jointly share a maximum size limit.
+        /// Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but
+        /// not both. They cannot both be empty.
         /// </para>
         ///  
         /// <para>

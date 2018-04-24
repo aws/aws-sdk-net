@@ -68,7 +68,7 @@ namespace Amazon.SecretsManager.Model
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
     /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
-    /// and <code>SecretBinary</code> for a secret in the same account as the calling user
+    /// or <code>SecretBinary</code> for a secret in the same account as the calling user
     /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
     /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
     /// If this key doesn't already exist in your account then Secrets Manager creates it
@@ -203,7 +203,8 @@ namespace Amazon.SecretsManager.Model
         /// of the secret. To use this parameter in the command-line tools, we recommend that
         /// you store your binary data in a file and then use the appropriate technique for your
         /// tool to pass the contents of the file as a parameter. Either <code>SecretBinary</code>
-        /// or <code>SecretString</code> must have a value. They cannot both be empty.
+        /// or <code>SecretString</code> must have a value, but not both. They cannot both be
+        /// empty.
         /// </para>
         ///  
         /// <para>
@@ -247,7 +248,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// (Optional) Specifies text data that you want to encrypt and store in this new version
         /// of the secret. Either <code>SecretString</code> or <code>SecretBinary</code> must
-        /// have a value. They cannot both be empty.
+        /// have a value, but not both. They cannot both be empty.
         /// </para>
         ///  
         /// <para>
