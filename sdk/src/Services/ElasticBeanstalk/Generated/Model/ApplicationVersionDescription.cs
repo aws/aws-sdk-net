@@ -33,6 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class ApplicationVersionDescription
     {
         private string _applicationName;
+        private string _applicationVersionArn;
         private string _buildArn;
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
@@ -63,6 +64,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the application version.
+        /// </para>
+        /// </summary>
+        public string ApplicationVersionArn
+        {
+            get { return this._applicationVersionArn; }
+            set { this._applicationVersionArn = value; }
+        }
+
+        // Check to see if ApplicationVersionArn property is set
+        internal bool IsSetApplicationVersionArn()
+        {
+            return this._applicationVersionArn != null;
         }
 
         /// <summary>

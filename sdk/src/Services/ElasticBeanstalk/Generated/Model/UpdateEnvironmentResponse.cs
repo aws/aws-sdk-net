@@ -192,7 +192,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentArn. 
         /// <para>
-        /// The environment's Amazon Resource Name (ARN), which can be used in other API reuqests
+        /// The environment's Amazon Resource Name (ARN), which can be used in other API requests
         /// that require an ARN.
         /// </para>
         /// </summary>

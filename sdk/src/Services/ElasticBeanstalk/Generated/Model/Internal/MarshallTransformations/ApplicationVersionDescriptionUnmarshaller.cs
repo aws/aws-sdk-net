@@ -60,6 +60,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ApplicationVersionArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplicationVersionArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BuildArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
