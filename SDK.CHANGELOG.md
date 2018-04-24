@@ -1,3 +1,9 @@
+### 3.3.269.0 (2018-04-24 18:36 UTC)
+* ElasticBeanstalk (3.3.8.0)
+	* Support tracking Elastic Beanstalk resources in AWS Config.
+* SecretsManager (3.3.0.3)
+	* Documentation updates for secretsmanager
+
 ### 3.3.268.0 (2018-04-23 20:36 UTC)
 * AutoScalingPlans (3.3.1.0)
 	* The release adds the operation UpdateScalingPlan for updating a scaling plan and the support for tag filters as an application source.
