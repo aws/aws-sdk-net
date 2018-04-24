@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.WAFRegional</AssemblyName>
     <PackageId>AWSSDK.WAFRegional</PackageId>
-
+    <BaseIntermediateOutputPath>./obj/net35</BaseIntermediateOutputPath>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -48,6 +48,8 @@
     <Compile Remove="**/_win8/**"/>
     <Compile Remove="**/_winPhone81/**"/>
     <Compile Remove="**/_winPhoneSilverlight8/**"/>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.UnitTests.SageMakerRuntime.Net45</AssemblyName>
+    <PackageId>AWSSDK.UnitTests.SageMakerRuntime.Net45</PackageId>
+    <BaseIntermediateOutputPath>./obj/Net45</BaseIntermediateOutputPath>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj"/>
+    <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj"/>
+    <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj"/>
+    <ProjectReference Include="..\..\..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net45.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2"/>
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration"/>
+  </ItemGroup>
+
+</Project>

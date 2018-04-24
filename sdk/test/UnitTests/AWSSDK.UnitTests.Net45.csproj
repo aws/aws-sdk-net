@@ -6,7 +6,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.Net45</AssemblyName>
     <PackageId>AWSSDK.UnitTests.Net45</PackageId>
-
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -20,6 +19,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="../Services/*/UnitTests/Custom/*.cs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -178,6 +182,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Custom\Runtime\TestResponses\*.txt"/>
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json"/>
-    <EmbeddedResource Include="Custom\CloudFront\sample.rsa.private.key.txt"/>
+    <EmbeddedResource Include="..\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt"/>
   </ItemGroup>
 </Project>
