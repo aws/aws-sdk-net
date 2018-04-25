@@ -32,7 +32,7 @@ namespace Amazon.Route53Domains
     public partial class AmazonRoute53DomainsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.1.7");
+            InternalSDKUtils.BuildUserAgentString("3.3.1.8");
 
         private string _userAgent = UserAgentString;
 

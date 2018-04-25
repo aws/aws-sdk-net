@@ -1,3 +1,9 @@
+### 3.3.269.1 (2018-04-25 00:54 UTC)
+* Core 3.3.22.1
+	* Fix Exception unmarshalling for cases where the response body isn't valid JSON or XML. Fix throws of AmazonUnmarshallingException to include the StatusCode. This allows the RetryHandler to retry based on the StatusCode. 
+Adding solutions for each AWS Service. The solution for each service contains the Net35, Net45, CoreCLR projects for Core, service projects, service tests and other dependencies.
+	* All services packages updated to require new Core
+
 ### 3.3.269.0 (2018-04-24 18:36 UTC)
 * ElasticBeanstalk (3.3.8.0)
 	* Support tracking Elastic Beanstalk resources in AWS Config.
