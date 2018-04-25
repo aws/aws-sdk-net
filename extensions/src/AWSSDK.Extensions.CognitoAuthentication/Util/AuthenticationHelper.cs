@@ -167,14 +167,20 @@ namespace Amazon.Extensions.CognitoAuthentication
             return hkdf.Expand(Encoding.UTF8.GetBytes(DerivedKeyInfo), DerivedKeySize);
         }
 
-        public static BigInteger CreateEphemeralRandom()
+        internal static BigInteger CreateEphemeralRandom()
+        {
+            return new BigInteger(1, CreateEphemeralRandomBytes());
+        }
+
+        internal static byte[] CreateEphemeralRandomBytes()
         {
             var bytes = new byte[EphemeralKeyByteLength];
-            using(var randomNumberGenerator = RandomNumberGenerator.Create())
+            using (var randomNumberGenerator = RandomNumberGenerator.Create())
             {
                 randomNumberGenerator.GetBytes(bytes);
             }
-            return new BigInteger(1, bytes);
+
+            return bytes;
         }
     }
 }
