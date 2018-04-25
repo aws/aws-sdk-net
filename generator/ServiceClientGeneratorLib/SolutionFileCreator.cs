@@ -303,13 +303,18 @@ namespace ServiceClientGenerator
         }
         private static IEnumerable<string> GetProjectPlatforms(string projectName, string projectFile)
         {
-
-            var projectTypeStart = projectName.LastIndexOf('.');
-            var projectType = projectName.Substring(projectTypeStart + 1);
+            string projectType = GetProjectType(projectName);
 
             var platformConfigurations = GetPlatformConfigurations(projectType);
             // Identify the framework of the project file if not already identified.
             return IdentifyProjectConfigurations(projectFile, platformConfigurations, projectType);
+        }
+
+        private static string GetProjectType(string projectName)
+        {
+            var projectTypeStart = projectName.LastIndexOf('.');
+            var projectType = projectName.Substring(projectTypeStart + 1);
+            return projectType;
         }
 
         private static IEnumerable<string> GetPlatformConfigurations(string projectType)
@@ -815,6 +820,12 @@ namespace ServiceClientGenerator
                 foreach (var projectFile in Directory.GetFiles(testProjectsRoot, filePattern, SearchOption.AllDirectories))
                 {
                     string projectName = Path.GetFileNameWithoutExtension(projectFile);
+
+                    if (GetProjectType(projectName).Equals(ProjectTypes.Partial, StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+
                     if (projectName.Contains("Integration"))
                     {
                         dependentProjects.AddRange(AddProjectDependencies
