@@ -686,6 +686,9 @@ namespace Amazon.CodeDeploy
         /// weren't part of the previous successful deployment. Valid values include "DISALLOW",
         /// "OVERWRITE", and "RETAIN".
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidGitHubAccountTokenException">
+        /// The GitHub token is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidIgnoreApplicationStopFailuresValueException">
         /// The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code>
         /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
