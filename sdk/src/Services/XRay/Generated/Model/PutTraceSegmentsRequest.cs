@@ -36,7 +36,7 @@ namespace Amazon.XRay.Model
     ///  
     /// <para>
     /// Segments must include the following fields. For the full segment document schema,
-    /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
     /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
     /// </para>
     ///  <p class="title"> <b>Required Segment Document Fields</b> 

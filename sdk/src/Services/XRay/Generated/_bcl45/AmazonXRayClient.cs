@@ -271,6 +271,49 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetEncryptionConfig
+
+
+        /// <summary>
+        /// Retrieves the current encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetServiceGraph
 
 
@@ -431,6 +474,49 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  PutEncryptionConfig
+
+
+        /// <summary>
+        /// Updates the encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutTelemetryRecords
 
 
@@ -485,7 +571,7 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
         /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
         ///  <p class="title"> <b>Required Segment Document Fields</b> 

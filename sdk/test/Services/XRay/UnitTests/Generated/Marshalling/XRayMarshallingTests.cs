@@ -76,6 +76,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("XRay")]
+        public void GetEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<GetEncryptionConfigRequest>();
+            var marshaller = new GetEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetEncryptionConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
         public void GetServiceGraphMarshallTest()
         {
             var operation = service_model.FindOperation("GetServiceGraph");
@@ -164,6 +196,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetTraceSummariesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void PutEncryptionConfigMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutEncryptionConfig");
+
+            var request = InstantiateClassGenerator.Execute<PutEncryptionConfigRequest>();
+            var marshaller = new PutEncryptionConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutEncryptionConfig", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutEncryptionConfigResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

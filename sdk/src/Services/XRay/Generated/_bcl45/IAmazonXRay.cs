@@ -71,6 +71,37 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetEncryptionConfig
+
+
+        /// <summary>
+        /// Retrieves the current encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetServiceGraph
 
 
@@ -195,6 +226,37 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  PutEncryptionConfig
+
+
+        /// <summary>
+        /// Updates the encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutTelemetryRecords
 
 
@@ -237,7 +299,7 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
         /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
         ///  <p class="title"> <b>Required Segment Document Fields</b> 

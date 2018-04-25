@@ -78,7 +78,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property TracesProcessedCount. 
         /// <para>
-        /// The number of traces that were processed to get this set of summaries.
+        /// The total number of traces processed, including traces that did not match the specified
+        /// filter expression.
         /// </para>
         /// </summary>
         public long TracesProcessedCount

@@ -262,6 +262,37 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetEncryptionConfig
+
+        internal virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetServiceGraph
 
         internal virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
@@ -350,6 +381,37 @@ namespace Amazon.XRay
             var unmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTraceSummariesRequest,GetTraceSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutEncryptionConfig
+
+        internal virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

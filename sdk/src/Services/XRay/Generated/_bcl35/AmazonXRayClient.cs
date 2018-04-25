@@ -282,6 +282,62 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetEncryptionConfig
+
+        /// <summary>
+        /// Retrieves the current encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionConfig operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncryptionConfig
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetEncryptionConfig(GetEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  GetEncryptionConfigResult from XRay.</returns>
+        public virtual GetEncryptionConfigResponse EndGetEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetServiceGraph
 
         /// <summary>
@@ -481,6 +537,62 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  PutEncryptionConfig
+
+        /// <summary>
+        /// Updates the encryption configuration for X-Ray data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutEncryptionConfig service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return Invoke<PutEncryptionConfigRequest,PutEncryptionConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEncryptionConfig operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEncryptionConfig
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginPutEncryptionConfig(PutEncryptionConfigRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutEncryptionConfigRequestMarshaller.Instance;
+            var unmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutEncryptionConfigRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEncryptionConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEncryptionConfig.</param>
+        /// 
+        /// <returns>Returns a  PutEncryptionConfigResult from XRay.</returns>
+        public virtual PutEncryptionConfigResponse EndPutEncryptionConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEncryptionConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutTelemetryRecords
 
         /// <summary>
@@ -547,7 +659,7 @@ namespace Amazon.XRay
         ///  
         /// <para>
         /// Segments must include the following fields. For the full segment document schema,
-        /// see <a href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+        /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
         /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
         ///  <p class="title"> <b>Required Segment Document Fields</b> 

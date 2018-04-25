@@ -32,6 +32,12 @@ namespace Amazon.XRay.Model
     /// be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code>
     /// segment for a downstream service, generated from a subsegment sent by the service
     /// that called it.
+    /// 
+    ///  
+    /// <para>
+    /// For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
+    /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Segment
     {
@@ -41,7 +47,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The segment document
+        /// The segment document.
         /// </para>
         /// </summary>
         public string Document
