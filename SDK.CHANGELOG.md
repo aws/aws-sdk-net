@@ -1,3 +1,11 @@
+### 3.3.270.0 (2018-04-25 19:00 UTC)
+* CodeDeploy (3.3.10.0)
+	* AWS CodeDeploy has a new exception that indicates when a GitHub token is not valid.
+* Rekognition (3.3.8.6)
+	* Documentation updates for Amazon Rekognition.
+* XRay (3.3.2.0)
+	* Added PutEncryptionConfig and GetEncryptionConfig APIs for managing data encryption settings. Use PutEncryptionConfig to configure X-Ray to use an AWS Key Management Service customer master key to encrypt trace data at rest.
+
 ### 3.3.269.1 (2018-04-25 00:54 UTC)
 * Core 3.3.22.1
 	* Fix Exception unmarshalling for cases where the response body isn't valid JSON or XML. Fix throws of AmazonUnmarshallingException to include the StatusCode. This allows the RetryHandler to retry based on the StatusCode. 
