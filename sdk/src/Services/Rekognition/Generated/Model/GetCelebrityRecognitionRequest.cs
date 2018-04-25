@@ -50,7 +50,14 @@ namespace Amazon.Rekognition.Model
     /// contains information about the celebrity in a object and the time, <code>Timestamp</code>,
     /// the celebrity was detected. 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>,
+    /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+    /// The other facial attributes listed in the <code>Face</code> object of the following
+    /// response syntax are not returned. For more information, see . 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// By default, the <code>Celebrities</code> array is sorted by time (milliseconds from
     /// the start of the video). You can also sort the array by celebrity by specifying the
@@ -105,8 +112,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of celebrities you want Rekognition Video to return in the response.
-        /// The default is 1000.
+        /// Maximum number of results to return per paginated call. The largest value you can
+        /// specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results
+        /// is returned. The default value is 1000.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -257,7 +257,11 @@ namespace Amazon.Rekognition
         /// API operation again.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -965,7 +969,14 @@ namespace Amazon.Rekognition
         /// contains information about the celebrity in a object and the time, <code>Timestamp</code>,
         /// the celebrity was detected. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the <code>Celebrities</code> array is sorted by time (milliseconds from
         /// the start of the video). You can also sort the array by celebrity by specifying the
@@ -1223,9 +1234,17 @@ namespace Amazon.Rekognition
         /// <para>
         /// The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
         /// element contains details about the matching faces in the input collection, person
-        /// information for the matched person, and the time the person was matched in the video.
+        /// information (facial attributes, bounding boxes, and person identifer) for the matched
+        /// person, and the time the person was matched in the video.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetFaceSearch</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the <code>Persons</code> array is sorted by the time, in milliseconds
         /// from the start of the video, persons are matched. You can also sort by persons by
@@ -1381,7 +1400,14 @@ namespace Amazon.Rekognition
         ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
         /// persons and the time(s) they were tracked in the video. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
+        /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+        /// The other facial attributes listed in the <code>Face</code> object of the following
+        /// response syntax are not returned. For more information, see . 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// By default, the array is sorted by the time(s) a person is tracked in the video. You
         /// can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
@@ -2022,7 +2048,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2099,7 +2129,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2171,7 +2205,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2243,7 +2281,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2327,7 +2369,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
@@ -2402,7 +2448,11 @@ namespace Amazon.Rekognition
         /// Amazon Rekognition is unable to access the S3 object specified in the request.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
-        /// 
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this

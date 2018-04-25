@@ -49,7 +49,14 @@ namespace Amazon.Rekognition.Model
     ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
     /// persons and the time(s) they were tracked in the video. 
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
+    /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
+    /// The other facial attributes listed in the <code>Face</code> object of the following
+    /// response syntax are not returned. For more information, see . 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// By default, the array is sorted by the time(s) a person is tracked in the video. You
     /// can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
@@ -94,7 +101,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of tracked persons to return. The default is 1000. 
+        /// Maximum number of results to return per paginated call. The largest value you can
+        /// specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results
+        /// is returned. The default value is 1000.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -29,6 +29,39 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Structure containing attributes of the face that the algorithm detected.
+    /// 
+    ///  
+    /// <para>
+    /// A <code>FaceDetail</code> object contains either the default facial attributes or
+    /// all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>,
+    /// <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  is the only Rekognition Video stored video operation that can return a <code>FaceDetail</code>
+    /// object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code>
+    /// input parameter for . The following Rekognition Video operations return only the default
+    /// attributes. The corresponding Start operations don't have a <code>FaceAttributes</code>
+    /// input parameter.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// GetCelebrityRecognition
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetPersonTracking
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// GetFaceSearch
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Rekognition Image and operations can return all facial attributes. To specify
+    /// which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>.
+    /// For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.
+    /// </para>
     /// </summary>
     public partial class FaceDetail
     {
@@ -88,7 +121,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// Bounding box of the face.
+        /// Bounding box of the face. Default attribute.
         /// </para>
         /// </summary>
         public BoundingBox BoundingBox
@@ -107,7 +140,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Confidence. 
         /// <para>
         /// Confidence level that the bounding box contains a face (and not a different object
-        /// such as a tree).
+        /// such as a tree). Default attribute.
         /// </para>
         /// </summary>
         public float Confidence
@@ -200,7 +233,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Landmarks. 
         /// <para>
-        /// Indicates the location of landmarks on the face.
+        /// Indicates the location of landmarks on the face. Default attribute.
         /// </para>
         /// </summary>
         public List<Landmark> Landmarks
@@ -256,7 +289,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Pose. 
         /// <para>
-        /// Indicates the pose of the face as determined by its pitch, roll, and yaw.
+        /// Indicates the pose of the face as determined by its pitch, roll, and yaw. Default
+        /// attribute.
         /// </para>
         /// </summary>
         public Pose Pose
@@ -274,7 +308,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Quality. 
         /// <para>
-        /// Identifies image brightness and sharpness.
+        /// Identifies image brightness and sharpness. Default attribute.
         /// </para>
         /// </summary>
         public ImageQuality Quality
