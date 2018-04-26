@@ -1,3 +1,13 @@
+### 3.3.270.1 (2018-04-26 22:57 UTC)
+* Glacier (3.3.2.7)
+	* Documentation updates for Glacier to fix a broken link
+* SecretsManager (3.3.0.5)
+	* Documentation updates for secretsmanager
+* Core 3.3.22.2
+	* AWS CodeCommit is now available in an additional region, EU (Paris).
+
+
+
 ### 3.3.270.0 (2018-04-25 19:00 UTC)
 * CodeDeploy (3.3.10.0)
 	* AWS CodeDeploy has a new exception that indicates when a GitHub token is not valid.

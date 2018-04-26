@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.270.0",
-    "CoreVersion"    : "3.3.22.1",
+    "ProductVersion" : "3.3.270.1",
+    "CoreVersion"    : "3.3.22.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -207,7 +207,7 @@
             "InPreview"               : false
         },
         "Glacier"              : {
-            "Version" : "3.3.2.6",
+            "Version" : "3.3.2.7",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1",
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.0.4",
+            "Version" : "3.3.0.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
