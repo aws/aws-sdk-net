@@ -488,7 +488,8 @@ namespace Amazon.SecretsManager
         /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
         /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
         /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role.
+        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
+        /// operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -514,7 +515,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:Encrypt - needed only if you use a customer-created KMS key to encrypt the secret.
+        /// kms:Decrypt - needed only if you use a customer-created KMS key to encrypt the secret.
         /// You do not need this permission to use the account's default AWS managed CMK for Secrets
         /// Manager.
         /// </para>
@@ -1278,7 +1279,8 @@ namespace Amazon.SecretsManager
         /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
         /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
         /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role.
+        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
+        /// operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -1914,7 +1916,8 @@ namespace Amazon.SecretsManager
         /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
         /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
         /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role.
+        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
+        /// operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
