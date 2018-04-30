@@ -1211,6 +1211,41 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeGlobalTableSettings
+        internal virtual DescribeGlobalTableSettingsResponse DescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request)
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual void DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, AmazonServiceCallback<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse> responseObject 
+                            = new AmazonServiceResult<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>((DescribeGlobalTableSettingsRequest)req, (DescribeGlobalTableSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeGlobalTableSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DescribeLimits
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
@@ -2543,6 +2578,41 @@ namespace Amazon.DynamoDBv2
                         callback(responseObject); 
                 };
             BeginInvoke<UpdateGlobalTableRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTableSettings
+        internal virtual UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request)
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual void UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, AmazonServiceCallback<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse> responseObject 
+                            = new AmazonServiceResult<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>((UpdateGlobalTableSettingsRequest)req, (UpdateGlobalTableSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateGlobalTableSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

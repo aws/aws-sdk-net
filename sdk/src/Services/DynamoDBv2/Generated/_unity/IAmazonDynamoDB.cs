@@ -825,6 +825,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeGlobalTableSettings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        void DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, AmazonServiceCallback<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeLimits
 
 
@@ -1729,6 +1746,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
         void UpdateGlobalTableAsync(UpdateGlobalTableRequest request, AmazonServiceCallback<UpdateGlobalTableRequest, UpdateGlobalTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateGlobalTableSettings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        void UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, AmazonServiceCallback<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResponse> callback, AsyncOptions options = null);
 
 
         #endregion

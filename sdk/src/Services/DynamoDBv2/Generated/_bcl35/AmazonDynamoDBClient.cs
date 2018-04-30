@@ -1065,6 +1065,29 @@ namespace Amazon.DynamoDBv2
         /// <para>
         ///  The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES). 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The tables must have same provisioned and maximum write capacity units. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If global secondary indexes are specified, then the following conditions must also
+        /// be met: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same hash key and sort key (if present).
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same provisioned and maximum write capacity
+        /// units. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlobalTable service method.</param>
@@ -1883,8 +1906,7 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-        /// You can restore your table to any point in time during the last 35 days with a 1-minute
-        /// granularity. 
+        /// You can restore your table to any point in time during the last 35 days. 
         /// </para>
         ///  
         /// <para>
@@ -2002,6 +2024,65 @@ namespace Amazon.DynamoDBv2
         public virtual DescribeGlobalTableResponse EndDescribeGlobalTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeGlobalTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeGlobalTableSettings
+
+        /// <summary>
+        /// Describes region specific settings for a global table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalTableSettings service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual DescribeGlobalTableSettingsResponse DescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request)
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGlobalTableSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeGlobalTableSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGlobalTableSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeGlobalTableSettingsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual DescribeGlobalTableSettingsResponse EndDescribeGlobalTableSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGlobalTableSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -3476,10 +3557,42 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code>
         /// and <code>LatestRestorableDateTime</code>. You can restore your table to any point
-        /// in time during the last 35 days with a 1-minute granularity. Any number of users can
-        /// execute up to 4 concurrent restores (any type of restore) in a given account. 
+        /// in time during the last 35 days. Any number of users can execute up to 4 concurrent
+        /// restores (any type of restore) in a given account. 
         /// 
         ///  
+        /// <para>
+        ///  When you restore using point in time recovery, DynamoDB restores your table data
+        /// to the state based on the selected date and time (day:hour:minute:second) to a new
+        /// table. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Along with data, the following are also included on the new restored table using
+        /// point in time recovery: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Global secondary indexes (GSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Local secondary indexes (LSIs)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned read and write capacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Encryption settings
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  All these settings come from the current settings of the source table at the time
+        /// of restore. 
+        /// </para>
+        ///  </important> </li> </ul> 
         /// <para>
         /// You must manually set up the following on the restored table:
         /// </para>
@@ -4111,8 +4224,7 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-        /// You can restore your table to any point in time during the last 35 days with a 1-minute
-        /// granularity. 
+        /// You can restore your table to any point in time during the last 35 days.. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -4179,7 +4291,8 @@ namespace Amazon.DynamoDBv2
         /// Adds or removes replicas in the specified global table. The global table must already
         /// exist to be able to use this operation. Any replica to be added must be empty, must
         /// have the same name as the global table, must have the same key schema, and must have
-        /// DynamoDB Streams enabled.
+        /// DynamoDB Streams enabled and must have same provisioned and maximum write capacity
+        /// units.
         /// 
         ///  <note> 
         /// <para>
@@ -4187,7 +4300,26 @@ namespace Amazon.DynamoDBv2
         /// in a single request, for simplicity we recommend that you issue separate requests
         /// for adding or removing replicas.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  If global secondary indexes are specified, then the following conditions must also
+        /// be met: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same name. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same hash key and sort key (if present).
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The global secondary indexes must have the same provisioned and maximum write capacity
+        /// units. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTable service method.</param>
         /// 
@@ -4249,6 +4381,96 @@ namespace Amazon.DynamoDBv2
         public virtual UpdateGlobalTableResponse EndUpdateGlobalTable(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateGlobalTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTableSettings
+
+        /// <summary>
+        /// Updates settings for a global table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalTableSettings service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.GlobalTableNotFoundException">
+        /// The specified global table does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.IndexNotFoundException">
+        /// The operation tried to access a nonexistent index.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
+        /// The specified replica is no longer part of the global table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request)
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGlobalTableSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateGlobalTableSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGlobalTableSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateGlobalTableSettingsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual UpdateGlobalTableSettingsResponse EndUpdateGlobalTableSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGlobalTableSettingsResponse>(asyncResult);
         }
 
         #endregion

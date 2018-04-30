@@ -362,6 +362,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void DescribeGlobalTableSettingsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeGlobalTableSettingsRequest>();
+            var marshaller = new DescribeGlobalTableSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeGlobalTableSettingsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeGlobalTableSettings").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeGlobalTableSettingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeGlobalTableSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeLimitsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeLimitsRequest>();
@@ -821,6 +850,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = UpdateGlobalTableResponseUnmarshaller.Instance.Unmarshall(context)
                 as UpdateGlobalTableResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void UpdateGlobalTableSettingsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateGlobalTableSettingsRequest>();
+            var marshaller = new UpdateGlobalTableSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UpdateGlobalTableSettingsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateGlobalTableSettings").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateGlobalTableSettingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateGlobalTableSettingsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

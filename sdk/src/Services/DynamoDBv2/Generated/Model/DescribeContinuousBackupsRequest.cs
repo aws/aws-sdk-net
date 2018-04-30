@@ -43,8 +43,7 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-    /// You can restore your table to any point in time during the last 35 days with a 1-minute
-    /// granularity. 
+    /// You can restore your table to any point in time during the last 35 days. 
     /// </para>
     ///  
     /// <para>

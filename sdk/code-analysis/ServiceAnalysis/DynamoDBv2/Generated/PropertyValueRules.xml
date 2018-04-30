@@ -59,6 +59,18 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsRequest.GlobalTableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsResponse.GlobalTableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeLimitsResponse.AccountMaxReadCapacityUnits</property>
     <min>1</min>
   </property-value-rule>
@@ -245,6 +257,22 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsRequest.GlobalTableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsRequest.GlobalTableProvisionedWriteCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsResponse.GlobalTableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateItemRequest.TableName</property>
     <min>3</min>
     <max>255</max>
@@ -356,6 +384,16 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.GlobalTableGlobalSecondaryIndexSettingsUpdate.IndexName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.GlobalTableGlobalSecondaryIndexSettingsUpdate.ProvisionedWriteCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.KeySchemaElement.AttributeName</property>
     <min>1</min>
     <max>255</max>
@@ -396,6 +434,42 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ProvisionedThroughputDescription.WriteCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.IndexName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.ProvisionedReadCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.ProvisionedWriteCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsUpdate.IndexName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsUpdate.ProvisionedReadCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaSettingsDescription.ReplicaProvisionedReadCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaSettingsDescription.ReplicaProvisionedWriteCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ReplicaSettingsUpdate.ReplicaProvisionedReadCapacityUnits</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

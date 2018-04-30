@@ -1229,6 +1229,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeGlobalTableSettings
+
+        internal virtual DescribeGlobalTableSettingsResponse DescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request)
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalTableSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
+        public virtual Task<DescribeGlobalTableSettingsResponse> DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGlobalTableSettingsRequest,DescribeGlobalTableSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeLimits
 
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
@@ -2470,6 +2502,38 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGlobalTableRequest,UpdateGlobalTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalTableSettings
+
+        internal virtual UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request)
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGlobalTableSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalTableSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
+        public virtual Task<UpdateGlobalTableSettingsResponse> UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlobalTableSettingsRequest,UpdateGlobalTableSettingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
