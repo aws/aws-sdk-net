@@ -29,7 +29,7 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateSkillGroupWithRoom operation.
-    /// Associates a skill group to a given room. This enables all skills in the associated
+    /// Associates a skill group with a given room. This enables all skills in the associated
     /// skill group on all devices in the room.
     /// </summary>
     public partial class AssociateSkillGroupWithRoomRequest : AmazonAlexaForBusinessRequest

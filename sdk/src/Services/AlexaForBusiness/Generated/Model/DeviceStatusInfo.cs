@@ -32,7 +32,26 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class DeviceStatusInfo
     {
+        private ConnectionStatus _connectionStatus;
         private List<DeviceStatusDetail> _deviceStatusDetails = new List<DeviceStatusDetail>();
+
+        /// <summary>
+        /// Gets and sets the property ConnectionStatus. 
+        /// <para>
+        /// The latest available information about the connection status of a device. 
+        /// </para>
+        /// </summary>
+        public ConnectionStatus ConnectionStatus
+        {
+            get { return this._connectionStatus; }
+            set { this._connectionStatus = value; }
+        }
+
+        // Check to see if ConnectionStatus property is set
+        internal bool IsSetConnectionStatus()
+        {
+            return this._connectionStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeviceStatusDetails. 

@@ -29,7 +29,7 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateContactWithAddressBook operation.
-    /// Associates a contact to a given address book.
+    /// Associates a contact with a given address book.
     /// </summary>
     public partial class AssociateContactWithAddressBookRequest : AmazonAlexaForBusinessRequest
     {

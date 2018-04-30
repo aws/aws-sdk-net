@@ -25,6 +25,102 @@ namespace Amazon.AlexaForBusiness
 {
 
     /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFFLINE for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus OFFLINE = new ConnectionStatus("OFFLINE");
+        /// <summary>
+        /// Constant ONLINE for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus ONLINE = new ConnectionStatus("ONLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceEventType.
+    /// </summary>
+    public class DeviceEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTION_STATUS for DeviceEventType
+        /// </summary>
+        public static readonly DeviceEventType CONNECTION_STATUS = new DeviceEventType("CONNECTION_STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceEventType FindValue(string value)
+        {
+            return FindValue<DeviceEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceStatus.
     /// </summary>
     public class DeviceStatus : ConstantClass
@@ -188,6 +284,10 @@ namespace Amazon.AlexaForBusiness
         /// Constant DEREGISTERING for EnrollmentStatus
         /// </summary>
         public static readonly EnrollmentStatus DEREGISTERING = new EnrollmentStatus("DEREGISTERING");
+        /// <summary>
+        /// Constant DISASSOCIATING for EnrollmentStatus
+        /// </summary>
+        public static readonly EnrollmentStatus DISASSOCIATING = new EnrollmentStatus("DISASSOCIATING");
         /// <summary>
         /// Constant INITIALIZED for EnrollmentStatus
         /// </summary>

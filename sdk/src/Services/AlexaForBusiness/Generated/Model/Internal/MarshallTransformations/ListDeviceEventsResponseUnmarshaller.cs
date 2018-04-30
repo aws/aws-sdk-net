@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateContactWithAddressBook operation
+    /// Response Unmarshaller for ListDeviceEvents operation
     /// </summary>  
-    public class AssociateContactWithAddressBookResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListDeviceEventsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateContactWithAddressBookResponse response = new AssociateContactWithAddressBookResponse();
+            ListDeviceEventsResponse response = new ListDeviceEventsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("DeviceEvents", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeviceEvent, DeviceEventUnmarshaller>(DeviceEventUnmarshaller.Instance);
+                    response.DeviceEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,16 +78,16 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonAlexaForBusinessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AssociateContactWithAddressBookResponseUnmarshaller _instance = new AssociateContactWithAddressBookResponseUnmarshaller();        
+        private static ListDeviceEventsResponseUnmarshaller _instance = new ListDeviceEventsResponseUnmarshaller();        
 
-        internal static AssociateContactWithAddressBookResponseUnmarshaller GetInstance()
+        internal static ListDeviceEventsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -78,7 +95,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateContactWithAddressBookResponseUnmarshaller Instance
+        public static ListDeviceEventsResponseUnmarshaller Instance
         {
             get
             {

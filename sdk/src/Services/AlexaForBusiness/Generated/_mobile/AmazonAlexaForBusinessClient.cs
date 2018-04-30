@@ -37,12 +37,12 @@ namespace Amazon.AlexaForBusiness
     /// Implementation for accessing AlexaForBusiness
     ///
     /// Alexa for Business makes it easy for you to use Alexa in your organization. Alexa
-    /// for Business gives you the tools you need to manage Alexa devices, enroll your users,
-    /// and assign skills, at scale. You can build your own context-aware voice skills using
-    /// the Alexa Skills Kit, and the Alexa for Business APIs, and you can make these available
-    /// as private skills for your organization. Alexa for Business also makes it easy to
-    /// voice-enable your products and services, providing context-aware voice experiences
-    /// for your customers.
+    /// for Business gives you the tools you need for managing Alexa devices, enroll your
+    /// users, and assign skills, at scale. You can build your own context-aware voice skills
+    /// using the Alexa Skills Kit and the Alexa for Business API operations. You can make
+    /// also these available as private skills for your organization. Alexa for Business makes
+    /// it easy to voice-enable your products and services, providing context-aware voice
+    /// experiences for your customers.
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
@@ -1063,6 +1063,38 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = GetSkillGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSkillGroupRequest,GetSkillGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeviceEvents
+
+        internal virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
+        {
+            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeviceEventsRequest,ListDeviceEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeviceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        public virtual Task<ListDeviceEventsResponse> ListDeviceEventsAsync(ListDeviceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeviceEventsRequest,ListDeviceEventsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

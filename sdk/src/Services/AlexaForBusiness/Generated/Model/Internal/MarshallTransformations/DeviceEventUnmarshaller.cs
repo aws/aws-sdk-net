@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeviceStatusInfo Object
+    /// Response Unmarshaller for DeviceEvent Object
     /// </summary>  
-    public class DeviceStatusInfoUnmarshaller : IUnmarshaller<DeviceStatusInfo, XmlUnmarshallerContext>, IUnmarshaller<DeviceStatusInfo, JsonUnmarshallerContext>
+    public class DeviceEventUnmarshaller : IUnmarshaller<DeviceEvent, XmlUnmarshallerContext>, IUnmarshaller<DeviceEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DeviceStatusInfo IUnmarshaller<DeviceStatusInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeviceEvent IUnmarshaller<DeviceEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DeviceStatusInfo Unmarshall(JsonUnmarshallerContext context)
+        public DeviceEvent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DeviceStatusInfo unmarshalledObject = new DeviceStatusInfo();
+            DeviceEvent unmarshalledObject = new DeviceEvent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeviceStatusDetails", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DeviceStatusDetail, DeviceStatusDetailUnmarshaller>(DeviceStatusDetailUnmarshaller.Instance);
-                    unmarshalledObject.DeviceStatusDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeviceStatusInfoUnmarshaller _instance = new DeviceStatusInfoUnmarshaller();        
+        private static DeviceEventUnmarshaller _instance = new DeviceEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeviceStatusInfoUnmarshaller Instance
+        public static DeviceEventUnmarshaller Instance
         {
             get
             {

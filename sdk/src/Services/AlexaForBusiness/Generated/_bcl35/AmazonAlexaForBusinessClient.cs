@@ -34,12 +34,12 @@ namespace Amazon.AlexaForBusiness
     /// Implementation for accessing AlexaForBusiness
     ///
     /// Alexa for Business makes it easy for you to use Alexa in your organization. Alexa
-    /// for Business gives you the tools you need to manage Alexa devices, enroll your users,
-    /// and assign skills, at scale. You can build your own context-aware voice skills using
-    /// the Alexa Skills Kit, and the Alexa for Business APIs, and you can make these available
-    /// as private skills for your organization. Alexa for Business also makes it easy to
-    /// voice-enable your products and services, providing context-aware voice experiences
-    /// for your customers.
+    /// for Business gives you the tools you need for managing Alexa devices, enroll your
+    /// users, and assign skills, at scale. You can build your own context-aware voice skills
+    /// using the Alexa Skills Kit and the Alexa for Business API operations. You can make
+    /// also these available as private skills for your organization. Alexa for Business makes
+    /// it easy to voice-enable your products and services, providing context-aware voice
+    /// experiences for your customers.
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
@@ -232,11 +232,15 @@ namespace Amazon.AlexaForBusiness
         #region  AssociateContactWithAddressBook
 
         /// <summary>
-        /// Associates a contact to a given address book.
+        /// Associates a contact with a given address book.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithAddressBook service method.</param>
         /// 
         /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits. HTTP
+        /// Status Code: 400
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
         public virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
         {
@@ -285,9 +289,9 @@ namespace Amazon.AlexaForBusiness
         #region  AssociateDeviceWithRoom
 
         /// <summary>
-        /// Associates a device to a given room. This applies all the settings from the room profile
-        /// to the device, and all the skills in any skill groups added to that room. This operation
-        /// requires the device to be online, or a manual sync is required.
+        /// Associates a device with a given room. This applies all the settings from the room
+        /// profile to the device, and all the skills in any skill groups added to that room.
+        /// This operation requires the device to be online, or else a manual sync is required.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithRoom service method.</param>
         /// 
@@ -344,7 +348,7 @@ namespace Amazon.AlexaForBusiness
         #region  AssociateSkillGroupWithRoom
 
         /// <summary>
-        /// Associates a skill group to a given room. This enables all skills in the associated
+        /// Associates a skill group with a given room. This enables all skills in the associated
         /// skill group on all devices in the room.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSkillGroupWithRoom service method.</param>
@@ -1698,6 +1702,65 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ListDeviceEvents
+
+        /// <summary>
+        /// Lists the Device Event history for up to 30 days. If EventType isn't specified in
+        /// the request, this returns a list of all device events in reverse chronological order.
+        /// If EventType is specified, this returns a list of device events for that EventType
+        /// in reverse chronological order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListDeviceEvents service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found. HTTP Status Code: 400
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        public virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
+        {
+            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeviceEventsRequest,ListDeviceEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeviceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceEvents operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        public virtual IAsyncResult BeginListDeviceEvents(ListDeviceEventsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListDeviceEventsRequestMarshaller.Instance;
+            var unmarshaller = ListDeviceEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDeviceEventsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeviceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeviceEvents.</param>
+        /// 
+        /// <returns>Returns a  ListDeviceEventsResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        public virtual ListDeviceEventsResponse EndListDeviceEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDeviceEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSkills
 
         /// <summary>
@@ -2409,7 +2472,7 @@ namespace Amazon.AlexaForBusiness
         #region  StartDeviceSync
 
         /// <summary>
-        /// Resets a device and its account to the known default settings by clearing all information
+        /// Resets a device and its account to the known default settings, by clearing all information
         /// and settings set by previous users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceSync service method.</param>

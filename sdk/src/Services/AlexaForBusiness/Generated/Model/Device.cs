@@ -99,8 +99,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property DeviceStatus. 
         /// <para>
-        /// The status of a device. If the status is not READY, check the DeviceStatusInfo for
-        /// details.
+        /// The status of a device. If the status is not READY, check the DeviceStatusInfo value
+        /// for details.
         /// </para>
         /// </summary>
         public DeviceStatus DeviceStatus

@@ -28,42 +28,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the SearchDevices operation.
-    /// Searches devices and lists the ones that meet a set of filter criteria.
+    /// Container for the parameters to the ListDeviceEvents operation.
+    /// Lists the Device Event history for up to 30 days. If EventType isn't specified in
+    /// the request, this returns a list of all device events in reverse chronological order.
+    /// If EventType is specified, this returns a list of device events for that EventType
+    /// in reverse chronological order.
     /// </summary>
-    public partial class SearchDevicesRequest : AmazonAlexaForBusinessRequest
+    public partial class ListDeviceEventsRequest : AmazonAlexaForBusinessRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private string _deviceArn;
+        private DeviceEventType _eventType;
         private int? _maxResults;
         private string _nextToken;
-        private List<Sort> _sortCriteria = new List<Sort>();
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property DeviceArn. 
         /// <para>
-        /// The filters to use to list a specified set of devices. Supported filter keys are DeviceName,
-        /// DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly,
-        /// and ConnectionStatus (ONLINE and OFFLINE).
+        /// The ARN of a device.
         /// </para>
         /// </summary>
-        public List<Filter> Filters
+        public string DeviceArn
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._deviceArn; }
+            set { this._deviceArn = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if DeviceArn property is set
+        internal bool IsSetDeviceArn()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._deviceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventType. 
+        /// <para>
+        /// The event type to filter device events.
+        /// </para>
+        /// </summary>
+        public DeviceEventType EventType
+        {
+            get { return this._eventType; }
+            set { this._eventType = value; }
+        }
+
+        // Check to see if EventType property is set
+        internal bool IsSetEventType()
+        {
+            return this._eventType != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.
+        /// the specified MaxResults value, a token is included in the response so that the remaining
+        /// results can be retrieved. Required. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -82,8 +101,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
+        /// results from this action. If this parameter is specified, the response only includes
+        /// results beyond the token, up to the value specified by MaxResults.
         /// </para>
         /// </summary>
         public string NextToken
@@ -96,25 +115,6 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SortCriteria. 
-        /// <para>
-        /// The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
-        /// </para>
-        /// </summary>
-        public List<Sort> SortCriteria
-        {
-            get { return this._sortCriteria; }
-            set { this._sortCriteria = value; }
-        }
-
-        // Check to see if SortCriteria property is set
-        internal bool IsSetSortCriteria()
-        {
-            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
         }
 
     }

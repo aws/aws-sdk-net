@@ -29,7 +29,7 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDeviceSync operation.
-    /// Resets a device and its account to the known default settings by clearing all information
+    /// Resets a device and its account to the known default settings, by clearing all information
     /// and settings set by previous users.
     /// </summary>
     public partial class StartDeviceSyncRequest : AmazonAlexaForBusinessRequest

@@ -60,7 +60,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the contact to display on the AWS management console.
+        /// The name of the contact to display on the console.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -114,7 +114,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number of the contact in E164 format.
+        /// The phone number of the contact in E.164 format.
         /// </para>
         /// </summary>
         public string PhoneNumber

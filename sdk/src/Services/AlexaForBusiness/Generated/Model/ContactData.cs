@@ -59,7 +59,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the contact to display on the AWS management console.
+        /// The name of the contact to display on the console.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -77,7 +77,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// The first name of the contact that is used to call the contact on the device.
+        /// The first name of the contact, used to call the contact on the device.
         /// </para>
         /// </summary>
         public string FirstName
@@ -95,7 +95,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// The last name of the contact that is used to call the contact on the device.
+        /// The last name of the contact, used to call the contact on the device.
         /// </para>
         /// </summary>
         public string LastName
