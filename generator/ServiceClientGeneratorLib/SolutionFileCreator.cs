@@ -114,28 +114,32 @@ namespace ServiceClientGenerator
         {
             Name = CommonTestProjectName,
             ProjectGuid = CommonTestProjectGuid,
-            ProjectPath = Path.Combine("..", "..", "..", CommonTestProject.ProjectPath)
+            ProjectPath = Path.Combine("..", "..", "..", CommonTestProject.ProjectPath),
+            RelativePath = string.Format(@"..\..\..\test\Common\{0}.csproj", CommonTestProjectName)
         };
 
         private static readonly Project UnitTestUtilityProject = new Project
         {
             Name = UnitTestUtilityProjectFileName,
             ProjectGuid = UtilityProjectFileGuid,
-            ProjectPath = string.Format(@"..\..\..\..\sdk\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName)
+            ProjectPath = string.Format(@"..\..\..\..\sdk\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName),
+            RelativePath = string.Format(@"..\..\..\test\UnitTests\Custom\{0}.csproj", UnitTestUtilityProjectFileName)
         };
 
         private static readonly Project IntegrationTestUtility35Project = new Project
         {
             Name = IntegrationTestUtilityName35,
             ProjectGuid = IntegrationTestUtilityGuid35,
-            ProjectPath = string.Format(@"..\..\..\..\sdk\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName35)
+            ProjectPath = string.Format(@"..\..\..\..\sdk\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName35),
+            RelativePath = string.Format(@"..\..\..\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName35)
         };
 
         private static readonly Project IntegrationTestUtility45Project = new Project
         {
             Name = IntegrationTestUtilityName45,
             ProjectGuid = IntegrationTestUtilityGuid45,
-            ProjectPath = string.Format(@"..\..\..\..\sdk\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName45)
+            ProjectPath = string.Format(@"..\..\..\..\sdk\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName45),
+            RelativePath = string.Format(@"..\..\..\test\IntegrationTests\{0}.csproj", IntegrationTestUtilityName45)
         };
 
         private static readonly List<Project> CoreProjects = new List<Project>{ 
@@ -608,7 +612,7 @@ namespace ServiceClientGenerator
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
             session["SolutionGuid"] = solutionGuid;
 
-            var generator = new CoreCLRSolutionFile() { Session = session };
+            var generator = new SolutionFileBclAndCoreCLR() { Session = session };
             var content = generator.TransformText();
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
@@ -746,7 +750,7 @@ namespace ServiceClientGenerator
 
                     SelectProjectAndConfigurationsForSolution(projectFile, buildConfigurations);
                 }
-               
+
                 // Include service's Unit and Integ csproj files and its dependencies.
                 AddTestProjectsAndDependencies(projectFileConfigurations, buildConfigurations, serviceDirectory, projectGuidDictionary, testProjects, dependentProjects);
 
@@ -775,6 +779,8 @@ namespace ServiceClientGenerator
                     continue;
                 }
 
+                ConvertToSlnRelativePath(testProjects, solutionPath);
+
                 serviceSolutionFolders.Add(folder);
                 // Adding core projects to service solution
                 session["CoreProjects"] = CoreProjects;
@@ -802,11 +808,34 @@ namespace ServiceClientGenerator
                 }
                 //Adding integration test service dependencies
                 session["IntegrationTestDependencies"] = dependentProjectList;
-                var generator = new CoreCLRSolutionFile() { Session = session };
+                var generator = new SolutionFileBclAndCoreCLR() { Session = session };
                 var content = generator.TransformText();
                 GeneratorDriver.WriteFile(serviceDirectory.FullName, null, solutionFileName, content, true, false);
             }
         }
+
+        /// <summary>
+        /// This method converts the test projects path from being generator sln relative to the service specific sln
+        /// relative path
+        /// Ex
+        /// ..\..\..\..\sdk\test\Services\{ServiceName}\UnitTests\AWSSDK.UnitTests.{ServiceName}.Net35.csproj
+        /// becomes
+        /// ..\..\..\test\Services\{ServiceName}\UnitTests\AWSSDK.UnitTests.{ServiceName}.Net35.csproj
+        /// </summary>
+        private static void ConvertToSlnRelativePath(List<Project> testProjects, string solutionPath)
+        {
+            var solutionUri = new Uri(Path.GetFullPath(solutionPath));
+            foreach (var testProject in testProjects)
+            {
+                if (!string.IsNullOrEmpty(testProject.RelativePath))
+                {
+                    continue;
+                }
+                var testProjecturi = new Uri(Path.GetFullPath(testProject.ProjectPath));
+                testProject.RelativePath = solutionUri.MakeRelativeUri(testProjecturi).ToString().Replace('/', Path.DirectorySeparatorChar);
+            }
+        }
+
         /// <summary>
         /// Adding Service test projects and its dependecies
         /// </summary>
@@ -1052,6 +1081,11 @@ namespace ServiceClientGenerator
             public string ProjectPath { get; set; }
             public string Name { get; set; }
             public string FolderGuid { get; set; }
+            /// <summary>
+            /// This property is being used only by service specific sln's test projects
+            /// to denote a path relative to the sln files.
+            /// </summary>
+            public string RelativePath { get; set; }
         }
 
         public class ServiceSolutionFolder
