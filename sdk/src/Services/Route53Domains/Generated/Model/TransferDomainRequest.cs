@@ -30,8 +30,9 @@ namespace Amazon.Route53Domains.Model
     /// <summary>
     /// Container for the parameters to the TransferDomain operation.
     /// This operation transfers a domain from another registrar to Amazon Route 53. When
-    /// the transfer is complete, the domain is registered with the AWS registrar partner,
-    /// Gandi.
+    /// the transfer is complete, the domain is registered either with Amazon Registrar (for
+    /// .com, .net, and .org domains) or with our registrar associate, Gandi (for all other
+    /// TLDs).
     /// 
     ///  
     /// <para>
@@ -222,8 +223,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectAdminContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
-        /// registrar partner, Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
+        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
+        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
+        /// the information that you entered for the admin contact.
         /// </para>
         ///  
         /// <para>
@@ -246,8 +249,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectRegistrantContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
-        /// registrar partner, Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
+        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
+        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
+        /// the information that you entered for the registrant contact (domain owner).
         /// </para>
         ///  
         /// <para>
@@ -270,8 +275,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectTechContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
-        /// registrar partner, Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
+        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
+        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
+        /// the information that you entered for the technical contact.
         /// </para>
         ///  
         /// <para>

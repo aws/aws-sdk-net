@@ -43,7 +43,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property End. 
         /// <para>
         /// The end date and time for the time period for which you want a list of billing records.
-        /// Specify the date in Unix time format.
+        /// Specify the date and time in Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime End
@@ -113,7 +113,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Start. 
         /// <para>
         /// The beginning date and time for the time period for which you want a list of billing
-        /// records. Specify the date in Unix time format.
+        /// records. Specify the date and time in Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
         public DateTime Start

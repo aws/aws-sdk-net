@@ -79,6 +79,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxItems);
                 }
 
+                if(publicRequest.IsSetSubmittedSince())
+                {
+                    context.Writer.WritePropertyName("SubmittedSince");
+                    context.Writer.Write(publicRequest.SubmittedSince);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
