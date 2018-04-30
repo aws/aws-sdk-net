@@ -33,7 +33,7 @@ namespace Amazon.SageMaker.Model
     /// models. In the configuration, you identify one or more models, created using the <code>CreateModel</code>
     /// API, to deploy and the resources that you want Amazon SageMaker to provision. Then
     /// you call the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-    /// API. 
+    /// API.
     /// 
     ///  <note> 
     /// <para>

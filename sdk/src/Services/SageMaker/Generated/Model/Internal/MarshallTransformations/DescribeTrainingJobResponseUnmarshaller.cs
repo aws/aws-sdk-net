@@ -153,6 +153,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.TrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    response.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

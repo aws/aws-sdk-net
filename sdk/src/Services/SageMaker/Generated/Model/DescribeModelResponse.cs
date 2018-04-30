@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private string _modelArn;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -127,6 +128,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPrimaryContainer()
         {
             return this._primaryContainer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A object that specifies the VPC that this model has access to. For more information,
+        /// see <a>host-vpc</a> 
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

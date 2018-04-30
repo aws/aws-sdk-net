@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
@@ -391,6 +392,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingStartTime()
         {
             return this._trainingStartTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A object that specifies the VPC that this training job has access to. For more information,
+        /// see <a>train-vpc</a>.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

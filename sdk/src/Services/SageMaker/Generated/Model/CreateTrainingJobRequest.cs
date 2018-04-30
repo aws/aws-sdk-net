@@ -99,6 +99,7 @@ namespace Amazon.SageMaker.Model
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = new List<Tag>();
         private string _trainingJobName;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
@@ -320,6 +321,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobName()
         {
             return this._trainingJobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// A object that specifies the VPC that you want your training job to connect to. Control
+        /// access to and from your training container by configuring the VPC. For more information,
+        /// see <a>train-vpc</a> 
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }
