@@ -234,6 +234,102 @@ namespace Amazon.WorkSpaces
         #endregion
 
         
+        #region  AssociateIpGroups
+
+        internal virtual AssociateIpGroupsResponse AssociateIpGroups(AssociateIpGroupsRequest request)
+        {
+            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpGroupsRequest,AssociateIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        public virtual Task<AssociateIpGroupsResponse> AssociateIpGroupsAsync(AssociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIpGroupsRequest,AssociateIpGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AuthorizeIpRules
+
+        internal virtual AuthorizeIpRulesResponse AuthorizeIpRules(AuthorizeIpRulesRequest request)
+        {
+            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeIpRulesRequest,AuthorizeIpRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeIpRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        public virtual Task<AuthorizeIpRulesResponse> AuthorizeIpRulesAsync(AuthorizeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AuthorizeIpRulesRequest,AuthorizeIpRulesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIpGroup
+
+        internal virtual CreateIpGroupResponse CreateIpGroup(CreateIpGroupRequest request)
+        {
+            var marshaller = CreateIpGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpGroupRequest,CreateIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        public virtual Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateIpGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIpGroupRequest,CreateIpGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
@@ -298,6 +394,38 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteIpGroup
+
+        internal virtual DeleteIpGroupResponse DeleteIpGroup(DeleteIpGroupRequest request)
+        {
+            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpGroupRequest,DeleteIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        public virtual Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIpGroupRequest,DeleteIpGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTags
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
@@ -325,6 +453,38 @@ namespace Amazon.WorkSpaces
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIpGroups
+
+        internal virtual DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request)
+        {
+            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpGroupsRequest,DescribeIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        public virtual Task<DescribeIpGroupsResponse> DescribeIpGroupsAsync(DescribeIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpGroupsRequest,DescribeIpGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -562,6 +722,38 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DisassociateIpGroups
+
+        internal virtual DisassociateIpGroupsResponse DisassociateIpGroups(DisassociateIpGroupsRequest request)
+        {
+            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        public virtual Task<DisassociateIpGroupsResponse> DisassociateIpGroupsAsync(DisassociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyWorkspaceProperties
 
         internal virtual ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
@@ -589,6 +781,38 @@ namespace Amazon.WorkSpaces
             var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyWorkspacePropertiesRequest,ModifyWorkspacePropertiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyWorkspaceState
+
+        internal virtual ModifyWorkspaceStateResponse ModifyWorkspaceState(ModifyWorkspaceStateRequest request)
+        {
+            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyWorkspaceStateRequest,ModifyWorkspaceStateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        public virtual Task<ModifyWorkspaceStateResponse> ModifyWorkspaceStateAsync(ModifyWorkspaceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyWorkspaceStateRequest,ModifyWorkspaceStateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -653,6 +877,38 @@ namespace Amazon.WorkSpaces
             var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebuildWorkspacesRequest,RebuildWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RevokeIpRules
+
+        internal virtual RevokeIpRulesResponse RevokeIpRules(RevokeIpRulesRequest request)
+        {
+            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeIpRulesRequest,RevokeIpRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeIpRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        public virtual Task<RevokeIpRulesResponse> RevokeIpRulesAsync(RevokeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RevokeIpRulesRequest,RevokeIpRulesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -749,6 +1005,38 @@ namespace Amazon.WorkSpaces
             var unmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateWorkspacesRequest,TerminateWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRulesOfIpGroup
+
+        internal virtual UpdateRulesOfIpGroupResponse UpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request)
+        {
+            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRulesOfIpGroupRequest,UpdateRulesOfIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRulesOfIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRulesOfIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        public virtual Task<UpdateRulesOfIpGroupResponse> UpdateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRulesOfIpGroupRequest,UpdateRulesOfIpGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

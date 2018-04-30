@@ -43,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Workspaces. 
         /// <para>
-        /// Information about the WorkSpaces to create.
+        /// The WorkSpaces to create. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
         public List<WorkspaceRequest> Workspaces

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Contains information about an AWS Directory Service directory for use with Amazon
-    /// WorkSpaces.
+    /// Information about an AWS Directory Service directory for use with Amazon WorkSpaces.
     /// </summary>
     public partial class WorkspaceDirectory
     {
@@ -40,6 +39,7 @@ namespace Amazon.WorkSpaces.Model
         private WorkspaceDirectoryType _directoryType;
         private List<string> _dnsIpAddresses = new List<string>();
         private string _iamRoleId;
+        private List<string> _ipGroupIds = new List<string>();
         private string _registrationCode;
         private WorkspaceDirectoryState _state;
         private List<string> _subnetIds = new List<string>();
@@ -171,6 +171,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetIamRoleId()
         {
             return this._iamRoleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpGroupIds. 
+        /// <para>
+        /// The identifiers of the IP access control groups associated with the directory.
+        /// </para>
+        /// </summary>
+        public List<string> IpGroupIds
+        {
+            get { return this._ipGroupIds; }
+            set { this._ipGroupIds = value; }
+        }
+
+        // Check to see if IpGroupIds property is set
+        internal bool IsSetIpGroupIds()
+        {
+            return this._ipGroupIds != null && this._ipGroupIds.Count > 0; 
         }
 
         /// <summary>

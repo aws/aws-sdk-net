@@ -41,11 +41,162 @@ namespace Amazon.WorkSpaces
     {
 
         
+        #region  AssociateIpGroups
+
+
+        /// <summary>
+        /// Associates the specified IP access control group with the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        AssociateIpGroupsResponse AssociateIpGroups(AssociateIpGroupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        Task<AssociateIpGroupsResponse> AssociateIpGroupsAsync(AssociateIpGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AuthorizeIpRules
+
+
+        /// <summary>
+        /// Adds one or more rules to the specified IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// This action gives users permission to access their WorkSpaces from the CIDR address
+        /// ranges specified in the rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeIpRules service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeIpRules service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        AuthorizeIpRulesResponse AuthorizeIpRules(AuthorizeIpRulesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeIpRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        Task<AuthorizeIpRulesResponse> AuthorizeIpRulesAsync(AuthorizeIpRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateIpGroup
+
+
+        /// <summary>
+        /// Creates an IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// An IP access control group provides you with the ability to control the IP addresses
+        /// from which users are allowed to access their WorkSpaces. To specify the CIDR address
+        /// ranges, add rules to your IP access control group and then associate the group with
+        /// your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default IP access control group associated with your directory. If you
+        /// don't associate an IP access control group with your directory, the default group
+        /// is used. The default group includes a default rule that allows users to access their
+        /// WorkSpaces from anywhere. You cannot modify the default IP access control group for
+        /// your directory.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        CreateIpGroupResponse CreateIpGroup(CreateIpGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateTags
 
 
         /// <summary>
-        /// Creates tags for the specified WorkSpace.
+        /// Creates the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
@@ -115,11 +266,55 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteIpGroup
+
+
+        /// <summary>
+        /// Deletes the specified IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an IP access control group that is associated with a directory.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        DeleteIpGroupResponse DeleteIpGroup(DeleteIpGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteTags
 
 
         /// <summary>
-        /// Deletes the specified tags from a WorkSpace.
+        /// Deletes the specified tags from the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -148,11 +343,44 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeIpGroups
+
+
+        /// <summary>
+        /// Describes one or more of your IP access control groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        Task<DescribeIpGroupsResponse> DescribeIpGroupsAsync(DescribeIpGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeTags
 
 
         /// <summary>
-        /// Describes the tags for the specified WorkSpace.
+        /// Describes the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -418,6 +646,45 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DisassociateIpGroups
+
+
+        /// <summary>
+        /// Disassociates the specified IP access control group from the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        DisassociateIpGroupsResponse DisassociateIpGroups(DisassociateIpGroupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        Task<DisassociateIpGroupsResponse> DisassociateIpGroupsAsync(DisassociateIpGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyWorkspaceProperties
 
 
@@ -434,7 +701,7 @@ namespace Amazon.WorkSpaces
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
-        /// The state of the WorkSpace is not valid for this operation.
+        /// The state of the resource is not valid for this operation.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
         /// The properties of this WorkSpace are currently being modified. Try again in a moment.
@@ -468,6 +735,50 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifyWorkspaceState
+
+
+        /// <summary>
+        /// Sets the state of the specified WorkSpace.
+        /// 
+        ///  
+        /// <para>
+        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+        /// WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild.
+        /// An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace
+        /// in the <code>ADMIN_MAINTENANCE</code> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceState service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        ModifyWorkspaceStateResponse ModifyWorkspaceState(ModifyWorkspaceStateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        Task<ModifyWorkspaceStateResponse> ModifyWorkspaceStateAsync(ModifyWorkspaceStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RebootWorkspaces
 
 
@@ -476,8 +787,7 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>,
-        /// or <code>INOPERABLE</code>.
+        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
         /// </para>
         ///  
         /// <para>
@@ -509,11 +819,12 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Rebuilds the specified WorkSpaces.
+        /// Rebuilds the specified WorkSpace.
         /// 
         ///  
         /// <para>
-        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
+        /// or <code>UNHEALTHY</code>.
         /// </para>
         ///  
         /// <para>
@@ -545,6 +856,45 @@ namespace Amazon.WorkSpaces
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeIpRules
+
+
+        /// <summary>
+        /// Removes one or more rules from the specified IP access control group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeIpRules service method.</param>
+        /// 
+        /// <returns>The response from the RevokeIpRules service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        RevokeIpRulesResponse RevokeIpRules(RevokeIpRulesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeIpRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        Task<RevokeIpRulesResponse> RevokeIpRulesAsync(RevokeIpRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -655,6 +1005,49 @@ namespace Amazon.WorkSpaces
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRulesOfIpGroup
+
+
+        /// <summary>
+        /// Replaces the current rules of the specified IP access control group with the specified
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRulesOfIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRulesOfIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        UpdateRulesOfIpGroupResponse UpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRulesOfIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRulesOfIpGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        Task<UpdateRulesOfIpGroupResponse> UpdateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

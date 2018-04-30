@@ -227,10 +227,239 @@ namespace Amazon.WorkSpaces
         #endregion
 
         
+        #region  AssociateIpGroups
+
+        /// <summary>
+        /// Associates the specified IP access control group with the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        public virtual AssociateIpGroupsResponse AssociateIpGroups(AssociateIpGroupsRequest request)
+        {
+            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpGroupsRequest,AssociateIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpGroups operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIpGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        public virtual IAsyncResult BeginAssociateIpGroups(AssociateIpGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateIpGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIpGroups.</param>
+        /// 
+        /// <returns>Returns a  AssociateIpGroupsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
+        public virtual AssociateIpGroupsResponse EndAssociateIpGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateIpGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AuthorizeIpRules
+
+        /// <summary>
+        /// Adds one or more rules to the specified IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// This action gives users permission to access their WorkSpaces from the CIDR address
+        /// ranges specified in the rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeIpRules service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeIpRules service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        public virtual AuthorizeIpRulesResponse AuthorizeIpRules(AuthorizeIpRulesRequest request)
+        {
+            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeIpRulesRequest,AuthorizeIpRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeIpRules operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeIpRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        public virtual IAsyncResult BeginAuthorizeIpRules(AuthorizeIpRulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AuthorizeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AuthorizeIpRulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AuthorizeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeIpRules.</param>
+        /// 
+        /// <returns>Returns a  AuthorizeIpRulesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
+        public virtual AuthorizeIpRulesResponse EndAuthorizeIpRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AuthorizeIpRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIpGroup
+
+        /// <summary>
+        /// Creates an IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// An IP access control group provides you with the ability to control the IP addresses
+        /// from which users are allowed to access their WorkSpaces. To specify the CIDR address
+        /// ranges, add rules to your IP access control group and then associate the group with
+        /// your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a default IP access control group associated with your directory. If you
+        /// don't associate an IP access control group with your directory, the default group
+        /// is used. The default group includes a default rule that allows users to access their
+        /// WorkSpaces from anywhere. You cannot modify the default IP access control group for
+        /// your directory.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceCreationFailedException">
+        /// The resource could not be created.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        public virtual CreateIpGroupResponse CreateIpGroup(CreateIpGroupRequest request)
+        {
+            var marshaller = CreateIpGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpGroupRequest,CreateIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpGroup operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateIpGroup(CreateIpGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateIpGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateIpGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateIpGroupResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
+        public virtual CreateIpGroupResponse EndCreateIpGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIpGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateTags
 
         /// <summary>
-        /// Creates tags for the specified WorkSpace.
+        /// Creates the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
@@ -353,10 +582,80 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteIpGroup
+
+        /// <summary>
+        /// Deletes the specified IP access control group.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an IP access control group that is associated with a directory.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        public virtual DeleteIpGroupResponse DeleteIpGroup(DeleteIpGroupRequest request)
+        {
+            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpGroupRequest,DeleteIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpGroup operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIpGroup(DeleteIpGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteIpGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteIpGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpGroupResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
+        public virtual DeleteIpGroupResponse EndDeleteIpGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIpGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteTags
 
         /// <summary>
-        /// Deletes the specified tags from a WorkSpace.
+        /// Deletes the specified tags from the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -412,10 +711,69 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeIpGroups
+
+        /// <summary>
+        /// Describes one or more of your IP access control groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        public virtual DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request)
+        {
+            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpGroupsRequest,DescribeIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpGroups operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIpGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeIpGroups(DescribeIpGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIpGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIpGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeIpGroupsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
+        public virtual DescribeIpGroupsResponse EndDescribeIpGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeIpGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTags
 
         /// <summary>
-        /// Describes the tags for the specified WorkSpace.
+        /// Describes the specified tags for the specified WorkSpace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -770,6 +1128,71 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DisassociateIpGroups
+
+        /// <summary>
+        /// Disassociates the specified IP access control group from the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpGroups service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpGroups service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        public virtual DisassociateIpGroupsResponse DisassociateIpGroups(DisassociateIpGroupsRequest request)
+        {
+            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpGroups operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIpGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateIpGroups(DisassociateIpGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateIpGroupsRequestMarshaller.Instance;
+            var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateIpGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIpGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIpGroups.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIpGroupsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
+        public virtual DisassociateIpGroupsResponse EndDisassociateIpGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateIpGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyWorkspaceProperties
 
         /// <summary>
@@ -785,7 +1208,7 @@ namespace Amazon.WorkSpaces
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
-        /// The state of the WorkSpace is not valid for this operation.
+        /// The state of the resource is not valid for this operation.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
         /// The properties of this WorkSpace are currently being modified. Try again in a moment.
@@ -846,6 +1269,76 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifyWorkspaceState
+
+        /// <summary>
+        /// Sets the state of the specified WorkSpace.
+        /// 
+        ///  
+        /// <para>
+        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+        /// WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild.
+        /// An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace
+        /// in the <code>ADMIN_MAINTENANCE</code> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState service method.</param>
+        /// 
+        /// <returns>The response from the ModifyWorkspaceState service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        public virtual ModifyWorkspaceStateResponse ModifyWorkspaceState(ModifyWorkspaceStateRequest request)
+        {
+            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyWorkspaceStateRequest,ModifyWorkspaceStateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyWorkspaceState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        public virtual IAsyncResult BeginModifyWorkspaceState(ModifyWorkspaceStateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
+            var unmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyWorkspaceStateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyWorkspaceState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyWorkspaceState.</param>
+        /// 
+        /// <returns>Returns a  ModifyWorkspaceStateResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
+        public virtual ModifyWorkspaceStateResponse EndModifyWorkspaceState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyWorkspaceStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RebootWorkspaces
 
         /// <summary>
@@ -853,8 +1346,7 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>,
-        /// or <code>INOPERABLE</code>.
+        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
         /// </para>
         ///  
         /// <para>
@@ -912,11 +1404,12 @@ namespace Amazon.WorkSpaces
         #region  RebuildWorkspaces
 
         /// <summary>
-        /// Rebuilds the specified WorkSpaces.
+        /// Rebuilds the specified WorkSpace.
         /// 
         ///  
         /// <para>
-        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
+        /// or <code>UNHEALTHY</code>.
         /// </para>
         ///  
         /// <para>
@@ -974,6 +1467,71 @@ namespace Amazon.WorkSpaces
         public virtual RebuildWorkspacesResponse EndRebuildWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<RebuildWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RevokeIpRules
+
+        /// <summary>
+        /// Removes one or more rules from the specified IP access control group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeIpRules service method.</param>
+        /// 
+        /// <returns>The response from the RevokeIpRules service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        public virtual RevokeIpRulesResponse RevokeIpRules(RevokeIpRulesRequest request)
+        {
+            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeIpRulesRequest,RevokeIpRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeIpRules operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeIpRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        public virtual IAsyncResult BeginRevokeIpRules(RevokeIpRulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RevokeIpRulesRequestMarshaller.Instance;
+            var unmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RevokeIpRulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeIpRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeIpRules.</param>
+        /// 
+        /// <returns>Returns a  RevokeIpRulesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
+        public virtual RevokeIpRulesResponse EndRevokeIpRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokeIpRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -1162,6 +1720,75 @@ namespace Amazon.WorkSpaces
         public virtual TerminateWorkspacesResponse EndTerminateWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRulesOfIpGroup
+
+        /// <summary>
+        /// Replaces the current rules of the specified IP access control group with the specified
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRulesOfIpGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRulesOfIpGroup service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        public virtual UpdateRulesOfIpGroupResponse UpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request)
+        {
+            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRulesOfIpGroupRequest,UpdateRulesOfIpGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRulesOfIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRulesOfIpGroup operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRulesOfIpGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateRulesOfIpGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRulesOfIpGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRulesOfIpGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateRulesOfIpGroupResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
+        public virtual UpdateRulesOfIpGroupResponse EndUpdateRulesOfIpGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRulesOfIpGroupResponse>(asyncResult);
         }
 
         #endregion

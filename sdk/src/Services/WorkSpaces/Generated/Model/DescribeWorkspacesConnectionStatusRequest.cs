@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceIds. 
         /// <para>
-        /// The identifiers of the WorkSpaces.
+        /// The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
         public List<string> WorkspaceIds

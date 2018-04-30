@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateIpGroupsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AuthorizeIpRulesRequest.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateIpGroupResponse.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CreateTagsRequest.ResourceId</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DeleteIpGroupRequest.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteTagsRequest.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeIpGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeIpGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeIpGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeTagsRequest.ResourceId</property>
@@ -71,8 +102,24 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DisassociateIpGroupsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ModifyWorkspacePropertiesRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ModifyWorkspaceStateRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RevokeIpRulesRequest.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.UpdateRulesOfIpGroupRequest.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DefaultWorkspaceCreationProperties.CustomSecurityGroupId</property>
@@ -194,5 +241,9 @@
     <property>Amazon.WorkSpaces.Model.WorkspaceRequest.UserName</property>
     <min>1</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspacesIpGroup.GroupId</property>
+    <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
 </property-value-rules>

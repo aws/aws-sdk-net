@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The identifier of the WorkSpace.
+        /// The ID of the WorkSpace.
         /// </para>
         /// </summary>
         public string WorkspaceId

@@ -295,6 +295,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type TargetWorkspaceState.
+    /// </summary>
+    public class TargetWorkspaceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADMIN_MAINTENANCE for TargetWorkspaceState
+        /// </summary>
+        public static readonly TargetWorkspaceState ADMIN_MAINTENANCE = new TargetWorkspaceState("ADMIN_MAINTENANCE");
+        /// <summary>
+        /// Constant AVAILABLE for TargetWorkspaceState
+        /// </summary>
+        public static readonly TargetWorkspaceState AVAILABLE = new TargetWorkspaceState("AVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetWorkspaceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetWorkspaceState FindValue(string value)
+        {
+            return FindValue<TargetWorkspaceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetWorkspaceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkspaceDirectoryState.
     /// </summary>
     public class WorkspaceDirectoryState : ConstantClass
@@ -412,6 +462,10 @@ namespace Amazon.WorkSpaces
     public class WorkspaceState : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ADMIN_MAINTENANCE for WorkspaceState
+        /// </summary>
+        public static readonly WorkspaceState ADMIN_MAINTENANCE = new WorkspaceState("ADMIN_MAINTENANCE");
         /// <summary>
         /// Constant AVAILABLE for WorkspaceState
         /// </summary>

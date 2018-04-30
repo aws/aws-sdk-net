@@ -44,7 +44,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property StartWorkspaceRequests. 
         /// <para>
-        /// The WorkSpaces to start.
+        /// The WorkSpaces to start. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
         public List<StartRequest> StartWorkspaceRequests

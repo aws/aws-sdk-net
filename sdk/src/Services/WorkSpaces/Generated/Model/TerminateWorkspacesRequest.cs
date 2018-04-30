@@ -54,7 +54,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property TerminateWorkspaceRequests. 
         /// <para>
-        /// The WorkSpaces to terminate.
+        /// The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
         public List<TerminateRequest> TerminateWorkspaceRequests

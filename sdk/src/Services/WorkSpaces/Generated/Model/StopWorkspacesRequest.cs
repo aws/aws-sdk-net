@@ -45,7 +45,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property StopWorkspaceRequests. 
         /// <para>
-        /// The WorkSpaces to stop.
+        /// The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
         /// </para>
         /// </summary>
         public List<StopRequest> StopWorkspaceRequests

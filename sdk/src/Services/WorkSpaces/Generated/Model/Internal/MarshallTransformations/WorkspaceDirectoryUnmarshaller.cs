@@ -106,6 +106,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamRoleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipGroupIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IpGroupIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RegistrationCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
