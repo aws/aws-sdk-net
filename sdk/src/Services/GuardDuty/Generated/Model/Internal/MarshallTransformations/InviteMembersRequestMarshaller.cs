@@ -79,6 +79,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDisableEmailNotification())
+                {
+                    context.Writer.WritePropertyName("disableEmailNotification");
+                    context.Writer.Write(publicRequest.DisableEmailNotification);
+                }
+
                 if(publicRequest.IsSetMessage())
                 {
                     context.Writer.WritePropertyName("message");

@@ -1646,7 +1646,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Disables GuardDuty from monitoring findings of the member accounts specified by the
         /// account IDs. After running this command, a master GuardDuty account can run StartMonitoringMembers
-        /// to re-enable GuardDuty to monitor these members' findings.
+        /// to re-enable GuardDuty to monitor these members’ findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
         /// 
