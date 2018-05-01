@@ -13,14 +13,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestClass]
     public class Replicationtests : TestBase<AmazonS3Client>
     {
-        [TestMethod]
+        //[TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfiguration()
         {
             TestReplicationConfigurationForPrefix("foo-");
         }
 
-        [TestMethod]
+        //[TestMethod]
         [TestCategory("S3")]
         public void TestReplicationConfigurationNoPrefix()
         {
