@@ -91,6 +91,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DocumentName);
                 }
 
+                if(publicRequest.IsSetDocumentVersion())
+                {
+                    context.Writer.WritePropertyName("DocumentVersion");
+                    context.Writer.Write(publicRequest.DocumentVersion);
+                }
+
                 if(publicRequest.IsSetInstanceIds())
                 {
                     context.Writer.WritePropertyName("InstanceIds");

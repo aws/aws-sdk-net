@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutParameter operation.
-    /// Add one or more parameters to the system.
+    /// Add a parameter to the system.
     /// </summary>
     public partial class PutParameterRequest : AmazonSimpleSystemsManagementRequest
     {

@@ -4050,6 +4050,12 @@ namespace Amazon.SimpleSystemsManagement
         /// Retrieves the default patch baseline. Note that Systems Manager supports creating
         /// multiple default patch baselines. For example, you can create a default patch baseline
         /// for each operating system.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify an operating system value, the default patch baseline for Windows
+        /// is returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
         /// 
@@ -6367,7 +6373,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Add one or more parameters to the system.
+        /// Add a parameter to the system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// 
@@ -6824,6 +6830,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
         /// 
@@ -6896,6 +6905,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -6973,6 +6985,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:

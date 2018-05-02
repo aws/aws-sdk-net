@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _comment;
         private int? _completedCount;
         private string _documentName;
+        private string _documentVersion;
         private int? _errorCount;
         private DateTime? _expiresAfter;
         private List<string> _instanceIds = new List<string>();
@@ -126,6 +127,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentName()
         {
             return this._documentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The SSM document version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>

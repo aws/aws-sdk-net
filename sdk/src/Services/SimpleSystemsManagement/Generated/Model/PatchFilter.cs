@@ -474,11 +474,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>SUSE Linux Enterprise Server (SUSE) Operating Systems</b> 
+    ///  <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b> 
     /// </para>
     ///  
     /// <para>
-    /// The supported keys for SUSE operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>,
+    /// The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>,
     /// and <code>SEVERITY</code>. See the following lists for valid values for each of these
     /// keys.
     /// </para>
@@ -581,6 +581,116 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Moderate</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Low</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>CentOS Operating Systems</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>,
+    /// and <code>SEVERITY</code>. See the following lists for valid values for each of these
+    /// keys.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported key:</i> <code>PRODUCT</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>CentOS6.5</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS6.6</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS6.7</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS6.8</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS6.9</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS7.0</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS7.1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS7.2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS7.3</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CentOS7.4</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Security</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Bugfix</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Enhancement</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Recommended</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Newpackage</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>SEVERITY</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Critical</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Important</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Medium</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

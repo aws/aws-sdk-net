@@ -69,6 +69,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.DocumentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DocumentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecutionElapsedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

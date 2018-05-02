@@ -207,8 +207,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either instances or tags). Instances are specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;.
-        /// Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// The targets (either instances or Maintenance Window targets).
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify instances using the following format: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify Maintenance Window targets using the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+        /// 
         /// </para>
         /// </summary>
         public List<Target> Targets
@@ -307,7 +323,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowId. 
         /// <para>
-        /// The id of the Maintenance Window the task should be added to.
+        /// The ID of the Maintenance Window the task should be added to.
         /// </para>
         /// </summary>
         public string WindowId

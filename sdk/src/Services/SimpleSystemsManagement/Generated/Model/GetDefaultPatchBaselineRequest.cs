@@ -32,6 +32,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Retrieves the default patch baseline. Note that Systems Manager supports creating
     /// multiple default patch baselines. For example, you can create a default patch baseline
     /// for each operating system.
+    /// 
+    ///  
+    /// <para>
+    /// If you do not specify an operating system value, the default patch baseline for Windows
+    /// is returned.
+    /// </para>
     /// </summary>
     public partial class GetDefaultPatchBaselineRequest : AmazonSimpleSystemsManagementRequest
     {

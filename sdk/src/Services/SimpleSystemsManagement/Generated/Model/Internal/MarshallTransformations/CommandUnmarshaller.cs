@@ -88,6 +88,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DocumentVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ErrorCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
