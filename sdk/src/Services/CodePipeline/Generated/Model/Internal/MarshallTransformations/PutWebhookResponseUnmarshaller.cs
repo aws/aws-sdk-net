@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListPipelines operation
+    /// Response Unmarshaller for PutWebhook operation
     /// </summary>  
-    public class ListPipelinesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutWebhookResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListPipelinesResponse response = new ListPipelinesResponse();
+            PutWebhookResponse response = new PutWebhookResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("webhook", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelines", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PipelineSummary, PipelineSummaryUnmarshaller>(PipelineSummaryUnmarshaller.Instance);
-                    response.Pipelines = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ListWebhookItemUnmarshaller.Instance;
+                    response.Webhook = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,9 +72,21 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidWebhookAuthenticationParametersException"))
             {
-                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidWebhookAuthenticationParametersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidWebhookFilterPatternException"))
+            {
+                return new InvalidWebhookFilterPatternException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PipelineNotFoundException"))
+            {
+                return new PipelineNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
             {
@@ -89,9 +95,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             return new AmazonCodePipelineException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListPipelinesResponseUnmarshaller _instance = new ListPipelinesResponseUnmarshaller();        
+        private static PutWebhookResponseUnmarshaller _instance = new PutWebhookResponseUnmarshaller();        
 
-        internal static ListPipelinesResponseUnmarshaller GetInstance()
+        internal static PutWebhookResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +105,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPipelinesResponseUnmarshaller Instance
+        public static PutWebhookResponseUnmarshaller Instance
         {
             get
             {

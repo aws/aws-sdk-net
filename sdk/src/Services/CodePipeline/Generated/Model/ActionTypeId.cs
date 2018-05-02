@@ -97,7 +97,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// A string that identifies the action type.
+        /// A string that describes the action version.
         /// </para>
         /// </summary>
         public string Version

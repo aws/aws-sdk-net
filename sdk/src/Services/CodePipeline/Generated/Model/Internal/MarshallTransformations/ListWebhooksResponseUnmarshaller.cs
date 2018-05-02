@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListPipelines operation
+    /// Response Unmarshaller for ListWebhooks operation
     /// </summary>  
-    public class ListPipelinesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListWebhooksResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListPipelinesResponse response = new ListPipelinesResponse();
+            ListWebhooksResponse response = new ListWebhooksResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pipelines", targetDepth))
+                if (context.TestExpression("webhooks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PipelineSummary, PipelineSummaryUnmarshaller>(PipelineSummaryUnmarshaller.Instance);
-                    response.Pipelines = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ListWebhookItem, ListWebhookItemUnmarshaller>(ListWebhookItemUnmarshaller.Instance);
+                    response.Webhooks = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,9 +89,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             return new AmazonCodePipelineException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListPipelinesResponseUnmarshaller _instance = new ListPipelinesResponseUnmarshaller();        
+        private static ListWebhooksResponseUnmarshaller _instance = new ListWebhooksResponseUnmarshaller();        
 
-        internal static ListPipelinesResponseUnmarshaller GetInstance()
+        internal static ListWebhooksResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +99,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPipelinesResponseUnmarshaller Instance
+        public static ListWebhooksResponseUnmarshaller Instance
         {
             get
             {

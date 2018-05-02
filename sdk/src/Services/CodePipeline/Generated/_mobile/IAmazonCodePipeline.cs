@@ -44,13 +44,13 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates,
-    /// and transitions, as described below.
+    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, and
+    /// transitions, as described below.
     /// </para>
     ///  
     /// <para>
     ///  <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely
-    /// named, and consists of actions, gates, and stages. 
+    /// named, and consists of stages, actions, and transitions. 
     /// </para>
     ///  
     /// <para>
@@ -101,16 +101,15 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Pipelines include <i>stages</i>, which are logical groupings of gates and actions.
-    /// Each stage contains one or more actions that must complete before the next stage begins.
-    /// A stage will result in success or failure. If a stage fails, then the pipeline stops
-    /// at that stage and will remain stopped until either a new version of an artifact appears
-    /// in the source location, or a user takes action to re-run the most recent artifact
-    /// through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
-    /// of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>,
-    /// which returns the entire structure of the pipeline, including the stages of that pipeline.
-    /// For more information about the structure of stages and actions, also refer to the
-    /// <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// Pipelines include <i>stages</i>. Each stage contains one or more actions that must
+    /// complete before the next stage begins. A stage will result in success or failure.
+    /// If a stage fails, then the pipeline stops at that stage and will remain stopped until
+    /// either a new version of an artifact appears in the source location, or a user takes
+    /// action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
+    /// which displays the status of a pipeline, including the status of stages in the pipeline,
+    /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
+    /// the stages of that pipeline. For more information about the structure of stages and
+    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -120,9 +119,33 @@ namespace Amazon.CodePipeline
     /// can use a source action to import artifacts into a pipeline from a source such as
     /// Amazon S3. Like stages, you do not work with actions directly in most cases, but you
     /// do define and interact with actions when working with pipeline operations such as
-    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. 
+    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid action categories are:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// Source
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Build
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Test
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Deploy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Approval
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Invoke
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Pipelines also include <i>transitions</i>, which allow the transition of artifacts
     /// from one stage to the next in a pipeline after the actions in one stage complete.
@@ -417,6 +440,40 @@ namespace Amazon.CodePipeline
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteWebhook
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeregisterWebhookWithThirdParty
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        Task<DeregisterWebhookWithThirdPartyResponse> DeregisterWebhookWithThirdPartyAsync(DeregisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -751,6 +808,9 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -765,6 +825,23 @@ namespace Amazon.CodePipeline
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListWebhooks
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -951,6 +1028,40 @@ namespace Amazon.CodePipeline
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         Task<PutThirdPartyJobSuccessResultResponse> PutThirdPartyJobSuccessResultAsync(PutThirdPartyJobSuccessResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutWebhook
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        Task<PutWebhookResponse> PutWebhookAsync(PutWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterWebhookWithThirdParty
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        Task<RegisterWebhookWithThirdPartyResponse> RegisterWebhookWithThirdPartyAsync(RegisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

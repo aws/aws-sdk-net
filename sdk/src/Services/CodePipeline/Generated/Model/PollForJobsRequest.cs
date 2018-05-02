@@ -29,7 +29,9 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PollForJobs operation.
-    /// Returns information about any jobs for AWS CodePipeline to act upon.
+    /// Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is
+    /// only valid for action types with "Custom" in the owner field. If the action type contains
+    /// "AWS" or "ThirdParty" in the owner field, the PollForJobs action returns an error.
     /// 
     ///  <important> 
     /// <para>

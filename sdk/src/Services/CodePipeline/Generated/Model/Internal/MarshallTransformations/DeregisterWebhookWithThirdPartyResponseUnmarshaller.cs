@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListPipelines operation
+    /// Response Unmarshaller for DeregisterWebhookWithThirdParty operation
     /// </summary>  
-    public class ListPipelinesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeregisterWebhookWithThirdPartyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListPipelinesResponse response = new ListPipelinesResponse();
+            DeregisterWebhookWithThirdPartyResponse response = new DeregisterWebhookWithThirdPartyResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("nextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pipelines", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PipelineSummary, PipelineSummaryUnmarshaller>(PipelineSummaryUnmarshaller.Instance);
-                    response.Pipelines = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -78,20 +61,20 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
-            {
-                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
             {
                 return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WebhookNotFoundException"))
+            {
+                return new WebhookNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCodePipelineException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListPipelinesResponseUnmarshaller _instance = new ListPipelinesResponseUnmarshaller();        
+        private static DeregisterWebhookWithThirdPartyResponseUnmarshaller _instance = new DeregisterWebhookWithThirdPartyResponseUnmarshaller();        
 
-        internal static ListPipelinesResponseUnmarshaller GetInstance()
+        internal static DeregisterWebhookWithThirdPartyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +82,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPipelinesResponseUnmarshaller Instance
+        public static DeregisterWebhookWithThirdPartyResponseUnmarshaller Instance
         {
             get
             {

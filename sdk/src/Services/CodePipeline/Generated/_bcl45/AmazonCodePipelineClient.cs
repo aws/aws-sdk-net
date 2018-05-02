@@ -49,13 +49,13 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  
     /// <para>
-    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates,
-    /// and transitions, as described below.
+    /// You can use the AWS CodePipeline API to work with pipelines, stages, actions, and
+    /// transitions, as described below.
     /// </para>
     ///  
     /// <para>
     ///  <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely
-    /// named, and consists of actions, gates, and stages. 
+    /// named, and consists of stages, actions, and transitions. 
     /// </para>
     ///  
     /// <para>
@@ -106,16 +106,15 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Pipelines include <i>stages</i>, which are logical groupings of gates and actions.
-    /// Each stage contains one or more actions that must complete before the next stage begins.
-    /// A stage will result in success or failure. If a stage fails, then the pipeline stops
-    /// at that stage and will remain stopped until either a new version of an artifact appears
-    /// in the source location, or a user takes action to re-run the most recent artifact
-    /// through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
-    /// of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>,
-    /// which returns the entire structure of the pipeline, including the stages of that pipeline.
-    /// For more information about the structure of stages and actions, also refer to the
-    /// <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// Pipelines include <i>stages</i>. Each stage contains one or more actions that must
+    /// complete before the next stage begins. A stage will result in success or failure.
+    /// If a stage fails, then the pipeline stops at that stage and will remain stopped until
+    /// either a new version of an artifact appears in the source location, or a user takes
+    /// action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
+    /// which displays the status of a pipeline, including the status of stages in the pipeline,
+    /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
+    /// the stages of that pipeline. For more information about the structure of stages and
+    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -125,9 +124,33 @@ namespace Amazon.CodePipeline
     /// can use a source action to import artifacts into a pipeline from a source such as
     /// Amazon S3. Like stages, you do not work with actions directly in most cases, but you
     /// do define and interact with actions when working with pipeline operations such as
-    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. 
+    /// <a>CreatePipeline</a> and <a>GetPipelineState</a>. Valid action categories are:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// Source
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Build
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Test
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Deploy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Approval
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Invoke
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Pipelines also include <i>transitions</i>, which allow the transition of artifacts
     /// from one stage to the next in a pipeline after the actions in one stage complete.
@@ -825,8 +848,10 @@ namespace Amazon.CodePipeline
         /// 
         ///  <important> 
         /// <para>
-        /// You cannot recreate a custom action after it has been deleted unless you increase
-        /// the version number of the action.
+        /// To re-create a custom action after it has been deleted you must use a string in the
+        /// version field that has never been used before. This string can be an incremented version
+        /// number, for example. To restore a deleted custom action, use a JSON file that is identical
+        /// to the deleted action, including the original string in the version field.
         /// </para>
         ///  </important>
         /// </summary>
@@ -942,6 +967,99 @@ namespace Amazon.CodePipeline
             var unmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePipelineRequest,DeletePipelineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWebhook
+
+
+        /// <summary>
+        /// Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline
+        /// from starting a pipeline every time an external event occurs. The API will return
+        /// successfully when trying to delete a webhook that is already deleted. If a deleted
+        /// webhook is re-created by calling PutWebhook with the same name, it will have a different
+        /// URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public virtual DeleteWebhookResponse DeleteWebhook(DeleteWebhookRequest request)
+        {
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
+        public virtual Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteWebhookRequestMarshaller.Instance;
+            var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterWebhookWithThirdParty
+
+
+        /// <summary>
+        /// Removes the connection between the webhook that was created by CodePipeline and the
+        /// external tool with events to be detected. Currently only supported for webhooks that
+        /// target an action type of GitHub.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        public virtual DeregisterWebhookWithThirdPartyResponse DeregisterWebhookWithThirdParty(DeregisterWebhookWithThirdPartyRequest request)
+        {
+            var marshaller = DeregisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = DeregisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterWebhookWithThirdPartyRequest,DeregisterWebhookWithThirdPartyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWebhookWithThirdParty operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty">REST API Reference for DeregisterWebhookWithThirdParty Operation</seealso>
+        public virtual Task<DeregisterWebhookWithThirdPartyResponse> DeregisterWebhookWithThirdPartyAsync(DeregisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeregisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = DeregisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterWebhookWithThirdPartyRequest,DeregisterWebhookWithThirdPartyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1800,6 +1918,9 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines()
         {
@@ -1817,6 +1938,9 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
@@ -1839,6 +1963,9 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1868,11 +1995,61 @@ namespace Amazon.CodePipeline
 
         #endregion
         
+        #region  ListWebhooks
+
+
+        /// <summary>
+        /// Gets a listing of all the webhooks in this region for this account. The output lists
+        /// all webhooks and includes the webhook URL and ARN, as well the configuration for each
+        /// webhook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks service method.</param>
+        /// 
+        /// <returns>The response from the ListWebhooks service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format. Make sure that the next token you
+        /// provided is the token returned by a previous call.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        public virtual ListWebhooksResponse ListWebhooks(ListWebhooksRequest request)
+        {
+            var marshaller = ListWebhooksRequestMarshaller.Instance;
+            var unmarshaller = ListWebhooksResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebhooksRequest,ListWebhooksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebhooks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebhooks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
+        public virtual Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListWebhooksRequestMarshaller.Instance;
+            var unmarshaller = ListWebhooksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWebhooksRequest,ListWebhooksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PollForJobs
 
 
         /// <summary>
-        /// Returns information about any jobs for AWS CodePipeline to act upon.
+        /// Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is
+        /// only valid for action types with "Custom" in the owner field. If the action type contains
+        /// "AWS" or "ThirdParty" in the owner field, the PollForJobs action returns an error.
         /// 
         ///  <important> 
         /// <para>
@@ -2406,6 +2583,113 @@ namespace Amazon.CodePipeline
             var unmarshaller = PutThirdPartyJobSuccessResultResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutThirdPartyJobSuccessResultRequest,PutThirdPartyJobSuccessResultResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutWebhook
+
+
+        /// <summary>
+        /// Defines a webhook and returns a unique webhook URL generated by CodePipeline. This
+        /// URL can be supplied to third party source hosting providers to call every time there's
+        /// a code change. When CodePipeline receives a POST request on this URL, the pipeline
+        /// defined in the webhook is started as long as the POST request satisfied the authentication
+        /// and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty
+        /// and DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported
+        /// third parties to call the generated webhook URL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook service method.</param>
+        /// 
+        /// <returns>The response from the PutWebhook service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookAuthenticationParametersException">
+        /// The specified authentication type is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.InvalidWebhookFilterPatternException">
+        /// The specified event filter rule is in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        public virtual PutWebhookResponse PutWebhook(PutWebhookRequest request)
+        {
+            var marshaller = PutWebhookRequestMarshaller.Instance;
+            var unmarshaller = PutWebhookResponseUnmarshaller.Instance;
+
+            return Invoke<PutWebhookRequest,PutWebhookResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutWebhook operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutWebhook operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook">REST API Reference for PutWebhook Operation</seealso>
+        public virtual Task<PutWebhookResponse> PutWebhookAsync(PutWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutWebhookRequestMarshaller.Instance;
+            var unmarshaller = PutWebhookResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutWebhookRequest,PutWebhookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterWebhookWithThirdParty
+
+
+        /// <summary>
+        /// Configures a connection between the webhook that was created and the external tool
+        /// with events to be detected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty service method.</param>
+        /// 
+        /// <returns>The response from the RegisterWebhookWithThirdParty service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.WebhookNotFoundException">
+        /// The specified webhook was entered in an invalid format or cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        public virtual RegisterWebhookWithThirdPartyResponse RegisterWebhookWithThirdParty(RegisterWebhookWithThirdPartyRequest request)
+        {
+            var marshaller = RegisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = RegisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterWebhookWithThirdPartyRequest,RegisterWebhookWithThirdPartyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterWebhookWithThirdParty operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWebhookWithThirdParty operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty">REST API Reference for RegisterWebhookWithThirdParty Operation</seealso>
+        public virtual Task<RegisterWebhookWithThirdPartyResponse> RegisterWebhookWithThirdPartyAsync(RegisterWebhookWithThirdPartyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RegisterWebhookWithThirdPartyRequestMarshaller.Instance;
+            var unmarshaller = RegisterWebhookWithThirdPartyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterWebhookWithThirdPartyRequest,RegisterWebhookWithThirdPartyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

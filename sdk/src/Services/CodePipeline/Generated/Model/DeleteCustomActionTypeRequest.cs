@@ -34,8 +34,10 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You cannot recreate a custom action after it has been deleted unless you increase
-    /// the version number of the action.
+    /// To re-create a custom action after it has been deleted you must use a string in the
+    /// version field that has never been used before. This string can be an incremented version
+    /// number, for example. To restore a deleted custom action, use a JSON file that is identical
+    /// to the deleted action, including the original string in the version field.
     /// </para>
     ///  </important>
     /// </summary>
