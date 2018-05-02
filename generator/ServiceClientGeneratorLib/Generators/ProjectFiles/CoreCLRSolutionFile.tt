@@ -42,21 +42,10 @@ EndProject
 <#
     foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
     {
-// This check will not be needed once we migrate to using service specific slns for releases
-        if(string.IsNullOrEmpty(project.RelativePath))
-        {
 #>
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
 EndProject
 <#
-        }
-        else
-        {
-#>
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.RelativePath#>", "<#=project.ProjectGuid#>"
-EndProject
-<#
-        }
     }
 if(this.Session.ContainsKey("IntegrationTestDependencies"))
 {
