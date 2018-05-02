@@ -62,7 +62,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property ResourceRecord. 
         /// <para>
         /// Contains the CNAME record that you add to your DNS database for domain validation.
-        /// For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">Use
+        /// For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
         /// DNS to Validate Domain Ownership</a>.
         /// </para>
         /// </summary>

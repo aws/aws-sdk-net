@@ -30,29 +30,18 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Container for the parameters to the RequestCertificate operation.
     /// Requests an ACM certificate for use with other AWS services. To request an ACM certificate,
-    /// you must specify the fully qualified domain name (FQDN) for your site in the <code>DomainName</code>
+    /// you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code>
     /// parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code>
     /// parameter. 
     /// 
     ///  
     /// <para>
-    /// Each domain name that you specify must be validated to verify that you own or control
-    /// the domain. You can use <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
-    /// validation</a> or <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
-    /// validation</a>. We recommend that you use DNS validation. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If you choose email validation, email is sent to the domain owner to request approval
-    /// to issue the certificate. Email is sent to three registered contact addresses in the
-    /// WHOIS database and to five common system administration addresses formed from the
-    /// <code>DomainName</code> you enter or the optional <code>ValidationDomain</code> parameter.
-    /// For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">Validate
-    /// with Email</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// After receiving approval from the domain owner, the ACM certificate is issued.
+    /// If you are requesting a private certificate, domain validation is not required. If
+    /// you are requesting a public certificate, each domain name that you specify must be
+    /// validated to verify that you own or control the domain. You can use <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS
+    /// validation</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email
+    /// validation</a>. We recommend that you use DNS validation. ACM issues public certificates
+    /// after receiving approval from the domain owner. 
     /// </para>
     /// </summary>
     public partial class RequestCertificateRequest : AmazonCertificateManagerRequest
@@ -69,8 +58,9 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will
-        /// be used to issue the certificate. For more information about private CAs, see the
-        /// <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
+        /// be used to issue the certificate. If you do not provide an ARN and you are trying
+        /// to request a private certificate, ACM will attempt to issue a public certificate.
+        /// For more information about private CAs, see the <a href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS
         /// Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must
         /// have the following form: 
         /// </para>
@@ -95,10 +85,10 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Fully qualified domain name (FQDN), such as www.example.com, of the site that you
-        /// want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate
-        /// that protects several sites in the same domain. For example, *.example.com protects
-        /// www.example.com, site.example.com, and images.example.com. 
+        ///  Fully qualified domain name (FQDN), such as www.example.com, that you want to secure
+        /// with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that
+        /// protects several sites in the same domain. For example, *.example.com protects www.example.com,
+        /// site.example.com, and images.example.com. 
         /// </para>
         ///  
         /// <para>
@@ -167,7 +157,7 @@ namespace Amazon.CertificateManager.Model
         /// a certificate transparency log. Certificate transparency makes it possible to detect
         /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates
         /// that have not been logged typically produce an error message in a browser. For more
-        /// information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+        /// information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
         /// Out of Certificate Transparency Logging</a>.
         /// </para>
         /// </summary>
@@ -191,7 +181,7 @@ namespace Amazon.CertificateManager.Model
         /// the <code>DomainName</code> field is www.example.com if users can reach your site
         /// by using either name. The maximum number of domain names that you can add to an ACM
         /// certificate is 100. However, the initial limit is 10 domain names. If you need more
-        /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+        /// than 10 names, you must request a limit increase. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
         /// </para>
         ///  
         /// <para>
@@ -232,9 +222,9 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationMethod. 
         /// <para>
-        /// The method you want to use to validate that you own or control domain. You can <a
-        /// href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-        /// with DNS</a> or <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">validate
+        /// The method you want to use if you are requesting a public certificate to validate
+        /// that you own or control domain. You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate
+        /// with DNS</a> or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate
         /// with email</a>. We recommend that you use DNS validation. 
         /// </para>
         /// </summary>
