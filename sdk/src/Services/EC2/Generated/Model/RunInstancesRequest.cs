@@ -514,7 +514,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
         /// The launch template to use to launch the instances. Any parameters that you specify
-        /// in <a>RunInstances</a> override the same parameters in the launch template.
+        /// in <a>RunInstances</a> override the same parameters in the launch template. You can
+        /// specify either the name or ID of a launch template, but not both.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate

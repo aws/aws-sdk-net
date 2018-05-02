@@ -293,9 +293,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the Spot Instance request. Spot status information can help you track
-        /// your Spot Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// Status</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The state of the Spot Instance request. Spot status information helps track your Spot
+        /// Instance requests. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+        /// Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public SpotInstanceState State

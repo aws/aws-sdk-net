@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The launch template to use. You must specify either the launch template ID or launch
-    /// template name in the request.
+    /// template name in the request, but not both.
     /// </summary>
     public partial class LaunchTemplateSpecification
     {

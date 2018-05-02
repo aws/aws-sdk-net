@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
     /// when the maximum price that you specify exceeds the current Spot price. For more information,
     /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {
@@ -118,8 +118,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that you can't specify an Availability Zone group or a launch group if you specify
-        /// a duration.
+        /// You can't specify an Availability Zone group or a launch group if you specify a duration.
         /// </para>
         /// </summary>
         public int BlockDurationMinutes
@@ -139,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         public string ClientToken

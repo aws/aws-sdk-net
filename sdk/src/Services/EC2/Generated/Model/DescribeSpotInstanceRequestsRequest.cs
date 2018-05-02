@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Describes the Spot Instance requests that belong to your account. Spot Instances are
     /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
     /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-    /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+    /// Spot Instance requests are deleted four hours after they are canceled and their instances
     /// are terminated.
     /// </para>
     /// </summary>
@@ -204,7 +204,7 @@ namespace Amazon.EC2.Model
         /// <code>active</code> | <code>closed</code> | <code>cancelled</code> | <code>failed</code>).
         /// Spot request status information can help you track your Amazon EC2 Spot Instance requests.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-        /// Request Status</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

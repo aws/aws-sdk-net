@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActiveInstances. 
         /// <para>
-        /// The running instances. Note that this list is refreshed periodically and might be
-        /// out of date.
+        /// The running instances. This list is refreshed periodically and might be out of date.
         /// </para>
         /// </summary>
         public List<ActiveInstance> ActiveInstances

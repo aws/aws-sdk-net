@@ -33,6 +33,12 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// The Spot Fleet request specifies the total target capacity and the On-Demand target
+    /// capacity. Amazon EC2 calculates the difference between the total capacity and On-Demand
+    /// capacity, and launches the difference as Spot capacity.
+    /// </para>
+    ///  
+    /// <para>
     /// You can submit a single request that includes multiple launch specifications that
     /// vary by instance type, AMI, Availability Zone, or subnet.
     /// </para>
@@ -52,12 +58,12 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can specify tags for the Spot Instances. You cannot tag other resource types in
-    /// a Spot Fleet request; only the <code>instance</code> resource type is supported.
+    /// a Spot Fleet request because only the <code>instance</code> resource type is supported.
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-    /// Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// </para>
     /// </summary>
     public partial class RequestSpotFleetRequest : AmazonEC2Request

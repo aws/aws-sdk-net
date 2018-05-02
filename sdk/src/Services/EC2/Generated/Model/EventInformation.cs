@@ -100,8 +100,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional
-        /// Spot Instances, but its existing Spot Instances continue to run until they are interrupted
+        ///  <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional
+        /// Spot Instances. Existing Spot Instances continue to run until they are interrupted
         /// or terminated.
         /// </para>
         ///  </li> <li> 

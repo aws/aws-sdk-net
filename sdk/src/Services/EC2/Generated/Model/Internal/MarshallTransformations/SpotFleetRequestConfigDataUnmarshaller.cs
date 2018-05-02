@@ -110,6 +110,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LoadBalancersConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("onDemandFulfilledCapacity", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.OnDemandFulfilledCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("onDemandTargetCapacity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.OnDemandTargetCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("replaceUnhealthyInstances", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

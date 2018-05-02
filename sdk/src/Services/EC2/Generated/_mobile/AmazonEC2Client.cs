@@ -1467,6 +1467,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateFleet
+
+        internal virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        {
+            var marshaller = CreateFleetRequestMarshaller.Instance;
+            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFleetRequest,CreateFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFleetRequestMarshaller.Instance;
+            var unmarshaller = CreateFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFleetRequest,CreateFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFlowLogs
 
         internal virtual CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
@@ -2576,6 +2608,38 @@ namespace Amazon.EC2
             var unmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEgressOnlyInternetGatewayRequest,DeleteEgressOnlyInternetGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFleets
+
+        internal virtual DeleteFleetsResponse DeleteFleets(DeleteFleetsRequest request)
+        {
+            var marshaller = DeleteFleetsRequestMarshaller.Instance;
+            var unmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetsRequest,DeleteFleetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        public virtual Task<DeleteFleetsResponse> DeleteFleetsAsync(DeleteFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFleetsRequestMarshaller.Instance;
+            var unmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFleetsRequest,DeleteFleetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4135,6 +4199,102 @@ namespace Amazon.EC2
             var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetHistory
+
+        internal virtual DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request)
+        {
+            var marshaller = DescribeFleetHistoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetHistoryRequest,DescribeFleetHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        public virtual Task<DescribeFleetHistoryResponse> DescribeFleetHistoryAsync(DescribeFleetHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeFleetHistoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetHistoryRequest,DescribeFleetHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetInstances
+
+        internal virtual DescribeFleetInstancesResponse DescribeFleetInstances(DescribeFleetInstancesRequest request)
+        {
+            var marshaller = DescribeFleetInstancesRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetInstancesRequest,DescribeFleetInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        public virtual Task<DescribeFleetInstancesResponse> DescribeFleetInstancesAsync(DescribeFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeFleetInstancesRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetInstancesRequest,DescribeFleetInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleets
+
+        internal virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
+        {
+            var marshaller = DescribeFleetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        public virtual Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeFleetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetsRequest,DescribeFleetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6025,7 +6185,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6175,7 +6335,7 @@ namespace Amazon.EC2
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
         /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
         /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -6187,7 +6347,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -6241,7 +6401,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -8051,6 +8211,38 @@ namespace Amazon.EC2
             var unmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportVolumeRequest,ImportVolumeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyFleet
+
+        internal virtual ModifyFleetResponse ModifyFleet(ModifyFleetRequest request)
+        {
+            var marshaller = ModifyFleetRequestMarshaller.Instance;
+            var unmarshaller = ModifyFleetResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyFleetRequest,ModifyFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        public virtual Task<ModifyFleetResponse> ModifyFleetAsync(ModifyFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyFleetRequestMarshaller.Instance;
+            var unmarshaller = ModifyFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyFleetRequest,ModifyFleetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

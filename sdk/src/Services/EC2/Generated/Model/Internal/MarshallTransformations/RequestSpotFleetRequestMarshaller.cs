@@ -429,6 +429,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                         }
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandFulfilledCapacity())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandFulfilledCapacity", StringUtils.FromDouble(publicRequest.SpotFleetRequestConfig.OnDemandFulfilledCapacity));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandTargetCapacity())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandTargetCapacity", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.OnDemandTargetCapacity));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));

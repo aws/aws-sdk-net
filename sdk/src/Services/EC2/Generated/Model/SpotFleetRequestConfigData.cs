@@ -41,6 +41,8 @@ namespace Amazon.EC2.Model
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
         private LoadBalancersConfig _loadBalancersConfig;
+        private double? _onDemandFulfilledCapacity;
+        private int? _onDemandTargetCapacity;
         private bool? _replaceUnhealthyInstances;
         private string _spotPrice;
         private int? _targetCapacity;
@@ -71,8 +73,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure idempotency of your listings.
-        /// This helps avoid duplicate listings. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// your listings. This helps to avoid duplicate listings. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// Idempotency</a>.
         /// </para>
         /// </summary>
@@ -226,6 +229,46 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandFulfilledCapacity. 
+        /// <para>
+        /// The number of On-Demand units fulfilled by this request compared to the set target
+        /// On-Demand capacity.
+        /// </para>
+        /// </summary>
+        public double OnDemandFulfilledCapacity
+        {
+            get { return this._onDemandFulfilledCapacity.GetValueOrDefault(); }
+            set { this._onDemandFulfilledCapacity = value; }
+        }
+
+        // Check to see if OnDemandFulfilledCapacity property is set
+        internal bool IsSetOnDemandFulfilledCapacity()
+        {
+            return this._onDemandFulfilledCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandTargetCapacity. 
+        /// <para>
+        /// The number of On-Demand units to request. You can choose to set the target capacity
+        /// in terms of instances or a performance characteristic that is important to your application
+        /// workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
+        /// you can specify a target capacity of 0 and add capacity later.
+        /// </para>
+        /// </summary>
+        public int OnDemandTargetCapacity
+        {
+            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            set { this._onDemandTargetCapacity = value; }
+        }
+
+        // Check to see if OnDemandTargetCapacity property is set
+        internal bool IsSetOnDemandTargetCapacity()
+        {
+            return this._onDemandTargetCapacity.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplaceUnhealthyInstances. 
         /// <para>
         /// Indicates whether Spot Fleet should replace unhealthy instances.
@@ -305,13 +348,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of request. Indicates whether the fleet will only <code>request</code> the
-        /// target capacity or also attempt to <code>maintain</code> it. When you <code>request</code>
-        /// a certain target capacity, the fleet will only place the required requests. It will
-        /// not attempt to replenish Spot Instances if capacity is diminished, nor will it submit
-        /// requests in alternative Spot pools if capacity is not available. When you want to
-        /// <code>maintain</code> a certain target capacity, fleet will place the required requests
-        /// to meet this target capacity. It will also automatically replenish any interrupted
+        /// The type of request. Indicates whether the Spot Fleet only requests the target capacity
+        /// or also attempts to maintain it. When this value is <code>request</code>, the Spot
+        /// Fleet only places the required requests. It does not attempt to replenish Spot Instances
+        /// if capacity is diminished, nor does it submit requests in alternative Spot pools if
+        /// capacity is not available. To maintain a certain target capacity, the Spot Fleet places
+        /// the required requests to meet capacity and automatically replenishes any interrupted
         /// instances. Default: <code>maintain</code>.
         /// </para>
         /// </summary>

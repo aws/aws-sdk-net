@@ -1116,7 +1116,7 @@ namespace Amazon.EC2
         /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
         /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
         /// Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  <important> 
         /// <para>
@@ -1530,6 +1530,44 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         Task<CreateEgressOnlyInternetGatewayResponse> CreateEgressOnlyInternetGatewayAsync(CreateEgressOnlyInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateFleet
+
+
+        /// <summary>
+        /// Launches an EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a single EC2 Fleet that includes multiple launch specifications that
+        /// vary by instance type, AMI, Availability Zone, or subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-ec2-fleet.html">Launching
+        /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        CreateFleetResponse CreateFleet(CreateFleetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2379,7 +2417,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
         /// You can create one data feed per AWS account. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// 
@@ -2986,6 +3024,42 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         Task<DeleteEgressOnlyInternetGatewayResponse> DeleteEgressOnlyInternetGatewayAsync(DeleteEgressOnlyInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteFleets
+
+
+        /// <summary>
+        /// Deletes the specified EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// After you delete an EC2 Fleet, the EC2 Fleet launches no new instances. You must specify
+        /// whether the EC2 Fleet should also terminate its instances. If you terminate the instances,
+        /// the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
+        /// Fleet enters the <code>deleted_running</code> state, and the instances continue to
+        /// run until they are interrupted or you terminate them manually. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        DeleteFleetsResponse DeleteFleets(DeleteFleetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
+        Task<DeleteFleetsResponse> DeleteFleetsAsync(DeleteFleetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4633,6 +4707,87 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFleetHistory
+
+
+        /// <summary>
+        /// Describes the events for the specified EC2 Fleet during the specified time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
+        Task<DescribeFleetHistoryResponse> DescribeFleetHistoryAsync(DescribeFleetHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFleetInstances
+
+
+        /// <summary>
+        /// Describes the running instances for the specified EC2 Fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        DescribeFleetInstancesResponse DescribeFleetInstances(DescribeFleetInstancesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
+        Task<DescribeFleetInstancesResponse> DescribeFleetInstancesAsync(DescribeFleetInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeFleets
+
+
+        /// <summary>
+        /// Describes the specified EC2 Fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
+        Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6927,7 +7082,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
@@ -6937,7 +7092,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// 
@@ -6948,7 +7103,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the data feed for Spot Instances. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-        /// Instance Data Feed</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7073,7 +7228,7 @@ namespace Amazon.EC2
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
         /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
         /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7085,7 +7240,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -7099,7 +7254,7 @@ namespace Amazon.EC2
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
         /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
         /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7111,7 +7266,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -7126,7 +7281,7 @@ namespace Amazon.EC2
         /// Describes the Spot Instance requests that belong to your account. Spot Instances are
         /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
         /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7138,7 +7293,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// Spot Instance requests are deleted 4 hours after they are canceled and their instances
+        /// Spot Instance requests are deleted four hours after they are canceled and their instances
         /// are terminated.
         /// </para>
         /// </summary>
@@ -7170,7 +7325,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7188,7 +7343,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -7207,7 +7362,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-        /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// 
         ///  
         /// <para>
@@ -9173,6 +9328,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyFleet
+
+
+        /// <summary>
+        /// Modifies the specified EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet service method.</param>
+        /// 
+        /// <returns>The response from the ModifyFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        ModifyFleetResponse ModifyFleet(ModifyFleetRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
+        Task<ModifyFleetResponse> ModifyFleetAsync(ModifyFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyFpgaImageAttribute
 
 
@@ -10747,6 +10934,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// The Spot Fleet request specifies the total target capacity and the On-Demand target
+        /// capacity. Amazon EC2 calculates the difference between the total capacity and On-Demand
+        /// capacity, and launches the difference as Spot capacity.
+        /// </para>
+        ///  
+        /// <para>
         /// You can submit a single request that includes multiple launch specifications that
         /// vary by instance type, AMI, Availability Zone, or subnet.
         /// </para>
@@ -10766,12 +10959,12 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can specify tags for the Spot Instances. You cannot tag other resource types in
-        /// a Spot Fleet request; only the <code>instance</code> resource type is supported.
+        /// a Spot Fleet request because only the <code>instance</code> resource type is supported.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-        /// Fleet Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
@@ -10802,7 +10995,7 @@ namespace Amazon.EC2
         /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
         /// when the maximum price that you specify exceeds the current Spot price. For more information,
         /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeSpotPriceHistory operation.
     /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-    /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
     /// 
     ///  
     /// <para>
@@ -115,9 +115,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for
-        /// example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can
-        /// use wildcards (* and ?). Greater than or less than comparison is not supported.
+        ///  <code>timestamp</code> - The time stamp of the Spot price history, in UTC format
+        /// (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You
+        /// can use wildcards (* and ?). Greater than or less than comparison is not supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>

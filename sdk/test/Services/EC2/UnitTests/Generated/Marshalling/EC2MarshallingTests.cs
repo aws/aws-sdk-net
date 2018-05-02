@@ -898,6 +898,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateFleetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFleet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFleetRequest>();
+            var marshaller = new CreateFleetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateFleetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateFleetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateFlowLogsMarshallTest()
         {
             var operation = service_model.FindOperation("CreateFlowLogs");
@@ -1675,6 +1699,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteEgressOnlyInternetGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteFleetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteFleets");
+
+            var request = InstantiateClassGenerator.Execute<DeleteFleetsRequest>();
+            var marshaller = new DeleteFleetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteFleetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteFleetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -2564,6 +2612,78 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeExportTasksResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeExportTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeFleetHistoryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFleetHistory");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFleetHistoryRequest>();
+            var marshaller = new DescribeFleetHistoryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFleetHistoryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFleetHistoryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeFleetInstancesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFleetInstances");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFleetInstancesRequest>();
+            var marshaller = new DescribeFleetInstancesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFleetInstancesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFleetInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeFleetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeFleets");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFleetsRequest>();
+            var marshaller = new DescribeFleetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeFleetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeFleetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -4828,6 +4948,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ImportVolumeResponseUnmarshaller.Instance.Unmarshall(context)
                 as ImportVolumeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyFleetMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyFleet");
+
+            var request = InstantiateClassGenerator.Execute<ModifyFleetRequest>();
+            var marshaller = new ModifyFleetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyFleetResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyFleetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

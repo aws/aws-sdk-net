@@ -106,6 +106,12 @@
     <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.FleetLaunchTemplateSpecificationRequest.LaunchTemplateName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplate.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
