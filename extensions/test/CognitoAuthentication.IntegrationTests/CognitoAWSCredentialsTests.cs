@@ -116,35 +116,29 @@ namespace CognitoAuthentication.IntegrationTests.NET45
             using (var client = new AmazonS3Client(credentials, Amazon.RegionEndpoint.USEast1))
             {
                 int tries = 0;
-                string bufferExMsg = "Invalid identity pool configuration. Check assigned IAM roles for this pool.";
                 ListBucketsResponse bucketsResponse = null;
+                var retryLimit = 5;
+                Exception lastException = null;
 
-                for (; tries < 5; tries++)
+                for (; tries < retryLimit; tries++)
                 {
                     try
                     {
                         bucketsResponse = await client.ListBucketsAsync(new ListBucketsRequest()).ConfigureAwait(false);
+                        Assert.Equal(bucketsResponse.HttpStatusCode, System.Net.HttpStatusCode.OK);
                         break;
-                    }
-                    catch (NullReferenceException)
-                    {
-                        System.Threading.Thread.Sleep(3000);
                     }
                     catch (Exception ex)
                     {
-                        if (string.Equals(bufferExMsg, ex.Message))
-                        {
-                            System.Threading.Thread.Sleep(3000);
-                        }
-                        else
-                        {
-                            throw ex;
-                        }
+                        lastException = ex;
+                        System.Threading.Thread.Sleep(3000);
                     }
                 }
 
-                Assert.True(tries < 5, "Failed to list buckets after 5 tries");
-                Assert.Equal(bucketsResponse.HttpStatusCode, System.Net.HttpStatusCode.OK);
+                if (tries == retryLimit && lastException != null)
+                {
+                    throw lastException;
+                }
             }
         }
 
