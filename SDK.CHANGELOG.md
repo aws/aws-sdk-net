@@ -1,3 +1,13 @@
+### 3.3.272.0 (2018-05-02 23:23 UTC)
+* CertificateManager (3.3.5.3)
+	* Documentation updates for acm
+* CodePipeline (3.3.4.0)
+	* Added support for webhooks with accompanying definitions as needed in the AWS CodePipeline API Guide.
+* EC2 (3.3.49.0)
+	* Amazon EC2 Fleet is a new feature that simplifies the provisioning of Amazon EC2 capacity across different EC2 instance types, Availability Zones, and the On-Demand, Reserved Instance, and Spot Instance purchase models. With a single API call, you can now provision capacity to achieve desired scale, performance, and cost.
+* SimpleSystemsManagement (3.3.21.0)
+	* Added support for new parameter, DocumentVersion, for SendCommand API. Users can now specify version of SSM document to be executed on the target(s).
+
 ### 3.3.271.0 (2018-04-30 23:05 UTC)
 * AlexaForBusiness (3.3.3.0)
 	* Adds ListDeviceEvents API to get a paginated list of device events (such as ConnectionStatus). This release also adds ConnectionStatus field to GetDevice and SearchDevices API.
