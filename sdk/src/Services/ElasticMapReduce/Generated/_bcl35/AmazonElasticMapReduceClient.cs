@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticMapReduce.Model;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
+using Amazon.ElasticMapReduce.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.ElasticMapReduce
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticMapReduceMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.ElasticMapReduce
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

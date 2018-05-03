@@ -106,6 +106,9 @@
     <Compile Include="Generated\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Generated\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Generated\_mobile\*.cs">
       <SubType>Code</SubType>
     </Compile>

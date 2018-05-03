@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ResourceGroups.Model;
 using Amazon.ResourceGroups.Model.Internal.MarshallTransformations;
+using Amazon.ResourceGroups.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -89,6 +90,7 @@ namespace Amazon.ResourceGroups
     /// </summary>
     public partial class AmazonResourceGroupsClient : AmazonServiceClient, IAmazonResourceGroups
     {
+        private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsMetadata();
         
         #region Constructors
 
@@ -263,6 +265,16 @@ namespace Amazon.ResourceGroups
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

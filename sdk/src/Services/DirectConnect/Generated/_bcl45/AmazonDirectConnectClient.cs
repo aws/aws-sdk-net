@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DirectConnect.Model;
 using Amazon.DirectConnect.Model.Internal.MarshallTransformations;
+using Amazon.DirectConnect.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -50,6 +51,7 @@ namespace Amazon.DirectConnect
     /// </summary>
     public partial class AmazonDirectConnectClient : AmazonServiceClient, IAmazonDirectConnect
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDirectConnectMetadata();
         #region Constructors
 
         /// <summary>
@@ -219,6 +221,16 @@ namespace Amazon.DirectConnect
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

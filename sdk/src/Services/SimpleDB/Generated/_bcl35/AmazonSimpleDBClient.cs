@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.SimpleDB.Model;
 using Amazon.SimpleDB.Model.Internal.MarshallTransformations;
+using Amazon.SimpleDB.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -54,6 +55,7 @@ namespace Amazon.SimpleDB
     /// </summary>
     public partial class AmazonSimpleDBClient : AmazonServiceClient, IAmazonSimpleDB
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSimpleDBMetadata();
         #region Constructors
 
         /// <summary>
@@ -224,6 +226,16 @@ namespace Amazon.SimpleDB
             return new QueryStringSigner();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

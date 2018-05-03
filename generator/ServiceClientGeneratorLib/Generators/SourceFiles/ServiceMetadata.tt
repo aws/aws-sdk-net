@@ -1,0 +1,78 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+    AddLicenseHeader();
+#>
+
+
+using Amazon.Runtime.Internal;
+
+
+namespace <#=this.Config.Namespace#>.Internal
+{
+    /// <summary>
+    /// Service metadata for  Amazon <#=this.Config.ClassName#> service
+    /// </summary>
+    public partial class Amazon<#=this.Config.ClassName#>Metadata : IServiceMetadata
+    {
+        /// <summary>
+        /// Gets the value of the Service Id.
+        /// </summary>
+        public string ServiceId
+        {
+            get
+            {
+<#
+            if(!string.IsNullOrEmpty(this.Config.ServiceId))
+            {
+#>
+                return "<#=this.Config.ServiceId#>";
+<#
+            }
+            else
+            {
+                var result = Utils.DetermineServiceId(this.Config.ServiceModel.ServiceAbbreviation, 
+                this.Config.ServiceModel.ServiceFullName);
+                
+                if(!string.IsNullOrEmpty(result))
+                {
+#>
+                return "<#=result#>";
+<#
+                }
+                else
+                {
+#>
+                return "<#=this.Config.ServiceModel.EndpointPrefix#>";
+<#
+                }
+            }
+#>
+            }
+        }
+
+        /// <summary>
+        /// Gets the dictionary that gives mapping of renamed operations
+        /// </summary>
+        public System.Collections.Generic.IDictionary<string, string> OperationNameMapping
+        {
+            get
+            {
+                return new System.Collections.Generic.Dictionary<string, string>(<#=this.Config.ServiceModel.OperationsNameMapping.Count#>)
+                {
+<#
+            foreach(var entry in this.Config.ServiceModel.OperationsNameMapping)
+            {
+#>
+                    {"<#=entry.Key#>", "<#=entry.Value#>"},
+<#
+            }
+#>
+                };
+            }
+        }
+    }
+}

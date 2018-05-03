@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.KinesisAnalytics.Model;
 using Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations;
+using Amazon.KinesisAnalytics.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.KinesisAnalytics
     /// </summary>
     public partial class AmazonKinesisAnalyticsClient : AmazonServiceClient, IAmazonKinesisAnalytics
     {
+        private static IServiceMetadata serviceMetadata = new AmazonKinesisAnalyticsMetadata();
         
         #region Constructors
 
@@ -214,6 +216,16 @@ namespace Amazon.KinesisAnalytics
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

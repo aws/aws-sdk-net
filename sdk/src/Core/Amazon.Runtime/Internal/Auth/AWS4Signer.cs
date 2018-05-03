@@ -151,7 +151,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             var service = DetermineService(clientConfig);
-            var region = DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
+            request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
@@ -169,7 +169,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             return ComputeSignature(awsAccessKeyId,
                                     awsSecretAccessKey,
-                                    region,
+                                    request.DeterminedSigningRegion,
                                     signedAt,
                                     service,
                                     CanonicalizeHeaderNames(sortedHeaders),

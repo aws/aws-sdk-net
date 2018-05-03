@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DLM.Model;
 using Amazon.DLM.Model.Internal.MarshallTransformations;
+using Amazon.DLM.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -51,6 +52,7 @@ namespace Amazon.DLM
     /// </summary>
     public partial class AmazonDLMClient : AmazonServiceClient, IAmazonDLM
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDLMMetadata();
         #region Constructors
 
         /// <summary>
@@ -220,6 +222,16 @@ namespace Amazon.DLM
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -129,6 +129,14 @@ namespace Amazon.Util
         }
     }
 
+    public partial class CSMConfig
+    {
+        public int CSMPort { get; set; } = 31000;
+
+        public string CSMClientId { get; set; }
+
+        public bool? CSMEnabled { get; set; }
+    }
     #endregion
 
 }

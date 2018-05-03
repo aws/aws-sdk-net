@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CodeDeploy.Model;
 using Amazon.CodeDeploy.Model.Internal.MarshallTransformations;
+using Amazon.CodeDeploy.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -134,6 +135,7 @@ namespace Amazon.CodeDeploy
     /// </summary>
     public partial class AmazonCodeDeployClient : AmazonServiceClient, IAmazonCodeDeploy
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCodeDeployMetadata();
         
         #region Constructors
 
@@ -308,6 +310,16 @@ namespace Amazon.CodeDeploy
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

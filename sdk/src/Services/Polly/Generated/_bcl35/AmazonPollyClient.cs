@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Polly.Model;
 using Amazon.Polly.Model.Internal.MarshallTransformations;
+using Amazon.Polly.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -44,6 +45,7 @@ namespace Amazon.Polly
     /// </summary>
     public partial class AmazonPollyClient : AmazonServiceClient, IAmazonPolly
     {
+        private static IServiceMetadata serviceMetadata = new AmazonPollyMetadata();
         #region Constructors
 
         /// <summary>
@@ -214,6 +216,16 @@ namespace Amazon.Polly
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

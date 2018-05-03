@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CostExplorer.Model;
 using Amazon.CostExplorer.Model.Internal.MarshallTransformations;
+using Amazon.CostExplorer.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -58,6 +59,7 @@ namespace Amazon.CostExplorer
     /// </summary>
     public partial class AmazonCostExplorerClient : AmazonServiceClient, IAmazonCostExplorer
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCostExplorerMetadata();
         #region Constructors
 
         /// <summary>
@@ -228,6 +230,16 @@ namespace Amazon.CostExplorer
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

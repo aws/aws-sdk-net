@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticLoadBalancingV2.Model;
 using Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations;
+using Amazon.ElasticLoadBalancingV2.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -112,6 +113,7 @@ namespace Amazon.ElasticLoadBalancingV2
     /// </summary>
     public partial class AmazonElasticLoadBalancingV2Client : AmazonServiceClient, IAmazonElasticLoadBalancingV2
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticLoadBalancingV2Metadata();
         
         #region Constructors
 
@@ -286,6 +288,16 @@ namespace Amazon.ElasticLoadBalancingV2
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

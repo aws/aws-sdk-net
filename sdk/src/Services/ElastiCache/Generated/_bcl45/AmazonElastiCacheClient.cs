@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElastiCache.Model;
 using Amazon.ElastiCache.Model.Internal.MarshallTransformations;
+using Amazon.ElastiCache.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -57,6 +58,7 @@ namespace Amazon.ElastiCache
     /// </summary>
     public partial class AmazonElastiCacheClient : AmazonServiceClient, IAmazonElastiCache
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElastiCacheMetadata();
         #region Constructors
 
         /// <summary>
@@ -226,6 +228,16 @@ namespace Amazon.ElastiCache
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

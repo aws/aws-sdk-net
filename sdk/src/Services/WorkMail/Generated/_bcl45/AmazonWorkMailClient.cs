@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.WorkMail.Model;
 using Amazon.WorkMail.Model.Internal.MarshallTransformations;
+using Amazon.WorkMail.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -78,6 +79,7 @@ namespace Amazon.WorkMail
     /// </summary>
     public partial class AmazonWorkMailClient : AmazonServiceClient, IAmazonWorkMail
     {
+        private static IServiceMetadata serviceMetadata = new AmazonWorkMailMetadata();
         #region Constructors
 
         /// <summary>
@@ -247,6 +249,16 @@ namespace Amazon.WorkMail
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

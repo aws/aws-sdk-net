@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Route53Domains.Model;
 using Amazon.Route53Domains.Model.Internal.MarshallTransformations;
+using Amazon.Route53Domains.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.Route53Domains
     /// </summary>
     public partial class AmazonRoute53DomainsClient : AmazonServiceClient, IAmazonRoute53Domains
     {
+        private static IServiceMetadata serviceMetadata = new AmazonRoute53DomainsMetadata();
         #region Constructors
 
         /// <summary>
@@ -209,6 +211,16 @@ namespace Amazon.Route53Domains
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

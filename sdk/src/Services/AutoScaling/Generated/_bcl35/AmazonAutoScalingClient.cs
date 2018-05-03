@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.AutoScaling.Model;
 using Amazon.AutoScaling.Model.Internal.MarshallTransformations;
+using Amazon.AutoScaling.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -43,6 +44,7 @@ namespace Amazon.AutoScaling
     /// </summary>
     public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAutoScalingMetadata();
         #region Constructors
 
         /// <summary>
@@ -213,6 +215,16 @@ namespace Amazon.AutoScaling
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

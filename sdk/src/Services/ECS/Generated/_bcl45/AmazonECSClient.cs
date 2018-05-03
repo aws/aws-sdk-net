@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ECS.Model;
 using Amazon.ECS.Model.Internal.MarshallTransformations;
+using Amazon.ECS.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -61,6 +62,7 @@ namespace Amazon.ECS
     /// </summary>
     public partial class AmazonECSClient : AmazonServiceClient, IAmazonECS
     {
+        private static IServiceMetadata serviceMetadata = new AmazonECSMetadata();
         #region Constructors
 
         /// <summary>
@@ -230,6 +232,16 @@ namespace Amazon.ECS
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

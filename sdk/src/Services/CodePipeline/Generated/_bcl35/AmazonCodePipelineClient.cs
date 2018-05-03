@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CodePipeline.Model;
 using Amazon.CodePipeline.Model.Internal.MarshallTransformations;
+using Amazon.CodePipeline.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -244,6 +245,7 @@ namespace Amazon.CodePipeline
     /// </summary>
     public partial class AmazonCodePipelineClient : AmazonServiceClient, IAmazonCodePipeline
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCodePipelineMetadata();
         #region Constructors
 
         /// <summary>
@@ -414,6 +416,16 @@ namespace Amazon.CodePipeline
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

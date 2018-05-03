@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.S3
     /// </summary>
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
+        private static IServiceMetadata serviceMetadata = new AmazonS3Metadata();
         
         #region Constructors
 
@@ -227,6 +229,16 @@ namespace Amazon.S3
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
             pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

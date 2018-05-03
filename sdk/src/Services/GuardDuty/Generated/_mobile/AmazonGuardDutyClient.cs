@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.GuardDuty.Model;
 using Amazon.GuardDuty.Model.Internal.MarshallTransformations;
+using Amazon.GuardDuty.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.GuardDuty
     /// </summary>
     public partial class AmazonGuardDutyClient : AmazonServiceClient, IAmazonGuardDuty
     {
+        private static IServiceMetadata serviceMetadata = new AmazonGuardDutyMetadata();
         
         #region Constructors
 
@@ -215,6 +217,16 @@ namespace Amazon.GuardDuty
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.DAX.Model;
 using Amazon.DAX.Model.Internal.MarshallTransformations;
+using Amazon.DAX.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.DAX
     /// </summary>
     public partial class AmazonDAXClient : AmazonServiceClient, IAmazonDAX
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDAXMetadata();
         #region Constructors
 
         /// <summary>
@@ -212,6 +214,16 @@ namespace Amazon.DAX
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

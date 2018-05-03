@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MediaLive.Model;
 using Amazon.MediaLive.Model.Internal.MarshallTransformations;
+using Amazon.MediaLive.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.MediaLive
     /// </summary>
     public partial class AmazonMediaLiveClient : AmazonServiceClient, IAmazonMediaLive
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMediaLiveMetadata();
         
         #region Constructors
 
@@ -214,6 +216,16 @@ namespace Amazon.MediaLive
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.WorkSpaces.Model;
 using Amazon.WorkSpaces.Model.Internal.MarshallTransformations;
+using Amazon.WorkSpaces.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.WorkSpaces
     /// </summary>
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
     {
+        private static IServiceMetadata serviceMetadata = new AmazonWorkSpacesMetadata();
         #region Constructors
 
         /// <summary>
@@ -211,6 +213,16 @@ namespace Amazon.WorkSpaces
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

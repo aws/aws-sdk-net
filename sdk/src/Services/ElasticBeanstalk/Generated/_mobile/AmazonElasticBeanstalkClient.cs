@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticBeanstalk.Model;
 using Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations;
+using Amazon.ElasticBeanstalk.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -63,6 +64,7 @@ namespace Amazon.ElasticBeanstalk
     /// </summary>
     public partial class AmazonElasticBeanstalkClient : AmazonServiceClient, IAmazonElasticBeanstalk
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticBeanstalkMetadata();
         
         #region Constructors
 
@@ -237,6 +239,16 @@ namespace Amazon.ElasticBeanstalk
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudHSMV2.Model;
 using Amazon.CloudHSMV2.Model.Internal.MarshallTransformations;
+using Amazon.CloudHSMV2.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.CloudHSMV2
     /// </summary>
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudHSMV2Metadata();
         #region Constructors
 
         /// <summary>
@@ -211,6 +213,16 @@ namespace Amazon.CloudHSMV2
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

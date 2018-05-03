@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudHSM.Model;
 using Amazon.CloudHSM.Model.Internal.MarshallTransformations;
+using Amazon.CloudHSM.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -54,6 +55,7 @@ namespace Amazon.CloudHSM
     /// </summary>
     public partial class AmazonCloudHSMClient : AmazonServiceClient, IAmazonCloudHSM
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudHSMMetadata();
         
         #region Constructors
 
@@ -228,6 +230,16 @@ namespace Amazon.CloudHSM
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

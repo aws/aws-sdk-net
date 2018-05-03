@@ -16,6 +16,7 @@ using System.Collections.Generic;
 
 using <#=this.Config.Namespace#>.Model;
 using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
+using <#=this.Config.Namespace#>.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -26,6 +27,7 @@ namespace <#=this.Config.Namespace#>
 <#    this.FormatServiceClientDocumentation(this.Config.ServiceModel.Documentation); #>
     public partial class Amazon<#=this.Config.ClassName#>Client : AmazonServiceClient, IAmazon<#=this.Config.ClassName#>
     {
+		private static IServiceMetadata serviceMetadata = new Amazon<#=this.Config.ClassName#>Metadata();
         
 <#
     // Generates generic constructors for the service if enabled in the model
@@ -241,6 +243,16 @@ namespace <#=this.Config.Namespace#>
 <#
         }
 #>
+		/// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

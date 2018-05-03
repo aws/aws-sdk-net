@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CodeBuild.Model;
 using Amazon.CodeBuild.Model.Internal.MarshallTransformations;
+using Amazon.CodeBuild.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -126,6 +127,7 @@ namespace Amazon.CodeBuild
     /// </summary>
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCodeBuildMetadata();
         #region Constructors
 
         /// <summary>
@@ -296,6 +298,16 @@ namespace Amazon.CodeBuild
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

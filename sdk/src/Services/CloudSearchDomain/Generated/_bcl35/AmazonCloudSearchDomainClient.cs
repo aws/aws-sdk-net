@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudSearchDomain.Model;
 using Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations;
+using Amazon.CloudSearchDomain.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -52,6 +53,7 @@ namespace Amazon.CloudSearchDomain
     /// </summary>
     public partial class AmazonCloudSearchDomainClient : AmazonServiceClient, IAmazonCloudSearchDomain
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudSearchDomainMetadata();
 
         #region Overrides
 
@@ -74,6 +76,16 @@ namespace Amazon.CloudSearchDomain
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ValidationResponseHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.CloudSearchDomain.Internal.ProcessExceptionHandler());
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

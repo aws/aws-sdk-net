@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-	AddLicenseHeader();
+    AddLicenseHeader();
 #>
 
 
@@ -19,12 +19,12 @@ namespace <#=this.Config.Namespace#>
     /// <summary>
     /// Configuration for accessing Amazon <#=this.Config.ClassName#> service
     /// </summary>
-	public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
-	{
-		private static readonly string UserAgentString =
+    public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
+    {
+        private static readonly string UserAgentString =
             InternalSDKUtils.BuildUserAgentString("<#=this.Config.ServiceFileVersion #>");
 
-		private string _userAgent = UserAgentString;
+        private string _userAgent = UserAgentString;
 
         /// <summary>
         /// Default constructor
@@ -47,8 +47,8 @@ namespace <#=this.Config.Namespace#>
             if(!string.IsNullOrEmpty(this.Config.DefaultRegion))
             {
 #>
-			var region = FallbackRegionFactory.GetRegionEndpoint(false);
-			this.RegionEndpoint = region ?? RegionEndpoint.<#=this.Config.DefaultRegion#>;
+            var region = FallbackRegionFactory.GetRegionEndpoint(false);
+            this.RegionEndpoint = region ?? RegionEndpoint.<#=this.Config.DefaultRegion#>;
 <#
             }
 #>
@@ -76,7 +76,7 @@ namespace <#=this.Config.Namespace#>
             }
         }
 
-		/// <summary>
+        /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
         public override string UserAgent

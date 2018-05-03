@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.WorkDocs.Model;
 using Amazon.WorkDocs.Model.Internal.MarshallTransformations;
+using Amazon.WorkDocs.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -76,6 +77,7 @@ namespace Amazon.WorkDocs
     /// </summary>
     public partial class AmazonWorkDocsClient : AmazonServiceClient, IAmazonWorkDocs
     {
+        private static IServiceMetadata serviceMetadata = new AmazonWorkDocsMetadata();
         
         #region Constructors
 
@@ -250,6 +252,16 @@ namespace Amazon.WorkDocs
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

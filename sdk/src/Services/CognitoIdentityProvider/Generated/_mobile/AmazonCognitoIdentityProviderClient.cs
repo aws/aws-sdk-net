@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CognitoIdentityProvider.Model;
 using Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations;
+using Amazon.CognitoIdentityProvider.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -51,6 +52,7 @@ namespace Amazon.CognitoIdentityProvider
     /// </summary>
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCognitoIdentityProviderMetadata();
         
         #region Constructors
 
@@ -225,6 +227,16 @@ namespace Amazon.CognitoIdentityProvider
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

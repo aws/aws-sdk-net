@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MTurk.Model;
 using Amazon.MTurk.Model.Internal.MarshallTransformations;
+using Amazon.MTurk.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.MTurk
     /// </summary>
     public partial class AmazonMTurkClient : AmazonServiceClient, IAmazonMTurk
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMTurkMetadata();
         #region Constructors
 
         /// <summary>
@@ -209,6 +211,16 @@ namespace Amazon.MTurk
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

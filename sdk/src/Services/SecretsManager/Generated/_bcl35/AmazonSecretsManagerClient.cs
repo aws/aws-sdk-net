@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.SecretsManager.Model;
 using Amazon.SecretsManager.Model.Internal.MarshallTransformations;
+using Amazon.SecretsManager.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -121,6 +122,7 @@ namespace Amazon.SecretsManager
     /// </summary>
     public partial class AmazonSecretsManagerClient : AmazonServiceClient, IAmazonSecretsManager
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSecretsManagerMetadata();
         #region Constructors
 
         /// <summary>
@@ -291,6 +293,16 @@ namespace Amazon.SecretsManager
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

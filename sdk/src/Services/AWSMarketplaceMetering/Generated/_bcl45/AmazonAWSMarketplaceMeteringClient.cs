@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.AWSMarketplaceMetering.Model;
 using Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations;
+using Amazon.AWSMarketplaceMetering.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -74,6 +75,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// </summary>
     public partial class AmazonAWSMarketplaceMeteringClient : AmazonServiceClient, IAmazonAWSMarketplaceMetering
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAWSMarketplaceMeteringMetadata();
         #region Constructors
 
         /// <summary>
@@ -243,6 +245,16 @@ namespace Amazon.AWSMarketplaceMetering
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.FMS.Model;
 using Amazon.FMS.Model.Internal.MarshallTransformations;
+using Amazon.FMS.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -44,6 +45,7 @@ namespace Amazon.FMS
     /// </summary>
     public partial class AmazonFMSClient : AmazonServiceClient, IAmazonFMS
     {
+        private static IServiceMetadata serviceMetadata = new AmazonFMSMetadata();
         #region Constructors
 
         /// <summary>
@@ -214,6 +216,16 @@ namespace Amazon.FMS
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.ACMPCA.Model;
 using Amazon.ACMPCA.Model.Internal.MarshallTransformations;
+using Amazon.ACMPCA.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -72,6 +73,7 @@ namespace Amazon.ACMPCA
     /// </summary>
     public partial class AmazonACMPCAClient : AmazonServiceClient, IAmazonACMPCA
     {
+        private static IServiceMetadata serviceMetadata = new AmazonACMPCAMetadata();
         #region Constructors
 
         /// <summary>
@@ -242,6 +244,16 @@ namespace Amazon.ACMPCA
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

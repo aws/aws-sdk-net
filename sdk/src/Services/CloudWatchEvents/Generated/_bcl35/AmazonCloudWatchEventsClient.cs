@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudWatchEvents.Model;
 using Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations;
+using Amazon.CloudWatchEvents.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -61,6 +62,7 @@ namespace Amazon.CloudWatchEvents
     /// </summary>
     public partial class AmazonCloudWatchEventsClient : AmazonServiceClient, IAmazonCloudWatchEvents
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudWatchEventsMetadata();
         #region Constructors
 
         /// <summary>
@@ -231,6 +233,16 @@ namespace Amazon.CloudWatchEvents
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

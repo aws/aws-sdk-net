@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Greengrass.Model;
 using Amazon.Greengrass.Model.Internal.MarshallTransformations;
+using Amazon.Greengrass.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.Greengrass
     /// </summary>
     public partial class AmazonGreengrassClient : AmazonServiceClient, IAmazonGreengrass
     {
+        private static IServiceMetadata serviceMetadata = new AmazonGreengrassMetadata();
         #region Constructors
 
         /// <summary>
@@ -212,6 +214,16 @@ namespace Amazon.Greengrass
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

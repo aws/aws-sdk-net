@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CostAndUsageReport.Model;
 using Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations;
+using Amazon.CostAndUsageReport.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.CostAndUsageReport
     /// </summary>
     public partial class AmazonCostAndUsageReportClient : AmazonServiceClient, IAmazonCostAndUsageReport
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCostAndUsageReportMetadata();
         #region Constructors
 
         /// <summary>
@@ -209,6 +211,16 @@ namespace Amazon.CostAndUsageReport
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

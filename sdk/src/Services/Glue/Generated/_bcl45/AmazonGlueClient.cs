@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Glue.Model;
 using Amazon.Glue.Model.Internal.MarshallTransformations;
+using Amazon.Glue.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -43,6 +44,7 @@ namespace Amazon.Glue
     /// </summary>
     public partial class AmazonGlueClient : AmazonServiceClient, IAmazonGlue
     {
+        private static IServiceMetadata serviceMetadata = new AmazonGlueMetadata();
         #region Constructors
 
         /// <summary>
@@ -212,6 +214,16 @@ namespace Amazon.Glue
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

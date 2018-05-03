@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CodeStar.Model;
 using Amazon.CodeStar.Model.Internal.MarshallTransformations;
+using Amazon.CodeStar.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -130,6 +131,7 @@ namespace Amazon.CodeStar
     /// </summary>
     public partial class AmazonCodeStarClient : AmazonServiceClient, IAmazonCodeStar
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCodeStarMetadata();
         #region Constructors
 
         /// <summary>
@@ -300,6 +302,16 @@ namespace Amazon.CodeStar
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.AlexaForBusiness.Model;
 using Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations;
+using Amazon.AlexaForBusiness.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -46,6 +47,7 @@ namespace Amazon.AlexaForBusiness
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAlexaForBusinessMetadata();
         
         #region Constructors
 
@@ -220,6 +222,16 @@ namespace Amazon.AlexaForBusiness
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

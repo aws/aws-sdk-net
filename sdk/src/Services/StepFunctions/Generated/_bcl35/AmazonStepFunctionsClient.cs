@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.StepFunctions.Model;
 using Amazon.StepFunctions.Model.Internal.MarshallTransformations;
+using Amazon.StepFunctions.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -60,6 +61,7 @@ namespace Amazon.StepFunctions
     /// </summary>
     public partial class AmazonStepFunctionsClient : AmazonServiceClient, IAmazonStepFunctions
     {
+        private static IServiceMetadata serviceMetadata = new AmazonStepFunctionsMetadata();
         #region Constructors
 
         /// <summary>
@@ -230,6 +232,16 @@ namespace Amazon.StepFunctions
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

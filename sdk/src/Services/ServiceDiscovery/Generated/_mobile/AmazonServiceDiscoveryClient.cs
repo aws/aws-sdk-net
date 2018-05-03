@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ServiceDiscovery.Model;
 using Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations;
+using Amazon.ServiceDiscovery.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -44,6 +45,7 @@ namespace Amazon.ServiceDiscovery
     /// </summary>
     public partial class AmazonServiceDiscoveryClient : AmazonServiceClient, IAmazonServiceDiscovery
     {
+        private static IServiceMetadata serviceMetadata = new AmazonServiceDiscoveryMetadata();
         
         #region Constructors
 
@@ -218,6 +220,16 @@ namespace Amazon.ServiceDiscovery
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.AWSSupport.Model;
 using Amazon.AWSSupport.Model.Internal.MarshallTransformations;
+using Amazon.AWSSupport.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -118,6 +119,7 @@ namespace Amazon.AWSSupport
     /// </summary>
     public partial class AmazonAWSSupportClient : AmazonServiceClient, IAmazonAWSSupport
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAWSSupportMetadata();
         
         #region Constructors
 
@@ -292,6 +294,16 @@ namespace Amazon.AWSSupport
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

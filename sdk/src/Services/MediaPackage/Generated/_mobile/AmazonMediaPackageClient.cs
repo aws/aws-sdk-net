@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MediaPackage.Model;
 using Amazon.MediaPackage.Model.Internal.MarshallTransformations;
+using Amazon.MediaPackage.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.MediaPackage
     /// </summary>
     public partial class AmazonMediaPackageClient : AmazonServiceClient, IAmazonMediaPackage
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMediaPackageMetadata();
         
         #region Constructors
 
@@ -214,6 +216,16 @@ namespace Amazon.MediaPackage
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

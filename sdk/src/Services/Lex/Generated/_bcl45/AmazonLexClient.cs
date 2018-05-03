@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Lex.Model;
 using Amazon.Lex.Model.Internal.MarshallTransformations;
+using Amazon.Lex.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -49,6 +50,7 @@ namespace Amazon.Lex
     /// </summary>
     public partial class AmazonLexClient : AmazonServiceClient, IAmazonLex
     {
+        private static IServiceMetadata serviceMetadata = new AmazonLexMetadata();
         #region Constructors
 
         /// <summary>
@@ -218,6 +220,16 @@ namespace Amazon.Lex
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

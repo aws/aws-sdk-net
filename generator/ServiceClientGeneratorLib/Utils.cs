@@ -6,11 +6,19 @@ using System.Linq;
 using System.Xml;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ServiceClientGenerator
 {
     public static class Utils
     {
+        // Regex used to evaluate if the service name contains any special characters except alphanumeric and underscore.
+        private readonly static Regex EvaluateSpecialCharacters = new Regex("[^a-zA-Z0-9 ]+");
+        // Regex used to evaluate if the service name begins with digits
+        private readonly static Regex EvaluateBeginningWithDigits = new Regex("^[0-9]+");
+        // Regex to evaluate if the final service name adheres to the Service id spec. The Regex has picked from the spec.
+        private readonly static Regex EvaluateServiceName = new Regex("^[a-zA-Z][a-zA-Z0-9]*( [a-zA-Z0-9]+)*$");
+
         public static string GetVersion(string fileVersionText)
         {
             var fileVersion = new Version(fileVersionText);
@@ -152,6 +160,28 @@ namespace ServiceClientGenerator
             return (data == null)
                 ? null
                 : data.ToString();
+        }
+
+        /// <summary>
+        /// Method to determine the service name as per Appendix A of the Service id spec
+        /// </summary>
+        /// <returns></returns>
+        public static string DetermineServiceId(string serviceAbbreviation, string serviceFullName)
+        {
+            var name = serviceAbbreviation;
+            if (string.IsNullOrEmpty(name))
+            {
+                name = serviceFullName;
+            }
+            name = name.Replace("Amazon", string.Empty).Replace("AWS", string.Empty).Trim();
+            name = EvaluateSpecialCharacters.Replace(name, string.Empty);
+            name = EvaluateBeginningWithDigits.Replace(name, string.Empty);
+            Match match = EvaluateServiceName.Match(name);
+            if (match.Success)
+            {
+                return name;
+            }
+            return null;
         }
     }
 }

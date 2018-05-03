@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Comprehend.Model;
 using Amazon.Comprehend.Model.Internal.MarshallTransformations;
+using Amazon.Comprehend.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.Comprehend
     /// </summary>
     public partial class AmazonComprehendClient : AmazonServiceClient, IAmazonComprehend
     {
+        private static IServiceMetadata serviceMetadata = new AmazonComprehendMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.Comprehend
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

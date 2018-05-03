@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.ImportExport.Model;
 using Amazon.ImportExport.Model.Internal.MarshallTransformations;
+using Amazon.ImportExport.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.ImportExport
     /// </summary>
     public partial class AmazonImportExportClient : AmazonServiceClient, IAmazonImportExport
     {
+        private static IServiceMetadata serviceMetadata = new AmazonImportExportMetadata();
         #region Constructors
 
         /// <summary>
@@ -212,6 +214,16 @@ namespace Amazon.ImportExport
             return new QueryStringSigner();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

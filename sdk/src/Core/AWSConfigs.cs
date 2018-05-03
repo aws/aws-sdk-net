@@ -26,6 +26,7 @@ using System.Globalization;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System.Collections.Generic;
+using Amazon.Runtime;
 
 namespace Amazon
 {
@@ -85,7 +86,6 @@ namespace Amazon
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
-        
         // for reading from awsconfigs.xml
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
@@ -397,7 +397,6 @@ namespace Amazon
 
         #endregion
 
-
         #region AWS Config Sections
 
         /// <summary>
@@ -450,6 +449,11 @@ namespace Amazon
             set { _rootConfig.RegionEndpoint = value; }
         }
 
+        public static CSMConfig CSMConfig
+        {
+            get { return _rootConfig.CSMConfig; }
+            set { _rootConfig.CSMConfig = value; }
+        }
         #endregion
 
         #region Internal members

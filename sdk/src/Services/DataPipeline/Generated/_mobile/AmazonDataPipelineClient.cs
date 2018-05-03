@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DataPipeline.Model;
 using Amazon.DataPipeline.Model.Internal.MarshallTransformations;
+using Amazon.DataPipeline.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -63,6 +64,7 @@ namespace Amazon.DataPipeline
     /// </summary>
     public partial class AmazonDataPipelineClient : AmazonServiceClient, IAmazonDataPipeline
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDataPipelineMetadata();
         
         #region Constructors
 
@@ -237,6 +239,16 @@ namespace Amazon.DataPipeline
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

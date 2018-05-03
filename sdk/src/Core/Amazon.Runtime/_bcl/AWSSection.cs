@@ -50,12 +50,20 @@ namespace Amazon
         private const string correctForClockSkewKey = "correctForClockSkew";
         private const string useSdkCacheKey = "useSdkCache";
         private const string applicationNameKey = "applicationName";
+        private const string csmConfigKey = "csmConfig";
 
         [ConfigurationProperty(loggingKey)]
         public LoggingSection Logging
         {
             get { return (LoggingSection)this[loggingKey]; }
             set { this[loggingKey] = value; }
+        }
+
+        [ConfigurationProperty(csmConfigKey)]
+        public CSMSection CSMConfig
+        {
+            get { return (CSMSection)this[csmConfigKey]; }
+            set { this[csmConfigKey] = value; }
         }
 
         [ConfigurationProperty(endpointDefinitionKey)]
@@ -319,6 +327,34 @@ namespace Amazon
         {
             get { return (Type)this[logMetricsCustomFormatterKey]; }
             set { this[logMetricsCustomFormatterKey] = value; }
+        }
+    }
+
+    internal class CSMSection : WritableConfigurationElement
+    {
+        private const string csmEnabledKey = "csmEnabled";
+        private const string csmClientIdKey = "csmClientId";
+        private const string csmPortKey = "csmPort";
+
+        [ConfigurationProperty(csmEnabledKey)]
+        public bool? CSMEnabled
+        {
+            get { return (bool)this[csmEnabledKey]; }
+            set { this[csmEnabledKey] = value; }
+        }
+
+        [ConfigurationProperty(csmPortKey)]
+        public int? CSMPort
+        {
+            get { return (int?)this[csmPortKey]; }
+            set { this[csmPortKey] = value; }
+        }
+
+        [ConfigurationProperty(csmClientIdKey)]
+        public string CSMClientId
+        {
+            get { return (string)this[csmClientIdKey]; }
+            set { this[csmClientIdKey] = value; }
         }
     }
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DirectoryService.Model;
 using Amazon.DirectoryService.Model.Internal.MarshallTransformations;
+using Amazon.DirectoryService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -58,6 +59,7 @@ namespace Amazon.DirectoryService
     /// </summary>
     public partial class AmazonDirectoryServiceClient : AmazonServiceClient, IAmazonDirectoryService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDirectoryServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -227,6 +229,16 @@ namespace Amazon.DirectoryService
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

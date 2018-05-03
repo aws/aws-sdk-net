@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.ServiceCatalog.Model;
 using Amazon.ServiceCatalog.Model.Internal.MarshallTransformations;
+using Amazon.ServiceCatalog.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -44,6 +45,7 @@ namespace Amazon.ServiceCatalog
     /// </summary>
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
     {
+        private static IServiceMetadata serviceMetadata = new AmazonServiceCatalogMetadata();
         #region Constructors
 
         /// <summary>
@@ -214,6 +216,16 @@ namespace Amazon.ServiceCatalog
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

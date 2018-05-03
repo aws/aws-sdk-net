@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.AppSync.Model;
 using Amazon.AppSync.Model.Internal.MarshallTransformations;
+using Amazon.AppSync.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.AppSync
     /// </summary>
     public partial class AmazonAppSyncClient : AmazonServiceClient, IAmazonAppSync
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAppSyncMetadata();
         
         #region Constructors
 
@@ -215,6 +217,16 @@ namespace Amazon.AppSync
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

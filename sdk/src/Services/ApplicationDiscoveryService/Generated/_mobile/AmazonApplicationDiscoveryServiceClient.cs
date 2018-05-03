@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ApplicationDiscoveryService.Model;
 using Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations;
+using Amazon.ApplicationDiscoveryService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -117,6 +118,7 @@ namespace Amazon.ApplicationDiscoveryService
     /// </summary>
     public partial class AmazonApplicationDiscoveryServiceClient : AmazonServiceClient, IAmazonApplicationDiscoveryService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonApplicationDiscoveryServiceMetadata();
         
         #region Constructors
 
@@ -291,6 +293,16 @@ namespace Amazon.ApplicationDiscoveryService
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

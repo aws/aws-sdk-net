@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.APIGateway.Model;
 using Amazon.APIGateway.Model.Internal.MarshallTransformations;
+using Amazon.APIGateway.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -46,6 +47,7 @@ namespace Amazon.APIGateway
     /// </summary>
     public partial class AmazonAPIGatewayClient : AmazonServiceClient, IAmazonAPIGateway
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAPIGatewayMetadata();
         
         #region Constructors
 
@@ -227,6 +229,16 @@ namespace Amazon.APIGateway
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.APIGateway.Internal.AmazonAPIGatewayPostMarshallHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

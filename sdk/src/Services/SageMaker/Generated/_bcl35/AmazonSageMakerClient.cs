@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.SageMaker.Model;
 using Amazon.SageMaker.Model.Internal.MarshallTransformations;
+using Amazon.SageMaker.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.SageMaker
     /// </summary>
     public partial class AmazonSageMakerClient : AmazonServiceClient, IAmazonSageMaker
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSageMakerMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.SageMaker
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

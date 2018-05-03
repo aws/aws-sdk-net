@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.DatabaseMigrationService.Model;
 using Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations;
+using Amazon.DatabaseMigrationService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -50,6 +51,7 @@ namespace Amazon.DatabaseMigrationService
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDatabaseMigrationServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -220,6 +222,16 @@ namespace Amazon.DatabaseMigrationService
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

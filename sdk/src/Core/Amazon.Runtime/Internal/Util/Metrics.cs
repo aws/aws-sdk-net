@@ -155,7 +155,7 @@ namespace Amazon.Runtime.Internal.Util
                 }
                 inFlightTimings.Remove(metric);
                 timing.Stop(CurrentTime);
-
+ 
                 if (IsEnabled)
                 {
                     List<IMetricsTiming> list;

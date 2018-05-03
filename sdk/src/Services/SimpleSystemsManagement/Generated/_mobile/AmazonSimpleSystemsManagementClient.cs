@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.SimpleSystemsManagement.Model;
 using Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations;
+using Amazon.SimpleSystemsManagement.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -67,6 +68,7 @@ namespace Amazon.SimpleSystemsManagement
     /// </summary>
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSimpleSystemsManagementMetadata();
         
         #region Constructors
 
@@ -241,6 +243,16 @@ namespace Amazon.SimpleSystemsManagement
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

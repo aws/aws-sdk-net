@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Route53.Model;
 using Amazon.Route53.Model.Internal.MarshallTransformations;
+using Amazon.Route53.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.Route53
     /// </summary>
     public partial class AmazonRoute53Client : AmazonServiceClient, IAmazonRoute53
     {
+        private static IServiceMetadata serviceMetadata = new AmazonRoute53Metadata();
         
         #region Constructors
 
@@ -222,6 +224,16 @@ namespace Amazon.Route53
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.Route53.Internal.AmazonRoute53PreMarshallHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

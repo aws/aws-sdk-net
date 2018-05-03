@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CodeCommit.Model;
 using Amazon.CodeCommit.Model.Internal.MarshallTransformations;
+using Amazon.CodeCommit.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -260,6 +261,7 @@ namespace Amazon.CodeCommit
     /// </summary>
     public partial class AmazonCodeCommitClient : AmazonServiceClient, IAmazonCodeCommit
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCodeCommitMetadata();
         #region Constructors
 
         /// <summary>
@@ -429,6 +431,16 @@ namespace Amazon.CodeCommit
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -470,21 +470,32 @@ namespace Amazon.Util
 
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
-            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
-            return Convert.ToInt32(ts.TotalSeconds);
+            return Convert.ToInt32(GetTimeSpanInTicks(dateTime).TotalSeconds);
         }
 
         public static string ConvertToUnixEpochSecondsString(DateTime dateTime)
         {
-            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
-            return Convert.ToInt64(ts.TotalSeconds).ToString(CultureInfo.InvariantCulture);
+            return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
         {
-            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
-            double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
-            return milli;
+            return Math.Round(GetTimeSpanInTicks(dateTime).TotalMilliseconds, 0) / 1000.0;
+        }
+
+        public static TimeSpan GetTimeSpanInTicks(DateTime dateTime)
+        {
+            return new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+        }
+
+        public static long ConvertDateTimetoMilliseconds(DateTime dateTime)
+        {
+            return ConvertTimeSpanToMilliseconds(GetTimeSpanInTicks(dateTime));
+        }
+
+        public static long ConvertTimeSpanToMilliseconds(TimeSpan timeSpan)
+        {
+            return timeSpan.Ticks / TimeSpan.TicksPerMillisecond;
         }
 
         /// <summary>

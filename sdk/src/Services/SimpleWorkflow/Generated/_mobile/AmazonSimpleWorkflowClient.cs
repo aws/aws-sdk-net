@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.SimpleWorkflow.Model;
 using Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations;
+using Amazon.SimpleWorkflow.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -59,6 +60,7 @@ namespace Amazon.SimpleWorkflow
     /// </summary>
     public partial class AmazonSimpleWorkflowClient : AmazonServiceClient, IAmazonSimpleWorkflow
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSimpleWorkflowMetadata();
         
         #region Constructors
 
@@ -233,6 +235,16 @@ namespace Amazon.SimpleWorkflow
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

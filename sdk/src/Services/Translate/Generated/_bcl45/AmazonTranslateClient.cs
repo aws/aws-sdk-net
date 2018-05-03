@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Translate.Model;
 using Amazon.Translate.Model.Internal.MarshallTransformations;
+using Amazon.Translate.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.Translate
     /// </summary>
     public partial class AmazonTranslateClient : AmazonServiceClient, IAmazonTranslate
     {
+        private static IServiceMetadata serviceMetadata = new AmazonTranslateMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.Translate
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

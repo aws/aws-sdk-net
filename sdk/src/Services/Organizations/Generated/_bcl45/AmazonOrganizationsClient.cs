@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Organizations.Model;
 using Amazon.Organizations.Model.Internal.MarshallTransformations;
+using Amazon.Organizations.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -198,6 +199,7 @@ namespace Amazon.Organizations
     /// </summary>
     public partial class AmazonOrganizationsClient : AmazonServiceClient, IAmazonOrganizations
     {
+        private static IServiceMetadata serviceMetadata = new AmazonOrganizationsMetadata();
         #region Constructors
 
         /// <summary>
@@ -367,6 +369,16 @@ namespace Amazon.Organizations
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

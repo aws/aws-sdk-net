@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Mobile.Model;
 using Amazon.Mobile.Model.Internal.MarshallTransformations;
+using Amazon.Mobile.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.Mobile
     /// </summary>
     public partial class AmazonMobileClient : AmazonServiceClient, IAmazonMobile
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMobileMetadata();
         
         #region Constructors
 
@@ -216,6 +218,16 @@ namespace Amazon.Mobile
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

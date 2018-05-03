@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticLoadBalancing.Model;
 using Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations;
+using Amazon.ElasticLoadBalancing.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -72,6 +73,7 @@ namespace Amazon.ElasticLoadBalancing
     /// </summary>
     public partial class AmazonElasticLoadBalancingClient : AmazonServiceClient, IAmazonElasticLoadBalancing
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticLoadBalancingMetadata();
         
         #region Constructors
 
@@ -253,6 +255,16 @@ namespace Amazon.ElasticLoadBalancing
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticLoadBalancing.Internal.ProcessRequestHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

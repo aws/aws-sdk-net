@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Cloud9.Model;
 using Amazon.Cloud9.Model.Internal.MarshallTransformations;
+using Amazon.Cloud9.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -98,6 +99,7 @@ namespace Amazon.Cloud9
     /// </summary>
     public partial class AmazonCloud9Client : AmazonServiceClient, IAmazonCloud9
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloud9Metadata();
         #region Constructors
 
         /// <summary>
@@ -267,6 +269,16 @@ namespace Amazon.Cloud9
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

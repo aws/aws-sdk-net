@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticTranscoder.Model;
 using Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations;
+using Amazon.ElasticTranscoder.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -43,6 +44,7 @@ namespace Amazon.ElasticTranscoder
     /// </summary>
     public partial class AmazonElasticTranscoderClient : AmazonServiceClient, IAmazonElasticTranscoder
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticTranscoderMetadata();
         
         #region Constructors
 
@@ -224,6 +226,16 @@ namespace Amazon.ElasticTranscoder
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticTranscoder.Internal.AmazonElasticTranscoderPreMarshallHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

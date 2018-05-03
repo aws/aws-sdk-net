@@ -388,7 +388,12 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public string AuthenticationRegion { get; set; }
 
-		/// <summary>
+        /// <summary>
+        /// The region in which the service request was signed.
+        /// </summary>
+        public string DeterminedSigningRegion { get ; set; }
+
+        /// <summary>
         /// Checks if the request stream can be rewinded.
         /// </summary>
         /// <returns>Returns true if the request stream can be rewinded ,
@@ -429,6 +434,15 @@ namespace Amazon.Runtime.Internal
             var isPutPost = (this.HttpMethod == "POST" || this.HttpMethod == "PUT" || this.HttpMethod == "PATCH");
             var hasContent = this.HasRequestData();
             return (isPutPost && hasContent);
+        }
+
+        public string GetHeaderValue(string headerName)
+        {
+            string headerValue;
+            if (headers.TryGetValue(headerName, out headerValue))
+                return headerValue;
+
+            return string.Empty;
         }
     }
 }

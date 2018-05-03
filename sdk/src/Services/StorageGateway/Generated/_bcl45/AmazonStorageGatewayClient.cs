@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.StorageGateway.Model;
 using Amazon.StorageGateway.Model.Internal.MarshallTransformations;
+using Amazon.StorageGateway.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -119,6 +120,7 @@ namespace Amazon.StorageGateway
     /// </summary>
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
+        private static IServiceMetadata serviceMetadata = new AmazonStorageGatewayMetadata();
         #region Constructors
 
         /// <summary>
@@ -288,6 +290,16 @@ namespace Amazon.StorageGateway
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

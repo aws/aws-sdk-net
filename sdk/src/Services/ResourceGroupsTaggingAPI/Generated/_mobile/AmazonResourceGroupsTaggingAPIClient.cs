@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ResourceGroupsTaggingAPI.Model;
 using Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations;
+using Amazon.ResourceGroupsTaggingAPI.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -97,6 +98,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     /// </summary>
     public partial class AmazonResourceGroupsTaggingAPIClient : AmazonServiceClient, IAmazonResourceGroupsTaggingAPI
     {
+        private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsTaggingAPIMetadata();
         
         #region Constructors
 
@@ -271,6 +273,16 @@ namespace Amazon.ResourceGroupsTaggingAPI
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.IoT1ClickDevicesService.Model;
 using Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations;
+using Amazon.IoT1ClickDevicesService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.IoT1ClickDevicesService
     /// </summary>
     public partial class AmazonIoT1ClickDevicesServiceClient : AmazonServiceClient, IAmazonIoT1ClickDevicesService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonIoT1ClickDevicesServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.IoT1ClickDevicesService
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

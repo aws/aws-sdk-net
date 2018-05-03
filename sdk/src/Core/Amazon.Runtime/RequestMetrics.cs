@@ -109,6 +109,9 @@ namespace Amazon.Runtime
         RetryPauseTime,
         StringToSign,
         CanonicalRequest,
+        // CSM metric added to measure the latency of each http 
+        // request
+        CSMAttemptLatency,
 
         // overall enums
         AsyncCall,

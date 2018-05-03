@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudSearch.Model;
 using Amazon.CloudSearch.Model.Internal.MarshallTransformations;
+using Amazon.CloudSearch.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -53,6 +54,7 @@ namespace Amazon.CloudSearch
     /// </summary>
     public partial class AmazonCloudSearchClient : AmazonServiceClient, IAmazonCloudSearch
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudSearchMetadata();
         
         #region Constructors
 
@@ -227,6 +229,16 @@ namespace Amazon.CloudSearch
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

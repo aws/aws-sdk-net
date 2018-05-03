@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.IdentityManagement.Model;
 using Amazon.IdentityManagement.Model.Internal.MarshallTransformations;
+using Amazon.IdentityManagement.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -112,6 +113,7 @@ namespace Amazon.IdentityManagement
     /// </summary>
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonIdentityManagementServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -223,6 +225,17 @@ namespace Amazon.IdentityManagement
         protected override AbstractAWSSigner CreateSigner()
         {
             return new AWS4Signer();
+        }
+
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

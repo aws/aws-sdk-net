@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.PI.Model;
 using Amazon.PI.Model.Internal.MarshallTransformations;
+using Amazon.PI.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -57,6 +58,7 @@ namespace Amazon.PI
     /// </summary>
     public partial class AmazonPIClient : AmazonServiceClient, IAmazonPI
     {
+        private static IServiceMetadata serviceMetadata = new AmazonPIMetadata();
         
         #region Constructors
 
@@ -231,6 +233,16 @@ namespace Amazon.PI
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 
