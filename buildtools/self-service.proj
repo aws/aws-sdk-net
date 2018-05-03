@@ -24,10 +24,9 @@
 
   <Target Name="run-generator">
     <Message Text="Build and run code generator"/>
-    <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
-    <MSBuild Projects="..\generator\AWSSDKGenerator.sln"
-        Targets="Clean;Build"
-        Properties="Configuration=Release" />
+    <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
+    <Exec Command="dotnet clean -c Release AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
+    <Exec Command="dotnet build -c Release --no-incremental AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
     <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorUnityPath) $(GeneratorPartialBuildArgument)"
         WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
   </Target>
