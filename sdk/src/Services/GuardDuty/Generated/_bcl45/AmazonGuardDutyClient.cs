@@ -363,6 +363,51 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateFilter
+
+
+        /// <summary>
+        /// Creates a filter using the specified finding criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        public virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
+        {
+            var marshaller = CreateFilterRequestMarshaller.Instance;
+            var unmarshaller = CreateFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFilterRequest,CreateFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        public virtual Task<CreateFilterResponse> CreateFilterAsync(CreateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFilterRequestMarshaller.Instance;
+            var unmarshaller = CreateFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFilterRequest,CreateFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIPSet
 
 
@@ -635,6 +680,51 @@ namespace Amazon.GuardDuty
             var unmarshaller = DeleteDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDetectorRequest,DeleteDetectorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFilter
+
+
+        /// <summary>
+        /// Deletes the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        public virtual DeleteFilterResponse DeleteFilter(DeleteFilterRequest request)
+        {
+            var marshaller = DeleteFilterRequestMarshaller.Instance;
+            var unmarshaller = DeleteFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFilterRequest,DeleteFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        public virtual Task<DeleteFilterResponse> DeleteFilterAsync(DeleteFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFilterRequestMarshaller.Instance;
+            var unmarshaller = DeleteFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFilterRequest,DeleteFilterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -953,6 +1043,51 @@ namespace Amazon.GuardDuty
             var unmarshaller = GetDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDetectorRequest,GetDetectorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFilter
+
+
+        /// <summary>
+        /// Returns the details of the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFilter service method.</param>
+        /// 
+        /// <returns>The response from the GetFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
+        public virtual GetFilterResponse GetFilter(GetFilterRequest request)
+        {
+            var marshaller = GetFilterRequestMarshaller.Instance;
+            var unmarshaller = GetFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetFilterRequest,GetFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
+        public virtual Task<GetFilterResponse> GetFilterAsync(GetFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFilterRequestMarshaller.Instance;
+            var unmarshaller = GetFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFilterRequest,GetFilterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1368,6 +1503,51 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListFilters
+
+
+        /// <summary>
+        /// Returns a paginated list of the current filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListFilters service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        public virtual ListFiltersResponse ListFilters(ListFiltersRequest request)
+        {
+            var marshaller = ListFiltersRequestMarshaller.Instance;
+            var unmarshaller = ListFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListFiltersRequest,ListFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        public virtual Task<ListFiltersResponse> ListFiltersAsync(ListFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListFiltersRequestMarshaller.Instance;
+            var unmarshaller = ListFiltersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFiltersRequest,ListFiltersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListFindings
 
 
@@ -1772,6 +1952,51 @@ namespace Amazon.GuardDuty
             var unmarshaller = UpdateDetectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDetectorRequest,UpdateDetectorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFilter
+
+
+        /// <summary>
+        /// Updates the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFilter service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
+        public virtual UpdateFilterResponse UpdateFilter(UpdateFilterRequest request)
+        {
+            var marshaller = UpdateFilterRequestMarshaller.Instance;
+            var unmarshaller = UpdateFilterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFilterRequest,UpdateFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFilter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
+        public virtual Task<UpdateFilterResponse> UpdateFilterAsync(UpdateFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFilterRequestMarshaller.Instance;
+            var unmarshaller = UpdateFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFilterRequest,UpdateFilterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

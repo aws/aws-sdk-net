@@ -76,6 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

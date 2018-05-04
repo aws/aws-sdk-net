@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _availabilityZone;
         private IamInstanceProfile _iamInstanceProfile;
+        private string _imageDescription;
         private string _imageId;
         private string _instanceId;
         private string _instanceState;
@@ -73,6 +74,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetIamInstanceProfile()
         {
             return this._iamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageDescription. The image description of the EC2 instance.
+        /// </summary>
+        public string ImageDescription
+        {
+            get { return this._imageDescription; }
+            set { this._imageDescription = value; }
+        }
+
+        // Check to see if ImageDescription property is set
+        internal bool IsSetImageDescription()
+        {
+            return this._imageDescription != null;
         }
 
         /// <summary>

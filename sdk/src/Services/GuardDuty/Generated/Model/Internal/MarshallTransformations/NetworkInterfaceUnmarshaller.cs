@@ -70,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ipv6Addresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkInterfaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("privateDnsName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

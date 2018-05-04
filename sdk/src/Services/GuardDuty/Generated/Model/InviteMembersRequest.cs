@@ -73,7 +73,9 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisableEmailNotification.
+        /// Gets and sets the property DisableEmailNotification. A boolean value that specifies
+        /// whether you want to disable email notification to the accounts that you’re inviting
+        /// to GuardDuty as members.
         /// </summary>
         public bool DisableEmailNotification
         {

@@ -33,6 +33,7 @@ namespace Amazon.GuardDuty.Model
     public partial class NetworkInterface
     {
         private List<string> _ipv6Addresses = new List<string>();
+        private string _networkInterfaceId;
         private string _privateDnsName;
         private string _privateIpAddress;
         private List<PrivateIpAddressDetails> _privateIpAddresses = new List<PrivateIpAddressDetails>();
@@ -55,6 +56,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetIpv6Addresses()
         {
             return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaceId. The ID of the network interface
+        /// </summary>
+        public string NetworkInterfaceId
+        {
+            get { return this._networkInterfaceId; }
+            set { this._networkInterfaceId = value; }
+        }
+
+        // Check to see if NetworkInterfaceId property is set
+        internal bool IsSetNetworkInterfaceId()
+        {
+            return this._networkInterfaceId != null;
         }
 
         /// <summary>

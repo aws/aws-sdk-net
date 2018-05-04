@@ -403,6 +403,65 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateFilter
+
+        /// <summary>
+        /// Creates a filter using the specified finding criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        public virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
+        {
+            var marshaller = CreateFilterRequestMarshaller.Instance;
+            var unmarshaller = CreateFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFilterRequest,CreateFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFilter operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        public virtual IAsyncResult BeginCreateFilter(CreateFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateFilterRequestMarshaller.Instance;
+            var unmarshaller = CreateFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFilter.</param>
+        /// 
+        /// <returns>Returns a  CreateFilterResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
+        public virtual CreateFilterResponse EndCreateFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIPSet
 
         /// <summary>
@@ -760,6 +819,65 @@ namespace Amazon.GuardDuty
         public virtual DeleteDetectorResponse EndDeleteDetector(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFilter
+
+        /// <summary>
+        /// Deletes the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        public virtual DeleteFilterResponse DeleteFilter(DeleteFilterRequest request)
+        {
+            var marshaller = DeleteFilterRequestMarshaller.Instance;
+            var unmarshaller = DeleteFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFilterRequest,DeleteFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFilter operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFilter(DeleteFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteFilterRequestMarshaller.Instance;
+            var unmarshaller = DeleteFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteFilterResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
+        public virtual DeleteFilterResponse EndDeleteFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFilterResponse>(asyncResult);
         }
 
         #endregion
@@ -1176,6 +1294,65 @@ namespace Amazon.GuardDuty
         public virtual GetDetectorResponse EndGetDetector(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFilter
+
+        /// <summary>
+        /// Returns the details of the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFilter service method.</param>
+        /// 
+        /// <returns>The response from the GetFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
+        public virtual GetFilterResponse GetFilter(GetFilterRequest request)
+        {
+            var marshaller = GetFilterRequestMarshaller.Instance;
+            var unmarshaller = GetFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetFilterRequest,GetFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFilter operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
+        public virtual IAsyncResult BeginGetFilter(GetFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetFilterRequestMarshaller.Instance;
+            var unmarshaller = GetFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFilter.</param>
+        /// 
+        /// <returns>Returns a  GetFilterResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">REST API Reference for GetFilter Operation</seealso>
+        public virtual GetFilterResponse EndGetFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFilterResponse>(asyncResult);
         }
 
         #endregion
@@ -1716,6 +1893,65 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  ListFilters
+
+        /// <summary>
+        /// Returns a paginated list of the current filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListFilters service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        public virtual ListFiltersResponse ListFilters(ListFiltersRequest request)
+        {
+            var marshaller = ListFiltersRequestMarshaller.Instance;
+            var unmarshaller = ListFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListFiltersRequest,ListFiltersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFilters operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFilters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        public virtual IAsyncResult BeginListFilters(ListFiltersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListFiltersRequestMarshaller.Instance;
+            var unmarshaller = ListFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListFiltersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFilters.</param>
+        /// 
+        /// <returns>Returns a  ListFiltersResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">REST API Reference for ListFilters Operation</seealso>
+        public virtual ListFiltersResponse EndListFilters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFiltersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListFindings
 
         /// <summary>
@@ -2247,6 +2483,65 @@ namespace Amazon.GuardDuty
         public virtual UpdateDetectorResponse EndUpdateDetector(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDetectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFilter
+
+        /// <summary>
+        /// Updates the filter specified by the filter name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFilter service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFilter service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// Error response object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// Error response object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
+        public virtual UpdateFilterResponse UpdateFilter(UpdateFilterRequest request)
+        {
+            var marshaller = UpdateFilterRequestMarshaller.Instance;
+            var unmarshaller = UpdateFilterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFilterRequest,UpdateFilterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFilter operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFilter(UpdateFilterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateFilterRequestMarshaller.Instance;
+            var unmarshaller = UpdateFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateFilterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFilter.</param>
+        /// 
+        /// <returns>Returns a  UpdateFilterResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">REST API Reference for UpdateFilter Operation</seealso>
+        public virtual UpdateFilterResponse EndUpdateFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFilterResponse>(asyncResult);
         }
 
         #endregion
