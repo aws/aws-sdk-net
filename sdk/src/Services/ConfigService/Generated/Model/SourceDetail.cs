@@ -122,9 +122,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you want your custom rule to be triggered by configuration changes, specify both
-        /// <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
-        /// 
+        /// If you want your custom rule to be triggered by configuration changes, specify two
+        /// SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and
+        /// one for <code>OversizedConfigurationItemChangeNotification</code>.
         /// </para>
         /// </summary>
         public MessageType MessageType

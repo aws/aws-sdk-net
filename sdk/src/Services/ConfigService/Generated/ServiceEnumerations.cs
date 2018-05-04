@@ -841,6 +841,22 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
         /// <summary>
+        /// Constant AWSElasticBeanstalkApplication for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkApplication = new ResourceType("AWS::ElasticBeanstalk::Application");
+        /// <summary>
+        /// Constant AWSElasticBeanstalkApplicationVersion for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkApplicationVersion = new ResourceType("AWS::ElasticBeanstalk::ApplicationVersion");
+        /// <summary>
+        /// Constant AWSElasticBeanstalkEnvironment for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticBeanstalkEnvironment = new ResourceType("AWS::ElasticBeanstalk::Environment");
+        /// <summary>
+        /// Constant AWSElasticLoadBalancingLoadBalancer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticLoadBalancingLoadBalancer = new ResourceType("AWS::ElasticLoadBalancing::LoadBalancer");
+        /// <summary>
         /// Constant AWSElasticLoadBalancingV2LoadBalancer for ResourceType
         /// </summary>
         public static readonly ResourceType AWSElasticLoadBalancingV2LoadBalancer = new ResourceType("AWS::ElasticLoadBalancingV2::LoadBalancer");
@@ -860,6 +876,10 @@ namespace Amazon.ConfigService
         /// Constant AWSIAMUser for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
+        /// <summary>
+        /// Constant AWSLambdaFunction for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSLambdaFunction = new ResourceType("AWS::Lambda::Function");
         /// <summary>
         /// Constant AWSRDSDBInstance for ResourceType
         /// </summary>
@@ -925,6 +945,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSWAFRegionalRule = new ResourceType("AWS::WAFRegional::Rule");
         /// <summary>
+        /// Constant AWSWAFRegionalRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRegionalRuleGroup = new ResourceType("AWS::WAFRegional::RuleGroup");
+        /// <summary>
         /// Constant AWSWAFRegionalWebACL for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFRegionalWebACL = new ResourceType("AWS::WAFRegional::WebACL");
@@ -932,6 +956,10 @@ namespace Amazon.ConfigService
         /// Constant AWSWAFRule for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFRule = new ResourceType("AWS::WAF::Rule");
+        /// <summary>
+        /// Constant AWSWAFRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSWAFRuleGroup = new ResourceType("AWS::WAF::RuleGroup");
         /// <summary>
         /// Constant AWSWAFWebACL for ResourceType
         /// </summary>

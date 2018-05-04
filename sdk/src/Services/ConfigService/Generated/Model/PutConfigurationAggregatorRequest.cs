@@ -30,11 +30,17 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutConfigurationAggregator operation.
     /// Creates and updates the configuration aggregator with the selected source accounts
-    /// and regions.
+    /// and regions. The source account can be individual account(s) or an organization.
     /// 
     ///  <note> 
     /// <para>
-    /// AWS Config should be enabled in accounts and regions you want to aggreagate.
+    /// AWS Config should be enabled in source accounts and regions you want to aggregate.
+    /// </para>
+    ///  
+    /// <para>
+    /// If your source type is an organization, you must be signed in to the master account
+    /// and all features must be enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code>
+    /// API to enable integration between AWS Config and AWS Organizations. 
     /// </para>
     ///  </note>
     /// </summary>

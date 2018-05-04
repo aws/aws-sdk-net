@@ -60,10 +60,6 @@ namespace Amazon.ConfigService
     /// Console, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
     /// Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.
     /// </para>
-    ///  <ul> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/>
-    /// <li/> </ul> <ul> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/>
-    /// <li/> <li/> </ul> <ul> <li> </li> <li/> <li/> <li/> <li/> <li/> <li/> <li/> <li/>
-    /// <li/> <li/> <li/> </ul>
     /// </summary>
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
     {
