@@ -187,8 +187,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>NONE</b>: There is no data source. This type is used when the required information
-        /// can be computed on the fly without connecting to a back-end data source.
+        ///  <b>NONE</b>: There is no data source. This type is used when when you wish to invoke
+        /// a GraphQL operation without connecting to a data source, such as performing data transformation
+        /// with resolvers or triggering a subscription to be invoked from a mutation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

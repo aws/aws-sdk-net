@@ -236,7 +236,8 @@ namespace Amazon.AppSync
         /// The API key exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
-        /// The API key expiration must be set to a value between 1 and 365 days.
+        /// The API key expiration must be set to a value between 1 and 365 days from creation
+        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -393,9 +394,6 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
-        /// </exception>
-        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
-        /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
         /// The request exceeded a limit. Try your request again.
@@ -1336,6 +1334,15 @@ namespace Amazon.AppSync
 
         /// <summary>
         /// Lists the API keys for a given API.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// API keys are deleted automatically sometime after they expire. However, they may still
+        /// be included in the response until they have actually been deleted. You can safely
+        /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
+        /// deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApiKeys service method.</param>
         /// 
@@ -1747,7 +1754,8 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UpdateApiKey service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
-        /// The API key expiration must be set to a value between 1 and 365 days.
+        /// The API key expiration must be set to a value between 1 and 365 days from creation
+        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field

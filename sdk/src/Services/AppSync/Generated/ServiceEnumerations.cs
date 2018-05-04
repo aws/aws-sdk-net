@@ -42,6 +42,10 @@ namespace Amazon.AppSync
         /// Constant AWS_IAM for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType AWS_IAM = new AuthenticationType("AWS_IAM");
+        /// <summary>
+        /// Constant OPENID_CONNECT for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType OPENID_CONNECT = new AuthenticationType("OPENID_CONNECT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -180,6 +184,60 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DefaultAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldLogLevel.
+    /// </summary>
+    public class FieldLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel ALL = new FieldLogLevel("ALL");
+        /// <summary>
+        /// Constant ERROR for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel ERROR = new FieldLogLevel("ERROR");
+        /// <summary>
+        /// Constant NONE for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel NONE = new FieldLogLevel("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldLogLevel FindValue(string value)
+        {
+            return FindValue<FieldLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldLogLevel(string value)
         {
             return FindValue(value);
         }

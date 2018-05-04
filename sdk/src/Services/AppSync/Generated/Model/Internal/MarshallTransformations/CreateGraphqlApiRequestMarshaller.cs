@@ -71,10 +71,32 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthenticationType);
                 }
 
+                if(publicRequest.IsSetLogConfig())
+                {
+                    context.Writer.WritePropertyName("logConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOpenIDConnectConfig())
+                {
+                    context.Writer.WritePropertyName("openIDConnectConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OpenIDConnectConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetUserPoolConfig())

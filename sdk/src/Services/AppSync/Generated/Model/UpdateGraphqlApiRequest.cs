@@ -35,7 +35,9 @@ namespace Amazon.AppSync.Model
     {
         private string _apiId;
         private AuthenticationType _authenticationType;
+        private LogConfig _logConfig;
         private string _name;
+        private OpenIDConnectConfig _openidConnectConfig;
         private UserPoolConfig _userPoolConfig;
 
         /// <summary>
@@ -75,6 +77,24 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfig. 
+        /// <para>
+        /// The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+        /// </para>
+        /// </summary>
+        public LogConfig LogConfig
+        {
+            get { return this._logConfig; }
+            set { this._logConfig = value; }
+        }
+
+        // Check to see if LogConfig property is set
+        internal bool IsSetLogConfig()
+        {
+            return this._logConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The new name for the <code>GraphqlApi</code> object.
@@ -90,6 +110,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenIDConnectConfig. 
+        /// <para>
+        /// The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+        /// </para>
+        /// </summary>
+        public OpenIDConnectConfig OpenIDConnectConfig
+        {
+            get { return this._openidConnectConfig; }
+            set { this._openidConnectConfig = value; }
+        }
+
+        // Check to see if OpenIDConnectConfig property is set
+        internal bool IsSetOpenIDConnectConfig()
+        {
+            return this._openidConnectConfig != null;
         }
 
         /// <summary>

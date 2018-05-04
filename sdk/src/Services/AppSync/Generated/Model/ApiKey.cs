@@ -29,6 +29,69 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Describes an API key.
+    /// 
+    ///  
+    /// <para>
+    /// Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism.
+    /// There are two key versions:
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>da1</b>: This version was introduced at launch in November 2017. These keys always
+    /// expire after 7 days. Key expiration is managed by DynamoDB TTL. The keys will cease
+    /// to be valid after Feb 21, 2018 and should not be used after that date.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ListApiKeys</code> returns the expiration time in milliseconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CreateApiKey</code> returns the expiration time in milliseconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateApiKey</code> is not available for this key version.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteApiKey</code> deletes the item from the table.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys
+    /// are not automatically deleted because DynamoDB expects the TTL to be stored in seconds.
+    /// As a one-time action, we will delete these keys from the table after Feb 21, 2018.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>da2</b>: This version was introduced in February 2018 when AppSync added support
+    /// to extend key expiration.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>ListApiKeys</code> returns the expiration time in seconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided
+    /// expiration time in seconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided
+    /// expiration time in seconds. Key expiration can only be updated while the key has not
+    /// expired.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteApiKey</code> deletes the item from the table.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Expiration is stored in DynamoDB as seconds.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ApiKey
     {

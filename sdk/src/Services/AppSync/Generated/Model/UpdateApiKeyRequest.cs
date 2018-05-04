@@ -77,8 +77,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// The time after which the API key expires. The date is represented as seconds since
-        /// the epoch.
+        /// The time from update time after which the API key expires. The date is represented
+        /// as seconds since the epoch. For more information, see .
         /// </para>
         /// </summary>
         public long Expires

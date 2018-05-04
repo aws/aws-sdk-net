@@ -14,12 +14,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.RequestMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.ResponseMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -137,12 +137,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.RequestMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.ResponseMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
@@ -171,12 +171,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.RequestMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.ResponseMappingTemplate</property>
-    <min>0</min>
+    <min>1</min>
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>

@@ -82,10 +82,22 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logConfig", targetDepth))
+                {
+                    var unmarshaller = LogConfigUnmarshaller.Instance;
+                    unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("openIDConnectConfig", targetDepth))
+                {
+                    var unmarshaller = OpenIDConnectConfigUnmarshaller.Instance;
+                    unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("uris", targetDepth))

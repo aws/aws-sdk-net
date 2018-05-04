@@ -30,6 +30,15 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Container for the parameters to the ListApiKeys operation.
     /// Lists the API keys for a given API.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// API keys are deleted automatically sometime after they expire. However, they may still
+    /// be included in the response until they have actually been deleted. You can safely
+    /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
+    /// deleted.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListApiKeysRequest : AmazonAppSyncRequest
     {
