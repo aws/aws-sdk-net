@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.273.0",
+    "ProductVersion" : "3.3.274.0",
     "CoreVersion"    : "3.3.22.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -913,7 +913,7 @@
             "InPreview"               : false
         },
         "GuardDuty"                       : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
