@@ -46,17 +46,15 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
-    /// If this update creates the first version of the secret or if you did not include the
-    /// <code>VersionStages</code> parameter then Secrets Manager automatically attaches the
-    /// staging label <code>AWSCURRENT</code> to the new version and removes it from any version
-    /// that had it previously. The previous version (if any) is then given the staging label
-    /// <code>AWSPREVIOUS</code>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
     /// parameter already exists, the operation generates an error. You cannot modify an existing
     /// version, you can only create new ones.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you include <code>SecretString</code> or <code>SecretBinary</code> to create a
+    /// new secret version, Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code>
+    /// to the new version. 
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>

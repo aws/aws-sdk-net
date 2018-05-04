@@ -47,8 +47,8 @@ namespace Amazon.SecretsManager.Model
     /// You provide the secret data to be encrypted by putting text in either the <code>SecretString</code>
     /// parameter or binary data in the <code>SecretBinary</code> parameter, but not both.
     /// If you include <code>SecretString</code> or <code>SecretBinary</code> then Secrets
-    /// Manager also creates an initial secret version and, if you don't supply a staging
-    /// label, automatically maps the new version's ID to the staging label <code>AWSCURRENT</code>.
+    /// Manager also creates an initial secret version and automatically attaches the staging
+    /// label <code>AWSCURRENT</code> to the new version.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
