@@ -1,3 +1,15 @@
+### 3.3.273.0 (2018-05-04 00:00 UTC)
+* AppSync (3.3.2.0)
+	* This release adds support for authorizing your AWS AppSync endpoint with an OpenID Connect compliant service and also to configure your AWS AppSync endpoint to log requests to Amazon CloudWatch Logs.
+* ConfigService (3.3.16.0)
+	* Update ResourceType enum with values for Lambda, ElasticBeanstalk, WAF and ElasticLoadBalancing resources
+* SecretsManager (3.3.0.6)
+	* Documentation updates for secretsmanager
+* Core 3.3.22.3
+	* Amazon WorkSpaces is now available in ca-central-1
+
+
+
 ### 3.3.272.0 (2018-05-02 23:23 UTC)
 * CertificateManager (3.3.5.3)
 	* Documentation updates for acm
