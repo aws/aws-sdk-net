@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.274.0",
+    "ProductVersion" : "3.3.275.0",
     "CoreVersion"    : "3.3.22.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.5.2",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -593,7 +593,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.3.7.5",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"

@@ -1,3 +1,11 @@
+### 3.3.275.0 (2018-05-07 21:40 UTC)
+* AlexaForBusiness (3.3.4.0)
+	* This release adds the new Device status "DEREGISTERED". This release also adds DEVICE_STATUS as the new DeviceEventType.
+* Budgets (3.3.8.0)
+	* "With this release, customers can use AWS Budgets to monitor how much of their Amazon EC2, Amazon RDS, Amazon Redshift, and Amazon ElastiCache instance usage is covered by reservations, and receive alerts when their coverage falls below the threshold they define."
+* Elasticsearch (3.3.6.0)
+	* This change brings support for Reserved Instances to AWS Elasticsearch.
+
 ### 3.3.274.0 (2018-05-04 20:08 UTC)
 * GuardDuty (3.3.4.0)
 	* Amazon GuardDuty is adding five new API operations for creating and managing filters. For each filter, you can specify a criteria and an action. The action you specify is applied to findings that match the specified criteria.
