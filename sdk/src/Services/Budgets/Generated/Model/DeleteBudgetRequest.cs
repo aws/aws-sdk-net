@@ -31,11 +31,12 @@ namespace Amazon.Budgets.Model
     /// Container for the parameters to the DeleteBudget operation.
     /// Deletes a budget. You can delete your budget at any time.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    ///  <b>Deleting a budget also deletes the notifications and subscribers associated with
-    /// that budget.</b> 
+    /// Deleting a budget also deletes the notifications and subscribers that are associated
+    /// with that budget.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteBudgetRequest : AmazonBudgetsRequest
     {

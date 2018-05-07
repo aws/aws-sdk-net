@@ -79,7 +79,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NewSubscriber. 
         /// <para>
-        /// The updated subscriber associated with a budget notification.
+        /// The updated subscriber that is associated with a budget notification.
         /// </para>
         /// </summary>
         public Subscriber NewSubscriber
@@ -115,7 +115,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property OldSubscriber. 
         /// <para>
-        /// The previous subscriber associated with a budget notification.
+        /// The previous subscriber that is associated with a budget notification.
         /// </para>
         /// </summary>
         public Subscriber OldSubscriber

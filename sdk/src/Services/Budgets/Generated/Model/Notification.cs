@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// A notification associated with a budget. A budget can have up to five notifications.
+    /// A notification that is associated with a budget. A budget can have up to five notifications.
     /// 
     /// 
     ///  
     /// <para>
     /// Each notification must have at least one subscriber. A notification can have one SNS
-    /// subscriber and up to ten email subscribers, for a total of 11 subscribers.
+    /// subscriber and up to 10 email subscribers, for a total of 11 subscribers.
     /// </para>
     ///  
     /// <para>
@@ -43,11 +43,11 @@ namespace Amazon.Budgets.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A notificationType of <code>ACTUAL</code> 
+    /// A <code>notificationType</code> of <code>ACTUAL</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A comparisonOperator of <code>GREATER_THAN</code> 
+    /// A <code>comparisonOperator</code> of <code>GREATER_THAN</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// The comparison used for this notification.
+        /// The comparison that is used for this notification.
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
@@ -102,7 +102,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        /// The threshold associated with a notification. Thresholds are always a percentage.
+        /// The threshold that is associated with a notification. Thresholds are always a percentage.
         /// </para>
         /// </summary>
         public double Threshold
@@ -121,7 +121,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property ThresholdType. 
         /// <para>
         /// The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS
-        /// notifies you when you go over the threshold, and for <code>FORECASTED</code> thresholds
+        /// notifies you when you go over the threshold. For <code>FORECASTED</code> thresholds,
         /// AWS notifies you when you are forecasted to go over the threshold.
         /// </para>
         /// </summary>

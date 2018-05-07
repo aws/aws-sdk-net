@@ -30,12 +30,15 @@ namespace Amazon.Budgets.Model
     /// <summary>
     /// Represents the output of the <code>CreateBudget</code> operation. The content consists
     /// of the detailed metadata and data file information, and the current status of the
-    /// <code>budget</code>.
+    /// <code>budget</code> object.
     /// 
     ///  
     /// <para>
-    /// The ARN pattern for a budget is: <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
-    /// 
+    /// This is the ARN pattern for a budget: 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> 
     /// </para>
     /// </summary>
     public partial class Budget
@@ -52,14 +55,14 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetLimit. 
         /// <para>
-        /// The total amount of cost, usage, or RI utilization that you want to track with your
-        /// budget.
+        /// The total amount of cost, usage, RI utilization, or RI coverage that you want to track
+        /// with your budget.
         /// </para>
         ///  
         /// <para>
         ///  <code>BudgetLimit</code> is required for cost or usage budgets, but optional for
-        /// RI utilization budgets. RI utilization budgets default to the only valid value for
-        /// RI utilization budgets, which is <code>100</code>.
+        /// RI utilization or coverage budgets. RI utilization or coverage budgets default to
+        /// <code>100</code>, which is the only valid value for RI utilization or coverage budgets.
         /// </para>
         /// </summary>
         public Spend BudgetLimit
@@ -77,8 +80,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetName. 
         /// <para>
-        /// The name of a budget. Unique within accounts. <code>:</code> and <code>\</code> characters
-        /// are not allowed in the <code>BudgetName</code>.
+        /// The name of a budget. The name must be unique within accounts. The <code>:</code>
+        /// and <code>\</code> characters are not allowed in <code>BudgetName</code>.
         /// </para>
         /// </summary>
         public string BudgetName
@@ -96,7 +99,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetType. 
         /// <para>
-        /// Whether this budget tracks monetary costs, usage, or RI utilization.
+        /// Whether this budget tracks monetary costs, usage, RI utilization, or RI coverage.
         /// </para>
         /// </summary>
         public BudgetType BudgetType
@@ -114,7 +117,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property CalculatedSpend. 
         /// <para>
-        /// The actual and forecasted cost or usage being tracked by a budget.
+        /// The actual and forecasted cost or usage that the budget tracks.
         /// </para>
         /// </summary>
         public CalculatedSpend CalculatedSpend
@@ -132,7 +135,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property CostFilters. 
         /// <para>
-        /// The cost filters applied to a budget, such as service or region.
+        /// The cost filters, such as service or region, that are applied to a budget.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> CostFilters
@@ -150,7 +153,12 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property CostTypes. 
         /// <para>
-        /// The types of costs included in this budget.
+        /// The types of costs that are included in this <code>COST</code> budget.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets
+        /// do not have <code>CostTypes</code>.
         /// </para>
         /// </summary>
         public CostTypes CostTypes
@@ -168,14 +176,15 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time covered by a budget. Has a start date and an end date. The start
-        /// date must come before the end date. There are no restrictions on the end date. 
+        /// The period of time that is covered by a budget. The period has a start date and an
+        /// end date. The start date must come before the end date. The end date must come before
+        /// <code>06/15/87 00:00 UTC</code>. 
         /// </para>
         ///  
         /// <para>
-        /// If you created your budget and didn't specify a start date, AWS defaults to the start
-        /// of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example,
-        /// if you created your budget on January 24th 2018, chose <code>DAILY</code>, and didn't
+        /// If you create your budget and don't specify a start date, AWS defaults to the start
+        /// of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example,
+        /// if you created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't
         /// set a start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
         /// chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00 UTC</code>.
         /// If you didn't specify an end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>.
@@ -206,7 +215,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimeUnit. 
         /// <para>
-        /// The length of time until a budget resets the actual and forecasted spend.
+        /// The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code>
+        /// is available only for <code>RI_UTILIZATION</code> and <code>RI_COVERAGE</code> budgets.
         /// </para>
         /// </summary>
         public TimeUnit TimeUnit

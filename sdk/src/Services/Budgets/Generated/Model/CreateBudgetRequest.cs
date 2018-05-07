@@ -77,7 +77,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property NotificationsWithSubscribers. 
         /// <para>
         /// A notification that you want to associate with a budget. A budget can have up to five
-        /// notifications, and each notification can have one SNS subscriber and up to ten email
+        /// notifications, and each notification can have one SNS subscriber and up to 10 email
         /// subscribers. If you include notifications and subscribers in your <code>CreateBudget</code>
         /// call, AWS creates the notifications and subscribers for you.
         /// </para>

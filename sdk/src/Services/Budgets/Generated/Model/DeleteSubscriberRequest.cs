@@ -31,11 +31,11 @@ namespace Amazon.Budgets.Model
     /// Container for the parameters to the DeleteSubscriber operation.
     /// Deletes a subscriber.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    ///  <b>Deleting the last subscriber to a notification also deletes the notification.</b>
-    /// 
+    /// Deleting the last subscriber to a notification also deletes the notification.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteSubscriberRequest : AmazonBudgetsRequest
     {
