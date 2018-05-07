@@ -84,6 +84,10 @@ namespace Amazon.AlexaForBusiness
         /// Constant CONNECTION_STATUS for DeviceEventType
         /// </summary>
         public static readonly DeviceEventType CONNECTION_STATUS = new DeviceEventType("CONNECTION_STATUS");
+        /// <summary>
+        /// Constant DEVICE_STATUS for DeviceEventType
+        /// </summary>
+        public static readonly DeviceEventType DEVICE_STATUS = new DeviceEventType("DEVICE_STATUS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -126,6 +130,10 @@ namespace Amazon.AlexaForBusiness
     public class DeviceStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DEREGISTERED for DeviceStatus
+        /// </summary>
+        public static readonly DeviceStatus DEREGISTERED = new DeviceStatus("DEREGISTERED");
         /// <summary>
         /// Constant PENDING for DeviceStatus
         /// </summary>
