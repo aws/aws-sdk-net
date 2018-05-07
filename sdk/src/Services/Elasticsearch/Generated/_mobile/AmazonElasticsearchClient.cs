@@ -489,6 +489,68 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribeReservedElasticsearchInstanceOfferings
+
+        internal virtual DescribeReservedElasticsearchInstanceOfferingsResponse DescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request)
+        {
+            var marshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedElasticsearchInstanceOfferingsRequest,DescribeReservedElasticsearchInstanceOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedElasticsearchInstanceOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedElasticsearchInstanceOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DescribeReservedElasticsearchInstanceOfferingsResponse> DescribeReservedElasticsearchInstanceOfferingsAsync(DescribeReservedElasticsearchInstanceOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReservedElasticsearchInstanceOfferingsRequest,DescribeReservedElasticsearchInstanceOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeReservedElasticsearchInstances
+
+        internal virtual DescribeReservedElasticsearchInstancesResponse DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request)
+        {
+            var marshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
+            var unmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReservedElasticsearchInstancesRequest,DescribeReservedElasticsearchInstancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedElasticsearchInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedElasticsearchInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DescribeReservedElasticsearchInstancesResponse> DescribeReservedElasticsearchInstancesAsync(DescribeReservedElasticsearchInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
+            var unmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReservedElasticsearchInstancesRequest,DescribeReservedElasticsearchInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
         internal virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
@@ -608,6 +670,37 @@ namespace Amazon.Elasticsearch
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PurchaseReservedElasticsearchInstanceOffering
+
+        internal virtual PurchaseReservedElasticsearchInstanceOfferingResponse PurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request)
+        {
+            var marshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
+            var unmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseReservedElasticsearchInstanceOfferingRequest,PurchaseReservedElasticsearchInstanceOfferingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseReservedElasticsearchInstanceOffering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedElasticsearchInstanceOffering operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PurchaseReservedElasticsearchInstanceOfferingResponse> PurchaseReservedElasticsearchInstanceOfferingAsync(PurchaseReservedElasticsearchInstanceOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
+            var unmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseReservedElasticsearchInstanceOfferingRequest,PurchaseReservedElasticsearchInstanceOfferingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

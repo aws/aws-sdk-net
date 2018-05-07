@@ -31,6 +31,20 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeReservedElasticsearchInstanceOfferingsRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeReservedElasticsearchInstanceOfferingsRequest.ReservedElasticsearchInstanceOfferingId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeReservedElasticsearchInstancesRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DescribeReservedElasticsearchInstancesRequest.ReservedElasticsearchInstanceId</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -43,6 +57,26 @@
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchVersionsRequest.MaxResults</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingRequest.InstanceCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingRequest.ReservationName</property>
+    <min>5</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingRequest.ReservedElasticsearchInstanceOfferingId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingResponse.ReservationName</property>
+    <min>5</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingResponse.ReservedElasticsearchInstanceId</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpdateElasticsearchDomainConfigRequest.DomainName</property>
@@ -92,6 +126,17 @@
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.OptionStatus.UpdateVersion</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstance.ReservationName</property>
+    <min>5</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstance.ReservedElasticsearchInstanceId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstanceOffering.ReservedElasticsearchInstanceOfferingId</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.Tag.Key</property>
