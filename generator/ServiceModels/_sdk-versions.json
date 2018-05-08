@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.275.0",
-    "CoreVersion"    : "3.3.22.3",
+    "ProductVersion" : "3.3.276.0",
+    "CoreVersion"    : "3.3.22.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.49.0",
+            "Version" : "3.3.50.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.22.2",
+            "Version" : "3.3.22.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"

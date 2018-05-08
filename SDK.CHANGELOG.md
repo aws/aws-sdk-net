@@ -1,3 +1,13 @@
+### 3.3.276.0 (2018-05-08 17:27 UTC)
+* EC2 (3.3.50.0)
+	* Enable support for specifying CPU options during instance launch.
+* RDS (3.3.22.3)
+	* Correction to the documentation about copying unencrypted snapshots.
+* Core 3.3.22.4
+	* Lightsail is now available in regions eu-west-3, ap-northeast-2 and ca-central-1. 
+
+
+
 ### 3.3.275.0 (2018-05-07 21:40 UTC)
 * AlexaForBusiness (3.3.4.0)
 	* This release adds the new Device status "DEREGISTERED". This release also adds DEVICE_STATUS as the new DeviceEventType.
