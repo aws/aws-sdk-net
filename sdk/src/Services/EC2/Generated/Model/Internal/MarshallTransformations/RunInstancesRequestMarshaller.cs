@@ -117,6 +117,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCpuOptions())
+                {
+                    if(publicRequest.CpuOptions.IsSetCoreCount())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.CpuOptions.CoreCount));
+                    }
+                    if(publicRequest.CpuOptions.IsSetThreadsPerCore())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.CpuOptions.ThreadsPerCore));
+                    }
+                }
                 if(publicRequest.IsSetCreditSpecification())
                 {
                     if(publicRequest.CreditSpecification.IsSetCpuCredits())

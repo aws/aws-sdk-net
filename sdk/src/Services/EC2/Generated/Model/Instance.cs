@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private ArchitectureValues _architecture;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private string _clientToken;
+        private CpuOptions _cpuOptions;
         private bool? _ebsOptimized;
         private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
         private bool? _enaSupport;
@@ -142,6 +143,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The CPU options for the instance.
+        /// </para>
+        /// </summary>
+        public CpuOptions CpuOptions
+        {
+            get { return this._cpuOptions; }
+            set { this._cpuOptions = value; }
+        }
+
+        // Check to see if CpuOptions property is set
+        internal bool IsSetCpuOptions()
+        {
+            return this._cpuOptions != null;
         }
 
         /// <summary>

@@ -79,6 +79,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("cpuOptions", targetDepth))
+                    {
+                        var unmarshaller = CpuOptionsUnmarshaller.Instance;
+                        unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimized", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
