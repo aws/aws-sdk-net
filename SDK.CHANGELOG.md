@@ -1,3 +1,15 @@
+### 3.3.277.0 (2018-05-10 01:03 UTC)
+* Budgets (3.3.9.0)
+	* Updating the regex for the NumericValue fields.
+* EC2 (3.3.51.0)
+	* Enable support for latest flag with Get Console Output
+* RDS (3.3.23.0)
+	* Changes to support the Aurora MySQL Backtrack feature.
+* Core 3.3.22.5
+	* With this release, we're adding support for ap-south-1 AWS region.
+
+
+
 ### 3.3.276.0 (2018-05-08 17:27 UTC)
 * EC2 (3.3.50.0)
 	* Enable support for specifying CPU options during instance launch.
