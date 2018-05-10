@@ -57,8 +57,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The console output, Base64-encoded. If using a command line tool, the tool decodes
-        /// the output for you.
+        /// The console output, base64-encoded. If you are using a command line tool, the tool
+        /// decodes the output for you.
         /// </para>
         /// </summary>
         public string Output
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time the output was last updated.
+        /// The time at which the output was last updated.
         /// </para>
         /// </summary>
         public DateTime Timestamp

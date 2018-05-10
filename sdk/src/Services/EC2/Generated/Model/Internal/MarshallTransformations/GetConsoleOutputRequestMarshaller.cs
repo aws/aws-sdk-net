@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetLatest())
+                {
+                    request.Parameters.Add("Latest", StringUtils.FromBool(publicRequest.Latest));
+                }
             }
             return request;
         }
