@@ -39,7 +39,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamARN. 
         /// <para>
-        /// The ARN of the source Kinesis data stream.
+        /// The ARN of the source Kinesis data stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+        /// Kinesis Data Streams ARN Format</a>.
         /// </para>
         /// </summary>
         public string KinesisStreamARN
@@ -57,7 +58,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the role that provides access to the source Kinesis data stream.
+        /// The ARN of the role that provides access to the source Kinesis data stream. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+        /// Identity and Access Management (IAM) ARN Format</a>.
         /// </para>
         /// </summary>
         public string RoleARN

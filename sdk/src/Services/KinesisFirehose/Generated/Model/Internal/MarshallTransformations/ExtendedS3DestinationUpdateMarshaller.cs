@@ -79,6 +79,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionFormat);
             }
 
+            if(requestObject.IsSetDataFormatConversionConfiguration())
+            {
+                context.Writer.WritePropertyName("DataFormatConversionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataFormatConversionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataFormatConversionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");

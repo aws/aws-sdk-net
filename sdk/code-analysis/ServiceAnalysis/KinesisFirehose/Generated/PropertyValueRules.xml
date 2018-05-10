@@ -295,6 +295,45 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.BlockSizeBytes</property>
+    <min>67108864</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.BloomFilterFalsePositiveProbability</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.DictionaryKeyThreshold</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.PaddingTolerance</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.RowIndexStride</property>
+    <min>1000</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.OrcSerDe.StripeSizeBytes</property>
+    <min>8388608</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ParquetSerDe.BlockSizeBytes</property>
+    <min>67108864</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ParquetSerDe.MaxPaddingBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ParquetSerDe.PageSizeBytes</property>
+    <min>65536</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.ProcessorParameter.ParameterValue</property>
     <min>1</min>
     <max>512</max>
@@ -401,6 +440,30 @@
     <min>1</min>
     <max>512</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.CatalogId</property>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.DatabaseName</property>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.Region</property>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.RoleARN</property>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.TableName</property>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.SchemaConfiguration.VersionId</property>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.SplunkDestinationConfiguration.HECAcknowledgmentTimeoutInSeconds</property>

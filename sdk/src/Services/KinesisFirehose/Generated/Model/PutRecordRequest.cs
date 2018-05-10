@@ -36,16 +36,15 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// By default, each delivery stream can take in up to 2,000 transactions per second,
-    /// 5,000 records per second, or 5 MB per second. Note that if you use <code>PutRecord</code>
-    /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-    /// for each delivery stream. For more information about limits and how to request an
-    /// increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+    /// 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>,
+    /// the limits are an aggregate across these two operations for each delivery stream.
+    /// For more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
     /// Kinesis Data Firehose Limits</a>. 
     /// </para>
     ///  
     /// <para>
-    /// You must specify the name of the delivery stream and the data record when using <code>PutRecord</code>.
-    /// The data record consists of a data blob that can be up to 1,000 KB in size and any
+    /// You must specify the name of the delivery stream and the data record when using <a>PutRecord</a>.
+    /// The data record consists of a data blob that can be up to 1,000 KB in size, and any
     /// kind of data. For example, it can be a segment from a log file, geographic location
     /// data, website clickstream data, and so on.
     /// </para>
@@ -72,7 +71,7 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// Data records sent to Kinesis Data Firehose are stored for 24 hours from the time they
-    /// are added to a delivery stream as it attempts to send the records to the destination.
+    /// are added to a delivery stream as it tries to send the records to the destination.
     /// If the destination is unreachable for more than 24 hours, the data is no longer available.
     /// </para>
     /// </summary>

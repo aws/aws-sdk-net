@@ -88,6 +88,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompressionFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataFormatConversionConfiguration", targetDepth))
+                {
+                    var unmarshaller = DataFormatConversionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataFormatConversionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EncryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;

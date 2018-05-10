@@ -395,6 +395,214 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type OrcCompression.
+    /// </summary>
+    public class OrcCompression : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for OrcCompression
+        /// </summary>
+        public static readonly OrcCompression NONE = new OrcCompression("NONE");
+        /// <summary>
+        /// Constant SNAPPY for OrcCompression
+        /// </summary>
+        public static readonly OrcCompression SNAPPY = new OrcCompression("SNAPPY");
+        /// <summary>
+        /// Constant ZLIB for OrcCompression
+        /// </summary>
+        public static readonly OrcCompression ZLIB = new OrcCompression("ZLIB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrcCompression(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrcCompression FindValue(string value)
+        {
+            return FindValue<OrcCompression>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrcCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrcFormatVersion.
+    /// </summary>
+    public class OrcFormatVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V0_11 for OrcFormatVersion
+        /// </summary>
+        public static readonly OrcFormatVersion V0_11 = new OrcFormatVersion("V0_11");
+        /// <summary>
+        /// Constant V0_12 for OrcFormatVersion
+        /// </summary>
+        public static readonly OrcFormatVersion V0_12 = new OrcFormatVersion("V0_12");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrcFormatVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrcFormatVersion FindValue(string value)
+        {
+            return FindValue<OrcFormatVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrcFormatVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParquetCompression.
+    /// </summary>
+    public class ParquetCompression : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for ParquetCompression
+        /// </summary>
+        public static readonly ParquetCompression GZIP = new ParquetCompression("GZIP");
+        /// <summary>
+        /// Constant SNAPPY for ParquetCompression
+        /// </summary>
+        public static readonly ParquetCompression SNAPPY = new ParquetCompression("SNAPPY");
+        /// <summary>
+        /// Constant UNCOMPRESSED for ParquetCompression
+        /// </summary>
+        public static readonly ParquetCompression UNCOMPRESSED = new ParquetCompression("UNCOMPRESSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParquetCompression(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParquetCompression FindValue(string value)
+        {
+            return FindValue<ParquetCompression>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParquetCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParquetWriterVersion.
+    /// </summary>
+    public class ParquetWriterVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V1 for ParquetWriterVersion
+        /// </summary>
+        public static readonly ParquetWriterVersion V1 = new ParquetWriterVersion("V1");
+        /// <summary>
+        /// Constant V2 for ParquetWriterVersion
+        /// </summary>
+        public static readonly ParquetWriterVersion V2 = new ParquetWriterVersion("V2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParquetWriterVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParquetWriterVersion FindValue(string value)
+        {
+            return FindValue<ParquetWriterVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParquetWriterVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProcessorParameterName.
     /// </summary>
     public class ProcessorParameterName : ConstantClass

@@ -45,7 +45,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// The CloudWatch logging options for your delivery stream.
+        /// The Amazon CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -121,7 +121,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECToken. 
         /// <para>
-        /// This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+        /// A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
         /// </para>
         /// </summary>
         public string HECToken

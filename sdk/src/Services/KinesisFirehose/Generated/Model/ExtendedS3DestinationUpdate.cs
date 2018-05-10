@@ -36,6 +36,7 @@ namespace Amazon.KinesisFirehose.Model
         private BufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private CompressionFormat _compressionFormat;
+        private DataFormatConversionConfiguration _dataFormatConversionConfiguration;
         private EncryptionConfiguration _encryptionConfiguration;
         private string _prefix;
         private ProcessingConfiguration _processingConfiguration;
@@ -46,7 +47,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BucketARN. 
         /// <para>
-        /// The ARN of the S3 bucket.
+        /// The ARN of the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string BucketARN
@@ -82,7 +84,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// The CloudWatch logging options for your delivery stream.
+        /// The Amazon CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -114,6 +116,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetCompressionFormat()
         {
             return this._compressionFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataFormatConversionConfiguration. 
+        /// <para>
+        /// The serializer, deserializer, and schema for converting data from the JSON format
+        /// to the Parquet or ORC format before writing it to Amazon S3.
+        /// </para>
+        /// </summary>
+        public DataFormatConversionConfiguration DataFormatConversionConfiguration
+        {
+            get { return this._dataFormatConversionConfiguration; }
+            set { this._dataFormatConversionConfiguration = value; }
+        }
+
+        // Check to see if DataFormatConversionConfiguration property is set
+        internal bool IsSetDataFormatConversionConfiguration()
+        {
+            return this._dataFormatConversionConfiguration != null;
         }
 
         /// <summary>
@@ -177,7 +198,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS credentials.
+        /// The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+        /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string RoleARN

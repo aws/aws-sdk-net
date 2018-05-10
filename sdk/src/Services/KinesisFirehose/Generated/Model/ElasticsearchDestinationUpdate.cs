@@ -46,7 +46,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code>
+        /// The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b>
         /// object default values are used. 
         /// </para>
         /// </summary>
@@ -85,7 +85,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
         /// <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after
-        /// assuming the IAM role specified in <code>RoleARN</code>.
+        /// assuming the IAM role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string DomainARN
@@ -121,7 +122,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName
+        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code>
         /// to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
         /// </para>
@@ -181,7 +182,8 @@ namespace Amazon.KinesisFirehose.Model
         /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
         /// for calling the Amazon ES Configuration API and for indexing documents. For more information,
         /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-        /// Kinesis Data Firehose Access to an Amazon S3 Destination</a>.
+        /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
         public string RoleARN
@@ -217,7 +219,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The Elasticsearch type name.
+        /// The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per
+        /// index. If you try to specify a new type for an existing index that already has another
+        /// type, Kinesis Data Firehose returns an error during runtime.
         /// </para>
         /// </summary>
         public string TypeName

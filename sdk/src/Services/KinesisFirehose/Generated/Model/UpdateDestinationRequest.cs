@@ -62,12 +62,11 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-    /// conditions and conflicting merges. This is a required field, and the service updates
-    /// the configuration only if the existing configuration has a version ID that matches.
-    /// After the update is applied successfully, the version ID is updated, and you can retrieve
-    /// it using <a>DescribeDeliveryStream</a>. Use the new version ID to set <code>CurrentDeliveryStreamVersionId</code>
-    /// in the next call.
+    /// Kinesis Data Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions
+    /// and conflicting merges. This is a required field, and the service updates the configuration
+    /// only if the existing configuration has a version ID that matches. After the update
+    /// is applied successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
+    /// Use the new version ID to set <b>CurrentDeliveryStreamVersionId</b> in the next call.
     /// </para>
     /// </summary>
     public partial class UpdateDestinationRequest : AmazonKinesisFirehoseRequest
@@ -84,8 +83,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CurrentDeliveryStreamVersionId. 
         /// <para>
-        /// Obtain this value from the <code>VersionId</code> result of <a>DeliveryStreamDescription</a>.
-        /// This value is required, and it helps the service perform conditional operations. For
+        /// Obtain this value from the <b>VersionId</b> result of <a>DeliveryStreamDescription</a>.
+        /// This value is required, and helps the service perform conditional operations. For
         /// example, if there is an interleaving update and this value is null, then the update
         /// destination fails. After the update is successful, the <code>VersionId</code> value
         /// is updated. The service then performs a merge of the old configuration with the new
