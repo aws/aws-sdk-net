@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.277.0",
+    "ProductVersion" : "3.3.278.0",
     "CoreVersion"    : "3.3.22.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -513,7 +513,7 @@
             "InPreview"               : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.11.5",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"

@@ -1,3 +1,7 @@
+### 3.3.278.0 (2018-05-10 19:29 UTC)
+* GameLift (3.3.12.0)
+	* AutoScaling Target Tracking scaling simplification along with StartFleetActions and StopFleetActions APIs to suspend and resume automatic scaling at will.
+
 ### 3.3.277.0 (2018-05-10 01:03 UTC)
 * Budgets (3.3.9.0)
 	* Updating the regex for the NumericValue fields.
