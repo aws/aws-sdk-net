@@ -94,6 +94,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PolicyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScalingAdjustment", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetConfiguration", targetDepth))
+                {
+                    var unmarshaller = TargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Threshold", targetDepth))

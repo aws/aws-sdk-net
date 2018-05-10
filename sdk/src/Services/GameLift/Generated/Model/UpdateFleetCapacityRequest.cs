@@ -36,10 +36,10 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// If you're using autoscaling (see <a>PutScalingPolicy</a>), you may want to specify
-    /// a minimum and/or maximum capacity. If you don't provide these, autoscaling can set
-    /// capacity anywhere between zero and the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-    /// limits</a>.
+    /// Specify minimum and maximum number of instances. Amazon GameLift will not change fleet
+    /// capacity to values fall outside of this range. This is particularly important when
+    /// using auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based
+    /// on player demand while imposing limits on automatic adjustments.
     /// </para>
     ///  
     /// <para>
@@ -64,11 +64,19 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Describe fleets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,6 +89,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -108,37 +120,17 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Manage fleet capacity:
+    /// Manage fleet actions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <a>StartFleetActions</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>StopFleetActions</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class UpdateFleetCapacityRequest : AmazonGameLiftRequest
     {

@@ -57,7 +57,7 @@ namespace Amazon.GameLift
     ///  </li> <li> 
     /// <para>
     ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
-    /// and aliases; set autoscaling policies; retrieve logs and metrics.
+    /// and aliases; set auto-scaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -339,21 +339,29 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Autoscale -- Manage autoscaling rules and apply them to a fleet.
+    /// Autoscale -- Manage auto-scaling rules and apply them to a fleet.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing
+    ///  <a>PutScalingPolicy</a> -- Create a new auto-scaling policy, or update an existing
     /// one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
+    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting
+    ///  <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and stop it from affecting
     /// a fleet's capacity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
@@ -1513,11 +1521,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1530,6 +1546,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1557,37 +1577,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// <param name="cancellationToken">
@@ -2039,11 +2039,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2056,6 +2064,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2083,37 +2095,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// <param name="cancellationToken">
@@ -2291,11 +2283,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2308,6 +2308,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2335,37 +2339,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// <param name="cancellationToken">
@@ -3352,6 +3336,38 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  StartFleetActions
+
+        internal virtual StartFleetActionsResponse StartFleetActions(StartFleetActionsRequest request)
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StartFleetActionsRequest,StartFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFleetActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual Task<StartFleetActionsResponse> StartFleetActionsAsync(StartFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartFleetActionsRequest,StartFleetActionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartGameSessionPlacement
 
         internal virtual StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
@@ -3443,6 +3459,38 @@ namespace Amazon.GameLift
             var unmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartMatchmakingRequest,StartMatchmakingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopFleetActions
+
+        internal virtual StopFleetActionsResponse StopFleetActions(StopFleetActionsRequest request)
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StopFleetActionsRequest,StopFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopFleetActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual Task<StopFleetActionsResponse> StopFleetActionsAsync(StopFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopFleetActionsRequest,StopFleetActionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

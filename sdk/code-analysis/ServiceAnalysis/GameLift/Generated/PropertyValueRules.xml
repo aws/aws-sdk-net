@@ -669,6 +669,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.StartFleetActionsRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.StartGameSessionPlacementRequest.GameSessionData</property>
     <min>1</min>
     <max>4096</max>
@@ -723,6 +727,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.StopFleetActionsRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.StopGameSessionPlacementRequest.PlacementId</property>

@@ -28,70 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteFleet operation.
-    /// Deletes everything related to a fleet. Before deleting a fleet, you must set the fleet's
-    /// desired capacity to zero. See <a>UpdateFleetCapacity</a>.
+    /// Container for the parameters to the StartFleetActions operation.
+    /// Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>. Currently,
+    /// this operation is used to restart a fleet's auto-scaling activity. 
     /// 
     ///  
     /// <para>
-    /// This action removes the fleet's resources and the fleet record. Once a fleet is deleted,
-    /// you can no longer use that fleet.
+    /// To start fleet actions, specify the fleet ID and the type of actions to restart. When
+    /// auto-scaling fleet actions are restarted, Amazon GameLift once again initiates scaling
+    /// events as triggered by the fleet's scaling policies. If actions on the fleet were
+    /// never stopped, this operation will have no effect. You can view a fleet's stopped
+    /// actions using <a>DescribeFleetAttributes</a>.
     /// </para>
     ///  
     /// <para>
-    /// Fleet-related operations include:
+    /// Operations related to fleet capacity scaling include:
     /// </para>
     ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Describe fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <a>DescribeFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -99,11 +54,23 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
+    ///  <a>DescribeEC2InstanceLimits</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// Manage scaling policies:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> (auto-scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> (auto-scaling)
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -119,14 +86,33 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
-    public partial class DeleteFleetRequest : AmazonGameLiftRequest
+    public partial class StartFleetActionsRequest : AmazonGameLiftRequest
     {
+        private List<string> _actions = new List<string>();
         private string _fleetId;
+
+        /// <summary>
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// List of actions to restart on the fleet.
+        /// </para>
+        /// </summary>
+        public List<string> Actions
+        {
+            get { return this._actions; }
+            set { this._actions = value; }
+        }
+
+        // Check to see if Actions property is set
+        internal bool IsSetActions()
+        {
+            return this._actions != null && this._actions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet to be deleted.
+        /// Unique identifier for a fleet
         /// </para>
         /// </summary>
         public string FleetId

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutScalingPolicy Request Marshaller
+    /// StartFleetActions Request Marshaller
     /// </summary>       
-    public class PutScalingPolicyRequestMarshaller : IMarshaller<IRequest, PutScalingPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartFleetActionsRequestMarshaller : IMarshaller<IRequest, StartFleetActionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutScalingPolicyRequest)input);
+            return this.Marshall((StartFleetActionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutScalingPolicyRequest publicRequest)
+        public IRequest Marshall(StartFleetActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.PutScalingPolicy";
+            string target = "GameLift.StartFleetActions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,69 +67,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComparisonOperator())
+                if(publicRequest.IsSetActions())
                 {
-                    context.Writer.WritePropertyName("ComparisonOperator");
-                    context.Writer.Write(publicRequest.ComparisonOperator);
-                }
-
-                if(publicRequest.IsSetEvaluationPeriods())
-                {
-                    context.Writer.WritePropertyName("EvaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods);
+                    context.Writer.WritePropertyName("Actions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    {
+                            context.Writer.Write(publicRequestActionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetFleetId())
                 {
                     context.Writer.WritePropertyName("FleetId");
                     context.Writer.Write(publicRequest.FleetId);
-                }
-
-                if(publicRequest.IsSetMetricName())
-                {
-                    context.Writer.WritePropertyName("MetricName");
-                    context.Writer.Write(publicRequest.MetricName);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPolicyType())
-                {
-                    context.Writer.WritePropertyName("PolicyType");
-                    context.Writer.Write(publicRequest.PolicyType);
-                }
-
-                if(publicRequest.IsSetScalingAdjustment())
-                {
-                    context.Writer.WritePropertyName("ScalingAdjustment");
-                    context.Writer.Write(publicRequest.ScalingAdjustment);
-                }
-
-                if(publicRequest.IsSetScalingAdjustmentType())
-                {
-                    context.Writer.WritePropertyName("ScalingAdjustmentType");
-                    context.Writer.Write(publicRequest.ScalingAdjustmentType);
-                }
-
-                if(publicRequest.IsSetTargetConfiguration())
-                {
-                    context.Writer.WritePropertyName("TargetConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetThreshold())
-                {
-                    context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold);
                 }
 
         
@@ -141,9 +93,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutScalingPolicyRequestMarshaller _instance = new PutScalingPolicyRequestMarshaller();        
+        private static StartFleetActionsRequestMarshaller _instance = new StartFleetActionsRequestMarshaller();        
 
-        internal static PutScalingPolicyRequestMarshaller GetInstance()
+        internal static StartFleetActionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +103,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutScalingPolicyRequestMarshaller Instance
+        public static StartFleetActionsRequestMarshaller Instance
         {
             get
             {

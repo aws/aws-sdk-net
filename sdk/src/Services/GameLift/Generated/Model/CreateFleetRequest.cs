@@ -124,11 +124,19 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Describe fleets:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -141,6 +149,10 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -168,37 +180,17 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Manage fleet capacity:
+    /// Manage fleet actions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <a>StartFleetActions</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
+    ///  <a>StopFleetActions</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateFleetRequest : AmazonGameLiftRequest
     {
@@ -390,9 +382,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Game session protection policy to apply to all instances in this fleet. If this parameter
         /// is not set, instances in this fleet default to no protection. You can change a fleet's
-        /// protection policy using UpdateFleetAttributes, but this change will only affect sessions
-        /// created after the policy change. You can also set protection for individual instances
-        /// using <a>UpdateGameSession</a>.
+        /// protection policy using <a>UpdateFleetAttributes</a>, but this change will only affect
+        /// sessions created after the policy change. You can also set protection for individual
+        /// instances using <a>UpdateGameSession</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

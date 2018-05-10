@@ -160,6 +160,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StoppedActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StoppedActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TerminationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

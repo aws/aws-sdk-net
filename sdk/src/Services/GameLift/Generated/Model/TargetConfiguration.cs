@@ -28,16 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteScalingPolicy operation.
-    /// Deletes a fleet scaling policy. This action means that the policy is no longer in
-    /// force and removes all record of it. To delete a scaling policy, specify both the scaling
-    /// policy name and the fleet ID it is associated with.
+    /// Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based
+    /// policy tracks a particular fleet metric specifies a target value for the metric. As
+    /// player usage changes, the policy triggers Amazon GameLift to adjust capacity so that
+    /// the metric returns to the target value. The target configuration specifies settings
+    /// as needed for the target based policy, including the target value. 
     /// 
-    ///  
-    /// <para>
-    /// To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation
-    /// suspends all policies for the fleet.
-    /// </para>
     ///  
     /// <para>
     /// Operations related to fleet capacity scaling include:
@@ -84,46 +80,30 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
-    public partial class DeleteScalingPolicyRequest : AmazonGameLiftRequest
+    public partial class TargetConfiguration
     {
-        private string _fleetId;
-        private string _name;
+        private double? _targetValue;
 
         /// <summary>
-        /// Gets and sets the property FleetId. 
+        /// Gets and sets the property TargetValue. 
         /// <para>
-        /// Unique identifier for a fleet to be deleted.
+        /// Desired value to use with a target-based scaling policy. The value must be relevant
+        /// for whatever metric the scaling policy is using. For example, in a policy using the
+        /// metric PercentAvailableGameSessions, the target value should be the preferred size
+        /// of the fleet's buffer (the percent of capacity that should be idle and ready for new
+        /// game sessions).
         /// </para>
         /// </summary>
-        public string FleetId
+        public double TargetValue
         {
-            get { return this._fleetId; }
-            set { this._fleetId = value; }
+            get { return this._targetValue.GetValueOrDefault(); }
+            set { this._targetValue = value; }
         }
 
-        // Check to see if FleetId property is set
-        internal bool IsSetFleetId()
+        // Check to see if TargetValue property is set
+        internal bool IsSetTargetValue()
         {
-            return this._fleetId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// Descriptive label that is associated with a scaling policy. Policy names do not need
-        /// to be unique.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._targetValue.HasValue; 
         }
 
     }

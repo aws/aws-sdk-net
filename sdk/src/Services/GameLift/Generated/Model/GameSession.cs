@@ -266,7 +266,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MatchmakerData. 
         /// <para>
         /// Information about the matchmaking process that was used to create the game session.
-        /// It is in JSON syntax, formated as a string. In addition the matchmaking configuration
+        /// It is in JSON syntax, formatted as a string. In addition the matchmaking configuration
         /// used, it contains data on all players assigned to the match, including player attributes
         /// and team assignments. For more details on matchmaker data, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
         /// Data</a>. Matchmaker data is useful when requesting match backfills, and is updated

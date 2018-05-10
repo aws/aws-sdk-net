@@ -57,7 +57,7 @@ namespace Amazon.GameLift
     ///  </li> <li> 
     /// <para>
     ///  <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues,
-    /// and aliases; set autoscaling policies; retrieve logs and metrics.
+    /// and aliases; set auto-scaling policies; retrieve logs and metrics.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -339,21 +339,29 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Autoscale -- Manage autoscaling rules and apply them to a fleet.
+    /// Autoscale -- Manage auto-scaling rules and apply them to a fleet.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing
+    ///  <a>PutScalingPolicy</a> -- Create a new auto-scaling policy, or update an existing
     /// one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
+    ///  <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting
+    ///  <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and stop it from affecting
     /// a fleet's capacity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
@@ -1137,11 +1145,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1154,6 +1170,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1181,37 +1201,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -3076,11 +3076,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3093,6 +3101,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3120,37 +3132,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// 
@@ -3206,11 +3198,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3223,6 +3223,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3250,37 +3254,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
@@ -3337,11 +3321,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3354,6 +3346,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3381,37 +3377,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// <param name="cancellationToken">
@@ -3645,63 +3621,12 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Fleet-related operations include:
+        /// To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation
+        /// suspends all policies for the fleet.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3713,25 +3638,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPolicy service method.</param>
         /// 
@@ -4417,11 +4354,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4434,6 +4379,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4461,37 +4410,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// 
@@ -4547,11 +4476,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4564,6 +4501,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4591,37 +4532,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
         /// 
@@ -4678,11 +4599,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4695,6 +4624,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4722,37 +4655,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// <param name="cancellationToken">
@@ -4830,11 +4743,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4847,6 +4768,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4874,37 +4799,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAttributes service method.</param>
         /// 
@@ -4985,11 +4890,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5002,6 +4915,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5029,37 +4946,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetCapacity service method.</param>
         /// 
@@ -5132,11 +5029,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5149,6 +5054,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5176,37 +5085,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetEvents service method.</param>
         /// 
@@ -5281,11 +5170,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5298,6 +5195,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5325,37 +5226,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// 
@@ -5406,11 +5287,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5423,6 +5312,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5450,37 +5343,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetPortSettings service method.</param>
         /// 
@@ -5532,11 +5405,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5549,6 +5430,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5576,37 +5461,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// <param name="cancellationToken">
@@ -5688,11 +5553,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5705,6 +5578,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5732,37 +5609,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetUtilization service method.</param>
         /// 
@@ -6692,11 +6549,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6709,6 +6574,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6736,37 +6605,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRuntimeConfiguration service method.</param>
         /// 
@@ -6831,63 +6680,14 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Fleet-related operations include:
+        /// A fleet may have all of its scaling policies suspended (<a>StopFleetActions</a>).
+        /// This action does not affect the status of the scaling policies, which remains ACTIVE.
+        /// To see whether a fleet's scaling policies are in force or suspended, call <a>DescribeFleetAttributes</a>
+        /// and check the stopped actions.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6899,25 +6699,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPolicies service method.</param>
         /// 
@@ -7689,11 +7501,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7706,6 +7526,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7733,37 +7557,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
         /// 
@@ -7817,14 +7621,84 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates or updates a scaling policy for a fleet. An active scaling policy prompts
-        /// Amazon GameLift to track a certain metric for a fleet and automatically change the
-        /// fleet's capacity in specific circumstances. Each scaling policy contains one rule
-        /// statement. Fleets can have multiple scaling policies in force simultaneously.
+        /// Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically
+        /// scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs
+        /// Amazon GameLift to track a fleet metric and automatically change the fleet's capacity
+        /// when a certain threshold is reached. There are two types of scaling policies: target-based
+        /// and rule-based. Use a target-based policy to quickly and efficiently manage fleet
+        /// scaling; this option is the most commonly used. Use rule-based policies when you need
+        /// to exert fine-grained control over auto-scaling. 
         /// 
         ///  
         /// <para>
-        /// A scaling policy rule statement has the following structure:
+        /// Fleets can have multiple scaling policies of each type in force at the same time;
+        /// you can have one target-based policy, one or multiple rule-based scaling policies,
+        /// or both. We recommend caution, however, because multiple auto-scaling policies can
+        /// have unintended consequences.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can temporarily suspend all scaling policies for a fleet by calling <a>StopFleetActions</a>
+        /// with the fleet action AUTO_SCALING. To resume scaling policies, call <a>StartFleetActions</a>
+        /// with the same fleet action. To stop just one scaling policy--or to permanently remove
+        /// it, you must delete the policy with <a>DeleteScalingPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Learn more about how to work with auto-scaling in <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+        /// Up Fleet Automatic Scaling</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Target-based policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A target-based policy tracks a single metric: PercentAvailableGameSessions. This metric
+        /// tells us how much of a fleet's hosting capacity is ready to host game sessions but
+        /// is not currently in use. This is the fleet's buffer; it measures the additional player
+        /// demand that the fleet could handle at current capacity. With a target-based policy,
+        /// you set your ideal buffer size and leave it to Amazon GameLift to take whatever action
+        /// is needed to maintain that target. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, you might choose to maintain a 10% buffer for a fleet that has the capacity
+        /// to host 100 simultaneous game sessions. This policy tells Amazon GameLift to take
+        /// action whenever the fleet's available capacity falls below or rises above 10 game
+        /// sessions. Amazon GameLift will start new instances or stop unused instances in order
+        /// to return to the 10% buffer. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a target-based policy, specify a fleet ID and name, and set the
+        /// policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions)
+        /// and reference a <a>TargetConfiguration</a> object with your desired buffer value.
+        /// Exclude all other parameters. On a successful request, the policy name is returned.
+        /// The scaling policy is automatically in force as soon as it's successfully created.
+        /// If the fleet's auto-scaling actions are temporarily suspended, the new policy will
+        /// be in force once the fleet actions are restarted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Rule-based policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A rule-based policy tracks specified fleet metric, sets a threshold value, and specifies
+        /// the type of action to initiate when triggered. With a rule-based policy, you can select
+        /// from several available fleet metrics. Each policy specifies whether to scale up or
+        /// scale down (and by how much), so you need one policy for each type of action. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, a policy may make the following statement: "If the percentage of idle
+        /// instances is greater than 20% for more than 15 minutes, then reduce the fleet capacity
+        /// by 10%."
+        /// </para>
+        ///  
+        /// <para>
+        /// A policy's rule statement has the following structure:
         /// </para>
         ///  
         /// <para>
@@ -7834,81 +7708,25 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// For example, this policy: "If the number of idle instances exceeds 20 for more than
-        /// 15 minutes, then reduce the fleet capacity by 10 instances" could be implemented as
-        /// the following rule statement:
+        /// To implement the example, the rule statement would look like this:
         /// </para>
         ///  
         /// <para>
-        /// If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15] minutes, then
-        /// [ChangeInCapacity] by [-10].
+        /// If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code>
+        /// for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.
         /// </para>
         ///  
         /// <para>
         /// To create or update a scaling policy, specify a unique combination of name and fleet
-        /// ID, and set the rule values. All parameters for this action are required. If successful,
-        /// the policy name is returned. Scaling policies cannot be suspended or made inactive.
-        /// To stop enforcing a scaling policy, call <a>DeleteScalingPolicy</a>.
+        /// ID, and set the policy type to "RuleBased". Specify the parameter values for a policy
+        /// rule statement. On a successful request, the policy name is returned. Scaling policies
+        /// are automatically in force as soon as they're successfully created. If the fleet's
+        /// auto-scaling actions are temporarily suspended, the new policy will be in force once
+        /// the fleet actions are restarted.
         /// </para>
         ///  
         /// <para>
-        /// Fleet-related operations include:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>CreateFleet</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>ListFleets</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Describe fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>DescribeFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetUtilization</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeFleetEvents</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Update fleets:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a>UpdateFleetAttributes</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateFleetPortSettings</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>UpdateRuntimeConfiguration</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Manage fleet capacity:
+        /// Operations related to fleet capacity scaling include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7920,25 +7738,37 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <a>DeleteFleet</a> 
+        /// Manage fleet actions:
         /// </para>
-        ///  </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
         /// 
@@ -8381,8 +8211,8 @@ namespace Amazon.GameLift
         /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
         /// expression must indicate the key and a string to search the data values for. For example,
         /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
-        /// specify the following: gameSessionProperties.gameMode = "brawl". All custom data values
-        /// are searched as strings.
+        /// specify the following: <code>gameSessionProperties.gameMode = "brawl"</code>. All
+        /// custom data values are searched as strings.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8523,6 +8353,115 @@ namespace Amazon.GameLift
             var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartFleetActions
+
+
+        /// <summary>
+        /// Resumes activity on a fleet that was suspended with <a>StopFleetActions</a>. Currently,
+        /// this operation is used to restart a fleet's auto-scaling activity. 
+        /// 
+        ///  
+        /// <para>
+        /// To start fleet actions, specify the fleet ID and the type of actions to restart. When
+        /// auto-scaling fleet actions are restarted, Amazon GameLift once again initiates scaling
+        /// events as triggered by the fleet's scaling policies. If actions on the fleet were
+        /// never stopped, this operation will have no effect. You can view a fleet's stopped
+        /// actions using <a>DescribeFleetAttributes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Operations related to fleet capacity scaling include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>UpdateFleetCapacity</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Manage scaling policies:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeScalingPolicies</a> (auto-scaling)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteScalingPolicy</a> (auto-scaling)
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Manage fleet actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>StartFleetActions</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>StopFleetActions</a> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFleetActions service method.</param>
+        /// 
+        /// <returns>The response from the StartFleetActions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual StartFleetActionsResponse StartFleetActions(StartFleetActionsRequest request)
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StartFleetActionsRequest,StartFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFleetActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
+        public virtual Task<StartFleetActionsResponse> StartFleetActionsAsync(StartFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartFleetActionsRequest,StartFleetActionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -8950,6 +8889,73 @@ namespace Amazon.GameLift
 
         #endregion
         
+        #region  StopFleetActions
+
+
+        /// <summary>
+        /// Suspends activity on a fleet. Currently, this operation is used to stop a fleet's
+        /// auto-scaling activity. It is used to temporarily stop scaling events triggered by
+        /// the fleet's scaling policies. The policies can be retained and auto-scaling activity
+        /// can be restarted using <a>StartFleetActions</a>. You can view a fleet's stopped actions
+        /// using <a>DescribeFleetAttributes</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To stop fleet actions, specify the fleet ID and the type of actions to suspend. When
+        /// auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates scaling
+        /// events except to maintain the fleet's desired instances setting (<a>FleetCapacity</a>.
+        /// Changes to the fleet's capacity must be done manually using <a>UpdateFleetCapacity</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopFleetActions service method.</param>
+        /// 
+        /// <returns>The response from the StopFleetActions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual StopFleetActionsResponse StopFleetActions(StopFleetActionsRequest request)
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return Invoke<StopFleetActionsRequest,StopFleetActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopFleetActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopFleetActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
+        public virtual Task<StopFleetActionsResponse> StopFleetActionsAsync(StopFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopFleetActionsRequestMarshaller.Instance;
+            var unmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopFleetActionsRequest,StopFleetActionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopGameSessionPlacement
 
 
@@ -9325,11 +9331,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9342,6 +9356,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9369,37 +9387,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetAttributes service method.</param>
         /// 
@@ -9472,10 +9470,10 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// If you're using autoscaling (see <a>PutScalingPolicy</a>), you may want to specify
-        /// a minimum and/or maximum capacity. If you don't provide these, autoscaling can set
-        /// capacity anywhere between zero and the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">service
-        /// limits</a>.
+        /// Specify minimum and maximum number of instances. Amazon GameLift will not change fleet
+        /// capacity to values fall outside of this range. This is particularly important when
+        /// using auto-scaling (see <a>PutScalingPolicy</a>) to allow capacity to adjust based
+        /// on player demand while imposing limits on automatic adjustments.
         /// </para>
         ///  
         /// <para>
@@ -9500,11 +9498,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9517,6 +9523,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9544,37 +9554,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetCapacity service method.</param>
         /// 
@@ -9661,11 +9651,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9678,6 +9676,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9705,37 +9707,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleetPortSettings service method.</param>
         /// 
@@ -10117,11 +10099,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a>DeleteFleet</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Describe fleets:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <a>DescribeFleetAttributes</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeFleetCapacity</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10134,6 +10124,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <a>DescribeRuntimeConfiguration</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeEC2InstanceLimits</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10161,37 +10155,17 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Manage fleet capacity:
+        /// Manage fleet actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DescribeFleetCapacity</a> 
+        ///  <a>StartFleetActions</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateFleetCapacity</a> 
+        ///  <a>StopFleetActions</a> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>PutScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeScalingPolicies</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DeleteScalingPolicy</a> (automatic scaling)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a>DescribeEC2InstanceLimits</a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <a>DeleteFleet</a> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
         /// 

@@ -49,8 +49,8 @@ namespace Amazon.GameLift.Model
     /// parameter. <code>GameProperty</code> values are stored as key:value pairs; the filter
     /// expression must indicate the key and a string to search the data values for. For example,
     /// to search for game sessions with custom data containing the key:value pair "gameMode:brawl",
-    /// specify the following: gameSessionProperties.gameMode = "brawl". All custom data values
-    /// are searched as strings.
+    /// specify the following: <code>gameSessionProperties.gameMode = "brawl"</code>. All
+    /// custom data values are searched as strings.
     /// </para>
     ///  </li> <li> 
     /// <para>
