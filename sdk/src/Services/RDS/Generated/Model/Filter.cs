@@ -28,7 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This type is not currently supported.
+    /// A filter name and value pair that is used to return a more specific list of results
+    /// from a describe operation. Filters can be used to match a set of resources by specific
+    /// criteria, such as IDs. The filters supported by a describe operation are documented
+    /// with the describe operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Currently, wildcards are not supported in filters.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// The following actions can be filtered:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeDBClusterBacktracks</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeDBClusters</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeDBInstances</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePendingMaintenanceActions</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Filter
     {
@@ -38,7 +67,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// This parameter is not currently supported.
+        /// The name of the filter. Filter names are case-sensitive.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +85,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// This parameter is not currently supported.
+        /// One or more filter values. Filter values are case-sensitive.
         /// </para>
         /// </summary>
         public List<string> Values

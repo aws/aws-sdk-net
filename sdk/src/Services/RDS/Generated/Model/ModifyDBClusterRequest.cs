@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
         private bool? _applyImmediately;
+        private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
@@ -82,6 +83,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetApplyImmediately()
         {
             return this._applyImmediately.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BacktrackWindow. 
+        /// <para>
+        /// The target backtrack window, in seconds. To disable backtracking, set this value to
+        /// 0.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 0
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long BacktrackWindow
+        {
+            get { return this._backtrackWindow.GetValueOrDefault(); }
+            set { this._backtrackWindow = value; }
+        }
+
+        // Check to see if BacktrackWindow property is set
+        internal bool IsSetBacktrackWindow()
+        {
+            return this._backtrackWindow.HasValue; 
         }
 
         /// <summary>

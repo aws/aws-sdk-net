@@ -154,6 +154,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void BacktrackDBClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("BacktrackDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<BacktrackDBClusterRequest>();
+            var marshaller = new BacktrackDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = BacktrackDBClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as BacktrackDBClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CopyDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDBClusterParameterGroup");
@@ -792,6 +816,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeCertificatesResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeCertificatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBClusterBacktracksMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBClusterBacktracks");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterBacktracksRequest>();
+            var marshaller = new DescribeDBClusterBacktracksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBClusterBacktracksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBClusterBacktracksResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

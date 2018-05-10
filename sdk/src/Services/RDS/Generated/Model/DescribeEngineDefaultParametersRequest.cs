@@ -74,7 +74,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Not currently supported.
+        /// This parameter is not currently supported.
         /// </para>
         /// </summary>
         public List<Filter> Filters
