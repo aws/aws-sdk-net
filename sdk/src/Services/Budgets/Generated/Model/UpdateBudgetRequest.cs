@@ -30,7 +30,7 @@ namespace Amazon.Budgets.Model
     /// <summary>
     /// Container for the parameters to the UpdateBudget operation.
     /// Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
-    /// and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code>
+    /// and the <code>calculatedSpend</code>. When a budget is modified, the <code>calculatedSpend</code>
     /// drops to zero until AWS has new usage data to use for forecasting.
     /// </summary>
     public partial class UpdateBudgetRequest : AmazonBudgetsRequest

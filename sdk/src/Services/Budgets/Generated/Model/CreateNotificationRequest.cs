@@ -61,8 +61,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetName. 
         /// <para>
-        /// The name of the budget that you want AWS to notify you about. Budget names must be
-        /// unique within an account.
+        /// The name of the budget that you want AWS to notified you about. Budget names must
+        /// be unique within an account.
         /// </para>
         /// </summary>
         public string BudgetName
@@ -99,7 +99,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property Subscribers. 
         /// <para>
         /// A list of subscribers that you want to associate with the notification. Each notification
-        /// can have one SNS subscriber and up to 10 email subscribers.
+        /// can have one SNS subscriber and up to ten email subscribers.
         /// </para>
         /// </summary>
         public List<Subscriber> Subscribers

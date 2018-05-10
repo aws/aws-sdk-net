@@ -56,8 +56,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token in the service response that indicates the next set of results
-        /// that you can retrieve.
+        /// The pagination token that indicates the next set of results that you can retrieve.
         /// </para>
         /// </summary>
         public string NextToken
