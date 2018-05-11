@@ -1,3 +1,7 @@
+### 3.3.279.0 (2018-05-10 23:22 UTC)
+* KinesisFirehose (3.3.5.0)
+	* With this release, Amazon Kinesis Data Firehose can convert the format of your input data from JSON to Apache Parquet or Apache ORC before storing the data in Amazon S3. Parquet and ORC are columnar data formats that save space and enable faster queries compared to row-oriented formats like JSON.
+
 ### 3.3.278.0 (2018-05-10 19:29 UTC)
 * GameLift (3.3.12.0)
 	* AutoScaling Target Tracking scaling simplification along with StartFleetActions and StopFleetActions APIs to suspend and resume automatic scaling at will.
