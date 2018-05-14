@@ -46,6 +46,7 @@ namespace Amazon.CodeBuild.Model
         private NetworkInterface _networkInterface;
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
+        private string _serviceRole;
         private ProjectSource _source;
         private string _sourceVersion;
         private DateTime? _startTime;
@@ -342,6 +343,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The name of a service role used for this build.
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
         }
 
         /// <summary>

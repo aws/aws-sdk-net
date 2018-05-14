@@ -148,6 +148,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = ProjectSourceUnmarshaller.Instance;

@@ -84,6 +84,35 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildspecOverride);
                 }
 
+                if(publicRequest.IsSetCacheOverride())
+                {
+                    context.Writer.WritePropertyName("cacheOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectCacheMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CacheOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetCertificateOverride())
+                {
+                    context.Writer.WritePropertyName("certificateOverride");
+                    context.Writer.Write(publicRequest.CertificateOverride);
+                }
+
+                if(publicRequest.IsSetComputeTypeOverride())
+                {
+                    context.Writer.WritePropertyName("computeTypeOverride");
+                    context.Writer.Write(publicRequest.ComputeTypeOverride);
+                }
+
+                if(publicRequest.IsSetEnvironmentTypeOverride())
+                {
+                    context.Writer.WritePropertyName("environmentTypeOverride");
+                    context.Writer.Write(publicRequest.EnvironmentTypeOverride);
+                }
+
                 if(publicRequest.IsSetEnvironmentVariablesOverride())
                 {
                     context.Writer.WritePropertyName("environmentVariablesOverride");
@@ -106,10 +135,63 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GitCloneDepthOverride);
                 }
 
+                if(publicRequest.IsSetIdempotencyToken())
+                {
+                    context.Writer.WritePropertyName("idempotencyToken");
+                    context.Writer.Write(publicRequest.IdempotencyToken);
+                }
+
+                if(publicRequest.IsSetImageOverride())
+                {
+                    context.Writer.WritePropertyName("imageOverride");
+                    context.Writer.Write(publicRequest.ImageOverride);
+                }
+
+                if(publicRequest.IsSetInsecureSslOverride())
+                {
+                    context.Writer.WritePropertyName("insecureSslOverride");
+                    context.Writer.Write(publicRequest.InsecureSslOverride);
+                }
+
+                if(publicRequest.IsSetPrivilegedModeOverride())
+                {
+                    context.Writer.WritePropertyName("privilegedModeOverride");
+                    context.Writer.Write(publicRequest.PrivilegedModeOverride);
+                }
+
                 if(publicRequest.IsSetProjectName())
                 {
                     context.Writer.WritePropertyName("projectName");
                     context.Writer.Write(publicRequest.ProjectName);
+                }
+
+                if(publicRequest.IsSetServiceRoleOverride())
+                {
+                    context.Writer.WritePropertyName("serviceRoleOverride");
+                    context.Writer.Write(publicRequest.ServiceRoleOverride);
+                }
+
+                if(publicRequest.IsSetSourceAuthOverride())
+                {
+                    context.Writer.WritePropertyName("sourceAuthOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceAuthMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceAuthOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSourceLocationOverride())
+                {
+                    context.Writer.WritePropertyName("sourceLocationOverride");
+                    context.Writer.Write(publicRequest.SourceLocationOverride);
+                }
+
+                if(publicRequest.IsSetSourceTypeOverride())
+                {
+                    context.Writer.WritePropertyName("sourceTypeOverride");
+                    context.Writer.Write(publicRequest.SourceTypeOverride);
                 }
 
                 if(publicRequest.IsSetSourceVersion())

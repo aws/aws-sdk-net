@@ -35,9 +35,21 @@ namespace Amazon.CodeBuild.Model
     {
         private ProjectArtifacts _artifactsOverride;
         private string _buildspecOverride;
+        private ProjectCache _cacheOverride;
+        private string _certificateOverride;
+        private ComputeType _computeTypeOverride;
+        private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
         private int? _gitCloneDepthOverride;
+        private string _idempotencyToken;
+        private string _imageOverride;
+        private bool? _insecureSslOverride;
+        private bool? _privilegedModeOverride;
         private string _projectName;
+        private string _serviceRoleOverride;
+        private SourceAuth _sourceAuthOverride;
+        private string _sourceLocationOverride;
+        private SourceType _sourceTypeOverride;
         private string _sourceVersion;
         private int? _timeoutInMinutesOverride;
 
@@ -80,6 +92,81 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CacheOverride. 
+        /// <para>
+        /// A ProjectCache object specified for this build that overrides the one defined in the
+        /// build project.
+        /// </para>
+        /// </summary>
+        public ProjectCache CacheOverride
+        {
+            get { return this._cacheOverride; }
+            set { this._cacheOverride = value; }
+        }
+
+        // Check to see if CacheOverride property is set
+        internal bool IsSetCacheOverride()
+        {
+            return this._cacheOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateOverride. 
+        /// <para>
+        /// The name of a certificate for this build that overrides the one specified in the build
+        /// project.
+        /// </para>
+        /// </summary>
+        public string CertificateOverride
+        {
+            get { return this._certificateOverride; }
+            set { this._certificateOverride = value; }
+        }
+
+        // Check to see if CertificateOverride property is set
+        internal bool IsSetCertificateOverride()
+        {
+            return this._certificateOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeTypeOverride. 
+        /// <para>
+        /// The name of a compute type for this build that overrides the one specified in the
+        /// build project.
+        /// </para>
+        /// </summary>
+        public ComputeType ComputeTypeOverride
+        {
+            get { return this._computeTypeOverride; }
+            set { this._computeTypeOverride = value; }
+        }
+
+        // Check to see if ComputeTypeOverride property is set
+        internal bool IsSetComputeTypeOverride()
+        {
+            return this._computeTypeOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentTypeOverride. 
+        /// <para>
+        /// A container type for this build that overrides the one specified in the build project.
+        /// </para>
+        /// </summary>
+        public EnvironmentType EnvironmentTypeOverride
+        {
+            get { return this._environmentTypeOverride; }
+            set { this._environmentTypeOverride = value; }
+        }
+
+        // Check to see if EnvironmentTypeOverride property is set
+        internal bool IsSetEnvironmentTypeOverride()
+        {
+            return this._environmentTypeOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentVariablesOverride. 
         /// <para>
         /// A set of environment variables that overrides, for this build only, the latest ones
@@ -118,6 +205,85 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild
+        /// request. The token is included in the StartBuild request and is valid for 12 hours.
+        /// If you repeat the StartBuild request with the same token, but change a parameter,
+        /// AWS CodeBuild returns a parameter mismatch error. 
+        /// </para>
+        /// </summary>
+        public string IdempotencyToken
+        {
+            get { return this._idempotencyToken; }
+            set { this._idempotencyToken = value; }
+        }
+
+        // Check to see if IdempotencyToken property is set
+        internal bool IsSetIdempotencyToken()
+        {
+            return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageOverride. 
+        /// <para>
+        /// The name of an image for this build that overrides the one specified in the build
+        /// project.
+        /// </para>
+        /// </summary>
+        public string ImageOverride
+        {
+            get { return this._imageOverride; }
+            set { this._imageOverride = value; }
+        }
+
+        // Check to see if ImageOverride property is set
+        internal bool IsSetImageOverride()
+        {
+            return this._imageOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsecureSslOverride. 
+        /// <para>
+        /// Enable this flag to override the insecure SSL setting that is specified in the build
+        /// project. The insecure SSL setting determines whether to ignore SSL warnings while
+        /// connecting to the project source code. This override applies only if the build's source
+        /// is GitHub Enterprise.
+        /// </para>
+        /// </summary>
+        public bool InsecureSslOverride
+        {
+            get { return this._insecureSslOverride.GetValueOrDefault(); }
+            set { this._insecureSslOverride = value; }
+        }
+
+        // Check to see if InsecureSslOverride property is set
+        internal bool IsSetInsecureSslOverride()
+        {
+            return this._insecureSslOverride.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivilegedModeOverride. 
+        /// <para>
+        /// Enable this flag to override privileged mode in the build project.
+        /// </para>
+        /// </summary>
+        public bool PrivilegedModeOverride
+        {
+            get { return this._privilegedModeOverride.GetValueOrDefault(); }
+            set { this._privilegedModeOverride = value; }
+        }
+
+        // Check to see if PrivilegedModeOverride property is set
+        internal bool IsSetPrivilegedModeOverride()
+        {
+            return this._privilegedModeOverride.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
         /// The name of the AWS CodeBuild build project to start running a build.
@@ -133,6 +299,82 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRoleOverride. 
+        /// <para>
+        /// The name of a service role for this build that overrides the one specified in the
+        /// build project.
+        /// </para>
+        /// </summary>
+        public string ServiceRoleOverride
+        {
+            get { return this._serviceRoleOverride; }
+            set { this._serviceRoleOverride = value; }
+        }
+
+        // Check to see if ServiceRoleOverride property is set
+        internal bool IsSetServiceRoleOverride()
+        {
+            return this._serviceRoleOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAuthOverride. 
+        /// <para>
+        /// An authorization type for this build that overrides the one defined in the build project.
+        /// This override applies only if the build project's source is BitBucket or GitHub.
+        /// </para>
+        /// </summary>
+        public SourceAuth SourceAuthOverride
+        {
+            get { return this._sourceAuthOverride; }
+            set { this._sourceAuthOverride = value; }
+        }
+
+        // Check to see if SourceAuthOverride property is set
+        internal bool IsSetSourceAuthOverride()
+        {
+            return this._sourceAuthOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLocationOverride. 
+        /// <para>
+        /// A location that overrides for this build the source location for the one defined in
+        /// the build project.
+        /// </para>
+        /// </summary>
+        public string SourceLocationOverride
+        {
+            get { return this._sourceLocationOverride; }
+            set { this._sourceLocationOverride = value; }
+        }
+
+        // Check to see if SourceLocationOverride property is set
+        internal bool IsSetSourceLocationOverride()
+        {
+            return this._sourceLocationOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceTypeOverride. 
+        /// <para>
+        /// A source input type for this build that overrides the source input defined in the
+        /// build project
+        /// </para>
+        /// </summary>
+        public SourceType SourceTypeOverride
+        {
+            get { return this._sourceTypeOverride; }
+            set { this._sourceTypeOverride = value; }
+        }
+
+        // Check to see if SourceTypeOverride property is set
+        internal bool IsSetSourceTypeOverride()
+        {
+            return this._sourceTypeOverride != null;
         }
 
         /// <summary>

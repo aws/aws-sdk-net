@@ -93,14 +93,34 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         /// If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact
-        /// object.
+        /// object. If you set the name to be a forward slash ("/"), then the artifact is stored
+        /// in the root of the output bucket.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
+        /// For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
         /// is set to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>,
         /// then the output artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+        /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>,
+        /// and <code>name</code> is set to "<code>/</code>", then the output artifact would be
+        /// stored in the root of the output bucket. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
+        /// is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>",
+        /// then the output artifact would be stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {

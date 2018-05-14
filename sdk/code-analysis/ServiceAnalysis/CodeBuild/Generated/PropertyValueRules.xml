@@ -57,7 +57,15 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildRequest.ImageOverride</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.StartBuildRequest.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.StartBuildRequest.ServiceRoleOverride</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -107,6 +115,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Build.ProjectName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Build.ServiceRole</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
