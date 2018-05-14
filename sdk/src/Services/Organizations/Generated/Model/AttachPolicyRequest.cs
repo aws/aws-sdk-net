@@ -29,8 +29,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachPolicy operation.
-    /// Attaches a policy to a root, an organizational unit, or an individual account. How
-    /// the policy affects accounts depends on the type of policy:
+    /// Attaches a policy to a root, an organizational unit (OU), or an individual account.
+    /// How the policy affects accounts depends on the type of policy:
     /// 
     ///  <ul> <li> 
     /// <para>

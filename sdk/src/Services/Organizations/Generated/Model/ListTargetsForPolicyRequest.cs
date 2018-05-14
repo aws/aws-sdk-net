@@ -29,7 +29,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTargetsForPolicy operation.
-    /// Lists all the roots, OUs, and accounts to which the specified policy is attached.
+    /// Lists all the roots, organizaitonal units (OUs), and accounts to which the specified
+    /// policy is attached.
     /// 
     ///  <note> 
     /// <para>

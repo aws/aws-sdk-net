@@ -43,7 +43,7 @@ namespace Amazon.Organizations.Model
     /// This operation can be called only from the organization's master account. Member accounts
     /// can remove themselves with <a>LeaveOrganization</a> instead.
     /// </para>
-    ///  <important> <ul> <li> 
+    ///  <important> 
     /// <para>
     /// You can remove an account from your organization only if the account is configured
     /// with the information required to operate as a standalone account. When you create
@@ -58,14 +58,7 @@ namespace Amazon.Organizations.Model
     /// To leave an organization when all required account information has not yet been provided</a>
     /// in the <i>AWS Organizations User Guide</i>.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You can remove a member account only after you enable IAM user access to billing in
-    /// the member account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-    /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-    /// Management User Guide</i>.
-    /// </para>
-    ///  </li> </ul> </important>
+    ///  </important>
     /// </summary>
     public partial class RemoveAccountFromOrganizationRequest : AmazonOrganizationsRequest
     {

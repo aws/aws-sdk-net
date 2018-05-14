@@ -30,8 +30,8 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the EnablePolicyType operation.
     /// Enables a policy type in a root. After you enable a policy type in a root, you can
-    /// attach policies of that type to the root, any OU, or account in that root. You can
-    /// undo this by using the <a>DisablePolicyType</a> operation.
+    /// attach policies of that type to the root, any organizational unit (OU), or account
+    /// in that root. You can undo this by using the <a>DisablePolicyType</a> operation.
     /// 
     ///  
     /// <para>

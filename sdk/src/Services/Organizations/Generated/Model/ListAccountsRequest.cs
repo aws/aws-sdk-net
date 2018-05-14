@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the ListAccounts operation.
     /// Lists all the accounts in the organization. To request only the accounts in a specified
-    /// root or OU, use the <a>ListAccountsForParent</a> operation instead.
+    /// root or organizational unit (OU), use the <a>ListAccountsForParent</a> operation instead.
     /// 
     ///  <note> 
     /// <para>

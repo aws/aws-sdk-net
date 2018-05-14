@@ -29,8 +29,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the MoveAccount operation.
-    /// Moves an account from its current source parent root or OU to the specified destination
-    /// parent root or OU.
+    /// Moves an account from its current source parent root or organizational unit (OU) to
+    /// the specified destination parent root or OU.
     /// 
     ///  
     /// <para>

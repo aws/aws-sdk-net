@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the DeletePolicy operation.
     /// Deletes the specified policy from your organization. Before you perform this operation,
-    /// you must first detach the policy from all OUs, roots, and accounts.
+    /// you must first detach the policy from all organizational units (OUs), roots, and accounts.
     /// 
     ///  
     /// <para>
