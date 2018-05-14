@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickDevicesService.Model.ClaimDevicesByClaimCodeResponse.ClaimCode</property>
+    <min>12</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickDevicesService.Model.ListDeviceEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT1ClickDevicesService.Model.ListDevicesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+</property-value-rules>
