@@ -102,6 +102,7 @@
     <ProjectReference Include="..\..\src\Services\Inspector\AWSSDK.Inspector.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoT\AWSSDK.IoT.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoT1ClickDevicesService\AWSSDK.IoT1ClickDevicesService.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\IoT1ClickProjects\AWSSDK.IoT1ClickProjects.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoTAnalytics\AWSSDK.IoTAnalytics.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\IoTJobsDataPlane\AWSSDK.IoTJobsDataPlane.Net45.csproj"/>

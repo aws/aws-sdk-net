@@ -92,6 +92,8 @@
       <Directory>$(ProjectDir)/src/Services/importexport/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/inspector/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iot/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iot1clickdevicesservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/iot1clickprojects/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotjobsdataplane/bin/Release/net35/</Directory>
@@ -230,6 +232,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Inspector.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoT.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoT1ClickDevicesService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoT1ClickProjects.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IoTJobsDataPlane.dll" Analyze="True" AnalyzeAllChildren="True" />
