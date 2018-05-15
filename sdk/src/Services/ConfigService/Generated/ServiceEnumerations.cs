@@ -964,6 +964,10 @@ namespace Amazon.ConfigService
         /// Constant AWSWAFWebACL for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFWebACL = new ResourceType("AWS::WAF::WebACL");
+        /// <summary>
+        /// Constant AWSXRayEncryptionConfig for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSXRayEncryptionConfig = new ResourceType("AWS::XRay::EncryptionConfig");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
