@@ -1,3 +1,7 @@
+### 3.3.281.0 (2018-05-15 18:32 UTC)
+* ConfigService (3.3.17.0)
+	* Update ResourceType enum with values for XRay resource
+
 ### 3.3.280.0 (2018-05-14 22:26 UTC)
 * CodeBuild (3.3.10.0)
 	* Adding support for more override fields for StartBuild API, add support for idempotency token field  for StartBuild API in AWS CodeBuild.
