@@ -562,6 +562,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests.CoreCLR", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.CoreCLR", "test\CoreCLR\UnitTests\UnitTests.CoreCLR.csproj", "{8AE5ABDF-2812-471A-94E3-492F57131946}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.SmokeTests.CoreCLR", "test\SmokeTests\AWSSDK.SmokeTests.CoreCLR.csproj", "{E667010C-D97E-4E90-B0D7-DD1BB915621D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1128,6 +1130,10 @@ Global
 		{8AE5ABDF-2812-471A-94E3-492F57131946}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE5ABDF-2812-471A-94E3-492F57131946}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE5ABDF-2812-471A-94E3-492F57131946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E667010C-D97E-4E90-B0D7-DD1BB915621D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E667010C-D97E-4E90-B0D7-DD1BB915621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E667010C-D97E-4E90-B0D7-DD1BB915621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E667010C-D97E-4E90-B0D7-DD1BB915621D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1410,6 +1416,7 @@ Global
 		{1CE2D127-EAF8-4FB7-BB70-6054EF10259C} = {AB873FDB-E443-7A3A-A9D6-04E4CB28D1DA}
 		{56831951-B8C6-4CDB-9408-0A405D2B4073} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 		{8AE5ABDF-2812-471A-94E3-492F57131946} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
+		{E667010C-D97E-4E90-B0D7-DD1BB915621D} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {227CA5E5-FDBE-4409-B7A8-4BD9184E707C}

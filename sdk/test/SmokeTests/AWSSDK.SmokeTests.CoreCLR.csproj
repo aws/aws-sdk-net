@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);CORECLR;AWS_ASYNC_API</DefineConstants>
+    <DebugType>portable</DebugType>
+    <AssemblyName>AWSSDK.SmokeTests.CoreCLR</AssemblyName>
+    <PackageId>AWSSDK.SmokeTests.CoreCLR</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../Services/*/SmokeTests/*.cs"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\src\Services\Cloud9\AWSSDK.Cloud9.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.CoreCLR.csproj" />
+    <ProjectReference Include="..\..\src\Services\TranscribeService\AWSSDK.TranscribeService.CoreCLR.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

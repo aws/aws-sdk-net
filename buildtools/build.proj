@@ -226,7 +226,7 @@
 			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
-    <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
+    <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-smoke-tests;run-unit-tests;run-integ-tests" />
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-desktop-service;run-unit-tests-service;run-integ-tests-service" />
 
@@ -342,6 +342,22 @@
             Configuration="$(Configuration)"
             Categories="$(IntegCategoriesToTest)"
             />
+    </Target>
+
+    
+    <Target Name="run-smoke-tests" DependsOnTargets="build-test-wrapper">
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.Net35.csproj"
+            Configuration="$(Configuration)"/>
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.Net45.csproj"
+            Configuration="$(Configuration)"/>
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.CoreCLR.csproj"
+            Configuration="$(Configuration)"/>
     </Target>
 
     <Target Name="nuget-pack" Condition="'$(Configuration)' == 'Release'">
