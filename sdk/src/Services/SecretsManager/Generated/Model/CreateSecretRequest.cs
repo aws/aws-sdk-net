@@ -332,8 +332,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
-        /// 
+        ///  <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code> 
         /// </para>
         ///  
         /// <para>
