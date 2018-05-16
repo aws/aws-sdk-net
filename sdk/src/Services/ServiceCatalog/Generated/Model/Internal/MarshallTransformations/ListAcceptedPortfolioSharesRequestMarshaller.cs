@@ -85,6 +85,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PageToken);
                 }
 
+                if(publicRequest.IsSetPortfolioShareType())
+                {
+                    context.Writer.WritePropertyName("PortfolioShareType");
+                    context.Writer.Write(publicRequest.PortfolioShareType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
