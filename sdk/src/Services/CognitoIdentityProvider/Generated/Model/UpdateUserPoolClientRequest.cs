@@ -133,7 +133,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CallbackURLs. 
         /// <para>
-        /// A list of allowed callback URLs for the identity providers.
+        /// A list of allowed redirect (callback) URLs for the identity providers.
+        /// </para>
+        ///  
+        /// <para>
+        /// A redirect URI must:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Be an absolute URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be registered with the authorization server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not include a fragment component.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+        /// Endpoint</a>.
         /// </para>
         /// </summary>
         public List<string> CallbackURLs
@@ -188,6 +213,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property DefaultRedirectURI. 
         /// <para>
         /// The default redirect URI. Must be in the <code>CallbackURLs</code> list.
+        /// </para>
+        ///  
+        /// <para>
+        /// A redirect URI must:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Be an absolute URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be registered with the authorization server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not include a fragment component.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+        /// Endpoint</a>.
         /// </para>
         /// </summary>
         public string DefaultRedirectURI

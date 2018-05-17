@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Mutable. 
         /// <para>
-        /// Specifies whether the attribute can be changed once it has been created.
+        /// Specifies whether the value of the attribute can be changed.
         /// </para>
         /// </summary>
         public bool Mutable

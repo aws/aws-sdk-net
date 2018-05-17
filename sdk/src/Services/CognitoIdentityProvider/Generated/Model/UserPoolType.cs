@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = new List<string>();
+        private string _arn;
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
         private DeviceConfigurationType _deviceConfiguration;
@@ -94,6 +95,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAliasAttributes()
         {
             return this._aliasAttributes != null && this._aliasAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the user pool.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
@@ -279,7 +298,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The AWS Lambda triggers associated with tue user pool.
+        /// The AWS Lambda triggers associated with the user pool.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig

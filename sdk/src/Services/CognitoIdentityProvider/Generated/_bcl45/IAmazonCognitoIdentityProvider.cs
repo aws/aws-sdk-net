@@ -5217,7 +5217,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Use this API to register a user's entered TOTP code and mark the user's software token
-        /// MFA status as "verified" if successful,
+        /// MFA status as "verified" if successful. The request takes an access token or a session
+        /// string, but not both.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifySoftwareToken service method.</param>
         /// 

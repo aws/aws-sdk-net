@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ExpiresIn. 
         /// <para>
-        /// The expiration period of the authentication result.
+        /// The expiration period of the authentication result in seconds.
         /// </para>
         /// </summary>
         public int ExpiresIn

@@ -1039,6 +1039,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly IdentityProviderTypeType LoginWithAmazon = new IdentityProviderTypeType("LoginWithAmazon");
         /// <summary>
+        /// Constant OIDC for IdentityProviderTypeType
+        /// </summary>
+        public static readonly IdentityProviderTypeType OIDC = new IdentityProviderTypeType("OIDC");
+        /// <summary>
         /// Constant SAML for IdentityProviderTypeType
         /// </summary>
         public static readonly IdentityProviderTypeType SAML = new IdentityProviderTypeType("SAML");
