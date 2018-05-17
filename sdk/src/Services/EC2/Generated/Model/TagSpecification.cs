@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource to tag. Currently, the resource types that support tagging on
-        /// creation are <code>instance</code> and <code>volume</code>. 
+        /// creation are <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+        /// 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

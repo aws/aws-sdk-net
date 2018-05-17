@@ -2941,6 +2941,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C59xlarge = new InstanceType("c5.9xlarge");
         /// <summary>
+        /// Constant C5d18xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d18xlarge = new InstanceType("c5d.18xlarge");
+        /// <summary>
+        /// Constant C5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d2xlarge = new InstanceType("c5d.2xlarge");
+        /// <summary>
+        /// Constant C5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d4xlarge = new InstanceType("c5d.4xlarge");
+        /// <summary>
+        /// Constant C5d9xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5d9xlarge = new InstanceType("c5d.9xlarge");
+        /// <summary>
+        /// Constant C5dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5dLarge = new InstanceType("c5d.large");
+        /// <summary>
+        /// Constant C5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5dXlarge = new InstanceType("c5d.xlarge");
+        /// <summary>
         /// Constant C5Large for InstanceType
         /// </summary>
         public static readonly InstanceType C5Large = new InstanceType("c5.large");
@@ -3068,6 +3092,10 @@ namespace Amazon.EC2
         /// Constant I3Large for InstanceType
         /// </summary>
         public static readonly InstanceType I3Large = new InstanceType("i3.large");
+        /// <summary>
+        /// Constant I3Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType I3Metal = new InstanceType("i3.metal");
         /// <summary>
         /// Constant I3Xlarge for InstanceType
         /// </summary>

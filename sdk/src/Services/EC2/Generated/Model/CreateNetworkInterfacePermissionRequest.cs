@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNetworkInterfacePermission operation.
-    /// Grants an AWS authorized partner account permission to attach the specified network
-    /// interface to an instance in their account.
+    /// Grants an AWS-authorized account permission to attach the specified network interface
+    /// to an instance in their account.
     /// 
     ///  
     /// <para>

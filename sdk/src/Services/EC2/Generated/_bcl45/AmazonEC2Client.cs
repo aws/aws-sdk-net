@@ -1640,10 +1640,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon
-        /// EC2 starts on your behalf when the maximum price that you specify exceeds the current
-        /// Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Cancels one or more Spot Instance requests.
         /// 
         ///  <important> 
         /// <para>
@@ -2867,8 +2864,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Grants an AWS authorized partner account permission to attach the specified network
-        /// interface to an instance in their account.
+        /// Grants an AWS-authorized account permission to attach the specified network interface
+        /// to an instance in their account.
         /// 
         ///  
         /// <para>
@@ -9520,10 +9517,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -9549,10 +9543,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -9582,10 +9573,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot Instance requests that belong to your account. Spot Instances are
-        /// instances that Amazon EC2 launches when the Spot price that you specify exceeds the
-        /// current Spot price. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-        /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Describes the specified Spot Instance requests.
         /// 
         ///  
         /// <para>
@@ -14436,10 +14424,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
-        /// when the maximum price that you specify exceeds the current Spot price. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+        /// Creates a Spot Instance request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
         /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 

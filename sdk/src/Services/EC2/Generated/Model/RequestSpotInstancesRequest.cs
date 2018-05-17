@@ -29,10 +29,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestSpotInstances operation.
-    /// Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches
-    /// when the maximum price that you specify exceeds the current Spot price. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+    /// Creates a Spot Instance request.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
     /// Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// </para>
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {
