@@ -43,6 +43,11 @@ namespace Amazon.CodeDeploy.Model
         /// in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load
         /// Balancers.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Adding more than one load balancer to the array is not supported. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ELBInfo> ElbInfoList
         {
@@ -63,6 +68,11 @@ namespace Amazon.CodeDeploy.Model
         /// a deployment. In Elastic Load Balancing, target groups are used with Application Load
         /// Balancers.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Adding more than one target group to the array is not supported. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<TargetGroupInfo> TargetGroupInfoList
         {

@@ -69,7 +69,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TerminationWaitTimeInMinutes. 
         /// <para>
         /// The number of minutes to wait after a successful blue/green deployment before terminating
-        /// instances from the original environment.
+        /// instances from the original environment. The maximum setting is 2880 minutes (2 days).
         /// </para>
         /// </summary>
         public int TerminationWaitTimeInMinutes
