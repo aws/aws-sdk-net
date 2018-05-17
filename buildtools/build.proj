@@ -345,7 +345,7 @@
     </Target>
 
     
-    <Target Name="run-smoke-tests" DependsOnTargets="build-test-wrapper">
+    <Target Name="run-smoke-tests" DependsOnTargets="build-test-wrapper" Condition="'$(PartialBuildList)'==''">
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.Net35.csproj"
