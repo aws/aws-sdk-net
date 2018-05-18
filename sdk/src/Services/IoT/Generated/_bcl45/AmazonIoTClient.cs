@@ -383,7 +383,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -440,7 +440,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -506,7 +506,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -549,7 +549,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -596,7 +596,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1070,7 +1070,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -1646,7 +1646,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -2424,7 +2424,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -3040,6 +3040,132 @@ namespace Amazon.IoT
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJob
+
+
+        /// <summary>
+        /// Deletes a job and its related job executions.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a job may take time, depending on the number of job executions created for
+        /// the job and various other factors. While the job is being deleted, the status of the
+        /// job will be shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job
+        /// whose status is already "DELETION_IN_PROGRESS" will result in an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException
+        /// will occur.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
+        {
+            var marshaller = DeleteJobRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobRequest,DeleteJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteJobRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobRequest,DeleteJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJobExecution
+
+
+        /// <summary>
+        /// Deletes a job execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        public virtual DeleteJobExecutionResponse DeleteJobExecution(DeleteJobExecutionRequest request)
+        {
+            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        public virtual Task<DeleteJobExecutionResponse> DeleteJobExecutionAsync(DeleteJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5094,7 +5220,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -5532,7 +5658,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -6271,7 +6397,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -7633,7 +7759,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -8399,7 +8525,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.RegistrationCodeValidationException">
         /// The registration code is invalid.
@@ -9383,7 +9509,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -9711,7 +9837,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

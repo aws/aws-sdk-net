@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Sends message data to an AWS IoT Analytics channel.
+    /// Sends messge data to an AWS IoT Analytics channel.
     /// </summary>
     public partial class IotAnalyticsAction
     {
@@ -75,8 +75,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role which has a policy that grants IoT permission to send message
-        /// data via IoT Analytics (iotanalytics:BatchPutMessage).
+        /// The ARN of the role which has a policy that grants IoT Analytics permission to send
+        /// message data via IoT Analytics (iotanalytics:BatchPutMessage).
         /// </para>
         /// </summary>
         public string RoleArn

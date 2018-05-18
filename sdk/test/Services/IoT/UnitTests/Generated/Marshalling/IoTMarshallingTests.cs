@@ -754,6 +754,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void DeleteJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteJob");
+
+            var request = InstantiateClassGenerator.Execute<DeleteJobRequest>();
+            var marshaller = new DeleteJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteJob", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
+        public void DeleteJobExecutionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteJobExecution");
+
+            var request = InstantiateClassGenerator.Execute<DeleteJobExecutionRequest>();
+            var marshaller = new DeleteJobExecutionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteJobExecution", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void DeleteOTAUpdateMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOTAUpdate");

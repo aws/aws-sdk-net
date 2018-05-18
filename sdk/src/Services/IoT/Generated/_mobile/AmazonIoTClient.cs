@@ -405,7 +405,7 @@ namespace Amazon.IoT
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.LimitExceededException">
-        /// The number of attached entities exceeds the limit.
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -1665,6 +1665,70 @@ namespace Amazon.IoT
             var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJob
+
+        internal virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
+        {
+            var marshaller = DeleteJobRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobRequest,DeleteJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteJobRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobRequest,DeleteJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJobExecution
+
+        internal virtual DeleteJobExecutionResponse DeleteJobExecution(DeleteJobExecutionRequest request)
+        {
+            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteJobExecution">REST API Reference for DeleteJobExecution Operation</seealso>
+        public virtual Task<DeleteJobExecutionResponse> DeleteJobExecutionAsync(DeleteJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = DeleteJobExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobExecutionRequest,DeleteJobExecutionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
