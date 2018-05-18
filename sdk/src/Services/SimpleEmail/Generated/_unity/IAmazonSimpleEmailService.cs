@@ -30,16 +30,16 @@ namespace Amazon.SimpleEmail
     ///
     /// Amazon Simple Email Service 
     /// <para>
-    ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
-    /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
+    /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
+    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
     /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>. 
+    /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
     /// </summary>

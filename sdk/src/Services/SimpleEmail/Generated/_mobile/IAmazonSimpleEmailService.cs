@@ -33,16 +33,16 @@ namespace Amazon.SimpleEmail
     ///
     /// Amazon Simple Email Service 
     /// <para>
-    ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
-    /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
+    /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
+    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
     /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>. 
+    /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -614,7 +614,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -702,7 +702,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>

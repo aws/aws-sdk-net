@@ -29,10 +29,10 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSendingEnabled operation.
-    /// Enables or disables email sending across your entire Amazon SES account. You can use
-    /// this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email
-    /// sending across your Amazon SES account when reputation metrics (such as your bounce
-    /// on complaint rate) reach certain thresholds.
+    /// Enables or disables email sending across your entire Amazon SES account in the current
+    /// AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms
+    /// to temporarily pause email sending across your Amazon SES account in a given AWS Region
+    /// when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Describes whether email sending is enabled or disabled for your Amazon SES account.
+        /// Describes whether email sending is enabled or disabled for your Amazon SES account
+        /// in the current AWS Region.
         /// </para>
         /// </summary>
         public bool Enabled

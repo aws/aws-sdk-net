@@ -112,9 +112,9 @@ namespace Amazon.SimpleEmail.Model
         /// server-side encryption. This means that you must use the Amazon S3 encryption client
         /// to decrypt the email after retrieving it from Amazon S3, as the service has no access
         /// to use your AWS KMS keys for decryption. This encryption client is currently available
-        /// with the <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
-        /// Ruby SDK</a> only. For more information about client-side encryption using AWS KMS
-        /// master keys, see the <a href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
+        /// with the <a href="http://aws.amazon.com/sdk-for-java/">AWS SDK for Java</a> and <a
+        /// href="http://aws.amazon.com/sdk-for-ruby/">AWS SDK for Ruby</a> only. For more information
+        /// about client-side encryption using AWS KMS master keys, see the <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon
         /// S3 Developer Guide</a>.
         /// </para>
         ///  </important>

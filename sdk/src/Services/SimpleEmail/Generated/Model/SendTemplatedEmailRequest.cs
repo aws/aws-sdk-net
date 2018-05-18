@@ -71,7 +71,22 @@ namespace Amazon.SimpleEmail.Model
     /// the entire message will be rejected, even if the message contains other recipients
     /// that are valid.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// If your call to the <code>SendTemplatedEmail</code> operation includes all of the
+    /// required parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon
+    /// SES can't render the email because the template contains errors, it doesn't send the
+    /// email. Additionally, because it already accepted the message, Amazon SES doesn't return
+    /// a message stating that it was unable to send the email.
+    /// </para>
+    ///  
+    /// <para>
+    /// For these reasons, we highly recommend that you set up Amazon SES to send you notifications
+    /// when Rendering Failure events occur. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
+    /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
+    /// Developer Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SendTemplatedEmailRequest : AmazonSimpleEmailServiceRequest
     {

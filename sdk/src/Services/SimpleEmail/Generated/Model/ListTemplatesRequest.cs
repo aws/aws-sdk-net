@@ -29,7 +29,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTemplates operation.
-    /// Lists the email templates present in your Amazon SES account.
+    /// Lists the email templates present in your Amazon SES account in the current AWS Region.
     /// 
     ///  
     /// <para>

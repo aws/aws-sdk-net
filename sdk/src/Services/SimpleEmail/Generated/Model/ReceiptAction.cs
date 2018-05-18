@@ -162,7 +162,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property WorkmailAction. 
         /// <para>
-        /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+        /// Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
         /// </para>
         /// </summary>
         public WorkmailAction WorkmailAction

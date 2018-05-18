@@ -30,7 +30,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
     /// Returns a list containing all of the identities (email addresses and domains) for
-    /// your AWS account, regardless of verification status.
+    /// your AWS account in the current AWS Region, regardless of verification status.
     /// 
     ///  
     /// <para>

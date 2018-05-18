@@ -38,16 +38,16 @@ namespace Amazon.SimpleEmail
     ///
     /// Amazon Simple Email Service 
     /// <para>
-    ///  This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple
-    /// Email Service</a> (Amazon SES). This documentation is intended to be used in conjunction
-    /// with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+    ///  This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon
+    /// Simple Email Service</a> (Amazon SES) API, version 2010-12-01. This document is best
+    /// used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
     /// SES Developer Guide</a>. 
     /// </para>
     ///  <note> 
     /// <para>
     ///  For a list of Amazon SES endpoints to use in service requests, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
     /// and Amazon SES</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-    /// SES Developer Guide</a>. 
+    /// SES Developer Guide</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -370,8 +370,8 @@ namespace Amazon.SimpleEmail
         ///  <note> 
         /// <para>
         /// When you create or update an event destination, you must provide one, and only one,
-        /// destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose, or
-        /// Amazon Simple Notification Service (Amazon SNS).
+        /// destination. The destination can be CloudWatch, Amazon Kinesis Firehose, or Amazon
+        /// Simple Notification Service (Amazon SNS).
         /// </para>
         ///  </note> 
         /// <para>
@@ -452,8 +452,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -519,7 +518,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -792,7 +791,8 @@ namespace Amazon.SimpleEmail
         /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
-        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// Indicates that the template that you specified could not be rendered. This issue may
+        /// occur when a template refers to a partial that does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
         /// Indicates that a resource could not be created because of service limits. For a list
@@ -942,8 +942,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  <note> 
@@ -1000,7 +999,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -1595,7 +1594,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Returns the email sending status of the Amazon SES account.
+        /// Returns the email sending status of the Amazon SES account for the current region.
         /// 
         ///  
         /// <para>
@@ -1643,7 +1642,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2062,7 +2061,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -2081,7 +2080,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -2104,7 +2103,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Provides sending statistics for the Amazon SES account. The result is a list of data
+        /// Provides sending statistics for the current AWS Region. The result is a list of data
         /// points, representing the last two weeks of sending activity. Each data point in the
         /// list contains statistics for a 15-minute period of time.
         /// 
@@ -2197,8 +2196,9 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Provides a list of the configuration sets associated with your Amazon SES account.
-        /// For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
+        /// Provides a list of the configuration sets associated with your Amazon SES account
+        /// in the current AWS Region. For information about using configuration sets, see <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring
         /// Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -2248,11 +2248,12 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Lists the existing custom verification email templates for your account.
+        /// Lists the existing custom verification email templates for your account in the current
+        /// AWS Region.
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -2298,7 +2299,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -2316,7 +2317,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -2338,7 +2339,7 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Returns a list containing all of the identities (email addresses and domains) for
-        /// your AWS account, regardless of verification status.
+        /// your AWS account in the current AWS Region, regardless of verification status.
         /// 
         ///  
         /// <para>
@@ -2438,7 +2439,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Lists the IP address filters associated with your AWS account.
+        /// Lists the IP address filters associated with your AWS account in the current AWS Region.
         /// 
         ///  
         /// <para>
@@ -2487,10 +2488,10 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Lists the receipt rule sets that exist under your AWS account. If there are additional
-        /// receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that
-        /// you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the
-        /// additional entries.
+        /// Lists the receipt rule sets that exist under your AWS account in the current AWS Region.
+        /// If there are additional receipt rule sets to be retrieved, you will receive a <code>NextToken</code>
+        /// that you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve
+        /// the additional entries.
         /// 
         ///  
         /// <para>
@@ -2539,7 +2540,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Lists the email templates present in your Amazon SES account.
+        /// Lists the email templates present in your Amazon SES account in the current AWS Region.
         /// 
         ///  
         /// <para>
@@ -2941,15 +2942,15 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Adds an email address to the list of identities for your Amazon SES account and attempts
-        /// to verify it. As a result of executing this operation, a customized verification email
-        /// is sent to the specified address.
+        /// Adds an email address to the list of identities for your Amazon SES account in the
+        /// current AWS Region and attempts to verify it. As a result of executing this operation,
+        /// a customized verification email is sent to the specified address.
         /// 
         ///  
         /// <para>
         /// To use this operation, you must first create a custom verification email template.
         /// For more information about creating and using custom verification email templates,
-        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -3332,7 +3333,22 @@ namespace Amazon.SimpleEmail
         /// the entire message will be rejected, even if the message contains other recipients
         /// that are valid.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// If your call to the <code>SendTemplatedEmail</code> operation includes all of the
+        /// required parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon
+        /// SES can't render the email because the template contains errors, it doesn't send the
+        /// email. Additionally, because it already accepted the message, Amazon SES doesn't return
+        /// a message stating that it was unable to send the email.
+        /// </para>
+        ///  
+        /// <para>
+        /// For these reasons, we highly recommend that you set up Amazon SES to send you notifications
+        /// when Rendering Failure events occur. For more information, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending
+        /// Personalized Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTemplatedEmail service method.</param>
         /// 
@@ -3858,10 +3874,10 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Enables or disables email sending across your entire Amazon SES account. You can use
-        /// this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email
-        /// sending across your Amazon SES account when reputation metrics (such as your bounce
-        /// on complaint rate) reach certain thresholds.
+        /// Enables or disables email sending across your entire Amazon SES account in the current
+        /// AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms
+        /// to temporarily pause email sending across your Amazon SES account in a given AWS Region
+        /// when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.
         /// 
         ///  
         /// <para>
@@ -3978,9 +3994,9 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Enables or disables the publishing of reputation metrics for emails sent using a specific
-        /// configuration set. Reputation metrics include bounce and complaint rates. These metrics
-        /// are published to Amazon CloudWatch. By using Amazon CloudWatch, you can create alarms
-        /// when bounce or complaint rates exceed a certain threshold.
+        /// configuration set in a given AWS Region. Reputation metrics include bounce and complaint
+        /// rates. These metrics are published to Amazon CloudWatch. By using CloudWatch, you
+        /// can create alarms when bounce or complaint rates exceed certain thresholds.
         /// 
         ///  
         /// <para>
@@ -4028,9 +4044,10 @@ namespace Amazon.SimpleEmail
 
         /// <summary>
         /// Enables or disables email sending for messages sent using a specific configuration
-        /// set. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily
-        /// pause email sending for a configuration set when the reputation metrics for that configuration
-        /// set (such as your bounce on complaint rate) reach certain thresholds.
+        /// set in a given AWS Region. You can use this operation in conjunction with Amazon CloudWatch
+        /// alarms to temporarily pause email sending for a configuration set when the reputation
+        /// metrics for that configuration set (such as your bounce on complaint rate) exceed
+        /// certain thresholds.
         /// 
         ///  
         /// <para>
@@ -4084,8 +4101,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// By default, images and links used for tracking open and click events are hosted on
         /// domains operated by Amazon SES. You can configure a subdomain of your own to handle
-        /// these events. For information about using configuration sets, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
+        /// these events. For information about using custom domains, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         /// </summary>
@@ -4150,7 +4166,7 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+        /// For more information about custom verification email templates, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
         /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
@@ -4298,7 +4314,8 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the UpdateTemplate service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidTemplateException">
-        /// Indicates that a template could not be created because it contained invalid JSON.
+        /// Indicates that the template that you specified could not be rendered. This issue may
+        /// occur when a template refers to a partial that does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.TemplateDoesNotExistException">
         /// Indicates that the Template object you specified does not exist in your Amazon SES
@@ -4397,8 +4414,9 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Adds a domain to the list of identities for your Amazon SES account and attempts to
-        /// verify it. For more information about verifying domains, see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
+        /// Adds a domain to the list of identities for your Amazon SES account in the current
+        /// AWS Region and attempts to verify it. For more information about verifying domains,
+        /// see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying
         /// Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> 
         /// 
         ///  
@@ -4483,9 +4501,9 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Adds an email address to the list of identities for your Amazon SES account and attempts
-        /// to verify it. As a result of executing this operation, a verification email is sent
-        /// to the specified address.
+        /// Adds an email address to the list of identities for your Amazon SES account in the
+        /// current AWS region and attempts to verify it. As a result of executing this operation,
+        /// a verification email is sent to the specified address.
         /// 
         ///  
         /// <para>

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Represents a request to return the email sending status for your Amazon SES account.
+    /// Represents a request to return the email sending status for your Amazon SES account
+    /// in the current AWS Region.
     /// </summary>
     public partial class GetAccountSendingEnabledResponse : AmazonWebServiceResponse
     {
@@ -37,7 +38,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Describes whether email sending is enabled or disabled for your Amazon SES account.
+        /// Describes whether email sending is enabled or disabled for your Amazon SES account
+        /// in the current AWS Region.
         /// </para>
         /// </summary>
         public bool Enabled
