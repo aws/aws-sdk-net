@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.283.0",
+    "ProductVersion" : "3.3.284.0",
     "CoreVersion"    : "3.3.22.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.6.6",
+            "Version" : "3.3.6.7",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.10.1",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"

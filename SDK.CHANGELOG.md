@@ -1,3 +1,9 @@
+### 3.3.284.0 (2018-05-18 20:27 UTC)
+* IoT (3.3.11.0)
+	* We are releasing DeleteJob and DeleteJobExecution APIs to allow customer to delete resources created using AWS IoT Jobs.
+* SimpleEmail (3.3.6.7)
+	* Fixed a broken link in the documentation for S3Action.
+
 ### 3.3.283.0 (2018-05-17 21:36 UTC)
 * CodeDeploy (3.3.10.1)
 	* Documentation updates for codedeploy
