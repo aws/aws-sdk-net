@@ -116,6 +116,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 return new OperationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("StackInstanceNotFoundException"))
+            {
+                return new StackInstanceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("StackSetNotFoundException"))
             {
                 return new StackSetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -29,7 +29,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStackSet operation.
-    /// Updates the stack set and <i>all</i> associated stack instances.
+    /// Updates the stack set, and associated stack instances in the specified accounts and
+    /// regions.
     /// 
     ///  
     /// <para>
@@ -41,17 +42,54 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class UpdateStackSetRequest : AmazonCloudFormationRequest
     {
+        private List<string> _accounts = new List<string>();
         private string _administrationRoleARN;
         private List<string> _capabilities = new List<string>();
         private string _description;
+        private string _executionRoleName;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private List<Parameter> _parameters = new List<Parameter>();
+        private List<string> _regions = new List<string>();
         private string _stackSetName;
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
         private string _templateURL;
         private bool? _usePreviousTemplate;
+
+        /// <summary>
+        /// Gets and sets the property Accounts. 
+        /// <para>
+        /// The accounts in which to update associated stack instances. If you specify accounts,
+        /// you must also specify the regions in which to update stack set instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update <i>all</i> the stack instances associated with this stack set, do not specify
+        /// the <code>Accounts</code> or <code>Regions</code> properties.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code>
+        /// or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code>
+        /// property, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+        /// prior to updating the stack instances in the specified accounts and regions. If the
+        /// stack set update does not include changes to the template or parameters, AWS CloudFormation
+        /// updates the stack instances in the specified accounts and regions, while leaving all
+        /// other stack instances with their existing stack instance status. 
+        /// </para>
+        /// </summary>
+        public List<string> Accounts
+        {
+            get { return this._accounts; }
+            set { this._accounts = value; }
+        }
+
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
+        {
+            return this._accounts != null && this._accounts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AdministrationRoleARN. 
@@ -175,6 +213,38 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionRoleName. 
+        /// <para>
+        /// The name of the IAM execution role to use to update the stack set. If you do not specify
+        /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code>
+        /// role for the stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify an IAM role only if you are using customized execution roles to control which
+        /// stack resources users and groups can include in their stack sets. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you specify a customized execution role, AWS CloudFormation uses that role to
+        /// update the stack. If you do not specify a customized execution role, AWS CloudFormation
+        /// performs the update using the role previously associated with the stack set, so long
+        /// as you have permissions to perform operations on the stack set.
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleName
+        {
+            get { return this._executionRoleName; }
+            set { this._executionRoleName = value; }
+        }
+
+        // Check to see if ExecutionRoleName property is set
+        internal bool IsSetExecutionRoleName()
+        {
+            return this._executionRoleName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
         /// The unique ID for this stack set operation. 
@@ -242,6 +312,40 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The regions in which to update associated stack instances. If you specify regions,
+        /// you must also specify accounts in which to update stack set instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update <i>all</i> the stack instances associated with this stack set, do not specify
+        /// the <code>Accounts</code> or <code>Regions</code> properties.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code>
+        /// or <code>TemplateURL</code> properties are specified), or the <code>Parameters</code>
+        /// property, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+        /// prior to updating the stack instances in the specified accounts and regions. If the
+        /// stack set update does not include changes to the template or parameters, AWS CloudFormation
+        /// updates the stack instances in the specified accounts and regions, while leaving all
+        /// other stack instances with their existing stack instance status. 
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
         }
 
         /// <summary>

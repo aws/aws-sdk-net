@@ -36,6 +36,7 @@ namespace Amazon.CloudFormation.Model
         private string _administrationRoleARN;
         private DateTime? _creationTimestamp;
         private DateTime? _endTimestamp;
+        private string _executionRoleName;
         private string _operationId;
         private StackSetOperationPreferences _operationPreferences;
         private bool? _retainStacks;
@@ -128,6 +129,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetEndTimestamp()
         {
             return this._endTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleName. 
+        /// <para>
+        /// The name of the IAM execution role used to create or update the stack set.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized execution roles to control which stack resources users and groups can
+        /// include in their stack sets. 
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleName
+        {
+            get { return this._executionRoleName; }
+            set { this._executionRoleName = value; }
+        }
+
+        // Check to see if ExecutionRoleName property is set
+        internal bool IsSetExecutionRoleName()
+        {
+            return this._executionRoleName != null;
         }
 
         /// <summary>

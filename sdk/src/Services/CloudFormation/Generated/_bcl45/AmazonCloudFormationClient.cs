@@ -2260,7 +2260,8 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Updates the stack set and <i>all</i> associated stack instances.
+        /// Updates the stack set, and associated stack instances in the specified accounts and
+        /// regions.
         /// 
         ///  
         /// <para>
@@ -2282,6 +2283,9 @@ namespace Amazon.CloudFormation
         /// <exception cref="Amazon.CloudFormation.Model.OperationInProgressException">
         /// Another operation is currently in progress for this stack set. Only one operation
         /// can be performed for a stack set at a given time.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.StackInstanceNotFoundException">
+        /// The specified stack instance doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
         /// The specified stack set doesn't exist.

@@ -73,6 +73,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExecutionRoleName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExecutionRoleName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;

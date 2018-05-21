@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private string _administrationRoleARN;
         private List<string> _capabilities = new List<string>();
         private string _description;
+        private string _executionRoleName;
         private List<Parameter> _parameters = new List<Parameter>();
         private string _stackSetARN;
         private string _stackSetId;
@@ -55,8 +56,9 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// stack sets within the same administrator account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+        /// Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string AdministrationRoleARN
@@ -109,6 +111,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleName. 
+        /// <para>
+        /// The name of the IAM execution role used to create or update the stack set. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use customized execution roles to control which stack resources users and groups can
+        /// include in their stack sets. 
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleName
+        {
+            get { return this._executionRoleName; }
+            set { this._executionRoleName = value; }
+        }
+
+        // Check to see if ExecutionRoleName property is set
+        internal bool IsSetExecutionRoleName()
+        {
+            return this._executionRoleName != null;
         }
 
         /// <summary>

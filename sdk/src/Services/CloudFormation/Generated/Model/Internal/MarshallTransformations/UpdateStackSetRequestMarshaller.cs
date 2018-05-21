@@ -58,6 +58,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAccounts())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Accounts)
+                    {
+                        request.Parameters.Add("Accounts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetAdministrationRoleARN())
                 {
                     request.Parameters.Add("AdministrationRoleARN", StringUtils.FromString(publicRequest.AdministrationRoleARN));
@@ -74,6 +83,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetExecutionRoleName())
+                {
+                    request.Parameters.Add("ExecutionRoleName", StringUtils.FromString(publicRequest.ExecutionRoleName));
                 }
                 if(publicRequest.IsSetOperationId())
                 {
@@ -132,6 +145,15 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
                         }
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRegions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Regions)
+                    {
+                        request.Parameters.Add("Regions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }

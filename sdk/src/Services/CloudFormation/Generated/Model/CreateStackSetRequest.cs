@@ -37,6 +37,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _capabilities = new List<string>();
         private string _clientRequestToken;
         private string _description;
+        private string _executionRoleName;
         private List<Parameter> _parameters = new List<Parameter>();
         private string _stackSetName;
         private List<Tag> _tags = new List<Tag>();
@@ -53,8 +54,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Specify an IAM role only if you are using customized administrator roles to control
         /// which users or groups can manage specific stack sets within the same administrator
-        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-        /// Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// account. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+        /// Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string AdministrationRoleARN
@@ -182,6 +184,31 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleName. 
+        /// <para>
+        /// The name of the IAM execution role to use to create the stack set. If you do not specify
+        /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code>
+        /// role for the stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify an IAM role only if you are using customized execution roles to control which
+        /// stack resources users and groups can include in their stack sets. 
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleName
+        {
+            get { return this._executionRoleName; }
+            set { this._executionRoleName = value; }
+        }
+
+        // Check to see if ExecutionRoleName property is set
+        internal bool IsSetExecutionRoleName()
+        {
+            return this._executionRoleName != null;
         }
 
         /// <summary>
