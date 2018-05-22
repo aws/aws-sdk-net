@@ -460,6 +460,12 @@ namespace Amazon.ECS.Model
         /// Remote API</a> and the <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code>
+        /// networkMode.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Hostname
         {

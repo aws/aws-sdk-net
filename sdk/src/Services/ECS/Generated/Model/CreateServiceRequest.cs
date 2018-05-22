@@ -94,10 +94,10 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Sort the valid container instances by the fewest number of running tasks for this
-    /// service in the same Availability Zone as the instance. For example, if zone A has
-    /// one running service task and zones B and C each have zero, valid container instances
-    /// in either zone B or C are considered optimal for placement.
+    /// Sort the valid container instances, giving priority to instances that have the fewest
+    /// number of running tasks for this service in their respective Availability Zone. For
+    /// example, if zone A has one running service task and zones B and C each have zero,
+    /// valid container instances in either zone B or C are considered optimal for placement.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -128,8 +128,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// Up to 32 ASCII characters are allowed.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 32 ASCII characters are allowed.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -266,6 +266,15 @@ namespace Amazon.ECS.Model
         /// definition), and the container port to access from the load balancer. When a task
         /// from this service is placed on a container instance, the container instance and port
         /// combination is registered as a target in the target group specified here.
+        /// </para>
+        ///  
+        /// <para>
+        /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
+        /// with the Fargate launch type) only support Application Load Balancers and Network
+        /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+        /// target groups for these services, you must choose <code>ip</code> as the target type,
+        /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -425,9 +434,16 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceRegistries. 
         /// <para>
         /// The details of the service discovery registries you want to assign to this service.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
         /// Discovery</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Service discovery is supported for Fargate tasks if using platform version v1.1.0
+        /// or later. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// Fargate Platform Versions</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries
         {

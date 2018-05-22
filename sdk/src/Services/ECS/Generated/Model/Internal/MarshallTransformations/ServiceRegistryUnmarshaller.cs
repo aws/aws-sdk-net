@@ -64,6 +64,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("containerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("containerPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

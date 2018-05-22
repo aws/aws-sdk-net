@@ -117,10 +117,16 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SharedMemorySize. 
         /// <para>
-        /// The value for the size of the <code>/dev/shm</code> volume. This parameter maps to
-        /// the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
+        /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code>
+        /// parameter is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int SharedMemorySize
         {
@@ -137,10 +143,16 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Tmpfs. 
         /// <para>
-        /// The container path, mount options, and size of the tmpfs mount. This parameter maps
-        /// to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter
+        /// maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter
+        /// is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Tmpfs> Tmpfs
         {

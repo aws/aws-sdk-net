@@ -209,6 +209,15 @@ namespace Amazon.ECS.Model
         /// name, the container name (as it appears in a container definition), and the container
         /// port to access from the load balancer.
         /// </para>
+        ///  
+        /// <para>
+        /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
+        /// with the Fargate launch type) only support Application Load Balancers and Network
+        /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+        /// target groups for these services, you must choose <code>ip</code> as the target type,
+        /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
+        /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
         {

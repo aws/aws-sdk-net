@@ -83,7 +83,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size of the tmpfs volume.
+        /// The size (in MiB) of the tmpfs volume.
         /// </para>
         /// </summary>
         public int Size

@@ -228,12 +228,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RemainingResources. 
         /// <para>
         /// For CPU and memory resource types, this parameter describes the remaining CPU and
-        /// memory on the that has not already been allocated to tasks (and is therefore available
-        /// for new tasks). For port resource types, this parameter describes the ports that were
-        /// reserved by the Amazon ECS container agent (at instance registration time) and any
-        /// task containers that have reserved port mappings on the host (with the <code>host</code>
-        /// or <code>bridge</code> network mode). Any port that is not specified here is available
-        /// for new tasks.
+        /// memory that has not already been allocated to tasks and is therefore available for
+        /// new tasks. For port resource types, this parameter describes the ports that were reserved
+        /// by the Amazon ECS container agent (at instance registration time) and any task containers
+        /// that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+        /// network mode). Any port that is not specified here is available for new tasks.
         /// </para>
         /// </summary>
         public List<Resource> RemainingResources

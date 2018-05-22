@@ -45,6 +45,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ServiceRegistry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContainerName())
+            {
+                context.Writer.WritePropertyName("containerName");
+                context.Writer.Write(requestObject.ContainerName);
+            }
+
+            if(requestObject.IsSetContainerPort())
+            {
+                context.Writer.WritePropertyName("containerPort");
+                context.Writer.Write(requestObject.ContainerPort);
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
