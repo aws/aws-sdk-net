@@ -105,6 +105,10 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidCrossAccountRoleException">
+        /// Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
+        /// instances during the assessment run.
+        /// </exception>
         /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
