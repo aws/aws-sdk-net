@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.NETCore.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.CoreCLR", "..\sdk\src\Services\S3\AWSSDK.S3.CoreCLR.csproj", "{8433CB66-751C-4A91-BC10-0B13DB902C04}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.Configuration.AWSSystemsManager", "src\AWSSDK.Extensions.Configuration.AWSSystemsManager\AWSSDK.Extensions.Configuration.AWSSystemsManager.csproj", "{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.AWSSystemsManagerTests", "test\Configuration.AWSSystemsManagerTests\Configuration.AWSSystemsManagerTests.csproj", "{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{8433CB66-751C-4A91-BC10-0B13DB902C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8433CB66-751C-4A91-BC10-0B13DB902C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8433CB66-751C-4A91-BC10-0B13DB902C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +62,10 @@ Global
 		{2C63DA02-EB94-443A-A986-B0E2CA5FA558} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
 		{C5AA3F6E-7BC8-4E26-8A4D-406938FC95FF} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{8433CB66-751C-4A91-BC10-0B13DB902C04} = {0BA39F07-84D6-420B-82D3-6DC3AF016C65}
+		{973BA9B2-CA2B-4E6C-B2E2-E011E14A1E24} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
+		{802F5AE1-B2DE-43D7-B3B8-F0FE50809E24} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9768D97A-622D-4289-A285-B2BEC7874017}
 	EndGlobalSection
 EndGlobal

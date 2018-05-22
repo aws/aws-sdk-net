@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package> 
+  <metadata> 
+    <id>AWSSDK.Extensions.Configuration.AWSSystemsManager</id>
+    <title>AWSSDK - ASP.NET Configuration Extensions for AWS Systems Manager</title>
+    <version>3.3.0.0</version>
+    <authors>Amazon Web Services, Ken Hundley</authors>
+    <description>ASP.NET Configuration Extensions for AWS Systems Manager</description>
+    <language>en-US</language>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon aws-sdk-v3</tags>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
+	
+    <dependencies>
+      <group targetFramework="netstandard1.3">
+        <dependency id="AWSSDK.Extensions.NETCore.Setup" version="[3.3.0, 3.4)" />
+        <dependency id="AWSSDK.SimpleSystemsManagement" version="[3.3.15, 3.4)" />
+        <dependency id="Microsoft.Extensions.Configuration" version="1.1.0" />
+      </group>
+    </dependencies>
+	
+  </metadata> 
+  <files>
+
+    <file src=".\bin\Release\netstandard1.3\AWSSDK.Extensions.Configuration.AWSSystemsManager.dll" target="lib\netstandard1.3" />
+    <file src=".\bin\Release\netstandard1.3\AWSSDK.Extensions.Configuration.AWSSystemsManager.pdb" target="lib\netstandard1.3" />
+
+  </files>
+</package>

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.0" />
+    <PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.3.15" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.0" />
+  </ItemGroup>
+</Project>
