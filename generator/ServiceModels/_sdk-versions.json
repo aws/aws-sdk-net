@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.285.0",
+    "ProductVersion" : "3.3.286.0",
     "CoreVersion"    : "3.3.22.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.13.3",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -457,7 +457,7 @@
             "InPreview"               : false
         },
         "Inspector"                       : {
-            "Version" : "3.3.4.5",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
