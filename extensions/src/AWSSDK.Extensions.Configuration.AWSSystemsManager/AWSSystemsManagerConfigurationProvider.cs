@@ -33,7 +33,7 @@ namespace Microsoft.Extensions.Configuration
     public class AWSSystemsManagerConfigurationProvider : ConfigurationProvider
     {
         private readonly AWSSystemsManagerConfigurationSource _configurationSource;
-        private readonly IAWSSystemsManagerProcessor _iawsSystemsManagerProcessor;
+        private readonly IAWSSystemsManagerProcessor _awsSystemsManagerProcessor;
 
         /// <inheritdoc />
         /// <summary>
@@ -44,10 +44,10 @@ namespace Microsoft.Extensions.Configuration
         {
         }
 
-        internal AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource, IAWSSystemsManagerProcessor iawsSystemsManagerProcessor)
+        internal AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource, IAWSSystemsManagerProcessor awsSystemsManagerProcessor)
         {
             _configurationSource = configurationSource ?? throw new ArgumentNullException(nameof(configurationSource));
-            _iawsSystemsManagerProcessor = iawsSystemsManagerProcessor;
+            _awsSystemsManagerProcessor = awsSystemsManagerProcessor;
             if (configurationSource.AwsOptions == null) throw new ArgumentNullException(nameof(configurationSource.AwsOptions));
             if (configurationSource.Path == null) throw new ArgumentNullException(nameof(configurationSource.Path));
 
@@ -74,7 +74,7 @@ namespace Microsoft.Extensions.Configuration
             {
                 var path = _configurationSource.Path;
                 var awsOptions = _configurationSource.AwsOptions;
-                var parameters = await _iawsSystemsManagerProcessor.GetParametersByPath(awsOptions, path);
+                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path);
 
                 Data = ProcessParameters(parameters, path);
             }
