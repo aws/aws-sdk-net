@@ -261,6 +261,10 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Specifies the friendly name of the new secret.
         /// </para>
+        ///  
+        /// <para>
+        /// The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+        /// </para>
         /// </summary>
         public string Name
         {
