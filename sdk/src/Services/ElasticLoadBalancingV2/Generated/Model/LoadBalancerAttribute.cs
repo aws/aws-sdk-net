@@ -40,46 +40,56 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The name of the attribute.
         /// </para>
+        ///  
+        /// <para>
+        /// The following attributes are supported by both Application Load Balancers and Network
+        /// Load Balancers:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether
-        /// access logs stored in Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the
-        /// S3 bucket for the access logs. This attribute is required if access logs in Amazon
-        /// S3 are enabled. The bucket must exist in the same region as the load balancer and
-        /// have a bucket policy that grants Elastic Load Balancing permission to write to the
-        /// bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for
-        /// the location in the S3 bucket. If you don't specify a prefix, the access logs are
-        /// stored in the root of the bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
-        /// is enabled. The value is <code>true</code> or <code>false</code>.
+        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by only Application Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled.
+        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle
-        /// timeout value, in seconds. The valid range is 1-4000. The default is 60 seconds.
+        ///  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
+        /// This attribute is required if access logs are enabled. The bucket must exist in the
+        /// same region as the load balancer and have a bucket policy that grants Elastic Load
+        /// Balancing permission to write to the bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates
-        /// whether cross-zone load balancing is enabled. The value is <code>true</code> or <code>false</code>.
-        /// The default is <code>false</code>.
+        ///  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket
+        /// for the access logs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether
-        /// HTTP/2 is enabled. The value is <code>true</code> or <code>false</code>. The default
-        /// is <code>true</code>.
+        ///  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
+        /// valid range is 1-4000 seconds. The default is 60 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value
+        /// is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by only Network Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
+        /// balancing is enabled. The value is <code>true</code> or <code>false</code>. The default
+        /// is <code>false</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
