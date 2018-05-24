@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroup;
         private DateTime? _earliestBacktrackTime;
         private DateTime? _earliestRestorableTime;
+        private List<string> _enabledCloudwatchLogsExports = new List<string>();
         private string _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -432,6 +433,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEarliestRestorableTime()
         {
             return this._earliestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnabledCloudwatchLogsExports. 
+        /// <para>
+        /// A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledCloudwatchLogsExports
+        {
+            get { return this._enabledCloudwatchLogsExports; }
+            set { this._enabledCloudwatchLogsExports = value; }
+        }
+
+        // Check to see if EnabledCloudwatchLogsExports property is set
+        internal bool IsSetEnabledCloudwatchLogsExports()
+        {
+            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
         }
 
         /// <summary>

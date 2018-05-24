@@ -70,6 +70,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
                 }
+                if(publicRequest.IsSetCloudwatchLogsExportConfiguration())
+                {
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetDisableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.CloudwatchLogsExportConfiguration.IsSetEnableLogTypes())
+                    {
+                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes)
+                        {
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));

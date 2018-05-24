@@ -282,7 +282,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to CloudWatch
-        /// Logs for a specific DB instance or DB cluster.
+        /// Logs for a specific DB instance.
         /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
@@ -667,6 +667,12 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
         /// True to enable Performance Insights for the DB instance, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
+        /// Guide</i>. 
         /// </para>
         /// </summary>
         public bool EnablePerformanceInsights

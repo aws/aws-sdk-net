@@ -324,6 +324,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// True to enable Performance Insights for the read replica, and otherwise false. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
+        /// Guide</i>. 
+        /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
         {

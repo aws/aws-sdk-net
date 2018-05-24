@@ -1754,6 +1754,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A DB security group controls access to EC2-Classic DB instances that are not in a
+        /// VPC.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup service method.</param>
         /// 
