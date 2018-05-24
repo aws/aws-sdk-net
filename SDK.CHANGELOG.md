@@ -1,3 +1,13 @@
+### 3.3.287.0 (2018-05-24 21:56 UTC)
+* CodeBuild (3.3.11.0)
+	* AWS CodeBuild Adds Support for Windows Builds.
+* ElasticLoadBalancingV2 (3.3.8.7)
+	* Updated elasticloadbalancingV2 documentation with slow start mode details.  The slow start mode can be used to gradually increase the number of requests forwarded by a load balancer to a newly added target in a target group. It provides a new target an opportunity to warm up before it can handle its fair share of requests received from the load balancer. Slow start mode is disabled by default and can be enabled on a per target group basis.
+* RDS (3.3.24.0)
+	* This release adds CloudWatch Logs integration capabilities to RDS Aurora MySQL clusters
+* SecretsManager (3.3.0.8)
+	* Documentation updates for secretsmanager
+
 ### 3.3.286.0 (2018-05-22 22:09 UTC)
 * ECS (3.3.14.0)
 	* Amazon Elastic Container Service (ECS) adds service discovery for services that use host or bridged network mode. ECS can now also register instance IPs for active tasks using bridged and host networking with Route 53, making them available via DNS.
