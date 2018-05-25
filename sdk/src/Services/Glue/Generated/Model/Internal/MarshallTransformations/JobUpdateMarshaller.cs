@@ -116,6 +116,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxRetries);
             }
 
+            if(requestObject.IsSetNotificationProperty())
+            {
+                context.Writer.WritePropertyName("NotificationProperty");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NotificationPropertyMarshaller.Instance;
+                marshaller.Marshall(requestObject.NotificationProperty, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");

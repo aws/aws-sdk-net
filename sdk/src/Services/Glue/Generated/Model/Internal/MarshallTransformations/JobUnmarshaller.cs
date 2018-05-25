@@ -130,6 +130,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationProperty", targetDepth))
+                {
+                    var unmarshaller = NotificationPropertyUnmarshaller.Instance;
+                    unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

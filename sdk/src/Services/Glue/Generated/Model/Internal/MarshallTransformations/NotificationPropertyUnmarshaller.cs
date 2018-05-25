@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Action Object
+    /// Response Unmarshaller for NotificationProperty Object
     /// </summary>  
-    public class ActionUnmarshaller : IUnmarshaller<Action, XmlUnmarshallerContext>, IUnmarshaller<Action, JsonUnmarshallerContext>
+    public class NotificationPropertyUnmarshaller : IUnmarshaller<NotificationProperty, XmlUnmarshallerContext>, IUnmarshaller<NotificationProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Action IUnmarshaller<Action, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NotificationProperty IUnmarshaller<NotificationProperty, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Action Unmarshall(JsonUnmarshallerContext context)
+        public NotificationProperty Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Action unmarshalledObject = new Action();
+            NotificationProperty unmarshalledObject = new NotificationProperty();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arguments", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Arguments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NotificationProperty", targetDepth))
-                {
-                    var unmarshaller = NotificationPropertyUnmarshaller.Instance;
-                    unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timeout", targetDepth))
+                if (context.TestExpression("NotifyDelayAfter", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotifyDelayAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActionUnmarshaller _instance = new ActionUnmarshaller();        
+        private static NotificationPropertyUnmarshaller _instance = new NotificationPropertyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionUnmarshaller Instance
+        public static NotificationPropertyUnmarshaller Instance
         {
             get
             {
