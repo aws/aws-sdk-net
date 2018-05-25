@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.287.0",
+    "ProductVersion" : "3.3.288.0",
     "CoreVersion"    : "3.3.22.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -69,7 +69,7 @@
             "InPreview"               : false
         },
         "ConfigService"     : {
-            "Version" : "3.3.17.0",
+            "Version" : "3.3.18.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.11.0",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.11.3",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.7.2",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"

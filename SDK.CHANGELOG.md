@@ -1,3 +1,13 @@
+### 3.3.288.0 (2018-05-25 21:36 UTC)
+* AppStream (3.3.12.0)
+	* This API update enables customers to control whether users can transfer data between their local devices and their streaming applications through file uploads and downloads, clipboard operations, or printing to local devices
+* ConfigService (3.3.18.0)
+	* AWS Config adds support for retention period, allowing you to specify a retention period for your AWS Config configuration items.
+* Glue (3.3.8.0)
+	* AWS Glue now sends a delay notification to Amazon CloudWatch Events when an ETL job runs longer than the specified delay notification threshold.
+* IoT (3.3.12.0)
+	* We are exposing DELETION_IN_PROGRESS as a new job status in regards to the release of DeleteJob API.
+
 ### 3.3.287.0 (2018-05-24 21:56 UTC)
 * CodeBuild (3.3.11.0)
 	* AWS CodeBuild Adds Support for Windows Builds.
