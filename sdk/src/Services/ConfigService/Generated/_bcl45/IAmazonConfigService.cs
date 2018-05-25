@@ -417,6 +417,40 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteRetentionConfiguration
+
+
+        /// <summary>
+        /// Deletes the retention configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRetentionConfiguration service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
+        /// You have specified a retention configuration that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        Task<DeleteRetentionConfigurationResponse> DeleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
 
@@ -1292,6 +1326,53 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeRetentionConfigurations
+
+
+        /// <summary>
+        /// Returns the details of one or more retention configurations. If the retention configuration
+        /// name is not specified, this action returns the details for all the retention configurations
+        /// for that account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, AWS Config supports only one retention configuration per region in your
+        /// account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetentionConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRetentionConfigurations service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchRetentionConfigurationException">
+        /// You have specified a retention configuration that does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRetentionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetentionConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        Task<DescribeRetentionConfigurationsResponse> DescribeRetentionConfigurationsAsync(DescribeRetentionConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAggregateComplianceDetailsByConfigRule
 
 
@@ -1623,7 +1704,10 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Returns a list of configuration items for the specified resource. The list contains
-        /// details about each state of the resource during the specified time interval.
+        /// details about each state of the resource during the specified time interval. If you
+        /// specified a retention period to retain your <code>ConfigurationItems</code> between
+        /// a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config returns the
+        /// <code>ConfigurationItems</code> for the specified retention period. 
         /// 
         ///  
         /// <para>
@@ -2102,6 +2186,52 @@ namespace Amazon.ConfigService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutRetentionConfiguration
+
+
+        /// <summary>
+        /// Creates and updates the retention configuration with details about retention period
+        /// (number of days) that AWS Config stores your historical information. The API creates
+        /// the <code>RetentionConfiguration</code> object and names the object as <b>default</b>.
+        /// When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling
+        /// the API modifies the default object. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, AWS Config supports only one retention configuration per region in your
+        /// account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutRetentionConfiguration service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfRetentionConfigurationsExceededException">
+        /// Failed to add the retention configuration because a retention configuration with that
+        /// name already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

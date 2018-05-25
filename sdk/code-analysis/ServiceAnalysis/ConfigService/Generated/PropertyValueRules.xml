@@ -45,6 +45,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteRetentionConfigurationRequest.RetentionConfigurationName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeliverConfigSnapshotRequest.DeliveryChannelName</property>
     <min>1</min>
     <max>256</max>
@@ -196,6 +202,11 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutRetentionConfigurationRequest.RetentionPeriodInDays</property>
+    <min>30</min>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StartConfigurationRecorderRequest.ConfigurationRecorderName</property>
@@ -398,6 +409,17 @@
     <property>Amazon.ConfigService.Model.PendingAggregationRequest.RequesterAwsRegion</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RetentionConfiguration.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.RetentionConfiguration.RetentionPeriodInDays</property>
+    <min>30</min>
+    <max>2557</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Scope.ComplianceResourceId</property>
