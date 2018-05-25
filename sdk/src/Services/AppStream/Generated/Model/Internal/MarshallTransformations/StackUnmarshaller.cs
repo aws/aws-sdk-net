@@ -118,6 +118,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
+                    unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

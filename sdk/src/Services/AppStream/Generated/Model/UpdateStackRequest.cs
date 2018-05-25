@@ -41,6 +41,7 @@ namespace Amazon.AppStream.Model
         private string _name;
         private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+        private List<UserSetting> _userSettings = new List<UserSetting>();
 
         /// <summary>
         /// Gets and sets the property AttributesToDelete. 
@@ -185,6 +186,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStorageConnectors()
         {
             return this._storageConnectors != null && this._storageConnectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserSettings. 
+        /// <para>
+        /// The actions that are enabled or disabled for users during their streaming sessions.
+        /// By default, these actions are enabled.
+        /// </para>
+        /// </summary>
+        public List<UserSetting> UserSettings
+        {
+            get { return this._userSettings; }
+            set { this._userSettings = value; }
+        }
+
+        // Check to see if UserSettings property is set
+        internal bool IsSetUserSettings()
+        {
+            return this._userSettings != null && this._userSettings.Count > 0; 
         }
 
     }
