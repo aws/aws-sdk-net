@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Save<T>(T value, DynamoDBOperationConfig operationConfig = null)
         {
-            SaveHelper<T>(value, operationConfig, false);
+            SaveHelper<T>(value, operationConfig);
         }
 
         #endregion
@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(object hashKey)
         {
-            return LoadHelper<T>(hashKey, null, null, false);
+            return LoadHelper<T>(hashKey, null, null);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(object hashKey, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(hashKey, null, operationConfig, false);
+            return LoadHelper<T>(hashKey, null, operationConfig);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(object hashKey, object rangeKey)
         {
-            return LoadHelper<T>(hashKey, rangeKey, null, false);
+            return LoadHelper<T>(hashKey, rangeKey, null);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(hashKey, rangeKey, operationConfig, false);
+            return LoadHelper<T>(hashKey, rangeKey, operationConfig);
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(T keyObject, DynamoDBOperationConfig operationConfig = null)
         {
-            return LoadHelper<T>(keyObject, operationConfig, false);
+            return LoadHelper<T>(keyObject, operationConfig);
         }
 
         #endregion
@@ -154,7 +154,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to delete.</param>
         public void Delete<T>(T value)
         {
-            DeleteHelper<T>(value, null, false);
+            DeleteHelper<T>(value, null);
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Delete<T>(T value, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(value, operationConfig, false);
+            DeleteHelper<T>(value, operationConfig);
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         public void Delete<T>(object hashKey)
         {
-            DeleteHelper<T>(hashKey, null, null, false);
+            DeleteHelper<T>(hashKey, null, null);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         public void Delete<T>(object hashKey, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(hashKey, null, operationConfig, false);
+            DeleteHelper<T>(hashKey, null, operationConfig);
         }
 
         /// <summary>
@@ -214,7 +214,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         public void Delete<T>(object hashKey, object rangeKey)
         {
-            DeleteHelper<T>(hashKey, rangeKey, null, false);
+            DeleteHelper<T>(hashKey, rangeKey, null);
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         public void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(hashKey, rangeKey, operationConfig, false);
+            DeleteHelper<T>(hashKey, rangeKey, operationConfig);
         }
 
         #endregion

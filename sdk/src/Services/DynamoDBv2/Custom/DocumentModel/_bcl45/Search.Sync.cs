@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Next set of Documents matching the search parameters</returns>
         public List<Document> GetNextSet()
         {
-            return GetNextSetHelper(false);
+            return GetNextSetHelper();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List of Documents matching the search parameters</returns>
         public List<Document> GetRemaining()
         {
-            return GetRemainingHelper(false);
+            return GetRemainingHelper();
         }
 
         #endregion
