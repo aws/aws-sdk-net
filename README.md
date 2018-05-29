@@ -277,6 +277,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.PI](https://www.nuget.org/packages/AWSSDK.PI/)
+	* Performance Insights is a feature of Amazon Relational Database Service (RDS) that helps you quickly assess the load on your database, and determine when and where to take action. You can use the SDK to retrieve Performance Insights data and integrate your monitoring solutions.
 * [AWSSDK.Pinpoint](https://www.nuget.org/packages/AWSSDK.Pinpoint/)
 	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
 * [AWSSDK.Polly](https://www.nuget.org/packages/AWSSDK.Polly/)

@@ -460,6 +460,10 @@
       <Project>{9539F8B3-78F6-4C4D-8A47-664D8476011F}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/PI/AWSSDK.PI.CodeAnalysis.csproj">
+      <Project>{580AC3E5-D981-4055-87A1-EF6985C35B7F}</Project>
+      <Name>AWSSDK.PI.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Pinpoint/AWSSDK.Pinpoint.CodeAnalysis.csproj">
       <Project>{82F5F402-030D-49B3-9AB7-1AF67F16EEA9}</Project>
       <Name>AWSSDK.Pinpoint.CodeAnalysis</Name>

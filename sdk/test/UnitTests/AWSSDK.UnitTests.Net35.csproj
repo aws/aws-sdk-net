@@ -135,6 +135,7 @@
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Organizations\AWSSDK.Organizations.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\PI\AWSSDK.PI.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net35.csproj"/>
