@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// Information about the rule.
+        /// Information about the modified rule.
         /// </para>
         /// </summary>
         public List<Rule> Rules

@@ -31,6 +31,14 @@ namespace Amazon.ElasticLoadBalancingV2
     {
 
         /// <summary>
+        /// Constant AuthenticateCognito for ActionTypeEnum
+        /// </summary>
+        public static readonly ActionTypeEnum AuthenticateCognito = new ActionTypeEnum("authenticate-cognito");
+        /// <summary>
+        /// Constant AuthenticateOidc for ActionTypeEnum
+        /// </summary>
+        public static readonly ActionTypeEnum AuthenticateOidc = new ActionTypeEnum("authenticate-oidc");
+        /// <summary>
         /// Constant Forward for ActionTypeEnum
         /// </summary>
         public static readonly ActionTypeEnum Forward = new ActionTypeEnum("forward");
@@ -64,6 +72,114 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ActionTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthenticateCognitoActionConditionalBehaviorEnum.
+    /// </summary>
+    public class AuthenticateCognitoActionConditionalBehaviorEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for AuthenticateCognitoActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateCognitoActionConditionalBehaviorEnum Allow = new AuthenticateCognitoActionConditionalBehaviorEnum("allow");
+        /// <summary>
+        /// Constant Authenticate for AuthenticateCognitoActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateCognitoActionConditionalBehaviorEnum Authenticate = new AuthenticateCognitoActionConditionalBehaviorEnum("authenticate");
+        /// <summary>
+        /// Constant Deny for AuthenticateCognitoActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateCognitoActionConditionalBehaviorEnum Deny = new AuthenticateCognitoActionConditionalBehaviorEnum("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticateCognitoActionConditionalBehaviorEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticateCognitoActionConditionalBehaviorEnum FindValue(string value)
+        {
+            return FindValue<AuthenticateCognitoActionConditionalBehaviorEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticateCognitoActionConditionalBehaviorEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthenticateOidcActionConditionalBehaviorEnum.
+    /// </summary>
+    public class AuthenticateOidcActionConditionalBehaviorEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for AuthenticateOidcActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateOidcActionConditionalBehaviorEnum Allow = new AuthenticateOidcActionConditionalBehaviorEnum("allow");
+        /// <summary>
+        /// Constant Authenticate for AuthenticateOidcActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateOidcActionConditionalBehaviorEnum Authenticate = new AuthenticateOidcActionConditionalBehaviorEnum("authenticate");
+        /// <summary>
+        /// Constant Deny for AuthenticateOidcActionConditionalBehaviorEnum
+        /// </summary>
+        public static readonly AuthenticateOidcActionConditionalBehaviorEnum Deny = new AuthenticateOidcActionConditionalBehaviorEnum("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticateOidcActionConditionalBehaviorEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticateOidcActionConditionalBehaviorEnum FindValue(string value)
+        {
+            return FindValue<AuthenticateOidcActionConditionalBehaviorEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticateOidcActionConditionalBehaviorEnum(string value)
         {
             return FindValue(value);
         }

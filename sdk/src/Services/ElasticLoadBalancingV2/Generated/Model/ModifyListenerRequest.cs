@@ -51,7 +51,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The default SSL server certificate.
+        /// [HTTPS listeners] The default SSL server certificate. You must provide exactly one
+        /// certificate. To create a certificate list, use <a>AddListenerCertificates</a>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -69,9 +70,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The default action. For Application Load Balancers, the protocol of the specified
-        /// target group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the
-        /// specified target group must be TCP.
+        /// The actions for the default rule. The rule must include one forward action.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>forward</code>, you can specify a single target group.
+        /// The protocol of the target group must be HTTP or HTTPS for an Application Load Balancer
+        /// or TCP for a Network Load Balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>authenticate-oidc</code>, you can use an identity provider
+        /// that is OpenID Connect (OIDC) compliant to authenticate users as they access your
+        /// application.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito
+        /// to authenticate users as they access your application.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions
@@ -144,8 +160,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// The security policy that defines which protocols and ciphers are supported. For more
-        /// information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+        /// [HTTPS listeners] The security policy that defines which protocols and ciphers are
+        /// supported. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
         /// Policies</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>

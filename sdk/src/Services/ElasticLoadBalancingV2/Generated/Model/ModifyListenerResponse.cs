@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Listeners. 
         /// <para>
-        /// Information about the modified listeners.
+        /// Information about the modified listener.
         /// </para>
         /// </summary>
         public List<Listener> Listeners
