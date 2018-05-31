@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.289.0",
-    "CoreVersion"    : "3.3.22.5",
+    "ProductVersion" : "3.3.290.0",
+    "CoreVersion"    : "3.3.23.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.8.7",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.1"
@@ -1117,6 +1117,14 @@
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.22.5"
+            },
+            "InPreview"               : false
+        },
+        "Neptune"                         : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.23.0"
             },
             "InPreview"               : false
         }

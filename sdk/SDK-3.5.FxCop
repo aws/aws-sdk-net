@@ -120,6 +120,7 @@
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mq/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mturk/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/neptune/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/organizations/bin/Release/net35/</Directory>
@@ -261,6 +262,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MQ.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MTurk.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Neptune.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Organizations.dll" Analyze="True" AnalyzeAllChildren="True" />
