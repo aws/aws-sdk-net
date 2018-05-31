@@ -213,6 +213,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MQ.CodeAnalysis" Path="|AWSSDK.MQ.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MTurk.CodeAnalysis" Path="|AWSSDK.MTurk.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MTurk.CodeAnalysis" Path="|AWSSDK.MTurk.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OpsWorks.CodeAnalysis" Path="|AWSSDK.OpsWorks.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.OpsWorks.CodeAnalysis" Path="|AWSSDK.OpsWorks.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OpsWorksCM.CodeAnalysis" Path="|AWSSDK.OpsWorksCM.CodeAnalysis|"/>

@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.AddSourceIdentifierToSubscription(Amazon.Neptune.Model.AddSourceIdentifierToSubscriptionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.AddSourceIdentifierToSubscription(Amazon.Neptune.Model.AddSourceIdentifierToSubscriptionRequest)" />
+            <member name="T:Amazon.Neptune.Model.AddSourceIdentifierToSubscriptionRequest" />
+            <member name="T:Amazon.Neptune.Model.AddSourceIdentifierToSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example add a source identifier to an event notification subscription.
+                </para>
+                <code
+                    title="To add a source identifier to an event notification subscription"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="add-source-identifier-to-subscription-93fb6a15-0a59-4577-a7b5-e12db9752c14" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.AddTagsToResource(Amazon.Neptune.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.AddTagsToResource(Amazon.Neptune.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.Neptune.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.Neptune.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a tag to an option group.
+                </para>
+                <code
+                    title="To add tags to a resource"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="add-tags-to-resource-fa99ef50-228b-449d-b893-ca4d4e9768ab" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ApplyPendingMaintenanceAction(Amazon.Neptune.Model.ApplyPendingMaintenanceActionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ApplyPendingMaintenanceAction(Amazon.Neptune.Model.ApplyPendingMaintenanceActionRequest)" />
+            <member name="T:Amazon.Neptune.Model.ApplyPendingMaintenanceActionRequest" />
+            <member name="T:Amazon.Neptune.Model.ApplyPendingMaintenanceActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example immediately applies a pending system update to a DB instance.
+                </para>
+                <code
+                    title="To apply a pending maintenance action"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="apply-pending-maintenance-action-2a026047-8bbb-47fc-b695-abad9f308c24" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CopyDBClusterParameterGroup(Amazon.Neptune.Model.CopyDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CopyDBClusterParameterGroup(Amazon.Neptune.Model.CopyDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.CopyDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.CopyDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example copies a DB cluster parameter group.
+                </para>
+                <code
+                    title="To copy a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="copy-db-cluster-parameter-group-6fefaffe-cde9-4dba-9f0b-d3f593572fe4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CopyDBClusterSnapshot(Amazon.Neptune.Model.CopyDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CopyDBClusterSnapshot(Amazon.Neptune.Model.CopyDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.Neptune.Model.CopyDBClusterSnapshotRequest" />
+            <member name="T:Amazon.Neptune.Model.CopyDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example copies an automated snapshot of a DB cluster to a new DB cluster snapshot.
+                </para>
+                <code
+                    title="To copy a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="to-copy-a-db-cluster-snapshot-1473879770564" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CopyDBParameterGroup(Amazon.Neptune.Model.CopyDBParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CopyDBParameterGroup(Amazon.Neptune.Model.CopyDBParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.CopyDBParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.CopyDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example copies a DB parameter group.
+                </para>
+                <code
+                    title="To copy a DB parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="copy-db-parameter-group-610d4dba-2c87-467f-ae5d-edd7f8e47349" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBCluster(Amazon.Neptune.Model.CreateDBClusterRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBCluster(Amazon.Neptune.Model.CreateDBClusterRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB cluster.
+                </para>
+                <code
+                    title="To create a DB cluster"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-cluster-423b998d-eba9-40dd-8e19-96c5b6e5f31d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBClusterParameterGroup(Amazon.Neptune.Model.CreateDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBClusterParameterGroup(Amazon.Neptune.Model.CreateDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB cluster parameter group.
+                </para>
+                <code
+                    title="To create a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-cluster-parameter-group-8eb1c3ae-1965-4262-afe3-ee134c4430b1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBClusterSnapshot(Amazon.Neptune.Model.CreateDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBClusterSnapshot(Amazon.Neptune.Model.CreateDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterSnapshotRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB cluster snapshot.
+                </para>
+                <code
+                    title="To create a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-cluster-snapshot-" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBInstance(Amazon.Neptune.Model.CreateDBInstanceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBInstance(Amazon.Neptune.Model.CreateDBInstanceRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBInstanceRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB instance.
+                </para>
+                <code
+                    title="To create a DB instance."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-instance-57eb5d16-8bf8-4c84-9709-1700322b37b9" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBParameterGroup(Amazon.Neptune.Model.CreateDBParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBParameterGroup(Amazon.Neptune.Model.CreateDBParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB parameter group.
+                </para>
+                <code
+                    title="To create a DB parameter group."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-parameter-group-42afcc37-12e9-4b6a-a55c-b8a141246e87" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateDBSubnetGroup(Amazon.Neptune.Model.CreateDBSubnetGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateDBSubnetGroup(Amazon.Neptune.Model.CreateDBSubnetGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateDBSubnetGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DB subnet group.
+                </para>
+                <code
+                    title="To create a DB subnet group."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-db-subnet-group-c3d162c2-0ec4-4955-ba89-18967615fdb8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.CreateEventSubscription(Amazon.Neptune.Model.CreateEventSubscriptionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.CreateEventSubscription(Amazon.Neptune.Model.CreateEventSubscriptionRequest)" />
+            <member name="T:Amazon.Neptune.Model.CreateEventSubscriptionRequest" />
+            <member name="T:Amazon.Neptune.Model.CreateEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an event notification subscription.
+                </para>
+                <code
+                    title="To create an event notification subscription"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="create-event-subscription-00dd0ee6-0e0f-4a38-ae83-e5f2ded5f69a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBCluster(Amazon.Neptune.Model.DeleteDBClusterRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBCluster(Amazon.Neptune.Model.DeleteDBClusterRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB cluster.
+                </para>
+                <code
+                    title="To delete a DB cluster."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-cluster-927fc2c8-6c67-4075-b1ba-75490be0f7d6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBClusterParameterGroup(Amazon.Neptune.Model.DeleteDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBClusterParameterGroup(Amazon.Neptune.Model.DeleteDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB cluster parameter group.
+                </para>
+                <code
+                    title="To delete a DB cluster parameter group."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-cluster-parameter-group-364f5555-ba0a-4cc8-979c-e769098924fc" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBClusterSnapshot(Amazon.Neptune.Model.DeleteDBClusterSnapshotRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBClusterSnapshot(Amazon.Neptune.Model.DeleteDBClusterSnapshotRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterSnapshotRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB cluster snapshot.
+                </para>
+                <code
+                    title="To delete a DB cluster snapshot."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-cluster-snapshot-c67e0d95-670e-4fb5-af90-6d9a70a91b07" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBInstance(Amazon.Neptune.Model.DeleteDBInstanceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBInstance(Amazon.Neptune.Model.DeleteDBInstanceRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBInstanceRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB instance.
+                </para>
+                <code
+                    title="To delete a DB instance."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-instance-4412e650-949c-488a-b32a-7d3038ebccc4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBParameterGroup(Amazon.Neptune.Model.DeleteDBParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBParameterGroup(Amazon.Neptune.Model.DeleteDBParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a DB parameter group.
+                </para>
+                <code
+                    title="To delete a DB parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="to-delete-a-db-parameter-group-1473888796509" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteDBSubnetGroup(Amazon.Neptune.Model.DeleteDBSubnetGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteDBSubnetGroup(Amazon.Neptune.Model.DeleteDBSubnetGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBSubnetGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB subnetgroup.
+                </para>
+                <code
+                    title="To delete a DB subnet group."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-subnet-group-4ae00375-511e-443d-a01d-4b9f552244aa" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DeleteEventSubscription(Amazon.Neptune.Model.DeleteEventSubscriptionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DeleteEventSubscription(Amazon.Neptune.Model.DeleteEventSubscriptionRequest)" />
+            <member name="T:Amazon.Neptune.Model.DeleteEventSubscriptionRequest" />
+            <member name="T:Amazon.Neptune.Model.DeleteEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DB event subscription.
+                </para>
+                <code
+                    title="To delete a DB event subscription."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="delete-db-event-subscription-d33567e3-1d5d-48ff-873f-0270453f4a75" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBClusterParameterGroups(Amazon.Neptune.Model.DescribeDBClusterParameterGroupsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBClusterParameterGroups(Amazon.Neptune.Model.DescribeDBClusterParameterGroupsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterParameterGroupsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified DB cluster parameter group.
+                </para>
+                <code
+                    title="To list DB cluster parameter group settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-cluster-parameter-groups-cf9c6e66-664e-4f57-8e29-a9080abfc013" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBClusterParameters(Amazon.Neptune.Model.DescribeDBClusterParametersRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBClusterParameters(Amazon.Neptune.Model.DescribeDBClusterParametersRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterParametersRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists system parameters for the specified DB cluster parameter group.
+                </para>
+                <code
+                    title="To list DB cluster parameters"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-cluster-parameters-98043c28-e489-41a7-b118-bfd96dc779a1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBClusters(Amazon.Neptune.Model.DescribeDBClustersRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBClusters(Amazon.Neptune.Model.DescribeDBClustersRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClustersRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified DB cluster.
+                </para>
+                <code
+                    title="To list DB clusters"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-clusters-7aae8861-cb95-4b3b-9042-f62df7698635" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBClusterSnapshotAttributes(Amazon.Neptune.Model.DescribeDBClusterSnapshotAttributesRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBClusterSnapshotAttributes(Amazon.Neptune.Model.DescribeDBClusterSnapshotAttributesRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterSnapshotAttributesRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterSnapshotAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists attributes for the specified DB cluster snapshot.
+                </para>
+                <code
+                    title="To list DB cluster snapshot attributes"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-cluster-snapshot-attributes-6752ade3-0c7b-4b06-a8e4-b76bf4e2d3571" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBClusterSnapshots(Amazon.Neptune.Model.DescribeDBClusterSnapshotsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBClusterSnapshots(Amazon.Neptune.Model.DescribeDBClusterSnapshotsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterSnapshotsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBClusterSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified, manually-created cluster snapshot.
+                </para>
+                <code
+                    title="To list DB cluster snapshots"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-cluster-snapshots-52f38af1-3431-4a51-9a6a-e6bb8c961b32" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBEngineVersions(Amazon.Neptune.Model.DescribeDBEngineVersionsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBEngineVersions(Amazon.Neptune.Model.DescribeDBEngineVersionsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBEngineVersionsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBEngineVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified DB engine version.
+                </para>
+                <code
+                    title="To list DB engine version settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-engine-versions-8e698cf2-2162-425a-a854-111cdaceb52b" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBInstances(Amazon.Neptune.Model.DescribeDBInstancesRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBInstances(Amazon.Neptune.Model.DescribeDBInstancesRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBInstancesRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists settings for the specified DB instance.
+                </para>
+                <code
+                    title="To list DB instance settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-instances-0e11a8c5-4ec3-4463-8cbf-f7254d04c4fc" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBParameterGroups(Amazon.Neptune.Model.DescribeDBParameterGroupsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBParameterGroups(Amazon.Neptune.Model.DescribeDBParameterGroupsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBParameterGroupsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information about the specified DB parameter group.
+                </para>
+                <code
+                    title="To list information about DB parameter groups"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-parameter-groups-" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBParameters(Amazon.Neptune.Model.DescribeDBParametersRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBParameters(Amazon.Neptune.Model.DescribeDBParametersRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBParametersRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information for up to the first 20 system parameters for the specified DB parameter group.
+                </para>
+                <code
+                    title="To list information about DB parameters"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-parameters-09db4201-ef4f-4d97-a4b5-d71c0715b901" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeDBSubnetGroups(Amazon.Neptune.Model.DescribeDBSubnetGroupsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeDBSubnetGroups(Amazon.Neptune.Model.DescribeDBSubnetGroupsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBSubnetGroupsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeDBSubnetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information about the specified DB subnet group.
+                </para>
+                <code
+                    title="To list information about DB subnet groups"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-db-subnet-groups-1d97b340-682f-4dd6-9653-8ed72a8d1221" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeEngineDefaultClusterParameters(Amazon.Neptune.Model.DescribeEngineDefaultClusterParametersRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeEngineDefaultClusterParameters(Amazon.Neptune.Model.DescribeEngineDefaultClusterParametersRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeEngineDefaultClusterParametersRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeEngineDefaultClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists default parameters for the specified DB cluster engine.
+                </para>
+                <code
+                    title="To list default parameters for a DB cluster engine"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-engine-default-cluster-parameters-f130374a-7bee-434b-b51d-da20b6e000e0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeEngineDefaultParameters(Amazon.Neptune.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeEngineDefaultParameters(Amazon.Neptune.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeEngineDefaultParametersRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeEngineDefaultParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists default parameters for the specified DB engine.
+                </para>
+                <code
+                    title="To list default parameters for a DB engine"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-engine-default-parameters-35d5108e-1d44-4fac-8aeb-04b8fdfface1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeEventCategories(Amazon.Neptune.Model.DescribeEventCategoriesRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeEventCategories(Amazon.Neptune.Model.DescribeEventCategoriesRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventCategoriesRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventCategoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all DB instance event categories.
+                </para>
+                <code
+                    title="To list event categories."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-event-categories-97bd4c77-12da-4be6-b42f-edf77771428b" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeEvents(Amazon.Neptune.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeEvents(Amazon.Neptune.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information for all backup-related events for the specified DB instance for the past 7 days (7 days * 24 hours * 60 minutes = 10,080 minutes).
+                </para>
+                <code
+                    title="To list information about events"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-events-3836e5ed-3913-4f76-8452-c77fcad5016b" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeEventSubscriptions(Amazon.Neptune.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeEventSubscriptions(Amazon.Neptune.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventSubscriptionsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeEventSubscriptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information for the specified DB event notification subscription.
+                </para>
+                <code
+                    title="To list information about DB event notification subscriptions"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-event-subscriptions-11184a82-e58a-4d0c-b558-f3a7489e0850" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribeOrderableDBInstanceOptions(Amazon.Neptune.Model.DescribeOrderableDBInstanceOptionsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribeOrderableDBInstanceOptions(Amazon.Neptune.Model.DescribeOrderableDBInstanceOptionsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribeOrderableDBInstanceOptionsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribeOrderableDBInstanceOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information for all orderable DB instance options for the specified DB engine, engine version, DB instance class, license model, and VPC settings.
+                </para>
+                <code
+                    title="To list information about orderable DB instance options"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-orderable-db-instance-options-7444d3ed-82eb-42b9-9ed9-896b8c27a782" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.DescribePendingMaintenanceActions(Amazon.Neptune.Model.DescribePendingMaintenanceActionsRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.DescribePendingMaintenanceActions(Amazon.Neptune.Model.DescribePendingMaintenanceActionsRequest)" />
+            <member name="T:Amazon.Neptune.Model.DescribePendingMaintenanceActionsRequest" />
+            <member name="T:Amazon.Neptune.Model.DescribePendingMaintenanceActionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information for all pending maintenance actions for the specified DB instance.
+                </para>
+                <code
+                    title="To list information about pending maintenance actions"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="describe-pending-maintenance-actions-e6021f7e-58ae-49cc-b874-11996176835c" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.FailoverDBCluster(Amazon.Neptune.Model.FailoverDBClusterRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.FailoverDBCluster(Amazon.Neptune.Model.FailoverDBClusterRequest)" />
+            <member name="T:Amazon.Neptune.Model.FailoverDBClusterRequest" />
+            <member name="T:Amazon.Neptune.Model.FailoverDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example performs a failover for the specified DB cluster to the specified DB instance.
+                </para>
+                <code
+                    title="To perform a failover for a DB cluster"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="failover-db-cluster-9e7f2f93-d98c-42c7-bb0e-d6c485c096d6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ListTagsForResource(Amazon.Neptune.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ListTagsForResource(Amazon.Neptune.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Neptune.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Neptune.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists information about all tags associated with the specified DB option group.
+                </para>
+                <code
+                    title="To list information about tags associated with a resource"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="list-tags-for-resource-8401f3c2-77cd-4f90-bfd5-b523f0adcc2f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBCluster(Amazon.Neptune.Model.ModifyDBClusterRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBCluster(Amazon.Neptune.Model.ModifyDBClusterRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example changes the specified settings for the specified DB cluster.
+                </para>
+                <code
+                    title="To change DB cluster settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-db-cluster-a370ee1b-768d-450a-853b-707cb1ab663d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBClusterParameterGroup(Amazon.Neptune.Model.ModifyDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBClusterParameterGroup(Amazon.Neptune.Model.ModifyDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example immediately changes the specified setting for the specified DB cluster parameter group.
+                </para>
+                <code
+                    title="To change DB cluster parameter group settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-db-cluster-parameter-group-f9156bc9-082a-442e-8d12-239542c1a113" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBClusterSnapshotAttribute(Amazon.Neptune.Model.ModifyDBClusterSnapshotAttributeRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBClusterSnapshotAttribute(Amazon.Neptune.Model.ModifyDBClusterSnapshotAttributeRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterSnapshotAttributeRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBClusterSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gives two AWS accounts access to a manual DB cluster snapshot and ensures that the DB cluster snapshot is private by removing the value "all".
+                </para>
+                <code
+                    title="To add or remove access to a manual DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="to-add-or-remove-access-to-a-manual-db-cluster-snapshot-1473889426431" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBInstance(Amazon.Neptune.Model.ModifyDBInstanceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBInstance(Amazon.Neptune.Model.ModifyDBInstanceRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBInstanceRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example immediately changes the specified settings for the specified DB instance.
+                </para>
+                <code
+                    title="To change DB instance settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-db-instance-6979a368-6254-467b-8a8d-61103f4fcde9" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBParameterGroup(Amazon.Neptune.Model.ModifyDBParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBParameterGroup(Amazon.Neptune.Model.ModifyDBParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example immediately changes the specified setting for the specified DB parameter group.
+                </para>
+                <code
+                    title="To change DB parameter group settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-db-parameter-group-f3a4e52a-68e4-4b88-b559-f912d34c457a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyDBSubnetGroup(Amazon.Neptune.Model.ModifyDBSubnetGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyDBSubnetGroup(Amazon.Neptune.Model.ModifyDBSubnetGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBSubnetGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyDBSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example changes the specified setting for the specified DB subnet group.
+                </para>
+                <code
+                    title="To change DB subnet group settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-db-subnet-group-e34a97d9-8fe6-4239-a4ed-ad6e73a956b0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ModifyEventSubscription(Amazon.Neptune.Model.ModifyEventSubscriptionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ModifyEventSubscription(Amazon.Neptune.Model.ModifyEventSubscriptionRequest)" />
+            <member name="T:Amazon.Neptune.Model.ModifyEventSubscriptionRequest" />
+            <member name="T:Amazon.Neptune.Model.ModifyEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example changes the specified setting for the specified event notification subscription.
+                </para>
+                <code
+                    title="To change event notification subscription settings"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="modify-event-subscription-405ac869-1f02-42cd-b8f4-6950a435f30e" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.RebootDBInstance(Amazon.Neptune.Model.RebootDBInstanceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.RebootDBInstance(Amazon.Neptune.Model.RebootDBInstanceRequest)" />
+            <member name="T:Amazon.Neptune.Model.RebootDBInstanceRequest" />
+            <member name="T:Amazon.Neptune.Model.RebootDBInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example reboots the specified DB instance without forcing a failover.
+                </para>
+                <code
+                    title="To reboot a DB instance"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="reboot-db-instance-b9ce8a0a-2920-451d-a1f3-01d288aa7366" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.RemoveSourceIdentifierFromSubscription(Amazon.Neptune.Model.RemoveSourceIdentifierFromSubscriptionRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.RemoveSourceIdentifierFromSubscription(Amazon.Neptune.Model.RemoveSourceIdentifierFromSubscriptionRequest)" />
+            <member name="T:Amazon.Neptune.Model.RemoveSourceIdentifierFromSubscriptionRequest" />
+            <member name="T:Amazon.Neptune.Model.RemoveSourceIdentifierFromSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes the specified source identifier from the specified DB event subscription.
+                </para>
+                <code
+                    title="To remove a source identifier from a DB event subscription"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="remove-source-identifier-from-subscription-30d25493-c19d-4cf7-b4e5-68371d0d8770" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.RemoveTagsFromResource(Amazon.Neptune.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.RemoveTagsFromResource(Amazon.Neptune.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.Neptune.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.Neptune.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes the specified tag associated with the specified DB option group.
+                </para>
+                <code
+                    title="To remove tags from a resource"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="remove-tags-from-resource-49f00574-38f6-4d01-ac89-d3c668449ce3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ResetDBClusterParameterGroup(Amazon.Neptune.Model.ResetDBClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ResetDBClusterParameterGroup(Amazon.Neptune.Model.ResetDBClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.ResetDBClusterParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.ResetDBClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resets all parameters for the specified DB cluster parameter group to their default values.
+                </para>
+                <code
+                    title="To reset the values of a DB cluster parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="reset-db-cluster-parameter-group-b04aeaf7-7f73-49e1-9bb4-857573ea3ee4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.ResetDBParameterGroup(Amazon.Neptune.Model.ResetDBParameterGroupRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.ResetDBParameterGroup(Amazon.Neptune.Model.ResetDBParameterGroupRequest)" />
+            <member name="T:Amazon.Neptune.Model.ResetDBParameterGroupRequest" />
+            <member name="T:Amazon.Neptune.Model.ResetDBParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resets all parameters for the specified DB parameter group to their default values.
+                </para>
+                <code
+                    title="To reset the values of a DB parameter group"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="reset-db-parameter-group-ed2ed723-de0d-4824-8af5-3c65fa130abf" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.RestoreDBClusterFromSnapshot(Amazon.Neptune.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.RestoreDBClusterFromSnapshot(Amazon.Neptune.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="T:Amazon.Neptune.Model.RestoreDBClusterFromSnapshotRequest" />
+            <member name="T:Amazon.Neptune.Model.RestoreDBClusterFromSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores an Amazon Aurora DB cluster from a DB cluster snapshot.
+                </para>
+                <code
+                    title="To restore an Amazon Aurora DB cluster from a DB cluster snapshot"
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="to-restore-an-amazon-aurora-db-cluster-from-a-db-cluster-snapshot-1473958144325" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Neptune.IAmazonNeptune.RestoreDBClusterToPointInTime(Amazon.Neptune.Model.RestoreDBClusterToPointInTimeRequest)" />
+            <member name="M:Amazon.Neptune.AmazonNeptuneClient.RestoreDBClusterToPointInTime(Amazon.Neptune.Model.RestoreDBClusterToPointInTimeRequest)" />
+            <member name="T:Amazon.Neptune.Model.RestoreDBClusterToPointInTimeRequest" />
+            <member name="T:Amazon.Neptune.Model.RestoreDBClusterToPointInTimeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores a DB cluster to a new DB cluster at a point in time from the source DB cluster.
+                </para>
+                <code
+                    title="To restore a DB cluster to a point in time."
+                    source=".\AWSSDKDocSamples\Neptune\Neptune.GeneratedSamples.cs"
+                    region="to-restore-a-db-cluster-to-a-point-in-time-1473962082214" />
+            </example>
+        </value>
+    </doc>
+</docs>
