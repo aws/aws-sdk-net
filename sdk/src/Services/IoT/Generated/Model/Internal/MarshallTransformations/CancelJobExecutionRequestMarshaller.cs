@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CancelJob Request Marshaller
+    /// CancelJobExecution Request Marshaller
     /// </summary>       
-    public class CancelJobRequestMarshaller : IMarshaller<IRequest, CancelJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CancelJobExecutionRequestMarshaller : IMarshaller<IRequest, CancelJobExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CancelJobRequest)input);
+            return this.Marshall((CancelJobExecutionRequest)input);
         }
 
         /// <summary>
@@ -52,16 +52,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CancelJobRequest publicRequest)
+        public IRequest Marshall(CancelJobExecutionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/jobs/{jobId}/cancel";
+            string uriResourcePath = "/things/{thingName}/jobs/{jobId}/cancel";
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTException("Request object does not have required field JobId set");
             uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            if (!publicRequest.IsSetThingName())
+                throw new AmazonIoTException("Request object does not have required field ThingName set");
+            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
@@ -71,10 +74,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComment())
+                if(publicRequest.IsSetExpectedVersion())
                 {
-                    context.Writer.WritePropertyName("comment");
-                    context.Writer.Write(publicRequest.Comment);
+                    context.Writer.WritePropertyName("expectedVersion");
+                    context.Writer.Write(publicRequest.ExpectedVersion);
+                }
+
+                if(publicRequest.IsSetStatusDetails())
+                {
+                    context.Writer.WritePropertyName("statusDetails");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                    {
+                        context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
+                        var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
+
+                            context.Writer.Write(publicRequestStatusDetailsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -87,9 +104,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CancelJobRequestMarshaller _instance = new CancelJobRequestMarshaller();        
+        private static CancelJobExecutionRequestMarshaller _instance = new CancelJobExecutionRequestMarshaller();        
 
-        internal static CancelJobRequestMarshaller GetInstance()
+        internal static CancelJobExecutionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +114,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CancelJobRequestMarshaller Instance
+        public static CancelJobExecutionRequestMarshaller Instance
         {
             get
             {

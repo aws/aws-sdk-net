@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private DateTime? _createdAt;
         private string _description;
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
+        private bool? _forceCanceled;
         private string _jobArn;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
@@ -135,6 +136,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDocumentParameters()
         {
             return this._documentParameters != null && this._documentParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceCanceled. 
+        /// <para>
+        /// Will be <code>true</code> if the job was canceled with the optional <code>force</code>
+        /// parameter set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool ForceCanceled
+        {
+            get { return this._forceCanceled.GetValueOrDefault(); }
+            set { this._forceCanceled = value; }
+        }
+
+        // Check to see if ForceCanceled property is set
+        internal bool IsSetForceCanceled()
+        {
+            return this._forceCanceled.HasValue; 
         }
 
         /// <summary>

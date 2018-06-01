@@ -303,6 +303,23 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  CancelJobExecution
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        Task<CancelJobExecutionResponse> CancelJobExecutionAsync(CancelJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ClearDefaultAuthorizer
 
 
@@ -1281,8 +1298,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

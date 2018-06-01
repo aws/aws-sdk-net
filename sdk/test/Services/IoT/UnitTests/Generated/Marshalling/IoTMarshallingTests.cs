@@ -240,6 +240,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("IoT")]
+        public void CancelJobExecutionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelJobExecution");
+
+            var request = InstantiateClassGenerator.Execute<CancelJobExecutionRequest>();
+            var marshaller = new CancelJobExecutionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CancelJobExecution", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("IoT")]
         public void ClearDefaultAuthorizerMarshallTest()
         {
             var operation = service_model.FindOperation("ClearDefaultAuthorizer");

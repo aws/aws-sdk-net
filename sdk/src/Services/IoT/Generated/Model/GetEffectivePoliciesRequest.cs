@@ -29,7 +29,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEffectivePolicies operation.
-    /// Gets effective policies.
+    /// Gets a list of the policies that have an effect on the authorization behavior of the
+    /// specified device when it connects to the AWS IoT device gateway.
     /// </summary>
     public partial class GetEffectivePoliciesRequest : AmazonIoTRequest
     {

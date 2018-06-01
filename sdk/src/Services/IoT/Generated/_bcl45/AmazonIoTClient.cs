@@ -997,6 +997,65 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CancelJobExecution
+
+
+        /// <summary>
+        /// Cancels the execution of a job for a given thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution service method.</param>
+        /// 
+        /// <returns>The response from the CancelJobExecution service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidStateTransitionException">
+        /// An attempt was made to change to an invalid state, for example by deleting a job or
+        /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        public virtual CancelJobExecutionResponse CancelJobExecution(CancelJobExecutionRequest request)
+        {
+            var marshaller = CancelJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobExecutionRequest,CancelJobExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelJobExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelJobExecution">REST API Reference for CancelJobExecution Operation</seealso>
+        public virtual Task<CancelJobExecutionResponse> CancelJobExecutionAsync(CancelJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CancelJobExecutionRequestMarshaller.Instance;
+            var unmarshaller = CancelJobExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelJobExecutionRequest,CancelJobExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ClearDefaultAuthorizer
 
 
@@ -3761,8 +3820,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public virtual DeleteThingResponse DeleteThing(string thingName)
@@ -3798,8 +3857,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public virtual DeleteThingResponse DeleteThing(DeleteThingRequest request)
@@ -3839,8 +3898,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThing">REST API Reference for DeleteThing Operation</seealso>
         public virtual Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3890,8 +3949,8 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteThingGroup">REST API Reference for DeleteThingGroup Operation</seealso>
         public virtual DeleteThingGroupResponse DeleteThingGroup(DeleteThingGroupRequest request)
@@ -5646,7 +5705,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets effective policies.
+        /// Gets a list of the policies that have an effect on the authorization behavior of the
+        /// specified device when it connects to the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePolicies service method.</param>
         /// 
@@ -9497,7 +9557,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Test custom authorization.
+        /// Tests if a specified principal is authorized to perform an AWS IoT action on a specified
+        /// resource. Use this to test and debug the authorization behavior of devices that connect
+        /// to the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestAuthorization service method.</param>
         /// 
@@ -9557,7 +9619,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Invoke the specified custom authorizer for testing purposes.
+        /// Tests a custom authorization behavior by invoking a specified custom authorizer. Use
+        /// this to test and debug the custom authorization behavior of devices that connect to
+        /// the AWS IoT device gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -10354,8 +10418,8 @@ namespace Amazon.IoT
         /// You are not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThing">REST API Reference for UpdateThing Operation</seealso>
         public virtual UpdateThingResponse UpdateThing(UpdateThingRequest request)
@@ -10409,8 +10473,8 @@ namespace Amazon.IoT
         /// The rate exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.VersionConflictException">
-        /// An exception thrown when the version of a thing passed to a command is different than
-        /// the version specified with the --version parameter.
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroup">REST API Reference for UpdateThingGroup Operation</seealso>
         public virtual UpdateThingGroupResponse UpdateThingGroup(UpdateThingGroupRequest request)
