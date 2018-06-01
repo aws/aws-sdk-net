@@ -1416,6 +1416,38 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ResetUserPassword
+
+        internal virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
+        {
+            var marshaller = ResetUserPasswordRequestMarshaller.Instance;
+            var unmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+
+            return Invoke<ResetUserPasswordRequest,ResetUserPasswordResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetUserPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ResetUserPasswordRequestMarshaller.Instance;
+            var unmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetUserPasswordRequest,ResetUserPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RestoreFromSnapshot
 
         internal virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)

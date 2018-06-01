@@ -1729,6 +1729,55 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ResetUserPassword
+
+
+        /// <summary>
+        /// Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword service method.</param>
+        /// 
+        /// <returns>The response from the ResetUserPassword service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidPasswordException">
+        /// The new password provided by the user does not meet the password complexity requirements
+        /// defined in your directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UserDoesNotExistException">
+        /// The user provided a username that does not exist in your directory.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetUserPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetUserPassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
+        Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RestoreFromSnapshot
 
 
