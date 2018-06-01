@@ -33,6 +33,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
     /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
     /// call to get further results.
+    /// 
+    ///  
+    /// <para>
+    /// This action is throttled at 30 transactions per second (TPS).
+    /// </para>
     /// </summary>
     public partial class ListSubscriptionsByTopicRequest : AmazonSimpleNotificationServiceRequest
     {

@@ -29,11 +29,20 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the Publish operation.
-    /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-    /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-    /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-    /// endpoint depends on the notification protocol.
+    /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+    /// to a phone number. 
     /// 
+    ///  
+    /// <para>
+    /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+    /// that is subscribed to the topic. The format of the message depends on the notification
+    /// protocol for each subscribed endpoint.
+    /// </para>
+    ///  
+    /// <para>
+    /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+    /// will attempt to deliver it shortly.
+    /// </para>
     ///  
     /// <para>
     /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -66,7 +75,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates PublishRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         public PublishRequest(string topicArn, string message)
         {
             _topicArn = topicArn;
@@ -77,7 +86,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates PublishRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
         public PublishRequest(string topicArn, string message, string subject)
         {
@@ -89,25 +98,35 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message you want to send to the topic.
+        /// The message you want to send.
         /// </para>
         ///  
         /// <para>
-        /// If you want to send the same message to all transport protocols, include the text
-        /// of the message as a String value.
+        /// If you are publishing to a topic and you want to send the same message to all transport
+        /// protocols, include the text of the message as a String value. If you want to send
+        /// different messages for each transport protocol, set the value of the <code>MessageStructure</code>
+        /// parameter to <code>json</code> and use a JSON object for the <code>Message</code>
+        /// parameter. 
         /// </para>
-        ///  
+        ///   
         /// <para>
-        /// If you want to send different messages for each transport protocol, set the value
-        /// of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON
-        /// object for the <code>Message</code> parameter. 
+        /// Constraints:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144
-        /// bytes, not 262144 characters).
+        /// With the exception of SMS, messages must be UTF-8 encoded strings and at most 256
+        /// KB in size (262144 bytes, not 262144 characters).
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        /// For SMS, each message can contain up to 140 bytes, and the character limit depends
+        /// on the encoding scheme. For example, an SMS message can contain 160 GSM characters,
+        /// 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds
+        /// the size limit, Amazon SNS sends it as multiple messages, each fitting within the
+        /// size limit. Messages are not cut off in the middle of a word but on whole-word boundaries.
+        /// The total size limit for a single SMS publish action is 1600 bytes.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// JSON-specific constraints:
         /// </para>

@@ -33,11 +33,18 @@ namespace Amazon.SimpleNotificationService.Model
     /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
     /// action with the token from the confirmation message. Confirmation tokens are valid
     /// for three days.
+    /// 
+    ///  
+    /// <para>
+    /// This action is throttled at 100 transactions per second (TPS).
+    /// </para>
     /// </summary>
     public partial class SubscribeRequest : AmazonSimpleNotificationServiceRequest
     {
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _endpoint;
         private string _protocol;
+        private bool? _returnSubscriptionArn;
         private string _topicArn;
 
         /// <summary>
@@ -56,6 +63,25 @@ namespace Amazon.SimpleNotificationService.Model
             _topicArn = topicArn;
             _protocol = protocol;
             _endpoint = endpoint;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// Assigns attributes to the subscription as a map of key-value pairs. You can assign
+        /// any attribute that is supported by the <code>SetSubscriptionAttributes</code> action.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
         }
 
         /// <summary>
@@ -161,6 +187,41 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnSubscriptionArn. 
+        /// <para>
+        /// Sets whether the response from the <code>Subscribe</code> request includes the subscription
+        /// ARN, even if the subscription is not yet confirmed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this parameter to <code>false</code>, the response includes the ARN for
+        /// confirmed subscriptions, but it includes an ARN value of "pending subscription" for
+        /// subscriptions that are not yet confirmed. A subscription becomes confirmed when the
+        /// subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this parameter to <code>true</code>, the response includes the ARN in all
+        /// cases, even if the subscription is not yet confirmed.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool ReturnSubscriptionArn
+        {
+            get { return this._returnSubscriptionArn.GetValueOrDefault(); }
+            set { this._returnSubscriptionArn = value; }
+        }
+
+        // Check to see if ReturnSubscriptionArn property is set
+        internal bool IsSetReturnSubscriptionArn()
+        {
+            return this._returnSubscriptionArn.HasValue; 
         }
 
         /// <summary>

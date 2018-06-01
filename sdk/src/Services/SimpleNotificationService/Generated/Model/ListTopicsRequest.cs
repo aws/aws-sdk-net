@@ -33,6 +33,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
     /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
     /// further results.
+    /// 
+    ///  
+    /// <para>
+    /// This action is throttled at 30 transactions per second (TPS).
+    /// </para>
     /// </summary>
     public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
     {
