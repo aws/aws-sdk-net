@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.",
+  "generate-client-constructors": true
+}

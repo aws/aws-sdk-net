@@ -124,6 +124,7 @@
     <ProjectReference Include="..\..\src\Services\MediaPackage\AWSSDK.MediaPackage.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaStore\AWSSDK.MediaStore.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaStoreData\AWSSDK.MediaStoreData.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaTailor\AWSSDK.MediaTailor.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MigrationHub\AWSSDK.MigrationHub.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Mobile\AWSSDK.Mobile.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj"/>

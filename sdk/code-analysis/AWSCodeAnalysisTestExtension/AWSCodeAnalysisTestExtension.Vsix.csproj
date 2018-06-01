@@ -428,6 +428,10 @@
       <Project>{D5C026FC-D0A7-49D4-B820-F104DBE4369B}</Project>
       <Name>AWSSDK.MediaStoreData.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaTailor/AWSSDK.MediaTailor.CodeAnalysis.csproj">
+      <Project>{7926EFD7-8177-4C0B-BFB2-1CE30D630B9B}</Project>
+      <Name>AWSSDK.MediaTailor.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MigrationHub/AWSSDK.MigrationHub.CodeAnalysis.csproj">
       <Project>{60427D51-62F5-43D6-888E-D9E2281C7804}</Project>
       <Name>AWSSDK.MigrationHub.CodeAnalysis</Name>
