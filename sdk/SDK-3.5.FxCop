@@ -115,6 +115,7 @@
       <Directory>$(ProjectDir)/src/Services/mediapackage/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastore/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediastoredata/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediatailor/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/migrationhub/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobile/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
@@ -257,6 +258,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaPackage.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaStore.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaStoreData.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaTailor.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MigrationHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Mobile.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />

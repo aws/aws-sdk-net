@@ -1,3 +1,20 @@
+### 3.3.291.0 (2018-06-01 20:07 UTC)
+* DirectoryService (3.3.5.0)
+	* Added ResetUserPassword API. Customers can now reset their users' passwords without providing the old passwords in Simple AD and Microsoft AD.
+* IoT (3.3.13.0)
+	* We are releasing force CancelJob and CancelJobExecution functionalities to customers.
+* MediaTailor (3.3.0.0)
+	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
+* Redshift (3.3.4.5)
+	* Documentation updates for redshift
+* SimpleNotificationService (3.3.1.0)
+	* The SNS Subscribe API has been updated with two new optional parameters: Attributes and ReturnSubscriptionArn. Attributes is a map of subscription attributes which can be one or more of: FilterPolicy, DeliveryPolicy, and RawMessageDelivery. ReturnSubscriptionArn is a boolean parameter that overrides the default behavior of returning "pending confirmation" for subscriptions that require confirmation instead of returning the subscription ARN.
+* Core 3.3.23.1
+	* SageMaker has added support for the Asia Pacific (Tokyo) region.
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.290.0 (2018-05-31 01:19 UTC)
 * ElasticLoadBalancingV2 (3.3.9.0)
 	* This release of Elastic Load Balancing introduces user authentication on Application Load Balancer.
