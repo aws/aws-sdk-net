@@ -60,13 +60,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance
-        /// capacity to satisfy the launch request.
+        ///  <code>Server.InsufficientInstanceCapacity</code>: There was insufficient capacity
+        /// available to satisfy the launch request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.InternalError</code>: An internal error occurred during instance launch,
-        /// resulting in termination.
+        ///  <code>Server.InternalError</code>: An internal error caused the instance to terminate
+        /// during launch.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -74,13 +74,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to
-        /// an increase in the Spot price.
+        ///  <code>Server.SpotInstanceShutdown</code>: The instance was stopped because the number
+        /// of Spot requests with a maximum price equal to or higher than the Spot price exceeded
+        /// available capacity or because of an increase in the Spot price.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.InternalError</code>: A client error caused the instance to terminate
-        /// on launch.
+        ///  <code>Server.SpotInstanceTermination</code>: The instance was terminated because
+        /// the number of Spot requests with a maximum price equal to or higher than the Spot
+        /// price exceeded available capacity or because of an increase in the Spot price.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,17 +96,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Client.InternalError</code>: A client error caused the instance to terminate
+        /// during launch.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon
         /// EC2 API.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or
-        /// total storage was exceeded. Decrease usage or request an increase in your limits.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+        /// total storage was exceeded. Decrease usage or request an increase in your account
+        /// limits.
         /// </para>
         ///  </li> </ul>
         /// </summary>

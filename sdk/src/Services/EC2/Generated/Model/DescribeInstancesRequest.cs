@@ -511,7 +511,7 @@ namespace Amazon.EC2.Model
         /// The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value. This value
         /// can be between 5 and 1000. You cannot specify this parameter and the instance IDs
-        /// parameter or tag filters in the same call.
+        /// parameter in the same call.
         /// </para>
         /// </summary>
         public int MaxResults
