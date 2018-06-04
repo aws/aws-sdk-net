@@ -299,6 +299,218 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type HyperParameterTuningJobObjectiveType.
+    /// </summary>
+    public class HyperParameterTuningJobObjectiveType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Maximize for HyperParameterTuningJobObjectiveType
+        /// </summary>
+        public static readonly HyperParameterTuningJobObjectiveType Maximize = new HyperParameterTuningJobObjectiveType("Maximize");
+        /// <summary>
+        /// Constant Minimize for HyperParameterTuningJobObjectiveType
+        /// </summary>
+        public static readonly HyperParameterTuningJobObjectiveType Minimize = new HyperParameterTuningJobObjectiveType("Minimize");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterTuningJobObjectiveType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterTuningJobObjectiveType FindValue(string value)
+        {
+            return FindValue<HyperParameterTuningJobObjectiveType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterTuningJobObjectiveType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HyperParameterTuningJobSortByOptions.
+    /// </summary>
+    public class HyperParameterTuningJobSortByOptions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for HyperParameterTuningJobSortByOptions
+        /// </summary>
+        public static readonly HyperParameterTuningJobSortByOptions CreationTime = new HyperParameterTuningJobSortByOptions("CreationTime");
+        /// <summary>
+        /// Constant Name for HyperParameterTuningJobSortByOptions
+        /// </summary>
+        public static readonly HyperParameterTuningJobSortByOptions Name = new HyperParameterTuningJobSortByOptions("Name");
+        /// <summary>
+        /// Constant Status for HyperParameterTuningJobSortByOptions
+        /// </summary>
+        public static readonly HyperParameterTuningJobSortByOptions Status = new HyperParameterTuningJobSortByOptions("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterTuningJobSortByOptions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterTuningJobSortByOptions FindValue(string value)
+        {
+            return FindValue<HyperParameterTuningJobSortByOptions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterTuningJobSortByOptions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HyperParameterTuningJobStatus.
+    /// </summary>
+    public class HyperParameterTuningJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for HyperParameterTuningJobStatus
+        /// </summary>
+        public static readonly HyperParameterTuningJobStatus Completed = new HyperParameterTuningJobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for HyperParameterTuningJobStatus
+        /// </summary>
+        public static readonly HyperParameterTuningJobStatus Failed = new HyperParameterTuningJobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for HyperParameterTuningJobStatus
+        /// </summary>
+        public static readonly HyperParameterTuningJobStatus InProgress = new HyperParameterTuningJobStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for HyperParameterTuningJobStatus
+        /// </summary>
+        public static readonly HyperParameterTuningJobStatus Stopped = new HyperParameterTuningJobStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for HyperParameterTuningJobStatus
+        /// </summary>
+        public static readonly HyperParameterTuningJobStatus Stopping = new HyperParameterTuningJobStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterTuningJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterTuningJobStatus FindValue(string value)
+        {
+            return FindValue<HyperParameterTuningJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterTuningJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HyperParameterTuningJobStrategyType.
+    /// </summary>
+    public class HyperParameterTuningJobStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bayesian for HyperParameterTuningJobStrategyType
+        /// </summary>
+        public static readonly HyperParameterTuningJobStrategyType Bayesian = new HyperParameterTuningJobStrategyType("Bayesian");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterTuningJobStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterTuningJobStrategyType FindValue(string value)
+        {
+            return FindValue<HyperParameterTuningJobStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterTuningJobStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceType.
     /// </summary>
     public class InstanceType : ConstantClass
@@ -718,6 +930,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotebookInstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObjectiveStatus.
+    /// </summary>
+    public class ObjectiveStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for ObjectiveStatus
+        /// </summary>
+        public static readonly ObjectiveStatus Failed = new ObjectiveStatus("Failed");
+        /// <summary>
+        /// Constant Pending for ObjectiveStatus
+        /// </summary>
+        public static readonly ObjectiveStatus Pending = new ObjectiveStatus("Pending");
+        /// <summary>
+        /// Constant Succeeded for ObjectiveStatus
+        /// </summary>
+        public static readonly ObjectiveStatus Succeeded = new ObjectiveStatus("Succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectiveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectiveStatus FindValue(string value)
+        {
+            return FindValue<ObjectiveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectiveStatus(string value)
         {
             return FindValue(value);
         }
@@ -1466,6 +1732,64 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrainingInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrainingJobSortByOptions.
+    /// </summary>
+    public class TrainingJobSortByOptions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreationTime for TrainingJobSortByOptions
+        /// </summary>
+        public static readonly TrainingJobSortByOptions CreationTime = new TrainingJobSortByOptions("CreationTime");
+        /// <summary>
+        /// Constant FinalObjectiveMetricValue for TrainingJobSortByOptions
+        /// </summary>
+        public static readonly TrainingJobSortByOptions FinalObjectiveMetricValue = new TrainingJobSortByOptions("FinalObjectiveMetricValue");
+        /// <summary>
+        /// Constant Name for TrainingJobSortByOptions
+        /// </summary>
+        public static readonly TrainingJobSortByOptions Name = new TrainingJobSortByOptions("Name");
+        /// <summary>
+        /// Constant Status for TrainingJobSortByOptions
+        /// </summary>
+        public static readonly TrainingJobSortByOptions Status = new TrainingJobSortByOptions("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrainingJobSortByOptions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrainingJobSortByOptions FindValue(string value)
+        {
+            return FindValue<TrainingJobSortByOptions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrainingJobSortByOptions(string value)
         {
             return FindValue(value);
         }

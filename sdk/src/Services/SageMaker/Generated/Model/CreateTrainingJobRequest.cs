@@ -125,9 +125,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Algorithm-specific parameters. You set hyperparameters before you start the learning
-        /// process. Hyperparameters influence the quality of the model. For a list of hyperparameters
-        /// for each training algorithm provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+        /// Algorithm-specific parameters that influence the quality of the model. You set hyperparameters
+        /// before you start the learning process. For a list of hyperparameters for each training
+        /// algorithm provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
         ///  
@@ -243,6 +243,12 @@ namespace Amazon.SageMaker.Model
         /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
+        /// the <code>iam:PassRole</code> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string RoleArn
         {

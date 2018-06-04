@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// If training data is compressed, the compression type. The default value is <code>None</code>.
-        /// <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave
+        /// <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave
         /// this field unset or set it to None.
         /// </para>
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RecordWrapperType.  
         /// <para>
         /// Specify RecordIO as the value when input data is in raw format but the training algorithm
-        /// requires the RecordIO format, in which caseAmazon SageMaker wraps each individual
+        /// requires the RecordIO format, in which case, Amazon SageMaker wraps each individual
         /// S3 object in a RecordIO record. If the input data is already in RecordIO format, you
         /// don't need to set this attribute. For more information, see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create
         /// a Dataset Using RecordIO</a>. 
