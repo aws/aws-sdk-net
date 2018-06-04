@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.291.0",
+    "ProductVersion" : "3.3.292.0",
     "CoreVersion"    : "3.3.23.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.52.1",
+            "Version" : "3.3.53.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -641,7 +641,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.12.1",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -817,7 +817,7 @@
             "InPreview"               : false
         },
         "MigrationHub"                    : {
-            "Version" : "3.3.1.5",
+            "Version" : "3.3.1.6",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.1.6",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -1129,6 +1129,14 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.23.1"
+            },
+            "InPreview"               : false
+        },
+        "EKS"                             : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

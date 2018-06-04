@@ -74,6 +74,7 @@
       <Directory>$(ProjectDir)/src/Services/ec2/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecr/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/ecs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/eks/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticache/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net45/</Directory>
@@ -217,6 +218,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EC2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ECR.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ECS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.EKS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElastiCache.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
