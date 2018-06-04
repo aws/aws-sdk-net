@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Describes a storage connector.
+    /// Describes a connector to enable persistent storage for users.
     /// </summary>
     public partial class StorageConnector
     {
         private StorageConnectorType _connectorType;
+        private List<string> _domains = new List<string>();
         private string _resourceIdentifier;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetConnectorType()
         {
             return this._connectorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domains. 
+        /// <para>
+        /// The names of the domains for the G Suite account.
+        /// </para>
+        /// </summary>
+        public List<string> Domains
+        {
+            get { return this._domains; }
+            set { this._domains = value; }
+        }
+
+        // Check to see if Domains property is set
+        internal bool IsSetDomains()
+        {
+            return this._domains != null && this._domains.Count > 0; 
         }
 
         /// <summary>

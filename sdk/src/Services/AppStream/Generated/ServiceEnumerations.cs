@@ -803,6 +803,14 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly StackAttribute REDIRECT_URL = new StackAttribute("REDIRECT_URL");
         /// <summary>
+        /// Constant STORAGE_CONNECTOR_GOOGLE_DRIVE for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_GOOGLE_DRIVE = new StackAttribute("STORAGE_CONNECTOR_GOOGLE_DRIVE");
+        /// <summary>
+        /// Constant STORAGE_CONNECTOR_HOMEFOLDERS for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_HOMEFOLDERS = new StackAttribute("STORAGE_CONNECTOR_HOMEFOLDERS");
+        /// <summary>
         /// Constant STORAGE_CONNECTORS for StackAttribute
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTORS = new StackAttribute("STORAGE_CONNECTORS");
@@ -906,6 +914,10 @@ namespace Amazon.AppStream
     public class StorageConnectorType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GOOGLE_DRIVE for StorageConnectorType
+        /// </summary>
+        public static readonly StorageConnectorType GOOGLE_DRIVE = new StorageConnectorType("GOOGLE_DRIVE");
         /// <summary>
         /// Constant HOMEFOLDERS for StorageConnectorType
         /// </summary>
