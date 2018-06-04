@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Caption inputs to be mapped to caption outputs.
+    /// Set up captions in your outputs by first selecting them from your input here.
     /// </summary>
     public partial class CaptionSelector
     {

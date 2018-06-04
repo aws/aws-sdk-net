@@ -35,9 +35,9 @@ namespace Amazon.MediaConvert.Model
         private List<string> _audioSelectorNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AudioSelectorNames. Name of an "Audio Selector":#inputs-audio_selector
-        /// within the same input to include in the group.  Audio selector names are standardized,
-        /// based on their order within the input (e.g. "Audio Selector 1").  The audio_selector_name
+        /// Gets and sets the property AudioSelectorNames. Name of an Audio Selector within the
+        /// same input to include in the group.  Audio selector names are standardized, based
+        /// on their order within the input (e.g., "Audio Selector 1").  The audio selector name
         /// parameter can be repeated to add any number of audio selectors to the group.
         /// </summary>
         public List<string> AudioSelectorNames

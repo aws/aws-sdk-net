@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Use Manual audio remixing (RemixSettings) to adjust audio levels for each output channel.
-    /// With audio remixing, you can output more or fewer audio channels than your input audio
-    /// source provides.
+    /// Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel
+    /// in each output of your job. With audio remixing, you can output more or fewer audio
+    /// channels than your input audio source provides.
     /// </summary>
     public partial class RemixSettings
     {

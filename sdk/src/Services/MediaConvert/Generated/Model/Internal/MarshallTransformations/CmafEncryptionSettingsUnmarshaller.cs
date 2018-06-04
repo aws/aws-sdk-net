@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WavSettings Object
+    /// Response Unmarshaller for CmafEncryptionSettings Object
     /// </summary>  
-    public class WavSettingsUnmarshaller : IUnmarshaller<WavSettings, XmlUnmarshallerContext>, IUnmarshaller<WavSettings, JsonUnmarshallerContext>
+    public class CmafEncryptionSettingsUnmarshaller : IUnmarshaller<CmafEncryptionSettings, XmlUnmarshallerContext>, IUnmarshaller<CmafEncryptionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WavSettings IUnmarshaller<WavSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CmafEncryptionSettings IUnmarshaller<CmafEncryptionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WavSettings Unmarshall(JsonUnmarshallerContext context)
+        public CmafEncryptionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WavSettings unmarshalledObject = new WavSettings();
+            CmafEncryptionSettings unmarshalledObject = new CmafEncryptionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bitDepth", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("channels", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("constantInitializationVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sampleRate", targetDepth))
+                if (context.TestExpression("encryptionMethod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("initializationVectorInManifest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InitializationVectorInManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("staticKeyProvider", targetDepth))
+                {
+                    var unmarshaller = StaticKeyProviderUnmarshaller.Instance;
+                    unmarshalledObject.StaticKeyProvider = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +100,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static WavSettingsUnmarshaller _instance = new WavSettingsUnmarshaller();        
+        private static CmafEncryptionSettingsUnmarshaller _instance = new CmafEncryptionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WavSettingsUnmarshaller Instance
+        public static CmafEncryptionSettingsUnmarshaller Instance
         {
             get
             {

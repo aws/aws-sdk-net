@@ -280,6 +280,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.UnregisteredSeiTimecode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("writeMp4PackagingType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WriteMp4PackagingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputGroupSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCmafGroupSettings())
+            {
+                context.Writer.WritePropertyName("cmafGroupSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CmafGroupSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CmafGroupSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDashIsoGroupSettings())
             {
                 context.Writer.WritePropertyName("dashIsoGroupSettings");

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WavSettings Marshaller
+    /// CmafEncryptionSettings Marshaller
     /// </summary>       
-    public class WavSettingsMarshaller : IRequestMarshaller<WavSettings, JsonMarshallerContext> 
+    public class CmafEncryptionSettingsMarshaller : IRequestMarshaller<CmafEncryptionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,41 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WavSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(CmafEncryptionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBitDepth())
+            if(requestObject.IsSetConstantInitializationVector())
             {
-                context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth);
+                context.Writer.WritePropertyName("constantInitializationVector");
+                context.Writer.Write(requestObject.ConstantInitializationVector);
             }
 
-            if(requestObject.IsSetChannels())
+            if(requestObject.IsSetEncryptionMethod())
             {
-                context.Writer.WritePropertyName("channels");
-                context.Writer.Write(requestObject.Channels);
+                context.Writer.WritePropertyName("encryptionMethod");
+                context.Writer.Write(requestObject.EncryptionMethod);
             }
 
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetInitializationVectorInManifest())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WritePropertyName("initializationVectorInManifest");
+                context.Writer.Write(requestObject.InitializationVectorInManifest);
             }
 
-            if(requestObject.IsSetSampleRate())
+            if(requestObject.IsSetStaticKeyProvider())
             {
-                context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.WritePropertyName("staticKeyProvider");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StaticKeyProviderMarshaller.Instance;
+                marshaller.Marshall(requestObject.StaticKeyProvider, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -74,7 +85,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static WavSettingsMarshaller Instance = new WavSettingsMarshaller();
+        public readonly static CmafEncryptionSettingsMarshaller Instance = new CmafEncryptionSettingsMarshaller();
 
     }
 }

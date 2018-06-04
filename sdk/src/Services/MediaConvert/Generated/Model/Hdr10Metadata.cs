@@ -28,9 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Use the HDR master display (Hdr10Metadata) settings to provide values for HDR color.
-    /// These values vary depending on the input video and must be provided by a color grader.
-    /// Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+    /// Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to
+    /// provide missing metadata. These values vary depending on the input video and must
+    /// be provided by a color grader. Range is 0 to 50,000, each increment represents 0.00002
+    /// in CIE1931 color coordinate. Note that these settings are not color correction. Note
+    /// that if you are creating HDR outputs inside of an HLS CMAF package, to comply with
+    /// the Apple specification, you must use the HVC1 for H.265 setting.
     /// </summary>
     public partial class Hdr10Metadata
     {
@@ -48,9 +51,10 @@ namespace Amazon.MediaConvert.Model
         private int? _whitePointY;
 
         /// <summary>
-        /// Gets and sets the property BluePrimaryX. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property BluePrimaryX. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int BluePrimaryX
         {
@@ -65,9 +69,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BluePrimaryY. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property BluePrimaryY. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int BluePrimaryY
         {
@@ -82,9 +87,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GreenPrimaryX. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property GreenPrimaryX. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int GreenPrimaryX
         {
@@ -99,9 +105,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GreenPrimaryY. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property GreenPrimaryY. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int GreenPrimaryY
         {
@@ -180,9 +187,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedPrimaryX. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property RedPrimaryX. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int RedPrimaryX
         {
@@ -197,9 +205,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedPrimaryY. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property RedPrimaryY. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int RedPrimaryY
         {
@@ -214,9 +223,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WhitePointX. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property WhitePointX. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int WhitePointX
         {
@@ -231,9 +241,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WhitePointY. HDR Master Display Information comes from
-        /// the color grader and the color grading tools. Range is 0 to 50,000, each increment
-        /// represents 0.00002 in CIE1931 color coordinate.
+        /// Gets and sets the property WhitePointY. HDR Master Display Information must be provided
+        /// by a color grader, using color grading tools. Range is 0 to 50,000, each increment
+        /// represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for
+        /// color correction.
         /// </summary>
         public int WhitePointY
         {

@@ -1751,6 +1751,548 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmafClientCache.
+    /// </summary>
+    public class CmafClientCache : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafClientCache
+        /// </summary>
+        public static readonly CmafClientCache DISABLED = new CmafClientCache("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafClientCache
+        /// </summary>
+        public static readonly CmafClientCache ENABLED = new CmafClientCache("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafClientCache(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafClientCache FindValue(string value)
+        {
+            return FindValue<CmafClientCache>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafClientCache(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafCodecSpecification.
+    /// </summary>
+    public class CmafCodecSpecification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RFC_4281 for CmafCodecSpecification
+        /// </summary>
+        public static readonly CmafCodecSpecification RFC_4281 = new CmafCodecSpecification("RFC_4281");
+        /// <summary>
+        /// Constant RFC_6381 for CmafCodecSpecification
+        /// </summary>
+        public static readonly CmafCodecSpecification RFC_6381 = new CmafCodecSpecification("RFC_6381");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafCodecSpecification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafCodecSpecification FindValue(string value)
+        {
+            return FindValue<CmafCodecSpecification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafCodecSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafEncryptionType.
+    /// </summary>
+    public class CmafEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAMPLE_AES for CmafEncryptionType
+        /// </summary>
+        public static readonly CmafEncryptionType SAMPLE_AES = new CmafEncryptionType("SAMPLE_AES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafEncryptionType FindValue(string value)
+        {
+            return FindValue<CmafEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafInitializationVectorInManifest.
+    /// </summary>
+    public class CmafInitializationVectorInManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for CmafInitializationVectorInManifest
+        /// </summary>
+        public static readonly CmafInitializationVectorInManifest EXCLUDE = new CmafInitializationVectorInManifest("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for CmafInitializationVectorInManifest
+        /// </summary>
+        public static readonly CmafInitializationVectorInManifest INCLUDE = new CmafInitializationVectorInManifest("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafInitializationVectorInManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafInitializationVectorInManifest FindValue(string value)
+        {
+            return FindValue<CmafInitializationVectorInManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafInitializationVectorInManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafKeyProviderType.
+    /// </summary>
+    public class CmafKeyProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STATIC_KEY for CmafKeyProviderType
+        /// </summary>
+        public static readonly CmafKeyProviderType STATIC_KEY = new CmafKeyProviderType("STATIC_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafKeyProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafKeyProviderType FindValue(string value)
+        {
+            return FindValue<CmafKeyProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafKeyProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafManifestCompression.
+    /// </summary>
+    public class CmafManifestCompression : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for CmafManifestCompression
+        /// </summary>
+        public static readonly CmafManifestCompression GZIP = new CmafManifestCompression("GZIP");
+        /// <summary>
+        /// Constant NONE for CmafManifestCompression
+        /// </summary>
+        public static readonly CmafManifestCompression NONE = new CmafManifestCompression("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafManifestCompression(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafManifestCompression FindValue(string value)
+        {
+            return FindValue<CmafManifestCompression>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafManifestCompression(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafManifestDurationFormat.
+    /// </summary>
+    public class CmafManifestDurationFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLOATING_POINT for CmafManifestDurationFormat
+        /// </summary>
+        public static readonly CmafManifestDurationFormat FLOATING_POINT = new CmafManifestDurationFormat("FLOATING_POINT");
+        /// <summary>
+        /// Constant INTEGER for CmafManifestDurationFormat
+        /// </summary>
+        public static readonly CmafManifestDurationFormat INTEGER = new CmafManifestDurationFormat("INTEGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafManifestDurationFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafManifestDurationFormat FindValue(string value)
+        {
+            return FindValue<CmafManifestDurationFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafManifestDurationFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafSegmentControl.
+    /// </summary>
+    public class CmafSegmentControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEGMENTED_FILES for CmafSegmentControl
+        /// </summary>
+        public static readonly CmafSegmentControl SEGMENTED_FILES = new CmafSegmentControl("SEGMENTED_FILES");
+        /// <summary>
+        /// Constant SINGLE_FILE for CmafSegmentControl
+        /// </summary>
+        public static readonly CmafSegmentControl SINGLE_FILE = new CmafSegmentControl("SINGLE_FILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafSegmentControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafSegmentControl FindValue(string value)
+        {
+            return FindValue<CmafSegmentControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafSegmentControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafStreamInfResolution.
+    /// </summary>
+    public class CmafStreamInfResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for CmafStreamInfResolution
+        /// </summary>
+        public static readonly CmafStreamInfResolution EXCLUDE = new CmafStreamInfResolution("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for CmafStreamInfResolution
+        /// </summary>
+        public static readonly CmafStreamInfResolution INCLUDE = new CmafStreamInfResolution("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafStreamInfResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafStreamInfResolution FindValue(string value)
+        {
+            return FindValue<CmafStreamInfResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafStreamInfResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafWriteDASHManifest.
+    /// </summary>
+    public class CmafWriteDASHManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafWriteDASHManifest
+        /// </summary>
+        public static readonly CmafWriteDASHManifest DISABLED = new CmafWriteDASHManifest("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafWriteDASHManifest
+        /// </summary>
+        public static readonly CmafWriteDASHManifest ENABLED = new CmafWriteDASHManifest("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafWriteDASHManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafWriteDASHManifest FindValue(string value)
+        {
+            return FindValue<CmafWriteDASHManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafWriteDASHManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafWriteHLSManifest.
+    /// </summary>
+    public class CmafWriteHLSManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafWriteHLSManifest
+        /// </summary>
+        public static readonly CmafWriteHLSManifest DISABLED = new CmafWriteHLSManifest("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafWriteHLSManifest
+        /// </summary>
+        public static readonly CmafWriteHLSManifest ENABLED = new CmafWriteHLSManifest("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafWriteHLSManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafWriteHLSManifest FindValue(string value)
+        {
+            return FindValue<CmafWriteHLSManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafWriteHLSManifest(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColorMetadata.
     /// </summary>
     public class ColorMetadata : ConstantClass
@@ -1980,6 +2522,10 @@ namespace Amazon.MediaConvert
     public class ContainerType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CMFC for ContainerType
+        /// </summary>
+        public static readonly ContainerType CMFC = new ContainerType("CMFC");
         /// <summary>
         /// Constant F4V for ContainerType
         /// </summary>
@@ -6036,6 +6582,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265UnregisteredSeiTimecode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265WriteMp4PackagingType.
+    /// </summary>
+    public class H265WriteMp4PackagingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEV1 for H265WriteMp4PackagingType
+        /// </summary>
+        public static readonly H265WriteMp4PackagingType HEV1 = new H265WriteMp4PackagingType("HEV1");
+        /// <summary>
+        /// Constant HVC1 for H265WriteMp4PackagingType
+        /// </summary>
+        public static readonly H265WriteMp4PackagingType HVC1 = new H265WriteMp4PackagingType("HVC1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265WriteMp4PackagingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265WriteMp4PackagingType FindValue(string value)
+        {
+            return FindValue<H265WriteMp4PackagingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265WriteMp4PackagingType(string value)
         {
             return FindValue(value);
         }
@@ -10329,6 +10925,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant CMAF_GROUP_SETTINGS for OutputGroupType
+        /// </summary>
+        public static readonly OutputGroupType CMAF_GROUP_SETTINGS = new OutputGroupType("CMAF_GROUP_SETTINGS");
+        /// <summary>
         /// Constant DASH_ISO_GROUP_SETTINGS for OutputGroupType
         /// </summary>
         public static readonly OutputGroupType DASH_ISO_GROUP_SETTINGS = new OutputGroupType("DASH_ISO_GROUP_SETTINGS");
@@ -11512,6 +12112,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoTimecodeInsertion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WavFormat.
+    /// </summary>
+    public class WavFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RF64 for WavFormat
+        /// </summary>
+        public static readonly WavFormat RF64 = new WavFormat("RF64");
+        /// <summary>
+        /// Constant RIFF for WavFormat
+        /// </summary>
+        public static readonly WavFormat RIFF = new WavFormat("RIFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WavFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WavFormat FindValue(string value)
+        {
+            return FindValue<WavFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WavFormat(string value)
         {
             return FindValue(value);
         }

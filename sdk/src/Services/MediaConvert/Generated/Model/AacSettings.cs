@@ -29,7 +29,11 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value
-    /// AAC.
+    /// AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR
+    /// and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode)
+    /// to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR
+    /// quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults
+    /// and valid values depend on the rate control mode.
     /// </summary>
     public partial class AacSettings
     {
@@ -59,8 +63,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid values depend
-        /// on rate control mode and profile.
+        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Defaults and valid
+        /// values depend on rate control mode and profile.
         /// </summary>
         public int Bitrate
         {
