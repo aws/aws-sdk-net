@@ -83,6 +83,7 @@
     <ProjectReference Include="..\..\src\Services\EC2\AWSSDK.EC2.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ECR\AWSSDK.ECR.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ECS\AWSSDK.ECS.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\EKS\AWSSDK.EKS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElastiCache\AWSSDK.ElastiCache.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticFileSystem\AWSSDK.ElasticFileSystem.Net45.csproj"/>

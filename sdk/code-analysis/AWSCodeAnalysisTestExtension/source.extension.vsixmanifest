@@ -121,6 +121,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ECR.CodeAnalysis" Path="|AWSSDK.ECR.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ECS.CodeAnalysis" Path="|AWSSDK.ECS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ECS.CodeAnalysis" Path="|AWSSDK.ECS.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.EKS.CodeAnalysis" Path="|AWSSDK.EKS.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.EKS.CodeAnalysis" Path="|AWSSDK.EKS.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElastiCache.CodeAnalysis" Path="|AWSSDK.ElastiCache.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ElastiCache.CodeAnalysis" Path="|AWSSDK.ElastiCache.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ElasticBeanstalk.CodeAnalysis" Path="|AWSSDK.ElasticBeanstalk.CodeAnalysis|"/>

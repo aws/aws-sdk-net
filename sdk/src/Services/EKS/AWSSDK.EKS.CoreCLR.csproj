@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <DefineConstants>$(DefineConstants);$(DefineConstants);CORECLR;AWS_ASYNC_API;ADD_SUPPORT_IORDERED_DICTIONARY;ADD_SUPPORT_ICLONEABLE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.EKS</AssemblyName>
+    <PackageId>AWSSDK.EKS</PackageId>
+    <BaseIntermediateOutputPath>./obj/netstandard1.3</BaseIntermediateOutputPath>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <Compile Remove="**/_pcl/**"/>
+    <Compile Remove="**/_pcl-sl/**"/>
+    <Compile Remove="**/_bcl35/**"/>
+    <Compile Remove="**/_bcl45/**"/>
+    <Compile Remove="**/_bcl/**"/>
+    <Compile Remove="**/_bcl+sl/**"/>
+    <Compile Remove="**/_bcl+unity/**"/>
+    <Compile Remove="**/_unity/**"/>
+    <Compile Remove="**/_android/**"/>
+    <Compile Remove="**/_ios/**"/>
+    <Compile Remove="**/_pclReference/**"/>
+    <Compile Remove="**/_win8/**"/>
+    <Compile Remove="**/_winPhone81/**"/>
+    <Compile Remove="**/_winPhoneSilverlight8/**"/>
+    <Compile Remove="**/_winstorage/**"/>
+    <Compile Remove="**/Custom/SyncManager/**"/>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.CoreCLR.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+</Project>

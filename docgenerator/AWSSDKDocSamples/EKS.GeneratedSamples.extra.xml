@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.EKS.IAmazonEKS.CreateCluster(Amazon.EKS.Model.CreateClusterRequest)" />
+            <member name="M:Amazon.EKS.AmazonEKSClient.CreateCluster(Amazon.EKS.Model.CreateClusterRequest)" />
+            <member name="T:Amazon.EKS.Model.CreateClusterRequest" />
+            <member name="T:Amazon.EKS.Model.CreateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an Amazon EKS cluster called prod.
+                </para>
+                <code
+                    title="To create a new cluster"
+                    source=".\AWSSDKDocSamples\EKS\EKS.GeneratedSamples.cs"
+                    region="to-create-a-new-cluster-1527868185648" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EKS.IAmazonEKS.DeleteCluster(Amazon.EKS.Model.DeleteClusterRequest)" />
+            <member name="M:Amazon.EKS.AmazonEKSClient.DeleteCluster(Amazon.EKS.Model.DeleteClusterRequest)" />
+            <member name="T:Amazon.EKS.Model.DeleteClusterRequest" />
+            <member name="T:Amazon.EKS.Model.DeleteClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command deletes a cluster named `devel` in your default region.
+                </para>
+                <code
+                    title="To delete a cluster"
+                    source=".\AWSSDKDocSamples\EKS\EKS.GeneratedSamples.cs"
+                    region="to-delete-a-cluster-1527868641252" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EKS.IAmazonEKS.DescribeCluster(Amazon.EKS.Model.DescribeClusterRequest)" />
+            <member name="M:Amazon.EKS.AmazonEKSClient.DescribeCluster(Amazon.EKS.Model.DescribeClusterRequest)" />
+            <member name="T:Amazon.EKS.Model.DescribeClusterRequest" />
+            <member name="T:Amazon.EKS.Model.DescribeClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command provides a description of the specified cluster in your default region.
+                </para>
+                <code
+                    title="To describe a cluster"
+                    source=".\AWSSDKDocSamples\EKS\EKS.GeneratedSamples.cs"
+                    region="to-describe-a-cluster-1527868708512" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EKS.IAmazonEKS.ListClusters(Amazon.EKS.Model.ListClustersRequest)" />
+            <member name="M:Amazon.EKS.AmazonEKSClient.ListClusters(Amazon.EKS.Model.ListClustersRequest)" />
+            <member name="T:Amazon.EKS.Model.ListClustersRequest" />
+            <member name="T:Amazon.EKS.Model.ListClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command lists all of your available clusters in your default region.
+                </para>
+                <code
+                    title="To list your available clusters"
+                    source=".\AWSSDKDocSamples\EKS\EKS.GeneratedSamples.cs"
+                    region="to-list-your-available-clusters-1527868801040" />
+            </example>
+        </value>
+    </doc>
+</docs>

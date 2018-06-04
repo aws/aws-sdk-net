@@ -264,6 +264,10 @@
       <Project>{D79A164A-FE16-4633-BF19-CC4CC1A738C3}</Project>
       <Name>AWSSDK.ECS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/EKS/AWSSDK.EKS.CodeAnalysis.csproj">
+      <Project>{41D90FAB-922C-4939-9511-D569CE14881B}</Project>
+      <Name>AWSSDK.EKS.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ElastiCache/AWSSDK.ElastiCache.CodeAnalysis.csproj">
       <Project>{F441B4FE-3B31-4E7C-82AA-C9B90D6662A5}</Project>
       <Name>AWSSDK.ElastiCache.CodeAnalysis</Name>

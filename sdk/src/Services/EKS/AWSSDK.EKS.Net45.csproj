@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <DefineConstants>$(DefineConstants);;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.EKS</AssemblyName>
+    <PackageId>AWSSDK.EKS</PackageId>
+    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(AWSKeyFile)' == '' ">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <Compile Remove="**/_android/**"/>
+    <Compile Remove="**/_bcl35/**"/>
+    <Compile Remove="**/_coreclr/**"/>
+    <Compile Remove="**/_ios/**"/>
+    <Compile Remove="**/_mobile/**"/>
+    <Compile Remove="**/_pcl/**"/>
+    <Compile Remove="**/_pcl-sl/**"/>
+    <Compile Remove="**/_pclReference/**"/>
+    <Compile Remove="**/_unity/**"/>
+    <Compile Remove="**/_win8/**"/>
+    <Compile Remove="**/_winPhone81/**"/>
+    <Compile Remove="**/_winPhoneSilverlight8/**"/>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.Net45.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration"/>
+  </ItemGroup>
+
+</Project>
