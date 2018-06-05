@@ -32,10 +32,89 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ReservationAggregates
     {
+        private string _amortizedRecurringFee;
+        private string _amortizedUpfrontFee;
+        private string _netRISavings;
+        private string _onDemandCostOfRIHoursUsed;
         private string _purchasedHours;
         private string _totalActualHours;
+        private string _totalAmortizedFee;
+        private string _totalPotentialRISavings;
         private string _unusedHours;
         private string _utilizationPercentage;
+
+        /// <summary>
+        /// Gets and sets the property AmortizedRecurringFee. 
+        /// <para>
+        /// The monthly cost of your RI, amortized over the RI period.
+        /// </para>
+        /// </summary>
+        public string AmortizedRecurringFee
+        {
+            get { return this._amortizedRecurringFee; }
+            set { this._amortizedRecurringFee = value; }
+        }
+
+        // Check to see if AmortizedRecurringFee property is set
+        internal bool IsSetAmortizedRecurringFee()
+        {
+            return this._amortizedRecurringFee != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmortizedUpfrontFee. 
+        /// <para>
+        /// The upfront cost of your RI, amortized over the RI period.
+        /// </para>
+        /// </summary>
+        public string AmortizedUpfrontFee
+        {
+            get { return this._amortizedUpfrontFee; }
+            set { this._amortizedUpfrontFee = value; }
+        }
+
+        // Check to see if AmortizedUpfrontFee property is set
+        internal bool IsSetAmortizedUpfrontFee()
+        {
+            return this._amortizedUpfrontFee != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetRISavings. 
+        /// <para>
+        /// How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting
+        /// the <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+        /// </para>
+        /// </summary>
+        public string NetRISavings
+        {
+            get { return this._netRISavings; }
+            set { this._netRISavings = value; }
+        }
+
+        // Check to see if NetRISavings property is set
+        internal bool IsSetNetRISavings()
+        {
+            return this._netRISavings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandCostOfRIHoursUsed. 
+        /// <para>
+        /// How much your RIs would cost if charged On-Demand rates.
+        /// </para>
+        /// </summary>
+        public string OnDemandCostOfRIHoursUsed
+        {
+            get { return this._onDemandCostOfRIHoursUsed; }
+            set { this._onDemandCostOfRIHoursUsed = value; }
+        }
+
+        // Check to see if OnDemandCostOfRIHoursUsed property is set
+        internal bool IsSetOnDemandCostOfRIHoursUsed()
+        {
+            return this._onDemandCostOfRIHoursUsed != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PurchasedHours. 
@@ -71,6 +150,42 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetTotalActualHours()
         {
             return this._totalActualHours != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalAmortizedFee. 
+        /// <para>
+        /// The total cost of your RI, amortized over the RI period.
+        /// </para>
+        /// </summary>
+        public string TotalAmortizedFee
+        {
+            get { return this._totalAmortizedFee; }
+            set { this._totalAmortizedFee = value; }
+        }
+
+        // Check to see if TotalAmortizedFee property is set
+        internal bool IsSetTotalAmortizedFee()
+        {
+            return this._totalAmortizedFee != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalPotentialRISavings. 
+        /// <para>
+        /// How much you could save if you use your entire reservation.
+        /// </para>
+        /// </summary>
+        public string TotalPotentialRISavings
+        {
+            get { return this._totalPotentialRISavings; }
+            set { this._totalPotentialRISavings = value; }
+        }
+
+        // Check to see if TotalPotentialRISavings property is set
+        internal bool IsSetTotalPotentialRISavings()
+        {
+            return this._totalPotentialRISavings != null;
         }
 
         /// <summary>
