@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidDBInstanceModificationsMessage Object
+    /// Response Unmarshaller for AvailableProcessorFeature Object
     /// </summary>  
-    public class ValidDBInstanceModificationsMessageUnmarshaller : IUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidDBInstanceModificationsMessage, JsonUnmarshallerContext>
+    public class AvailableProcessorFeatureUnmarshaller : IUnmarshaller<AvailableProcessorFeature, XmlUnmarshallerContext>, IUnmarshaller<AvailableProcessorFeature, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(XmlUnmarshallerContext context)
+        public AvailableProcessorFeature Unmarshall(XmlUnmarshallerContext context)
         {
-            ValidDBInstanceModificationsMessage unmarshalledObject = new ValidDBInstanceModificationsMessage();
+            AvailableProcessorFeature unmarshalledObject = new AvailableProcessorFeature();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,18 +54,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
+                    if (context.TestExpression("AllowedValues", targetDepth))
                     {
-                        var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Storage.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    if (context.TestExpression("DefaultValue", targetDepth))
                     {
-                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ValidProcessorFeatures.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Name", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -83,18 +87,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(JsonUnmarshallerContext context)
+        public AvailableProcessorFeature Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ValidDBInstanceModificationsMessageUnmarshaller _instance = new ValidDBInstanceModificationsMessageUnmarshaller();        
+        private static AvailableProcessorFeatureUnmarshaller _instance = new AvailableProcessorFeatureUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidDBInstanceModificationsMessageUnmarshaller Instance
+        public static AvailableProcessorFeatureUnmarshaller Instance
         {
             get
             {

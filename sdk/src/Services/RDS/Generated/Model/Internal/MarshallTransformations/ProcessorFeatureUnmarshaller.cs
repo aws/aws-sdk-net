@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidDBInstanceModificationsMessage Object
+    /// Response Unmarshaller for ProcessorFeature Object
     /// </summary>  
-    public class ValidDBInstanceModificationsMessageUnmarshaller : IUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidDBInstanceModificationsMessage, JsonUnmarshallerContext>
+    public class ProcessorFeatureUnmarshaller : IUnmarshaller<ProcessorFeature, XmlUnmarshallerContext>, IUnmarshaller<ProcessorFeature, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(XmlUnmarshallerContext context)
+        public ProcessorFeature Unmarshall(XmlUnmarshallerContext context)
         {
-            ValidDBInstanceModificationsMessage unmarshalledObject = new ValidDBInstanceModificationsMessage();
+            ProcessorFeature unmarshalledObject = new ProcessorFeature();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,18 +54,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
+                    if (context.TestExpression("Name", targetDepth))
                     {
-                        var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Storage.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    if (context.TestExpression("Value", targetDepth))
                     {
-                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ValidProcessorFeatures.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -83,18 +81,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(JsonUnmarshallerContext context)
+        public ProcessorFeature Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ValidDBInstanceModificationsMessageUnmarshaller _instance = new ValidDBInstanceModificationsMessageUnmarshaller();        
+        private static ProcessorFeatureUnmarshaller _instance = new ProcessorFeatureUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidDBInstanceModificationsMessageUnmarshaller Instance
+        public static ProcessorFeatureUnmarshaller Instance
         {
             get
             {

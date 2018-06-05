@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the availability zone.
+        /// The name of the Availability Zone.
         /// </para>
         /// </summary>
         public string Name

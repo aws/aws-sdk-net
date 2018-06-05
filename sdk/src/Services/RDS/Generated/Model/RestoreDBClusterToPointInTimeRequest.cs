@@ -276,11 +276,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: A value from <code>1150-65535</code>. 
         /// </para>
         ///  
         /// <para>
-        /// Default: The same port as the original DB cluster.
+        /// Default: The default port for the engine.
         /// </para>
         /// </summary>
         public int Port

@@ -132,6 +132,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
+                    {
+                        var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProcessorFeatures.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("StorageType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

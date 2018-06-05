@@ -299,6 +299,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
+                    {
+                        var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProcessorFeatures.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("PromotionTier", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
