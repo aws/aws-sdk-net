@@ -396,7 +396,7 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
         /// The value of the "Text" parameter is longer than the accepted limits. The limit for
-        /// input text is a maximum of 3000 characters total, of which no more than 1500 can be
+        /// input text is a maximum of 6000 characters total, of which no more than 3000 can be
         /// billed characters. SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
