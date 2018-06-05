@@ -1,0 +1,9 @@
+{
+  "deprecatedOverrides": {
+    "operation": {
+      "DeleteSubscription": {
+        "message": "Use UpdateSubscription operation to disable automatic subscription renewal instead."
+      }
+    }
+  }
+}

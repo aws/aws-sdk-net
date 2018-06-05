@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Subscription Object
+    /// Response Unmarshaller for Limit Object
     /// </summary>  
-    public class SubscriptionUnmarshaller : IUnmarshaller<Subscription, XmlUnmarshallerContext>, IUnmarshaller<Subscription, JsonUnmarshallerContext>
+    public class LimitUnmarshaller : IUnmarshaller<Limit, XmlUnmarshallerContext>, IUnmarshaller<Limit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Subscription IUnmarshaller<Subscription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Limit IUnmarshaller<Limit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Subscription Unmarshall(JsonUnmarshallerContext context)
+        public Limit Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Subscription unmarshalledObject = new Subscription();
+            Limit unmarshalledObject = new Limit();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AutoRenew", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Limits", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
-                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeCommitmentInSeconds", targetDepth))
+                if (context.TestExpression("Max", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Max = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         }
 
 
-        private static SubscriptionUnmarshaller _instance = new SubscriptionUnmarshaller();        
+        private static LimitUnmarshaller _instance = new LimitUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubscriptionUnmarshaller Instance
+        public static LimitUnmarshaller Instance
         {
             get
             {

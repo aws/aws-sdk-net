@@ -28,25 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSubscription operation.
-    /// Activates AWS Shield Advanced for an account.
-    /// 
-    ///  
-    /// <para>
-    /// As part of this request you can specify <code>EmergencySettings</code> that automaticaly
-    /// grant the DDoS response team (DRT) needed permissions to assist you during a suspected
-    /// DDoS attack. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
-    /// the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// When you initally create a subscription, your subscription is set to be automatically
-    /// renewed at the end of the existing subscription period. You can change this by submitting
-    /// an <code>UpdateSubscription</code> request. 
-    /// </para>
+    /// This is the response object from the DescribeEmergencyContactSettings operation.
     /// </summary>
-    public partial class CreateSubscriptionRequest : AmazonShieldRequest
+    public partial class DescribeEmergencyContactSettingsResponse : AmazonWebServiceResponse
     {
+        private List<EmergencyContact> _emergencyContactList = new List<EmergencyContact>();
+
+        /// <summary>
+        /// Gets and sets the property EmergencyContactList. 
+        /// <para>
+        /// A list of email addresses that the DRT can use to contact you during a suspected attack.
+        /// </para>
+        /// </summary>
+        public List<EmergencyContact> EmergencyContactList
+        {
+            get { return this._emergencyContactList; }
+            set { this._emergencyContactList = value; }
+        }
+
+        // Check to see if EmergencyContactList property is set
+        internal bool IsSetEmergencyContactList()
+        {
+            return this._emergencyContactList != null && this._emergencyContactList.Count > 0; 
+        }
 
     }
 }

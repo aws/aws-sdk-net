@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListProtections operation
+    /// Response Unmarshaller for DescribeEmergencyContactSettings operation
     /// </summary>  
-    public class ListProtectionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeEmergencyContactSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListProtectionsResponse response = new ListProtectionsResponse();
+            DescribeEmergencyContactSettingsResponse response = new DescribeEmergencyContactSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("EmergencyContactList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Protections", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Protection, ProtectionUnmarshaller>(ProtectionUnmarshaller.Instance);
-                    response.Protections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EmergencyContact, EmergencyContactUnmarshaller>(EmergencyContactUnmarshaller.Instance);
+                    response.EmergencyContactList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,10 +76,6 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
-            {
-                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +83,9 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             return new AmazonShieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListProtectionsResponseUnmarshaller _instance = new ListProtectionsResponseUnmarshaller();        
+        private static DescribeEmergencyContactSettingsResponseUnmarshaller _instance = new DescribeEmergencyContactSettingsResponseUnmarshaller();        
 
-        internal static ListProtectionsResponseUnmarshaller GetInstance()
+        internal static DescribeEmergencyContactSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +93,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListProtectionsResponseUnmarshaller Instance
+        public static DescribeEmergencyContactSettingsResponseUnmarshaller Instance
         {
             get
             {

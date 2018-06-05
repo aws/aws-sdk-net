@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Subscription Object
+    /// Response Unmarshaller for EmergencyContact Object
     /// </summary>  
-    public class SubscriptionUnmarshaller : IUnmarshaller<Subscription, XmlUnmarshallerContext>, IUnmarshaller<Subscription, JsonUnmarshallerContext>
+    public class EmergencyContactUnmarshaller : IUnmarshaller<EmergencyContact, XmlUnmarshallerContext>, IUnmarshaller<EmergencyContact, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Subscription IUnmarshaller<Subscription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EmergencyContact IUnmarshaller<EmergencyContact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Subscription Unmarshall(JsonUnmarshallerContext context)
+        public EmergencyContact Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Subscription unmarshalledObject = new Subscription();
+            EmergencyContact unmarshalledObject = new EmergencyContact();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AutoRenew", targetDepth))
+                if (context.TestExpression("EmailAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Limits", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
-                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeCommitmentInSeconds", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         }
 
 
-        private static SubscriptionUnmarshaller _instance = new SubscriptionUnmarshaller();        
+        private static EmergencyContactUnmarshaller _instance = new EmergencyContactUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SubscriptionUnmarshaller Instance
+        public static EmergencyContactUnmarshaller Instance
         {
             get
             {

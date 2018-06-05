@@ -238,6 +238,70 @@ namespace Amazon.Shield
         #endregion
 
         
+        #region  AssociateDRTLogBucket
+
+        internal virtual AssociateDRTLogBucketResponse AssociateDRTLogBucket(AssociateDRTLogBucketRequest request)
+        {
+            var marshaller = AssociateDRTLogBucketRequestMarshaller.Instance;
+            var unmarshaller = AssociateDRTLogBucketResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDRTLogBucketRequest,AssociateDRTLogBucketResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDRTLogBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDRTLogBucket operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">REST API Reference for AssociateDRTLogBucket Operation</seealso>
+        public virtual Task<AssociateDRTLogBucketResponse> AssociateDRTLogBucketAsync(AssociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateDRTLogBucketRequestMarshaller.Instance;
+            var unmarshaller = AssociateDRTLogBucketResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateDRTLogBucketRequest,AssociateDRTLogBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateDRTRole
+
+        internal virtual AssociateDRTRoleResponse AssociateDRTRole(AssociateDRTRoleRequest request)
+        {
+            var marshaller = AssociateDRTRoleRequestMarshaller.Instance;
+            var unmarshaller = AssociateDRTRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateDRTRoleRequest,AssociateDRTRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateDRTRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDRTRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">REST API Reference for AssociateDRTRole Operation</seealso>
+        public virtual Task<AssociateDRTRoleResponse> AssociateDRTRoleAsync(AssociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateDRTRoleRequestMarshaller.Instance;
+            var unmarshaller = AssociateDRTRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateDRTRoleRequest,AssociateDRTRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProtection
 
         internal virtual CreateProtectionResponse CreateProtection(CreateProtectionRequest request)
@@ -336,6 +400,7 @@ namespace Amazon.Shield
         
         #region  DeleteSubscription
 
+        [Obsolete("Use UpdateSubscription operation to disable automatic subscription renewal instead.")]
         internal virtual DeleteSubscriptionResponse DeleteSubscription(DeleteSubscriptionRequest request)
         {
             var marshaller = DeleteSubscriptionRequestMarshaller.Instance;
@@ -355,6 +420,7 @@ namespace Amazon.Shield
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
+        [Obsolete("Use UpdateSubscription operation to disable automatic subscription renewal instead.")]
         public virtual Task<DeleteSubscriptionResponse> DeleteSubscriptionAsync(DeleteSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteSubscriptionRequestMarshaller.Instance;
@@ -393,6 +459,70 @@ namespace Amazon.Shield
             var unmarshaller = DescribeAttackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAttackRequest,DescribeAttackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDRTAccess
+
+        internal virtual DescribeDRTAccessResponse DescribeDRTAccess(DescribeDRTAccessRequest request)
+        {
+            var marshaller = DescribeDRTAccessRequestMarshaller.Instance;
+            var unmarshaller = DescribeDRTAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDRTAccessRequest,DescribeDRTAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDRTAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDRTAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">REST API Reference for DescribeDRTAccess Operation</seealso>
+        public virtual Task<DescribeDRTAccessResponse> DescribeDRTAccessAsync(DescribeDRTAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeDRTAccessRequestMarshaller.Instance;
+            var unmarshaller = DescribeDRTAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDRTAccessRequest,DescribeDRTAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEmergencyContactSettings
+
+        internal virtual DescribeEmergencyContactSettingsResponse DescribeEmergencyContactSettings(DescribeEmergencyContactSettingsRequest request)
+        {
+            var marshaller = DescribeEmergencyContactSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEmergencyContactSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEmergencyContactSettingsRequest,DescribeEmergencyContactSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEmergencyContactSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmergencyContactSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">REST API Reference for DescribeEmergencyContactSettings Operation</seealso>
+        public virtual Task<DescribeEmergencyContactSettingsResponse> DescribeEmergencyContactSettingsAsync(DescribeEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeEmergencyContactSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEmergencyContactSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEmergencyContactSettingsRequest,DescribeEmergencyContactSettingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -457,6 +587,70 @@ namespace Amazon.Shield
             var unmarshaller = DescribeSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSubscriptionRequest,DescribeSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateDRTLogBucket
+
+        internal virtual DisassociateDRTLogBucketResponse DisassociateDRTLogBucket(DisassociateDRTLogBucketRequest request)
+        {
+            var marshaller = DisassociateDRTLogBucketRequestMarshaller.Instance;
+            var unmarshaller = DisassociateDRTLogBucketResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDRTLogBucketRequest,DisassociateDRTLogBucketResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDRTLogBucket operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTLogBucket operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket">REST API Reference for DisassociateDRTLogBucket Operation</seealso>
+        public virtual Task<DisassociateDRTLogBucketResponse> DisassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateDRTLogBucketRequestMarshaller.Instance;
+            var unmarshaller = DisassociateDRTLogBucketResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateDRTLogBucketRequest,DisassociateDRTLogBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateDRTRole
+
+        internal virtual DisassociateDRTRoleResponse DisassociateDRTRole(DisassociateDRTRoleRequest request)
+        {
+            var marshaller = DisassociateDRTRoleRequestMarshaller.Instance;
+            var unmarshaller = DisassociateDRTRoleResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateDRTRoleRequest,DisassociateDRTRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateDRTRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateDRTRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole">REST API Reference for DisassociateDRTRole Operation</seealso>
+        public virtual Task<DisassociateDRTRoleResponse> DisassociateDRTRoleAsync(DisassociateDRTRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateDRTRoleRequestMarshaller.Instance;
+            var unmarshaller = DisassociateDRTRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateDRTRoleRequest,DisassociateDRTRoleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -553,6 +747,70 @@ namespace Amazon.Shield
             var unmarshaller = ListProtectionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProtectionsRequest,ListProtectionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEmergencyContactSettings
+
+        internal virtual UpdateEmergencyContactSettingsResponse UpdateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest request)
+        {
+            var marshaller = UpdateEmergencyContactSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateEmergencyContactSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEmergencyContactSettingsRequest,UpdateEmergencyContactSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEmergencyContactSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmergencyContactSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">REST API Reference for UpdateEmergencyContactSettings Operation</seealso>
+        public virtual Task<UpdateEmergencyContactSettingsResponse> UpdateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateEmergencyContactSettingsRequestMarshaller.Instance;
+            var unmarshaller = UpdateEmergencyContactSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEmergencyContactSettingsRequest,UpdateEmergencyContactSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSubscription
+
+        internal virtual UpdateSubscriptionResponse UpdateSubscription(UpdateSubscriptionRequest request)
+        {
+            var marshaller = UpdateSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubscriptionRequest,UpdateSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
+        public virtual Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSubscriptionRequest,UpdateSubscriptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

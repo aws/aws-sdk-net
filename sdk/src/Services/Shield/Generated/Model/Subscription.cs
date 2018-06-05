@@ -32,8 +32,73 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class Subscription
     {
+        private AutoRenew _autoRenew;
+        private DateTime? _endTime;
+        private List<Limit> _limits = new List<Limit>();
         private DateTime? _startTime;
         private long? _timeCommitmentInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property AutoRenew. 
+        /// <para>
+        /// If <code>ENABLED</code>, the subscription will be automatically renewed at the end
+        /// of the existing subscription period.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>.
+        /// You can change this by submitting an <code>UpdateSubscription</code> request. If the
+        /// <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>,
+        /// the existing value for <code>AutoRenew</code> remains unchanged.
+        /// </para>
+        /// </summary>
+        public AutoRenew AutoRenew
+        {
+            get { return this._autoRenew; }
+            set { this._autoRenew = value; }
+        }
+
+        // Check to see if AutoRenew property is set
+        internal bool IsSetAutoRenew()
+        {
+            return this._autoRenew != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The date and time your subscription will end.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Limits. 
+        /// <para>
+        /// Specifies how many protections of a given type you can create.
+        /// </para>
+        /// </summary>
+        public List<Limit> Limits
+        {
+            get { return this._limits; }
+            set { this._limits = value; }
+        }
+
+        // Check to see if Limits property is set
+        internal bool IsSetLimits()
+        {
+            return this._limits != null && this._limits.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property StartTime. 

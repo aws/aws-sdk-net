@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListProtections operation
+    /// Response Unmarshaller for AssociateDRTLogBucket operation
     /// </summary>  
-    public class ListProtectionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateDRTLogBucketResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListProtectionsResponse response = new ListProtectionsResponse();
+            AssociateDRTLogBucketResponse response = new AssociateDRTLogBucketResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Protections", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Protection, ProtectionUnmarshaller>(ProtectionUnmarshaller.Instance);
-                    response.Protections = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -78,13 +61,33 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedForDependencyException"))
+            {
+                return new AccessDeniedForDependencyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
             {
-                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
+            {
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitsExceededException"))
+            {
+                return new LimitsExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoAssociatedRoleException"))
+            {
+                return new NoAssociatedRoleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OptimisticLockException"))
+            {
+                return new OptimisticLockException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -93,9 +96,9 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             return new AmazonShieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListProtectionsResponseUnmarshaller _instance = new ListProtectionsResponseUnmarshaller();        
+        private static AssociateDRTLogBucketResponseUnmarshaller _instance = new AssociateDRTLogBucketResponseUnmarshaller();        
 
-        internal static ListProtectionsResponseUnmarshaller GetInstance()
+        internal static AssociateDRTLogBucketResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +106,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListProtectionsResponseUnmarshaller Instance
+        public static AssociateDRTLogBucketResponseUnmarshaller Instance
         {
             get
             {

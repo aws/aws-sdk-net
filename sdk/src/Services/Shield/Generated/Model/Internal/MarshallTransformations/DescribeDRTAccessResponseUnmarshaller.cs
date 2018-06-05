@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListProtections operation
+    /// Response Unmarshaller for DescribeDRTAccess operation
     /// </summary>  
-    public class ListProtectionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeDRTAccessResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListProtectionsResponse response = new ListProtectionsResponse();
+            DescribeDRTAccessResponse response = new DescribeDRTAccessResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("LogBucketList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.LogBucketList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Protections", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Protection, ProtectionUnmarshaller>(ProtectionUnmarshaller.Instance);
-                    response.Protections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,10 +82,6 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
-            {
-                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +89,9 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             return new AmazonShieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListProtectionsResponseUnmarshaller _instance = new ListProtectionsResponseUnmarshaller();        
+        private static DescribeDRTAccessResponseUnmarshaller _instance = new DescribeDRTAccessResponseUnmarshaller();        
 
-        internal static ListProtectionsResponseUnmarshaller GetInstance()
+        internal static DescribeDRTAccessResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +99,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListProtectionsResponseUnmarshaller Instance
+        public static DescribeDRTAccessResponseUnmarshaller Instance
         {
             get
             {

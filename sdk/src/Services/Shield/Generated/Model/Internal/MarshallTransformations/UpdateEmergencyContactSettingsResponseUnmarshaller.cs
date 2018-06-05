@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListProtections operation
+    /// Response Unmarshaller for UpdateEmergencyContactSettings operation
     /// </summary>  
-    public class ListProtectionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateEmergencyContactSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListProtectionsResponse response = new ListProtectionsResponse();
+            UpdateEmergencyContactSettingsResponse response = new UpdateEmergencyContactSettingsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Protections", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Protection, ProtectionUnmarshaller>(ProtectionUnmarshaller.Instance);
-                    response.Protections = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -82,9 +65,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
-                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OptimisticLockException"))
+            {
+                return new OptimisticLockException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -93,9 +80,9 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             return new AmazonShieldException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListProtectionsResponseUnmarshaller _instance = new ListProtectionsResponseUnmarshaller();        
+        private static UpdateEmergencyContactSettingsResponseUnmarshaller _instance = new UpdateEmergencyContactSettingsResponseUnmarshaller();        
 
-        internal static ListProtectionsResponseUnmarshaller GetInstance()
+        internal static UpdateEmergencyContactSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +90,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListProtectionsResponseUnmarshaller Instance
+        public static UpdateEmergencyContactSettingsResponseUnmarshaller Instance
         {
             get
             {
