@@ -1,3 +1,15 @@
+### 3.3.293.0 (2018-06-05 22:44 UTC)
+* CostExplorer (3.3.4.0)
+	* Cost Explorer API is providing programmatic access to RI saving metrics to enable customers to optimize their reservations.
+* Polly (3.3.5.0)
+	* Amazon Polly adds new French voice - "Lea"
+* RDS (3.3.25.0)
+	* This release adds customizable processor features for RDS instances.
+* SecretsManager (3.3.0.10)
+	* Documentation updates for secretsmanager
+* Shield (3.3.2.0)
+	* DDoS Response Team access management for AWS Shield
+
 ### 3.3.292.0 (2018-06-04 21:50 UTC)
 * AppStream (3.3.13.0)
 	* Amazon AppStream 2.0 adds support for Google Drive for G Suite. With this feature, customers will be able to connect their G Suite accounts with AppStream 2.0 and enable Google Drive access for an AppStream 2.0 stack. Users of the stack can then link their Google Drive using their G Suite login credentials and use their existing files stored in Drive with their AppStream 2.0 applications. File changes will be synced automatically to Google cloud. 

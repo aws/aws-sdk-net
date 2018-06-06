@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.292.0",
+    "ProductVersion" : "3.3.293.0",
     "CoreVersion"    : "3.3.23.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.24.1",
+            "Version" : "3.3.25.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.4.6",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -673,7 +673,7 @@
             "InPreview"               : false
         },
         "Shield"                          : {
-            "Version" : "3.3.1.6",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.0.9",
+            "Version" : "3.3.0.10",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
