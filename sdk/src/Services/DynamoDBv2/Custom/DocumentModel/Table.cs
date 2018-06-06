@@ -868,7 +868,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            var resp = await DDBClient.UpdateItemAsync(req).ConfigureAwait(false);
+            var resp = await DDBClient.UpdateItemAsync(req, cancellationToken).ConfigureAwait(false);
             var returnedAttributes = resp.Attributes;
             doc.CommitChanges();
 
