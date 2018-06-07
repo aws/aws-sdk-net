@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial class DynamoDBContext : IDynamoDBContext
     {
-#region Private members
+        #region Private members
 
         private bool disposed;
         private bool ownClient;
@@ -40,18 +40,18 @@ namespace Amazon.DynamoDBv2.DataModel
         internal DynamoDBContextConfig Config { get; private set; }
         internal ItemStorageConfigCache StorageConfigCache { get; private set; }
 
-#endregion
+        #endregion
 
-#region Public properties
+        #region Public properties
 
         /// <summary>
         /// This cache is a way to store Converters for objects which provides a way to expand Context
         /// </summary>
         public Dictionary<Type, IPropertyConverter> ConverterCache { get; private set; }
 
-#endregion
+        #endregion
 
-#region Constructors
+        #region Constructors
 
 #if !(PCL || UNITY || CORECLR)
 
@@ -95,7 +95,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="client">Client to use for making calls</param>
         public DynamoDBContext(IAmazonDynamoDB client)
             : this(client, false, new DynamoDBContextConfig()) { }
-        
+
         /// <summary>
         /// Constructs a DynamoDBContext object with the specified DynamoDB client
         /// and configuration.
@@ -120,9 +120,9 @@ namespace Amazon.DynamoDBv2.DataModel
             this.StorageConfigCache = new ItemStorageConfigCache(this);
         }
 
-#endregion
+        #endregion
 
-#region Dispose Pattern Implementation
+        #region Dispose Pattern Implementation
 
         /// <summary>
         /// Implements the Dispose pattern
@@ -162,9 +162,9 @@ namespace Amazon.DynamoDBv2.DataModel
             this.Dispose(false);
         }
 
-#endregion
+        #endregion
 
-#region Factory Creates
+        #region Factory Creates
 
         /// <summary>
         /// Creates a strongly-typed BatchGet object, allowing
@@ -237,9 +237,9 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 
-#endregion
+        #endregion
 
-#region Save/serialize
+        #region Save/serialize
 
         private void SaveHelper<T>(T value, DynamoDBOperationConfig operationConfig)
         {
@@ -327,9 +327,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return storage.Document;
         }
 
-#endregion
+        #endregion
 
-#region Load/deserialize
+        #region Load/deserialize
 
         private T LoadHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
@@ -478,9 +478,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#endregion
+        #endregion
 
-#region Delete
+        #region Delete
 
         private void DeleteHelper<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
@@ -527,7 +527,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-#if AWS_ASYNC_API 
+#if AWS_ASYNC_API
         private async Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
@@ -553,6 +553,6 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 #endif
 
-#endregion
+        #endregion
     }
 }

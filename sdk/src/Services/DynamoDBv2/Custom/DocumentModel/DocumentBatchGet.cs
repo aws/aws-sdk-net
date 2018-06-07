@@ -30,15 +30,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class DocumentBatchGet
     {
-#region Internal properties
+        #region Internal properties
 
         internal Table TargetTable { get; private set; }
         internal List<Key> Keys { get; private set; }
 
-#endregion
+        #endregion
 
 
-#region Public properties
+        #region Public properties
 
         /// <summary>
         /// List of results retrieved from DynamoDB.
@@ -56,10 +56,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public bool ConsistentRead { get; set; }
 
-#endregion
+        #endregion
 
 
-#region Constructor
+        #region Constructor
 
         /// <summary>
         /// Constructs a DocumentBatchGet instance for a specific table.
@@ -71,10 +71,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Keys = new List<Key>();
         }
 
-#endregion
+        #endregion
 
 
-#region Public methods
+        #region Public methods
 
         /// <summary>
         /// Add a single item to get, identified by its hash primary key.
@@ -118,11 +118,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return new MultiTableDocumentBatchGet(this, otherBatch);
         }
 
-#endregion
+        #endregion
 
 
-#region Internal methods
-        
+        #region Internal methods
+
         internal void ExecuteHelper()
         {
             MultiBatchGet resultsObject = new MultiBatchGet
@@ -175,7 +175,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Keys.Add(key);
         }
 
-#endregion
+        #endregion
     }
 
     /// <summary>
@@ -183,7 +183,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class MultiTableDocumentBatchGet
     {
-#region Properties
+        #region Properties
 
         /// <summary>
         /// List of DocumentBatchGet objects to include in the multi-table
@@ -207,10 +207,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#endregion
+        #endregion
 
 
-#region Constructor
+        #region Constructor
 
         /// <summary>
         /// Constructs a MultiTableDocumentBatchGet object from a number of
@@ -225,11 +225,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Batches = new List<DocumentBatchGet>(batches);
         }
 
-#endregion
+        #endregion
 
 
-#region Public methods
-        
+        #region Public methods
+
         /// <summary>
         /// Add a DocumentBatchGet object to the multi-table batch request.
         /// </summary>
@@ -239,9 +239,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Batches.Add(batch);
         }
 
-#endregion
+        #endregion
 
-#region Internal methods
+        #region Internal methods
 
         internal void ExecuteHelper()
         {
@@ -266,7 +266,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-#if AWS_ASYNC_API 
+#if AWS_ASYNC_API
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchGet resultsObject = new MultiBatchGet
@@ -291,7 +291,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 #endif
 
-#endregion
+        #endregion
     }
 
     /// <summary>

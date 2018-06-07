@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// </summary>
     public partial class Search
     {
-#region Internal constructors
+        #region Internal constructors
 
         internal Search()
             : this((SearchType)0)
@@ -45,10 +45,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Reset();
         }
 
-#endregion
+        #endregion
 
 
-#region Public properties
+        #region Public properties
 
         /// <summary>
         /// Name of the table being searched
@@ -200,10 +200,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public SelectValues Select { get; internal set; }
 
-#endregion
+        #endregion
 
 
-#region Private/internal members
+        #region Private/internal members
 
         internal List<Document> GetNextSetHelper()
         {
@@ -580,6 +580,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             CollectResults = true;
         }
 
-#endregion
+        #endregion
     }
 }
