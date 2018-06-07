@@ -1,3 +1,7 @@
+### 3.3.294.0 (2018-06-07 22:10 UTC)
+* MediaLive (3.3.6.0)
+	* AWS Elemental MediaLive now makes channel log information available through Amazon CloudWatch Logs. You can set up each MediaLive channel with a logging level; when the channel is run, logs will automatically be published to your account on Amazon CloudWatch Logs
+
 ### 3.3.293.0 (2018-06-05 22:44 UTC)
 * CostExplorer (3.3.4.0)
 	* Cost Explorer API is providing programmatic access to RI saving metrics to enable customers to optimize their reservations.
