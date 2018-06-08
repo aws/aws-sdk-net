@@ -32,10 +32,25 @@ namespace Amazon.Runtime.Internal
         private ILogger _logger;
         private static volatile bool _isProtocolUpdated;
 
-        // Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
-        // do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
-        // version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2.
-        public HttpWebRequestFactory(IAmazonSecurityProtocolManager amazonSecurityProtocolManager, ILogger logger = null)
+        /// <summary>
+        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
+        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
+        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
+        /// </summary>
+        /// <param name="amazonSecurityProtocolManager"></param>
+        public HttpWebRequestFactory(IAmazonSecurityProtocolManager amazonSecurityProtocolManager)
+            : this(amazonSecurityProtocolManager, null)
+        {
+        }
+
+        /// <summary>
+        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
+        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
+        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
+        /// </summary>
+        /// <param name="amazonSecurityProtocolManager"></param>
+        /// <param name="logger"></param>
+        public HttpWebRequestFactory(IAmazonSecurityProtocolManager amazonSecurityProtocolManager, ILogger logger)
         {
             _logger = logger ?? Logger.GetLogger(typeof(HttpWebRequestFactory));
 
