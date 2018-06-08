@@ -88,7 +88,7 @@ namespace Amazon.Runtime
             {
                 Logger.GetLogger(typeof(ECSTaskCredentials)).Error(e, "Failed to access environment variable {0}", ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
             }
-            return new InstanceProfileAWSCredentials();
+            return DefaultInstanceProfileAWSCredentials.Instance;
         }
 #endif
 
