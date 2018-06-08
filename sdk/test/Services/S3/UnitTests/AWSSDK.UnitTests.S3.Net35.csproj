@@ -22,26 +22,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/obj/**"/>
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj"/>
-    <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj"/>
-    <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj"/>
-    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net35.csproj"/>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="..\..\..\Common\AWSSDK.CommonTest.csproj" />
+    <ProjectReference Include="..\..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Services\S3\AWSSDK.S3.Net35.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2"/>
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0"/>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="Moq" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration"/>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
 </Project>

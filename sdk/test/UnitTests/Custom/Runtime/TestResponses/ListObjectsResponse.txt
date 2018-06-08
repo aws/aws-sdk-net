@@ -1,0 +1,51 @@
+HTTP/1.1 200 OK
+x-amz-id-2: JzNa5pbE3sLslZGZpDNGDModpX1SSj6j7zR2iemSDFGWVXe1uqqjKnKOpiH/Puws90qcIjZbGdk=
+x-amz-request-id: 15833AA0108540D6
+Date: Fri, 18 May 2018 19:07:13 GMT
+x-amz-bucket-region: us-east-1
+Content-Type: application/xml
+Transfer-Encoding: chunked
+Server: AmazonS3
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+  <Name>gokarnm-addressing-test</Name>
+  <Prefix></Prefix>
+  <Marker></Marker>
+  <MaxKeys>1000</MaxKeys>
+  <Delimiter>/</Delimiter>
+  <IsTruncated>false</IsTruncated>
+  <Contents>
+    <Key>1.txt</Key>
+    <LastModified>2018-05-18T19:06:24.000Z</LastModified>
+    <ETag>&quot;d41d8cd98f00b204e9800998ecf8427e&quot;</ETag>
+    <Size>0</Size>
+    <Owner>
+      <ID>de1e01e270ce2a48c1eaf97ec822f4aa</ID>
+      <DisplayName>bob</DisplayName>
+    </Owner>
+    <StorageClass>STANDARD</StorageClass>
+  </Contents>
+  <Contents>
+    <Key>2.txt</Key>
+    <LastModified>2018-05-18T19:06:36.000Z</LastModified>
+    <ETag>&quot;d41d8cd98f00b204e9800998ecf8427e&quot;</ETag>
+    <Size>0</Size>
+    <Owner>
+      <ID>de1e01e270ce2a48c1eaf97ec822f4aa</ID>
+      <DisplayName>bob</DisplayName>
+    </Owner>
+    <StorageClass>STANDARD</StorageClass>
+  </Contents>
+  <Contents>
+    <Key>3.txt</Key>
+    <LastModified>2018-05-18T19:06:45.000Z</LastModified>
+    <ETag>&quot;d41d8cd98f00b204e9800998ecf8427e&quot;</ETag>
+    <Size>0</Size>
+    <Owner>
+      <ID>de1e01e270ce2a48c1eaf97ec822f4aa</ID>
+      <DisplayName>bob</DisplayName>
+    </Owner>
+    <StorageClass>STANDARD</StorageClass>
+  </Contents>
+</ListBucketResult>
