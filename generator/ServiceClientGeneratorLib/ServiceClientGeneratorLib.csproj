@@ -3,6 +3,7 @@
     <TargetFramework>net45</TargetFramework>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>ServiceClientGenerator</RootNamespace>
     <AssemblyName>ServiceClientGeneratorLib</AssemblyName>
     <PackageId>ServiceClientGeneratorLib</PackageId>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
@@ -96,10 +97,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CodeAnalysisProjectFile.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators\ProjectFiles\CoreCLRSolutionFile.cs">
+    <Compile Update="Generators\ProjectFiles\SolutionFileBclAndCoreCLR.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CoreCLRSolutionFile.tt</DependentUpon>
+      <DependentUpon>SolutionFileBclAndCoreCLR.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\ProjectFiles\IOSProjectFile.cs">
       <AutoGen>True</AutoGen>
@@ -642,9 +643,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Generators\ProjectFiles\CoreCLRSolutionFile.tt">
+    <None Update="Generators\ProjectFiles\SolutionFileBclAndCoreCLR.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CoreCLRSolutionFile.cs</LastGenOutput>
+      <LastGenOutput>SolutionFileBclAndCoreCLR.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
