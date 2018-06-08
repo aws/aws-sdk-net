@@ -1,3 +1,7 @@
+### 3.3.295.0 (2018-06-08 17:41 UTC)
+* MediaTailor (3.3.1.0)
+	* Fixes a bug in the request URIs for MediaTailor PlaybackConfiguration operations.
+
 ### 3.3.294.0 (2018-06-07 22:10 UTC)
 * MediaLive (3.3.6.0)
 	* AWS Elemental MediaLive now makes channel log information available through Amazon CloudWatch Logs. You can set up each MediaLive channel with a logging level; when the channel is run, logs will automatically be published to your account on Amazon CloudWatch Logs

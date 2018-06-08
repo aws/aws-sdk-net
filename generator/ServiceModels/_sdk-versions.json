@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.294.0",
+    "ProductVersion" : "3.3.295.0",
     "CoreVersion"    : "3.3.23.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1129,7 +1129,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.23.1"
