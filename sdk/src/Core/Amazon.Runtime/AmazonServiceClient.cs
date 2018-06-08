@@ -400,7 +400,7 @@ namespace Amazon.Runtime
         private void BuildRuntimePipeline()
         {
 #if BCL || BCL45
-            var httpRequestFactory = new HttpWebRequestFactory();
+            var httpRequestFactory = new HttpWebRequestFactory(new AmazonSecurityProtocolManager());
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
 #elif UNITY
             IHttpRequestFactory<string> httpRequestFactory = null;
