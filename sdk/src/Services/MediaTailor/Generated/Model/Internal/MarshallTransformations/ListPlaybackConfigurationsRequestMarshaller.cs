@@ -57,7 +57,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.HttpMethod = "GET";
 
-            string uriResourcePath = "/prod/playbackConfigurations";
+            string uriResourcePath = "/playbackConfigurations";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));

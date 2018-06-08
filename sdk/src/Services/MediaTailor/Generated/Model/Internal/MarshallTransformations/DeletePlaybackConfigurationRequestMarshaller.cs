@@ -57,7 +57,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaTailor");
             request.HttpMethod = "DELETE";
 
-            string uriResourcePath = "/prod/playbackConfiguration/{Name}";
+            string uriResourcePath = "/playbackConfiguration/{Name}";
             if (!publicRequest.IsSetName())
                 throw new AmazonMediaTailorException("Request object does not have required field Name set");
             uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromString(publicRequest.Name));

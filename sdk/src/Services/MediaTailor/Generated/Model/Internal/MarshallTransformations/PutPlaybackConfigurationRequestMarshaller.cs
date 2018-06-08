@@ -58,7 +58,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/prod/playbackConfiguration";
+            string uriResourcePath = "/playbackConfiguration";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
