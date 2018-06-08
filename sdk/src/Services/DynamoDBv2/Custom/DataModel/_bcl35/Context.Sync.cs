@@ -56,7 +56,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Save<T>(T value, DynamoDBOperationConfig operationConfig)
         {
-            SaveHelper<T>(value, operationConfig, false);
+            SaveHelper<T>(value, operationConfig);
         }
 
         #endregion
@@ -132,7 +132,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(hashKey, rangeKey, operationConfig, false);
+            return LoadHelper<T>(hashKey, rangeKey, operationConfig);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </returns>
         public T Load<T>(T keyObject, DynamoDBOperationConfig operationConfig)
         {
-            return LoadHelper<T>(keyObject, operationConfig, false);
+            return LoadHelper<T>(keyObject, operationConfig);
         }
 
         #endregion
@@ -208,7 +208,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         public void Delete<T>(T value, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(value, operationConfig, false);
+            DeleteHelper<T>(value, operationConfig);
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         public void Delete<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig)
         {
-            DeleteHelper<T>(hashKey, rangeKey, operationConfig, false);
+            DeleteHelper<T>(hashKey, rangeKey, operationConfig);
         }
 
         #endregion

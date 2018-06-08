@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<List<Document>>(
-                () => { return GetNextSetHelper(true); },
+                () => { return GetNextSetHelper(); },
                 asyncOptions,
                 callback);
         }
@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<List<Document>>(
-                () => { return GetRemainingHelper(true); },
+                () => { return GetRemainingHelper(); },
                 asyncOptions,
                 callback);
         }

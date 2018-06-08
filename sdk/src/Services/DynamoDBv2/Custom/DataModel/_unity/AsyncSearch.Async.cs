@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<List<T>>(
                 () =>
                 {
-                    var documents = DocumentSearch.GetNextSetHelper(true);
+                    var documents = DocumentSearch.GetNextSetHelper();
                     List<T> items = SourceContext.FromDocumentsHelper<T>(documents, Config).ToList();
                     return items;
                 },
@@ -60,7 +60,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<List<T>>(
                 () =>
                 {
-                    var documents = DocumentSearch.GetRemainingHelper(true);
+                    var documents = DocumentSearch.GetRemainingHelper();
                     List<T> items = SourceContext.FromDocumentsHelper<T>(documents, Config).ToList();
                     return items;
                 },

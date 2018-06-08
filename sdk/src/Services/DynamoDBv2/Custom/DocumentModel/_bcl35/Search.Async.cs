@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetNextSet(AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetNextSetHelper(true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetNextSetHelper(), callback, state);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetRemaining(AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetRemainingHelper(true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetRemainingHelper(), callback, state);
         }
         /// <summary>
         /// Finishes the asynchronous execution of the GetRemaining operation.

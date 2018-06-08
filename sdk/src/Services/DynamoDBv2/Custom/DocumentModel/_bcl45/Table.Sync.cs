@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Null or updated attributes, depending on config.</returns>
         public Document PutItem(Document doc, PutItemOperationConfig config = null)
         {
-            return PutItemHelper(doc, config, false);
+            return PutItemHelper(doc, config);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                PutItemHelper(doc, config, false);
+                PutItemHelper(doc, config);
                 return true;
             }
             catch (ConditionalCheckFailedException)
@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         public Document GetItem(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config = null)
         {
-            return GetItemHelper(MakeKey(hashKey, rangeKey), config, false);
+            return GetItemHelper(MakeKey(hashKey, rangeKey), config);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         public Document GetItem(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config = null)
         {
-            return GetItemHelper(MakeKey(key), config, false);
+            return GetItemHelper(MakeKey(key), config);
         }
 
         #endregion
@@ -113,7 +113,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(doc), config, false);
+            return UpdateHelper(doc, MakeKey(doc), config);
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                UpdateHelper(doc, MakeKey(doc), config, false);
+                UpdateHelper(doc, MakeKey(doc), config);
                 return true;
             }
             catch (ConditionalCheckFailedException)
@@ -147,7 +147,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(key), config, false);
+            return UpdateHelper(doc, MakeKey(key), config);
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                UpdateHelper(doc, MakeKey(key), config, false);
+                UpdateHelper(doc, MakeKey(key), config);
                 return true;
             }
             catch (ConditionalCheckFailedException)
@@ -183,7 +183,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, null), config, false);
+            return UpdateHelper(doc, MakeKey(hashKey, null), config);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                UpdateHelper(doc, MakeKey(hashKey, null), config, false);
+                UpdateHelper(doc, MakeKey(hashKey, null), config);
                 return true;
             }
             catch (ConditionalCheckFailedException)
@@ -220,7 +220,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.UpdateItemOperationConfig"/>
         public Document UpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, false);
+            return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, false);
+                UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
                 return true;
             }
             catch (ConditionalCheckFailedException)
@@ -260,7 +260,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Document document, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(document), config, false);
+            return DeleteHelper(MakeKey(document), config);
         }
 
         /// <summary>
@@ -292,7 +292,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Primitive hashKey, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(hashKey, null), config, false);
+            return DeleteHelper(MakeKey(hashKey, null), config);
         }
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(hashKey, rangeKey), config, false);
+            return DeleteHelper(MakeKey(hashKey, rangeKey), config);
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Null or old attributes, depending on config.</returns>
         public Document DeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(key), config, false);
+            return DeleteHelper(MakeKey(key), config);
         }
 
         /// <summary>
@@ -372,7 +372,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             try
             {
-                DeleteHelper(MakeKey(key), config, false);
+                DeleteHelper(MakeKey(key), config);
                 return true;
             }
             catch (ConditionalCheckFailedException)

@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper(false);
+            ExecuteHelper();
         }
 
         #endregion
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper(false);
+            ExecuteHelper();
         }
 
         #endregion

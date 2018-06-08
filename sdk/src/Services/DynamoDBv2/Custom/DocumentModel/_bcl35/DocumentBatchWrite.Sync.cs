@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper(false);
+            ExecuteHelper();
         }
 
         #endregion
@@ -58,7 +58,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper(false);
+            ExecuteHelper();
         }
 
         #endregion
