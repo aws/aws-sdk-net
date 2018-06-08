@@ -528,27 +528,30 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
 #if AWS_ASYNC_API
-        private async Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
+
+        private static readonly Task CompletedTask = Task.FromResult<object>(null);
+
+        private Task DeleteHelperAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken)
         {
             if (value == null) throw new ArgumentNullException("value");
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             flatConfig.IgnoreNullValues = true;
             ItemStorage storage = ObjectToItemStorage(value, true, flatConfig);
-            if (storage == null) return;
+            if (storage == null) return CompletedTask;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
             if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
             {
-                await table.DeleteHelperAsync(table.MakeKey(storage.Document), null, cancellationToken).ConfigureAwait(false);
+                return table.DeleteHelperAsync(table.MakeKey(storage.Document), null, cancellationToken);
             }
             else
             {
                 Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                await table.DeleteHelperAsync(
+                return table.DeleteHelperAsync(
                     table.MakeKey(storage.Document),
                     new DeleteItemOperationConfig { Expected = expectedDocument },
-                    cancellationToken).ConfigureAwait(false);
+                    cancellationToken);
             }
         }
 #endif
