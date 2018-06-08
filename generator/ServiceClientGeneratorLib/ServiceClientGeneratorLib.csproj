@@ -5,7 +5,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>ServiceClientGeneratorLib</AssemblyName>
     <PackageId>ServiceClientGeneratorLib</PackageId>
-
+    <RootNamespace>ServiceClientGenerator</RootNamespace>
+    
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

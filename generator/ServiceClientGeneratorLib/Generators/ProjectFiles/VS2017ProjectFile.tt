@@ -12,14 +12,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName><#=this.Session["AssemblyName"]#></AssemblyName>
     <PackageId><#=this.Session["AssemblyName"]#></PackageId>
-<#
-    if ((bool)Session["SetBaseIntermediateOutputPath"])
-    {
-#>
-	<BaseIntermediateOutputPath>./obj/<#=this.Session["ConfigurationName"]#></BaseIntermediateOutputPath>
-<#
-    }
-#>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

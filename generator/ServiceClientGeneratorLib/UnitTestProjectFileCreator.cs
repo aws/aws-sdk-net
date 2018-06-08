@@ -91,7 +91,6 @@ namespace ServiceClientGenerator
                     session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
                     session["ExternalFilesInclude"] = "../Services/*/UnitTests/Custom/*.cs";
                     session["EmbeddedResources"] = configuration.EmbeddedResources;
-                    session["SetBaseIntermediateOutputPath"] = false;
                 }
                 else
                 {
@@ -102,7 +101,6 @@ namespace ServiceClientGenerator
                     {
                         session["EmbeddedResources"] = new List<string> { Path.Combine("Custom", "EmbeddedResource", "*") };
                     }
-                    session["SetBaseIntermediateOutputPath"] = true;
                 }
 
                 if (useDllReference) session.Add("ServiceDllReferences", dllProjectReferences);
