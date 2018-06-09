@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.295.0",
-    "CoreVersion"    : "3.3.23.1",
+    "ProductVersion" : "3.3.296.0",
+    "CoreVersion"    : "3.3.24.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -143,10 +143,10 @@
             "InPreview"               : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
-                "Core" : "3.3.23.1"
+                "Core" : "3.3.24.0"
             },
             "InPreview"               : false
         },
