@@ -1,17 +1,13 @@
 ### 3.3.296.0 (2018-06-09 01:01 UTC)
 * DynamoDBv2 (3.3.9.0)
 	* Updated to use new Core, version 3.3.24.0
-	* Removed AsyncRunner usage for async paths in DynamoDB DataModel and DocumentModel APIs - PR https://github.com/aws/aws-sdk-net/pull/896 .
+	* Removed AsyncRunner usage for async paths in DynamoDB DataModel and DocumentModel APIs - PR https://github.com/aws/aws-sdk-net/pull/896
 * Core 3.3.24.0
 	* DotnetCLI fix for BaseIntermediateOutputPath.
+	* Replace EC2 instance profile credentials resolver in the credentials fallback chain with a new singleton implementation.
+* AWSSDK.Extensions.NETCore.Setup (3.3.6)
+	* Support for TryAddAWSService - PR https://github.com/aws/aws-sdk-net/pull/935
 
-Fix to condense reference path for projects in the service specific solutions.
-
-Replace EC2 instance profile credentials resolver in the credentials fallback chain with a new singleton implementation.
-
-Add S3 virtual host addressing tests.
-
-Pull request https://github.com/aws/aws-sdk-net/pull/935 for AWSSDK.Extensions.NETCore.Setup
 
 ### 3.3.295.0 (2018-06-08 17:41 UTC)
 * MediaTailor (3.3.1.0)
