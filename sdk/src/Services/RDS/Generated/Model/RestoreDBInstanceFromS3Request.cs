@@ -211,7 +211,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all AWS Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon RDS User Guide. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -437,7 +437,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the database engine to use. Choose the latest minor version
-        /// of your database engine as specified in <a>CreateDBInstance</a>. 
+        /// of your database engine. For information about engine versions, see <a>CreateDBInstance</a>,
+        /// or call <a>DescribeDBEngineVersions</a>. 
         /// </para>
         /// </summary>
         public string EngineVersion

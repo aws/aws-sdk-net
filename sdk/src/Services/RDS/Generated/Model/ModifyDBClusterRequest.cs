@@ -246,7 +246,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+        /// For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
         /// </para>
         /// </summary>
         public string EngineVersion

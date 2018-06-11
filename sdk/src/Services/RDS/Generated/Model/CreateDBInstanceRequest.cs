@@ -87,7 +87,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dbInstanceIdentifier">The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Cannot end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <code>mydbinstance</code> </param>
         /// <param name="allocatedStorage">The amount of storage (in gibibytes) to allocate for the DB instance. Type: Integer  <b>Amazon Aurora</b>  Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.  <b>MySQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 16384. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>MariaDB</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 16384. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>PostgreSQL</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 16384. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul>  <b>Oracle</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 16384. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul>  <b>SQL Server</b>  Constraints to the amount of storage for each storage type are the following:  <ul> <li> General Purpose (SSD) storage (gp2): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 200 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul></param>
-        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the Amazon RDS User Guide. </param>
+        /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </param>
         /// <param name="engine">The name of the database engine to be used for this instance.  Not every database engine is available for every AWS Region.  Valid Values:  <ul> <li>  <code>aurora</code> (for MySQL 5.6-compatible Aurora) </li> <li>  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora) </li> <li>  <code>aurora-postgresql</code>  </li> <li>  <code>mariadb</code>  </li> <li>  <code>mysql</code>  </li> <li>  <code>oracle-ee</code>  </li> <li>  <code>oracle-se2</code>  </li> <li>  <code>oracle-se1</code>  </li> <li>  <code>oracle-se</code>  </li> <li>  <code>postgres</code>  </li> <li>  <code>sqlserver-ee</code>  </li> <li>  <code>sqlserver-se</code>  </li> <li>  <code>sqlserver-ex</code>  </li> <li>  <code>sqlserver-web</code>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user.  <b>Amazon Aurora</b>  Not applicable. The name for the master user is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.   <b>MariaDB</b>  Constraints: <ul> <li> Required for MariaDB. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Microsoft SQL Server</b>  Constraints: <ul> <li> Required for SQL Server. </li> <li> Must be 1 to 128 letters or numbers. </li> <li> The first character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>MySQL</b>  Constraints: <ul> <li> Required for MySQL. </li> <li> Must be 1 to 16 letters or numbers. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>Oracle</b>  Constraints: <ul> <li> Required for Oracle. </li> <li> Must be 1 to 30 letters or numbers. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul>  <b>PostgreSQL</b>  Constraints: <ul> <li> Required for PostgreSQL. </li> <li> Must be 1 to 63 letters or numbers. </li> <li> First character must be a letter. </li> <li> Cannot be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. The password can include any printable ASCII character except "/", """, or "@".  <b>Amazon Aurora</b>  Not applicable. The password for the master user is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.  <b>MariaDB</b>  Constraints: Must contain from 8 to 41 characters.  <b>Microsoft SQL Server</b>  Constraints: Must contain from 8 to 128 characters.  <b>MySQL</b>  Constraints: Must contain from 8 to 41 characters.  <b>Oracle</b>  Constraints: Must contain from 8 to 30 characters.  <b>PostgreSQL</b>  Constraints: Must contain from 8 to 128 characters.</param>
@@ -441,7 +441,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all AWS Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon RDS User Guide. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -933,8 +933,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The following are the database engines and major and minor versions that are available
-        /// with Amazon RDS. Not every database engine is available for every AWS Region.
+        /// For a list of valid engine versions, call <a>DescribeDBEngineVersions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the database engines and links to information about the major and
+        /// minor versions that are available with Amazon RDS. Not every database engine is available
+        /// for every AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -949,332 +954,47 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <b>MariaDB</b> 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>10.2.12</code> (supported in all AWS Regions)
+        /// See <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>10.2.11</code> (supported in all AWS Regions)
+        ///  <b>Microsoft SQL Server</b> 
         /// </para>
-        ///  </li> </ul>  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>10.1.31</code> (supported in all AWS Regions)
+        /// See <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+        /// and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.26</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.23</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.19</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>10.0.34</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.32</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.31</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.28</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.24</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1,
-        /// eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2017</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2016</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2014</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition,
-        /// and all AWS Regions except ca-central-1 and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2012</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2008 R2</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         ///  <b>MySQL</b> 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>5.7.21</code> (supported in all AWS regions)
+        /// See <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>5.7.19</code> (supported in all AWS regions)
+        ///  <b>Oracle</b> 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>5.7.17</code> (supported in all AWS regions)
+        /// See <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+        /// Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.7.16</code> (supported in all AWS regions)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>5.6.39</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.37</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.35</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.34</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.29</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1,
-        /// eu-west-2)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>5.5.59</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.57</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.54</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.53</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.46</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle 12c</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v7</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle 11g</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v11</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         ///  <b>PostgreSQL</b> 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <b>Version 10.1</b> 
+        /// See <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+        /// PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string EngineVersion
         {

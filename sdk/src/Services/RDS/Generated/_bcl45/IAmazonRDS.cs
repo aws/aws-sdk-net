@@ -478,7 +478,7 @@ namespace Amazon.RDS
         /// For more information on copying encrypted DB cluster snapshots from one AWS Region
         /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
         /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-        /// Regions</a> in the Amazon RDS User Guide.
+        /// Regions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -578,7 +578,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about copying snapshots, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-        /// a DB Snapshot</a> in the Amazon RDS User Guide. 
+        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>

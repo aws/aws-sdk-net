@@ -171,7 +171,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all AWS Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon RDS User Guide. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
