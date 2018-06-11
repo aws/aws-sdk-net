@@ -521,6 +521,23 @@ namespace Amazon.CloudDirectory
 
         #endregion
                 
+        #region  GetLinkAttributes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        Task<GetLinkAttributesResponse> GetLinkAttributesAsync(GetLinkAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetObjectAttributes
 
 
@@ -1028,6 +1045,23 @@ namespace Amazon.CloudDirectory
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateLinkAttributes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        Task<UpdateLinkAttributesResponse> UpdateLinkAttributesAsync(UpdateLinkAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

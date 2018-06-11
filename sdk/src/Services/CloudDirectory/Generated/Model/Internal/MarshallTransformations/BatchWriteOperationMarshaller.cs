@@ -188,6 +188,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetUpdateLinkAttributes())
+            {
+                context.Writer.WritePropertyName("UpdateLinkAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchUpdateLinkAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateLinkAttributes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUpdateObjectAttributes())
             {
                 context.Writer.WritePropertyName("UpdateObjectAttributes");

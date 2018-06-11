@@ -2803,6 +2803,96 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetLinkAttributes
+
+        /// <summary>
+        /// Retrieves attributes that are associated with a typed link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetLinkAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        public virtual GetLinkAttributesResponse GetLinkAttributes(GetLinkAttributesRequest request)
+        {
+            var marshaller = GetLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetLinkAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetLinkAttributesRequest,GetLinkAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLinkAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        public virtual IAsyncResult BeginGetLinkAttributes(GetLinkAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetLinkAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetLinkAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLinkAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetLinkAttributesResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        public virtual GetLinkAttributesResponse EndGetLinkAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLinkAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetObjectAttributes
 
         /// <summary>
@@ -5519,6 +5609,97 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  UpdateLinkAttributes
+
+        /// <summary>
+        /// Updates a given typed link’s attributes. Attributes to be updated must not contribute
+        /// to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLinkAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        public virtual UpdateLinkAttributesResponse UpdateLinkAttributes(UpdateLinkAttributesRequest request)
+        {
+            var marshaller = UpdateLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateLinkAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLinkAttributesRequest,UpdateLinkAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLinkAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLinkAttributes(UpdateLinkAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateLinkAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateLinkAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLinkAttributes.</param>
+        /// 
+        /// <returns>Returns a  UpdateLinkAttributesResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        public virtual UpdateLinkAttributesResponse EndUpdateLinkAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLinkAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateObjectAttributes
 
         /// <summary>
@@ -5549,6 +5730,10 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
         /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
+        /// Indicates that a link could not be created due to a naming conflict. Choose a different
+        /// name and then try again.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateObjectAttributes operation
+    /// Response Unmarshaller for GetLinkAttributes operation
     /// </summary>  
-    public class UpdateObjectAttributesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetLinkAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateObjectAttributesResponse response = new UpdateObjectAttributesResponse();
+            GetLinkAttributesResponse response = new GetLinkAttributesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ObjectIdentifier", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ObjectIdentifier = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AttributeKeyAndValue, AttributeKeyAndValueUnmarshaller>(AttributeKeyAndValueUnmarshaller.Instance);
+                    response.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -96,10 +96,6 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LinkNameAlreadyInUseException"))
-            {
-                return new LinkNameAlreadyInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -115,9 +111,9 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             return new AmazonCloudDirectoryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateObjectAttributesResponseUnmarshaller _instance = new UpdateObjectAttributesResponseUnmarshaller();        
+        private static GetLinkAttributesResponseUnmarshaller _instance = new GetLinkAttributesResponseUnmarshaller();        
 
-        internal static UpdateObjectAttributesResponseUnmarshaller GetInstance()
+        internal static GetLinkAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +121,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateObjectAttributesResponseUnmarshaller Instance
+        public static GetLinkAttributesResponseUnmarshaller Instance
         {
             get
             {

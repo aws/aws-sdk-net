@@ -1135,6 +1135,38 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  GetLinkAttributes
+
+        internal virtual GetLinkAttributesResponse GetLinkAttributes(GetLinkAttributesRequest request)
+        {
+            var marshaller = GetLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetLinkAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetLinkAttributesRequest,GetLinkAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        public virtual Task<GetLinkAttributesResponse> GetLinkAttributesAsync(GetLinkAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetLinkAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLinkAttributesRequest,GetLinkAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectAttributes
 
         internal virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
@@ -2090,6 +2122,38 @@ namespace Amazon.CloudDirectory
             var unmarshaller = UpdateFacetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFacetRequest,UpdateFacetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLinkAttributes
+
+        internal virtual UpdateLinkAttributesResponse UpdateLinkAttributes(UpdateLinkAttributesRequest request)
+        {
+            var marshaller = UpdateLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateLinkAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLinkAttributesRequest,UpdateLinkAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        public virtual Task<UpdateLinkAttributesResponse> UpdateLinkAttributesAsync(UpdateLinkAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateLinkAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateLinkAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLinkAttributesRequest,UpdateLinkAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

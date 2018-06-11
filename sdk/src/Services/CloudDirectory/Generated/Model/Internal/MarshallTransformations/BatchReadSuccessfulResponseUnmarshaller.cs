@@ -64,6 +64,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GetLinkAttributes", targetDepth))
+                {
+                    var unmarshaller = BatchGetLinkAttributesResponseUnmarshaller.Instance;
+                    unmarshalledObject.GetLinkAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GetObjectAttributes", targetDepth))
                 {
                     var unmarshaller = BatchGetObjectAttributesResponseUnmarshaller.Instance;

@@ -32,6 +32,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchReadSuccessfulResponse
     {
+        private BatchGetLinkAttributesResponse _getLinkAttributes;
         private BatchGetObjectAttributesResponse _getObjectAttributes;
         private BatchGetObjectInformationResponse _getObjectInformation;
         private BatchListAttachedIndicesResponse _listAttachedIndices;
@@ -44,6 +45,24 @@ namespace Amazon.CloudDirectory.Model
         private BatchListOutgoingTypedLinksResponse _listOutgoingTypedLinks;
         private BatchListPolicyAttachmentsResponse _listPolicyAttachments;
         private BatchLookupPolicyResponse _lookupPolicy;
+
+        /// <summary>
+        /// Gets and sets the property GetLinkAttributes. 
+        /// <para>
+        /// The list of attributes to retrieve from the typed link.
+        /// </para>
+        /// </summary>
+        public BatchGetLinkAttributesResponse GetLinkAttributes
+        {
+            get { return this._getLinkAttributes; }
+            set { this._getLinkAttributes = value; }
+        }
+
+        // Check to see if GetLinkAttributes property is set
+        internal bool IsSetGetLinkAttributes()
+        {
+            return this._getLinkAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GetObjectAttributes. 

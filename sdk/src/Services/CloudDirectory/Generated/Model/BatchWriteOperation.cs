@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         private BatchDetachPolicy _detachPolicy;
         private BatchDetachTypedLink _detachTypedLink;
         private BatchRemoveFacetFromObject _removeFacetFromObject;
+        private BatchUpdateLinkAttributes _updateLinkAttributes;
         private BatchUpdateObjectAttributes _updateObjectAttributes;
 
         /// <summary>
@@ -285,6 +286,24 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetRemoveFacetFromObject()
         {
             return this._removeFacetFromObject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateLinkAttributes. 
+        /// <para>
+        /// Updates a given object's attributes.
+        /// </para>
+        /// </summary>
+        public BatchUpdateLinkAttributes UpdateLinkAttributes
+        {
+            get { return this._updateLinkAttributes; }
+            set { this._updateLinkAttributes = value; }
+        }
+
+        // Check to see if UpdateLinkAttributes property is set
+        internal bool IsSetUpdateLinkAttributes()
+        {
+            return this._updateLinkAttributes != null;
         }
 
         /// <summary>

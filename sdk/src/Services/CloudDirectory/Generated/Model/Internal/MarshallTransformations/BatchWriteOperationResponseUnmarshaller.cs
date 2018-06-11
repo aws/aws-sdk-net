@@ -142,6 +142,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     unmarshalledObject.RemoveFacetFromObject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UpdateLinkAttributes", targetDepth))
+                {
+                    var unmarshaller = BatchUpdateLinkAttributesResponseUnmarshaller.Instance;
+                    unmarshalledObject.UpdateLinkAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UpdateObjectAttributes", targetDepth))
                 {
                     var unmarshaller = BatchUpdateObjectAttributesResponseUnmarshaller.Instance;
