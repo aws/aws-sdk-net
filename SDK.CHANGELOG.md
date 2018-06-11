@@ -1,3 +1,11 @@
+### 3.3.297.0 (2018-06-11 21:08 UTC)
+* CloudDirectory (3.3.8.0)
+	* Amazon Cloud Directory now supports optional attributes on Typed Links, giving users the ability to associate and manage data on Typed Links. 
+* RDS (3.3.25.1)
+	* Changed lists of valid EngineVersion values to links to the RDS User Guide.
+* StorageGateway (3.3.8.0)
+	*  AWS Storage Gateway now enables you to create cached volumes and tapes with AWS KMS support.
+
 ### 3.3.296.0 (2018-06-09 01:01 UTC)
 * DynamoDBv2 (3.3.9.0)
 	* Updated to use new Core, version 3.3.24.0
