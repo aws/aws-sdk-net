@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     public partial class CachediSCSIVolume
     {
         private DateTime? _createdDate;
+        private string _kmsKey;
         private string _sourceSnapshotId;
         private string _volumeARN;
         private string _volumeId;
@@ -60,6 +61,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKey.
+        /// </summary>
+        public string KMSKey
+        {
+            get { return this._kmsKey; }
+            set { this._kmsKey = value; }
+        }
+
+        // Check to see if KMSKey property is set
+        internal bool IsSetKMSKey()
+        {
+            return this._kmsKey != null;
         }
 
         /// <summary>

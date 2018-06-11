@@ -79,6 +79,18 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GatewayARN);
                 }
 
+                if(publicRequest.IsSetKMSEncrypted())
+                {
+                    context.Writer.WritePropertyName("KMSEncrypted");
+                    context.Writer.Write(publicRequest.KMSEncrypted);
+                }
+
+                if(publicRequest.IsSetKMSKey())
+                {
+                    context.Writer.WritePropertyName("KMSKey");
+                    context.Writer.Write(publicRequest.KMSKey);
+                }
+
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     context.Writer.WritePropertyName("NetworkInterfaceId");

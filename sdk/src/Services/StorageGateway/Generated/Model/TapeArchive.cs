@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     public partial class TapeArchive
     {
         private DateTime? _completionTime;
+        private string _kmsKey;
         private string _retrievedTo;
         private string _tapeARN;
         private string _tapeBarcode;
@@ -48,7 +49,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+        /// The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
         /// format.
         /// </para>
         /// </summary>
@@ -62,6 +63,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetCompletionTime()
         {
             return this._completionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKey.
+        /// </summary>
+        public string KMSKey
+        {
+            get { return this._kmsKey; }
+            set { this._kmsKey = value; }
+        }
+
+        // Check to see if KMSKey property is set
+        internal bool IsSetKMSKey()
+        {
+            return this._kmsKey != null;
         }
 
         /// <summary>
@@ -124,7 +140,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TapeCreatedDate.
+        /// Gets and sets the property TapeCreatedDate. 
+        /// <para>
+        /// The date the virtual tape was created.
+        /// </para>
         /// </summary>
         public DateTime TapeCreatedDate
         {
