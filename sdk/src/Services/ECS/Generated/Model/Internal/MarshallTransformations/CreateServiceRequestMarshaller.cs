@@ -179,6 +179,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetSchedulingStrategy())
+                {
+                    context.Writer.WritePropertyName("schedulingStrategy");
+                    context.Writer.Write(publicRequest.SchedulingStrategy);
+                }
+
                 if(publicRequest.IsSetServiceName())
                 {
                     context.Writer.WritePropertyName("serviceName");

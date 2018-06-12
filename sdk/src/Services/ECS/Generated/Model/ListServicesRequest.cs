@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private LaunchType _launchType;
         private int? _maxResults;
         private string _nextToken;
+        private SchedulingStrategy _schedulingStrategy;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -124,6 +125,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingStrategy. 
+        /// <para>
+        /// The scheduling strategy for services to list.
+        /// </para>
+        /// </summary>
+        public SchedulingStrategy SchedulingStrategy
+        {
+            get { return this._schedulingStrategy; }
+            set { this._schedulingStrategy = value; }
+        }
+
+        // Check to see if SchedulingStrategy property is set
+        internal bool IsSetSchedulingStrategy()
+        {
+            return this._schedulingStrategy != null;
         }
 
     }

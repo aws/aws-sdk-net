@@ -73,6 +73,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetService())
                 {
                     context.Writer.WritePropertyName("service");

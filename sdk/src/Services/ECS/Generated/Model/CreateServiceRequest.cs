@@ -61,8 +61,10 @@ namespace Amazon.ECS.Model
     /// are considered healthy if they are in the <code>RUNNING</code> state. Tasks for services
     /// that <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
     /// state and the container instance they are hosted on is reported as healthy by the
-    /// load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in
-    /// the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+    /// load balancer. The default value for a replica service for <code>minimumHealthyPercent</code>
+    /// is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs. The default
+    /// value for a daemon service for <code>minimumHealthyPercent</code> is 0% for the AWS
+    /// CLI, the AWS SDKs, and the APIs and 50% for the console.
     /// </para>
     ///  
     /// <para>
@@ -70,10 +72,12 @@ namespace Amazon.ECS.Model
     /// of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
     /// state during a deployment, as a percentage of the <code>desiredCount</code> (rounded
     /// down to the nearest integer). This parameter enables you to define the deployment
-    /// batch size. For example, if your service has a <code>desiredCount</code> of four tasks
-    /// and a <code>maximumPercent</code> value of 200%, the scheduler can start four new
-    /// tasks before stopping the four older tasks (provided that the cluster resources required
-    /// to do this are available). The default value for <code>maximumPercent</code> is 200%.
+    /// batch size. For example, if your replica service has a <code>desiredCount</code> of
+    /// four tasks and a <code>maximumPercent</code> value of 200%, the scheduler can start
+    /// four new tasks before stopping the four older tasks (provided that the cluster resources
+    /// required to do this are available). The default value for a replica service for <code>maximumPercent</code>
+    /// is 200%. If you are using a daemon service type, the <code>maximumPercent</code> should
+    /// remain at 100%, which is the default value.
     /// </para>
     ///  
     /// <para>
@@ -121,6 +125,7 @@ namespace Amazon.ECS.Model
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
         private string _role;
+        private SchedulingStrategy _schedulingStrategy;
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _taskDefinition;
@@ -407,6 +412,47 @@ namespace Amazon.ECS.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingStrategy. 
+        /// <para>
+        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// There are two service scheduler strategies available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired
+        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
+        /// across Availability Zones. You can use task placement strategies and constraints to
+        /// customize task placement decisions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
+        /// active container instance that meets all of the task placement constraints that you
+        /// specify in your cluster. When using this strategy, there is no need to specify a desired
+        /// number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+        /// </para>
+        ///  </note> </li> </ul>
+        /// </summary>
+        public SchedulingStrategy SchedulingStrategy
+        {
+            get { return this._schedulingStrategy; }
+            set { this._schedulingStrategy = value; }
+        }
+
+        // Check to see if SchedulingStrategy property is set
+        internal bool IsSetSchedulingStrategy()
+        {
+            return this._schedulingStrategy != null;
         }
 
         /// <summary>

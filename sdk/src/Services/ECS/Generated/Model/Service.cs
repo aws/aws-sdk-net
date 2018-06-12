@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private string _platformVersion;
         private string _roleArn;
         private int? _runningCount;
+        private SchedulingStrategy _schedulingStrategy;
         private string _serviceArn;
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
@@ -359,6 +360,46 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningCount()
         {
             return this._runningCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingStrategy. 
+        /// <para>
+        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// There are two service scheduler strategies available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired
+        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
+        /// across Availability Zones. You can use task placement strategies and constraints to
+        /// customize task placement decisions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
+        /// container instance in your cluster. When using this strategy, do not specify a desired
+        /// number of tasks or any task placement strategies.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+        /// </para>
+        ///  </note> </li> </ul>
+        /// </summary>
+        public SchedulingStrategy SchedulingStrategy
+        {
+            get { return this._schedulingStrategy; }
+            set { this._schedulingStrategy = value; }
+        }
+
+        // Check to see if SchedulingStrategy property is set
+        internal bool IsSetSchedulingStrategy()
+        {
+            return this._schedulingStrategy != null;
         }
 
         /// <summary>
