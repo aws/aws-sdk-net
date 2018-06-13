@@ -105,6 +105,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <code>WindowsServer2016</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
@@ -206,6 +215,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Ubuntu16.04</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -309,6 +327,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>AmazonLinux2017.09</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -420,6 +447,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <code>RedhatEnterpriseLinux7.4</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
@@ -529,6 +565,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Suse12.9</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -643,6 +688,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>CentOS7.4</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>

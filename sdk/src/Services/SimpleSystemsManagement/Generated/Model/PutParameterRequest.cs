@@ -113,8 +113,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about parameter name requirements and restrictions, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about">About
-        /// Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// For information about parameter name requirements and restrictions, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+        /// Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

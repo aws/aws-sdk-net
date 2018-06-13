@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CommandInvocation
     {
+        private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _commandId;
         private List<CommandPlugin> _commandPlugins = new List<CommandPlugin>();
         private string _comment;
@@ -51,6 +52,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private CommandInvocationStatus _status;
         private string _statusDetails;
         private string _traceOutput;
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchOutputConfig. 
+        /// <para>
+        /// CloudWatch Logs information where you want Systems Manager to send the command output.
+        /// </para>
+        /// </summary>
+        public CloudWatchOutputConfig CloudWatchOutputConfig
+        {
+            get { return this._cloudWatchOutputConfig; }
+            set { this._cloudWatchOutputConfig = value; }
+        }
+
+        // Check to see if CloudWatchOutputConfig property is set
+        internal bool IsSetCloudWatchOutputConfig()
+        {
+            return this._cloudWatchOutputConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CommandId. 
@@ -300,8 +319,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// by the command). StatusDetails includes more information than Status because it includes
         /// states resulting from error and concurrency control parameters. StatusDetails can
         /// show different results than Status. For more information about these statuses, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-        /// Command Status</a>. StatusDetails can be one of the following values:
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

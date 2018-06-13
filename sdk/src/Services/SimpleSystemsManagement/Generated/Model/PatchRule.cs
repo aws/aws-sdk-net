@@ -40,8 +40,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApproveAfterDays. 
         /// <para>
-        /// The number of days after the release date of each patch matched by the rule the patch
-        /// is marked as approved in the patch baseline.
+        /// The number of days after the release date of each patch matched by the rule that the
+        /// patch is marked as approved in the patch baseline. For example, a value of <code>7</code>
+        /// means that patches are approved seven days after they are released. 
         /// </para>
         /// </summary>
         public int ApproveAfterDays

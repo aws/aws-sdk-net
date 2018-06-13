@@ -32,9 +32,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Command
     {
+        private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _commandId;
         private string _comment;
         private int? _completedCount;
+        private int? _deliveryTimedOutCount;
         private string _documentName;
         private string _documentVersion;
         private int? _errorCount;
@@ -53,6 +55,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _statusDetails;
         private int? _targetCount;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchOutputConfig. 
+        /// <para>
+        /// CloudWatch Logs information where you want Systems Manager to send the command output.
+        /// </para>
+        /// </summary>
+        public CloudWatchOutputConfig CloudWatchOutputConfig
+        {
+            get { return this._cloudWatchOutputConfig; }
+            set { this._cloudWatchOutputConfig = value; }
+        }
+
+        // Check to see if CloudWatchOutputConfig property is set
+        internal bool IsSetCloudWatchOutputConfig()
+        {
+            return this._cloudWatchOutputConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CommandId. 
@@ -109,6 +129,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetCompletedCount()
         {
             return this._completedCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryTimedOutCount. 
+        /// <para>
+        /// The number of targets for which the status is Delivery Timed Out.
+        /// </para>
+        /// </summary>
+        public int DeliveryTimedOutCount
+        {
+            get { return this._deliveryTimedOutCount.GetValueOrDefault(); }
+            set { this._deliveryTimedOutCount = value; }
+        }
+
+        // Check to see if DeliveryTimedOutCount property is set
+        internal bool IsSetDeliveryTimedOutCount()
+        {
+            return this._deliveryTimedOutCount.HasValue; 
         }
 
         /// <summary>
@@ -210,7 +248,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// time. You can specify a number of instances, such as 10, or a percentage of instances,
         /// such as 10%. The default value is 50. For more information about how to use MaxConcurrency,
         /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-        /// a Command Using Systems Manager Run Command</a>.
+        /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string MaxConcurrency
@@ -232,7 +271,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is 0. For more information about how to
         /// use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-        /// a Command Using Systems Manager Run Command</a>.
+        /// Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string MaxErrors
@@ -401,8 +441,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A detailed status of the command execution. StatusDetails includes more information
         /// than Status because it includes states resulting from error and concurrency control
         /// parameters. StatusDetails can show different results than Status. For more information
-        /// about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-        /// Command Status</a>. StatusDetails can be one of the following values:
+        /// about these statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can
+        /// be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -1767,6 +1767,12 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudWatchOutputConfig.CloudWatchLogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.CommandId</property>
     <min>36</min>
     <max>36</max>

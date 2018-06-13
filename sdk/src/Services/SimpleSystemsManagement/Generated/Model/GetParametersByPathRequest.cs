@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetParametersByPath operation.
     /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-    /// with Systems Manager Parameters</a>. 
+    /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// 
     /// 
     ///  
     /// <para>
