@@ -1,3 +1,9 @@
+### 3.3.299.0 (2018-06-13 22:32 UTC)
+* ServiceCatalog (3.3.10.0)
+	* Introduced new length limitations for few of the product fields.
+* SimpleSystemsManagement (3.3.22.0)
+	* Added support for new parameter, CloudWatchOutputConfig, for SendCommand API. Users can now have RunCommand output sent to CloudWatchLogs.
+
 ### 3.3.298.0 (2018-06-12 21:29 UTC)
 * DeviceFarm (3.3.7.0)
 	* Adding VPCEndpoint support for Remote access. Allows customers to be able to access their private endpoints/services running in their VPC during remote access.
