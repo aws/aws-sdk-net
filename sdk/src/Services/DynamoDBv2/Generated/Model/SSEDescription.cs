@@ -32,7 +32,54 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class SSEDescription
     {
+        private string _kmsMasterKeyArn;
+        private SSEType _sseType;
         private SSEStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property KMSMasterKeyArn. 
+        /// <para>
+        /// The KMS master key ARN used for the KMS encryption.
+        /// </para>
+        /// </summary>
+        public string KMSMasterKeyArn
+        {
+            get { return this._kmsMasterKeyArn; }
+            set { this._kmsMasterKeyArn = value; }
+        }
+
+        // Check to see if KMSMasterKeyArn property is set
+        internal bool IsSetKMSMasterKeyArn()
+        {
+            return this._kmsMasterKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSEType. 
+        /// <para>
+        /// Server-side encryption type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SSEType SSEType
+        {
+            get { return this._sseType; }
+            set { this._sseType = value; }
+        }
+
+        // Check to see if SSEType property is set
+        internal bool IsSetSSEType()
+        {
+            return this._sseType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

@@ -37,8 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ContinuousBackupsDescription. 
         /// <para>
-        ///  <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED,
-        /// DISABLED. 
+        /// Represents the continuous backups and point in time recovery settings on the table.
         /// </para>
         /// </summary>
         public ContinuousBackupsDescription ContinuousBackupsDescription
