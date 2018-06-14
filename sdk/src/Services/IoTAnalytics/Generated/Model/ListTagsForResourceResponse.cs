@@ -28,37 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutLoggingOptions operation.
-    /// Sets or updates the AWS IoT Analytics logging options.
-    /// 
-    ///  
-    /// <para>
-    /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
-    /// up to one minute for the change to take effect. Also, if you change the policy attached
-    /// to the role you specified in the roleArn field (for example, to correct an invalid
-    /// policy) it takes up to 5 minutes for that change to take effect. 
-    /// </para>
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class PutLoggingOptionsRequest : AmazonIoTAnalyticsRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private LoggingOptions _loggingOptions;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property LoggingOptions. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The new values of the AWS IoT Analytics logging options.
+        /// The tags (metadata) which you have assigned to the resource.
         /// </para>
         /// </summary>
-        public LoggingOptions LoggingOptions
+        public List<Tag> Tags
         {
-            get { return this._loggingOptions; }
-            set { this._loggingOptions = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if LoggingOptions property is set
-        internal bool IsSetLoggingOptions()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._loggingOptions != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

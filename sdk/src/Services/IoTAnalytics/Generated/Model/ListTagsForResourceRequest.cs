@@ -28,37 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutLoggingOptions operation.
-    /// Sets or updates the AWS IoT Analytics logging options.
-    /// 
-    ///  
-    /// <para>
-    /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
-    /// up to one minute for the change to take effect. Also, if you change the policy attached
-    /// to the role you specified in the roleArn field (for example, to correct an invalid
-    /// policy) it takes up to 5 minutes for that change to take effect. 
-    /// </para>
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists the tags (metadata) which you have assigned to the resource.
     /// </summary>
-    public partial class PutLoggingOptionsRequest : AmazonIoTAnalyticsRequest
+    public partial class ListTagsForResourceRequest : AmazonIoTAnalyticsRequest
     {
-        private LoggingOptions _loggingOptions;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property LoggingOptions. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The new values of the AWS IoT Analytics logging options.
+        /// The ARN of the resource whose tags you want to list.
         /// </para>
         /// </summary>
-        public LoggingOptions LoggingOptions
+        public string ResourceArn
         {
-            get { return this._loggingOptions; }
-            set { this._loggingOptions = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if LoggingOptions property is set
-        internal bool IsSetLoggingOptions()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._loggingOptions != null;
+            return this._resourceArn != null;
         }
 
     }

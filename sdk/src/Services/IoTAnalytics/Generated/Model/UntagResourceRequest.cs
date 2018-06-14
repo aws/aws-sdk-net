@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about a message.
+    /// Container for the parameters to the UntagResource operation.
+    /// Removes the given tags (metadata) from the resource.
     /// </summary>
-    public partial class Message
+    public partial class UntagResourceRequest : AmazonIoTAnalyticsRequest
     {
-        private string _messageId;
-        private MemoryStream _payload;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property MessageId. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ID you wish to assign to the message. Each "messageId" must be unique within each
-        /// batch sent.
+        /// The ARN of the resource whose tags will be removed.
         /// </para>
         /// </summary>
-        public string MessageId
+        public string ResourceArn
         {
-            get { return this._messageId; }
-            set { this._messageId = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if MessageId property is set
-        internal bool IsSetMessageId()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._messageId != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Payload. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The payload of the message.
+        /// The keys of those tags which will be removed.
         /// </para>
         /// </summary>
-        public MemoryStream Payload
+        public List<string> TagKeys
         {
-            get { return this._payload; }
-            set { this._payload = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if Payload property is set
-        internal bool IsSetPayload()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._payload != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

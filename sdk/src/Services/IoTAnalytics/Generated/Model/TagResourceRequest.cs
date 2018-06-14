@@ -28,56 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateChannel operation.
-    /// Creates a channel. A channel collects data from an MQTT topic and archives the raw,
-    /// unprocessed messages before publishing the data to a pipeline.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+    /// used to manage a resource.
     /// </summary>
-    public partial class CreateChannelRequest : AmazonIoTAnalyticsRequest
+    public partial class TagResourceRequest : AmazonIoTAnalyticsRequest
     {
-        private string _channelName;
-        private RetentionPeriod _retentionPeriod;
+        private string _resourceArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ChannelName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The name of the channel.
+        /// The ARN of the resource whose tags will be modified.
         /// </para>
         /// </summary>
-        public string ChannelName
+        public string ResourceArn
         {
-            get { return this._channelName; }
-            set { this._channelName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ChannelName property is set
-        internal bool IsSetChannelName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._channelName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RetentionPeriod. 
-        /// <para>
-        /// How long, in days, message data is kept for the channel.
-        /// </para>
-        /// </summary>
-        public RetentionPeriod RetentionPeriod
-        {
-            get { return this._retentionPeriod; }
-            set { this._retentionPeriod = value; }
-        }
-
-        // Check to see if RetentionPeriod property is set
-        internal bool IsSetRetentionPeriod()
-        {
-            return this._retentionPeriod != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Metadata which can be used to manage the channel.
+        /// The new or modified tags for the resource.
         /// </para>
         /// </summary>
         public List<Tag> Tags

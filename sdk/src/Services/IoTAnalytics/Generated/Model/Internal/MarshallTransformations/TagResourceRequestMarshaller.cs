@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePipeline Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreatePipelineRequestMarshaller : IMarshaller<IRequest, CreatePipelineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePipelineRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,41 +52,22 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePipelineRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTAnalytics");
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/pipelines";
+            string uriResourcePath = "/tags";
+            
+            if (publicRequest.IsSetResourceArn())
+                request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetPipelineActivities())
-                {
-                    context.Writer.WritePropertyName("pipelineActivities");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPipelineActivitiesListValue in publicRequest.PipelineActivities)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipelineActivityMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPipelineActivitiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPipelineName())
-                {
-                    context.Writer.WritePropertyName("pipelineName");
-                    context.Writer.Write(publicRequest.PipelineName);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -109,12 +90,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            request.UseQueryString = true;
 
             return request;
         }
-        private static CreatePipelineRequestMarshaller _instance = new CreatePipelineRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreatePipelineRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +104,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePipelineRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
