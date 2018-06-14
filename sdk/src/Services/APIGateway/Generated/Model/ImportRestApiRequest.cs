@@ -91,8 +91,9 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-        /// or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is <code>EDGE</code>.
+        ///  To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+        /// <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>.
+        /// The default endpoint type is <code>EDGE</code>.
         /// </para>
         ///  
         /// <para>
@@ -104,12 +105,12 @@ namespace Amazon.APIGateway.Model
         /// For example, the AWS CLI command to exclude documentation from the imported API is:
         /// </para>
         ///  <pre><code>aws apigateway import-rest-api --parameters ignore=documentation --body
-        /// 'file:///path/to/imported-api-body.json</code></pre> 
+        /// 'file:///path/to/imported-api-body.json'</code></pre> 
         /// <para>
         /// The AWS CLI command to set the regional endpoint on the imported API is:
         /// </para>
         ///  <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL
-        /// --body 'file:///path/to/imported-api-body.json</code></pre>
+        /// --body 'file:///path/to/imported-api-body.json'</code></pre>
         /// </summary>
         public Dictionary<string, string> Parameters
         {
