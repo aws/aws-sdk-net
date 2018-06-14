@@ -1,3 +1,11 @@
+### 3.3.300.0 (2018-06-14 22:16 UTC)
+* APIGateway (3.3.18.0)
+	* Support for PRIVATE endpoint configuration type
+* DynamoDBv2 (3.3.10.0)
+	* Added two new fields SSEType and KMSMasterKeyArn to SSEDescription block in describe-table output.
+* IoTAnalytics (3.3.1.0)
+	* With this release, AWS IoT Analytics allows you to tag resources. Tags are metadata that you can create and use to manage your IoT Analytics resources. For more information about tagging, see AWS Tagging Strategies. For technical documentation, look for the tagging operations in the AWS IoT Analytics API reference or User Guide.
+
 ### 3.3.299.0 (2018-06-13 22:32 UTC)
 * ServiceCatalog (3.3.10.0)
 	* Introduced new length limitations for few of the product fields.
