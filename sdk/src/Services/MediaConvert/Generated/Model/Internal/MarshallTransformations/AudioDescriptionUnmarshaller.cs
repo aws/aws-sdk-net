@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customLanguageCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomLanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("languageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

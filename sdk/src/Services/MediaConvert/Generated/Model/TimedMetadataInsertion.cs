@@ -37,7 +37,8 @@ namespace Amazon.MediaConvert.Model
         private List<Id3Insertion> _id3Insertions = new List<Id3Insertion>();
 
         /// <summary>
-        /// Gets and sets the property Id3Insertions.
+        /// Gets and sets the property Id3Insertions. Id3Insertions contains the array of Id3Insertion
+        /// instances.
         /// </summary>
         public List<Id3Insertion> Id3Insertions
         {

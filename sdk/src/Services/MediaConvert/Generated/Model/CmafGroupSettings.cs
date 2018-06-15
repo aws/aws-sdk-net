@@ -29,6 +29,8 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS.
+    /// Each output in a CMAF Output Group may only contain a single video, audio, or caption
+    /// output.
     /// </summary>
     public partial class CmafGroupSettings
     {

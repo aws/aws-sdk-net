@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDescriptionPreset requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomLanguageCode())
+            {
+                context.Writer.WritePropertyName("customLanguageCode");
+                context.Writer.Write(requestObject.CustomLanguageCode);
+            }
+
             if(requestObject.IsSetDestinationSettings())
             {
                 context.Writer.WritePropertyName("destinationSettings");

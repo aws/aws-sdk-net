@@ -32,6 +32,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class AudioSelector
     {
+        private string _customLanguageCode;
         private AudioDefaultSelection _defaultSelection;
         private string _externalAudioFileInput;
         private LanguageCode _languageCode;
@@ -41,6 +42,22 @@ namespace Amazon.MediaConvert.Model
         private RemixSettings _remixSettings;
         private AudioSelectorType _selectorType;
         private List<int> _tracks = new List<int>();
+
+        /// <summary>
+        /// Gets and sets the property CustomLanguageCode. Selects a specific language code from
+        /// within an audio source, using the ISO 639-2 or ISO 639-3 three-letter language code
+        /// </summary>
+        public string CustomLanguageCode
+        {
+            get { return this._customLanguageCode; }
+            set { this._customLanguageCode = value; }
+        }
+
+        // Check to see if CustomLanguageCode property is set
+        internal bool IsSetCustomLanguageCode()
+        {
+            return this._customLanguageCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultSelection.

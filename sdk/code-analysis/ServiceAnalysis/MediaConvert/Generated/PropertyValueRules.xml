@@ -51,6 +51,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AudioDescription.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AudioDescription.StreamName</property>
     <pattern>^[\w\s]*$</pattern>
   </property-value-rule>
@@ -58,6 +64,12 @@
     <property>Amazon.MediaConvert.Model.AudioNormalizationSettings.CorrectionGateLevel</property>
     <min>-70</min>
     <max>0</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AudioSelector.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AudioSelector.ExternalAudioFileInput</property>
@@ -131,6 +143,24 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CaptionDescription.CaptionSelectorName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CaptionDescription.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CaptionDescriptionPreset.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CaptionSelector.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafEncryptionSettings.ConstantInitializationVector</property>
@@ -544,6 +574,12 @@
     <property>Amazon.MediaConvert.Model.HlsCaptionLanguageMapping.CaptionChannel</property>
     <min>-2147483648</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsCaptionLanguageMapping.CustomLanguageCode</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>^[A-Za-z]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsEncryptionSettings.ConstantInitializationVector</property>
