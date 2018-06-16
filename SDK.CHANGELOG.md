@@ -1,3 +1,7 @@
+### 3.3.301.0 (2018-06-15 23:50 UTC)
+* MediaConvert (3.3.3.0)
+	* This release adds language code support according to the ISO-639-3 standard. Custom 3-character language codes are now supported on input and output for both audio and captions.
+
 ### 3.3.300.0 (2018-06-14 22:16 UTC)
 * APIGateway (3.3.18.0)
 	* Support for PRIVATE endpoint configuration type
