@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,9 +30,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventCategories operation.
     /// Displays a list of categories for all event source types, or, if specified, for a
-    /// specified source type. You can see a list of the event categories and source types
-    /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-    /// Events</a> topic in the <i>Amazon Neptune User Guide.</i>
+    /// specified source type.
     /// </summary>
     public partial class DescribeEventCategoriesRequest : AmazonNeptuneRequest
     {

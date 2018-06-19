@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -77,40 +77,6 @@ namespace Amazon.Neptune.Model
         /// name and <code>ResetAllParameters</code> parameters. To reset specific parameters,
         /// provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>.
         /// A maximum of 20 parameters can be modified in a single request.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code>
-        /// value for both dynamic and static parameters, and changes are applied when DB instance
-        /// reboots.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values (for Apply method): <code>immediate</code> | <code>pending-reboot</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use the immediate value with dynamic parameters only. You can use the <code>pending-reboot</code>
-        /// value for both dynamic and static parameters, and changes are applied when DB instance
-        /// reboots.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
         /// </para>
         ///  
         /// <para>

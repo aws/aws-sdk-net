@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,19 +29,14 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBCluster operation.
-    /// Creates a new Amazon Aurora DB cluster.
+    /// Creates a new Amazon Neptune DB cluster.
     /// 
     ///  
     /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster or Amazon Neptune MySQL DB instance.
-    /// For cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
+    /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance. For
+    /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
     /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonNeptuneRequest
@@ -73,8 +68,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
-        /// For information on AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-        /// and Availability Zones</a>. 
+        /// 
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -201,7 +195,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> is used. 
+        /// this argument is omitted, the default is used. 
         /// </para>
         ///  
         /// <para>
@@ -281,8 +275,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
-        /// (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code> 
+        /// Valid Values: <code>neptune</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -304,19 +297,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Aurora MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>5.6.10a</code>, <code>5.7.12</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Aurora PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>9.6.3</code> 
+        /// Example: <code>1.0.1</code> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -471,8 +452,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set
-        /// to aurora-postgresql. 
+        ///  Default: <code>8182</code> 
         /// </para>
         /// </summary>
         public int Port
@@ -600,8 +580,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica
-        /// will be created in.
+        ///  <code>DestinationRegion</code> - The name of the AWS Region that Read Replica will
+        /// be created in.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -609,7 +589,7 @@ namespace Amazon.Neptune.Model
         /// DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN)
         /// format for the source AWS Region. For example, if you are copying an encrypted DB
         /// cluster from the us-west-2 AWS Region, then your <code>ReplicationSourceIdentifier</code>
-        /// would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
+        /// would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:neptune-cluster1</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

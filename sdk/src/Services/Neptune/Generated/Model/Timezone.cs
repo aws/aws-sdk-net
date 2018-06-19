@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// A time zone associated with a <a>DBInstance</a> or a <a>DBSnapshot</a>. This data
-    /// type is an element in the response to the <a>DescribeDBInstances</a>, the <a>DescribeDBSnapshots</a>,
-    /// and the <a>DescribeDBEngineVersions</a> actions.
+    /// A time zone associated with a <a>DBInstance</a>. This data type is an element in the
+    /// response to the <a>DescribeDBInstances</a>, and the <a>DescribeDBEngineVersions</a>
+    /// actions.
     /// </summary>
     public partial class Timezone
     {

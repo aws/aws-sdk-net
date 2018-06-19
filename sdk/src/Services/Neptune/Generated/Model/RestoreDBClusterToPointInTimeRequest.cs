@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,11 +43,7 @@ namespace Amazon.Neptune.Model
     /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
     /// action has completed and the DB cluster is available.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonNeptuneRequest
     {

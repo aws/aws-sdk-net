@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,11 +59,7 @@ namespace Amazon.Neptune.Model
     /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
     /// DB cluster parameter group has been created or modified.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDBClusterParameterGroupRequest : AmazonNeptuneRequest
     {
@@ -110,22 +106,6 @@ namespace Amazon.Neptune.Model
         /// with one and only one DB cluster parameter group family, and can be applied only to
         /// a DB cluster running a database engine and engine version compatible with that DB
         /// cluster parameter group family.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Aurora MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Aurora PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>aurora-postgresql9.6</code> 
         /// </para>
         /// </summary>
         public string DBParameterGroupFamily

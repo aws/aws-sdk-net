@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,10 +29,8 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBCluster operation.
-    /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
-    /// configuration parameters by specifying these parameters and the new values in the
-    /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i>
+    /// Modify a setting for a DB cluster. You can change one or more database configuration
+    /// parameters by specifying these parameters and the new values in the request.
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonNeptuneRequest
     {
@@ -334,9 +332,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
-        /// 
+        /// for each AWS Region. 
         /// </para>
         ///  
         /// <para>
@@ -385,10 +381,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
-        /// 
+        /// for each AWS Region, occurring on a random day of the week. 
         /// </para>
         ///  
         /// <para>

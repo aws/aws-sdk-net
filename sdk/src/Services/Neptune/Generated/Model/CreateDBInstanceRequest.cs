@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -87,139 +87,10 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Aurora cluster volumes automatically grow as the amount of data in
+        /// Not applicable. Neptune cluster volumes automatically grow as the amount of data in
         /// your database increases, though you are only charged for the space that you use in
-        /// an Aurora cluster volume.
+        /// a Neptune cluster volume.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Magnetic storage (standard): Must be an integer from 5 to 3072.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Magnetic storage (standard): Must be an integer from 10 to 3072.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints to the amount of storage for each storage type are the following: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// General Purpose (SSD) storage (gp2):
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Enterprise and Standard editions: Must be an integer from 200 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Web and Express editions: Must be an integer from 20 to 16384.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Provisioned IOPS storage (io1):
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Enterprise and Standard editions: Must be an integer from 200 to 16384.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Web and Express editions: Must be an integer from 100 to 16384.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Magnetic storage (standard):
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Enterprise and Standard editions: Must be an integer from 200 to 1024.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Web and Express editions: Must be an integer from 20 to 1024.
-        /// </para>
-        ///  </li> </ul> </li> </ul>
         /// </summary>
         public int AllocatedStorage
         {
@@ -259,9 +130,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone that the DB instance is created in. For information on
-        /// AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-        /// and Availability Zones</a>. 
+        ///  The EC2 Availability Zone that the DB instance is created in. 
         /// </para>
         ///  
         /// <para>
@@ -293,13 +162,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// The number of days for which automated backups are retained. Setting this parameter
-        /// to a positive number enables backups. Setting this parameter to 0 disables automated
-        /// backups.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
+        /// The number of days for which automated backups are retained.
         /// </para>
         ///  
         /// <para>
@@ -339,12 +202,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// For supported engines, indicates that the DB instance should be associated with the
-        /// specified CharacterSet.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
+        /// Indicates that the DB instance should be associated with the specified CharacterSet.
         /// </para>
         ///  
         /// <para>
@@ -413,10 +271,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database
-        /// engines. For the full list of DB instance classes, and availability for your engine,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon Neptune User Guide. 
+        /// Not all DB instance classes are available in all AWS Regions. 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -472,132 +327,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The meaning of this parameter differs according to the database engine you use.
+        /// The database name. 
         /// </para>
         ///  
         /// <para>
         /// Type: String
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 64 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a word reserved by the specified database engine
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, no database is created in the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 64 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a word reserved by the specified database engine
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the DB instance is created. If this parameter
-        /// is not specified, the default "postgres" database is created in the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 63 letters, numbers, or underscores.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must begin with a letter or an underscore. Subsequent characters can be letters, underscores,
-        /// or digits (0-9).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a word reserved by the specified database engine
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The Oracle System ID (SID) of the created DB instance. If you specify <code>null</code>,
-        /// the default value <code>ORCL</code> is used. You can't specify the string NULL, or
-        /// any other reserved word, for <code>DBName</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>ORCL</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Cannot be longer than 8 characters
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Must be null.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of the database to create when the primary instance of the DB cluster is
-        /// created. If this parameter is not specified, no database is created in the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain 1 to 64 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a word reserved by the specified database engine
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string DBName
         {
@@ -749,35 +484,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false. 
+        /// True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
         /// </para>
         ///  
-        /// <para>
-        /// You can enable IAM database authentication for the following database engines:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
-        /// cluster. For more information, see <a>CreateDBCluster</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// Default: <code>false</code> 
         /// </para>
@@ -819,69 +528,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Not every database engine is available for every AWS Region. 
+        /// Valid Values: <code>neptune</code> 
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-postgresql</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>mariadb</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>mysql</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>oracle-ee</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>oracle-se2</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>oracle-se1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>oracle-se</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>postgres</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>sqlserver-ee</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>sqlserver-se</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>sqlserver-ex</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>sqlserver-web</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -900,350 +548,6 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The version number of the database engine to use.
         /// </para>
-        ///  
-        /// <para>
-        /// The following are the database engines and major and minor versions that are available
-        /// with Amazon Neptune. Not every database engine is available for every AWS Region.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. The version number of the database engine to be used by the DB instance
-        /// is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>10.2.12</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.2.11</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>10.1.31</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.26</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.23</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.19</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.1.14</code> (supported in all AWS Regions except us-east-2)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>10.0.34</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.32</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.31</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.28</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.24</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1,
-        /// eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2017</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2016</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2014</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition,
-        /// and all AWS Regions except ca-central-1 and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2012</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server 2008 R2</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except
-        /// us-east-2, ca-central-1, and eu-west-2)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>5.7.21</code> (supported in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.7.19</code> (supported in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.7.17</code> (supported in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.7.16</code> (supported in all AWS regions)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>5.6.39</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.37</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.35</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.34</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.29</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1,
-        /// eu-west-2)
-        /// </para>
-        ///  </li> </ul>  <ul> <li> 
-        /// <para>
-        ///  <code>5.5.59</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.57</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.54</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.53</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>5.5.46</code> (supported in all AWS Regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle 12c</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v7</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all AWS
-        /// regions except us-gov-west-1)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle 11g</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v11</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all AWS regions)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>Version 10.1</b> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string EngineVersion
         {
@@ -1261,16 +565,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
-        /// allocated for the DB instance. For information about valid Iops values, see see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// Neptune Provisioned IOPS Storage to Improve Performance</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must be a multiple between 1 and 50 of the storage amount for the DB
-        /// instance. Must also be an integer multiple of 1000. For example, if the size of your
-        /// DB instance is 500 GiB, then your <code>Iops</code> value can be 2000, 3000, 4000,
-        /// or 5000. 
+        /// allocated for the DB instance. 
         /// </para>
         /// </summary>
         public int Iops
@@ -1296,10 +591,6 @@ namespace Amazon.Neptune.Model
         /// If you are creating a DB instance with the same AWS account that owns the KMS encryption
         /// key used to encrypt the new DB instance, then you can use the KMS key alias instead
         /// of the ARN for the KM encryption key.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
         /// </para>
         ///  
         /// <para>
@@ -1352,134 +643,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name for the master user.
+        /// The name for the master user. Not used.
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. The name for the master user is managed by the DB cluster. For more
-        /// information, see <a>CreateDBCluster</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required for MariaDB.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 16 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Microsoft SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required for SQL Server.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 128 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The first character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required for MySQL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 16 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required for Oracle.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 30 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Required for PostgreSQL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be 1 to 63 letters or numbers.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// First character must be a letter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string MasterUsername
         {
@@ -1501,52 +666,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. The password for the master user is managed by the DB cluster. For
-        /// more information, see <a>CreateDBCluster</a>.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Microsoft SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 30 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
+        ///  Not used. 
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -1593,10 +713,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
-        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
-        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-        /// Up and Enabling Enhanced Monitoring</a>.
+        /// The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics
+        /// to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
         /// </para>
         ///  
         /// <para>
@@ -1686,89 +804,11 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>MySQL</b> 
+        /// Not applicable. The port is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>5432</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>1521</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>1433</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Default: <code>8182</code> 
         /// </para>
         ///  
         /// <para>
@@ -1790,47 +830,13 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
-        ///  The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-        /// Backup Window</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
+        ///  The daily time range during which automated backups are created. 
         /// </para>
         ///  
         /// <para>
         /// Not applicable. The daily time range for creating automated backups is managed by
         /// the DB cluster. For more information, see <a>CreateDBCluster</a>.
         /// </para>
-        ///  
-        /// <para>
-        ///  The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-        /// Adjusting the Preferred DB Instance Maintenance Window</a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be in Universal Coordinated Time (UTC).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must not conflict with the preferred maintenance window.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be at least 30 minutes.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string PreferredBackupWindow
         {
@@ -1848,8 +854,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// The time range each week during which system maintenance can occur, in Universal Coordinated
-        /// Time (UTC). For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-        /// Neptune Maintenance Window</a>. 
+        /// Time (UTC). 
         /// </para>
         ///  
         /// <para>
@@ -1884,10 +889,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PromotionTier. 
         /// <para>
-        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
-        /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// A value that specifies the order in which an Read Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. 
         /// </para>
         ///  
         /// <para>
@@ -1958,10 +961,6 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
         /// Not applicable. The encryption for DB instances is managed by the DB cluster. For
         /// more information, see <a>CreateDBCluster</a>.
         /// </para>
@@ -1989,17 +988,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>standard | gp2 | io1</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>standard</code> 
+        /// Not applicable. Storage is managed by the DB Cluster.
         /// </para>
         /// </summary>
         public string StorageType
@@ -2068,9 +1057,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB instance. The time zone parameter is currently supported only
-        /// by <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
-        /// SQL Server</a>. 
+        /// The time zone of the DB instance. 
         /// </para>
         /// </summary>
         public string Timezone
@@ -2089,10 +1076,6 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
         /// A list of EC2 VPC security groups to associate with this DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
         /// </para>
         ///  
         /// <para>

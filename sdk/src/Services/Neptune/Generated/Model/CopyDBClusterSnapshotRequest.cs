@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -80,7 +80,7 @@ namespace Amazon.Neptune.Model
     /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
     /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
     /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-    /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+    /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:neptune-cluster1-snapshot-20161115</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -106,18 +106,6 @@ namespace Amazon.Neptune.Model
     /// To cancel the copy operation once it is in progress, delete the target DB cluster
     /// snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB
     /// cluster snapshot is in "copying" status.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-    /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
-    /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-    /// Regions</a> in the Amazon Neptune User Guide.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Amazon Neptune, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Amazon
-    /// Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonNeptuneRequest
@@ -227,7 +215,7 @@ namespace Amazon.Neptune.Model
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
         /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:neptune-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -274,8 +262,7 @@ namespace Amazon.Neptune.Model
         ///  </li> <li> 
         /// <para>
         /// If the source snapshot is in a different AWS Region than the copy, specify a valid
-        /// DB cluster snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-        /// Copying a DB Snapshot or DB Cluster Snapshot</a>.
+        /// DB cluster snapshot ARN. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,6 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Container for the parameters to the AddRoleToDBCluster operation.
     /// Associates an Identity and Access Management (IAM) role from an Neptune DB cluster.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-    /// Amazon Neptune to Access Other AWS Services On Your Behalf</a>.
     /// </summary>
     public partial class AddRoleToDBClusterRequest : AmazonNeptuneRequest
     {
@@ -60,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster,
-        /// for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
+        /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.
         /// </para>
         /// </summary>
         public string RoleArn

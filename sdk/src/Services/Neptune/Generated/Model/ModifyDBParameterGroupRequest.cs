@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -48,9 +48,9 @@ namespace Amazon.Neptune.Model
     /// group is used as the default for a new DB instance. This is especially important for
     /// parameters that are critical when creating the default database for a DB instance,
     /// such as the character set for the default database defined by the <code>character_set_database</code>
-    /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-    /// Neptune console</a> or the <i>DescribeDBParameters</i> command to verify that your
-    /// DB parameter group has been created or modified.
+    /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
+    /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
+    /// has been created or modified.
     /// </para>
     ///  </important>
     /// </summary>

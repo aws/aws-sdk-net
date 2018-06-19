@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -95,10 +95,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PromotionTier. 
         /// <para>
-        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
-        /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// A value that specifies the order in which a Read Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. 
         /// </para>
         /// </summary>
         public int PromotionTier

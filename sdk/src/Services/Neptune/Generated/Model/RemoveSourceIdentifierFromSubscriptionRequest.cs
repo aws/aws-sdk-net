@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveSourceIdentifierFromSubscription operation.
-    /// Removes a source identifier from an existing RDS event notification subscription.
+    /// Removes a source identifier from an existing event notification subscription.
     /// </summary>
     public partial class RemoveSourceIdentifierFromSubscriptionRequest : AmazonNeptuneRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        /// The name of the RDS event notification subscription you want to remove a source identifier
+        /// The name of the event notification subscription you want to remove a source identifier
         /// from.
         /// </para>
         /// </summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -80,15 +80,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10%
-        /// greater than the current value. Values that are not at least 10% greater than the
-        /// existing value are rounded up so that they are 10% greater than the current value.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// For the valid values for allocated storage for each engine, see <a>CreateDBInstance</a>.
-        /// 
+        /// Not applicable. Storage is managed by the DB Cluster.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -139,10 +131,7 @@ namespace Amazon.Neptune.Model
         ///  If this parameter is set to <code>false</code>, changes to the DB instance are applied
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// are applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
-        /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-        /// a DB Instance and Using the Apply Immediately Parameter</a> to see the impact that
-        /// setting <code>ApplyImmediately</code> to <code>true</code> or <code>false</code> has
-        /// for each modified parameter and to determine when the changes are applied. 
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -168,7 +157,7 @@ namespace Amazon.Neptune.Model
         /// during the maintenance window. Changing this parameter doesn't result in an outage
         /// except in the following case and the change is asynchronously applied as soon as possible.
         /// An outage will result if this parameter is set to <code>true</code> during the maintenance
-        /// window, and a newer minor version is available, and RDS has enabled auto patching
+        /// window, and a newer minor version is available, and Neptune has enabled auto patching
         /// for that engine version. 
         /// </para>
         /// </summary>
@@ -192,18 +181,6 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Changing this parameter can result in an outage if you change from 0 to a non-zero
-        /// value or from a non-zero value to 0. These changes are applied during the next maintenance
-        /// window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-        /// for this request. If you change the parameter from one non-zero value to another non-zero
-        /// value, the change is asynchronously applied as soon as possible.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
         /// Not applicable. The retention period for automated backups is managed by the DB cluster.
         /// For more information, see <a>ModifyDBCluster</a>.
         /// </para>
@@ -211,28 +188,6 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// Default: Uses existing setting
         /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be a value from 0 to 35
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL
-        /// 9.3.5
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be set to 0 if the DB instance is a source to Read Replicas
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -306,10 +261,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>.
-        /// Not all DB instance classes are available in all AWS Regions, or for all database
-        /// engines. For the full list of DB instance classes, and availability for your engine,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon Neptune User Guide. 
+        /// Not all DB instance classes are available in all AWS Regions. 
         /// </para>
         ///  
         /// <para>
@@ -409,81 +361,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>5432</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>1521</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>1433</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-        /// <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Default: <code>3306</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        ///  Default: <code>8182</code> 
         /// </para>
         /// </summary>
         public int DBPortNumber
@@ -530,10 +408,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         /// The new DB subnet group for the DB instance. You can use this parameter to move your
-        /// DB instance to a different VPC. If your DB instance is not in a VPC, you can also
-        /// use this parameter to move your DB instance into a VPC. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-        /// the VPC for a DB Instance</a>. 
+        /// DB instance to a different VPC. 
         /// </para>
         ///  
         /// <para>
@@ -565,10 +440,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory Domain to move the instance to. Specify <code>none</code> to
-        /// remove the instance from its current domain. The domain must be created prior to this
-        /// operation. Currently only a Microsoft SQL Server instance can be created in a Active
-        /// Directory Domain. 
+        /// Not supported. 
         /// </para>
         /// </summary>
         public string Domain
@@ -586,7 +458,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DomainIAMRoleName. 
         /// <para>
-        /// The name of the IAM role to use when making API calls to the Directory Service.
+        /// Not supported
         /// </para>
         /// </summary>
         public string DomainIAMRoleName
@@ -613,26 +485,10 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
         /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
         /// cluster. For more information, see <a>ModifyDBCluster</a>.
         /// </para>
         ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// Default: <code>false</code> 
         /// </para>
@@ -682,10 +538,6 @@ namespace Amazon.Neptune.Model
         /// must be specified. The new DB parameter group can be the default for that DB parameter
         /// group family.
         /// </para>
-        ///  
-        /// <para>
-        /// For a list of valid engine versions, see <a>CreateDBInstance</a>.
-        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -702,36 +554,13 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The new Provisioned IOPS (I/O operations per second) value for the RDS instance. 
+        /// The new Provisioned IOPS (I/O operations per second) value for the instance. 
         /// </para>
         ///  
         /// <para>
         /// Changing this setting doesn't result in an outage and the change is applied during
         /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-        /// set to <code>true</code> for this request. If you are migrating from Provisioned IOPS
-        /// to standard storage, set this value to 0. The DB instance will require a reboot for
-        /// the change in storage type to take effect. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If you choose to migrate your DB instance from using standard storage to using Provisioned
-        /// IOPS, or from using Provisioned IOPS to using standard storage, the process can take
-        /// time. The duration of the migration depends on several factors such as database load,
-        /// storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned
-        /// (if any), and the number of prior scale storage operations. Typical migration times
-        /// are under 24 hours, but the process can take up to several days in some cases. During
-        /// the migration, the DB instance is available for use, but might experience performance
-        /// degradation. While the migration takes place, nightly backups for the instance are
-        /// suspended. No other Amazon Neptune operations can take place for the instance, including
-        /// modifying the instance, rebooting the instance, deleting the instance, creating a
-        /// Read Replica for the instance, and creating a DB snapshot of the instance. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be
-        /// at least 10% greater than the current value. Values that are not at least 10% greater
-        /// than the existing value are rounded up so that they are 10% greater than the current
-        /// value. 
+        /// set to <code>true</code> for this request.
         /// </para>
         ///  
         /// <para>
@@ -781,71 +610,12 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  Changing this parameter doesn't result in an outage and the change is asynchronously
-        /// applied as soon as possible. Between the time of the request and the completion of
-        /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
-        /// element of the operation response. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. The password for the master user is managed by the DB cluster. For
-        /// more information, see <a>ModifyDBCluster</a>. 
+        /// Not applicable. 
         /// </para>
         ///  
         /// <para>
         /// Default: Uses existing setting
         /// </para>
-        ///  
-        /// <para>
-        ///  <b>MariaDB</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Microsoft SQL Server</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 41 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 30 characters.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Must contain from 8 to 128 characters.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Neptune API actions never return the password, so this action provides a way
-        /// to regain access to a primary instance user if the password is lost. This includes
-        /// restoring privileges that might have been accidentally revoked. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public string MasterUserPassword
         {
@@ -891,10 +661,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
-        /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
-        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-        /// create an IAM role for Amazon Neptune Enhanced Monitoring</a>.
+        /// The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics
+        /// to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1031,13 +800,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  The daily time range during which automated backups are created if automated backups
-        /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
-        /// this parameter doesn't result in an outage and the change is asynchronously applied
-        /// as soon as possible. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
+        /// are enabled. 
         /// </para>
         ///  
         /// <para>
@@ -1122,10 +885,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PromotionTier. 
         /// <para>
-        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
-        /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// A value that specifies the order in which a Read Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. 
         /// </para>
         ///  
         /// <para>
@@ -1158,9 +919,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
-        /// must be part of a public subnet and <code>PubliclyAccessible</code> must be true in
-        /// order for it to be publicly accessible. 
+        ///  The DB instance must be part of a public subnet and <code>PubliclyAccessible</code>
+        /// must be true in order for it to be publicly accessible. 
         /// </para>
         ///  
         /// <para>
@@ -1271,10 +1031,6 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// A list of EC2 VPC security groups to authorize on this DB instance. This change is
         /// asynchronously applied as soon as possible.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
         /// </para>
         ///  
         /// <para>

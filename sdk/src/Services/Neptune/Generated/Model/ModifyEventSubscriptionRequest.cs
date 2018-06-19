@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,15 +29,14 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyEventSubscription operation.
-    /// Modifies an existing RDS event notification subscription. Note that you can't modify
-    /// the source identifiers using this call; to change source identifiers for a subscription,
+    /// Modifies an existing event notification subscription. Note that you can't modify the
+    /// source identifiers using this call; to change source identifiers for a subscription,
     /// use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a>
     /// calls.
     /// 
     ///  
     /// <para>
-    /// You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-    /// topic in the Amazon Neptune User Guide or by using the <b>DescribeEventCategories</b>
+    /// You can see a list of the event categories for a given SourceType by using the <b>DescribeEventCategories</b>
     /// action.
     /// </para>
     /// </summary>
@@ -71,8 +70,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property EventCategories. 
         /// <para>
         ///  A list of event categories for a SourceType that you want to subscribe to. You can
-        /// see a list of the categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the Amazon Neptune User Guide or by using the <b>DescribeEventCategories</b>
+        /// see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b>
         /// action. 
         /// </para>
         /// </summary>
@@ -134,7 +132,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SubscriptionName. 
         /// <para>
-        /// The name of the RDS event notification subscription.
+        /// The name of the event notification subscription.
         /// </para>
         /// </summary>
         public string SubscriptionName

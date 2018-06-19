@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,13 +31,7 @@ namespace Amazon.Neptune.Model
     /// Container for the parameters to the DescribeDBClusterParameterGroups operation.
     /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
     /// parameter is specified, the list will contain only the description of the specified
-    /// DB cluster parameter group. 
-    /// 
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-    /// </para>
+    /// DB cluster parameter group.
     /// </summary>
     public partial class DescribeDBClusterParameterGroupsRequest : AmazonNeptuneRequest
     {

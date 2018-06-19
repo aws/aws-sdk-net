@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,12 +32,6 @@ namespace Amazon.Neptune.Model
     /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
     /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
     /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
-    /// 
-    ///   
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-    /// </para>
     /// </summary>
     public partial class DeleteDBClusterRequest : AmazonNeptuneRequest
     {

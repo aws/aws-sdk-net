@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 
 
@@ -66,41 +66,6 @@ namespace Amazon.Neptune
     /// <para>
     ///  <b>Amazon Neptune API Reference</b> 
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// For the alphabetical list of API actions, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
-    /// Actions</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For the alphabetical list of data types, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
-    /// Types</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For a list of common query parameters, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html">Common
-    /// Parameters</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For descriptions of the error codes, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html">Common
-    /// Errors</a>.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Amazon Neptune User Guide</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// For a summary of the Amazon Neptune interfaces, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces">Available
-    /// RDS Interfaces</a>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For more information about how to use the Query API, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
-    /// the Query API</a>.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonNeptuneClient : AmazonServiceClient, IAmazonNeptune
     {
@@ -294,8 +259,6 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Associates an Identity and Access Management (IAM) role from an Neptune DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-        /// Amazon Neptune to Access Other AWS Services On Your Behalf</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
         /// 
@@ -314,7 +277,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
         {
             var marshaller = AddRoleToDBClusterRequestMarshaller.Instance;
@@ -332,7 +295,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = AddRoleToDBClusterRequestMarshaller.Instance;
@@ -348,7 +311,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Adds a source identifier to an existing RDS event notification subscription.
+        /// Adds a source identifier to an existing event notification subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddSourceIdentifierToSubscription service method.</param>
         /// 
@@ -359,7 +322,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
         {
             var marshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
@@ -377,7 +340,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
@@ -396,12 +359,6 @@ namespace Amazon.Neptune
         /// Adds metadata tags to an Amazon Neptune resource. These tags can also be used with
         /// cost allocation reporting to track cost associated with Amazon Neptune resources,
         /// or used in a Condition statement in an IAM policy for Amazon Neptune.
-        /// 
-        ///  
-        /// <para>
-        /// For an overview on tagging Amazon Neptune resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon Neptune Resources</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -415,7 +372,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = AddTagsToResourceRequestMarshaller.Instance;
@@ -433,7 +390,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = AddTagsToResourceRequestMarshaller.Instance;
@@ -457,7 +414,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
             var marshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
@@ -475,7 +432,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
@@ -505,7 +462,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
         {
             var marshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
@@ -523,7 +480,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
@@ -590,7 +547,7 @@ namespace Amazon.Neptune
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are
         /// copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+        /// <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:neptune-cluster1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -617,18 +574,6 @@ namespace Amazon.Neptune
         /// snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB
         /// cluster snapshot is in "copying" status.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-        /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
-        /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-        /// Regions</a> in the Amazon Neptune User Guide.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information on Amazon Neptune, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Amazon
-        /// Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
         /// 
@@ -651,7 +596,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
             var marshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
@@ -669,7 +614,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual Task<CopyDBClusterSnapshotResponse> CopyDBClusterSnapshotAsync(CopyDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
@@ -699,7 +644,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
         {
             var marshaller = CopyDBParameterGroupRequestMarshaller.Instance;
@@ -717,7 +662,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual Task<CopyDBParameterGroupResponse> CopyDBParameterGroupAsync(CopyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CopyDBParameterGroupRequestMarshaller.Instance;
@@ -733,19 +678,14 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Creates a new Amazon Aurora DB cluster.
+        /// Creates a new Amazon Neptune DB cluster.
         /// 
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster or Amazon Neptune MySQL DB instance.
-        /// For cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
+        /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance. For
+        /// cross-region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
         /// is encrypted, you must also specify the <code>PreSignedUrl</code> parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -804,7 +744,7 @@ namespace Amazon.Neptune
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
             var marshaller = CreateDBClusterRequestMarshaller.Instance;
@@ -822,7 +762,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBClusterRequestMarshaller.Instance;
@@ -868,11 +808,7 @@ namespace Amazon.Neptune
         /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
         /// DB cluster parameter group has been created or modified.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
         /// 
@@ -883,7 +819,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
         {
             var marshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
@@ -901,7 +837,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual Task<CreateDBClusterParameterGroupResponse> CreateDBClusterParameterGroupAsync(CreateDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
@@ -917,9 +853,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i>
+        /// Creates a snapshot of a DB cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
         /// 
@@ -939,7 +873,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
         {
             var marshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
@@ -957,7 +891,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual Task<CreateDBClusterSnapshotResponse> CreateDBClusterSnapshotAsync(CreateDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
@@ -1042,7 +976,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
             var marshaller = CreateDBInstanceRequestMarshaller.Instance;
@@ -1060,7 +994,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBInstanceRequestMarshaller.Instance;
@@ -1096,9 +1030,9 @@ namespace Amazon.Neptune
         /// group is used as the default for a new DB instance. This is especially important for
         /// parameters that are critical when creating the default database for a DB instance,
         /// such as the character set for the default database defined by the <code>character_set_database</code>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// Neptune console</a> or the <i>DescribeDBParameters</i> command to verify that your
-        /// DB parameter group has been created or modified.
+        /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
+        /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
+        /// has been created or modified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1111,7 +1045,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
             var marshaller = CreateDBParameterGroupRequestMarshaller.Instance;
@@ -1129,7 +1063,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBParameterGroupRequestMarshaller.Instance;
@@ -1169,7 +1103,7 @@ namespace Amazon.Neptune
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
             var marshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
@@ -1187,7 +1121,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
@@ -1203,16 +1137,16 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
-        /// Resource Name) created by either the RDS console, the SNS console, or the SNS API.
-        /// To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to
-        /// the topic. The ARN is displayed in the SNS console.
+        /// Creates an event notification subscription. This action requires a topic ARN (Amazon
+        /// Resource Name) created by either the Neptune console, the SNS console, or the SNS
+        /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
+        /// to the topic. The ARN is displayed in the SNS console.
         /// 
         ///  
         /// <para>
         /// You can specify the type of source (SourceType) you want to be notified of, provide
-        /// a list of RDS sources (SourceIds) that triggers the events, and provide a list of
-        /// event categories (EventCategories) for events you want to be notified of. For example,
+        /// a list of Neptune sources (SourceIds) that triggers the events, and provide a list
+        /// of event categories (EventCategories) for events you want to be notified of. For example,
         /// you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2
         /// and EventCategories = Availability, Backup.
         /// </para>
@@ -1221,9 +1155,9 @@ namespace Amazon.Neptune
         /// If you specify both the SourceType and SourceIds, such as SourceType = db-instance
         /// and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
         /// for the specified source. If you specify a SourceType but do not specify a SourceIdentifier,
-        /// you receive notice of the events for that source type for all your RDS sources. If
-        /// you do not specify either the SourceType nor the SourceIdentifier, you are notified
-        /// of events generated from all RDS sources belonging to your customer account.
+        /// you receive notice of the events for that source type for all your Neptune sources.
+        /// If you do not specify either the SourceType nor the SourceIdentifier, you are notified
+        /// of events generated from all Neptune sources belonging to your customer account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
@@ -1250,7 +1184,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionCategoryNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
             var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
@@ -1268,7 +1202,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = CreateEventSubscriptionRequestMarshaller.Instance;
@@ -1287,12 +1221,6 @@ namespace Amazon.Neptune
         /// The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete
         /// a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered.
         /// Manual DB cluster snapshots of the specified DB cluster are not deleted.
-        /// 
-        ///   
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
         /// 
@@ -1312,7 +1240,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
         {
             var marshaller = DeleteDBClusterRequestMarshaller.Instance;
@@ -1330,7 +1258,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBClusterRequestMarshaller.Instance;
@@ -1348,12 +1276,6 @@ namespace Amazon.Neptune
         /// <summary>
         /// Deletes a specified DB cluster parameter group. The DB cluster parameter group to
         /// be deleted can't be associated with any DB clusters.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
         /// 
@@ -1366,7 +1288,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
         {
             var marshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
@@ -1384,7 +1306,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual Task<DeleteDBClusterParameterGroupResponse> DeleteDBClusterParameterGroupAsync(DeleteDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
@@ -1407,11 +1329,7 @@ namespace Amazon.Neptune
         /// <para>
         /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
         /// 
@@ -1422,7 +1340,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value is not a valid DB cluster snapshot state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
         {
             var marshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
@@ -1440,7 +1358,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual Task<DeleteDBClusterSnapshotResponse> DeleteDBClusterSnapshotAsync(DeleteDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
@@ -1476,12 +1394,12 @@ namespace Amazon.Neptune
         /// </para>
         ///  
         /// <para>
-        /// If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete
-        /// the DB instance if both of the following conditions are true:
+        /// If the specified DB instance is part of a DB cluster, you can't delete the DB instance
+        /// if both of the following conditions are true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+        /// The DB cluster is a Read Replica of another DB cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1513,7 +1431,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
             var marshaller = DeleteDBInstanceRequestMarshaller.Instance;
@@ -1531,7 +1449,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBInstanceRequestMarshaller.Instance;
@@ -1561,7 +1479,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
             var marshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
@@ -1579,7 +1497,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
@@ -1615,7 +1533,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBSubnetStateException">
         /// The DB subnet is not in the <i>available</i> state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
             var marshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
@@ -1633,7 +1551,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
@@ -1649,7 +1567,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Deletes an RDS event notification subscription.
+        /// Deletes an event notification subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSubscription service method.</param>
         /// 
@@ -1660,7 +1578,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
             var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
@@ -1678,7 +1596,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
@@ -1696,13 +1614,7 @@ namespace Amazon.Neptune
         /// <summary>
         /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
         /// parameter is specified, the list will contain only the description of the specified
-        /// DB cluster parameter group. 
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
+        /// DB cluster parameter group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
         /// 
@@ -1710,7 +1622,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
         {
             var marshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
@@ -1728,7 +1640,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
@@ -1745,12 +1657,6 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Returns the detailed parameter list for a particular DB cluster parameter group.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
         /// 
@@ -1758,7 +1664,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
         {
             var marshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
@@ -1776,7 +1682,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
@@ -1792,13 +1698,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns information about provisioned Aurora DB clusters. This API supports pagination.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
+        /// Returns information about provisioned DB clusters. This API supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
         /// 
@@ -1806,7 +1706,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
         {
             var marshaller = DescribeDBClustersRequestMarshaller.Instance;
@@ -1824,7 +1724,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBClustersRequestMarshaller.Instance;
@@ -1864,7 +1764,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request)
         {
             var marshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
@@ -1882,7 +1782,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotAttributesResponse> DescribeDBClusterSnapshotAttributesAsync(DescribeDBClusterSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
@@ -1899,12 +1799,6 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Returns information about DB cluster snapshots. This API action supports pagination.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
         /// 
@@ -1912,7 +1806,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
         {
             var marshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
@@ -1930,7 +1824,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
@@ -1951,7 +1845,7 @@ namespace Amazon.Neptune
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
             var marshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
@@ -1969,7 +1863,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
@@ -1985,7 +1879,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// Returns information about provisioned instances. This API supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstances service method.</param>
         /// 
@@ -1993,7 +1887,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
             var marshaller = DescribeDBInstancesRequestMarshaller.Instance;
@@ -2011,7 +1905,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBInstancesRequestMarshaller.Instance;
@@ -2037,7 +1931,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
             var marshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
@@ -2055,7 +1949,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
@@ -2079,7 +1973,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
         {
             var marshaller = DescribeDBParametersRequestMarshaller.Instance;
@@ -2097,7 +1991,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBParametersRequestMarshaller.Instance;
@@ -2128,7 +2022,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
             var marshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
@@ -2146,7 +2040,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
@@ -2164,17 +2058,11 @@ namespace Amazon.Neptune
         /// <summary>
         /// Returns the default engine and system parameter information for the cluster database
         /// engine.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeEngineDefaultClusterParameters service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
         {
             var marshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
@@ -2192,7 +2080,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultClusterParametersResponse> DescribeEngineDefaultClusterParametersAsync(DescribeEngineDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
@@ -2214,7 +2102,7 @@ namespace Amazon.Neptune
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
             var marshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
@@ -2232,7 +2120,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
@@ -2249,14 +2137,12 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Displays a list of categories for all event source types, or, if specified, for a
-        /// specified source type. You can see a list of the event categories and source types
-        /// in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-        /// Events</a> topic in the <i>Amazon Neptune User Guide.</i>
+        /// specified source type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
             var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
@@ -2274,7 +2160,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeEventCategoriesRequestMarshaller.Instance;
@@ -2298,7 +2184,7 @@ namespace Amazon.Neptune
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = DescribeEventsRequestMarshaller.Instance;
@@ -2316,7 +2202,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeEventsRequestMarshaller.Instance;
@@ -2347,7 +2233,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
             var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
@@ -2365,7 +2251,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
@@ -2386,7 +2272,7 @@ namespace Amazon.Neptune
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by Neptune.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
         {
             var marshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
@@ -2404,7 +2290,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
@@ -2429,7 +2315,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
             var marshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
@@ -2447,7 +2333,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
@@ -2475,7 +2361,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
         {
             var marshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
@@ -2493,7 +2379,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual Task<DescribeValidDBInstanceModificationsResponse> DescribeValidDBInstanceModificationsAsync(DescribeValidDBInstanceModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
@@ -2513,21 +2399,16 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances)
+        /// A failover for a DB cluster promotes one of the Read Replicas (read-only instances)
         /// in the DB cluster to be the primary instance (the cluster writer).
         /// </para>
         ///  
         /// <para>
-        /// Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when
+        /// Amazon Neptune will automatically fail over to a Read Replica, if one exists, when
         /// the primary instance fails. You can force a failover when you want to simulate a failure
         /// of a primary instance for testing. Because each instance in a DB cluster has its own
         /// endpoint address, you will need to clean up and re-establish any existing connections
         /// that use those endpoint addresses when the failover is complete.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -2542,7 +2423,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {
             var marshaller = FailoverDBClusterRequestMarshaller.Instance;
@@ -2560,7 +2441,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = FailoverDBClusterRequestMarshaller.Instance;
@@ -2577,12 +2458,6 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Lists all tags on an Amazon Neptune resource.
-        /// 
-        ///  
-        /// <para>
-        /// For an overview on tagging an Amazon Neptune resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon Neptune Resources</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2596,7 +2471,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = ListTagsForResourceRequestMarshaller.Instance;
@@ -2614,7 +2489,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListTagsForResourceRequestMarshaller.Instance;
@@ -2630,10 +2505,8 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
-        /// configuration parameters by specifying these parameters and the new values in the
-        /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i>
+        /// Modify a setting for a DB cluster. You can change one or more database configuration
+        /// parameters by specifying these parameters and the new values in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
@@ -2675,7 +2548,7 @@ namespace Amazon.Neptune
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
             var marshaller = ModifyDBClusterRequestMarshaller.Instance;
@@ -2693,7 +2566,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBClusterRequestMarshaller.Instance;
@@ -2714,11 +2587,6 @@ namespace Amazon.Neptune
         /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
         /// request. 
         /// 
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         ///  <note> 
         /// <para>
         /// Changes to dynamic parameters are applied immediately. Changes to static parameters
@@ -2734,9 +2602,8 @@ namespace Amazon.Neptune
         /// is especially important for parameters that are critical when creating the default
         /// database for a DB cluster, such as the character set for the default database defined
         /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
-        /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon Neptune
-        /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
-        /// DB cluster parameter group has been created or modified.
+        /// Groups</i> option of the Amazon Neptune console or the <a>DescribeDBClusterParameters</a>
+        /// command to verify that your DB cluster parameter group has been created or modified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2751,7 +2618,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
         {
             var marshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
@@ -2769,7 +2636,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual Task<ModifyDBClusterParameterGroupResponse> ModifyDBClusterParameterGroupAsync(ModifyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
@@ -2821,7 +2688,7 @@ namespace Amazon.Neptune
         /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
         /// with.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request)
         {
             var marshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
@@ -2839,7 +2706,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual Task<ModifyDBClusterSnapshotAttributeResponse> ModifyDBClusterSnapshotAttributeAsync(ModifyDBClusterSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
@@ -2919,7 +2786,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
             var marshaller = ModifyDBInstanceRequestMarshaller.Instance;
@@ -2937,7 +2804,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBInstanceRequestMarshaller.Instance;
@@ -2972,9 +2839,9 @@ namespace Amazon.Neptune
         /// group is used as the default for a new DB instance. This is especially important for
         /// parameters that are critical when creating the default database for a DB instance,
         /// such as the character set for the default database defined by the <code>character_set_database</code>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// Neptune console</a> or the <i>DescribeDBParameters</i> command to verify that your
-        /// DB parameter group has been created or modified.
+        /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
+        /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
+        /// has been created or modified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2989,7 +2856,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
             var marshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
@@ -3007,7 +2874,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
@@ -3047,7 +2914,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubnetAlreadyInUseException">
         /// The DB subnet is already in use in the Availability Zone.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
             var marshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
@@ -3065,7 +2932,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
@@ -3081,15 +2948,14 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Modifies an existing RDS event notification subscription. Note that you can't modify
-        /// the source identifiers using this call; to change source identifiers for a subscription,
+        /// Modifies an existing event notification subscription. Note that you can't modify the
+        /// source identifiers using this call; to change source identifiers for a subscription,
         /// use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a>
         /// calls.
         /// 
         ///  
         /// <para>
-        /// You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the Amazon Neptune User Guide or by using the <b>DescribeEventCategories</b>
+        /// You can see a list of the event categories for a given SourceType by using the <b>DescribeEventCategories</b>
         /// action.
         /// </para>
         /// </summary>
@@ -3114,7 +2980,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
             var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
@@ -3132,7 +2998,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
@@ -3159,7 +3025,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
         {
             var marshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
@@ -3177,7 +3043,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual Task<PromoteReadReplicaDBClusterResponse> PromoteReadReplicaDBClusterAsync(PromoteReadReplicaDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
@@ -3204,11 +3070,6 @@ namespace Amazon.Neptune
         /// results in a momentary outage, during which the DB instance status is set to rebooting.
         /// 
         /// </para>
-        ///  
-        /// <para>
-        /// For more information about rebooting, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-        /// a DB Instance</a>. 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
         /// 
@@ -3219,7 +3080,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
             var marshaller = RebootDBInstanceRequestMarshaller.Instance;
@@ -3237,7 +3098,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RebootDBInstanceRequestMarshaller.Instance;
@@ -3253,9 +3114,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// Disassociates an Identity and Access Management (IAM) role from a DB cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
         /// 
@@ -3270,7 +3129,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
         {
             var marshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
@@ -3288,7 +3147,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
@@ -3304,7 +3163,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Removes a source identifier from an existing RDS event notification subscription.
+        /// Removes a source identifier from an existing event notification subscription.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveSourceIdentifierFromSubscription service method.</param>
         /// 
@@ -3315,7 +3174,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.SubscriptionNotFoundException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
             var marshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
@@ -3333,7 +3192,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
@@ -3350,12 +3209,6 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Removes metadata tags from an Amazon Neptune resource.
-        /// 
-        ///  
-        /// <para>
-        /// For an overview on tagging an Amazon Neptune resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon Neptune Resources</a>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -3369,7 +3222,7 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
@@ -3387,7 +3240,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
@@ -3417,11 +3270,6 @@ namespace Amazon.Neptune
         /// for every DB instance in your DB cluster that you want the updated static parameter
         /// to apply to.
         /// </para>
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
         /// 
@@ -3434,7 +3282,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
         {
             var marshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
@@ -3452,7 +3300,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual Task<ResetDBClusterParameterGroupResponse> ResetDBClusterParameterGroupAsync(ResetDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
@@ -3487,7 +3335,7 @@ namespace Amazon.Neptune
         /// to delete the parameter group, you cannot delete it when the parameter group is in
         /// this state.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
             var marshaller = ResetDBParameterGroupRequestMarshaller.Instance;
@@ -3505,103 +3353,13 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetDBParameterGroupRequest,ResetDBParameterGroupResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  RestoreDBClusterFromS3
-
-
-        /// <summary>
-        /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
-        /// Neptune must be authorized to access the Amazon S3 bucket and the data must be created
-        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-        /// Data from MySQL by Using an Amazon S3 Bucket</a>.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
-        /// 
-        /// <returns>The response from the RestoreDBClusterFromS3 service method, as returned by Neptune.</returns>
-        /// <exception cref="Amazon.Neptune.Model.DBClusterAlreadyExistsException">
-        /// User already has a DB cluster with the given identifier.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
-        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBClusterParameterGroupNotFoundException">
-        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
-        /// group.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBClusterQuotaExceededException">
-        /// User attempted to create a new DB cluster and the user has already reached the maximum
-        /// allowed DB cluster quota.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InsufficientStorageClusterCapacityException">
-        /// There is insufficient storage available for the current action. You may be able to
-        /// resolve this error by updating your subnet group to use different Availability Zones
-        /// that have more storage available.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
-        /// The DB cluster is not in a valid state.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InvalidDBSubnetGroupStateException">
-        /// The DB subnet group cannot be deleted because it is in use.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InvalidS3BucketException">
-        /// The specified Amazon S3 bucket name could not be found or Amazon Neptune is not authorized
-        /// to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and
-        /// <b>S3IngestionRoleArn</b> values and try again.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InvalidSubnetException">
-        /// The requested subnet is invalid, or multiple subnets were requested that are not all
-        /// in a common VPC.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.InvalidVPCNetworkStateException">
-        /// DB subnet group does not cover all Availability Zones after it is created because
-        /// users' change.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.KMSKeyNotAccessibleException">
-        /// Error accessing KMS key.
-        /// </exception>
-        /// <exception cref="Amazon.Neptune.Model.StorageQuotaExceededException">
-        /// Request would result in user exceeding the allowed amount of storage available across
-        /// all DB instances.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
-        public virtual RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
-        {
-            var marshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
-            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
-
-            return Invoke<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RestoreDBClusterFromS3 operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
-        public virtual Task<RestoreDBClusterFromS3Response> RestoreDBClusterFromS3Async(RestoreDBClusterFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
-            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
-
-            return InvokeAsync<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3623,11 +3381,6 @@ namespace Amazon.Neptune
         /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
         /// DB cluster restore point with the same configuration as the original source DB cluster,
         /// except that the new DB cluster is created with the default security group.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
@@ -3691,7 +3444,7 @@ namespace Amazon.Neptune
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
             var marshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
@@ -3709,7 +3462,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
@@ -3739,11 +3492,7 @@ namespace Amazon.Neptune
         /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
         /// action has completed and the DB cluster is available.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
         /// 
@@ -3802,7 +3551,7 @@ namespace Amazon.Neptune
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
             var marshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
@@ -3820,7 +3569,7 @@ namespace Amazon.Neptune
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2018-05-15/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;

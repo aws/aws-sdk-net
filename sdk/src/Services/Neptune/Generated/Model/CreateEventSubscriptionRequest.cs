@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,16 +29,16 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventSubscription operation.
-    /// Creates an RDS event notification subscription. This action requires a topic ARN (Amazon
-    /// Resource Name) created by either the RDS console, the SNS console, or the SNS API.
-    /// To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to
-    /// the topic. The ARN is displayed in the SNS console.
+    /// Creates an event notification subscription. This action requires a topic ARN (Amazon
+    /// Resource Name) created by either the Neptune console, the SNS console, or the SNS
+    /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
+    /// to the topic. The ARN is displayed in the SNS console.
     /// 
     ///  
     /// <para>
     /// You can specify the type of source (SourceType) you want to be notified of, provide
-    /// a list of RDS sources (SourceIds) that triggers the events, and provide a list of
-    /// event categories (EventCategories) for events you want to be notified of. For example,
+    /// a list of Neptune sources (SourceIds) that triggers the events, and provide a list
+    /// of event categories (EventCategories) for events you want to be notified of. For example,
     /// you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2
     /// and EventCategories = Availability, Backup.
     /// </para>
@@ -47,9 +47,9 @@ namespace Amazon.Neptune.Model
     /// If you specify both the SourceType and SourceIds, such as SourceType = db-instance
     /// and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
     /// for the specified source. If you specify a SourceType but do not specify a SourceIdentifier,
-    /// you receive notice of the events for that source type for all your RDS sources. If
-    /// you do not specify either the SourceType nor the SourceIdentifier, you are notified
-    /// of events generated from all RDS sources belonging to your customer account.
+    /// you receive notice of the events for that source type for all your Neptune sources.
+    /// If you do not specify either the SourceType nor the SourceIdentifier, you are notified
+    /// of events generated from all Neptune sources belonging to your customer account.
     /// </para>
     /// </summary>
     public partial class CreateEventSubscriptionRequest : AmazonNeptuneRequest
@@ -85,8 +85,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property EventCategories. 
         /// <para>
         ///  A list of event categories for a SourceType that you want to subscribe to. You can
-        /// see a list of the categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the Amazon Neptune User Guide or by using the <b>DescribeEventCategories</b>
+        /// see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b>
         /// action. 
         /// </para>
         /// </summary>

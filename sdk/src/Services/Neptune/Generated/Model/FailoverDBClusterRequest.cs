@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,21 +33,16 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances)
+    /// A failover for a DB cluster promotes one of the Read Replicas (read-only instances)
     /// in the DB cluster to be the primary instance (the cluster writer).
     /// </para>
     ///  
     /// <para>
-    /// Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when
+    /// Amazon Neptune will automatically fail over to a Read Replica, if one exists, when
     /// the primary instance fails. You can force a failover when you want to simulate a failure
     /// of a primary instance for testing. Because each instance in a DB cluster has its own
     /// endpoint address, you will need to clean up and re-establish any existing connections
     /// that use those endpoint addresses when the failover is complete.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class FailoverDBClusterRequest : AmazonNeptuneRequest
@@ -89,8 +84,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify the instance identifier for an Aurora Replica in the DB cluster.
-        /// For example, <code>mydbcluster-replica1</code>.
+        /// You must specify the instance identifier for an Read Replica in the DB cluster. For
+        /// example, <code>mydbcluster-replica1</code>.
         /// </para>
         /// </summary>
         public string TargetDBInstanceIdentifier

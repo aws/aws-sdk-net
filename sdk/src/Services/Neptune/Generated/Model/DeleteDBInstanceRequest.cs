@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -49,12 +49,12 @@ namespace Amazon.Neptune.Model
     /// </para>
     ///  
     /// <para>
-    /// If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete
-    /// the DB instance if both of the following conditions are true:
+    /// If the specified DB instance is part of a DB cluster, you can't delete the DB instance
+    /// if both of the following conditions are true:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+    /// The DB cluster is a Read Replica of another DB cluster.
     /// </para>
     ///  </li> <li> 
     /// <para>

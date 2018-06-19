@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -41,11 +41,6 @@ namespace Amazon.Neptune.Model
     /// If a DB cluster snapshot is specified, the target DB cluster is created from the source
     /// DB cluster restore point with the same configuration as the original source DB cluster,
     /// except that the new DB cluster is created with the default security group.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon Neptune</a> in the <i>Amazon Neptune User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonNeptuneRequest

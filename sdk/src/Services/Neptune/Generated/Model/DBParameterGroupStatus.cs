@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,10 +40,6 @@ namespace Amazon.Neptune.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateDBInstanceReadReplica</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a>DeleteDBInstance</a> 
     /// </para>
     ///  </li> <li> 
@@ -53,10 +49,6 @@ namespace Amazon.Neptune.Model
     ///  </li> <li> 
     /// <para>
     ///  <a>RebootDBInstance</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RestoreDBInstanceFromDBSnapshot</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,11 +39,6 @@ namespace Amazon.Neptune.Model
     /// Rebooting a DB instance restarts the database engine service. Rebooting a DB instance
     /// results in a momentary outage, during which the DB instance status is set to rebooting.
     /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about rebooting, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-    /// a DB Instance</a>. 
     /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonNeptuneRequest

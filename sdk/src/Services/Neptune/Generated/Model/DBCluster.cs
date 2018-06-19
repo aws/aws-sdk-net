@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -77,10 +77,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
-        /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
-        /// always returns 1, because Aurora DB cluster storage size is not fixed, but instead
-        /// automatically adjusts as needed.
+        ///  <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage
+        /// size is not fixed, but instead automatically adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -619,16 +617,16 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property ReaderEndpoint. 
         /// <para>
         /// The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances
-        /// connections across the Aurora Replicas that are available in a DB cluster. As clients
-        /// request new connections to the reader endpoint, Aurora distributes the connection
-        /// requests among the Aurora Replicas in the DB cluster. This functionality can help
-        /// balance your read workload across multiple Aurora Replicas in your DB cluster. 
+        /// connections across the Read Replicas that are available in a DB cluster. As clients
+        /// request new connections to the reader endpoint, Neptune distributes the connection
+        /// requests among the Read Replicas in the DB cluster. This functionality can help balance
+        /// your read workload across multiple Read Replicas in your DB cluster. 
         /// </para>
         ///  
         /// <para>
-        /// If a failover occurs, and the Aurora Replica that you are connected to is promoted
-        /// to be the primary instance, your connection is dropped. To continue sending your read
-        /// workload to other Aurora Replicas in the cluster, you can then reconnect to the reader
+        /// If a failover occurs, and the Read Replica that you are connected to is promoted to
+        /// be the primary instance, your connection is dropped. To continue sending your read
+        /// workload to other Read Replicas in the cluster, you can then reconnect to the reader
         /// endpoint.
         /// </para>
         /// </summary>

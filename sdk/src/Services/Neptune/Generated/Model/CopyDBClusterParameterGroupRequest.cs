@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,8 +42,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property SourceDBClusterParameterGroupIdentifier. 
         /// <para>
         /// The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
-        /// For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-        /// Constructing an RDS Amazon Resource Name (ARN)</a>. 
+        /// For information about creating an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// Constructing an Amazon Resource Name (ARN)</a>. 
         /// </para>
         ///  
         /// <para>

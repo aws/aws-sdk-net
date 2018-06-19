@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,7 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveRoleFromDBCluster operation.
-    /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-    /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+    /// Disassociates an Identity and Access Management (IAM) role from a DB cluster.
     /// </summary>
     public partial class RemoveRoleFromDBClusterRequest : AmazonNeptuneRequest
     {
@@ -59,8 +57,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB
-        /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
+        /// The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster,
+        /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.
         /// </para>
         /// </summary>
         public string RoleArn

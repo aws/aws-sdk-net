@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -100,9 +100,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The RDS Amazon Resource Name (ARN) of the resource that the pending maintenance action
-        /// applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-        /// Constructing an RDS Amazon Resource Name (ARN)</a>.
+        /// The Amazon Resource Name (ARN) of the resource that the pending maintenance action
+        /// applies to. For information about creating an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

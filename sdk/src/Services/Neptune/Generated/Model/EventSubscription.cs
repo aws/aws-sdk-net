@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CustomerAwsId. 
         /// <para>
-        /// The AWS customer account associated with the RDS event notification subscription.
+        /// The AWS customer account associated with the event notification subscription.
         /// </para>
         /// </summary>
         public string CustomerAwsId
@@ -65,7 +65,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CustSubscriptionId. 
         /// <para>
-        /// The RDS event notification subscription Id.
+        /// The event notification subscription Id.
         /// </para>
         /// </summary>
         public string CustSubscriptionId
@@ -102,7 +102,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EventCategoriesList. 
         /// <para>
-        /// A list of event categories for the RDS event notification subscription.
+        /// A list of event categories for the event notification subscription.
         /// </para>
         /// </summary>
         public List<string> EventCategoriesList
@@ -138,7 +138,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The topic ARN of the RDS event notification subscription.
+        /// The topic ARN of the event notification subscription.
         /// </para>
         /// </summary>
         public string SnsTopicArn
@@ -156,7 +156,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SourceIdsList. 
         /// <para>
-        /// A list of source IDs for the RDS event notification subscription.
+        /// A list of source IDs for the event notification subscription.
         /// </para>
         /// </summary>
         public List<string> SourceIdsList
@@ -174,7 +174,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The source type for the RDS event notification subscription.
+        /// The source type for the event notification subscription.
         /// </para>
         /// </summary>
         public string SourceType
@@ -192,7 +192,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the RDS event notification subscription.
+        /// The status of the event notification subscription.
         /// </para>
         ///  
         /// <para>
@@ -205,9 +205,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// The status "no-permission" indicates that RDS no longer has permission to post to
-        /// the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after
-        /// the subscription was created.
+        /// The status "no-permission" indicates that Neptune no longer has permission to post
+        /// to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+        /// after the subscription was created.
         /// </para>
         /// </summary>
         public string Status
@@ -225,7 +225,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SubscriptionCreationTime. 
         /// <para>
-        /// The time the RDS event notification subscription was created.
+        /// The time the event notification subscription was created.
         /// </para>
         /// </summary>
         public string SubscriptionCreationTime

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -352,33 +352,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The meaning of this parameter differs according to the database engine you use. For
-        /// example, this value returns MySQL, MariaDB, or PostgreSQL information when returning
-        /// values from CreateDBInstanceReadReplica since Read Replicas are only supported for
-        /// these engines.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Contains the name of the initial database of this instance that was provided at create
-        /// time, if one was specified when the DB instance was created. This same name is returned
-        /// for the life of the DB instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Oracle</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Contains the Oracle System ID (SID) of the created DB instance. Not shown when the
-        /// returned parameters do not apply to an Oracle DB instance.
+        /// The database name.
         /// </para>
         /// </summary>
         public string DBName
@@ -452,7 +426,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DomainMemberships. 
         /// <para>
-        /// The Active Directory Domain membership records associated with the DB instance.
+        /// Not supported
         /// </para>
         /// </summary>
         public List<DomainMembership> DomainMemberships
@@ -561,27 +535,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
         /// <para>
-        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-        /// is enabled, and otherwise false.
+        /// True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise
+        /// false.
         /// </para>
-        ///  
-        /// <para>
-        /// IAM database authentication can be enabled for the following database engines
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster
-        /// Type.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
         {
@@ -726,8 +682,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
-        /// The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon
-        /// CloudWatch Logs.
+        /// The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics
+        /// to Amazon CloudWatch Logs.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -876,10 +832,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PromotionTier. 
         /// <para>
-        /// A value that specifies the order in which an Aurora Replica is promoted to the primary
-        /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// A value that specifies the order in which a Read Replica is promoted to the primary
+        /// instance after a failure of the existing primary instance. 
         /// </para>
         /// </summary>
         public int PromotionTier
@@ -938,8 +892,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
         /// <para>
-        /// Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this
-        /// DB instance.
+        /// Contains one or more identifiers of DB clusters that are Read Replicas of this DB
+        /// instance.
         /// </para>
         /// </summary>
         public List<string> ReadReplicaDBClusterIdentifiers
@@ -1084,9 +1038,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB instance. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
-        /// that were created with a time zone specified. 
+        /// Not supported. 
         /// </para>
         /// </summary>
         public string Timezone

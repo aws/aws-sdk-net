@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the neptune-2018-05-15.normal.json service model.
+ * Do not modify this file. This file is generated from the neptune-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,12 +32,6 @@ namespace Amazon.Neptune.Model
     /// Adds metadata tags to an Amazon Neptune resource. These tags can also be used with
     /// cost allocation reporting to track cost associated with Amazon Neptune resources,
     /// or used in a Condition statement in an IAM policy for Amazon Neptune.
-    /// 
-    ///  
-    /// <para>
-    /// For an overview on tagging Amazon Neptune resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-    /// Amazon Neptune Resources</a>.
-    /// </para>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonNeptuneRequest
     {
@@ -48,8 +42,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource
-        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-        /// Constructing an RDS Amazon Resource Name (ARN)</a>.
+        /// Name (ARN). For information about creating an ARN, see <a href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+        /// Constructing an Amazon Resource Name (ARN)</a>.
         /// </para>
         /// </summary>
         public string ResourceName
