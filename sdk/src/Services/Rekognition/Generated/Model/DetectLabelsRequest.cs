@@ -31,14 +31,18 @@ namespace Amazon.Rekognition.Model
     /// Container for the parameters to the DetectLabels operation.
     /// Detects instances of real-world entities within an image (JPEG or PNG) provided as
     /// input. This includes objects like flower, tree, and table; events like wedding, graduation,
-    /// and birthday party; and concepts like landscape, evening, and nature. For an example,
-    /// see <a>images-s3</a>.
+    /// and birthday party; and concepts like landscape, evening, and nature. 
     /// 
+    ///  
+    /// <para>
+    /// For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition
+    /// Developer Guide.
+    /// </para>
     ///  <note> 
     /// <para>
     ///  <code>DetectLabels</code> does not support the detection of activities. However,
     /// activity detection is supported for label detection in videos. For more information,
-    /// see .
+    /// see StartLabelDetection in the Amazon Rekognition Developer Guide.
     /// </para>
     ///  </note> 
     /// <para>
@@ -68,7 +72,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  In the preceding example, the operation returns one label for each of the three objects.
+    /// In the preceding example, the operation returns one label for each of the three objects.
     /// The operation can also return multiple labels for the same object in the image. For
     /// example, if the input image shows a flower (for example, a tulip), the operation might
     /// return the following three labels. 

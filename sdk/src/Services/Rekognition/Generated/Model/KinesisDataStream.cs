@@ -29,7 +29,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon
-    /// Rekognition stream processor are streamed. For more information, see .
+    /// Rekognition stream processor are streamed. For more information, see CreateStreamProcessor
+    /// in the Amazon Rekognition Developer Guide.
     /// </summary>
     public partial class KinesisDataStream
     {

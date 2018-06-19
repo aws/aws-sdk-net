@@ -58,10 +58,6 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For an example, see <a>procedure-detecting-faces-in-images</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// This operation requires permissions to perform the <code>rekognition:DetectFaces</code>
     /// action. 
     /// </para>

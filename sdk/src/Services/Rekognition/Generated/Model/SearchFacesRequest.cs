@@ -49,7 +49,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example, see <a>search-face-with-id-procedure</a>.
+    /// For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition
+    /// Developer Guide.
     /// </para>
     ///  
     /// <para>

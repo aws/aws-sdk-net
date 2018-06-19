@@ -33,7 +33,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// Rekognition Video can detect labels in a video. Labels are instances of real-world
+    /// Amazon Rekognition Video can detect labels in a video. Labels are instances of real-world
     /// entities. This includes objects like flower, tree, and table; events like wedding,
     /// graduation, and birthday party; concepts like landscape, evening, and nature; and
     /// activities like a person getting out of a car or a person skiing.
@@ -43,8 +43,8 @@ namespace Amazon.Rekognition.Model
     /// The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket
     /// name and the filename of the video. <code>StartLabelDetection</code> returns a job
     /// identifier (<code>JobId</code>) which you use to get the results of the operation.
-    /// When label detection is finished, Rekognition Video publishes a completion status
-    /// to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+    /// When label detection is finished, Amazon Rekognition Video publishes a completion
+    /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
     /// </para>
     ///  
     /// <para>
@@ -104,11 +104,11 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MinConfidence. 
         /// <para>
-        /// Specifies the minimum confidence that Rekognition Video must have in order to return
-        /// a detected label. Confidence represents how certain Amazon Rekognition is that a label
-        /// is correctly identified.0 is the lowest confidence. 100 is the highest confidence.
-        /// Rekognition Video doesn't return any labels with a confidence level lower than this
-        /// specified value.
+        /// Specifies the minimum confidence that Amazon Rekognition Video must have in order
+        /// to return a detected label. Confidence represents how certain Amazon Rekognition is
+        /// that a label is correctly identified.0 is the lowest confidence. 100 is the highest
+        /// confidence. Amazon Rekognition Video doesn't return any labels with a confidence level
+        /// lower than this specified value.
         /// </para>
         ///  
         /// <para>
@@ -131,8 +131,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NotificationChannel. 
         /// <para>
-        /// The Amazon SNS topic ARN you want Rekognition Video to publish the completion status
-        /// of the label detection operation to. 
+        /// The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion
+        /// status of the label detection operation to. 
         /// </para>
         /// </summary>
         public NotificationChannel NotificationChannel

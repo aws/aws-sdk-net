@@ -59,8 +59,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Rekognition Video returns this token that you can use
-        /// in the subsequent request to retrieve the next set of persons. 
+        /// If the response is truncated, Amazon Rekognition Video returns this token that you
+        /// can use in the subsequent request to retrieve the next set of persons. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -115,8 +115,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property VideoMetadata. 
         /// <para>
-        /// Information about a video that Rekognition Video analyzed. <code>Videometadata</code>
-        /// is returned in every page of paginated responses from a Rekognition Video operation.
+        /// Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code>
+        /// is returned in every page of paginated responses from a Amazon Rekognition Video operation.
         /// </para>
         /// </summary>
         public VideoMetadata VideoMetadata

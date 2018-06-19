@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property FaceRecords. 
         /// <para>
         /// An array of faces detected and added to the collection. For more information, see
-        /// <a>collections-index-faces</a>. 
+        /// Searching Faces in a Collection in the Amazon Rekognition Developer Guide. 
         /// </para>
         /// </summary>
         public List<FaceRecord> FaceRecords

@@ -29,14 +29,15 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPersonTracking operation.
-    /// Gets the person tracking results of a Rekognition Video analysis started by .
+    /// Gets the person tracking results of a Amazon Rekognition Video analysis started by
+    /// .
     /// 
     ///  
     /// <para>
     /// The person detection operation is started by a call to <code>StartPersonTracking</code>
     /// which returns a job identifier (<code>JobId</code>). When the person detection operation
-    /// finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification
-    /// Service topic registered in the initial call to <code>StartPersonTracking</code>.
+    /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
+    /// Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.
     /// </para>
     ///  
     /// <para>
@@ -54,7 +55,11 @@ namespace Amazon.Rekognition.Model
     ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
     /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
     /// The other facial attributes listed in the <code>Face</code> object of the following
-    /// response syntax are not returned. For more information, see . 
+    /// response syntax are not returned. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see FaceDetail in the Amazon Rekognition Developer Guide.
     /// </para>
     ///  </note> 
     /// <para>
@@ -122,8 +127,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there are more persons to retrieve),
-        /// Rekognition Video returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of persons. 
+        /// Amazon Rekognition Video returns a pagination token in the response. You can use this
+        /// pagination token to retrieve the next set of persons. 
         /// </para>
         /// </summary>
         public string NextToken

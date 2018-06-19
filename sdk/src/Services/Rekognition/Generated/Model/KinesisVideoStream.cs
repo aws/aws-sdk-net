@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Kinesis video stream stream that provides the source streaming video for a Rekognition
-    /// Video stream processor. For more information, see .
+    /// Kinesis video stream stream that provides the source streaming video for a Amazon
+    /// Rekognition Video stream processor. For more information, see CreateStreamProcessor
+    /// in the Amazon Rekognition Developer Guide.
     /// </summary>
     public partial class KinesisVideoStream
     {

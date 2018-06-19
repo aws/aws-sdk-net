@@ -29,7 +29,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLabelDetection operation.
-    /// Gets the label detection results of a Rekognition Video analysis started by . 
+    /// Gets the label detection results of a Amazon Rekognition Video analysis started by
+    /// . 
     /// 
     ///  
     /// <para>
@@ -112,8 +113,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous response was incomplete (because there are more labels to retrieve),
-        /// Rekognition Video returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of labels. 
+        /// Amazon Rekognition Video returns a pagination token in the response. You can use this
+        /// pagination token to retrieve the next set of labels. 
         /// </para>
         /// </summary>
         public string NextToken

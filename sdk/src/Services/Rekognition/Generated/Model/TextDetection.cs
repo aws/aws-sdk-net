@@ -44,7 +44,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a>text-detection</a>.
+    /// For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
     /// </para>
     /// </summary>
     public partial class TextDetection

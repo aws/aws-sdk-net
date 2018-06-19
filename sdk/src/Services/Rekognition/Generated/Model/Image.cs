@@ -36,8 +36,12 @@ namespace Amazon.Rekognition.Model
     /// property. For example, you would use the <code>Bytes</code> property to pass an image
     /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
     /// property must be base64-encoded. Your code may not need to encode image bytes if you
-    /// are using an AWS SDK to call Rekognition API operations. For more information, see
-    /// <a>images-bytes</a>.
+    /// are using an AWS SDK to call Rekognition API operations. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see Analyzing an Image Loaded from a Local File System in the
+    /// Amazon Rekognition Developer Guide.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +62,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// For Amazon Rekognition to process an S3 object, the user must have permission to access
-    /// the S3 object. For more information, see <a>manage-access-resource-policies</a>. 
+    /// the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition
+    /// Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Image

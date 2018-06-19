@@ -33,15 +33,19 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <a>Video</a>
-    /// to specify the bucket name and the filename of the video. <code>StartFaceDetection</code>
+    /// Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket.
+    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartFaceDetection</code>
     /// returns a job identifier (<code>JobId</code>) that you use to get the results of the
-    /// operation. When face detection is finished, Rekognition Video publishes a completion
+    /// operation. When face detection is finished, Amazon Rekognition Video publishes a completion
     /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
     /// To get the results of the label detection operation, first check that the status value
     /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
     /// the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
-    /// For more information, see <a>faces-video</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition
+    /// Developer Guide.
     /// </para>
     /// </summary>
     public partial class StartFaceDetectionRequest : AmazonRekognitionRequest
@@ -122,8 +126,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NotificationChannel. 
         /// <para>
-        /// The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the
-        /// completion status of the face detection operation.
+        /// The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish
+        /// the completion status of the face detection operation.
         /// </para>
         /// </summary>
         public NotificationChannel NotificationChannel
