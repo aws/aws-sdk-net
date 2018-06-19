@@ -32,7 +32,7 @@ namespace Amazon.IoT1ClickProjects
     public partial class AmazonIoT1ClickProjectsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.1");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.2");
 
         private string _userAgent = UserAgentString;
 

@@ -1,3 +1,12 @@
+### 3.3.302.1 (2018-06-19 20:24 UTC)
+* Rekognition (3.3.8.8)
+	* Documentation updates for rekognition
+* Core 3.3.24.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.302.0 (2018-06-19 02:26 UTC)
 * Neptune (3.3.1.0)
 	* Fixed Neptune with correct service model.
