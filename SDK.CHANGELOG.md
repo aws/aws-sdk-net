@@ -1,3 +1,7 @@
+### 3.3.302.0 (2018-06-19 02:26 UTC)
+* Neptune (3.3.1.0)
+	* Fixed Neptune with correct service model.
+
 ### 3.3.301.0 (2018-06-15 23:50 UTC)
 * MediaConvert (3.3.3.0)
 	* This release adds language code support according to the ISO-639-3 standard. Custom 3-character language codes are now supported on input and output for both audio and captions.
