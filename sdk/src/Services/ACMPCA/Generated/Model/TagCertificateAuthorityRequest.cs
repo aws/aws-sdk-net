@@ -35,8 +35,8 @@ namespace Amazon.ACMPCA.Model
     /// the tag by using a key-value pair. You can apply a tag to just one private CA if you
     /// want to identify a specific characteristic of that CA, or you can apply the same tag
     /// to multiple private CAs if you want to filter for a common relationship among those
-    /// CAs. To remove one or more tags, use the <a>UntagCertificateAuthority</a> function.
-    /// Call the <a>ListTags</a> function to see what tags are associated with your CA.
+    /// CAs. To remove one or more tags, use the <a>UntagCertificateAuthority</a> operation.
+    /// Call the <a>ListTags</a> operation to see what tags are associated with your CA.
     /// </summary>
     public partial class TagCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -51,7 +51,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code> 
         /// </para>
         /// </summary>

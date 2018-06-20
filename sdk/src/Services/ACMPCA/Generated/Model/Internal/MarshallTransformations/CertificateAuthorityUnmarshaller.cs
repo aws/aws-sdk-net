@@ -106,6 +106,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RestorableUntil", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RestorableUntil = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RevocationConfiguration", targetDepth))
                 {
                     var unmarshaller = RevocationConfigurationUnmarshaller.Instance;

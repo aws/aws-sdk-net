@@ -365,6 +365,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ACMPCA")]
+        public void RestoreCertificateAuthorityMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<RestoreCertificateAuthorityRequest>();
+            var marshaller = new RestoreCertificateAuthorityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<RestoreCertificateAuthorityRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ACMPCA")]
         public void RevokeCertificateMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<RevokeCertificateRequest>();

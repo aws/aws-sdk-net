@@ -31,7 +31,7 @@ namespace Amazon.ACMPCA.Model
     /// Tags are labels that you can use to identify and organize your private CAs. Each tag
     /// consists of a key and an optional value. You can associate up to 50 tags with a private
     /// CA. To add one or more tags to a private CA, call the <a>TagCertificateAuthority</a>
-    /// function. To remove a tag, call the <a>UntagCertificateAuthority</a> function.
+    /// operation. To remove a tag, call the <a>UntagCertificateAuthority</a> operation.
     /// </summary>
     public partial class Tag
     {

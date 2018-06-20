@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TagCertificateAuthority operation
+    /// Response Unmarshaller for RestoreCertificateAuthority operation
     /// </summary>  
-    public class TagCertificateAuthorityResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RestoreCertificateAuthorityResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TagCertificateAuthorityResponse response = new TagCertificateAuthorityResponse();
+            RestoreCertificateAuthorityResponse response = new RestoreCertificateAuthorityResponse();
 
 
             return response;
@@ -69,24 +69,16 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             {
                 return new InvalidStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagException"))
-            {
-                return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
-            {
-                return new TooManyTagsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonACMPCAException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static TagCertificateAuthorityResponseUnmarshaller _instance = new TagCertificateAuthorityResponseUnmarshaller();        
+        private static RestoreCertificateAuthorityResponseUnmarshaller _instance = new RestoreCertificateAuthorityResponseUnmarshaller();        
 
-        internal static TagCertificateAuthorityResponseUnmarshaller GetInstance()
+        internal static RestoreCertificateAuthorityResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -94,7 +86,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TagCertificateAuthorityResponseUnmarshaller Instance
+        public static RestoreCertificateAuthorityResponseUnmarshaller Instance
         {
             get
             {

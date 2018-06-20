@@ -28,24 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Container for the parameters to the UntagCertificateAuthority operation.
-    /// Remove one or more tags from your private CA. A tag consists of a key-value pair.
-    /// If you do not specify the value portion of the tag when calling this operation, the
-    /// tag will be removed regardless of value. If you specify a value, the tag is removed
-    /// only if it is associated with the specified value. To add tags to a private CA, use
-    /// the <a>TagCertificateAuthority</a>. Call the <a>ListTags</a> operation to see what
-    /// tags are associated with your CA.
+    /// Container for the parameters to the RestoreCertificateAuthority operation.
+    /// Restores a certificate authority (CA) that is in the <code>DELETED</code> state. You
+    /// can restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
+    /// parameter of the <a>DeleteCertificateAuthority</a> operation. Currently, you can specify
+    /// 7 to 30 days. If you did not specify a <b>PermanentDeletionTimeInDays</b> value, by
+    /// default you can restore the CA at any time in a 30 day period. You can check the time
+    /// remaining in the restoration period of a private CA in the <code>DELETED</code> state
+    /// by calling the <a>DescribeCertificateAuthority</a> or <a>ListCertificateAuthorities</a>
+    /// operations. The status of a restored CA is set to its pre-deletion status when the
+    /// <b>RestoreCertificateAuthority</b> operation returns. To change its status to <code>ACTIVE</code>,
+    /// call the <a>UpdateCertificateAuthority</a> operation. If the private CA was in the
+    /// <code>PENDING_CERTIFICATE</code> state at deletion, you must use the <a>ImportCertificateAuthorityCertificate</a>
+    /// operation to import a certificate authority into the private CA before it can be activated.
+    /// You cannot restore a CA after the restoration period has ended.
     /// </summary>
-    public partial class UntagCertificateAuthorityRequest : AmazonACMPCARequest
+    public partial class RestoreCertificateAuthorityRequest : AmazonACMPCARequest
     {
         private string _certificateAuthorityArn;
-        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>.
-        /// This must be of the form: 
+        /// The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
+        /// operation. This must be of the form: 
         /// </para>
         ///  
         /// <para>
@@ -63,24 +69,6 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetCertificateAuthorityArn()
         {
             return this._certificateAuthorityArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// List of tags to be removed from the CA.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

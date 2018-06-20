@@ -154,8 +154,8 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Boolean value that specifies whether certificate revocation lists (CRLs) are enabled.
         /// You can use this value to enable certificate revocation for a new CA when you call
-        /// the <a>CreateCertificateAuthority</a> function or for an existing CA when you call
-        /// the <a>UpdateCertificateAuthority</a> function. 
+        /// the <a>CreateCertificateAuthority</a> operation or for an existing CA when you call
+        /// the <a>UpdateCertificateAuthority</a> operation. 
         /// </para>
         /// </summary>
         public bool Enabled
@@ -194,7 +194,7 @@ namespace Amazon.ACMPCA.Model
         /// Name of the S3 bucket that contains the CRL. If you do not provide a value for the
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
-        /// of your bucket by calling the <a>UpdateCertificateAuthority</a> function. You must
+        /// of your bucket by calling the <a>UpdateCertificateAuthority</a> operation. You must
         /// specify a bucket policy that allows ACM PCA to write the CRL to your bucket.
         /// </para>
         /// </summary>

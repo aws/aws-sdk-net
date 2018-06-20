@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteCertificateAuthority Request Marshaller
+    /// RestoreCertificateAuthority Request Marshaller
     /// </summary>       
-    public class DeleteCertificateAuthorityRequestMarshaller : IMarshaller<IRequest, DeleteCertificateAuthorityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RestoreCertificateAuthorityRequestMarshaller : IMarshaller<IRequest, RestoreCertificateAuthorityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteCertificateAuthorityRequest)input);
+            return this.Marshall((RestoreCertificateAuthorityRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteCertificateAuthorityRequest publicRequest)
+        public IRequest Marshall(RestoreCertificateAuthorityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ACMPCA");
-            string target = "ACMPrivateCA.DeleteCertificateAuthority";
+            string target = "ACMPrivateCA.RestoreCertificateAuthority";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,12 +73,6 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CertificateAuthorityArn);
                 }
 
-                if(publicRequest.IsSetPermanentDeletionTimeInDays())
-                {
-                    context.Writer.WritePropertyName("PermanentDeletionTimeInDays");
-                    context.Writer.Write(publicRequest.PermanentDeletionTimeInDays);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -88,9 +82,9 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteCertificateAuthorityRequestMarshaller _instance = new DeleteCertificateAuthorityRequestMarshaller();        
+        private static RestoreCertificateAuthorityRequestMarshaller _instance = new RestoreCertificateAuthorityRequestMarshaller();        
 
-        internal static DeleteCertificateAuthorityRequestMarshaller GetInstance()
+        internal static RestoreCertificateAuthorityRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +92,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteCertificateAuthorityRequestMarshaller Instance
+        public static RestoreCertificateAuthorityRequestMarshaller Instance
         {
             get
             {

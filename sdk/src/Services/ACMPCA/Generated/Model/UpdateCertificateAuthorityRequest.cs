@@ -30,10 +30,9 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the UpdateCertificateAuthority operation.
     /// Updates the status or configuration of a private certificate authority (CA). Your
-    /// private CA must be in the <b> <code>ACTIVE</code> </b> or <b> <code>DISABLED</code>
-    /// </b> state before you can update it. You can disable a private CA that is in the <b>
-    /// <code>ACTIVE</code> </b> state or make a CA that is in the <b> <code>DISABLED</code>
-    /// </b> state active again.
+    /// private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before
+    /// you can update it. You can disable a private CA that is in the <code>ACTIVE</code>
+    /// state or make a CA that is in the <code>DISABLED</code> state active again.
     /// </summary>
     public partial class UpdateCertificateAuthorityRequest : AmazonACMPCARequest
     {
@@ -49,7 +48,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code> 
         /// </para>
         /// </summary>

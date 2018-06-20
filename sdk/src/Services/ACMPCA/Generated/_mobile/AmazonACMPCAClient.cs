@@ -37,9 +37,9 @@ namespace Amazon.ACMPCA
     /// Implementation for accessing ACMPCA
     ///
     /// You can use the ACM PCA API to create a private certificate authority (CA). You must
-    /// first call the <a>CreateCertificateAuthority</a> function. If successful, the function
+    /// first call the <a>CreateCertificateAuthority</a> operation. If successful, the operation
     /// returns an Amazon Resource Name (ARN) for your private CA. Use this ARN as input to
-    /// the <a>GetCertificateAuthorityCsr</a> function to retrieve the certificate signing
+    /// the <a>GetCertificateAuthorityCsr</a> operation to retrieve the certificate signing
     /// request (CSR) for your private CA certificate. Sign the CSR using the root or an intermediate
     /// CA in your on-premises PKI hierarchy, and call the <a>ImportCertificateAuthorityCertificate</a>
     /// to import your signed private CA certificate into ACM PCA. 
@@ -49,7 +49,7 @@ namespace Amazon.ACMPCA
     /// Use your private CA to issue and revoke certificates. These are private certificates
     /// that identify and secure client computers, servers, applications, services, devices,
     /// and users over SSLS/TLS connections within your organization. Call the <a>IssueCertificate</a>
-    /// function to issue a certificate. Call the <a>RevokeCertificate</a> function to revoke
+    /// operation to issue a certificate. Call the <a>RevokeCertificate</a> operation to revoke
     /// a certificate. 
     /// </para>
     ///  <note> 
@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA
     /// <para>
     /// Your private CA can optionally create a certificate revocation list (CRL) to track
     /// the certificates you revoke. To create a CRL, you must specify a <a>RevocationConfiguration</a>
-    /// object when you call the <a>CreateCertificateAuthority</a> function. ACM PCA writes
+    /// object when you call the <a>CreateCertificateAuthority</a> operation. ACM PCA writes
     /// the CRL to an S3 bucket that you specify. You must specify a bucket policy that grants
     /// ACM PCA write permission. 
     /// </para>
@@ -69,7 +69,7 @@ namespace Amazon.ACMPCA
     /// <para>
     /// You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional
     /// audit report that lists every time the CA private key is used. The private key is
-    /// used for signing when the <b>IssueCertificate</b> or <b>RevokeCertificate</b> function
+    /// used for signing when the <b>IssueCertificate</b> or <b>RevokeCertificate</b> operation
     /// is called. 
     /// </para>
     /// </summary>
@@ -644,6 +644,38 @@ namespace Amazon.ACMPCA
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreCertificateAuthority
+
+        internal virtual RestoreCertificateAuthorityResponse RestoreCertificateAuthority(RestoreCertificateAuthorityRequest request)
+        {
+            var marshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
+            var unmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreCertificateAuthorityRequest,RestoreCertificateAuthorityResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreCertificateAuthority operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreCertificateAuthority operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RestoreCertificateAuthority">REST API Reference for RestoreCertificateAuthority Operation</seealso>
+        public virtual Task<RestoreCertificateAuthorityResponse> RestoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RestoreCertificateAuthorityRequestMarshaller.Instance;
+            var unmarshaller = RestoreCertificateAuthorityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreCertificateAuthorityRequest,RestoreCertificateAuthorityResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
