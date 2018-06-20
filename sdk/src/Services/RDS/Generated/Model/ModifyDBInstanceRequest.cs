@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _newDBInstanceIdentifier;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
@@ -1048,6 +1049,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPerformanceInsightsKMSKeyId()
         {
             return this._performanceInsightsKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years). 
+        /// </para>
+        /// </summary>
+        public int PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
         }
 
         /// <summary>

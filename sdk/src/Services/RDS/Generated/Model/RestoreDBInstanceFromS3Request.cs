@@ -63,6 +63,7 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
@@ -696,6 +697,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPerformanceInsightsKMSKeyId()
         {
             return this._performanceInsightsKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years). 
+        /// </para>
+        /// </summary>
+        public int PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
         }
 
         /// <summary>

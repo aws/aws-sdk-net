@@ -287,6 +287,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PerformanceInsightsKMSKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PerformanceInsightsRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PreferredBackupWindow", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

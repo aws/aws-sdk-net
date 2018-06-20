@@ -4331,6 +4331,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
+        /// group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
@@ -4436,6 +4440,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
@@ -4550,6 +4558,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
@@ -4753,6 +4764,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.

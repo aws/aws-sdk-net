@@ -127,6 +127,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PerformanceInsightsKMSKeyId", StringUtils.FromString(publicRequest.PerformanceInsightsKMSKeyId));
                 }
+                if(publicRequest.IsSetPerformanceInsightsRetentionPeriod())
+                {
+                    request.Parameters.Add("PerformanceInsightsRetentionPeriod", StringUtils.FromInt(publicRequest.PerformanceInsightsRetentionPeriod));
+                }
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
