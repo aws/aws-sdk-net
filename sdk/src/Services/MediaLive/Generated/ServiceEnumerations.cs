@@ -7255,6 +7255,530 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type OfferingDurationUnits.
+    /// </summary>
+    public class OfferingDurationUnits : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHS for OfferingDurationUnits
+        /// </summary>
+        public static readonly OfferingDurationUnits MONTHS = new OfferingDurationUnits("MONTHS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingDurationUnits(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingDurationUnits FindValue(string value)
+        {
+            return FindValue<OfferingDurationUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingDurationUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferingType.
+    /// </summary>
+    public class OfferingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_UPFRONT for OfferingType
+        /// </summary>
+        public static readonly OfferingType NO_UPFRONT = new OfferingType("NO_UPFRONT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingType FindValue(string value)
+        {
+            return FindValue<OfferingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationCodec.
+    /// </summary>
+    public class ReservationCodec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec AUDIO = new ReservationCodec("AUDIO");
+        /// <summary>
+        /// Constant AVC for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec AVC = new ReservationCodec("AVC");
+        /// <summary>
+        /// Constant HEVC for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec HEVC = new ReservationCodec("HEVC");
+        /// <summary>
+        /// Constant MPEG2 for ReservationCodec
+        /// </summary>
+        public static readonly ReservationCodec MPEG2 = new ReservationCodec("MPEG2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationCodec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationCodec FindValue(string value)
+        {
+            return FindValue<ReservationCodec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationCodec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationMaximumBitrate.
+    /// </summary>
+    public class ReservationMaximumBitrate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_10_MBPS for ReservationMaximumBitrate
+        /// </summary>
+        public static readonly ReservationMaximumBitrate MAX_10_MBPS = new ReservationMaximumBitrate("MAX_10_MBPS");
+        /// <summary>
+        /// Constant MAX_20_MBPS for ReservationMaximumBitrate
+        /// </summary>
+        public static readonly ReservationMaximumBitrate MAX_20_MBPS = new ReservationMaximumBitrate("MAX_20_MBPS");
+        /// <summary>
+        /// Constant MAX_50_MBPS for ReservationMaximumBitrate
+        /// </summary>
+        public static readonly ReservationMaximumBitrate MAX_50_MBPS = new ReservationMaximumBitrate("MAX_50_MBPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationMaximumBitrate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationMaximumBitrate FindValue(string value)
+        {
+            return FindValue<ReservationMaximumBitrate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationMaximumBitrate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationMaximumFramerate.
+    /// </summary>
+    public class ReservationMaximumFramerate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX_30_FPS for ReservationMaximumFramerate
+        /// </summary>
+        public static readonly ReservationMaximumFramerate MAX_30_FPS = new ReservationMaximumFramerate("MAX_30_FPS");
+        /// <summary>
+        /// Constant MAX_60_FPS for ReservationMaximumFramerate
+        /// </summary>
+        public static readonly ReservationMaximumFramerate MAX_60_FPS = new ReservationMaximumFramerate("MAX_60_FPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationMaximumFramerate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationMaximumFramerate FindValue(string value)
+        {
+            return FindValue<ReservationMaximumFramerate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationMaximumFramerate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationResolution.
+    /// </summary>
+    public class ReservationResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HD for ReservationResolution
+        /// </summary>
+        public static readonly ReservationResolution HD = new ReservationResolution("HD");
+        /// <summary>
+        /// Constant SD for ReservationResolution
+        /// </summary>
+        public static readonly ReservationResolution SD = new ReservationResolution("SD");
+        /// <summary>
+        /// Constant UHD for ReservationResolution
+        /// </summary>
+        public static readonly ReservationResolution UHD = new ReservationResolution("UHD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationResolution FindValue(string value)
+        {
+            return FindValue<ReservationResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationResourceType.
+    /// </summary>
+    public class ReservationResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHANNEL for ReservationResourceType
+        /// </summary>
+        public static readonly ReservationResourceType CHANNEL = new ReservationResourceType("CHANNEL");
+        /// <summary>
+        /// Constant INPUT for ReservationResourceType
+        /// </summary>
+        public static readonly ReservationResourceType INPUT = new ReservationResourceType("INPUT");
+        /// <summary>
+        /// Constant OUTPUT for ReservationResourceType
+        /// </summary>
+        public static readonly ReservationResourceType OUTPUT = new ReservationResourceType("OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationResourceType FindValue(string value)
+        {
+            return FindValue<ReservationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationSpecialFeature.
+    /// </summary>
+    public class ReservationSpecialFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADVANCED_AUDIO for ReservationSpecialFeature
+        /// </summary>
+        public static readonly ReservationSpecialFeature ADVANCED_AUDIO = new ReservationSpecialFeature("ADVANCED_AUDIO");
+        /// <summary>
+        /// Constant AUDIO_NORMALIZATION for ReservationSpecialFeature
+        /// </summary>
+        public static readonly ReservationSpecialFeature AUDIO_NORMALIZATION = new ReservationSpecialFeature("AUDIO_NORMALIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationSpecialFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationSpecialFeature FindValue(string value)
+        {
+            return FindValue<ReservationSpecialFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationSpecialFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationState.
+    /// </summary>
+    public class ReservationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ReservationState
+        /// </summary>
+        public static readonly ReservationState ACTIVE = new ReservationState("ACTIVE");
+        /// <summary>
+        /// Constant CANCELED for ReservationState
+        /// </summary>
+        public static readonly ReservationState CANCELED = new ReservationState("CANCELED");
+        /// <summary>
+        /// Constant DELETED for ReservationState
+        /// </summary>
+        public static readonly ReservationState DELETED = new ReservationState("DELETED");
+        /// <summary>
+        /// Constant EXPIRED for ReservationState
+        /// </summary>
+        public static readonly ReservationState EXPIRED = new ReservationState("EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationState FindValue(string value)
+        {
+            return FindValue<ReservationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationVideoQuality.
+    /// </summary>
+    public class ReservationVideoQuality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENHANCED for ReservationVideoQuality
+        /// </summary>
+        public static readonly ReservationVideoQuality ENHANCED = new ReservationVideoQuality("ENHANCED");
+        /// <summary>
+        /// Constant PREMIUM for ReservationVideoQuality
+        /// </summary>
+        public static readonly ReservationVideoQuality PREMIUM = new ReservationVideoQuality("PREMIUM");
+        /// <summary>
+        /// Constant STANDARD for ReservationVideoQuality
+        /// </summary>
+        public static readonly ReservationVideoQuality STANDARD = new ReservationVideoQuality("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationVideoQuality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationVideoQuality FindValue(string value)
+        {
+            return FindValue<ReservationVideoQuality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationVideoQuality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RtmpCacheFullBehavior.
     /// </summary>
     public class RtmpCacheFullBehavior : ConstantClass
