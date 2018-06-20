@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.302.1",
+    "ProductVersion" : "3.3.303.0",
     "CoreVersion"    : "3.3.24.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.25.2",
+            "Version" : "3.3.26.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.6.1",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
@@ -1081,7 +1081,7 @@
             "InPreview"               : false
         },
         "ACMPCA"                          : {
-            "Version" : "3.3.0.4",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
