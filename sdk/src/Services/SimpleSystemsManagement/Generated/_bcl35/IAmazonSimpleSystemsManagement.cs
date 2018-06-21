@@ -2396,7 +2396,15 @@ namespace Amazon.SimpleSystemsManagement
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error.
+        /// you receive an error. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IamRole field for this API action is the Amazon Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// for Amazon EC2 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceInformation service method, as returned by SimpleSystemsManagement.</returns>
@@ -2445,7 +2453,15 @@ namespace Amazon.SimpleSystemsManagement
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error.
+        /// you receive an error. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IamRole field for this API action is the Amazon Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// for Amazon EC2 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceInformation service method.</param>
         /// 

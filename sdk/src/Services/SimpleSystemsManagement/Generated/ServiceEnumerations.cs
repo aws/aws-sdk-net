@@ -1961,6 +1961,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX = new OperatingSystem("AMAZON_LINUX");
         /// <summary>
+        /// Constant AMAZON_LINUX_2 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
+        /// <summary>
         /// Constant CENTOS for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem CENTOS = new OperatingSystem("CENTOS");
