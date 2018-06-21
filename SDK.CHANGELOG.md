@@ -1,3 +1,11 @@
+### 3.3.304.0 (2018-06-21 20:16 UTC)
+* Macie (3.3.0.0)
+	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
+* Neptune (3.3.2.0)
+	* Deprecates the PubliclyAccessible parameter that is not supported by Amazon Neptune.
+* SimpleSystemsManagement (3.3.23.0)
+	* Adds Amazon Linux 2 support to Patch Manager
+
 ### 3.3.303.0 (2018-06-20 20:09 UTC)
 * ACMPCA (3.3.1.0)
 	* CA Restore is a new feature within AWS Certificate Manager Private Certificate Authority (ACM PCA) that allows you to restore a private certificate authority that has been deleted. When you issue the DeleteCertificateAuthority call, you can now specify the number of days (7-30, with 30 being the default) in which the private certificate authority will remain in the DELETED state. During this time, the private certificate authority can be restored with the RestoreCertificateAuthority API call and then be returned to the PENDING_CERTIFICATE or DISABLED state, depending upon the state prior to deletion.  Summary of API Changes: 1). Added RestoreCertificateAuthority API call; 2). Added optional PermanentDeletionTimeInDays parameter to DeleteCertificateAuthority API call. If this parameter is not specified, the DeleteCertificateAuthority API call will use a 30 day restore period as default.

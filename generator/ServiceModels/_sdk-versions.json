@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.303.0",
+    "ProductVersion" : "3.3.304.0",
     "CoreVersion"    : "3.3.24.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.22.1",
+            "Version" : "3.3.23.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
@@ -1121,7 +1121,7 @@
             "InPreview"               : false
         },
         "Neptune"                         : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
@@ -1138,6 +1138,14 @@
         },
         "EKS"                             : {
             "Version" : "3.3.0.1",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.24.1"
+            },
+            "InPreview"               : false
+        },
+        "Macie"                           : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.1"
