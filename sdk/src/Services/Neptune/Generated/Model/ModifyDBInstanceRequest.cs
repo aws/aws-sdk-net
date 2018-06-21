@@ -912,24 +912,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Boolean value that indicates if the DB instance has a publicly resolvable DNS name.
-        /// Set to <code>True</code> to make the DB instance Internet-facing with a publicly resolvable
-        /// DNS name, which resolves to a public IP address. Set to <code>False</code> to make
-        /// the DB instance internal with a DNS name that resolves to a private IP address. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  The DB instance must be part of a public subnet and <code>PubliclyAccessible</code>
-        /// must be true in order for it to be publicly accessible. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
-        /// of the value of the <code>ApplyImmediately</code> parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: false
+        /// This parameter is not supported.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
