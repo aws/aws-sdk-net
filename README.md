@@ -251,6 +251,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* An extremely simplified VM creation and management service.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
+* [AWSSDK.Macie](https://www.nuget.org/packages/AWSSDK.Macie/)
+	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
 * [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)

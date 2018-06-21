@@ -193,6 +193,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Lightsail.CodeAnalysis" Path="|AWSSDK.Lightsail.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MachineLearning.CodeAnalysis" Path="|AWSSDK.MachineLearning.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MachineLearning.CodeAnalysis" Path="|AWSSDK.MachineLearning.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Macie.CodeAnalysis" Path="|AWSSDK.Macie.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Macie.CodeAnalysis" Path="|AWSSDK.Macie.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceEntitlementService.CodeAnalysis" Path="|AWSSDK.MarketplaceEntitlementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MarketplaceEntitlementService.CodeAnalysis" Path="|AWSSDK.MarketplaceEntitlementService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MediaConvert.CodeAnalysis" Path="|AWSSDK.MediaConvert.CodeAnalysis|"/>

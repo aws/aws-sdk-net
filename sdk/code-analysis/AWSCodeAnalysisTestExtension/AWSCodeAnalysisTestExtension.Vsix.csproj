@@ -408,6 +408,10 @@
       <Project>{A3EEC74B-542C-44A8-9585-F514B8396D56}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Macie/AWSSDK.Macie.CodeAnalysis.csproj">
+      <Project>{73D8D7FB-FDE9-40C0-9D78-8A973EC0A763}</Project>
+      <Name>AWSSDK.Macie.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj">
       <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
       <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>

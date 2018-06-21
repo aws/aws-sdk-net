@@ -120,6 +120,7 @@
     <ProjectReference Include="..\..\src\Services\LexModelBuildingService\AWSSDK.LexModelBuildingService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Macie\AWSSDK.Macie.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaConvert\AWSSDK.MediaConvert.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaLive\AWSSDK.MediaLive.Net45.csproj"/>
