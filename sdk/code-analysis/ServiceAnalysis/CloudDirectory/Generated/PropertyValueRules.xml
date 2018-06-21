@@ -113,6 +113,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListManagedSchemaArnsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListObjectAttributesRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
