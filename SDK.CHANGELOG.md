@@ -1,3 +1,7 @@
+### 3.3.305.0 (2018-06-21 23:29 UTC)
+* CloudDirectory (3.3.9.0)
+	* SDK release to support Flexible Schema initiative being carried out by Amazon Cloud Directory. This feature lets customers using new capabilities like: variant typed attributes, dynamic facets and AWS managed Cloud Directory schemas.
+
 ### 3.3.304.0 (2018-06-21 20:16 UTC)
 * Macie (3.3.0.0)
 	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
