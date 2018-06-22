@@ -1,3 +1,14 @@
+### 3.3.306.0 (2018-06-22 22:01 UTC)
+* AlexaForBusiness (3.3.5.0)
+	*  Introduce DeviceNotRegisteredException for AWSMoneypenny
+* AppStream (3.3.14.0)
+	* This API update enables customers to find their VPC private IP address and ENI ID associated with AppStream streaming sessions.
+* Core 3.3.24.2
+	* General availability release of Amazon Translate in the GovCloud West (us-gov-west-1) region. For more information, see the Amazon Translate developer guide.
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.305.0 (2018-06-21 23:29 UTC)
 * CloudDirectory (3.3.9.0)
 	* SDK release to support Flexible Schema initiative being carried out by Amazon Cloud Directory. This feature lets customers using new capabilities like: variant typed attributes, dynamic facets and AWS managed Cloud Directory schemas.
