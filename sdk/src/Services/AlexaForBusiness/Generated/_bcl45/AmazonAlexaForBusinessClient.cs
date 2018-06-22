@@ -285,6 +285,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithRoom service method.</param>
         /// 
         /// <returns>The response from the AssociateDeviceWithRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits. HTTP
         /// Status Code: 400
@@ -976,6 +979,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDeviceFromRoom service method.</param>
         /// 
         /// <returns>The response from the DisassociateDeviceFromRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
         public virtual DisassociateDeviceFromRoomResponse DisassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request)
         {
@@ -1921,6 +1927,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the StartDeviceSync service method.</param>
         /// 
         /// <returns>The response from the StartDeviceSync service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
         public virtual StartDeviceSyncResponse StartDeviceSync(StartDeviceSyncRequest request)
         {
@@ -2131,6 +2140,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateDevice service method.</param>
         /// 
         /// <returns>The response from the UpdateDevice service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found. HTTP Status Code: 400
         /// </exception>
