@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names of the fleets.
+        /// The name of the fleet.
         /// </para>
         /// </summary>
         public List<string> Names

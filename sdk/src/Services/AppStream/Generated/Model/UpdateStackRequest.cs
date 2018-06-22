@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
-    /// Updates the specified stack.
+    /// Updates the specified fields for the specified stack.
     /// </summary>
     public partial class UpdateStackRequest : AmazonAppStreamRequest
     {

@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImageBuilder operation.
-    /// Creates an image builder.
+    /// Creates an image builder. An image builder is a virtual machine that is used to create
+    /// an image.
     /// 
     ///  
     /// <para>

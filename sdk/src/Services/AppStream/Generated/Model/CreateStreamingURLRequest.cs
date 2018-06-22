@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingURL operation.
-    /// Creates a URL to start a streaming session for the specified user.
+    /// Creates a temporary URL to start an AppStream 2.0 streaming session for the specified
+    /// user. A streaming URL enables application streaming to be tested without user setup.
     /// </summary>
     public partial class CreateStreamingURLRequest : AmazonAppStreamRequest
     {

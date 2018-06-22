@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
-    /// Creates a stack.
+    /// Creates a stack to start streaming applications to users. A stack consists of an associated
+    /// fleet, user access policies, and storage configurations.
     /// </summary>
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {

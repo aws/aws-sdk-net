@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// Describes the specified stacks or all stacks in the account.
+    /// Retrieves a list that describes one or more specified stacks, if the stack names are
+    /// provided. Otherwise, all stacks in the account are described.
     /// </summary>
     public partial class DescribeStacksRequest : AmazonAppStreamRequest
     {

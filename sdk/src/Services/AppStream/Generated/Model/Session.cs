@@ -35,6 +35,7 @@ namespace Amazon.AppStream.Model
         private AuthenticationType _authenticationType;
         private string _fleetName;
         private string _id;
+        private NetworkAccessConfiguration _networkAccessConfiguration;
         private string _stackName;
         private StreamSessionState _state;
         private string _userId;
@@ -92,6 +93,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkAccessConfiguration. 
+        /// <para>
+        /// The network details for the streaming session.
+        /// </para>
+        /// </summary>
+        public NetworkAccessConfiguration NetworkAccessConfiguration
+        {
+            get { return this._networkAccessConfiguration; }
+            set { this._networkAccessConfiguration = value; }
+        }
+
+        // Check to see if NetworkAccessConfiguration property is set
+        internal bool IsSetNetworkAccessConfiguration()
+        {
+            return this._networkAccessConfiguration != null;
         }
 
         /// <summary>

@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImageBuilders operation.
-    /// Describes the specified image builders or all image builders in the account.
+    /// Retrieves a list that describes one or more specified image builders, if the image
+    /// builder names are provided. Otherwise, all image builders in the account are described.
     /// </summary>
     public partial class DescribeImageBuildersRequest : AmazonAppStreamRequest
     {

@@ -28,49 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAssociatedFleets operation.
-    /// Retrieves the name of the fleet that is associated with the specified stack.
+    /// The network details of the fleet instance for the streaming session.
     /// </summary>
-    public partial class ListAssociatedFleetsRequest : AmazonAppStreamRequest
+    public partial class NetworkAccessConfiguration
     {
-        private string _nextToken;
-        private string _stackName;
+        private string _eniId;
+        private string _eniPrivateIpAddress;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property EniId. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results for this operation.
-        /// If this value is null, it retrieves the first page.
+        /// The resource identifier of the elastic network interface that is attached to instances
+        /// in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string EniId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._eniId; }
+            set { this._eniId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if EniId property is set
+        internal bool IsSetEniId()
         {
-            return this._nextToken != null;
+            return this._eniId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StackName. 
+        /// Gets and sets the property EniPrivateIpAddress. 
         /// <para>
-        /// The name of the stack.
+        /// The private IP address of the elastic network interface that is attached to instances
+        /// in your VPC.
         /// </para>
         /// </summary>
-        public string StackName
+        public string EniPrivateIpAddress
         {
-            get { return this._stackName; }
-            set { this._stackName = value; }
+            get { return this._eniPrivateIpAddress; }
+            set { this._eniPrivateIpAddress = value; }
         }
 
-        // Check to see if StackName property is set
-        internal bool IsSetStackName()
+        // Check to see if EniPrivateIpAddress property is set
+        internal bool IsSetEniPrivateIpAddress()
         {
-            return this._stackName != null;
+            return this._eniPrivateIpAddress != null;
         }
 
     }

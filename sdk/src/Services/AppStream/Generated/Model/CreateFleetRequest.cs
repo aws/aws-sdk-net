@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet.
+    /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
     /// </summary>
     public partial class CreateFleetRequest : AmazonAppStreamRequest
     {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Session Object
+    /// Response Unmarshaller for NetworkAccessConfiguration Object
     /// </summary>  
-    public class SessionUnmarshaller : IUnmarshaller<Session, XmlUnmarshallerContext>, IUnmarshaller<Session, JsonUnmarshallerContext>
+    public class NetworkAccessConfigurationUnmarshaller : IUnmarshaller<NetworkAccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NetworkAccessConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Session IUnmarshaller<Session, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkAccessConfiguration IUnmarshaller<NetworkAccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,27 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Session Unmarshall(JsonUnmarshallerContext context)
+        public NetworkAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Session unmarshalledObject = new Session();
+            NetworkAccessConfiguration unmarshalledObject = new NetworkAccessConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("EniId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EniId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FleetName", targetDepth))
+                if (context.TestExpression("EniPrivateIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FleetName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NetworkAccessConfiguration", targetDepth))
-                {
-                    var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAccessConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StackName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EniPrivateIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +82,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionUnmarshaller _instance = new SessionUnmarshaller();        
+        private static NetworkAccessConfigurationUnmarshaller _instance = new NetworkAccessConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionUnmarshaller Instance
+        public static NetworkAccessConfigurationUnmarshaller Instance
         {
             get
             {

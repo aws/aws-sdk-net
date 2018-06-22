@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Disassociates the specified tags from the specified AppStream 2.0 resource.
+    /// Disassociates one or more specified tags from the specified AppStream 2.0 resource.
     /// 
     ///  
     /// <para>

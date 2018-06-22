@@ -96,7 +96,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Name</property>
-    <min>1</min>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.RedirectURL</property>
@@ -418,6 +418,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ImageStateChangeReason.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.NetworkAccessConfiguration.EniId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.NetworkAccessConfiguration.EniPrivateIpAddress</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
