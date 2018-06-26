@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateSecret operation
+    /// Response Unmarshaller for GetResourcePolicy operation
     /// </summary>  
-    public class UpdateSecretResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateSecretResponse response = new UpdateSecretResponse();
+            GetResourcePolicyResponse response = new GetResourcePolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -63,10 +63,10 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("VersionId", targetDepth))
+                if (context.TestExpression("ResourcePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VersionId = unmarshaller.Unmarshall(context);
+                    response.ResourcePolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,37 +84,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionFailure"))
-            {
-                return new EncryptionFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceError"))
             {
                 return new InternalServiceErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
-            {
-                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedPolicyDocumentException"))
-            {
-                return new MalformedPolicyDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionNotMetException"))
-            {
-                return new PreconditionNotMetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceExistsException"))
-            {
-                return new ResourceExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -123,9 +99,9 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             return new AmazonSecretsManagerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateSecretResponseUnmarshaller _instance = new UpdateSecretResponseUnmarshaller();        
+        private static GetResourcePolicyResponseUnmarshaller _instance = new GetResourcePolicyResponseUnmarshaller();        
 
-        internal static UpdateSecretResponseUnmarshaller GetInstance()
+        internal static GetResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +109,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateSecretResponseUnmarshaller Instance
+        public static GetResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

@@ -395,8 +395,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -557,14 +570,30 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
         /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
+        /// The request failed because you did not complete all the prerequisite steps.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
@@ -597,6 +626,99 @@ namespace Amazon.SecretsManager
             var unmarshaller = CreateSecretResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSecretRequest,CreateSecretResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource-based policy currently attached to the secret.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:DeleteResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -675,8 +797,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -825,8 +960,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual GetRandomPasswordResponse GetRandomPassword(GetRandomPasswordRequest request)
@@ -853,6 +1001,101 @@ namespace Amazon.SecretsManager
             var unmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRandomPasswordRequest,GetRandomPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Retrieves the JSON text of the resource-based policy attached to the specified secret.
+        /// The JSON request string input and response output are shown formatted with whitespace
+        /// and line breaks for better readability. Submit your input as a single line JSON string.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:GetResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -911,8 +1154,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1109,6 +1365,113 @@ namespace Amazon.SecretsManager
 
         #endregion
         
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Attaches the contents of the specified resource-based policy to a secret. A resource-based
+        /// policy is optional. Alternatively, you can use IAM user-based policies that specify
+        /// the secret's ARN in the policy statement's <code>Resources</code> element. You can
+        /// also use a combination of both identity- an resource-based policies. The affected
+        /// users and roles receive the permissions permitted by all of the relevant policies.
+        /// For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
+        /// Resource-Based Policies for AWS Secrets Manager</a>. For the complete description
+        /// of the AWS policy syntax and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+        /// JSON Policy Reference</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:PutResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
+        /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutSecretValue
 
 
@@ -1231,8 +1594,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
@@ -1313,8 +1689,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1440,8 +1829,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1560,6 +1962,24 @@ namespace Amazon.SecretsManager
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// You provided an invalid value for a parameter.
         /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
         /// </exception>
@@ -1645,6 +2065,24 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1795,14 +2233,30 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
         /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
+        /// The request failed because you did not complete all the prerequisite steps.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
@@ -1908,8 +2362,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.

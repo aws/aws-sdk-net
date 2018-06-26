@@ -65,6 +65,21 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DeleteResourcePolicyRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DeleteResourcePolicyResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.DeleteResourcePolicyResponse.Name</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecretsManager.Model.DeleteSecretRequest.SecretId</property>
     <min>1</min>
     <max>2048</max>
@@ -121,6 +136,26 @@
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.GetRandomPasswordResponse.RandomPassword</property>
     <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.Name</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.GetResourcePolicyResponse.ResourcePolicy</property>
+    <min>1</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -207,6 +242,26 @@
     <property>Amazon.SecretsManager.Model.ListSecretVersionIdsResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyRequest.ResourcePolicy</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyRequest.SecretId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyResponse.ARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecretsManager.Model.PutResourcePolicyResponse.Name</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecretsManager.Model.PutSecretValueRequest.ClientRequestToken</property>
