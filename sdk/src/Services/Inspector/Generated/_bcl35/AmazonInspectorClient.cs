@@ -451,6 +451,79 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  CreateExclusionsPreview
+
+        /// <summary>
+        /// Starts the generation of an exclusions preview for the specified assessment template.
+        /// The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector
+        /// can detect before it runs the assessment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExclusionsPreview service method.</param>
+        /// 
+        /// <returns>The response from the CreateExclusionsPreview service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.PreviewGenerationInProgressException">
+        /// The request is rejected. The specified assessment template is currently generating
+        /// an exclusions preview.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
+        public virtual CreateExclusionsPreviewResponse CreateExclusionsPreview(CreateExclusionsPreviewRequest request)
+        {
+            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExclusionsPreviewRequest,CreateExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExclusionsPreview operation on AmazonInspectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExclusionsPreview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
+        public virtual IAsyncResult BeginCreateExclusionsPreview(CreateExclusionsPreviewRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateExclusionsPreviewRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExclusionsPreview.</param>
+        /// 
+        /// <returns>Returns a  CreateExclusionsPreviewResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
+        public virtual CreateExclusionsPreviewResponse EndCreateExclusionsPreview(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExclusionsPreviewResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateResourceGroup
 
         /// <summary>
@@ -969,6 +1042,66 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  DescribeExclusions
+
+        /// <summary>
+        /// Describes the exclusions that are specified by the exclusions' ARNs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExclusions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExclusions service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">REST API Reference for DescribeExclusions Operation</seealso>
+        public virtual DescribeExclusionsResponse DescribeExclusions(DescribeExclusionsRequest request)
+        {
+            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExclusionsRequest,DescribeExclusionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExclusions operation on AmazonInspectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExclusions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">REST API Reference for DescribeExclusions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeExclusions(DescribeExclusionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeExclusionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExclusions.</param>
+        /// 
+        /// <returns>Returns a  DescribeExclusionsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">REST API Reference for DescribeExclusions Operation</seealso>
+        public virtual DescribeExclusionsResponse EndDescribeExclusions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeExclusionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeFindings
 
         /// <summary>
@@ -1222,6 +1355,75 @@ namespace Amazon.Inspector
         public virtual GetAssessmentReportResponse EndGetAssessmentReport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAssessmentReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetExclusionsPreview
+
+        /// <summary>
+        /// Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by
+        /// the preview token. You can obtain the preview token by running the CreateExclusionsPreview
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExclusionsPreview service method.</param>
+        /// 
+        /// <returns>The response from the GetExclusionsPreview service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">REST API Reference for GetExclusionsPreview Operation</seealso>
+        public virtual GetExclusionsPreviewResponse GetExclusionsPreview(GetExclusionsPreviewRequest request)
+        {
+            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetExclusionsPreviewRequest,GetExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExclusionsPreview operation on AmazonInspectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExclusionsPreview
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">REST API Reference for GetExclusionsPreview Operation</seealso>
+        public virtual IAsyncResult BeginGetExclusionsPreview(GetExclusionsPreviewRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetExclusionsPreviewRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExclusionsPreview.</param>
+        /// 
+        /// <returns>Returns a  GetExclusionsPreviewResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">REST API Reference for GetExclusionsPreview Operation</seealso>
+        public virtual GetExclusionsPreviewResponse EndGetExclusionsPreview(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExclusionsPreviewResponse>(asyncResult);
         }
 
         #endregion
@@ -1627,6 +1829,73 @@ namespace Amazon.Inspector
         public virtual ListEventSubscriptionsResponse EndListEventSubscriptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEventSubscriptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExclusions
+
+        /// <summary>
+        /// List exclusions that are generated by the assessment run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExclusions service method.</param>
+        /// 
+        /// <returns>The response from the ListExclusions service method, as returned by Inspector.</returns>
+        /// <exception cref="Amazon.Inspector.Model.AccessDeniedException">
+        /// You do not have required permissions to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error code describes the entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">REST API Reference for ListExclusions Operation</seealso>
+        public virtual ListExclusionsResponse ListExclusions(ListExclusionsRequest request)
+        {
+            var marshaller = ListExclusionsRequestMarshaller.Instance;
+            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExclusionsRequest,ListExclusionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExclusions operation on AmazonInspectorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExclusions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">REST API Reference for ListExclusions Operation</seealso>
+        public virtual IAsyncResult BeginListExclusions(ListExclusionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListExclusionsRequestMarshaller.Instance;
+            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListExclusionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExclusions.</param>
+        /// 
+        /// <returns>Returns a  ListExclusionsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">REST API Reference for ListExclusions Operation</seealso>
+        public virtual ListExclusionsResponse EndListExclusions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExclusionsResponse>(asyncResult);
         }
 
         #endregion

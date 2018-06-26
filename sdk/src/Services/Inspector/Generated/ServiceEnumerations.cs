@@ -1035,6 +1035,56 @@ namespace Amazon.Inspector
 
 
     /// <summary>
+    /// Constants used for properties of type PreviewStatus.
+    /// </summary>
+    public class PreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for PreviewStatus
+        /// </summary>
+        public static readonly PreviewStatus COMPLETED = new PreviewStatus("COMPLETED");
+        /// <summary>
+        /// Constant WORK_IN_PROGRESS for PreviewStatus
+        /// </summary>
+        public static readonly PreviewStatus WORK_IN_PROGRESS = new PreviewStatus("WORK_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreviewStatus FindValue(string value)
+        {
+            return FindValue<PreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReportFileFormat.
     /// </summary>
     public class ReportFileFormat : ConstantClass
@@ -1182,6 +1232,56 @@ namespace Amazon.Inspector
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReportType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScopeType.
+    /// </summary>
+    public class ScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE_ID for ScopeType
+        /// </summary>
+        public static readonly ScopeType INSTANCE_ID = new ScopeType("INSTANCE_ID");
+        /// <summary>
+        /// Constant RULES_PACKAGE_ARN for ScopeType
+        /// </summary>
+        public static readonly ScopeType RULES_PACKAGE_ARN = new ScopeType("RULES_PACKAGE_ARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScopeType FindValue(string value)
+        {
+            return FindValue<ScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScopeType(string value)
         {
             return FindValue(value);
         }

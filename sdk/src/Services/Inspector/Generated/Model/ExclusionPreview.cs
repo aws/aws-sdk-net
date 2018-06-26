@@ -1,0 +1,133 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the inspector-2016-02-16.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Inspector.Model
+{
+    /// <summary>
+    /// Contains information about what is excluded from an assessment run given the current
+    /// state of the assessment template.
+    /// </summary>
+    public partial class ExclusionPreview
+    {
+        private List<Attribute> _attributes = new List<Attribute>();
+        private string _description;
+        private string _recommendation;
+        private List<Scope> _scopes = new List<Scope>();
+        private string _title;
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// The system-defined attributes for the exclusion preview.
+        /// </para>
+        /// </summary>
+        public List<Attribute> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the exclusion preview.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recommendation. 
+        /// <para>
+        /// The recommendation for the exclusion preview.
+        /// </para>
+        /// </summary>
+        public string Recommendation
+        {
+            get { return this._recommendation; }
+            set { this._recommendation = value; }
+        }
+
+        // Check to see if Recommendation property is set
+        internal bool IsSetRecommendation()
+        {
+            return this._recommendation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scopes. 
+        /// <para>
+        /// The AWS resources for which the exclusion preview pertains.
+        /// </para>
+        /// </summary>
+        public List<Scope> Scopes
+        {
+            get { return this._scopes; }
+            set { this._scopes = value; }
+        }
+
+        // Check to see if Scopes property is set
+        internal bool IsSetScopes()
+        {
+            return this._scopes != null && this._scopes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The name of the exclusion preview.
+        /// </para>
+        /// </summary>
+        public string Title
+        {
+            get { return this._title; }
+            set { this._title = value; }
+        }
+
+        // Check to see if Title property is set
+        internal bool IsSetTitle()
+        {
+            return this._title != null;
+        }
+
+    }
+}
