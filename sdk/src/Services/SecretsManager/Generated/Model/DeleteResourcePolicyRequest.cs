@@ -29,7 +29,7 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
-    /// Deletes the resource-based policy currently attached to the secret.
+    /// Deletes the resource-based permission policy that's attached to the secret.
     /// 
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+    /// To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret for which you want to delete the attached resource-based policy.
+        /// Specifies the secret that you want to delete the attached resource-based policy for.
         /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
         /// secret.
         /// </para>

@@ -29,9 +29,10 @@ namespace Amazon.SecretsManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicy operation.
-    /// Retrieves the JSON text of the resource-based policy attached to the specified secret.
-    /// The JSON request string input and response output are shown formatted with whitespace
-    /// and line breaks for better readability. Submit your input as a single line JSON string.
+    /// Retrieves the JSON text of the resource-based policy document that's attached to the
+    /// specified secret. The JSON request string input and response output are shown formatted
+    /// with white space and line breaks for better readability. Submit your input as a single
+    /// line JSON string.
     /// 
     ///  
     /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+    /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -70,9 +71,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SecretId. 
         /// <para>
-        /// Specifies the secret for which you want to retrieve the attached resource-based policy.
-        /// You can specify either the Amazon Resource Name (ARN) or the friendly name of the
-        /// secret.
+        /// Specifies the secret that you want to retrieve the attached resource-based policy
+        /// for. You can specify either the Amazon Resource Name (ARN) or the friendly name of
+        /// the secret.
         /// </para>
         /// </summary>
         public string SecretId

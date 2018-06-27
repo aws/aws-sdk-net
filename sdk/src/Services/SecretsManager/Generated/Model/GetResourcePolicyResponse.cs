@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret for which the resource-based policy was retrieved.
+        /// The ARN of the secret that the resource-based policy was retrieved for.
         /// </para>
         /// </summary>
         public string ARN
@@ -57,7 +57,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret for which the resource-based policy was retrieved.
+        /// The friendly name of the secret that the resource-based policy was retrieved for.
         /// </para>
         /// </summary>
         public string Name
@@ -75,11 +75,11 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// A JSON-formatted string that describes the permissions associated with the attached
-        /// secret. These permissions are combined with any permissions associated with the user
-        /// or role who attempts to access this secret. The combined permissions specify who can
-        /// access the secret and what actions they can perform. For more information, see <a
-        /// href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+        /// A JSON-formatted string that describes the permissions that are associated with the
+        /// attached secret. These permissions are combined with any permissions that are associated
+        /// with the user or role that attempts to access this secret. The combined permissions
+        /// specify who can access the secret and what actions they can perform. For more information,
+        /// see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager User
         /// Guide</i>.
         /// </para>

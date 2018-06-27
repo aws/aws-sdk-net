@@ -269,7 +269,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+        /// The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
         /// </para>
         /// </summary>
         public string Name
