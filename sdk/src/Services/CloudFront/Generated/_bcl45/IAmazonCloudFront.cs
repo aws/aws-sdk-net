@@ -1104,45 +1104,6 @@ namespace Amazon.CloudFront
 
         #endregion
         
-        #region  DeleteServiceLinkedRole
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole service method.</param>
-        /// 
-        /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by CloudFront.</returns>
-        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
-        /// Access denied.
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request);
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  DeleteStreamingDistribution
 
 

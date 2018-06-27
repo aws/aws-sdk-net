@@ -1228,58 +1228,6 @@ namespace Amazon.CloudFront
 
         #endregion
         
-        #region  DeleteServiceLinkedRole
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole service method.</param>
-        /// 
-        /// <returns>The response from the DeleteServiceLinkedRole service method, as returned by CloudFront.</returns>
-        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
-        /// Access denied.
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
-        /// The argument is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation on AmazonCloudFrontClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceLinkedRole
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        IAsyncResult BeginDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceLinkedRole.</param>
-        /// 
-        /// <returns>Returns a  DeleteServiceLinkedRoleResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        DeleteServiceLinkedRoleResponse EndDeleteServiceLinkedRole(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  DeleteStreamingDistribution
 
 

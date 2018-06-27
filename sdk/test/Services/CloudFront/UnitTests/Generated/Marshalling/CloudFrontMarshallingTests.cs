@@ -425,23 +425,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("CloudFront")]
-        public void DeleteServiceLinkedRoleMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteServiceLinkedRole");
-
-            var request = InstantiateClassGenerator.Execute<DeleteServiceLinkedRoleRequest>();
-            var marshaller = new DeleteServiceLinkedRoleRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteServiceLinkedRole", request, internalRequest, service_model);            
-
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Xml")]
-        [TestCategory("CloudFront")]
         public void DeleteStreamingDistributionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteStreamingDistribution");

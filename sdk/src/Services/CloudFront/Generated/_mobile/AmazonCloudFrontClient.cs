@@ -752,38 +752,6 @@ namespace Amazon.CloudFront
 
         #endregion
         
-        #region  DeleteServiceLinkedRole
-
-        internal virtual DeleteServiceLinkedRoleResponse DeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request)
-        {
-            var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteServiceLinkedRole operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedRole operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole">REST API Reference for DeleteServiceLinkedRole Operation</seealso>
-        public virtual Task<DeleteServiceLinkedRoleResponse> DeleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = DeleteServiceLinkedRoleRequestMarshaller.Instance;
-            var unmarshaller = DeleteServiceLinkedRoleResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DeleteServiceLinkedRoleRequest,DeleteServiceLinkedRoleResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DeleteStreamingDistribution
 
         internal virtual DeleteStreamingDistributionResponse DeleteStreamingDistribution()
