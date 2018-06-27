@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.307.0",
+    "ProductVersion" : "3.3.308.0",
     "CoreVersion"    : "3.3.24.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -37,7 +37,7 @@
             "InPreview"               : false
         },
         "CloudFront"     : {
-            "Version" : "3.3.7.5",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : "3.3.4.0",
             "Dependencies"            : {
                 "Core" : "3.3.24.2"
@@ -417,7 +417,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.2"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.0.8",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.2"
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.2"

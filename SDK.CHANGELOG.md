@@ -1,3 +1,13 @@
+### 3.3.308.0 (2018-06-27 22:08 UTC)
+* CloudFront (3.3.8.0)
+	* Unpublish delete-service-linked-role API.
+* CodePipeline (3.3.5.0)
+	* UpdatePipeline may now throw a LimitExceededException when adding or updating Source Actions that use periodic checks for change detection
+* Comprehend (3.3.1.0)
+	* This release gives customers the option to batch process a set of documents stored within an S3 bucket in addition to the existing synchronous nature of the current Comprehend API.
+* SecretsManager (3.3.1.1)
+	* Documentation updates for secretsmanager
+
 ### 3.3.307.0 (2018-06-26 22:24 UTC)
 * Inspector (3.3.6.0)
 	* Introduce four new APIs to view and preview Exclusions.  Exclusions show which intended security checks are excluded from an assessment, along with reasons and recommendations to fix.  The APIs are CreateExclusionsPreview, GetExclusionsPreview, ListExclusions, and DescribeExclusions.
