@@ -171,6 +171,14 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant STOP_REQUESTED for JobStatus
+        /// </summary>
+        public static readonly JobStatus STOP_REQUESTED = new JobStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for JobStatus
+        /// </summary>
+        public static readonly JobStatus STOPPED = new JobStatus("STOPPED");
+        /// <summary>
         /// Constant SUBMITTED for JobStatus
         /// </summary>
         public static readonly JobStatus SUBMITTED = new JobStatus("SUBMITTED");

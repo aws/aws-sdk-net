@@ -37,15 +37,17 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 URI where you want to write the output data. The URI must be in the
-        /// same region as the API endpoint that you are calling. 
+        /// When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+        /// you specify the Amazon S3 location where you want to write the output data. The URI
+        /// must be in the same region as the API endpoint that you are calling. The location
+        /// is used as the prefix for the actual location of the output file.
         /// </para>
         ///  
         /// <para>
-        /// The service creates an output file called <code>output.tar.gz</code>. It is a compressed
-        /// archive that contains two files, <code>topic-terms.csv</code> that lists the terms
-        /// associated with each topic, and <code>doc-topics.csv</code> that lists the documents
-        /// associated with each topic. For more information, see <a>topic-modeling</a>.
+        /// When the topic detection job is finished, the service creates an output file in a
+        /// directory specific to the job. The <code>S3Uri</code> field contains the location
+        /// of the output file, called <code>output.tar.gz</code>. It is a compressed archive
+        /// that contains the ouput of the operation.
         /// </para>
         /// </summary>
         public string S3Uri

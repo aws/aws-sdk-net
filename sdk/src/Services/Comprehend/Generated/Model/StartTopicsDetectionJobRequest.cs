@@ -136,7 +136,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies where to send the output files.
+        /// Specifies where to send the output files. The output is a compressed archive with
+        /// two files, <code>topic-terms.csv</code> that lists the terms associated with each
+        /// topic, and <code>doc-topics.csv</code> that lists the documents associated with each
+        /// topic
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig
