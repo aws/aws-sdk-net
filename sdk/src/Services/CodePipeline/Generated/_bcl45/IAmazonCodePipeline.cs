@@ -2117,6 +2117,10 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
@@ -2143,6 +2147,10 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
@@ -2174,6 +2182,10 @@ namespace Amazon.CodePipeline
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.InvalidStructureException">
         /// The specified structure was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.LimitExceededException">
+        /// The number of pipelines associated with the AWS account has exceeded the limit allowed
+        /// for the account.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
