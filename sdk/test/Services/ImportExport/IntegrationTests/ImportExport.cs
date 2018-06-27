@@ -86,6 +86,7 @@ returnAddress:
             }
         }
 
+        [Ignore]
         [TestMethod]
         [TestCategory("ImportExport")]
         public void TestImportExport()
