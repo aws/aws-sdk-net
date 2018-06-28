@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Describes mapping between an Amazon Kinesis stream and a Lambda function.
+    /// Describes mapping between an Amazon Kinesis or DynamoDB stream or an Amazon SQS queue
+    /// and a Lambda function.
     /// </summary>
     public partial class DeleteEventSourceMappingResponse : AmazonWebServiceResponse
     {
@@ -64,8 +65,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of
-        /// events.
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS
+        /// queue that is the source of events.
         /// </para>
         /// </summary>
         public string EventSourceArn
@@ -83,7 +84,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Lambda function to invoke when AWS Lambda detects an event on the stream.
+        /// The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
         /// </para>
         /// </summary>
         public string FunctionArn
