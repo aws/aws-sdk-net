@@ -239,6 +239,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// sets the configuration values to the default values associated with the specified
         /// solution stack.
         /// </para>
+        ///  
+        /// <para>
+        /// For a list of current solution stacks, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+        /// Beanstalk Supported Platforms</a>.
+        /// </para>
         /// </summary>
         public string SolutionStackName
         {
