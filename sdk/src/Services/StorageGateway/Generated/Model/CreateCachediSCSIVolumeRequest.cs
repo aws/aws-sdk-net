@@ -66,7 +66,11 @@ namespace Amazon.StorageGateway.Model
         private long? _volumeSizeInBytes;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique identifier that you use to retry a request. If you retry a request, use the
+        /// same <code>ClientToken</code> you specified in the initial request.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -134,7 +138,16 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceId.
+        /// Gets and sets the property NetworkInterfaceId. 
+        /// <para>
+        /// The network interface of the gateway on which to expose the iSCSI target. Only IPv4
+        /// addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a list of the
+        /// network interfaces available on a gateway.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: A valid IP address.
+        /// </para>
         /// </summary>
         public string NetworkInterfaceId
         {
@@ -149,7 +162,13 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotId.
+        /// Gets and sets the property SnapshotId. 
+        /// <para>
+        /// The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached
+        /// volume. Specify this field if you want to create the iSCSI storage volume from a snapshot
+        /// otherwise do not include this field. To list snapshots for your account use <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+        /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+        /// </para>
         /// </summary>
         public string SnapshotId
         {
@@ -185,7 +204,13 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetName.
+        /// Gets and sets the property TargetName. 
+        /// <para>
+        /// The name of the iSCSI target used by initiators to connect to the target and as a
+        /// suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i>
+        /// results in the target ARN of arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
+        /// The target name must be unique across all volumes of a gateway.
+        /// </para>
         /// </summary>
         public string TargetName
         {
@@ -200,7 +225,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeSizeInBytes.
+        /// Gets and sets the property VolumeSizeInBytes. 
+        /// <para>
+        /// The size of the volume in bytes.
+        /// </para>
         /// </summary>
         public long VolumeSizeInBytes
         {

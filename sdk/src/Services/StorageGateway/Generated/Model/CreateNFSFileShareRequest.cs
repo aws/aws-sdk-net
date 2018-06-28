@@ -29,10 +29,10 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNFSFileShare operation.
-    /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
-    /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
-    /// file shares using a Network File System (NFS) interface. This operation is only supported
-    /// in the file gateway type.
+    /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
+    /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
+    /// Storage Gateway exposes file shares using a NFS interface. This operation is only
+    /// supported in the file gateway type.
     /// 
     ///  <important> 
     /// <para>

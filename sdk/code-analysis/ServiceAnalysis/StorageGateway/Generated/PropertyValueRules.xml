@@ -200,6 +200,46 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Authentication</property>
+    <min>5</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.ClientToken</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.LocationARN</property>
+    <min>16</min>
+    <max>310</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Role</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSnapshotRequest.SnapshotDescription</property>
     <min>1</min>
     <max>255</max>
@@ -529,6 +569,20 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeSMBSettingsRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeSMBSettingsResponse.DomainName</property>
+    <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeSMBSettingsResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeSnapshotScheduleRequest.VolumeARN</property>
     <min>50</min>
     <max>500</max>
@@ -666,6 +720,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DisableGatewayResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.DomainName</property>
+    <pattern>^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.Password</property>
+    <pattern>^[ -~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainRequest.UserName</property>
+    <pattern>^\w[\w\.\- ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.JoinDomainResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -890,6 +966,22 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetSMBGuestPasswordRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetSMBGuestPasswordRequest.Password</property>
+    <min>6</min>
+    <max>512</max>
+    <pattern>^[ -~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SetSMBGuestPasswordResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.ShutdownGatewayRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -1037,6 +1129,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareResponse.FileShareARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -1257,6 +1369,51 @@
     <max>15</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Authentication</property>
+    <min>5</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareId</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.FileShareStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.LocationARN</property>
+    <min>16</min>
+    <max>310</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Role</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>
     <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
@@ -1289,7 +1446,7 @@
     <property>Amazon.StorageGateway.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tag.Value</property>

@@ -95,7 +95,7 @@ namespace Amazon.StorageGateway
     /// will be created with a 17-character string. Starting in April 2016, you will be able
     /// to use these longer IDs so you can test your systems with the new format. For more
     /// information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
-    /// and EBS Resource IDs</a>.
+    /// and EBS Resource IDs</a>. 
     /// </para>
     ///  
     /// <para>
@@ -592,6 +592,38 @@ namespace Amazon.StorageGateway
             var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSMBFileShare
+
+        internal virtual CreateSMBFileShareResponse CreateSMBFileShare(CreateSMBFileShareRequest request)
+        {
+            var marshaller = CreateSMBFileShareRequestMarshaller.Instance;
+            var unmarshaller = CreateSMBFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSMBFileShareRequest,CreateSMBFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSMBFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">REST API Reference for CreateSMBFileShare Operation</seealso>
+        public virtual Task<CreateSMBFileShareResponse> CreateSMBFileShareAsync(CreateSMBFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSMBFileShareRequestMarshaller.Instance;
+            var unmarshaller = CreateSMBFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSMBFileShareRequest,CreateSMBFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1237,6 +1269,70 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DescribeSMBFileShares
+
+        internal virtual DescribeSMBFileSharesResponse DescribeSMBFileShares(DescribeSMBFileSharesRequest request)
+        {
+            var marshaller = DescribeSMBFileSharesRequestMarshaller.Instance;
+            var unmarshaller = DescribeSMBFileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSMBFileSharesRequest,DescribeSMBFileSharesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSMBFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBFileShares operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares">REST API Reference for DescribeSMBFileShares Operation</seealso>
+        public virtual Task<DescribeSMBFileSharesResponse> DescribeSMBFileSharesAsync(DescribeSMBFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSMBFileSharesRequestMarshaller.Instance;
+            var unmarshaller = DescribeSMBFileSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSMBFileSharesRequest,DescribeSMBFileSharesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSMBSettings
+
+        internal virtual DescribeSMBSettingsResponse DescribeSMBSettings(DescribeSMBSettingsRequest request)
+        {
+            var marshaller = DescribeSMBSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeSMBSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSMBSettingsRequest,DescribeSMBSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSMBSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings">REST API Reference for DescribeSMBSettings Operation</seealso>
+        public virtual Task<DescribeSMBSettingsResponse> DescribeSMBSettingsAsync(DescribeSMBSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSMBSettingsRequestMarshaller.Instance;
+            var unmarshaller = DescribeSMBSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSMBSettingsRequest,DescribeSMBSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSnapshotSchedule
 
         internal virtual DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
@@ -1554,6 +1650,38 @@ namespace Amazon.StorageGateway
             var unmarshaller = DisableGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  JoinDomain
+
+        internal virtual JoinDomainResponse JoinDomain(JoinDomainRequest request)
+        {
+            var marshaller = JoinDomainRequestMarshaller.Instance;
+            var unmarshaller = JoinDomainResponseUnmarshaller.Instance;
+
+            return Invoke<JoinDomainRequest,JoinDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the JoinDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the JoinDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain">REST API Reference for JoinDomain Operation</seealso>
+        public virtual Task<JoinDomainResponse> JoinDomainAsync(JoinDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = JoinDomainRequestMarshaller.Instance;
+            var unmarshaller = JoinDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<JoinDomainRequest,JoinDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2121,6 +2249,38 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  SetSMBGuestPassword
+
+        internal virtual SetSMBGuestPasswordResponse SetSMBGuestPassword(SetSMBGuestPasswordRequest request)
+        {
+            var marshaller = SetSMBGuestPasswordRequestMarshaller.Instance;
+            var unmarshaller = SetSMBGuestPasswordResponseUnmarshaller.Instance;
+
+            return Invoke<SetSMBGuestPasswordRequest,SetSMBGuestPasswordResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetSMBGuestPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword">REST API Reference for SetSMBGuestPassword Operation</seealso>
+        public virtual Task<SetSMBGuestPasswordResponse> SetSMBGuestPasswordAsync(SetSMBGuestPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SetSMBGuestPasswordRequestMarshaller.Instance;
+            var unmarshaller = SetSMBGuestPasswordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SetSMBGuestPasswordRequest,SetSMBGuestPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ShutdownGateway
 
         internal virtual ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
@@ -2372,6 +2532,38 @@ namespace Amazon.StorageGateway
             var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSMBFileShare
+
+        internal virtual UpdateSMBFileShareResponse UpdateSMBFileShare(UpdateSMBFileShareRequest request)
+        {
+            var marshaller = UpdateSMBFileShareRequestMarshaller.Instance;
+            var unmarshaller = UpdateSMBFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSMBFileShareRequest,UpdateSMBFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
+        public virtual Task<UpdateSMBFileShareResponse> UpdateSMBFileShareAsync(UpdateSMBFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateSMBFileShareRequestMarshaller.Instance;
+            var unmarshaller = UpdateSMBFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSMBFileShareRequest,UpdateSMBFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

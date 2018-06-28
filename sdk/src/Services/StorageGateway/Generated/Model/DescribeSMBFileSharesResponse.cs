@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNFSFileShares operation.
-    /// Gets a description for one or more Network File System (NFS) file shares from a file
-    /// gateway. This operation is only supported in the file gateway type.
+    /// DescribeSMBFileSharesOutput
     /// </summary>
-    public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
+    public partial class DescribeSMBFileSharesResponse : AmazonWebServiceResponse
     {
-        private List<string> _fileShareARNList = new List<string>();
+        private List<SMBFileShareInfo> _smbFileShareInfoList = new List<SMBFileShareInfo>();
 
         /// <summary>
-        /// Gets and sets the property FileShareARNList. 
+        /// Gets and sets the property SMBFileShareInfoList. 
         /// <para>
-        /// An array containing the Amazon Resource Name (ARN) of each file share to be described.
-        /// 
+        /// An array containing a description for each requested file share. 
         /// </para>
         /// </summary>
-        public List<string> FileShareARNList
+        public List<SMBFileShareInfo> SMBFileShareInfoList
         {
-            get { return this._fileShareARNList; }
-            set { this._fileShareARNList = value; }
+            get { return this._smbFileShareInfoList; }
+            set { this._smbFileShareInfoList = value; }
         }
 
-        // Check to see if FileShareARNList property is set
-        internal bool IsSetFileShareARNList()
+        // Check to see if SMBFileShareInfoList property is set
+        internal bool IsSetSMBFileShareInfoList()
         {
-            return this._fileShareARNList != null && this._fileShareARNList.Count > 0; 
+            return this._smbFileShareInfoList != null && this._smbFileShareInfoList.Count > 0; 
         }
 
     }

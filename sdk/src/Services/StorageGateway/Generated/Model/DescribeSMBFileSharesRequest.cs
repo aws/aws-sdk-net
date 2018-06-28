@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNFSFileShares operation.
-    /// Gets a description for one or more Network File System (NFS) file shares from a file
+    /// Container for the parameters to the DescribeSMBFileShares operation.
+    /// Gets a description for one or more Server Message Block (SMB) file shares from a file
     /// gateway. This operation is only supported in the file gateway type.
     /// </summary>
-    public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
+    public partial class DescribeSMBFileSharesRequest : AmazonStorageGatewayRequest
     {
         private List<string> _fileShareARNList = new List<string>();
 

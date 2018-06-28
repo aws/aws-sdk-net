@@ -28,31 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNFSFileShares operation.
-    /// Gets a description for one or more Network File System (NFS) file shares from a file
-    /// gateway. This operation is only supported in the file gateway type.
+    /// UpdateSMBFileShareOutput
     /// </summary>
-    public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
+    public partial class UpdateSMBFileShareResponse : AmazonWebServiceResponse
     {
-        private List<string> _fileShareARNList = new List<string>();
+        private string _fileShareARN;
 
         /// <summary>
-        /// Gets and sets the property FileShareARNList. 
+        /// Gets and sets the property FileShareARN. 
         /// <para>
-        /// An array containing the Amazon Resource Name (ARN) of each file share to be described.
-        /// 
+        /// The Amazon Resource Name (ARN) of the updated SMB file share. 
         /// </para>
         /// </summary>
-        public List<string> FileShareARNList
+        public string FileShareARN
         {
-            get { return this._fileShareARNList; }
-            set { this._fileShareARNList = value; }
+            get { return this._fileShareARN; }
+            set { this._fileShareARN = value; }
         }
 
-        // Check to see if FileShareARNList property is set
-        internal bool IsSetFileShareARNList()
+        // Check to see if FileShareARN property is set
+        internal bool IsSetFileShareARN()
         {
-            return this._fileShareARNList != null && this._fileShareARNList.Count > 0; 
+            return this._fileShareARN != null;
         }
 
     }

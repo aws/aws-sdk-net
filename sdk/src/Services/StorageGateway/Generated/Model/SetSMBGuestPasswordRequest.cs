@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the CreateCachediSCSIVolume operation.
+    /// Container for the parameters to the SetSMBGuestPassword operation.
+    /// Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication
+    /// method for the file share is “GuestAccess”.
     /// </summary>
-    public partial class CreateCachediSCSIVolumeResponse : AmazonWebServiceResponse
+    public partial class SetSMBGuestPasswordRequest : AmazonStorageGatewayRequest
     {
-        private string _targetARN;
-        private string _volumeARN;
+        private string _gatewayARN;
+        private string _password;
 
         /// <summary>
-        /// Gets and sets the property TargetARN. 
+        /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// he Amazon Resource Name (ARN) of the volume target that includes the iSCSI name that
-        /// initiators can use to connect to the target.
+        /// The Amazon Resource Name (ARN) of the file gateway the SMB file share is associated
+        /// with.
         /// </para>
         /// </summary>
-        public string TargetARN
+        public string GatewayARN
         {
-            get { return this._targetARN; }
-            set { this._targetARN = value; }
+            get { return this._gatewayARN; }
+            set { this._gatewayARN = value; }
         }
 
-        // Check to see if TargetARN property is set
-        internal bool IsSetTargetARN()
+        // Check to see if GatewayARN property is set
+        internal bool IsSetGatewayARN()
         {
-            return this._targetARN != null;
+            return this._gatewayARN != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeARN. 
+        /// Gets and sets the property Password. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the configured volume.
+        /// The password you want to set for your SMB Server.
         /// </para>
         /// </summary>
-        public string VolumeARN
+        public string Password
         {
-            get { return this._volumeARN; }
-            set { this._volumeARN = value; }
+            get { return this._password; }
+            set { this._password = value; }
         }
 
-        // Check to see if VolumeARN property is set
-        internal bool IsSetVolumeARN()
+        // Check to see if Password property is set
+        internal bool IsSetPassword()
         {
-            return this._volumeARN != null;
+            return this._password != null;
         }
 
     }

@@ -28,82 +28,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateNFSFileShare operation.
-    /// Updates a Network File System (NFS) file share. This operation is only supported in
-    /// the file gateway type.
+    /// Container for the parameters to the UpdateSMBFileShare operation.
+    /// Updates a Server Message Block (SMB) file share. This operation is only supported
+    /// in the file gateway type.
     /// 
     ///  <note> 
     /// <para>
     /// To leave a file share field unchanged, set the corresponding input field to null.
+    /// This operation is only supported in the file gateway type.
     /// </para>
-    ///  </note> 
+    ///  </note> <important> 
     /// <para>
-    /// Updates the following file share setting:
+    /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+    /// you create a file share. Make sure AWS STS is activated in the region you are creating
+    /// your file gateway in. If AWS STS is not activated in the region, activate it. For
+    /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
+    /// in an AWS Region in the AWS Identity and Access Management User Guide. 
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// Default storage class for your S3 bucket
+    /// File gateway does not support creating hard or symbolic links on a file share.
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Metadata defaults for your S3 bucket
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Allowed NFS clients for your file share
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Squash settings
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Write status of your file share
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// To leave a file share field unchanged, set the corresponding input field to null.
-    /// This operation is only supported in file gateways.
-    /// </para>
-    ///  </note>
+    ///  </important>
     /// </summary>
-    public partial class UpdateNFSFileShareRequest : AmazonStorageGatewayRequest
+    public partial class UpdateSMBFileShareRequest : AmazonStorageGatewayRequest
     {
-        private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
         private string _fileShareARN;
         private bool? _guessMIMETypeEnabled;
+        private List<string> _invalidUserList = new List<string>();
         private bool? _kmsEncrypted;
         private string _kmsKey;
-        private NFSFileShareDefaults _nfsFileShareDefaults;
         private ObjectACL _objectACL;
         private bool? _readOnly;
         private bool? _requesterPays;
-        private string _squash;
-
-        /// <summary>
-        /// Gets and sets the property ClientList. 
-        /// <para>
-        /// The list of clients that are allowed to access the file gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks.
-        /// </para>
-        /// </summary>
-        public List<string> ClientList
-        {
-            get { return this._clientList; }
-            set { this._clientList = value; }
-        }
-
-        // Check to see if ClientList property is set
-        internal bool IsSetClientList()
-        {
-            return this._clientList != null && this._clientList.Count > 0; 
-        }
+        private List<string> _validUserList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by a file gateway.
+        /// The default storage class for objects put into an Amazon S3 bucket by file gateway.
         /// Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is
         /// not populated, the default value S3_STANDARD is used. Optional.
         /// </para>
@@ -123,7 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileShareARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the file share to be updated. 
+        /// The Amazon Resource Name (ARN) of the SMB file share you want to update.
         /// </para>
         /// </summary>
         public string FileShareARN
@@ -159,10 +123,29 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InvalidUserList. 
+        /// <para>
+        /// A list of users in the Active Directory that are not allowed to access the file share.
+        /// Can only be set if Authentication is set to "ActiveDirectory".
+        /// </para>
+        /// </summary>
+        public List<string> InvalidUserList
+        {
+            get { return this._invalidUserList; }
+            set { this._invalidUserList = value; }
+        }
+
+        // Check to see if InvalidUserList property is set
+        internal bool IsSetInvalidUserList()
+        {
+            return this._invalidUserList != null && this._invalidUserList.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
         /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
-        /// use a key managed by Amazon S3. Optional. 
+        /// use a key managed by Amazon S3. Optional.
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -180,8 +163,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption.
-        /// This value can only be set when KMSEncrypted is true. Optional. 
+        /// The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption.
+        /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
         public string KMSKey
@@ -197,28 +180,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NFSFileShareDefaults. 
-        /// <para>
-        /// The default values for the file share. Optional.
-        /// </para>
-        /// </summary>
-        public NFSFileShareDefaults NFSFileShareDefaults
-        {
-            get { return this._nfsFileShareDefaults; }
-            set { this._nfsFileShareDefaults = value; }
-        }
-
-        // Check to see if NFSFileShareDefaults property is set
-        internal bool IsSetNFSFileShareDefaults()
-        {
-            return this._nfsFileShareDefaults != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ObjectACL. 
         /// <para>
-        /// Sets the access control list permission for objects in the S3 bucket that a file gateway
-        /// puts objects into. The default value is "private".
+        /// Sets the access control list permission for objects in the Amazon S3 bucket that a
+        /// file gateway puts objects into. The default value is "private".
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -273,34 +238,22 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Squash. 
+        /// Gets and sets the property ValidUserList. 
         /// <para>
-        /// The user mapped to anonymous user. Valid options are the following:
+        /// A list of users in the Active Directory that are allowed to access the file share.
+        /// Can only be set if Authentication is set to "ActiveDirectory".
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// "RootSquash" - Only root is mapped to anonymous user.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// "NoSquash" - No one is mapped to anonymous user
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// "AllSquash" - Everyone is mapped to anonymous user.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public string Squash
+        public List<string> ValidUserList
         {
-            get { return this._squash; }
-            set { this._squash = value; }
+            get { return this._validUserList; }
+            set { this._validUserList = value; }
         }
 
-        // Check to see if Squash property is set
-        internal bool IsSetSquash()
+        // Check to see if ValidUserList property is set
+        internal bool IsSetValidUserList()
         {
-            return this._squash != null;
+            return this._validUserList != null && this._validUserList.Count > 0; 
         }
 
     }
