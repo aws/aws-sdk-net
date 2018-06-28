@@ -1,3 +1,11 @@
+### 3.3.309.0 (2018-06-28 21:13 UTC)
+* ElasticBeanstalk (3.3.9.0)
+	* Elastic Beanstalk adds "Suspended" health status to the EnvironmentHealthStatus enum type and updates document.
+* Lambda (3.3.14.0)
+	* Support for SQS as an event source.
+* StorageGateway (3.3.9.0)
+	* AWS Storage Gateway now enables you to use Server Message Block (SMB) protocol  to store and access objects in Amazon Simple Storage Service (S3). 
+
 ### 3.3.308.0 (2018-06-27 22:08 UTC)
 * CloudFront (3.3.8.0)
 	* Unpublish delete-service-linked-role API.
