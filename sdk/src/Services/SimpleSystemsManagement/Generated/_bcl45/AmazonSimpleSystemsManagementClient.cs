@@ -2531,6 +2531,105 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAssociationExecutions
+
+
+        /// <summary>
+        /// Use this API action to view all executions for a specific association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssociationExecutions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual Task<DescribeAssociationExecutionsResponse> DescribeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAssociationExecutionTargets
+
+
+        /// <summary>
+        /// Use this API action to view information about a specific execution of a specific association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssociationExecutionTargets service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationExecutionDoesNotExistException">
+        /// The specified execution ID does not exist. Verify the ID number and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutionTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual Task<DescribeAssociationExecutionTargetsResponse> DescribeAssociationExecutionTargetsAsync(DescribeAssociationExecutionTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAutomationExecutions
 
 
@@ -6406,8 +6505,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
-        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+        /// and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
         /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
@@ -7089,6 +7188,52 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = SendCommandResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendCommandRequest,SendCommandResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAssociationsOnce
+
+
+        /// <summary>
+        /// Use this API action to execute an association immediately and only one time. This
+        /// action can be helpful when troubleshooting associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce service method.</param>
+        /// 
+        /// <returns>The response from the StartAssociationsOnce service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationException">
+        /// The association is not valid or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request)
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAssociationsOnce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual Task<StartAssociationsOnceResponse> StartAssociationsOnceAsync(StartAssociationsOnceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -122,8 +122,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end
-        /// with the parameter name. A hierarchy can have a maximum of 15 levels. Here is an example
-        /// of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code> 
+        /// with the parameter name. A parameter name hierarchy can have a maximum of 15 levels.
+        /// Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code>
+        /// 
         /// </para>
         /// </summary>
         public string Path

@@ -1428,6 +1428,70 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAssociationExecutions
+
+        internal virtual DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual Task<DescribeAssociationExecutionsResponse> DescribeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAssociationExecutionTargets
+
+        internal virtual DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutionTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual Task<DescribeAssociationExecutionTargetsResponse> DescribeAssociationExecutionTargetsAsync(DescribeAssociationExecutionTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAutomationExecutions
 
         internal virtual DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request)
@@ -3927,6 +3991,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = SendCommandResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendCommandRequest,SendCommandResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAssociationsOnce
+
+        internal virtual StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request)
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAssociationsOnce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual Task<StartAssociationsOnceResponse> StartAssociationsOnceAsync(StartAssociationsOnceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
