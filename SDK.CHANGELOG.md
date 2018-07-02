@@ -1,3 +1,7 @@
+### 3.3.310.0 (2018-07-02 20:51 UTC)
+* SimpleSystemsManagement (3.3.24.0)
+	* Execution History and StartAssociationOnce release for State Manager. Users now have the ability to view association execution history with DescribeAssociationExecutions and DescribeAssociationExecutionTargets. Users can also execute an association by calling StartAssociationOnce.
+
 ### 3.3.309.0 (2018-06-28 21:13 UTC)
 * ElasticBeanstalk (3.3.9.0)
 	* Elastic Beanstalk adds "Suspended" health status to the EnvironmentHealthStatus enum type and updates document.
