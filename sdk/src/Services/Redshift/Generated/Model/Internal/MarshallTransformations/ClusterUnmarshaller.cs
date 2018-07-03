@@ -214,6 +214,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PendingActions/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PendingActions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("PendingModifiedValues", targetDepth))
                     {
                         var unmarshaller = PendingModifiedValuesUnmarshaller.Instance;

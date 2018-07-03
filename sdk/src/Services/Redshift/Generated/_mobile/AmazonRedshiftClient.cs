@@ -264,6 +264,38 @@ namespace Amazon.Redshift
         #endregion
 
         
+        #region  AcceptReservedNodeExchange
+
+        internal virtual AcceptReservedNodeExchangeResponse AcceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request)
+        {
+            var marshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
+            var unmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptReservedNodeExchangeRequest,AcceptReservedNodeExchangeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptReservedNodeExchange operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedNodeExchange operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">REST API Reference for AcceptReservedNodeExchange Operation</seealso>
+        public virtual Task<AcceptReservedNodeExchangeResponse> AcceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AcceptReservedNodeExchangeRequestMarshaller.Instance;
+            var unmarshaller = AcceptReservedNodeExchangeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptReservedNodeExchangeRequest,AcceptReservedNodeExchangeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AuthorizeClusterSecurityGroupIngress
 
         internal virtual AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request)
@@ -995,6 +1027,38 @@ namespace Amazon.Redshift
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeClusterDbRevisions
+
+        internal virtual DescribeClusterDbRevisionsResponse DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request)
+        {
+            var marshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterDbRevisionsRequest,DescribeClusterDbRevisionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterDbRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterDbRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
+        public virtual Task<DescribeClusterDbRevisionsResponse> DescribeClusterDbRevisionsAsync(DescribeClusterDbRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeClusterDbRevisionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClusterDbRevisionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterDbRevisionsRequest,DescribeClusterDbRevisionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2337,6 +2401,38 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  GetReservedNodeExchangeOfferings
+
+        internal virtual GetReservedNodeExchangeOfferingsResponse GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request)
+        {
+            var marshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
+            var unmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservedNodeExchangeOfferingsRequest,GetReservedNodeExchangeOfferingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservedNodeExchangeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedNodeExchangeOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">REST API Reference for GetReservedNodeExchangeOfferings Operation</seealso>
+        public virtual Task<GetReservedNodeExchangeOfferingsResponse> GetReservedNodeExchangeOfferingsAsync(GetReservedNodeExchangeOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetReservedNodeExchangeOfferingsRequestMarshaller.Instance;
+            var unmarshaller = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReservedNodeExchangeOfferingsRequest,GetReservedNodeExchangeOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyCluster
 
         internal virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
@@ -2364,6 +2460,38 @@ namespace Amazon.Redshift
             var unmarshaller = ModifyClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClusterRequest,ModifyClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyClusterDbRevision
+
+        internal virtual ModifyClusterDbRevisionResponse ModifyClusterDbRevision(ModifyClusterDbRevisionRequest request)
+        {
+            var marshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterDbRevisionRequest,ModifyClusterDbRevisionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterDbRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterDbRevision operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
+        public virtual Task<ModifyClusterDbRevisionResponse> ModifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyClusterDbRevisionRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterDbRevisionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClusterDbRevisionRequest,ModifyClusterDbRevisionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

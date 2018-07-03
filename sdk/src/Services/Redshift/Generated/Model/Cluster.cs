@@ -58,6 +58,7 @@ namespace Amazon.Redshift.Model
         private string _modifyStatus;
         private string _nodeType;
         private int? _numberOfNodes;
+        private List<string> _pendingActions = new List<string>();
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -631,6 +632,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetNumberOfNodes()
         {
             return this._numberOfNodes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingActions. 
+        /// <para>
+        /// Cluster operations that are waiting to be started.
+        /// </para>
+        /// </summary>
+        public List<string> PendingActions
+        {
+            get { return this._pendingActions; }
+            set { this._pendingActions = value; }
+        }
+
+        // Check to see if PendingActions property is set
+        internal bool IsSetPendingActions()
+        {
+            return this._pendingActions != null && this._pendingActions.Count > 0; 
         }
 
         /// <summary>
