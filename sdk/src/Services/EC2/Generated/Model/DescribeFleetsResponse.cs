@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Fleets. 
         /// <para>
-        /// The EC2 Fleets.
+        /// Information about the EC2 Fleets.
         /// </para>
         /// </summary>
         public List<FleetData> Fleets

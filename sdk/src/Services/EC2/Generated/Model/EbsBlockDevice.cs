@@ -121,8 +121,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects
-        /// called by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// This parameter is only supported on <code>BlockDeviceMapping</code> objects called
+        /// by <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
         /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
         /// and <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.
         /// </para>

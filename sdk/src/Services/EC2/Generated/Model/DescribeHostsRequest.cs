@@ -79,6 +79,11 @@ namespace Amazon.EC2.Model
         /// | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code>
         /// | <code>released-permanent-failure</code>).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
+        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<Filter> Filter

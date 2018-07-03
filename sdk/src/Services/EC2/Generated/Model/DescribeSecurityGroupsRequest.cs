@@ -164,11 +164,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the security group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>tag-value</code> - The value of a tag assigned to the security group.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
+        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
         /// <para>

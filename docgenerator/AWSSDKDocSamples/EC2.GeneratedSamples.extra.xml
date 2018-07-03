@@ -173,6 +173,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateIamInstanceProfile(Amazon.EC2.Model.AssociateIamInstanceProfileRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateIamInstanceProfile(Amazon.EC2.Model.AssociateIamInstanceProfileRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateIamInstanceProfileRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateIamInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates an IAM instance profile named admin-role with the specified instance.
+                </para>
+                <code
+                    title="To associate an IAM instance profile with an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-associate-an-iam-instance-profile-with-an-instance-1528928429850" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.AssociateRouteTable(Amazon.EC2.Model.AssociateRouteTableRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.AssociateRouteTable(Amazon.EC2.Model.AssociateRouteTableRequest)" />
             <member name="T:Amazon.EC2.Model.AssociateRouteTableRequest" />
@@ -244,6 +263,101 @@
                     title="To attach a volume to an instance"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="to-attach-a-volume-to-an-instance-1472499213109" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AuthorizeSecurityGroupEgress(Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AuthorizeSecurityGroupEgress(Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest)" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupEgressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a rule that grants access to the specified address ranges on TCP port 80.
+                </para>
+                <code
+                    title="To add a rule that allows outbound traffic to a specific address range"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-add-a-rule-that-allows-outbound-traffic-to-a-specific-address-range-1528929309636" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AuthorizeSecurityGroupEgress(Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AuthorizeSecurityGroupEgress(Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest)" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupEgressRequest" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupEgressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a rule that grants access to the specified security group on TCP port 80.
+                </para>
+                <code
+                    title="To add a rule that allows outbound traffic to a specific security group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-add-a-rule-that-allows-outbound-traffic-to-a-specific-security-group-1528929760260" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables inbound traffic on TCP port 22 (SSH). The rule includes a description to help you identify it later.
+                </para>
+                <code
+                    title="To add a rule that allows inbound SSH traffic from an IPv4 address range"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-add-a-rule-that-allows-inbound-ssh-traffic-1529011610328" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables inbound traffic on TCP port 80 from the specified security group. The group must be in the same VPC or a peer VPC. Incoming traffic is allowed based on the private IP addresses of instances that are associated with the specified security group.
+                </para>
+                <code
+                    title="To add a rule that allows inbound HTTP traffic from another security group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-add-a-rule-that-allows-inbound-http-traffic-from-another-security-group-1529012163168" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AuthorizeSecurityGroupIngress(Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressRequest" />
+            <member name="T:Amazon.EC2.Model.AuthorizeSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds an inbound rule that allows RDP traffic from the specified IPv6 address range. The rule includes a description to help you identify it later.
+                </para>
+                <code
+                    title="To add a rule that allows inbound RDP traffic from an IPv6 address range"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-add-a-rule-with-a-description-1529012418116" />
             </example>
         </value>
     </doc>
@@ -325,6 +439,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CopyImage(Amazon.EC2.Model.CopyImageRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CopyImage(Amazon.EC2.Model.CopyImageRequest)" />
+            <member name="T:Amazon.EC2.Model.CopyImageRequest" />
+            <member name="T:Amazon.EC2.Model.CopyImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example copies the specified AMI from the us-east-1 region to the current region.
+                </para>
+                <code
+                    title="To copy an AMI to another region"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-copy-an-ami-to-another-region-1529022820832" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.CopySnapshot(Amazon.EC2.Model.CopySnapshotRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.CopySnapshot(Amazon.EC2.Model.CopySnapshotRequest)" />
             <member name="T:Amazon.EC2.Model.CopySnapshotRequest" />
@@ -382,6 +515,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateImage(Amazon.EC2.Model.CreateImageRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateImage(Amazon.EC2.Model.CreateImageRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateImageRequest" />
+            <member name="T:Amazon.EC2.Model.CreateImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an AMI from the specified instance and adds an EBS volume with the device name /dev/sdh and an instance store volume with the device name /dev/sdc.
+                </para>
+                <code
+                    title="To create an AMI from an Amazon EBS-backed instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-an-ami-from-an-amazon-ebs-backed-instance-1529023150636" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.CreateInternetGateway(Amazon.EC2.Model.CreateInternetGatewayRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.CreateInternetGateway(Amazon.EC2.Model.CreateInternetGatewayRequest)" />
             <member name="T:Amazon.EC2.Model.CreateInternetGatewayRequest" />
@@ -415,6 +567,44 @@
                     title="To create a key pair"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-create-key-pair-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateLaunchTemplate(Amazon.EC2.Model.CreateLaunchTemplateRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateLaunchTemplate(Amazon.EC2.Model.CreateLaunchTemplateRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateLaunchTemplateRequest" />
+            <member name="T:Amazon.EC2.Model.CreateLaunchTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a launch template that specifies the subnet in which to launch the instance, assigns a public IP address and an IPv6 address to the instance, and creates a tag for the instance.
+                </para>
+                <code
+                    title="To create a launch template"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-launch-template-1529023655488" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateLaunchTemplateVersion(Amazon.EC2.Model.CreateLaunchTemplateVersionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateLaunchTemplateVersion(Amazon.EC2.Model.CreateLaunchTemplateVersionRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateLaunchTemplateVersionRequest" />
+            <member name="T:Amazon.EC2.Model.CreateLaunchTemplateVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new launch template version based on version 1 of the specified launch template and specifies a different AMI ID.
+                </para>
+                <code
+                    title="To create a launch template version"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-launch-template-version-1529024195702" />
             </example>
         </value>
     </doc>
@@ -548,6 +738,25 @@
                     title="To create a route table"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-create-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSecurityGroup(Amazon.EC2.Model.CreateSecurityGroupRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSecurityGroup(Amazon.EC2.Model.CreateSecurityGroupRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSecurityGroupRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a security group for the specified VPC.
+                </para>
+                <code
+                    title="To create a security group for a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-security-group-for-a-vpc-1529024532716" />
             </example>
         </value>
     </doc>
@@ -762,6 +971,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteLaunchTemplate(Amazon.EC2.Model.DeleteLaunchTemplateRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteLaunchTemplate(Amazon.EC2.Model.DeleteLaunchTemplateRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteLaunchTemplateRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteLaunchTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified launch template.
+                </para>
+                <code
+                    title="To delete a launch template"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-launch-template-1529024658216" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteLaunchTemplateVersions(Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteLaunchTemplateVersions(Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteLaunchTemplateVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified launch template version.
+                </para>
+                <code
+                    title="To delete a launch template version"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-launch-template-version-1529024790864" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DeleteNatGateway(Amazon.EC2.Model.DeleteNatGatewayRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DeleteNatGateway(Amazon.EC2.Model.DeleteNatGatewayRequest)" />
             <member name="T:Amazon.EC2.Model.DeleteNatGatewayRequest" />
@@ -891,6 +1138,25 @@
                     title="To delete a route table"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-delete-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSecurityGroup(Amazon.EC2.Model.DeleteSecurityGroupRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSecurityGroup(Amazon.EC2.Model.DeleteSecurityGroupRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSecurityGroupRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified security group.
+                </para>
+                <code
+                    title="To delete a security group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-security-group-1529024952972" />
             </example>
         </value>
     </doc>
@@ -1162,6 +1428,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeIamInstanceProfileAssociations(Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeIamInstanceProfileAssociations(Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeIamInstanceProfileAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified IAM instance profile association.
+                </para>
+                <code
+                    title="To describe an IAM instance profile association"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-an-iam-instance-profile-association-1529025123918" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeImageAttribute(Amazon.EC2.Model.DescribeImageAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeImageAttribute(Amazon.EC2.Model.DescribeImageAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeImageAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeImageAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the launch permissions for the specified AMI.
+                </para>
+                <code
+                    title="To describe the launch permissions for an AMI"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-launch-permissions-for-an-ami-1529025296264" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeImages(Amazon.EC2.Model.DescribeImagesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeImages(Amazon.EC2.Model.DescribeImagesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeImagesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeImagesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified AMI.
+                </para>
+                <code
+                    title="To describe an AMI"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-an-ami-1529025482866" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
             <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeRequest" />
@@ -1222,6 +1545,82 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified instance.
+                </para>
+                <code
+                    title="To describe an Amazon EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-an-amazon-ec2-instance-1529025982172" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the instances with the t2.micro instance type.
+                </para>
+                <code
+                    title="To describe the instances with a specific instance type"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-instances-with-the-instance-type-t2micro-1529026147602" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstances(Amazon.EC2.Model.DescribeInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the instances with the Purpose=test tag.
+                </para>
+                <code
+                    title="To describe the instances with a specific tag"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-instances-with-a-specific-tag-1529026251928" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstanceStatus(Amazon.EC2.Model.DescribeInstanceStatusRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstanceStatus(Amazon.EC2.Model.DescribeInstanceStatusRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceStatusRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the current status of the specified instance.
+                </para>
+                <code
+                    title="To describe the status of an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-status-of-an-instance-1529025696830" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DescribeInternetGateways(Amazon.EC2.Model.DescribeInternetGatewaysRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInternetGateways(Amazon.EC2.Model.DescribeInternetGatewaysRequest)" />
             <member name="T:Amazon.EC2.Model.DescribeInternetGatewaysRequest" />
@@ -1255,6 +1654,44 @@
                     title="To display a key pair"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-describe-key-pairs-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeLaunchTemplates(Amazon.EC2.Model.DescribeLaunchTemplatesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeLaunchTemplates(Amazon.EC2.Model.DescribeLaunchTemplatesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeLaunchTemplatesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeLaunchTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified launch template.
+                </para>
+                <code
+                    title="To describe a launch template"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-a-launch-template-1529344182862" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeLaunchTemplateVersions(Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeLaunchTemplateVersions(Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeLaunchTemplateVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the versions for the specified launch template.
+                </para>
+                <code
+                    title="To describe the versions for a launch template"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-versions-for-a-launch-template-1529344425048" />
             </example>
         </value>
     </doc>
@@ -1483,6 +1920,63 @@
                     title="To describe your Scheduled Instances"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-describe-scheduled-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecurityGroupReferences(Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecurityGroupReferences(Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupReferencesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupReferencesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the security group references for the specified security group.
+                </para>
+                <code
+                    title="To describe security group references"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-security-group-references-1529354312088" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecurityGroups(Amazon.EC2.Model.DescribeSecurityGroupsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecurityGroups(Amazon.EC2.Model.DescribeSecurityGroupsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified security group.
+                </para>
+                <code
+                    title="To describe a security group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-a-security-group-1529354426314" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSecurityGroups(Amazon.EC2.Model.DescribeSecurityGroupsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSecurityGroups(Amazon.EC2.Model.DescribeSecurityGroupsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the security groups that include the specified tag (Purpose=test).
+                </para>
+                <code
+                    title="To describe a tagged security group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-a-tagged-security-group-1529354553880" />
             </example>
         </value>
     </doc>
@@ -1963,6 +2457,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateIamInstanceProfile(Amazon.EC2.Model.DisassociateIamInstanceProfileRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateIamInstanceProfile(Amazon.EC2.Model.DisassociateIamInstanceProfileRequest)" />
+            <member name="T:Amazon.EC2.Model.DisassociateIamInstanceProfileRequest" />
+            <member name="T:Amazon.EC2.Model.DisassociateIamInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disassociates the specified IAM instance profile from an instance.
+                </para>
+                <code
+                    title="To disassociate an IAM instance profile"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-disassociate-an-iam-instance-profile-1529355364478" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DisassociateRouteTable(Amazon.EC2.Model.DisassociateRouteTableRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateRouteTable(Amazon.EC2.Model.DisassociateRouteTableRequest)" />
             <member name="T:Amazon.EC2.Model.DisassociateRouteTableRequest" />
@@ -2015,6 +2528,139 @@
                     title="To enable I/O for a volume"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="to-enable-io-for-a-volume-1472508114867" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.GetConsoleOutput(Amazon.EC2.Model.GetConsoleOutputRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.GetConsoleOutput(Amazon.EC2.Model.GetConsoleOutputRequest)" />
+            <member name="T:Amazon.EC2.Model.GetConsoleOutputRequest" />
+            <member name="T:Amazon.EC2.Model.GetConsoleOutputResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the console output for the specified instance.
+                </para>
+                <code
+                    title="To get the console output"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-get-the-console-output-1529355683194" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.GetLaunchTemplateData(Amazon.EC2.Model.GetLaunchTemplateDataRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.GetLaunchTemplateData(Amazon.EC2.Model.GetLaunchTemplateDataRequest)" />
+            <member name="T:Amazon.EC2.Model.GetLaunchTemplateDataRequest" />
+            <member name="T:Amazon.EC2.Model.GetLaunchTemplateDataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the launch template data for the specified instance.
+                </para>
+                <code
+                    title="To get the launch template data for an instance "
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-get-the-launch-template-data-for-an-instance--1529356515702" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyImageAttribute(Amazon.EC2.Model.ModifyImageAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyImageAttribute(Amazon.EC2.Model.ModifyImageAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyImageAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyImageAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example makes the specified AMI public.
+                </para>
+                <code
+                    title="To make an AMI public"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-make-an-ami-public-1529357395278" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyImageAttribute(Amazon.EC2.Model.ModifyImageAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyImageAttribute(Amazon.EC2.Model.ModifyImageAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyImageAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyImageAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example grants launch permissions for the specified AMI to the specified AWS account.
+                </para>
+                <code
+                    title="To grant launch permissions"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-grant-launch-permissions-1529357727906" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyInstanceAttribute(Amazon.EC2.Model.ModifyInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyInstanceAttribute(Amazon.EC2.Model.ModifyInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the instance type of the specified stopped instance.
+                </para>
+                <code
+                    title="To modify the instance type"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-modify-the-instance-type-1529357844378" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyInstanceAttribute(Amazon.EC2.Model.ModifyInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyInstanceAttribute(Amazon.EC2.Model.ModifyInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables enhanced networking for the specified stopped instance.
+                </para>
+                <code
+                    title="To enable enhanced networking"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-enable-enhanced-networking-1529358279870" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyLaunchTemplate(Amazon.EC2.Model.ModifyLaunchTemplateRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyLaunchTemplate(Amazon.EC2.Model.ModifyLaunchTemplateRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyLaunchTemplateRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyLaunchTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example specifies version 2 as the default version of the specified launch template.
+                </para>
+                <code
+                    title="To change the default version of a launch template"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-change-the-default-version-of-a-launch-template-1529358440364" />
             </example>
         </value>
     </doc>
@@ -2286,6 +2932,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RebootInstances(Amazon.EC2.Model.RebootInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RebootInstances(Amazon.EC2.Model.RebootInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RebootInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RebootInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example reboots the specified EC2 instance.
+                </para>
+                <code
+                    title="To reboot an EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-reboot-an-ec2-instance-1529358566382" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
             <member name="T:Amazon.EC2.Model.ReleaseAddressRequest" />
@@ -2514,6 +3179,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ResetImageAttribute(Amazon.EC2.Model.ResetImageAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ResetImageAttribute(Amazon.EC2.Model.ResetImageAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ResetImageAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ResetImageAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resets the launchPermission attribute for the specified AMI. By default, AMIs are private.
+                </para>
+                <code
+                    title="To reset the launchPermission attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-reset-the-launchpermission-attribute-1529359519534" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ResetInstanceAttribute(Amazon.EC2.Model.ResetInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ResetInstanceAttribute(Amazon.EC2.Model.ResetInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ResetInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ResetInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resets the sourceDestCheck attribute for the specified instance.
+                </para>
+                <code
+                    title="To reset the sourceDestCheck attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-reset-the-sourcedestcheck-attribute-1529359630708" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.ResetSnapshotAttribute(Amazon.EC2.Model.ResetSnapshotAttributeRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.ResetSnapshotAttribute(Amazon.EC2.Model.ResetSnapshotAttributeRequest)" />
             <member name="T:Amazon.EC2.Model.ResetSnapshotAttributeRequest" />
@@ -2547,6 +3250,25 @@
                     title="To restore an address to EC2-Classic"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-restore-address-to-classic-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RunInstances(Amazon.EC2.Model.RunInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RunInstances(Amazon.EC2.Model.RunInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RunInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RunInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example launches an instance using the specified AMI, instance type, security group, subnet, block device mapping, and tags.
+                </para>
+                <code
+                    title="To launch an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-launch-an-instance-1529360150806" />
             </example>
         </value>
     </doc>
@@ -2590,6 +3312,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.StartInstances(Amazon.EC2.Model.StartInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.StartInstances(Amazon.EC2.Model.StartInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.StartInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.StartInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example starts the specified EC2 instance.
+                </para>
+                <code
+                    title="To start a stopped EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-start-a-stopped-ec2-instance-1529358792730" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.StopInstances(Amazon.EC2.Model.StopInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.StopInstances(Amazon.EC2.Model.StopInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.StopInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.StopInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example stops the specified EC2 instance.
+                </para>
+                <code
+                    title="To stop a running EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-stop-a-running-ec2-instance-1529358905540" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.TerminateInstances(Amazon.EC2.Model.TerminateInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.TerminateInstances(Amazon.EC2.Model.TerminateInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.TerminateInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.TerminateInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example terminates the specified EC2 instance.
+                </para>
+                <code
+                    title="To terminate an EC2 instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-terminate-an-ec2-instance-1529359350660" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.UnassignPrivateIpAddresses(Amazon.EC2.Model.UnassignPrivateIpAddressesRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.UnassignPrivateIpAddresses(Amazon.EC2.Model.UnassignPrivateIpAddressesRequest)" />
             <member name="T:Amazon.EC2.Model.UnassignPrivateIpAddressesRequest" />
@@ -2604,6 +3383,44 @@
                     title="To unassign a secondary private IP address from a network interface"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-unassign-private-ip-addresses-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.UpdateSecurityGroupRuleDescriptionsEgress(Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsEgressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.UpdateSecurityGroupRuleDescriptionsEgress(Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsEgressRequest)" />
+            <member name="T:Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsEgressRequest" />
+            <member name="T:Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsEgressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the description for the specified security group rule.
+                </para>
+                <code
+                    title="To update an outbound security group rule description"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-update-an-outbound-security-group-rule-description-1529360481544" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.UpdateSecurityGroupRuleDescriptionsIngress(Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsIngressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.UpdateSecurityGroupRuleDescriptionsIngress(Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsIngressRequest)" />
+            <member name="T:Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsIngressRequest" />
+            <member name="T:Amazon.EC2.Model.UpdateSecurityGroupRuleDescriptionsIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the description for the specified security group rule.
+                </para>
+                <code
+                    title="To update an inbound security group rule description"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-update-an-inbound-security-group-rule-description-1529360820372" />
             </example>
         </value>
     </doc>

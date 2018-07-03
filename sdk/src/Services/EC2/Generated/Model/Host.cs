@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private List<HostInstance> _instances = new List<HostInstance>();
         private DateTime? _releaseTime;
         private AllocationState _state;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AllocationTime. 
@@ -243,6 +244,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags assigned to the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

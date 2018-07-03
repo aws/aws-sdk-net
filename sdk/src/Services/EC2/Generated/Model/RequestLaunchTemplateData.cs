@@ -424,9 +424,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can tag instances and volumes.
-        /// The specified tags are applied to all instances or volumes that are created during
-        /// launch.
+        /// The tags to apply to the resources during launch. You can only tag instances and volumes
+        /// on launch. The specified tags are applied to all instances or volumes that are created
+        /// during launch. To tag a resource after it has been created, see <a>CreateTags</a>.
         /// </para>
         /// </summary>
         public List<LaunchTemplateTagSpecificationRequest> TagSpecifications
