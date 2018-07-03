@@ -1,3 +1,14 @@
+### 3.3.311.0 (2018-07-03 20:11 UTC)
+* EC2 (3.3.54.0)
+	* Added support for customers to tag EC2 Dedicated Hosts
+* Redshift (3.3.5.0)
+	* Feature 1 - On-demand cluster release version - When Amazon Redshift releases a new cluster version, you can choose to upgrade to that version immediately instead of waiting until your next maintenance window. You can also choose to roll back to a previous version. The two new APIs added for managing cluster release version are - ModifyClusterDbRevision, DescribeClusterDbRevisions. Feature 2 - Upgradeable reserved instance - You can now exchange one Reserved Instance for a new Reserved Instance with no changes to the terms of your existing Reserved Instance (term, payment type, or number of nodes). The two new APIs added for managing these upgrades are - AcceptReservedNodeExchange, GetReservedNodeExchangeOfferings. 
+* Core 3.3.24.3
+	* General availability of AWS Lambda in the China Northwest (cn-northwest-1) region. For more information, see the AWS Lambda developer guide.
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.310.0 (2018-07-02 20:51 UTC)
 * SimpleSystemsManagement (3.3.24.0)
 	* Execution History and StartAssociationOnce release for State Manager. Users now have the ability to view association execution history with DescribeAssociationExecutions and DescribeAssociationExecutionTargets. Users can also execute an association by calling StartAssociationOnce.
