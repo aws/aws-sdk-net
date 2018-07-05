@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
         private string _requestID;
 
         /// <summary>
-        /// Gets and sets the property Message. The error message returned from the API.
+        /// Gets and sets the property Message. The error message that's returned from the API.
         /// </summary>
         public string Message
         {

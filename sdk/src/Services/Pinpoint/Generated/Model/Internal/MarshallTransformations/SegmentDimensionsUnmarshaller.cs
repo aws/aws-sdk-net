@@ -88,6 +88,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, MetricDimension, StringUnmarshaller, MetricDimensionUnmarshaller>(StringUnmarshaller.Instance, MetricDimensionUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);

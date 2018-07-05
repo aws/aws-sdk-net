@@ -124,6 +124,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MessagesPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

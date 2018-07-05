@@ -99,6 +99,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SilentPush);
             }
 
+            if(requestObject.IsSetTimeToLive())
+            {
+                context.Writer.WritePropertyName("TimeToLive");
+                context.Writer.Write(requestObject.TimeToLive);
+            }
+
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");

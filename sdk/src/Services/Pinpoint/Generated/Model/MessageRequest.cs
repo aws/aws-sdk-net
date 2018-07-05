@@ -38,9 +38,9 @@ namespace Amazon.Pinpoint.Model
         private DirectMessageConfiguration _messageConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Addresses. A map of destination addresses, with the address
-        /// as the key(Email address, phone number or push token) and the Address Configuration
-        /// as the value.
+        /// Gets and sets the property Addresses. A map of key-value pairs, where each key is
+        /// an address and each value is an AddressConfiguration object. An address can be a push
+        /// notification token, a phone number, or an email address.
         /// </summary>
         public Dictionary<string, AddressConfiguration> Addresses
         {
@@ -72,9 +72,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Endpoints. A map of destination addresses, with the address
-        /// as the key(Email address, phone number or push token) and the Address Configuration
-        /// as the value.
+        /// Gets and sets the property Endpoints. A map of key-value pairs, where each key is
+        /// an endpoint ID and each value is an EndpointSendConfiguration object. Within an EndpointSendConfiguration
+        /// object, you can tailor the message for an endpoint by specifying message overrides
+        /// or substitutions.
         /// </summary>
         public Dictionary<string, EndpointSendConfiguration> Endpoints
         {

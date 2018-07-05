@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.SegmentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SegmentVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SegmentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

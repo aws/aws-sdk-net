@@ -39,6 +39,7 @@ namespace Amazon.Pinpoint.Model
         private SegmentImportResource _importDefinition;
         private string _lastModifiedDate;
         private string _name;
+        private SegmentGroupList _segmentGroups;
         private SegmentType _segmentType;
         private int? _version;
 
@@ -148,6 +149,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentGroups. Segment definition groups. We currently
+        /// only support one. If specified Dimensions must be empty.
+        /// </summary>
+        public SegmentGroupList SegmentGroups
+        {
+            get { return this._segmentGroups; }
+            set { this._segmentGroups = value; }
+        }
+
+        // Check to see if SegmentGroups property is set
+        internal bool IsSetSegmentGroups()
+        {
+            return this._segmentGroups != null;
         }
 
         /// <summary>

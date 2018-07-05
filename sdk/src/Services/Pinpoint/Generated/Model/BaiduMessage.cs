@@ -43,6 +43,7 @@ namespace Amazon.Pinpoint.Model
         private string _smallImageIconUrl;
         private string _sound;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private int? _timeToLive;
         private string _title;
         private string _url;
 
@@ -228,6 +229,23 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSubstitutions()
         {
             return this._substitutions != null && this._substitutions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
+        /// the message should be kept in Baidu storage if the device is offline. The and the
+        /// default value and the maximum time to live supported is 7 days (604800 seconds)
+        /// </summary>
+        public int TimeToLive
+        {
+            get { return this._timeToLive.GetValueOrDefault(); }
+            set { this._timeToLive = value; }
+        }
+
+        // Check to see if TimeToLive property is set
+        internal bool IsSetTimeToLive()
+        {
+            return this._timeToLive.HasValue; 
         }
 
         /// <summary>

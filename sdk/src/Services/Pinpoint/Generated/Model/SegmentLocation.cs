@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class SegmentLocation
     {
         private SetDimension _country;
+        private GPSPointDimension _gpsPoint;
 
         /// <summary>
         /// Gets and sets the property Country. The country filter according to ISO 3166-1 Alpha-2
@@ -48,6 +49,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCountry()
         {
             return this._country != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GPSPoint. The GPS Point dimension.
+        /// </summary>
+        public GPSPointDimension GPSPoint
+        {
+            get { return this._gpsPoint; }
+            set { this._gpsPoint = value; }
+        }
+
+        // Check to see if GPSPoint property is set
+        internal bool IsSetGPSPoint()
+        {
+            return this._gpsPoint != null;
         }
 
     }

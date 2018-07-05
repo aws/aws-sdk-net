@@ -37,7 +37,7 @@ namespace Amazon.Pinpoint.Model
         private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
@@ -52,7 +52,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobId.
+        /// Gets and sets the property JobId. The unique ID of the job.
         /// </summary>
         public string JobId
         {

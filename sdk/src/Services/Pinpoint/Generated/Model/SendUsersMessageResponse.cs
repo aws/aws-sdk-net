@@ -37,7 +37,8 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, Dictionary<string, EndpointMessageResult>> _result = new Dictionary<string, Dictionary<string, EndpointMessageResult>>();
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. Application id of the message.
+        /// Gets and sets the property ApplicationId. The unique ID of the Amazon Pinpoint project
+        /// used to send the message.
         /// </summary>
         public string ApplicationId
         {
@@ -52,8 +53,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId. Original request Id for which this message was
-        /// delivered.
+        /// Gets and sets the property RequestId. The unique ID assigned to the users-messages
+        /// request.
         /// </summary>
         public string RequestId
         {
@@ -68,8 +69,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Result. A map containing of UserId to Map of EndpointId
-        /// to Endpoint Message Result.
+        /// Gets and sets the property Result. An object that shows the endpoints that were messaged
+        /// for each user. The object provides a list of user IDs. For each user ID, it provides
+        /// the endpoint IDs that were messaged. For each endpoint ID, it provides an EndpointMessageResult
+        /// object.
         /// </summary>
         public Dictionary<string, Dictionary<string, EndpointMessageResult>> Result
         {

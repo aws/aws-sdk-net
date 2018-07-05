@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GPSPoint", targetDepth))
+                {
+                    var unmarshaller = GPSPointDimensionUnmarshaller.Instance;
+                    unmarshalledObject.GPSPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

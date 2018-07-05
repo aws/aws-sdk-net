@@ -37,9 +37,10 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property Context. A map of custom attributes to attributes to be
-        /// attached to the message. This payload is added to the push notification's 'data.pinpoint'
-        /// object or added to the email/sms delivery receipt event attributes.
+        /// Gets and sets the property Context. A map of custom attribute-value pairs. Amazon
+        /// Pinpoint adds these attributes to the data.pinpoint object in the body of the push
+        /// notification payload. Amazon Pinpoint also provides these attributes in the events
+        /// that it generates for users-messages deliveries.
         /// </summary>
         public Dictionary<string, string> Context
         {
@@ -54,7 +55,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageConfiguration. Message configuration.
+        /// Gets and sets the property MessageConfiguration. Message definitions for the default
+        /// message and any messages that are tailored for specific channels.
         /// </summary>
         public DirectMessageConfiguration MessageConfiguration
         {
@@ -69,8 +71,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. A map of destination endpoints, with the EndpointId
-        /// as the key Endpoint Message Configuration as the value.
+        /// Gets and sets the property Users. A map that associates user IDs with EndpointSendConfiguration
+        /// objects. Within an EndpointSendConfiguration object, you can tailor the message for
+        /// a user by specifying message overrides or substitutions.
         /// </summary>
         public Dictionary<string, EndpointSendConfiguration> Users
         {

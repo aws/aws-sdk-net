@@ -45,8 +45,11 @@ namespace Amazon.Pinpoint.Model
         private EndpointUser _user;
 
         /// <summary>
-        /// Gets and sets the property Address. The address or token of the endpoint as provided
-        /// by your push provider (e.g. DeviceToken or RegistrationId).
+        /// Gets and sets the property Address. The destination for messages that you send to
+        /// this endpoint. The address varies by channel. For mobile push channels, use the token
+        /// provided by the push notification service, such as the APNs device token or the FCM
+        /// registration token. For the SMS channel, use a phone number in E.164 format, such
+        /// as +1206XXX5550100. For the email channel, use an email address.
         /// </summary>
         public string Address
         {
@@ -129,9 +132,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointStatus. The endpoint status. Can be either ACTIVE
-        /// or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set to ACTIVE if
-        /// the address is updated.
+        /// Gets and sets the property EndpointStatus. Unused.
         /// </summary>
         public string EndpointStatus
         {

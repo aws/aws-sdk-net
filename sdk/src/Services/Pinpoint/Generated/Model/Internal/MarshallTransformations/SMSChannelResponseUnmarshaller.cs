@@ -118,6 +118,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PromotionalMessagesPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PromotionalMessagesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SenderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShortCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TransactionalMessagesPerSecond", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TransactionalMessagesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Version", targetDepth))

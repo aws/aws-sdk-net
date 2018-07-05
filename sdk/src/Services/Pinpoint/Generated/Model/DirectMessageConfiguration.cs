@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The message configuration.
+    /// Message definitions for the default message and any messages that are tailored for
+    /// specific channels.
     /// </summary>
     public partial class DirectMessageConfiguration
     {

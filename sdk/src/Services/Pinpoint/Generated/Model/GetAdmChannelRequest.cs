@@ -29,14 +29,14 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAdmChannel operation.
-    /// Get an ADM channel
+    /// Get an ADM channel.
     /// </summary>
     public partial class GetAdmChannelRequest : AmazonPinpointRequest
     {
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {

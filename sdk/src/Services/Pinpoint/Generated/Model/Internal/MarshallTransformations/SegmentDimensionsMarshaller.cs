@@ -97,6 +97,25 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMetrics())
+            {
+                context.Writer.WritePropertyName("Metrics");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectMetricsKvp in requestObject.Metrics)
+                {
+                    context.Writer.WritePropertyName(requestObjectMetricsKvp.Key);
+                    var requestObjectMetricsValue = requestObjectMetricsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetricDimensionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMetricsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUserAttributes())
             {
                 context.Writer.WritePropertyName("UserAttributes");

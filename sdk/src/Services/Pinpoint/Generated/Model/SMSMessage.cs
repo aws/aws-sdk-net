@@ -33,14 +33,14 @@ namespace Amazon.Pinpoint.Model
     public partial class SMSMessage
     {
         private string _body;
+        private string _keyword;
         private MessageType _messageType;
         private string _originationNumber;
         private string _senderId;
         private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// Gets and sets the property Body. The message body of the notification, the email body
-        /// or the text message.
+        /// Gets and sets the property Body. The body of the SMS message.
         /// </summary>
         public string Body
         {
@@ -52,6 +52,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Keyword. The SMS program name that you provided to AWS
+        /// Support when you requested your dedicated number.
+        /// </summary>
+        public string Keyword
+        {
+            get { return this._keyword; }
+            set { this._keyword = value; }
+        }
+
+        // Check to see if Keyword property is set
+        internal bool IsSetKeyword()
+        {
+            return this._keyword != null;
         }
 
         /// <summary>

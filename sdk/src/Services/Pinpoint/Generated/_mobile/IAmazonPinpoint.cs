@@ -31,7 +31,7 @@ namespace Amazon.Pinpoint
     /// <summary>
     /// Interface for accessing Pinpoint
     ///
-    /// 
+    /// Amazon Pinpoint
     /// </summary>
     public partial interface IAmazonPinpoint : IAmazonService, IDisposable
     {
@@ -340,6 +340,22 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  DeleteUserEndpoints
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAdmChannel
 
 
@@ -561,6 +577,22 @@ namespace Amazon.Pinpoint
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetCampaignVersionsResponse> GetCampaignVersionsAsync(GetCampaignVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetChannels
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -804,6 +836,38 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  GetUserEndpoints
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PhoneNumberValidate
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PhoneNumberValidate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PhoneNumberValidate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutEventStream
 
 
@@ -817,6 +881,22 @@ namespace Amazon.Pinpoint
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveAttributes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

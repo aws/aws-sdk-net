@@ -37,7 +37,7 @@ namespace Amazon.Pinpoint.Model
         private WriteEventStream _writeEventStream;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. ApplicationId
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
@@ -52,7 +52,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WriteEventStream. EventStream to write.
+        /// Gets and sets the property WriteEventStream.
         /// </summary>
         public WriteEventStream WriteEventStream
         {

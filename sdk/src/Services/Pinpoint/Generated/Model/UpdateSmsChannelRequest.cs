@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSmsChannel operation.
-    /// Update an SMS channel
+    /// Update an SMS channel.
     /// </summary>
     public partial class UpdateSmsChannelRequest : AmazonPinpointRequest
     {
@@ -37,7 +37,7 @@ namespace Amazon.Pinpoint.Model
         private SMSChannelRequest _smsChannelRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
