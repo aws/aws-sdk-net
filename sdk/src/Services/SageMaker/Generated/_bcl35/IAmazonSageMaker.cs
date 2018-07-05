@@ -120,6 +120,16 @@ namespace Amazon.SageMaker
         /// For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
         /// 1: Using the K-Means Algorithm Provided by Amazon SageMaker</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// If any of the models hosted at this endpoint get model data from an Amazon S3 location,
+        /// Amazon SageMaker uses AWS Security Token Service to download model artifacts from
+        /// the S3 path you provided. AWS STS is activated in your IAM user account by default.
+        /// If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
+        /// for that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
@@ -1300,8 +1310,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Gets a list of objects that describe the hyperparameter tuning jobs launched in your
-        /// account.
+        /// Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter
+        /// tuning jobs launched in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs service method.</param>
         /// 
@@ -1382,7 +1392,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists notebook instance lifestyle configurations created with the API.
+        /// Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs service method.</param>
         /// 
@@ -1543,8 +1554,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Gets a list of objects that describe the training jobs that a hyperparameter tuning
-        /// job launched.
+        /// Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that
+        /// a hyperparameter tuning job launched.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob service method.</param>
         /// 
@@ -1806,6 +1817,12 @@ namespace Amazon.SageMaker
         /// the status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot update an endpoint with the current <code>EndpointConfig</code>. To update
+        /// an endpoint, you must create a new <code>EndpointConfig</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -1944,7 +1961,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Updates a notebook instance lifecycle configuration created with the API.
+        /// Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// 

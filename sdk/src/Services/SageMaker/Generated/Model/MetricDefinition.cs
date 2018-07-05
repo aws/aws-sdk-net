@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A regular expression that searches the output of a training job and gets the value
         /// of the metric. For more information about using regular expressions to define metrics,
-        /// see <a>hpo-define-metrics</a>.
+        /// see <a>automatic-model-tuning-define-metrics</a>.
         /// </para>
         /// </summary>
         public string Regex

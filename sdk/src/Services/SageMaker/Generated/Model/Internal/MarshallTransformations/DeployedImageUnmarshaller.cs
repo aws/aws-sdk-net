@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProductionVariantSummary Object
+    /// Response Unmarshaller for DeployedImage Object
     /// </summary>  
-    public class ProductionVariantSummaryUnmarshaller : IUnmarshaller<ProductionVariantSummary, XmlUnmarshallerContext>, IUnmarshaller<ProductionVariantSummary, JsonUnmarshallerContext>
+    public class DeployedImageUnmarshaller : IUnmarshaller<DeployedImage, XmlUnmarshallerContext>, IUnmarshaller<DeployedImage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProductionVariantSummary IUnmarshaller<ProductionVariantSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DeployedImage IUnmarshaller<DeployedImage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProductionVariantSummary Unmarshall(JsonUnmarshallerContext context)
+        public DeployedImage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProductionVariantSummary unmarshalledObject = new ProductionVariantSummary();
+            DeployedImage unmarshalledObject = new DeployedImage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CurrentInstanceCount", targetDepth))
+                if (context.TestExpression("ResolutionTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ResolutionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CurrentWeight", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeployedImages", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
-                    unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DesiredInstanceCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DesiredWeight", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VariantName", targetDepth))
+                if (context.TestExpression("ResolvedImage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VariantName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResolvedImage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SpecifiedImage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpecifiedImage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProductionVariantSummaryUnmarshaller _instance = new ProductionVariantSummaryUnmarshaller();        
+        private static DeployedImageUnmarshaller _instance = new DeployedImageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProductionVariantSummaryUnmarshaller Instance
+        public static DeployedImageUnmarshaller Instance
         {
             get
             {

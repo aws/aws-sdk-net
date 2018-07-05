@@ -170,8 +170,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        ///  An array of ProductionVariant objects, one for each model hosted behind this endpoint.
-        /// 
+        ///  An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind
+        /// this endpoint. 
         /// </para>
         /// </summary>
         public List<ProductionVariantSummary> ProductionVariants

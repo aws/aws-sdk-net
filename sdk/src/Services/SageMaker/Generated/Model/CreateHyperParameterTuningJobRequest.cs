@@ -41,9 +41,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobConfig. 
         /// <para>
-        /// The object that describes the tuning job, including the search strategy, metric used
-        /// to evaluate training jobs, ranges of parameters to search, and resource limits for
-        /// the tuning job.
+        /// The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including
+        /// the search strategy, metric used to evaluate training jobs, ranges of parameters to
+        /// search, and resource limits for the tuning job.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobConfig HyperParameterTuningJobConfig
@@ -102,9 +102,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobDefinition. 
         /// <para>
-        /// The object that describes the training jobs that this tuning job launches, including
-        /// static hyperparameters, input data configuration, output data configuration, resource
-        /// configuration, and stopping condition.
+        /// The <a>HyperParameterTrainingJobDefinition</a> object that describes the training
+        /// jobs that this tuning job launches, including static hyperparameters, input data configuration,
+        /// output data configuration, resource configuration, and stopping condition.
         /// </para>
         /// </summary>
         public HyperParameterTrainingJobDefinition TrainingJobDefinition

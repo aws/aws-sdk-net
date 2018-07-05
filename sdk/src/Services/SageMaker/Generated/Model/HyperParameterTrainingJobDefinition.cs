@@ -44,8 +44,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
         /// <para>
-        /// The object that specifies the algorithm to use for the training jobs that the tuning
-        /// job launches.
+        /// The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm
+        /// to use for the training jobs that the tuning job launches.
         /// </para>
         /// </summary>
         public HyperParameterAlgorithmSpecification AlgorithmSpecification
@@ -63,8 +63,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// An array of objects that specify the input for the training jobs that the tuning job
-        /// launches.
+        /// An array of <a>Channel</a> objects that specify the input for the training jobs that
+        /// the tuning job launches.
         /// </para>
         /// </summary>
         public List<Channel> InputDataConfig
@@ -196,9 +196,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// The object that specifies the VPC that you want the training jobs that this hyperparameter
-        /// tuning job launches to connect to. Control access to and from your training container
-        /// by configuring the VPC. For more information, see <a>train-vpc</a>.
+        /// The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs
+        /// that this hyperparameter tuning job launches to connect to. Control access to and
+        /// from your training container by configuring the VPC. For more information, see <a>train-vpc</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

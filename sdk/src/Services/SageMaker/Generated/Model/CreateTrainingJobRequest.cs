@@ -332,9 +332,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A object that specifies the VPC that you want your training job to connect to. Control
-        /// access to and from your training container by configuring the VPC. For more information,
-        /// see <a>train-vpc</a> 
+        /// A <a>VpcConfig</a> object that specifies the VPC that you want your training job to
+        /// connect to. Control access to and from your training container by configuring the
+        /// VPC. For more information, see <a>train-vpc</a> 
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

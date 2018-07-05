@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason that the 
+        /// The reason that the training job failed. 
         /// </para>
         /// </summary>
         public string FailureReason
@@ -82,8 +82,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FinalHyperParameterTuningJobObjectiveMetric. 
         /// <para>
-        /// The object that specifies the value of the objective metric of the tuning job that
-        /// launched this training job.
+        /// The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value
+        /// of the objective metric of the tuning job that launched this training job.
         /// </para>
         /// </summary>
         public FinalHyperParameterTuningJobObjectiveMetric FinalHyperParameterTuningJobObjectiveMetric

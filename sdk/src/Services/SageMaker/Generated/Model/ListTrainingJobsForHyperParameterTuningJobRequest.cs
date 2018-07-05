@@ -29,8 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTrainingJobsForHyperParameterTuningJob operation.
-    /// Gets a list of objects that describe the training jobs that a hyperparameter tuning
-    /// job launched.
+    /// Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that
+    /// a hyperparameter tuning job launched.
     /// </summary>
     public partial class ListTrainingJobsForHyperParameterTuningJobRequest : AmazonSageMakerRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of training jobs to return.
+        /// The maximum number of training jobs to return. The default value is 10.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -101,6 +101,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The field to sort results by. The default is <code>Name</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
+        /// jobs that did not return an objective metric are not listed.
         /// </para>
         /// </summary>
         public TrainingJobSortByOptions SortBy

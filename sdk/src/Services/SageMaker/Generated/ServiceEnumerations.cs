@@ -900,6 +900,10 @@ namespace Amazon.SageMaker
         /// Constant Stopping for NotebookInstanceStatus
         /// </summary>
         public static readonly NotebookInstanceStatus Stopping = new NotebookInstanceStatus("Stopping");
+        /// <summary>
+        /// Constant Updating for NotebookInstanceStatus
+        /// </summary>
+        public static readonly NotebookInstanceStatus Updating = new NotebookInstanceStatus("Updating");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

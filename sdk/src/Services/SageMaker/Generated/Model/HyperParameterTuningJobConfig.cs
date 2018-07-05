@@ -40,7 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobObjective. 
         /// <para>
-        /// The object that specifies the objective metric for this tuning job.
+        /// The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric
+        /// for this tuning job.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobObjective HyperParameterTuningJobObjective
@@ -58,7 +59,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ParameterRanges. 
         /// <para>
-        /// The object that specifies the ranges of hyperparameters that this tuning job searches.
+        /// The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that
+        /// this tuning job searches.
         /// </para>
         /// </summary>
         public ParameterRanges ParameterRanges
@@ -76,8 +78,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceLimits. 
         /// <para>
-        /// The object that specifies the maximum number of training jobs and parallel training
-        /// jobs for this tuning job.
+        /// The <a>ResourceLimits</a> object that specifies the maximum number of training jobs
+        /// and parallel training jobs for this tuning job.
         /// </para>
         /// </summary>
         public ResourceLimits ResourceLimits

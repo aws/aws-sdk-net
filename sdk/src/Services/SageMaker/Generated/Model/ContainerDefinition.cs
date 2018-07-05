@@ -80,8 +80,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
         /// If you are using your own custom algorithm instead of an algorithm provided by Amazon
-        /// SageMaker, the inference code must meet Amazon SageMaker requirements. For more information,
-        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+        /// SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker
+        /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// image path formats. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a> 
         /// </para>
         /// </summary>
@@ -102,6 +103,15 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The S3 path where the model artifacts, which result from model training, are stored.
         /// This path must point to a single gzip compressed tar archive (.tar.gz suffix). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token
+        /// Service to download model artifacts from the S3 path you provide. AWS STS is activated
+        /// in your IAM user account by default. If you previously deactivated AWS STS for a region,
+        /// you need to reactivate AWS STS for that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string ModelDataUrl

@@ -40,6 +40,12 @@ namespace Amazon.SageMaker.Model
     /// the status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
     /// API. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// You cannot update an endpoint with the current <code>EndpointConfig</code>. To update
+    /// an endpoint, you must create a new <code>EndpointConfig</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonSageMakerRequest
     {

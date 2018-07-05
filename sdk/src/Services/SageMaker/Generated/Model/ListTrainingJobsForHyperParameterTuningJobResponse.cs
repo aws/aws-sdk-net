@@ -58,8 +58,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobSummaries. 
         /// <para>
-        /// A list of objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
-        /// request returned.
+        /// A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
+        /// <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
         /// </para>
         /// </summary>
         public List<HyperParameterTrainingJobSummary> TrainingJobSummaries

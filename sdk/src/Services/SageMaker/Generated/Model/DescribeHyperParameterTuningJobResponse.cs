@@ -48,7 +48,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BestTrainingJob. 
         /// <para>
-        /// A object that describes the training job that completed with the best current .
+        /// A <a>TrainingJobSummary</a> object that describes the training job that completed
+        /// with the best current <a>HyperParameterTuningJobObjective</a>.
         /// </para>
         /// </summary>
         public HyperParameterTrainingJobSummary BestTrainingJob
@@ -138,7 +139,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobConfig. 
         /// <para>
-        /// The object that specifies the configuration of the tuning job.
+        /// The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of
+        /// the tuning job.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobConfig HyperParameterTuningJobConfig
@@ -210,8 +212,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ObjectiveStatusCounters. 
         /// <para>
-        /// The object that specifies the number of training jobs, categorized by the status of
-        /// their final objective metric, that this tuning job launched.
+        /// The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs,
+        /// categorized by the status of their final objective metric, that this tuning job launched.
         /// </para>
         /// </summary>
         public ObjectiveStatusCounters ObjectiveStatusCounters
@@ -229,8 +231,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobDefinition. 
         /// <para>
-        /// The object that specifies the definition of the training jobs that this tuning job
-        /// launches.
+        /// The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition
+        /// of the training jobs that this tuning job launches.
         /// </para>
         /// </summary>
         public HyperParameterTrainingJobDefinition TrainingJobDefinition
@@ -248,8 +250,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobStatusCounters. 
         /// <para>
-        /// The object that specifies the number of training jobs, categorized by status, that
-        /// this tuning job launched.
+        /// The <a>TrainingJobStatusCounters</a> object that specifies the number of training
+        /// jobs, categorized by status, that this tuning job launched.
         /// </para>
         /// </summary>
         public TrainingJobStatusCounters TrainingJobStatusCounters

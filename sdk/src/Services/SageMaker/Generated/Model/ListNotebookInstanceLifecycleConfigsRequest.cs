@@ -29,7 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotebookInstanceLifecycleConfigs operation.
-    /// Lists notebook instance lifestyle configurations created with the API.
+    /// Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+    /// API.
     /// </summary>
     public partial class ListNotebookInstanceLifecycleConfigsRequest : AmazonSageMakerRequest
     {

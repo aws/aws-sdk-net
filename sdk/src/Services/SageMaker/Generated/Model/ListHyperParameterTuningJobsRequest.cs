@@ -29,8 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHyperParameterTuningJobs operation.
-    /// Gets a list of objects that describe the hyperparameter tuning jobs launched in your
-    /// account.
+    /// Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter
+    /// tuning jobs launched in your account.
     /// </summary>
     public partial class ListHyperParameterTuningJobsRequest : AmazonSageMakerRequest
     {
@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of tuning jobs to return.
+        /// The maximum number of tuning jobs to return. The default value is 10.
         /// </para>
         /// </summary>
         public int MaxResults
