@@ -1,3 +1,9 @@
+### 3.3.312.0 (2018-07-05 21:15 UTC)
+* Pinpoint (3.3.8.0)
+	* This release of the Amazon Pinpoint SDK adds the ability to create complex segments and validate phone numbers for SMS messages. It also adds the ability to get or delete endpoints based on user IDs, remove attributes from endpoints, and list the defined channels for an app.
+* SageMaker (3.3.7.0)
+	* Amazon SageMaker NotebookInstances supports 'Updating' as a NotebookInstanceStatus.  In addition, DescribeEndpointOutput now includes Docker repository digest of deployed Model images.
+
 ### 3.3.311.0 (2018-07-03 20:11 UTC)
 * EC2 (3.3.54.0)
 	* Added support for customers to tag EC2 Dedicated Hosts
