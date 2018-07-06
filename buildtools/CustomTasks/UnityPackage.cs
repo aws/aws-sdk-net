@@ -90,7 +90,23 @@ namespace CustomTasks
                 if (!Directory.Exists(pluginsFolder))
                     throw new DirectoryNotFoundException("Cannot find Plugins Directory");
 
-                CopyDirectory(pluginsFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
+                //copy common plugins folder
+                var commonFolder = Path.Combine(pluginsFolder, "Common");
+                if (!Directory.Exists(commonFolder))
+                    throw new DirectoryNotFoundException(@"Cannot find Plugins\Common Directory");
+                CopyDirectory(commonFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
+
+
+                //copy common plugins folder
+                var serviceFolder = Path.Combine(pluginsFolder, ServiceName);
+                if (!Directory.Exists(serviceFolder))
+                {
+                    //if the service folder is not present, use the default folder
+                    serviceFolder = Path.Combine(pluginsFolder, "Default");
+                    if (!Directory.Exists(serviceFolder))
+                        throw new DirectoryNotFoundException(@"Cannot find Plugins\Default Directory");
+                }
+                CopyDirectory(serviceFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
 
                 //create SDK Directory
                 var assetsFolder = Path.Combine(UnityTempProjectPath, @"Assets");
@@ -107,10 +123,10 @@ namespace CustomTasks
                 {
                     var samplesDestinationDirectory = Path.Combine(assetsFolder, @"Examples");
                     Directory.CreateDirectory(samplesDestinationDirectory);
-                    CopyDirectory(samplesSourceDirectory, samplesDestinationDirectory);
+                    //CopyDirectory(samplesSourceDirectory, samplesDestinationDirectory);
 
                     //copy the license for samples
-                    File.Copy(Path.Combine(SamplesPath, @"License.txt"), Path.Combine(samplesDestinationDirectory, @"License.txt"));
+                   // File.Copy(Path.Combine(SamplesPath, @"License.txt"), Path.Combine(samplesDestinationDirectory, @"License.txt"));
                 }
 
                 //create unitypackage
