@@ -67,7 +67,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        /// Array containing the list of values allowed for the parameter.
+        /// An array containing the list of values allowed for the parameter.
         /// </para>
         /// </summary>
         public List<string> AllowedValues
@@ -96,7 +96,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// 
         /// <para>
         /// By adding a constraint description, such as "must contain only uppercase and lowercase
-        /// letters, and numbers," you can display the following customized error message:
+        /// letters and numbers," you can display the following customized error message:
         /// </para>
         /// 
         /// <para>
@@ -157,8 +157,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property MaxLength. 
         /// <para>
-        /// An integer value that determines the largest number of characters you want to allow
-        /// for String types.
+        /// An integer value that determines the largest number of characters that you want to
+        /// allow for String types.
         /// </para>
         /// </summary>
         public int MaxLength
@@ -176,8 +176,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property MaxValue. 
         /// <para>
-        /// A numeric value that determines the largest numeric value you want to allow for Number
-        /// types.
+        /// A numeric value that determines the largest numeric value that you want to allow for
+        /// Number types.
         /// </para>
         /// </summary>
         public int MaxValue
@@ -195,8 +195,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property MinLength. 
         /// <para>
-        /// An integer value that determines the smallest number of characters you want to allow
-        /// for String types.
+        /// An integer value that determines the smallest number of characters that you want to
+        /// allow for String types.
         /// </para>
         /// </summary>
         public int MinLength
@@ -214,8 +214,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property MinValue. 
         /// <para>
-        /// A numeric value that determines the smallest numeric value you want to allow for Number
-        /// types.
+        /// A numeric value that determines the smallest numeric value that you want to allow
+        /// for Number types.
         /// </para>
         /// </summary>
         public int MinValue
@@ -301,28 +301,28 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// For example, users could specify "MyUserName".
+        /// For example, users can specify "MyUserName".
         /// </para>
         /// 
         /// <para>
         ///  Number: An integer or float. AWS CloudFormation validates the parameter value as
-        /// a number; however, when you use the parameter elsewhere in your template (for example,
+        /// a number. However, when you use the parameter elsewhere in your template (for example,
         /// by using the Ref intrinsic function), the parameter value becomes a string.
         /// </para>
         /// 
         /// <para>
-        /// For example, users could specify "8888".
+        /// For example, users might specify "8888".
         /// </para>
         /// 
         /// <para>
         ///  List&lt;Number>: An array of integers or floats that are separated by commas. AWS
-        /// CloudFormation validates the parameter value as numbers; however, when you use the
+        /// CloudFormation validates the parameter value as numbers. However, when you use the
         /// parameter elsewhere in your template (for example, by using the Ref intrinsic function),
         /// the parameter value becomes a list of strings.
         /// </para>
         /// 
         /// <para>
-        /// For example, users could specify "80,20", and a Ref results in ["80","20"].
+        /// For example, users might specify "80,20", and then Ref results in ["80","20"].
         /// </para>
         /// 
         /// <para>
@@ -332,7 +332,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+        /// For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
         /// </para>
         /// </summary>
         public string Type

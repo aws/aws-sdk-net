@@ -58,15 +58,15 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ChangeSetId. 
         /// <para>
-        /// The ARN of the change set.
+        /// The Amazon Resource Name (ARN) of the change set.
         /// </para>
         /// 
         /// <para>
-        /// Length Constraints: Minimum length of 1.
+        /// Length constraints: Minimum length of 1.
         /// </para>
         /// 
         /// <para>
-        /// Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+        /// Pattern: ARN:[-a-zA-Z0-9:/]*
         /// </para>
         /// </summary>
         public string ChangeSetId

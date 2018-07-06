@@ -69,7 +69,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=127.
+        /// Minimum length=1. Maximum length=127.
         /// </para>
         /// 
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date/time this resource was created.
+        /// The date and time this resource was created.
         /// </para>
         /// </summary>
         public string CreationTime
@@ -113,7 +113,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=256
+        /// Minimum length=1. Maximum length=256
         /// </para>
         /// </summary>
         public string Description
@@ -154,7 +154,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=127. Maximum number of labels: 10
+        /// Minimum length=1. Maximum length=127. Maximum number of labels: 10
         /// </para>
         /// 
         /// <para>
@@ -176,11 +176,11 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property LicenseUrl. 
         /// <para>
-        /// A link to a license file of the app that matches the spdxLicenseID of your application.
+        /// A link to a license file of the app that matches the spdxLicenseID value of your application.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
         /// </para>
         /// </summary>
         public string LicenseUrl
@@ -202,7 +202,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=140
+        /// Minimum length=1. Maximum length=140
         /// </para>
         /// 
         /// <para>
@@ -224,12 +224,12 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ReadmeUrl. 
         /// <para>
-        /// A link to the readme file that contains a more detailed description of the application
-        /// and how it works in Markdown language.
+        /// A link to the readme file in Markdown language that contains a more detailed description
+        /// of the application and how it works.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
         /// </para>
         /// </summary>
         public string ReadmeUrl

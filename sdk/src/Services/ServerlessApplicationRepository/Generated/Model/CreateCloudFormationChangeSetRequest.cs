@@ -29,7 +29,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCloudFormationChangeSet operation.
-    /// Creates an AWS CloudFormation ChangeSet for the given application.
+    /// Creates an AWS CloudFormation change set for the given application.
     /// </summary>
     public partial class CreateCloudFormationChangeSetRequest : AmazonServerlessApplicationRepositoryRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The ID of the application to get.
+        /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
         public string ApplicationId

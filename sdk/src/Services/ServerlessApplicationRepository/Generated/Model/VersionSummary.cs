@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
-    /// Application version summary.
+    /// An application version summary.
     /// </summary>
     public partial class VersionSummary
     {
@@ -58,7 +58,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date/time this resource was created.
+        /// The date and time this resource was created.
         /// </para>
         /// </summary>
         public string CreationTime

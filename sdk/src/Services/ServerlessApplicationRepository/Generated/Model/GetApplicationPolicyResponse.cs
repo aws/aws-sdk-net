@@ -37,7 +37,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Statements. 
         /// <para>
-        /// Array of policy statements applied to the application.
+        /// An array of policy statements applied to the application.
         /// </para>
         /// </summary>
         public List<ApplicationPolicyStatement> Statements

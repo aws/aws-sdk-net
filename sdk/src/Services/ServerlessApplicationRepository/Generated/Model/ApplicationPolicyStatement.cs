@@ -39,27 +39,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of supported actions:
-        /// </para>
-        /// 
-        /// <para>
-        ///  GetApplication 
-        /// </para>
-        /// 
-        /// <para>
-        ///  CreateCloudFormationChangeSet 
-        /// </para>
-        /// 
-        /// <para>
-        ///  ListApplicationVersions 
-        /// </para>
-        /// 
-        /// <para>
-        ///  SearchApplications 
-        /// </para>
-        /// 
-        /// <para>
-        ///  Deploy (Note: This action enables all other actions above.)
+        /// See <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+        /// Permissions</a> for the list of supported actions.
         /// </para>
         /// </summary>
         public List<string> Actions

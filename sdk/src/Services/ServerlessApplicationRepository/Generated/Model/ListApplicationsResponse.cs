@@ -38,7 +38,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// Array of application summaries.
+        /// An array of application summaries.
         /// </para>
         /// </summary>
         public List<ApplicationSummary> Applications
