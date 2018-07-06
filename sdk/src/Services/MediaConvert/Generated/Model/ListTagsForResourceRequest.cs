@@ -28,28 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Group of Audio Selectors
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Retrieve the tags for a MediaConvert resource.
     /// </summary>
-    public partial class AudioSelectorGroup
+    public partial class ListTagsForResourceRequest : AmazonMediaConvertRequest
     {
-        private List<string> _audioSelectorNames = new List<string>();
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property AudioSelectorNames. Name of an Audio Selector within the
-        /// same input to include in the group.  Audio selector names are standardized, based
-        /// on their order within the input (e.g., "Audio Selector 1"). The audio selector name
-        /// parameter can be repeated to add any number of audio selectors to the group.
+        /// Gets and sets the property Arn. The Amazon Resource Name (ARN) of the resource that
+        /// you want to list tags for. To get the ARN, send a GET request with the resource name.
         /// </summary>
-        public List<string> AudioSelectorNames
+        public string Arn
         {
-            get { return this._audioSelectorNames; }
-            set { this._audioSelectorNames = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if AudioSelectorNames property is set
-        internal bool IsSetAudioSelectorNames()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._audioSelectorNames != null && this._audioSelectorNames.Count > 0; 
+            return this._arn != null;
         }
 
     }

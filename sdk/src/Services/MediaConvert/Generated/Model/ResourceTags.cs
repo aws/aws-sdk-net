@@ -28,50 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateQueue operation.
-    /// Create a new transcoding queue. For information about job templates see the User Guide
-    /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
     /// </summary>
-    public partial class CreateQueueRequest : AmazonMediaConvertRequest
+    public partial class ResourceTags
     {
-        private string _description;
-        private string _name;
+        private string _arn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Description. Optional. A description of the queue you are
-        /// creating.
+        /// Gets and sets the property Arn. The Amazon Resource Name (ARN) of the resource.
         /// </summary>
-        public string Description
+        public string Arn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._description != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the queue you are creating.
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. The tags that you want to add to the resource. You
-        /// can tag resources with a key-value pair or with only a key.
+        /// Gets and sets the property Tags. The tags for the resource.
         /// </summary>
         public Dictionary<string, string> Tags
         {

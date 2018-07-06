@@ -28,28 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Group of Audio Selectors
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class AudioSelectorGroup
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<string> _audioSelectorNames = new List<string>();
+        private ResourceTags _resourceTags;
 
         /// <summary>
-        /// Gets and sets the property AudioSelectorNames. Name of an Audio Selector within the
-        /// same input to include in the group.  Audio selector names are standardized, based
-        /// on their order within the input (e.g., "Audio Selector 1"). The audio selector name
-        /// parameter can be repeated to add any number of audio selectors to the group.
+        /// Gets and sets the property ResourceTags.
         /// </summary>
-        public List<string> AudioSelectorNames
+        public ResourceTags ResourceTags
         {
-            get { return this._audioSelectorNames; }
-            set { this._audioSelectorNames = value; }
+            get { return this._resourceTags; }
+            set { this._resourceTags = value; }
         }
 
-        // Check to see if AudioSelectorNames property is set
-        internal bool IsSetAudioSelectorNames()
+        // Check to see if ResourceTags property is set
+        internal bool IsSetResourceTags()
         {
-            return this._audioSelectorNames != null && this._audioSelectorNames.Count > 0; 
+            return this._resourceTags != null;
         }
 
     }

@@ -39,7 +39,9 @@ namespace Amazon.MediaConvert.Model
         private string _description;
         private DateTime? _lastUpdated;
         private string _name;
+        private int? _progressingJobsCount;
         private QueueStatus _status;
+        private int? _submittedJobsCount;
         private Type _type;
 
         /// <summary>
@@ -122,6 +124,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProgressingJobsCount. Estimated number of jobs in PROGRESSING
+        /// status.
+        /// </summary>
+        public int ProgressingJobsCount
+        {
+            get { return this._progressingJobsCount.GetValueOrDefault(); }
+            set { this._progressingJobsCount = value; }
+        }
+
+        // Check to see if ProgressingJobsCount property is set
+        internal bool IsSetProgressingJobsCount()
+        {
+            return this._progressingJobsCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status.
         /// </summary>
         public QueueStatus Status
@@ -134,6 +152,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubmittedJobsCount. Estimated number of jobs in SUBMITTED
+        /// status.
+        /// </summary>
+        public int SubmittedJobsCount
+        {
+            get { return this._submittedJobsCount.GetValueOrDefault(); }
+            set { this._submittedJobsCount = value; }
+        }
+
+        // Check to see if SubmittedJobsCount property is set
+        internal bool IsSetSubmittedJobsCount()
+        {
+            return this._submittedJobsCount.HasValue; 
         }
 
         /// <summary>

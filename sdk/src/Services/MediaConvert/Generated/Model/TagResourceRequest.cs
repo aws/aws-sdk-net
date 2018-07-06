@@ -28,45 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateQueue operation.
-    /// Create a new transcoding queue. For information about job templates see the User Guide
-    /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// Container for the parameters to the TagResource operation.
+    /// Tag a MediaConvert queue, preset, or job template. For information about these resource
+    /// types, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     /// </summary>
-    public partial class CreateQueueRequest : AmazonMediaConvertRequest
+    public partial class TagResourceRequest : AmazonMediaConvertRequest
     {
-        private string _description;
-        private string _name;
+        private string _arn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Description. Optional. A description of the queue you are
-        /// creating.
+        /// Gets and sets the property Arn. The Amazon Resource Name (ARN) of the resource that
+        /// you want to tag. To get the ARN, send a GET request with the resource name.
         /// </summary>
-        public string Description
+        public string Arn
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. The name of the queue you are creating.
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
+            return this._arn != null;
         }
 
         /// <summary>
