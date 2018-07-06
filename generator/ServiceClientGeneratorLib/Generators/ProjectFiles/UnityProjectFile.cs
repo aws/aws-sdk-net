@@ -262,7 +262,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
       <HintPath>");
             
             #line 101 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\UnityProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.dll")));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "Managed", "UnityEngine.dll")));
             
             #line default
             #line hidden
