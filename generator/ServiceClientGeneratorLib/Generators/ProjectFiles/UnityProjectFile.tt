@@ -98,7 +98,8 @@
     <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "PlaybackEngines", "windowsstandalonesupport", "Managed", "UnityEngine.dll")#></HintPath>
+	<!-- create the path of reference UnityEngine for Unity projects  -->
+      <HintPath><#=Path.Combine((string)this.Session["UnityPath"], "Editor", "Data", "Managed", "UnityEngine.dll")#></HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
