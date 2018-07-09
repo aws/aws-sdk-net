@@ -96,6 +96,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// or CdcStartPosition to specify when you want a CDC operation to start. Specifying
         /// both values results in an error.
         /// </para>
+        ///  
+        /// <para>
+        /// Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+        /// </para>
         /// </summary>
         public DateTime CdcStartTime
         {

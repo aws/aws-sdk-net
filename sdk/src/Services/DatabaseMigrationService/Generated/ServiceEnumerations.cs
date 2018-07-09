@@ -395,6 +395,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type ReloadOptionValue.
+    /// </summary>
+    public class ReloadOptionValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DataReload for ReloadOptionValue
+        /// </summary>
+        public static readonly ReloadOptionValue DataReload = new ReloadOptionValue("data-reload");
+        /// <summary>
+        /// Constant ValidateOnly for ReloadOptionValue
+        /// </summary>
+        public static readonly ReloadOptionValue ValidateOnly = new ReloadOptionValue("validate-only");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReloadOptionValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReloadOptionValue FindValue(string value)
+        {
+            return FindValue<ReloadOptionValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReloadOptionValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicationEndpointTypeValue.
     /// </summary>
     public class ReplicationEndpointTypeValue : ConstantClass

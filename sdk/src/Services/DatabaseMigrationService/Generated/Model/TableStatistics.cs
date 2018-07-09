@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private long? _validationFailedRecords;
         private long? _validationPendingRecords;
         private string _validationState;
+        private string _validationStateDetails;
         private long? _validationSuspendedRecords;
 
         /// <summary>
@@ -345,6 +346,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetValidationState()
         {
             return this._validationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStateDetails. 
+        /// <para>
+        /// Additional details about the state of validation.
+        /// </para>
+        /// </summary>
+        public string ValidationStateDetails
+        {
+            get { return this._validationStateDetails; }
+            set { this._validationStateDetails = value; }
+        }
+
+        // Check to see if ValidationStateDetails property is set
+        internal bool IsSetValidationStateDetails()
+        {
+            return this._validationStateDetails != null;
         }
 
         /// <summary>

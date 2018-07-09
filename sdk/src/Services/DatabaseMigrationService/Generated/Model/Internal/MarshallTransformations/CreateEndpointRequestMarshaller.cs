@@ -79,6 +79,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatabaseName);
                 }
 
+                if(publicRequest.IsSetDmsTransferSettings())
+                {
+                    context.Writer.WritePropertyName("DmsTransferSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DmsTransferSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DmsTransferSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDynamoDbSettings())
                 {
                     context.Writer.WritePropertyName("DynamoDbSettings");
