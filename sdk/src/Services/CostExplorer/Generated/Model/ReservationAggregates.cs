@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The aggregated numbers for your RI usage.
+    /// The aggregated numbers for your Reserved Instance (RI) usage.
     /// </summary>
     public partial class ReservationAggregates
     {
@@ -82,8 +82,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetRISavings. 
         /// <para>
-        /// How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting
-        /// the <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+        /// How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+        /// <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
         /// </para>
         /// </summary>
         public string NetRISavings

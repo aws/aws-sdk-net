@@ -31,6 +31,10 @@ namespace Amazon.CostExplorer
     {
 
         /// <summary>
+        /// Constant LINKED for AccountScope
+        /// </summary>
+        public static readonly AccountScope LINKED = new AccountScope("LINKED");
+        /// <summary>
         /// Constant PAYER for AccountScope
         /// </summary>
         public static readonly AccountScope PAYER = new AccountScope("PAYER");

@@ -62,8 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        /// How many days of previous usage that AWS takes into consideration when making this
-        /// recommendation.
+        /// How many days of previous usage that AWS considers when making this recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays

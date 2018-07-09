@@ -70,6 +70,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DatabaseEdition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseEdition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatabaseEngine", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

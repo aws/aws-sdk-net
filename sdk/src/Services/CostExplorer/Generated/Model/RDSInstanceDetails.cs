@@ -33,6 +33,7 @@ namespace Amazon.CostExplorer.Model
     public partial class RDSInstanceDetails
     {
         private bool? _currentGeneration;
+        private string _databaseEdition;
         private string _databaseEngine;
         private string _deploymentOption;
         private string _family;
@@ -60,6 +61,24 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseEdition. 
+        /// <para>
+        /// The database edition that the recommended reservation supports.
+        /// </para>
+        /// </summary>
+        public string DatabaseEdition
+        {
+            get { return this._databaseEdition; }
+            set { this._databaseEdition = value; }
+        }
+
+        // Check to see if DatabaseEdition property is set
+        internal bool IsSetDatabaseEdition()
+        {
+            return this._databaseEdition != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatabaseEngine. 
         /// <para>
         /// The database engine that the recommended reservation supports.
@@ -80,8 +99,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DeploymentOption. 
         /// <para>
-        /// Whether the recommendation is for a reservation in a single availability zone or a
-        /// reservation with a backup in a second availability zone.
+        /// Whether the recommendation is for a reservation in a single Availability Zone or a
+        /// reservation with a backup in a second Availability Zone.
         /// </para>
         /// </summary>
         public string DeploymentOption

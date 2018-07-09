@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A group of RIs that share a set of attributes.
+    /// A group of Reserved Instances (RIs) that share a set of attributes.
     /// </summary>
     public partial class ReservationUtilizationGroup
     {
