@@ -30,7 +30,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public ByteRange(long start, long end)
+        public ByteRange(long? start, long? end)
         {
             this.Start = start;
             this.End = end;
