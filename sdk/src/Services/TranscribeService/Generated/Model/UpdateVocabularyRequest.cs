@@ -29,7 +29,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVocabulary operation.
-    /// Updates an existing vocabulary with new values.
+    /// Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
+    /// operation overwrites all of the existing information with the values that you provide
+    /// in the request.
     /// </summary>
     public partial class UpdateVocabularyRequest : AmazonTranscribeServiceRequest
     {

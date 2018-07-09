@@ -37,6 +37,7 @@ namespace Amazon.TranscribeService.Model
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
+        private string _outputBucketName;
         private Settings _settings;
         private string _transcriptionJobName;
 
@@ -113,6 +114,40 @@ namespace Amazon.TranscribeService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputBucketName. 
+        /// <para>
+        /// The location where the transcription is stored.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription
+        /// in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation,
+        /// the operation returns this location in the <code>TranscriptFileUri</code> field. The
+        /// S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+        /// Required for IAM User Roles</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a
+        /// pre-signed URL, a shareable URL that provides secure access to your transcription,
+        /// and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download
+        /// the transcription.
+        /// </para>
+        /// </summary>
+        public string OutputBucketName
+        {
+            get { return this._outputBucketName; }
+            set { this._outputBucketName = value; }
+        }
+
+        // Check to see if OutputBucketName property is set
+        internal bool IsSetOutputBucketName()
+        {
+            return this._outputBucketName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
         /// A <code>Settings</code> object that provides optional settings for a transcription
@@ -134,7 +169,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the job. The name must be unique within an AWS account.
+        /// The name of the job. You can't use the strings "." or ".." in the job name. The name
+        /// must be unique within an AWS account.
         /// </para>
         /// </summary>
         public string TranscriptionJobName

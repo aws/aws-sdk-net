@@ -237,12 +237,19 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The <code>JobName</code> field is a duplicate of a previously entered job name. Resend
-        /// your request with a different name.
+        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// field is a duplicate of a previously entered job name. Resend your request with a
+        /// different name.
+        /// 
+        ///  
+        /// <para>
+        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+        /// running at the same time. Resend the second request later.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -290,6 +297,11 @@ namespace Amazon.TranscribeService
         /// <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
         /// 
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. For example, a name already
+        /// exists when creating a resource or a name may not exist when getting a transcription
+        /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
+        /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
         /// </exception>
@@ -298,8 +310,7 @@ namespace Amazon.TranscribeService
         /// you resend your request, or use a smaller file and resend the request.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
-        /// We can't find the requested transcription job or custom vocabulary. Check the name
-        /// and try your request again.
+        /// We can't find the requested resource. Check the name and try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
         public virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
@@ -345,7 +356,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -356,8 +367,7 @@ namespace Amazon.TranscribeService
         /// you resend your request, or use a smaller file and resend the request.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
-        /// We can't find the requested transcription job or custom vocabulary. Check the name
-        /// and try your request again.
+        /// We can't find the requested resource. Check the name and try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual GetTranscriptionJobResponse GetTranscriptionJob(GetTranscriptionJobRequest request)
@@ -400,7 +410,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -411,8 +421,7 @@ namespace Amazon.TranscribeService
         /// you resend your request, or use a smaller file and resend the request.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
-        /// We can't find the requested transcription job or custom vocabulary. Check the name
-        /// and try your request again.
+        /// We can't find the requested resource. Check the name and try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
         public virtual GetVocabularyResponse GetVocabulary(GetVocabularyRequest request)
@@ -455,7 +464,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -507,7 +516,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -558,12 +567,19 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
-        /// The <code>JobName</code> field is a duplicate of a previously entered job name. Resend
-        /// your request with a different name.
+        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// field is a duplicate of a previously entered job name. Resend your request with a
+        /// different name.
+        /// 
+        ///  
+        /// <para>
+        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+        /// running at the same time. Resend the second request later.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -606,15 +622,28 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Updates an existing vocabulary with new values.
+        /// Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
+        /// operation overwrites all of the existing information with the values that you provide
+        /// in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// 
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, a name already
-        /// exists when createing a resource or a name may not exist when getting a transcription
+        /// exists when creating a resource or a name may not exist when getting a transcription
         /// job or custom vocabulary. See the exception <code>Message</code> field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+        /// field is a duplicate of a previously entered job name. Resend your request with a
+        /// different name.
+        /// 
+        ///  
+        /// <para>
+        /// When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+        /// running at the same time. Resend the second request later.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -624,8 +653,7 @@ namespace Amazon.TranscribeService
         /// you resend your request, or use a smaller file and resend the request.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
-        /// We can't find the requested transcription job or custom vocabulary. Check the name
-        /// and try your request again.
+        /// We can't find the requested resource. Check the name and try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
         public virtual UpdateVocabularyResponse UpdateVocabulary(UpdateVocabularyRequest request)
