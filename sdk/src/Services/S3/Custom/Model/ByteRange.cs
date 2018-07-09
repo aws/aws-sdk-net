@@ -39,7 +39,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The starting byte number of the range
         /// </summary>
-        public long Start
+        public long? Start
         {
             get;
             set;
@@ -48,7 +48,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The ending byte number of the range
         /// </summary>
-        public long End
+        public long? End
         {
             get;
             set;
@@ -61,6 +61,8 @@ namespace Amazon.S3.Model
         {
             get
             {
+                if(this.End == null && this.Start == null)
+                    return null;
                 return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", this.Start, this.End);
             }
         }
