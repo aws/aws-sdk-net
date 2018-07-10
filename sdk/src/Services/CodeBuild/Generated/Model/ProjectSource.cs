@@ -37,6 +37,7 @@ namespace Amazon.CodeBuild.Model
         private int? _gitCloneDepth;
         private bool? _insecureSsl;
         private string _location;
+        private bool? _reportBuildStatus;
         private SourceType _type;
 
         /// <summary>
@@ -184,6 +185,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportBuildStatus. 
+        /// <para>
+        ///  Set to true to report the status of a build's start and finish to your source provider.
+        /// This option is only valid when your source provider is GitHub. If this is set and
+        /// you use a different source provider, an invalidInputException is thrown. 
+        /// </para>
+        /// </summary>
+        public bool ReportBuildStatus
+        {
+            get { return this._reportBuildStatus.GetValueOrDefault(); }
+            set { this._reportBuildStatus = value; }
+        }
+
+        // Check to see if ReportBuildStatus property is set
+        internal bool IsSetReportBuildStatus()
+        {
+            return this._reportBuildStatus.HasValue; 
         }
 
         /// <summary>

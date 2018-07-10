@@ -46,6 +46,7 @@ namespace Amazon.CodeBuild.Model
         private bool? _insecureSslOverride;
         private bool? _privilegedModeOverride;
         private string _projectName;
+        private bool? _reportBuildStatusOverride;
         private string _serviceRoleOverride;
         private SourceAuth _sourceAuthOverride;
         private string _sourceLocationOverride;
@@ -299,6 +300,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReportBuildStatusOverride. 
+        /// <para>
+        ///  Set to true to report to your source provider the status of a build's start and completion.
+        /// If you use this option with a source provider other than GitHub, an invalidInputException
+        /// is thrown. 
+        /// </para>
+        /// </summary>
+        public bool ReportBuildStatusOverride
+        {
+            get { return this._reportBuildStatusOverride.GetValueOrDefault(); }
+            set { this._reportBuildStatusOverride = value; }
+        }
+
+        // Check to see if ReportBuildStatusOverride property is set
+        internal bool IsSetReportBuildStatusOverride()
+        {
+            return this._reportBuildStatusOverride.HasValue; 
         }
 
         /// <summary>

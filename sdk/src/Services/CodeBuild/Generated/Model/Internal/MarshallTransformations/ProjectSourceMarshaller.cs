@@ -80,6 +80,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Location);
             }
 
+            if(requestObject.IsSetReportBuildStatus())
+            {
+                context.Writer.WritePropertyName("reportBuildStatus");
+                context.Writer.Write(requestObject.ReportBuildStatus);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
