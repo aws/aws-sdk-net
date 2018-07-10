@@ -1,3 +1,15 @@
+### 3.3.315.0 (2018-07-10 21:11 UTC)
+* AppStream (3.3.15.0)
+	* This API update adds pagination to the DescribeImages API to support future features and enhancements.
+* CodeBuild (3.3.12.0)
+	* API changes to CodeBuild service, support report build status for Github sources
+* EC2 (3.3.55.0)
+	* Support CpuOptions field in Launch Template data and allow Launch Template name to contain hyphen.
+* Glue (3.3.9.0)
+	* AWS Glue adds the ability to crawl DynamoDB tables.
+* OpsWorks (3.3.3.10)
+	* Documentation updates for AWS OpsWorks Stacks.
+
 ### 3.3.314.1 (2018-07-10 01:40 UTC)
 * ApplicationAutoScaling (3.3.10.1)
 	* Documentation updates for application-autoscaling
