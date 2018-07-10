@@ -1,3 +1,7 @@
+### 3.3.314.1 (2018-07-10 01:40 UTC)
+* ApplicationAutoScaling (3.3.10.1)
+	* Documentation updates for application-autoscaling
+
 ### 3.3.314.0 (2018-07-09 20:26 UTC)
 * ApplicationAutoScaling (3.3.10.0)
 	* The release adds support for custom resource auto scaling.

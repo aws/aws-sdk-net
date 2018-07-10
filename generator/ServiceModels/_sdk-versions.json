@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.314.0",
+    "ProductVersion" : "3.3.314.1",
     "CoreVersion"    : "3.3.24.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -553,7 +553,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.3.10.0",
+            "Version" : "3.3.10.1",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
