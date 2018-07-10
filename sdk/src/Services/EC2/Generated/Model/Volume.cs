@@ -124,8 +124,8 @@ namespace Amazon.EC2.Model
         /// IOPS SSD volumes, this represents the number of IOPS that are provisioned for the
         /// volume. For General Purpose SSD volumes, this represents the baseline performance
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
-        /// For more information on General Purpose SSD baseline performance, I/O credits, and
-        /// bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// For more information about General Purpose SSD baseline performance, I/O credits,
+        /// and bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

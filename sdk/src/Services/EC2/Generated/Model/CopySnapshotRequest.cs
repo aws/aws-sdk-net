@@ -42,17 +42,17 @@ namespace Amazon.EC2.Model
     /// Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
     /// a non-default CMK with the <code>KmsKeyId</code> parameter. 
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// To copy an encrypted snapshot that has been shared from another account, you must
     /// have permissions for the CMK used to encrypt the snapshot.
     /// </para>
-    ///  </note> <note> 
+    ///  
     /// <para>
-    /// Snapshots created by the CopySnapshot action have an arbitrary volume ID that should
+    /// Snapshots created by copying another snapshot have an arbitrary volume ID that should
     /// not be used for any purpose.
     /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
     /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -93,14 +93,13 @@ namespace Amazon.EC2.Model
         /// copy operation. This parameter is only valid for specifying the destination region
         /// in a <code>PresignedUrl</code> parameter, where it is required.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        ///  <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you
-        /// send the HTTP request to, such as <code>ec2.us-east-1.amazonaws.com</code> (in the
-        /// AWS CLI, this is specified with the <code>--region</code> parameter or the default
-        /// region in your AWS configuration file).
+        /// The snapshot copy is sent to the regional endpoint that you sent the HTTP request
+        /// to (for example, <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this
+        /// is specified using the <code>--region</code> parameter or the default region in your
+        /// AWS configuration file.
         /// </para>
-        ///  </note>
         /// </summary>
         public string DestinationRegion
         {

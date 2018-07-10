@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class ResponseLaunchTemplateData
     {
         private List<LaunchTemplateBlockDeviceMapping> _blockDeviceMappings = new List<LaunchTemplateBlockDeviceMapping>();
+        private LaunchTemplateCpuOptions _cpuOptions;
         private CreditSpecification _creditSpecification;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
@@ -69,6 +70,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The CPU options for the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+        /// CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateCpuOptions CpuOptions
+        {
+            get { return this._cpuOptions; }
+            set { this._cpuOptions = value; }
+        }
+
+        // Check to see if CpuOptions property is set
+        internal bool IsSetCpuOptions()
+        {
+            return this._cpuOptions != null;
         }
 
         /// <summary>

@@ -115,6 +115,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetCoreCount())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));
+                        }
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetThreadsPerCore())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.ThreadsPerCore));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetCreditSpecification())
                     {
                         if(publicRequest.LaunchTemplateData.CreditSpecification.IsSetCpuCredits())

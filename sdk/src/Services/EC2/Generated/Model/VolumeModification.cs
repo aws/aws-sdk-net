@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Modification completion or failure time.
+        /// The modification completion or failure time.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -71,8 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ModificationState. 
         /// <para>
-        /// Current state of modification. Modification state is null for unmodified volumes.
-        /// 
+        /// The current modification state. The modification state is null for unmodified volumes.
         /// </para>
         /// </summary>
         public VolumeModificationState ModificationState
@@ -90,7 +89,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OriginalIops. 
         /// <para>
-        /// Original IOPS rate of the volume being modified.
+        /// The original IOPS rate of the volume.
         /// </para>
         /// </summary>
         public int OriginalIops
@@ -108,7 +107,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OriginalSize. 
         /// <para>
-        /// Original size of the volume being modified.
+        /// The original size of the volume.
         /// </para>
         /// </summary>
         public int OriginalSize
@@ -126,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OriginalVolumeType. 
         /// <para>
-        /// Original EBS volume type of the volume being modified.
+        /// The original EBS volume type of the volume.
         /// </para>
         /// </summary>
         public VolumeType OriginalVolumeType
@@ -144,7 +143,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Progress. 
         /// <para>
-        /// Modification progress from 0 to 100%.
+        /// The modification progress, from 0 to 100 percent complete.
         /// </para>
         /// </summary>
         public long Progress
@@ -162,7 +161,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Modification start time 
+        /// The modification start time.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -180,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Generic status message on modification progress or failure.
+        /// A status message about the modification progress or failure.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -198,7 +197,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetIops. 
         /// <para>
-        /// Target IOPS rate of the volume being modified.
+        /// The target IOPS rate of the volume.
         /// </para>
         /// </summary>
         public int TargetIops
@@ -216,7 +215,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetSize. 
         /// <para>
-        /// Target size of the volume being modified.
+        /// The target size of the volume, in GiB.
         /// </para>
         /// </summary>
         public int TargetSize
@@ -234,7 +233,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetVolumeType. 
         /// <para>
-        /// Target EBS volume type of the volume being modified.
+        /// The target EBS volume type of the volume.
         /// </para>
         /// </summary>
         public VolumeType TargetVolumeType
@@ -252,7 +251,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// ID of the volume being modified.
+        /// The ID of the volume.
         /// </para>
         /// </summary>
         public string VolumeId
