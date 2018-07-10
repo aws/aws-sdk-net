@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartCrawler operation.
-    /// Starts a crawl using the specified crawler, regardless of what is scheduled. If the
-    /// crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.
+    /// Specifies a DynamoDB table to crawl.
     /// </summary>
-    public partial class StartCrawlerRequest : AmazonGlueRequest
+    public partial class DynamoDBTarget
     {
-        private string _name;
+        private string _path;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Path. 
         /// <para>
-        /// Name of the crawler to start.
+        /// The name of the DynamoDB table to crawl.
         /// </para>
         /// </summary>
-        public string Name
+        public string Path
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._path; }
+            set { this._path = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Path property is set
+        internal bool IsSetPath()
         {
-            return this._name != null;
+            return this._path != null;
         }
 
     }

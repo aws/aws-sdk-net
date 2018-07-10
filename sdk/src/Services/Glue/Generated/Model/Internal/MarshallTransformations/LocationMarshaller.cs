@@ -45,6 +45,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Location requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDynamoDB())
+            {
+                context.Writer.WritePropertyName("DynamoDB");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDynamoDBListValue in requestObject.DynamoDB)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CodeGenNodeArgMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDynamoDBListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetJdbc())
             {
                 context.Writer.WritePropertyName("Jdbc");

@@ -32,8 +32,27 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CrawlerTargets
     {
+        private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
         private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
         private List<S3Target> _s3Targets = new List<S3Target>();
+
+        /// <summary>
+        /// Gets and sets the property DynamoDBTargets. 
+        /// <para>
+        /// Specifies DynamoDB targets.
+        /// </para>
+        /// </summary>
+        public List<DynamoDBTarget> DynamoDBTargets
+        {
+            get { return this._dynamoDBTargets; }
+            set { this._dynamoDBTargets = value; }
+        }
+
+        // Check to see if DynamoDBTargets property is set
+        internal bool IsSetDynamoDBTargets()
+        {
+            return this._dynamoDBTargets != null && this._dynamoDBTargets.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property JdbcTargets. 
