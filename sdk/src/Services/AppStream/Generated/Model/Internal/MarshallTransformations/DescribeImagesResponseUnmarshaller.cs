@@ -57,6 +57,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     response.Images = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

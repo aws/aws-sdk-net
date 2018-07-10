@@ -34,7 +34,27 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeImagesRequest : AmazonAppStreamRequest
     {
+        private int? _maxResults;
         private List<string> _names = new List<string>();
+        private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum size of each results page.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Names. 
@@ -52,6 +72,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetNames()
         {
             return this._names != null && this._names.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results. If this value is
+        /// empty, only the first page is retrieved.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

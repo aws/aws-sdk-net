@@ -33,6 +33,7 @@ namespace Amazon.AppStream.Model
     public partial class DescribeImagesResponse : AmazonWebServiceResponse
     {
         private List<Image> _images = new List<Image>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Images. 
@@ -50,6 +51,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetImages()
         {
             return this._images != null && this._images.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token used to retrieve the next page of results. If this value is empty,
+        /// only the first page is retrieved.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

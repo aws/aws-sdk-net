@@ -811,6 +811,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTOR_HOMEFOLDERS = new StackAttribute("STORAGE_CONNECTOR_HOMEFOLDERS");
         /// <summary>
+        /// Constant STORAGE_CONNECTOR_ONE_DRIVE for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute STORAGE_CONNECTOR_ONE_DRIVE = new StackAttribute("STORAGE_CONNECTOR_ONE_DRIVE");
+        /// <summary>
         /// Constant STORAGE_CONNECTORS for StackAttribute
         /// </summary>
         public static readonly StackAttribute STORAGE_CONNECTORS = new StackAttribute("STORAGE_CONNECTORS");
@@ -922,6 +926,10 @@ namespace Amazon.AppStream
         /// Constant HOMEFOLDERS for StorageConnectorType
         /// </summary>
         public static readonly StorageConnectorType HOMEFOLDERS = new StorageConnectorType("HOMEFOLDERS");
+        /// <summary>
+        /// Constant ONE_DRIVE for StorageConnectorType
+        /// </summary>
+        public static readonly StorageConnectorType ONE_DRIVE = new StorageConnectorType("ONE_DRIVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
