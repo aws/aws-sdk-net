@@ -35,7 +35,10 @@ namespace Amazon.OpsWorks.Model
         private List<OperatingSystem> _operatingSystems = new List<OperatingSystem>();
 
         /// <summary>
-        /// Gets and sets the property OperatingSystems.
+        /// Gets and sets the property OperatingSystems. 
+        /// <para>
+        /// Contains information in response to a <code>DescribeOperatingSystems</code> request.
+        /// </para>
         /// </summary>
         public List<OperatingSystem> OperatingSystems
         {

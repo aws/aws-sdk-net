@@ -47,7 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property EcsClusterArn. 
         /// <para>
-        /// The cluster's ARN.
+        /// The cluster's Amazon Resource Number (ARN).
         /// </para>
         /// </summary>
         public string EcsClusterArn

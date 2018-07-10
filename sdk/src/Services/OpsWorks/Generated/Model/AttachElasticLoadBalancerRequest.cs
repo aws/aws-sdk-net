@@ -74,7 +74,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LayerId. 
         /// <para>
-        /// The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+        /// The ID of the layer to which the Elastic Load Balancing instance is to be attached.
         /// </para>
         /// </summary>
         public string LayerId

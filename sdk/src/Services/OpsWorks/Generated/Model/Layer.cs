@@ -57,7 +57,10 @@ namespace Amazon.OpsWorks.Model
         private List<VolumeConfiguration> _volumeConfigurations = new List<VolumeConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of a layer.
+        /// </para>
         /// </summary>
         public string Arn
         {
