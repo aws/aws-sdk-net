@@ -147,6 +147,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and
         /// the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom resources are not supported with a resource type. This parameter must specify
+        /// the <code>OutputValue</code> from the CloudFormation template stack used to access
+        /// the resources. The unique identifier is defined by the service provider.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -216,6 +222,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances
         /// for an Amazon SageMaker model endpoint variant.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a
+        /// custom resource provided by your own application or service.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
@@ -233,7 +244,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// The namespace of the AWS service that provides the resource or <code>custom-resource</code>
+        /// for a resource provided by your own application or service. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
