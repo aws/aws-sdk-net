@@ -38,7 +38,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private FailureDetails _failureDetails;
         private string _failureMessage;
         private Dictionary<string, string> _inputs = new Dictionary<string, string>();
+        private bool? _isCritical;
+        private bool? _isEnd;
         private int? _maxAttempts;
+        private string _nextStep;
         private string _onFailure;
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
         private Dictionary<string, List<string>> _overriddenParameters = new Dictionary<string, List<string>>();
@@ -48,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _stepName;
         private AutomationExecutionStatus _stepStatus;
         private long? _timeoutSeconds;
+        private List<string> _validNextSteps = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -160,6 +164,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsCritical. 
+        /// <para>
+        /// Enable this option to designate a step as critical for the successful completion of
+        /// the Automation. If a step with this designation fails, then Automation reports the
+        /// final status of the Automation as Failed. 
+        /// </para>
+        /// </summary>
+        public bool IsCritical
+        {
+            get { return this._isCritical.GetValueOrDefault(); }
+            set { this._isCritical = value; }
+        }
+
+        // Check to see if IsCritical property is set
+        internal bool IsSetIsCritical()
+        {
+            return this._isCritical.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsEnd. 
+        /// <para>
+        /// Enable this option to stop an Automation execution at the end of a specific step.
+        /// The Automation execution stops if the step execution failed or succeeded.
+        /// </para>
+        /// </summary>
+        public bool IsEnd
+        {
+            get { return this._isEnd.GetValueOrDefault(); }
+            set { this._isEnd = value; }
+        }
+
+        // Check to see if IsEnd property is set
+        internal bool IsSetIsEnd()
+        {
+            return this._isEnd.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxAttempts. 
         /// <para>
         /// The maximum number of tries to run the action of the step. The default value is 1.
@@ -175,6 +218,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetMaxAttempts()
         {
             return this._maxAttempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextStep. 
+        /// <para>
+        /// Specifies which step in an Automation to process next after successfully completing
+        /// a step. 
+        /// </para>
+        /// </summary>
+        public string NextStep
+        {
+            get { return this._nextStep; }
+            set { this._nextStep = value; }
+        }
+
+        // Check to see if NextStep property is set
+        internal bool IsSetNextStep()
+        {
+            return this._nextStep != null;
         }
 
         /// <summary>
@@ -338,6 +400,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTimeoutSeconds()
         {
             return this._timeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidNextSteps. 
+        /// <para>
+        /// ValidNextSteps offer different strategies for managing an Automation workflow when
+        /// a step finishes. Automation dynamically processes ValidNextSteps when a step is completed.
+        /// For example, you can specify <code>Abort</code> to stop the Automation when a step
+        /// fails or <code>Continue</code> to ignore the failure of the current step and allow
+        /// Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i>
+        /// </code> to jump to a designated step after a step succeeds. The result of the current
+        /// step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep
+        /// is designated, then the Automation stops.
+        /// </para>
+        /// </summary>
+        public List<string> ValidNextSteps
+        {
+            get { return this._validNextSteps; }
+            set { this._validNextSteps = value; }
+        }
+
+        // Check to see if ValidNextSteps property is set
+        internal bool IsSetValidNextSteps()
+        {
+            return this._validNextSteps != null && this._validNextSteps.Count > 0; 
         }
 
     }
