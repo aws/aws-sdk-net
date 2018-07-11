@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InstanceDetails Object
+    /// Response Unmarshaller for ElastiCacheInstanceDetails Object
     /// </summary>  
-    public class InstanceDetailsUnmarshaller : IUnmarshaller<InstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<InstanceDetails, JsonUnmarshallerContext>
+    public class ElastiCacheInstanceDetailsUnmarshaller : IUnmarshaller<ElastiCacheInstanceDetails, XmlUnmarshallerContext>, IUnmarshaller<ElastiCacheInstanceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InstanceDetails IUnmarshaller<InstanceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElastiCacheInstanceDetails IUnmarshaller<ElastiCacheInstanceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,51 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InstanceDetails Unmarshall(JsonUnmarshallerContext context)
+        public ElastiCacheInstanceDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InstanceDetails unmarshalledObject = new InstanceDetails();
+            ElastiCacheInstanceDetails unmarshalledObject = new ElastiCacheInstanceDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EC2InstanceDetails", targetDepth))
+                if (context.TestExpression("CurrentGeneration", targetDepth))
                 {
-                    var unmarshaller = EC2InstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CurrentGeneration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ElastiCacheInstanceDetails", targetDepth))
+                if (context.TestExpression("Family", targetDepth))
                 {
-                    var unmarshaller = ElastiCacheInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ElastiCacheInstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Family = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ESInstanceDetails", targetDepth))
+                if (context.TestExpression("NodeType", targetDepth))
                 {
-                    var unmarshaller = ESInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RDSInstanceDetails", targetDepth))
+                if (context.TestExpression("ProductDescription", targetDepth))
                 {
-                    var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RedshiftInstanceDetails", targetDepth))
+                if (context.TestExpression("Region", targetDepth))
                 {
-                    var unmarshaller = RedshiftInstanceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftInstanceDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SizeFlexEligible", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.SizeFlexEligible = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceDetailsUnmarshaller _instance = new InstanceDetailsUnmarshaller();        
+        private static ElastiCacheInstanceDetailsUnmarshaller _instance = new ElastiCacheInstanceDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceDetailsUnmarshaller Instance
+        public static ElastiCacheInstanceDetailsUnmarshaller Instance
         {
             get
             {
