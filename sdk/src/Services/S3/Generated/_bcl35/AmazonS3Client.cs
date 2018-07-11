@@ -242,7 +242,7 @@ namespace Amazon.S3
         /// <summary>
         /// Aborts a multipart upload.
         /// 
-        /// 
+        ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
@@ -266,7 +266,7 @@ namespace Amazon.S3
         /// <summary>
         /// Aborts a multipart upload.
         /// 
-        /// 
+        ///  
         /// <para>
         /// To verify that all parts have been removed, so you don't get charged for the part
         /// storage, you should call the List Parts operation and ensure the parts list is empty.
@@ -2738,9 +2738,9 @@ namespace Amazon.S3
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
         /// 
-        /// 
+        ///  
         /// <para>
-        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        ///  <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for
         /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
         /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
@@ -2762,9 +2762,9 @@ namespace Amazon.S3
         /// <summary>
         /// Initiates a multipart upload and returns an upload ID.
         /// 
-        /// 
+        ///  
         /// <para>
-        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        ///  <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for
         /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
         /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
@@ -4610,9 +4610,9 @@ namespace Amazon.S3
         /// <summary>
         /// Uploads a part in a multipart upload.
         /// 
-        /// 
+        ///  
         /// <para>
-        /// <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
+        ///  <b>Note:</b> After you initiate multipart upload and upload one or more parts, you
         /// must either complete or abort multipart upload in order to stop getting charged for
         /// storage of the uploaded parts. Only after you either complete or abort multipart upload,
         /// Amazon S3 frees up the parts storage and stops charging you for the parts storage.
