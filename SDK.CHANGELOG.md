@@ -1,3 +1,13 @@
+### 3.3.316.0 (2018-07-11 21:44 UTC)
+* APIGateway (3.3.19.0)
+	* Support for fine grain throttling for API gateway. 
+* CostExplorer (3.3.6.0)
+	* Starting today, you can access custom Reserved Instance (RI) purchase recommendations for your Amazon Redshift, Amazon ElastiCache, and Amazon Elasticsearch reservations via AWS Cost Explorer API, in addition to accessing RI purchase recommendations for your Amazon EC2 and Amazon RDS reservations.
+* S3 (3.3.19.0)
+	* S3 Select support for BZIP2 compressed input files
+* SimpleSystemsManagement (3.3.25.0)
+	* Support Conditional Branching OnFailure for SSM Automation
+
 ### 3.3.315.0 (2018-07-10 21:11 UTC)
 * AppStream (3.3.15.0)
 	* This API update adds pagination to the DescribeImages API to support future features and enhancements.
