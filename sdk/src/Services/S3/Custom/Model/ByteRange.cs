@@ -30,16 +30,21 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        public ByteRange(long? start, long? end)
+        public ByteRange(long start, long end)
         {
             this.Start = start;
             this.End = end;
         }
 
         /// <summary>
+        /// A private, string, represending the byte range.
+        /// </summary>
+        private string _formattedByteRange;
+
+        /// <summary>
         /// The starting byte number of the range
         /// </summary>
-        public long? Start
+        public long Start
         {
             get;
             set;
@@ -48,7 +53,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The ending byte number of the range
         /// </summary>
-        public long? End
+        public long End
         {
             get;
             set;
@@ -61,9 +66,14 @@ namespace Amazon.S3.Model
         {
             get
             {
-                if (this.Start == null && this.End == null)
-                    return null;
-                return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", this.Start, this.End);
+                if (_formattedByteRange != null)
+                    return _formattedByteRange;
+                else
+                    return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", this.Start, this.End);
+            }
+            set
+            {
+                _formattedByteRange = value;
             }
         }
     }
