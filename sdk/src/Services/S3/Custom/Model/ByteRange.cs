@@ -37,7 +37,16 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A private, string, represending the byte range.
+        /// Constructs a ByteRange and sets the header to the value specified.
+        /// </summary>
+        /// <param name="byteRangeValue"></param>
+        public ByteRange(string byteRangeValue)
+        {
+            this._formattedByteRange = byteRangeValue;
+        }
+
+        /// <summary>
+        /// A private string, represending the byte range.
         /// </summary>
         private string _formattedByteRange;
 
@@ -66,8 +75,8 @@ namespace Amazon.S3.Model
         {
             get
             {
-                if (_formattedByteRange != null)
-                    return _formattedByteRange;
+                if (this._formattedByteRange != null)
+                    return this._formattedByteRange;
                 else
                     return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", this.Start, this.End);
             }
