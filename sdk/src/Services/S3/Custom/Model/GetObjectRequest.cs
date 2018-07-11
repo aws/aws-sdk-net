@@ -156,7 +156,7 @@ namespace Amazon.S3.Model
         // Check to see if ByteRange property is set
         internal bool IsSetByteRange()
         {
-            return this.byteRange != null && this.byteRange?.FormattedByteRange != null;
+            return this.byteRange != null;
         }
 
         /// <summary>
