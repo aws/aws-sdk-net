@@ -29,6 +29,7 @@ namespace ServiceClientGenerator
         public const string PatternKey = "pattern";
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
+        public const string EventStreamKey = "eventstream";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -337,6 +338,20 @@ namespace ServiceClientGenerator
                 var exception = this.data[ExceptionKey];
                 if (exception == null || !exception.IsBoolean) return false;
                 return (bool)exception;
+            }
+        }
+
+        public bool IsEventStream
+        {
+            get
+            {
+                var isEventStream = data[EventStreamKey];
+                if (isEventStream != null && isEventStream.IsBoolean)
+                {
+                    return (bool) isEventStream;
+                }
+
+                return false;
             }
         }
 
