@@ -57,6 +57,25 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Stage);
             }
 
+            if(requestObject.IsSetThrottle())
+            {
+                context.Writer.WritePropertyName("throttle");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectThrottleKvp in requestObject.Throttle)
+                {
+                    context.Writer.WritePropertyName(requestObjectThrottleKvp.Key);
+                    var requestObjectThrottleValue = requestObjectThrottleKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThrottleSettingsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectThrottleValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

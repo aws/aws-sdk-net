@@ -76,6 +76,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Stage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("throttle", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ThrottleSettings, StringUnmarshaller, ThrottleSettingsUnmarshaller>(StringUnmarshaller.Instance, ThrottleSettingsUnmarshaller.Instance);
+                    unmarshalledObject.Throttle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
