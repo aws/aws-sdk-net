@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFileSystem Request Marshaller
+    /// UpdateFileSystem Request Marshaller
     /// </summary>       
-    public class CreateFileSystemRequestMarshaller : IMarshaller<IRequest, CreateFileSystemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateFileSystemRequestMarshaller : IMarshaller<IRequest, UpdateFileSystemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFileSystemRequest)input);
+            return this.Marshall((UpdateFileSystemRequest)input);
         }
 
         /// <summary>
@@ -52,43 +52,22 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFileSystemRequest publicRequest)
+        public IRequest Marshall(UpdateFileSystemRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticFileSystem");
             request.Headers["Content-Type"] = "application/x-amz-json-";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2015-02-01/file-systems";
+            string uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
+            if (!publicRequest.IsSetFileSystemId())
+                throw new AmazonElasticFileSystemException("Request object does not have required field FileSystemId set");
+            uriResourcePath = uriResourcePath.Replace("{FileSystemId}", StringUtils.FromString(publicRequest.FileSystemId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreationToken())
-                {
-                    context.Writer.WritePropertyName("CreationToken");
-                    context.Writer.Write(publicRequest.CreationToken);
-                }
-
-                if(publicRequest.IsSetEncrypted())
-                {
-                    context.Writer.WritePropertyName("Encrypted");
-                    context.Writer.Write(publicRequest.Encrypted);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetPerformanceMode())
-                {
-                    context.Writer.WritePropertyName("PerformanceMode");
-                    context.Writer.Write(publicRequest.PerformanceMode);
-                }
-
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
@@ -110,9 +89,9 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateFileSystemRequestMarshaller _instance = new CreateFileSystemRequestMarshaller();        
+        private static UpdateFileSystemRequestMarshaller _instance = new UpdateFileSystemRequestMarshaller();        
 
-        internal static CreateFileSystemRequestMarshaller GetInstance()
+        internal static UpdateFileSystemRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +99,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFileSystemRequestMarshaller Instance
+        public static UpdateFileSystemRequestMarshaller Instance
         {
             get
             {

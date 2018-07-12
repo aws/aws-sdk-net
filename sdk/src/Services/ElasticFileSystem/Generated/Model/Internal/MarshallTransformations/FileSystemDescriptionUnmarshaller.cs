@@ -124,10 +124,22 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerformanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedThroughputInMibps", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughputInMibps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SizeInBytes", targetDepth))
                 {
                     var unmarshaller = FileSystemSizeUnmarshaller.Instance;
                     unmarshalledObject.SizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThroughputMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ThroughputMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

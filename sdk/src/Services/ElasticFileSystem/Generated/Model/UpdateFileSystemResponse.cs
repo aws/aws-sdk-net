@@ -30,7 +30,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Description of the file system.
     /// </summary>
-    public partial class FileSystemDescription
+    public partial class UpdateFileSystemResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
         private string _creationToken;

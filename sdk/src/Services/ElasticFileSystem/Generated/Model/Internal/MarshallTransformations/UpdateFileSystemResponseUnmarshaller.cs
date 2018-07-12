@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateFileSystem operation
+    /// Response Unmarshaller for UpdateFileSystem operation
     /// </summary>  
-    public class CreateFileSystemResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateFileSystemResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateFileSystemResponse response = new CreateFileSystemResponse();
+            UpdateFileSystemResponse response = new UpdateFileSystemResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -148,13 +148,13 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FileSystemAlreadyExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FileSystemNotFound"))
             {
-                return new FileSystemAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new FileSystemNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FileSystemLimitExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("IncorrectFileSystemLifeCycleState"))
             {
-                return new FileSystemLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new IncorrectFileSystemLifeCycleStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientThroughputCapacity"))
             {
@@ -168,12 +168,16 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 return new ThroughputLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequests"))
+            {
+                return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonElasticFileSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateFileSystemResponseUnmarshaller _instance = new CreateFileSystemResponseUnmarshaller();        
+        private static UpdateFileSystemResponseUnmarshaller _instance = new UpdateFileSystemResponseUnmarshaller();        
 
-        internal static CreateFileSystemResponseUnmarshaller GetInstance()
+        internal static UpdateFileSystemResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -181,7 +185,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFileSystemResponseUnmarshaller Instance
+        public static UpdateFileSystemResponseUnmarshaller Instance
         {
             get
             {

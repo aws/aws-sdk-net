@@ -102,6 +102,8 @@ namespace Amazon.ElasticFileSystem.Model
         private bool? _encrypted;
         private string _kmsKeyId;
         private PerformanceMode _performanceMode;
+        private double? _provisionedThroughputInMibps;
+        private ThroughputMode _throughputMode;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -138,7 +140,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// A boolean value that, if true, creates an encrypted file system. When creating an
+        /// A Boolean value that, if true, creates an encrypted file system. When creating an
         /// encrypted file system, you have the option of specifying a <a>CreateFileSystemRequest$KmsKeyId</a>
         /// for an existing AWS Key Management Service (AWS KMS) customer master key (CMK). If
         /// you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>,
@@ -160,18 +162,17 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The id of the AWS KMS CMK that will be used to protect the encrypted file system.
-        /// This parameter is only required if you want to use a non-default CMK. If this parameter
-        /// is not specified, the default CMK for Amazon EFS is used. This id can be in one of
-        /// the following formats:
+        /// The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter
+        /// is only required if you want to use a non-default CMK. If this parameter is not specified,
+        /// the default CMK for Amazon EFS is used. This ID can be in one of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID - A unique identifier of the key. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Key ID - A unique identifier of the key, for example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN - An Amazon Resource Name for the key. For example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// ARN - An Amazon Resource Name (ARN) for the key, for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -179,12 +180,12 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key alias ARN - An Amazon Resource Name for a key alias. For example, <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.
+        /// Key alias ARN - An ARN for a key alias, for example, <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that if the KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
-        /// parameter must be set to true.
+        /// If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must
+        /// be set to true.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -219,6 +220,49 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetPerformanceMode()
         {
             return this._performanceMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedThroughputInMibps. 
+        /// <para>
+        /// The throughput, measured in MiB/s, that you want to provision for a file system that
+        /// you're creating. The limit on throughput is 1024 MiB/s. You can get these limits increased
+        /// by contacting AWS Support. For more information, see <a href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+        /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public double ProvisionedThroughputInMibps
+        {
+            get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
+            set { this._provisionedThroughputInMibps = value; }
+        }
+
+        // Check to see if ProvisionedThroughputInMibps property is set
+        internal bool IsSetProvisionedThroughputInMibps()
+        {
+            return this._provisionedThroughputInMibps.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputMode. 
+        /// <para>
+        /// The throughput mode for the file system to be created. There are two throughput modes
+        /// to choose from for your file system: bursting and provisioned. You can decrease your
+        /// file system's throughput in Provisioned Throughput mode or change between the throughput
+        /// modes as long as it’s been more than 24 hours since the last decrease or throughput
+        /// mode change.
+        /// </para>
+        /// </summary>
+        public ThroughputMode ThroughputMode
+        {
+            get { return this._throughputMode; }
+            set { this._throughputMode = value; }
+        }
+
+        // Check to see if ThroughputMode property is set
+        internal bool IsSetThroughputMode()
+        {
+            return this._throughputMode != null;
         }
 
     }

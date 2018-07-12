@@ -340,11 +340,22 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created maximum number of file systems allowed
-        /// per account.
+        /// Returned if the AWS account has already created the maximum number of file systems
+        /// allowed per account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
+        /// Returned if there's not enough capacity to provision additional throughput. This value
+        /// might be returned when you try to create a file system in provisioned throughput mode,
+        /// when you attempt to increase the provisioned throughput of an existing file system,
+        /// or when you attempt to change an existing file system from bursting to provisioned
+        /// throughput mode.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
+        /// Returned if the throughput mode or amount of provisioned throughput can't be changed
+        /// because the throughput limit of 1024 MiB/s has been reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual Task<CreateFileSystemResponse> CreateFileSystemAsync(string creationToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -490,7 +501,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if a file system has mount targets.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -724,7 +735,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -877,7 +888,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -940,6 +951,38 @@ namespace Amazon.ElasticFileSystem
             var unmarshaller = ModifyMountTargetSecurityGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyMountTargetSecurityGroupsRequest,ModifyMountTargetSecurityGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFileSystem
+
+        internal virtual UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request)
+        {
+            var marshaller = UpdateFileSystemRequestMarshaller.Instance;
+            var unmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFileSystemRequest,UpdateFileSystemResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
+        public virtual Task<UpdateFileSystemResponse> UpdateFileSystemAsync(UpdateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFileSystemRequestMarshaller.Instance;
+            var unmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFileSystemRequest,UpdateFileSystemResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
