@@ -50,6 +50,7 @@ namespace Amazon.IdentityManagement.Model
         private string _description;
         private bool? _isAttachable;
         private string _path;
+        private int? _permissionsBoundaryUsageCount;
         private string _policyId;
         private string _policyName;
         private DateTime? _updateDate;
@@ -186,6 +187,30 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionsBoundaryUsageCount. 
+        /// <para>
+        /// The number of entities (users and roles) for which the policy is used to set the permissions
+        /// boundary. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int PermissionsBoundaryUsageCount
+        {
+            get { return this._permissionsBoundaryUsageCount.GetValueOrDefault(); }
+            set { this._permissionsBoundaryUsageCount = value; }
+        }
+
+        // Check to see if PermissionsBoundaryUsageCount property is set
+        internal bool IsSetPermissionsBoundaryUsageCount()
+        {
+            return this._permissionsBoundaryUsageCount.HasValue; 
         }
 
         /// <summary>

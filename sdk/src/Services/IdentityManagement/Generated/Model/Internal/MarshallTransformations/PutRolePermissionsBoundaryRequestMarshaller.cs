@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateUser Request Marshaller
+    /// PutRolePermissionsBoundary Request Marshaller
     /// </summary>       
-    public class CreateUserRequestMarshaller : IMarshaller<IRequest, CreateUserRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutRolePermissionsBoundaryRequestMarshaller : IMarshaller<IRequest, PutRolePermissionsBoundaryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateUserRequest)input);
+            return this.Marshall((PutRolePermissionsBoundaryRequest)input);
         }
     
         /// <summary>
@@ -50,32 +50,28 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateUserRequest publicRequest)
+        public IRequest Marshall(PutRolePermissionsBoundaryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
-            request.Parameters.Add("Action", "CreateUser");
+            request.Parameters.Add("Action", "PutRolePermissionsBoundary");
             request.Parameters.Add("Version", "2010-05-08");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetPath())
-                {
-                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
-                }
                 if(publicRequest.IsSetPermissionsBoundary())
                 {
                     request.Parameters.Add("PermissionsBoundary", StringUtils.FromString(publicRequest.PermissionsBoundary));
                 }
-                if(publicRequest.IsSetUserName())
+                if(publicRequest.IsSetRoleName())
                 {
-                    request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
+                    request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
                 }
             }
             return request;
         }
-                    private static CreateUserRequestMarshaller _instance = new CreateUserRequestMarshaller();        
+                    private static PutRolePermissionsBoundaryRequestMarshaller _instance = new PutRolePermissionsBoundaryRequestMarshaller();        
 
-        internal static CreateUserRequestMarshaller GetInstance()
+        internal static PutRolePermissionsBoundaryRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +79,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateUserRequestMarshaller Instance
+        public static PutRolePermissionsBoundaryRequestMarshaller Instance
         {
             get
             {

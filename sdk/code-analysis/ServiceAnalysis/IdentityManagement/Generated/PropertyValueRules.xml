@@ -191,6 +191,11 @@
     <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateRoleRequest.PermissionsBoundary</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.RoleName</property>
     <min>1</min>
     <max>64</max>
@@ -240,6 +245,11 @@
     <min>1</min>
     <max>512</max>
     <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.CreateUserRequest.PermissionsBoundary</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.UserName</property>
@@ -344,6 +354,12 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteRolePermissionsBoundaryRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteRolePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
@@ -417,6 +433,12 @@
     <property>Amazon.IdentityManagement.Model.DeleteUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DeleteUserPermissionsBoundaryRequest.UserName</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1255,6 +1277,17 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PutRolePermissionsBoundaryRequest.PermissionsBoundary</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PutRolePermissionsBoundaryRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePolicyRequest.PolicyDocument</property>
     <min>1</min>
     <max>131072</max>
@@ -1268,6 +1301,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PutRolePolicyRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PutUserPermissionsBoundaryRequest.PermissionsBoundary</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PutUserPermissionsBoundaryRequest.UserName</property>
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
@@ -1715,6 +1759,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.AttachedPermissionsBoundary.PermissionsBoundaryArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.AttachedPolicyType.PolicyArn</property>

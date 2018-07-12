@@ -1443,6 +1443,38 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteRolePermissionsBoundary
+
+        internal virtual DeleteRolePermissionsBoundaryResponse DeleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request)
+        {
+            var marshaller = DeleteRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteRolePermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRolePermissionsBoundaryRequest,DeleteRolePermissionsBoundaryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRolePermissionsBoundary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        public virtual Task<DeleteRolePermissionsBoundaryResponse> DeleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteRolePermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRolePermissionsBoundaryRequest,DeleteRolePermissionsBoundaryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRolePolicy
 
         internal virtual DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
@@ -1694,6 +1726,38 @@ namespace Amazon.IdentityManagement
             var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUserPermissionsBoundary
+
+        internal virtual DeleteUserPermissionsBoundaryResponse DeleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request)
+        {
+            var marshaller = DeleteUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserPermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserPermissionsBoundaryRequest,DeleteUserPermissionsBoundaryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPermissionsBoundary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        public virtual Task<DeleteUserPermissionsBoundaryResponse> DeleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserPermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserPermissionsBoundaryRequest,DeleteUserPermissionsBoundaryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4145,6 +4209,38 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  PutRolePermissionsBoundary
+
+        internal virtual PutRolePermissionsBoundaryResponse PutRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request)
+        {
+            var marshaller = PutRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutRolePermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return Invoke<PutRolePermissionsBoundaryRequest,PutRolePermissionsBoundaryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRolePermissionsBoundary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        public virtual Task<PutRolePermissionsBoundaryResponse> PutRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutRolePermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRolePermissionsBoundaryRequest,PutRolePermissionsBoundaryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRolePolicy
 
         internal virtual PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
@@ -4172,6 +4268,38 @@ namespace Amazon.IdentityManagement
             var unmarshaller = PutRolePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRolePolicyRequest,PutRolePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutUserPermissionsBoundary
+
+        internal virtual PutUserPermissionsBoundaryResponse PutUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request)
+        {
+            var marshaller = PutUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutUserPermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return Invoke<PutUserPermissionsBoundaryRequest,PutUserPermissionsBoundaryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUserPermissionsBoundary operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        public virtual Task<PutUserPermissionsBoundaryResponse> PutUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutUserPermissionsBoundaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutUserPermissionsBoundaryRequest,PutUserPermissionsBoundaryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

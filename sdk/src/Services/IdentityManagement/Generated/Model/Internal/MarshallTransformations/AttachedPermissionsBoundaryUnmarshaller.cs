@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for User Object
+    /// Response Unmarshaller for AttachedPermissionsBoundary Object
     /// </summary>  
-    public class UserUnmarshaller : IUnmarshaller<User, XmlUnmarshallerContext>, IUnmarshaller<User, JsonUnmarshallerContext>
+    public class AttachedPermissionsBoundaryUnmarshaller : IUnmarshaller<AttachedPermissionsBoundary, XmlUnmarshallerContext>, IUnmarshaller<AttachedPermissionsBoundary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public User Unmarshall(XmlUnmarshallerContext context)
+        public AttachedPermissionsBoundary Unmarshall(XmlUnmarshallerContext context)
         {
-            User unmarshalledObject = new User();
+            AttachedPermissionsBoundary unmarshalledObject = new AttachedPermissionsBoundary();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Arn", targetDepth))
+                    if (context.TestExpression("PermissionsBoundaryArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PermissionsBoundaryArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("CreateDate", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PasswordLastUsed", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.PasswordLastUsed = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Path", targetDepth))
+                    if (context.TestExpression("PermissionsBoundaryType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Path = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PermissionsBoundary", targetDepth))
-                    {
-                        var unmarshaller = AttachedPermissionsBoundaryUnmarshaller.Instance;
-                        unmarshalledObject.PermissionsBoundary = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("UserId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("UserName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PermissionsBoundaryType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +81,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public User Unmarshall(JsonUnmarshallerContext context)
+        public AttachedPermissionsBoundary Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UserUnmarshaller _instance = new UserUnmarshaller();        
+        private static AttachedPermissionsBoundaryUnmarshaller _instance = new AttachedPermissionsBoundaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserUnmarshaller Instance
+        public static AttachedPermissionsBoundaryUnmarshaller Instance
         {
             get
             {

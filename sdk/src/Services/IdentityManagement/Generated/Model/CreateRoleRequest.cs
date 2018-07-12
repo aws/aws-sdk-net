@@ -41,6 +41,7 @@ namespace Amazon.IdentityManagement.Model
         private string _description;
         private int? _maxSessionDuration;
         private string _path;
+        private string _permissionsBoundary;
         private string _roleName;
 
         /// <summary>
@@ -162,6 +163,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionsBoundary. 
+        /// <para>
+        /// The ARN of the policy that is used to set the permissions boundary for the role.
+        /// </para>
+        /// </summary>
+        public string PermissionsBoundary
+        {
+            get { return this._permissionsBoundary; }
+            set { this._permissionsBoundary = value; }
+        }
+
+        // Check to see if PermissionsBoundary property is set
+        internal bool IsSetPermissionsBoundary()
+        {
+            return this._permissionsBoundary != null;
         }
 
         /// <summary>

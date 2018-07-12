@@ -350,14 +350,20 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        /// An AWS account ID that specifies the owner of any simulated resource that does not
-        /// identify its owner in the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code>
-        /// is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
-        /// included in the simulation. If the <code>ResourceOwner</code> parameter is not specified,
-        /// then the owner of the resources and the resource policy defaults to the account of
-        /// the identity provided in <code>CallerArn</code>. This parameter is required only if
-        /// you specify a resource-based policy and account that owns the resource is different
-        /// from the account that owns the simulated calling user <code>CallerArn</code>.
+        /// An ARN representing the AWS account ID that specifies the owner of any simulated resource
+        /// that does not identify its owner in the resource ARN, such as an S3 bucket or object.
+        /// If <code>ResourceOwner</code> is specified, it is also used as the account owner of
+        /// any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
+        /// parameter is not specified, then the owner of the resources and the resource policy
+        /// defaults to the account of the identity provided in <code>CallerArn</code>. This parameter
+        /// is required only if you specify a resource-based policy and account that owns the
+        /// resource is different from the account that owns the simulated calling user <code>CallerArn</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
+        /// For example, to represent the account with the 112233445566 ID, use the following
+        /// ARN: <code>arn:aws:iam::112233445566-ID:root</code>. 
         /// </para>
         /// </summary>
         public string ResourceOwner

@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _createDate;
         private List<string> _groupList = new List<string>();
         private string _path;
+        private AttachedPermissionsBoundary _permissionsBoundary;
         private string _userId;
         private string _userName;
         private List<PolicyDetail> _userPolicyList = new List<PolicyDetail>();
@@ -135,6 +136,29 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionsBoundary. 
+        /// <para>
+        /// The ARN of the policy used to set the permissions boundary for the user.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AttachedPermissionsBoundary PermissionsBoundary
+        {
+            get { return this._permissionsBoundary; }
+            set { this._permissionsBoundary = value; }
+        }
+
+        // Check to see if PermissionsBoundary property is set
+        internal bool IsSetPermissionsBoundary()
+        {
+            return this._permissionsBoundary != null;
         }
 
         /// <summary>
