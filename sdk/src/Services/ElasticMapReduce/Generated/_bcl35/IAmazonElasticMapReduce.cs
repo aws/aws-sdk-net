@@ -406,7 +406,7 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Provides cluster-level details including status, hardware and software configuration,
-        /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
+        /// VPC settings, and so on.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by ElasticMapReduce.</returns>
@@ -421,7 +421,7 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Provides cluster-level details including status, hardware and software configuration,
-        /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
+        /// VPC settings, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
         /// 

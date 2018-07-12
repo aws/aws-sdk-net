@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the DescribeCluster operation.
     /// Provides cluster-level details including status, hardware and software configuration,
-    /// VPC settings, and so on. For information about the cluster steps, see <a>ListSteps</a>.
+    /// VPC settings, and so on.
     /// </summary>
     public partial class DescribeClusterRequest : AmazonElasticMapReduceRequest
     {
