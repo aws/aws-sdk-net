@@ -1,3 +1,15 @@
+### 3.3.317.0 (2018-07-12 20:44 UTC)
+* AppSync (3.3.3.0)
+	* This release adds support for configuring HTTP  endpoints as data sources for your AWS AppSync GraphQL API.
+* DLM (3.3.0.0)
+	* Amazon Data Lifecycle Manager (DLM) for EBS Snapshots provides a simple, automated way to back up data stored on Amazon EBS volumes. You can define backup and retention schedules for EBS snapshots by creating lifecycle policies based on tags. With this feature, you no longer have to rely on custom scripts to create and manage your backups. This feature is now available in the US East (N. Virginia), US West (Oregon), and Europe (Ireland) AWS regions at no additional cost.
+* ElasticFileSystem (3.3.2.0)
+	* Amazon EFS now allows you to instantly provision the throughput required for your applications independent of the amount of data stored in your file system, allowing you to optimize throughput for your applications performance needs. Starting today, you can provision the throughput your applications require quickly with a few simple steps using AWS Console, AWS CLI or AWS API to achieve consistent performance.
+* ElasticMapReduce (3.3.5.10)
+	* Documentation updates for EMR.
+* IdentityManagement (3.3.7.0)
+	* SDK release to support IAM delegated administrator feature. The feature lets customers attach permissions boundary to IAM principals. The IAM principals cannot operate exceeding the permission specified in permissions boundary.
+
 ### 3.3.316.0 (2018-07-11 21:44 UTC)
 * APIGateway (3.3.19.0)
 	* Support for fine grain throttling for API gateway. 

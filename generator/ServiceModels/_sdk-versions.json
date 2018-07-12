@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.316.0",
+    "ProductVersion" : "3.3.317.0",
     "CoreVersion"    : "3.3.24.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -191,7 +191,7 @@
             "InPreview"               : false
         },
         "ElasticMapReduce"     : {
-            "Version" : "3.3.5.9",
+            "Version" : "3.3.5.10",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -217,7 +217,7 @@
             "InPreview"               : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.3.6.7",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -401,7 +401,7 @@
             "InPreview"               : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.1.12",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -921,7 +921,7 @@
             "InPreview"               : false
         },
         "AppSync"                         : {
-            "Version" : "3.3.2.4",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -1146,6 +1146,14 @@
         },
         "Macie"                           : {
             "Version" : "3.3.0.2",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.24.3"
+            },
+            "InPreview"               : false
+        },
+        "DLM"                             : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
