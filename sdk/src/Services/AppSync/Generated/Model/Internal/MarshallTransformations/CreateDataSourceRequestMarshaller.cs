@@ -96,6 +96,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetHttpConfig())
+                {
+                    context.Writer.WritePropertyName("httpConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HttpDataSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.HttpConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLambdaConfig())
                 {
                     context.Writer.WritePropertyName("lambdaConfig");

@@ -88,6 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("httpConfig", targetDepth))
+                {
+                    var unmarshaller = HttpDataSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.HttpConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lambdaConfig", targetDepth))
                 {
                     var unmarshaller = LambdaDataSourceConfigUnmarshaller.Instance;
