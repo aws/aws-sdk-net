@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeImages Request Marshaller
+    /// DeleteImagePermissions Request Marshaller
     /// </summary>       
-    public class DescribeImagesRequestMarshaller : IMarshaller<IRequest, DescribeImagesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteImagePermissionsRequestMarshaller : IMarshaller<IRequest, DeleteImagePermissionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeImagesRequest)input);
+            return this.Marshall((DeleteImagePermissionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeImagesRequest publicRequest)
+        public IRequest Marshall(DeleteImagePermissionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.DescribeImages";
+            string target = "PhotonAdminProxyService.DeleteImagePermissions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,44 +67,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArns())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("Arns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestArnsListValue in publicRequest.Arns)
-                    {
-                            context.Writer.Write(publicRequestArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetSharedAccountId())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNames())
-                {
-                    context.Writer.WritePropertyName("Names");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNamesListValue in publicRequest.Names)
-                    {
-                            context.Writer.Write(publicRequestNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("SharedAccountId");
+                    context.Writer.Write(publicRequest.SharedAccountId);
                 }
 
         
@@ -116,9 +88,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeImagesRequestMarshaller _instance = new DescribeImagesRequestMarshaller();        
+        private static DeleteImagePermissionsRequestMarshaller _instance = new DeleteImagePermissionsRequestMarshaller();        
 
-        internal static DescribeImagesRequestMarshaller GetInstance()
+        internal static DeleteImagePermissionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +98,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeImagesRequestMarshaller Instance
+        public static DeleteImagePermissionsRequestMarshaller Instance
         {
             get
             {

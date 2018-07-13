@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImages operation.
+    /// Describes the permissions for an image.
     /// </summary>
-    public partial class DescribeImagesResponse : AmazonWebServiceResponse
+    public partial class ImagePermissions
     {
-        private List<Image> _images = new List<Image>();
-        private string _nextToken;
+        private bool? _allowFleet;
+        private bool? _allowImageBuilder;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property AllowFleet. 
         /// <para>
-        /// Information about the images.
+        /// Indicates whether the image can be used for a fleet.
         /// </para>
         /// </summary>
-        public List<Image> Images
+        public bool AllowFleet
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._allowFleet.GetValueOrDefault(); }
+            set { this._allowFleet = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if AllowFleet property is set
+        internal bool IsSetAllowFleet()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._allowFleet.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property AllowImageBuilder. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results. If there are no
-        /// more pages, this value is null.
+        /// Indicates whether the image can be used for an image builder.
         /// </para>
         /// </summary>
-        public string NextToken
+        public bool AllowImageBuilder
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._allowImageBuilder.GetValueOrDefault(); }
+            set { this._allowImageBuilder = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if AllowImageBuilder property is set
+        internal bool IsSetAllowImageBuilder()
         {
-            return this._nextToken != null;
+            return this._allowImageBuilder.HasValue; 
         }
 
     }

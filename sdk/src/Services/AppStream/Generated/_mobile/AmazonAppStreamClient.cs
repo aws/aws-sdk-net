@@ -618,6 +618,38 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteImagePermissions
+
+        internal virtual DeleteImagePermissionsResponse DeleteImagePermissions(DeleteImagePermissionsRequest request)
+        {
+            var marshaller = DeleteImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImagePermissionsRequest,DeleteImagePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImagePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
+        public virtual Task<DeleteImagePermissionsResponse> DeleteImagePermissionsAsync(DeleteImagePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = DeleteImagePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImagePermissionsRequest,DeleteImagePermissionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStack
 
         internal virtual DeleteStackResponse DeleteStack(DeleteStackRequest request)
@@ -741,6 +773,38 @@ namespace Amazon.AppStream
             var unmarshaller = DescribeImageBuildersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeImageBuildersRequest,DescribeImageBuildersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImagePermissions
+
+        internal virtual DescribeImagePermissionsResponse DescribeImagePermissions(DescribeImagePermissionsRequest request)
+        {
+            var marshaller = DescribeImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImagePermissionsRequest,DescribeImagePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImagePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
+        public virtual Task<DescribeImagePermissionsResponse> DescribeImagePermissionsAsync(DescribeImagePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeImagePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImagePermissionsRequest,DescribeImagePermissionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1253,6 +1317,38 @@ namespace Amazon.AppStream
             var unmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateFleetRequest,UpdateFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateImagePermissions
+
+        internal virtual UpdateImagePermissionsResponse UpdateImagePermissions(UpdateImagePermissionsRequest request)
+        {
+            var marshaller = UpdateImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImagePermissionsRequest,UpdateImagePermissionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImagePermissions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
+        public virtual Task<UpdateImagePermissionsResponse> UpdateImagePermissionsAsync(UpdateImagePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateImagePermissionsRequestMarshaller.Instance;
+            var unmarshaller = UpdateImagePermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateImagePermissionsRequest,UpdateImagePermissionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

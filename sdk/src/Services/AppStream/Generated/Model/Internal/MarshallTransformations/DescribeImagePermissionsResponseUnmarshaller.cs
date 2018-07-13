@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeImages operation
+    /// Response Unmarshaller for DescribeImagePermissions operation
     /// </summary>  
-    public class DescribeImagesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeImagePermissionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,28 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeImagesResponse response = new DescribeImagesResponse();
+            DescribeImagePermissionsResponse response = new DescribeImagePermissionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Images", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Image, ImageUnmarshaller>(ImageUnmarshaller.Instance);
-                    response.Images = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SharedImagePermissionsList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SharedImagePermissions, SharedImagePermissionsUnmarshaller>(SharedImagePermissionsUnmarshaller.Instance);
+                    response.SharedImagePermissionsList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,10 +84,6 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
-            {
-                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -89,9 +91,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             return new AmazonAppStreamException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeImagesResponseUnmarshaller _instance = new DescribeImagesResponseUnmarshaller();        
+        private static DescribeImagePermissionsResponseUnmarshaller _instance = new DescribeImagePermissionsResponseUnmarshaller();        
 
-        internal static DescribeImagesResponseUnmarshaller GetInstance()
+        internal static DescribeImagePermissionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +101,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeImagesResponseUnmarshaller Instance
+        public static DescribeImagePermissionsResponseUnmarshaller Instance
         {
             get
             {

@@ -28,40 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeImages operation.
-    /// Retrieves a list that describes one or more specified images, if the image names are
-    /// provided. Otherwise, all images in the account are described.
+    /// Container for the parameters to the DescribeImagePermissions operation.
+    /// Retrieves a list that describes the permissions for a private image that you own.
     /// </summary>
-    public partial class DescribeImagesRequest : AmazonAppStreamRequest
+    public partial class DescribeImagePermissionsRequest : AmazonAppStreamRequest
     {
-        private List<string> _arns = new List<string>();
         private int? _maxResults;
-        private List<string> _names = new List<string>();
+        private string _name;
         private string _nextToken;
-        private VisibilityType _type;
-
-        /// <summary>
-        /// Gets and sets the property Arns. 
-        /// <para>
-        /// The ARNs of the public, private, and shared images to describe.
-        /// </para>
-        /// </summary>
-        public List<string> Arns
-        {
-            get { return this._arns; }
-            set { this._arns = value; }
-        }
-
-        // Check to see if Arns property is set
-        internal bool IsSetArns()
-        {
-            return this._arns != null && this._arns.Count > 0; 
-        }
+        private List<string> _sharedAwsAccountIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum size of each page of results.
+        /// The maximum size of each results page.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -77,21 +57,22 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Names. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The names of the images to describe.
+        /// The name of the private image for which to describe permissions. The image must be
+        /// one that you own. 
         /// </para>
         /// </summary>
-        public List<string> Names
+        public string Name
         {
-            get { return this._names; }
-            set { this._names = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Names property is set
-        internal bool IsSetNames()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
@@ -114,21 +95,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property SharedAwsAccountIds. 
         /// <para>
-        /// The type of image (public, private, or shared) to describe. 
+        /// The 12-digit ID of one or more AWS accounts with which the image is shared.
         /// </para>
         /// </summary>
-        public VisibilityType Type
+        public List<string> SharedAwsAccountIds
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._sharedAwsAccountIds; }
+            set { this._sharedAwsAccountIds = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if SharedAwsAccountIds property is set
+        internal bool IsSetSharedAwsAccountIds()
         {
-            return this._type != null;
+            return this._sharedAwsAccountIds != null && this._sharedAwsAccountIds.Count > 0; 
         }
 
     }

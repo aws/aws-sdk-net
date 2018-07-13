@@ -1034,6 +1034,10 @@ namespace Amazon.AppStream
         /// Constant PUBLIC for VisibilityType
         /// </summary>
         public static readonly VisibilityType PUBLIC = new VisibilityType("PUBLIC");
+        /// <summary>
+        /// Constant SHARED for VisibilityType
+        /// </summary>
+        public static readonly VisibilityType SHARED = new VisibilityType("SHARED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private bool? _imageBuilderSupported;
+        private ImagePermissions _imagePermissions;
         private string _name;
         private PlatformType _platform;
         private DateTime? _publicBaseImageReleasedDate;
@@ -190,6 +191,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetImageBuilderSupported()
         {
             return this._imageBuilderSupported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImagePermissions. 
+        /// <para>
+        /// The permissions to provide to the destination AWS account for the specified image.
+        /// </para>
+        /// </summary>
+        public ImagePermissions ImagePermissions
+        {
+            get { return this._imagePermissions; }
+            set { this._imagePermissions = value; }
+        }
+
+        // Check to see if ImagePermissions property is set
+        internal bool IsSetImagePermissions()
+        {
+            return this._imagePermissions != null;
         }
 
         /// <summary>

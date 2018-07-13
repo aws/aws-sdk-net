@@ -28,48 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImages operation.
+    /// Container for the parameters to the DeleteImagePermissions operation.
+    /// Deletes permissions for the specified private image. After you delete permissions
+    /// for an image, AWS accounts to which you previously granted these permissions can no
+    /// longer use the image.
     /// </summary>
-    public partial class DescribeImagesResponse : AmazonWebServiceResponse
+    public partial class DeleteImagePermissionsRequest : AmazonAppStreamRequest
     {
-        private List<Image> _images = new List<Image>();
-        private string _nextToken;
+        private string _name;
+        private string _sharedAccountId;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Information about the images.
+        /// The name of the private image.
         /// </para>
         /// </summary>
-        public List<Image> Images
+        public string Name
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results. If there are no
-        /// more pages, this value is null.
+        /// The 12-digit ID of the AWS account for which to delete image permissions.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string SharedAccountId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._sharedAccountId; }
+            set { this._sharedAccountId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if SharedAccountId property is set
+        internal bool IsSetSharedAccountId()
         {
-            return this._nextToken != null;
+            return this._sharedAccountId != null;
         }
 
     }

@@ -28,48 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImages operation.
+    /// Describes the permissions that are available to the specified AWS account for a shared
+    /// image.
     /// </summary>
-    public partial class DescribeImagesResponse : AmazonWebServiceResponse
+    public partial class SharedImagePermissions
     {
-        private List<Image> _images = new List<Image>();
-        private string _nextToken;
+        private ImagePermissions _imagePermissions;
+        private string _sharedAccountId;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property ImagePermissions. 
         /// <para>
-        /// Information about the images.
+        /// Describes the permissions for a shared image.
         /// </para>
         /// </summary>
-        public List<Image> Images
+        public ImagePermissions ImagePermissions
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._imagePermissions; }
+            set { this._imagePermissions = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if ImagePermissions property is set
+        internal bool IsSetImagePermissions()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._imagePermissions != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property SharedAccountId. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results. If there are no
-        /// more pages, this value is null.
+        /// The 12-digit ID of the AWS account with which the image is shared.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string SharedAccountId
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._sharedAccountId; }
+            set { this._sharedAccountId = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if SharedAccountId property is set
+        internal bool IsSetSharedAccountId()
         {
-            return this._nextToken != null;
+            return this._sharedAccountId != null;
         }
 
     }

@@ -28,36 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImages operation.
+    /// This is the response object from the DescribeImagePermissions operation.
     /// </summary>
-    public partial class DescribeImagesResponse : AmazonWebServiceResponse
+    public partial class DescribeImagePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<Image> _images = new List<Image>();
+        private string _name;
         private string _nextToken;
+        private List<SharedImagePermissions> _sharedImagePermissionsList = new List<SharedImagePermissions>();
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Information about the images.
+        /// The name of the private image.
         /// </para>
         /// </summary>
-        public List<Image> Images
+        public string Name
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results. If there are no
-        /// more pages, this value is null.
+        /// The pagination token to use to retrieve the next page of results. If this value is
+        /// empty, only the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken
@@ -70,6 +71,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharedImagePermissionsList. 
+        /// <para>
+        /// The permissions for a private image that you own. 
+        /// </para>
+        /// </summary>
+        public List<SharedImagePermissions> SharedImagePermissionsList
+        {
+            get { return this._sharedImagePermissionsList; }
+            set { this._sharedImagePermissionsList = value; }
+        }
+
+        // Check to see if SharedImagePermissionsList property is set
+        internal bool IsSetSharedImagePermissionsList()
+        {
+            return this._sharedImagePermissionsList != null && this._sharedImagePermissionsList.Count > 0; 
         }
 
     }

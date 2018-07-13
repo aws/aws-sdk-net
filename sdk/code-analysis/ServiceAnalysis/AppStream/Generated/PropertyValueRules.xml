@@ -38,6 +38,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateFleetRequest.ImageArn</property>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateFleetRequest.ImageName</property>
     <min>1</min>
   </property-value-rule>
@@ -61,6 +65,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImageBuilderRequest.DisplayName</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImageBuilderRequest.ImageArn</property>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImageBuilderRequest.ImageName</property>
@@ -141,6 +149,14 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DeleteImagePermissionsRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DeleteImagePermissionsRequest.SharedAccountId</property>
+    <pattern>^\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DeleteStackRequest.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -166,6 +182,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.DescribeImageBuildersResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeImagePermissionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeImagePermissionsRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeImagePermissionsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeImagePermissionsResponse.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.DescribeImagePermissionsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -288,6 +325,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateFleetRequest.ImageArn</property>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.ImageName</property>
     <min>1</min>
   </property-value-rule>
@@ -298,6 +339,14 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateFleetRequest.Name</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateImagePermissionsRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.UpdateImagePermissionsRequest.SharedAccountId</property>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.UpdateStackRequest.Description</property>
@@ -354,6 +403,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.Fleet.DisplayName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Fleet.ImageArn</property>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Fleet.ImageName</property>
@@ -470,6 +523,10 @@
     <property>Amazon.AppStream.Model.Session.UserId</property>
     <min>2</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.SharedImagePermissions.SharedAccountId</property>
+    <pattern>^\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Stack.Arn</property>

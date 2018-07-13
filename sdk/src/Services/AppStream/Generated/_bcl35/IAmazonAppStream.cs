@@ -237,6 +237,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
@@ -311,6 +314,9 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
@@ -712,6 +718,54 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DeleteImagePermissions
+
+
+        /// <summary>
+        /// Deletes permissions for the specified private image. After you delete permissions
+        /// for an image, AWS accounts to which you previously granted these permissions can no
+        /// longer use the image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImagePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteImagePermissions service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
+        DeleteImagePermissionsResponse DeleteImagePermissions(DeleteImagePermissionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImagePermissions operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImagePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
+        IAsyncResult BeginDeleteImagePermissions(DeleteImagePermissionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImagePermissions.</param>
+        /// 
+        /// <returns>Returns a  DeleteImagePermissionsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImagePermissions">REST API Reference for DeleteImagePermissions Operation</seealso>
+        DeleteImagePermissionsResponse EndDeleteImagePermissions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteStack
 
 
@@ -903,6 +957,49 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeImagePermissions
+
+
+        /// <summary>
+        /// Retrieves a list that describes the permissions for a private image that you own.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImagePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImagePermissions service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
+        DescribeImagePermissionsResponse DescribeImagePermissions(DescribeImagePermissionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImagePermissions operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImagePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
+        IAsyncResult BeginDescribeImagePermissions(DescribeImagePermissionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImagePermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeImagePermissionsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImagePermissions">REST API Reference for DescribeImagePermissions Operation</seealso>
+        DescribeImagePermissionsResponse EndDescribeImagePermissions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeImages
 
 
@@ -913,6 +1010,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1709,6 +1809,55 @@ namespace Amazon.AppStream
         /// <returns>Returns a  UpdateFleetResult from AppStream.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         UpdateFleetResponse EndUpdateFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateImagePermissions
+
+
+        /// <summary>
+        /// Adds or updates permissions for the specified private image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImagePermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImagePermissions service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
+        UpdateImagePermissionsResponse UpdateImagePermissions(UpdateImagePermissionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImagePermissions operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateImagePermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
+        IAsyncResult BeginUpdateImagePermissions(UpdateImagePermissionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateImagePermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateImagePermissions.</param>
+        /// 
+        /// <returns>Returns a  UpdateImagePermissionsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateImagePermissions">REST API Reference for UpdateImagePermissions Operation</seealso>
+        UpdateImagePermissionsResponse EndUpdateImagePermissions(IAsyncResult asyncResult);
 
         #endregion
         

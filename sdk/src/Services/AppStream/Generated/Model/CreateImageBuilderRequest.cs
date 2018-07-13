@@ -45,6 +45,7 @@ namespace Amazon.AppStream.Model
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
+        private string _imageArn;
         private string _imageName;
         private string _instanceType;
         private string _name;
@@ -139,6 +140,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEnableDefaultInternetAccess()
         {
             return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageArn. 
+        /// <para>
+        /// The ARN of the public, private, or shared image to use.
+        /// </para>
+        /// </summary>
+        public string ImageArn
+        {
+            get { return this._imageArn; }
+            set { this._imageArn = value; }
+        }
+
+        // Check to see if ImageArn property is set
+        internal bool IsSetImageArn()
+        {
+            return this._imageArn != null;
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeImages Request Marshaller
+    /// DescribeImagePermissions Request Marshaller
     /// </summary>       
-    public class DescribeImagesRequestMarshaller : IMarshaller<IRequest, DescribeImagesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeImagePermissionsRequestMarshaller : IMarshaller<IRequest, DescribeImagePermissionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeImagesRequest)input);
+            return this.Marshall((DescribeImagePermissionsRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeImagesRequest publicRequest)
+        public IRequest Marshall(DescribeImagePermissionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.DescribeImages";
+            string target = "PhotonAdminProxyService.DescribeImagePermissions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,32 +67,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArns())
-                {
-                    context.Writer.WritePropertyName("Arns");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestArnsListValue in publicRequest.Arns)
-                    {
-                            context.Writer.Write(publicRequestArnsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetNames())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("Names");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNamesListValue in publicRequest.Names)
-                    {
-                            context.Writer.Write(publicRequestNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -101,10 +85,15 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetType())
+                if(publicRequest.IsSetSharedAwsAccountIds())
                 {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("SharedAwsAccountIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSharedAwsAccountIdsListValue in publicRequest.SharedAwsAccountIds)
+                    {
+                            context.Writer.Write(publicRequestSharedAwsAccountIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         
@@ -116,9 +105,9 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeImagesRequestMarshaller _instance = new DescribeImagesRequestMarshaller();        
+        private static DescribeImagePermissionsRequestMarshaller _instance = new DescribeImagePermissionsRequestMarshaller();        
 
-        internal static DescribeImagesRequestMarshaller GetInstance()
+        internal static DescribeImagePermissionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +115,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeImagesRequestMarshaller Instance
+        public static DescribeImagePermissionsRequestMarshaller Instance
         {
             get
             {
