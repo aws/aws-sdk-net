@@ -30,14 +30,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <summary>
     /// Container for the parameters to the GetMediaForFragmentList operation.
     /// Gets media for a list of fragments (specified by fragment number) from the archived
-    /// data in a Kinesis video stream.
+    /// data in an Amazon Kinesis video stream.
     /// 
-    ///  <note> 
-    /// <para>
-    /// This operation is only available for the AWS SDK for Java. It is not supported in
-    /// AWS SDKs for other languages.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// The following limits apply when using the <code>GetMediaForFragmentList</code> API:
     /// </para>

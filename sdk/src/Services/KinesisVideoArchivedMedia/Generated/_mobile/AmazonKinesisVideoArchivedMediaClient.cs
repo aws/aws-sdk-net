@@ -68,6 +68,38 @@ namespace Amazon.KinesisVideoArchivedMedia
         #endregion
 
         
+        #region  GetHLSStreamingSessionURL
+
+        internal virtual GetHLSStreamingSessionURLResponse GetHLSStreamingSessionURL(GetHLSStreamingSessionURLRequest request)
+        {
+            var marshaller = GetHLSStreamingSessionURLRequestMarshaller.Instance;
+            var unmarshaller = GetHLSStreamingSessionURLResponseUnmarshaller.Instance;
+
+            return Invoke<GetHLSStreamingSessionURLRequest,GetHLSStreamingSessionURLResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHLSStreamingSessionURL operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHLSStreamingSessionURL operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">REST API Reference for GetHLSStreamingSessionURL Operation</seealso>
+        public virtual Task<GetHLSStreamingSessionURLResponse> GetHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetHLSStreamingSessionURLRequestMarshaller.Instance;
+            var unmarshaller = GetHLSStreamingSessionURLResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHLSStreamingSessionURLRequest,GetHLSStreamingSessionURLResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMediaForFragmentList
 
         internal virtual GetMediaForFragmentListResponse GetMediaForFragmentList(GetMediaForFragmentListRequest request)
