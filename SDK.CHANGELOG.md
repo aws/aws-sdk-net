@@ -1,3 +1,11 @@
+### 3.3.318.0 (2018-07-13 21:47 UTC)
+* AppStream (3.3.16.0)
+	* This API update adds support for sharing AppStream images across AWS accounts within the same region.
+* KinesisVideo (3.3.1.0)
+	* Adds support for HLS video playback of Kinesis Video streams using the KinesisVideo client by including "GET_HLS_STREAMING_SESSION_URL" as an additional APIName parameter in the GetDataEndpoint input.
+* KinesisVideoArchivedMedia (3.3.1.0)
+	* Adds support for HLS video playback of Kinesis Video streams by providing the GetHLSStreamingSessionURL function in the KinesisVideoArchivedMedia client.
+
 ### 3.3.317.0 (2018-07-12 20:44 UTC)
 * AppSync (3.3.3.0)
 	* This release adds support for configuring HTTP  endpoints as data sources for your AWS AppSync GraphQL API.
