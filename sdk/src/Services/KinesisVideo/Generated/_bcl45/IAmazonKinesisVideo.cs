@@ -515,7 +515,7 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
         /// The stream version that you specified is not the latest version. To get the latest
-        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideo/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
         /// API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
@@ -579,7 +579,7 @@ namespace Amazon.KinesisVideo
         /// </exception>
         /// <exception cref="Amazon.KinesisVideo.Model.VersionMismatchException">
         /// The stream version that you specified is not the latest version. To get the latest
-        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideo/latest/dg/API_DescribeStream.html">DescribeStream</a>
+        /// version, use the <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
         /// API.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>

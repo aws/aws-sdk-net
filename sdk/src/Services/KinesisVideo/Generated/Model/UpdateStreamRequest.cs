@@ -102,7 +102,7 @@ namespace Amazon.KinesisVideo.Model
         /// The stream's media type. Use <code>MediaType</code> to specify the type of content
         /// that the stream contains to the consumers of the stream. For more information about
         /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.sietf.org/html/rfc6838#section-4.2">Naming
+        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
         /// Requirements</a>.
         /// </para>
         ///  

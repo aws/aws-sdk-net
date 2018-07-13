@@ -68,6 +68,13 @@ namespace Amazon.KinesisVideo.Model
         /// <para>
         /// The default value is 0, indicating that the stream does not persist data.
         /// </para>
+        ///  
+        /// <para>
+        /// When the <code>DataRetentionInHours</code> value is 0, consumers can still consume
+        /// the fragments that remain in the service host buffer, which has a retention time limit
+        /// of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the
+        /// buffer when either limit is reached.
+        /// </para>
         /// </summary>
         public int DataRetentionInHours
         {

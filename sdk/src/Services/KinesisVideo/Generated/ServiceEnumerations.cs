@@ -31,6 +31,10 @@ namespace Amazon.KinesisVideo
     {
 
         /// <summary>
+        /// Constant GET_HLS_STREAMING_SESSION_URL for APIName
+        /// </summary>
+        public static readonly APIName GET_HLS_STREAMING_SESSION_URL = new APIName("GET_HLS_STREAMING_SESSION_URL");
+        /// <summary>
         /// Constant GET_MEDIA for APIName
         /// </summary>
         public static readonly APIName GET_MEDIA = new APIName("GET_MEDIA");
