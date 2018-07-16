@@ -24,6 +24,8 @@
   <ItemGroup>
     <Compile Remove="**/45/**" />
     <None Remove="**/45/**" />
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
     <Compile Include="..\..\KeyManagementService\IntegrationTests\KeyManagementService.cs" />
   </ItemGroup>
 
