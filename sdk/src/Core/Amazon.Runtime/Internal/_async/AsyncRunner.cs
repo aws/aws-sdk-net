@@ -18,6 +18,11 @@ using System.Threading.Tasks;
 
 namespace Amazon.Runtime.Internal
 {
+    /// <summary>
+    /// This class is no longer used anymore and should be avoided as it is just meant
+    /// as a last resort when blending async and sync operations. The code is still
+    /// here to support versions before 3.3.9.0 of AWSSDK.DynamoDBv2.
+    /// </summary>
     public static class AsyncRunner
     {
         public static Task Run(Action action, CancellationToken cancellationToken)

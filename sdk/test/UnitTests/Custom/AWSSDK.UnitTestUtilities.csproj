@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Compile Remove="**\**" />
+    <Compile Include="Runtime\DeprecatedCodeTest.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="CapacityManagerTests.cs" />
