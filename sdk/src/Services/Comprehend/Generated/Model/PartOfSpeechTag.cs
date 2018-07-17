@@ -28,49 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the StopDominantLanguageDetectionJob operation.
+    /// Identifies the part of speech represented by the token and gives the confidence that
+    /// Amazon Comprehend has that the part of speech was correctly identified. For more information
+    /// about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
     /// </summary>
-    public partial class StopDominantLanguageDetectionJobResponse : AmazonWebServiceResponse
+    public partial class PartOfSpeechTag
     {
-        private string _jobId;
-        private JobStatus _jobStatus;
+        private float? _score;
+        private PartOfSpeechTagType _tag;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Score. 
         /// <para>
-        /// The identifier of the dominant language detection job to stop.
+        /// The confidence that Amazon Comprehend has that the part of speech was correctly identified.
         /// </para>
         /// </summary>
-        public string JobId
+        public float Score
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._score.GetValueOrDefault(); }
+            set { this._score = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Score property is set
+        internal bool IsSetScore()
         {
-            return this._jobId != null;
+            return this._score.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property JobStatus. 
+        /// Gets and sets the property Tag. 
         /// <para>
-        /// Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code>
-        /// if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code>
-        /// operation.
+        /// Identifies the part of speech that the token represents.
         /// </para>
         /// </summary>
-        public JobStatus JobStatus
+        public PartOfSpeechTagType Tag
         {
-            get { return this._jobStatus; }
-            set { this._jobStatus = value; }
+            get { return this._tag; }
+            set { this._tag = value; }
         }
 
-        // Check to see if JobStatus property is set
-        internal bool IsSetJobStatus()
+        // Check to see if Tag property is set
+        internal bool IsSetTag()
         {
-            return this._jobStatus != null;
+            return this._tag != null;
         }
 
     }

@@ -56,7 +56,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// Either <code>STOPPING</code> if the job is currently running, or <code>STOPPED</code>
+        /// Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code>
         /// if the job was previously stopped with the <code>StopSentimentDetectionJob</code>
         /// operation.
         /// </para>

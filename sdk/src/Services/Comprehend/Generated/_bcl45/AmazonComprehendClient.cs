@@ -459,6 +459,66 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  BatchDetectSyntax
+
+
+        /// <summary>
+        /// Inspects the text of a batch of documents for the syntax and part of speech of the
+        /// words in the document and returns information about them. For more information, see
+        /// <a>how-syntax</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax service method.</param>
+        /// 
+        /// <returns>The response from the BatchDetectSyntax service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.BatchSizeLimitExceededException">
+        /// The number of documents in the request exceeds the limit of 25. Try your request again
+        /// with fewer documents.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all APIs except
+        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
+        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
+        /// languages. For a list of languages, see <a>how-languages</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
+        public virtual BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request)
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
+        public virtual Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDominantLanguageDetectionJob
 
 
@@ -928,6 +988,61 @@ namespace Amazon.Comprehend
             var unmarshaller = DetectSentimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectSentimentRequest,DetectSentimentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectSyntax
+
+
+        /// <summary>
+        /// Inspects text for syntax and the part of speech of words in the document. For more
+        /// information, <a>how-syntax</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectSyntax service method.</param>
+        /// 
+        /// <returns>The response from the DetectSyntax service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all APIs except
+        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
+        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
+        /// languages. For a list of languages, see <a>how-languages</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
+        public virtual DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request)
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
+        public virtual Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1446,19 +1561,20 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job will be marked for termination
-        /// and put into the <code>STOPPING</code> state.
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
         /// </para>
         ///  
         /// <para>
         /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-        /// return a 400 Internal Request Exception. 
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
-        /// When a job is stopped, any document that has already been processed will be written
-        /// to the output location.
+        /// When a job is stopped, any documents already processed are written to the output location.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDominantLanguageDetectionJob service method.</param>
@@ -1511,19 +1627,20 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job will be marked for termination
-        /// and put into the <code>STOPPING</code> state.
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
         /// </para>
         ///  
         /// <para>
         /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-        /// return a 400 Internal Request Exception. 
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
-        /// When a job is stopped, any document that has already been processed will be written
-        /// to the output location.
+        /// When a job is stopped, any documents already processed are written to the output location.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEntitiesDetectionJob service method.</param>
@@ -1576,19 +1693,20 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job will be marked for termination
-        /// and put into the <code>STOPPING</code> state.
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
         /// </para>
         ///  
         /// <para>
         /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-        /// return a 400 Internal Request Exception. 
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
-        /// When a job is stopped, any document that has already been processed will be written
-        /// to the output location.
+        /// When a job is stopped, any documents already processed are written to the output location.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopKeyPhrasesDetectionJob service method.</param>
@@ -1641,19 +1759,20 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job will be marked for termination
-        /// and put into the <code>STOPPING</code> state.
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// be stopped and put into the <code>STOPPED</code> state.
         /// </para>
         ///  
         /// <para>
         /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation will
-        /// return a 400 Internal Request Exception. 
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
-        /// When a job is stopped, any document that has already been processed will be written
-        /// to the output location.
+        /// When a job is stopped, any documents already processed are written to the output location.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopSentimentDetectionJob service method.</param>

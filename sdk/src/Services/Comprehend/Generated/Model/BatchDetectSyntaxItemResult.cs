@@ -28,49 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the StopDominantLanguageDetectionJob operation.
+    /// The result of calling the operation. The operation returns one object that is successfully
+    /// processed by the operation.
     /// </summary>
-    public partial class StopDominantLanguageDetectionJobResponse : AmazonWebServiceResponse
+    public partial class BatchDetectSyntaxItemResult
     {
-        private string _jobId;
-        private JobStatus _jobStatus;
+        private int? _index;
+        private List<SyntaxToken> _syntaxTokens = new List<SyntaxToken>();
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property Index. 
         /// <para>
-        /// The identifier of the dominant language detection job to stop.
+        /// The zero-based index of the document in the input list.
         /// </para>
         /// </summary>
-        public string JobId
+        public int Index
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._index.GetValueOrDefault(); }
+            set { this._index = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
         {
-            return this._jobId != null;
+            return this._index.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property JobStatus. 
+        /// Gets and sets the property SyntaxTokens. 
         /// <para>
-        /// Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code>
-        /// if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code>
-        /// operation.
+        /// The syntax tokens for the words in the document, one token for each word.
         /// </para>
         /// </summary>
-        public JobStatus JobStatus
+        public List<SyntaxToken> SyntaxTokens
         {
-            get { return this._jobStatus; }
-            set { this._jobStatus = value; }
+            get { return this._syntaxTokens; }
+            set { this._syntaxTokens = value; }
         }
 
-        // Check to see if JobStatus property is set
-        internal bool IsSetJobStatus()
+        // Check to see if SyntaxTokens property is set
+        internal bool IsSetSyntaxTokens()
         {
-            return this._jobStatus != null;
+            return this._syntaxTokens != null && this._syntaxTokens.Count > 0; 
         }
 
     }

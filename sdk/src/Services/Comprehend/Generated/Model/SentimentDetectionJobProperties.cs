@@ -32,6 +32,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class SentimentDetectionJobProperties
     {
+        private string _dataAccessRoleArn;
         private DateTime? _endTime;
         private InputDataConfig _inputDataConfig;
         private string _jobId;
@@ -41,6 +42,25 @@ namespace Amazon.Comprehend.Model
         private string _message;
         private OutputDataConfig _outputDataConfig;
         private DateTime? _submitTime;
+
+        /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.
+        /// </para>
+        /// </summary>
+        public string DataAccessRoleArn
+        {
+            get { return this._dataAccessRoleArn; }
+            set { this._dataAccessRoleArn = value; }
+        }
+
+        // Check to see if DataAccessRoleArn property is set
+        internal bool IsSetDataAccessRoleArn()
+        {
+            return this._dataAccessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 

@@ -361,6 +361,38 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  BatchDetectSyntax
+
+        internal virtual BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request)
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
+        public virtual Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDominantLanguageDetectionJob
 
         internal virtual DescribeDominantLanguageDetectionJobResponse DescribeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request)
@@ -644,6 +676,38 @@ namespace Amazon.Comprehend
             var unmarshaller = DetectSentimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetectSentimentRequest,DetectSentimentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectSyntax
+
+        internal virtual DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request)
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
+        public virtual Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

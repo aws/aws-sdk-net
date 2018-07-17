@@ -28,49 +28,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the StopDominantLanguageDetectionJob operation.
+    /// Container for the parameters to the DetectSyntax operation.
+    /// Inspects text for syntax and the part of speech of words in the document. For more
+    /// information, <a>how-syntax</a>.
     /// </summary>
-    public partial class StopDominantLanguageDetectionJobResponse : AmazonWebServiceResponse
+    public partial class DetectSyntaxRequest : AmazonComprehendRequest
     {
-        private string _jobId;
-        private JobStatus _jobStatus;
+        private SyntaxLanguageCode _languageCode;
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property JobId. 
+        /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The identifier of the dominant language detection job to stop.
+        /// The language code of the input documents. You can specify English ("en") or Spanish
+        /// ("es").
         /// </para>
         /// </summary>
-        public string JobId
+        public SyntaxLanguageCode LanguageCode
         {
-            get { return this._jobId; }
-            set { this._jobId = value; }
+            get { return this._languageCode; }
+            set { this._languageCode = value; }
         }
 
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
+        // Check to see if LanguageCode property is set
+        internal bool IsSetLanguageCode()
         {
-            return this._jobId != null;
+            return this._languageCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property JobStatus. 
+        /// Gets and sets the property Text. 
         /// <para>
-        /// Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code>
-        /// if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code>
-        /// operation.
+        /// A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.
         /// </para>
         /// </summary>
-        public JobStatus JobStatus
+        public string Text
         {
-            get { return this._jobStatus; }
-            set { this._jobStatus = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if JobStatus property is set
-        internal bool IsSetJobStatus()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._jobStatus != null;
+            return this._text != null;
         }
 
     }

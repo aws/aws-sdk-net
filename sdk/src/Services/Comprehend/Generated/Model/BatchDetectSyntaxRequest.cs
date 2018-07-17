@@ -1,0 +1,81 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the comprehend-2017-11-27.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Comprehend.Model
+{
+    /// <summary>
+    /// Container for the parameters to the BatchDetectSyntax operation.
+    /// Inspects the text of a batch of documents for the syntax and part of speech of the
+    /// words in the document and returns information about them. For more information, see
+    /// <a>how-syntax</a>.
+    /// </summary>
+    public partial class BatchDetectSyntaxRequest : AmazonComprehendRequest
+    {
+        private SyntaxLanguageCode _languageCode;
+        private List<string> _textList = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// The language of the input documents. You can specify English ("en") or Spanish ("es").
+        /// All documents must be in the same language.
+        /// </para>
+        /// </summary>
+        public SyntaxLanguageCode LanguageCode
+        {
+            get { return this._languageCode; }
+            set { this._languageCode = value; }
+        }
+
+        // Check to see if LanguageCode property is set
+        internal bool IsSetLanguageCode()
+        {
+            return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextList. 
+        /// <para>
+        /// A list containing the text of the input documents. The list can contain a maximum
+        /// of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
+        /// characters.
+        /// </para>
+        /// </summary>
+        public List<string> TextList
+        {
+            get { return this._textList; }
+            set { this._textList = value; }
+        }
+
+        // Check to see if TextList property is set
+        internal bool IsSetTextList()
+        {
+            return this._textList != null && this._textList.Count > 0; 
+        }
+
+    }
+}
