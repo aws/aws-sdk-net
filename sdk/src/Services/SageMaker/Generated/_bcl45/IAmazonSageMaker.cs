@@ -560,6 +560,81 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateTransformJob
+
+
+        /// <summary>
+        /// Starts a transform job. After the results are obtained, Amazon SageMaker saves them
+        /// to an Amazon S3 location that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// To perform batch transformations, you create a transform job and use the data that
+        /// you have readily available.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the request body, you provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TransformJobName</code> - Identifies the transform job. The name must be unique
+        /// within an AWS Region in an AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ModelName</code> - Identifies the model to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon
+        /// S3 location where it is stored.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon
+        /// SageMaker to save the results from the transform job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformResources</code> - Identifies the ML compute instances for the transform
+        /// job.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information about how batch transformation works Amazon SageMaker, see <a
+        /// href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
+        /// Works</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        Task<CreateTransformJobResponse> CreateTransformJobAsync(CreateTransformJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEndpoint
 
 
@@ -942,6 +1017,36 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTransformJob
+
+
+        /// <summary>
+        /// Returns information about a transform job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        Task<DescribeTransformJobResponse> DescribeTransformJobAsync(DescribeTransformJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEndpointConfigs
 
 
@@ -1193,6 +1298,33 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTransformJobs
+
+
+        /// <summary>
+        /// Lists transform jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTransformJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        ListTransformJobsResponse ListTransformJobs(ListTransformJobsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTransformJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        Task<ListTransformJobsResponse> ListTransformJobsAsync(ListTransformJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartNotebookInstance
 
 
@@ -1237,7 +1369,7 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// All model artifacts output from the training jobs are stored in Amazon Simple Storage
-        /// Service (Amazon S3). All data that the training jobs write toAmazon CloudWatch Logs
+        /// Service (Amazon S3). All data that the training jobs write to Amazon CloudWatch Logs
         /// are still available in CloudWatch. After the tuning job moves to the <code>Stopped</code>
         /// state, it releases all reserved resources for the tuning job.
         /// </para>
@@ -1346,6 +1478,44 @@ namespace Amazon.SageMaker
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob">REST API Reference for StopTrainingJob Operation</seealso>
         Task<StopTrainingJobResponse> StopTrainingJobAsync(StopTrainingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopTransformJob
+
+
+        /// <summary>
+        /// Stops a transform job.
+        /// 
+        ///  
+        /// <para>
+        /// When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status
+        /// of the job changes to <code>Stopping</code>. After Amazon SageMaker stops the job,
+        /// the status is set to <code>Stopped</code>. When you stop a transform job before it
+        /// is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the StopTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        StopTransformJobResponse StopTransformJob(StopTransformJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        Task<StopTransformJobResponse> StopTransformJobAsync(StopTransformJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

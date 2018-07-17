@@ -25,6 +25,106 @@ namespace Amazon.SageMaker
 {
 
     /// <summary>
+    /// Constants used for properties of type AssemblyType.
+    /// </summary>
+    public class AssemblyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Line for AssemblyType
+        /// </summary>
+        public static readonly AssemblyType Line = new AssemblyType("Line");
+        /// <summary>
+        /// Constant None for AssemblyType
+        /// </summary>
+        public static readonly AssemblyType None = new AssemblyType("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssemblyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssemblyType FindValue(string value)
+        {
+            return FindValue<AssemblyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssemblyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchStrategy.
+    /// </summary>
+    public class BatchStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MultiRecord for BatchStrategy
+        /// </summary>
+        public static readonly BatchStrategy MultiRecord = new BatchStrategy("MultiRecord");
+        /// <summary>
+        /// Constant SingleRecord for BatchStrategy
+        /// </summary>
+        public static readonly BatchStrategy SingleRecord = new BatchStrategy("SingleRecord");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchStrategy FindValue(string value)
+        {
+            return FindValue<BatchStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompressionType.
     /// </summary>
     public class CompressionType : ConstantClass
@@ -1547,6 +1647,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SplitType.
+    /// </summary>
+    public class SplitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Line for SplitType
+        /// </summary>
+        public static readonly SplitType Line = new SplitType("Line");
+        /// <summary>
+        /// Constant None for SplitType
+        /// </summary>
+        public static readonly SplitType None = new SplitType("None");
+        /// <summary>
+        /// Constant RecordIO for SplitType
+        /// </summary>
+        public static readonly SplitType RecordIO = new SplitType("RecordIO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SplitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SplitType FindValue(string value)
+        {
+            return FindValue<SplitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SplitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TrainingInputMode.
     /// </summary>
     public class TrainingInputMode : ConstantClass
@@ -1856,6 +2010,214 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrainingJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransformInstanceType.
+    /// </summary>
+    public class TransformInstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MlC42xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC42xlarge = new TransformInstanceType("ml.c4.2xlarge");
+        /// <summary>
+        /// Constant MlC44xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC44xlarge = new TransformInstanceType("ml.c4.4xlarge");
+        /// <summary>
+        /// Constant MlC48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC48xlarge = new TransformInstanceType("ml.c4.8xlarge");
+        /// <summary>
+        /// Constant MlC4Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC4Xlarge = new TransformInstanceType("ml.c4.xlarge");
+        /// <summary>
+        /// Constant MlC518xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC518xlarge = new TransformInstanceType("ml.c5.18xlarge");
+        /// <summary>
+        /// Constant MlC52xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC52xlarge = new TransformInstanceType("ml.c5.2xlarge");
+        /// <summary>
+        /// Constant MlC54xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC54xlarge = new TransformInstanceType("ml.c5.4xlarge");
+        /// <summary>
+        /// Constant MlC59xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC59xlarge = new TransformInstanceType("ml.c5.9xlarge");
+        /// <summary>
+        /// Constant MlC5Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlC5Xlarge = new TransformInstanceType("ml.c5.xlarge");
+        /// <summary>
+        /// Constant MlM410xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM410xlarge = new TransformInstanceType("ml.m4.10xlarge");
+        /// <summary>
+        /// Constant MlM416xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM416xlarge = new TransformInstanceType("ml.m4.16xlarge");
+        /// <summary>
+        /// Constant MlM42xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM42xlarge = new TransformInstanceType("ml.m4.2xlarge");
+        /// <summary>
+        /// Constant MlM44xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM44xlarge = new TransformInstanceType("ml.m4.4xlarge");
+        /// <summary>
+        /// Constant MlM4Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM4Xlarge = new TransformInstanceType("ml.m4.xlarge");
+        /// <summary>
+        /// Constant MlM512xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM512xlarge = new TransformInstanceType("ml.m5.12xlarge");
+        /// <summary>
+        /// Constant MlM524xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM524xlarge = new TransformInstanceType("ml.m5.24xlarge");
+        /// <summary>
+        /// Constant MlM52xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM52xlarge = new TransformInstanceType("ml.m5.2xlarge");
+        /// <summary>
+        /// Constant MlM54xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM54xlarge = new TransformInstanceType("ml.m5.4xlarge");
+        /// <summary>
+        /// Constant MlM5Large for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM5Large = new TransformInstanceType("ml.m5.large");
+        /// <summary>
+        /// Constant MlM5Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlM5Xlarge = new TransformInstanceType("ml.m5.xlarge");
+        /// <summary>
+        /// Constant MlP216xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP216xlarge = new TransformInstanceType("ml.p2.16xlarge");
+        /// <summary>
+        /// Constant MlP28xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP28xlarge = new TransformInstanceType("ml.p2.8xlarge");
+        /// <summary>
+        /// Constant MlP2Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP2Xlarge = new TransformInstanceType("ml.p2.xlarge");
+        /// <summary>
+        /// Constant MlP316xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP316xlarge = new TransformInstanceType("ml.p3.16xlarge");
+        /// <summary>
+        /// Constant MlP32xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP32xlarge = new TransformInstanceType("ml.p3.2xlarge");
+        /// <summary>
+        /// Constant MlP38xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlP38xlarge = new TransformInstanceType("ml.p3.8xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransformInstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransformInstanceType FindValue(string value)
+        {
+            return FindValue<TransformInstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransformInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransformJobStatus.
+    /// </summary>
+    public class TransformJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for TransformJobStatus
+        /// </summary>
+        public static readonly TransformJobStatus Completed = new TransformJobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for TransformJobStatus
+        /// </summary>
+        public static readonly TransformJobStatus Failed = new TransformJobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for TransformJobStatus
+        /// </summary>
+        public static readonly TransformJobStatus InProgress = new TransformJobStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for TransformJobStatus
+        /// </summary>
+        public static readonly TransformJobStatus Stopped = new TransformJobStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for TransformJobStatus
+        /// </summary>
+        public static readonly TransformJobStatus Stopping = new TransformJobStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransformJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransformJobStatus FindValue(string value)
+        {
+            return FindValue<TransformJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransformJobStatus(string value)
         {
             return FindValue(value);
         }

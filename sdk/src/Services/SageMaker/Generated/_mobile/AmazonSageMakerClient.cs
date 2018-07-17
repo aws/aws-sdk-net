@@ -518,6 +518,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateTransformJob
+
+        internal virtual CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request)
+        {
+            var marshaller = CreateTransformJobRequestMarshaller.Instance;
+            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        public virtual Task<CreateTransformJobResponse> CreateTransformJobAsync(CreateTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransformJobRequestMarshaller.Instance;
+            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
@@ -934,6 +966,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTransformJob
+
+        internal virtual DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request)
+        {
+            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        public virtual Task<DescribeTransformJobResponse> DescribeTransformJobAsync(DescribeTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEndpointConfigs
 
         internal virtual ListEndpointConfigsResponse ListEndpointConfigs(ListEndpointConfigsRequest request)
@@ -1222,6 +1286,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTransformJobs
+
+        internal virtual ListTransformJobsResponse ListTransformJobs(ListTransformJobsRequest request)
+        {
+            var marshaller = ListTransformJobsRequestMarshaller.Instance;
+            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTransformJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        public virtual Task<ListTransformJobsResponse> ListTransformJobsAsync(ListTransformJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTransformJobsRequestMarshaller.Instance;
+            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartNotebookInstance
 
         internal virtual StartNotebookInstanceResponse StartNotebookInstance(StartNotebookInstanceRequest request)
@@ -1345,6 +1441,38 @@ namespace Amazon.SageMaker
             var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTrainingJobRequest,StopTrainingJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTransformJob
+
+        internal virtual StopTransformJobResponse StopTransformJob(StopTransformJobRequest request)
+        {
+            var marshaller = StopTransformJobRequestMarshaller.Instance;
+            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        public virtual Task<StopTransformJobResponse> StopTransformJobAsync(StopTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopTransformJobRequestMarshaller.Instance;
+            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

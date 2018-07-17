@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTrainingJobs operation.
-    /// Lists training jobs.
+    /// Container for the parameters to the ListTransformJobs operation.
+    /// Lists transform jobs.
     /// </summary>
-    public partial class ListTrainingJobsRequest : AmazonSageMakerRequest
+    public partial class ListTransformJobsRequest : AmazonSageMakerRequest
     {
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
@@ -42,12 +42,12 @@ namespace Amazon.SageMaker.Model
         private string _nextToken;
         private SortBy _sortBy;
         private SortOrder _sortOrder;
-        private TrainingJobStatus _statusEquals;
+        private TransformJobStatus _statusEquals;
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// A filter that returns only training jobs created after the specified time (timestamp).
+        /// A filter that returns only transform jobs created after the specified time.
         /// </para>
         /// </summary>
         public DateTime CreationTimeAfter
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// A filter that returns only training jobs created before the specified time (timestamp).
+        /// A filter that returns only transform jobs created before the specified time.
         /// </para>
         /// </summary>
         public DateTime CreationTimeBefore
@@ -83,7 +83,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeAfter. 
         /// <para>
-        /// A filter that returns only training jobs modified after the specified time (timestamp).
+        /// A filter that returns only transform jobs modified after the specified time.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTimeAfter
@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTimeBefore. 
         /// <para>
-        /// A filter that returns only training jobs modified before the specified time (timestamp).
+        /// A filter that returns only transform jobs modified before the specified time.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTimeBefore
@@ -119,7 +119,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of training jobs to return in the response.
+        /// The maximum number of transform jobs to return in the response. The default value
+        /// is <code>10</code>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -137,8 +138,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string in the training job name. This filter returns only training jobs whose name
-        /// contains the specified string.
+        /// A string in the transform job name. This filter returns only transform jobs whose
+        /// name contains the specified string.
         /// </para>
         /// </summary>
         public string NameContains
@@ -156,9 +157,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListTrainingJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of training
-        /// jobs, use the token in the next request. 
+        /// If the result of the previous <code>ListTransformJobs</code> request was truncated,
+        /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
+        /// jobs, use the token in the next request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -194,7 +195,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. The default is <code>Ascending</code>.
+        /// The sort order for results. The default is <code>Descending</code>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder
@@ -212,10 +213,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        /// A filter that retrieves only training jobs with a specific status.
+        /// A filter that retrieves only transform jobs with a specific status.
         /// </para>
         /// </summary>
-        public TrainingJobStatus StatusEquals
+        public TransformJobStatus StatusEquals
         {
             get { return this._statusEquals; }
             set { this._statusEquals = value; }

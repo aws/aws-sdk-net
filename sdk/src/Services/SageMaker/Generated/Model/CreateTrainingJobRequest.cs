@@ -314,7 +314,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingJobName. 
         /// <para>
         /// The name of the training job. The name must be unique within an AWS Region in an AWS
-        /// account. It appears in the Amazon SageMaker console. 
+        /// account. 
         /// </para>
         /// </summary>
         public string TrainingJobName
