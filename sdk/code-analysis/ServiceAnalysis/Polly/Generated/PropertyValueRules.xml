@@ -9,8 +9,30 @@
     <pattern>[0-9A-Za-z]{1,20}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Polly.Model.GetSpeechSynthesisTaskRequest.TaskId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.ListSpeechSynthesisTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Polly.Model.PutLexiconRequest.Name</property>
     <pattern>[0-9A-Za-z]{1,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.OutputS3BucketName</property>
+    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.OutputS3KeyPrefix</property>
+    <pattern>^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.SnsTopicArn</property>
+    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:.*:\w{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.Lexicon.Name</property>
@@ -19,5 +41,14 @@
   <property-value-rule>
     <property>Amazon.Polly.Model.LexiconDescription.Name</property>
     <pattern>[0-9A-Za-z]{1,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.SynthesisTask.SnsTopicArn</property>
+    <pattern>^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:.*:\w{12}:.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Polly.Model.SynthesisTask.TaskId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
 </property-value-rules>
