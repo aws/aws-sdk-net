@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.318.0",
+    "ProductVersion" : "3.3.319.0",
     "CoreVersion"    : "3.3.24.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -585,7 +585,7 @@
             "InPreview"               : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.2.19",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.5.3",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.7.0",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
