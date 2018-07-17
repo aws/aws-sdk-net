@@ -157,7 +157,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of appliance used with this job.
+        /// The type of device used with this job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

@@ -255,12 +255,12 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property ShippingOption. 
         /// <para>
         /// The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge appliance, rather it represents how quickly each appliance
+        /// you'll get each Snowball Edge device, rather it represents how quickly each device
         /// moves to its destination while in transit. Regional shipping speeds are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// In Australia, you have access to express shipping. Typically, appliances shipped express
+        /// In Australia, you have access to express shipping. Typically, devices shipped express
         /// are delivered in about a day.
         /// </para>
         ///  </li> <li> 
@@ -295,8 +295,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball appliance to use for this cluster. Currently, the only supported
-        /// appliance type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

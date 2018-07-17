@@ -296,8 +296,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball appliance to use for this job. Currently, the only supported
-        /// appliance type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snowball device to use for this job. Currently, the only supported
+        /// device type for cluster jobs is <code>EDGE</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

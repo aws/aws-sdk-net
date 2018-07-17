@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobResource Object
+    /// Response Unmarshaller for CompatibleImage Object
     /// </summary>  
-    public class JobResourceUnmarshaller : IUnmarshaller<JobResource, XmlUnmarshallerContext>, IUnmarshaller<JobResource, JsonUnmarshallerContext>
+    public class CompatibleImageUnmarshaller : IUnmarshaller<CompatibleImage, XmlUnmarshallerContext>, IUnmarshaller<CompatibleImage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobResource IUnmarshaller<JobResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CompatibleImage IUnmarshaller<CompatibleImage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobResource Unmarshall(JsonUnmarshallerContext context)
+        public CompatibleImage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobResource unmarshalledObject = new JobResource();
+            CompatibleImage unmarshalledObject = new CompatibleImage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Ec2AmiResources", targetDepth))
+                if (context.TestExpression("AmiId", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Ec2AmiResource, Ec2AmiResourceUnmarshaller>(Ec2AmiResourceUnmarshaller.Instance);
-                    unmarshalledObject.Ec2AmiResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AmiId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LambdaResources", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LambdaResource, LambdaResourceUnmarshaller>(LambdaResourceUnmarshaller.Instance);
-                    unmarshalledObject.LambdaResources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3Resources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<S3Resource, S3ResourceUnmarshaller>(S3ResourceUnmarshaller.Instance);
-                    unmarshalledObject.S3Resources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobResourceUnmarshaller _instance = new JobResourceUnmarshaller();        
+        private static CompatibleImageUnmarshaller _instance = new CompatibleImageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobResourceUnmarshaller Instance
+        public static CompatibleImageUnmarshaller Instance
         {
             get
             {

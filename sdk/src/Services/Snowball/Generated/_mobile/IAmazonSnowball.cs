@@ -31,13 +31,13 @@ namespace Amazon.Snowball
     /// <summary>
     /// Interface for accessing Snowball
     ///
-    /// AWS Snowball is a petabyte-scale data transport solution that uses secure appliances
+    /// AWS Snowball is a petabyte-scale data transport solution that uses secure devices
     /// to transfer large amounts of data between your on-premises data centers and Amazon
     /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
     /// to the same functionality that is available in the AWS Snowball Management Console,
     /// which enables you to create and manage jobs for Snowball. To transfer data locally
-    /// with a Snowball appliance, you'll need to use the Snowball client or the Amazon S3
-    /// API adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// with a Snowball device, you'll need to use the Snowball client or the Amazon S3 API
+    /// adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
     /// Guide</a>.
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
@@ -278,6 +278,23 @@ namespace Amazon.Snowball
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCompatibleImages
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCompatibleImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">REST API Reference for ListCompatibleImages Operation</seealso>
+        Task<ListCompatibleImagesResponse> ListCompatibleImagesAsync(ListCompatibleImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

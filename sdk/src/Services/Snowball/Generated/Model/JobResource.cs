@@ -28,14 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Contains an array of <code>S3Resource</code> objects. Each <code>S3Resource</code>
-    /// object represents an Amazon S3 bucket that your transferred data will be exported
-    /// from or imported into.
+    /// Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket,
+    /// an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that
+    /// is associated with a particular job.
     /// </summary>
     public partial class JobResource
     {
+        private List<Ec2AmiResource> _ec2AmiResources = new List<Ec2AmiResource>();
         private List<LambdaResource> _lambdaResources = new List<LambdaResource>();
         private List<S3Resource> _s3Resources = new List<S3Resource>();
+
+        /// <summary>
+        /// Gets and sets the property Ec2AmiResources. 
+        /// <para>
+        /// The Amazon Machine Images (AMIs) associated with this job.
+        /// </para>
+        /// </summary>
+        public List<Ec2AmiResource> Ec2AmiResources
+        {
+            get { return this._ec2AmiResources; }
+            set { this._ec2AmiResources = value; }
+        }
+
+        // Check to see if Ec2AmiResources property is set
+        internal bool IsSetEc2AmiResources()
+        {
+            return this._ec2AmiResources != null && this._ec2AmiResources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property LambdaResources. 

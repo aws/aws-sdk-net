@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateJob operation
+    /// Response Unmarshaller for ListCompatibleImages operation
     /// </summary>  
-    public class UpdateJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListCompatibleImagesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateJobResponse response = new UpdateJobResponse();
+            ListCompatibleImagesResponse response = new ListCompatibleImagesResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("CompatibleImages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CompatibleImage, CompatibleImageUnmarshaller>(CompatibleImageUnmarshaller.Instance);
+                    response.CompatibleImages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,36 +78,20 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterLimitExceededException"))
-            {
-                return new ClusterLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("Ec2RequestFailedException"))
             {
                 return new Ec2RequestFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputCombinationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
-                return new InvalidInputCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidJobStateException"))
-            {
-                return new InvalidJobStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceException"))
-            {
-                return new InvalidResourceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSRequestFailedException"))
-            {
-                return new KMSRequestFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonSnowballException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateJobResponseUnmarshaller _instance = new UpdateJobResponseUnmarshaller();        
+        private static ListCompatibleImagesResponseUnmarshaller _instance = new ListCompatibleImagesResponseUnmarshaller();        
 
-        internal static UpdateJobResponseUnmarshaller GetInstance()
+        internal static ListCompatibleImagesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +99,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateJobResponseUnmarshaller Instance
+        public static ListCompatibleImagesResponseUnmarshaller Instance
         {
             get
             {
