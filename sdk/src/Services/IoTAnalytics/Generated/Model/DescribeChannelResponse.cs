@@ -33,6 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DescribeChannelResponse : AmazonWebServiceResponse
     {
         private Channel _channel;
+        private ChannelStatistics _statistics;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -50,6 +51,25 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetChannel()
         {
             return this._channel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// Statistics about the channel. Included if the 'includeStatistics' parameter is set
+        /// to true in the request.
+        /// </para>
+        /// </summary>
+        public ChannelStatistics Statistics
+        {
+            get { return this._statistics; }
+            set { this._statistics = value; }
+        }
+
+        // Check to see if Statistics property is set
+        internal bool IsSetStatistics()
+        {
+            return this._statistics != null;
         }
 
     }

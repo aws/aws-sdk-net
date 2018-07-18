@@ -33,6 +33,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DescribeDatastoreResponse : AmazonWebServiceResponse
     {
         private Datastore _datastore;
+        private DatastoreStatistics _statistics;
 
         /// <summary>
         /// Gets and sets the property Datastore. 
@@ -50,6 +51,25 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastore()
         {
             return this._datastore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// Statistics about the data store. Included if the 'includeStatistics' parameter is
+        /// set to true in the request.
+        /// </para>
+        /// </summary>
+        public DatastoreStatistics Statistics
+        {
+            get { return this._statistics; }
+            set { this._statistics = value; }
+        }
+
+        // Check to see if Statistics property is set
+        internal bool IsSetStatistics()
+        {
+            return this._statistics != null;
         }
 
     }

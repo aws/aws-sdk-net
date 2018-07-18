@@ -28,49 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about a message.
+    /// The estimated size of the resource.
     /// </summary>
-    public partial class Message
+    public partial class EstimatedResourceSize
     {
-        private string _messageId;
-        private MemoryStream _payload;
+        private DateTime? _estimatedOn;
+        private double? _estimatedSizeInBytes;
 
         /// <summary>
-        /// Gets and sets the property MessageId. 
+        /// Gets and sets the property EstimatedOn. 
         /// <para>
-        /// The ID you wish to assign to the message. Each "messageId" must be unique within each
-        /// batch sent.
+        /// The time when the estimate of the size of the resource was made.
         /// </para>
         /// </summary>
-        public string MessageId
+        public DateTime EstimatedOn
         {
-            get { return this._messageId; }
-            set { this._messageId = value; }
+            get { return this._estimatedOn.GetValueOrDefault(); }
+            set { this._estimatedOn = value; }
         }
 
-        // Check to see if MessageId property is set
-        internal bool IsSetMessageId()
+        // Check to see if EstimatedOn property is set
+        internal bool IsSetEstimatedOn()
         {
-            return this._messageId != null;
+            return this._estimatedOn.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Payload. 
+        /// Gets and sets the property EstimatedSizeInBytes. 
         /// <para>
-        /// The payload of the message. This may be a JSON string or a Base64-encoded string representing
-        /// binary data (in which case you must decode it by means of a pipeline activity).
+        /// The estimated size of the resource in bytes.
         /// </para>
         /// </summary>
-        public MemoryStream Payload
+        public double EstimatedSizeInBytes
         {
-            get { return this._payload; }
-            set { this._payload = value; }
+            get { return this._estimatedSizeInBytes.GetValueOrDefault(); }
+            set { this._estimatedSizeInBytes = value; }
         }
 
-        // Check to see if Payload property is set
-        internal bool IsSetPayload()
+        // Check to see if EstimatedSizeInBytes property is set
+        internal bool IsSetEstimatedSizeInBytes()
         {
-            return this._payload != null;
+            return this._estimatedSizeInBytes.HasValue; 
         }
 
     }
