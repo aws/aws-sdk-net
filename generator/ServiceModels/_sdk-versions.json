@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.319.0",
+    "ProductVersion" : "3.3.320.0",
     "CoreVersion"    : "3.3.24.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1089,7 +1089,7 @@
             "InPreview"               : false
         },
         "IoTAnalytics"                    : {
-            "Version" : "3.3.1.3",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"

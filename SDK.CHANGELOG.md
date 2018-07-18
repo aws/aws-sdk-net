@@ -1,3 +1,7 @@
+### 3.3.320.0 (2018-07-18 21:37 UTC)
+* IoTAnalytics (3.3.2.0)
+	* This change allows publishing of channel/datastore size as part of the describe-channel/describe-datastore APIs. We introduce an optional boolean parameter 'includeStatistics' in the Describe request. If the user sets this parameter to true, the describe response will return the resource size and timestamp at which the size was recorded. If the parameter is set to false, the size won't be computed or returned.
+
 ### 3.3.319.0 (2018-07-17 15:32 UTC)
 * Comprehend (3.3.2.0)
 	* This release gives customers the ability to tokenize (find word boundaries) text and for each word provide a label for the part of speech, using the DetectSyntax operation. This API is useful to analyze text for specific conditions like for example finding nouns and the correlating adjectives to understand customer feedback. 
