@@ -1,3 +1,7 @@
+### 3.3.321.0 (2018-07-19 20:20 UTC)
+* MediaPackage (3.3.2.0)
+	* Adds support for DASH OriginEnpoints with multiple media presentation description periods triggered by presence of SCTE-35 ad markers in Channel input streams.
+
 ### 3.3.320.0 (2018-07-18 21:37 UTC)
 * IoTAnalytics (3.3.2.0)
 	* This change allows publishing of channel/datastore size as part of the describe-channel/describe-datastore APIs. We introduce an optional boolean parameter 'includeStatistics' in the Describe request. If the user sets this parameter to true, the describe response will return the resource size and timestamp at which the size was recorded. If the parameter is set to false, the size won't be computed or returned.

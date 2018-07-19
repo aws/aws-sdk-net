@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.320.0",
+    "ProductVersion" : "3.3.321.0",
     "CoreVersion"    : "3.3.24.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -865,7 +865,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.3.1.6",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.3"
