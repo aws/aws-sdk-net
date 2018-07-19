@@ -88,6 +88,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinUpdatePeriodSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("periodTriggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PeriodTriggers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

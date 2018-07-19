@@ -36,6 +36,7 @@ namespace Amazon.MediaPackage.Model
         private int? _manifestWindowSeconds;
         private int? _minBufferTimeSeconds;
         private int? _minUpdatePeriodSeconds;
+        private List<string> _periodTriggers = new List<string>();
         private Profile _profile;
         private int? _segmentDurationSeconds;
         private StreamSelection _streamSelection;
@@ -103,6 +104,25 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetMinUpdatePeriodSeconds()
         {
             return this._minUpdatePeriodSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeriodTriggers. A list of triggers that controls when the
+        /// outgoing Dynamic Adaptive Streaming over HTTP (DASH)Media Presentation Description
+        /// (MPD) will be partitioned into multiple periods. If empty, the content will notbe
+        /// partitioned into more than one period. If the list contains "ADS", new periods will
+        /// be created wherethe Channel source contains SCTE-35 ad markers.
+        /// </summary>
+        public List<string> PeriodTriggers
+        {
+            get { return this._periodTriggers; }
+            set { this._periodTriggers = value; }
+        }
+
+        // Check to see if PeriodTriggers property is set
+        internal bool IsSetPeriodTriggers()
+        {
+            return this._periodTriggers != null && this._periodTriggers.Count > 0; 
         }
 
         /// <summary>

@@ -74,6 +74,17 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinUpdatePeriodSeconds);
             }
 
+            if(requestObject.IsSetPeriodTriggers())
+            {
+                context.Writer.WritePropertyName("periodTriggers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPeriodTriggersListValue in requestObject.PeriodTriggers)
+                {
+                        context.Writer.Write(requestObjectPeriodTriggersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
