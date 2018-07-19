@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,9 +15,10 @@
 
 using System;
 using Amazon.Extensions.NETCore.Setup;
+using Microsoft.Extensions.Configuration;
 
 // ReSharper disable once CheckNamespace
-namespace Microsoft.Extensions.Configuration
+namespace Amazon.Extensions.Configuration
 {
     /// <inheritdoc />
     /// <summary>
@@ -34,6 +35,11 @@ namespace Microsoft.Extensions.Configuration
         /// <see cref="AWSOptions"/> used to create an AWS Systems Manager Client />.
         /// </summary>
         public AWSOptions AwsOptions { get; set; }
+
+        /// <summary>
+        /// Determines if loading configuration data from AWS Systems Manager Parameter Store is optional.
+        /// </summary>
+        public bool Optional { get; set; }
 
         /// <summary>
         /// Paramaters will be reloaded from the AWS Systems Manager Parameter Store after the specified timeframe

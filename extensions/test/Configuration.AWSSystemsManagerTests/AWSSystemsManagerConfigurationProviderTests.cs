@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
+using Amazon.Extensions.Configuration;
+using Amazon.Extensions.Configuration.AWSSystemsManager.Internal;
 using Amazon.Extensions.NETCore.Setup;
 using Amazon.SimpleSystemsManagement.Model;
-using AWSSDK.Extensions.Configuration.AWSSystemsManager;
-using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 
@@ -43,7 +43,7 @@ namespace Configuration.AWSSystemsManagerTests
                 Path = "/start/path"
             };
             var processor = new Mock<IAWSSystemsManagerProcessor>();
-            processor.Setup(p => p.GetParametersByPath(source.AwsOptions, source.Path)).ReturnsAsync(parameters);
+            processor.Setup(p => p.GetParametersByPath(source.AwsOptions, source.Path, false)).ReturnsAsync(parameters);
             var provider = new AWSSystemsManagerConfigurationProvider(source, processor.Object);
             
             provider.Load();

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,13 +18,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Extensions.Configuration.AWSSystemsManager.Internal;
 using Amazon.Extensions.NETCore.Setup;
 using Amazon.SimpleSystemsManagement.Model;
-using AWSSDK.Extensions.Configuration.AWSSystemsManager;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace Microsoft.Extensions.Configuration
+namespace Amazon.Extensions.Configuration
 {
     /// <inheritdoc />
     /// <summary>
@@ -44,7 +45,7 @@ namespace Microsoft.Extensions.Configuration
         {
         }
 
-        internal AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource, IAWSSystemsManagerProcessor awsSystemsManagerProcessor)
+        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource, IAWSSystemsManagerProcessor awsSystemsManagerProcessor)
         {
             _configurationSource = configurationSource ?? throw new ArgumentNullException(nameof(configurationSource));
             _awsSystemsManagerProcessor = awsSystemsManagerProcessor;
@@ -74,7 +75,8 @@ namespace Microsoft.Extensions.Configuration
             {
                 var path = _configurationSource.Path;
                 var awsOptions = _configurationSource.AwsOptions;
-                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path);
+                var optional = this._configurationSource.Optional;
+                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path, optional);
 
                 Data = ProcessParameters(parameters, path);
             }
@@ -101,7 +103,7 @@ namespace Microsoft.Extensions.Configuration
             return key.Replace("/", ConfigurationPath.KeyDelimiter);
         }
 
-        internal static IDictionary<string, string> ProcessParameters(List<Parameter> parameters, string path) =>
+        public static IDictionary<string, string> ProcessParameters(List<Parameter> parameters, string path) =>
             parameters
                 .Select(parameter => new
                 {
